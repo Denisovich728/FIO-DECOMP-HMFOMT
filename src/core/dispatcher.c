@@ -21,14 +21,14 @@ undefined8 SramProxy_ReadSaveData(undefined4 param_1)
   uint uStack_10;
   
   SramProxy_ReadBlock(param_1,auStack_34,0,0x20);
-  puVar1 = _DAT_08000324;
-  uStack_14 = (uint)*_DAT_08000324;
+  puVar1 = gIWRAM_SramBuffer;
+  uStack_14 = (uint)*gIWRAM_SramBuffer;
   if (uStack_14 == 0) {
     SramProxy_ReadBlock(param_1,&uStack_14,0x20,4);
     uStack_10 = (uint)*puVar1;
     if ((uStack_10 == 0) && (SramProxy_ReadBlock(param_1,&uStack_10,0x24,4), *puVar1 == 0)) {
       uVar2 = 0;
-      iVar3 = gba_memcmp(auStack_34,_DAT_08000354,0x20);
+      iVar3 = gba_memcmp(auStack_34,gRomData_080E862C,0x20);
       if ((iVar3 == 0) && (((uStack_14 & 3) == uStack_14 && (uStack_10 < 2)))) {
         uVar2 = 1;
       }
@@ -50,9 +50,9 @@ undefined4 SramProxy_WriteSaveData(undefined4 param_1)
   undefined4 in_lr;
   uint uStack_10;
   
-  SramProxy_WriteBlock(param_1,0,_DAT_08000398,0x20);
-  puVar1 = _DAT_0800039c;
-  uStack_10 = (uint)*_DAT_0800039c;
+  SramProxy_WriteBlock(param_1,0,gRomData_080E862C,0x20);
+  puVar1 = gIWRAM_SramBuffer;
+  uStack_10 = (uint)*gIWRAM_SramBuffer;
   if (uStack_10 == 0) {
     SramProxy_WriteBlock(param_1,0x20,&uStack_10,4);
     if (*puVar1 == 0) {
@@ -76,7 +76,7 @@ undefined8 SramProxy_VerifyChecksum(undefined4 param_1)
   if (cVar1 != '\0') {
     uStack_c = 0;
     SramProxy_ReadBlock(param_1,&uStack_c,0x20,4);
-    if (*_DAT_080003cc == 0) goto LAB_080003d2;
+    if (*gIWRAM_SramBuffer == 0) goto LAB_080003d2;
   }
   uStack_c = 0;
 LAB_080003d2:
@@ -94,7 +94,7 @@ undefined4 SramProxy_ReadSaveSlot(undefined4 param_1,uint param_2)
   
   uStack_10 = 0;
   SramProxy_ReadBlock(param_1,&uStack_10,0x20,4);
-  if (*_DAT_08000428 == 0) {
+  if (*gIWRAM_SramBuffer == 0) {
     uStack_10 = uStack_10 | 1 << (param_2 & 0xff);
     SramProxy_WriteBlock(param_1,0x20,&uStack_10,4);
   }
@@ -112,7 +112,7 @@ undefined4 SramProxy_WriteSaveSlot(undefined4 param_1,uint param_2)
   
   uStack_10 = 0;
   SramProxy_ReadBlock(param_1,&uStack_10,0x20,4);
-  if (*_DAT_0800046c == 0) {
+  if (*gIWRAM_SramBuffer == 0) {
     uStack_10 = uStack_10 & ~(1 << (param_2 & 0xff));
     SramProxy_WriteBlock(param_1,0x20,&uStack_10,4);
   }
@@ -149,7 +149,7 @@ undefined8 SramProxy_VerifySlotChecksum(undefined4 param_1)
   if (cVar1 != '\0') {
     uStack_c = 0;
     SramProxy_ReadBlock(param_1,&uStack_c,0x24,4);
-    if (*_DAT_080004b4 == 0) goto LAB_080004ba;
+    if (*gIWRAM_SramBuffer == 0) goto LAB_080004ba;
   }
   uStack_c = 0;
 LAB_080004ba:
@@ -165,8 +165,8 @@ undefined4 Interrupt_InitVBlank(void)
   uint uVar1;
   undefined4 in_lr;
   
-  Interrupt_WaitForVBlank(_DAT_080004e8);
-  *_DAT_080004ec = _DAT_080004f0;
+  Interrupt_WaitForVBlank(0xFFFF);
+  *gIWRAM_037FFC = gIWRAM_030958;
   uVar1 = 0;
   do {
     M4A_Routine_080D100C(uVar1,0);
@@ -184,7 +184,7 @@ ulonglong Interrupt_EnableHBlank(int param_1)
   undefined4 uVar1;
   undefined4 in_lr;
   
-  uVar1 = _call_via_r1(param_1 << 0x10,_DAT_08000508);
+  uVar1 = _call_via_r1(param_1 << 0x10,gIWRAM_030A1C);
   return CONCAT44(in_lr,uVar1) & 0xffffffff0000ffff;
 }
 
@@ -197,7 +197,7 @@ ulonglong Interrupt_SetMasterEnable(undefined2 param_1)
   undefined4 uVar1;
   undefined4 in_lr;
   
-  *_DAT_08000524 = param_1;
+  *REG_IF = param_1;
   uVar1 = Interrupt_EnableHBlank();
   return CONCAT44(in_lr,uVar1) & 0xffffffff0000ffff;
 }
@@ -211,7 +211,7 @@ ulonglong Interrupt_WaitForVBlank(undefined2 param_1)
   undefined4 uVar1;
   undefined4 in_lr;
   
-  uVar1 = _call_via_r1(param_1,_DAT_0800053c);
+  uVar1 = _call_via_r1(param_1,gIWRAM_030A1C);
   return CONCAT44(in_lr,uVar1) & 0xffffffff0000ffff;
 }
 
@@ -288,7 +288,7 @@ void Dispatcher_Routine_0800059C(undefined4 param_1)
 LAB_080005be:
       return iVar1;
     }
-    if (*_DAT_080005b8 == 0) {
+    if (*gIWRAM_0304C0 == 0) {
       iVar1 = 0;
       goto LAB_080005be;
     }
@@ -398,9 +398,9 @@ undefined8 SramProxy_LoadGlobalSettings(undefined4 param_1)
 {
   undefined4 in_lr;
   
-  if (*_DAT_0800065c == '\0') {
-    *_DAT_0800065c = '\x01';
-    *_DAT_08000660 = 0;
+  if (*gIWRAM_030402 == '\0') {
+    *gIWRAM_030402 = '\x01';
+    *gIWRAM_SramBuffer = 0;
   }
   return CONCAT44(in_lr,param_1);
 }
@@ -439,7 +439,7 @@ undefined8 SramProxy_WriteBlock(undefined4 param_1,uint param_2,undefined4 param
   undefined4 in_lr;
   
   uVar1 = 0;
-  *_DAT_080006e0 = 0;
+  *gIWRAM_SramBuffer = 0;
   if (param_4 != 0) {
     iVar2 = VTable_Routine_080D38D4(param_3,param_2 | 0xe000000);
     if (iVar2 != 0) {
@@ -458,7 +458,7 @@ undefined8 SramProxy_ReadBlock(undefined4 param_1,undefined4 param_2,uint param_
 {
   undefined4 in_lr;
   
-  *_DAT_08000708 = 0;
+  *gIWRAM_SramBuffer = 0;
   if (param_4 != 0) {
     VTable_Routine_080D379C(param_3 | 0xe000000,param_2);
   }
@@ -487,63 +487,63 @@ undefined4 SramProxy_CalculateChecksum(undefined4 param_1,ushort param_2)
   undefined4 in_lr;
   
   if (param_2 == 0x10) {
-    uVar2 = *_DAT_080007c8;
+    uVar2 = *gIWRAM_SramBuffer;
     uVar3 = 0x10;
-    puVar1 = _DAT_080007c8;
+    puVar1 = gIWRAM_SramBuffer;
   }
   else if (param_2 < 0x11) {
     if (param_2 == 2) {
-      uVar2 = *_DAT_08000788;
+      uVar2 = *gIWRAM_SramBuffer;
       uVar3 = 2;
-      puVar1 = _DAT_08000788;
+      puVar1 = gIWRAM_SramBuffer;
     }
     else if (param_2 < 3) {
       if (param_2 != 1) {
         return in_lr;
       }
-      uVar2 = *_DAT_0800077c;
+      uVar2 = *gIWRAM_SramBuffer;
       uVar3 = 1;
-      puVar1 = _DAT_0800077c;
+      puVar1 = gIWRAM_SramBuffer;
     }
     else if (param_2 == 4) {
-      uVar2 = *_DAT_080007a4;
+      uVar2 = *gIWRAM_SramBuffer;
       uVar3 = 4;
-      puVar1 = _DAT_080007a4;
+      puVar1 = gIWRAM_SramBuffer;
     }
     else {
       if (param_2 != 8) {
         return in_lr;
       }
-      uVar2 = *_DAT_080007bc;
+      uVar2 = *gIWRAM_SramBuffer;
       uVar3 = 8;
-      puVar1 = _DAT_080007bc;
+      puVar1 = gIWRAM_SramBuffer;
     }
   }
   else if (param_2 == 0x80) {
-    uVar2 = *_DAT_080007e8;
+    uVar2 = *gIWRAM_SramBuffer;
     uVar3 = 0x80;
-    puVar1 = _DAT_080007e8;
+    puVar1 = gIWRAM_SramBuffer;
   }
   else {
     if (0x80 < param_2) {
       if ((param_2 != 0x100) && (param_2 != 0x200)) {
         return in_lr;
       }
-      *_DAT_08000798 = param_2 | *_DAT_08000798;
+      *gIWRAM_SramBuffer = param_2 | *gIWRAM_SramBuffer;
       return in_lr;
     }
     if (param_2 == 0x20) {
-      uVar2 = *_DAT_080007b0;
+      uVar2 = *gIWRAM_SramBuffer;
       uVar3 = 0x20;
-      puVar1 = _DAT_080007b0;
+      puVar1 = gIWRAM_SramBuffer;
     }
     else {
       if (param_2 != 0x40) {
         return in_lr;
       }
-      uVar2 = *_DAT_080007d4;
+      uVar2 = *gIWRAM_SramBuffer;
       uVar3 = 0x40;
-      puVar1 = _DAT_080007d4;
+      puVar1 = gIWRAM_SramBuffer;
     }
   }
   *puVar1 = uVar2 | uVar3;
@@ -558,7 +558,7 @@ undefined4 SramProxy_VerifyBufferParity(undefined4 *param_1,uint param_2)
 {
   undefined4 in_lr;
   
-  *param_1 = _DAT_08000808;
+  *param_1 = gRomData_080E59CC;
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
   }

@@ -24,7 +24,7 @@ undefined8 ShippingBin_Init(undefined4 *param_1)
   do {
     puVar2 = puVar2 + 1;
     ShippingBin_Routine_0800B26C(puVar2);
-    iVar1 = _DAT_0800b11c;
+    iVar1 = gRomData_080E95CC;
     iVar4 = iVar4 + -1;
   } while (iVar4 != -1);
   uVar3 = 0;
@@ -113,7 +113,7 @@ undefined8 ShippingBin_HasShippedOneOfEachProduct(int param_1)
   
   uVar4 = 0;
   while( true ) {
-    iVar3 = param_1 + (uint)*(byte *)(uVar4 + _DAT_0800b1b8) * 4 + 4;
+    iVar3 = param_1 + (uint)*(byte *)(uVar4 + gRomData_080E95E2) * 4 + 4;
     cVar1 = ShippingBin_Routine_0800B280(iVar3);
     if ((cVar1 == '\0') || (iVar3 = ShippingBin_ForceEnableDisplay(iVar3), iVar3 == 0)) break;
     uVar4 = uVar4 + 1;
@@ -141,7 +141,7 @@ undefined8 ShippingBin_HasShippedOneOfEachCrop(int param_1)
   
   uVar4 = 0;
   while( true ) {
-    iVar3 = param_1 + (uint)*(byte *)(uVar4 + _DAT_0800b1f8) * 4 + 4;
+    iVar3 = param_1 + (uint)*(byte *)(uVar4 + gRomData_080E95F1) * 4 + 4;
     cVar1 = ShippingBin_Routine_0800B280(iVar3);
     if ((cVar1 == '\0') || (iVar3 = ShippingBin_ForceEnableDisplay(iVar3), iVar3 == 0)) break;
     uVar4 = uVar4 + 1;
@@ -170,7 +170,7 @@ undefined4 ShippingBin_ShipItem(int *param_1,undefined4 param_2)
   if (uVar1 != 0) {
     iVar2 = Item_Routine_0800E194(param_2);
     ShippingBin_StatEnt_Init(param_1 + iVar2 + 1);
-    uVar3 = _DAT_0800b248 - *param_1;
+    uVar3 = 0x3B9ACA00 - *param_1;
     if (uVar1 < uVar3) {
       uVar3 = uVar1;
     }
@@ -224,8 +224,8 @@ undefined4 ShippingBin_StatEnt_Init(uint *param_1)
     *(byte *)((int)param_1 + 3) = *(byte *)((int)param_1 + 3) | 0x80;
   }
   uVar1 = *param_1 & 0x7fffffff;
-  if (uVar1 <= _DAT_0800b2cc) {
-    *param_1 = _DAT_0800b2d0 + 1 & *param_1 | uVar1 + 1 & _DAT_0800b2d0;
+  if (uVar1 <= 0x3B9AC9FF) {
+    *param_1 = 0x7FFFFFFF + 1 & *param_1 | uVar1 + 1 & 0x7FFFFFFF;
   }
   return in_lr;
 }

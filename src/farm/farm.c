@@ -32,8 +32,8 @@ undefined4 Farm_Routine_0800901C(int *param_1)
     CpuSet(ppuVar2,iVar5,uVar4);
   }
   else {
-    uVar1 = _DAT_0800907c & uVar4 & 7;
-    iVar3 = (_DAT_0800907c & uVar4) - uVar1;
+    uVar1 = 0xFFFF & uVar4 & 7;
+    iVar3 = (0xFFFF & uVar4) - uVar1;
     if ((iVar3 != 0) || (uVar1 == 0)) {
       uStack_18 = uVar1;
       CpuFastSet(ppuVar2,iVar5,uVar4 - uVar1);
@@ -80,8 +80,8 @@ undefined4 Farm_Routine_08009094(int *param_1,int *param_2)
       CpuSet(ppuVar3,iVar2,uVar5);
     }
     else {
-      uVar1 = _DAT_08009108 & uVar5 & 7;
-      iVar4 = (_DAT_08009108 & uVar5) - uVar1;
+      uVar1 = 0xFFFF & uVar5 & 7;
+      iVar4 = (0xFFFF & uVar5) - uVar1;
       if ((iVar4 != 0) || (uVar1 == 0)) {
         iStack_20 = iVar2;
         CpuFastSet(ppuVar3,iVar2,uVar5 - uVar1);
@@ -352,7 +352,7 @@ undefined4 Farm_Routine_0800934C(int *param_1,short param_2,undefined4 param_3,i
   *(undefined4 *)(iVar1 + 8) = param_3;
   *(byte *)(iVar1 + 0xc) =
        (byte)((byte)((uint)-param_4 >> 0x18) | (byte)((uint)param_4 >> 0x18)) >> 7;
-  *(short *)(iVar1 + 0xe) = (short)_DAT_08009374;
+  *(short *)(iVar1 + 0xe) = (short)0xFFFF;
   return in_lr;
 }
 
@@ -412,16 +412,16 @@ undefined8 Farm_Routine_080093AC(undefined4 *param_1)
       uVar9 = 0xc0;
     }
     iVar2 = *piVar8;
-    puVar3 = _DAT_080093f4;
+    puVar3 = ((void *)0x04000050);
     if (iVar2 != 0) {
       puVar3 = (ushort *)(iVar2 + 0x50);
     }
-    *puVar3 = (ushort)_DAT_080093f8 & *puVar3 | uVar9;
-    psVar5 = _DAT_08009408;
+    *puVar3 = (ushort)0xFF3F & *puVar3 | uVar9;
+    psVar5 = ((void *)0x04000054);
     if (iVar2 != 0) {
       psVar5 = (short *)(iVar2 + 0x54);
     }
-    if (_DAT_0800940c < uVar7) {
+    if (0xFFFE < uVar7) {
       sVar1 = 0x10;
     }
     else if (uVar7 == 0) {
@@ -433,7 +433,7 @@ undefined8 Farm_Routine_080093AC(undefined4 *param_1)
     *psVar5 = sVar1;
   }
   if ((char)piVar8[3] != '\0') {
-    if (_DAT_08009434 < uVar7) {
+    if (0xFFFE < uVar7) {
       uVar6 = 0xf;
     }
     else if (uVar7 == 0) {
@@ -443,7 +443,7 @@ undefined8 Farm_Routine_080093AC(undefined4 *param_1)
       uVar6 = (uVar7 * 0xe >> 0x10) + 1;
     }
     uVar6 = uVar6 | uVar6 << 4;
-    puVar3 = _DAT_0800946c;
+    puVar3 = ((void *)0x0400004C);
     if (*piVar8 != 0) {
       puVar3 = (ushort *)(*piVar8 + 0x4c);
     }
@@ -452,7 +452,7 @@ undefined8 Farm_Routine_080093AC(undefined4 *param_1)
   if (iVar10 < 0) {
     if (uVar7 == 0) goto LAB_08009478;
   }
-  else if (uVar7 == _DAT_08009470) {
+  else if (uVar7 == 0xFFFF) {
 LAB_08009478:
     uVar4 = 0;
     *(undefined2 *)(piVar8 + 1) = 0;
@@ -462,8 +462,8 @@ LAB_08009478:
   if (iVar10 < 0) {
     iVar10 = 0;
   }
-  else if (_DAT_08009498 < iVar10) {
-    iVar10 = _DAT_08009498;
+  else if (0xFFFF < iVar10) {
+    iVar10 = 0xFFFF;
   }
   *(short *)((int)piVar8 + 0xe) = (short)iVar10;
   uVar4 = 1;
@@ -489,7 +489,7 @@ undefined4 Farm_Routine_080094B8(int param_1,undefined4 param_2)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 8) = _DAT_080094dc;
+  *(undefined4 *)(param_1 + 8) = gRomData_080E5B80;
   Farm_Routine_08009324(param_1 + 0xc,2);
   Farm_Routine_080098AC(param_1,param_2);
   return in_lr;
@@ -578,7 +578,7 @@ undefined8 Farm_Routine_08009548(undefined4 *param_1)
   
   *param_1 = 0;
   param_1[1] = 0;
-  param_1[2] = _DAT_08009568;
+  param_1[2] = gRomData_080E5B80;
   Farm_Routine_08009300(param_1 + 3);
   return CONCAT44(in_lr,param_1);
 }
@@ -608,7 +608,7 @@ undefined4 Farm_Routine_0800959C(int param_1,undefined4 param_2)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 8) = _DAT_080095bc;
+  *(undefined4 *)(param_1 + 8) = gRomData_080E5B90;
   Farm_Routine_0800956C(param_1);
   Farm_Routine_080098DC(param_1,param_2);
   return in_lr;
@@ -692,7 +692,7 @@ undefined8 Farm_Routine_080096B0(undefined4 *param_1)
   undefined2 auStack_c [2];
   
   auStack_c[0] = 0;
-  CpuSet(auStack_c,param_1,_DAT_080096ec);
+  CpuSet(auStack_c,param_1,0x0100002B);
   *param_1 = 0x80;
   *(undefined2 *)(param_1 + 8) = 0x100;
   *(undefined2 *)((int)param_1 + 0x22) = 0;
@@ -714,7 +714,7 @@ undefined4 Farm_Routine_080096F0(int param_1)
   undefined4 in_lr;
   
   HW_Routine_08008E64(param_1,0x4000000,0x54);
-  *_DAT_0800970c = *(undefined2 *)(param_1 + 0x54);
+  *((void *)0x04000054) = *(undefined2 *)(param_1 + 0x54);
   return in_lr;
 }
 
@@ -727,8 +727,8 @@ undefined4 Farm_Routine_08009710(int param_1)
   undefined4 in_lr;
   
   CpuFastSet(param_1,0x4000000,0x10);
-  CpuSet(param_1 + 0x40,_DAT_08009738,_DAT_0800973c);
-  *_DAT_08009740 = *(undefined2 *)(param_1 + 0x14);
+  CpuSet(param_1 + 0x40,REG_BLDCNT,((void *)0x04000005));
+  *REG_BG1HOFS = *(undefined2 *)(param_1 + 0x14);
   return in_lr;
 }
 
@@ -747,7 +747,7 @@ undefined8 Farm_Routine_08009744(byte *param_1,byte param_2,byte param_3)
   param_1[3] = param_3 & 0x1f;
   param_1[2] = param_3 & 0x1f;
   pbVar1 = param_1 + 4;
-  pbVar2 = param_1 + _DAT_08009778;
+  pbVar2 = param_1 + 0x404;
   do {
     pbVar1[1] = 2;
     pbVar1 = pbVar1 + 8;
@@ -795,14 +795,14 @@ undefined4 Farm_Routine_080097A4(byte *param_1)
   uint uVar8;
   undefined4 in_lr;
   
-  uVar4 = _DAT_0800982c;
+  uVar4 = 0xFFF;
   pbVar6 = param_1 + 4;
   puVar7 = (undefined4 *)0x7000000;
   bVar1 = *param_1;
   uVar8 = 0;
   do {
-    puVar3 = _DAT_08009830;
-    for (pbVar5 = param_1 + 4; _DAT_08009830 = puVar3, pbVar5 != param_1 + (uint)bVar1 * 8 + 4;
+    puVar3 = 0x07000400;
+    for (pbVar5 = param_1 + 4; 0x07000400 = puVar3, pbVar5 != param_1 + (uint)bVar1 * 8 + 4;
         pbVar5 = pbVar5 + 8) {
       uVar2 = *(ushort *)(pbVar5 + 4);
       if ((uVar2 & 0xc00) == uVar8) {
@@ -812,7 +812,7 @@ undefined4 Farm_Routine_080097A4(byte *param_1)
         pbVar6 = pbVar6 + 8;
         puVar7 = puVar7 + 2;
       }
-      puVar3 = _DAT_08009830;
+      puVar3 = 0x07000400;
     }
     uVar8 = uVar8 + 0x400;
   } while (uVar8 <= uVar4);
@@ -897,7 +897,7 @@ undefined4 Farm_Routine_080098AC(undefined4 *param_1,uint param_2)
   undefined4 *puVar1;
   undefined4 in_lr;
   
-  param_1[2] = _DAT_080098d4;
+  param_1[2] = gRomData_080E5BE8;
   puVar1 = (undefined4 *)*param_1;
   if (puVar1 != (undefined4 *)0x0) {
     *puVar1 = param_1[1];
@@ -1022,14 +1022,14 @@ undefined8 Farm_Routine_08009A48(int param_1,undefined4 param_2)
   }
   gba_memcpy(param_1,param_2,uVar1);
   *(undefined1 *)(param_1 + uVar1) = 0;
-  *(ushort *)(param_1 + 0x10) = (ushort)_DAT_08009acc & *(ushort *)(param_1 + 0x10);
+  *(ushort *)(param_1 + 0x10) = (ushort)0xFFFFFC00 & *(ushort *)(param_1 + 0x10);
   *(byte *)(param_1 + 0x11) = *(byte *)(param_1 + 0x11) & 0xeb | 8;
   ShippingBin_Init(param_1 + 0x40);
   Coop_Init(param_1 + 0x1e0);
   Barn_Init(param_1 + 0x3fc);
-  Stable_Init(param_1 + _DAT_08009ad0);
-  iVar2 = param_1 + _DAT_08009ad4;
-  iVar3 = _DAT_08009ad8;
+  Stable_Init(param_1 + 0x5DC);
+  iVar2 = param_1 + 0x9C8;
+  iVar3 = 0x432;
   do {
     Farm_Routine_08009F8C(iVar2);
     iVar2 = iVar2 + 4;
@@ -1071,7 +1071,7 @@ undefined8 Farm_HasPlantedCrop(int param_1)
   iVar4 = 0;
   do {
     uVar3 = 0;
-    puVar2 = (uint *)(iVar4 + param_1 + _DAT_08009b44);
+    puVar2 = (uint *)(iVar4 + param_1 + 0x9C8);
     do {
       if (((*puVar2 & 0xfff) >> 8 != 0) && ((*puVar2 & 0xff) >> 2 == 0x1a)) {
         uVar1 = 1;
@@ -1101,14 +1101,14 @@ undefined4 Farm_AddLumber(int param_1,int param_2)
   uint uStack_14;
   uint uStack_10;
   
-  uStack_14 = _DAT_08009ba0;
+  uStack_14 = 0x3E7;
   uStack_10 = (*(ushort *)(param_1 + 0x10) & 0x3ff) + param_2;
   puVar1 = &uStack_14;
-  if (uStack_10 < _DAT_08009ba0) {
+  if (uStack_10 < 0x3E7) {
     puVar1 = &uStack_10;
   }
   *(ushort *)(param_1 + 0x10) =
-       (ushort)_DAT_08009ba8 & *(ushort *)(param_1 + 0x10) | (ushort)*puVar1 & (ushort)_DAT_08009ba4
+       (ushort)0xFFFFFC00 & *(ushort *)(param_1 + 0x10) | (ushort)*puVar1 & (ushort)0x3FF
   ;
   return in_lr;
 }
@@ -1124,11 +1124,11 @@ undefined4 Farm_TakeLumber(int param_1,uint param_2)
   
   uVar1 = *(ushort *)(param_1 + 0x10);
   if (param_2 < (uVar1 & 0x3ff)) {
-    uVar1 = (ushort)_DAT_08009be0 & uVar1 |
-            (short)(uVar1 & 0x3ff) - (short)param_2 & (ushort)_DAT_08009bdc;
+    uVar1 = (ushort)0xFFFFFC00 & uVar1 |
+            (short)(uVar1 & 0x3ff) - (short)param_2 & (ushort)0x3FF;
   }
   else {
-    uVar1 = (ushort)_DAT_08009bc0 & uVar1;
+    uVar1 = (ushort)0xFFFFFC00 & uVar1;
   }
   *(ushort *)(param_1 + 0x10) = uVar1;
   return in_lr;
@@ -1186,7 +1186,7 @@ undefined8 Farm_Routine_08009FC8(uint *param_1,byte param_2,char param_3,byte pa
   
   *(byte *)param_1 = param_3 << 2 | param_2 & 3;
   *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | param_4 & 0xf;
-  *param_1 = *param_1 & _DAT_0800a010;
+  *param_1 = *param_1 & 0xFFFE0FFF;
   bVar1 = FieldPlot_GetState(param_1);
   *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1 | (bVar1 & 7) << 1;
   return CONCAT44(in_lr,param_1);
@@ -1257,10 +1257,10 @@ undefined8 FieldPlot_GetCropType(uint *param_1)
       uVar2 = 0x3cc;
       break;
     case 0x800a106:
-      uVar2 = _DAT_0800a10c;
+      uVar2 = 0x3CB;
       break;
     case 0x800a110:
-      uVar2 = _DAT_0800a114;
+      uVar2 = 0x3CA;
     }
   }
   return CONCAT44(in_lr,uVar2);
@@ -1474,7 +1474,7 @@ undefined8 FieldPlot_ChopBranch(uint *param_1)
     if (uVar1 == 0x14) {
       if (uVar3 == 5) {
         *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 7;
-        *param_1 = *param_1 & _DAT_0800a3fc;
+        *param_1 = *param_1 & 0xFFFE0FFF;
         uVar2 = 1;
         goto LAB_0800a432;
       }
@@ -1520,7 +1520,7 @@ undefined4 FieldPlot_SetDebris(uint *param_1,char param_2)
   if (((*param_1 & 3) - 1 < 2) && ((*param_1 & 0xfff) >> 8 == 0)) {
     *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 1;
     *(byte *)param_1 = (byte)*param_1 & 3 | param_2 << 2;
-    *param_1 = *param_1 & _DAT_0800a4a0;
+    *param_1 = *param_1 & 0xFFFE0FFF;
   }
   return in_lr;
 }
@@ -1539,7 +1539,7 @@ undefined8 FieldPlot_HarvestCrop(undefined **param_1,uint *param_2)
   uint3 uStack_14;
   undefined1 auStack_10 [4];
   
-  iVar4 = _DAT_0800a680;
+  iVar4 = gRomData_080E93F8;
   uVar3 = *param_2;
   uVar2 = (uVar3 & 0xfff) >> 8;
   if (uVar2 == 5) {
@@ -1550,35 +1550,35 @@ undefined8 FieldPlot_HarvestCrop(undefined **param_1,uint *param_2)
         param_1 = &PTR_case_0800A918_0800a894;
       case 0x800a524:
         *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 2;
-        uVar2 = *param_2 & _DAT_0800a540 | 0x4000;
+        uVar2 = *param_2 & 0xFFFE0FFF | 0x4000;
         break;
       case 0x800a544:
         *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 3;
-        uVar2 = *param_2 & _DAT_0800a560 | 0x6000;
+        uVar2 = *param_2 & 0xFFFE0FFF | 0x6000;
         break;
       case 0x800a564:
         *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 4;
-        uVar2 = *param_2 & _DAT_0800a580 | 0x6000;
+        uVar2 = *param_2 & 0xFFFE0FFF | 0x6000;
         break;
       case 0x800a584:
         *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 4;
-        uVar2 = *param_2 & _DAT_0800a5a0 | 0xb000;
+        uVar2 = *param_2 & 0xFFFE0FFF | 0xb000;
         break;
       case 0x800a5a4:
         *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 4;
-        uVar2 = *param_2 & _DAT_0800a5c0 | 0xf000;
+        uVar2 = *param_2 & 0xFFFE0FFF | 0xf000;
         break;
       case 0x800a5c4:
         *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 3;
-        uVar2 = *param_2 & _DAT_0800a5e0 | 0x6000;
+        uVar2 = *param_2 & 0xFFFE0FFF | 0x6000;
         break;
       case 0x800a5e4:
         *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 2;
-        uVar2 = *param_2 & _DAT_0800a600 | 0x3000;
+        uVar2 = *param_2 & 0xFFFE0FFF | 0x3000;
         break;
       case 0x800a604:
         *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 4;
-        uVar2 = *param_2 & _DAT_0800a620 | 0x5000;
+        uVar2 = *param_2 & 0xFFFE0FFF | 0x5000;
         break;
       case 0x800a624:
         goto case_0800A624;
@@ -1589,10 +1589,10 @@ undefined8 FieldPlot_HarvestCrop(undefined **param_1,uint *param_2)
     else {
 case_0800A624:
       *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0;
-      uVar2 = *param_2 & _DAT_0800a63c;
+      uVar2 = *param_2 & 0xFFFE0FFF;
     }
     *param_2 = uVar2;
-    iVar4 = _DAT_0800a640;
+    iVar4 = gRomData_080E93F8;
 LAB_0800a662:
     uVar2 = (*param_2 & 0xff) >> 2;
     sVar1 = *(short *)(uVar2 * 0xc + iVar4 + 10);
@@ -1609,7 +1609,7 @@ LAB_0800a662:
     }
   }
   else if (uVar2 == 8) {
-    if (*(short *)(((uVar3 & 0xff) >> 2) * 0xc + _DAT_0800a680 + 10) != 0xff) {
+    if (*(short *)(((uVar3 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 10) != 0xff) {
       *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0;
     }
     goto LAB_0800a662;
@@ -1752,7 +1752,7 @@ case_0800A9B2:
     case 0x800a94c:
       if (((*param_3 & 3) == 3) || (uVar1 = *param_1, (uVar1 & 0xfff) >> 8 == 5))
       goto case_0800A9B2;
-      uVar5 = _DAT_0800a9f0 & uVar1;
+      uVar5 = 0xFFFE0FFF & uVar1;
       uVar1 = uVar5 | (((uVar1 & 0x1ffff) >> 0xc) + 1 & 0x1f) << 0xc;
       *param_1 = uVar1;
       uVar5 = (uVar5 & 0xfff) >> 8;
@@ -1767,24 +1767,24 @@ case_0800A9B2:
     uVar1 = (uVar5 & 0xfff) >> 8;
     if ((uVar1 == 0) || (4 < uVar1)) goto case_0800A9B2;
     if ((uVar5 & 3) == 2) {
-      uVar4 = _DAT_0800a948 & uVar5;
+      uVar4 = 0xFFFE0FFF & uVar5;
       uVar1 = uVar4 | (((uVar5 & 0x1ffff) >> 0xc) + 1 & 0x1f) << 0xc;
       *param_1 = uVar1;
       uVar5 = (uVar4 & 0xfff) >> 8;
 LAB_0800a97e:
       iVar3 = ((uVar1 & 0xff) >> 2) * 0x54;
-      if (uVar5 != *(uint *)(((uVar1 & 0x1ffff) >> 0xc) * 4 + iVar3 + _DAT_0800a9f4)) {
+      if (uVar5 != *(uint *)(((uVar1 & 0x1ffff) >> 0xc) * 4 + iVar3 + gRomData_080E8D14)) {
         *(byte *)((int)param_1 + 1) =
              *(byte *)((int)param_1 + 1) & 0xf0 |
-             (byte)*(undefined4 *)(((uVar1 & 0x1ffff) >> 0xc) * 4 + iVar3 + _DAT_0800a9f4) & 0xf;
+             (byte)*(undefined4 *)(((uVar1 & 0x1ffff) >> 0xc) * 4 + iVar3 + gRomData_080E8D14) & 0xf;
       }
       goto case_0800A9B2;
     }
   }
-  pbVar2 = _DAT_0800aa00;
+  pbVar2 = gRomData_080E8D04;
   if ((param_2 != 3) &&
-     (((param_2 < 4 || (pbVar2 = _DAT_0800aa30, param_2 != 4)) &&
-      (pbVar2 = (byte *)((*param_3 & 3) * 0x10 + _DAT_0800a9f8), param_2 == 0)))) {
+     (((param_2 < 4 || (pbVar2 = gRomData_080E8D0C, param_2 != 4)) &&
+      (pbVar2 = (byte *)((*param_3 & 3) * 0x10 + gRomData_080E8CC4), param_2 == 0)))) {
     pbVar2 = pbVar2 + 8;
   }
   uVar5 = *param_1;
@@ -1897,13 +1897,13 @@ LAB_0800adec:
         case 0x800abf0:
           *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 7;
           *(byte *)param_1 = (byte)*param_1 & 0xfc | 1;
-          *param_1 = *param_1 & _DAT_0800ac18;
+          *param_1 = *param_1 & 0xFFFE0FFF;
           break;
         case 0x800ac1c:
           *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
         }
       }
-      if ((_DAT_0800ac50 & (ushort)*param_1) != 0) {
+      if ((0xF03 & (ushort)*param_1) != 0) {
         return in_lr;
       }
       iVar1 = math_rand();
@@ -1935,7 +1935,7 @@ LAB_0800adec:
         return in_lr;
       }
       *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 7;
-      *param_1 = *param_1 & _DAT_0800af0c;
+      *param_1 = *param_1 & 0xFFFE0FFF;
       return in_lr;
     }
     uVar3 = *param_1;
@@ -1974,14 +1974,14 @@ undefined8 FieldPlot_GetTileGraphic(uint *param_1)
   undefined4 in_lr;
   
   uVar1 = *param_1 & 3;
-  uVar2 = _DAT_0800af48;
+  uVar2 = gRomGfx_086D6520;
   if (uVar1 != 1) {
     if (uVar1 < 2) {
-      uVar2 = _DAT_0800af40;
+      uVar2 = gRomGfx_086D6518;
       if (uVar1 == 0) goto LAB_0800af56;
     }
     else {
-      uVar2 = _DAT_0800af50;
+      uVar2 = gRomGfx_086D6528;
       if (uVar1 == 2) goto LAB_0800af56;
     }
     uVar2 = 0;
@@ -2007,8 +2007,8 @@ undefined8 FieldPlot_ResolveBorderTile(uint *param_1,uint *param_2,uint *param_3
   uVar3 = (*param_1 & 0xff) >> 2;
   uVar5 = 0xff;
   uVar1 = (*param_1 & 0xfff) >> 8;
-  iVar2 = _DAT_0800af8c;
-  if ((uVar1 == 0) || (iVar2 = _DAT_0800af98, uVar1 == 1)) goto LAB_0800b0d4;
+  iVar2 = gRomGfx_086D6458;
+  if ((uVar1 == 0) || (iVar2 = gRomGfx_086D6608, uVar1 == 1)) goto LAB_0800b0d4;
   if (uVar3 == 0x14) {
     if (uVar1 == 7) {
       uVar5 = 0xc;
@@ -2048,19 +2048,19 @@ undefined8 FieldPlot_ResolveBorderTile(uint *param_1,uint *param_2,uint *param_3
     case 0x800afb8:
       puVar6 = &stack0x0000000c;
     case 0x800afd4:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + _DAT_0800af88 + 4);
+      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 4);
       break;
     case 0x800afe6:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + _DAT_0800af88 + 5);
+      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 5);
       break;
     case 0x800aff8:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + _DAT_0800af88 + 6);
+      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 6);
       break;
     case 0x800b00a:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + _DAT_0800af88 + 7);
+      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 7);
       break;
     case 0x800b01c:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + _DAT_0800af88 + 8);
+      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 8);
       break;
     case 0x800b02e:
       uVar5 = 1;
@@ -2070,7 +2070,7 @@ undefined8 FieldPlot_ResolveBorderTile(uint *param_1,uint *param_2,uint *param_3
     }
   }
 case_0800B0CC:
-  iVar2 = uVar5 * 0xc + *(int *)(uVar3 * 0xc + _DAT_0800af88);
+  iVar2 = uVar5 * 0xc + *(int *)(uVar3 * 0xc + gRomData_080E93F8);
 LAB_0800b0d4:
   return CONCAT44(*(undefined4 *)(puVar6 + 0x10),iVar2);
 }

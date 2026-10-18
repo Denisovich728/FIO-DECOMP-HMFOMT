@@ -94,24 +94,24 @@ void MainLoop_Callback(void)
   ushort uVar2;
   int iVar3;
   
-  Interrupt_WaitForVBlank(_DAT_080002c8);
-  iVar3 = _DAT_080002d0;
+  Interrupt_WaitForVBlank(0xFFFF);
+  iVar3 = REG_DMA0SAD;
   REG_DISPCNT = 0x80;
   REG_SOUNDCNT_X._0_1_ = 0;
-  uVar1 = *_DAT_080002cc;
+  uVar1 = *REG_KEYINPUT;
   while ((~uVar1 & 0xf) != 0) {
-    uVar1 = *_DAT_080002cc;
+    uVar1 = *REG_KEYINPUT;
   }
-  uVar1 = (ushort)_DAT_080002d4;
-  *(ushort *)(_DAT_080002d0 + 10) = uVar1 & *(ushort *)(_DAT_080002d0 + 10);
-  uVar2 = (ushort)_DAT_080002d8;
+  uVar1 = (ushort)0xC5FF;
+  *(ushort *)(REG_DMA0SAD + 10) = uVar1 & *(ushort *)(REG_DMA0SAD + 10);
+  uVar2 = (ushort)0x7FFF;
   *(ushort *)(iVar3 + 10) = uVar2 & *(ushort *)(iVar3 + 10);
   *(ushort *)(iVar3 + 0x16) = uVar1 & *(ushort *)(iVar3 + 0x16);
   *(ushort *)(iVar3 + 0x16) = uVar2 & *(ushort *)(iVar3 + 0x16);
   *(ushort *)(iVar3 + 0x22) = uVar1 & *(ushort *)(iVar3 + 0x22);
   *(ushort *)(iVar3 + 0x22) = uVar2 & *(ushort *)(iVar3 + 0x22);
-  iVar3 = _DAT_080002dc;
-  *(ushort *)(_DAT_080002dc + 10) = uVar1 & *(ushort *)(_DAT_080002dc + 10);
+  iVar3 = REG_DMA3SAD;
+  *(ushort *)(REG_DMA3SAD + 10) = uVar1 & *(ushort *)(REG_DMA3SAD + 10);
   *(ushort *)(iVar3 + 10) = uVar2 & *(ushort *)(iVar3 + 10);
   Interrupt_DisableMaster(0xff);
   do {

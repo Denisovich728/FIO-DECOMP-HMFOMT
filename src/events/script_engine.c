@@ -69,7 +69,7 @@ undefined8 ScriptEngine_Construct(undefined4 *param_1,int *param_2)
   uVar7 = 0;
   do {
     iVar6 = *piVar2;
-    _call_via_r3(ppuStack_24,piVar2,uVar7 + _DAT_0803ac74,*(undefined4 *)(iVar6 + 0xc));
+    _call_via_r3(ppuStack_24,piVar2,uVar7 + 0x91A,*(undefined4 *)(iVar6 + 0xc));
     _call_via_r3(&uStack_50,piVar2,*apuStack_2c[0],*(undefined4 *)(iVar6 + 0x10));
     gba_memcpy(&uStack_50,&uStack_50,0x20);
     param_1[uVar7 * 0xb + 1] = uStack_50;
@@ -152,7 +152,7 @@ undefined4 ScriptEngine_ClearVM(undefined4 *param_1,int *param_2)
     if (param_1[uVar11 * 0xb + 3] != 0) {
       uVar7 = *(undefined2 *)(param_1 + uVar11 * 0xb + 4);
     }
-    HW_Routine_08008F0C(&uStack_48,uVar9,iVar1 * 0x20 + _DAT_0803ad50,uVar7);
+    HW_Routine_08008F0C(&uStack_48,uVar9,iVar1 * 0x20 + 0x06010000,uVar7);
     puVar4 = (undefined4 *)param_2[1];
     if (puVar4 == (undefined4 *)param_2[3]) {
       iStack_34 = 1;
@@ -459,7 +459,7 @@ undefined4 ScriptEngine_ParseHeaderChunks(undefined4 *param_1,int *param_2)
       puStack_28 = puVar6 + 10;
       if (sVar9 != 0) {
         iVar1 = HW_Routine_08007D4C(puVar6 + 8,puVar6[9]);
-        HW_Routine_08008F0C(&uStack_48,iVar7,iVar1 * 0x20 + _DAT_0803b1a8,sVar9);
+        HW_Routine_08008F0C(&uStack_48,iVar7,iVar1 * 0x20 + 0x06010000,sVar9);
         puVar3 = (undefined4 *)param_2[1];
         if (puVar3 == (undefined4 *)param_2[3]) {
           iStack_34 = 1;
@@ -562,7 +562,7 @@ undefined4 ScriptEngine_AllocateStack(undefined4 *param_1)
   uint uStack_2c;
   
   uVar5 = (uint)*(byte *)(param_1 + 0x39);
-  piVar4 = (int *)(uVar5 * 0x10 + _DAT_0803b2d8);
+  piVar4 = (int *)(uVar5 * 0x10 + gRomData_080F1948);
   uVar8 = 0;
   uVar9 = 0;
   if ((uVar5 == 0) || (uVar5 != 1)) {
@@ -705,7 +705,7 @@ undefined8 ScriptEngine_StackTop(undefined4 *param_1,undefined4 param_2)
   int iVar2;
   undefined4 in_lr;
   
-  *param_1 = _DAT_0803b4d8;
+  *param_1 = gRomData_080E76E8;
   param_1[1] = param_2;
   puVar1 = param_1 + 2;
   iVar2 = 3;
@@ -731,24 +731,24 @@ undefined8 ScriptEngine_SetPC(undefined1 *param_1,int param_2,int param_3)
   undefined4 in_lr;
   undefined1 auStack_34 [32];
   
-  if (0xc < (uint)(param_3 + _DAT_0803b4f8)) {
+  if (0xc < (uint)(param_3 + 0xFFFF00DF)) {
     auStack_34[0] = 0;
     *param_1 = 0;
     gba_strcpy(param_1 + 4);
     goto LAB_0803b6ac;
   }
-  switch(*(uint *)((param_3 + _DAT_0803b4f8) * 4 + _func_0803B4FC) & 0xfffffffe) {
+  switch(*(uint *)((param_3 + 0xFFFF00DF) * 4 + _func_0803B4FC) & 0xfffffffe) {
   case 0x803b534:
     cVar1 = Farm_HasPlantedCrop(*(int *)(param_2 + 4) + 0x14);
     if ((cVar1 == '\0') ||
-       (puVar3 = _DAT_0803b558,
-       -1 < (int)((uint)*(byte *)(*(int *)(param_2 + 4) + _DAT_0803b554) * 0x20000000))) {
-      puVar3 = (undefined *)Farmer_GetName(*(int *)(param_2 + 4) + _DAT_0803b56c);
+       (puVar3 = gRomData_080F1974,
+       -1 < (int)((uint)*(byte *)(*(int *)(param_2 + 4) + 0x21C8) * 0x20000000))) {
+      puVar3 = (undefined *)Farmer_GetName(*(int *)(param_2 + 4) + 0x1BD8);
     }
     break;
   case 0x803b570:
     iVar4 = Farm_GetFieldState(*(int *)(param_2 + 4) + 0x14);
-    uVar2 = _DAT_0803b5a4;
+    uVar2 = gRomData_080F1980;
     if (iVar4 != 0) {
       uVar2 = Animal_Routine_0809B1F4();
     }
@@ -759,16 +759,16 @@ undefined8 ScriptEngine_SetPC(undefined1 *param_1,int param_2,int param_3)
     gba_memcpy(auStack_34,uVar2,uVar5);
     goto LAB_0803b68c;
   case 0x803b5a8:
-    puVar3 = (undefined *)Animal_Routine_0809B1F4(*(int *)(param_2 + 4) + _DAT_0803b5b8);
+    puVar3 = (undefined *)Animal_Routine_0809B1F4(*(int *)(param_2 + 4) + 0x1C70);
     break;
   case 0x803b5bc:
-    puVar3 = (undefined *)Farmer_GetFarmName(*(int *)(param_2 + 4) + _DAT_0803b5cc);
+    puVar3 = (undefined *)Farmer_GetFarmName(*(int *)(param_2 + 4) + 0x1BD8);
     break;
   case 0x803b5d0:
-    iVar4 = NPC_Routine_080A0384(*(int *)(param_2 + 4) + _DAT_0803b5f4);
-    uVar2 = _DAT_0803b624;
+    iVar4 = NPC_Routine_080A0384(*(int *)(param_2 + 4) + 0x1CD4);
+    uVar2 = gRomData_080F1984;
     if (iVar4 == 0) {
-      uVar5 = gba_strlen(_DAT_0803b624);
+      uVar5 = gba_strlen(gRomData_080F1984);
       if (0x1f < uVar5) {
         uVar5 = 0x1f;
       }
@@ -778,27 +778,27 @@ undefined8 ScriptEngine_SetPC(undefined1 *param_1,int param_2,int param_3)
       gba_strcpy(param_1 + 4);
       goto LAB_0803b6ac;
     }
-    NPC_Routine_080A0384(*(int *)(param_2 + 4) + _DAT_0803b5f4);
+    NPC_Routine_080A0384(*(int *)(param_2 + 4) + 0x1CD4);
     puVar3 = (undefined *)NPC_Routine_0809EACC();
     break;
   case 0x803b628:
     puVar3 = (undefined *)Farm_NoOp(*(int *)(param_2 + 4) + 0x14);
     break;
   case 0x803b634:
-    gba_strcpy(auStack_34,param_3 * 0x18 + param_2 + _DAT_0803b64c);
+    gba_strcpy(auStack_34,param_3 * 0x18 + param_2 + 0xFFE81490);
     *param_1 = 1;
     goto LAB_0803b694;
   case 0x803b650:
     iVar4 = *(int *)(param_2 + 4);
-    puVar3 = _DAT_0803b658;
+    puVar3 = 0x21E0;
     goto LAB_0803b66e;
   case 0x803b65c:
     iVar4 = *(int *)(param_2 + 4);
-    puVar3 = _DAT_0803b664;
+    puVar3 = 0x21F0;
     goto LAB_0803b66e;
   case 0x803b668:
     iVar4 = *(int *)(param_2 + 4);
-    puVar3 = &UNK_00002200;
+    puVar3 = 0x2200;
 LAB_0803b66e:
     puVar3 = puVar3 + iVar4;
   }
@@ -844,7 +844,7 @@ void ScriptEngine_ResolveStringPointer(undefined4 *param_1,undefined4 *param_2,u
 {
   undefined4 uVar1;
   
-  *param_1 = _DAT_0803b714;
+  *param_1 = gRomData_080E7748;
   uVar1 = *param_2;
   *param_2 = 0;
   param_1[1] = uVar1;
@@ -861,15 +861,15 @@ longlong ScriptEngine_ResolveJumpTarget(int param_1)
   uint in_lr;
   uint uStack_10;
   
-  uStack_10 = ((*(ushort *)(param_1 + 0x1c) & 0x7fff) >> 5) + 3 & _DAT_0803b8c0 |
+  uStack_10 = ((*(ushort *)(param_1 + 0x1c) & 0x7fff) >> 5) + 3 & 0x3FF |
               ((*(uint *)(param_1 + 0x1c) & 0x7ffff) >> 0xf) << 0xc;
   uStack_10 = uStack_10 | uStack_10 << 0x10;
-  CpuFastSet(&uStack_10,(*(byte *)(param_1 + 0x1c) & 0x1f) * 0x800 + 0x6000000,_DAT_0803b8c4);
+  CpuFastSet(&uStack_10,(*(byte *)(param_1 + 0x1c) & 0x1f) * 0x800 + 0x6000000,0x010000A0);
   Animal_Routine_08051320((*(byte *)(param_1 + 0x1c) & 0x1f) * 0x800 + 0x6000000,
                 *(undefined4 *)(param_1 + 0xc),0,*(undefined4 *)(param_1 + 0x14),
                 *(undefined4 *)(param_1 + 0x18),(*(ushort *)(param_1 + 0x1c) & 0x7fff) >> 5,
                 (*(uint *)(param_1 + 0x1c) & 0x7ffff) >> 0xf);
-  CpuFastSet(*_DAT_0803b8c8,((*(uint *)(param_1 + 0x1c) & 0x7ffff) >> 0xf) * 0x20 + 0x5000000,8
+  CpuFastSet(*gRomData_080F9F78,((*(uint *)(param_1 + 0x1c) & 0x7ffff) >> 0xf) * 0x20 + 0x5000000,8
                  );
   return (ulonglong)in_lr << 0x20;
 }
@@ -899,14 +899,14 @@ ScriptEngine_LookupJumpTable(short *param_1,short param_2,short param_3,short pa
   *(byte *)(param_1 + 4) =
        *(byte *)(param_1 + 4) & 0x80 | param_6 & 3 | (byte)((param_7 & 0x1f) << 2);
   uVar3 = (param_7 >> 3 & 3) << 7;
-  uVar4 = _DAT_0803ba7c & (ushort)param_1[4];
+  uVar4 = 0xFFFFFE7F & (ushort)param_1[4];
   param_1[4] = (ushort)uVar4 | (ushort)uVar3;
-  uVar1 = _DAT_0803ba80;
+  uVar1 = 0x3FF;
   uVar6 = ((param_7 & 7) * 0x40 + 0x14) * 0x200;
-  uVar7 = *(uint *)(param_1 + 4) & _DAT_0803ba84;
+  uVar7 = *(uint *)(param_1 + 4) & 0xFFF801FF;
   *(uint *)(param_1 + 4) = uVar7 | uVar6;
   *(byte *)(param_1 + 5) = *(byte *)(param_1 + 5) & 0x87 | (byte)((param_8 & 0xf) << 3);
-  param_1[5] = (ushort)_DAT_0803ba88 & param_1[5] | (ushort)((param_9 & 0xff) << 7);
+  param_1[5] = (ushort)0xFFFF807F & param_1[5] | (ushort)((param_9 & 0xff) << 7);
   *(byte *)((int)param_1 + 0xb) = *(byte *)((int)param_1 + 0xb) & 0x7f;
   *(byte *)(param_1 + 6) = *(byte *)(param_1 + 6) & 0x80;
   *(undefined1 *)((int)param_1 + 0xd) = 0;
@@ -914,21 +914,21 @@ ScriptEngine_LookupJumpTable(short *param_1,short param_2,short param_3,short pa
   param_1[9] = 0;
   param_1[10] = 0;
   param_1[0xb] = 0;
-  *(undefined4 *)(param_1 + 0xc) = _DAT_0803ba8c;
+  *(undefined4 *)(param_1 + 0xc) = gRomData_080E5BB4;
   *(short **)(param_1 + 0xe) = param_1 + 0x10;
   param_1[0x12] = 0;
   param_1[0x13] = 0;
-  *(undefined4 *)(param_1 + 0x14) = _DAT_0803ba90;
+  *(undefined4 *)(param_1 + 0x14) = gRomData_080E5BD8;
   *(short **)(param_1 + 0x10) = param_1 + 0xe;
   *(short **)(param_1 + 0x12) = param_1 + 0x10;
   uVar7 = (uVar7 & 0x7ffff | uVar6) >> 9;
-  uVar6 = *_DAT_0803ba94;
-  uVar5 = *_DAT_0803ba98;
+  uVar6 = *gRomData_080F9F74;
+  uVar5 = *gRomData_080F9F70;
   param_1[0x16] = 0;
   param_1[0x17] = 0;
   param_1[0x18] = 0;
   param_1[0x19] = 0;
-  *(undefined4 *)(param_1 + 0x1a) = _DAT_0803ba9c;
+  *(undefined4 *)(param_1 + 0x1a) = gRomData_080E7768;
   *(undefined4 *)(param_1 + 0x1c) = uVar5;
   *(uint *)(param_1 + 0x1e) = (((uVar4 & 0x1ff | uVar3) >> 7) * 0x200 + uVar7) * 0x20 + 0x6000000;
   *(char *)(param_1 + 0x20) = (char)(uVar6 >> 5);
@@ -946,14 +946,14 @@ ScriptEngine_LookupJumpTable(short *param_1,short param_2,short param_3,short pa
   param_1[0x23] = 0;
   param_1[0x24] = 0;
   param_1[0x25] = 0;
-  *(undefined4 *)(param_1 + 0x26) = _DAT_0803baa0;
+  *(undefined4 *)(param_1 + 0x26) = gRomData_080E7758;
   *(int *)(param_1 + 0x28) = iVar2 >> 3;
   *(int *)(param_1 + 0x2a) = iVar8 >> 3;
   *(uint *)(param_1 + 0x2c) = (uint)((ushort)param_1[2] >> 3);
   *(uint *)(param_1 + 0x2e) = (uint)((ushort)param_1[3] >> 3);
   *(byte *)(param_1 + 0x30) = *(byte *)(param_1 + 0x30) & 0xe0 | (byte)(param_7 & 0x1f);
-  param_1[0x30] = (ushort)_DAT_0803baa4 & param_1[0x30] | (ushort)((uVar7 & uVar1) << 5);
-  *(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x30) & _DAT_0803baa8 | (param_8 & 0xf) << 0xf;
+  param_1[0x30] = (ushort)0xFFFF801F & param_1[0x30] | (ushort)((uVar7 & uVar1) << 5);
+  *(uint *)(param_1 + 0x30) = *(uint *)(param_1 + 0x30) & 0xFFF87FFF | (param_8 & 0xf) << 0xf;
   return CONCAT44(in_lr,param_1);
 }
 
@@ -1039,7 +1039,7 @@ LAB_0803bb18:
     uVar9 = ((ushort)param_1[5] & 0x7fff) >> 7;
     if (uVar9 == 2) {
       *puVar10 = *puVar10 | 0x20;
-      *(uint *)(param_2 + 0x28) = uVar11 | _DAT_0803bca4;
+      *(uint *)(param_2 + 0x28) = uVar11 | gRomTable_08083F40;
     }
     if ((uVar9 == 1) && (-1 < (int)(-*(uint *)(param_1 + 0x16) | *(uint *)(param_1 + 0x16)))) {
       _call_via_r2(param_4,param_1 + 0x16,*(undefined4 *)(*(int *)(param_4 + 8) + 0x10),
@@ -1127,7 +1127,7 @@ void ScriptEngine_Routine_0803BDFC(undefined4 *param_1,undefined4 param_2,undefi
 {
   undefined4 uVar1;
   
-  param_1[1] = _DAT_0803be4c;
+  param_1[1] = gRomData_080E7778;
   uVar1 = Dispatcher_Routine_080005D4(100);
   uVar1 = ScriptEngine_LookupJumpTable(uVar1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9);
   *param_1 = uVar1;
@@ -1143,7 +1143,7 @@ undefined4 ScriptEngine_Routine_0803BE50(int *param_1,uint param_2)
   int iVar1;
   undefined4 in_lr;
   
-  param_1[1] = _DAT_0803be98;
+  param_1[1] = gRomData_080E7778;
   iVar1 = *param_1;
   if (iVar1 != 0) {
     Farm_Routine_080098AC(iVar1 + 0x44,2);
@@ -1250,14 +1250,14 @@ void ScriptEngine_Routine_0803BF14(undefined4 *param_1,undefined4 param_2,undefi
   param_1[6] = param_5;
   *param_1 = 0;
   param_1[1] = 0;
-  param_1[2] = _DAT_0803bf68;
+  param_1[2] = gRomData_080E7758;
   param_1[3] = param_2;
   param_1[4] = param_3;
   param_1[5] = param_4;
   *(byte *)(param_1 + 7) = *(byte *)(param_1 + 7) & 0xe0 | param_6 & 0x1f;
   *(ushort *)(param_1 + 7) =
-       (ushort)_DAT_0803bf70 & *(ushort *)(param_1 + 7) | (ushort)((param_7 & _DAT_0803bf6c) << 5);
-  param_1[7] = param_1[7] & _DAT_0803bf74 | (param_8 & 0xf) << 0xf;
+       (ushort)0xFFFF801F & *(ushort *)(param_1 + 7) | (ushort)((param_7 & 0x3FF) << 5);
+  param_1[7] = param_1[7] & 0xFFF87FFF | (param_8 & 0xf) << 0xf;
   return;
 }
 
@@ -1273,8 +1273,8 @@ ScriptEngine_Routine_0803BF78(int param_1,undefined4 param_2,undefined4 param_3,
   undefined4 in_lr;
   
   ScriptEngine_Routine_0803BDFC(param_1,0,0x88,0xf0,0x18,param_2,param_3,param_4,param_5);
-  *(undefined4 *)(param_1 + 4) = _DAT_0803bfc0;
-  Dispatcher_Routine_080005D4(_DAT_0803bfc4);
+  *(undefined4 *)(param_1 + 4) = gRomData_080E77A4;
+  Dispatcher_Routine_080005D4(0x41C);
   uVar1 = VTable_Routine_080E0A94();
   *(undefined4 *)(param_1 + 8) = uVar1;
   *(undefined1 *)(param_1 + 0xc) = param_6;
@@ -1292,7 +1292,7 @@ undefined4 ScriptEngine_Routine_0803BFC8(int param_1,undefined4 param_2)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 4) = _DAT_0803bfec;
+  *(undefined4 *)(param_1 + 4) = gRomData_080E77A4;
   if (*(int *)(param_1 + 8) != 0) {
     VTable_Routine_080E0C38(*(int *)(param_1 + 8),3);
   }
@@ -1400,7 +1400,7 @@ LAB_0803c0a4:
       if (param_7 != 0) {
         HW_Routine_08008B6C(param_7,0xcb);
       }
-      uStack_48 = *(uint *)((uint)*(byte *)(param_1 + 0xc) * 4 + _DAT_0803c0c4);
+      uStack_48 = *(uint *)((uint)*(byte *)(param_1 + 0xc) * 4 + gRomData_080F1A34);
       *(undefined1 *)(param_1 + 0xe) = 0x14;
     }
   }
@@ -1416,12 +1416,12 @@ LAB_0803c0a4:
     if (iStack_80 != 0) {
       uVar10 = (uint)uStack_7c;
     }
-    iVar6 = iVar6 * 0x20 + _DAT_0803c4d0;
+    iVar6 = iVar6 * 0x20 + 0x05000200;
     *(int *)(iVar11 + 0x44) = iVar5;
     *(int *)(iVar11 + 0x48) = iVar6;
     *(uint *)(iVar11 + 0x4c) = uVar10;
     _call_via_r2(param_5,iVar11 + 0x38,*(undefined4 *)(*(int *)(param_5 + 8) + 0x10));
-    uStack_48 = *(uint *)((uint)*(byte *)(param_1 + 0xc) * 4 + _DAT_0803c4d4);
+    uStack_48 = *(uint *)((uint)*(byte *)(param_1 + 0xc) * 4 + gRomData_080F1A34);
     *(undefined1 *)(param_1 + 0xd) = 0;
   }
   cVar4 = *(char *)(param_1 + 0xe) + -1;
@@ -1445,19 +1445,19 @@ LAB_0803c0a4:
       if (iStack_88 != 0) {
         uVar7 = (uint)uStack_84;
       }
-      iVar11 = iVar11 * 0x20 + _DAT_0803c4d8;
+      iVar11 = iVar11 * 0x20 + 0x06010000;
       *(int *)(iVar6 + 0x14) = iVar5;
       *(int *)(iVar6 + 0x18) = iVar11;
       *(uint *)(iVar6 + 0x1c) = uVar7;
       _call_via_r2(param_5,iVar6 + 8,*(undefined4 *)(*(int *)(param_5 + 8) + 0x10));
     }
-    uVar7 = _DAT_0803c4e0 & *apuStack_90[0];
-    uStack_70 = _DAT_0803c4e4 &
+    uVar7 = 0xFE00FFFF & *apuStack_90[0];
+    uStack_70 = 0xFFFFFF00 &
                 (uVar7 | (((*apuStack_90[0] & 0x1ffffff) >> 0x10) + (uint)bVar1 * 0x10 + 0x10 &
-                         _DAT_0803c4dc) << 0x10) | (uVar7 & 0xff) + 0x96 & 0xff;
-    uStack_6c = apuStack_90[0][1] & _DAT_0803c4e8 | (uVar10 & 0xf) << 0xc;
+                         0x1FF) << 0x10) | (uVar7 & 0xff) + 0x96 & 0xff;
+    uStack_6c = apuStack_90[0][1] & 0xFFFF0FFF | (uVar10 & 0xf) << 0xc;
     uVar10 = HW_Routine_08007D4C(iVar6,*(undefined4 *)(iVar6 + 4));
-    uStack_6c = uStack_6c & _DAT_0803c4ec | uVar10 & 0x3ff;
+    uStack_6c = uStack_6c & 0xFFFFFC00 | uVar10 & 0x3ff;
     uStack_70 = uStack_70 | 0x1000;
     bVar1 = *pbStack_50;
     if (bVar1 < 0x80) {
@@ -1486,19 +1486,19 @@ LAB_0803c0a4:
       if (iStack_88 != 0) {
         uVar8 = (uint)uStack_84;
       }
-      iVar9 = iVar9 * 0x20 + _DAT_0803c4d8;
+      iVar9 = iVar9 * 0x20 + 0x06010000;
       *(int *)(iVar11 + 0x14) = iVar6;
       *(int *)(iVar11 + 0x18) = iVar9;
       *(uint *)(iVar11 + 0x1c) = uVar8;
       _call_via_r2(param_5,iVar11 + 8,*(undefined4 *)(*(int *)(param_5 + 8) + 0x10));
     }
-    uStack_68 = _DAT_0803c4e4 &
-                (_DAT_0803c4e0 & *apuStack_90[0] |
-                (((*apuStack_90[0] & 0x1ffffff) >> 0x10) + iStack_28 & _DAT_0803c4dc) << 0x10) |
+    uStack_68 = 0xFFFFFF00 &
+                (0xFE00FFFF & *apuStack_90[0] |
+                (((*apuStack_90[0] & 0x1ffffff) >> 0x10) + iStack_28 & 0x1FF) << 0x10) |
                 (byte)*puStack_34 + 0x96 & 0xff;
-    uStack_64 = apuStack_90[0][1] & _DAT_0803c4e8 | (uVar7 & 0xf) << 0xc;
+    uStack_64 = apuStack_90[0][1] & 0xFFFF0FFF | (uVar7 & 0xf) << 0xc;
     uVar7 = HW_Routine_08007D4C(iVar11,*(undefined4 *)(iVar11 + 4));
-    uStack_64 = uStack_64 & _DAT_0803c4ec | uVar7 & 0x3ff;
+    uStack_64 = uStack_64 & 0xFFFFFC00 | uVar7 & 0x3ff;
     uStack_68 = uStack_68 | 0x1000;
     bVar1 = *pbStack_50;
     if (bVar1 < 0x80) {
@@ -1520,8 +1520,8 @@ LAB_0803c0a4:
   iStack_44 = iVar5 + 0x70;
   uStack_40 = (uStack_2c | uStack_48) >> 0x1f;
   auStack_58[1] = 0;
-  puStack_30[1] = puStack_30[1] & _DAT_0803c4e8 | (uVar10 & 0xf) << 0xc;
-  auStack_58[0] = (_DAT_0803c4f4 & 0x80000000 | 0x4000) & _DAT_0803c4e4 | 0x108e;
+  puStack_30[1] = puStack_30[1] & 0xFFFF0FFF | (uVar10 & 0xf) << 0xc;
+  auStack_58[0] = (0xFFFF3FFF & 0x80000000 | 0x4000) & 0xFFFFFF00 | 0x108e;
   iStack_3c = iVar5 + 0x74;
   uVar10 = 0;
   do {
@@ -1531,7 +1531,7 @@ LAB_0803c0a4:
     if (uStack_40 != 0) {
       uVar8 = 0;
       piVar12 = (int *)(uVar10 * 0x30 + iStack_44 + 0x328);
-      iVar11 = uVar7 * 0x20 + _DAT_0803c4d8;
+      iVar11 = uVar7 * 0x20 + 0x06010000;
       iVar6 = uVar10 * 0x80 + iStack_3c;
       iVar5 = uVar10 * 0x30 + iStack_44 + 0x31c;
       do {
@@ -1548,8 +1548,8 @@ LAB_0803c0a4:
       } while (uVar8 < 2);
     }
     puVar3 = puStack_30;
-    puStack_30[1] = puStack_30[1] & _DAT_0803c4ec | uVar7 & 0x3ff;
-    auStack_58[0] = auStack_58[0] & _DAT_0803c4e0 | (uVar10 * 0x20 + 0x88 & _DAT_0803c4dc) << 0x10;
+    puStack_30[1] = puStack_30[1] & 0xFFFFFC00 | uVar7 & 0x3ff;
+    auStack_58[0] = auStack_58[0] & 0xFE00FFFF | (uVar10 * 0x20 + 0x88 & 0x1FF) << 0x10;
     bVar1 = *pbStack_50;
     if (bVar1 < 0x80) {
       *(uint *)(pbStack_50 + (uint)bVar1 * 8 + 4) = auStack_58[0];
@@ -1601,7 +1601,7 @@ ScriptEngine_Routine_0803C54C(int param_1,undefined4 param_2,undefined4 param_3,
   undefined4 in_lr;
   
   ScriptEngine_Routine_0803BDFC(param_1,0x80,0x88,0x70,0x18,param_2,param_3,param_4,param_5);
-  *(undefined4 *)(param_1 + 4) = _DAT_0803c584;
+  *(undefined4 *)(param_1 + 4) = gRomData_080E77E0;
   ScriptEngine_Routine_0803C5B0(param_1 + 8);
   return CONCAT44(in_lr,param_1);
 }
@@ -1614,7 +1614,7 @@ undefined4 ScriptEngine_Routine_0803C588(int param_1,undefined4 param_2)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 4) = _DAT_0803c5ac;
+  *(undefined4 *)(param_1 + 4) = gRomData_080E77E0;
   ScriptEngine_Routine_0803C7A0(param_1 + 8,2);
   ScriptEngine_Routine_0803BE50(param_1,param_2);
   return in_lr;
@@ -1679,7 +1679,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
       uVar3 = -piVar8[0x1a] | piVar8[0x1a];
       if (-1 < (int)uVar3) {
         Animal_Routine_0805E790(auStack_8c,piVar8,0);
-        iVar4 = uStack_34 * 0x20 + _DAT_0803cbc8;
+        iVar4 = uStack_34 * 0x20 + 0x05000200;
         piVar8[0x1d] = iStack_7c;
         piVar8[0x1e] = iVar4;
         piVar8[0x1f] = 0x20;
@@ -1695,7 +1695,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
         uVar5 = piVar8[100];
         uVar5 = -uVar5 | uVar5;
         if (-1 < (int)uVar5) {
-          iVar4 = uVar3 * 0x20 + _DAT_0803cbcc;
+          iVar4 = uVar3 * 0x20 + 0x06010000;
           piVar8[0x67] = (int)(piVar8 + 0x21);
           piVar8[0x68] = iVar4;
           piVar8[0x69] = 0x100;
@@ -1703,9 +1703,9 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
           *(byte *)(piVar8 + 99) = (byte)(uVar5 >> 0x1f);
         }
       }
-      uStack_6c = (((_DAT_0803cbd0 & 0x1000 | 0x4000) & _DAT_0803cbd4 | 0x80000000) & _DAT_0803cbd8
-                  | uStack_2c & 0xff) & _DAT_0803cbe0 | (_DAT_0803cbdc & uStack_30) << 0x10;
-      uStack_68 = uVar3 & 0x3ff & _DAT_0803cbe8 | (uStack_34 & 0xf) << 0xc;
+      uStack_6c = (((0xFFFF3FFF & 0x1000 | 0x4000) & 0x3FFFFFFF | 0x80000000) & 0xFFFFFF00
+                  | uStack_2c & 0xff) & 0xFE00FFFF | (0x1FF & uStack_30) << 0x10;
+      uStack_68 = uVar3 & 0x3ff & 0xFFFF0FFF | (uStack_34 & 0xf) << 0xc;
       bVar1 = *param_4;
       if (bVar1 < 0x80) {
         *(uint *)(param_4 + (uint)bVar1 * 8 + 4) = uStack_6c;
@@ -1720,7 +1720,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
         uVar6 = piVar8[0xad];
         uVar6 = -uVar6 | uVar6;
         if (-1 < (int)uVar6) {
-          iVar4 = uVar5 * 0x20 + _DAT_0803cbcc;
+          iVar4 = uVar5 * 0x20 + 0x06010000;
           piVar8[0xb0] = (int)(piVar8 + 0x6a);
           piVar8[0xb1] = iVar4;
           piVar8[0xb2] = 0x100;
@@ -1728,9 +1728,9 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
           *(byte *)(piVar8 + 0xac) = (byte)(uVar6 >> 0x1f);
         }
       }
-      uStack_64 = (((_DAT_0803cbd0 & 0x1000 | 0x4000) & _DAT_0803cbd4 | 0x80000000) & _DAT_0803cbd8
-                  | uStack_2c & 0xff) & _DAT_0803cbe0 | (uVar3 & _DAT_0803cbdc) << 0x10;
-      uStack_60 = uVar5 & 0x3ff & _DAT_0803cbe8 | (uStack_34 & 0xf) << 0xc;
+      uStack_64 = (((0xFFFF3FFF & 0x1000 | 0x4000) & 0x3FFFFFFF | 0x80000000) & 0xFFFFFF00
+                  | uStack_2c & 0xff) & 0xFE00FFFF | (uVar3 & 0x1FF) << 0x10;
+      uStack_60 = uVar5 & 0x3ff & 0xFFFF0FFF | (uStack_34 & 0xf) << 0xc;
       bVar1 = *param_4;
       if (bVar1 < 0x80) {
         *(uint *)(param_4 + (uint)bVar1 * 8 + 4) = uStack_64;
@@ -1749,7 +1749,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
           iVar4 = *piVar8;
           _call_via_r3(apuStack_5c,piVar8,(char)piVar8[0xb3],*(undefined4 *)(iVar4 + 0xc));
           _call_via_r3(auStack_8c,piVar8,*apuStack_5c[0],*(undefined4 *)(iVar4 + 0x10));
-          iVar4 = uVar3 * 0x20 + _DAT_0803cbcc;
+          iVar4 = uVar3 * 0x20 + 0x06010000;
           piVar8[0xb9] = iStack_84;
           piVar8[0xba] = iVar4;
           piVar8[0xbb] = 0x80;
@@ -1757,9 +1757,9 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
           *(byte *)(piVar8 + 0xbc) = (byte)(uVar5 >> 0x1f);
         }
       }
-      uStack_54 = (uStack_28 & _DAT_0803cbd8 | uStack_2c & 0xff) & _DAT_0803cbe0 |
-                  (uStack_30 + 0x40 & _DAT_0803cbdc) << 0x10;
-      uStack_50 = (uStack_24 & _DAT_0803cbe4 | uVar3 & 0x3ff) & _DAT_0803cbe8 |
+      uStack_54 = (uStack_28 & 0xFFFFFF00 | uStack_2c & 0xff) & 0xFE00FFFF |
+                  (uStack_30 + 0x40 & 0x1FF) << 0x10;
+      uStack_50 = (uStack_24 & 0xFFFFFC00 | uVar3 & 0x3ff) & 0xFFFF0FFF |
                   (uStack_34 & 0xf) << 0xc;
       bVar1 = *param_4;
       if (bVar1 < 0x80) {
@@ -1770,19 +1770,19 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
     }
     if (((-piVar8[0xc6] | piVar8[0xc6]) < 0) && ((-piVar8[0xbe] | piVar8[0xbe]) < 0)) {
       uStack_40 = uStack_24;
-      uStack_44 = (uStack_28 & _DAT_0803cbd8 | uStack_2c & 0xff) & _DAT_0803cbe0 |
-                  (uStack_30 + 0x58 & _DAT_0803cbdc) << 0x10;
-      if (*(char *)((int)piVar8 + _DAT_0803cbec) != '\0') {
+      uStack_44 = (uStack_28 & 0xFFFFFF00 | uStack_2c & 0xff) & 0xFE00FFFF |
+                  (uStack_30 + 0x58 & 0x1FF) << 0x10;
+      if (*(char *)((int)piVar8 + 0x2F1) != '\0') {
         uVar3 = HW_Routine_08007D4C(piVar8 + 0xc5,piVar8[0xc6]);
         uVar5 = HW_Routine_080074C0(piVar8 + 0xbd,piVar8[0xbe]);
         if ((char)piVar8[0xcd] != '\0') {
           iVar4 = piVar8[0xc];
-          _call_via_r3(apuStack_4c,piVar8 + 0xc,*(undefined2 *)((int)piVar8 + _DAT_0803cbf0),
+          _call_via_r3(apuStack_4c,piVar8 + 0xc,*(undefined2 *)((int)piVar8 + 0x2F2),
                           *(undefined4 *)(iVar4 + 0xc));
           _call_via_r3(auStack_8c,piVar8 + 0xc,*apuStack_4c[0],*(undefined4 *)(iVar4 + 0x10));
           uVar6 = piVar8[199];
           if (-1 < (int)(-uVar6 | uVar6)) {
-            iVar4 = uVar3 * 0x20 + _DAT_0803cbcc;
+            iVar4 = uVar3 * 0x20 + 0x06010000;
             piVar8[0xca] = iStack_84;
             piVar8[0xcb] = iVar4;
             piVar8[0xcc] = 0x80;
@@ -1790,7 +1790,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
           }
           uVar6 = piVar8[0xbf];
           if (-1 < (int)(-uVar6 | uVar6)) {
-            iVar4 = uVar5 * 0x20 + _DAT_0803cd38;
+            iVar4 = uVar5 * 0x20 + 0x05000200;
             piVar8[0xc2] = iStack_7c;
             piVar8[0xc3] = iVar4;
             piVar8[0xc4] = 0x20;
@@ -1798,7 +1798,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
           }
           *(char *)(piVar8 + 0xcd) = '\0';
         }
-        uStack_40 = (uStack_40 & _DAT_0803cd3c | uVar3 & 0x3ff) & _DAT_0803cd40 |
+        uStack_40 = (uStack_40 & 0xFFFFFC00 | uVar3 & 0x3ff) & 0xFFFF0FFF |
                     (uVar5 & 0xf) << 0xc;
         bVar1 = *param_4;
         if (bVar1 < 0x80) {
@@ -1816,7 +1816,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
             iVar7 = *piVar8;
             _call_via_r3(apuStack_3c,piVar8,5,*(undefined4 *)(iVar7 + 0xc));
             _call_via_r3(auStack_8c,piVar8,*apuStack_3c[0],*(undefined4 *)(iVar7 + 0x10));
-            iVar7 = iVar4 * 0x20 + _DAT_0803cd44;
+            iVar7 = iVar4 * 0x20 + 0x06010000;
             piVar8[0xd3] = iStack_84;
             piVar8[0xd4] = iVar7;
             piVar8[0xd5] = 0x80;
@@ -1824,7 +1824,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *param_1,int param_2,int par
             *(byte *)(piVar8 + 0xd6) = (byte)(uVar3 >> 0x1f);
           }
         }
-        uVar2 = (ushort)_DAT_0803cd3c & (ushort)uStack_40 | (ushort)iVar4 & (ushort)_DAT_0803cd48;
+        uVar2 = (ushort)0xFFFFFC00 & (ushort)uStack_40 | (ushort)iVar4 & (ushort)0x3FF;
         uStack_40._1_1_ = (byte)(uVar2 >> 8);
         uStack_40._0_2_ = CONCAT11(uStack_40._1_1_ & 0xf | (byte)(uStack_34 << 4),(char)uVar2);
         bVar1 = *param_4;
@@ -1851,7 +1851,7 @@ undefined4 ScriptEngine_Routine_0803D080(int *param_1,int param_2)
   undefined4 in_lr;
   undefined4 uStack_1c;
   
-  iVar1 = _DAT_0803d0ec;
+  iVar1 = gRomGfx_0875A440;
   iVar3 = *param_1;
   if (param_2 == 1) {
     uStack_1c = 0xd;
@@ -1873,7 +1873,7 @@ undefined4 ScriptEngine_Routine_0803D080(int *param_1,int param_2)
   uStack_1c = 0xb;
   iVar2 = 0xc;
 LAB_0803d0b4:
-  gba_memcpy(iVar3 + 0x84,uStack_1c * 0x20 + _DAT_0803d0ec,0x20);
+  gba_memcpy(iVar3 + 0x84,uStack_1c * 0x20 + gRomGfx_0875A440,0x20);
   *(undefined1 *)(iVar3 + 0x18c) = 1;
   gba_memcpy(iVar3 + 0xa4,iVar2 * 0x20 + iVar1,0x20);
   *(undefined1 *)(iVar3 + 0x18c) = 1;
@@ -1901,7 +1901,7 @@ undefined4 ScriptEngine_Routine_0803D240(int *param_1,uint param_2)
   if (param_2 < 0xc) {
     iVar2 = 0x1c;
   }
-  gba_memcpy(iVar6 + 0x104,iVar2 * 0x20 + _DAT_0803d2a4,0x20);
+  gba_memcpy(iVar6 + 0x104,iVar2 * 0x20 + gRomGfx_0875A440,0x20);
   puVar3 = (undefined1 *)(iVar6 + 0x18c);
   *puVar3 = 1;
   uVar5 = 0xc;
@@ -1914,11 +1914,11 @@ undefined4 ScriptEngine_Routine_0803D240(int *param_1,uint param_2)
     gba_memset(auStack_34,0,0x20);
   }
   else {
-    puVar4 = (undefined1 *)(iVar2 * 0x20 + _DAT_0803d2a4);
+    puVar4 = (undefined1 *)(iVar2 * 0x20 + gRomGfx_0875A440);
   }
   gba_memcpy(iVar6 + 0x144,puVar4,0x20);
   *puVar3 = 1;
-  gba_memcpy(iVar6 + 0x164,iVar1 * 0x20 + _DAT_0803d2e4,0x20);
+  gba_memcpy(iVar6 + 0x164,iVar1 * 0x20 + gRomGfx_0875A440,0x20);
   *puVar3 = 1;
   return in_lr;
 }
@@ -1939,7 +1939,7 @@ undefined4 ScriptEngine_Routine_0803D2E8(int *param_1,char param_2)
     gba_memcpy(iVar1 + 0x228,auStack_28,0x20);
   }
   else {
-    gba_memcpy(iVar1 + 0x228,_DAT_0803d310 + 0x140,0x20);
+    gba_memcpy(iVar1 + 0x228,gRomGfx_0875A440 + 0x140,0x20);
   }
   *(undefined1 *)(iVar1 + 0x2b0) = 1;
   return in_lr;
@@ -1996,13 +1996,13 @@ undefined4 ScriptEngine_Routine_0803D3A0(int *param_1,undefined *param_2)
     case 0x803d3c0:
       if (!CARRY4((int)param_2 * 4,(uint)PTR_case_0803D3C0_0803d3bc)) {
         gba_memcpy(param_1,unaff_r4,0x20);
-        param_1 = (int *)&UNK_000002b0;
+        param_1 = (int *)0x02b0;
 code_r0x0803d378:
         unaff_r6 = (undefined *)(unaff_r7 + (int)param_1);
         unaff_r4 = 1;
         *unaff_r6 = 1;
         unaff_r5 = unaff_r5 * 0x20 + unaff_r8;
-        puVar2 = &UNK_0000009a;
+        puVar2 = 0x009a;
 code_r0x0803d384:
         gba_memcpy(unaff_r7 + (int)puVar2 * 4,unaff_r5,0x20);
 code_r0x0803d390:
@@ -2055,10 +2055,10 @@ undefined4 ScriptEngine_Routine_0803D404(int *param_1,uint param_2)
   undefined4 in_lr;
   
   iVar1 = *param_1;
-  if ((*(char *)(iVar1 + _DAT_0803d438) == '\0') || (param_2 != *(ushort *)(iVar1 + _DAT_0803d43c)))
+  if ((*(char *)(iVar1 + 0x2F1) == '\0') || (param_2 != *(ushort *)(iVar1 + 0x2F2)))
   {
-    *(char *)(iVar1 + _DAT_0803d438) = '\x01';
-    *(short *)(iVar1 + _DAT_0803d43c) = (short)param_2;
+    *(char *)(iVar1 + 0x2F1) = '\x01';
+    *(short *)(iVar1 + 0x2F2) = (short)param_2;
     *(undefined1 *)(iVar1 + 0x334) = 1;
   }
   return in_lr;
@@ -2075,7 +2075,7 @@ undefined4 ScriptEngine_Routine_0803D440(int *param_1)
   undefined4 in_lr;
   
   iVar1 = *param_1;
-  pcVar2 = (char *)(iVar1 + _DAT_0803d460);
+  pcVar2 = (char *)(iVar1 + 0x2F1);
   if (*pcVar2 != '\0') {
     *pcVar2 = '\0';
     *(undefined1 *)(iVar1 + 0x334) = 1;
@@ -2282,8 +2282,8 @@ undefined8 ScriptEngine_Routine_0803D644(int param_1,int param_2)
   uint uStack_c;
   
   uStack_c = param_1 * 0x1e + -1 + param_2;
-  pbVar3 = (byte *)(_DAT_0803d684 + 0xe);
-  pbVar1 = (byte *)VTable_Routine_080E0E80(_DAT_0803d684,pbVar3,&uStack_c,0,0);
+  pbVar3 = (byte *)(gRomData_080F1A66 + 0xe);
+  pbVar1 = (byte *)VTable_Routine_080E0E80(gRomData_080F1A66,pbVar3,&uStack_c,0,0);
   uVar2 = 0;
   if ((pbVar1 != pbVar3) && (*pbVar1 <= uStack_c)) {
     uVar2 = 1;
@@ -2320,7 +2320,7 @@ undefined4 ScriptEngine_Routine_0803D688(int param_1,undefined4 *param_2,undefin
     iVar6 = *(int *)(*(int *)(psVar5 + 2) + 4);
   }
   if (iVar6 == 0) {
-    uVar2 = (ushort)_DAT_0803d7d8;
+    uVar2 = (ushort)0xFFFFFC00;
     uStack_28 = uVar2 & uStack_28 & 0x3ff | 0x234;
     uStack_26 = uVar2 & uStack_26 & 0x3ff;
     uStack_24 = uVar2 & uStack_24;
@@ -2328,7 +2328,7 @@ undefined4 ScriptEngine_Routine_0803D688(int param_1,undefined4 *param_2,undefin
     uStack_32 = 0;
   }
   else {
-    uVar3 = (ushort)_DAT_0803d74c;
+    uVar3 = (ushort)0xFFFFFC00;
     uVar2 = uVar3 & uStack_30 | *(ushort *)(iVar6 + 10) & 0x3ff;
     uStack_30._1_1_ = (byte)(uVar2 >> 8);
     uStack_30 = CONCAT11(uStack_30._1_1_ & 3 | (byte)((*(ushort *)(iVar6 + 6) & 0x3f) << 2),
@@ -2344,9 +2344,9 @@ undefined4 ScriptEngine_Routine_0803D688(int param_1,undefined4 *param_2,undefin
   }
   NPC_Routine_0809E368(param_1,auStack_38);
   *(byte *)(param_1 + 0xc) = *(byte *)(param_1 + 0xc) & 0xe0 | (byte)iVar4 & 0x1f;
-  *(ushort *)(param_1 + 0xc) = (ushort)_DAT_0803d7dc & *(ushort *)(param_1 + 0xc);
+  *(ushort *)(param_1 + 0xc) = (ushort)0xFFFFFC1F & *(ushort *)(param_1 + 0xc);
   *(byte *)(param_1 + 0xd) = *(byte *)(param_1 + 0xd) & 0x83;
-  *(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 0xc) & _DAT_0803d7e0;
+  *(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 0xc) & 0xFE007FFF;
   return in_lr;
 }
 
@@ -2364,7 +2364,7 @@ undefined8 ScriptEngine_Routine_0803DA24(int param_1)
   undefined1 uStack_e;
   char cStack_d;
   
-  if ((*(byte *)(param_1 + _DAT_0803da3c) & 0xc) == 0) {
+  if ((*(byte *)(param_1 + 0x21CA) & 0xc) == 0) {
     ScriptEngine_Routine_0803D52C(&uStack_10,param_1 + 0x10);
     cVar1 = ScriptEngine_Routine_0803D644(uStack_f,uStack_e);
     if (cVar1 == '\0') {
@@ -2408,19 +2408,19 @@ undefined8 ScriptEngine_Routine_0803DA7C(int param_1)
   char cStack_1e;
   char cStack_1d;
   
-  if (-1 < (int)((uint)*(byte *)(param_1 + _DAT_0803dac8) * 0x10000000)) {
+  if (-1 < (int)((uint)*(byte *)(param_1 + 0x21CA) * 0x10000000)) {
     ScriptEngine_Routine_0803D52C(&uStack_20,param_1 + 0x10);
-    iVar3 = NPC_Routine_080A0490(param_1 + _DAT_0803dacc);
+    iVar3 = NPC_Routine_080A0490(param_1 + 0x1CD4);
     if (iVar3 == 3) {
       if ((cStack_1f == '\x02') && (cStack_1e == '\r')) {
         uVar6 = 0x16;
       }
-      else if ((*(byte *)(param_1 + _DAT_0803dae4) & 0x7f) >> 5 == 1) {
+      else if ((*(byte *)(param_1 + 0x216B) & 0x7f) >> 5 == 1) {
         uVar6 = 0x17;
       }
       else {
-        cVar2 = *(char *)(param_1 + _DAT_0803db20);
-        uVar4 = NPC_Routine_080A0384(param_1 + _DAT_0803db24);
+        cVar2 = *(char *)(param_1 + 0x2148);
+        uVar4 = NPC_Routine_080A0384(param_1 + 0x1CD4);
         uVar4 = -uVar4 | uVar4;
         cVar1 = ScriptEngine_Routine_0803D644(cStack_1f,cStack_1e);
         if (((cVar1 == '\0') && (*(int *)(param_1 + 8) != 3)) && (*(int *)(param_1 + 8) != 4)) {
@@ -2464,17 +2464,17 @@ undefined8 ScriptEngine_Routine_0803DA7C(int param_1)
       }
       goto LAB_0803dc54;
     }
-    uVar4 = NPC_Routine_0809E4AC(param_1 + _DAT_0803db8c);
+    uVar4 = NPC_Routine_0809E4AC(param_1 + 0x1D6C);
     if (uVar4 < 5) {
       if (((cStack_1f == '\x02') && (cStack_1e == '\x1e')) &&
-         ((*(byte *)(param_1 + _DAT_0803dbbc) & 3) != 2)) {
+         ((*(byte *)(param_1 + 0x21A3) & 3) != 2)) {
         uVar6 = 0x11;
         goto LAB_0803dc54;
       }
-      iVar5 = NPC_Routine_080A01F8(param_1 + _DAT_0803dbf8,3);
+      iVar5 = NPC_Routine_080A01F8(param_1 + 0x1CD4,3);
       if (((((cStack_1f == '\x03') && (cStack_1e == '\x0e')) && (iVar3 == 0)) &&
-          ((iVar5 != 0 && (uVar4 = NPC_Routine_0809E498(), _DAT_0803dbfc < uVar4)))) &&
-         ((*(byte *)(param_1 + _DAT_0803dc00) & 0x3f) >> 4 != 2)) {
+          ((iVar5 != 0 && (uVar4 = NPC_Routine_0809E498(), 0x270F < uVar4)))) &&
+         ((*(byte *)(param_1 + 0x21A3) & 0x3f) >> 4 != 2)) {
         uVar6 = 0x12;
         goto LAB_0803dc54;
       }
@@ -2483,7 +2483,7 @@ undefined8 ScriptEngine_Routine_0803DA7C(int param_1)
         uVar6 = 0x10;
         goto LAB_0803dc54;
       }
-      if (-1 < (int)((uint)*(byte *)(param_1 + _DAT_0803dc28) * 0x10000000)) {
+      if (-1 < (int)((uint)*(byte *)(param_1 + 0x215A) * 0x10000000)) {
         if (cStack_1d == '\0') {
           if (*(int *)(param_1 + 8) == 0) {
             if (cStack_1f == '\x01') {
@@ -2541,7 +2541,7 @@ undefined8 ScriptEngine_Routine_0803DC64(int param_1)
   undefined1 uStack_a;
   char cStack_9;
   
-  if ((*(byte *)(param_1 + _DAT_0803dc7c) & 0xc) == 0) {
+  if ((*(byte *)(param_1 + 0x21CA) & 0xc) == 0) {
     ScriptEngine_Routine_0803D52C(&uStack_c,param_1 + 0x10);
     cVar1 = ScriptEngine_Routine_0803D644(uStack_b,uStack_a);
     if (cVar1 == '\0') {
@@ -2579,7 +2579,7 @@ undefined8 ScriptEngine_Routine_0803DCB4(int param_1)
   char cStack_12;
   char cStack_11;
   
-  iVar5 = param_1 + _DAT_0803dce4;
+  iVar5 = param_1 + 0x1CD4;
   iVar2 = NPC_Routine_080A0384(iVar5);
   if (iVar2 == 0) {
     uVar4 = 0;
@@ -2603,9 +2603,9 @@ undefined8 ScriptEngine_Routine_0803DCB4(int param_1)
   cVar1 = ScriptEngine_Routine_0803D644();
   if (((cVar1 != '\0') || (*(int *)(param_1 + 8) == 3)) || (*(int *)(param_1 + 8) == 4))
   goto LAB_0803ddb0;
-  cVar1 = *(char *)(param_1 + _DAT_0803dd30);
+  cVar1 = *(char *)(param_1 + 0x2148);
   if (0x1c < iVar2 - 3U) goto case_0803DDD6;
-  switch(*(uint *)((iVar2 - 3U) * 4 + _DAT_0803dd34) & 0xfffffffe) {
+  switch(*(uint *)((iVar2 - 3U) * 4 + gInlineTable_0803DD38) & 0xfffffffe) {
   case 0x803ddac:
     if (cStack_11 != '\x01') goto case_0803DDD6;
     goto LAB_0803ddb0;
@@ -2650,13 +2650,13 @@ undefined8 ScriptEngine_Routine_0803DDE8(int param_1)
   byte bStack_1a;
   char cStack_19;
   
-  if (-1 < (int)((uint)*(byte *)(param_1 + _DAT_0803de48) * 0x2000000)) {
+  if (-1 < (int)((uint)*(byte *)(param_1 + 0x21CA) * 0x2000000)) {
     ScriptEngine_Routine_0803D52C(&bStack_1c,param_1 + 0x10);
-    if (((*(byte *)(param_1 + _DAT_0803de4c) & 0x3f) >> 4 != 2) &&
-       (((int)((uint)*(byte *)(param_1 + _DAT_0803de4c + -0xc) * 0x8000000) < 0 ||
+    if (((*(byte *)(param_1 + 0x2181) & 0x3f) >> 4 != 2) &&
+       (((int)((uint)*(byte *)(param_1 + 0x2181 + -0xc) * 0x8000000) < 0 ||
         ((bStack_1c < 2 && (((bStack_1c != 1 || (cStack_1b != '\x03')) || (bStack_1a < 0x1d))))))))
     {
-      if ((*(byte *)(param_1 + _DAT_0803de64) & 3) == 1) {
+      if ((*(byte *)(param_1 + 0x2181) & 3) == 1) {
         uVar2 = 5;
       }
       else {
@@ -2664,8 +2664,8 @@ undefined8 ScriptEngine_Routine_0803DDE8(int param_1)
         if (cVar1 == '\0') {
           if (((bStack_1c != 1) || (cStack_1b != '\x02')) ||
              ((bStack_1a != 0xf ||
-              (-1 < (int)((uint)*(byte *)(param_1 + _DAT_0803de98) * 0x8000000))))) {
-            if ((*(uint *)(param_1 + _DAT_0803deb8) & 0x61000) != 0x41000) {
+              (-1 < (int)((uint)*(byte *)(param_1 + 0x2175) * 0x8000000))))) {
+            if ((*(uint *)(param_1 + 0x2174) & 0x61000) != 0x41000) {
               uVar2 = 1;
               goto LAB_0803debe;
             }
@@ -2726,7 +2726,7 @@ undefined8 ScriptEngine_Routine_0803DEF8(int param_1)
   undefined1 uStack_e;
   char cStack_d;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803df10) * 0x4000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x4000000) < 0) {
     uVar2 = 0;
   }
   else {
@@ -2765,7 +2765,7 @@ undefined8 ScriptEngine_Routine_0803DF50(int param_1)
   undefined1 uStack_b;
   undefined1 uStack_a;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803df68) * 0x4000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x4000000) < 0) {
     uVar2 = 0;
   }
   else {
@@ -2795,7 +2795,7 @@ undefined8 ScriptEngine_Routine_0803DF94(int param_1)
   undefined1 uStack_a;
   char cStack_9;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803dfac) * 0x20000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x20000000) < 0) {
     uVar2 = 0;
   }
   else {
@@ -2837,9 +2837,9 @@ undefined8 ScriptEngine_Routine_0803DFE8(int param_1)
   char cStack_1e;
   char cStack_1d;
   
-  if ((*(byte *)(param_1 + _DAT_0803e008) & 0xc) == 0) {
+  if ((*(byte *)(param_1 + 0x21CA) & 0xc) == 0) {
     ScriptEngine_Routine_0803D52C(&uStack_20,param_1 + 0x10);
-    iVar6 = param_1 + _DAT_0803e040;
+    iVar6 = param_1 + 0x1CD4;
     iVar4 = NPC_Routine_080A0490(iVar6);
     if (iVar4 == 0x13) {
       if (cStack_1f == '\x02') {
@@ -2852,12 +2852,12 @@ undefined8 ScriptEngine_Routine_0803DFE8(int param_1)
           goto LAB_0803e194;
         }
       }
-      if ((*(byte *)(param_1 + _DAT_0803e060) & 0x1f) >> 3 == 1) {
+      if ((*(byte *)(param_1 + 0x216C) & 0x1f) >> 3 == 1) {
         uVar3 = 0x17;
       }
       else {
-        cVar2 = *(char *)(param_1 + _DAT_0803e09c);
-        uVar5 = NPC_Routine_080A0384(param_1 + _DAT_0803e0a0);
+        cVar2 = *(char *)(param_1 + 0x2148);
+        uVar5 = NPC_Routine_080A0384(param_1 + 0x1CD4);
         uVar5 = -uVar5 | uVar5;
         cVar1 = ScriptEngine_Routine_0803D644(cStack_1f,cStack_1e);
         if (((cVar1 == '\0') && (*(int *)(param_1 + 8) != 3)) && (*(int *)(param_1 + 8) != 4)) {
@@ -2901,12 +2901,12 @@ undefined8 ScriptEngine_Routine_0803DFE8(int param_1)
       }
     }
     else {
-      uVar5 = NPC_Routine_0809E4AC(param_1 + _DAT_0803e108);
+      uVar5 = NPC_Routine_0809E4AC(param_1 + 0x1EB8);
       if (uVar5 < 5) {
         iVar6 = NPC_Routine_080A01F8(iVar6,0x13);
         if (((((cStack_1f == '\x03') && (cStack_1e == '\x0e')) && (iVar4 == 0)) &&
-            ((iVar6 != 0 && (uVar5 = NPC_Routine_0809E498(), _DAT_0803e150 < uVar5)))) &&
-           ((*(byte *)(param_1 + _DAT_0803e154) & 0x7f) >> 5 != 2)) {
+            ((iVar6 != 0 && (uVar5 = NPC_Routine_0809E498(), 0x270F < uVar5)))) &&
+           ((*(byte *)(param_1 + 0x21A4) & 0x7f) >> 5 != 2)) {
           uVar3 = 9;
         }
         else {
@@ -2972,7 +2972,7 @@ undefined8 ScriptEngine_Routine_0803E1A4(int param_1)
   undefined1 uStack_e;
   char cStack_d;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803e1bc) * 0x20000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x20000000) < 0) {
     uVar2 = 0;
   }
   else {
@@ -3012,14 +3012,14 @@ undefined8 ScriptEngine_Routine_0803E1FC(int param_1)
   char cStack_13;
   char cStack_12;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803e214) * 0x2000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x2000000) < 0) {
     uVar2 = 0;
   }
   else {
     ScriptEngine_Routine_0803D52C(&uStack_14,param_1 + 0x10);
     cVar1 = ScriptEngine_Routine_0803D644(cStack_13,cStack_12);
     if (cVar1 == '\0') {
-      iVar3 = NPC_Routine_080A0490(param_1 + _DAT_0803e254);
+      iVar3 = NPC_Routine_080A0490(param_1 + 0x1CD4);
       if (((cStack_13 == '\x02') && (cStack_12 == '\x05')) && (iVar3 != 0x19)) {
         uVar2 = 3;
       }
@@ -3051,12 +3051,12 @@ undefined8 ScriptEngine_Routine_0803E264(int param_1)
   char cStack_1f;
   char cStack_1e;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803e280) * 0x2000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x2000000) < 0) {
     uVar3 = 0;
     goto LAB_0803e3fe;
   }
   ScriptEngine_Routine_0803D52C(&uStack_20,param_1 + 0x10);
-  iVar4 = NPC_Routine_080A0490(param_1 + _DAT_0803e2b4);
+  iVar4 = NPC_Routine_080A0490(param_1 + 0x1CD4);
   if ((cStack_1f == '\x02') && (cStack_1e == '\x05')) {
     if (iVar4 != 0x19) {
       uVar3 = 5;
@@ -3064,13 +3064,13 @@ undefined8 ScriptEngine_Routine_0803E264(int param_1)
     }
   }
   else if (iVar4 != 0x19) {
-    uVar5 = NPC_Routine_0809E4AC(param_1 + _DAT_0803e388);
+    uVar5 = NPC_Routine_0809E4AC(param_1 + 0x1F38);
     if (uVar5 < 5) {
-      iVar6 = NPC_Routine_080A01F8(param_1 + _DAT_0803e3d4,0x19);
+      iVar6 = NPC_Routine_080A01F8(param_1 + 0x1CD4,0x19);
       if (((((cStack_1f == '\x03') && (cStack_1e == '\x0e')) && (iVar4 == 0)) &&
-          ((iVar6 != 0 && (uVar5 = NPC_Routine_0809E498(), _DAT_0803e3d8 < uVar5)))) &&
-         ((byte)((*(byte *)(param_1 + _DAT_0803e3dc + 1) & 1) << 1 |
-                *(byte *)(param_1 + _DAT_0803e3dc) >> 7) != 2)) {
+          ((iVar6 != 0 && (uVar5 = NPC_Routine_0809E498(), 0x270F < uVar5)))) &&
+         ((byte)((*(byte *)(param_1 + 0x21A3 + 1) & 1) << 1 |
+                *(byte *)(param_1 + 0x21A3) >> 7) != 2)) {
         uVar3 = 7;
         goto LAB_0803e3fe;
       }
@@ -3110,13 +3110,13 @@ undefined8 ScriptEngine_Routine_0803E264(int param_1)
       goto LAB_0803e3fe;
     }
   }
-  if ((byte)((*(byte *)(param_1 + _DAT_0803e2f0 + 1) & 1) << 1 |
-            *(byte *)(param_1 + _DAT_0803e2f0) >> 7) == 1) {
+  if ((byte)((*(byte *)(param_1 + 0x216B + 1) & 1) << 1 |
+            *(byte *)(param_1 + 0x216B) >> 7) == 1) {
     uVar3 = 0x12;
   }
   else {
-    cVar2 = *(char *)(param_1 + _DAT_0803e330);
-    uVar5 = NPC_Routine_080A0384(param_1 + _DAT_0803e334);
+    cVar2 = *(char *)(param_1 + 0x2148);
+    uVar5 = NPC_Routine_080A0384(param_1 + 0x1CD4);
     cVar1 = ScriptEngine_Routine_0803D644(cStack_1f,cStack_1e);
     if (((cVar1 == '\0') && (*(int *)(param_1 + 8) != 3)) && (*(int *)(param_1 + 8) != 4)) {
       if ((int)(-uVar5 | uVar5) < 0) {
@@ -3165,7 +3165,7 @@ undefined8 ScriptEngine_Routine_0803E40C(int param_1)
   char cStack_d;
   
   ScriptEngine_Routine_0803D52C(auStack_10,param_1 + 0x10);
-  if (((*(byte *)(param_1 + _DAT_0803e438) & 0x1f) >> 3 == 2) && (cStack_d == '\0')) {
+  if (((*(byte *)(param_1 + 0x2187) & 0x1f) >> 3 == 2) && (cStack_d == '\0')) {
     uVar1 = 1;
   }
   else {
@@ -3188,7 +3188,7 @@ undefined8 ScriptEngine_Routine_0803E448(int param_1)
   undefined1 uStack_e;
   char cStack_d;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803e460) * 0x8000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x8000000) < 0) {
     uVar2 = 0;
   }
   else {
@@ -3231,12 +3231,12 @@ undefined8 ScriptEngine_Routine_0803E4A0(int param_1)
   char cStack_1e;
   char cStack_1d;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803e4bc) * 0x8000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x8000000) < 0) {
     uVar2 = 0;
   }
   else {
     ScriptEngine_Routine_0803D52C(&uStack_20,param_1 + 0x10);
-    iVar5 = param_1 + _DAT_0803e4f0;
+    iVar5 = param_1 + 0x1CD4;
     iVar3 = NPC_Routine_080A0490(iVar5);
     if (iVar3 == 0xc) {
       if (cStack_1f == '\x02') {
@@ -3249,11 +3249,11 @@ undefined8 ScriptEngine_Routine_0803E4A0(int param_1)
           goto LAB_0803e610;
         }
       }
-      if ((*(byte *)(param_1 + _DAT_0803e510) & 0x7f) >> 5 == 1) {
+      if ((*(byte *)(param_1 + 0x216C) & 0x7f) >> 5 == 1) {
         uVar2 = 0x12;
       }
       else {
-        uVar4 = NPC_Routine_080A0384(param_1 + _DAT_0803e548);
+        uVar4 = NPC_Routine_080A0384(param_1 + 0x1CD4);
         uVar4 = -uVar4 | uVar4;
         cVar1 = ScriptEngine_Routine_0803D644(cStack_1f,cStack_1e);
         if (((cVar1 == '\0') && (*(int *)(param_1 + 8) != 3)) && (*(int *)(param_1 + 8) != 4)) {
@@ -3281,12 +3281,12 @@ undefined8 ScriptEngine_Routine_0803E4A0(int param_1)
       }
     }
     else {
-      uVar4 = NPC_Routine_0809E4AC(param_1 + _DAT_0803e58c);
+      uVar4 = NPC_Routine_0809E4AC(param_1 + 0x1E28);
       if (uVar4 < 5) {
         iVar5 = NPC_Routine_080A01F8(iVar5,0xc);
         if (((((cStack_1f == '\x03') && (cStack_1e == '\x0e')) && (iVar3 == 0)) &&
-            ((iVar5 != 0 && (uVar4 = NPC_Routine_0809E498(), _DAT_0803e5e0 < uVar4)))) &&
-           ((*(byte *)(param_1 + _DAT_0803e5e4) & 3) != 2)) {
+            ((iVar5 != 0 && (uVar4 = NPC_Routine_0809E498(), 0x270F < uVar4)))) &&
+           ((*(byte *)(param_1 + 0x21A5) & 3) != 2)) {
           uVar2 = 7;
         }
         else {
@@ -3348,7 +3348,7 @@ undefined8 ScriptEngine_Routine_0803E620(int param_1)
   undefined1 uStack_e;
   char cStack_d;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803e638) * 0x8000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x8000000) < 0) {
     uVar2 = 0;
   }
   else {
@@ -3431,8 +3431,8 @@ undefined8 ScriptEngine_Routine_0803E6EC(int param_1)
   
   ScriptEngine_Routine_0803D52C(&uStack_10,param_1 + 0x10);
   if (((cStack_f == '\x03') && (cStack_e == '\x02')) &&
-     ((*(uint *)(param_1 + _DAT_0803e734) & 0x43000) == 0x2000)) {
-    if ((*(byte *)(param_1 + _DAT_0803e738) & 0x1f) >> 3 == 2) {
+     ((*(uint *)(param_1 + 0x2178) & 0x43000) == 0x2000)) {
+    if ((*(byte *)(param_1 + 0x217A) & 0x1f) >> 3 == 2) {
       uVar2 = 0;
     }
     else {
@@ -3486,12 +3486,12 @@ undefined8 ScriptEngine_Routine_0803E780(int param_1)
   char cStack_1e;
   char cStack_1d;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803e79c) * 0x4000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x4000000) < 0) {
     uVar2 = 0;
   }
   else {
     ScriptEngine_Routine_0803D52C(&uStack_20,param_1 + 0x10);
-    iVar5 = param_1 + _DAT_0803e7d0;
+    iVar5 = param_1 + 0x1CD4;
     iVar3 = NPC_Routine_080A0490(iVar5);
     if (iVar3 == 0x15) {
       if (cStack_1f == '\x02') {
@@ -3504,11 +3504,11 @@ undefined8 ScriptEngine_Routine_0803E780(int param_1)
           goto LAB_0803e8da;
         }
       }
-      if ((*(byte *)(param_1 + _DAT_0803e7f0) & 7) >> 1 == 1) {
+      if ((*(byte *)(param_1 + 0x216C) & 7) >> 1 == 1) {
         uVar2 = 0x10;
       }
       else {
-        uVar4 = NPC_Routine_080A0384(param_1 + _DAT_0803e828);
+        uVar4 = NPC_Routine_080A0384(param_1 + 0x1CD4);
         uVar4 = -uVar4 | uVar4;
         cVar1 = ScriptEngine_Routine_0803D644(cStack_1f,cStack_1e);
         if (((cVar1 == '\0') && (*(int *)(param_1 + 8) != 3)) && (*(int *)(param_1 + 8) != 4)) {
@@ -3536,12 +3536,12 @@ undefined8 ScriptEngine_Routine_0803E780(int param_1)
       }
     }
     else {
-      uVar4 = NPC_Routine_0809E4AC(param_1 + _DAT_0803e86c);
+      uVar4 = NPC_Routine_0809E4AC(param_1 + 0x1EE4);
       if (uVar4 < 5) {
         iVar5 = NPC_Routine_080A01F8(iVar5,0x15);
         if (((((cStack_1f == '\x03') && (cStack_1e == '\x0e')) && (iVar3 == 0)) &&
-            ((iVar5 != 0 && (uVar4 = NPC_Routine_0809E498(), _DAT_0803e8b4 < uVar4)))) &&
-           ((*(byte *)(param_1 + _DAT_0803e8b8) & 0xf) >> 2 != 2)) {
+            ((iVar5 != 0 && (uVar4 = NPC_Routine_0809E498(), 0x270F < uVar4)))) &&
+           ((*(byte *)(param_1 + 0x21A4) & 0xf) >> 2 != 2)) {
           uVar2 = 6;
         }
         else {
@@ -3593,10 +3593,10 @@ undefined8 ScriptEngine_Routine_0803E8E8(int param_1)
   char cStack_e;
   char cStack_d;
   
-  if (-1 < (int)((uint)*(byte *)(param_1 + _DAT_0803e924) * 0x4000000)) {
+  if (-1 < (int)((uint)*(byte *)(param_1 + 0x21CA) * 0x4000000)) {
     ScriptEngine_Routine_0803D52C(&uStack_10,param_1 + 0x10);
     if (((cStack_f == '\x02') && (cStack_e == '\x1e')) &&
-       (*(byte *)(param_1 + _DAT_0803e928) >> 6 != 2)) {
+       (*(byte *)(param_1 + 0x21A2) >> 6 != 2)) {
       uVar2 = 5;
       goto LAB_0803e968;
     }
@@ -3605,7 +3605,7 @@ undefined8 ScriptEngine_Routine_0803E8E8(int param_1)
       uVar2 = 4;
       goto LAB_0803e968;
     }
-    if (-1 < (int)((uint)*(byte *)(param_1 + _DAT_0803e94c) * 0x10000000)) {
+    if (-1 < (int)((uint)*(byte *)(param_1 + 0x215A) * 0x10000000)) {
       if ((cStack_d == '\x01') || (cStack_d == '\x03')) {
         uVar2 = 3;
       }
@@ -3640,10 +3640,10 @@ undefined8 ScriptEngine_Routine_0803E970(int param_1)
   ScriptEngine_Routine_0803D52C(&uStack_14,param_1 + 0x10);
   cVar1 = ScriptEngine_Routine_0803D644(uStack_13,uStack_12);
   if (cVar1 == '\0') {
-    if ((int)((uint)*(byte *)(param_1 + _DAT_0803e9a8) * 0x2000000) < 0) {
+    if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x2000000) < 0) {
       uVar2 = 0;
     }
-    else if ((*(uint *)(param_1 + _DAT_0803e9c8) & 0x61000) == 0x41000) {
+    else if ((*(uint *)(param_1 + 0x2174) & 0x61000) == 0x41000) {
       if (cStack_11 == '\x06') {
         uVar2 = 4;
       }
@@ -3681,12 +3681,12 @@ undefined8 ScriptEngine_Routine_0803E9E4(int param_1)
   ScriptEngine_Routine_0803D52C(&uStack_10,param_1 + 0x10);
   cVar1 = ScriptEngine_Routine_0803D644(uStack_f,uStack_e);
   if (cVar1 == '\0') {
-    if ((int)((uint)*(byte *)(param_1 + _DAT_0803ea1c) * 0x2000000) < 0) {
+    if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x2000000) < 0) {
       uVar2 = 0;
     }
     else if (*(int *)(param_1 + 8) == 0) {
       if (cStack_d == '\x06') {
-        if ((*(uint *)(param_1 + _DAT_0803ea44) & 0x61000) == 0x41000) {
+        if ((*(uint *)(param_1 + 0x2174) & 0x61000) == 0x41000) {
           uVar2 = 4;
         }
         else {
@@ -3719,7 +3719,7 @@ undefined8 ScriptEngine_Routine_0803EA5C(int param_1)
   char cStack_d;
   
   ScriptEngine_Routine_0803D52C(auStack_10,param_1 + 0x10);
-  if (((*(byte *)(param_1 + _DAT_0803ea88) & 0x7f) >> 5 == 2) && (cStack_d == '\x03')) {
+  if (((*(byte *)(param_1 + 0x2186) & 0x7f) >> 5 == 2) && (cStack_d == '\x03')) {
     uVar1 = 1;
   }
   else {
@@ -3741,7 +3741,7 @@ undefined8 ScriptEngine_Routine_0803EA98(int param_1)
   undefined1 uStack_b;
   undefined1 uStack_a;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803eab0) * 0x4000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x4000000) < 0) {
     uVar2 = 0;
   }
   else {
@@ -3771,7 +3771,7 @@ undefined8 ScriptEngine_Routine_0803EADC(int param_1)
   char cStack_e;
   char cStack_d;
   
-  if ((*(byte *)(param_1 + _DAT_0803eaf4) & 0x7c) == 0) {
+  if ((*(byte *)(param_1 + 0x21CA) & 0x7c) == 0) {
     ScriptEngine_Routine_0803D52C(&uStack_10,param_1 + 0x10);
     if ((cStack_f == '\x02') && (cStack_e == '\x03')) {
       uVar2 = 9;
@@ -3811,7 +3811,7 @@ undefined8 ScriptEngine_Routine_0803EB40(int param_1)
   undefined1 uStack_e;
   char cStack_d;
   
-  if (-1 < (int)((uint)*(byte *)(param_1 + _DAT_0803eb78) * 0x10000000)) {
+  if (-1 < (int)((uint)*(byte *)(param_1 + 0x21CA) * 0x10000000)) {
     ScriptEngine_Routine_0803D52C(&uStack_10,param_1 + 0x10);
     if (cStack_f == '\x01') {
       cVar1 = ScriptEngine_Routine_0803D644(1,uStack_e);
@@ -3854,12 +3854,12 @@ undefined8 ScriptEngine_Routine_0803EB9C(int param_1)
   undefined1 uStack_1a;
   char cStack_19;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803ebb8) * 0x8000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x8000000) < 0) {
     uVar2 = 0;
   }
   else {
     ScriptEngine_Routine_0803D52C(&uStack_1c,param_1 + 0x10);
-    uVar3 = NPC_Routine_0809E4AC(param_1 + _DAT_0803ebf0);
+    uVar3 = NPC_Routine_0809E4AC(param_1 + 0x1E28);
     if (uVar3 < 5) {
       cVar1 = ScriptEngine_Routine_0803D644(uStack_1b,uStack_1a);
       if (cVar1 == '\0') {
@@ -3919,14 +3919,14 @@ undefined8 ScriptEngine_Routine_0803EC44(int param_1)
   undefined1 uStack_12;
   char cStack_11;
   
-  if ((int)((uint)*(byte *)(param_1 + _DAT_0803ec5c) * 0x8000000) < 0) {
+  if ((int)((uint)*(byte *)(param_1 + 0x21CA) * 0x8000000) < 0) {
     uVar2 = 0;
   }
   else {
     ScriptEngine_Routine_0803D52C(&uStack_14,param_1 + 0x10);
     cVar1 = ScriptEngine_Routine_0803D644(uStack_13,uStack_12);
     if (cVar1 == '\0') {
-      iVar4 = param_1 + _DAT_0803eca0;
+      iVar4 = param_1 + 0x1DAC;
       iVar3 = NPC_Routine_0809ECD8(iVar4);
       if ((iVar3 == 0) || (cVar1 = NPC_Routine_0809ECE0(iVar4), cVar1 != '\0')) {
         if (cStack_11 == '\x04') {
@@ -3977,12 +3977,12 @@ undefined8 ScriptEngine_Routine_0803ECC0(int param_1)
     goto LAB_0803edc4;
   }
   iVar6 = *(int *)(param_1 + 8);
-  iVar5 = param_1 + _DAT_0803ed28;
+  iVar5 = param_1 + 0x1F64;
   iVar3 = NPC_Routine_0809EB68(iVar5);
   if ((((iVar3 == 0) || (cVar1 = NPC_Routine_0809EB70(iVar5), cVar1 != '\0')) ||
       (cVar1 = NPC_Routine_0809EB8C(iVar5), cVar1 != '\0')) ||
      ((iVar6 - 3U < 2 || (uVar4 = NPC_Routine_0809EB68(iVar5), 0xd < uVar4)))) goto case_0803EDA4;
-  switch(*(uint *)(uVar4 * 4 + _DAT_0803ed2c) & 0xfffffffe) {
+  switch(*(uint *)(uVar4 * 4 + gInlineTable_0803ED30) & 0xfffffffe) {
   case 0x803ed68:
     iVar3 = Building_Routine_0800BF14(param_1 + 500);
     if (iVar3 == 1) {
@@ -4055,10 +4055,10 @@ undefined8 ScriptEngine_Routine_0803EDCC(int param_1)
   cVar1 = ScriptEngine_Routine_0803D644(cStack_17,cStack_16);
   if (cVar1 == '\0') {
     if (((cStack_17 == '\x02') && (cStack_16 == '\x1e')) &&
-       ((*(byte *)(param_1 + _DAT_0803ee14) & 0x3f) >> 4 != 2)) {
+       ((*(byte *)(param_1 + 0x21A2) & 0x3f) >> 4 != 2)) {
       uVar2 = 6;
     }
-    else if ((int)((uint)*(byte *)(param_1 + _DAT_0803ee28) * 0x10000000) < 0) {
+    else if ((int)((uint)*(byte *)(param_1 + 0x215A) * 0x10000000) < 0) {
       uVar2 = 0;
     }
     else if (*(int *)(param_1 + 8) == 0) {
@@ -4125,7 +4125,7 @@ undefined8 ScriptEngine_HandleDialogTrigger(undefined4 *param_1)
 {
   undefined4 in_lr;
   
-  param_1[0xd3] = _DAT_0803eec4;
+  param_1[0xd3] = gRomData_080E7810;
   *param_1 = 0;
   param_1[0x6d] = 0;
   gba_memset(param_1 + 9,0,400);
@@ -4140,7 +4140,7 @@ undefined4 ScriptEngine_Routine_0803EEC8(int param_1,uint param_2)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 0x34c) = _DAT_0803eee8;
+  *(undefined4 *)(param_1 + 0x34c) = gRomData_080E7810;
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
   }
@@ -4168,25 +4168,25 @@ undefined8 ScriptEngine_Routine_0803EEEC(undefined4 *param_1,int param_2)
   if (param_2 != 0) {
     gba_memcpy(&iStack_2c,param_2,0xc);
     uVar4 = 0xc;
-    if ((iStack_2c == _DAT_0803ef48) && (iStack_24 == _DAT_0803ef4c)) {
+    if ((iStack_2c == 0x46464952) && (iStack_24 == 0x20524353)) {
       param_1[1] = 0;
       if (0xb < uStack_28) {
         do {
           gba_memcpy(&iStack_20,param_2 + uVar4,8);
           iVar5 = uVar4 + 8;
-          if (iStack_20 == _DAT_0803ef50) {
+          if (iStack_20 == 0x45444F43) {
             param_1[2] = 0;
             param_1[3] = *(undefined4 *)(param_2 + iVar5);
             param_1[1] = (undefined4 *)(param_2 + iVar5) + 1;
           }
-          else if (iStack_20 == _DAT_0803ef70) {
+          else if (iStack_20 == 0x20525453) {
             iVar3 = *(int *)(param_2 + iVar5);
             param_1[4] = iVar3;
             iVar1 = param_2 + uVar4 + 0xc;
             param_1[5] = iVar1;
             param_1[6] = iVar1 + iVar3 * 4;
           }
-          else if (iStack_20 == _DAT_0803efc4) {
+          else if (iStack_20 == 0x504D554A) {
             param_1[7] = *(undefined4 *)(param_2 + iVar5);
             param_1[8] = (undefined4 *)(param_2 + iVar5) + 1;
           }
@@ -4278,7 +4278,7 @@ undefined8 ScriptEngine_GetStringById(int param_1,uint param_2)
   int iVar1;
   undefined4 in_lr;
   
-  iVar1 = _DAT_0803f7f0;
+  iVar1 = gRomData_080F9EA4;
   if (param_2 <= *(uint *)(param_1 + 0x10)) {
     iVar1 = *(int *)(param_1 + 0x18) + *(int *)(param_2 * 4 + *(int *)(param_1 + 0x14));
   }
@@ -4293,7 +4293,7 @@ void ScriptEngine_StartEventScript(int param_1,undefined4 param_2)
 {
   
   ScriptEngine_HandleDialogTrigger();
-  *(undefined4 *)(param_1 + 0x34c) = _DAT_0803f838;
+  *(undefined4 *)(param_1 + 0x34c) = gRomData_080E7824;
   *(undefined4 *)(param_1 + 0x350) = param_2;
   *(undefined4 *)(param_1 + 0x354) = 0;
   *(undefined4 *)(param_1 + 0x358) = 0;
@@ -4309,7 +4309,7 @@ undefined8 ScriptEngine_Routine_0803F83C(int param_1,undefined4 param_2,undefine
   undefined4 in_lr;
   
   ScriptEngine_HandleDialogTrigger();
-  *(undefined4 *)(param_1 + 0x34c) = _DAT_0803f874;
+  *(undefined4 *)(param_1 + 0x34c) = gRomData_080E7824;
   *(undefined4 *)(param_1 + 0x350) = param_2;
   *(undefined4 *)(param_1 + 0x354) = param_3;
   *(undefined4 *)(param_1 + 0x358) = 0;
@@ -4324,7 +4324,7 @@ undefined4 ScriptEngine_Routine_0803F878(int param_1,int param_2,undefined4 para
 {
   undefined4 in_lr;
   
-  ScriptEngine_Routine_0803EEEC(param_1,*(undefined4 *)(param_2 * 4 + _DAT_0803f89c));
+  ScriptEngine_Routine_0803EEEC(param_1,*(undefined4 *)(param_2 * 4 + gRomData_080F89D4));
   *(undefined4 *)(param_1 + 0x358) = param_3;
   return in_lr;
 }
@@ -4357,7 +4357,7 @@ undefined8 ScriptEngine_Routine_08045584(int param_1,undefined4 param_2,char par
   undefined4 uVar3;
   undefined4 in_lr;
   
-  iVar1 = NPC_Routine_080A0878(*(int *)(param_1 + 0x350) + _DAT_080455b8);
+  iVar1 = NPC_Routine_080A0878(*(int *)(param_1 + 0x350) + 0x1CD4);
   if (iVar1 != 0) {
     if (param_3 == '\0') {
       iVar2 = NPC_Routine_0809E49C(iVar1);
@@ -4392,9 +4392,9 @@ ScriptEngine_Routine_080455D8(int param_1,undefined2 param_2,undefined4 param_3,
   uint uVar4;
   undefined4 in_lr;
   
-  cVar1 = NPC_Routine_0809C694(*(int *)(param_1 + 0x350) + _DAT_08045600,param_2);
+  cVar1 = NPC_Routine_0809C694(*(int *)(param_1 + 0x350) + 0x214C,param_2);
   if (cVar1 == '\0') {
-    iVar3 = NPC_Routine_080A0878(*(int *)(param_1 + 0x350) + _DAT_08045620,param_3);
+    iVar3 = NPC_Routine_080A0878(*(int *)(param_1 + 0x350) + 0x1CD4,param_3);
     if (iVar3 != 0) {
       if (param_5 == '\0') {
         uVar4 = NPC_Routine_0809E49C();
@@ -4443,9 +4443,9 @@ ScriptEngine_Routine_08045638(int param_1,undefined2 param_2,undefined4 param_3,
   byte bStack_28;
   byte *pbStack_24;
   
-  iVar9 = *(int *)(param_1 + 0x350) + _DAT_08045684;
+  iVar9 = *(int *)(param_1 + 0x350) + 0x214C;
   uStack_34 = param_3;
-  iVar5 = NPC_Routine_080A0878(*(int *)(param_1 + 0x350) + _DAT_08045688,param_3);
+  iVar5 = NPC_Routine_080A0878(*(int *)(param_1 + 0x350) + 0x1CD4,param_3);
   if (iVar5 != 0) {
     if (param_4 == 1) {
       if (param_6 == '\0') {
@@ -4504,8 +4504,8 @@ ScriptEngine_Routine_08045638(int param_1,undefined2 param_2,undefined4 param_3,
           }
           bStack_3c = bStack_3c & 0xf8 | bVar4 & 7;
         }
-        bStack_3b = Farmer_GetBirthday(*(int *)(param_1 + 0x350) + _DAT_080457f0);
-        bVar4 = NPC_Routine_0809FE74(*(int *)(param_1 + 0x350) + _DAT_080457f4,uStack_34,&bStack_3b);
+        bStack_3b = Farmer_GetBirthday(*(int *)(param_1 + 0x350) + 0x1BD8);
+        bVar4 = NPC_Routine_0809FE74(*(int *)(param_1 + 0x350) + 0x1CD4,uStack_34,&bStack_3b);
         bStack_2c = bStack_2c & 0x80;
         pbStack_24 = abStack_38;
         while( true ) {
@@ -4540,7 +4540,7 @@ ScriptEngine_Routine_08045638(int param_1,undefined2 param_2,undefined4 param_3,
         iVar5 = *(int *)(param_1 + 0x350);
         abStack_38[0] = bStack_3c;
         pbStack_24[1] = abStack_3a[0];
-        NPC_Routine_080A1478(iVar5 + _DAT_08045908,pbStack_24);
+        NPC_Routine_080A1478(iVar5 + 0x1CD4,pbStack_24);
       }
     }
   }
@@ -4568,11 +4568,11 @@ undefined8 ScriptEngine_Routine_0804590C(uint *param_1,uint param_2)
   uint uStack_18;
   uint uStack_14;
   
-  if (_DAT_0804592c < param_2) {
+  if (0x24D < param_2) {
     ScriptEngine_Routine_08048FEC();
     param_2 = extraout_r1;
   }
-  switch(*(uint *)(param_2 * 4 + _DAT_08045930) & 0xfffffffe) {
+  switch(*(uint *)(param_2 * 4 + gInlineTable_08045934) & 0xfffffffe) {
   case 0x804626c:
     uStack_18 = 200;
     uStack_14 = (uint)(*(byte *)(param_1[0xd4] + 0x10) >> 3) * 7 +
@@ -4611,7 +4611,7 @@ undefined8 ScriptEngine_Routine_0804590C(uint *param_1,uint param_2)
     uVar5 = Farmer_GetBirthday(param_1[0xd4] + _LAB_08046344);
     goto SUB_08048f32;
   case 0x8046348:
-    uVar5 = Farmer_GetBirthday(param_1[0xd4] + _DAT_0804635c);
+    uVar5 = Farmer_GetBirthday(param_1[0xd4] + 0x1BD8);
     goto LAB_08046812;
   case 0x8046360:
     uVar5 = Farmer_GetStamina(param_1[0xd4] + _LAB_08046374);
@@ -4623,7 +4623,7 @@ undefined8 ScriptEngine_Routine_0804590C(uint *param_1,uint param_2)
     uVar5 = Farmer_GetFatigue(param_1[0xd4] + _LAB_080463a4);
     break;
   case 0x80463a8:
-    uVar5 = Farmer_AteMysteryBerry(param_1[0xd4] + _DAT_080463bc);
+    uVar5 = Farmer_AteMysteryBerry(param_1[0xd4] + 0x1BD8);
     goto LAB_080466d4;
   case 0x80463c0:
     uVar5 = Farm_Routine_08009AF8(param_1[0xd4] + 0x14);
@@ -4660,7 +4660,7 @@ undefined8 ScriptEngine_Routine_0804590C(uint *param_1,uint param_2)
     goto LAB_080466d4;
   case 0x804648e:
     puVar3 = param_1 + 0xd4;
-    param_1 = (uint *)&UNK_000001f4;
+    param_1 = (uint *)0x01f4;
     iVar2 = Building_Routine_0800C048(*puVar3 + 500);
     goto LAB_080464a0;
   case 0x80464ae:
@@ -4682,7 +4682,7 @@ undefined8 ScriptEngine_Routine_0804590C(uint *param_1,uint param_2)
     goto LAB_080466d4;
   case 0x8046526:
     puVar3 = param_1 + 0xd4;
-    param_1 = (uint *)&UNK_000001f4;
+    param_1 = (uint *)0x01f4;
     iVar2 = Building_Routine_0800C07C(*puVar3 + 500);
     goto LAB_080464a0;
   case 0x804653a:
@@ -4757,7 +4757,7 @@ LAB_080466d4:
     uVar5 = NPC_Routine_0809EAD0();
     goto SUB_08048f32;
   case 0x8046704:
-    iVar2 = NPC_Routine_080A0A04(param_1[0xd4] + _DAT_08046724);
+    iVar2 = NPC_Routine_080A0A04(param_1[0xd4] + 0x1CD4);
     if (iVar2 == 0) {
       ScriptEngine_Routine_08048FEC();
     }
@@ -4801,16 +4801,16 @@ LAB_08046770:
     uVar5 = ScriptEngine_Routine_08045584(param_1,uVar6,1);
     break;
   case 0x804677a:
-    iVar2 = param_1[0xd4] + _DAT_080467d8;
+    iVar2 = param_1[0xd4] + 0x214C;
     uVar5 = (uint)*(byte *)(iVar2 + 0x1c);
     if ((((((uVar5 & 1) << 1 | (uint)(*(byte *)(iVar2 + 0x1b) >> 7)) != 2) &&
          ((uVar5 & 7) >> 1 != 2)) && ((uVar5 & 0x1f) >> 3 != 2)) &&
        ((((uVar5 & 0x7f) >> 5 != 2 && ((*(ushort *)(iVar2 + 0x1c) & 0x1ff) >> 7 != 2)) &&
-        ((*(byte *)(param_1[0xd4] + _DAT_080467dc) & 3) != 2)))) {
+        ((*(byte *)(param_1[0xd4] + 0x2197) & 3) != 2)))) {
       ScriptEngine_Routine_08048FEC();
     }
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_080467e0;
+    param_1 = 0x2144;
     goto LAB_0804688c;
   case 0x80467e4:
     iVar2 = NPC_Routine_080A1480(param_1[0xd4] + _LAB_080467fc);
@@ -4832,7 +4832,7 @@ LAB_080464a0:
       ScriptEngine_Routine_08048FEE(1);
 case_080464AE:
       puVar3 = param_1 + 0xd4;
-      param_1 = (uint *)&UNK_000001f4;
+      param_1 = (uint *)0x01f4;
       iVar2 = Building_Routine_0800C060(*puVar3 + 500);
     }
     uVar5 = 0;
@@ -4853,7 +4853,7 @@ case_080464AE:
     break;
   case 0x8046884:
     uVar5 = *_LAB_08046894;
-    param_1 = (uint *)&UNK_00000368;
+    param_1 = (uint *)0x0368;
 LAB_0804688c:
     puVar3 = (uint *)(uVar5 + (int)param_1);
 LAB_0804688e:
@@ -5717,7 +5717,7 @@ LAB_08046c2a:
     goto ScriptEngine_Routine_08048E76;
   case 0x80476f8:
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_08047704;
+    param_1 = 0x2178;
     goto LAB_08047c1a;
   case 0x8047708:
     puVar3 = param_1 + 0xd4;
@@ -5816,19 +5816,19 @@ case_08047774:
     ScriptEngine_Routine_08048E36(*puVar3);
   case 0x80478ec:
     uVar5 = param_1[0xd4];
-    puVar9 = &UNK_00002180;
+    puVar9 = 0x2180;
     goto SUB_08048f2e;
   case 0x80478fc:
     puVar3 = param_1 + 0xd4;
-    param_1 = (uint *)&UNK_00002180;
+    param_1 = (uint *)0x2180;
     ScriptEngine_Routine_08048E5E(*puVar3);
   case 0x804790c:
     uVar5 = param_1[0xd4];
-    puVar9 = &UNK_00002180;
+    puVar9 = 0x2180;
     goto ScriptEngine_Routine_08048E76;
   case 0x804791c:
     puVar3 = param_1 + 0xd4;
-    param_1 = (uint *)&UNK_00002180;
+    param_1 = (uint *)0x2180;
     ScriptEngine_Routine_08048E36(*puVar3);
   case 0x804792c:
     uVar5 = param_1[0xd4];
@@ -6242,11 +6242,11 @@ case_0804812C:
     goto SUB_08048f76;
   case 0x8048168:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048174;
+    iVar2 = 0x219A;
     goto SUB_08048662;
   case 0x8048178:
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_08048184;
+    param_1 = 0x219A;
     goto SUB_08048626;
   case 0x8048188:
     puVar3 = param_1 + 0xd4;
@@ -6275,7 +6275,7 @@ case_0804812C:
     goto SUB_08048f76;
   case 0x8048218:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048224;
+    iVar2 = 0x219C;
     goto SUB_08048662;
   case 0x8048228:
     puVar3 = param_1 + 0xd4;
@@ -6291,7 +6291,7 @@ case_0804812C:
     ScriptEngine_Routine_08048F46(*puVar3);
   case 0x8048264:
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_08048270;
+    param_1 = 0x219D;
     goto ScriptEngine_Routine_080486B2;
   case 0x8048274:
     uVar5 = param_1[0xd4];
@@ -6307,7 +6307,7 @@ case_0804812C:
     goto ScriptEngine_Routine_08048EC6;
   case 0x80482b0:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080482bc;
+    iVar2 = 0x219E;
     goto SUB_08048966;
   case 0x80482c0:
     puVar3 = param_1 + 0xd4;
@@ -6319,11 +6319,11 @@ case_0804812C:
     goto ScriptEngine_Routine_08048E76;
   case 0x80482e8:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_080482f4;
+    puVar9 = 0x219E;
     goto LAB_08048950;
   case 0x80482f8:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048304;
+    iVar2 = 0x219F;
     goto SUB_08048966;
   case 0x8048308:
     puVar3 = param_1 + 0xd4;
@@ -6355,7 +6355,7 @@ case_0804812C:
     ScriptEngine_Routine_08048F76(*puVar3);
   case 0x8048394:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080483a0;
+    iVar2 = 0x21A0;
     goto SUB_08048662;
   case 0x80483a4:
     uVar5 = param_1[0xd4];
@@ -6373,7 +6373,7 @@ ScriptEngine_Routine_080483AE:
     goto ScriptEngine_Routine_08048F46;
   case 0x80483e8:
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_080483f4;
+    param_1 = 0x21A1;
     goto ScriptEngine_Routine_080486B2;
   case 0x80483f8:
     puVar3 = param_1 + 0xd4;
@@ -6389,7 +6389,7 @@ ScriptEngine_Routine_080483AE:
     ScriptEngine_Routine_08048EC6(*puVar3);
   case 0x8048434:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048440;
+    iVar2 = 0x21A2;
     goto SUB_08048966;
   case 0x8048444:
     uVar5 = param_1[0xd4];
@@ -6420,8 +6420,8 @@ ScriptEngine_Routine_080483AE:
     iVar2 = _LAB_080484cc;
     goto SUB_08048fde;
   case 0x80484d0:
-    uVar5 = (uint)(*(byte *)(param_1[0xd4] + _DAT_080484ec) >> 7);
-    uVar4 = (uint)*(byte *)(param_1[0xd4] + _DAT_080484f0);
+    uVar5 = (uint)(*(byte *)(param_1[0xd4] + 0x21A3) >> 7);
+    uVar4 = (uint)*(byte *)(param_1[0xd4] + 0x21A4);
     uVar7 = 1;
     goto ScriptEngine_Routine_08048A7C;
   case 0x80484f4:
@@ -6438,7 +6438,7 @@ ScriptEngine_Routine_080483AE:
     ScriptEngine_Routine_08048F76(*puVar3);
   case 0x8048530:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_0804853c;
+    iVar2 = 0x21A4;
     goto SUB_08048662;
   case 0x8048540:
     uVar5 = param_1[0xd4];
@@ -6454,11 +6454,11 @@ ScriptEngine_Routine_080483AE:
     goto ScriptEngine_Routine_08048F46;
   case 0x804857c:
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_08048588;
+    param_1 = 0x21A5;
     goto ScriptEngine_Routine_080486B2;
   case 0x804858c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048598;
+    iVar2 = 0x21A5;
     goto SUB_08048662;
   case 0x804859c:
     puVar3 = param_1 + 0xd4;
@@ -6491,7 +6491,7 @@ SUB_08048626:
     ScriptEngine_Routine_08048FEE((*(ushort *)(uVar5 + (int)param_1) & 0x1ff) >> 7);
 case_08048638:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048644;
+    iVar2 = 0x21A7;
 SUB_08048966:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 7) >> 1;
     break;
@@ -6499,7 +6499,7 @@ SUB_08048966:
     goto case_08048638;
   case 0x8048648:
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_08048654;
+    param_1 = 0x21A7;
     goto ScriptEngine_Routine_080486B2;
   case 0x8048658:
     uVar5 = param_1[0xd4];
@@ -6508,13 +6508,13 @@ SUB_08048662:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 0x7f) >> 5;
     break;
   case 0x8048674:
-    uVar5 = (uint)(*(byte *)(param_1[0xd4] + _DAT_08048690) >> 7);
-    uVar4 = (uint)*(byte *)(param_1[0xd4] + _DAT_08048694);
+    uVar5 = (uint)(*(byte *)(param_1[0xd4] + 0x21A7) >> 7);
+    uVar4 = (uint)*(byte *)(param_1[0xd4] + 0x21A8);
     uVar7 = 1;
     goto ScriptEngine_Routine_08048A7C;
   case 0x8048698:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080486a4;
+    iVar2 = 0x21A8;
     goto SUB_08048966;
   case 0x80486a8:
     uVar5 = param_1[0xd4];
@@ -6556,7 +6556,7 @@ case_080486C4:
     ScriptEngine_Routine_08048EC6(*puVar3);
   case 0x8048768:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048774;
+    iVar2 = 0x21AA;
     goto ScriptEngine_Routine_08048C0E;
   case 0x8048778:
     uVar5 = param_1[0xd4];
@@ -6588,7 +6588,7 @@ case_080486C4:
     goto ScriptEngine_Routine_08048EC6;
   case 0x8048804:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048810;
+    iVar2 = 0x21AB;
     goto ScriptEngine_Routine_08048C0E;
   case 0x8048814:
     puVar3 = param_1 + 0xd4;
@@ -6600,41 +6600,41 @@ case_080486C4:
     goto SUB_08048f5e;
   case 0x804883c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048848;
+    iVar2 = 0x21B4;
     goto LAB_0804890a;
   case 0x804884c:
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_08048858;
+    param_1 = 0x21B4;
     goto LAB_080488ee;
   case 0x804885c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048868;
+    iVar2 = 0x21B6;
     goto LAB_0804890a;
   case 0x804886c:
     uVar5 = param_1[0xd4];
-    param_1 = (uint *)(uint)(*(byte *)(uVar5 + _DAT_08048880) >> 6);
-    puVar9 = _DAT_08048884;
+    param_1 = (uint *)(uint)(*(byte *)(uVar5 + 0x21B7) >> 6);
+    puVar9 = 0x21B8;
     goto LAB_08048930;
   case 0x8048888:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048894;
+    iVar2 = 0x21B8;
     goto LAB_0804890a;
   case 0x8048898:
     uVar5 = param_1[0xd4];
-    param_1 = _DAT_080488a4;
+    param_1 = 0x21B8;
     goto LAB_080488ee;
   case 0x80488a8:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080488b4;
+    iVar2 = 0x21BA;
     goto LAB_0804890a;
   case 0x80488b8:
     uVar5 = param_1[0xd4];
-    param_1 = (uint *)(uint)(*(byte *)(uVar5 + _DAT_080488cc) >> 6);
-    puVar9 = _DAT_080488d0;
+    param_1 = (uint *)(uint)(*(byte *)(uVar5 + 0x21BB) >> 6);
+    puVar9 = 0x21BC;
     goto LAB_08048930;
   case 0x80488d4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080488e0;
+    iVar2 = 0x21BC;
     goto LAB_0804890a;
   case 0x80488e4:
     uVar5 = param_1[0xd4];
@@ -6652,12 +6652,12 @@ LAB_0804890a:
   case 0x804891c:
     uVar5 = param_1[0xd4];
     param_1 = (uint *)(uint)(*(byte *)(uVar5 + _LAB_08048940) >> 6);
-    puVar9 = &UNK_000021c0;
+    puVar9 = 0x21c0;
 LAB_08048930:
     ScriptEngine_Routine_08048FEE(((byte)puVar9[uVar5] & 0x3f) << 2 | (uint)param_1);
 case_08048944:
     uVar5 = param_1[0xd4];
-    puVar9 = &UNK_000021c0;
+    puVar9 = 0x21c0;
 LAB_08048950:
     uVar5 = (*(ushort *)(puVar9 + uVar5) & 0x1ff) >> 6;
     break;
@@ -6665,357 +6665,357 @@ LAB_08048950:
     goto case_08048944;
   case 0x804895c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048970;
+    iVar2 = 0x21C1;
     goto SUB_08048966;
   case 0x8048974:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048980;
+    iVar2 = 0x21C1;
     goto SUB_08048f5e;
   case 0x8048984:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048990;
+    iVar2 = 0x21C1;
     goto SUB_08048f76;
   case 0x8048994:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080489a0;
+    iVar2 = 0x21C1;
     goto SUB_08048fc6;
   case 0x80489a4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080489b0;
+    iVar2 = 0x21C1;
     goto SUB_08048fde;
   case 0x80489b4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080489c0;
+    iVar2 = 0x21C1;
     goto ScriptEngine_Routine_08048F16;
   case 0x80489c4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080489d0;
+    iVar2 = 0x21C2;
     goto ScriptEngine_Routine_08048EC6;
   case 0x80489d4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080489e0;
+    iVar2 = 0x21C2;
     goto ScriptEngine_Routine_08048C0E;
   case 0x80489e4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_080489f0;
+    iVar2 = 0x21C2;
     goto ScriptEngine_Routine_08048F46;
   case 0x80489f4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048a00;
+    iVar2 = 0x21C2;
     goto SUB_08048f5e;
   case 0x8048a04:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048a10;
+    iVar2 = 0x21C2;
     goto SUB_08048f76;
   case 0x8048a14:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048a20;
+    iVar2 = 0x21C2;
     goto SUB_08048fc6;
   case 0x8048a24:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048a30;
+    iVar2 = 0x21C2;
     goto SUB_08048fde;
   case 0x8048a34:
-    uVar5 = (*(ushort *)(param_1[0xd4] + _DAT_08048a48) & 0x7ff) >> 7;
+    uVar5 = (*(ushort *)(param_1[0xd4] + 0x21C2) & 0x7ff) >> 7;
     break;
   case 0x8048a4c:
     uVar5 = (*(byte *)(param_1[0xd4] + _ASSET_BLOCK_08048A60) & 0x7f) >> 3;
     break;
   case 0x8048a64:
-    uVar5 = (uint)(*(byte *)(param_1[0xd4] + _DAT_08048a84) >> 7);
-    uVar4 = (uint)*(byte *)(param_1[0xd4] + _DAT_08048a88);
+    uVar5 = (uint)(*(byte *)(param_1[0xd4] + 0x21C3) >> 7);
+    uVar4 = (uint)*(byte *)(param_1[0xd4] + 0x21C4);
     uVar7 = 7;
 ScriptEngine_Routine_08048A7C:
     uVar5 = (uVar4 & uVar7) << 1 | uVar5;
     break;
   case 0x8048a8c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048a98;
+    iVar2 = 0x21C4;
     goto SUB_08048f5e;
   case 0x8048a9c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048aa8;
+    iVar2 = 0x21C4;
     goto SUB_08048f76;
   case 0x8048aac:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048ab8;
+    iVar2 = 0x21C4;
     goto SUB_08048fc6;
   case 0x8048abc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048ac8;
+    iVar2 = 0x21C4;
     goto SUB_08048fde;
   case 0x8048acc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048ad8;
+    iVar2 = 0x21C4;
     goto ScriptEngine_Routine_08048F16;
   case 0x8048adc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048ae8;
+    iVar2 = 0x21C5;
     goto ScriptEngine_Routine_08048EC6;
   case 0x8048aec:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048af8;
+    iVar2 = 0x21C5;
     goto ScriptEngine_Routine_08048C0E;
   case 0x8048afc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048b08;
+    iVar2 = 0x21C5;
     goto ScriptEngine_Routine_08048F46;
   case 0x8048b0c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048b18;
+    iVar2 = 0x21C5;
     goto SUB_08048f5e;
   case 0x8048b1c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048b28;
+    iVar2 = 0x21C5;
     goto SUB_08048f76;
   case 0x8048b2c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048b38;
+    iVar2 = 0x21C5;
     goto SUB_08048fc6;
   case 0x8048b3c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048b48;
+    iVar2 = 0x21C5;
     goto SUB_08048fde;
   case 0x8048b4c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048b58;
+    iVar2 = 0x21C5;
     goto ScriptEngine_Routine_08048F16;
   case 0x8048b5c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048b68;
+    iVar2 = 0x21C6;
     goto ScriptEngine_Routine_08048EC6;
   case 0x8048b6c:
-    uVar5 = (*(ushort *)(param_1[0xd4] + _DAT_08048b80) & 0x1ff) >> 1;
+    uVar5 = (*(ushort *)(param_1[0xd4] + 0x21C6) & 0x1ff) >> 1;
     break;
   case 0x8048b84:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048b90;
+    iVar2 = 0x21C7;
     goto ScriptEngine_Routine_08048C0E;
   case 0x8048b94:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048ba0;
+    iVar2 = 0x21C7;
     goto ScriptEngine_Routine_08048F46;
   case 0x8048ba4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048bb0;
+    iVar2 = 0x21C7;
     goto SUB_08048f5e;
   case 0x8048bb4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048bc0;
+    iVar2 = 0x21C7;
     goto SUB_08048f76;
   case 0x8048bc4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048bd0;
+    iVar2 = 0x21C7;
     goto SUB_08048fc6;
   case 0x8048bd4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048be0;
+    iVar2 = 0x21C7;
     goto SUB_08048fde;
   case 0x8048be4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048bf0;
+    iVar2 = 0x21C7;
     goto ScriptEngine_Routine_08048F16;
   case 0x8048bf4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048c00;
+    iVar2 = 0x21C8;
     goto ScriptEngine_Routine_08048EC6;
   case 0x8048c04:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048c18;
+    iVar2 = 0x21C8;
 ScriptEngine_Routine_08048C0E:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 3) >> 1;
     break;
   case 0x8048c1c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048c28;
+    puVar9 = 0x21AB;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048c2c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048c38;
+    iVar2 = 0x21AB;
     goto ScriptEngine_Routine_08048E36;
   case 0x8048c3c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048c48;
+    puVar9 = 0x21AC;
     goto SUB_08048f2e;
   case 0x8048c4c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048c58;
+    iVar2 = 0x21AC;
     goto ScriptEngine_Routine_08048E5E;
   case 0x8048c5c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048c68;
+    puVar9 = 0x21AC;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048c6c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048c78;
+    iVar2 = 0x21AC;
     goto ScriptEngine_Routine_08048E36;
   case 0x8048c7c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048c88;
+    puVar9 = 0x21AD;
     goto SUB_08048f2e;
   case 0x8048c8c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048c98;
+    iVar2 = 0x21AD;
     goto ScriptEngine_Routine_08048E5E;
   case 0x8048c9c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048ca8;
+    puVar9 = 0x21AD;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048cac:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048cb8;
+    iVar2 = 0x21AD;
     goto ScriptEngine_Routine_08048E36;
   case 0x8048cbc:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048cc8;
+    puVar9 = 0x21AE;
     goto SUB_08048f2e;
   case 0x8048ccc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048cd8;
+    iVar2 = 0x21AE;
     goto ScriptEngine_Routine_08048E5E;
   case 0x8048cdc:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048ce8;
+    puVar9 = 0x21AE;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048cec:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048cf8;
+    iVar2 = 0x21AE;
     goto ScriptEngine_Routine_08048E36;
   case 0x8048cfc:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048d08;
+    puVar9 = 0x21AF;
     goto SUB_08048f2e;
   case 0x8048d0c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048d18;
+    iVar2 = 0x21AF;
     goto ScriptEngine_Routine_08048E5E;
   case 0x8048d1c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048d28;
+    puVar9 = 0x21AF;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048d2c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048d38;
+    iVar2 = 0x21AF;
     goto ScriptEngine_Routine_08048E36;
   case 0x8048d3c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048d48;
+    puVar9 = 0x21B0;
     goto SUB_08048f2e;
   case 0x8048d4c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048d58;
+    iVar2 = 0x21B0;
     goto ScriptEngine_Routine_08048E5E;
   case 0x8048d5c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048d68;
+    puVar9 = 0x21B0;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048d6c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048d78;
+    iVar2 = 0x21B0;
     goto ScriptEngine_Routine_08048E36;
   case 0x8048d7c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048d88;
+    puVar9 = 0x21B1;
     goto SUB_08048f2e;
   case 0x8048d8c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048d98;
+    iVar2 = 0x21B1;
     goto ScriptEngine_Routine_08048E5E;
   case 0x8048d9c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048da8;
+    puVar9 = 0x21B1;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048dac:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048db8;
+    iVar2 = 0x21B1;
     goto ScriptEngine_Routine_08048E36;
   case 0x8048dbc:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048dc8;
+    puVar9 = 0x21B2;
     goto SUB_08048f2e;
   case 0x8048dcc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048dd8;
+    iVar2 = 0x21B2;
     goto ScriptEngine_Routine_08048E5E;
   case 0x8048ddc:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048de8;
+    puVar9 = 0x21B2;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048dec:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048df8;
+    iVar2 = 0x21B2;
     goto ScriptEngine_Routine_08048E36;
   case 0x8048dfc:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048e08;
+    puVar9 = 0x21B3;
     goto SUB_08048f2e;
   case 0x8048e0c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048e18;
+    iVar2 = 0x21B3;
     goto ScriptEngine_Routine_08048E5E;
   case 0x8048e1c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048e28;
+    puVar9 = 0x21B3;
     goto ScriptEngine_Routine_08048E76;
   case 0x8048e2c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048e40;
+    iVar2 = 0x21B3;
 ScriptEngine_Routine_08048E36:
     uVar5 = (uint)(*(byte *)(uVar5 + iVar2) >> 6);
     break;
   case 0x8048e44:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048e50;
+    puVar9 = 0x21B4;
     goto SUB_08048f2e;
   case 0x8048e54:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048e68;
+    iVar2 = 0x21B4;
 ScriptEngine_Routine_08048E5E:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 0xf) >> 2;
     break;
   case 0x8048e6c:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048e80;
+    puVar9 = 0x21B4;
 ScriptEngine_Routine_08048E76:
     uVar5 = ((byte)puVar9[uVar5] & 0x3f) >> 4;
     break;
   case 0x8048e84:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048e90;
+    iVar2 = 0x21C8;
     goto ScriptEngine_Routine_08048F46;
   case 0x8048e94:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048ea0;
+    iVar2 = 0x21C8;
     goto SUB_08048f5e;
   case 0x8048ea4:
-    uVar5 = (uint)(*(byte *)(param_1[0xd4] + _DAT_08048eb8) >> 4);
+    uVar5 = (uint)(*(byte *)(param_1[0xd4] + 0x21C8) >> 4);
     break;
   case 0x8048ebc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048ed0;
+    iVar2 = 0x21C9;
 ScriptEngine_Routine_08048EC6:
     uVar5 = *(byte *)(uVar5 + iVar2) & 1;
     break;
   case 0x8048ed4:
-    uVar5 = (*(byte *)(param_1[0xd4] + _DAT_08048ee8) & 0x1f) >> 1;
+    uVar5 = (*(byte *)(param_1[0xd4] + 0x21C9) & 0x1f) >> 1;
     break;
   case 0x8048eec:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048ef8;
+    iVar2 = 0x21C9;
     goto SUB_08048fc6;
   case 0x8048efc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048f08;
+    iVar2 = 0x21C9;
     goto SUB_08048fde;
   case 0x8048f0c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048f20;
+    iVar2 = 0x21C9;
 ScriptEngine_Routine_08048F16:
     uVar5 = (uint)(*(byte *)(uVar5 + iVar2) >> 7);
     break;
   case 0x8048f24:
     uVar5 = param_1[0xd4];
-    puVar9 = _DAT_08048f38;
+    puVar9 = 0x21CA;
 SUB_08048f2e:
     uVar5 = (uint)(byte)puVar9[uVar5];
 SUB_08048f32:
@@ -7023,42 +7023,42 @@ SUB_08048f32:
     break;
   case 0x8048f3c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048f50;
+    iVar2 = 0x21CA;
 ScriptEngine_Routine_08048F46:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 7) >> 2;
     break;
   case 0x8048f54:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048f68;
+    iVar2 = 0x21CA;
 SUB_08048f5e:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 0xf) >> 3;
     break;
   case 0x8048f6c:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048f80;
+    iVar2 = 0x21CA;
 SUB_08048f76:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 0x1f) >> 4;
     break;
   case 0x8048f84:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048f90;
+    iVar2 = 0x21CA;
     goto SUB_08048fc6;
   case 0x8048f94:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048fa0;
+    iVar2 = 0x21CA;
     goto SUB_08048fde;
   case 0x8048fa4:
-    uVar5 = (uint)(*(byte *)(param_1[0xd4] + _DAT_08048fb8) >> 2);
+    uVar5 = (uint)(*(byte *)(param_1[0xd4] + 0x21CB) >> 2);
     break;
   case 0x8048fbc:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048fd0;
+    iVar2 = 0x216E;
 SUB_08048fc6:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 0x3f) >> 5;
     break;
   case 0x8048fd4:
     uVar5 = param_1[0xd4];
-    iVar2 = _DAT_08048fe8;
+    iVar2 = 0x216E;
 SUB_08048fde:
     uVar5 = (*(byte *)(uVar5 + iVar2) & 0x7f) >> 6;
   }
@@ -7096,9 +7096,9 @@ undefined4 ScriptEngine_Routine_08048FFC(uint param_1,int param_2,uint param_3)
   undefined1 uVar22;
   
   ScriptEngine_Routine_0804590C();
-  if (_DAT_0804902c < param_2 - 0x1cU) goto case_0804DA2E;
+  if (0x231 < param_2 - 0x1cU) goto case_0804DA2E;
   bVar6 = (byte)param_3;
-  switch(*(uint *)((param_2 - 0x1cU) * 4 + _DAT_08049030) & 0xfffffffe) {
+  switch(*(uint *)((param_2 - 0x1cU) * 4 + gInlineTable_08049034) & 0xfffffffe) {
   case 0x80498fc:
     if (param_3 != 0) {
       ScriptEngine_Routine_0804DA2E();
@@ -7162,7 +7162,7 @@ undefined4 ScriptEngine_Routine_08048FFC(uint param_1,int param_2,uint param_3)
     }
     goto case_0804DA2E;
   case 0x8049a54:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_08049a8c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x219C);
     *pbVar12 = *pbVar12 & 0xef | (byte)((param_3 & 1) << 4);
     if (param_3 == 0) {
       if (*(int *)(param_1 + 0x354) != 0) {
@@ -7177,7 +7177,7 @@ undefined4 ScriptEngine_Routine_08048FFC(uint param_1,int param_2,uint param_3)
     uVar5 = 4;
     goto LAB_08049b0a;
   case 0x8049aaa:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_08049ad0);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x219A);
     *pbVar12 = *pbVar12 & 0xfd | (byte)((param_3 & 1) << 1);
     goto joined_r0x08049af6;
   case 0x8049ad4:
@@ -7214,7 +7214,7 @@ LAB_08049b66:
     NPC_Routine_080A03A4(*(int *)(param_1 + 0x350) + _LAB_08049b90,param_3);
     goto case_0804DA2E;
   case 0x8049b94:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_08049bdc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x219A);
     *pbVar12 = *pbVar12 & 0xef | (byte)((param_3 & 1) << 4);
     if (param_3 == 0) goto case_0804DA2E;
     iVar19 = *(int *)(param_1 + 0x354);
@@ -7225,7 +7225,7 @@ LAB_08049b66:
     uVar21 = 0;
     goto LAB_08049d4c;
   case 0x8049be0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_08049c20);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x219C);
     *pbVar12 = *pbVar12 & 0x7f | (byte)(param_3 << 7);
     if (param_3 == 0) goto case_0804DA2E;
     iVar19 = *(int *)(param_1 + 0x354);
@@ -7236,7 +7236,7 @@ LAB_08049b66:
     uVar21 = 4;
     goto LAB_08049d4c;
   case 0x8049c24:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_08049c6c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x219D);
     *pbVar12 = *pbVar12 & 0xdf | (byte)((param_3 & 1) << 5);
     if (param_3 == 0) goto case_0804DA2E;
     iVar19 = *(int *)(param_1 + 0x354);
@@ -7247,7 +7247,7 @@ LAB_08049b66:
     uVar21 = 3;
     goto LAB_08049d4c;
   case 0x8049c70:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_08049cb8);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x219E);
     *pbVar12 = *pbVar12 & 0xf7 | (byte)((param_3 & 1) << 3);
     if (param_3 == 0) goto case_0804DA2E;
     iVar19 = *(int *)(param_1 + 0x354);
@@ -7258,7 +7258,7 @@ LAB_08049b66:
     uVar21 = 1;
     goto LAB_08049d4c;
   case 0x8049cbc:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_08049d04);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21A1);
     *pbVar12 = *pbVar12 & 0xdf | (byte)((param_3 & 1) << 5);
     if (param_3 == 0) {
       ScriptEngine_Routine_0804DA2E();
@@ -7466,7 +7466,7 @@ LAB_08049d4c:
     uVar21 = 6;
     uVar22 = 0;
     uVar15 = 0x1f;
-    uVar5 = _DAT_08049f9c;
+    uVar5 = 0x173;
     goto LAB_0804a1b8;
   case 0x8049fa0:
     uVar21 = 1;
@@ -8476,19 +8476,19 @@ ScriptEngine_Routine_0804D0FE:
     break;
   case 0x804b638:
     param_3 = param_3 & 3;
-    ScriptEngine_Routine_0804DA2C((byte)(&UNK_00002180)[*(int *)(param_1 + 0x350)] & 0xfffffffc | param_3);
+    ScriptEngine_Routine_0804DA2C((byte)(0x2180)[*(int *)(param_1 + 0x350)] & 0xfffffffc | param_3);
   case 0x804b658:
-    pbVar12 = &UNK_00002180 + *(int *)(param_1 + 0x350);
+    pbVar12 = 0x2180 + *(int *)(param_1 + 0x350);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804b676:
     param_3 = param_3 & 3;
-    ScriptEngine_SetFlagBit(0xffffffcf,&UNK_00002180 + *(int *)(param_1 + 0x350),
-                    (&UNK_00002180)[*(int *)(param_1 + 0x350)],param_3 << 4);
+    ScriptEngine_SetFlagBit(0xffffffcf,0x2180 + *(int *)(param_1 + 0x350),
+                    (0x2180)[*(int *)(param_1 + 0x350)],param_3 << 4);
   case 0x804b694:
-    pbVar12 = &UNK_00002180 + *(int *)(param_1 + 0x350);
+    pbVar12 = 0x2180 + *(int *)(param_1 + 0x350);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
@@ -9189,10 +9189,10 @@ ScriptEngine_Routine_0804D0FE:
     param_3 = param_3 & 3;
     ScriptEngine_SetFlagBit(0xffffff9f,puVar9,*puVar9,param_3 << 5);
   case 0x804c950:
-    puVar18 = (uint *)(*(int *)(param_1 + 0x350) + _DAT_0804c968);
+    puVar18 = (uint *)(*(int *)(param_1 + 0x350) + 0x21A4);
     uVar8 = (param_3 & 7) << 0xf;
     uVar4 = *puVar18;
-    uVar16 = _DAT_0804c96c;
+    uVar16 = 0xFFFC7FFF;
     goto SUB_0804ce8e;
   case 0x804c970:
     pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _LAB_0804c98c);
@@ -9240,9 +9240,9 @@ ScriptEngine_Routine_0804D0FE:
     ScriptEngine_SetFlagBit(0xffffff9f,puVar9,*puVar9,param_3 << 5);
   case 0x804ca88:
     iVar19 = *(int *)(param_1 + 0x350);
-    pbVar12 = (byte *)(iVar19 + _DAT_0804cab8);
+    pbVar12 = (byte *)(iVar19 + 0x21A7);
     *pbVar12 = *pbVar12 & 0x7f | (byte)((param_3 & 1) << 7);
-    pbVar12 = (byte *)(iVar19 + _DAT_0804cabc);
+    pbVar12 = (byte *)(iVar19 + 0x21A8);
     bVar6 = (byte)(param_3 >> 1) & 1;
     bVar13 = *pbVar12;
     bVar2 = 0xfe;
@@ -9347,60 +9347,60 @@ ScriptEngine_Routine_0804D0FE:
     bVar13 = 0xf7;
     break;
   case 0x804cd48:
-    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + _DAT_0804cd60);
+    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + 0x21B4);
     uVar17 = (ushort)((param_3 & 0xff) << 6);
     uVar14 = *puVar10;
-    uVar3 = (ushort)_DAT_0804cd64;
+    uVar3 = (ushort)0xFFFFC03F;
     goto ScriptEngine_Routine_0804D2D6;
   case 0x804cd68:
     iVar11 = *(int *)(param_1 + 0x350);
-    iVar19 = _DAT_0804cd74;
+    iVar19 = 0x21B4;
     goto LAB_0804ce82;
   case 0x804cd78:
-    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + _DAT_0804cd90);
+    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + 0x21B6);
     uVar17 = (ushort)((param_3 & 0xff) << 6);
     uVar14 = *puVar10;
-    uVar3 = (ushort)_DAT_0804cd94;
+    uVar3 = (ushort)0xFFFFC03F;
     goto ScriptEngine_Routine_0804D2D6;
   case 0x804cd98:
     iVar19 = *(int *)(param_1 + 0x350);
-    pbVar12 = (byte *)(iVar19 + _DAT_0804cdc8);
+    pbVar12 = (byte *)(iVar19 + 0x21B7);
     *pbVar12 = *pbVar12 & 0x3f | (byte)((param_3 & 3) << 6);
-    pbVar12 = (byte *)(iVar19 + _DAT_0804cdcc);
+    pbVar12 = (byte *)(iVar19 + 0x21B8);
     bVar6 = (byte)(param_3 >> 2) & 0x3f;
     bVar13 = *pbVar12;
     bVar2 = 0xc0;
     goto ScriptEngine_Routine_0804D106;
   case 0x804cdd0:
-    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + _DAT_0804cde8);
+    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + 0x21B8);
     uVar17 = (ushort)((param_3 & 0xff) << 6);
     uVar14 = *puVar10;
-    uVar3 = (ushort)_DAT_0804cdec;
+    uVar3 = (ushort)0xFFFFC03F;
     goto ScriptEngine_Routine_0804D2D6;
   case 0x804cdf0:
     iVar11 = *(int *)(param_1 + 0x350);
-    iVar19 = _DAT_0804cdfc;
+    iVar19 = 0x21B8;
     goto LAB_0804ce82;
   case 0x804ce00:
-    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + _DAT_0804ce18);
+    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + 0x21BA);
     uVar17 = (ushort)((param_3 & 0xff) << 6);
     uVar14 = *puVar10;
-    uVar3 = (ushort)_DAT_0804ce1c;
+    uVar3 = (ushort)0xFFFFC03F;
     goto ScriptEngine_Routine_0804D2D6;
   case 0x804ce20:
     iVar19 = *(int *)(param_1 + 0x350);
-    pbVar12 = (byte *)(iVar19 + _DAT_0804ce50);
+    pbVar12 = (byte *)(iVar19 + 0x21BB);
     *pbVar12 = *pbVar12 & 0x3f | (byte)((param_3 & 3) << 6);
-    pbVar12 = (byte *)(iVar19 + _DAT_0804ce54);
+    pbVar12 = (byte *)(iVar19 + 0x21BC);
     bVar6 = (byte)(param_3 >> 2) & 0x3f;
     bVar13 = *pbVar12;
     bVar2 = 0xc0;
     goto ScriptEngine_Routine_0804D106;
   case 0x804ce58:
-    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + _DAT_0804ce70);
+    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + 0x21BC);
     uVar17 = (ushort)((param_3 & 0xff) << 6);
     uVar14 = *puVar10;
-    uVar3 = (ushort)_DAT_0804ce74;
+    uVar3 = (ushort)0xFFFFC03F;
     goto ScriptEngine_Routine_0804D2D6;
   case 0x804ce78:
     iVar11 = *(int *)(param_1 + 0x350);
@@ -9414,16 +9414,16 @@ SUB_0804ce8e:
     *puVar18 = uVar4 & uVar16 | uVar8;
     goto case_0804DA2E;
   case 0x804cea0:
-    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + _DAT_0804ceb8);
+    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + 0x21BE);
     uVar17 = (ushort)((param_3 & 0xff) << 6);
     uVar14 = *puVar10;
-    uVar3 = (ushort)_DAT_0804cebc;
+    uVar3 = (ushort)0xFFFFC03F;
     goto ScriptEngine_Routine_0804D2D6;
   case 0x804cec0:
     iVar19 = *(int *)(param_1 + 0x350);
-    pbVar12 = (byte *)(iVar19 + _DAT_0804cef0);
+    pbVar12 = (byte *)(iVar19 + 0x21BF);
     *pbVar12 = *pbVar12 & 0x3f | (byte)((param_3 & 3) << 6);
-    pbVar12 = &UNK_000021c0 + iVar19;
+    pbVar12 = 0x21c0 + iVar19;
     bVar6 = (byte)(param_3 >> 2) & 0x3f;
     bVar13 = *pbVar12;
     bVar2 = 0xc0;
@@ -9437,10 +9437,10 @@ case_0804D118:
     bVar13 = 0xf7;
     break;
   case 0x804cef4:
-    puVar10 = (ushort *)(&UNK_000021c0 + *(int *)(param_1 + 0x350));
+    puVar10 = (ushort *)(0x21c0 + *(int *)(param_1 + 0x350));
     uVar17 = (ushort)((param_3 & 7) << 6);
     uVar14 = *puVar10;
-    uVar3 = (ushort)_DAT_0804cf10;
+    uVar3 = (ushort)0xFFFFFE3F;
     goto ScriptEngine_Routine_0804D2D6;
   case 0x804cf14:
     puVar9 = (undefined1 *)(*(int *)(param_1 + 0x350) + _LAB_0804cf30);
@@ -9502,10 +9502,10 @@ case_0804D118:
   case 0x804d088:
     ScriptEngine_Routine_0804DA1A((undefined4 *)(param_1 + 0x350),*(undefined4 *)(param_1 + 0x350),_LAB_0804d098);
   case 0x804d09c:
-    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + _DAT_0804d0b4);
+    puVar10 = (ushort *)(*(int *)(param_1 + 0x350) + 0x21C2);
     uVar17 = (ushort)((param_3 & 0xf) << 7);
     uVar14 = *puVar10;
-    uVar3 = (ushort)_DAT_0804d0b8;
+    uVar3 = (ushort)0xFFFFF87F;
     goto ScriptEngine_Routine_0804D2D6;
   case 0x804d0bc:
     pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _ASSET_BLOCK_0804D0D8);
@@ -9589,350 +9589,350 @@ ScriptEngine_Routine_0804D2D6:
     *puVar10 = uVar3 & uVar14 | uVar17;
     goto case_0804DA2E;
   case 0x804d2e8:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d304);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C7);
     bVar2 = (byte)((param_3 & 1) << 1);
     bVar6 = *pbVar12;
     bVar13 = 0xfd;
     break;
   case 0x804d308:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d324);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C7);
     bVar2 = (byte)((param_3 & 1) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xfb;
     break;
   case 0x804d328:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d344);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C7);
     bVar2 = (byte)((param_3 & 1) << 3);
     bVar6 = *pbVar12;
     bVar13 = 0xf7;
     break;
   case 0x804d348:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d364);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C7);
     bVar2 = (byte)((param_3 & 1) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xef;
     break;
   case 0x804d368:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d384);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C7);
     bVar2 = (byte)((param_3 & 1) << 5);
     bVar6 = *pbVar12;
     bVar13 = 0xdf;
     break;
   case 0x804d388:
     iVar11 = *(int *)(param_1 + 0x350);
-    iVar19 = _DAT_0804d394;
+    iVar19 = 0x21C7;
     goto SUB_0804da1a;
   case 0x804d398:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d3ac);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C7);
     bVar2 = (byte)(param_3 << 7);
     bVar6 = *pbVar12;
     bVar13 = 0x7f;
     break;
   case 0x804d3b0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d3cc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C8);
     bVar2 = *pbVar12 & 0xfe | bVar6 & 1;
     goto SUB_0804da2c;
   case 0x804d3d0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d3ec);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C8);
     bVar2 = (byte)((param_3 & 1) << 1);
     bVar6 = *pbVar12;
     bVar13 = 0xfd;
     break;
   case 0x804d3f0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d40c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AB);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d410:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d424);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AB);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d428:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d444);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AC);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d448:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d464);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AC);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d468:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d484);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AC);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d488:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d49c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AC);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d4a0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d4bc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AD);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d4c0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d4dc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AD);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d4e0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d4fc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AD);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d500:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d514);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AD);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d518:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d534);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AE);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d538:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d554);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AE);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d558:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d574);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AE);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d578:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d58c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AE);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d590:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d5ac);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AF);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d5b0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d5cc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AF);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d5d0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d5ec);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AF);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d5f0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d604);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21AF);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d608:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d624);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B0);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d628:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d644);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B0);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d648:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d664);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B0);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d668:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d67c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B0);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d680:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d69c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B1);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d6a0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d6bc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B1);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d6c0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d6dc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B1);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d6e0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d6f4);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B1);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d6f8:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d714);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B2);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d718:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d734);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B2);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d738:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d754);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B2);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d758:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d76c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B2);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d770:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d78c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B3);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d790:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d7ac);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B3);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d7b0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d7cc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B3);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d7d0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d7e4);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B3);
     bVar2 = (byte)(param_3 << 6);
     bVar6 = *pbVar12;
     bVar13 = 0x3f;
     break;
   case 0x804d7e8:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d804);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B4);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d808:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d824);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B4);
     bVar2 = (byte)((param_3 & 3) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xf3;
     break;
   case 0x804d828:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d844);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21B4);
     bVar2 = (byte)((param_3 & 3) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xcf;
     break;
   case 0x804d848:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d864);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C8);
     bVar2 = (byte)((param_3 & 1) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xfb;
     break;
   case 0x804d868:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d884);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C8);
     bVar2 = (byte)((param_3 & 1) << 3);
     bVar6 = *pbVar12;
     bVar13 = 0xf7;
     break;
   case 0x804d888:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d89c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C8);
     bVar2 = (byte)(param_3 << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xf;
     break;
   case 0x804d8a0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d8bc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C9);
     bVar2 = *pbVar12 & 0xfe | bVar6 & 1;
     goto SUB_0804da2c;
   case 0x804d8c0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d8dc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C9);
     bVar2 = (byte)((param_3 & 0xf) << 1);
     bVar6 = *pbVar12;
     bVar13 = 0xe1;
     break;
   case 0x804d8e0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d8fc);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C9);
     bVar2 = (byte)((param_3 & 1) << 5);
     bVar6 = *pbVar12;
     bVar13 = 0xdf;
     break;
   case 0x804d900:
     iVar11 = *(int *)(param_1 + 0x350);
-    iVar19 = _DAT_0804d90c;
+    iVar19 = 0x21C9;
     goto SUB_0804da1a;
   case 0x804d910:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d924);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21C9);
     bVar2 = (byte)(param_3 << 7);
     bVar6 = *pbVar12;
     bVar13 = 0x7f;
     break;
   case 0x804d928:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d944);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21CA);
     bVar2 = *pbVar12 & 0xfc | bVar6 & 3;
     goto SUB_0804da2c;
   case 0x804d948:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d964);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21CA);
     bVar2 = (byte)((param_3 & 1) << 2);
     bVar6 = *pbVar12;
     bVar13 = 0xfb;
     break;
   case 0x804d968:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d984);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21CA);
     bVar2 = (byte)((param_3 & 1) << 3);
     bVar6 = *pbVar12;
     bVar13 = 0xf7;
     break;
   case 0x804d988:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d9a4);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21CA);
     bVar2 = (byte)((param_3 & 1) << 4);
     bVar6 = *pbVar12;
     bVar13 = 0xef;
     break;
   case 0x804d9a8:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d9c4);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21CA);
     bVar2 = (byte)((param_3 & 1) << 5);
     bVar6 = *pbVar12;
     bVar13 = 0xdf;
     break;
   case 0x804d9c8:
     iVar11 = *(int *)(param_1 + 0x350);
-    iVar19 = _DAT_0804d9d4;
+    iVar19 = 0x21CA;
     goto SUB_0804da1a;
   case 0x804d9d8:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804d9ec);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x21CB);
     bVar2 = (byte)(param_3 << 2);
     bVar6 = *pbVar12;
     bVar13 = 3;
     break;
   case 0x804d9f0:
-    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + _DAT_0804da0c);
+    pbVar12 = (byte *)(*(int *)(param_1 + 0x350) + 0x216E);
     bVar2 = (byte)((param_3 & 1) << 5);
     bVar6 = *pbVar12;
     bVar13 = 0xdf;
     break;
   case 0x804da10:
     iVar11 = *(int *)(param_1 + 0x350);
-    iVar19 = _DAT_0804da50;
+    iVar19 = 0x216E;
 SUB_0804da1a:
     pbVar12 = (byte *)(iVar11 + iVar19);
     bVar2 = (byte)((param_3 & 1) << 6);
@@ -9947,11 +9947,11 @@ SUB_0804da2c:
   *pbVar12 = bVar2;
 case_0804DA2E:
   uVar5 = ScriptEngine_Routine_0804590C(param_1,param_2);
-  if (_DAT_0804da54 < param_2 - 0x46U) {
+  if (0x18B < param_2 - 0x46U) {
     return in_lr;
   }
-  opcode_handler = *(code **)((param_2 - 0x46U) * 4 + _DAT_0804da58);
-  uVar5 = (*opcode_handler)(opcode_handler,_DAT_0804da58,uVar5);
+  opcode_handler = *(code **)((param_2 - 0x46U) * 4 + gInlineTable_0804DA5C);
+  uVar5 = (*opcode_handler)(opcode_handler,gInlineTable_0804DA5C,uVar5);
   return uVar5;
 }
 
@@ -9971,7 +9971,7 @@ undefined8 ScriptEngine_Routine_0804E0F8(int param_1,int param_2)
   undefined1 auStack_18 [4];
   
   piVar5 = (int *)(param_1 + 0x350);
-  iVar2 = *piVar5 + _DAT_0804e168;
+  iVar2 = *piVar5 + 0x1C34;
   cVar1 = Product_GetId();
   if (cVar1 == '\0') {
     uVar6 = 0;
@@ -9981,7 +9981,7 @@ undefined8 ScriptEngine_Routine_0804E0F8(int param_1,int param_2)
       uVar6 = Product_GetPrice(iVar2);
       uVar6 = (-(uVar6 ^ 99) | uVar6 ^ 99) >> 0x1f;
     }
-    if (((uVar6 == 0) && (iVar2 = Farmer_Routine_0800F990(*piVar5 + _DAT_0804e16c,param_2), iVar2 == 0)) &&
+    if (((uVar6 == 0) && (iVar2 = Farmer_Routine_0800F990(*piVar5 + 0x1C38,param_2), iVar2 == 0)) &&
        (iVar2 = ShippingBin_StatEnt_ShipOne(*piVar5 + 0x380,param_2), iVar2 == 0)) {
       uVar4 = 0;
       goto LAB_0804e172;
@@ -10005,8 +10005,8 @@ undefined8 ScriptEngine_Routine_0804E17C(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   piVar4 = (int *)(param_1 + 0x350);
-  cVar1 = HeldItem_IsEmpty(*piVar4 + _DAT_0804e1c4);
-  if (((cVar1 == '\0') && (iVar2 = Farmer_Routine_0800F77C(*piVar4 + _DAT_0804e1c8), iVar2 == 0)) &&
+  cVar1 = HeldItem_IsEmpty(*piVar4 + 0x1C2C);
+  if (((cVar1 == '\0') && (iVar2 = Farmer_Routine_0800F77C(*piVar4 + 0x1C38), iVar2 == 0)) &&
      ((iVar2 = Building_Routine_0800C048(*piVar4 + 500), iVar2 == 0 ||
       (iVar2 = ShippingBin_Routine_0800B68C(iVar2,param_2), iVar2 == 0)))) {
     uVar3 = 0;
@@ -10030,8 +10030,8 @@ undefined8 ScriptEngine_Routine_0804E1D4(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   piVar4 = (int *)(param_1 + 0x350);
-  cVar1 = HeldItem_IsEmpty(*piVar4 + _DAT_0804e21c);
-  if (((cVar1 == '\0') && (iVar2 = Farmer_Routine_0800F77C(*piVar4 + _DAT_0804e220), iVar2 == 0)) &&
+  cVar1 = HeldItem_IsEmpty(*piVar4 + 0x1C2C);
+  if (((cVar1 == '\0') && (iVar2 = Farmer_Routine_0800F77C(*piVar4 + 0x1C38), iVar2 == 0)) &&
      ((iVar2 = Building_Routine_0800C060(*piVar4 + 500), iVar2 == 0 ||
       (iVar2 = Fridge_GetItem(iVar2,param_2), iVar2 == 0)))) {
     uVar3 = 0;
@@ -10055,7 +10055,7 @@ undefined8 ScriptEngine_Routine_0804E22C(int param_1,int param_2)
   undefined4 in_lr;
   undefined1 auStack_14 [4];
   
-  iVar4 = *(int *)(param_1 + 0x350) + _DAT_0804e2ac;
+  iVar4 = *(int *)(param_1 + 0x350) + 0x1C2C;
   cVar1 = HeldItem_IsEmpty(iVar4);
   if ((cVar1 == '\0') && (iVar2 = HeldItem_GetKind(iVar4), iVar2 == 1)) {
     auStack_14[0] = HeldItem_GetArticle(iVar4);
@@ -10064,7 +10064,7 @@ undefined8 ScriptEngine_Routine_0804E22C(int param_1,int param_2)
   }
   else {
 LAB_0804e272:
-    iVar4 = Farmer_Routine_0800F714(*(int *)(param_1 + 0x350) + _DAT_0804e2b0,param_2);
+    iVar4 = Farmer_Routine_0800F714(*(int *)(param_1 + 0x350) + 0x1C38,param_2);
     if ((iVar4 == -1) &&
        ((iVar4 = Building_Routine_0800C060(*(int *)(param_1 + 0x350) + 500), iVar4 == 0 ||
         (iVar4 = Shelf_GetItem(iVar4,param_2), iVar4 == -1)))) {
@@ -10090,7 +10090,7 @@ undefined8 ScriptEngine_Routine_0804E2C0(int param_1,int param_2)
   undefined4 in_lr;
   undefined1 auStack_14 [4];
   
-  iVar4 = *(int *)(param_1 + 0x350) + _DAT_0804e340;
+  iVar4 = *(int *)(param_1 + 0x350) + 0x1C2C;
   cVar1 = HeldItem_IsEmpty(iVar4);
   if ((cVar1 == '\0') && (iVar2 = HeldItem_GetKind(iVar4), iVar2 == 0)) {
     HeldItem_GetFood(auStack_14,iVar4);
@@ -10099,7 +10099,7 @@ undefined8 ScriptEngine_Routine_0804E2C0(int param_1,int param_2)
   }
   else {
 LAB_0804e304:
-    iVar4 = Farmer_Routine_0800F6B4(*(int *)(param_1 + 0x350) + _DAT_0804e344,param_2);
+    iVar4 = Farmer_Routine_0800F6B4(*(int *)(param_1 + 0x350) + 0x1C38,param_2);
     if ((iVar4 == -1) &&
        ((iVar4 = Building_Routine_0800C048(*(int *)(param_1 + 0x350) + 500), iVar4 == 0 ||
         (iVar4 = ShippingBin_Routine_0800B7B8(iVar4,param_2), iVar4 == -1)))) {
@@ -10124,7 +10124,7 @@ undefined8 ScriptEngine_Routine_0804E354(int param_1,int param_2)
   undefined4 in_lr;
   undefined1 auStack_14 [4];
   
-  iVar3 = *(int *)(param_1 + 0x350) + _DAT_0804e3c4;
+  iVar3 = *(int *)(param_1 + 0x350) + 0x1C34;
   cVar1 = Product_GetId(iVar3);
   if (cVar1 == '\0') {
     auStack_14[0] = Product_Construct(iVar3);
@@ -10133,7 +10133,7 @@ undefined8 ScriptEngine_Routine_0804E354(int param_1,int param_2)
   }
   else {
 LAB_0804e390:
-    iVar3 = Farmer_Routine_0800F92C(*(int *)(param_1 + 0x350) + _DAT_0804e3c8,param_2);
+    iVar3 = Farmer_Routine_0800F92C(*(int *)(param_1 + 0x350) + 0x1C38,param_2);
     if ((iVar3 == -1) &&
        (iVar3 = ShippingBin_Routine_0800B544(*(int *)(param_1 + 0x350) + 0x380,param_2), iVar3 == -1)) {
       uVar2 = 0;
@@ -10166,7 +10166,7 @@ ScriptEngine_Routine_0804E3D8(int param_1,uint param_2,int *param_3,undefined4 p
     case 0x804e3f4:
       uVar1 = Product_GetPrice(unaff_r4);
       if ((((int)(-(uVar1 ^ 99) | uVar1 ^ 99) < 0) ||
-          (iVar4 = Farmer_Routine_0800F990(*param_3 + _DAT_0804e16c,0), iVar4 != 0)) ||
+          (iVar4 = Farmer_Routine_0800F990(*param_3 + 0x1C38,0), iVar4 != 0)) ||
          (iVar4 = ShippingBin_StatEnt_ShipOne(*param_3 + 0x380,0), iVar4 != 0)) {
         uVar2 = 1;
       }
@@ -10196,7 +10196,7 @@ ScriptEngine_Routine_0804E3D8(int param_1,uint param_2,int *param_3,undefined4 p
       }
       break;
     case 0x804e492:
-      iVar4 = *(int *)(param_1 + 0x350) + _DAT_0804e4a8;
+      iVar4 = *(int *)(param_1 + 0x350) + 0x1C70;
     }
   }
   return CONCAT44(in_lr,iVar4);
@@ -10269,7 +10269,7 @@ undefined4 ScriptEngine_Routine_0804E7A0(uint param_1,undefined4 param_2,uint pa
   uStack_8 = uStack_8 | uStack_8 << 0x10;
   uStack_4 = in_lr;
   CpuFastSet(&uStack_8,param_2,
-                  (param_1 >> 0x10) * 0x20 * (param_1 & 0xffff) >> 2 & _DAT_0804e7d8 | 0x1000000);
+                  (param_1 >> 0x10) * 0x20 * (param_1 & 0xffff) >> 2 & 0x001FFFFF | 0x1000000);
   return uStack_4;
 }
 
@@ -10297,7 +10297,7 @@ ScriptEngine_Routine_0804E7DC(uint param_1,int param_2,uint param_3,uint param_4
   uVar4 = param_1 * 8;
   if ((((param_3 == 0) && (param_4 == 0)) && (uVar2 <= param_5)) && (uVar4 <= param_6)) {
     uStack_20 = uVar1;
-    CpuFastSet(&uStack_20,param_2,param_1 * 0x20 * uVar3 >> 2 & _DAT_0804e83c | 0x1000000);
+    CpuFastSet(&uStack_20,param_2,param_1 * 0x20 * uVar3 >> 2 & 0x001FFFFF | 0x1000000);
   }
   else if ((param_3 < uVar3) && (param_4 < param_1)) {
     if (uVar2 <= param_3 + param_5) {
@@ -10310,7 +10310,7 @@ ScriptEngine_Routine_0804E7DC(uint param_1,int param_2,uint param_3,uint param_4
        (((param_5 & 7) == 0 && ((param_6 & 7) == 0)))) {
       param_6 = param_6 >> 3;
       param_2 = param_2 + (uVar3 * (param_4 >> 3) + (param_3 >> 3)) * 0x20;
-      uVar2 = _DAT_0804e8e8 & param_5 & _DAT_0804e8ec;
+      uVar2 = 0x3FFFFFF8 & param_5 & 0x001FFFFF;
       do {
         uStack_20 = uVar1;
         CpuFastSet(&uStack_20,param_2,uVar2 | 0x1000000);
@@ -10402,7 +10402,7 @@ undefined4 ScriptEngine_Routine_0804E9D0(uint param_1,undefined4 param_2,undefin
   undefined4 in_lr;
   
   CpuFastSet(param_3,param_2,
-                  ((param_1 >> 0x10) * (param_1 & 0xffff) & 0x7ffffff) << 3 & _DAT_0804e9f0);
+                  ((param_1 >> 0x10) * (param_1 & 0xffff) & 0x7ffffff) << 3 & 0x001FFFFF);
   return in_lr;
 }
 
@@ -10451,7 +10451,7 @@ void ScriptEngine_Routine_0804EA58(undefined4 *param_1,undefined4 param_2,undefi
   
   *param_1 = 0;
   param_1[1] = 0;
-  param_1[2] = _DAT_0804ea7c;
+  param_1[2] = gRomData_080E7868;
   param_1[3] = param_2;
   *(undefined2 *)((int)param_1 + 0x12) = param_3;
   param_1[5] = param_4;
@@ -10469,7 +10469,7 @@ undefined4 ScriptEngine_Routine_0804EA80(int param_1)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 8) = _DAT_0804ea90;
+  *(undefined4 *)(param_1 + 8) = gRomData_080E7868;
   Farm_Routine_080098AC();
   return in_lr;
 }
@@ -10484,11 +10484,11 @@ void ScriptEngine_Routine_0804EA94(uint *param_1,uint param_2,uint param_3,uint 
   uint uVar1;
   uint uVar2;
   
-  uVar1 = _DAT_0804eb58 & (_DAT_0804eb54 & param_4 & 0x3ff | (param_5 & 0xf) << 0xc);
-  uVar2 = _DAT_0804eb5c &
-          (_DAT_0804eb4c & (_DAT_0804eb44 & 0x1000 | param_3 & 0xff) |
-          (param_2 & _DAT_0804eb48) << 0x10);
-  *param_1 = _DAT_0804eb60 & (uVar2 | (param_8 & 3) << 0xe) |
+  uVar1 = 0xFFFFF3FF & (0xFFFF0FFF & param_4 & 0x3ff | (param_5 & 0xf) << 0xc);
+  uVar2 = 0xFFFF3FFF &
+          (0xFE00FFFF & (0xFFFFFF00 & 0x1000 | param_3 & 0xff) |
+          (param_2 & 0x1FF) << 0x10);
+  *param_1 = 0x3FFFFFFF & (uVar2 | (param_8 & 3) << 0xe) |
              ((uVar2 >> 0x1e) + param_7) * 0x40000000;
   param_1[1] = uVar1 | (param_6 & 3) << 10;
   return;
@@ -10525,9 +10525,9 @@ undefined4 ScriptEngine_Routine_0804EB64(int param_1,undefined1 *param_2,uint pa
     }
     VTable_Routine_080E0EFC(param_1,pbVar6);
     uStack_32 = 0;
-    puVar1 = _DAT_0804ec30;
-    puVar2 = _DAT_0804ec2c;
-    iVar3 = _DAT_0804ec28;
+    puVar1 = gRomData_080F9F2C;
+    puVar2 = gRomData_080F9F28;
+    iVar3 = gRomData_080F9E78;
     goto LAB_0804ec44;
   }
   bVar9 = param_1 < 0;
@@ -10565,9 +10565,9 @@ LAB_0804ebd2:
   }
   *pbStack_24 = 0;
   pbVar5 = abStack_3d + 1;
-  puVar1 = _DAT_0804ec30;
-  puVar2 = _DAT_0804ec2c;
-  iVar3 = _DAT_0804ec28;
+  puVar1 = gRomData_080F9F2C;
+  puVar2 = gRomData_080F9F28;
+  iVar3 = gRomData_080F9E78;
 LAB_0804ec44:
   for (; uVar8 = (uint)*pbVar5, uVar8 != 0; pbVar5 = pbVar5 + 1) {
     if ((uVar8 - 0x30 & 0xff) < 10) {
@@ -10668,7 +10668,7 @@ void ScriptEngine_Routine_0804ED7C(undefined4 *param_1,undefined4 param_2,undefi
   
   *param_1 = 0;
   param_1[1] = 0;
-  param_1[2] = _DAT_0804ed9c;
+  param_1[2] = gRomData_080E7858;
   param_1[3] = param_2;
   param_1[4] = param_3;
   *(undefined2 *)(param_1 + 5) = param_4;
@@ -10685,7 +10685,7 @@ undefined4 ScriptEngine_Routine_0804EDA0(int param_1)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 8) = _DAT_0804edb0;
+  *(undefined4 *)(param_1 + 8) = gRomData_080E7858;
   Farm_Routine_080098AC();
   return in_lr;
 }
@@ -10721,7 +10721,7 @@ void ScriptEngine_Routine_0804EDF8(undefined4 *param_1,undefined4 param_2,undefi
   
   *param_1 = 0;
   param_1[1] = 0;
-  param_1[2] = _DAT_0804ee18;
+  param_1[2] = gRomData_080E7848;
   param_1[3] = param_2;
   param_1[4] = param_3;
   *(undefined2 *)(param_1 + 5) = param_4;
@@ -10738,7 +10738,7 @@ undefined4 ScriptEngine_Routine_0804EE1C(int param_1)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 8) = _DAT_0804ee2c;
+  *(undefined4 *)(param_1 + 8) = gRomData_080E7848;
   Farm_Routine_080098AC();
   return in_lr;
 }
@@ -10771,7 +10771,7 @@ void ScriptEngine_Routine_0804EE64(undefined4 *param_1,undefined4 param_2,undefi
   
   *param_1 = 0;
   param_1[1] = 0;
-  param_1[2] = _DAT_0804ee84;
+  param_1[2] = gRomData_080E7838;
   param_1[3] = param_2;
   param_1[4] = param_3;
   *(undefined2 *)(param_1 + 5) = param_4;
@@ -10788,7 +10788,7 @@ undefined4 ScriptEngine_Routine_0804EE88(int param_1)
 {
   undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 8) = _DAT_0804ee98;
+  *(undefined4 *)(param_1 + 8) = gRomData_080E7838;
   Farm_Routine_080098AC();
   return in_lr;
 }
@@ -10876,7 +10876,7 @@ undefined8 ScriptEngine_Routine_0804EF20(int param_1)
     puVar7 = puVar5 + (*(ushort *)(param_1 + 0x14) & 0x3fff) * 8;
     uVar3 = (bVar1 & 0x7f) >> 6 ^ 1;
     *(byte *)(param_1 + 0x15) = bVar1 & 0xbf | (byte)(uVar3 << 6);
-    uVar4 = _DAT_0804ef90 << (uVar3 << 2);
+    uVar4 = 0x0F0F0F0F << (uVar3 << 2);
     uVar3 = ~uVar4;
     do {
       *puVar5 = *puVar6 & uVar4;
@@ -10934,7 +10934,7 @@ undefined8 ScriptEngine_Routine_0804EFAC(int param_1,int param_2)
       uVar2 = math_modsi3(uVar2,0x1c);
     }
     *(short *)(param_1 + 0x14) = (short)uVar2;
-    if ((param_2 != 0x20) && (param_2 != _DAT_0804f054)) {
+    if ((param_2 != 0x20) && (param_2 != 0x8140)) {
       *(undefined1 *)(param_1 + 0x1b) = 1;
     }
     uVar3 = 1;
@@ -11055,21 +11055,21 @@ longlong ScriptEngine_Routine_0804F19C(int param_1)
   undefined4 uStack_4c;
   undefined1 auStack_3c [48];
   
-  uStack_60 = ((*(ushort *)(param_1 + 0xc) & 0x7fff) >> 5) + 3 & _DAT_0804f270 |
+  uStack_60 = ((*(ushort *)(param_1 + 0xc) & 0x7fff) >> 5) + 3 & 0x3FF |
               ((*(uint *)(param_1 + 0xc) & 0x7ffff) >> 0xf) << 0xc;
   uStack_60 = uStack_60 | uStack_60 << 0x10;
-  CpuFastSet(&uStack_60,(*(byte *)(param_1 + 0xc) & 0x1f) * 0x800 + 0x6000000,_DAT_0804f274);
+  CpuFastSet(&uStack_60,(*(byte *)(param_1 + 0xc) & 0x1f) * 0x800 + 0x6000000,0x010000A0);
   Animal_Routine_08051320((*(byte *)(param_1 + 0xc) & 0x1f) * 0x800 + 0x6000000,0x10,0,0xe,3,
                 (*(ushort *)(param_1 + 0xc) & 0x7fff) >> 5,
                 (*(uint *)(param_1 + 0xc) & 0x7ffff) >> 0xf);
   Animal_Routine_08051320((*(byte *)(param_1 + 0xc) & 0x1f) * 0x800 + 0x6000000,0,3,0x1e,7,
                 (*(ushort *)(param_1 + 0xc) & 0x7fff) >> 5,
                 (*(uint *)(param_1 + 0xc) & 0x7ffff) >> 0xf);
-  CpuFastSet(*_DAT_0804f278,((*(uint *)(param_1 + 0xc) & 0x7ffff) >> 0xf) * 0x20 + 0x5000000,8)
+  CpuFastSet(*gRomData_080F9F78,((*(uint *)(param_1 + 0xc) & 0x7ffff) >> 0xf) * 0x20 + 0x5000000,8)
   ;
-  Animal_Routine_0805E6CC(auStack_3c,_DAT_0804f27c);
+  Animal_Routine_0805E6CC(auStack_3c,gRomGfx_08728208);
   Animal_Routine_0805E790(auStack_5c,auStack_3c,0);
-  CpuFastSet(uStack_4c,((*(byte *)(param_1 + 0xe) & 0x7f) >> 3) * 0x20 + _DAT_0804f280,8);
+  CpuFastSet(uStack_4c,((*(byte *)(param_1 + 0xe) & 0x7f) >> 3) * 0x20 + 0x05000200,8);
   return (ulonglong)in_lr << 0x20;
 }
 
@@ -11109,8 +11109,8 @@ ScriptEngine_Routine_0804F288(uint *param_1,byte param_2,uint param_3,byte param
   int iStack_24;
   
   *(byte *)param_1 = (byte)*param_1 & 0x80 | param_2 & 3 | (byte)((param_3 & 0x1f) << 2);
-  *(ushort *)param_1 = (ushort)_DAT_0804f64c & (ushort)*param_1 | (ushort)((param_3 >> 3 & 3) << 7);
-  *param_1 = *param_1 & _DAT_0804f650 | ((param_3 & 7) * 0x40 + 0x14) * 0x200;
+  *(ushort *)param_1 = (ushort)0xFFFFFE7F & (ushort)*param_1 | (ushort)((param_3 >> 3 & 3) << 7);
+  *param_1 = *param_1 & 0xFFF801FF | ((param_3 & 7) * 0x40 + 0x14) * 0x200;
   *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0x87 | (param_4 & 0xf) << 3;
   param_1[1] = param_5;
   param_1[2] = 0;
@@ -11120,20 +11120,20 @@ ScriptEngine_Routine_0804F288(uint *param_1,byte param_2,uint param_3,byte param
   HW_Routine_080083D0(param_1 + 6,param_6,2);
   param_1[8] = 0;
   param_1[9] = 0;
-  param_1[10] = _DAT_0804f654;
+  param_1[10] = gRomData_080E5BB4;
   param_1[0xb] = (uint)(param_1 + 0xc);
   param_1[0xc] = 0;
   param_1[0xd] = 0;
-  param_1[0xe] = _DAT_0804f658;
+  param_1[0xe] = gRomData_080E5BD8;
   param_1[0xc] = (uint)(param_1 + 0xb);
   param_1[0xd] = (uint)(param_1 + 0xc);
   param_1[0xf] = 0;
   param_1[0x30] = 0;
   param_1[0x31] = 0;
-  param_1[0x32] = _DAT_0804f65c;
+  param_1[0x32] = gRomData_080E7898;
   param_1[0x33] = (uint)(param_1 + 0xf);
   puVar11 = param_1 + 0x34;
-  *puVar11 = _DAT_0804f660;
+  *puVar11 = gRomData_080E78C0;
   param_1[0x35] = (uint)(param_1 + 4);
   puVar10 = param_1 + 0x36;
   iVar5 = 2;
@@ -11209,18 +11209,18 @@ ScriptEngine_Routine_0804F288(uint *param_1,byte param_2,uint param_3,byte param
   NPC_Routine_080ADD44(puStack_2c);
   param_1[0x48] = 0;
   param_1[0x49] = 0;
-  param_1[0x4a] = _DAT_0804f664;
+  param_1[0x4a] = gRomData_080E7888;
   param_1[0x4b] = (uint)puStack_30;
-  uVar9 = *_DAT_0804f668;
-  uVar12 = *_DAT_0804f66c;
+  uVar9 = *gRomData_080F9F74;
+  uVar12 = *gRomData_080F9F70;
   param_1[0x4c] = 0;
   param_1[0x4d] = 0;
-  param_1[0x4e] = _DAT_0804f670;
+  param_1[0x4e] = gRomData_080E78E0;
   param_1[0x4f] = uVar12;
   param_1[0x50] =
        (((ushort)*param_1 & 0x1ff) >> 7) * 0x4000 + ((*param_1 & 0x7ffff) >> 9) * 0x20 + 0x6000000;
   *(ushort *)(param_1 + 0x51) =
-       (ushort)_DAT_0804f678 & (ushort)param_1[0x51] | (ushort)(uVar9 >> 5) & (ushort)_DAT_0804f674;
+       (ushort)0xFFFFC000 & (ushort)param_1[0x51] | (ushort)(uVar9 >> 5) & (ushort)0x3FFF;
   *(byte *)((int)param_1 + 0x145) = *(byte *)((int)param_1 + 0x145) & 0x3f | (param_5 == 1) << 7;
   uVar9 = *param_1;
   uVar12 = *param_1;
@@ -11228,15 +11228,15 @@ ScriptEngine_Routine_0804F288(uint *param_1,byte param_2,uint param_3,byte param
   bVar4 = HW_Routine_080074C0(puStack_28,puStack_28[1]);
   param_1[0x52] = 0;
   param_1[0x53] = 0;
-  param_1[0x54] = _DAT_0804f67c;
+  param_1[0x54] = gRomData_080E7878;
   *(byte *)(param_1 + 0x55) = (byte)param_1[0x55] & 0xe0 | (byte)(((byte)uVar9 & 0x7f) >> 2);
   *(ushort *)(param_1 + 0x55) =
-       (ushort)_DAT_0804f680 & (ushort)param_1[0x55] | (ushort)(((uVar12 & 0x7ffff) >> 9) << 5);
-  param_1[0x55] = param_1[0x55] & _DAT_0804f684 | ((bVar1 & 0x7f) >> 3) << 0xf;
+       (ushort)0xFFFF801F & (ushort)param_1[0x55] | (ushort)(((uVar12 & 0x7ffff) >> 9) << 5);
+  param_1[0x55] = param_1[0x55] & 0xFFF87FFF | ((bVar1 & 0x7f) >> 3) << 0xf;
   *(byte *)((int)param_1 + 0x156) = *(byte *)((int)param_1 + 0x156) & 0x87 | (bVar4 & 0xf) << 3;
   param_1[0x56] = 0;
-  Animal_Routine_0805E6CC(param_1 + 0x58,_DAT_0804f688);
-  Animal_Routine_0805E6CC(param_1 + 100,_DAT_0804f68c);
+  Animal_Routine_0805E6CC(param_1 + 0x58,gRomGfx_08728208);
+  Animal_Routine_0805E6CC(param_1 + 100,gRomGfx_0872937C);
   Animal_Routine_0805E824(param_1 + 0x70,param_1 + 100,0,0x100);
   HW_Routine_080083D0(param_1 + 0x75,param_6,7);
   *(byte *)(param_1 + 0x77) = (byte)param_1[0x77] & 0xfc;
@@ -11248,9 +11248,9 @@ ScriptEngine_Routine_0804F288(uint *param_1,byte param_2,uint param_3,byte param
     iVar5 = iVar5 + -1;
   } while (iVar5 != -1);
   *(byte *)(param_1 + 0x140) = 0;
-  pbVar17 = (byte *)(_DAT_0804f690 + (int)param_1);
-  Animal_Routine_0805E6CC(pbVar17,_DAT_0804f694);
-  Animal_Routine_0805E824((byte *)(_DAT_0804f698 + (int)param_1),pbVar17,0,0x100);
+  pbVar17 = (byte *)(0x504 + (int)param_1);
+  Animal_Routine_0805E6CC(pbVar17,gRomGfx_08728320);
+  Animal_Routine_0805E824((byte *)(0x534 + (int)param_1),pbVar17,0,0x100);
   HW_Routine_08007770(param_1 + 0x152,param_7);
   *(byte *)(param_1 + 0x154) = (byte)param_1[0x154] | 0x3f;
   return CONCAT44(in_lr,param_1);
@@ -11268,8 +11268,8 @@ undefined4 ScriptEngine_Routine_0804F69C(int param_1,uint param_2)
   
   HW_Routine_080073E0(param_1 + 0x548,*(undefined4 *)(param_1 + 0x54c));
   HW_Routine_08007184(param_1 + 0x548,2);
-  uVar1 = _DAT_0804f7a0;
-  *(undefined4 *)(param_1 + _DAT_0804f79c) = _DAT_0804f7a0;
+  uVar1 = gRomData_080E5A28;
+  *(undefined4 *)(param_1 + 0x504) = gRomData_080E5A28;
   HW_Routine_080073E0(param_1 + 0x1e8,*(undefined4 *)(param_1 + 0x1ec));
   HW_Routine_08007184(param_1 + 0x1e8,2);
   NPC_Routine_080ADC84(param_1 + 0x1e4,2);

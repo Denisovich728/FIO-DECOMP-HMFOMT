@@ -41,7 +41,7 @@ typedef enum VillagerId {
     NPC_STU         = 30,
     NPC_VAN         = 31,
     NPC_LOU         = 32,
-    // Harvest Sprites
+    // Harvest Sprites (Nature Sprites)
     NPC_CHEF        = 33,
     NPC_NAUGHTY     = 34,
     NPC_BOLD        = 35,
@@ -63,14 +63,20 @@ typedef struct NPCData {
     bool talkedToday;
 } NPCData;
 
+// =============================================================================
 // Function Prototypes
+// =============================================================================
 void NPC_InitAll(void);
 void NPC_UpdateSchedule(u8 hour, Season season, Weather weather);
 void NPC_AddAffection(VillagerId id, s16 delta);
 void NPC_AddFriendship(VillagerId id, s16 delta);
 u16  NPC_GetAffection(VillagerId id);
 u16  NPC_GetFriendship(VillagerId id);
+
+u32  Bachelorette_GetHeartColor(u32 npc_id);
+void Bachelorette_AddHeartPoints(u32 npc_id, s32 points);
 bool Bachelorette_CheckHeartEvent(VillagerId id, u8 eventLevel);
 void HarvestSprite_PerformChores(VillagerId id, u8 choreType);
+const void *Map_GetMapData(u32 map_id);
 
 #endif // NPC_H

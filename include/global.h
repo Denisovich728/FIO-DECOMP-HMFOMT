@@ -6,7 +6,7 @@
 #include <stddef.h>
 
 // =============================================================================
-// GBA Fundamental Data Types
+// GBA Fundamental Data Types & Fixed Width Integers
 // =============================================================================
 typedef uint8_t   u8;
 typedef uint16_t  u16;
@@ -30,6 +30,7 @@ typedef unsigned int   uint;
 typedef unsigned short ushort;
 typedef unsigned char  uchar;
 typedef unsigned long  ulong;
+typedef unsigned long long ulonglong;
 
 // =============================================================================
 // Ghidra / Decompiler Primitive Types
@@ -46,6 +47,15 @@ typedef uint32_t  dword;
 typedef uint64_t  qword;
 typedef void      code;
 
+// Concatenation & Bit Packing Macros
+#define CONCAT44(hi, lo) (((uint64_t)(hi) << 32) | ((uint32_t)(lo)))
+#define CONCAT22(hi, lo) (((uint32_t)(hi) << 16) | ((uint16_t)(lo)))
+#define CONCAT11(hi, lo) (((uint16_t)(hi) << 8)  | ((uint8_t)(lo)))
+
+// Hardware Screen Constants
+#define GBA_SCREEN_WIDTH   240
+#define GBA_SCREEN_HEIGHT  160
+
 // BIOS / Hardware Stub functions
 #define software_interrupt(swi) ((void)0)
 
@@ -59,15 +69,38 @@ typedef void      code;
 #define BIT(n) (1U << (n))
 
 // =============================================================================
-// 2D Vector Structure
+// Geometric & Positional Vectors
 // =============================================================================
 typedef struct Vec2 {
     s16 x;
     s16 y;
 } Vec2;
 
+typedef struct Vec3 {
+    s16 x;
+    s16 y;
+    s16 z;
+} Vec3;
+
+// Direction Facing Enum
+typedef enum Direction {
+    DIR_DOWN  = 0,
+    DIR_UP    = 1,
+    DIR_LEFT  = 2,
+    DIR_RIGHT = 3
+} Direction;
+
+// World Actor Location Definition
+typedef struct ActorLocation {
+    u8  map_id;
+    s16 x;
+    s16 y;
+    u8  elevation;
+    u8  facing;
+} ActorLocation;
+
 // =============================================================================
-// In-Game Calendar & Time Structure
+// In-Game Calendar & Environment State
 // =============================================================================
 typedef enum Season {
     SEASON_SPRING = 0,
@@ -77,10 +110,10 @@ typedef enum Season {
 } Season;
 
 typedef enum Weather {
-    WEATHER_SUNNY = 0,
-    WEATHER_RAINY = 1,
-    WEATHER_SNOWY = 2,
-    WEATHER_TYPHOON = 3,
+    WEATHER_SUNNY    = 0,
+    WEATHER_RAINY    = 1,
+    WEATHER_SNOWY    = 2,
+    WEATHER_TYPHOON  = 3,
     WEATHER_BLIZZARD = 4
 } Weather;
 

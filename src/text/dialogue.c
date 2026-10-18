@@ -12,7 +12,7 @@ static DialogueState s_dialogueState;
 
 void Dialogue_Init(void)
 {
-    memset(&s_dialogueState, 0, sizeof(DialogueState));
+    gba_memset(&s_dialogueState, 0, sizeof(DialogueState));
     s_dialogueState.isWindowOpen = false;
 }
 
@@ -60,7 +60,7 @@ bool Dialogue_Advance(void)
     if (!s_dialogueState.isWindowOpen) return false;
     
     // Check if end of message reached
-    if (s_dialogueState.currentText && s_dialogueState.charIndex >= strlen(s_dialogueState.currentText)) {
+    if (s_dialogueState.currentText && s_dialogueState.charIndex >= gba_strlen(s_dialogueState.currentText)) {
         return false;
     }
     

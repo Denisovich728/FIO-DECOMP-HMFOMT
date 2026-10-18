@@ -4,7 +4,7 @@
 #include "../global.h"
 
 // =============================================================================
-// Product ID Constants
+// Product ID Constants (72 Shippable Products)
 // =============================================================================
 enum ProductId {
     PRODUCT_TURNIP = 0,
@@ -99,14 +99,25 @@ typedef struct ShippingBin {
     ProductStat product_stats[NUM_PRODUCTS];
 } ShippingBin;
 
-// Function prototypes
+// =============================================================================
+// Function Prototypes
+// =============================================================================
 void ShippingBin_Init(ShippingBin *bin);
 void ShippingBin_ResetDaily(ShippingBin *bin);
 u32  ShippingBin_GetValueShipped(const ShippingBin *bin);
 bool ShippingBin_IsDisplayEnabled(const ShippingBin *bin, int product_id);
 u32  ShippingBin_GetAmountShipped(const ShippingBin *bin, int product_id);
-void ShippingBin_ShipItem(ShippingBin *bin, int product_id, int amount);
 bool ShippingBin_HasShippedOneOfEachProduct(const ShippingBin *bin);
 bool ShippingBin_HasShippedOneOfEachCrop(const ShippingBin *bin);
+bool ShippingBin_HasShippedOneOfEachMineral(const ShippingBin *bin);
+void ShippingBin_ShipItem(ShippingBin *bin, u16 item_id, u32 price);
+void ShippingBin_ResetValueShipped(ShippingBin *bin);
+void ShippingBin_ForceEnableDisplay(ShippingBin *bin, int product_id);
+
+void ShippingBin_StatEnt_Init(ProductStat *stat);
+bool ShippingBin_StatEnt_IsDisplayEnabled(const ProductStat *stat);
+u32  ShippingBin_StatEnt_GetAmountShipped(const ProductStat *stat);
+void ShippingBin_StatEnt_ShipOne(ProductStat *stat);
+void ShippingBin_StatEnt_ForceEnableDisplay(ProductStat *stat);
 
 #endif // SHIPPING_BIN_H

@@ -46,7 +46,7 @@ bool Sram_ReadSlot(u8 slot, void *dest, u32 size)
         return false;
     }
     u32 offset = slot * SRAM_SLOT_SIZE;
-    memcpy(dest, &s_virtualSramBuffer[offset], size);
+    gba_memcpy(dest, &s_virtualSramBuffer[offset], size);
     return true;
 }
 
@@ -56,7 +56,7 @@ bool Sram_WriteSlot(u8 slot, const void *src, u32 size)
         return false;
     }
     u32 offset = slot * SRAM_SLOT_SIZE;
-    memcpy(&s_virtualSramBuffer[offset], src, size);
+    gba_memcpy(&s_virtualSramBuffer[offset], src, size);
     
     SaveHeader *header = (SaveHeader *)&s_virtualSramBuffer[offset];
     header->magic = SRAM_MAGIC_HEADER;

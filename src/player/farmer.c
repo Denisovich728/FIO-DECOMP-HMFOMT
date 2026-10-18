@@ -23,9 +23,9 @@ undefined8 Farmer_Init(uint param_1)
 }
 
 // =============================================================================
-// Function: func_0800E304 @ 0x0800E304
+// Function: Farmer_Routine_0800E304 @ 0x0800E304
 // =============================================================================
-undefined8 func_0800E304(uint param_1)
+undefined8 Farmer_Routine_0800E304(uint param_1)
 
 {
   int iVar1;
@@ -39,9 +39,9 @@ undefined8 func_0800E304(uint param_1)
 }
 
 // =============================================================================
-// Function: func_0800E324 @ 0x0800E324
+// Function: Farmer_Routine_0800E324 @ 0x0800E324
 // =============================================================================
-ulonglong func_0800E324(int param_1)
+ulonglong Farmer_Routine_0800E324(int param_1)
 
 {
   uint uVar1;
@@ -57,9 +57,9 @@ ulonglong func_0800E324(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800E354 @ 0x0800E354
+// Function: Farmer_Routine_0800E354 @ 0x0800E354
 // =============================================================================
-undefined8 func_0800E354(int param_1,undefined4 param_2,undefined1 *param_3)
+undefined8 Farmer_Routine_0800E354(int param_1,undefined4 param_2,undefined1 *param_3)
 
 {
   ushort uVar1;
@@ -80,11 +80,11 @@ undefined8 func_0800E354(int param_1,undefined4 param_2,undefined1 *param_3)
   int iStack_28;
   int iStack_24;
   
-  uVar2 = strlen(param_2);
+  uVar2 = gba_strlen(param_2);
   if (0xc < uVar2) {
     uVar2 = 0xc;
   }
-  memcpy(param_1,param_2,uVar2);
+  gba_memcpy(param_1,param_2,uVar2);
   *(undefined1 *)(param_1 + uVar2) = 0;
   *(undefined1 *)(param_1 + 0x10) = 0;
   *(undefined1 *)(param_1 + 0x20) = *param_3;
@@ -92,7 +92,7 @@ undefined8 func_0800E354(int param_1,undefined4 param_2,undefined1 *param_3)
   uStack_44 = uVar1 & uStack_44 & 0x3ff | 2;
   uStack_42 = uVar1 & uStack_42 & 0x3ff;
   uStack_40 = uVar1 & uStack_40;
-  memcpy(param_1 + 0x24,&uStack_44,6);
+  gba_memcpy(param_1 + 0x24,&uStack_44,6);
   *(undefined1 *)(param_1 + 0x2a) = 0;
   iVar4 = param_1 + 0x2c;
   iVar5 = 5;
@@ -124,15 +124,15 @@ undefined8 func_0800E354(int param_1,undefined4 param_2,undefined1 *param_3)
   *puStack_34 = (ushort)_DAT_0800e4dc & *puStack_34;
   *pbStack_30 = *pbStack_30 & 0x1f;
   func_0x0800f170(iStack_2c);
-  func_0800DBC8(iStack_28);
-  func_0800F574(iStack_24);
+  ArticleStack_AddAmount(iStack_28);
+  Farmer_Routine_0800F574(iStack_24);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800E504 @ 0x0800E504
+// Function: Farmer_IsOverworked @ 0x0800E504
 // =============================================================================
-undefined8 func_0800E504(int param_1)
+undefined8 Farmer_IsOverworked(int param_1)
 
 {
   undefined4 in_lr;
@@ -141,9 +141,9 @@ undefined8 func_0800E504(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800E550 @ 0x0800E550
+// Function: Farmer_GetUpgradedTool @ 0x0800E550
 // =============================================================================
-undefined8 func_0800E550(int param_1,byte param_2)
+undefined8 Farmer_GetUpgradedTool(int param_1,byte param_2)
 
 {
   undefined4 uVar1;
@@ -364,9 +364,9 @@ case_0800E916:
 }
 
 // =============================================================================
-// Function: func_0800E924 @ 0x0800E924
+// Function: Farmer_GetLocation @ 0x0800E924
 // =============================================================================
-void func_0800E924(undefined4 *param_1,int param_2)
+void Farmer_GetLocation(undefined4 *param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -380,9 +380,9 @@ void func_0800E924(undefined4 *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800E9E4 @ 0x0800E9E4
+// Function: Farmer_AddStamina @ 0x0800E9E4
 // =============================================================================
-undefined4 func_0800E9E4(int param_1,int param_2)
+undefined4 Farmer_AddStamina(int param_1,int param_2)
 
 {
   uint *puVar1;
@@ -408,21 +408,21 @@ undefined4 func_0800E9E4(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800EA38 @ 0x0800EA38
+// Function: Farmer_ReduceStamina @ 0x0800EA38
 // =============================================================================
-undefined4 func_0800EA38(undefined4 param_1,int param_2)
+undefined4 Farmer_ReduceStamina(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_0800E9E4(param_1,-param_2);
+  Farmer_AddStamina(param_1,-param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800EA44 @ 0x0800EA44
+// Function: Farmer_RestoreStamina @ 0x0800EA44
 // =============================================================================
-undefined4 func_0800EA44(int param_1)
+undefined4 Farmer_RestoreStamina(int param_1)
 
 {
   ushort uVar1;
@@ -435,9 +435,9 @@ undefined4 func_0800EA44(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800EA68 @ 0x0800EA68
+// Function: Farmer_AddFatigue @ 0x0800EA68
 // =============================================================================
-undefined4 func_0800EA68(int param_1,int param_2)
+undefined4 Farmer_AddFatigue(int param_1,int param_2)
 
 {
   uint uVar1;
@@ -481,21 +481,21 @@ undefined4 func_0800EA68(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800EAD4 @ 0x0800EAD4
+// Function: Farmer_ReduceFatigue @ 0x0800EAD4
 // =============================================================================
-undefined4 func_0800EAD4(undefined4 param_1,int param_2)
+undefined4 Farmer_ReduceFatigue(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_0800EA68(param_1,-param_2);
+  Farmer_AddFatigue(param_1,-param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800EAFC @ 0x0800EAFC
+// Function: Farmer_EatPowerBerry @ 0x0800EAFC
 // =============================================================================
-undefined4 func_0800EAFC(int param_1)
+undefined4 Farmer_EatPowerBerry(int param_1)
 
 {
   byte bVar1;
@@ -506,15 +506,15 @@ undefined4 func_0800EAFC(int param_1)
   bVar2 = bVar1 & 0xf;
   if (bVar2 < 10) {
     *(byte *)(param_1 + 0x44) = bVar1 & 0xf0 | bVar2 + 1 & 0xf;
-    func_0800E9E4(param_1,10);
+    Farmer_AddStamina(param_1,10);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800EB3C @ 0x0800EB3C
+// Function: Farmer_CycleHeldItemBack @ 0x0800EB3C
 // =============================================================================
-undefined8 func_0800EB3C(int param_1)
+undefined8 Farmer_CycleHeldItemBack(int param_1)
 
 {
   char cVar1;
@@ -525,28 +525,28 @@ undefined8 func_0800EB3C(int param_1)
   undefined4 uStack_1c;
   undefined4 uStack_18;
   
-  cVar1 = func_0800F604(param_1 + 0x60);
+  cVar1 = Farmer_Routine_0800F604(param_1 + 0x60);
   if (cVar1 == '\0') {
     func_0x0800efec(&uStack_20);
     iVar3 = param_1 + 0x54;
-    cVar1 = func_0800F190(iVar3);
+    cVar1 = HeldItem_IsEmpty(iVar3);
     if (cVar1 == '\0') {
       iVar2 = func_0x0800f204(iVar3);
       if ((1 < iVar2) || (iVar2 < 0)) goto LAB_0800eb72;
-      func_0800F294(&uStack_1c,iVar3);
+      HeldItem_ToRucksackItem(&uStack_1c,iVar3);
       uStack_20 = uStack_1c;
       func_0x0800f390(iVar3);
     }
     iVar2 = 0;
     do {
       uStack_18 = uStack_20;
-      func_0800FD20(&uStack_1c,param_1 + 0x60);
+      Farmer_Routine_0800FD20(&uStack_1c,param_1 + 0x60);
       uStack_20 = uStack_1c;
       iVar2 = iVar2 + 1;
-      cVar1 = func_0800F06C(&uStack_20);
+      cVar1 = Farmer_Routine_0800F06C(&uStack_20);
     } while (cVar1 != '\0');
     uStack_1c = uStack_20;
-    func_0800F418(iVar3);
+    HeldItem_FromRucksackItem(iVar3);
   }
   else {
 LAB_0800eb72:
@@ -556,9 +556,9 @@ LAB_0800eb72:
 }
 
 // =============================================================================
-// Function: func_0800EBC4 @ 0x0800EBC4
+// Function: Farmer_CycleHeldItemFront @ 0x0800EBC4
 // =============================================================================
-undefined8 func_0800EBC4(int param_1)
+undefined8 Farmer_CycleHeldItemFront(int param_1)
 
 {
   char cVar1;
@@ -569,28 +569,28 @@ undefined8 func_0800EBC4(int param_1)
   undefined4 uStack_1c;
   undefined4 uStack_18;
   
-  cVar1 = func_0800F604(param_1 + 0x60);
+  cVar1 = Farmer_Routine_0800F604(param_1 + 0x60);
   if (cVar1 == '\0') {
     func_0x0800efec(&uStack_20);
     iVar3 = param_1 + 0x54;
-    cVar1 = func_0800F190(iVar3);
+    cVar1 = HeldItem_IsEmpty(iVar3);
     if (cVar1 == '\0') {
       iVar2 = func_0x0800f204(iVar3);
       if ((1 < iVar2) || (iVar2 < 0)) goto LAB_0800ebfa;
-      func_0800F294(&uStack_1c,iVar3);
+      HeldItem_ToRucksackItem(&uStack_1c,iVar3);
       uStack_20 = uStack_1c;
       func_0x0800f390(iVar3);
     }
     iVar2 = 0;
     do {
       uStack_18 = uStack_20;
-      func_0800FD38(&uStack_1c,param_1 + 0x60);
+      Farmer_Routine_0800FD38(&uStack_1c,param_1 + 0x60);
       uStack_20 = uStack_1c;
       iVar2 = iVar2 + 1;
-      cVar1 = func_0800F06C(&uStack_20);
+      cVar1 = Farmer_Routine_0800F06C(&uStack_20);
     } while (cVar1 != '\0');
     uStack_1c = uStack_20;
-    func_0800F418(iVar3);
+    HeldItem_FromRucksackItem(iVar3);
   }
   else {
 LAB_0800ebfa:
@@ -600,9 +600,9 @@ LAB_0800ebfa:
 }
 
 // =============================================================================
-// Function: func_0800EC4C @ 0x0800EC4C
+// Function: Farmer_CycleToolBack @ 0x0800EC4C
 // =============================================================================
-undefined8 func_0800EC4C(int param_1)
+undefined8 Farmer_CycleToolBack(int param_1)
 
 {
   char cVar1;
@@ -612,16 +612,16 @@ undefined8 func_0800EC4C(int param_1)
   undefined1 auStack_20 [4];
   undefined1 auStack_1c [4];
   
-  cVar1 = func_0800F874(param_1 + 0x60);
+  cVar1 = Farmer_Routine_0800F874(param_1 + 0x60);
   if (cVar1 == '\0') {
     iVar2 = 0;
     iVar3 = param_1 + 0x5c;
     do {
-      memcpy(auStack_1c,iVar3,2);
-      func_0800FE78(auStack_20,param_1 + 0x60,auStack_1c);
-      memcpy(iVar3,auStack_20,2);
+      gba_memcpy(auStack_1c,iVar3,2);
+      Farmer_Routine_0800FE78(auStack_20,param_1 + 0x60,auStack_1c);
+      gba_memcpy(iVar3,auStack_20,2);
       iVar2 = iVar2 + 1;
-      cVar1 = func_0800DC34(iVar3);
+      cVar1 = Product_GetId(iVar3);
     } while (cVar1 != '\0');
   }
   else {
@@ -631,9 +631,9 @@ undefined8 func_0800EC4C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800ECB0 @ 0x0800ECB0
+// Function: Farmer_CycleToolFront @ 0x0800ECB0
 // =============================================================================
-undefined8 func_0800ECB0(int param_1)
+undefined8 Farmer_CycleToolFront(int param_1)
 
 {
   char cVar1;
@@ -643,16 +643,16 @@ undefined8 func_0800ECB0(int param_1)
   undefined1 auStack_20 [4];
   undefined1 auStack_1c [4];
   
-  cVar1 = func_0800F874(param_1 + 0x60);
+  cVar1 = Farmer_Routine_0800F874(param_1 + 0x60);
   if (cVar1 == '\0') {
     iVar2 = 0;
     iVar3 = param_1 + 0x5c;
     do {
-      memcpy(auStack_1c,iVar3,2);
-      func_0800FEA0(auStack_20,param_1 + 0x60,auStack_1c);
-      memcpy(iVar3,auStack_20,2);
+      gba_memcpy(auStack_1c,iVar3,2);
+      Farmer_Routine_0800FEA0(auStack_20,param_1 + 0x60,auStack_1c);
+      gba_memcpy(iVar3,auStack_20,2);
       iVar2 = iVar2 + 1;
-      cVar1 = func_0800DC34(iVar3);
+      cVar1 = Product_GetId(iVar3);
     } while (cVar1 != '\0');
   }
   else {
@@ -662,9 +662,9 @@ undefined8 func_0800ECB0(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800ED54 @ 0x0800ED54
+// Function: Farmer_Routine_0800ED54 @ 0x0800ED54
 // =============================================================================
-undefined4 func_0800ED54(int param_1,int param_2)
+undefined4 Farmer_Routine_0800ED54(int param_1,int param_2)
 
 {
   uint uVar1;
@@ -683,9 +683,9 @@ undefined4 func_0800ED54(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800ED8C @ 0x0800ED8C
+// Function: Farmer_IncrementPedometerStep @ 0x0800ED8C
 // =============================================================================
-undefined4 func_0800ED8C(int param_1)
+undefined4 Farmer_IncrementPedometerStep(int param_1)
 
 {
   byte bVar1;
@@ -702,15 +702,15 @@ undefined4 func_0800ED8C(int param_1)
     return in_lr;
   }
   bVar2 = false;
-  cVar4 = func_0800DC34(param_1 + 0x5c);
+  cVar4 = Product_GetId(param_1 + 0x5c);
   if (cVar4 == '\0') {
-    auStack_14[0] = func_0800DC10(param_1 + 0x5c);
+    auStack_14[0] = Product_Construct(param_1 + 0x5c);
     iVar5 = func_0x0800db30(auStack_14);
     if (iVar5 != 0x4c) goto LAB_0800edce;
   }
   else {
 LAB_0800edce:
-    iVar5 = func_0800F92C(param_1 + 0x60,0x4c);
+    iVar5 = Farmer_Routine_0800F92C(param_1 + 0x60,0x4c);
     if (iVar5 == -1) goto LAB_0800ede2;
   }
   bVar2 = true;
@@ -726,9 +726,9 @@ LAB_0800ede2:
 }
 
 // =============================================================================
-// Function: func_0800EE2C @ 0x0800EE2C
+// Function: Farmer_Routine_0800EE2C @ 0x0800EE2C
 // =============================================================================
-undefined8 func_0800EE2C(int param_1)
+undefined8 Farmer_Routine_0800EE2C(int param_1)
 
 {
   byte bVar1;
@@ -749,9 +749,9 @@ undefined8 func_0800EE2C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800EE60 @ 0x0800EE60
+// Function: Farmer_Routine_0800EE60 @ 0x0800EE60
 // =============================================================================
-undefined4 func_0800EE60(int param_1)
+undefined4 Farmer_Routine_0800EE60(int param_1)
 
 {
   byte bVar1;
@@ -771,16 +771,16 @@ undefined4 func_0800EE60(int param_1)
     *(byte *)(param_1 + 0x4c) = *(byte *)(param_1 + 0x4c) & 0x80;
   }
   pbVar4 = (byte *)(param_1 + 0x51);
-  if ((*pbVar4 >> 5 < 7) && (iVar3 = func_0800F5D8(param_1 + 0x60), iVar3 != 0)) {
+  if ((*pbVar4 >> 5 < 7) && (iVar3 = Farmer_Routine_0800F5D8(param_1 + 0x60), iVar3 != 0)) {
     *pbVar4 = *pbVar4 & 0x1f | ((*pbVar4 >> 5) + 1) * ' ';
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800EECC @ 0x0800EECC
+// Function: Farmer_Routine_0800EECC @ 0x0800EECC
 // =============================================================================
-undefined8 func_0800EECC(int param_1,uint param_2)
+undefined8 Farmer_Routine_0800EECC(int param_1,uint param_2)
 
 {
   ushort uVar1;
@@ -796,9 +796,9 @@ undefined8 func_0800EECC(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800EEF8 @ 0x0800EEF8
+// Function: Farmer_Routine_0800EEF8 @ 0x0800EEF8
 // =============================================================================
-undefined4 func_0800EEF8(int param_1)
+undefined4 Farmer_Routine_0800EEF8(int param_1)
 
 {
   uint uVar1;
@@ -819,9 +819,9 @@ undefined4 func_0800EEF8(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800EF88 @ 0x0800EF88
+// Function: ToolLevel_AddExperience @ 0x0800EF88
 // =============================================================================
-undefined4 func_0800EF88(ushort *param_1,int param_2)
+undefined4 ToolLevel_AddExperience(ushort *param_1,int param_2)
 
 {
   uint *puVar1;
@@ -840,9 +840,9 @@ undefined4 func_0800EF88(ushort *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800EFB4 @ 0x0800EFB4
+// Function: ToolLevel_SetTierLevel @ 0x0800EFB4
 // =============================================================================
-undefined4 func_0800EFB4(uint *param_1,uint param_2)
+undefined4 ToolLevel_SetTierLevel(uint *param_1,uint param_2)
 
 {
   undefined4 in_lr;
@@ -854,9 +854,9 @@ undefined4 func_0800EFB4(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800F004 @ 0x0800F004
+// Function: Farmer_Routine_0800F004 @ 0x0800F004
 // =============================================================================
-undefined8 func_0800F004(byte *param_1,undefined4 param_2)
+undefined8 Farmer_Routine_0800F004(byte *param_1,undefined4 param_2)
 
 {
   byte bVar1;
@@ -867,17 +867,17 @@ undefined8 func_0800F004(byte *param_1,undefined4 param_2)
   uStack_c = param_2;
   bVar1 = func_0x0800dcb4(&uStack_c);
   param_1[1] = bVar1;
-  bVar1 = func_0800DD6C(&uStack_c);
+  bVar1 = Item_Routine_0800DD6C(&uStack_c);
   param_1[2] = bVar1;
-  bVar1 = func_0800DD8C(&uStack_c);
+  bVar1 = Item_Routine_0800DD8C(&uStack_c);
   param_1[3] = bVar1;
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800F040 @ 0x0800F040
+// Function: Farmer_Routine_0800F040 @ 0x0800F040
 // =============================================================================
-undefined8 func_0800F040(byte *param_1,undefined1 param_2)
+undefined8 Farmer_Routine_0800F040(byte *param_1,undefined1 param_2)
 
 {
   byte bVar1;
@@ -892,9 +892,9 @@ undefined8 func_0800F040(byte *param_1,undefined1 param_2)
 }
 
 // =============================================================================
-// Function: func_0800F06C @ 0x0800F06C
+// Function: Farmer_Routine_0800F06C @ 0x0800F06C
 // =============================================================================
-undefined8 func_0800F06C(byte *param_1)
+undefined8 Farmer_Routine_0800F06C(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -918,9 +918,9 @@ LAB_0800f098:
 }
 
 // =============================================================================
-// Function: func_0800F0A4 @ 0x0800F0A4
+// Function: Farmer_Routine_0800F0A4 @ 0x0800F0A4
 // =============================================================================
-undefined8 func_0800F0A4(undefined4 param_1,byte *param_2)
+undefined8 Farmer_Routine_0800F0A4(undefined4 param_1,byte *param_2)
 
 {
   undefined4 in_lr;
@@ -928,8 +928,8 @@ undefined8 func_0800F0A4(undefined4 param_1,byte *param_2)
   
   if ((*param_2 & 1) == 0) {
     func_0x0800dca8(auStack_10,param_2[1]);
-    func_0800DE0C(auStack_10,(int)(char)param_2[2],(int)(char)param_2[3]);
-    memcpy(param_1,auStack_10,3);
+    Item_Routine_0800DE0C(auStack_10,(int)(char)param_2[2],(int)(char)param_2[3]);
+    gba_memcpy(param_1,auStack_10,3);
   }
   else {
     func_0x0800dca8(param_1,0xab);
@@ -938,9 +938,9 @@ undefined8 func_0800F0A4(undefined4 param_1,byte *param_2)
 }
 
 // =============================================================================
-// Function: func_0800F0E8 @ 0x0800F0E8
+// Function: Farmer_Routine_0800F0E8 @ 0x0800F0E8
 // =============================================================================
-undefined8 func_0800F0E8(byte *param_1)
+undefined8 Farmer_Routine_0800F0E8(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -958,9 +958,9 @@ undefined8 func_0800F0E8(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F124 @ 0x0800F124
+// Function: Farmer_Routine_0800F124 @ 0x0800F124
 // =============================================================================
-undefined8 func_0800F124(byte *param_1)
+undefined8 Farmer_Routine_0800F124(byte *param_1)
 
 {
   uint uVar1;
@@ -973,7 +973,7 @@ undefined8 func_0800F124(byte *param_1)
   }
   else if ((*param_1 & 1) == 1) {
     func_0x0800df50(auStack_c,param_1[1]);
-    uVar1 = func_0800DFB0(auStack_c);
+    uVar1 = Item_Routine_0800DFB0(auStack_c);
     uVar1 = uVar1 & 0xff;
   }
   *param_1 = *param_1 & 0xfd | (byte)((uVar1 & 1) << 1);
@@ -981,9 +981,9 @@ undefined8 func_0800F124(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F190 @ 0x0800F190
+// Function: HeldItem_IsEmpty @ 0x0800F190
 // =============================================================================
-undefined8 func_0800F190(byte *param_1)
+undefined8 HeldItem_IsEmpty(byte *param_1)
 
 {
   uint uVar1;
@@ -1022,9 +1022,9 @@ LAB_0800f1fc:
 }
 
 // =============================================================================
-// Function: func_0800F20C @ 0x0800F20C
+// Function: HeldItem_GetFood @ 0x0800F20C
 // =============================================================================
-undefined8 func_0800F20C(undefined4 param_1,byte *param_2)
+undefined8 HeldItem_GetFood(undefined4 param_1,byte *param_2)
 
 {
   undefined4 in_lr;
@@ -1032,8 +1032,8 @@ undefined8 func_0800F20C(undefined4 param_1,byte *param_2)
   
   if (((*param_2 & 7) == 0) && (param_2[2] < 0xab)) {
     func_0x0800dca8(auStack_10,param_2[2]);
-    func_0800DE0C(auStack_10,(int)(char)param_2[3],(int)(char)param_2[4]);
-    memcpy(param_1,auStack_10,3);
+    Item_Routine_0800DE0C(auStack_10,(int)(char)param_2[3],(int)(char)param_2[4]);
+    gba_memcpy(param_1,auStack_10,3);
   }
   else {
     func_0x0800dca8(param_1,0xab);
@@ -1042,9 +1042,9 @@ undefined8 func_0800F20C(undefined4 param_1,byte *param_2)
 }
 
 // =============================================================================
-// Function: func_0800F258 @ 0x0800F258
+// Function: HeldItem_GetArticle @ 0x0800F258
 // =============================================================================
-undefined8 func_0800F258(byte *param_1)
+undefined8 HeldItem_GetArticle(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -1062,9 +1062,9 @@ undefined8 func_0800F258(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F294 @ 0x0800F294
+// Function: HeldItem_ToRucksackItem @ 0x0800F294
 // =============================================================================
-undefined8 func_0800F294(undefined4 *param_1,byte *param_2)
+undefined8 HeldItem_ToRucksackItem(undefined4 *param_1,byte *param_2)
 
 {
   undefined4 in_lr;
@@ -1075,19 +1075,19 @@ undefined8 func_0800F294(undefined4 *param_1,byte *param_2)
   
   if (((*param_2 & 7) == 0) && (param_2[2] < 0xab)) {
     func_0x0800dca8(&uStack_24,param_2[2]);
-    func_0800DE0C(&uStack_24,(int)(char)param_2[3],(int)(char)param_2[4]);
-    memcpy(&uStack_1c,&uStack_24,3);
-    func_0800F004(&uStack_20,(uint)uStack_1c);
+    Item_Routine_0800DE0C(&uStack_24,(int)(char)param_2[3],(int)(char)param_2[4]);
+    gba_memcpy(&uStack_1c,&uStack_24,3);
+    Farmer_Routine_0800F004(&uStack_20,(uint)uStack_1c);
     if ((int)((uint)*param_2 * 0x10000000) < 0) {
-      func_0800F124(&uStack_20);
+      Farmer_Routine_0800F124(&uStack_20);
     }
     *param_1 = uStack_20;
   }
   else if (((*param_2 & 7) == 1) && (param_2[2] < 0x5f)) {
     func_0x0800df50(auStack_18,param_2[2]);
-    func_0800F040(&uStack_24,auStack_18[0]);
+    Farmer_Routine_0800F040(&uStack_24,auStack_18[0]);
     if ((int)((uint)*param_2 * 0x10000000) < 0) {
-      func_0800F124(&uStack_24);
+      Farmer_Routine_0800F124(&uStack_24);
     }
     *param_1 = uStack_24;
   }
@@ -1098,9 +1098,9 @@ undefined8 func_0800F294(undefined4 *param_1,byte *param_2)
 }
 
 // =============================================================================
-// Function: func_0800F344 @ 0x0800F344
+// Function: Farmer_Routine_0800F344 @ 0x0800F344
 // =============================================================================
-undefined8 func_0800F344(byte *param_1)
+undefined8 Farmer_Routine_0800F344(byte *param_1)
 
 {
   uint uVar1;
@@ -1113,9 +1113,9 @@ undefined8 func_0800F344(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F360 @ 0x0800F360
+// Function: Farmer_Routine_0800F360 @ 0x0800F360
 // =============================================================================
-undefined8 func_0800F360(byte *param_1)
+undefined8 Farmer_Routine_0800F360(byte *param_1)
 
 {
   uint uVar1;
@@ -1128,9 +1128,9 @@ undefined8 func_0800F360(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F3B0 @ 0x0800F3B0
+// Function: HeldItem_SetFood @ 0x0800F3B0
 // =============================================================================
-undefined4 func_0800F3B0(byte *param_1,undefined4 param_2)
+undefined4 HeldItem_SetFood(byte *param_1,undefined4 param_2)
 
 {
   byte bVar1;
@@ -1141,17 +1141,17 @@ undefined4 func_0800F3B0(byte *param_1,undefined4 param_2)
   uStack_c = param_2;
   bVar1 = func_0x0800dcb4(&uStack_c);
   param_1[2] = bVar1;
-  bVar1 = func_0800DD6C(&uStack_c);
+  bVar1 = Item_Routine_0800DD6C(&uStack_c);
   param_1[3] = bVar1;
-  bVar1 = func_0800DD8C(&uStack_c);
+  bVar1 = Item_Routine_0800DD8C(&uStack_c);
   param_1[4] = bVar1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800F3E8 @ 0x0800F3E8
+// Function: HeldItem_SetArticle @ 0x0800F3E8
 // =============================================================================
-undefined4 func_0800F3E8(byte *param_1,undefined1 param_2)
+undefined4 HeldItem_SetArticle(byte *param_1,undefined1 param_2)
 
 {
   byte bVar1;
@@ -1166,9 +1166,9 @@ undefined4 func_0800F3E8(byte *param_1,undefined1 param_2)
 }
 
 // =============================================================================
-// Function: func_0800F418 @ 0x0800F418
+// Function: HeldItem_FromRucksackItem @ 0x0800F418
 // =============================================================================
-undefined4 func_0800F418(byte *param_1,undefined4 param_2)
+undefined4 HeldItem_FromRucksackItem(byte *param_1,undefined4 param_2)
 
 {
   byte bVar1;
@@ -1184,19 +1184,19 @@ undefined4 func_0800F418(byte *param_1,undefined4 param_2)
     *param_1 = *param_1 & 0xf8;
     bVar1 = func_0x0800f11c(&uStack_18);
     *param_1 = *param_1 & 0xf7 | (bVar1 & 1) << 3;
-    func_0800F0A4(auStack_14,&uStack_18);
+    Farmer_Routine_0800F0A4(auStack_14,&uStack_18);
     bVar1 = func_0x0800dcb4(auStack_14);
     param_1[2] = bVar1;
-    bVar1 = func_0800DD6C(auStack_14);
+    bVar1 = Item_Routine_0800DD6C(auStack_14);
     param_1[3] = bVar1;
-    bVar1 = func_0800DD8C(auStack_14);
+    bVar1 = Item_Routine_0800DD8C(auStack_14);
     param_1[4] = bVar1;
   }
   else if (iVar2 == 1) {
     *param_1 = *param_1 & 0xf8 | 1;
     bVar1 = func_0x0800f11c(&uStack_18);
     *param_1 = *param_1 & 0xf7 | (bVar1 & 1) << 3;
-    uStack_10 = func_0800F0E8(&uStack_18);
+    uStack_10 = Farmer_Routine_0800F0E8(&uStack_18);
     bVar1 = func_0x0800df54();
     param_1[2] = bVar1;
   }
@@ -1207,9 +1207,9 @@ undefined4 func_0800F418(byte *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0800F528 @ 0x0800F528
+// Function: HeldItem_CanThrow @ 0x0800F528
 // =============================================================================
-undefined8 func_0800F528(byte *param_1)
+undefined8 HeldItem_CanThrow(byte *param_1)
 
 {
   uint uVar1;
@@ -1222,7 +1222,7 @@ undefined8 func_0800F528(byte *param_1)
   }
   else if ((*param_1 & 7) == 1) {
     func_0x0800df50(auStack_c,param_1[2]);
-    uVar1 = func_0800DFB0(auStack_c);
+    uVar1 = Item_Routine_0800DFB0(auStack_c);
     uVar1 = uVar1 & 0xff;
   }
   *param_1 = *param_1 & 0xf7 | (byte)((uVar1 & 1) << 3);
@@ -1230,9 +1230,9 @@ undefined8 func_0800F528(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F574 @ 0x0800F574
+// Function: Farmer_Routine_0800F574 @ 0x0800F574
 // =============================================================================
-undefined8 func_0800F574(undefined4 *param_1)
+undefined8 Farmer_Routine_0800F574(undefined4 *param_1)
 
 {
   int iVar1;
@@ -1253,13 +1253,13 @@ undefined8 func_0800F574(undefined4 *param_1)
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
   *param_1 = 2;
-  func_0800DBC8(auStack_18);
+  ArticleStack_AddAmount(auStack_18);
   param_1[9] = 0;
   iVar1 = 2;
   puVar2 = param_1 + 10;
   do {
     if (puVar2 != (undefined4 *)0x0) {
-      memcpy(puVar2,auStack_18,2);
+      gba_memcpy(puVar2,auStack_18,2);
     }
     iVar1 = iVar1 + -1;
     puVar2 = (undefined4 *)((int)puVar2 + 2);
@@ -1269,9 +1269,9 @@ undefined8 func_0800F574(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F5D8 @ 0x0800F5D8
+// Function: Farmer_Routine_0800F5D8 @ 0x0800F5D8
 // =============================================================================
-undefined8 func_0800F5D8(uint *param_1)
+undefined8 Farmer_Routine_0800F5D8(uint *param_1)
 
 {
   uint uVar1;
@@ -1292,9 +1292,9 @@ undefined8 func_0800F5D8(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F604 @ 0x0800F604
+// Function: Farmer_Routine_0800F604 @ 0x0800F604
 // =============================================================================
-undefined8 func_0800F604(int *param_1)
+undefined8 Farmer_Routine_0800F604(int *param_1)
 
 {
   char cVar1;
@@ -1309,7 +1309,7 @@ undefined8 func_0800F604(int *param_1)
       uVar2 = 1;
       goto LAB_0800f62c;
     }
-    cVar1 = func_0800F06C(param_1);
+    cVar1 = Farmer_Routine_0800F06C(param_1);
   } while (cVar1 != '\0');
   uVar2 = 0;
 LAB_0800f62c:
@@ -1317,9 +1317,9 @@ LAB_0800f62c:
 }
 
 // =============================================================================
-// Function: func_0800F634 @ 0x0800F634
+// Function: Farmer_Routine_0800F634 @ 0x0800F634
 // =============================================================================
-undefined8 func_0800F634(int *param_1)
+undefined8 Farmer_Routine_0800F634(int *param_1)
 
 {
   char cVar1;
@@ -1330,7 +1330,7 @@ undefined8 func_0800F634(int *param_1)
   iVar3 = 0;
   piVar2 = param_1 + *param_1 + 1;
   while (param_1 = param_1 + 1, param_1 != piVar2) {
-    cVar1 = func_0800F06C(param_1);
+    cVar1 = Farmer_Routine_0800F06C(param_1);
     if (cVar1 != '\0') goto LAB_0800f662;
     iVar3 = iVar3 + 1;
   }
@@ -1340,9 +1340,9 @@ LAB_0800f662:
 }
 
 // =============================================================================
-// Function: func_0800F668 @ 0x0800F668
+// Function: Farmer_Routine_0800F668 @ 0x0800F668
 // =============================================================================
-undefined8 func_0800F668(int *param_1)
+undefined8 Farmer_Routine_0800F668(int *param_1)
 
 {
   char cVar1;
@@ -1353,7 +1353,7 @@ undefined8 func_0800F668(int *param_1)
   iVar2 = *param_1;
   for (piStack_c = param_1 + iVar2 + 1; iVar2 = iVar2 + -1, piStack_c != param_1 + 1;
       piStack_c = piStack_c + -1) {
-    cVar1 = func_0800F06C(piStack_c + -1);
+    cVar1 = Farmer_Routine_0800F06C(piStack_c + -1);
     if (cVar1 != '\0') goto LAB_0800f6aa;
   }
   iVar2 = -1;
@@ -1362,9 +1362,9 @@ LAB_0800f6aa:
 }
 
 // =============================================================================
-// Function: func_0800F6B4 @ 0x0800F6B4
+// Function: Farmer_Routine_0800F6B4 @ 0x0800F6B4
 // =============================================================================
-undefined8 func_0800F6B4(int *param_1,int param_2)
+undefined8 Farmer_Routine_0800F6B4(int *param_1,int param_2)
 
 {
   char cVar1;
@@ -1377,9 +1377,9 @@ undefined8 func_0800F6B4(int *param_1,int param_2)
   iVar4 = 0;
   piVar3 = param_1 + *param_1 + 1;
   while (param_1 = param_1 + 1, param_1 != piVar3) {
-    cVar1 = func_0800F06C(param_1);
+    cVar1 = Farmer_Routine_0800F06C(param_1);
     if ((cVar1 == '\0') && (iVar2 = func_0x0800f09c(param_1), iVar2 == 0)) {
-      func_0800F0A4(auStack_18,param_1);
+      Farmer_Routine_0800F0A4(auStack_18,param_1);
       iVar2 = func_0x0800dcb4(auStack_18);
       if (iVar2 == param_2) goto LAB_0800f70a;
     }
@@ -1391,9 +1391,9 @@ LAB_0800f70a:
 }
 
 // =============================================================================
-// Function: func_0800F714 @ 0x0800F714
+// Function: Farmer_Routine_0800F714 @ 0x0800F714
 // =============================================================================
-undefined8 func_0800F714(int *param_1,int param_2)
+undefined8 Farmer_Routine_0800F714(int *param_1,int param_2)
 
 {
   char cVar1;
@@ -1406,9 +1406,9 @@ undefined8 func_0800F714(int *param_1,int param_2)
   iVar4 = 0;
   piVar3 = param_1 + *param_1 + 1;
   while (param_1 = param_1 + 1, param_1 != piVar3) {
-    cVar1 = func_0800F06C(param_1);
+    cVar1 = Farmer_Routine_0800F06C(param_1);
     if ((cVar1 == '\0') && (iVar2 = func_0x0800f09c(param_1), iVar2 == 1)) {
-      auStack_1c[0] = func_0800F0E8(param_1);
+      auStack_1c[0] = Farmer_Routine_0800F0E8(param_1);
       iVar2 = func_0x0800df54(auStack_1c);
       if (iVar2 == param_2) goto LAB_0800f770;
     }
@@ -1420,9 +1420,9 @@ LAB_0800f770:
 }
 
 // =============================================================================
-// Function: func_0800F77C @ 0x0800F77C
+// Function: Farmer_Routine_0800F77C @ 0x0800F77C
 // =============================================================================
-undefined8 func_0800F77C(int *param_1)
+undefined8 Farmer_Routine_0800F77C(int *param_1)
 
 {
   char cVar1;
@@ -1433,7 +1433,7 @@ undefined8 func_0800F77C(int *param_1)
   iVar3 = 0;
   piVar2 = param_1 + *param_1 + 1;
   while (param_1 = param_1 + 1, param_1 != piVar2) {
-    cVar1 = func_0800F06C(param_1);
+    cVar1 = Farmer_Routine_0800F06C(param_1);
     if (cVar1 != '\0') {
       iVar3 = iVar3 + 1;
     }
@@ -1442,9 +1442,9 @@ undefined8 func_0800F77C(int *param_1)
 }
 
 // =============================================================================
-// Function: func_0800F7AC @ 0x0800F7AC
+// Function: Farmer_Routine_0800F7AC @ 0x0800F7AC
 // =============================================================================
-undefined8 func_0800F7AC(int *param_1,int param_2)
+undefined8 Farmer_Routine_0800F7AC(int *param_1,int param_2)
 
 {
   char cVar1;
@@ -1457,9 +1457,9 @@ undefined8 func_0800F7AC(int *param_1,int param_2)
   iVar4 = 0;
   piVar3 = param_1 + *param_1 + 1;
   while (param_1 = param_1 + 1, param_1 != piVar3) {
-    cVar1 = func_0800F06C(param_1);
+    cVar1 = Farmer_Routine_0800F06C(param_1);
     if ((cVar1 == '\0') && (iVar2 = func_0x0800f09c(param_1), iVar2 == 0)) {
-      func_0800F0A4(auStack_18,param_1);
+      Farmer_Routine_0800F0A4(auStack_18,param_1);
       iVar2 = func_0x0800dcb4(auStack_18);
       if (iVar2 == param_2) {
         iVar4 = iVar4 + 1;
@@ -1470,9 +1470,9 @@ undefined8 func_0800F7AC(int *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800F804 @ 0x0800F804
+// Function: Farmer_Routine_0800F804 @ 0x0800F804
 // =============================================================================
-undefined8 func_0800F804(int *param_1,int param_2)
+undefined8 Farmer_Routine_0800F804(int *param_1,int param_2)
 
 {
   char cVar1;
@@ -1485,9 +1485,9 @@ undefined8 func_0800F804(int *param_1,int param_2)
   iVar4 = 0;
   piVar3 = param_1 + *param_1 + 1;
   while (param_1 = param_1 + 1, param_1 != piVar3) {
-    cVar1 = func_0800F06C(param_1);
+    cVar1 = Farmer_Routine_0800F06C(param_1);
     if ((cVar1 == '\0') && (iVar2 = func_0x0800f09c(param_1), iVar2 == 1)) {
-      auStack_1c[0] = func_0800F0E8(param_1);
+      auStack_1c[0] = Farmer_Routine_0800F0E8(param_1);
       iVar2 = func_0x0800df54(auStack_1c);
       if (iVar2 == param_2) {
         iVar4 = iVar4 + 1;
@@ -1498,9 +1498,9 @@ undefined8 func_0800F804(int *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800F874 @ 0x0800F874
+// Function: Farmer_Routine_0800F874 @ 0x0800F874
 // =============================================================================
-undefined8 func_0800F874(int param_1)
+undefined8 Farmer_Routine_0800F874(int param_1)
 
 {
   char cVar1;
@@ -1517,7 +1517,7 @@ undefined8 func_0800F874(int param_1)
 LAB_0800f8a0:
       return CONCAT44(in_lr,uVar2);
     }
-    cVar1 = func_0800DC34(iVar4);
+    cVar1 = Product_GetId(iVar4);
     if (cVar1 == '\0') {
       uVar2 = 0;
       goto LAB_0800f8a0;
@@ -1527,9 +1527,9 @@ LAB_0800f8a0:
 }
 
 // =============================================================================
-// Function: func_0800F8A8 @ 0x0800F8A8
+// Function: Farmer_Routine_0800F8A8 @ 0x0800F8A8
 // =============================================================================
-undefined8 func_0800F8A8(int param_1)
+undefined8 Farmer_Routine_0800F8A8(int param_1)
 
 {
   char cVar1;
@@ -1541,7 +1541,7 @@ undefined8 func_0800F8A8(int param_1)
   iVar4 = 0;
   iVar2 = *(int *)(param_1 + 0x24);
   for (iVar3 = param_1 + 0x28; iVar3 != iVar2 * 2 + param_1 + 0x28; iVar3 = iVar3 + 2) {
-    cVar1 = func_0800DC34(iVar3);
+    cVar1 = Product_GetId(iVar3);
     if (cVar1 != '\0') goto LAB_0800f8da;
     iVar4 = iVar4 + 1;
   }
@@ -1551,9 +1551,9 @@ LAB_0800f8da:
 }
 
 // =============================================================================
-// Function: func_0800F8E0 @ 0x0800F8E0
+// Function: Farmer_Routine_0800F8E0 @ 0x0800F8E0
 // =============================================================================
-undefined8 func_0800F8E0(int param_1)
+undefined8 Farmer_Routine_0800F8E0(int param_1)
 
 {
   char cVar1;
@@ -1564,7 +1564,7 @@ undefined8 func_0800F8E0(int param_1)
   iVar2 = *(int *)(param_1 + 0x24);
   for (iStack_c = iVar2 * 2 + param_1 + 0x28; iVar2 = iVar2 + -1, iStack_c != param_1 + 0x28;
       iStack_c = iStack_c + -2) {
-    cVar1 = func_0800DC34(iStack_c + -2);
+    cVar1 = Product_GetId(iStack_c + -2);
     if (cVar1 != '\0') goto LAB_0800f924;
   }
   iVar2 = -1;
@@ -1573,9 +1573,9 @@ LAB_0800f924:
 }
 
 // =============================================================================
-// Function: func_0800F92C @ 0x0800F92C
+// Function: Farmer_Routine_0800F92C @ 0x0800F92C
 // =============================================================================
-undefined8 func_0800F92C(int param_1,int param_2)
+undefined8 Farmer_Routine_0800F92C(int param_1,int param_2)
 
 {
   char cVar1;
@@ -1589,9 +1589,9 @@ undefined8 func_0800F92C(int param_1,int param_2)
   iVar5 = 0;
   iVar3 = *(int *)(param_1 + 0x24);
   for (iVar4 = param_1 + 0x28; iVar4 != iVar3 * 2 + param_1 + 0x28; iVar4 = iVar4 + 2) {
-    cVar1 = func_0800DC34(iVar4);
+    cVar1 = Product_GetId(iVar4);
     if (cVar1 == '\0') {
-      auStack_1c[0] = func_0800DC10(iVar4);
+      auStack_1c[0] = Product_Construct(iVar4);
       iVar2 = func_0x0800db30(auStack_1c);
       if (iVar2 == param_2) goto LAB_0800f982;
     }
@@ -1603,9 +1603,9 @@ LAB_0800f982:
 }
 
 // =============================================================================
-// Function: func_0800F990 @ 0x0800F990
+// Function: Farmer_Routine_0800F990 @ 0x0800F990
 // =============================================================================
-undefined8 func_0800F990(int param_1,int param_2)
+undefined8 Farmer_Routine_0800F990(int param_1,int param_2)
 
 {
   char cVar1;
@@ -1619,12 +1619,12 @@ undefined8 func_0800F990(int param_1,int param_2)
   iVar5 = 0;
   iVar3 = *(int *)(param_1 + 0x24);
   for (iVar4 = param_1 + 0x28; iVar4 != iVar3 * 2 + param_1 + 0x28; iVar4 = iVar4 + 2) {
-    cVar1 = func_0800DC34(iVar4);
+    cVar1 = Product_GetId(iVar4);
     if (cVar1 == '\0') {
-      auStack_1c[0] = func_0800DC10(iVar4);
+      auStack_1c[0] = Product_Construct(iVar4);
       iVar2 = func_0x0800db30(auStack_1c);
       if (iVar2 == param_2) {
-        iVar2 = func_0800DC48(iVar4);
+        iVar2 = Product_GetPrice(iVar4);
         iVar5 = (iVar5 + 99) - iVar2;
       }
     }
@@ -1636,9 +1636,9 @@ undefined8 func_0800F990(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800F9FC @ 0x0800F9FC
+// Function: Farmer_Routine_0800F9FC @ 0x0800F9FC
 // =============================================================================
-undefined8 func_0800F9FC(int param_1,int param_2)
+undefined8 Farmer_Routine_0800F9FC(int param_1,int param_2)
 
 {
   char cVar1;
@@ -1652,12 +1652,12 @@ undefined8 func_0800F9FC(int param_1,int param_2)
   iVar5 = 0;
   iVar3 = *(int *)(param_1 + 0x24);
   for (iVar4 = param_1 + 0x28; iVar4 != iVar3 * 2 + param_1 + 0x28; iVar4 = iVar4 + 2) {
-    cVar1 = func_0800DC34(iVar4);
+    cVar1 = Product_GetId(iVar4);
     if (cVar1 == '\0') {
-      auStack_1c[0] = func_0800DC10(iVar4);
+      auStack_1c[0] = Product_Construct(iVar4);
       iVar2 = func_0x0800db30(auStack_1c);
       if (iVar2 == param_2) {
-        iVar2 = func_0800DC48(iVar4);
+        iVar2 = Product_GetPrice(iVar4);
         iVar5 = iVar5 + iVar2;
       }
     }
@@ -1666,9 +1666,9 @@ undefined8 func_0800F9FC(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800FA60 @ 0x0800FA60
+// Function: Farmer_Routine_0800FA60 @ 0x0800FA60
 // =============================================================================
-undefined4 func_0800FA60(uint *param_1)
+undefined4 Farmer_Routine_0800FA60(uint *param_1)
 
 {
   uint uVar1;
@@ -1686,7 +1686,7 @@ undefined4 func_0800FA60(uint *param_1)
   uint uStack_28;
   undefined1 *puStack_24;
   
-  uVar1 = func_0800F5D8();
+  uVar1 = Farmer_Routine_0800F5D8();
   if (uVar1 < 2) {
     uVar1 = 2 << (uVar1 + 1 & 0xff);
     func_0x0800efec(&uStack_28);
@@ -1734,7 +1734,7 @@ undefined4 func_0800FA60(uint *param_1)
         }
       }
     }
-    func_0800DBC8(&uStack_28);
+    ArticleStack_AddAmount(&uStack_28);
     puVar7 = param_1 + 9;
     uVar6 = *puVar7;
     if (uVar1 < uVar6) {
@@ -1755,7 +1755,7 @@ undefined4 func_0800FA60(uint *param_1)
           puStack_24 = (undefined1 *)&uStack_28;
           for (iVar5 = iVar3; iVar5 != iVar9; iVar5 = iVar5 + 2) {
             if (iVar2 != 0) {
-              memcpy(iVar2,iVar5,2);
+              gba_memcpy(iVar2,iVar5,2);
             }
             iVar2 = iVar2 + 2;
           }
@@ -1764,10 +1764,10 @@ undefined4 func_0800FA60(uint *param_1)
           for (iVar5 = iVar3 - iVar9 >> 1; 0 < iVar5; iVar5 = iVar5 + -1) {
             iVar2 = iVar2 + -2;
             iVar3 = iVar3 + -2;
-            memcpy(iVar2,iVar3,2);
+            gba_memcpy(iVar2,iVar3,2);
           }
           for (; uVar1 != 0; uVar1 = uVar1 - 1) {
-            memcpy(iVar9,puStack_24,2);
+            gba_memcpy(iVar9,puStack_24,2);
             iVar9 = iVar9 + 2;
           }
         }
@@ -1775,7 +1775,7 @@ undefined4 func_0800FA60(uint *param_1)
           puStack_24 = (undefined1 *)&uStack_28;
           for (iVar2 = uVar1 - uVar6; iVar2 != 0; iVar2 = iVar2 + -1) {
             if (iVar9 != 0) {
-              memcpy(iVar9,puStack_24,2);
+              gba_memcpy(iVar9,puStack_24,2);
             }
             iVar9 = iVar9 + 2;
           }
@@ -1789,9 +1789,9 @@ undefined4 func_0800FA60(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800FCE4 @ 0x0800FCE4
+// Function: Farmer_Routine_0800FCE4 @ 0x0800FCE4
 // =============================================================================
-undefined8 func_0800FCE4(undefined4 *param_1,int param_2,int param_3)
+undefined8 Farmer_Routine_0800FCE4(undefined4 *param_1,int param_2,int param_3)
 
 {
   char cVar1;
@@ -1801,7 +1801,7 @@ undefined8 func_0800FCE4(undefined4 *param_1,int param_2,int param_3)
   undefined4 uStack_10;
   
   puVar3 = (undefined4 *)(param_2 + param_3 * 4 + 4);
-  cVar1 = func_0800F06C(puVar3);
+  cVar1 = Farmer_Routine_0800F06C(puVar3);
   if (cVar1 == '\0') {
     uVar2 = *puVar3;
     func_0x0800efec(&uStack_10);
@@ -1815,33 +1815,33 @@ undefined8 func_0800FCE4(undefined4 *param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0800FD20 @ 0x0800FD20
+// Function: Farmer_Routine_0800FD20 @ 0x0800FD20
 // =============================================================================
-undefined8 func_0800FD20(undefined4 param_1)
+undefined8 Farmer_Routine_0800FD20(undefined4 param_1)
 
 {
   undefined4 in_lr;
   
-  func_080D7CFC();
+  VTable_Routine_080D7CFC();
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800FD38 @ 0x0800FD38
+// Function: Farmer_Routine_0800FD38 @ 0x0800FD38
 // =============================================================================
-undefined8 func_0800FD38(undefined4 param_1)
+undefined8 Farmer_Routine_0800FD38(undefined4 param_1)
 
 {
   undefined4 in_lr;
   
-  func_080D7D40();
+  VTable_Routine_080D7D40();
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800FD50 @ 0x0800FD50
+// Function: Farmer_Routine_0800FD50 @ 0x0800FD50
 // =============================================================================
-undefined8 func_0800FD50(int *param_1,int param_2,int param_3)
+undefined8 Farmer_Routine_0800FD50(int *param_1,int param_2,int param_3)
 
 {
   char cVar1;
@@ -1856,10 +1856,10 @@ undefined8 func_0800FD50(int *param_1,int param_2,int param_3)
     piVar3 = param_1 + 1;
     if ((param_3 != 0) && (piVar3 != param_1 + iVar2 + 1)) {
       do {
-        cVar1 = func_0800F06C(piVar3);
+        cVar1 = Farmer_Routine_0800F06C(piVar3);
         if (cVar1 != '\0') {
           func_0x0800dca8(&uStack_1c,param_2);
-          func_0800F004(&iStack_20,(uint)uStack_1c);
+          Farmer_Routine_0800F004(&iStack_20,(uint)uStack_1c);
           *piVar3 = iStack_20;
           param_3 = param_3 + -1;
         }
@@ -1871,9 +1871,9 @@ undefined8 func_0800FD50(int *param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0800FDC4 @ 0x0800FDC4
+// Function: Farmer_Routine_0800FDC4 @ 0x0800FDC4
 // =============================================================================
-undefined8 func_0800FDC4(int *param_1,int param_2,int param_3)
+undefined8 Farmer_Routine_0800FDC4(int *param_1,int param_2,int param_3)
 
 {
   char cVar1;
@@ -1885,10 +1885,10 @@ undefined8 func_0800FDC4(int *param_1,int param_2,int param_3)
   if (param_2 < 0x5f) {
     piVar2 = param_1 + *param_1 + 1;
     while ((param_1 = param_1 + 1, param_3 != 0 && (param_1 != piVar2))) {
-      cVar1 = func_0800F06C(param_1);
+      cVar1 = Farmer_Routine_0800F06C(param_1);
       if (cVar1 != '\0') {
         func_0x0800df50(auStack_18,param_2);
-        func_0800F040(&iStack_1c,auStack_18[0]);
+        Farmer_Routine_0800F040(&iStack_1c,auStack_18[0]);
         *param_1 = iStack_1c;
         param_3 = param_3 + -1;
       }
@@ -1898,9 +1898,9 @@ undefined8 func_0800FDC4(int *param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0800FE24 @ 0x0800FE24
+// Function: Farmer_Routine_0800FE24 @ 0x0800FE24
 // =============================================================================
-undefined8 func_0800FE24(undefined4 param_1,int param_2,int param_3)
+undefined8 Farmer_Routine_0800FE24(undefined4 param_1,int param_2,int param_3)
 
 {
   char cVar1;
@@ -1910,51 +1910,51 @@ undefined8 func_0800FE24(undefined4 param_1,int param_2,int param_3)
   undefined1 auStack_14 [4];
   
   iVar2 = param_3 * 2 + param_2 + 0x28;
-  cVar1 = func_0800DC34(iVar2);
+  cVar1 = Product_GetId(iVar2);
   if (cVar1 == '\0') {
-    memcpy(auStack_18,iVar2,2);
-    func_0800DBC8(auStack_14);
-    memcpy(iVar2,auStack_14,2);
-    memcpy(param_1,auStack_18,2);
+    gba_memcpy(auStack_18,iVar2,2);
+    ArticleStack_AddAmount(auStack_14);
+    gba_memcpy(iVar2,auStack_14,2);
+    gba_memcpy(param_1,auStack_18,2);
   }
   else {
-    func_0800DBC8(param_1);
+    ArticleStack_AddAmount(param_1);
   }
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800FE78 @ 0x0800FE78
+// Function: Farmer_Routine_0800FE78 @ 0x0800FE78
 // =============================================================================
-undefined8 func_0800FE78(undefined4 param_1,int param_2,undefined4 param_3)
+undefined8 Farmer_Routine_0800FE78(undefined4 param_1,int param_2,undefined4 param_3)
 
 {
   undefined4 in_lr;
   undefined1 auStack_10 [4];
   
-  memcpy(auStack_10,param_3,2);
-  func_080D7D88(param_1,param_2 + 0x24,auStack_10);
+  gba_memcpy(auStack_10,param_3,2);
+  VTable_Routine_080D7D88(param_1,param_2 + 0x24,auStack_10);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800FEA0 @ 0x0800FEA0
+// Function: Farmer_Routine_0800FEA0 @ 0x0800FEA0
 // =============================================================================
-undefined8 func_0800FEA0(undefined4 param_1,int param_2,undefined4 param_3)
+undefined8 Farmer_Routine_0800FEA0(undefined4 param_1,int param_2,undefined4 param_3)
 
 {
   undefined4 in_lr;
   undefined1 auStack_10 [4];
   
-  memcpy(auStack_10,param_3,2);
-  func_080D7DF4(param_1,param_2 + 0x24,auStack_10);
+  gba_memcpy(auStack_10,param_3,2);
+  VTable_Routine_080D7DF4(param_1,param_2 + 0x24,auStack_10);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800FEC8 @ 0x0800FEC8
+// Function: Farmer_Routine_0800FEC8 @ 0x0800FEC8
 // =============================================================================
-undefined8 func_0800FEC8(int param_1,int param_2,uint param_3)
+undefined8 Farmer_Routine_0800FEC8(int param_1,int param_2,uint param_3)
 
 {
   char cVar1;
@@ -1976,19 +1976,19 @@ undefined8 func_0800FEC8(int param_1,int param_2,uint param_3)
     for (iVar6 = param_1 + 0x28; (param_3 != 0 && (iVar6 != iVar2 * 2 + param_1 + 0x28));
         iVar6 = iVar6 + 2) {
       uStack_24 = param_3;
-      cVar1 = func_0800DC34(iVar6);
+      cVar1 = Product_GetId(iVar6);
       if (cVar1 == '\0') {
-        auStack_1b[0] = func_0800DC10(iVar6);
+        auStack_1b[0] = Product_Construct(iVar6);
         iVar3 = func_0x0800db30(auStack_1b);
         if (iVar3 == param_2) {
-          iVar3 = func_0800DC48(iVar6);
+          iVar3 = Product_GetPrice(iVar6);
           uStack_18 = 99U - iVar3;
           puVar5 = &uStack_24;
           if (99U - iVar3 < uStack_24) {
             puVar5 = &uStack_18;
           }
           uVar4 = *puVar5;
-          func_0800DC5C(iVar6,uVar4);
+          Product_GetName(iVar6,uVar4);
           goto LAB_0800ff70;
         }
       }
@@ -2000,8 +2000,8 @@ undefined8 func_0800FEC8(int param_1,int param_2,uint param_3)
         }
         uVar4 = *puVar5;
         func_0x0800db2c(&uStack_1c,param_2);
-        func_0800DBE0(auStack_28,uStack_1c,uVar4);
-        memcpy(iVar6,auStack_28,2);
+        ArticleStack_SubtractAmount(auStack_28,uStack_1c,uVar4);
+        gba_memcpy(iVar6,auStack_28,2);
 LAB_0800ff70:
         uStack_24 = uStack_24 - uVar4;
       }
@@ -2012,9 +2012,9 @@ LAB_0800ff70:
 }
 
 // =============================================================================
-// Function: func_0800FF8C @ 0x0800FF8C
+// Function: Farmer_Routine_0800FF8C @ 0x0800FF8C
 // =============================================================================
-void func_0800FF8C(undefined4 *param_1)
+void Farmer_Routine_0800FF8C(undefined4 *param_1)
 
 {
   ushort uVar1;
@@ -2030,21 +2030,21 @@ void func_0800FF8C(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_0800FFE0 @ 0x0800FFE0
+// Function: Farmer_Routine_0800FFE0 @ 0x0800FFE0
 // =============================================================================
-undefined8 func_0800FFE0(undefined4 param_1,int param_2)
+undefined8 Farmer_Routine_0800FFE0(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  memcpy(param_1,param_2 + 0x24,6);
+  gba_memcpy(param_1,param_2 + 0x24,6);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800FFF4 @ 0x0800FFF4
+// Function: Farmer_Routine_0800FFF4 @ 0x0800FFF4
 // =============================================================================
-undefined4 func_0800FFF4(uint *param_1,undefined1 param_2)
+undefined4 Farmer_Routine_0800FFF4(uint *param_1,undefined1 param_2)
 
 {
   undefined1 *puVar1;
@@ -2061,21 +2061,21 @@ undefined4 func_0800FFF4(uint *param_1,undefined1 param_2)
 }
 
 // =============================================================================
-// Function: func_08010014 @ 0x08010014
+// Function: Farmer_Routine_08010014 @ 0x08010014
 // =============================================================================
-undefined4 func_08010014(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08010014(int param_1,undefined4 param_2)
 
 {
   undefined4 in_lr;
   
-  memcpy(param_1 + 0x24,param_2,6);
+  gba_memcpy(param_1 + 0x24,param_2,6);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08010024 @ 0x08010024
+// Function: Farmer_Routine_08010024 @ 0x08010024
 // =============================================================================
-undefined4 func_08010024(int *param_1)
+undefined4 Farmer_Routine_08010024(int *param_1)
 
 {
   int *piVar1;
@@ -2090,9 +2090,9 @@ undefined4 func_08010024(int *param_1)
 }
 
 // =============================================================================
-// Function: func_0801004C @ 0x0801004C
+// Function: Farmer_Routine_0801004C @ 0x0801004C
 // =============================================================================
-void func_0801004C(undefined4 *param_1,int param_2)
+void Farmer_Routine_0801004C(undefined4 *param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -2104,17 +2104,17 @@ void func_0801004C(undefined4 *param_1,int param_2)
   int **ppiStack_1c;
   undefined4 uStack_18;
   
-  func_08008980(auStack_30);
+  HW_Routine_08008980(auStack_30);
   piStack_2c = (int *)0x0;
   apiStack_28[0] = (int *)(uint)(*(char *)(param_2 + 0x364) == '\0');
-  uVar1 = func_080005D4(8);
-  piVar2 = (int *)func_08011DC4(uVar1,*(undefined4 *)(param_2 + 4),apiStack_28);
+  uVar1 = Dispatcher_Routine_080005D4(8);
+  piVar2 = (int *)Farmer_Routine_08011DC4(uVar1,*(undefined4 *)(param_2 + 4),apiStack_28);
   if ((piVar2 != piStack_2c) && (piStack_2c != (int *)0x0)) {
     func_0x080d3914(piStack_2c,3,*(undefined4 *)(*piStack_2c + 8));
   }
   piStack_2c = (int *)0x0;
   apiStack_28[0] = piVar2;
-  func_0800082C(apiStack_28);
+  Scene_Routine_0800082C(apiStack_28);
   *param_1 = 0;
   uStack_18 = 0;
   apiStack_28[0] = (int *)0x0;
@@ -2122,34 +2122,34 @@ void func_0801004C(undefined4 *param_1,int param_2)
   if (piStack_2c != (int *)0x0) {
     func_0x080d3914(piStack_2c,3,*(undefined4 *)(*piStack_2c + 8));
   }
-  func_08008A68(auStack_30,2);
+  HW_Routine_08008A68(auStack_30,2);
   (*UNRECOVERED_JUMPTABLE)(param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_08010158 @ 0x08010158
+// Function: Farmer_Routine_08010158 @ 0x08010158
 // =============================================================================
-undefined4 func_08010158(undefined4 *param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08010158(undefined4 *param_1,undefined4 param_2)
 
 {
   undefined4 in_lr;
   
   *param_1 = _DAT_08010198;
   *_DAT_0801019c = 0;
-  func_080D7E64(param_1 + 0xde,2);
-  func_0803EEC8(param_1 + 2,2);
+  VTable_Routine_080D7E64(param_1 + 0xde,2);
+  ScriptEngine_Routine_0803EEC8(param_1 + 2,2);
   if (param_1[1] != 0) {
-    func_080D4480(param_1[1],3);
+    VTable_Routine_080D4480(param_1[1],3);
   }
-  func_080007EC(param_1,param_2);
+  SramProxy_VerifyBufferParity(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080101A0 @ 0x080101A0
+// Function: Farmer_Routine_080101A0 @ 0x080101A0
 // =============================================================================
-undefined8 func_080101A0(undefined4 *param_1,int *param_2)
+undefined8 Farmer_Routine_080101A0(undefined4 *param_1,int *param_2)
 
 {
   int iVar1;
@@ -2161,7 +2161,7 @@ undefined8 func_080101A0(undefined4 *param_1,int *param_2)
   iVar1 = *param_2;
   *param_2 = 0;
   param_1[1] = iVar1;
-  func_0803F804(param_1 + 2);
+  ScriptEngine_StartEventScript(param_1 + 2);
   *(undefined1 *)(param_1 + 0xd9) = 0;
   *(undefined1 *)(param_1 + 0xdb) = 0;
   param_1[0xdc] = 0x1d;
@@ -2174,29 +2174,29 @@ undefined8 func_080101A0(undefined4 *param_1,int *param_2)
   iVar1 = (int)param_1 + _DAT_0801025c;
   iVar3 = 5;
   do {
-    func_080D4130(iVar1);
+    VTable_Routine_080D4130(iVar1);
     iVar1 = iVar1 + 0xc;
     iVar3 = iVar3 + -1;
   } while (iVar3 != -1);
   iVar1 = (int)param_1 + _DAT_08010260;
   iVar3 = 3;
   do {
-    func_080D40CC(iVar1);
+    VTable_Routine_080D40CC(iVar1);
     iVar1 = iVar1 + 0xc;
     iVar3 = iVar3 + -1;
   } while (iVar3 != -1);
   *_DAT_08010264 = param_1;
   if (*param_2 != 0) {
-    func_080D4480(*param_2,3);
+    VTable_Routine_080D4480(*param_2,3);
   }
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08010268 @ 0x08010268
+// Function: Farmer_Routine_08010268 @ 0x08010268
 // =============================================================================
 undefined8
-func_08010268(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+Farmer_Routine_08010268(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
              undefined4 param_5)
 
 {
@@ -2207,10 +2207,10 @@ func_08010268(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefine
   undefined4 in_lr;
   
   *param_1 = _DAT_08010330;
-  uVar1 = func_080005D4(_DAT_08010334);
-  uVar1 = func_08010358(uVar1,param_2,param_3,param_4,param_5);
+  uVar1 = Dispatcher_Routine_080005D4(_DAT_08010334);
+  uVar1 = Farmer_Routine_08010358(uVar1,param_2,param_3,param_4,param_5);
   param_1[1] = uVar1;
-  func_0803F804(param_1 + 2);
+  ScriptEngine_StartEventScript(param_1 + 2);
   *(undefined1 *)(param_1 + 0xd9) = 1;
   param_1[0xda] = 0xab;
   *(undefined1 *)(param_1 + 0xdb) = 0;
@@ -2224,14 +2224,14 @@ func_08010268(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefine
   iVar3 = (int)param_1 + _DAT_0801033c;
   iVar4 = 5;
   do {
-    func_080D4130(iVar3);
+    VTable_Routine_080D4130(iVar3);
     iVar3 = iVar3 + 0xc;
     iVar4 = iVar4 + -1;
   } while (iVar4 != -1);
   iVar3 = (int)param_1 + _DAT_08010340;
   iVar4 = 3;
   do {
-    func_080D40CC(iVar3);
+    VTable_Routine_080D40CC(iVar3);
     iVar3 = iVar3 + 0xc;
     iVar4 = iVar4 + -1;
   } while (iVar4 != -1);
@@ -2240,9 +2240,9 @@ func_08010268(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefine
 }
 
 // =============================================================================
-// Function: func_08010348 @ 0x08010348
+// Function: Farmer_Routine_08010348 @ 0x08010348
 // =============================================================================
-void func_08010348(void)
+void Farmer_Routine_08010348(void)
 
 {
   int iVar1;
@@ -2254,10 +2254,10 @@ void func_08010348(void)
 }
 
 // =============================================================================
-// Function: func_08010358 @ 0x08010358
+// Function: Farmer_Routine_08010358 @ 0x08010358
 // =============================================================================
 undefined8
-func_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 param_4,
+Farmer_Routine_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 param_4,
              undefined4 param_5)
 
 {
@@ -2331,13 +2331,13 @@ func_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 par
   param_1[4] = uStack_c0;
   auStack_bc[0] = param_4;
   puStack_80 = param_1;
-  func_08009A48(param_1 + 5);
-  func_0809AB8C((byte *)((int)puStack_80 + _DAT_08010600));
-  func_0800E354((byte *)((int)puStack_80 + _DAT_08010604),param_3,auStack_bc,puStack_80,uVar17,
+  Farm_Routine_08009A48(param_1 + 5);
+  Animal_Routine_0809AB8C((byte *)((int)puStack_80 + _DAT_08010600));
+  Farmer_Routine_0800E354((byte *)((int)puStack_80 + _DAT_08010604),param_3,auStack_bc,puStack_80,uVar17,
                 uVar18);
-  func_0809B9D4((byte *)((int)puStack_80 + _DAT_08010608),param_5);
+  Animal_Routine_0809B9D4((byte *)((int)puStack_80 + _DAT_08010608),param_5);
   puVar3 = puStack_80;
-  func_0800FF8C(puStack_80 + 0x728);
+  Farmer_Routine_0800FF8C(puStack_80 + 0x728);
   puVar11 = (ushort *)((int)puVar3 + _DAT_0801060c);
   uVar1 = (ushort)_DAT_08010610;
   *puVar11 = uVar1 & *puVar11 | 0x234;
@@ -2345,9 +2345,9 @@ func_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 par
   puVar11[1] = uVar1 & puVar11[1];
   *(byte *)((int)puVar11 + 3) = *(byte *)((int)puVar11 + 3) & 3;
   puVar11[2] = uVar1 & puVar11[2];
-  func_0809EEE8((byte *)((int)puVar3 + _DAT_08010614));
-  func_0809C6BC((byte *)((int)puVar3 + _DAT_08010618));
-  uVar17 = func_08010348();
+  NPC_Routine_0809EEE8((byte *)((int)puVar3 + _DAT_08010614));
+  NPC_Routine_0809C6BC((byte *)((int)puVar3 + _DAT_08010618));
+  uVar17 = Farmer_Routine_08010348();
   iVar12 = _DAT_0801061c;
   pbVar13 = (byte *)((int)puVar3 + _DAT_0801061c);
   *(undefined4 *)pbVar13 = uVar17;
@@ -2383,7 +2383,7 @@ func_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 par
     pbVar13 = pbVar13 + 1;
   } while (0 < iVar12);
   func_0x080114f8((byte *)((int)puStack_80 + _DAT_0801062c));
-  func_0809A8AC((byte *)((int)puStack_80 + _DAT_08010630));
+  Animal_Routine_0809A8AC((byte *)((int)puStack_80 + _DAT_08010630));
   iVar12 = _DAT_08010634;
   *pbVar15 = *pbVar15 | 3;
   *(uint *)((int)puStack_80 + iVar12 + 0x2c) =
@@ -2400,9 +2400,9 @@ func_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 par
   } while (iVar12 != -1);
   func_0x08011510((byte *)((int)puStack_80 + _DAT_08010640));
   puVar3 = puStack_80;
-  func_0809CD78(puStack_80 + 0xb20);
-  func_0809CE8C((byte *)((int)puVar3 + _DAT_08010644));
-  func_0809C144(puVar3 + 0xd20);
+  NPC_Routine_0809CD78(puStack_80 + 0xb20);
+  NPC_Routine_0809CE8C((byte *)((int)puVar3 + _DAT_08010644));
+  NPC_Routine_0809C144(puVar3 + 0xd20);
   pbVar7 = (byte *)((int)puVar3 + _DAT_08010648);
   iVar12 = 2;
   do {
@@ -2415,8 +2415,8 @@ func_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 par
   func_0x080a1a48((byte *)((int)puStack_80 + _DAT_08010654));
   func_0x0809c4e4((byte *)((int)puStack_80 + _DAT_08010658));
   puVar3 = puStack_80;
-  func_0809BFE8((byte *)((int)puStack_80 + _DAT_0801065c));
-  func_0809B2A8((byte *)((int)puVar3 + _DAT_08010608),0x32);
+  NPC_UpdateSchedule((byte *)((int)puStack_80 + _DAT_0801065c));
+  Animal_Routine_0809B2A8((byte *)((int)puVar3 + _DAT_08010608),0x32);
   iVar12 = _DAT_08010660;
   uStack_48 = 0;
   piStack_7c = aiStack_b0;
@@ -2429,14 +2429,14 @@ func_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 par
       uVar17 = func_0x080d11e4();
       iVar9 = func_0x080d0f4e(uVar17,0x18);
       iVar10 = iVar9 * 0x2b;
-      cVar6 = func_0800A78C();
+      cVar6 = FieldPlot_IsPassable();
       if (cVar6 == '\0') {
-        cVar6 = func_0800A78C((byte *)((int)puVar3 + (iVar8 + 1 + iVar10) * 4 + iVar12));
+        cVar6 = FieldPlot_IsPassable((byte *)((int)puVar3 + (iVar8 + 1 + iVar10) * 4 + iVar12));
         if (cVar6 == '\0') {
           iVar14 = (iVar9 + 1) * 0x2b;
-          cVar6 = func_0800A78C((byte *)((int)puVar3 + (iVar8 + iVar14) * 4 + iVar12));
+          cVar6 = FieldPlot_IsPassable((byte *)((int)puVar3 + (iVar8 + iVar14) * 4 + iVar12));
           if (((((cVar6 == '\0') &&
-                (cVar6 = func_0800A78C((byte *)((int)puVar3 + (iVar8 + 1 + iVar14) * 4 + iVar12)),
+                (cVar6 = FieldPlot_IsPassable((byte *)((int)puVar3 + (iVar8 + 1 + iVar14) * 4 + iVar12)),
                 piVar5 = piStack_7c, cVar6 == '\0')) &&
                ((*(uint *)((int)puVar3 + (iVar8 + iVar10) * 4 + iVar12) & 0xfff) >> 8 == 0)) &&
               (((*(uint *)((int)puVar3 + (iVar8 + 1 + iVar10) * 4 + iVar12) & 0xfff) >> 8 == 0 &&
@@ -2455,14 +2455,14 @@ func_08010358(uint *param_1,undefined4 param_2,undefined4 param_3,undefined1 par
     bVar2 = false;
 LAB_0801073e:
     if (bVar2) {
-      func_0800A134((byte *)((int)puVar3 + (aiStack_b0[0] + piStack_7c[1] * 0x2b) * 4 + iVar12),0x1f
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_b0[0] + piStack_7c[1] * 0x2b) * 4 + iVar12),0x1f
                     ,8);
       piVar5 = piStack_7c;
-      func_0800A134((byte *)((int)puVar3 + (aiStack_b0[0] + 1 + piStack_7c[1] * 0x2b) * 4 + iVar12),
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_b0[0] + 1 + piStack_7c[1] * 0x2b) * 4 + iVar12),
                     0x20,8);
-      func_0800A134((byte *)((int)puVar3 + (aiStack_b0[0] + (piVar5[1] + 1) * 0x2b) * 4 + iVar12),
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_b0[0] + (piVar5[1] + 1) * 0x2b) * 4 + iVar12),
                     0x21,8);
-      func_0800A134((byte *)((int)puVar3 + (aiStack_b0[0] + 1 + (piVar5[1] + 1) * 0x2b) * 4 + iVar12
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_b0[0] + 1 + (piVar5[1] + 1) * 0x2b) * 4 + iVar12
                             ),0x22,8);
     }
     puVar4 = puStack_80;
@@ -2479,14 +2479,14 @@ LAB_0801073e:
       uVar17 = func_0x080d11e4();
       iVar9 = func_0x080d0f4e(uVar17,0x18);
       iVar10 = iVar9 * 0x2b;
-      cVar6 = func_0800A78C();
+      cVar6 = FieldPlot_IsPassable();
       if (cVar6 == '\0') {
-        cVar6 = func_0800A78C((byte *)((int)puVar4 + (iVar12 + 1 + iVar10) * 4 + iVar8));
+        cVar6 = FieldPlot_IsPassable((byte *)((int)puVar4 + (iVar12 + 1 + iVar10) * 4 + iVar8));
         if (cVar6 == '\0') {
           iVar14 = (iVar9 + 1) * 0x2b;
-          cVar6 = func_0800A78C((byte *)((int)puVar4 + (iVar12 + iVar14) * 4 + iVar8));
+          cVar6 = FieldPlot_IsPassable((byte *)((int)puVar4 + (iVar12 + iVar14) * 4 + iVar8));
           if (((cVar6 == '\0') &&
-              (cVar6 = func_0800A78C((byte *)((int)puVar4 + (iVar12 + 1 + iVar14) * 4 + iVar8)),
+              (cVar6 = FieldPlot_IsPassable((byte *)((int)puVar4 + (iVar12 + 1 + iVar14) * 4 + iVar8)),
               piVar5 = piStack_74, cVar6 == '\0')) &&
              (((*(uint *)((int)puVar4 + (iVar12 + iVar10) * 4 + iVar8) & 0xfff) >> 8 == 0 &&
               ((((*(uint *)((int)puVar4 + (iVar12 + 1 + iVar10) * 4 + iVar8) & 0xfff) >> 8 == 0 &&
@@ -2506,14 +2506,14 @@ LAB_0801073e:
     bVar2 = false;
 LAB_080108b8:
     if (bVar2) {
-      func_0800A134((byte *)((int)puVar4 + (aiStack_a8[0] + piStack_74[1] * 0x2b) * 4 + iVar8),0x23,
+      FieldPlot_SetCropAndStage((byte *)((int)puVar4 + (aiStack_a8[0] + piStack_74[1] * 0x2b) * 4 + iVar8),0x23,
                     8);
       piVar5 = piStack_74;
-      func_0800A134((byte *)((int)puVar4 + (aiStack_a8[0] + 1 + piStack_74[1] * 0x2b) * 4 + iVar8),
+      FieldPlot_SetCropAndStage((byte *)((int)puVar4 + (aiStack_a8[0] + 1 + piStack_74[1] * 0x2b) * 4 + iVar8),
                     0x24,8);
-      func_0800A134((byte *)((int)puVar4 + (aiStack_a8[0] + (piVar5[1] + 1) * 0x2b) * 4 + iVar8),
+      FieldPlot_SetCropAndStage((byte *)((int)puVar4 + (aiStack_a8[0] + (piVar5[1] + 1) * 0x2b) * 4 + iVar8),
                     0x25,8);
-      func_0800A134((byte *)((int)puVar4 + (aiStack_a8[0] + 1 + (piVar5[1] + 1) * 0x2b) * 4 + iVar8)
+      FieldPlot_SetCropAndStage((byte *)((int)puVar4 + (aiStack_a8[0] + 1 + (piVar5[1] + 1) * 0x2b) * 4 + iVar8)
                     ,0x26,8);
     }
     puVar3 = puStack_80;
@@ -2530,14 +2530,14 @@ LAB_080108b8:
       uVar17 = func_0x080d11e4();
       iVar9 = func_0x080d0f4e(uVar17,0x18);
       iVar10 = iVar9 * 0x2b;
-      cVar6 = func_0800A78C();
+      cVar6 = FieldPlot_IsPassable();
       if (cVar6 == '\0') {
-        cVar6 = func_0800A78C((byte *)((int)puVar3 + (iVar8 + 1 + iVar10) * 4 + iVar12));
+        cVar6 = FieldPlot_IsPassable((byte *)((int)puVar3 + (iVar8 + 1 + iVar10) * 4 + iVar12));
         if (cVar6 == '\0') {
           iVar14 = (iVar9 + 1) * 0x2b;
-          cVar6 = func_0800A78C((byte *)((int)puVar3 + (iVar8 + iVar14) * 4 + iVar12));
+          cVar6 = FieldPlot_IsPassable((byte *)((int)puVar3 + (iVar8 + iVar14) * 4 + iVar12));
           if ((((cVar6 == '\0') &&
-               (cVar6 = func_0800A78C((byte *)((int)puVar3 + (iVar8 + 1 + iVar14) * 4 + iVar12)),
+               (cVar6 = FieldPlot_IsPassable((byte *)((int)puVar3 + (iVar8 + 1 + iVar14) * 4 + iVar12)),
                piVar5 = piStack_6c, cVar6 == '\0')) &&
               (((*(uint *)((int)puVar3 + (iVar8 + iVar10) * 4 + iVar12) & 0xfff) >> 8 == 0 &&
                (((*(uint *)((int)puVar3 + (iVar8 + 1 + iVar10) * 4 + iVar12) & 0xfff) >> 8 == 0 &&
@@ -2556,14 +2556,14 @@ LAB_080108b8:
     bVar2 = false;
 LAB_08010a30:
     if (bVar2) {
-      func_0800A134((byte *)((int)puVar3 + (aiStack_a0[0] + piStack_6c[1] * 0x2b) * 4 + iVar12),0x1b
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_a0[0] + piStack_6c[1] * 0x2b) * 4 + iVar12),0x1b
                     ,8);
       piVar5 = piStack_6c;
-      func_0800A134((byte *)((int)puVar3 + (aiStack_a0[0] + 1 + piStack_6c[1] * 0x2b) * 4 + iVar12),
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_a0[0] + 1 + piStack_6c[1] * 0x2b) * 4 + iVar12),
                     0x1c,8);
-      func_0800A134((byte *)((int)puVar3 + (aiStack_a0[0] + (piVar5[1] + 1) * 0x2b) * 4 + iVar12),
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_a0[0] + (piVar5[1] + 1) * 0x2b) * 4 + iVar12),
                     0x1d,8);
-      func_0800A134((byte *)((int)puVar3 + (aiStack_a0[0] + 1 + (piVar5[1] + 1) * 0x2b) * 4 + iVar12
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_a0[0] + 1 + (piVar5[1] + 1) * 0x2b) * 4 + iVar12
                             ),0x1e,8);
     }
     puVar4 = puStack_80;
@@ -2579,7 +2579,7 @@ LAB_08010a30:
       iVar12 = func_0x080d0f4e(uVar17,0x2b);
       uVar17 = func_0x080d11e4();
       iVar9 = func_0x080d0f4e(uVar17,0x19);
-      cVar6 = func_0800A78C();
+      cVar6 = FieldPlot_IsPassable();
       piVar5 = piStack_64;
       if ((cVar6 == '\0') &&
          ((*(uint *)((int)puVar4 + (iVar12 + iVar9 * 0x2b) * 4 + iVar8) & 0xfff) >> 8 == 0)) {
@@ -2593,7 +2593,7 @@ LAB_08010a30:
     bVar2 = false;
 LAB_08010ba8:
     if (bVar2) {
-      func_0800A134((byte *)((int)puVar4 + (aiStack_98[0] + piStack_34[1] * 0x2b) * 4 + iVar8),0x15,
+      FieldPlot_SetCropAndStage((byte *)((int)puVar4 + (aiStack_98[0] + piStack_34[1] * 0x2b) * 4 + iVar8),0x15,
                     8);
     }
     puVar3 = puStack_80;
@@ -2609,7 +2609,7 @@ LAB_08010ba8:
       iVar8 = func_0x080d0f4e(uVar17,0x2b);
       uVar17 = func_0x080d11e4();
       iVar9 = func_0x080d0f4e(uVar17,0x19);
-      cVar6 = func_0800A78C();
+      cVar6 = FieldPlot_IsPassable();
       piVar5 = piStack_5c;
       if ((cVar6 == '\0') &&
          ((*(uint *)((int)puVar3 + (iVar8 + iVar9 * 0x2b) * 4 + iVar12) & 0xfff) >> 8 == 0)) {
@@ -2623,7 +2623,7 @@ LAB_08010ba8:
     bVar2 = false;
 LAB_08010ce0:
     if (bVar2) {
-      func_0800A134((byte *)((int)puVar3 + (aiStack_90[0] + piStack_30[1] * 0x2b) * 4 + iVar12),0x16
+      FieldPlot_SetCropAndStage((byte *)((int)puVar3 + (aiStack_90[0] + piStack_30[1] * 0x2b) * 4 + iVar12),0x16
                     ,8);
     }
     puVar4 = puStack_80;
@@ -2639,7 +2639,7 @@ LAB_08010ce0:
       iVar12 = func_0x080d0f4e(uVar17,0x2b);
       uVar17 = func_0x080d11e4();
       iVar9 = func_0x080d0f4e(uVar17,0x19);
-      cVar6 = func_0800A78C();
+      cVar6 = FieldPlot_IsPassable();
       piVar5 = piStack_54;
       if ((cVar6 == '\0') &&
          ((*(uint *)((int)puVar4 + (iVar12 + iVar9 * 0x2b) * 4 + iVar8) & 0xfff) >> 8 == 0)) {
@@ -2653,7 +2653,7 @@ LAB_08010ce0:
     bVar2 = false;
 LAB_08010e10:
     if (bVar2) {
-      func_0800A134((byte *)((int)puVar4 + (aiStack_88[0] + piStack_2c[1] * 0x2b) * 4 + iVar8),0x17,
+      FieldPlot_SetCropAndStage((byte *)((int)puVar4 + (aiStack_88[0] + piStack_2c[1] * 0x2b) * 4 + iVar8),0x17,
                     8);
     }
     if (0x31 < uStack_28) {
@@ -2663,9 +2663,9 @@ LAB_08010e10:
 }
 
 // =============================================================================
-// Function: func_08010E68 @ 0x08010E68
+// Function: Farmer_Routine_08010E68 @ 0x08010E68
 // =============================================================================
-undefined8 func_08010E68(int param_1)
+undefined8 Farmer_Routine_08010E68(int param_1)
 
 {
   uint uVar1;
@@ -2680,16 +2680,16 @@ undefined8 func_08010E68(int param_1)
   if ((iVar2 != 0) && (uVar3 = func_0x0809b228(), uVar3 < 200)) {
     uVar1 = 0;
   }
-  for (uVar3 = 0; uVar4 = func_0800C570(param_1 + 0x410), uVar3 < uVar4; uVar3 = uVar3 + 1) {
-    iVar2 = func_0800C5CC(param_1 + 0x410,uVar3);
+  for (uVar3 = 0; uVar4 = Barn_GetCowCount(param_1 + 0x410), uVar3 < uVar4; uVar3 = uVar3 + 1) {
+    iVar2 = Building_Routine_0800C5CC(param_1 + 0x410,uVar3);
     if ((iVar2 != 0) && (uVar4 = func_0x0809b228(), uVar4 < 200)) {
       uVar1 = 0;
     }
   }
   param_1 = param_1 + 0x5f0;
-  for (uVar3 = 0; uVar4 = func_0800CE74(param_1), uVar3 < uVar4; uVar3 = uVar3 + 1) {
-    iVar2 = func_0800CF10(param_1,uVar3);
-    if (((iVar2 != 0) || (iVar2 = func_0800CF38(param_1,uVar3), iVar2 != 0)) &&
+  for (uVar3 = 0; uVar4 = Building_Routine_0800CE74(param_1), uVar3 < uVar4; uVar3 = uVar3 + 1) {
+    iVar2 = Building_Routine_0800CF10(param_1,uVar3);
+    if (((iVar2 != 0) || (iVar2 = Building_Routine_0800CF38(param_1,uVar3), iVar2 != 0)) &&
        (uVar4 = func_0x0809b228(), uVar4 < 200)) {
       uVar1 = 0;
     }
@@ -2698,9 +2698,9 @@ undefined8 func_08010E68(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801140C @ 0x0801140C
+// Function: Farmer_Routine_0801140C @ 0x0801140C
 // =============================================================================
-undefined8 func_0801140C(int param_1)
+undefined8 Farmer_Routine_0801140C(int param_1)
 
 {
   uint uVar1;
@@ -2710,10 +2710,10 @@ undefined8 func_0801140C(int param_1)
   
   uVar1 = func_0x0800b120(param_1 + 0x54);
   iVar3 = param_1 + _DAT_08011450;
-  func_0809ABD8(iVar3,uVar1);
+  Animal_Routine_0809ABD8(iVar3,uVar1);
   pcVar2 = (char *)(param_1 + _DAT_08011454);
   if (*pcVar2 != '\0') {
-    func_0809ABD8(iVar3,uVar1);
+    Animal_Routine_0809ABD8(iVar3,uVar1);
     *pcVar2 = '\0';
   }
   func_0x0800b24c(param_1 + 0x54);
@@ -2721,9 +2721,9 @@ undefined8 func_0801140C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08011464 @ 0x08011464
+// Function: Farmer_Routine_08011464 @ 0x08011464
 // =============================================================================
-undefined8 func_08011464(uint *param_1,uint param_2)
+undefined8 Farmer_Routine_08011464(uint *param_1,uint param_2)
 
 {
   undefined4 in_lr;
@@ -2740,9 +2740,9 @@ undefined8 func_08011464(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_08011498 @ 0x08011498
+// Function: Farmer_Routine_08011498 @ 0x08011498
 // =============================================================================
-undefined8 func_08011498(int param_1,uint param_2)
+undefined8 Farmer_Routine_08011498(int param_1,uint param_2)
 
 {
   undefined4 in_lr;
@@ -2760,9 +2760,9 @@ undefined8 func_08011498(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_080114C8 @ 0x080114C8
+// Function: Farmer_Routine_080114C8 @ 0x080114C8
 // =============================================================================
-undefined8 func_080114C8(int param_1,uint param_2)
+undefined8 Farmer_Routine_080114C8(int param_1,uint param_2)
 
 {
   undefined4 in_lr;
@@ -2779,9 +2779,9 @@ undefined8 func_080114C8(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_08011524 @ 0x08011524
+// Function: Farmer_Routine_08011524 @ 0x08011524
 // =============================================================================
-undefined8 func_08011524(int param_1)
+undefined8 Farmer_Routine_08011524(int param_1)
 
 {
   undefined4 uVar1;
@@ -2795,9 +2795,9 @@ undefined8 func_08011524(int param_1)
 }
 
 // =============================================================================
-// Function: func_08011550 @ 0x08011550
+// Function: Farmer_Routine_08011550 @ 0x08011550
 // =============================================================================
-undefined4 func_08011550(int *param_1)
+undefined4 Farmer_Routine_08011550(int *param_1)
 
 {
   undefined4 in_lr;
@@ -2810,9 +2810,9 @@ undefined4 func_08011550(int *param_1)
 }
 
 // =============================================================================
-// Function: func_08011568 @ 0x08011568
+// Function: Farmer_Routine_08011568 @ 0x08011568
 // =============================================================================
-undefined4 func_08011568(int *param_1)
+undefined4 Farmer_Routine_08011568(int *param_1)
 
 {
   undefined4 in_lr;
@@ -2824,9 +2824,9 @@ undefined4 func_08011568(int *param_1)
 }
 
 // =============================================================================
-// Function: func_08011588 @ 0x08011588
+// Function: Farmer_Routine_08011588 @ 0x08011588
 // =============================================================================
-undefined8 func_08011588(byte *param_1,int param_2)
+undefined8 Farmer_Routine_08011588(byte *param_1,int param_2)
 
 {
   int iVar1;
@@ -2843,9 +2843,9 @@ undefined8 func_08011588(byte *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_080115B0 @ 0x080115B0
+// Function: Farmer_Routine_080115B0 @ 0x080115B0
 // =============================================================================
-undefined8 func_080115B0(undefined4 param_1,undefined4 param_2,int param_3)
+undefined8 Farmer_Routine_080115B0(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 uVar1;
@@ -2858,21 +2858,21 @@ undefined8 func_080115B0(undefined4 param_1,undefined4 param_2,int param_3)
   
   uVar1 = _DAT_080115e0;
   uStack_20 = _DAT_080115e0;
-  cVar2 = func_080006A4(param_2,param_3,&uStack_20,4);
+  cVar2 = SramProxy_WriteBlock(param_2,param_3,&uStack_20,4);
   if (cVar2 == '\0') {
     uVar3 = (uint)*_DAT_080115e4;
     uVar4 = 0x10000;
   }
   else {
-    cVar2 = func_080006A4(param_2,param_3 + 4,param_1,uVar1);
+    cVar2 = SramProxy_WriteBlock(param_2,param_3 + 4,param_1,uVar1);
     if (cVar2 == '\0') {
       uVar3 = (uint)*_DAT_08011608;
       uVar4 = 0x20000;
     }
     else {
       param_3 = _DAT_08011630 + param_3;
-      uStack_1c = func_08011588(param_1,uVar1);
-      cVar2 = func_080006A4(param_2,param_3,&uStack_1c,4);
+      uStack_1c = Farmer_Routine_08011588(param_1,uVar1);
+      cVar2 = SramProxy_WriteBlock(param_2,param_3,&uStack_1c,4);
       if (cVar2 != '\0') {
         uVar3 = 0;
         goto LAB_0801163e;
@@ -2887,9 +2887,9 @@ LAB_0801163e:
 }
 
 // =============================================================================
-// Function: func_08011650 @ 0x08011650
+// Function: Farmer_Routine_08011650 @ 0x08011650
 // =============================================================================
-undefined8 func_08011650(int param_1,undefined4 param_2,int param_3,uint *param_4)
+undefined8 Farmer_Routine_08011650(int param_1,undefined4 param_2,int param_3,uint *param_4)
 
 {
   ushort uVar1;
@@ -2920,12 +2920,12 @@ undefined8 func_08011650(int param_1,undefined4 param_2,int param_3,uint *param_
   *(ushort *)(param_1 + 0x12) = (ushort)_DAT_08011870 & *(ushort *)(param_1 + 0x12);
   uVar2 = _DAT_08011874;
   uStack_24 = param_2;
-  func_08009A48(param_1 + 0x14,_DAT_08011874);
-  func_0809AB8C(param_1 + _DAT_08011878);
+  Farm_Routine_08009A48(param_1 + 0x14,_DAT_08011874);
+  Animal_Routine_0809AB8C(param_1 + _DAT_08011878);
   abStack_38[0] = abStack_38[0] & 0x80;
-  func_0800E354(param_1 + _DAT_0801187c,uVar2,abStack_38);
-  func_0809B9D4(param_1 + _DAT_08011880,uVar2);
-  func_0800FF8C(&UNK_00001ca0 + param_1);
+  Farmer_Routine_0800E354(param_1 + _DAT_0801187c,uVar2,abStack_38);
+  Animal_Routine_0809B9D4(param_1 + _DAT_08011880,uVar2);
+  Farmer_Routine_0800FF8C(&UNK_00001ca0 + param_1);
   puVar7 = (ushort *)(param_1 + _DAT_08011884);
   uVar1 = (ushort)_DAT_08011888;
   *puVar7 = uVar1 & *puVar7 | 0x234;
@@ -2933,8 +2933,8 @@ undefined8 func_08011650(int param_1,undefined4 param_2,int param_3,uint *param_
   puVar7[1] = uVar1 & puVar7[1];
   *(byte *)((int)puVar7 + 3) = *(byte *)((int)puVar7 + 3) & 3;
   puVar7[2] = uVar1 & puVar7[2];
-  func_0809EEE8(param_1 + _DAT_0801188c);
-  func_0809C6BC(param_1 + _DAT_08011890);
+  NPC_Routine_0809EEE8(param_1 + _DAT_0801188c);
+  NPC_Routine_0809C6BC(param_1 + _DAT_08011890);
   iVar8 = _DAT_08011894;
   puVar10 = (undefined4 *)(param_1 + _DAT_08011894);
   *puVar10 = 1;
@@ -2962,7 +2962,7 @@ undefined8 func_08011650(int param_1,undefined4 param_2,int param_3,uint *param_
     puVar10 = (undefined4 *)((int)puVar10 + 1);
   } while (0 < iVar8);
   func_0x080114f8(param_1 + _DAT_080118a4);
-  func_0809A8AC(param_1 + _DAT_080118a8);
+  Animal_Routine_0809A8AC(param_1 + _DAT_080118a8);
   iVar8 = param_1 + _DAT_080118ac;
   *pbVar12 = *pbVar12 | 3;
   *(uint *)(iVar8 + 0x2c) = *(uint *)(iVar8 + 0x2c) & _DAT_080118b0;
@@ -2976,9 +2976,9 @@ undefined8 func_08011650(int param_1,undefined4 param_2,int param_3,uint *param_
     iVar8 = iVar8 + -1;
   } while (iVar8 != -1);
   func_0x08011510(param_1 + _DAT_080118b8);
-  func_0809CD78(&UNK_00002c80 + param_1);
-  func_0809CE8C(param_1 + _DAT_080118bc);
-  func_0809C144(&UNK_00003480 + param_1);
+  NPC_Routine_0809CD78(&UNK_00002c80 + param_1);
+  NPC_Routine_0809CE8C(param_1 + _DAT_080118bc);
+  NPC_Routine_0809C144(&UNK_00003480 + param_1);
   pbVar11 = (byte *)(param_1 + _DAT_080118c0);
   iVar8 = 2;
   do {
@@ -2988,10 +2988,10 @@ undefined8 func_08011650(int param_1,undefined4 param_2,int param_3,uint *param_
   } while (iVar8 != -1);
   func_0x080a1a48(param_1 + _DAT_080118c4);
   func_0x0809c4e4(param_1 + _DAT_080118c8);
-  func_0809BFE8(param_1 + _DAT_080118cc);
+  NPC_UpdateSchedule(param_1 + _DAT_080118cc);
   *param_4 = 0;
   iStack_2c = 0;
-  cVar4 = func_080006E4(uStack_24,&iStack_2c,param_3,4);
+  cVar4 = SramProxy_ReadBlock(uStack_24,&iStack_2c,param_3,4);
   iVar8 = iStack_2c;
   if ((cVar4 == '\0') || (iStack_2c != _DAT_080118d0)) {
 LAB_0801190e:
@@ -3000,7 +3000,7 @@ LAB_0801190e:
     puVar7 = _DAT_08011930;
   }
   else {
-    cVar4 = func_080006E4(uStack_24,param_1,param_3 + 4,iStack_2c);
+    cVar4 = SramProxy_ReadBlock(uStack_24,param_1,param_3 + 4,iStack_2c);
     if (cVar4 == '\0') {
       uVar6 = *param_4;
       uVar9 = 0x20000;
@@ -3008,9 +3008,9 @@ LAB_0801190e:
     }
     else {
       iStack_28 = 0;
-      cVar4 = func_080006E4(uStack_24,&iStack_28,_DAT_080118f8 + param_3,4);
+      cVar4 = SramProxy_ReadBlock(uStack_24,&iStack_28,_DAT_080118f8 + param_3,4);
       if (cVar4 != '\0') {
-        iVar8 = func_08011588(param_1,iVar8);
+        iVar8 = Farmer_Routine_08011588(param_1,iVar8);
         if (iVar8 == iStack_28) goto LAB_0801191e;
         goto LAB_0801190e;
       }
@@ -3025,9 +3025,9 @@ LAB_0801191e:
 }
 
 // =============================================================================
-// Function: func_08011934 @ 0x08011934
+// Function: Farmer_Routine_08011934 @ 0x08011934
 // =============================================================================
-undefined4 func_08011934(int param_1,int param_2,int param_3)
+undefined4 Farmer_Routine_08011934(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -3052,56 +3052,56 @@ undefined4 func_08011934(int param_1,int param_2,int param_3)
   
   iStack_44 = param_1;
   iStack_40 = param_2;
-  memcpy(auStack_4c,_DAT_080119ac,3);
-  memcpy(auStack_48,_DAT_080119b0,2);
+  gba_memcpy(auStack_4c,_DAT_080119ac,3);
+  gba_memcpy(auStack_48,_DAT_080119b0,2);
   iStack_3c = 1;
   uVar7 = 0;
-  uStack_38 = func_0800C570(*(int *)(iStack_44 + 0x8c) + 0x410);
+  uStack_38 = Barn_GetCowCount(*(int *)(iStack_44 + 0x8c) + 0x410);
   uStack_34 = 0;
   if (uStack_38 != 0) {
     do {
-      iVar1 = func_0800C894(*(int *)(iStack_44 + 0x8c) + 0x410,uStack_34);
+      iVar1 = Building_Routine_0800C894(*(int *)(iStack_44 + 0x8c) + 0x410,uStack_34);
       if (iVar1 != 0) {
         iVar2 = func_0x0809b514();
         uVar3 = _DAT_08011abc;
         if (iVar2 == iStack_40) {
           if (iStack_3c == 0) {
-            iVar2 = strlen(param_3);
+            iVar2 = gba_strlen(param_3);
             uVar6 = _DAT_08011ac0 - iVar2;
             if (uVar6 != 0) {
-              uVar4 = strlen(uVar3);
+              uVar4 = gba_strlen(uVar3);
               if (uVar6 < uVar4) {
                 uVar4 = uVar6;
               }
-              memcpy(param_3 + iVar2,uVar3,uVar4);
+              gba_memcpy(param_3 + iVar2,uVar3,uVar4);
               *(undefined1 *)(param_3 + iVar2 + uVar4) = (undefined1)iStack_3c;
             }
           }
           else {
             iStack_3c = 0;
           }
-          uVar3 = func_0809B1F4(iVar1);
-          iVar1 = strlen(param_3);
+          uVar3 = Animal_Routine_0809B1F4(iVar1);
+          iVar1 = gba_strlen(param_3);
           uVar6 = _DAT_08011ac0 - iVar1;
           if (uVar6 != 0) {
-            uVar4 = strlen(uVar3);
+            uVar4 = gba_strlen(uVar3);
             if (uVar6 < uVar4) {
               uVar4 = uVar6;
             }
-            memcpy(param_3 + iVar1,uVar3,uVar4);
+            gba_memcpy(param_3 + iVar1,uVar3,uVar4);
             *(undefined1 *)(param_3 + iVar1 + uVar4) = 0;
           }
           uVar3 = _DAT_08011ac4;
           uVar7 = uVar7 + 1;
           if (2 < uVar7) {
-            iVar1 = strlen(param_3);
+            iVar1 = gba_strlen(param_3);
             uVar7 = _DAT_08011ac0 - iVar1;
             if (uVar7 != 0) {
-              uVar6 = strlen(uVar3);
+              uVar6 = gba_strlen(uVar3);
               if (uVar7 < uVar6) {
                 uVar6 = uVar7;
               }
-              memcpy(param_3 + iVar1,uVar3,uVar6);
+              gba_memcpy(param_3 + iVar1,uVar3,uVar6);
               *(undefined1 *)(param_3 + iVar1 + uVar6) = 0;
             }
             uVar7 = 0;
@@ -3112,50 +3112,50 @@ undefined4 func_08011934(int param_1,int param_2,int param_3)
     } while (uStack_34 < uStack_38);
   }
   piVar5 = (int *)(iStack_44 + 0x8c);
-  uStack_30 = func_0800CE74(*piVar5 + 0x5f0);
+  uStack_30 = Building_Routine_0800CE74(*piVar5 + 0x5f0);
   uStack_2c = 0;
   piStack_24 = piVar5;
   if (uStack_30 != 0) {
     do {
-      iVar1 = func_0800D3D0(*piStack_24 + 0x5f0,uStack_2c);
+      iVar1 = Food_GetStaminaGain(*piStack_24 + 0x5f0,uStack_2c);
       if ((iVar1 != 0) && (iVar2 = func_0x0809b514(), uVar3 = _DAT_08011bbc, iVar2 == iStack_40)) {
         if (iStack_3c == 0) {
-          iVar2 = strlen(param_3);
+          iVar2 = gba_strlen(param_3);
           uVar6 = _DAT_08011bc0 - iVar2;
           if (uVar6 != 0) {
-            uVar4 = strlen(uVar3);
+            uVar4 = gba_strlen(uVar3);
             if (uVar6 < uVar4) {
               uVar4 = uVar6;
             }
-            memcpy(param_3 + iVar2,uVar3,uVar4);
+            gba_memcpy(param_3 + iVar2,uVar3,uVar4);
             *(undefined1 *)(param_3 + iVar2 + uVar4) = (undefined1)iStack_3c;
           }
         }
         else {
           iStack_3c = 0;
         }
-        uVar3 = func_0809B1F4(iVar1);
-        iVar1 = strlen(param_3);
+        uVar3 = Animal_Routine_0809B1F4(iVar1);
+        iVar1 = gba_strlen(param_3);
         uVar6 = _DAT_08011bc0 - iVar1;
         if (uVar6 != 0) {
-          uVar4 = strlen(uVar3);
+          uVar4 = gba_strlen(uVar3);
           if (uVar6 < uVar4) {
             uVar4 = uVar6;
           }
-          memcpy(param_3 + iVar1,uVar3,uVar4);
+          gba_memcpy(param_3 + iVar1,uVar3,uVar4);
           *(undefined1 *)(param_3 + iVar1 + uVar4) = 0;
         }
         uVar3 = _DAT_08011bc4;
         uVar7 = uVar7 + 1;
         if (2 < uVar7) {
-          iVar1 = strlen(param_3);
+          iVar1 = gba_strlen(param_3);
           uVar7 = _DAT_08011bc0 - iVar1;
           if (uVar7 != 0) {
-            uVar6 = strlen(uVar3);
+            uVar6 = gba_strlen(uVar3);
             if (uVar7 < uVar6) {
               uVar6 = uVar7;
             }
-            memcpy(param_3 + iVar1,uVar3,uVar6);
+            gba_memcpy(param_3 + iVar1,uVar3,uVar6);
             *(undefined1 *)(param_3 + iVar1 + uVar6) = 0;
           }
           uVar7 = 0;
@@ -3167,45 +3167,45 @@ undefined4 func_08011934(int param_1,int param_2,int param_3)
   uStack_28 = 0;
   if (uStack_30 != 0) {
     do {
-      iVar1 = func_0800D3F8(*piStack_24 + 0x5f0,uStack_28);
+      iVar1 = Food_GetFatigueGain(*piStack_24 + 0x5f0,uStack_28);
       if ((iVar1 != 0) && (iVar2 = func_0x0809b514(), uVar3 = _DAT_08011ccc, iVar2 == iStack_40)) {
         if (iStack_3c == 0) {
-          iVar2 = strlen(param_3);
+          iVar2 = gba_strlen(param_3);
           uVar6 = _DAT_08011cd0 - iVar2;
           if (uVar6 != 0) {
-            uVar4 = strlen(uVar3);
+            uVar4 = gba_strlen(uVar3);
             if (uVar6 < uVar4) {
               uVar4 = uVar6;
             }
-            memcpy(param_3 + iVar2,uVar3,uVar4);
+            gba_memcpy(param_3 + iVar2,uVar3,uVar4);
             *(undefined1 *)(param_3 + iVar2 + uVar4) = (undefined1)iStack_3c;
           }
         }
         else {
           iStack_3c = 0;
         }
-        uVar3 = func_0809B1F4(iVar1);
-        iVar1 = strlen(param_3);
+        uVar3 = Animal_Routine_0809B1F4(iVar1);
+        iVar1 = gba_strlen(param_3);
         uVar6 = _DAT_08011cd0 - iVar1;
         if (uVar6 != 0) {
-          uVar4 = strlen(uVar3);
+          uVar4 = gba_strlen(uVar3);
           if (uVar6 < uVar4) {
             uVar4 = uVar6;
           }
-          memcpy(param_3 + iVar1,uVar3,uVar4);
+          gba_memcpy(param_3 + iVar1,uVar3,uVar4);
           *(undefined1 *)(param_3 + iVar1 + uVar4) = 0;
         }
         uVar3 = _DAT_08011cd4;
         uVar7 = uVar7 + 1;
         if (2 < uVar7) {
-          iVar1 = strlen(param_3);
+          iVar1 = gba_strlen(param_3);
           uVar7 = _DAT_08011cd0 - iVar1;
           if (uVar7 != 0) {
-            uVar6 = strlen(uVar3);
+            uVar6 = gba_strlen(uVar3);
             if (uVar7 < uVar6) {
               uVar6 = uVar7;
             }
-            memcpy(param_3 + iVar1,uVar3,uVar6);
+            gba_memcpy(param_3 + iVar1,uVar3,uVar6);
             *(undefined1 *)(param_3 + iVar1 + uVar6) = 0;
           }
           uVar7 = 0;
@@ -3216,14 +3216,14 @@ undefined4 func_08011934(int param_1,int param_2,int param_3)
   }
   uVar3 = _DAT_08011cd4;
   if (uVar7 != 0) {
-    iVar1 = strlen(param_3);
+    iVar1 = gba_strlen(param_3);
     uVar7 = _DAT_08011cd0 - iVar1;
     if (uVar7 != 0) {
-      uVar6 = strlen(uVar3);
+      uVar6 = gba_strlen(uVar3);
       if (uVar7 < uVar6) {
         uVar6 = uVar7;
       }
-      memcpy(param_3 + iVar1,uVar3,uVar6);
+      gba_memcpy(param_3 + iVar1,uVar3,uVar6);
       *(undefined1 *)(param_3 + iVar1 + uVar6) = 0;
     }
   }
@@ -3231,9 +3231,9 @@ undefined4 func_08011934(int param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_08011FE8 @ 0x08011FE8
+// Function: Farmer_Routine_08011FE8 @ 0x08011FE8
 // =============================================================================
-undefined4 func_08011FE8(undefined4 *param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08011FE8(undefined4 *param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -3245,29 +3245,29 @@ undefined4 func_08011FE8(undefined4 *param_1,undefined4 param_2)
   if (iVar1 != 0) {
     func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0xf4) + 8));
   }
-  func_080007EC(param_1,param_2);
+  SramProxy_VerifyBufferParity(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012028 @ 0x08012028
+// Function: Farmer_Routine_08012028 @ 0x08012028
 // =============================================================================
-undefined8 func_08012028(undefined4 *param_1,int param_2)
+undefined8 Farmer_Routine_08012028(undefined4 *param_1,int param_2)
 
 {
   undefined4 in_lr;
   undefined4 auStack_14 [3];
   
-  func_080D8178(auStack_14,*(undefined4 *)(param_2 + 4));
+  VTable_Routine_080D8178(auStack_14,*(undefined4 *)(param_2 + 4));
   *param_1 = auStack_14[0];
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08012064 @ 0x08012064
+// Function: Farmer_Routine_08012064 @ 0x08012064
 // =============================================================================
 undefined4
-func_08012064(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+Farmer_Routine_08012064(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
              undefined4 param_5)
 
 {
@@ -3279,14 +3279,14 @@ func_08012064(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param
   iVar3 = *(int *)(param_1 + 4);
   piVar1 = *(int **)(iVar3 + 0xa8);
   uVar2 = func_0x080d3910(piVar1,*(undefined4 *)(*piVar1 + 0x14));
-  func_080D7F9C(iVar3,param_2,uVar2,param_3,param_4,param_5);
+  VTable_Routine_080D7F9C(iVar3,param_2,uVar2,param_3,param_4,param_5);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080120A4 @ 0x080120A4
+// Function: Farmer_Routine_080120A4 @ 0x080120A4
 // =============================================================================
-undefined8 func_080120A4(int param_1,undefined4 param_2)
+undefined8 Farmer_Routine_080120A4(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -3304,9 +3304,9 @@ undefined8 func_080120A4(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080120C4 @ 0x080120C4
+// Function: Farmer_Routine_080120C4 @ 0x080120C4
 // =============================================================================
-undefined8 func_080120C4(int param_1,undefined4 param_2)
+undefined8 Farmer_Routine_080120C4(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -3324,9 +3324,9 @@ undefined8 func_080120C4(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080120E4 @ 0x080120E4
+// Function: Farmer_Routine_080120E4 @ 0x080120E4
 // =============================================================================
-undefined4 func_080120E4(int param_1,undefined4 param_2,uint param_3)
+undefined4 Farmer_Routine_080120E4(int param_1,undefined4 param_2,uint param_3)
 
 {
   int *piVar1;
@@ -3336,15 +3336,15 @@ undefined4 func_080120E4(int param_1,undefined4 param_2,uint param_3)
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40));
   if ((iVar2 != 0) && (*(byte *)(iVar2 + 0x20) != param_3)) {
-    func_08032198(iVar2,param_3);
+    Entity_Routine_08032198(iVar2,param_3);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012114 @ 0x08012114
+// Function: Farmer_Routine_08012114 @ 0x08012114
 // =============================================================================
-undefined8 func_08012114(int param_1,undefined4 param_2)
+undefined8 Farmer_Routine_08012114(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -3364,9 +3364,9 @@ undefined8 func_08012114(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08012134 @ 0x08012134
+// Function: Farmer_Routine_08012134 @ 0x08012134
 // =============================================================================
-undefined8 func_08012134(int param_1,undefined4 param_2)
+undefined8 Farmer_Routine_08012134(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -3384,9 +3384,9 @@ undefined8 func_08012134(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08012154 @ 0x08012154
+// Function: Farmer_Routine_08012154 @ 0x08012154
 // =============================================================================
-undefined4 func_08012154(int param_1,undefined4 param_2,undefined1 param_3)
+undefined4 Farmer_Routine_08012154(int param_1,undefined4 param_2,undefined1 param_3)
 
 {
   int *piVar1;
@@ -3402,9 +3402,9 @@ undefined4 func_08012154(int param_1,undefined4 param_2,undefined1 param_3)
 }
 
 // =============================================================================
-// Function: func_08012174 @ 0x08012174
+// Function: Farmer_Routine_08012174 @ 0x08012174
 // =============================================================================
-undefined4 func_08012174(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined4 Farmer_Routine_08012174(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   int *piVar1;
@@ -3414,15 +3414,15 @@ undefined4 func_08012174(int param_1,undefined4 param_2,undefined4 param_3,undef
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40));
   if (iVar2 != 0) {
-    func_08032308(iVar2,param_3,param_4);
+    Entity_Routine_08032308(iVar2,param_3,param_4);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801219C @ 0x0801219C
+// Function: Farmer_Routine_0801219C @ 0x0801219C
 // =============================================================================
-undefined4 func_0801219C(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined4 Farmer_Routine_0801219C(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   int *piVar1;
@@ -3432,15 +3432,15 @@ undefined4 func_0801219C(int param_1,undefined4 param_2,undefined4 param_3,undef
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40));
   if (iVar2 != 0) {
-    func_0803233C(iVar2,param_3,param_4);
+    Entity_Routine_0803233C(iVar2,param_3,param_4);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080121C4 @ 0x080121C4
+// Function: Farmer_Routine_080121C4 @ 0x080121C4
 // =============================================================================
-undefined4 func_080121C4(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_080121C4(int param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -3458,9 +3458,9 @@ undefined4 func_080121C4(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080121EC @ 0x080121EC
+// Function: Farmer_Routine_080121EC @ 0x080121EC
 // =============================================================================
-undefined4 func_080121EC(int param_1,undefined4 param_2,uint param_3)
+undefined4 Farmer_Routine_080121EC(int param_1,undefined4 param_2,uint param_3)
 
 {
   int *piVar1;
@@ -3470,15 +3470,15 @@ undefined4 func_080121EC(int param_1,undefined4 param_2,uint param_3)
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40));
   if ((iVar2 != 0) && (*(ushort *)(iVar2 + 0x22) != param_3)) {
-    func_080321B0(iVar2,param_3);
+    Entity_Routine_080321B0(iVar2,param_3);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801221C @ 0x0801221C
+// Function: Farmer_Routine_0801221C @ 0x0801221C
 // =============================================================================
-undefined4 func_0801221C(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_0801221C(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -3494,9 +3494,9 @@ undefined4 func_0801221C(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0801223C @ 0x0801223C
+// Function: Farmer_Routine_0801223C @ 0x0801223C
 // =============================================================================
-undefined4 func_0801223C(int param_1,undefined4 param_2,int param_3,int param_4)
+undefined4 Farmer_Routine_0801223C(int param_1,undefined4 param_2,int param_3,int param_4)
 
 {
   int *piVar1;
@@ -3506,16 +3506,16 @@ undefined4 func_0801223C(int param_1,undefined4 param_2,int param_3,int param_4)
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40));
   if (iVar2 != 0) {
-    func_08033B84(iVar2,*(undefined1 *)(iVar2 + 0x30),*(short *)(iVar2 + 10) + param_3,
+    Entity_Routine_08033B84(iVar2,*(undefined1 *)(iVar2 + 0x30),*(short *)(iVar2 + 10) + param_3,
                   *(short *)(iVar2 + 0xe) + param_4);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012274 @ 0x08012274
+// Function: Farmer_Routine_08012274 @ 0x08012274
 // =============================================================================
-undefined4 func_08012274(int param_1,undefined4 param_2,undefined4 param_3,uint param_4)
+undefined4 Farmer_Routine_08012274(int param_1,undefined4 param_2,undefined4 param_3,uint param_4)
 
 {
   int *piVar1;
@@ -3525,15 +3525,15 @@ undefined4 func_08012274(int param_1,undefined4 param_2,undefined4 param_3,uint 
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40));
   if (iVar2 != 0) {
-    func_08032384(iVar2,param_3,(-param_4 | param_4) >> 0x1f);
+    Entity_Routine_08032384(iVar2,param_3,(-param_4 | param_4) >> 0x1f);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080122A0 @ 0x080122A0
+// Function: Farmer_Routine_080122A0 @ 0x080122A0
 // =============================================================================
-undefined4 func_080122A0(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_080122A0(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -3543,15 +3543,15 @@ undefined4 func_080122A0(int param_1,undefined4 param_2)
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40));
   if (iVar2 != 0) {
-    func_080323C8();
+    Entity_Routine_080323C8();
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080122BC @ 0x080122BC
+// Function: Farmer_Routine_080122BC @ 0x080122BC
 // =============================================================================
-undefined4 func_080122BC(int param_1,undefined4 param_2,undefined4 param_3)
+undefined4 Farmer_Routine_080122BC(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   int *piVar1;
@@ -3561,15 +3561,15 @@ undefined4 func_080122BC(int param_1,undefined4 param_2,undefined4 param_3)
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40));
   if (iVar2 != 0) {
-    func_080323E0(iVar2,param_3);
+    Entity_Routine_080323E0(iVar2,param_3);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080122E0 @ 0x080122E0
+// Function: Farmer_Routine_080122E0 @ 0x080122E0
 // =============================================================================
-undefined4 func_080122E0(int param_1,ushort param_2,uint param_3,uint param_4)
+undefined4 Farmer_Routine_080122E0(int param_1,ushort param_2,uint param_3,uint param_4)
 
 {
   ushort uVar1;
@@ -3594,14 +3594,14 @@ undefined4 func_080122E0(int param_1,ushort param_2,uint param_3,uint param_4)
   uStack_26 = CONCAT11(uStack_26._1_1_ & 3 | (byte)((param_4 & 0x3f) << 2),(char)uVar1);
   uStack_24 = uVar2 & uStack_24 | (ushort)((param_4 & 0xffff) >> 6) & uVar3;
   func_0x080d3918(piVar5,&uStack_28,1,*(undefined4 *)(*piVar5 + 0xb4));
-  func_080D7F08(iVar4);
+  VTable_Routine_080D7F08(iVar4);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801238C @ 0x0801238C
+// Function: Farmer_Routine_0801238C @ 0x0801238C
 // =============================================================================
-undefined4 func_0801238C(void)
+undefined4 Farmer_Routine_0801238C(void)
 
 {
   undefined4 in_lr;
@@ -3611,9 +3611,9 @@ undefined4 func_0801238C(void)
 }
 
 // =============================================================================
-// Function: func_080123A4 @ 0x080123A4
+// Function: Farmer_Routine_080123A4 @ 0x080123A4
 // =============================================================================
-undefined4 func_080123A4(int param_1)
+undefined4 Farmer_Routine_080123A4(int param_1)
 
 {
   char cVar1;
@@ -3631,9 +3631,9 @@ undefined4 func_080123A4(int param_1)
 }
 
 // =============================================================================
-// Function: func_080123CC @ 0x080123CC
+// Function: Farmer_Routine_080123CC @ 0x080123CC
 // =============================================================================
-undefined4 func_080123CC(int param_1,int param_2,undefined2 param_3,undefined2 *param_4)
+undefined4 Farmer_Routine_080123CC(int param_1,int param_2,undefined2 param_3,undefined2 *param_4)
 
 {
   int iVar1;
@@ -3643,43 +3643,43 @@ undefined4 func_080123CC(int param_1,int param_2,undefined2 param_3,undefined2 *
   iVar2 = *(int *)(param_1 + 4);
   iVar1 = iVar2 + 0xbc;
   if (param_2 == 1) {
-    func_08008B88(iVar1,param_3);
+    HW_Routine_08008B88(iVar1,param_3);
   }
   else if (param_2 < 2) {
     if (param_2 == 0) {
-      func_08008B6C(iVar1,param_3);
+      HW_Routine_08008B6C(iVar1,param_3);
     }
   }
   else if (param_2 == 2) {
-    func_08008BB0(iVar1,param_3);
+    HW_Routine_08008BB0(iVar1,param_3);
   }
   iVar2 = iVar2 + 0xbc;
-  func_08008CC4(iVar2);
-  func_08008C28(iVar2,*param_4);
-  func_08008C38(iVar2,param_4[1],_DAT_08012450);
-  func_08008C54(iVar2,(int)(short)param_4[2],_DAT_08012450);
-  func_08008C70(iVar2,(int)*(char *)(param_4 + 3),_DAT_08012450);
-  func_08008C8C(iVar2,*(undefined1 *)((int)param_4 + 7),_DAT_08012450);
-  func_08008CA8(iVar2,*(undefined1 *)(param_4 + 4),_DAT_08012450);
+  HW_Routine_08008CC4(iVar2);
+  HW_Routine_08008C28(iVar2,*param_4);
+  HW_Routine_08008C38(iVar2,param_4[1],_DAT_08012450);
+  HW_Routine_08008C54(iVar2,(int)(short)param_4[2],_DAT_08012450);
+  HW_Routine_08008C70(iVar2,(int)*(char *)(param_4 + 3),_DAT_08012450);
+  HW_Routine_08008C8C(iVar2,*(undefined1 *)((int)param_4 + 7),_DAT_08012450);
+  HW_Routine_08008CA8(iVar2,*(undefined1 *)(param_4 + 4),_DAT_08012450);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012454 @ 0x08012454
+// Function: Farmer_Routine_08012454 @ 0x08012454
 // =============================================================================
-undefined4 func_08012454(int param_1)
+undefined4 Farmer_Routine_08012454(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_08008BE0(*(int *)(param_1 + 4) + 0xbc);
+  HW_Routine_08008BE0(*(int *)(param_1 + 4) + 0xbc);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012464 @ 0x08012464
+// Function: Farmer_Routine_08012464 @ 0x08012464
 // =============================================================================
-undefined4 func_08012464(int param_1,int param_2,undefined2 param_3)
+undefined4 Farmer_Routine_08012464(int param_1,int param_2,undefined2 param_3)
 
 {
   char cVar1;
@@ -3695,15 +3695,15 @@ undefined4 func_08012464(int param_1,int param_2,undefined2 param_3)
       uVar2 = puVar4[-1];
 LAB_0801248c:
       if (param_2 == 1) {
-        func_08008B88(uVar2,param_3);
+        HW_Routine_08008B88(uVar2,param_3);
       }
       else if (param_2 < 2) {
         if (param_2 == 0) {
-          func_08008B6C(uVar2);
+          HW_Routine_08008B6C(uVar2);
         }
       }
       else if (param_2 == 2) {
-        func_08008BB0(uVar2);
+        HW_Routine_08008BB0(uVar2);
       }
       return in_lr;
     }
@@ -3717,21 +3717,21 @@ LAB_0801248c:
 }
 
 // =============================================================================
-// Function: func_080124C4 @ 0x080124C4
+// Function: Farmer_Routine_080124C4 @ 0x080124C4
 // =============================================================================
-undefined4 func_080124C4(void)
+undefined4 Farmer_Routine_080124C4(void)
 
 {
   undefined4 in_lr;
   
-  func_08008DE8();
+  HW_Routine_08008DE8();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080124D0 @ 0x080124D0
+// Function: Farmer_Routine_080124D0 @ 0x080124D0
 // =============================================================================
-undefined4 func_080124D0(int param_1)
+undefined4 Farmer_Routine_080124D0(int param_1)
 
 {
   int *piVar1;
@@ -3757,44 +3757,44 @@ undefined4 func_080124D0(int param_1)
   piVar1 = (int *)(iVar5 + 0xac);
   if (*piVar1 == 0) {
     if (*(char *)(iVar5 + 0xe8) == '\0') {
-      uVar2 = func_080005D4(4);
+      uVar2 = Dispatcher_Routine_080005D4(4);
       func_0x0800835c(auStack_1c);
       func_0x0800770c(auStack_18);
-      iVar4 = func_08050CC0(uVar2,0,0x1f,0,1,auStack_1c,auStack_18);
+      iVar4 = Animal_Routine_08050CC0(uVar2,0,0x1f,0,1,auStack_1c,auStack_18);
       iVar3 = *piVar1;
       if ((iVar4 != iVar3) && (iVar3 != 0)) {
-        func_08050D0C(iVar3,3);
+        Animal_Routine_08050D0C(iVar3,3);
       }
       *piVar1 = iVar4;
-      func_08007714(auStack_18,2);
+      HW_Routine_08007714(auStack_18,2);
       func_0x08008364(auStack_1c,2);
     }
     else {
-      uVar2 = func_080005D4(4);
+      uVar2 = Dispatcher_Routine_080005D4(4);
       func_0x0800835c(auStack_1c);
       func_0x0800770c(auStack_18);
-      iVar4 = func_08050CC0(uVar2,0,0x1f,0,0,auStack_1c,auStack_18);
+      iVar4 = Animal_Routine_08050CC0(uVar2,0,0x1f,0,0,auStack_1c,auStack_18);
       iVar3 = *piVar1;
       if ((iVar4 != iVar3) && (iVar3 != 0)) {
-        func_08050D0C(iVar3,3);
+        Animal_Routine_08050D0C(iVar3,3);
       }
       *piVar1 = iVar4;
-      func_08007714(auStack_18,2);
+      HW_Routine_08007714(auStack_18,2);
       func_0x08008364(auStack_1c,2);
     }
   }
   iVar4 = func_0x08050d34(*piVar1);
   if (iVar4 != 3) {
-    func_08050D5C(*piVar1);
+    Animal_Routine_08050D5C(*piVar1);
     *(undefined4 *)(iVar5 + 0x9c) = 0xe;
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080125EC @ 0x080125EC
+// Function: Farmer_Routine_080125EC @ 0x080125EC
 // =============================================================================
-undefined4 func_080125EC(int param_1)
+undefined4 Farmer_Routine_080125EC(int param_1)
 
 {
   int iVar1;
@@ -3814,7 +3814,7 @@ undefined4 func_080125EC(int param_1)
   *(int *)(iVar2 + 0xb8) = 0;
   iVar1 = *(int *)(iVar2 + 0xac);
   if ((iVar1 != 0) && (iVar1 != 0)) {
-    func_08050D0C(iVar1,3);
+    Animal_Routine_08050D0C(iVar1,3);
   }
   *(int *)(iVar2 + 0xac) = 0;
   *(ushort *)(iVar2 + 0x10) = (ushort)_DAT_08012654 & *(ushort *)(iVar2 + 0x10);
@@ -3822,9 +3822,9 @@ undefined4 func_080125EC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08012658 @ 0x08012658
+// Function: Farmer_Routine_08012658 @ 0x08012658
 // =============================================================================
-undefined4 func_08012658(int param_1)
+undefined4 Farmer_Routine_08012658(int param_1)
 
 {
   int iVar1;
@@ -3832,19 +3832,19 @@ undefined4 func_08012658(int param_1)
   
   iVar1 = *(int *)(param_1 + 4);
   if (*(int *)(iVar1 + 0xac) != 0) {
-    func_08050D74();
-    func_080D7F88(iVar1);
-    func_080D7F74(iVar1);
-    func_080D7F60(iVar1);
+    Animal_Routine_08050D74();
+    VTable_Routine_080D7F88(iVar1);
+    VTable_Routine_080D7F74(iVar1);
+    VTable_Routine_080D7F60(iVar1);
     *(undefined4 *)(iVar1 + 0x9c) = 0xf;
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801268C @ 0x0801268C
+// Function: Farmer_Routine_0801268C @ 0x0801268C
 // =============================================================================
-undefined4 func_0801268C(int param_1,undefined4 param_2,undefined2 param_3)
+undefined4 Farmer_Routine_0801268C(int param_1,undefined4 param_2,undefined2 param_3)
 
 {
   int iVar1;
@@ -3852,16 +3852,16 @@ undefined4 func_0801268C(int param_1,undefined4 param_2,undefined2 param_3)
   
   iVar1 = *(int *)(param_1 + 4);
   if (*(int *)(iVar1 + 0xac) != 0) {
-    func_08050DC8(*(int *)(iVar1 + 0xac),param_2,param_3,*(undefined4 *)(iVar1 + 0xb0));
+    Animal_Routine_08050DC8(*(int *)(iVar1 + 0xac),param_2,param_3,*(undefined4 *)(iVar1 + 0xb0));
     *(undefined4 *)(iVar1 + 0x9c) = 0x10;
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080126BC @ 0x080126BC
+// Function: Farmer_Routine_080126BC @ 0x080126BC
 // =============================================================================
-undefined4 func_080126BC(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_080126BC(int param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -3869,16 +3869,16 @@ undefined4 func_080126BC(int param_1,undefined4 param_2)
   
   iVar1 = *(int *)(param_1 + 4);
   if (*(int *)(iVar1 + 0xac) != 0) {
-    func_08050DC8(*(int *)(iVar1 + 0xac),param_2,0x40,*(undefined4 *)(iVar1 + 0xb0));
+    Animal_Routine_08050DC8(*(int *)(iVar1 + 0xac),param_2,0x40,*(undefined4 *)(iVar1 + 0xb0));
     *(undefined4 *)(iVar1 + 0x9c) = 0x11;
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080126E4 @ 0x080126E4
+// Function: Farmer_Routine_080126E4 @ 0x080126E4
 // =============================================================================
-undefined4 func_080126E4(int param_1)
+undefined4 Farmer_Routine_080126E4(int param_1)
 
 {
   undefined4 uVar1;
@@ -3890,16 +3890,16 @@ undefined4 func_080126E4(int param_1)
   if ((iVar3 != 0) &&
      (iVar2 = *(int *)(*(int *)(param_1 + 4) + 0x8c),
      (int)((uint)*(byte *)(iVar2 + _DAT_08012718) * 0x10000000) < 0)) {
-    uVar1 = func_0809FE3C(iVar2 + _DAT_0801271c);
-    func_08050E68(iVar3,uVar1);
+    uVar1 = NPC_Routine_0809FE3C(iVar2 + _DAT_0801271c);
+    Animal_Routine_08050E68(iVar3,uVar1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012720 @ 0x08012720
+// Function: Farmer_Routine_08012720 @ 0x08012720
 // =============================================================================
-undefined4 func_08012720(int param_1)
+undefined4 Farmer_Routine_08012720(int param_1)
 
 {
   int iVar1;
@@ -3909,29 +3909,29 @@ undefined4 func_08012720(int param_1)
   if ((iVar1 != 0) &&
      ((int)((uint)*(byte *)(*(int *)(*(int *)(param_1 + 4) + 0x8c) + _DAT_08012748) * 0x10000000) <
       0)) {
-    func_08050E68(iVar1);
+    Animal_Routine_08050E68(iVar1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801274C @ 0x0801274C
+// Function: Farmer_Routine_0801274C @ 0x0801274C
 // =============================================================================
-undefined4 func_0801274C(int param_1)
+undefined4 Farmer_Routine_0801274C(int param_1)
 
 {
   undefined4 in_lr;
   
   if (*(int *)(*(int *)(param_1 + 4) + 0xac) != 0) {
-    func_08050E74();
+    Animal_Routine_08050E74();
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012760 @ 0x08012760
+// Function: Farmer_Routine_08012760 @ 0x08012760
 // =============================================================================
-undefined4 func_08012760(int param_1)
+undefined4 Farmer_Routine_08012760(int param_1)
 
 {
   int iVar1;
@@ -3941,29 +3941,29 @@ undefined4 func_08012760(int param_1)
   if ((iVar1 != 0) &&
      ((int)((uint)*(byte *)(*(int *)(*(int *)(param_1 + 4) + 0x8c) + _DAT_08012788) * 0x20000000) <
       0)) {
-    func_08050E50(iVar1);
+    Animal_Routine_08050E50(iVar1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801278C @ 0x0801278C
+// Function: Farmer_Routine_0801278C @ 0x0801278C
 // =============================================================================
-undefined4 func_0801278C(int param_1)
+undefined4 Farmer_Routine_0801278C(int param_1)
 
 {
   undefined4 in_lr;
   
   if (*(int *)(*(int *)(param_1 + 4) + 0xac) != 0) {
-    func_08050E5C();
+    Animal_Routine_08050E5C();
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080127A0 @ 0x080127A0
+// Function: Farmer_Routine_080127A0 @ 0x080127A0
 // =============================================================================
-undefined4 func_080127A0(int param_1,int param_2)
+undefined4 Farmer_Routine_080127A0(int param_1,int param_2)
 
 {
   int iVar1;
@@ -3976,7 +3976,7 @@ undefined4 func_080127A0(int param_1,int param_2)
   if ((((*(int *)(iVar4 + 0xac) != 0) &&
        ((int)((uint)*(byte *)(*(int *)(iVar4 + 0x8c) + _DAT_080127e0) * 0x20000000) < 0)) &&
       (param_2 != 0x1f)) &&
-     (iVar1 = func_080A0878(*(int *)(iVar4 + 0x8c) + _DAT_080127e4), iVar1 != 0)) {
+     (iVar1 = NPC_Routine_080A0878(*(int *)(iVar4 + 0x8c) + _DAT_080127e4), iVar1 != 0)) {
     uVar2 = func_0x0809e498();
     if (_DAT_080127e8 < uVar2) {
       uVar3 = 6;
@@ -3999,30 +3999,30 @@ undefined4 func_080127A0(int param_1,int param_2)
         uVar3 = 1;
       }
     }
-    func_08050E80(*(undefined4 *)(iVar4 + 0xac),uVar3);
+    Animal_Routine_08050E80(*(undefined4 *)(iVar4 + 0xac),uVar3);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801284C @ 0x0801284C
+// Function: Farmer_Routine_0801284C @ 0x0801284C
 // =============================================================================
-undefined4 func_0801284C(int param_1)
+undefined4 Farmer_Routine_0801284C(int param_1)
 
 {
   undefined4 in_lr;
   
   if (*(int *)(*(int *)(param_1 + 4) + 0xac) != 0) {
-    func_08050E8C();
+    Animal_Routine_08050E8C();
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012860 @ 0x08012860
+// Function: Farmer_Routine_08012860 @ 0x08012860
 // =============================================================================
 undefined4
-func_08012860(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int param_6)
+Farmer_Routine_08012860(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int param_6)
 
 {
   undefined4 uVar1;
@@ -4046,22 +4046,22 @@ func_08012860(int param_1,undefined4 param_2,int param_3,int param_4,int param_5
   }
   else {
     if (param_6 != 0) {
-      func_08050E30(iVar2,param_2,param_3,param_4,param_5,param_6,*(undefined4 *)(iVar3 + 0xb0));
+      Animal_Routine_08050E30(iVar2,param_2,param_3,param_4,param_5,param_6,*(undefined4 *)(iVar3 + 0xb0));
       goto LAB_080128c0;
     }
     uVar1 = *(undefined4 *)(iVar3 + 0xb0);
   }
-  func_08050E30(iVar2,param_2,param_3,param_4,param_5,0,uVar1);
+  Animal_Routine_08050E30(iVar2,param_2,param_3,param_4,param_5,0,uVar1);
 LAB_080128c0:
   *(undefined4 *)(iVar3 + 0x9c) = 0x14;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080128D0 @ 0x080128D0
+// Function: Farmer_Routine_080128D0 @ 0x080128D0
 // =============================================================================
 undefined4
-func_080128D0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
+Farmer_Routine_080128D0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
 
 {
   undefined4 uVar1;
@@ -4081,7 +4081,7 @@ func_080128D0(int param_1,int param_2,int param_3,int param_4,int param_5,int pa
     return in_lr;
   }
   if (param_4 == 0) {
-    func_08050E0C(iVar2,param_2,param_3,0,0,0,0,*(undefined4 *)(iVar3 + 0xb0));
+    Animal_Routine_08050E0C(iVar2,param_2,param_3,0,0,0,0,*(undefined4 *)(iVar3 + 0xb0));
   }
   else {
     if (param_5 == 0) {
@@ -4093,13 +4093,13 @@ func_080128D0(int param_1,int param_2,int param_3,int param_4,int param_5,int pa
     }
     else {
       if (param_7 != 0) {
-        func_08050E0C(iVar2,param_2,param_3,param_4,param_5,param_6,param_7,
+        Animal_Routine_08050E0C(iVar2,param_2,param_3,param_4,param_5,param_6,param_7,
                       *(undefined4 *)(iVar3 + 0xb0));
         goto LAB_0801296c;
       }
       uVar1 = *(undefined4 *)(iVar3 + 0xb0);
     }
-    func_08050E0C(iVar2,param_2,param_3,param_4,param_5,param_6,0,uVar1);
+    Animal_Routine_08050E0C(iVar2,param_2,param_3,param_4,param_5,param_6,0,uVar1);
   }
 LAB_0801296c:
   *(undefined4 *)(iVar3 + 0x9c) = 0x14;
@@ -4107,9 +4107,9 @@ LAB_0801296c:
 }
 
 // =============================================================================
-// Function: func_0801297C @ 0x0801297C
+// Function: Farmer_Routine_0801297C @ 0x0801297C
 // =============================================================================
-undefined8 func_0801297C(int param_1,uint param_2,int param_3,char param_4,char param_5)
+undefined8 Farmer_Routine_0801297C(int param_1,uint param_2,int param_3,char param_4,char param_5)
 
 {
   ushort uVar1;
@@ -4160,7 +4160,7 @@ LAB_080129d0:
     if (param_5 != '\0') {
       func_0x080d3910(*(int **)(iVar3 + 0xa8),*(undefined4 *)(**(int **)(iVar3 + 0xa8) + 0xb8));
     }
-    func_0800934C(*(undefined4 *)(iVar3 + 0xa0),uVar4,iVar5,uVar6);
+    Farm_Routine_0800934C(*(undefined4 *)(iVar3 + 0xa0),uVar4,iVar5,uVar6);
     *(undefined4 *)(iVar3 + 0x9c) = 0x13;
     *(undefined1 *)(iVar3 + 0xe8) = 0;
     *(bool *)(iVar3 + 0xe9) = iVar5 == 2;
@@ -4177,7 +4177,7 @@ LAB_080129d0:
     *(short *)(iVar3 + 0x60) = (short)register0x00000054;
   }
   else {
-    func_08009378(*(undefined4 *)(iVar3 + 0xa0),uVar4,iVar5,uVar6);
+    Farm_Routine_08009378(*(undefined4 *)(iVar3 + 0xa0),uVar4,iVar5,uVar6);
     *(undefined4 *)(iVar3 + 0x9c) = 0x12;
     *(undefined1 *)(iVar3 + 0xe8) = 0;
     register0x00000054 = (BADSPACEBASE *)(uint)(iVar5 == 2);
@@ -4188,9 +4188,9 @@ LAB_08012a98:
 }
 
 // =============================================================================
-// Function: func_08012AA4 @ 0x08012AA4
+// Function: Farmer_Routine_08012AA4 @ 0x08012AA4
 // =============================================================================
-undefined4 func_08012AA4(int param_1,undefined4 param_2,undefined4 param_3)
+undefined4 Farmer_Routine_08012AA4(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   int iVar1;
@@ -4198,15 +4198,15 @@ undefined4 func_08012AA4(int param_1,undefined4 param_2,undefined4 param_3)
   undefined1 auStack_40 [52];
   
   iVar1 = *(int *)(param_1 + 4);
-  func_0804EC84(param_3,auStack_40,0);
+  ScriptEngine_Routine_0804EC84(param_3,auStack_40,0);
   ScriptEngine_GetPC(*(undefined4 *)(iVar1 + 0xb0),param_2,auStack_40);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012ACC @ 0x08012ACC
+// Function: Farmer_Routine_08012ACC @ 0x08012ACC
 // =============================================================================
-undefined4 func_08012ACC(int param_1)
+undefined4 Farmer_Routine_08012ACC(int param_1)
 
 {
   undefined4 in_lr;
@@ -4216,9 +4216,9 @@ undefined4 func_08012ACC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08012ADC @ 0x08012ADC
+// Function: Farmer_Routine_08012ADC @ 0x08012ADC
 // =============================================================================
-undefined4 func_08012ADC(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined4 Farmer_Routine_08012ADC(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   int iVar1;
@@ -4226,30 +4226,30 @@ undefined4 func_08012ADC(int param_1,undefined4 param_2,undefined4 param_3,undef
   undefined1 auStack_40 [52];
   
   iVar1 = *(int *)(param_1 + 4);
-  func_0804EC84(param_3,auStack_40,param_4);
+  ScriptEngine_Routine_0804EC84(param_3,auStack_40,param_4);
   ScriptEngine_GetPC(*(undefined4 *)(iVar1 + 0xb0),param_2,auStack_40);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08012B04 @ 0x08012B04
+// Function: Farmer_Routine_08012B04 @ 0x08012B04
 // =============================================================================
-undefined4 func_08012B04(int param_1)
+undefined4 Farmer_Routine_08012B04(int param_1)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   
   uVar1 = *(undefined4 *)(param_1 + 4);
-  func_0803F878(*_DAT_08012b20 + 8);
-  func_080D7F3C(uVar1);
+  ScriptEngine_Routine_0803F878(*_DAT_08012b20 + 8);
+  VTable_Routine_080D7F3C(uVar1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080134A4 @ 0x080134A4
+// Function: Farmer_Routine_080134A4 @ 0x080134A4
 // =============================================================================
-undefined4 func_080134A4(int param_1)
+undefined4 Farmer_Routine_080134A4(int param_1)
 
 {
   undefined4 *puVar1;
@@ -4263,14 +4263,14 @@ undefined4 func_080134A4(int param_1)
   undefined4 uStack_28;
   
   iVar6 = *(int *)(param_1 + 4);
-  puVar1 = (undefined4 *)func_080005D4(0x14);
+  puVar1 = (undefined4 *)Dispatcher_Routine_080005D4(0x14);
   iVar3 = *(int *)(iVar6 + 0x8c);
   *puVar1 = _DAT_08013538;
   puVar1[1] = iVar3;
   puVar1[2] = 0x18;
   puVar1[3] = uStack_2c;
   puVar1[4] = uStack_28;
-  piVar2 = (int *)func_080005D4(0x10,&stack0xffffffec,puVar1 + 5);
+  piVar2 = (int *)Dispatcher_Routine_080005D4(0x10,&stack0xffffffec,puVar1 + 5);
   iVar3 = _DAT_0801353c;
   iVar5 = *(int *)(iVar6 + 0x8c);
   *piVar2 = _DAT_08013540;
@@ -4287,9 +4287,9 @@ undefined4 func_080134A4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08013EF8 @ 0x08013EF8
+// Function: Farmer_Routine_08013EF8 @ 0x08013EF8
 // =============================================================================
-undefined4 func_08013EF8(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08013EF8(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4302,14 +4302,14 @@ undefined4 func_08013EF8(int param_1,undefined4 param_2)
   undefined4 *apuStack_24 [3];
   
   iVar4 = *(int *)(param_1 + 4);
-  apuStack_24[0] = (undefined4 *)func_080005D4(0x14);
+  apuStack_24[0] = (undefined4 *)Dispatcher_Routine_080005D4(0x14);
   uVar3 = *(undefined4 *)(iVar4 + 0x8c);
   *apuStack_24[0] = _DAT_08013f84;
   apuStack_24[0][1] = uVar3;
   apuStack_24[0][2] = 0x2f;
   apuStack_24[0][3] = uStack_30;
   apuStack_24[0][4] = uStack_2c;
-  uVar3 = func_080005D4(0xc,0,apuStack_24[0] + 5);
+  uVar3 = Dispatcher_Routine_080005D4(0xc,0,apuStack_24[0] + 5);
   piVar1 = (int *)ScriptEngine_ResolveStringPointer(uVar3,apuStack_24,param_2);
   piVar2 = *(int **)(iVar4 + 0xa4);
   if ((piVar1 != piVar2) && (piVar2 != (int *)0x0)) {
@@ -4321,9 +4321,9 @@ undefined4 func_08013EF8(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08014034 @ 0x08014034
+// Function: Farmer_Routine_08014034 @ 0x08014034
 // =============================================================================
-undefined4 func_08014034(int param_1)
+undefined4 Farmer_Routine_08014034(int param_1)
 
 {
   int *piVar1;
@@ -4335,9 +4335,9 @@ undefined4 func_08014034(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801404C @ 0x0801404C
+// Function: Farmer_Routine_0801404C @ 0x0801404C
 // =============================================================================
-undefined4 func_0801404C(int param_1)
+undefined4 Farmer_Routine_0801404C(int param_1)
 
 {
   int *piVar1;
@@ -4349,9 +4349,9 @@ undefined4 func_0801404C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014064 @ 0x08014064
+// Function: Farmer_Routine_08014064 @ 0x08014064
 // =============================================================================
-undefined4 func_08014064(int param_1)
+undefined4 Farmer_Routine_08014064(int param_1)
 
 {
   int *piVar1;
@@ -4363,9 +4363,9 @@ undefined4 func_08014064(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801407C @ 0x0801407C
+// Function: Farmer_Routine_0801407C @ 0x0801407C
 // =============================================================================
-undefined4 func_0801407C(int param_1)
+undefined4 Farmer_Routine_0801407C(int param_1)
 
 {
   int *piVar1;
@@ -4377,9 +4377,9 @@ undefined4 func_0801407C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014094 @ 0x08014094
+// Function: Farmer_Routine_08014094 @ 0x08014094
 // =============================================================================
-undefined4 func_08014094(int param_1)
+undefined4 Farmer_Routine_08014094(int param_1)
 
 {
   int *piVar1;
@@ -4391,9 +4391,9 @@ undefined4 func_08014094(int param_1)
 }
 
 // =============================================================================
-// Function: func_080140AC @ 0x080140AC
+// Function: Farmer_Routine_080140AC @ 0x080140AC
 // =============================================================================
-undefined4 func_080140AC(int param_1)
+undefined4 Farmer_Routine_080140AC(int param_1)
 
 {
   int *piVar1;
@@ -4405,9 +4405,9 @@ undefined4 func_080140AC(int param_1)
 }
 
 // =============================================================================
-// Function: func_080140C4 @ 0x080140C4
+// Function: Farmer_Routine_080140C4 @ 0x080140C4
 // =============================================================================
-undefined4 func_080140C4(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_080140C4(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4419,9 +4419,9 @@ undefined4 func_080140C4(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080140DC @ 0x080140DC
+// Function: Farmer_Routine_080140DC @ 0x080140DC
 // =============================================================================
-undefined4 func_080140DC(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_080140DC(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4433,9 +4433,9 @@ undefined4 func_080140DC(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080140F4 @ 0x080140F4
+// Function: Farmer_Routine_080140F4 @ 0x080140F4
 // =============================================================================
-undefined4 func_080140F4(int param_1)
+undefined4 Farmer_Routine_080140F4(int param_1)
 
 {
   int *piVar1;
@@ -4447,9 +4447,9 @@ undefined4 func_080140F4(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801410C @ 0x0801410C
+// Function: Farmer_Routine_0801410C @ 0x0801410C
 // =============================================================================
-void func_0801410C(int param_1)
+void Farmer_Routine_0801410C(int param_1)
 
 {
   int *piVar1;
@@ -4462,9 +4462,9 @@ void func_0801410C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801412C @ 0x0801412C
+// Function: Farmer_Routine_0801412C @ 0x0801412C
 // =============================================================================
-undefined8 func_0801412C(int param_1)
+undefined8 Farmer_Routine_0801412C(int param_1)
 
 {
   char cVar1;
@@ -4484,9 +4484,9 @@ undefined8 func_0801412C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014164 @ 0x08014164
+// Function: Farmer_Routine_08014164 @ 0x08014164
 // =============================================================================
-undefined8 func_08014164(int param_1,undefined4 param_2,undefined1 param_3)
+undefined8 Farmer_Routine_08014164(int param_1,undefined4 param_2,undefined1 param_3)
 
 {
   int *piVar1;
@@ -4503,9 +4503,9 @@ undefined8 func_08014164(int param_1,undefined4 param_2,undefined1 param_3)
 }
 
 // =============================================================================
-// Function: func_08014198 @ 0x08014198
+// Function: Farmer_Routine_08014198 @ 0x08014198
 // =============================================================================
-undefined8 func_08014198(int param_1)
+undefined8 Farmer_Routine_08014198(int param_1)
 
 {
   int *piVar1;
@@ -4522,9 +4522,9 @@ undefined8 func_08014198(int param_1)
 }
 
 // =============================================================================
-// Function: func_080141C4 @ 0x080141C4
+// Function: Farmer_Routine_080141C4 @ 0x080141C4
 // =============================================================================
-undefined4 func_080141C4(int param_1)
+undefined4 Farmer_Routine_080141C4(int param_1)
 
 {
   int *piVar1;
@@ -4541,9 +4541,9 @@ undefined4 func_080141C4(int param_1)
 }
 
 // =============================================================================
-// Function: func_080141EC @ 0x080141EC
+// Function: Farmer_Routine_080141EC @ 0x080141EC
 // =============================================================================
-undefined4 func_080141EC(int param_1)
+undefined4 Farmer_Routine_080141EC(int param_1)
 
 {
   int *piVar1;
@@ -4560,9 +4560,9 @@ undefined4 func_080141EC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014214 @ 0x08014214
+// Function: Farmer_Routine_08014214 @ 0x08014214
 // =============================================================================
-undefined4 func_08014214(int param_1)
+undefined4 Farmer_Routine_08014214(int param_1)
 
 {
   int *piVar1;
@@ -4576,9 +4576,9 @@ undefined4 func_08014214(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014234 @ 0x08014234
+// Function: Farmer_Routine_08014234 @ 0x08014234
 // =============================================================================
-void func_08014234(int param_1)
+void Farmer_Routine_08014234(int param_1)
 
 {
   int *piVar1;
@@ -4589,9 +4589,9 @@ void func_08014234(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801424C @ 0x0801424C
+// Function: Farmer_Routine_0801424C @ 0x0801424C
 // =============================================================================
-void func_0801424C(int param_1,undefined4 param_2)
+void Farmer_Routine_0801424C(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4602,9 +4602,9 @@ void func_0801424C(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08014264 @ 0x08014264
+// Function: Farmer_Routine_08014264 @ 0x08014264
 // =============================================================================
-undefined4 func_08014264(int param_1,undefined4 param_2,undefined4 param_3)
+undefined4 Farmer_Routine_08014264(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   int *piVar1;
@@ -4620,9 +4620,9 @@ undefined4 func_08014264(int param_1,undefined4 param_2,undefined4 param_3)
 }
 
 // =============================================================================
-// Function: func_08014290 @ 0x08014290
+// Function: Farmer_Routine_08014290 @ 0x08014290
 // =============================================================================
-undefined4 func_08014290(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08014290(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4638,9 +4638,9 @@ undefined4 func_08014290(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080142B8 @ 0x080142B8
+// Function: Farmer_Routine_080142B8 @ 0x080142B8
 // =============================================================================
-undefined4 func_080142B8(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_080142B8(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4652,9 +4652,9 @@ undefined4 func_080142B8(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080142D4 @ 0x080142D4
+// Function: Farmer_Routine_080142D4 @ 0x080142D4
 // =============================================================================
-undefined4 func_080142D4(int param_1)
+undefined4 Farmer_Routine_080142D4(int param_1)
 
 {
   int *piVar1;
@@ -4666,9 +4666,9 @@ undefined4 func_080142D4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014318 @ 0x08014318
+// Function: Farmer_Routine_08014318 @ 0x08014318
 // =============================================================================
-undefined4 func_08014318(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08014318(int param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -4689,16 +4689,16 @@ undefined4 func_08014318(int param_1,undefined4 param_2)
     if ((cVar1 != '\0') || (((*(ushort *)(*(int *)(iVar4 + 0x8c) + 0x12) & 0x7ff) >> 5 & 1) != 0)) {
       uVar5 = 1;
     }
-    func_0803CD4C(iVar3 + 8,*(int *)(iVar4 + 0x8c) + 0x10,uVar5);
+    ScriptEngine_Routine_0803CD4C(iVar3 + 8,*(int *)(iVar4 + 0x8c) + 0x10,uVar5);
   }
-  func_080D7F08(iVar4);
+  VTable_Routine_080D7F08(iVar4);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08014694 @ 0x08014694
+// Function: Farmer_Routine_08014694 @ 0x08014694
 // =============================================================================
-undefined4 func_08014694(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08014694(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4710,9 +4710,9 @@ undefined4 func_08014694(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080146B0 @ 0x080146B0
+// Function: Farmer_Routine_080146B0 @ 0x080146B0
 // =============================================================================
-undefined4 func_080146B0(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_080146B0(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4724,9 +4724,9 @@ undefined4 func_080146B0(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080146CC @ 0x080146CC
+// Function: Farmer_Routine_080146CC @ 0x080146CC
 // =============================================================================
-undefined4 func_080146CC(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_080146CC(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -4734,16 +4734,16 @@ undefined4 func_080146CC(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   iVar2 = *(int *)(param_1 + 4);
-  func_0800C994(*(int *)(iVar2 + 0x8c) + 0x410,param_2);
+  Building_Routine_0800C994(*(int *)(iVar2 + 0x8c) + 0x410,param_2);
   piVar1 = *(int **)(iVar2 + 0xa8);
   func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0xac));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080146FC @ 0x080146FC
+// Function: Farmer_Routine_080146FC @ 0x080146FC
 // =============================================================================
-undefined4 func_080146FC(int param_1,undefined2 param_2)
+undefined4 Farmer_Routine_080146FC(int param_1,undefined2 param_2)
 
 {
   int *piVar1;
@@ -4787,7 +4787,7 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
   *(undefined2 *)(piVar9 + 8) = 0;
   uStack_74 = uStack_74 & 0xffff0000;
   *(undefined2 *)((int)piVar9 + 0x22) = 0;
-  func_08008F60(&uStack_70,(short)piVar9[0x3b],_DAT_080147a8,2);
+  HW_Routine_08008F60(&uStack_70,(short)piVar9[0x3b],_DAT_080147a8,2);
   puVar3 = (uint *)piVar9[1];
   if (puVar3 == (uint *)piVar9[3]) {
     iStack_5c = 1;
@@ -4803,9 +4803,9 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
     }
     else {
       iVar7 = (iStack_60 + *piVar1) * 0x10;
-      puStack_24 = (uint *)malloc(iVar7);
+      puStack_24 = (uint *)malloc_gba(iVar7);
       if (puStack_24 == (uint *)0x0) {
-        puStack_24 = (uint *)func_080D3BC0(iVar7);
+        puStack_24 = (uint *)VTable_Routine_080D3BC0(iVar7);
       }
     }
     puVar2 = (uint *)*piVar9;
@@ -4853,7 +4853,7 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
     for (iVar5 = *piVar9; iVar5 != piVar9[1]; iVar5 = iVar5 + 0x10) {
     }
     if (*piVar9 != 0) {
-      free();
+      cpp_operator_delete();
     }
     *piVar9 = (int)puStack_24;
     piVar9[1] = (int)puVar3;
@@ -4876,7 +4876,7 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
     puStack_40 = (undefined1 *)((int)piVar9 + 0xef);
     piStack_48 = piVar9 + 0x27;
   }
-  func_08008F60(&uStack_74,_DAT_080148e0,(iStack_3c + 0x1e8) * 0x20 + 0x6000000,0x20);
+  HW_Routine_08008F60(&uStack_74,_DAT_080148e0,(iStack_3c + 0x1e8) * 0x20 + 0x6000000,0x20);
   puVar3 = (uint *)piVar9[1];
   if (puVar3 == (uint *)piVar9[3]) {
     iStack_54 = 1;
@@ -4892,9 +4892,9 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
     }
     else {
       iVar7 = (iStack_58 + *piVar1) * 0x10;
-      puVar3 = (uint *)malloc(iVar7);
+      puVar3 = (uint *)malloc_gba(iVar7);
       if (puVar3 == (uint *)0x0) {
-        puVar3 = (uint *)func_080D3BC0(iVar7);
+        puVar3 = (uint *)VTable_Routine_080D3BC0(iVar7);
       }
     }
     puVar6 = puVar3;
@@ -4934,7 +4934,7 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
     }
     puStack_24 = puVar3;
     if (*piVar9 != 0) {
-      free();
+      cpp_operator_delete();
     }
     *piVar9 = (int)puStack_24;
     piVar9[1] = (int)puVar6;
@@ -4950,7 +4950,7 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
     piVar9[1] = piVar9[1] + 0x10;
   }
   uVar4 = uStack_38 & 0xf000 | 0x1e8;
-  func_08008F60(&uStack_74,uVar4 | uVar4 << 0x10,iStack_34 + 0x6000000,0x500);
+  HW_Routine_08008F60(&uStack_74,uVar4 | uVar4 << 0x10,iStack_34 + 0x6000000,0x500);
   puVar3 = (uint *)piVar9[1];
   if (puVar3 == (uint *)piVar9[3]) {
     iStack_4c = 1;
@@ -4965,9 +4965,9 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
     }
     else {
       iVar7 = (iStack_50 + *piVar1) * 0x10;
-      puVar2 = (uint *)malloc(iVar7);
+      puVar2 = (uint *)malloc_gba(iVar7);
       if (puVar2 == (uint *)0x0) {
-        puVar2 = (uint *)func_080D3BC0(iVar7);
+        puVar2 = (uint *)VTable_Routine_080D3BC0(iVar7);
       }
     }
     puVar8 = puVar2;
@@ -5007,7 +5007,7 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
     }
     puStack_24 = puVar2;
     if (*piVar9 != 0) {
-      free();
+      cpp_operator_delete();
     }
     *piVar9 = (int)puStack_24;
     piVar9[1] = (int)puVar8;
@@ -5031,9 +5031,9 @@ undefined4 func_080146FC(int param_1,undefined2 param_2)
 }
 
 // =============================================================================
-// Function: func_08014AF8 @ 0x08014AF8
+// Function: Farmer_Routine_08014AF8 @ 0x08014AF8
 // =============================================================================
-undefined4 func_08014AF8(int param_1)
+undefined4 Farmer_Routine_08014AF8(int param_1)
 
 {
   int iVar1;
@@ -5055,7 +5055,7 @@ undefined4 func_08014AF8(int param_1)
   *(undefined4 *)(iVar5 + 0xa8) = 0;
   func_0x08010f54(*(undefined4 *)(iVar5 + 0x8c));
   puVar6 = (undefined4 *)(iVar5 + 0xa8);
-  func_0801FB7C(&piStack_1c,*(undefined4 *)(iVar5 + 0x8c),*(undefined4 *)(iVar5 + 0x88),0);
+  Farmer_Routine_0801FB7C(&piStack_1c,*(undefined4 *)(iVar5 + 0x8c),*(undefined4 *)(iVar5 + 0x88),0);
   piVar2 = piStack_1c;
   piStack_14 = piStack_1c;
   piStack_1c = (int *)0x0;
@@ -5086,9 +5086,9 @@ undefined4 func_08014AF8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014BD8 @ 0x08014BD8
+// Function: Farmer_Routine_08014BD8 @ 0x08014BD8
 // =============================================================================
-undefined4 func_08014BD8(int param_1)
+undefined4 Farmer_Routine_08014BD8(int param_1)
 
 {
   int iVar1;
@@ -5111,9 +5111,9 @@ undefined4 func_08014BD8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014C0C @ 0x08014C0C
+// Function: Farmer_Routine_08014C0C @ 0x08014C0C
 // =============================================================================
-undefined4 func_08014C0C(int param_1,undefined4 param_2,undefined4 param_3)
+undefined4 Farmer_Routine_08014C0C(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   int *piVar1;
@@ -5127,10 +5127,10 @@ undefined4 func_08014C0C(int param_1,undefined4 param_2,undefined4 param_3)
 }
 
 // =============================================================================
-// Function: func_08014C34 @ 0x08014C34
+// Function: Farmer_Routine_08014C34 @ 0x08014C34
 // =============================================================================
 undefined4
-func_08014C34(int param_1,int param_2,int param_3,ushort param_4,uint param_5,uint param_6)
+Farmer_Routine_08014C34(int param_1,int param_2,int param_3,ushort param_4,uint param_5,uint param_6)
 
 {
   ushort uVar1;
@@ -5163,10 +5163,10 @@ func_08014C34(int param_1,int param_2,int param_3,ushort param_4,uint param_5,ui
     uStack_2e = CONCAT11(uStack_2e._1_1_ & 3 | (byte)((param_6 & 0x3f) << 2),(char)uVar1);
     uStack_2c = uVar2 & uStack_2c | (ushort)((param_6 & 0xffff) >> 6) & uVar3;
     iStack_28 = param_3;
-    memcpy(auStack_38,&uStack_30,6);
+    gba_memcpy(auStack_38,&uStack_30,6);
     uStack_32 = 0;
-    func_0809BBF0(auStack_64,auStack_38,iStack_28 * 0x78);
-    func_08009BE4(iVar5 + 0x14,auStack_64);
+    Animal_Routine_0809BBF0(auStack_64,auStack_38,iStack_28 * 0x78);
+    Farm_Routine_08009BE4(iVar5 + 0x14,auStack_64);
     puVar7 = (undefined4 *)(iStack_24 + 0xa8);
     piVar6 = (int *)*puVar7;
     func_0x080d3914(piVar6,0x2c,*(undefined4 *)(*piVar6 + 0x38));
@@ -5182,9 +5182,9 @@ func_08014C34(int param_1,int param_2,int param_3,ushort param_4,uint param_5,ui
 }
 
 // =============================================================================
-// Function: func_08014D30 @ 0x08014D30
+// Function: Farmer_Routine_08014D30 @ 0x08014D30
 // =============================================================================
-undefined4 func_08014D30(int param_1,int param_2)
+undefined4 Farmer_Routine_08014D30(int param_1,int param_2)
 
 {
   int *piVar1;
@@ -5201,9 +5201,9 @@ undefined4 func_08014D30(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08014D5C @ 0x08014D5C
+// Function: Farmer_Routine_08014D5C @ 0x08014D5C
 // =============================================================================
-void func_08014D5C(int param_1)
+void Farmer_Routine_08014D5C(int param_1)
 
 {
   int *piVar1;
@@ -5216,9 +5216,9 @@ void func_08014D5C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014D7C @ 0x08014D7C
+// Function: Farmer_Routine_08014D7C @ 0x08014D7C
 // =============================================================================
-void func_08014D7C(int param_1)
+void Farmer_Routine_08014D7C(int param_1)
 
 {
   int *piVar1;
@@ -5231,9 +5231,9 @@ void func_08014D7C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08014D9C @ 0x08014D9C
+// Function: Farmer_Routine_08014D9C @ 0x08014D9C
 // =============================================================================
-undefined4 func_08014D9C(int param_1)
+undefined4 Farmer_Routine_08014D9C(int param_1)
 
 {
   int iVar1;
@@ -5288,229 +5288,229 @@ undefined4 func_08014D9C(int param_1)
   puVar27 = &stack0xffffffe0 + _DAT_0801510c;
   iVar2 = *(int *)(param_1 + 4);
   if (*(int *)(iVar2 + 0xf0) != 0) {
-    func_08000608();
+    Dispatcher_Routine_08000608();
   }
   *(int *)(iVar2 + 0xf0) = 0;
   *puVar7 = 0;
-  memcpy(&stack0x00000364 + iVar1,_DAT_08015110,3);
-  memcpy(&stack0x00000368 + iVar1,_DAT_08015114,2);
-  memcpy(&stack0x0000036c + iVar1,_DAT_08015118,2);
+  gba_memcpy(&stack0x00000364 + iVar1,_DAT_08015110,3);
+  gba_memcpy(&stack0x00000368 + iVar1,_DAT_08015114,2);
+  gba_memcpy(&stack0x0000036c + iVar1,_DAT_08015118,2);
   uVar5 = _DAT_0801511c;
-  iVar3 = strlen(puVar8);
+  iVar3 = gba_strlen(puVar8);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015110;
-  iVar3 = strlen(puVar9);
+  iVar3 = gba_strlen(puVar9);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015124;
-  iVar3 = strlen(puVar10);
+  iVar3 = gba_strlen(puVar10);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = func_0x08009af4(*(int *)(iVar2 + 0x8c) + 0x14);
-  iVar3 = strlen(puVar11);
+  iVar3 = gba_strlen(puVar11);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015128;
-  iVar3 = strlen(puVar12);
+  iVar3 = gba_strlen(puVar12);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015110;
-  iVar3 = strlen(puVar13);
+  iVar3 = gba_strlen(puVar13);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_0801512c;
-  iVar3 = strlen(puVar14);
+  iVar3 = gba_strlen(puVar14);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015114;
-  iVar3 = strlen(puVar15);
+  iVar3 = gba_strlen(puVar15);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015110;
-  iVar3 = strlen(puVar16);
+  iVar3 = gba_strlen(puVar16);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015130;
-  iVar3 = strlen(puVar17);
+  iVar3 = gba_strlen(puVar17);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015114;
-  iVar3 = strlen(puVar18);
+  iVar3 = gba_strlen(puVar18);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015110;
-  iVar3 = strlen(puVar19);
+  iVar3 = gba_strlen(puVar19);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015118;
-  iVar3 = strlen(puVar20);
+  iVar3 = gba_strlen(puVar20);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
-  func_08011934(iVar2,2,puVar21);
+  Farmer_Routine_08011934(iVar2,2,puVar21);
   uVar5 = _DAT_08015118;
-  iVar3 = strlen(puVar22);
+  iVar3 = gba_strlen(puVar22);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015134;
-  iVar3 = strlen(puVar23);
+  iVar3 = gba_strlen(puVar23);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015110;
-  iVar3 = strlen(puVar24);
+  iVar3 = gba_strlen(puVar24);
   uVar6 = _DAT_08015120 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015204;
-  iVar3 = strlen(puVar25);
+  iVar3 = gba_strlen(puVar25);
   uVar6 = _DAT_08015208 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_0801520c;
-  iVar3 = strlen(puVar26);
+  iVar3 = gba_strlen(puVar26);
   uVar6 = _DAT_08015208 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
-  iVar3 = func_080005D4(900);
-  strcpy(iVar3,puVar27);
+  iVar3 = Dispatcher_Routine_080005D4(900);
+  gba_strcpy(iVar3,puVar27);
   if (iVar3 != *(int *)(iVar2 + 0xf0)) {
-    func_08000608();
+    Dispatcher_Routine_08000608();
   }
   *(int *)(iVar2 + 0xf0) = iVar3;
   if (*(int *)(iVar2 + 0xac) != 0) {
-    func_08050DC8(*(int *)(iVar2 + 0xac),iVar3,0x100,*(undefined4 *)(iVar2 + 0xb0));
+    Animal_Routine_08050DC8(*(int *)(iVar2 + 0xac),iVar3,0x100,*(undefined4 *)(iVar2 + 0xb0));
     *(undefined4 *)(iVar2 + 0x9c) = 0x10;
   }
   return *(undefined4 *)(&stack0x0000038c + iVar1);
 }
 
 // =============================================================================
-// Function: func_08015210 @ 0x08015210
+// Function: Farmer_Routine_08015210 @ 0x08015210
 // =============================================================================
-undefined4 func_08015210(int param_1)
+undefined4 Farmer_Routine_08015210(int param_1)
 
 {
   char cVar1;
@@ -5525,39 +5525,39 @@ undefined4 func_08015210(int param_1)
   
   iVar2 = *(int *)(param_1 + 4);
   piVar8 = (int *)(iVar2 + 0x8c);
-  uVar3 = func_0800C570(*piVar8 + 0x410);
+  uVar3 = Barn_GetCowCount(*piVar8 + 0x410);
   uVar7 = 0;
   if (uVar3 != 0) {
     do {
-      iVar4 = func_0800C894(*piVar8 + 0x410,uVar7);
+      iVar4 = Building_Routine_0800C894(*piVar8 + 0x410,uVar7);
       if ((iVar4 != 0) && (iVar4 = func_0x0809b514(), iVar4 == 2)) {
         func_0x080d3914(*(int **)(iVar2 + 0xa8),uVar7 + 0x2e,
                         *(undefined4 *)(**(int **)(iVar2 + 0xa8) + 0x3c));
-        func_0800C91C(*piVar8 + 0x410,uVar7);
+        Building_Routine_0800C91C(*piVar8 + 0x410,uVar7);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < uVar3);
   }
   piVar8 = (int *)(iVar2 + 0x8c);
   iVar4 = *piVar8 + _DAT_08015318;
-  cVar1 = func_0800F190(iVar4);
+  cVar1 = HeldItem_IsEmpty(iVar4);
   if ((cVar1 == '\0') && (iVar5 = func_0x0800f204(iVar4), iVar5 == 3)) {
     iVar5 = *piVar8;
-    uVar6 = func_0800F344(iVar4);
-    iVar4 = func_0800C894(iVar5 + 0x410,uVar6);
+    uVar6 = Farmer_Routine_0800F344(iVar4);
+    iVar4 = Building_Routine_0800C894(iVar5 + 0x410,uVar6);
     if (iVar4 == 0) {
       func_0x0800f390(*piVar8 + _DAT_08015318);
     }
   }
-  uVar3 = func_0800CE74(*piVar8 + 0x5f0);
+  uVar3 = Building_Routine_0800CE74(*piVar8 + 0x5f0);
   uVar7 = 0;
   if (uVar3 != 0) {
     do {
-      iVar4 = func_0800D420(*piVar8 + 0x5f0,uVar7);
+      iVar4 = Food_GetStaminaBonus(*piVar8 + 0x5f0,uVar7);
       if ((iVar4 != 0) && (iVar4 = func_0x0809b514(), iVar4 == 2)) {
         func_0x080d3914(*(int **)(iVar2 + 0xa8),uVar7 + 0x36,
                         *(undefined4 *)(**(int **)(iVar2 + 0xa8) + 0x3c));
-        func_0800D4D4(*piVar8 + 0x5f0,uVar7);
+        Food_AddBonuses(*piVar8 + 0x5f0,uVar7);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < uVar3);
@@ -5566,9 +5566,9 @@ undefined4 func_08015210(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801531C @ 0x0801531C
+// Function: Farmer_Routine_0801531C @ 0x0801531C
 // =============================================================================
-undefined4 func_0801531C(int param_1)
+undefined4 Farmer_Routine_0801531C(int param_1)
 
 {
   int iVar1;
@@ -5623,229 +5623,229 @@ undefined4 func_0801531C(int param_1)
   puVar27 = &stack0xffffffe0 + _DAT_0801568c;
   iVar2 = *(int *)(param_1 + 4);
   if (*(int *)(iVar2 + 0xf0) != 0) {
-    func_08000608();
+    Dispatcher_Routine_08000608();
   }
   *(int *)(iVar2 + 0xf0) = 0;
   *puVar7 = 0;
-  memcpy(&stack0x00000364 + iVar1,_DAT_08015690,3);
-  memcpy(&stack0x00000368 + iVar1,_DAT_08015694,2);
-  memcpy(&stack0x0000036c + iVar1,_DAT_08015698,2);
+  gba_memcpy(&stack0x00000364 + iVar1,_DAT_08015690,3);
+  gba_memcpy(&stack0x00000368 + iVar1,_DAT_08015694,2);
+  gba_memcpy(&stack0x0000036c + iVar1,_DAT_08015698,2);
   uVar5 = _DAT_0801569c;
-  iVar3 = strlen(puVar8);
+  iVar3 = gba_strlen(puVar8);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015690;
-  iVar3 = strlen(puVar9);
+  iVar3 = gba_strlen(puVar9);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_080156a4;
-  iVar3 = strlen(puVar10);
+  iVar3 = gba_strlen(puVar10);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = func_0x08009af4(*(int *)(iVar2 + 0x8c) + 0x14);
-  iVar3 = strlen(puVar11);
+  iVar3 = gba_strlen(puVar11);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_080156a8;
-  iVar3 = strlen(puVar12);
+  iVar3 = gba_strlen(puVar12);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015690;
-  iVar3 = strlen(puVar13);
+  iVar3 = gba_strlen(puVar13);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_080156ac;
-  iVar3 = strlen(puVar14);
+  iVar3 = gba_strlen(puVar14);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015694;
-  iVar3 = strlen(puVar15);
+  iVar3 = gba_strlen(puVar15);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015690;
-  iVar3 = strlen(puVar16);
+  iVar3 = gba_strlen(puVar16);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_080156b0;
-  iVar3 = strlen(puVar17);
+  iVar3 = gba_strlen(puVar17);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015694;
-  iVar3 = strlen(puVar18);
+  iVar3 = gba_strlen(puVar18);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015690;
-  iVar3 = strlen(puVar19);
+  iVar3 = gba_strlen(puVar19);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015698;
-  iVar3 = strlen(puVar20);
+  iVar3 = gba_strlen(puVar20);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
-  func_08011934(iVar2,1,puVar21);
+  Farmer_Routine_08011934(iVar2,1,puVar21);
   uVar5 = _DAT_08015698;
-  iVar3 = strlen(puVar22);
+  iVar3 = gba_strlen(puVar22);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_080156b4;
-  iVar3 = strlen(puVar23);
+  iVar3 = gba_strlen(puVar23);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015690;
-  iVar3 = strlen(puVar24);
+  iVar3 = gba_strlen(puVar24);
   uVar6 = _DAT_080156a0 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_08015784;
-  iVar3 = strlen(puVar25);
+  iVar3 = gba_strlen(puVar25);
   uVar6 = _DAT_08015788 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
   uVar5 = _DAT_0801578c;
-  iVar3 = strlen(puVar26);
+  iVar3 = gba_strlen(puVar26);
   uVar6 = _DAT_08015788 - iVar3;
   if (uVar6 != 0) {
-    uVar4 = strlen(uVar5);
+    uVar4 = gba_strlen(uVar5);
     if (uVar6 < uVar4) {
       uVar4 = uVar6;
     }
-    memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
+    gba_memcpy(&stack0xffffffe0 + iVar3 + iVar1,uVar5,uVar4);
     (&stack0xffffffe0 + iVar3 + iVar1)[uVar4] = 0;
   }
-  iVar3 = func_080005D4(900);
-  strcpy(iVar3,puVar27);
+  iVar3 = Dispatcher_Routine_080005D4(900);
+  gba_strcpy(iVar3,puVar27);
   if (iVar3 != *(int *)(iVar2 + 0xf0)) {
-    func_08000608();
+    Dispatcher_Routine_08000608();
   }
   *(int *)(iVar2 + 0xf0) = iVar3;
   if (*(int *)(iVar2 + 0xac) != 0) {
-    func_08050DC8(*(int *)(iVar2 + 0xac),iVar3,0x100,*(undefined4 *)(iVar2 + 0xb0));
+    Animal_Routine_08050DC8(*(int *)(iVar2 + 0xac),iVar3,0x100,*(undefined4 *)(iVar2 + 0xb0));
     *(undefined4 *)(iVar2 + 0x9c) = 0x10;
   }
   return *(undefined4 *)(&stack0x0000038c + iVar1);
 }
 
 // =============================================================================
-// Function: func_08015790 @ 0x08015790
+// Function: Farmer_Routine_08015790 @ 0x08015790
 // =============================================================================
-undefined4 func_08015790(int param_1)
+undefined4 Farmer_Routine_08015790(int param_1)
 
 {
   char cVar1;
@@ -5860,39 +5860,39 @@ undefined4 func_08015790(int param_1)
   
   iVar2 = *(int *)(param_1 + 4);
   piVar8 = (int *)(iVar2 + 0x8c);
-  uVar3 = func_0800C570(*piVar8 + 0x410);
+  uVar3 = Barn_GetCowCount(*piVar8 + 0x410);
   uVar7 = 0;
   if (uVar3 != 0) {
     do {
-      iVar4 = func_0800C894(*piVar8 + 0x410,uVar7);
+      iVar4 = Building_Routine_0800C894(*piVar8 + 0x410,uVar7);
       if ((iVar4 != 0) && (iVar4 = func_0x0809b514(), iVar4 == 1)) {
         func_0x080d3914(*(int **)(iVar2 + 0xa8),uVar7 + 0x2e,
                         *(undefined4 *)(**(int **)(iVar2 + 0xa8) + 0x3c));
-        func_0800C91C(*piVar8 + 0x410,uVar7);
+        Building_Routine_0800C91C(*piVar8 + 0x410,uVar7);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < uVar3);
   }
   piVar8 = (int *)(iVar2 + 0x8c);
   iVar4 = *piVar8 + _DAT_08015898;
-  cVar1 = func_0800F190(iVar4);
+  cVar1 = HeldItem_IsEmpty(iVar4);
   if ((cVar1 == '\0') && (iVar5 = func_0x0800f204(iVar4), iVar5 == 3)) {
     iVar5 = *piVar8;
-    uVar6 = func_0800F344(iVar4);
-    iVar4 = func_0800C894(iVar5 + 0x410,uVar6);
+    uVar6 = Farmer_Routine_0800F344(iVar4);
+    iVar4 = Building_Routine_0800C894(iVar5 + 0x410,uVar6);
     if (iVar4 == 0) {
       func_0x0800f390(*piVar8 + _DAT_08015898);
     }
   }
-  uVar3 = func_0800CE74(*piVar8 + 0x5f0);
+  uVar3 = Building_Routine_0800CE74(*piVar8 + 0x5f0);
   uVar7 = 0;
   if (uVar3 != 0) {
     do {
-      iVar4 = func_0800D420(*piVar8 + 0x5f0,uVar7);
+      iVar4 = Food_GetStaminaBonus(*piVar8 + 0x5f0,uVar7);
       if ((iVar4 != 0) && (iVar4 = func_0x0809b514(), iVar4 == 1)) {
         func_0x080d3914(*(int **)(iVar2 + 0xa8),uVar7 + 0x36,
                         *(undefined4 *)(**(int **)(iVar2 + 0xa8) + 0x3c));
-        func_0800D4D4(*piVar8 + 0x5f0,uVar7);
+        Food_AddBonuses(*piVar8 + 0x5f0,uVar7);
       }
       uVar7 = uVar7 + 1;
     } while (uVar7 < uVar3);
@@ -5901,9 +5901,9 @@ undefined4 func_08015790(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801589C @ 0x0801589C
+// Function: Farmer_Routine_0801589C @ 0x0801589C
 // =============================================================================
-undefined4 func_0801589C(int param_1,undefined2 param_2)
+undefined4 Farmer_Routine_0801589C(int param_1,undefined2 param_2)
 
 {
   int *piVar1;
@@ -5920,9 +5920,9 @@ undefined4 func_0801589C(int param_1,undefined2 param_2)
 }
 
 // =============================================================================
-// Function: func_080158CC @ 0x080158CC
+// Function: Farmer_Routine_080158CC @ 0x080158CC
 // =============================================================================
-undefined4 func_080158CC(int param_1)
+undefined4 Farmer_Routine_080158CC(int param_1)
 
 {
   int *piVar1;
@@ -5939,9 +5939,9 @@ undefined4 func_080158CC(int param_1)
 }
 
 // =============================================================================
-// Function: func_080158F8 @ 0x080158F8
+// Function: Farmer_Routine_080158F8 @ 0x080158F8
 // =============================================================================
-undefined4 func_080158F8(int param_1)
+undefined4 Farmer_Routine_080158F8(int param_1)
 
 {
   int *piVar1;
@@ -5958,9 +5958,9 @@ undefined4 func_080158F8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08015920 @ 0x08015920
+// Function: Farmer_Routine_08015920 @ 0x08015920
 // =============================================================================
-undefined8 func_08015920(int param_1,int param_2)
+undefined8 Farmer_Routine_08015920(int param_1,int param_2)
 
 {
   int *piVar1;
@@ -5971,7 +5971,7 @@ undefined8 func_08015920(int param_1,int param_2)
   if ((param_2 - 0x24U < 7) &&
      (piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8),
      iVar2 = func_0x080d3914(piVar1,param_2,*(undefined4 *)(*piVar1 + 0x40)), iVar2 != 0)) {
-    uVar3 = func_08033B24();
+    uVar3 = Entity_Routine_08033B24();
   }
   else {
     uVar3 = 0;
@@ -5980,9 +5980,9 @@ undefined8 func_08015920(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08015950 @ 0x08015950
+// Function: Farmer_Routine_08015950 @ 0x08015950
 // =============================================================================
-void func_08015950(int param_1)
+void Farmer_Routine_08015950(int param_1)
 
 {
   int *piVar1;
@@ -5995,9 +5995,9 @@ void func_08015950(int param_1)
 }
 
 // =============================================================================
-// Function: func_08015970 @ 0x08015970
+// Function: Farmer_Routine_08015970 @ 0x08015970
 // =============================================================================
-void func_08015970(int param_1)
+void Farmer_Routine_08015970(int param_1)
 
 {
   int *piVar1;
@@ -6010,9 +6010,9 @@ void func_08015970(int param_1)
 }
 
 // =============================================================================
-// Function: func_08015990 @ 0x08015990
+// Function: Farmer_Routine_08015990 @ 0x08015990
 // =============================================================================
-void func_08015990(int param_1)
+void Farmer_Routine_08015990(int param_1)
 
 {
   int *piVar1;
@@ -6025,9 +6025,9 @@ void func_08015990(int param_1)
 }
 
 // =============================================================================
-// Function: func_080159B0 @ 0x080159B0
+// Function: Farmer_Routine_080159B0 @ 0x080159B0
 // =============================================================================
-undefined4 func_080159B0(int param_1,int param_2,int param_3)
+undefined4 Farmer_Routine_080159B0(int param_1,int param_2,int param_3)
 
 {
   bool bVar1;
@@ -6302,16 +6302,16 @@ LAB_08015dd6:
   if (uStack_98 != 0) {
     puVar7 = puVar4;
   }
-  func_0809CF34(auStack_1c,*(int *)(iVar8 + 0x8c) + _DAT_08015e2c,param_2,param_3,puVar7,uStack_98);
+  NPC_Routine_0809CF34(auStack_1c,*(int *)(iVar8 + 0x8c) + _DAT_08015e2c,param_2,param_3,puVar7,uStack_98);
   for (; puVar4 != auStack_94 + uStack_98; puVar4 = puVar4 + 1) {
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08015E30 @ 0x08015E30
+// Function: Farmer_Routine_08015E30 @ 0x08015E30
 // =============================================================================
-undefined4 func_08015E30(int param_1)
+undefined4 Farmer_Routine_08015E30(int param_1)
 
 {
   ushort uVar1;
@@ -6618,7 +6618,7 @@ undefined4 func_08015E30(int param_1)
       puVar12 = puVar11;
     }
     piVar14 = (int *)(iStack_30 + 0x8c);
-    func_0809CF34(&uStack_80,*piVar14 + _DAT_0801624c,0,iVar15,puVar12,uStack_100);
+    NPC_Routine_0809CF34(&uStack_80,*piVar14 + _DAT_0801624c,0,iVar15,puVar12,uStack_100);
     puVar8 = &uStack_80;
     for (; puVar11 != auStack_fc + uStack_100 * 2; puVar11 = puVar11 + 2) {
     }
@@ -6853,7 +6853,7 @@ undefined4 func_08015E30(int param_1)
       puVar12 = puVar11;
     }
     piVar14 = (int *)(iStack_30 + 0x8c);
-    func_0809CF34(&uStack_34,*piVar14 + _DAT_08016668,1,iVar15,puVar12,uStack_100);
+    NPC_Routine_0809CF34(&uStack_34,*piVar14 + _DAT_08016668,1,iVar15,puVar12,uStack_100);
     puVar8 = &uStack_34;
     for (; puVar11 != auStack_fc + uStack_100 * 2; puVar11 = puVar11 + 2) {
     }
@@ -6877,17 +6877,17 @@ undefined4 func_08015E30(int param_1)
     uStack_100 = CONCAT13(uStack_100._3_1_ & 3 | (byte)((uVar9 & 0x3f) << 2),(int3)uVar10);
     auStack_fc[0] = uVar3 & auStack_fc[0] | (ushort)(uVar9 >> 6) & uVar4;
     func_0x080d3918((int *)*puStack_28,&uStack_100,1,*puStack_2c);
-    func_080D7F08(iStack_30);
+    VTable_Routine_080D7F08(iStack_30);
     uVar10 = func_0x080d3910((int *)*puStack_28,*(undefined4 *)(*(int *)*puStack_28 + 0x14));
-    func_080D7F9C(iStack_30,0,uVar10,uVar16,uVar9,0);
+    VTable_Routine_080D7F9C(iStack_30,0,uVar10,uVar16,uVar9,0);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08016758 @ 0x08016758
+// Function: Farmer_Routine_08016758 @ 0x08016758
 // =============================================================================
-undefined4 func_08016758(int param_1)
+undefined4 Farmer_Routine_08016758(int param_1)
 
 {
   undefined2 uVar1;
@@ -6898,14 +6898,14 @@ undefined4 func_08016758(int param_1)
   iVar2 = *(int *)(param_1 + 4);
   piVar3 = *(int **)(iVar2 + 0xa8);
   uVar1 = func_0x080d3910(piVar3,*(undefined4 *)(*piVar3 + 0x148));
-  func_08008B88(iVar2 + 0xbc,uVar1);
+  HW_Routine_08008B88(iVar2 + 0xbc,uVar1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08016784 @ 0x08016784
+// Function: Farmer_Routine_08016784 @ 0x08016784
 // =============================================================================
-undefined8 func_08016784(int param_1)
+undefined8 Farmer_Routine_08016784(int param_1)
 
 {
   char cVar1;
@@ -6915,15 +6915,15 @@ undefined8 func_08016784(int param_1)
   iVar2 = *(int *)(param_1 + 4) + 0xbc;
   cVar1 = func_0x08008cd0(iVar2);
   if (cVar1 != '\0') {
-    func_08008BF8(iVar2,5);
+    HW_Routine_08008BF8(iVar2,5);
   }
   return CONCAT44(in_lr,(uint)(cVar1 != '\0'));
 }
 
 // =============================================================================
-// Function: func_080167AC @ 0x080167AC
+// Function: Farmer_Routine_080167AC @ 0x080167AC
 // =============================================================================
-void func_080167AC(int param_1)
+void Farmer_Routine_080167AC(int param_1)
 
 {
   int *piVar1;
@@ -6936,9 +6936,9 @@ void func_080167AC(int param_1)
 }
 
 // =============================================================================
-// Function: func_080167CC @ 0x080167CC
+// Function: Farmer_Routine_080167CC @ 0x080167CC
 // =============================================================================
-void func_080167CC(int param_1)
+void Farmer_Routine_080167CC(int param_1)
 
 {
   func_0x08008cd0(*(int *)(param_1 + 4) + 0xbc);
@@ -6946,9 +6946,9 @@ void func_080167CC(int param_1)
 }
 
 // =============================================================================
-// Function: func_080167DC @ 0x080167DC
+// Function: Farmer_Routine_080167DC @ 0x080167DC
 // =============================================================================
-undefined4 func_080167DC(int param_1)
+undefined4 Farmer_Routine_080167DC(int param_1)
 
 {
   char cVar1;
@@ -6975,9 +6975,9 @@ undefined4 func_080167DC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016834 @ 0x08016834
+// Function: Farmer_Routine_08016834 @ 0x08016834
 // =============================================================================
-undefined4 func_08016834(int param_1,uint param_2,int param_3)
+undefined4 Farmer_Routine_08016834(int param_1,uint param_2,int param_3)
 
 {
   int iVar1;
@@ -6997,12 +6997,12 @@ undefined4 func_08016834(int param_1,uint param_2,int param_3)
       ;
       break;
     case 0x8016884:
-      func_0800D80C(*(int *)(iVar1 + 0x8c) + 0x5f0,param_3);
+      FoodStack_GetFood(*(int *)(iVar1 + 0x8c) + 0x5f0,param_3);
       func_0x080d3914(*(int **)(iVar1 + 0xa8),param_3 + 0x36,
                       *(undefined4 *)(**(int **)(iVar1 + 0xa8) + 0x3c));
       break;
     case 0x80168aa:
-      func_0800CB7C(*(int *)(iVar1 + 0x8c) + 0x410,param_3);
+      Building_Routine_0800CB7C(*(int *)(iVar1 + 0x8c) + 0x410,param_3);
       func_0x080d3914(*(int **)(iVar1 + 0xa8),param_3 + 0x2e,
                       *(undefined4 *)(**(int **)(iVar1 + 0xa8) + 0x3c));
     }
@@ -7011,9 +7011,9 @@ undefined4 func_08016834(int param_1,uint param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_080168D4 @ 0x080168D4
+// Function: Farmer_Routine_080168D4 @ 0x080168D4
 // =============================================================================
-undefined4 func_080168D4(int param_1,uint param_2)
+undefined4 Farmer_Routine_080168D4(int param_1,uint param_2)
 
 {
   char cVar1;
@@ -7044,13 +7044,13 @@ undefined4 func_080168D4(int param_1,uint param_2)
           func_0x080d3910(iVar6,*(undefined4 *)(*(int *)(iVar6 + 0x14) + 0x20));
         }
         if (iVar6 != 0) {
-          func_0801FE78(iVar6,2,0x2f0,0x84);
+          Farmer_Routine_0801FE78(iVar6,2,0x2f0,0x84);
         }
       }
       break;
     case 0x801696c:
       piVar4 = (int *)(iVar6 + 0x8c);
-      iVar2 = func_0800D058(*piVar4 + 0x5f0);
+      iVar2 = Tool_GetId(*piVar4 + 0x5f0);
       if (iVar2 != -1) {
         func_0x0800d858(*piVar4 + 0x5f0);
         piVar3 = *(int **)(iVar6 + 0xa8);
@@ -7062,15 +7062,15 @@ undefined4 func_080168D4(int param_1,uint param_2)
            cVar1 == '\0')) {
           func_0x080d3910(iVar6,*(undefined4 *)(*(int *)(iVar6 + 0x14) + 0x20));
         }
-        func_0800D074(&sStack_20,*piVar4 + 0x5f0,iVar2);
+        Tool_GetName(&sStack_20,*piVar4 + 0x5f0,iVar2);
         if (iVar6 != 0) {
-          func_0801FE78(iVar6,0x25,(int)sStack_20,(int)sStack_1e);
+          Farmer_Routine_0801FE78(iVar6,0x25,(int)sStack_20,(int)sStack_1e);
         }
       }
       break;
     case 0x8016a02:
       piVar4 = (int *)(iVar6 + 0x8c);
-      iVar2 = func_0800C6D8(*piVar4 + 0x410);
+      iVar2 = Building_Routine_0800C6D8(*piVar4 + 0x410);
       if (iVar2 != -1) {
         func_0x0800cbc0(*piVar4 + 0x410);
         piVar3 = *(int **)(iVar6 + 0xa8);
@@ -7082,9 +7082,9 @@ undefined4 func_080168D4(int param_1,uint param_2)
            cVar1 == '\0')) {
           func_0x080d3910(iVar6,*(undefined4 *)(*(int *)(iVar6 + 0x14) + 0x20));
         }
-        func_0800C6F0(&sStack_1c,*piVar4 + 0x410,iVar2);
+        Building_Routine_0800C6F0(&sStack_1c,*piVar4 + 0x410,iVar2);
         if (iVar6 != 0) {
-          func_0801FE78(iVar6,0x11,(int)sStack_1c,(int)sStack_1a);
+          Farmer_Routine_0801FE78(iVar6,0x11,(int)sStack_1c,(int)sStack_1a);
         }
       }
       break;
@@ -7100,7 +7100,7 @@ undefined4 func_080168D4(int param_1,uint param_2)
           func_0x080d3910(iVar6,*(undefined4 *)(*(int *)(iVar6 + 0x14) + 0x20));
         }
         if (iVar6 != 0) {
-          func_0801FE78(iVar6,2,0x17e,0x52);
+          Farmer_Routine_0801FE78(iVar6,2,0x17e,0x52);
         }
       }
     }
@@ -7109,9 +7109,9 @@ undefined4 func_080168D4(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_08016AFC @ 0x08016AFC
+// Function: Farmer_Routine_08016AFC @ 0x08016AFC
 // =============================================================================
-undefined8 func_08016AFC(int param_1,uint param_2)
+undefined8 Farmer_Routine_08016AFC(int param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -7139,18 +7139,18 @@ LAB_08016b70:
     if ((*(byte *)(*(int *)(iVar2 + 0x8c) + _DAT_08016b74) & 0x10) == 0) break;
     goto LAB_08016b70;
   case 0x8016b78:
-    uVar1 = func_0800D058(*(int *)(iVar2 + 0x8c) + 0x5f0);
+    uVar1 = Tool_GetId(*(int *)(iVar2 + 0x8c) + 0x5f0);
     break;
   case 0x8016b8a:
-    uVar1 = func_0800C6D8(*(int *)(iVar2 + 0x8c) + 0x410);
+    uVar1 = Building_Routine_0800C6D8(*(int *)(iVar2 + 0x8c) + 0x410);
   }
   return CONCAT44(in_lr,uVar1);
 }
 
 // =============================================================================
-// Function: func_08016BA4 @ 0x08016BA4
+// Function: Farmer_Routine_08016BA4 @ 0x08016BA4
 // =============================================================================
-undefined4 func_08016BA4(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08016BA4(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -7162,9 +7162,9 @@ undefined4 func_08016BA4(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08016BC0 @ 0x08016BC0
+// Function: Farmer_Routine_08016BC0 @ 0x08016BC0
 // =============================================================================
-undefined4 func_08016BC0(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08016BC0(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -7176,9 +7176,9 @@ undefined4 func_08016BC0(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08016BDC @ 0x08016BDC
+// Function: Farmer_Routine_08016BDC @ 0x08016BDC
 // =============================================================================
-undefined4 func_08016BDC(int param_1)
+undefined4 Farmer_Routine_08016BDC(int param_1)
 
 {
   int *piVar1;
@@ -7190,9 +7190,9 @@ undefined4 func_08016BDC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016BF4 @ 0x08016BF4
+// Function: Farmer_Routine_08016BF4 @ 0x08016BF4
 // =============================================================================
-undefined4 func_08016BF4(int param_1)
+undefined4 Farmer_Routine_08016BF4(int param_1)
 
 {
   int *piVar1;
@@ -7204,9 +7204,9 @@ undefined4 func_08016BF4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016C10 @ 0x08016C10
+// Function: Farmer_Routine_08016C10 @ 0x08016C10
 // =============================================================================
-undefined4 func_08016C10(int param_1)
+undefined4 Farmer_Routine_08016C10(int param_1)
 
 {
   int *piVar1;
@@ -7218,9 +7218,9 @@ undefined4 func_08016C10(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016C2C @ 0x08016C2C
+// Function: Farmer_Routine_08016C2C @ 0x08016C2C
 // =============================================================================
-undefined4 func_08016C2C(int param_1)
+undefined4 Farmer_Routine_08016C2C(int param_1)
 
 {
   int *piVar1;
@@ -7228,14 +7228,14 @@ undefined4 func_08016C2C(int param_1)
   
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   func_0x080d3914(piVar1,0x5d,*(undefined4 *)(*piVar1 + 0x40));
-  func_080387B8();
+  Entity_Routine_080387B8();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08016C48 @ 0x08016C48
+// Function: Farmer_Routine_08016C48 @ 0x08016C48
 // =============================================================================
-undefined4 func_08016C48(int param_1)
+undefined4 Farmer_Routine_08016C48(int param_1)
 
 {
   int *piVar1;
@@ -7245,15 +7245,15 @@ undefined4 func_08016C48(int param_1)
   iVar2 = *(int *)(param_1 + 4);
   piVar1 = *(int **)(iVar2 + 0xa8);
   func_0x080d3914(piVar1,0x5d,*(undefined4 *)(*piVar1 + 0x40));
-  func_080387C8();
+  Entity_Routine_080387C8();
   *(undefined4 *)(iVar2 + 0x9c) = 0x1c;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08016C6C @ 0x08016C6C
+// Function: Farmer_Routine_08016C6C @ 0x08016C6C
 // =============================================================================
-undefined4 func_08016C6C(int param_1)
+undefined4 Farmer_Routine_08016C6C(int param_1)
 
 {
   int *piVar1;
@@ -7261,14 +7261,14 @@ undefined4 func_08016C6C(int param_1)
   
   piVar1 = *(int **)(*(int *)(param_1 + 4) + 0xa8);
   func_0x080d3914(piVar1,0x5d,*(undefined4 *)(*piVar1 + 0x40));
-  func_080387EC();
+  Entity_Routine_080387EC();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08016C88 @ 0x08016C88
+// Function: Farmer_Routine_08016C88 @ 0x08016C88
 // =============================================================================
-undefined4 func_08016C88(int param_1)
+undefined4 Farmer_Routine_08016C88(int param_1)
 
 {
   int *piVar1;
@@ -7278,15 +7278,15 @@ undefined4 func_08016C88(int param_1)
   iVar2 = *(int *)(param_1 + 4);
   piVar1 = *(int **)(iVar2 + 0xa8);
   func_0x080d3914(piVar1,0x5d,*(undefined4 *)(*piVar1 + 0x40));
-  func_080387FC();
+  Entity_Routine_080387FC();
   *(undefined4 *)(iVar2 + 0x9c) = 0x1b;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08016CAC @ 0x08016CAC
+// Function: Farmer_Routine_08016CAC @ 0x08016CAC
 // =============================================================================
-undefined4 func_08016CAC(int param_1)
+undefined4 Farmer_Routine_08016CAC(int param_1)
 
 {
   int *piVar1;
@@ -7300,9 +7300,9 @@ undefined4 func_08016CAC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016CCC @ 0x08016CCC
+// Function: Farmer_Routine_08016CCC @ 0x08016CCC
 // =============================================================================
-undefined4 func_08016CCC(int param_1)
+undefined4 Farmer_Routine_08016CCC(int param_1)
 
 {
   int *piVar1;
@@ -7316,9 +7316,9 @@ undefined4 func_08016CCC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016CEC @ 0x08016CEC
+// Function: Farmer_Routine_08016CEC @ 0x08016CEC
 // =============================================================================
-undefined4 func_08016CEC(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08016CEC(int param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -7341,9 +7341,9 @@ undefined4 func_08016CEC(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08016D34 @ 0x08016D34
+// Function: Farmer_Routine_08016D34 @ 0x08016D34
 // =============================================================================
-undefined4 func_08016D34(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08016D34(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -7355,9 +7355,9 @@ undefined4 func_08016D34(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08016D48 @ 0x08016D48
+// Function: Farmer_Routine_08016D48 @ 0x08016D48
 // =============================================================================
-void func_08016D48(int param_1)
+void Farmer_Routine_08016D48(int param_1)
 
 {
   ushort uVar1;
@@ -7381,9 +7381,9 @@ void func_08016D48(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016DB0 @ 0x08016DB0
+// Function: Farmer_Routine_08016DB0 @ 0x08016DB0
 // =============================================================================
-undefined4 func_08016DB0(int param_1)
+undefined4 Farmer_Routine_08016DB0(int param_1)
 
 {
   int iVar1;
@@ -7402,7 +7402,7 @@ undefined4 func_08016DB0(int param_1)
   iVar1 = func_0x080d3914(*(int **)(iVar5 + 0xa8),0,*(undefined4 *)(**(int **)(iVar5 + 0xa8) + 0x40)
                          );
   iVar2 = *(int *)(iVar1 + 0x14);
-  iVar3 = func_0809AAD4(*(int *)(iVar5 + 0x8c) + _DAT_08016e30);
+  iVar3 = Animal_Routine_0809AAD4(*(int *)(iVar5 + 0x8c) + _DAT_08016e30);
   uVar4 = func_0x080d11e4();
   iVar3 = func_0x080d0f4e(uVar4,iVar3 + 2);
   if (iVar3 == 0) {
@@ -7412,26 +7412,26 @@ undefined4 func_08016DB0(int param_1)
     func_0x0800dca8(auStack_34,0x40);
   }
   else {
-    func_0809AB08(&uStack_30,*(int *)(iVar5 + 0x8c) + _DAT_08016e30,iVar3 + -2);
+    Animal_Routine_0809AB08(&uStack_30,*(int *)(iVar5 + 0x8c) + _DAT_08016e30,iVar3 + -2);
     if (uStack_30 == 0) {
       func_0x0800dca8(auStack_34,0x40);
     }
     else {
       func_0x0800dca8(auStack_1c,uStack_30 - 1);
-      func_0800DE0C(auStack_1c,(int)cStack_2e,(int)cStack_2c);
-      memcpy(auStack_34,auStack_1c,3);
+      Item_Routine_0800DE0C(auStack_1c,(int)cStack_2e,(int)cStack_2c);
+      gba_memcpy(auStack_34,auStack_1c,3);
     }
   }
-  memcpy(auStack_34,auStack_34,3);
+  gba_memcpy(auStack_34,auStack_34,3);
   func_0x080d3914(iVar1,auStack_34,*(undefined4 *)(iVar2 + 0x58));
   *(undefined4 *)(iVar5 + 0x9c) = 0x19;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08016E7C @ 0x08016E7C
+// Function: Farmer_Routine_08016E7C @ 0x08016E7C
 // =============================================================================
-undefined4 func_08016E7C(int param_1)
+undefined4 Farmer_Routine_08016E7C(int param_1)
 
 {
   int *piVar1;
@@ -7445,9 +7445,9 @@ undefined4 func_08016E7C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016E9C @ 0x08016E9C
+// Function: Farmer_Routine_08016E9C @ 0x08016E9C
 // =============================================================================
-undefined4 func_08016E9C(int param_1)
+undefined4 Farmer_Routine_08016E9C(int param_1)
 
 {
   int *piVar1;
@@ -7464,9 +7464,9 @@ undefined4 func_08016E9C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016EC4 @ 0x08016EC4
+// Function: Farmer_Routine_08016EC4 @ 0x08016EC4
 // =============================================================================
-undefined4 func_08016EC4(void)
+undefined4 Farmer_Routine_08016EC4(void)
 
 {
   undefined4 in_lr;
@@ -7476,9 +7476,9 @@ undefined4 func_08016EC4(void)
 }
 
 // =============================================================================
-// Function: func_08016EF0 @ 0x08016EF0
+// Function: Farmer_Routine_08016EF0 @ 0x08016EF0
 // =============================================================================
-undefined4 func_08016EF0(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08016EF0(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -7490,9 +7490,9 @@ undefined4 func_08016EF0(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08016F0C @ 0x08016F0C
+// Function: Farmer_Routine_08016F0C @ 0x08016F0C
 // =============================================================================
-undefined4 func_08016F0C(int param_1,undefined1 param_2)
+undefined4 Farmer_Routine_08016F0C(int param_1,undefined1 param_2)
 
 {
   int *piVar1;
@@ -7506,9 +7506,9 @@ undefined4 func_08016F0C(int param_1,undefined1 param_2)
 }
 
 // =============================================================================
-// Function: func_08016F34 @ 0x08016F34
+// Function: Farmer_Routine_08016F34 @ 0x08016F34
 // =============================================================================
-undefined4 func_08016F34(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_08016F34(int param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -7525,9 +7525,9 @@ undefined4 func_08016F34(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08016F60 @ 0x08016F60
+// Function: Farmer_Routine_08016F60 @ 0x08016F60
 // =============================================================================
-undefined4 func_08016F60(int param_1)
+undefined4 Farmer_Routine_08016F60(int param_1)
 
 {
   char cVar1;
@@ -7553,10 +7553,10 @@ undefined4 func_08016F60(int param_1)
 }
 
 // =============================================================================
-// Function: func_08016FA4 @ 0x08016FA4
+// Function: Farmer_Routine_08016FA4 @ 0x08016FA4
 // =============================================================================
 undefined4
-func_08016FA4(int param_1,int param_2,int param_3,uint param_4,uint param_5,undefined1 param_6)
+Farmer_Routine_08016FA4(int param_1,int param_2,int param_3,uint param_4,uint param_5,undefined1 param_6)
 
 {
   ushort uVar1;
@@ -7589,9 +7589,9 @@ func_08016FA4(int param_1,int param_2,int param_3,uint param_4,uint param_5,unde
       uStack_2e._1_1_ = (byte)(uVar1 >> 8);
       uStack_2e = CONCAT11(uStack_2e._1_1_ & 3 | (byte)((param_5 & 0x3f) << 2),(char)uVar1);
       uStack_2c = uVar2 & uStack_2c | (ushort)((param_5 & 0xffff) >> 6) & uVar3;
-      memcpy(&uStack_38,&uStack_30,6);
+      gba_memcpy(&uStack_38,&uStack_30,6);
       uStack_32 = param_6;
-      func_0803211C(iVar4,&uStack_38);
+      Entity_Routine_0803211C(iVar4,&uStack_38);
       func_0x080d3910(iVar4,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0x20));
     }
   }
@@ -7608,7 +7608,7 @@ func_08016FA4(int param_1,int param_2,int param_3,uint param_4,uint param_5,unde
       uStack_36._1_1_ = (byte)(uVar1 >> 8);
       uStack_36 = CONCAT11(uStack_36._1_1_ & 3 | (byte)((param_5 & 0x3f) << 2),(char)uVar1);
       uStack_34 = uVar2 & uStack_34 | (ushort)((param_5 & 0xffff) >> 6) & uVar3;
-      func_0801FE78(iVar4,uStack_38 & 0x3ff,
+      Farmer_Routine_0801FE78(iVar4,uStack_38 & 0x3ff,
                     (int)(short)((ushort)((uStack_36 & _DAT_08017138) << 6) |
                                 (ushort)(param_4 & 0x3f)),
                     (int)(short)((ushort)((uStack_34 & _DAT_08017138) << 6) |
@@ -7618,7 +7618,7 @@ func_08016FA4(int param_1,int param_2,int param_3,uint param_4,uint param_5,unde
   }
   if (iStack_28 == 0) {
     if (param_3 == 0x19) {
-      func_080A0A90(*(int *)(iStack_24 + 0x8c) + _DAT_08017140);
+      NPC_Routine_080A0A90(*(int *)(iStack_24 + 0x8c) + _DAT_08017140);
     }
     iVar4 = 0;
     if (param_3 - 0x35U < 0xff) {
@@ -7628,16 +7628,16 @@ func_08016FA4(int param_1,int param_2,int param_3,uint param_4,uint param_5,unde
       iVar4 = _DAT_08017178 + param_3;
     }
     if (0 < iVar4) {
-      func_0800EECC(*(int *)(iStack_24 + 0x8c) + _DAT_0801717c);
+      Farmer_Routine_0800EECC(*(int *)(iStack_24 + 0x8c) + _DAT_0801717c);
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08017180 @ 0x08017180
+// Function: Farmer_Routine_08017180 @ 0x08017180
 // =============================================================================
-undefined4 func_08017180(int param_1,uint param_2,byte *param_3,int param_4,int param_5)
+undefined4 Farmer_Routine_08017180(int param_1,uint param_2,byte *param_3,int param_4,int param_5)
 
 {
   byte bVar1;
@@ -7678,9 +7678,9 @@ undefined4 func_08017180(int param_1,uint param_2,byte *param_3,int param_4,int 
 }
 
 // =============================================================================
-// Function: func_0801740C @ 0x0801740C
+// Function: Farmer_Routine_0801740C @ 0x0801740C
 // =============================================================================
-undefined8 func_0801740C(uint *param_1,undefined4 param_2,undefined4 param_3,int param_4)
+undefined8 Farmer_Routine_0801740C(uint *param_1,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
   undefined1 uVar1;
@@ -7725,9 +7725,9 @@ case_08017458:
 }
 
 // =============================================================================
-// Function: func_0801746C @ 0x0801746C
+// Function: Farmer_Routine_0801746C @ 0x0801746C
 // =============================================================================
-undefined8 func_0801746C(uint *param_1)
+undefined8 Farmer_Routine_0801746C(uint *param_1)
 
 {
   undefined1 uVar1;
@@ -7769,10 +7769,10 @@ case_080174B8:
 }
 
 // =============================================================================
-// Function: func_080174C8 @ 0x080174C8
+// Function: Farmer_Routine_080174C8 @ 0x080174C8
 // =============================================================================
 undefined8
-func_080174C8(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+Farmer_Routine_080174C8(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
              int param_5,char param_6,undefined1 *param_7)
 
 {
@@ -7783,7 +7783,7 @@ func_080174C8(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined
   short sStack_28;
   short sStack_26;
   
-  func_080A1CBC(aiStack_30,param_2);
+  NPC_Routine_080A1CBC(aiStack_30,param_2);
   iVar2 = 0;
   if (param_6 == '\0') {
     if (aiStack_30[0] != 0x12) {
@@ -7793,9 +7793,9 @@ func_080174C8(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined
 LAB_08017514:
     param_7[0x10] = 0;
     if ((0 < param_5 - iVar2) &&
-       (((aiStack_30[0] == 0x12 || (func_080A1FC4(param_2,param_3), aiStack_30[0] == 0x12)) ||
-        (iVar2 = func_080A1EF4(param_2,param_3), iVar2 == 0)))) {
-      func_080A1C94(param_2,param_3,param_4);
+       (((aiStack_30[0] == 0x12 || (NPC_Routine_080A1FC4(param_2,param_3), aiStack_30[0] == 0x12)) ||
+        (iVar2 = NPC_Routine_080A1EF4(param_2,param_3), iVar2 == 0)))) {
+      NPC_Routine_080A1C94(param_2,param_3,param_4);
       *param_7 = 1;
       *(int *)(param_7 + 8) = (int)sStack_28;
       *(int *)(param_7 + 0xc) = (int)sStack_26;
@@ -7844,10 +7844,10 @@ LAB_080175a2:
 }
 
 // =============================================================================
-// Function: func_080175B4 @ 0x080175B4
+// Function: Farmer_Routine_080175B4 @ 0x080175B4
 // =============================================================================
 undefined8
-func_080175B4(undefined4 *param_1,int param_2,undefined4 param_3,int *param_4,byte param_5)
+Farmer_Routine_080175B4(undefined4 *param_1,int param_2,undefined4 param_3,int *param_4,byte param_5)
 
 {
   undefined2 uVar1;
@@ -7879,7 +7879,7 @@ func_080175B4(undefined4 *param_1,int param_2,undefined4 param_3,int *param_4,by
   *param_4 = 0;
   iStack_38 = param_2;
   piStack_34 = param_4;
-  func_080AC674(param_1 + 1,&iStack_4c);
+  NPC_Routine_080AC674(param_1 + 1,&iStack_4c);
   piVar4 = (int *)(_DAT_0801783c + (int)param_1);
   *piVar4 = iStack_38;
   *(undefined1 *)((int)param_1 + _DAT_08017840) = 0;
@@ -7887,14 +7887,14 @@ func_080175B4(undefined4 *param_1,int param_2,undefined4 param_3,int *param_4,by
   param_1[0x410] = iVar7 + 0x10;
   *(undefined1 *)(param_1 + 0x411) = 0;
   puVar8 = (undefined4 *)(_DAT_08017844 + (int)param_1);
-  uVar5 = func_0801A8C0(param_1,(*(uint *)(iVar7 + 0x10) & 0x1fffff) >> 0x10);
+  uVar5 = Farmer_Routine_0801A8C0(param_1,(*(uint *)(iVar7 + 0x10) & 0x1fffff) >> 0x10);
   *puVar8 = uVar5;
   uVar9 = *(uint *)param_1[0x410];
-  uVar5 = func_0800E324(*piVar4 + 0x10);
-  uVar2 = func_080A4650((uVar9 & 0x1fffff) >> 0x10,(uVar9 & 0x7ffffff) >> 0x15,uVar5,*puVar8);
+  uVar5 = Farmer_Routine_0800E324(*piVar4 + 0x10);
+  uVar2 = NPC_Routine_080A4650((uVar9 & 0x1fffff) >> 0x10,(uVar9 & 0x7ffffff) >> 0x15,uVar5,*puVar8);
   *(undefined1 *)((int)param_1 + _DAT_08017848) = uVar2;
   puVar8 = (undefined4 *)((int)param_1 + _DAT_0801784c);
-  uVar5 = func_080005E4(0xb000);
+  uVar5 = Dispatcher_Routine_080005E4(0xb000);
   *puVar8 = uVar5;
   *(undefined4 *)((int)param_1 + _DAT_08017850) = param_3;
   iVar7 = _DAT_08017854;
@@ -7936,23 +7936,23 @@ func_080175B4(undefined4 *param_1,int param_2,undefined4 param_3,int *param_4,by
   *(undefined1 *)((int)param_1 + _DAT_0801786c) = 0;
   uVar5 = param_1[1];
   piVar10 = (int *)((int)param_1 + _DAT_0801783c);
-  func_0800E924(auStack_48,*piVar10 + _DAT_08017870);
-  func_080A56DC(uVar5,auStack_48,*(undefined4 *)((int)param_1 + _DAT_08017844),
+  Farmer_GetLocation(auStack_48,*piVar10 + _DAT_08017870);
+  NPC_Routine_080A56DC(uVar5,auStack_48,*(undefined4 *)((int)param_1 + _DAT_08017844),
                 (uint)*(byte *)((int)param_1 + _DAT_08017848),
                 0x1e - (uint)*(byte *)((int)param_1 + _DAT_08017848));
   if (*(int *)param_1[1] != 2) {
     uVar5 = *(undefined4 *)((int)param_1 + _DAT_0801784c);
     iVar7 = *piVar10;
-    iVar6 = func_0800E324(iVar7 + 0x10);
-    func_080171F8(uVar5,iVar7 + 0x14,iVar6 == 3);
+    iVar6 = Farmer_Routine_0800E324(iVar7 + 0x10);
+    Farmer_Routine_080171F8(uVar5,iVar7 + 0x14,iVar6 == 3);
   }
   if ((uStack_30 != 0) &&
      ((cVar3 = func_0x0809c5f4(*(int *)((int)param_1 + _DAT_0801783c) + _DAT_08017874),
       cVar3 == '\0' ||
-      (cVar3 = func_080167CC(*(undefined4 *)((int)param_1 + _DAT_08017850)), cVar3 == '\0')))) {
-    func_0801DB58(param_1);
+      (cVar3 = Farmer_Routine_080167CC(*(undefined4 *)((int)param_1 + _DAT_08017850)), cVar3 == '\0')))) {
+    Farmer_Routine_0801DB58(param_1);
   }
-  uVar5 = func_080005D4(0xa0);
+  uVar5 = Dispatcher_Routine_080005D4(0xa0);
   iVar7 = ScriptEngine_Construct(uVar5,param_1);
   piVar10 = (int *)((int)param_1 + _DAT_08017878);
   iVar6 = *piVar10;
@@ -7963,20 +7963,20 @@ func_080175B4(undefined4 *param_1,int param_2,undefined4 param_3,int *param_4,by
   piVar10 = (int *)((int)param_1 + _DAT_0801787c);
   iVar7 = *piVar10;
   if ((iVar7 != 0) && (iVar7 != 0)) {
-    func_080AB2E4(iVar7,3);
+    NPC_Routine_080AB2E4(iVar7,3);
   }
   *piVar10 = 0;
-  uVar5 = func_080005D4(4);
-  iVar7 = func_080AAFC8(uVar5,param_1,*(undefined4 *)(param_1[1] + 4));
+  uVar5 = Dispatcher_Routine_080005D4(4);
+  iVar7 = NPC_Routine_080AAFC8(uVar5,param_1,*(undefined4 *)(param_1[1] + 4));
   piVar10 = (int *)((int)param_1 + _DAT_0801787c);
   iVar6 = *piVar10;
   if ((iVar7 != iVar6) && (iVar6 != 0)) {
-    func_080AB2E4(iVar6,3);
+    NPC_Routine_080AB2E4(iVar6,3);
   }
   *piVar10 = iVar7;
   uVar9 = 0;
   do {
-    func_0801A8E0(param_1,uVar9);
+    Farmer_Routine_0801A8E0(param_1,uVar9);
     uVar9 = uVar9 + 1;
   } while (uVar9 < 100);
   iVar7 = *piVar4;
@@ -8002,26 +8002,26 @@ LAB_08017890:
     iVar7 = *(int *)(*(int *)((int)param_1 + _DAT_0801783c) + 8);
   }
   if (iVar7 == 1) {
-    func_0801FAC8(param_1,1);
+    Farmer_Routine_0801FAC8(param_1,1);
   }
   else if (iVar7 == 2) {
-    func_0801FAC8(param_1,0);
+    Farmer_Routine_0801FAC8(param_1,0);
   }
 LAB_080178ae:
-  func_0801F14C(param_1);
-  func_0801F3E4(param_1);
-  func_0801F2DC(param_1);
-  func_0801F614(param_1);
-  func_0801F77C(param_1);
+  Farmer_Routine_0801F14C(param_1);
+  Farmer_Routine_0801F3E4(param_1);
+  Farmer_Routine_0801F2DC(param_1);
+  Farmer_Routine_0801F614(param_1);
+  Farmer_Routine_0801F77C(param_1);
   uStack_2c = 0;
   piStack_28 = (int *)((int)param_1 + _DAT_080179b8);
   pbVar11 = (byte *)(*_DAT_080179b4 + _DAT_080179bc);
   do {
     if (((*pbVar11 & 3) == 1) && ((*(ushort *)(pbVar11 + 2) & 0x3ff) == *(uint *)param_1[1])) {
       piVar4 = (int *)((int)param_1 + uStack_2c * 4 + _DAT_080179c0);
-      iVar7 = func_080005D4(0x4c);
+      iVar7 = Dispatcher_Routine_080005D4(0x4c);
       uVar1 = *(undefined2 *)(pbVar11 + 8);
-      func_080A4740(iVar7,param_1,2,0x1b);
+      NPC_Routine_080A4740(iVar7,param_1,2,0x1b);
       *(undefined4 *)(iVar7 + 0x24) = _DAT_080179c4;
       iStack_24 = iVar7 + 0x28;
       iVar6 = *piStack_28;
@@ -8038,8 +8038,8 @@ LAB_080178ae:
     uStack_2c = uStack_2c + 1;
   } while (uStack_2c < 6);
   if (*(char *)(iStack_38 + _DAT_080179c8) != '\0') {
-    func_0801D8CC(param_1);
-    func_0801D948(param_1);
+    Farmer_Routine_0801D8CC(param_1);
+    Farmer_Routine_0801D948(param_1);
   }
   iVar7 = *piStack_34;
   if (iVar7 != 0) {
@@ -8049,9 +8049,9 @@ LAB_080178ae:
 }
 
 // =============================================================================
-// Function: func_080179CC @ 0x080179CC
+// Function: Farmer_Routine_080179CC @ 0x080179CC
 // =============================================================================
-undefined4 func_080179CC(undefined4 *param_1,uint param_2)
+undefined4 Farmer_Routine_080179CC(undefined4 *param_1,uint param_2)
 
 {
   char cVar1;
@@ -8072,7 +8072,7 @@ undefined4 func_080179CC(undefined4 *param_1,uint param_2)
     func_0x0800ed2c(*piVar4 + _DAT_08017a5c);
     iVar8 = *piVar4 + _DAT_08017a60;
     if (*(char *)((int)param_1 + _DAT_08017a64) == '\0') {
-      piVar4 = (int *)func_0801DB44(param_1);
+      piVar4 = (int *)Farmer_Routine_0801DB44(param_1);
       puVar7 = (undefined4 *)piVar4[1];
       for (puVar5 = (undefined4 *)*piVar4; puVar5 != puVar7; puVar5 = puVar5 + 1) {
         cVar1 = func_0x08008cd0(*puVar5);
@@ -8083,12 +8083,12 @@ undefined4 func_080179CC(undefined4 *param_1,uint param_2)
       }
       uVar2 = puVar7[-1];
 LAB_08017a28:
-      func_08008B6C(uVar2,0x6d);
-      iVar3 = func_080A45A8(iVar8);
+      HW_Routine_08008B6C(uVar2,0x6d);
+      iVar3 = NPC_Routine_080A45A8(iVar8);
       if (iVar3 == 2) {
         uStack_20 = _DAT_08017abc;
         uStack_1c = 0;
-        func_0801D9A8(param_1,&uStack_20,0);
+        Farmer_Routine_0801D9A8(param_1,&uStack_20,0);
       }
       else {
         func_0x080a1484(*(int *)((int)param_1 + _DAT_08017a58) + _DAT_08017a68,iVar8,
@@ -8097,7 +8097,7 @@ LAB_08017a28:
     }
   }
   if (*(int *)((int)param_1 + _DAT_08017ac0) != 0) {
-    func_08000614();
+    Dispatcher_Routine_08000614();
   }
   piVar4 = (int *)((int)param_1 + _DAT_08017ac4);
   if (piVar4 != (int *)0x0) {
@@ -8163,18 +8163,18 @@ LAB_08017a28:
   if (iVar8 != 0) {
     func_0x080d3914(iVar8,3,*(undefined4 *)(*(int *)(iVar8 + 0x24) + 8));
   }
-  func_080AC85C(param_1 + 1,2);
+  NPC_Routine_080AC85C(param_1 + 1,2);
   *param_1 = _DAT_08017bfc;
   if ((param_2 & 1) != 0) {
-    func_08000608(param_1);
+    Dispatcher_Routine_08000608(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08017C00 @ 0x08017C00
+// Function: Farmer_Routine_08017C00 @ 0x08017C00
 // =============================================================================
-undefined8 func_08017C00(int param_1)
+undefined8 Farmer_Routine_08017C00(int param_1)
 
 {
   int iVar1;
@@ -8193,9 +8193,9 @@ undefined8 func_08017C00(int param_1)
 }
 
 // =============================================================================
-// Function: func_08017C30 @ 0x08017C30
+// Function: Farmer_Routine_08017C30 @ 0x08017C30
 // =============================================================================
-undefined4 func_08017C30(int *param_1,undefined4 *param_2)
+undefined4 Farmer_Routine_08017C30(int *param_1,undefined4 *param_2)
 
 {
   byte bVar1;
@@ -8249,8 +8249,8 @@ undefined4 func_08017C30(int *param_1,undefined4 *param_2)
       }
       uVar6 = puVar16[-1];
 LAB_08017cbe:
-      func_08008B6C(uVar6,0x6d);
-      iVar9 = func_080A45A8(iVar8);
+      HW_Routine_08008B6C(uVar6,0x6d);
+      iVar9 = NPC_Routine_080A45A8(iVar8);
       if (iVar9 == 2) {
         uStack_4c = _DAT_08017e48;
         uStack_48 = 0;
@@ -8272,8 +8272,8 @@ LAB_08017cbe:
         }
         *piVar14 = 0;
         *(undefined1 *)(piVar14 + 2) = 0;
-        uVar7 = func_080005D4(0x40);
-        iVar8 = func_080A4A00(uVar7,uVar6,_DAT_08017d98,param_1,2,3,0);
+        uVar7 = Dispatcher_Routine_080005D4(0x40);
+        iVar8 = NPC_Routine_080A4A00(uVar7,uVar6,_DAT_08017d98,param_1,2,3,0);
         iVar9 = *piVar14;
         if ((iVar8 != iVar9) && (iVar9 != 0)) {
           func_0x080d3914(iVar9,3,*(undefined4 *)(*(int *)(iVar9 + 0x24) + 8));
@@ -8348,10 +8348,10 @@ LAB_08017cbe:
         }
       }
       else {
-        func_0801A13C(param_1,uVar17,uVar18,0);
+        Farmer_Routine_0801A13C(param_1,uVar17,uVar18,0);
         if ((uVar17 == 0x14) && (uVar18 == 0)) {
-          func_08012464(*(undefined4 *)(_DAT_08017fb4 + (int)param_1),0,0x9e);
-          func_0801DB58(param_1);
+          Farmer_Routine_08012464(*(undefined4 *)(_DAT_08017fb4 + (int)param_1),0,0x9e);
+          Farmer_Routine_0801DB58(param_1);
         }
         else if ((uVar17 == 0) && (uVar18 == 0)) {
           func_0x080d3918(iVar8,0,3,*(undefined4 *)(*(int *)(iVar8 + 0x14) + 100));
@@ -8386,7 +8386,7 @@ LAB_08017cbe:
     ScriptEngine_AllocateStack();
   }
   if (*(int *)(_DAT_080180b0 + (int)param_1) != 0) {
-    func_080AB380();
+    NPC_Routine_080AB380();
   }
   uVar18 = 0;
   piVar14 = (int *)(_DAT_080180b4 + (int)param_1);
@@ -8395,7 +8395,7 @@ LAB_08017cbe:
     if (iVar8 != 0) {
       pcVar11 = (char *)(iVar8 + 0x3f);
       if (*pcVar11 == '\0') {
-        iVar9 = func_0805E8F0(iVar8 + 0x28);
+        iVar9 = Animal_Routine_0805E8F0(iVar8 + 0x28);
         if (-1 < iVar9 * 0x40000000) goto LAB_080180bc;
         pcVar11 = (char *)(iVar8 + 0x3c);
         cVar5 = '\x01';
@@ -8416,7 +8416,7 @@ LAB_080180bc:
     if (iVar8 != 0) {
       pcVar11 = (char *)(iVar8 + 0x3f);
       if (*pcVar11 == '\0') {
-        iVar9 = func_0805E8F0(iVar8 + 0x28);
+        iVar9 = Animal_Routine_0805E8F0(iVar8 + 0x28);
         if (-1 < iVar9 * 0x40000000) goto LAB_080180f8;
         pcVar11 = (char *)(iVar8 + 0x3c);
         cVar5 = '\x01';
@@ -8443,7 +8443,7 @@ LAB_080180f8:
             if (cVar5 == '\0') {
               *(byte *)((int)piVar14 + 1) = bVar1 & 0xf3 | 8;
               iVar8 = piVar14[2];
-              func_0805E860(iVar8 + 0x28,_DAT_080181dc);
+              Animal_Routine_0805E860(iVar8 + 0x28,_DAT_080181dc);
               *(undefined1 *)(iVar8 + 0x3c) = 1;
               *(undefined1 *)(iVar8 + 0x3e) = 0;
               *(undefined1 *)(iVar8 + 0x3f) = 1;
@@ -8453,7 +8453,7 @@ LAB_080180f8:
             if (uVar17 == 0) {
               iVar8 = piVar14[2];
               if (*(char *)(iVar8 + 0x3f) == '\0') {
-                iVar9 = func_0805E8F0(iVar8 + 0x28);
+                iVar9 = Animal_Routine_0805E8F0(iVar8 + 0x28);
                 if (iVar9 * 0x40000000 < 0) {
                   *(undefined1 *)(iVar8 + 0x3c) = 1;
                 }
@@ -8465,7 +8465,7 @@ LAB_080180f8:
               if (iVar9 * 0x20000000 < 0) {
                 *(byte *)((int)piVar14 + 1) = *(byte *)((int)piVar14 + 1) & 0xf3 | 4;
                 iVar8 = piVar14[2];
-                func_0805E860(iVar8 + 0x28,_DAT_080181a0);
+                Animal_Routine_0805E860(iVar8 + 0x28,_DAT_080181a0);
                 *(undefined1 *)(iVar8 + 0x3c) = 1;
                 *(undefined1 *)(iVar8 + 0x3e) = 0;
                 *(undefined1 *)(iVar8 + 0x3f) = 1;
@@ -8476,7 +8476,7 @@ LAB_080180f8:
           else if (uVar17 == 2) {
             iVar8 = piVar14[2];
             if (*(char *)(iVar8 + 0x3f) == '\0') {
-              iVar9 = func_0805E8F0(iVar8 + 0x28);
+              iVar9 = Animal_Routine_0805E8F0(iVar8 + 0x28);
               if (iVar9 * 0x40000000 < 0) {
                 *(undefined1 *)(iVar8 + 0x3c) = 1;
               }
@@ -8500,15 +8500,15 @@ LAB_080180f8:
         uVar18 = uVar18 + 1;
       } while (uVar18 < 4);
       if (*(char *)(_DAT_080182b4 + (int)param_1) == '\0') {
-        func_080A5960(param_1[1],(int)*(short *)(param_1[2] + 10),(int)*(short *)(param_1[2] + 0xe))
+        NPC_Routine_080A5960(param_1[1],(int)*(short *)(param_1[2] + 10),(int)*(short *)(param_1[2] + 0xe))
         ;
       }
       piVar14 = (int *)(_DAT_080182b8 + (int)param_1);
       iVar8 = func_0x0800e4fc(*piVar14 + _DAT_080182bc);
       if (((iVar8 != iStack_30) &&
-          (cVar5 = func_080167CC(*(undefined4 *)(_DAT_080182c0 + (int)param_1)), cVar5 != '\0')) &&
+          (cVar5 = Farmer_Routine_080167CC(*(undefined4 *)(_DAT_080182c0 + (int)param_1)), cVar5 != '\0')) &&
          (cVar5 = func_0x0809c5f4(*piVar14 + _DAT_080182c4), cVar5 == '\0')) {
-        func_0801DB58(param_1);
+        Farmer_Routine_0801DB58(param_1);
       }
       return in_lr;
     }
@@ -8516,9 +8516,9 @@ LAB_080180f8:
 }
 
 // =============================================================================
-// Function: func_080182C8 @ 0x080182C8
+// Function: Farmer_Routine_080182C8 @ 0x080182C8
 // =============================================================================
-void func_080182C8(int *param_1,undefined4 param_2)
+void Farmer_Routine_080182C8(int *param_1,undefined4 param_2)
 
 {
   byte bVar1;
@@ -8660,7 +8660,7 @@ void func_080182C8(int *param_1,undefined4 param_2)
     ScriptEngine_FreeStack(*(int *)(_DAT_080184f4 + (int)param_1),&stack0xfffffff4 + iVar7);
   }
   if (*(int *)(_DAT_08018528 + (int)param_1) != 0) {
-    func_080AB410(*(int *)(_DAT_08018528 + (int)param_1),&stack0xfffffff4 + iVar7,*puVar26);
+    NPC_Routine_080AB410(*(int *)(_DAT_08018528 + (int)param_1),&stack0xfffffff4 + iVar7,*puVar26);
   }
   uVar11 = puVar26[2];
   *(undefined4 *)(&stack0xffffffe0 + _DAT_0801850c + iVar7) = *puVar26;
@@ -8669,7 +8669,7 @@ void func_080182C8(int *param_1,undefined4 param_2)
   if (iVar16 != 0) {
     bVar6 = false;
     if (*(char *)(iVar16 + 0x3f) == '\0') {
-      iVar21 = func_0805E8F0(iVar16 + 0x28);
+      iVar21 = Animal_Routine_0805E8F0(iVar16 + 0x28);
       if (iVar21 * 0x40000000 < 0) {
         *(undefined1 *)(iVar16 + 0x3c) = 1;
       }
@@ -8684,7 +8684,7 @@ void func_080182C8(int *param_1,undefined4 param_2)
     if (bVar6) {
       *(undefined1 *)(param_1 + 0x418) = 0;
       iVar16 = *(int *)(_DAT_08018598 + (int)param_1);
-      func_0805E860(iVar16 + 0x28,1);
+      Animal_Routine_0805E860(iVar16 + 0x28,1);
       *(undefined1 *)(iVar16 + 0x3c) = 1;
       *(undefined1 *)(iVar16 + 0x3e) = 0;
       *(undefined1 *)(iVar16 + 0x3f) = 1;
@@ -8746,7 +8746,7 @@ void func_080182C8(int *param_1,undefined4 param_2)
       }
       if ((iVar16 == 0) || (pcVar20 = (char *)(puVar26 + 0xf), *pcVar20 == '\0'))
       goto case_0801887E;
-      func_080A480C(puVar26,*puVar12,puVar13 + 8);
+      NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
       cVar8 = *(char *)((int)puVar26 + 0x3d);
       goto joined_r0x08018850;
     case 0x801887e:
@@ -8776,17 +8776,17 @@ LAB_080186b0:
       iVar16 = 0;
     }
     if ((iVar16 != 0) && (pcVar20 = (char *)(puVar26 + 0xf), *pcVar20 != '\0')) {
-      func_080A480C(puVar26,*puVar12,puVar13 + 8);
+      NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
       cVar8 = *(char *)((int)puVar26 + 0x3d);
 joined_r0x08018850:
       if (cVar8 == '\0') {
         if (*(char *)((int)puVar26 + 0x3e) == '\0') {
-          func_080A4944(puVar26,puVar13 + 0x10,1);
+          NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
           *(char *)((int)puVar26 + 0x3e) = '\x01';
         }
       }
       else {
-        func_080A4944(puVar26,puVar13 + 0x10,1);
+        NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
       }
       *pcVar20 = '\0';
     }
@@ -8796,7 +8796,7 @@ case_0801887E:
   if (iVar16 != 0) {
     pcVar20 = (char *)(iVar16 + 0x3f);
     if (*pcVar20 == '\0') {
-      iVar21 = func_0805E8F0(iVar16 + 0x28);
+      iVar21 = Animal_Routine_0805E8F0(iVar16 + 0x28);
       if (iVar21 * 0x40000000 < 0) {
         pcVar20 = (char *)(iVar16 + 0x3c);
         cVar8 = '\x01';
@@ -8831,15 +8831,15 @@ LAB_080188b2:
       iVar16 = 0;
     }
     if ((iVar16 != 0) && (*(char *)(puVar26 + 0xf) != '\0')) {
-      func_080A480C(puVar26,*puVar12,puVar13 + 8);
+      NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
       if (*(char *)((int)puVar26 + 0x3d) == '\0') {
         if (*(char *)((int)puVar26 + 0x3e) == '\0') {
-          func_080A4944(puVar26,puVar13 + 0x10,1);
+          NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
           *(char *)((int)puVar26 + 0x3e) = '\x01';
         }
       }
       else {
-        func_080A4944(puVar26,puVar13 + 0x10,1);
+        NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
       }
       *(char *)(puVar26 + 0xf) = '\0';
     }
@@ -8873,15 +8873,15 @@ LAB_080188b2:
         iVar16 = 0;
       }
       if ((iVar16 != 0) && (*(char *)(puVar26 + 0xf) != '\0')) {
-        func_080A480C(puVar26,*puVar12,puVar13 + 8);
+        NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
         if (*(char *)((int)puVar26 + 0x3d) == '\0') {
           if (*(char *)((int)puVar26 + 0x3e) == '\0') {
-            func_080A4944(puVar26,puVar13 + 0x10,1);
+            NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
             *(char *)((int)puVar26 + 0x3e) = '\x01';
           }
         }
         else {
-          func_080A4944(puVar26,puVar13 + 0x10,1);
+          NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
         }
         *(char *)(puVar26 + 0xf) = '\0';
       }
@@ -8919,10 +8919,10 @@ LAB_080188b2:
         iVar16 = 0;
       }
       if ((iVar16 == 0) || (pcVar20 = (char *)(puVar26 + 0xf), *pcVar20 == '\0')) goto LAB_08018d76;
-      func_080A480C(puVar26,*puVar12,puVar13 + 8);
+      NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
       if (*(char *)((int)puVar26 + 0x3d) == '\0') goto LAB_08018d58;
 LAB_08018d4a:
-      func_080A4944(puVar26,puVar13 + 0x10,1);
+      NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
     }
     else {
       if (iVar16 < 3) {
@@ -8978,11 +8978,11 @@ LAB_08018b98:
         iVar16 = func_0x080d391c(uVar19,iVar24,iVar16,0x55);
       }
       if ((iVar16 == 0) || (pcVar20 = (char *)(puVar26 + 0xf), *pcVar20 == '\0')) goto LAB_08018d76;
-      func_080A480C(puVar26,*puVar12,puVar13 + 8);
+      NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
       if (*(char *)((int)puVar26 + 0x3d) != '\0') goto LAB_08018d4a;
 LAB_08018d58:
       if (*(char *)((int)puVar26 + 0x3e) == '\0') {
-        func_080A4944(puVar26,puVar13 + 0x10,1);
+        NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
         *(char *)((int)puVar26 + 0x3e) = '\x01';
       }
     }
@@ -9014,15 +9014,15 @@ LAB_08018d76:
       iVar16 = 0;
     }
     if ((iVar16 != 0) && (*(char *)(puVar26 + 0xf) != '\0')) {
-      func_080A480C(puVar26,*puVar12,puVar13 + 8);
+      NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
       if (*(char *)((int)puVar26 + 0x3d) == '\0') {
         if (*(char *)((int)puVar26 + 0x3e) == '\0') {
-          func_080A4944(puVar26,puVar13 + 0x10,1);
+          NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
           *(char *)((int)puVar26 + 0x3e) = '\x01';
         }
       }
       else {
-        func_080A4944(puVar26,puVar13 + 0x10,1);
+        NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
       }
       *(char *)(puVar26 + 0xf) = '\0';
     }
@@ -9031,7 +9031,7 @@ LAB_08018d76:
   if (iVar16 != 0) {
     pcVar20 = (char *)(iVar16 + 0x3f);
     if (*pcVar20 == '\0') {
-      iVar21 = func_0805E8F0(iVar16 + 0x28);
+      iVar21 = Animal_Routine_0805E8F0(iVar16 + 0x28);
       if (iVar21 * 0x40000000 < 0) {
         pcVar20 = (char *)(iVar16 + 0x3c);
         cVar8 = '\x01';
@@ -9072,14 +9072,14 @@ LAB_08018ea2:
         iVar16 = 0;
       }
       if ((iVar16 != 0) && (pcVar20 = (char *)(puVar26 + 0xf), *pcVar20 != '\0')) {
-        func_080A480C(puVar26,*puVar12,puVar13 + 8);
+        NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
         if (*(char *)((int)puVar26 + 0x3d) == '\0') {
           pcVar22 = (char *)((int)puVar26 + 0x3e);
           cVar8 = *pcVar22;
           goto joined_r0x08018fbe;
         }
 LAB_0801909c:
-        func_080A4944(puVar26,puVar13 + 0x10,1);
+        NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
 LAB_080190be:
         *pcVar20 = '\0';
       }
@@ -9111,13 +9111,13 @@ LAB_080190be:
         iVar16 = 0;
       }
       if ((iVar16 != 0) && (pcVar20 = (char *)(puVar26 + 0xf), *pcVar20 != '\0')) {
-        func_080A480C(puVar26,*puVar12,puVar13 + 8);
+        NPC_Routine_080A480C(puVar26,*puVar12,puVar13 + 8);
         if (*(char *)((int)puVar26 + 0x3d) != '\0') goto LAB_0801909c;
         pcVar22 = (char *)((int)puVar26 + 0x3e);
         cVar8 = *pcVar22;
 joined_r0x08018fbe:
         if (cVar8 == '\0') {
-          func_080A4944(puVar26,puVar13 + 0x10,1);
+          NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
           *pcVar22 = '\x01';
         }
         goto LAB_080190be;
@@ -9173,8 +9173,8 @@ LAB_080191da:
       iVar16 = func_0x080d391c(uVar19,iVar16,0x30 - iVar21,0xaa);
     }
     if ((iVar16 != 0) && (*(char *)(puVar23 + 0x12) != '\0')) {
-      func_080A480C(puVar23,*puVar26,puVar27 + 2);
-      func_080A4944(puVar23,puVar27 + 4,1);
+      NPC_Routine_080A480C(puVar23,*puVar26,puVar27 + 2);
+      NPC_Routine_080A4944(puVar23,puVar27 + 4,1);
       *(char *)(puVar23 + 0x12) = '\0';
     }
   }
@@ -9184,7 +9184,7 @@ LAB_08019232:
   if ((int)(-uVar18 | uVar18) < 0) {
     if ((char)puVar15[2] == '\0') {
       if (*(char *)(uVar18 + 0x3f) == '\0') {
-        iVar16 = func_0805E8F0(uVar18 + 0x28);
+        iVar16 = Animal_Routine_0805E8F0(uVar18 + 0x28);
         if (iVar16 * 0x40000000 < 0) {
           *(undefined1 *)(uVar18 + 0x3c) = 1;
         }
@@ -9214,7 +9214,7 @@ LAB_08019232:
       else {
         uVar18 = *puVar15;
         if (*(char *)(uVar18 + 0x3f) == '\0') {
-          iVar16 = func_0805E8F0(uVar18 + 0x28);
+          iVar16 = Animal_Routine_0805E8F0(uVar18 + 0x28);
           if (iVar16 * 0x40000000 < 0) {
             *(undefined1 *)(uVar18 + 0x3c) = 1;
           }
@@ -9254,16 +9254,16 @@ LAB_08019232:
           iVar16 = 0;
         }
         if ((iVar16 != 0) && (*(char *)(puVar12 + 0xf) != '\0')) {
-          func_080A480C(puVar12,**(undefined4 **)(&stack0xffffffe0 + _DAT_080194e0 + iVar7),
+          NPC_Routine_080A480C(puVar12,**(undefined4 **)(&stack0xffffffe0 + _DAT_080194e0 + iVar7),
                         puVar13 + 8);
           if (*(char *)((int)puVar12 + 0x3d) == '\0') {
             if (*(char *)((int)puVar12 + 0x3e) == '\0') {
-              func_080A4944(puVar12,puVar13 + 0x10,1);
+              NPC_Routine_080A4944(puVar12,puVar13 + 0x10,1);
               *(char *)((int)puVar12 + 0x3e) = '\x01';
             }
           }
           else {
-            func_080A4944(puVar12,puVar13 + 0x10,1);
+            NPC_Routine_080A4944(puVar12,puVar13 + 0x10,1);
           }
           *(char *)(puVar12 + 0xf) = '\0';
         }
@@ -9291,16 +9291,16 @@ LAB_08019232:
           iVar16 = 0;
         }
         if ((iVar16 != 0) && (*(char *)(puVar12 + 0xf) != '\0')) {
-          func_080A480C(puVar12,**(undefined4 **)(&stack0xffffffe0 + _DAT_0801940c + iVar7),
+          NPC_Routine_080A480C(puVar12,**(undefined4 **)(&stack0xffffffe0 + _DAT_0801940c + iVar7),
                         puVar13 + 8);
           if (*(char *)((int)puVar12 + 0x3d) == '\0') {
             if (*(char *)((int)puVar12 + 0x3e) == '\0') {
-              func_080A4944(puVar12,puVar13 + 0x10,1);
+              NPC_Routine_080A4944(puVar12,puVar13 + 0x10,1);
               *(char *)((int)puVar12 + 0x3e) = '\x01';
             }
           }
           else {
-            func_080A4944(puVar12,puVar13 + 0x10,1);
+            NPC_Routine_080A4944(puVar12,puVar13 + 0x10,1);
           }
           *(char *)(puVar12 + 0xf) = '\0';
         }
@@ -9340,16 +9340,16 @@ LAB_08019232:
         iVar16 = 0;
       }
       if ((iVar16 != 0) && (*(char *)(puVar26 + 0xf) != '\0')) {
-        func_080A480C(puVar26,**(undefined4 **)(&stack0xffffffe0 + _DAT_08019628 + iVar7),
+        NPC_Routine_080A480C(puVar26,**(undefined4 **)(&stack0xffffffe0 + _DAT_08019628 + iVar7),
                       puVar13 + 8);
         if (*(char *)((int)puVar26 + 0x3d) == '\0') {
           if (*(char *)((int)puVar26 + 0x3e) == '\0') {
-            func_080A4944(puVar26,puVar13 + 0x10,1);
+            NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
             *(char *)((int)puVar26 + 0x3e) = '\x01';
           }
         }
         else {
-          func_080A4944(puVar26,puVar13 + 0x10,1);
+          NPC_Routine_080A4944(puVar26,puVar13 + 0x10,1);
         }
         *(char *)(puVar26 + 0xf) = '\0';
       }
@@ -9396,8 +9396,8 @@ LAB_08019232:
         iVar16 = 0;
       }
       if ((iVar16 != 0) && (*(char *)(puVar26 + 0x12) != '\0')) {
-        func_080A480C(puVar26,*puVar12,puVar26 + 0xc);
-        func_080A4944(puVar26,puVar26 + 0xe,1);
+        NPC_Routine_080A480C(puVar26,*puVar12,puVar26 + 0xc);
+        NPC_Routine_080A4944(puVar26,puVar26 + 0xe,1);
         *(char *)(puVar26 + 0x12) = '\0';
       }
     }
@@ -9433,7 +9433,7 @@ LAB_08019232:
   uVar18 = iVar16 >> 2;
 LAB_08019844:
   param_1[0x66] = uVar18;
-  func_08094A3C(&stack0xfffffff4 + iVar7,
+  Animal_Routine_08094A3C(&stack0xfffffff4 + iVar7,
                 *(undefined4 *)(*(int *)(&stack0xffffffe0 + _DAT_0801997c + iVar7) + 8));
   for (puVar13 = *(undefined1 **)(&stack0xffffffe0 + _DAT_08019980 + iVar7);
       &stack0xfffffff8 + iVar7 != puVar13; puVar13 = puVar13 + _DAT_08019984) {
@@ -9462,7 +9462,7 @@ SUB_08019870:
         if (*(int *)(&stack0x00000c80 + iVar7) == 0) {
           iVar24 = iVar21;
         }
-        func_08008F0C(&stack0xfffffff4 + iVar7,iVar24,
+        HW_Routine_08008F0C(&stack0xfffffff4 + iVar7,iVar24,
                       (uint)*(byte *)(iVar16 + 8) * 0x20 + _DAT_080199a0,0x20);
         *(undefined1 **)(&stack0xffffffe0 + _DAT_080199a4 + iVar7) = &stack0xfffffff4 + iVar7;
         puVar26 = (undefined4 *)piVar14[1];
@@ -9482,10 +9482,10 @@ SUB_08019870:
           }
           else {
             iVar24 = (uVar18 + *puVar15) * 0x10;
-            puVar26 = (undefined4 *)malloc(iVar24);
+            puVar26 = (undefined4 *)malloc_gba(iVar24);
             *(int *)(&stack0xffffffe0 + _DAT_080199f8 + iVar7) = iVar24;
             if (puVar26 == (undefined4 *)0x0) {
-              puVar26 = (undefined4 *)func_080D3BC0(iVar24);
+              puVar26 = (undefined4 *)VTable_Routine_080D3BC0(iVar24);
             }
           }
           *(undefined4 **)(&stack0xffffffe0 + _DAT_08019a74 + iVar7) = puVar26;
@@ -9536,7 +9536,7 @@ SUB_08019870:
           for (iVar24 = *piVar14; iVar24 != piVar14[1]; iVar24 = iVar24 + 0x10) {
           }
           if (*piVar14 != 0) {
-            free();
+            cpp_operator_delete();
           }
           iVar29 = *(int *)(&stack0xffffffe0 + _DAT_08019b70 + iVar7);
           iVar24 = *(int *)(&stack0xffffffe0 + _DAT_08019b74 + iVar7);
@@ -9583,9 +9583,9 @@ SUB_08019870:
 }
 
 // =============================================================================
-// Function: func_08019B90 @ 0x08019B90
+// Function: Farmer_Routine_08019B90 @ 0x08019B90
 // =============================================================================
-undefined4 func_08019B90(int param_1)
+undefined4 Farmer_Routine_08019B90(int param_1)
 
 {
   int iVar1;
@@ -9596,16 +9596,16 @@ undefined4 func_08019B90(int param_1)
                   0x1e - (uint)*(byte *)(param_1 + _DAT_08019be8));
   iVar1 = func_0x080a4698(*(undefined4 *)(*(int *)(param_1 + 4) + 4));
   if (*(char *)(iVar1 + 0x24) == '\0') {
-    func_0801A13C(param_1,(**(uint **)(&UNK_00001040 + param_1) & 0x1fffff) >> 0x10,
+    Farmer_Routine_0801A13C(param_1,(**(uint **)(&UNK_00001040 + param_1) & 0x1fffff) >> 0x10,
                   (**(uint **)(&UNK_00001040 + param_1) & 0x7ffffff) >> 0x15,1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08019BEC @ 0x08019BEC
+// Function: Farmer_Routine_08019BEC @ 0x08019BEC
 // =============================================================================
-undefined4 func_08019BEC(int *param_1,ushort *param_2,uint param_3)
+undefined4 Farmer_Routine_08019BEC(int *param_1,ushort *param_2,uint param_3)
 
 {
   ushort uVar1;
@@ -9651,9 +9651,9 @@ undefined4 func_08019BEC(int *param_1,ushort *param_2,uint param_3)
   } while (uVar10 < 6);
   if ((((*param_2 & 0x3ff) != 2) && (*(int *)param_1[1] == 2)) &&
      (*(int *)((int)param_1 + _DAT_08019e08) != 0)) {
-    func_08008E64(((int *)param_1[1])[0xb],*(int *)((int)param_1 + _DAT_08019e08),0xb000);
+    HW_Routine_08008E64(((int *)param_1[1])[0xb],*(int *)((int)param_1 + _DAT_08019e08),0xb000);
   }
-  func_080A56DC(param_1[1],param_2,*(undefined4 *)((int)param_1 + _DAT_08019e0c),
+  NPC_Routine_080A56DC(param_1[1],param_2,*(undefined4 *)((int)param_1 + _DAT_08019e0c),
                 (uint)*(byte *)((int)param_1 + _DAT_08019e10),
                 0x1e - (uint)*(byte *)((int)param_1 + _DAT_08019e10));
   piVar8 = (int *)((int)param_1 + _DAT_08019e14);
@@ -9670,7 +9670,7 @@ undefined4 func_08019BEC(int *param_1,ushort *param_2,uint param_3)
   piVar4 = (int *)((int)param_1 + _DAT_08019e18);
   iVar7 = *piVar4;
   if ((iVar7 != 0) && (iVar7 != 0)) {
-    func_080AB2E4(iVar7,3);
+    NPC_Routine_080AB2E4(iVar7,3);
   }
   *piVar4 = 0;
   uStack_34 = 0;
@@ -9682,10 +9682,10 @@ undefined4 func_08019BEC(int *param_1,ushort *param_2,uint param_3)
        uVar10 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14)), (uVar1 & 0x3ff) == uVar10
        )) {
       piVar8 = (int *)((int)param_1 + uStack_34 * 4 + _DAT_08019e04);
-      iVar7 = func_080005D4(0x4c);
+      iVar7 = Dispatcher_Routine_080005D4(0x4c);
       piVar4 = (int *)func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 100));
       uVar2 = *(undefined2 *)(pbStack_24 + 8);
-      func_080A4740(iVar7,param_1,2,0x1b);
+      NPC_Routine_080A4740(iVar7,param_1,2,0x1b);
       *(undefined4 *)(iVar7 + 0x24) = _DAT_08019e1c;
       iVar9 = *piVar4;
       func_0x080d3918(apuStack_40,piVar4,uVar2,*(undefined4 *)(iVar9 + 0xc));
@@ -9700,7 +9700,7 @@ undefined4 func_08019BEC(int *param_1,ushort *param_2,uint param_3)
     pbStack_24 = pbStack_24 + 0xc;
     uStack_34 = uStack_34 + 1;
   } while (uStack_34 < 6);
-  uVar5 = func_080005D4(0xa0);
+  uVar5 = Dispatcher_Routine_080005D4(0xa0);
   iVar7 = ScriptEngine_Construct(uVar5,param_1);
   piVar4 = (int *)((int)param_1 + _DAT_08019e14);
   iVar9 = *piVar4;
@@ -9726,26 +9726,26 @@ LAB_08019e34:
     iVar7 = *(int *)(*(int *)((int)param_1 + _DAT_08019e20) + 8);
   }
   if (iVar7 == 1) {
-    func_0801FAC8(param_1,1);
+    Farmer_Routine_0801FAC8(param_1,1);
   }
   else if (iVar7 == 2) {
-    func_0801FAC8(param_1,0);
+    Farmer_Routine_0801FAC8(param_1,0);
   }
 LAB_08019e52:
-  uVar5 = func_080005D4(4);
-  iVar7 = func_080AAFC8(uVar5,param_1,*(undefined4 *)(param_1[1] + 4));
+  uVar5 = Dispatcher_Routine_080005D4(4);
+  iVar7 = NPC_Routine_080AAFC8(uVar5,param_1,*(undefined4 *)(param_1[1] + 4));
   piVar4 = (int *)((int)param_1 + _DAT_08019f28);
   iVar9 = *piVar4;
   if ((iVar7 != iVar9) && (iVar9 != 0)) {
-    func_080AB2E4(iVar9,3);
+    NPC_Routine_080AB2E4(iVar9,3);
   }
   *piVar4 = iVar7;
-  func_0801F14C(param_1);
-  func_0801F3E4(param_1);
-  func_0801F2DC(param_1);
-  func_0801F614(param_1);
-  func_0801F77C(param_1);
-  func_0801E67C(param_1);
+  Farmer_Routine_0801F14C(param_1);
+  Farmer_Routine_0801F3E4(param_1);
+  Farmer_Routine_0801F2DC(param_1);
+  Farmer_Routine_0801F614(param_1);
+  Farmer_Routine_0801F77C(param_1);
+  Farmer_Routine_0801E67C(param_1);
   piVar8 = piStack_28;
   for (piVar4 = piStack_2c; piVar4 != piVar8; piVar4 = piVar4 + 1) {
     iVar7 = *piVar4;
@@ -9756,21 +9756,21 @@ LAB_08019e52:
   if ((uStack_38 != 0) &&
      ((cVar3 = func_0x0809c5f4(*(int *)((int)param_1 + _DAT_08019f2c) + _DAT_08019f30),
       cVar3 == '\0' ||
-      (cVar3 = func_080167CC(*(undefined4 *)((int)param_1 + _DAT_08019f34)), cVar3 == '\0')))) {
-    func_0801DB58(param_1);
+      (cVar3 = Farmer_Routine_080167CC(*(undefined4 *)((int)param_1 + _DAT_08019f34)), cVar3 == '\0')))) {
+    Farmer_Routine_0801DB58(param_1);
   }
   iVar7 = func_0x080a4698(*(undefined4 *)(param_1[1] + 4));
   if (*(char *)(iVar7 + 0x24) == '\0') {
-    func_0801A13C(param_1,(*(uint *)param_1[0x410] & 0x1fffff) >> 0x10,
+    Farmer_Routine_0801A13C(param_1,(*(uint *)param_1[0x410] & 0x1fffff) >> 0x10,
                   (*(uint *)param_1[0x410] & 0x7ffffff) >> 0x15,1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08019F38 @ 0x08019F38
+// Function: Farmer_Routine_08019F38 @ 0x08019F38
 // =============================================================================
-undefined8 func_08019F38(int param_1,undefined4 param_2)
+undefined8 Farmer_Routine_08019F38(int param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -9780,8 +9780,8 @@ undefined8 func_08019F38(int param_1,undefined4 param_2)
   
   iVar2 = func_0x080a4698(*(undefined4 *)(*(int *)(param_1 + 4) + 4));
   if ((*(char *)(iVar2 + 0x24) == '\0') &&
-     ((iVar2 = func_0800E324(*(int *)(param_1 + _DAT_08019f70) + 0x10), iVar2 == 3 ||
-      (cVar1 = func_080A5EB8(*(undefined4 *)(param_1 + 4),param_2), cVar1 != '\0')))) {
+     ((iVar2 = Farmer_Routine_0800E324(*(int *)(param_1 + _DAT_08019f70) + 0x10), iVar2 == 3 ||
+      (cVar1 = NPC_Routine_080A5EB8(*(undefined4 *)(param_1 + 4),param_2), cVar1 != '\0')))) {
     uVar3 = 1;
   }
   else {
@@ -9791,9 +9791,9 @@ undefined8 func_08019F38(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08019F7C @ 0x08019F7C
+// Function: Farmer_Routine_08019F7C @ 0x08019F7C
 // =============================================================================
-undefined8 func_08019F7C(int param_1,undefined4 param_2)
+undefined8 Farmer_Routine_08019F7C(int param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
@@ -9805,7 +9805,7 @@ undefined8 func_08019F7C(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   piVar6 = (int *)(param_1 + _DAT_08019fe4);
-  uVar1 = func_0800E324(*piVar6 + 0x10);
+  uVar1 = Farmer_Routine_0800E324(*piVar6 + 0x10);
   uVar2 = func_0x0800bf14(*piVar6 + 500);
   uVar3 = func_0x0800c560(*piVar6 + 0x410);
   uVar4 = func_0x0800ce64(*piVar6 + 0x5f0);
@@ -9815,9 +9815,9 @@ undefined8 func_08019F7C(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08019FE8 @ 0x08019FE8
+// Function: Farmer_Routine_08019FE8 @ 0x08019FE8
 // =============================================================================
-undefined8 func_08019FE8(int param_1,undefined4 param_2)
+undefined8 Farmer_Routine_08019FE8(int param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
@@ -9829,7 +9829,7 @@ undefined8 func_08019FE8(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   piVar6 = (int *)(param_1 + _DAT_0801a050);
-  uVar1 = func_0800E324(*piVar6 + 0x10);
+  uVar1 = Farmer_Routine_0800E324(*piVar6 + 0x10);
   uVar2 = func_0x0800bf14(*piVar6 + 500);
   uVar3 = func_0x0800c560(*piVar6 + 0x410);
   uVar4 = func_0x0800ce64(*piVar6 + 0x5f0);
@@ -9839,9 +9839,9 @@ undefined8 func_08019FE8(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0801A054 @ 0x0801A054
+// Function: Farmer_Routine_0801A054 @ 0x0801A054
 // =============================================================================
-undefined8 func_0801A054(undefined4 *param_1,int param_2,uint param_3)
+undefined8 Farmer_Routine_0801A054(undefined4 *param_1,int param_2,uint param_3)
 
 {
   undefined2 uVar1;
@@ -9876,7 +9876,7 @@ undefined8 func_0801A054(undefined4 *param_1,int param_2,uint param_3)
       }
       else {
         piVar10 = (int *)(_DAT_0801a118 + param_2);
-        uVar7 = func_0800E324(*piVar10 + 0x10);
+        uVar7 = Farmer_Routine_0800E324(*piVar10 + 0x10);
         uVar9 = func_0x0800bf14(*piVar10 + 500);
         uVar4 = func_0x0800c560(*piVar10 + 0x410);
         uVar5 = func_0x0800ce64(*piVar10 + 0x5f0);
@@ -9905,9 +9905,9 @@ undefined8 func_0801A054(undefined4 *param_1,int param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_0801A13C @ 0x0801A13C
+// Function: Farmer_Routine_0801A13C @ 0x0801A13C
 // =============================================================================
-undefined4 func_0801A13C(int param_1,int param_2,int param_3,char param_4)
+undefined4 Farmer_Routine_0801A13C(int param_1,int param_2,int param_3,char param_4)
 
 {
   bool bVar1;
@@ -9968,7 +9968,7 @@ undefined4 func_0801A13C(int param_1,int param_2,int param_3,char param_4)
   undefined1 *puStack_24;
   
   iStack_54 = param_1;
-  iVar3 = func_0801A8C0();
+  iVar3 = Farmer_Routine_0801A8C0();
   iVar12 = iStack_54;
   if (*(int *)(iStack_54 + _DAT_0801a198) == iVar3) {
     uStack_3c = param_2 << 0x18;
@@ -9979,7 +9979,7 @@ undefined4 func_0801A13C(int param_1,int param_2,int param_3,char param_4)
     }
   }
   *(int *)(iStack_54 + _DAT_0801a198) = iVar3;
-  func_080A5D14(*(undefined4 *)(iStack_54 + 4));
+  NPC_Routine_080A5D14(*(undefined4 *)(iStack_54 + 4));
   iVar3 = **(int **)(iVar12 + 4);
   if (iVar3 == 0x2e) {
     uStack_48 = 1;
@@ -10136,7 +10136,7 @@ LAB_0801a1b0:
         goto LAB_0801a79e;
       }
       if (iStack_4c == 1) {
-        memcpy(puVar9 + 8,puVar9,0x20);
+        gba_memcpy(puVar9 + 8,puVar9,0x20);
         puVar7 = auStack_ac;
         auStack_ac[0] = auStack_ac[0] & 0xffe0 | 3;
         auStack_ac[0] = (ushort)_DAT_0801a400 & auStack_ac[0] | 0x360;
@@ -10212,7 +10212,7 @@ LAB_0801a6d8:
             *(short *)puVar6 = (short)_DAT_0801a398;
           }
           func_0x080d393c(puVar9 + 8,auStack_e4,puVar9,uStack_b4);
-          memcpy(puVar9 + 0x10,puVar9,0x20);
+          gba_memcpy(puVar9 + 0x10,puVar9,0x20);
         }
         else {
           puStack_24 = (undefined1 *)((int)puVar9 + 0x82);
@@ -10227,12 +10227,12 @@ LAB_0801a79e:
 LAB_0801a7b0:
   uVar8 = uStack_3c >> 0x18;
   uVar10 = uStack_38 >> 0x18;
-  uVar4 = func_0800E324(*(int *)(iStack_54 + _DAT_0801a8a8) + 0x10);
-  bVar2 = func_080A4650(uVar8,uVar10,uVar4,*(undefined4 *)(iStack_54 + _DAT_0801a8ac));
+  uVar4 = Farmer_Routine_0800E324(*(int *)(iStack_54 + _DAT_0801a8a8) + 0x10);
+  bVar2 = NPC_Routine_080A4650(uVar8,uVar10,uVar4,*(undefined4 *)(iStack_54 + _DAT_0801a8ac));
   pbVar11 = (byte *)(iStack_54 + _DAT_0801a8b0);
   if ((*pbVar11 != bVar2) || (bVar1)) {
     *pbVar11 = bVar2;
-    func_080A5DFC(*(undefined4 *)(iStack_54 + 4),(uint)*pbVar11,0x1e - (uint)*pbVar11);
+    NPC_Routine_080A5DFC(*(undefined4 *)(iStack_54 + 4),(uint)*pbVar11,0x1e - (uint)*pbVar11);
     bVar2 = *pbVar11;
     uVar8 = 0;
     uStack_40 = bVar2 & 0x1f;
@@ -10257,9 +10257,9 @@ LAB_0801a7b0:
 }
 
 // =============================================================================
-// Function: func_0801A8C0 @ 0x0801A8C0
+// Function: Farmer_Routine_0801A8C0 @ 0x0801A8C0
 // =============================================================================
-undefined8 func_0801A8C0(undefined4 param_1,uint param_2)
+undefined8 Farmer_Routine_0801A8C0(undefined4 param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -10281,9 +10281,9 @@ undefined8 func_0801A8C0(undefined4 param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0801B498 @ 0x0801B498
+// Function: Farmer_Routine_0801B498 @ 0x0801B498
 // =============================================================================
-undefined8 func_0801B498(int param_1,ushort *param_2,short *param_3)
+undefined8 Farmer_Routine_0801B498(int param_1,ushort *param_2,short *param_3)
 
 {
   int *piVar1;
@@ -10347,9 +10347,9 @@ LAB_0801b59c:
 }
 
 // =============================================================================
-// Function: func_0801B9E8 @ 0x0801B9E8
+// Function: Farmer_Routine_0801B9E8 @ 0x0801B9E8
 // =============================================================================
-undefined8 func_0801B9E8(int param_1,undefined4 param_2,int param_3,char param_4)
+undefined8 Farmer_Routine_0801B9E8(int param_1,undefined4 param_2,int param_3,char param_4)
 
 {
   int iVar1;
@@ -10437,7 +10437,7 @@ undefined8 func_0801B9E8(int param_1,undefined4 param_2,int param_3,char param_4
   iVar1 = func_0x080a4698(*(undefined4 *)(*(int *)(param_1 + 4) + 4));
   if (*(char *)(iVar1 + 0x24) != '\0') {
     iVar1 = param_1 + 0x1bc + iStack_50 * 0x84;
-    memcpy(iVar1,param_2,0x20);
+    gba_memcpy(iVar1,param_2,0x20);
     puVar5 = (undefined1 *)(iVar1 + 0x82);
     *puVar5 = 1;
     *(char *)(iVar1 + 0x83) = param_4;
@@ -10463,7 +10463,7 @@ LAB_0801ba68:
   uStack_48 = 0x1e - uStack_4c;
   iVar1 = iStack_50 * 0x20;
   puVar11 = (undefined4 *)(param_1 + 0x1bc + iStack_50 * 0x84);
-  memcpy(puVar11,param_2,0x20);
+  gba_memcpy(puVar11,param_2,0x20);
   puVar7 = (ushort *)((int)puVar11 + 0x82);
   *(undefined1 *)puVar7 = 1;
   *(char *)((int)puVar11 + 0x83) = param_4;
@@ -10529,7 +10529,7 @@ code_r0x0801bb6c:
                 *puVar16 = (ushort)_DAT_0801bc68;
               }
               func_0x080d391c(puVar11 + 8,auStack_e0,puVar11,uStack_b0);
-              memcpy(puVar11 + 0x10,puVar11,0x20);
+              gba_memcpy(puVar11 + 0x10,puVar11,0x20);
             }
             else {
               puStack_28 = (ushort *)((int)puVar11 + 0x82);
@@ -10574,7 +10574,7 @@ code_r0x0801bb6c:
           }
           goto LAB_0801c054;
         }
-        memcpy(puVar11 + 8,puVar11,0x20);
+        gba_memcpy(puVar11 + 8,puVar11,0x20);
         uVar13 = uStack_a8 & 0xffffffe0;
         uStack_a8._0_2_ = (ushort)uVar13 | 3;
         uStack_a8._2_2_ = (undefined2)(uVar13 >> 0x10);
@@ -10704,9 +10704,9 @@ LAB_0801c0b6:
 }
 
 // =============================================================================
-// Function: func_0801C0F8 @ 0x0801C0F8
+// Function: Farmer_Routine_0801C0F8 @ 0x0801C0F8
 // =============================================================================
-undefined8 func_0801C0F8(int param_1,ushort *param_2,int *param_3)
+undefined8 Farmer_Routine_0801C0F8(int param_1,ushort *param_2,int *param_3)
 
 {
   short sVar1;
@@ -10749,9 +10749,9 @@ undefined8 func_0801C0F8(int param_1,ushort *param_2,int *param_3)
 }
 
 // =============================================================================
-// Function: func_0801C198 @ 0x0801C198
+// Function: Farmer_Routine_0801C198 @ 0x0801C198
 // =============================================================================
-undefined8 func_0801C198(int param_1,ushort *param_2,short *param_3)
+undefined8 Farmer_Routine_0801C198(int param_1,ushort *param_2,short *param_3)
 
 {
   short sVar1;
@@ -10794,9 +10794,9 @@ undefined8 func_0801C198(int param_1,ushort *param_2,short *param_3)
 case_0801C240:
   }
   if ((1 < uVar6) && (6 < uVar5)) {
-    iVar3 = func_0809D8A4(iVar7);
+    iVar3 = NPC_Routine_0809D8A4(iVar7);
     if (uVar6 < iVar3 * 2 + 2U) {
-      iVar3 = func_0809D8B8(iVar7);
+      iVar3 = NPC_Routine_0809D8B8(iVar7);
       if (uVar5 < iVar3 * 2 + 7U) {
         sVar1 = (short)(uVar6 - 2 >> 1);
         *param_3 = sVar1 * 2 + 2;
@@ -10813,9 +10813,9 @@ LAB_0801c28c:
 }
 
 // =============================================================================
-// Function: func_0801C29C @ 0x0801C29C
+// Function: Farmer_Routine_0801C29C @ 0x0801C29C
 // =============================================================================
-undefined8 func_0801C29C(int *param_1,ushort *param_2)
+undefined8 Farmer_Routine_0801C29C(int *param_1,ushort *param_2)
 
 {
   bool bVar1;
@@ -10843,10 +10843,10 @@ undefined8 func_0801C29C(int *param_1,ushort *param_2)
   uStack_1e = 0;
   uStack_1c = 0;
   uStack_1a = 0;
-  cVar2 = func_0801C0F8(param_1,param_2,&uStack_24);
+  cVar2 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_24);
   if (cVar2 != '\0') {
     piVar10 = (int *)((int)param_1 + _DAT_0801c338);
-    iVar12 = Field_TillSoil(uStack_24,*(int *)(*piVar10 + 8) == 0);
+    iVar12 = FieldPlot_TillSoil(uStack_24,*(int *)(*piVar10 + 8) == 0);
     uVar3 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (uVar3 == (*param_2 & 0x3ff)) {
       iVar6 = param_1[1];
@@ -10874,8 +10874,8 @@ undefined8 func_0801C29C(int *param_1,ushort *param_2)
       else {
         iVar7 = 0;
       }
-      uVar4 = func_0800AF5C(iVar11 + (uVar9 + uVar3 * 0x2b) * 4,iVar5,iVar7);
-      func_080AA6D0(iVar6,uStack_20,uStack_1e,uStack_24,uVar4);
+      uVar4 = FieldPlot_ResolveBorderTile(iVar11 + (uVar9 + uVar3 * 0x2b) * 4,iVar5,iVar7);
+      NPC_Routine_080AA6D0(iVar6,uStack_20,uStack_1e,uStack_24,uVar4);
     }
     if (iVar12 == 3) {
       uVar3 = 0;
@@ -10898,9 +10898,9 @@ undefined8 func_0801C29C(int *param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_0801C3E0 @ 0x0801C3E0
+// Function: Farmer_Routine_0801C3E0 @ 0x0801C3E0
 // =============================================================================
-undefined4 func_0801C3E0(int *param_1)
+undefined4 Farmer_Routine_0801C3E0(int *param_1)
 
 {
   bool bVar1;
@@ -10920,9 +10920,9 @@ undefined4 func_0801C3E0(int *param_1)
   do {
     if ((*pbVar7 & 3) == 2) {
       *pbVar7 = *pbVar7 & 0xf0 | 1;
-      uVar3 = func_080005D4(0x40);
+      uVar3 = Dispatcher_Routine_080005D4(0x40);
       uVar4 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x68));
-      iVar5 = func_080A4A00(uVar3,uVar4,_DAT_0801c498,param_1,3,0x1a,0);
+      iVar5 = NPC_Routine_080A4A00(uVar3,uVar4,_DAT_0801c498,param_1,3,0x1a,0);
       iVar6 = *piVar2;
       if ((iVar5 != iVar6) && (iVar6 != 0)) {
         func_0x080d3914(iVar6,3,*(undefined4 *)(*(int *)(iVar6 + 0x24) + 8));
@@ -10935,15 +10935,15 @@ undefined4 func_0801C3E0(int *param_1)
     uVar8 = uVar8 + 1;
   } while (uVar8 < 4);
   if (bVar1) {
-    func_08032384(param_1[2],2,0);
+    Entity_Routine_08032384(param_1[2],2,0);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801C49C @ 0x0801C49C
+// Function: Farmer_Routine_0801C49C @ 0x0801C49C
 // =============================================================================
-undefined8 func_0801C49C(int *param_1,ushort *param_2,undefined4 *param_3)
+undefined8 Farmer_Routine_0801C49C(int *param_1,ushort *param_2,undefined4 *param_3)
 
 {
   char cVar1;
@@ -10961,7 +10961,7 @@ undefined8 func_0801C49C(int *param_1,ushort *param_2,undefined4 *param_3)
   undefined2 uStack_22;
   
   *param_3 = 0;
-  cVar1 = func_0801C198(param_1,param_2,&uStack_28);
+  cVar1 = Farmer_Routine_0801C198(param_1,param_2,&uStack_28);
   if (cVar1 == '\0') {
     uVar7 = 0;
   }
@@ -10970,24 +10970,24 @@ undefined8 func_0801C49C(int *param_1,ushort *param_2,undefined4 *param_3)
     iVar2 = *piVar8 + _DAT_0801c538;
     iVar3 = func_0x0809d8d4(iVar2,uStack_24,uStack_22);
     uVar7 = (uint)(iVar3 == 0);
-    uVar4 = func_0809D8E8(iVar2,uStack_24,uStack_22,*piVar8);
+    uVar4 = NPC_Routine_0809D8E8(iVar2,uStack_24,uStack_22,*piVar8);
     *param_3 = uVar4;
     uVar5 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (uVar5 == (*param_2 & 0x3ff)) {
       iVar3 = param_1[1];
       uVar4 = func_0x0809d8d4(iVar2,uStack_24,uStack_22);
-      uVar6 = func_0809E0AC(iVar2,uStack_24,uStack_22);
-      func_080AA540(iVar3,uStack_28,uStack_26,uVar4,uVar6);
+      uVar6 = NPC_Routine_0809E0AC(iVar2,uStack_24,uStack_22);
+      NPC_Routine_080AA540(iVar3,uStack_28,uStack_26,uVar4,uVar6);
     }
   }
   return CONCAT44(in_lr,uVar7);
 }
 
 // =============================================================================
-// Function: func_0801C550 @ 0x0801C550
+// Function: Farmer_Routine_0801C550 @ 0x0801C550
 // =============================================================================
 undefined4
-func_0801C550(int *param_1,int param_2,uint param_3,uint param_4,byte param_5,uint param_6)
+Farmer_Routine_0801C550(int *param_1,int param_2,uint param_3,uint param_4,byte param_5,uint param_6)
 
 {
   ushort uVar1;
@@ -11016,9 +11016,9 @@ func_0801C550(int *param_1,int param_2,uint param_3,uint param_4,byte param_5,ui
   *pbVar6 = *pbVar6 & 0xf3 | (param_5 & 3) << 2;
   *(undefined2 *)(pbVar6 + 8) = (undefined2)uStack_24;
   piVar8 = (int *)((int)param_1 + param_2 * 4 + _DAT_0801c694);
-  iVar4 = func_080005D4(0x4c);
+  iVar4 = Dispatcher_Routine_080005D4(0x4c);
   piVar5 = (int *)func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 100));
-  func_080A4740(iVar4,param_1,2,0x1b);
+  NPC_Routine_080A4740(iVar4,param_1,2,0x1b);
   *(undefined4 *)(iVar4 + 0x24) = _DAT_0801c698;
   iVar7 = *piVar5;
   func_0x080d3918(apuStack_2c,piVar5,uStack_24,*(undefined4 *)(iVar7 + 0xc));
@@ -11033,9 +11033,9 @@ func_0801C550(int *param_1,int param_2,uint param_3,uint param_4,byte param_5,ui
 }
 
 // =============================================================================
-// Function: func_0801C69C @ 0x0801C69C
+// Function: Farmer_Routine_0801C69C @ 0x0801C69C
 // =============================================================================
-undefined4 func_0801C69C(int param_1,int param_2)
+undefined4 Farmer_Routine_0801C69C(int param_1,int param_2)
 
 {
   int iVar1;
@@ -11055,9 +11055,9 @@ undefined4 func_0801C69C(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0801C6EC @ 0x0801C6EC
+// Function: Farmer_Routine_0801C6EC @ 0x0801C6EC
 // =============================================================================
-undefined8 func_0801C6EC(int *param_1,int param_2,int param_3,undefined4 param_4)
+undefined8 Farmer_Routine_0801C6EC(int *param_1,int param_2,int param_3,undefined4 param_4)
 
 {
   bool bVar1;
@@ -11089,14 +11089,14 @@ undefined8 func_0801C6EC(int *param_1,int param_2,int param_3,undefined4 param_4
     do {
       if ((((*pbVar12 & 3) == 1) && (uVar3 == *puVar9)) && (uVar4 == puVar9[1])) {
         if ((*pbVar12 & 0xf) >> 2 != 2) {
-          func_08012464(*(undefined4 *)((int)param_1 + _DAT_0801c7a4),0,0xc0);
+          Farmer_Routine_08012464(*(undefined4 *)((int)param_1 + _DAT_0801c7a4),0,0xc0);
           *pbVar12 = *pbVar12 & 0xf3 | 8;
           iVar10 = *(int *)(puVar9 + 2);
-          func_0805E860(iVar10 + 0x28,_DAT_0801c7a8);
+          Animal_Routine_0805E860(iVar10 + 0x28,_DAT_0801c7a8);
           *(undefined1 *)(iVar10 + 0x3c) = 1;
           *(undefined1 *)(iVar10 + 0x3e) = 0;
           *(undefined1 *)(iVar10 + 0x3f) = 1;
-          func_0800EEF8(*(int *)((int)param_1 + _DAT_0801c7ac) + _DAT_0801c7b0);
+          Farmer_Routine_0800EEF8(*(int *)((int)param_1 + _DAT_0801c7ac) + _DAT_0801c7b0);
         }
         goto LAB_0801c862;
       }
@@ -11107,7 +11107,7 @@ undefined8 func_0801C6EC(int *param_1,int param_2,int param_3,undefined4 param_4
     piVar13 = (int *)((int)param_1 + _DAT_0801c818);
     iVar11 = (param_3 * 0x2b + param_2) * 4;
     iVar2 = *piVar13 + _DAT_0801c81c + iVar11;
-    uStack_2c = Field_PlantSeeds(iVar2,param_4);
+    uStack_2c = FieldPlot_PlantSeeds(iVar2,param_4);
     iVar14 = param_1[1];
     iVar10 = *piVar13 + iVar10;
     iVar6 = param_3 + 1;
@@ -11132,17 +11132,17 @@ undefined8 func_0801C6EC(int *param_1,int param_2,int param_3,undefined4 param_4
     else {
       iVar8 = 0;
     }
-    uVar5 = func_0800AF5C(iVar10 + iVar11,iVar6,iVar8);
-    func_080AA6D0(iVar14,uVar3,uVar4,iVar2,uVar5);
+    uVar5 = FieldPlot_ResolveBorderTile(iVar10 + iVar11,iVar6,iVar8);
+    NPC_Routine_080AA6D0(iVar14,uVar3,uVar4,iVar2,uVar5);
   }
 LAB_0801c862:
   return CONCAT44(in_lr,uStack_2c);
 }
 
 // =============================================================================
-// Function: func_0801C874 @ 0x0801C874
+// Function: Farmer_Routine_0801C874 @ 0x0801C874
 // =============================================================================
-longlong func_0801C874(int *param_1,int param_2,int param_3,undefined4 param_4)
+longlong Farmer_Routine_0801C874(int *param_1,int param_2,int param_3,undefined4 param_4)
 
 {
   char cVar1;
@@ -11151,12 +11151,12 @@ longlong func_0801C874(int *param_1,int param_2,int param_3,undefined4 param_4)
   uint in_lr;
   
   iVar3 = *(int *)((int)param_1 + _DAT_0801c8c0) + _DAT_0801c8c4 + (param_2 + param_3 * 0x2b) * 4;
-  cVar1 = func_0800A78C(iVar3);
+  cVar1 = FieldPlot_IsPassable(iVar3);
   if (cVar1 == '\0') {
-    uVar2 = func_0801C6EC(param_1,param_2,param_3,param_4);
+    uVar2 = Farmer_Routine_0801C6EC(param_1,param_2,param_3,param_4);
   }
   else {
-    iVar3 = func_0801740C(iVar3);
+    iVar3 = Farmer_Routine_0801740C(iVar3);
     if (iVar3 == 1) {
       param_2 = param_2 + -1;
     }
@@ -11169,10 +11169,10 @@ longlong func_0801C874(int *param_1,int param_2,int param_3,undefined4 param_4)
         param_3 = param_3 + -1;
       }
     }
-    uVar2 = func_0801C6EC(param_1,param_2,param_3,param_4);
-    func_0801C6EC(param_1,param_2 + 1,param_3,param_4);
-    func_0801C6EC(param_1,param_2,param_3 + 1,param_4);
-    func_0801C6EC(param_1,param_2 + 1,param_3 + 1,param_4);
+    uVar2 = Farmer_Routine_0801C6EC(param_1,param_2,param_3,param_4);
+    Farmer_Routine_0801C6EC(param_1,param_2 + 1,param_3,param_4);
+    Farmer_Routine_0801C6EC(param_1,param_2,param_3 + 1,param_4);
+    Farmer_Routine_0801C6EC(param_1,param_2 + 1,param_3 + 1,param_4);
   }
   iVar3 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
   if ((iVar3 == 2) && (uVar2 < 9)) {
@@ -11181,23 +11181,23 @@ longlong func_0801C874(int *param_1,int param_2,int param_3,undefined4 param_4)
       param_2 = _PrefetchAbort;
       param_1 = _DataAbort;
     case 0x801c96c:
-      func_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801c988),param_2 * 0x10 + 0x118,
+      NPC_Routine_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801c988),param_2 * 0x10 + 0x118,
                     param_3 * 0x10 + 0xc0,3);
       break;
     case 0x801c98c:
-      func_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801c9a8),param_2 * 0x10 + 0x118,
+      NPC_Routine_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801c9a8),param_2 * 0x10 + 0x118,
                     param_3 * 0x10 + 0xc0,1);
       break;
     case 0x801c9ac:
-      func_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801c9c8),param_2 * 0x10 + 0x118,
+      NPC_Routine_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801c9c8),param_2 * 0x10 + 0x118,
                     param_3 * 0x10 + 0xc0,2);
       break;
     case 0x801c9cc:
-      func_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801c9e8),param_2 * 0x10 + 0x120,
+      NPC_Routine_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801c9e8),param_2 * 0x10 + 0x120,
                     param_3 * 0x10 + 0xd0,8);
       break;
     case 0x801c9ec:
-      func_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801ca18),param_2 * 0x10 + 0x120,
+      NPC_Routine_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801ca18),param_2 * 0x10 + 0x120,
                     param_3 * 0x10 + 0xd0,6);
     }
   }
@@ -11205,9 +11205,9 @@ longlong func_0801C874(int *param_1,int param_2,int param_3,undefined4 param_4)
 }
 
 // =============================================================================
-// Function: func_0801CA1C @ 0x0801CA1C
+// Function: Farmer_Routine_0801CA1C @ 0x0801CA1C
 // =============================================================================
-undefined8 func_0801CA1C(int param_1,undefined4 param_2,int param_3)
+undefined8 Farmer_Routine_0801CA1C(int param_1,undefined4 param_2,int param_3)
 
 {
   char cVar1;
@@ -11229,27 +11229,27 @@ undefined8 func_0801CA1C(int param_1,undefined4 param_2,int param_3)
   uStack_2e = 0;
   uStack_2c = 0;
   uStack_2a = 0;
-  cVar1 = func_0801C0F8(param_1,param_2,&uStack_34);
+  cVar1 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_34);
   if (cVar1 == '\0') {
     acStack_28[0] = '\0';
     bStack_18 = 1;
-    func_0801D104(param_1,param_2,*(undefined1 *)(param_3 + _DAT_0801ca90),1,acStack_28);
+    Farmer_Routine_0801D104(param_1,param_2,*(undefined1 *)(param_3 + _DAT_0801ca90),1,acStack_28);
     if (acStack_28[0] != '\0') {
       if (iStack_24 == 6) {
-        func_080AB68C(*(undefined4 *)(param_1 + _DAT_0801caac),iStack_20 + 0x10,iStack_1c + 0x20,6);
+        NPC_Routine_080AB68C(*(undefined4 *)(param_1 + _DAT_0801caac),iStack_20 + 0x10,iStack_1c + 0x20,6);
       }
       else {
         if (iStack_24 != 9) {
           uVar2 = 0;
           goto LAB_0801caca;
         }
-        func_080AB68C(*(undefined4 *)(param_1 + _DAT_0801cad4),iStack_20 + 0x18,iStack_1c + 0x20,9);
+        NPC_Routine_080AB68C(*(undefined4 *)(param_1 + _DAT_0801cad4),iStack_20 + 0x18,iStack_1c + 0x20,9);
       }
     }
     uVar2 = bStack_18 ^ 1;
   }
   else {
-    uVar2 = func_0801C874(param_1,uStack_2c,uStack_2a,*(undefined1 *)(param_3 + _DAT_0801ca5c));
+    uVar2 = Farmer_Routine_0801C874(param_1,uStack_2c,uStack_2a,*(undefined1 *)(param_3 + _DAT_0801ca5c));
     uVar2 = uVar2 & 0xff;
   }
 LAB_0801caca:
@@ -11257,9 +11257,9 @@ LAB_0801caca:
 }
 
 // =============================================================================
-// Function: func_0801CAD8 @ 0x0801CAD8
+// Function: Farmer_Routine_0801CAD8 @ 0x0801CAD8
 // =============================================================================
-undefined8 func_0801CAD8(int *param_1,ushort *param_2,undefined4 *param_3)
+undefined8 Farmer_Routine_0801CAD8(int *param_1,ushort *param_2,undefined4 *param_3)
 
 {
   char cVar1;
@@ -11277,7 +11277,7 @@ undefined8 func_0801CAD8(int *param_1,ushort *param_2,undefined4 *param_3)
   undefined2 uStack_22;
   
   *param_3 = 0;
-  cVar1 = func_0801C198(param_1,param_2,&uStack_28);
+  cVar1 = Farmer_Routine_0801C198(param_1,param_2,&uStack_28);
   if (cVar1 == '\0') {
     uVar7 = 0;
   }
@@ -11286,16 +11286,16 @@ undefined8 func_0801CAD8(int *param_1,ushort *param_2,undefined4 *param_3)
     iVar2 = *piVar8 + _DAT_0801cb94;
     iVar3 = func_0x0809d8d4(iVar2,uStack_24,uStack_22);
     uVar7 = (uint)(iVar3 == 4);
-    uVar4 = func_0809D9B4(iVar2,uStack_24,uStack_22,*piVar8);
+    uVar4 = NPC_Routine_0809D9B4(iVar2,uStack_24,uStack_22,*piVar8);
     *param_3 = uVar4;
     uVar5 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (uVar5 == (*param_2 & 0x3ff)) {
       iVar3 = param_1[1];
       uVar4 = func_0x0809d8d4(iVar2,uStack_24,uStack_22);
-      uVar6 = func_0809E0AC(iVar2,uStack_24,uStack_22);
-      func_080AA540(iVar3,uStack_28,uStack_26,uVar4,uVar6);
+      uVar6 = NPC_Routine_0809E0AC(iVar2,uStack_24,uStack_22);
+      NPC_Routine_080AA540(iVar3,uStack_28,uStack_26,uVar4,uVar6);
       if (uVar7 != 0) {
-        func_080AB68C(*(undefined4 *)(_DAT_0801cb98 + (int)param_1),(uint)uStack_28 * 8 + 8,
+        NPC_Routine_080AB68C(*(undefined4 *)(_DAT_0801cb98 + (int)param_1),(uint)uStack_28 * 8 + 8,
                       (uint)uStack_26 * 8 + 0x10,5);
       }
     }
@@ -11304,9 +11304,9 @@ undefined8 func_0801CAD8(int *param_1,ushort *param_2,undefined4 *param_3)
 }
 
 // =============================================================================
-// Function: func_0801CBB0 @ 0x0801CBB0
+// Function: Farmer_Routine_0801CBB0 @ 0x0801CBB0
 // =============================================================================
-undefined8 func_0801CBB0(int *param_1,int param_2,int param_3)
+undefined8 Farmer_Routine_0801CBB0(int *param_1,int param_2,int param_3)
 
 {
   char cVar1;
@@ -11338,7 +11338,7 @@ undefined8 func_0801CBB0(int *param_1,int param_2,int param_3)
       uVar10 = uVar8 + 1;
       iVar5 = uVar8 * 0xac;
       do {
-        iVar3 = Field_PlantSeeds(*(int *)(_DAT_0801cc18 + (int)param_1) + _DAT_0801cc1c + iVar5,*puVar2
+        iVar3 = FieldPlot_PlantSeeds(*(int *)(_DAT_0801cc18 + (int)param_1) + _DAT_0801cc1c + iVar5,*puVar2
                              );
         if (iVar3 != 0) {
           uVar9 = 1;
@@ -11352,16 +11352,16 @@ undefined8 func_0801CBB0(int *param_1,int param_2,int param_3)
   }
   else {
     piVar6 = (int *)(_DAT_0801ccd4 + (int)param_1);
-    uVar4 = func_0800E324(*piVar6 + 0x10);
+    uVar4 = Farmer_Routine_0800E324(*piVar6 + 0x10);
     iVar5 = *piVar6 + _DAT_0801ccd8;
     uVar8 = 0x60;
     puVar2 = (undefined1 *)(param_3 + _DAT_0801ccdc);
     do {
-      cVar1 = func_080A1ED4(iVar5,uVar8,uVar4);
-      if ((cVar1 != '\0') && (func_080A1CBC(auStack_50,iVar5,uVar8), iStack_4c == iStack_24)) {
+      cVar1 = NPC_Routine_080A1ED4(iVar5,uVar8,uVar4);
+      if ((cVar1 != '\0') && (NPC_Routine_080A1CBC(auStack_50,iVar5,uVar8), iStack_4c == iStack_24)) {
         auStack_40[0] = 0;
         bStack_30 = 1;
-        func_080174C8(*(int *)(_DAT_0801ccd4 + (int)param_1) + 0x14,
+        Farmer_Routine_080174C8(*(int *)(_DAT_0801ccd4 + (int)param_1) + 0x14,
                       *(int *)(_DAT_0801ccd4 + (int)param_1) + _DAT_0801ccd8,uVar8,uVar4,*puVar2,1,
                       auStack_40);
         uVar9 = -uVar9 >> 0x1f | bStack_30 ^ 1;
@@ -11378,9 +11378,9 @@ undefined8 func_0801CBB0(int *param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0801CCE4 @ 0x0801CCE4
+// Function: Farmer_Routine_0801CCE4 @ 0x0801CCE4
 // =============================================================================
-undefined8 func_0801CCE4(int *param_1,int param_2,int param_3,undefined4 param_4)
+undefined8 Farmer_Routine_0801CCE4(int *param_1,int param_2,int param_3,undefined4 param_4)
 
 {
   bool bVar1;
@@ -11398,7 +11398,7 @@ undefined8 func_0801CCE4(int *param_1,int param_2,int param_3,undefined4 param_4
   piVar10 = (int *)((int)param_1 + _DAT_0801cd5c);
   iVar9 = (param_2 + param_3 * 0x2b) * 4;
   iVar5 = *piVar10 + _DAT_0801cd60 + iVar9;
-  uVar2 = func_0800A33C(iVar5,param_4);
+  uVar2 = FieldPlot_StrikeWithHammer(iVar5,param_4);
   iVar3 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
   if (iVar3 == 2) {
     iVar8 = param_1[1];
@@ -11425,16 +11425,16 @@ undefined8 func_0801CCE4(int *param_1,int param_2,int param_3,undefined4 param_4
     else {
       iVar7 = 0;
     }
-    uVar4 = func_0800AF5C(iVar6 + iVar9,iVar3,iVar7);
-    func_080AA6D0(iVar8,param_2 * 2 + 0x22,param_3 * 2 + 0x16,iVar5,uVar4);
+    uVar4 = FieldPlot_ResolveBorderTile(iVar6 + iVar9,iVar3,iVar7);
+    NPC_Routine_080AA6D0(iVar8,param_2 * 2 + 0x22,param_3 * 2 + 0x16,iVar5,uVar4);
   }
   return CONCAT44(in_lr,uVar2);
 }
 
 // =============================================================================
-// Function: func_0801CDBC @ 0x0801CDBC
+// Function: Farmer_Routine_0801CDBC @ 0x0801CDBC
 // =============================================================================
-longlong func_0801CDBC(int *param_1,int param_2,int param_3,undefined4 param_4)
+longlong Farmer_Routine_0801CDBC(int *param_1,int param_2,int param_3,undefined4 param_4)
 
 {
   char cVar1;
@@ -11443,12 +11443,12 @@ longlong func_0801CDBC(int *param_1,int param_2,int param_3,undefined4 param_4)
   uint in_lr;
   
   iVar3 = *(int *)((int)param_1 + _DAT_0801ce08) + _DAT_0801ce0c + (param_2 + param_3 * 0x2b) * 4;
-  cVar1 = func_0800A78C(iVar3);
+  cVar1 = FieldPlot_IsPassable(iVar3);
   if (cVar1 == '\0') {
-    iVar3 = func_0801CCE4(param_1,param_2,param_3,param_4);
+    iVar3 = Farmer_Routine_0801CCE4(param_1,param_2,param_3,param_4);
   }
   else {
-    iVar3 = func_0801740C(iVar3);
+    iVar3 = Farmer_Routine_0801740C(iVar3);
     if (iVar3 == 1) {
       param_2 = param_2 + -1;
     }
@@ -11461,21 +11461,21 @@ longlong func_0801CDBC(int *param_1,int param_2,int param_3,undefined4 param_4)
         param_3 = param_3 + -1;
       }
     }
-    iVar3 = func_0801CCE4(param_1,param_2,param_3,param_4);
-    func_0801CCE4(param_1,param_2 + 1,param_3,param_4);
-    func_0801CCE4(param_1,param_2,param_3 + 1,param_4);
-    func_0801CCE4(param_1,param_2 + 1,param_3 + 1,param_4);
+    iVar3 = Farmer_Routine_0801CCE4(param_1,param_2,param_3,param_4);
+    Farmer_Routine_0801CCE4(param_1,param_2 + 1,param_3,param_4);
+    Farmer_Routine_0801CCE4(param_1,param_2,param_3 + 1,param_4);
+    Farmer_Routine_0801CCE4(param_1,param_2 + 1,param_3 + 1,param_4);
   }
   iVar2 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
   if (iVar2 == 2) {
     if (iVar3 == 1) {
       Farm_AddLumber(*(int *)((int)param_1 + _DAT_0801ceb4) + 0x14,1);
-      func_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801ceb8),param_2 * 0x10 + 0x118,
+      NPC_Routine_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801ceb8),param_2 * 0x10 + 0x118,
                     param_3 * 0x10 + 0xbb,4);
     }
     else if ((1 < iVar3) && (iVar3 == 2)) {
       Farm_AddLumber(*(int *)((int)param_1 + _DAT_0801cef4) + 0x14,6);
-      func_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801cef8),param_2 * 0x10 + 0x120,
+      NPC_Routine_080AB68C(*(undefined4 *)((int)param_1 + _DAT_0801cef8),param_2 * 0x10 + 0x120,
                     param_3 * 0x10 + 0xd0,7);
     }
   }
@@ -11483,9 +11483,9 @@ longlong func_0801CDBC(int *param_1,int param_2,int param_3,undefined4 param_4)
 }
 
 // =============================================================================
-// Function: func_0801CEFC @ 0x0801CEFC
+// Function: Farmer_Routine_0801CEFC @ 0x0801CEFC
 // =============================================================================
-undefined8 func_0801CEFC(int param_1,undefined4 param_2,int param_3)
+undefined8 Farmer_Routine_0801CEFC(int param_1,undefined4 param_2,int param_3)
 
 {
   char cVar1;
@@ -11507,27 +11507,27 @@ undefined8 func_0801CEFC(int param_1,undefined4 param_2,int param_3)
   uStack_2e = 0;
   uStack_2c = 0;
   uStack_2a = 0;
-  cVar1 = func_0801C0F8(param_1,param_2,&uStack_34);
+  cVar1 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_34);
   if (cVar1 == '\0') {
     acStack_28[0] = '\0';
     bStack_18 = 1;
-    func_0801D104(param_1,param_2,*(undefined1 *)(param_3 + _DAT_0801cf70),0,acStack_28);
+    Farmer_Routine_0801D104(param_1,param_2,*(undefined1 *)(param_3 + _DAT_0801cf70),0,acStack_28);
     if (acStack_28[0] != '\0') {
       if (iStack_24 == 4) {
-        func_080AB68C(*(undefined4 *)(param_1 + _DAT_0801cfb4),iStack_20 + 8,iStack_1c + 0xb,4);
+        NPC_Routine_080AB68C(*(undefined4 *)(param_1 + _DAT_0801cfb4),iStack_20 + 8,iStack_1c + 0xb,4);
       }
       else {
         if (iStack_24 != 7) {
           uVar2 = 0;
           goto LAB_0801cfaa;
         }
-        func_080AB68C(*(undefined4 *)(param_1 + _DAT_0801cf8c),iStack_20 + 0x10,iStack_1c + 0x20,7);
+        NPC_Routine_080AB68C(*(undefined4 *)(param_1 + _DAT_0801cf8c),iStack_20 + 0x10,iStack_1c + 0x20,7);
       }
     }
     uVar2 = bStack_18 ^ 1;
   }
   else {
-    uVar2 = func_0801CDBC(param_1,uStack_2c,uStack_2a,*(undefined1 *)(param_3 + _DAT_0801cf3c));
+    uVar2 = Farmer_Routine_0801CDBC(param_1,uStack_2c,uStack_2a,*(undefined1 *)(param_3 + _DAT_0801cf3c));
     uVar2 = uVar2 & 0xff;
   }
 LAB_0801cfaa:
@@ -11535,9 +11535,9 @@ LAB_0801cfaa:
 }
 
 // =============================================================================
-// Function: func_0801CFB8 @ 0x0801CFB8
+// Function: Farmer_Routine_0801CFB8 @ 0x0801CFB8
 // =============================================================================
-undefined8 func_0801CFB8(int *param_1,int param_2,int param_3)
+undefined8 Farmer_Routine_0801CFB8(int *param_1,int param_2,int param_3)
 
 {
   char cVar1;
@@ -11567,7 +11567,7 @@ undefined8 func_0801CFB8(int *param_1,int param_2,int param_3)
       uVar5 = 0;
       uVar4 = uVar6 + 1;
       do {
-        iVar2 = func_0800A33C(*param_1 + _DAT_0801d03c + (uVar5 + uVar6 * 0x2b) * 4,*puVar8);
+        iVar2 = FieldPlot_StrikeWithHammer(*param_1 + _DAT_0801d03c + (uVar5 + uVar6 * 0x2b) * 4,*puVar8);
         if (iVar2 - 1U < 2) {
           Farm_AddLumber(*param_1 + 0x14,1);
         }
@@ -11582,16 +11582,16 @@ undefined8 func_0801CFB8(int *param_1,int param_2,int param_3)
   }
   else {
     param_1 = (int *)((int)param_1 + _DAT_0801d0f4);
-    uVar3 = func_0800E324(*param_1 + 0x10);
+    uVar3 = Farmer_Routine_0800E324(*param_1 + 0x10);
     iVar2 = *param_1 + _DAT_0801d0f8;
     uVar6 = 0x60;
     puVar8 = (undefined1 *)(param_3 + _DAT_0801d0fc);
     do {
-      cVar1 = func_080A1ED4(iVar2,uVar6,uVar3);
-      if ((cVar1 != '\0') && (func_080A1CBC(auStack_50,iVar2,uVar6), iStack_4c == param_2)) {
+      cVar1 = NPC_Routine_080A1ED4(iVar2,uVar6,uVar3);
+      if ((cVar1 != '\0') && (NPC_Routine_080A1CBC(auStack_50,iVar2,uVar6), iStack_4c == param_2)) {
         auStack_40[0] = 0;
         bStack_30 = 1;
-        func_080174C8(*(int *)((int)piStack_24 + _DAT_0801d0f4) + 0x14,
+        Farmer_Routine_080174C8(*(int *)((int)piStack_24 + _DAT_0801d0f4) + 0x14,
                       *(int *)((int)piStack_24 + _DAT_0801d0f4) + _DAT_0801d0f8,uVar6,uVar3,*puVar8,
                       0,auStack_40);
         uVar7 = -uVar7 >> 0x1f | bStack_30 ^ 1;
@@ -11608,9 +11608,9 @@ undefined8 func_0801CFB8(int *param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0801D104 @ 0x0801D104
+// Function: Farmer_Routine_0801D104 @ 0x0801D104
 // =============================================================================
-undefined8 func_0801D104(int param_1,ushort *param_2,undefined4 param_3,uint param_4,char *param_5)
+undefined8 Farmer_Routine_0801D104(int param_1,ushort *param_2,undefined4 param_3,uint param_4,char *param_5)
 
 {
   int iVar1;
@@ -11636,18 +11636,18 @@ undefined8 func_0801D104(int param_1,ushort *param_2,undefined4 param_3,uint par
   iVar1 = *piVar5;
   iVar4 = iVar1 + _DAT_0801d1d8;
   uStack_28 = param_3;
-  uVar2 = func_0800E324(iVar1 + 0x10);
+  uVar2 = Farmer_Routine_0800E324(iVar1 + 0x10);
   uStack_34 = (ushort)((param_2[1] & _DAT_0801d1dc) << 6) |
               (ushort)(*(byte *)((int)param_2 + 1) >> 2);
   uStack_32 = (ushort)((param_2[2] & _DAT_0801d1dc) << 6) |
               (ushort)(*(byte *)((int)param_2 + 3) >> 2);
   sStack_30 = uStack_34 + 1;
   sStack_2e = uStack_32 + 1;
-  iVar1 = func_080A1D20(iVar4,*param_2 & 0x3ff,&uStack_34,uVar2);
+  iVar1 = NPC_Routine_080A1D20(iVar4,*param_2 & 0x3ff,&uStack_34,uVar2);
   if (iVar1 == -1) goto LAB_0801d228;
-  func_080A1CBC(auStack_44,iVar4,iVar1);
+  NPC_Routine_080A1CBC(auStack_44,iVar4,iVar1);
   iVar4 = *piVar5;
-  func_080174C8(iVar4 + 0x14,iVar4 + _DAT_0801d1d8,iVar1,uVar2,uStack_28,(undefined1)uStack_24,
+  Farmer_Routine_080174C8(iVar4 + 0x14,iVar4 + _DAT_0801d1d8,iVar1,uVar2,uStack_28,(undefined1)uStack_24,
                 param_5);
   if ((*param_5 != '\0') && ((*param_2 & 0x3ff) == **(uint **)(param_1 + 4))) {
     iVar1 = *(int *)(param_5 + 4);
@@ -11685,7 +11685,7 @@ LAB_0801d228:
     }
     uStack_2c = (undefined2)(iVar1 >> 3);
     uStack_2a = (undefined2)(iVar4 >> 3);
-    func_080A5F78(*(uint **)(param_1 + 4),1,&uStack_2c,uVar2,uVar3);
+    NPC_Routine_080A5F78(*(uint **)(param_1 + 4),1,&uStack_2c,uVar2,uVar3);
   }
   uVar2 = 1;
 LAB_0801d22a:
@@ -11693,9 +11693,9 @@ LAB_0801d22a:
 }
 
 // =============================================================================
-// Function: func_0801D23C @ 0x0801D23C
+// Function: Farmer_Routine_0801D23C @ 0x0801D23C
 // =============================================================================
-undefined8 func_0801D23C(int *param_1,ushort *param_2)
+undefined8 Farmer_Routine_0801D23C(int *param_1,ushort *param_2)
 
 {
   char cVar1;
@@ -11728,18 +11728,18 @@ undefined8 func_0801D23C(int *param_1,ushort *param_2)
   uStack_3e = 0;
   uStack_3c = 0;
   uStack_3a = 0;
-  cVar1 = func_0801C0F8(param_1,param_2,&uStack_44);
+  cVar1 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_44);
   if (cVar1 == '\0') {
     uVar6 = 0;
     goto LAB_0801d3ec;
   }
-  uStack_38 = func_0800A3C8(uStack_44);
+  uStack_38 = FieldPlot_ChopBranch(uStack_44);
   if (uStack_38 == 1) {
-    func_0800D23C(*(int *)(_DAT_0801d33c + (int)param_1) + 0x5f0,1);
+    ToolStack_IsEmpty(*(int *)(_DAT_0801d33c + (int)param_1) + 0x5f0,1);
 LAB_0801d29c:
     iVar2 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (iVar2 == 2) {
-      func_080AB68C(*(undefined4 *)(_DAT_0801d340 + (int)param_1),(uint)uStack_40 * 8 + 8,
+      NPC_Routine_080AB68C(*(undefined4 *)(_DAT_0801d340 + (int)param_1),(uint)uStack_40 * 8 + 8,
                     (uint)uStack_3e * 8 + 0x10,0);
     }
     uVar6 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
@@ -11789,8 +11789,8 @@ LAB_0801d29c:
           else {
             iVar4 = 0;
           }
-          uVar5 = func_0800AF5C(iVar12 * 4 + iVar8,iVar3,iVar4);
-          func_080AA6D0(iVar7,uStack_30,iVar2,iVar10,uVar5);
+          uVar5 = FieldPlot_ResolveBorderTile(iVar12 * 4 + iVar8,iVar3,iVar4);
+          NPC_Routine_080AA6D0(iVar7,uStack_30,iVar2,iVar10,uVar5);
         }
         iVar2 = iVar2 + 2;
         iVar12 = iVar12 + 0x2b;
@@ -11809,9 +11809,9 @@ LAB_0801d3ec:
 }
 
 // =============================================================================
-// Function: func_0801D3FC @ 0x0801D3FC
+// Function: Farmer_Routine_0801D3FC @ 0x0801D3FC
 // =============================================================================
-undefined8 func_0801D3FC(int *param_1,ushort *param_2)
+undefined8 Farmer_Routine_0801D3FC(int *param_1,ushort *param_2)
 
 {
   bool bVar1;
@@ -11836,9 +11836,9 @@ undefined8 func_0801D3FC(int *param_1,ushort *param_2)
   uStack_1a = 0;
   uStack_18 = 0;
   uStack_16 = 0;
-  cVar2 = func_0801C0F8(param_1,param_2,&uStack_20);
+  cVar2 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_20);
   if (cVar2 != '\0') {
-    iVar3 = func_0800A438(uStack_20);
+    iVar3 = FieldPlot_ClearWeeds(uStack_20);
     uVar4 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (uVar4 == (*param_2 & 0x3ff)) {
       iVar10 = param_1[1];
@@ -11866,8 +11866,8 @@ undefined8 func_0801D3FC(int *param_1,ushort *param_2)
       else {
         iVar7 = 0;
       }
-      uVar5 = func_0800AF5C(iVar9 + (uVar8 + uVar4 * 0x2b) * 4,iVar6,iVar7);
-      func_080AA6D0(iVar10,uStack_1c,uStack_1a,uStack_20,uVar5);
+      uVar5 = FieldPlot_ResolveBorderTile(iVar9 + (uVar8 + uVar4 * 0x2b) * 4,iVar6,iVar7);
+      NPC_Routine_080AA6D0(iVar10,uStack_1c,uStack_1a,uStack_20,uVar5);
     }
     if (iVar3 == 1) {
       uVar5 = 1;
@@ -11880,9 +11880,9 @@ LAB_0801d4d8:
 }
 
 // =============================================================================
-// Function: func_0801D4E0 @ 0x0801D4E0
+// Function: Farmer_Routine_0801D4E0 @ 0x0801D4E0
 // =============================================================================
-undefined4 func_0801D4E0(int *param_1,ushort *param_2,undefined4 param_3)
+undefined4 Farmer_Routine_0801D4E0(int *param_1,ushort *param_2,undefined4 param_3)
 
 {
   bool bVar1;
@@ -11906,9 +11906,9 @@ undefined4 func_0801D4E0(int *param_1,ushort *param_2,undefined4 param_3)
   uStack_16 = 0;
   uStack_14 = 0;
   uStack_12 = 0;
-  cVar2 = func_0801C0F8(param_1,param_2,&uStack_1c);
+  cVar2 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_1c);
   if (cVar2 != '\0') {
-    func_0800A460(uStack_1c,param_3);
+    FieldPlot_SetDebris(uStack_1c,param_3);
     uVar3 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (uVar3 == (*param_2 & 0x3ff)) {
       iVar9 = param_1[1];
@@ -11936,17 +11936,17 @@ undefined4 func_0801D4E0(int *param_1,ushort *param_2,undefined4 param_3)
       else {
         iVar6 = 0;
       }
-      uVar4 = func_0800AF5C(iVar8 + (uVar7 + uVar3 * 0x2b) * 4,iVar5,iVar6);
-      func_080AA6D0(iVar9,uStack_18,uStack_16,uStack_1c,uVar4);
+      uVar4 = FieldPlot_ResolveBorderTile(iVar8 + (uVar7 + uVar3 * 0x2b) * 4,iVar5,iVar6);
+      NPC_Routine_080AA6D0(iVar9,uStack_18,uStack_16,uStack_1c,uVar4);
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801D5BC @ 0x0801D5BC
+// Function: Farmer_Routine_0801D5BC @ 0x0801D5BC
 // =============================================================================
-undefined4 func_0801D5BC(int *param_1,ushort *param_2,undefined4 *param_3)
+undefined4 Farmer_Routine_0801D5BC(int *param_1,ushort *param_2,undefined4 *param_3)
 
 {
   bool bVar1;
@@ -11971,13 +11971,13 @@ undefined4 func_0801D5BC(int *param_1,ushort *param_2,undefined4 *param_3)
   uStack_1a = 0;
   uStack_18 = 0;
   uStack_16 = 0;
-  cVar2 = func_0801C0F8(param_1,param_2,&uStack_20);
+  cVar2 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_20);
   if (cVar2 == '\0') {
-    func_0801D6AC(&uStack_14,param_1,param_2);
+    Farmer_Routine_0801D6AC(&uStack_14,param_1,param_2);
     *param_3 = uStack_14;
   }
   else {
-    Field_HarvestCrop(&uStack_14,uStack_20);
+    FieldPlot_HarvestCrop(&uStack_14,uStack_20);
     *param_3 = uStack_14;
     uVar3 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (uVar3 == (*param_2 & 0x3ff)) {
@@ -12006,17 +12006,17 @@ undefined4 func_0801D5BC(int *param_1,ushort *param_2,undefined4 *param_3)
       else {
         iVar6 = 0;
       }
-      uVar4 = func_0800AF5C(iVar8 + (uVar7 + uVar3 * 0x2b) * 4,iVar5,iVar6);
-      func_080AA6D0(iVar9,uStack_1c,uStack_1a,uStack_20,uVar4);
+      uVar4 = FieldPlot_ResolveBorderTile(iVar8 + (uVar7 + uVar3 * 0x2b) * 4,iVar5,iVar6);
+      NPC_Routine_080AA6D0(iVar9,uStack_1c,uStack_1a,uStack_20,uVar4);
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801D6AC @ 0x0801D6AC
+// Function: Farmer_Routine_0801D6AC @ 0x0801D6AC
 // =============================================================================
-undefined8 func_0801D6AC(undefined4 *param_1,int param_2,ushort *param_3)
+undefined8 Farmer_Routine_0801D6AC(undefined4 *param_1,int param_2,ushort *param_3)
 
 {
   char cVar1;
@@ -12037,21 +12037,21 @@ undefined8 func_0801D6AC(undefined4 *param_1,int param_2,ushort *param_3)
   undefined2 uStack_22;
   
   iVar4 = *(int *)(param_2 + _DAT_0801d7a4) + _DAT_0801d7a8;
-  uVar2 = func_0800E324(*(int *)(param_2 + _DAT_0801d7a4) + 0x10);
+  uVar2 = Farmer_Routine_0800E324(*(int *)(param_2 + _DAT_0801d7a4) + 0x10);
   uStack_2c = (ushort)((param_3[1] & _DAT_0801d7ac) << 6) |
               (ushort)(*(byte *)((int)param_3 + 1) >> 2);
   uStack_2a = (ushort)((param_3[2] & _DAT_0801d7ac) << 6) |
               (ushort)(*(byte *)((int)param_3 + 3) >> 2);
   sStack_28 = uStack_2c + 1;
   sStack_26 = uStack_2a + 1;
-  iVar3 = func_080A1D20(iVar4,*param_3 & 0x3ff,&uStack_2c,uVar2);
+  iVar3 = NPC_Routine_080A1D20(iVar4,*param_3 & 0x3ff,&uStack_2c,uVar2);
   func_0x0800efec(&uStack_44);
   if (iVar3 != -1) {
-    func_080A1B38(&uStack_40,iVar4,*param_3 & 0x3ff,&uStack_2c,uVar2);
+    NPC_Routine_080A1B38(&uStack_40,iVar4,*param_3 & 0x3ff,&uStack_2c,uVar2);
     uStack_44 = uStack_40;
-    cVar1 = func_0800F06C(&uStack_44);
+    cVar1 = Farmer_Routine_0800F06C(&uStack_44);
     if ((cVar1 == '\0') && ((*param_3 & 0x3ff) == **(uint **)(param_2 + 4))) {
-      func_080A1CBC(auStack_3c,iVar4,iVar3);
+      NPC_Routine_080A1CBC(auStack_3c,iVar4,iVar3);
       iVar3 = (int)sStack_34;
       if (iVar3 < 0) {
         iVar3 = iVar3 + 7;
@@ -12062,7 +12062,7 @@ undefined8 func_0801D6AC(undefined4 *param_1,int param_2,ushort *param_3)
       }
       uStack_24 = (undefined2)(iVar3 >> 3);
       uStack_22 = (undefined2)(iVar4 >> 3);
-      func_080A5F78(*(undefined4 *)(param_2 + 4),1,&uStack_24,2,2);
+      NPC_Routine_080A5F78(*(undefined4 *)(param_2 + 4),1,&uStack_24,2,2);
     }
   }
   *param_1 = uStack_44;
@@ -12070,9 +12070,9 @@ undefined8 func_0801D6AC(undefined4 *param_1,int param_2,ushort *param_3)
 }
 
 // =============================================================================
-// Function: func_0801D7B0 @ 0x0801D7B0
+// Function: Farmer_Routine_0801D7B0 @ 0x0801D7B0
 // =============================================================================
-undefined4 func_0801D7B0(int *param_1,ushort *param_2,undefined4 param_3)
+undefined4 Farmer_Routine_0801D7B0(int *param_1,ushort *param_2,undefined4 param_3)
 
 {
   bool bVar1;
@@ -12096,9 +12096,9 @@ undefined4 func_0801D7B0(int *param_1,ushort *param_2,undefined4 param_3)
   uStack_16 = 0;
   uStack_14 = 0;
   uStack_12 = 0;
-  cVar2 = func_0801C0F8(param_1,param_2,&uStack_1c);
+  cVar2 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_1c);
   if (cVar2 != '\0') {
-    Field_PlaceItem(uStack_1c,param_3);
+    FieldPlot_PlaceItem(uStack_1c,param_3);
     uVar3 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (uVar3 == (*param_2 & 0x3ff)) {
       iVar9 = param_1[1];
@@ -12126,17 +12126,17 @@ undefined4 func_0801D7B0(int *param_1,ushort *param_2,undefined4 param_3)
       else {
         iVar6 = 0;
       }
-      uVar4 = func_0800AF5C(iVar8 + (uVar7 + uVar3 * 0x2b) * 4,iVar5,iVar6);
-      func_080AA6D0(iVar9,uStack_18,uStack_16,uStack_1c,uVar4);
+      uVar4 = FieldPlot_ResolveBorderTile(iVar8 + (uVar7 + uVar3 * 0x2b) * 4,iVar5,iVar6);
+      NPC_Routine_080AA6D0(iVar9,uStack_18,uStack_16,uStack_1c,uVar4);
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801D88C @ 0x0801D88C
+// Function: Farmer_Routine_0801D88C @ 0x0801D88C
 // =============================================================================
-undefined8 func_0801D88C(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+undefined8 Farmer_Routine_0801D88C(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   char cVar1;
@@ -12153,12 +12153,12 @@ undefined8 func_0801D88C(undefined4 param_1,undefined4 param_2,undefined4 param_
   uStack_e = 0;
   uStack_c = 0;
   uStack_a = 0;
-  cVar1 = func_0801C0F8(param_1,param_2,&uStack_14);
+  cVar1 = Farmer_Routine_0801C0F8(param_1,param_2,&uStack_14);
   if (cVar1 == '\0') {
     uVar2 = 2;
   }
   else {
-    cVar1 = Field_CanPlaceItem(uStack_14,param_3);
+    cVar1 = FieldPlot_CanPlaceItem(uStack_14,param_3);
     if (cVar1 == '\0') {
       uVar2 = 1;
     }
@@ -12170,9 +12170,9 @@ undefined8 func_0801D88C(undefined4 param_1,undefined4 param_2,undefined4 param_
 }
 
 // =============================================================================
-// Function: func_0801D8CC @ 0x0801D8CC
+// Function: Farmer_Routine_0801D8CC @ 0x0801D8CC
 // =============================================================================
-undefined4 func_0801D8CC(int param_1)
+undefined4 Farmer_Routine_0801D8CC(int param_1)
 
 {
   int iVar1;
@@ -12200,9 +12200,9 @@ undefined4 func_0801D8CC(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801D948 @ 0x0801D948
+// Function: Farmer_Routine_0801D948 @ 0x0801D948
 // =============================================================================
-undefined4 func_0801D948(int param_1)
+undefined4 Farmer_Routine_0801D948(int param_1)
 
 {
   int iVar1;
@@ -12226,21 +12226,21 @@ undefined4 func_0801D948(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801D9A8 @ 0x0801D9A8
+// Function: Farmer_Routine_0801D9A8 @ 0x0801D9A8
 // =============================================================================
-undefined4 func_0801D9A8(int param_1)
+undefined4 Farmer_Routine_0801D9A8(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_08012B24(*(undefined4 *)(param_1 + _DAT_0801d9b8));
+  Farmer_Routine_08012B24(*(undefined4 *)(param_1 + _DAT_0801d9b8));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801D9BC @ 0x0801D9BC
+// Function: Farmer_Routine_0801D9BC @ 0x0801D9BC
 // =============================================================================
-undefined8 func_0801D9BC(int *param_1)
+undefined8 Farmer_Routine_0801D9BC(int *param_1)
 
 {
   char cVar1;
@@ -12259,7 +12259,7 @@ undefined8 func_0801D9BC(int *param_1)
     uVar2 = 0xb;
     goto LAB_0801db3e;
   }
-  iVar3 = func_0800C07C(iVar5 + 500);
+  iVar3 = Building_Routine_0800C07C(iVar5 + 500);
   uVar4 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
   if (uVar4 - 0x34 <= _DAT_0801da18) {
     uVar4 = 2;
@@ -12269,7 +12269,7 @@ undefined8 func_0801D9BC(int *param_1)
     case 0x801dad0:
       if ((*(byte *)(iVar5 + 0x12) & 0x1f) * 0x1000000 + 0xfa000000 >> 0x18 < 0xe) {
         if ((iVar3 == 0) || (cVar1 = func_0x0800bb74(iVar3), cVar1 == '\0')) {
-          iVar5 = func_0800E324(iVar5 + 0x10);
+          iVar5 = Farmer_Routine_0800E324(iVar5 + 0x10);
           if (iVar5 == 1) {
             uVar2 = 2;
           }
@@ -12288,7 +12288,7 @@ undefined8 func_0801D9BC(int *param_1)
           }
         }
         else {
-          uVar2 = func_0800BB7C(iVar3);
+          uVar2 = RecordPlayer_PlayTrack(iVar3);
         }
         goto LAB_0801db3e;
       }
@@ -12313,9 +12313,9 @@ LAB_0801db3e:
 }
 
 // =============================================================================
-// Function: func_0801DB44 @ 0x0801DB44
+// Function: Farmer_Routine_0801DB44 @ 0x0801DB44
 // =============================================================================
-void func_0801DB44(int param_1)
+void Farmer_Routine_0801DB44(int param_1)
 
 {
   func_0x0801468c(*(undefined4 *)(param_1 + _DAT_0801db54));
@@ -12323,9 +12323,9 @@ void func_0801DB44(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801DB58 @ 0x0801DB58
+// Function: Farmer_Routine_0801DB58 @ 0x0801DB58
 // =============================================================================
-undefined4 func_0801DB58(int *param_1)
+undefined4 Farmer_Routine_0801DB58(int *param_1)
 
 {
   int iVar1;
@@ -12368,14 +12368,14 @@ undefined4 func_0801DB58(int *param_1)
   }
   uVar4 = *(undefined4 *)((int)param_1 + _DAT_0801dc20);
   uVar2 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x148));
-  func_080123CC(uVar4,1,uVar2,&uStack_18);
+  Farmer_Routine_080123CC(uVar4,1,uVar2,&uStack_18);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DC24 @ 0x0801DC24
+// Function: Farmer_Routine_0801DC24 @ 0x0801DC24
 // =============================================================================
-undefined4 func_0801DC24(int *param_1,undefined4 param_2)
+undefined4 Farmer_Routine_0801DC24(int *param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
@@ -12388,9 +12388,9 @@ undefined4 func_0801DC24(int *param_1,undefined4 param_2)
   piVar5 = (int *)((int)param_1 + _DAT_0801dc54);
   iVar4 = *piVar5;
   if (iVar4 == 0) {
-    uVar1 = func_080005D4(0x40);
+    uVar1 = Dispatcher_Routine_080005D4(0x40);
     uVar2 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x5c));
-    iVar4 = func_080A4A00(uVar1,uVar2,param_2,param_1,3,0x1b,1);
+    iVar4 = NPC_Routine_080A4A00(uVar1,uVar2,param_2,param_1,3,0x1b,1);
     iVar3 = *piVar5;
     if ((iVar4 != iVar3) && (iVar3 != 0)) {
       func_0x080d3914(iVar3,3,*(undefined4 *)(*(int *)(iVar3 + 0x24) + 8));
@@ -12398,7 +12398,7 @@ undefined4 func_0801DC24(int *param_1,undefined4 param_2)
     *piVar5 = iVar4;
   }
   else {
-    func_0805E860(iVar4 + 0x28);
+    Animal_Routine_0805E860(iVar4 + 0x28);
     *(undefined1 *)(iVar4 + 0x3c) = 1;
     *(undefined1 *)(iVar4 + 0x3e) = 0;
     *(undefined1 *)(iVar4 + 0x3f) = 1;
@@ -12407,9 +12407,9 @@ undefined4 func_0801DC24(int *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0801DCA8 @ 0x0801DCA8
+// Function: Farmer_Routine_0801DCA8 @ 0x0801DCA8
 // =============================================================================
-undefined4 func_0801DCA8(int param_1)
+undefined4 Farmer_Routine_0801DCA8(int param_1)
 
 {
   int iVar1;
@@ -12426,9 +12426,9 @@ undefined4 func_0801DCA8(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801DCD4 @ 0x0801DCD4
+// Function: Farmer_Routine_0801DCD4 @ 0x0801DCD4
 // =============================================================================
-undefined4 func_0801DCD4(int *param_1)
+undefined4 Farmer_Routine_0801DCD4(int *param_1)
 
 {
   undefined4 uVar1;
@@ -12439,7 +12439,7 @@ undefined4 func_0801DCD4(int *param_1)
   
   piVar2 = (int *)((int)param_1 + _DAT_0801dd10);
   uVar1 = func_0x0800b120(*piVar2 + 0x54);
-  func_0801140C(*piVar2);
+  Farmer_Routine_0801140C(*piVar2);
   uStack_18 = _DAT_0801dd14;
   uStack_14 = uVar1;
   func_0x080d3918(param_1,&uStack_18,1,*(undefined4 *)(*param_1 + 0x140));
@@ -12447,105 +12447,105 @@ undefined4 func_0801DCD4(int *param_1)
 }
 
 // =============================================================================
-// Function: func_0801DD18 @ 0x0801DD18
+// Function: Farmer_Routine_0801DD18 @ 0x0801DD18
 // =============================================================================
-undefined4 func_0801DD18(int param_1)
+undefined4 Farmer_Routine_0801DD18(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A6138(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A6138(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DD24 @ 0x0801DD24
+// Function: Farmer_Routine_0801DD24 @ 0x0801DD24
 // =============================================================================
-undefined4 func_0801DD24(int param_1)
+undefined4 Farmer_Routine_0801DD24(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A6194(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A6194(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DD30 @ 0x0801DD30
+// Function: Farmer_Routine_0801DD30 @ 0x0801DD30
 // =============================================================================
-undefined4 func_0801DD30(int param_1)
+undefined4 Farmer_Routine_0801DD30(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A61F0(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A61F0(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DD3C @ 0x0801DD3C
+// Function: Farmer_Routine_0801DD3C @ 0x0801DD3C
 // =============================================================================
-undefined4 func_0801DD3C(int param_1)
+undefined4 Farmer_Routine_0801DD3C(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A6234(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A6234(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DD48 @ 0x0801DD48
+// Function: Farmer_Routine_0801DD48 @ 0x0801DD48
 // =============================================================================
-undefined4 func_0801DD48(int param_1)
+undefined4 Farmer_Routine_0801DD48(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A6278(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A6278(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DD54 @ 0x0801DD54
+// Function: Farmer_Routine_0801DD54 @ 0x0801DD54
 // =============================================================================
-undefined4 func_0801DD54(int param_1)
+undefined4 Farmer_Routine_0801DD54(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A62BC(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A62BC(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DD60 @ 0x0801DD60
+// Function: Farmer_Routine_0801DD60 @ 0x0801DD60
 // =============================================================================
-undefined4 func_0801DD60(int param_1)
+undefined4 Farmer_Routine_0801DD60(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A607C(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A607C(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DD6C @ 0x0801DD6C
+// Function: Farmer_Routine_0801DD6C @ 0x0801DD6C
 // =============================================================================
-undefined4 func_0801DD6C(int param_1)
+undefined4 Farmer_Routine_0801DD6C(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A6024(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A6024(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DD78 @ 0x0801DD78
+// Function: Farmer_Routine_0801DD78 @ 0x0801DD78
 // =============================================================================
-undefined4 func_0801DD78(int param_1)
+undefined4 Farmer_Routine_0801DD78(int param_1)
 
 {
   undefined4 in_lr;
@@ -12555,102 +12555,102 @@ undefined4 func_0801DD78(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801DD84 @ 0x0801DD84
+// Function: Farmer_Routine_0801DD84 @ 0x0801DD84
 // =============================================================================
-void func_0801DD84(int param_1)
+void Farmer_Routine_0801DD84(int param_1)
 
 {
   undefined4 uVar1;
   undefined1 auStack_14 [4];
   undefined1 uStack_10;
   
-  uVar1 = func_0800C07C(*(int *)(param_1 + _DAT_0801ddc8) + 500);
-  func_080A6300(*(undefined4 *)(param_1 + 4));
-  func_0800BBA4(auStack_14,uVar1);
-  func_0801DB58(param_1);
-  uStack_10 = func_0800E058(auStack_14);
+  uVar1 = Building_Routine_0800C07C(*(int *)(param_1 + _DAT_0801ddc8) + 500);
+  NPC_Routine_080A6300(*(undefined4 *)(param_1 + 4));
+  Building_Routine_0800BBA4(auStack_14,uVar1);
+  Farmer_Routine_0801DB58(param_1);
+  uStack_10 = Item_Routine_0800E058(auStack_14);
   func_0x0800df54();
   return;
 }
 
 // =============================================================================
-// Function: func_0801DDCC @ 0x0801DDCC
+// Function: Farmer_Routine_0801DDCC @ 0x0801DDCC
 // =============================================================================
-undefined4 func_0801DDCC(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_0801DDCC(int param_1,undefined4 param_2)
 
 {
   undefined4 in_lr;
   
-  func_0809C5B4(*(int *)(param_1 + _DAT_0801ddf0) + _DAT_0801ddf4,param_2);
-  func_080AA850(*(undefined4 *)(param_1 + 4),param_2);
+  NPC_Routine_0809C5B4(*(int *)(param_1 + _DAT_0801ddf0) + _DAT_0801ddf4,param_2);
+  NPC_Routine_080AA850(*(undefined4 *)(param_1 + 4),param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DDF8 @ 0x0801DDF8
+// Function: Farmer_Routine_0801DDF8 @ 0x0801DDF8
 // =============================================================================
-undefined4 func_0801DDF8(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_0801DDF8(int param_1,undefined4 param_2)
 
 {
   undefined4 in_lr;
   
-  func_0809C5D0(*(int *)(param_1 + _DAT_0801de1c) + _DAT_0801de20,param_2);
-  func_080AA850(*(undefined4 *)(param_1 + 4),param_2);
+  NPC_Routine_0809C5D0(*(int *)(param_1 + _DAT_0801de1c) + _DAT_0801de20,param_2);
+  NPC_Routine_080AA850(*(undefined4 *)(param_1 + 4),param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DE24 @ 0x0801DE24
+// Function: Farmer_Routine_0801DE24 @ 0x0801DE24
 // =============================================================================
-undefined4 func_0801DE24(int param_1)
+undefined4 Farmer_Routine_0801DE24(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080A63B8(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A63B8(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DE30 @ 0x0801DE30
+// Function: Farmer_Routine_0801DE30 @ 0x0801DE30
 // =============================================================================
-undefined4 func_0801DE30(int param_1)
+undefined4 Farmer_Routine_0801DE30(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080AA89C(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080AA89C(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DE3C @ 0x0801DE3C
+// Function: Farmer_Routine_0801DE3C @ 0x0801DE3C
 // =============================================================================
-undefined4 func_0801DE3C(int param_1)
+undefined4 Farmer_Routine_0801DE3C(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080AA8BC(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080AA8BC(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DE48 @ 0x0801DE48
+// Function: Farmer_Routine_0801DE48 @ 0x0801DE48
 // =============================================================================
-undefined4 func_0801DE48(int param_1)
+undefined4 Farmer_Routine_0801DE48(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_080AA8DC(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080AA8DC(*(undefined4 *)(param_1 + 4));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801DE54 @ 0x0801DE54
+// Function: Farmer_Routine_0801DE54 @ 0x0801DE54
 // =============================================================================
-void func_0801DE54(int param_1,undefined4 param_2)
+void Farmer_Routine_0801DE54(int param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
@@ -12658,20 +12658,20 @@ void func_0801DE54(int param_1,undefined4 param_2)
   undefined1 uStack_18;
   undefined1 uStack_17;
   
-  uVar1 = func_0800C07C(*(int *)(param_1 + _DAT_0801deb0) + 500);
-  func_080A635C(*(undefined4 *)(param_1 + 4));
+  uVar1 = Building_Routine_0800C07C(*(int *)(param_1 + _DAT_0801deb0) + 500);
+  NPC_Routine_080A635C(*(undefined4 *)(param_1 + 4));
   func_0x0800df50(&uStack_18,param_2);
-  func_0800BBF0(auStack_1c,uVar1,&uStack_18);
-  func_0801DB58(param_1);
-  uStack_17 = func_0800E058(auStack_1c);
+  Building_Routine_0800BBF0(auStack_1c,uVar1,&uStack_18);
+  Farmer_Routine_0801DB58(param_1);
+  uStack_17 = Item_Routine_0800E058(auStack_1c);
   func_0x0800df54();
   return;
 }
 
 // =============================================================================
-// Function: func_0801DEB4 @ 0x0801DEB4
+// Function: Farmer_Routine_0801DEB4 @ 0x0801DEB4
 // =============================================================================
-undefined8 func_0801DEB4(int *param_1,short *param_2)
+undefined8 Farmer_Routine_0801DEB4(int *param_1,short *param_2)
 
 {
   int iVar1;
@@ -12722,7 +12722,7 @@ undefined8 func_0801DEB4(int *param_1,short *param_2)
   } while (uVar13 < 0x19);
   if (bVar15) {
     iVar1 = uVar14 + uStack_38 * 0x2b;
-    func_0800A3C8(*(int *)(_DAT_0801dfc8 + (int)param_1) + _DAT_0801dfcc + iVar1 * 4);
+    FieldPlot_ChopBranch(*(int *)(_DAT_0801dfc8 + (int)param_1) + _DAT_0801dfcc + iVar1 * 4);
     iVar12 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
     if (iVar12 == 2) {
       iVar6 = param_1[1];
@@ -12765,8 +12765,8 @@ undefined8 func_0801DEB4(int *param_1,short *param_2)
           else {
             iVar3 = 0;
           }
-          uVar4 = func_0800AF5C(iVar1 * 4 + iVar7,iVar2,iVar3);
-          func_080AA6D0(iVar6,uVar14 * 2 + 0x22,iVar12,iVar9,uVar4);
+          uVar4 = FieldPlot_ResolveBorderTile(iVar1 * 4 + iVar7,iVar2,iVar3);
+          NPC_Routine_080AA6D0(iVar6,uVar14 * 2 + 0x22,iVar12,iVar9,uVar4);
         }
         iVar12 = iVar12 + 2;
         iVar1 = iVar1 + 0x2b;
@@ -12783,9 +12783,9 @@ undefined8 func_0801DEB4(int *param_1,short *param_2)
 }
 
 // =============================================================================
-// Function: func_0801E084 @ 0x0801E084
+// Function: Farmer_Routine_0801E084 @ 0x0801E084
 // =============================================================================
-undefined4 func_0801E084(int *param_1)
+undefined4 Farmer_Routine_0801E084(int *param_1)
 
 {
   bool bVar1;
@@ -12823,7 +12823,7 @@ undefined4 func_0801E084(int *param_1)
   int iStack_24;
   
   piStack_2c = param_1;
-  func_0801E90C();
+  Farmer_Routine_0801E90C();
   iStack_28 = 0;
   iStack_24 = 0;
   do {
@@ -12874,7 +12874,7 @@ case_0801E18A:
               uStack_68._0_3_ = (undefined3)uVar2;
               uStack_68 = CONCAT13(uStack_68._3_1_,(undefined3)uStack_68) & 0x3ffffff;
               uStack_64 = CONCAT22(uStack_64._2_2_,uVar14 & (ushort)uStack_64);
-              func_080A56DC(puVar15,&uStack_68,3,0,0x1e);
+              NPC_Routine_080A56DC(puVar15,&uStack_68,3,0,0x1e);
               iStack_28 = 1;
               iVar6 = func_0x080a4698(*(undefined4 *)(piStack_2c[1] + 4));
               uVar11 = *(ushort *)(iVar6 + 0x20);
@@ -12886,7 +12886,7 @@ case_0801E18A:
               uStack_60 = uVar11;
               uStack_5e = uVar14;
               func_0x080d3914(auStack_44,iVar4,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0xc));
-              cVar3 = func_080AC070(&uStack_68,auStack_44);
+              cVar3 = NPC_Routine_080AC070(&uStack_68,auStack_44);
               if (cVar3 != '\0') {
                 bVar1 = true;
               }
@@ -12900,7 +12900,7 @@ case_0801E18A:
           }
           uStack_64 = 0;
           func_0x080d3914(puVar12,iVar4,*(undefined4 *)(iVar6 + 0xc));
-          cVar3 = func_080AC070(&uStack_68,puVar12);
+          cVar3 = NPC_Routine_080AC070(&uStack_68,puVar12);
           if (cVar3 == '\0') goto case_0801E29C;
         }
         break;
@@ -12921,10 +12921,10 @@ LAB_0801e5e6:
             puVar8[2] = uVar11;
             uVar10 = 0;
 LAB_0801e5ec:
-            memcpy(&uStack_68,puVar8,6);
+            gba_memcpy(&uStack_68,puVar8,6);
             uStack_64._0_3_ = CONCAT12(uVar10,(ushort)uStack_64);
 LAB_0801e5f6:
-            func_0803211C(iVar4,&uStack_68);
+            Entity_Routine_0803211C(iVar4,&uStack_68);
           }
           break;
         case 0x801e3b0:
@@ -12954,7 +12954,7 @@ code_r0x0801e3ec:
                 goto LAB_0801e5e6;
               }
             }
-            func_0800C6F0(&uStack_3c,*(int *)((int)piStack_2c + _DAT_0801e474) + 0x410,
+            Building_Routine_0800C6F0(&uStack_3c,*(int *)((int)piStack_2c + _DAT_0801e474) + 0x410,
                           iVar13 + -0x2e);
             uStack_38 = uStack_3c;
             uVar9 = uStack_38;
@@ -12980,7 +12980,7 @@ code_r0x0801e3ec:
         case 0x801e4bc:
           if (iVar4 != 0) {
             func_0x080d3914(piStack_2c,iVar13,*(undefined4 *)(*piStack_2c + 0x3c));
-            func_0800C9B8(*(int *)((int)piStack_2c + _DAT_0801e4e8) + 0x410,iVar13 + -0x4c);
+            Building_Routine_0800C9B8(*(int *)((int)piStack_2c + _DAT_0801e4e8) + 0x410,iVar13 + -0x4c);
           }
           break;
         case 0x801e4ec:
@@ -12991,7 +12991,7 @@ code_r0x0801e3ec:
               uVar14 = 7;
               goto LAB_0801e5cc;
             }
-            func_0800D074(&uStack_34,*(int *)((int)piStack_2c + _DAT_0801e5a4) + 0x5f0,
+            Tool_GetName(&uStack_34,*(int *)((int)piStack_2c + _DAT_0801e5a4) + 0x5f0,
                           iVar13 - 0x36U);
             uStack_30 = uStack_34;
             uVar9 = uStack_30;
@@ -13009,7 +13009,7 @@ code_r0x0801e3ec:
                                  (undefined1)uStack_5e);
             uStack_5c = uVar14 & uStack_5c | uStack_30._2_2_ >> 6;
             uStack_30 = uVar9;
-            memcpy(&uStack_68,&uStack_60,6);
+            gba_memcpy(&uStack_68,&uStack_60,6);
             uStack_64 = CONCAT13(uStack_64._3_1_,
                                  CONCAT12((char)(iVar13 - 0x36U >> 2),(ushort)uStack_64)) &
                         0xff01ffff;
@@ -13017,7 +13017,7 @@ code_r0x0801e3ec:
           }
           break;
         case 0x801e604:
-          func_0801FE78(iVar4,2,0xe0,0xa8);
+          Farmer_Routine_0801FE78(iVar4,2,0xe0,0xa8);
           break;
         case 0x801e612:
           func_0x080d3914(piStack_2c,iVar13,*(undefined4 *)(*piStack_2c + 0x3c));
@@ -13030,7 +13030,7 @@ case_0801E630:
     if (99 < iStack_24) {
       if (iStack_28 != 0) {
         iVar13 = *piStack_2c;
-        func_0800E924(&uStack_68,*(int *)((int)piStack_2c + _DAT_0801e674) + _DAT_0801e678);
+        Farmer_GetLocation(&uStack_68,*(int *)((int)piStack_2c + _DAT_0801e674) + _DAT_0801e678);
         func_0x080d3918(piStack_2c,&uStack_68,0,*(undefined4 *)(iVar13 + 0xb4));
       }
       return in_lr;
@@ -13039,9 +13039,9 @@ case_0801E630:
 }
 
 // =============================================================================
-// Function: func_0801E67C @ 0x0801E67C
+// Function: Farmer_Routine_0801E67C @ 0x0801E67C
 // =============================================================================
-undefined4 func_0801E67C(int *param_1)
+undefined4 Farmer_Routine_0801E67C(int *param_1)
 
 {
   undefined2 uVar1;
@@ -13112,7 +13112,7 @@ LAB_0801e6be:
           if (*(short *)(iVar5 + 4) == 0x1d) {
             func_0x080d3914(auStack_2c,iVar5,*(undefined4 *)(*(int *)(iVar5 + 0x14) + 0xc));
             uVar12 = 0x801e7d5;
-            uVar14 = func_080AC070(&uStack_38,auStack_2c);
+            uVar14 = NPC_Routine_080AC070(&uStack_38,auStack_2c);
             puVar11 = (undefined *)(uVar14 >> 0x20);
             if ((uVar14 & 0xff) != 0) {
               puVar11 = &UNK_00000001;
@@ -13219,7 +13219,7 @@ LAB_0801e6be:
           case 0x801e8c6:
             if (iVar5 != 0) {
               func_0x080d3914(param_1,iVar4,*(undefined4 *)(*param_1 + 0x3c));
-              func_0800C9B8(*(int *)((int)param_1 + _DAT_0801e908) + 0x410,iVar4 + -0x4c);
+              Building_Routine_0800C9B8(*(int *)((int)param_1 + _DAT_0801e908) + 0x410,iVar4 + -0x4c);
             }
             goto LAB_0801e8ea;
           }
@@ -13227,7 +13227,7 @@ LAB_0801e6be:
         if (iVar5 != 0) {
           uVar8 = func_0x080d11e4(uVar7,puVar11);
           iVar9 = func_0x080d0f4e(uVar8,uVar10);
-          func_0801FE78(iVar5,0x1d,(int)*(short *)(puStack_24 + iVar9 * 4),
+          Farmer_Routine_0801FE78(iVar5,0x1d,(int)*(short *)(puStack_24 + iVar9 * 4),
                         (int)*(short *)((int)(puStack_24 + iVar9 * 4) + 2));
         }
       }
@@ -13244,9 +13244,9 @@ case_0801E714:
 }
 
 // =============================================================================
-// Function: func_0801E90C @ 0x0801E90C
+// Function: Farmer_Routine_0801E90C @ 0x0801E90C
 // =============================================================================
-undefined4 func_0801E90C(int *param_1)
+undefined4 Farmer_Routine_0801E90C(int *param_1)
 
 {
   int iVar1;
@@ -13327,7 +13327,7 @@ undefined4 func_0801E90C(int *param_1)
                   >> 2 == 0x15) {
                 iStack_28 = iVar3;
                 iStack_24 = iVar5;
-                Field_HarvestCrop(auStack_60);
+                FieldPlot_HarvestCrop(auStack_60);
                 iStack_2c = 1;
                 iVar3 = iStack_28;
                 iVar5 = iStack_24;
@@ -13350,17 +13350,17 @@ undefined4 func_0801E90C(int *param_1)
     else {
       uVar9 = *(undefined4 *)(_DAT_0801ea98 + (int)param_1);
       iVar6 = *(int *)(_DAT_0801ea9c + (int)param_1);
-      iVar1 = func_0800E324(iVar6 + 0x10);
-      func_080171F8(uVar9,iVar6 + 0x14,iVar1 == 3);
+      iVar1 = Farmer_Routine_0800E324(iVar6 + 0x10);
+      Farmer_Routine_080171F8(uVar9,iVar6 + 0x14,iVar1 == 3);
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801EAA0 @ 0x0801EAA0
+// Function: Farmer_Routine_0801EAA0 @ 0x0801EAA0
 // =============================================================================
-undefined4 func_0801EAA0(int *param_1,undefined4 param_2)
+undefined4 Farmer_Routine_0801EAA0(int *param_1,undefined4 param_2)
 
 {
   byte bVar1;
@@ -13526,23 +13526,23 @@ undefined4 func_0801EAA0(int *param_1,undefined4 param_2)
   }
   iVar8 = func_0x080a4698(*(undefined4 *)(param_1[1] + 4));
   if (*(char *)(iVar8 + 0x24) == '\0') {
-    func_0801A13C(param_1,(*(uint *)param_1[0x410] & 0x1fffff) >> 0x10,
+    Farmer_Routine_0801A13C(param_1,(*(uint *)param_1[0x410] & 0x1fffff) >> 0x10,
                   (*(uint *)param_1[0x410] & 0x7ffffff) >> 0x15,0);
   }
   func_0x080d3910(param_1[2],*(undefined4 *)(*(int *)(param_1[2] + 0x14) + 0xa4));
-  cVar5 = func_080167CC(*(undefined4 *)((int)param_1 + _DAT_0801edf4));
+  cVar5 = Farmer_Routine_080167CC(*(undefined4 *)((int)param_1 + _DAT_0801edf4));
   if ((cVar5 != '\0') &&
      (cVar5 = func_0x0809c5f4(*(int *)((int)param_1 + _DAT_0801edf8) + _DAT_0801edfc), cVar5 == '\0'
      )) {
-    func_0801DB58(param_1);
+    Farmer_Routine_0801DB58(param_1);
   }
   return *(undefined4 *)(&stack0x0000034c + iVar4);
 }
 
 // =============================================================================
-// Function: func_0801EE00 @ 0x0801EE00
+// Function: Farmer_Routine_0801EE00 @ 0x0801EE00
 // =============================================================================
-undefined8 func_0801EE00(int *param_1,ushort *param_2,undefined4 param_3)
+undefined8 Farmer_Routine_0801EE00(int *param_1,ushort *param_2,undefined4 param_3)
 
 {
   bool bVar1;
@@ -13573,7 +13573,7 @@ undefined8 func_0801EE00(int *param_1,ushort *param_2,undefined4 param_3)
   undefined4 *puStack_24;
   
   func_0x080d3918(auStack_50,param_1,*param_2 & 0x3ff,*(undefined4 *)(*param_1 + 0x34));
-  uVar5 = func_080AC5D0(auStack_50,
+  uVar5 = NPC_Routine_080AC5D0(auStack_50,
                         (int)(short)((ushort)((param_2[1] & _DAT_0801eec0) << 6) |
                                     (ushort)(*(byte *)((int)param_2 + 1) >> 2)),
                         (int)(short)((ushort)((param_2[2] & _DAT_0801eec0) << 6) |
@@ -13595,14 +13595,14 @@ undefined8 func_0801EE00(int *param_1,ushort *param_2,undefined4 param_3)
   }
   uVar7 = puVar12[-1];
 LAB_0801eea6:
-  func_08008B6C(uVar7,0x6d);
-  iVar6 = func_080A45A8(param_2);
+  HW_Routine_08008B6C(uVar7,0x6d);
+  iVar6 = NPC_Routine_080A45A8(param_2);
   if (iVar6 == 2) {
     iStack_2c = _DAT_0801ef80;
   }
   else if (iVar6 < 3) {
     if ((iVar6 != 0) || (iVar6 = func_0x0800f09c(param_3), iVar6 != 0)) goto LAB_0801efa8;
-    func_0800F0A4(auStack_50,param_3);
+    Farmer_Routine_0800F0A4(auStack_50,param_3);
     iVar6 = func_0x0800dcb4(auStack_50);
     if (iVar6 != 2) goto LAB_0801efa8;
     iStack_2c = 0x23c;
@@ -13611,7 +13611,7 @@ LAB_0801eea6:
     if (iVar6 == 4) {
       iVar6 = func_0x0800f09c(param_3);
       if (iVar6 == 0) {
-        func_0800F0A4(auStack_50,param_3);
+        Farmer_Routine_0800F0A4(auStack_50,param_3);
         iVar6 = func_0x0800dcb4(auStack_50);
         if (iVar6 == 0xa0) {
           func_0x08011458(*(undefined4 *)(_DAT_0801eefc + (int)param_1));
@@ -13623,10 +13623,10 @@ LAB_0801eea6:
     bVar1 = false;
     iVar6 = func_0x0800f09c(param_3);
     if (iVar6 == 0) {
-      func_0800F0A4(auStack_50,param_3);
+      Farmer_Routine_0800F0A4(auStack_50,param_3);
       iVar6 = func_0x0800dcb4(auStack_50);
       if (0xe < iVar6) {
-        func_0800F0A4(auStack_4c,param_3);
+        Farmer_Routine_0800F0A4(auStack_4c,param_3);
         iVar6 = func_0x0800dcb4(auStack_4c);
         if (iVar6 < 0x15) {
           bVar1 = true;
@@ -13637,7 +13637,7 @@ LAB_0801eea6:
     iVar9 = param_1[2];
     iVar6 = *(int *)(iVar9 + 0x14);
     func_0x0800dca8(&uStack_44,0x15);
-    func_0800F004(auStack_48,(uint)uStack_44);
+    Farmer_Routine_0800F004(auStack_48,(uint)uStack_44);
     func_0x080d3918(iVar9,auStack_48,0,*(undefined4 *)(iVar6 + 0x5c));
   }
   bVar2 = false;
@@ -13655,11 +13655,11 @@ LAB_0801efa8:
   if (cVar3 == '\0') {
     iVar6 = func_0x0800f09c(param_3);
     if ((iVar6 == 0) || (iVar6 != 1)) {
-      func_0800F0A4(auStack_50,param_3);
-      uVar4 = func_0800DCE0(auStack_50);
+      Farmer_Routine_0800F0A4(auStack_50,param_3);
+      uVar4 = Item_Routine_0800DCE0(auStack_50);
     }
     else {
-      auStack_38[0] = func_0800F0E8(param_3);
+      auStack_38[0] = Farmer_Routine_0800F0E8(param_3);
       iVar6 = func_0x0800df54(auStack_38);
       if (iVar6 == 0x1b) {
         uVar4 = 3;
@@ -13668,7 +13668,7 @@ LAB_0801efa8:
         }
       }
       else {
-        uVar4 = func_0800DF84(auStack_38);
+        uVar4 = Item_Routine_0800DF84(auStack_38);
       }
     }
   }
@@ -13690,9 +13690,9 @@ LAB_0801efa8:
   *piVar11 = 0;
   *(undefined1 *)(piVar11 + 2) = (undefined1)uStack_30;
   if (uStack_30 == 0) {
-    uVar8 = func_080005D4(0x40);
+    uVar8 = Dispatcher_Routine_080005D4(0x40);
     *puStack_28 = 0;
-    iVar6 = func_080A4A00(uVar8,uVar7,_DAT_0801f148,param_1,2,3);
+    iVar6 = NPC_Routine_080A4A00(uVar8,uVar7,_DAT_0801f148,param_1,2,3);
     iVar9 = *piVar11;
     if ((iVar6 != iVar9) && (iVar9 != 0)) {
       func_0x080d3914(iVar9,3,*(undefined4 *)(*(int *)(iVar9 + 0x24) + 8));
@@ -13701,9 +13701,9 @@ LAB_0801efa8:
     uVar7 = 0;
   }
   else {
-    uVar8 = func_080005D4(0x40);
+    uVar8 = Dispatcher_Routine_080005D4(0x40);
     *puStack_28 = 0;
-    iVar6 = func_080A4A00(uVar8,uVar7,uVar4,param_1,2,3);
+    iVar6 = NPC_Routine_080A4A00(uVar8,uVar7,uVar4,param_1,2,3);
     iVar9 = *piVar11;
     if ((iVar6 != iVar9) && (iVar9 != 0)) {
       func_0x080d3914(iVar9,3,*(undefined4 *)(*(int *)(iVar9 + 0x24) + 8));
@@ -13717,9 +13717,9 @@ LAB_0801efa8:
 }
 
 // =============================================================================
-// Function: func_0801F14C @ 0x0801F14C
+// Function: Farmer_Routine_0801F14C @ 0x0801F14C
 // =============================================================================
-undefined4 func_0801F14C(int *param_1)
+undefined4 Farmer_Routine_0801F14C(int *param_1)
 
 {
   undefined4 uVar1;
@@ -13756,7 +13756,7 @@ undefined4 func_0801F14C(int *param_1)
       uVar6 = *(byte *)(*(int *)((int)param_1 + _DAT_0801f268) + 4) & 1;
       break;
     case 0x801f26c:
-      iVar3 = func_0800E324(*(int *)((int)param_1 + _DAT_0801f2d4) + 0x10);
+      iVar3 = Farmer_Routine_0800E324(*(int *)((int)param_1 + _DAT_0801f2d4) + 0x10);
       uVar6 = 0;
       if (iVar3 == 3) {
         uVar6 = 1;
@@ -13765,9 +13765,9 @@ undefined4 func_0801F14C(int *param_1)
     case 0x801f2ca:
       goto case_0801F2CA;
     }
-    uVar1 = func_080005D4(0x40);
+    uVar1 = Dispatcher_Routine_080005D4(0x40);
     uVar2 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x60));
-    iVar3 = func_080A4A00(uVar1,uVar2,uVar6,param_1,2,0x1b,0);
+    iVar3 = NPC_Routine_080A4A00(uVar1,uVar2,uVar6,param_1,2,0x1b,0);
     param_1 = (int *)((int)param_1 + _DAT_0801f2d8);
     iVar4 = *param_1;
     if ((iVar3 != iVar4) && (iVar4 != 0)) {
@@ -13780,9 +13780,9 @@ case_0801F2CA:
 }
 
 // =============================================================================
-// Function: func_0801F2DC @ 0x0801F2DC
+// Function: Farmer_Routine_0801F2DC @ 0x0801F2DC
 // =============================================================================
-undefined4 func_0801F2DC(int *param_1)
+undefined4 Farmer_Routine_0801F2DC(int *param_1)
 
 {
   byte bVar1;
@@ -13805,29 +13805,29 @@ undefined4 func_0801F2DC(int *param_1)
   bVar1 = *(byte *)(*(int *)((int)param_1 + _DAT_0801f320) + 0x12) & 0x1f;
   if (3 < bVar1) {
     if (bVar1 < 9) {
-      uVar3 = func_080005D4(0x40);
+      uVar3 = Dispatcher_Routine_080005D4(0x40);
       iVar2 = (int)param_1 + _DAT_0801f324;
       uVar5 = 0;
       goto LAB_0801f38a;
     }
     if (bVar1 < 0x10) {
-      uVar3 = func_080005D4(0x40);
+      uVar3 = Dispatcher_Routine_080005D4(0x40);
       iVar2 = (int)param_1 + _DAT_0801f348;
       uVar5 = 1;
       goto LAB_0801f38a;
     }
     if (bVar1 < 0x13) {
-      uVar3 = func_080005D4(0x40);
+      uVar3 = Dispatcher_Routine_080005D4(0x40);
       iVar2 = (int)param_1 + _DAT_0801f36c;
       uVar5 = 2;
       goto LAB_0801f38a;
     }
   }
-  uVar3 = func_080005D4(0x40);
+  uVar3 = Dispatcher_Routine_080005D4(0x40);
   iVar2 = (int)param_1 + _DAT_0801f3b0;
   uVar5 = 3;
 LAB_0801f38a:
-  iVar2 = func_080A4A00(uVar3,iVar2,uVar5,param_1,5,0x1b,0);
+  iVar2 = NPC_Routine_080A4A00(uVar3,iVar2,uVar5,param_1,5,0x1b,0);
   param_1 = (int *)((int)param_1 + _DAT_0801f3b4);
   iVar4 = *param_1;
   if ((iVar2 != iVar4) && (iVar4 != 0)) {
@@ -13838,9 +13838,9 @@ LAB_0801f38a:
 }
 
 // =============================================================================
-// Function: func_0801F3E4 @ 0x0801F3E4
+// Function: Farmer_Routine_0801F3E4 @ 0x0801F3E4
 // =============================================================================
-undefined4 func_0801F3E4(int *param_1)
+undefined4 Farmer_Routine_0801F3E4(int *param_1)
 
 {
   undefined2 uVar1;
@@ -13871,15 +13871,15 @@ undefined4 func_0801F3E4(int *param_1)
       return in_lr;
     }
     func_0x0800df50(auStack_28);
-    uVar1 = func_0800DF84(auStack_28);
+    uVar1 = Item_Routine_0800DF84(auStack_28);
     piVar5 = (int *)(_DAT_0801f48c + (int)param_1);
     iVar2 = *piVar5;
     if (iVar2 != 0) {
       uVar3 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 100));
-      func_0805E824(&piStack_3c,uVar3,uVar1,0x100);
+      Animal_Routine_0805E824(&piStack_3c,uVar3,uVar1,0x100);
       func_0x080d3918(&uStack_5c,piStack_3c,*(undefined2 *)(iStack_38 + (uint)uStack_30 * 4),
                       *(undefined4 *)(*piStack_3c + 0x10));
-      memcpy(&uStack_5c,&uStack_5c,0x20);
+      gba_memcpy(&uStack_5c,&uStack_5c,0x20);
       *(undefined4 *)(iVar2 + 0x28) = uStack_5c;
       *(undefined4 *)(iVar2 + 0x2c) = uStack_58;
       *(undefined4 *)(iVar2 + 0x30) = uStack_54;
@@ -13891,9 +13891,9 @@ undefined4 func_0801F3E4(int *param_1)
       *(undefined1 *)(iVar2 + 0x48) = 1;
       return in_lr;
     }
-    iVar2 = func_080005D4(0x4c);
+    iVar2 = Dispatcher_Routine_080005D4(0x4c);
     piVar4 = (int *)func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 100));
-    func_080A4740(iVar2,param_1,2,0x1b);
+    NPC_Routine_080A4740(iVar2,param_1,2,0x1b);
     *(undefined4 *)(iVar2 + 0x24) = _DAT_0801f4e4;
     iVar6 = *piVar4;
     func_0x080d3918(apuStack_24,piVar4,uVar1,*(undefined4 *)(iVar6 + 0xc));
@@ -13913,9 +13913,9 @@ undefined4 func_0801F3E4(int *param_1)
 }
 
 // =============================================================================
-// Function: func_0801F518 @ 0x0801F518
+// Function: Farmer_Routine_0801F518 @ 0x0801F518
 // =============================================================================
-undefined4 func_0801F518(int *param_1,int param_2)
+undefined4 Farmer_Routine_0801F518(int *param_1,int param_2)
 
 {
   char cVar1;
@@ -13930,7 +13930,7 @@ undefined4 func_0801F518(int *param_1,int param_2)
     piVar6 = (int *)((int)param_1 + _DAT_0801f558);
     cVar1 = func_0x0800bfc4(*piVar6 + 500);
     if (cVar1 == '\0') {
-      func_0800C25C(*piVar6 + 500);
+      Building_Routine_0800C25C(*piVar6 + 500);
     }
   }
   else if (param_2 < 0x1e) {
@@ -13950,9 +13950,9 @@ undefined4 func_0801F518(int *param_1,int param_2)
   iVar2 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
   if (iVar2 == param_2) {
     *(undefined1 *)(param_1 + 0x418) = 1;
-    uVar3 = func_080005D4(0x40);
+    uVar3 = Dispatcher_Routine_080005D4(0x40);
     uVar4 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x60));
-    iVar2 = func_080A4A00(uVar3,uVar4,2,param_1,2,0x1b,0);
+    iVar2 = NPC_Routine_080A4A00(uVar3,uVar4,2,param_1,2,0x1b,0);
     param_1 = (int *)((int)param_1 + _DAT_0801f5ec);
     iVar5 = *param_1;
     if ((iVar2 != iVar5) && (iVar5 != 0)) {
@@ -13964,22 +13964,22 @@ undefined4 func_0801F518(int *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0801F5F0 @ 0x0801F5F0
+// Function: Farmer_Routine_0801F5F0 @ 0x0801F5F0
 // =============================================================================
-undefined4 func_0801F5F0(int param_1)
+undefined4 Farmer_Routine_0801F5F0(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_0800C1A0(*(int *)(param_1 + _DAT_0801f610) + 500);
-  func_0801F3E4(param_1);
+  Building_Routine_0800C1A0(*(int *)(param_1 + _DAT_0801f610) + 500);
+  Farmer_Routine_0801F3E4(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0801F614 @ 0x0801F614
+// Function: Farmer_Routine_0801F614 @ 0x0801F614
 // =============================================================================
-undefined4 func_0801F614(int *param_1)
+undefined4 Farmer_Routine_0801F614(int *param_1)
 
 {
   undefined4 uVar1;
@@ -14004,34 +14004,34 @@ undefined4 func_0801F614(int *param_1)
   *piVar5 = 0;
   iVar2 = func_0x080d3910(param_1,*(undefined4 *)(*param_1 + 0x14));
   if (iVar2 == 0) {
-    iVar2 = func_0800E324(*(int *)((int)param_1 + _DAT_0801f6e0) + 0x10);
+    iVar2 = Farmer_Routine_0800E324(*(int *)((int)param_1 + _DAT_0801f6e0) + 0x10);
     if (iVar2 == 3) {
-      uVar1 = func_080005D4(0x40);
+      uVar1 = Dispatcher_Routine_080005D4(0x40);
       iVar6 = (int)param_1 + _DAT_0801f770;
-      iVar2 = func_080A4A00(uVar1,iVar6,1,param_1,3,0x1e,0);
+      iVar2 = NPC_Routine_080A4A00(uVar1,iVar6,1,param_1,3,0x1e,0);
       piVar5 = (int *)(_DAT_0801f774 + (int)param_1);
       iVar3 = *piVar5;
       if ((iVar2 != iVar3) && (iVar3 != 0)) {
         func_0x080d3914(iVar3,3,*(undefined4 *)(*(int *)(iVar3 + 0x24) + 8));
       }
       *piVar5 = iVar2;
-      uVar1 = func_080005D4(0x40);
+      uVar1 = Dispatcher_Routine_080005D4(0x40);
       uVar4 = 1;
     }
     else {
-      uVar1 = func_080005D4(0x40);
+      uVar1 = Dispatcher_Routine_080005D4(0x40);
       iVar6 = (int)param_1 + _DAT_0801f6e4;
-      iVar2 = func_080A4A00(uVar1,iVar6,0,param_1,3,0x1e,0);
+      iVar2 = NPC_Routine_080A4A00(uVar1,iVar6,0,param_1,3,0x1e,0);
       piVar5 = (int *)(_DAT_0801f6d8 + (int)param_1);
       iVar3 = *piVar5;
       if ((iVar2 != iVar3) && (iVar3 != 0)) {
         func_0x080d3914(iVar3,3,*(undefined4 *)(*(int *)(iVar3 + 0x24) + 8));
       }
       *piVar5 = iVar2;
-      uVar1 = func_080005D4(0x40);
+      uVar1 = Dispatcher_Routine_080005D4(0x40);
       uVar4 = 0;
     }
-    iVar2 = func_080A4A00(uVar1,iVar6,uVar4,param_1,3,0x1e,0);
+    iVar2 = NPC_Routine_080A4A00(uVar1,iVar6,uVar4,param_1,3,0x1e,0);
     param_1 = (int *)((int)param_1 + _DAT_0801f778);
     iVar3 = *param_1;
     if ((iVar2 != iVar3) && (iVar3 != 0)) {
@@ -14043,9 +14043,9 @@ undefined4 func_0801F614(int *param_1)
 }
 
 // =============================================================================
-// Function: func_0801F77C @ 0x0801F77C
+// Function: Farmer_Routine_0801F77C @ 0x0801F77C
 // =============================================================================
-undefined4 func_0801F77C(int *param_1)
+undefined4 Farmer_Routine_0801F77C(int *param_1)
 
 {
   char cVar1;
@@ -14073,7 +14073,7 @@ undefined4 func_0801F77C(int *param_1)
     if (cVar1 == '\0') {
       return in_lr;
     }
-    uVar2 = func_080005D4(0x40);
+    uVar2 = Dispatcher_Routine_080005D4(0x40);
     iVar3 = (int)param_1 + _DAT_0801f91c;
   }
   else if (iVar3 < 3) {
@@ -14083,15 +14083,15 @@ undefined4 func_0801F77C(int *param_1)
     if (-1 < *(char *)(*(int *)((int)param_1 + _DAT_0801f8b4) + 3)) {
       return in_lr;
     }
-    uVar2 = func_080005D4(0x40);
+    uVar2 = Dispatcher_Routine_080005D4(0x40);
     iVar3 = (int)param_1 + _DAT_0801f8b8;
   }
   else if (iVar3 == 3) {
-    iVar3 = func_0800E324(*(int *)((int)param_1 + _DAT_0801f884) + 0x10);
+    iVar3 = Farmer_Routine_0800E324(*(int *)((int)param_1 + _DAT_0801f884) + 0x10);
     if (iVar3 != 3) {
       return in_lr;
     }
-    uVar2 = func_080005D4(0x40);
+    uVar2 = Dispatcher_Routine_080005D4(0x40);
     iVar3 = (int)param_1 + _DAT_0801f888;
   }
   else {
@@ -14099,8 +14099,8 @@ undefined4 func_0801F77C(int *param_1)
       return in_lr;
     }
     if ((*(byte *)(*(int *)((int)param_1 + _DAT_0801f858) + 4) & 1) != 0) {
-      uVar2 = func_080005D4(0x40);
-      iVar3 = func_080A4A00(uVar2,(int)param_1 + _DAT_0801f85c,2,param_1,2,0x1f,0);
+      uVar2 = Dispatcher_Routine_080005D4(0x40);
+      iVar3 = NPC_Routine_080A4A00(uVar2,(int)param_1 + _DAT_0801f85c,2,param_1,2,0x1f,0);
       piVar5 = (int *)((int)param_1 + _DAT_0801f860);
       iVar4 = *piVar5;
       if ((iVar3 != iVar4) && (iVar4 != 0)) {
@@ -14108,14 +14108,14 @@ undefined4 func_0801F77C(int *param_1)
       }
       *piVar5 = iVar3;
     }
-    iVar3 = func_0800E324(*(int *)((int)param_1 + _DAT_0801f858) + 0x10);
+    iVar3 = Farmer_Routine_0800E324(*(int *)((int)param_1 + _DAT_0801f858) + 0x10);
     if (iVar3 != 3) {
       return in_lr;
     }
-    uVar2 = func_080005D4(0x40);
+    uVar2 = Dispatcher_Routine_080005D4(0x40);
     iVar3 = (int)param_1 + _DAT_0801f85c;
   }
-  iVar3 = func_080A4A00(uVar2,iVar3,2,param_1,2,0x1f,0);
+  iVar3 = NPC_Routine_080A4A00(uVar2,iVar3,2,param_1,2,0x1f,0);
   param_1 = (int *)((int)param_1 + _DAT_0801f920);
   iVar4 = *param_1;
   if ((iVar3 != iVar4) && (iVar4 != 0)) {
@@ -14126,9 +14126,9 @@ undefined4 func_0801F77C(int *param_1)
 }
 
 // =============================================================================
-// Function: func_0801F924 @ 0x0801F924
+// Function: Farmer_Routine_0801F924 @ 0x0801F924
 // =============================================================================
-undefined4 func_0801F924(int *param_1,undefined4 param_2)
+undefined4 Farmer_Routine_0801F924(int *param_1,undefined4 param_2)
 
 {
   byte bVar1;
@@ -14155,15 +14155,15 @@ undefined4 func_0801F924(int *param_1,undefined4 param_2)
   puVar7 = &uStack_50;
   iVar3 = *(int *)((int)param_1 + _DAT_0801f95c) + 0x54;
   uVar4 = func_0x0800e194(param_2);
-  cVar2 = func_0800B124(iVar3,uVar4);
+  cVar2 = ShippingBin_GetValueShipped(iVar3,uVar4);
   if (cVar2 == '\0') {
     uVar5 = 0;
   }
   else {
-    uVar5 = func_0800B140(iVar3,uVar4);
+    uVar5 = ShippingBin_IsDisplayEnabled(iVar3,uVar4);
   }
   ShippingBin_ShipItem(iVar3,param_2);
-  uVar6 = func_0800B140(iVar3,uVar4);
+  uVar6 = ShippingBin_IsDisplayEnabled(iVar3,uVar4);
   if (uVar6 <= uVar5) goto LAB_0801fa50;
   if (uVar6 == _DAT_0801f990) {
     puVar8 = (undefined4 *)(*param_1 + 0x140);
@@ -14210,7 +14210,7 @@ LAB_0801fa28:
   func_0x080d3918(param_1,puVar7,1,uVar9);
 LAB_0801fa50:
   bVar1 = *(byte *)(*(int *)((int)param_1 + _DAT_0801fa9c) + _DAT_0801faa0);
-  if (((bVar1 & 3) == 0) && (cVar2 = func_0800B15C(iVar3), cVar2 != '\0')) {
+  if (((bVar1 & 3) == 0) && (cVar2 = ShippingBin_GetAmountShipped(iVar3), cVar2 != '\0')) {
     uStack_20 = _DAT_0801faa4;
     uStack_1c = bVar1 & 3;
     func_0x080d3918(param_1,&uStack_20,1,*(undefined4 *)(*param_1 + 0x140));
@@ -14219,9 +14219,9 @@ LAB_0801fa50:
 }
 
 // =============================================================================
-// Function: func_0801FAA8 @ 0x0801FAA8
+// Function: Farmer_Routine_0801FAA8 @ 0x0801FAA8
 // =============================================================================
-void func_0801FAA8(int *param_1,undefined4 param_2)
+void Farmer_Routine_0801FAA8(int *param_1,undefined4 param_2)
 
 {
   func_0x080d3914(param_1,param_2,*(undefined4 *)(*param_1 + 0x40));
@@ -14229,9 +14229,9 @@ void func_0801FAA8(int *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0801FAB8 @ 0x0801FAB8
+// Function: Farmer_Routine_0801FAB8 @ 0x0801FAB8
 // =============================================================================
-void func_0801FAB8(int *param_1,undefined4 param_2)
+void Farmer_Routine_0801FAB8(int *param_1,undefined4 param_2)
 
 {
   func_0x080d3914(param_1,param_2,*(undefined4 *)(*param_1 + 0x44));
@@ -14239,9 +14239,9 @@ void func_0801FAB8(int *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0801FAC8 @ 0x0801FAC8
+// Function: Farmer_Routine_0801FAC8 @ 0x0801FAC8
 // =============================================================================
-undefined4 func_0801FAC8(int param_1,int param_2)
+undefined4 Farmer_Routine_0801FAC8(int param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -14276,7 +14276,7 @@ undefined4 func_0801FAC8(int param_1,int param_2)
         }
       }
     }
-    uVar1 = func_080005D4(_DAT_0801fb74);
+    uVar1 = Dispatcher_Routine_080005D4(_DAT_0801fb74);
     iVar5 = ScriptEngine_GetVariable(uVar1,param_1,iVar5,param_2,iVar4);
     piVar2 = (int *)(param_1 + _DAT_0801fb78);
     iVar4 = *piVar2;
@@ -14289,28 +14289,28 @@ undefined4 func_0801FAC8(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0801FB7C @ 0x0801FB7C
+// Function: Farmer_Routine_0801FB7C @ 0x0801FB7C
 // =============================================================================
 undefined8
-func_0801FB7C(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined1 param_4)
+Farmer_Routine_0801FB7C(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined1 param_4)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   undefined4 auStack_20 [3];
   
-  uVar1 = func_080005D4(0xbc);
-  auStack_20[0] = func_080A6474(uVar1,param_2);
-  uVar1 = func_080005D4(_DAT_0801fbd8);
-  uVar1 = func_080175B4(uVar1,param_2,param_3,auStack_20,param_4);
+  uVar1 = Dispatcher_Routine_080005D4(0xbc);
+  auStack_20[0] = NPC_Routine_080A6474(uVar1,param_2);
+  uVar1 = Dispatcher_Routine_080005D4(_DAT_0801fbd8);
+  uVar1 = Farmer_Routine_080175B4(uVar1,param_2,param_3,auStack_20,param_4);
   *param_1 = uVar1;
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0801FC78 @ 0x0801FC78
+// Function: Farmer_Routine_0801FC78 @ 0x0801FC78
 // =============================================================================
-undefined4 func_0801FC78(int param_1)
+undefined4 Farmer_Routine_0801FC78(int param_1)
 
 {
   int iVar1;
@@ -14327,9 +14327,9 @@ undefined4 func_0801FC78(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801FD0C @ 0x0801FD0C
+// Function: Farmer_Routine_0801FD0C @ 0x0801FD0C
 // =============================================================================
-undefined4 func_0801FD0C(int param_1,int param_2)
+undefined4 Farmer_Routine_0801FD0C(int param_1,int param_2)
 
 {
   int iVar1;
@@ -14346,22 +14346,22 @@ undefined4 func_0801FD0C(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0801FD3C @ 0x0801FD3C
+// Function: Farmer_Routine_0801FD3C @ 0x0801FD3C
 // =============================================================================
-void func_0801FD3C(int param_1)
+void Farmer_Routine_0801FD3C(int param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
   
-  func_080A5A9C(*(undefined4 *)(param_1 + 4));
+  NPC_Routine_080A5A9C(*(undefined4 *)(param_1 + 4));
   (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
 // =============================================================================
-// Function: func_0801FDC0 @ 0x0801FDC0
+// Function: Farmer_Routine_0801FDC0 @ 0x0801FDC0
 // =============================================================================
-undefined4 func_0801FDC0(undefined4 *param_1)
+undefined4 Farmer_Routine_0801FDC0(undefined4 *param_1)
 
 {
   uint uVar1;
@@ -14387,9 +14387,9 @@ undefined4 func_0801FDC0(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_0801FE20 @ 0x0801FE20
+// Function: Farmer_Routine_0801FE20 @ 0x0801FE20
 // =============================================================================
-undefined4 func_0801FE20(int param_1)
+undefined4 Farmer_Routine_0801FE20(int param_1)
 
 {
   int iVar1;
@@ -14404,9 +14404,9 @@ undefined4 func_0801FE20(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801FE48 @ 0x0801FE48
+// Function: Farmer_Routine_0801FE48 @ 0x0801FE48
 // =============================================================================
-undefined4 func_0801FE48(int param_1,undefined4 param_2)
+undefined4 Farmer_Routine_0801FE48(int param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -14420,9 +14420,9 @@ undefined4 func_0801FE48(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0801FE60 @ 0x0801FE60
+// Function: Farmer_Routine_0801FE60 @ 0x0801FE60
 // =============================================================================
-undefined4 func_0801FE60(int param_1)
+undefined4 Farmer_Routine_0801FE60(int param_1)
 
 {
   int iVar1;
@@ -14436,9 +14436,9 @@ undefined4 func_0801FE60(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801FE78 @ 0x0801FE78
+// Function: Farmer_Routine_0801FE78 @ 0x0801FE78
 // =============================================================================
-undefined4 func_0801FE78(int param_1,undefined4 param_2,int param_3,int param_4)
+undefined4 Farmer_Routine_0801FE78(int param_1,undefined4 param_2,int param_3,int param_4)
 
 {
   undefined4 in_lr;
@@ -14450,9 +14450,9 @@ undefined4 func_0801FE78(int param_1,undefined4 param_2,int param_3,int param_4)
 }
 
 // =============================================================================
-// Function: func_0801FE94 @ 0x0801FE94
+// Function: Farmer_Routine_0801FE94 @ 0x0801FE94
 // =============================================================================
-void func_0801FE94(ushort *param_1,int param_2)
+void Farmer_Routine_0801FE94(ushort *param_1,int param_2)
 
 {
   ushort uVar1;
@@ -14475,9 +14475,9 @@ void func_0801FE94(ushort *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0801FF54 @ 0x0801FF54
+// Function: Farmer_Routine_0801FF54 @ 0x0801FF54
 // =============================================================================
-undefined4 func_0801FF54(int param_1)
+undefined4 Farmer_Routine_0801FF54(int param_1)
 
 {
   int iVar1;
@@ -14491,9 +14491,9 @@ undefined4 func_0801FF54(int param_1)
 }
 
 // =============================================================================
-// Function: func_0801FF84 @ 0x0801FF84
+// Function: Farmer_Routine_0801FF84 @ 0x0801FF84
 // =============================================================================
-undefined4 func_0801FF84(undefined4 param_1)
+undefined4 Farmer_Routine_0801FF84(undefined4 param_1)
 
 {
   undefined4 in_lr;
@@ -14503,14 +14503,14 @@ undefined4 func_0801FF84(undefined4 param_1)
 }
 
 // =============================================================================
-// Function: func_0801FF98 @ 0x0801FF98
+// Function: Farmer_Routine_0801FF98 @ 0x0801FF98
 // =============================================================================
-undefined4 func_0801FF98(undefined4 param_1,ushort *param_2)
+undefined4 Farmer_Routine_0801FF98(undefined4 param_1,ushort *param_2)
 
 {
   undefined4 in_lr;
   
-  func_0801FE78(param_1,*param_2 & 0x3ff,
+  Farmer_Routine_0801FE78(param_1,*param_2 & 0x3ff,
                 (int)(short)((ushort)((param_2[1] & _DAT_0801ffd0) << 6) |
                             (ushort)(*(byte *)((int)param_2 + 1) >> 2)),
                 (int)(short)((ushort)((param_2[2] & _DAT_0801ffd0) << 6) |

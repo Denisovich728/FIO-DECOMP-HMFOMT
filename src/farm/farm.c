@@ -7,9 +7,9 @@
 #include "../../include/farm/farm.h"
 
 // =============================================================================
-// Function: func_0800901C @ 0x0800901C
+// Function: Farm_Routine_0800901C @ 0x0800901C
 // =============================================================================
-undefined4 func_0800901C(int *param_1)
+undefined4 Farm_Routine_0800901C(int *param_1)
 
 {
   uint uVar1;
@@ -51,9 +51,9 @@ undefined4 func_0800901C(int *param_1)
 }
 
 // =============================================================================
-// Function: func_08009094 @ 0x08009094
+// Function: Farm_Routine_08009094 @ 0x08009094
 // =============================================================================
-undefined4 func_08009094(int *param_1,int *param_2)
+undefined4 Farm_Routine_08009094(int *param_1,int *param_2)
 
 {
   uint uVar1;
@@ -99,9 +99,9 @@ LAB_08009116:
 }
 
 // =============================================================================
-// Function: func_08009140 @ 0x08009140
+// Function: Farm_Routine_08009140 @ 0x08009140
 // =============================================================================
-undefined8 func_08009140(undefined2 *param_1)
+undefined8 Farm_Routine_08009140(undefined2 *param_1)
 
 {
   undefined2 uVar1;
@@ -113,9 +113,9 @@ undefined8 func_08009140(undefined2 *param_1)
 }
 
 // =============================================================================
-// Function: func_08009158 @ 0x08009158
+// Function: Farm_Routine_08009158 @ 0x08009158
 // =============================================================================
-void func_08009158(undefined2 *param_1)
+void Farm_Routine_08009158(undefined2 *param_1)
 
 {
   undefined2 uVar1;
@@ -126,22 +126,22 @@ void func_08009158(undefined2 *param_1)
 }
 
 // =============================================================================
-// Function: func_08009168 @ 0x08009168
+// Function: Farm_Routine_08009168 @ 0x08009168
 // =============================================================================
-undefined8 func_08009168(undefined2 *param_1)
+undefined8 Farm_Routine_08009168(undefined2 *param_1)
 
 {
   undefined4 in_lr;
   
-  func_08009140();
+  Farm_Routine_08009140();
   param_1[2] = *param_1;
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800917C @ 0x0800917C
+// Function: Farm_Routine_0800917C @ 0x0800917C
 // =============================================================================
-undefined8 func_0800917C(undefined2 *param_1)
+undefined8 Farm_Routine_0800917C(undefined2 *param_1)
 
 {
   undefined4 in_lr;
@@ -152,30 +152,30 @@ undefined8 func_0800917C(undefined2 *param_1)
 }
 
 // =============================================================================
-// Function: func_08009190 @ 0x08009190
+// Function: Farm_Routine_08009190 @ 0x08009190
 // =============================================================================
-void func_08009190(ushort *param_1)
+void Farm_Routine_08009190(ushort *param_1)
 
 {
   ushort uVar1;
   ushort uVar2;
   
   uVar1 = *param_1;
-  uVar2 = func_08009158();
+  uVar2 = Farm_Routine_08009158();
   param_1[2] = uVar2 & ~uVar1;
   return;
 }
 
 // =============================================================================
-// Function: func_080091A4 @ 0x080091A4
+// Function: Farm_Routine_080091A4 @ 0x080091A4
 // =============================================================================
-undefined8 func_080091A4(int param_1,undefined2 param_2,undefined2 param_3)
+undefined8 Farm_Routine_080091A4(int param_1,undefined2 param_2,undefined2 param_3)
 
 {
   undefined2 *puVar1;
   undefined4 in_lr;
   
-  func_08009168();
+  Farm_Routine_08009168();
   *(undefined2 *)(param_1 + 8) = *(undefined2 *)(param_1 + 4);
   *(undefined2 *)(param_1 + 10) = param_2;
   *(undefined2 *)(param_1 + 0xc) = param_3;
@@ -187,15 +187,15 @@ undefined8 func_080091A4(int param_1,undefined2 param_2,undefined2 param_3)
 }
 
 // =============================================================================
-// Function: func_080091E8 @ 0x080091E8
+// Function: Farm_Routine_080091E8 @ 0x080091E8
 // =============================================================================
-undefined8 func_080091E8(int param_1)
+undefined8 Farm_Routine_080091E8(int param_1)
 
 {
   undefined2 *puVar1;
   undefined4 in_lr;
   
-  func_0800917C();
+  Farm_Routine_0800917C();
   *(undefined2 *)(param_1 + 8) = *(undefined2 *)(param_1 + 4);
   *(undefined2 *)(param_1 + 10) = 0x1e;
   *(undefined2 *)(param_1 + 0xc) = 4;
@@ -207,15 +207,15 @@ undefined8 func_080091E8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08009224 @ 0x08009224
+// Function: Farm_Routine_08009224 @ 0x08009224
 // =============================================================================
-undefined8 func_08009224(int param_1,undefined2 param_2,undefined2 param_3,undefined4 param_4)
+undefined8 Farm_Routine_08009224(int param_1,undefined2 param_2,undefined2 param_3,undefined4 param_4)
 
 {
   undefined2 *puVar1;
   undefined4 in_lr;
   
-  func_0800917C(param_1,param_4);
+  Farm_Routine_0800917C(param_1,param_4);
   *(undefined2 *)(param_1 + 8) = *(undefined2 *)(param_1 + 4);
   *(undefined2 *)(param_1 + 10) = param_2;
   *(undefined2 *)(param_1 + 0xc) = param_3;
@@ -227,9 +227,9 @@ undefined8 func_08009224(int param_1,undefined2 param_2,undefined2 param_3,undef
 }
 
 // =============================================================================
-// Function: func_08009268 @ 0x08009268
+// Function: Farm_Routine_08009268 @ 0x08009268
 // =============================================================================
-undefined8 func_08009268(ushort *param_1)
+undefined8 Farm_Routine_08009268(ushort *param_1)
 
 {
   ushort uVar1;
@@ -242,7 +242,7 @@ undefined8 func_08009268(ushort *param_1)
   uint uVar8;
   undefined4 in_lr;
   
-  uVar5 = func_08009190();
+  uVar5 = Farm_Routine_08009190();
   uVar1 = *param_1;
   uVar2 = param_1[6];
   uVar3 = param_1[5];
@@ -275,9 +275,9 @@ undefined8 func_08009268(ushort *param_1)
 }
 
 // =============================================================================
-// Function: func_080092C8 @ 0x080092C8
+// Function: Farm_Routine_080092C8 @ 0x080092C8
 // =============================================================================
-undefined4 func_080092C8(ushort *param_1,ushort param_2)
+undefined4 Farm_Routine_080092C8(ushort *param_1,ushort param_2)
 
 {
   ushort uVar1;
@@ -302,15 +302,15 @@ undefined4 func_080092C8(ushort *param_1,ushort param_2)
 }
 
 // =============================================================================
-// Function: func_08009300 @ 0x08009300
+// Function: Farm_Routine_08009300 @ 0x08009300
 // =============================================================================
-undefined8 func_08009300(int *param_1,undefined4 param_2)
+undefined8 Farm_Routine_08009300(int *param_1,undefined4 param_2)
 
 {
   undefined4 *puVar1;
   undefined4 in_lr;
   
-  puVar1 = (undefined4 *)func_080005D4(0x10);
+  puVar1 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
   *puVar1 = param_2;
   *(undefined2 *)(puVar1 + 1) = 0;
   puVar1[2] = 0;
@@ -321,24 +321,24 @@ undefined8 func_08009300(int *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08009324 @ 0x08009324
+// Function: Farm_Routine_08009324 @ 0x08009324
 // =============================================================================
-undefined4 func_08009324(undefined4 *param_1,uint param_2)
+undefined4 Farm_Routine_08009324(undefined4 *param_1,uint param_2)
 
 {
   undefined4 in_lr;
   
-  func_08000608(*param_1);
+  Dispatcher_Routine_08000608(*param_1);
   if ((param_2 & 1) != 0) {
-    func_08000608(param_1);
+    Dispatcher_Routine_08000608(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800934C @ 0x0800934C
+// Function: Farm_Routine_0800934C @ 0x0800934C
 // =============================================================================
-undefined4 func_0800934C(int *param_1,short param_2,undefined4 param_3,int param_4)
+undefined4 Farm_Routine_0800934C(int *param_1,short param_2,undefined4 param_3,int param_4)
 
 {
   int iVar1;
@@ -357,9 +357,9 @@ undefined4 func_0800934C(int *param_1,short param_2,undefined4 param_3,int param
 }
 
 // =============================================================================
-// Function: func_08009378 @ 0x08009378
+// Function: Farm_Routine_08009378 @ 0x08009378
 // =============================================================================
-undefined4 func_08009378(int *param_1,short param_2,undefined4 param_3,int param_4)
+undefined4 Farm_Routine_08009378(int *param_1,short param_2,undefined4 param_3,int param_4)
 
 {
   int iVar1;
@@ -378,9 +378,9 @@ undefined4 func_08009378(int *param_1,short param_2,undefined4 param_3,int param
 }
 
 // =============================================================================
-// Function: func_080093AC @ 0x080093AC
+// Function: Farm_Routine_080093AC @ 0x080093AC
 // =============================================================================
-undefined8 func_080093AC(undefined4 *param_1)
+undefined8 Farm_Routine_080093AC(undefined4 *param_1)
 
 {
   short sVar1;
@@ -472,33 +472,33 @@ LAB_0800949e:
 }
 
 // =============================================================================
-// Function: func_080094AC @ 0x080094AC
+// Function: Farm_Routine_080094AC @ 0x080094AC
 // =============================================================================
-void func_080094AC(int param_1)
+void Farm_Routine_080094AC(int param_1)
 
 {
-  func_080093AC(param_1 + 0xc);
+  Farm_Routine_080093AC(param_1 + 0xc);
   return;
 }
 
 // =============================================================================
-// Function: func_080094B8 @ 0x080094B8
+// Function: Farm_Routine_080094B8 @ 0x080094B8
 // =============================================================================
-undefined4 func_080094B8(int param_1,undefined4 param_2)
+undefined4 Farm_Routine_080094B8(int param_1,undefined4 param_2)
 
 {
   undefined4 in_lr;
   
   *(undefined4 *)(param_1 + 8) = _DAT_080094dc;
-  func_08009324(param_1 + 0xc,2);
-  func_080098AC(param_1,param_2);
+  Farm_Routine_08009324(param_1 + 0xc,2);
+  Farm_Routine_080098AC(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080094E0 @ 0x080094E0
+// Function: Farm_Routine_080094E0 @ 0x080094E0
 // =============================================================================
-undefined8 func_080094E0(int param_1)
+undefined8 Farm_Routine_080094E0(int param_1)
 
 {
   short sVar1;
@@ -509,9 +509,9 @@ undefined8 func_080094E0(int param_1)
 }
 
 // =============================================================================
-// Function: func_080094F8 @ 0x080094F8
+// Function: Farm_Routine_080094F8 @ 0x080094F8
 // =============================================================================
-undefined8 func_080094F8(int param_1)
+undefined8 Farm_Routine_080094F8(int param_1)
 
 {
   short sVar1;
@@ -522,9 +522,9 @@ undefined8 func_080094F8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08009508 @ 0x08009508
+// Function: Farm_Routine_08009508 @ 0x08009508
 // =============================================================================
-undefined8 func_08009508(int param_1,short param_2)
+undefined8 Farm_Routine_08009508(int param_1,short param_2)
 
 {
   short sVar1;
@@ -535,33 +535,33 @@ undefined8 func_08009508(int param_1,short param_2)
 }
 
 // =============================================================================
-// Function: func_0800951C @ 0x0800951C
+// Function: Farm_Routine_0800951C @ 0x0800951C
 // =============================================================================
-undefined4 func_0800951C(int param_1,short param_2)
+undefined4 Farm_Routine_0800951C(int param_1,short param_2)
 
 {
   undefined4 in_lr;
   
-  func_08009378(param_1 + 0xc,(int)param_2);
+  Farm_Routine_08009378(param_1 + 0xc,(int)param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800952C @ 0x0800952C
+// Function: Farm_Routine_0800952C @ 0x0800952C
 // =============================================================================
-undefined4 func_0800952C(int param_1,short param_2)
+undefined4 Farm_Routine_0800952C(int param_1,short param_2)
 
 {
   undefined4 in_lr;
   
-  func_0800934C(param_1 + 0xc,(int)param_2);
+  Farm_Routine_0800934C(param_1 + 0xc,(int)param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800953C @ 0x0800953C
+// Function: Farm_Routine_0800953C @ 0x0800953C
 // =============================================================================
-void func_0800953C(int param_1)
+void Farm_Routine_0800953C(int param_1)
 
 {
   func_0x08009344(param_1 + 0xc);
@@ -569,9 +569,9 @@ void func_0800953C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08009548 @ 0x08009548
+// Function: Farm_Routine_08009548 @ 0x08009548
 // =============================================================================
-undefined8 func_08009548(undefined4 *param_1)
+undefined8 Farm_Routine_08009548(undefined4 *param_1)
 
 {
   undefined4 in_lr;
@@ -579,21 +579,21 @@ undefined8 func_08009548(undefined4 *param_1)
   *param_1 = 0;
   param_1[1] = 0;
   param_1[2] = _DAT_08009568;
-  func_08009300(param_1 + 3);
+  Farm_Routine_08009300(param_1 + 3);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800956C @ 0x0800956C
+// Function: Farm_Routine_0800956C @ 0x0800956C
 // =============================================================================
-undefined4 func_0800956C(undefined4 param_1)
+undefined4 Farm_Routine_0800956C(undefined4 param_1)
 
 {
   ushort uVar1;
   undefined4 in_lr;
   
   uVar1 = Interrupt_WaitForVBlank(1);
-  func_08009984(param_1);
+  Farm_Routine_08009984(param_1);
   if ((uVar1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
@@ -601,30 +601,30 @@ undefined4 func_0800956C(undefined4 param_1)
 }
 
 // =============================================================================
-// Function: func_0800959C @ 0x0800959C
+// Function: Farm_Routine_0800959C @ 0x0800959C
 // =============================================================================
-undefined4 func_0800959C(int param_1,undefined4 param_2)
+undefined4 Farm_Routine_0800959C(int param_1,undefined4 param_2)
 
 {
   undefined4 in_lr;
   
   *(undefined4 *)(param_1 + 8) = _DAT_080095bc;
-  func_0800956C(param_1);
+  Farm_Routine_0800956C(param_1);
   func_0x080098dc(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080095C0 @ 0x080095C0
+// Function: Farm_Routine_080095C0 @ 0x080095C0
 // =============================================================================
-undefined4 func_080095C0(undefined4 param_1,undefined4 param_2)
+undefined4 Farm_Routine_080095C0(undefined4 param_1,undefined4 param_2)
 
 {
   ushort uVar1;
   undefined4 in_lr;
   
   uVar1 = Interrupt_WaitForVBlank(1);
-  func_08009940(param_1,param_2);
+  Farm_Routine_08009940(param_1,param_2);
   if ((uVar1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
@@ -632,16 +632,16 @@ undefined4 func_080095C0(undefined4 param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080095FC @ 0x080095FC
+// Function: Farm_Routine_080095FC @ 0x080095FC
 // =============================================================================
-undefined4 func_080095FC(undefined4 param_1,undefined4 param_2)
+undefined4 Farm_Routine_080095FC(undefined4 param_1,undefined4 param_2)
 
 {
   ushort uVar1;
   undefined4 in_lr;
   
   uVar1 = Interrupt_WaitForVBlank(1);
-  func_08009968(param_1,param_2);
+  Farm_Routine_08009968(param_1,param_2);
   if ((uVar1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
@@ -649,9 +649,9 @@ undefined4 func_080095FC(undefined4 param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08009638 @ 0x08009638
+// Function: Farm_Routine_08009638 @ 0x08009638
 // =============================================================================
-undefined4 func_08009638(undefined4 param_1,undefined4 param_2)
+undefined4 Farm_Routine_08009638(undefined4 param_1,undefined4 param_2)
 
 {
   ushort uVar1;
@@ -666,9 +666,9 @@ undefined4 func_08009638(undefined4 param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08009674 @ 0x08009674
+// Function: Farm_Routine_08009674 @ 0x08009674
 // =============================================================================
-undefined4 func_08009674(undefined4 param_1,undefined4 param_2)
+undefined4 Farm_Routine_08009674(undefined4 param_1,undefined4 param_2)
 
 {
   ushort uVar1;
@@ -683,9 +683,9 @@ undefined4 func_08009674(undefined4 param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_080096B0 @ 0x080096B0
+// Function: Farm_Routine_080096B0 @ 0x080096B0
 // =============================================================================
-undefined8 func_080096B0(undefined4 *param_1)
+undefined8 Farm_Routine_080096B0(undefined4 *param_1)
 
 {
   undefined4 in_lr;
@@ -706,22 +706,22 @@ undefined8 func_080096B0(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_080096F0 @ 0x080096F0
+// Function: Farm_Routine_080096F0 @ 0x080096F0
 // =============================================================================
-undefined4 func_080096F0(int param_1)
+undefined4 Farm_Routine_080096F0(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_08008E64(param_1,0x4000000,0x54);
+  HW_Routine_08008E64(param_1,0x4000000,0x54);
   *_DAT_0800970c = *(undefined2 *)(param_1 + 0x54);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08009710 @ 0x08009710
+// Function: Farm_Routine_08009710 @ 0x08009710
 // =============================================================================
-undefined4 func_08009710(int param_1)
+undefined4 Farm_Routine_08009710(int param_1)
 
 {
   undefined4 in_lr;
@@ -733,9 +733,9 @@ undefined4 func_08009710(int param_1)
 }
 
 // =============================================================================
-// Function: func_08009744 @ 0x08009744
+// Function: Farm_Routine_08009744 @ 0x08009744
 // =============================================================================
-undefined8 func_08009744(byte *param_1,byte param_2,byte param_3)
+undefined8 Farm_Routine_08009744(byte *param_1,byte param_2,byte param_3)
 
 {
   byte *pbVar1;
@@ -756,21 +756,21 @@ undefined8 func_08009744(byte *param_1,byte param_2,byte param_3)
 }
 
 // =============================================================================
-// Function: func_0800977C @ 0x0800977C
+// Function: Farm_Routine_0800977C @ 0x0800977C
 // =============================================================================
-undefined4 func_0800977C(int param_1)
+undefined4 Farm_Routine_0800977C(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_08008E64(param_1 + 4,0x7000000,0x400);
+  HW_Routine_08008E64(param_1 + 4,0x7000000,0x400);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08009790 @ 0x08009790
+// Function: Farm_Routine_08009790 @ 0x08009790
 // =============================================================================
-undefined4 func_08009790(int param_1)
+undefined4 Farm_Routine_08009790(int param_1)
 
 {
   undefined4 in_lr;
@@ -780,9 +780,9 @@ undefined4 func_08009790(int param_1)
 }
 
 // =============================================================================
-// Function: func_080097A4 @ 0x080097A4
+// Function: Farm_Routine_080097A4 @ 0x080097A4
 // =============================================================================
-undefined4 func_080097A4(byte *param_1)
+undefined4 Farm_Routine_080097A4(byte *param_1)
 
 {
   byte bVar1;
@@ -825,9 +825,9 @@ undefined4 func_080097A4(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_08009834 @ 0x08009834
+// Function: Farm_Routine_08009834 @ 0x08009834
 // =============================================================================
-undefined4 func_08009834(byte *param_1)
+undefined4 Farm_Routine_08009834(byte *param_1)
 
 {
   byte bVar1;
@@ -850,48 +850,48 @@ undefined4 func_08009834(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_08009864 @ 0x08009864
+// Function: Farm_Routine_08009864 @ 0x08009864
 // =============================================================================
-undefined4 func_08009864(undefined4 param_1)
+undefined4 Farm_Routine_08009864(undefined4 param_1)
 
 {
   undefined4 in_lr;
   
-  func_0800977C();
-  func_08009834(param_1);
+  Farm_Routine_0800977C();
+  Farm_Routine_08009834(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08009878 @ 0x08009878
+// Function: Farm_Routine_08009878 @ 0x08009878
 // =============================================================================
-undefined4 func_08009878(int param_1)
+undefined4 Farm_Routine_08009878(int param_1)
 
 {
   undefined4 in_lr;
   
   func_0x080d374c(param_1 + 4,0x7000000,0x100);
-  func_08009834(param_1);
+  Farm_Routine_08009834(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08009898 @ 0x08009898
+// Function: Farm_Routine_08009898 @ 0x08009898
 // =============================================================================
-undefined4 func_08009898(undefined4 param_1)
+undefined4 Farm_Routine_08009898(undefined4 param_1)
 
 {
   undefined4 in_lr;
   
-  func_080097A4();
-  func_08009834(param_1);
+  Farm_Routine_080097A4();
+  Farm_Routine_08009834(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080098AC @ 0x080098AC
+// Function: Farm_Routine_080098AC @ 0x080098AC
 // =============================================================================
-undefined4 func_080098AC(undefined4 *param_1,uint param_2)
+undefined4 Farm_Routine_080098AC(undefined4 *param_1,uint param_2)
 
 {
   undefined4 *puVar1;
@@ -904,15 +904,15 @@ undefined4 func_080098AC(undefined4 *param_1,uint param_2)
     *(undefined4 **)param_1[1] = puVar1;
   }
   if ((param_2 & 1) != 0) {
-    func_08000608(param_1);
+    Dispatcher_Routine_08000608(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08009908 @ 0x08009908
+// Function: Farm_Routine_08009908 @ 0x08009908
 // =============================================================================
-undefined8 func_08009908(int param_1)
+undefined8 Farm_Routine_08009908(int param_1)
 
 {
   char cVar1;
@@ -932,9 +932,9 @@ undefined8 func_08009908(int param_1)
 }
 
 // =============================================================================
-// Function: func_08009940 @ 0x08009940
+// Function: Farm_Routine_08009940 @ 0x08009940
 // =============================================================================
-undefined4 func_08009940(int param_1,undefined4 *param_2)
+undefined4 Farm_Routine_08009940(int param_1,undefined4 *param_2)
 
 {
   undefined4 *puVar1;
@@ -954,9 +954,9 @@ undefined4 func_08009940(int param_1,undefined4 *param_2)
 }
 
 // =============================================================================
-// Function: func_08009968 @ 0x08009968
+// Function: Farm_Routine_08009968 @ 0x08009968
 // =============================================================================
-undefined4 func_08009968(undefined4 param_1,undefined4 *param_2)
+undefined4 Farm_Routine_08009968(undefined4 param_1,undefined4 *param_2)
 
 {
   undefined4 *puVar1;
@@ -973,9 +973,9 @@ undefined4 func_08009968(undefined4 param_1,undefined4 *param_2)
 }
 
 // =============================================================================
-// Function: func_08009984 @ 0x08009984
+// Function: Farm_Routine_08009984 @ 0x08009984
 // =============================================================================
-undefined4 func_08009984(int param_1)
+undefined4 Farm_Routine_08009984(int param_1)
 
 {
   undefined4 *puVar1;
@@ -995,9 +995,9 @@ undefined4 func_08009984(int param_1)
 }
 
 // =============================================================================
-// Function: func_080099EC @ 0x080099EC
+// Function: Farm_Routine_080099EC @ 0x080099EC
 // =============================================================================
-undefined8 func_080099EC(int param_1)
+undefined8 Farm_Routine_080099EC(int param_1)
 
 {
   undefined4 in_lr;
@@ -1006,9 +1006,9 @@ undefined8 func_080099EC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08009A48 @ 0x08009A48
+// Function: Farm_Routine_08009A48 @ 0x08009A48
 // =============================================================================
-undefined8 func_08009A48(int param_1,undefined4 param_2)
+undefined8 Farm_Routine_08009A48(int param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -1016,11 +1016,11 @@ undefined8 func_08009A48(int param_1,undefined4 param_2)
   int iVar3;
   undefined4 in_lr;
   
-  uVar1 = strlen(param_2);
+  uVar1 = gba_strlen(param_2);
   if (0xc < uVar1) {
     uVar1 = 0xc;
   }
-  memcpy(param_1,param_2,uVar1);
+  gba_memcpy(param_1,param_2,uVar1);
   *(undefined1 *)(param_1 + uVar1) = 0;
   *(ushort *)(param_1 + 0x10) = (ushort)_DAT_08009acc & *(ushort *)(param_1 + 0x10);
   *(byte *)(param_1 + 0x11) = *(byte *)(param_1 + 0x11) & 0xeb | 8;
@@ -1055,9 +1055,9 @@ undefined8 Farm_GetFieldState(int param_1)
 }
 
 // =============================================================================
-// Function: Farm_HasHorse @ 0x08009B20
+// Function: Farm_HasPlantedCrop @ 0x08009B20
 // =============================================================================
-undefined8 Farm_HasHorse(int param_1)
+undefined8 Farm_HasPlantedCrop(int param_1)
 
 {
   undefined4 uVar1;
@@ -1135,9 +1135,9 @@ undefined4 Farm_TakeLumber(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_08009BE4 @ 0x08009BE4
+// Function: Farm_Routine_08009BE4 @ 0x08009BE4
 // =============================================================================
-undefined4 func_08009BE4(int param_1,int param_2)
+undefined4 Farm_Routine_08009BE4(int param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -1145,7 +1145,7 @@ undefined4 func_08009BE4(int param_1,int param_2)
   
   if (-1 < (int)((uint)*(byte *)(param_1 + 0x11) * 0x20000000)) {
     if (param_1 + 0x14 != 0) {
-      func_080D684C(param_1 + 0x14);
+      VTable_Routine_080D684C(param_1 + 0x14);
       *(undefined1 *)(param_1 + 0x30) = *(undefined1 *)(param_2 + 0x1c);
       *(byte *)(param_1 + 0x31) =
            *(byte *)(param_1 + 0x31) & 0xfc | *(byte *)(param_2 + 0x1d) & 1 |
@@ -1161,9 +1161,9 @@ undefined4 func_08009BE4(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08009C3C @ 0x08009C3C
+// Function: Farm_Routine_08009C3C @ 0x08009C3C
 // =============================================================================
-void func_08009C3C(int param_1)
+void Farm_Routine_08009C3C(int param_1)
 
 {
   int iVar1;
@@ -1178,9 +1178,9 @@ void func_08009C3C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08009FC8 @ 0x08009FC8
+// Function: Farm_Routine_08009FC8 @ 0x08009FC8
 // =============================================================================
-undefined8 func_08009FC8(uint *param_1,byte param_2,char param_3,byte param_4)
+undefined8 Farm_Routine_08009FC8(uint *param_1,byte param_2,char param_3,byte param_4)
 
 {
   byte bVar1;
@@ -1189,15 +1189,15 @@ undefined8 func_08009FC8(uint *param_1,byte param_2,char param_3,byte param_4)
   *(byte *)param_1 = param_3 << 2 | param_2 & 3;
   *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | param_4 & 0xf;
   *param_1 = *param_1 & _DAT_0800a010;
-  bVar1 = Field_GetPlotState(param_1);
+  bVar1 = FieldPlot_GetState(param_1);
   *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1 | (bVar1 & 7) << 1;
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: Field_GetPlotState @ 0x0800A014
+// Function: FieldPlot_GetState @ 0x0800A014
 // =============================================================================
-undefined8 Field_GetPlotState(uint *param_1)
+undefined8 FieldPlot_GetState(uint *param_1)
 
 {
   uint uVar1;
@@ -1219,9 +1219,9 @@ undefined8 Field_GetPlotState(uint *param_1)
 }
 
 // =============================================================================
-// Function: Field_IsPlotTilled @ 0x0800A07C
+// Function: FieldPlot_IsTilled @ 0x0800A07C
 // =============================================================================
-undefined8 Field_IsPlotTilled(uint *param_1)
+undefined8 FieldPlot_IsTilled(uint *param_1)
 
 {
   uint uVar1;
@@ -1239,9 +1239,9 @@ undefined8 Field_IsPlotTilled(uint *param_1)
 }
 
 // =============================================================================
-// Function: Field_GetCropType @ 0x0800A0A4
+// Function: FieldPlot_GetCropType @ 0x0800A0A4
 // =============================================================================
-undefined8 Field_GetCropType(uint *param_1)
+undefined8 FieldPlot_GetCropType(uint *param_1)
 
 {
   uint uVar1;
@@ -1269,9 +1269,9 @@ undefined8 Field_GetCropType(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800A134 @ 0x0800A134
+// Function: FieldPlot_SetCropAndStage @ 0x0800A134
 // =============================================================================
-undefined4 func_0800A134(uint *param_1,char param_2,int param_3)
+undefined4 FieldPlot_SetCropAndStage(uint *param_1,char param_2,int param_3)
 
 {
   byte bVar1;
@@ -1279,7 +1279,7 @@ undefined4 func_0800A134(uint *param_1,char param_2,int param_3)
   
   *(byte *)param_1 = (byte)*param_1 & 3 | param_2 << 2;
   *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | (byte)param_3 & 0xf;
-  bVar1 = Field_GetPlotState(param_1);
+  bVar1 = FieldPlot_GetState(param_1);
   *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1 | (bVar1 & 7) << 1;
   if ((param_3 == 8) && ((*param_1 & 3) != 3)) {
     *(byte *)param_1 = (byte)*param_1 & 0xfc;
@@ -1288,9 +1288,9 @@ undefined4 func_0800A134(uint *param_1,char param_2,int param_3)
 }
 
 // =============================================================================
-// Function: Field_TillSoil @ 0x0800A190
+// Function: FieldPlot_TillSoil @ 0x0800A190
 // =============================================================================
-undefined8 Field_TillSoil(uint *param_1,char param_2)
+undefined8 FieldPlot_TillSoil(uint *param_1,char param_2)
 
 {
   byte bVar1;
@@ -1342,9 +1342,9 @@ LAB_0800a230:
 }
 
 // =============================================================================
-// Function: Field_PlantSeeds @ 0x0800A238
+// Function: FieldPlot_PlantSeeds @ 0x0800A238
 // =============================================================================
-undefined8 Field_PlantSeeds(uint *param_1,int param_2)
+undefined8 FieldPlot_PlantSeeds(uint *param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -1412,9 +1412,9 @@ LAB_0800a336:
 }
 
 // =============================================================================
-// Function: func_0800A33C @ 0x0800A33C
+// Function: FieldPlot_StrikeWithHammer @ 0x0800A33C
 // =============================================================================
-undefined8 func_0800A33C(uint *param_1,int param_2)
+undefined8 FieldPlot_StrikeWithHammer(uint *param_1,int param_2)
 
 {
   uint uVar1;
@@ -1458,9 +1458,9 @@ LAB_0800a3c2:
 }
 
 // =============================================================================
-// Function: func_0800A3C8 @ 0x0800A3C8
+// Function: FieldPlot_ChopBranch @ 0x0800A3C8
 // =============================================================================
-undefined8 func_0800A3C8(uint *param_1)
+undefined8 FieldPlot_ChopBranch(uint *param_1)
 
 {
   uint uVar1;
@@ -1496,9 +1496,9 @@ LAB_0800a432:
 }
 
 // =============================================================================
-// Function: func_0800A438 @ 0x0800A438
+// Function: FieldPlot_ClearWeeds @ 0x0800A438
 // =============================================================================
-undefined8 func_0800A438(uint *param_1)
+undefined8 FieldPlot_ClearWeeds(uint *param_1)
 
 {
   undefined4 in_lr;
@@ -1512,9 +1512,9 @@ undefined8 func_0800A438(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800A460 @ 0x0800A460
+// Function: FieldPlot_SetDebris @ 0x0800A460
 // =============================================================================
-undefined4 func_0800A460(uint *param_1,char param_2)
+undefined4 FieldPlot_SetDebris(uint *param_1,char param_2)
 
 {
   undefined4 in_lr;
@@ -1528,9 +1528,9 @@ undefined4 func_0800A460(uint *param_1,char param_2)
 }
 
 // =============================================================================
-// Function: Field_HarvestCrop @ 0x0800A4A4
+// Function: FieldPlot_HarvestCrop @ 0x0800A4A4
 // =============================================================================
-undefined8 Field_HarvestCrop(undefined **param_1,uint *param_2)
+undefined8 FieldPlot_HarvestCrop(undefined **param_1,uint *param_2)
 
 {
   short sVar1;
@@ -1601,11 +1601,11 @@ LAB_0800a662:
     if (sVar1 != 0xff) {
       if (uVar2 < 0xf) {
         func_0x0800dca8(&uStack_14);
-        func_0800F004(param_1,(uint)uStack_14);
+        Farmer_Routine_0800F004(param_1,(uint)uStack_14);
       }
       else {
         func_0x0800df50(auStack_10,sVar1);
-        func_0800F040(param_1,auStack_10[0]);
+        Farmer_Routine_0800F040(param_1,auStack_10[0]);
       }
       goto LAB_0800a6be;
     }
@@ -1623,9 +1623,9 @@ LAB_0800a6be:
 }
 
 // =============================================================================
-// Function: Field_CanPlaceItem @ 0x0800A6C8
+// Function: FieldPlot_CanPlaceItem @ 0x0800A6C8
 // =============================================================================
-undefined8 Field_CanPlaceItem(uint *param_1,undefined4 param_2)
+undefined8 FieldPlot_CanPlaceItem(uint *param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -1643,9 +1643,9 @@ undefined8 Field_CanPlaceItem(uint *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: Field_PlaceItem @ 0x0800A6F4
+// Function: FieldPlot_PlaceItem @ 0x0800A6F4
 // =============================================================================
-undefined4 Field_PlaceItem(uint *param_1,undefined4 param_2)
+undefined4 FieldPlot_PlaceItem(uint *param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -1654,7 +1654,7 @@ undefined4 Field_PlaceItem(uint *param_1,undefined4 param_2)
   byte bVar4;
   undefined4 in_lr;
   
-  cVar1 = Field_CanPlaceItem();
+  cVar1 = FieldPlot_CanPlaceItem();
   if (cVar1 != '\0') {
     iVar3 = func_0x0800df54(param_2);
     if (iVar3 == 0x32) {
@@ -1684,16 +1684,16 @@ undefined4 Field_PlaceItem(uint *param_1,undefined4 param_2)
     if ((*param_1 & 3) != 3) {
       *(byte *)param_1 = (byte)*param_1 & 0xfc;
     }
-    bVar2 = Field_GetPlotState(param_1);
+    bVar2 = FieldPlot_GetState(param_1);
     *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1 | (bVar2 & 7) << 1;
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800A78C @ 0x0800A78C
+// Function: FieldPlot_IsPassable @ 0x0800A78C
 // =============================================================================
-undefined8 func_0800A78C(uint *param_1)
+undefined8 FieldPlot_IsPassable(uint *param_1)
 
 {
   uint uVar1;
@@ -1711,9 +1711,9 @@ undefined8 func_0800A78C(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800A7B0 @ 0x0800A7B0
+// Function: Farm_Routine_0800A7B0 @ 0x0800A7B0
 // =============================================================================
-undefined4 func_0800A7B0(uint *param_1,int param_2,byte *param_3)
+undefined4 Farm_Routine_0800A7B0(uint *param_1,int param_2,byte *param_3)
 
 {
   uint uVar1;
@@ -1819,7 +1819,7 @@ LAB_0800a97e:
       }
       if (pbVar2[2] + uVar5 <= uVar1) {
         if (uVar1 < (uint)pbVar2[3] + (uint)pbVar2[2] + uVar5) {
-          func_0800A134(param_1,0x16,8);
+          FieldPlot_SetCropAndStage(param_1,0x16,8);
         }
         goto LAB_0800aad2;
       }
@@ -1839,7 +1839,7 @@ LAB_0800a97e:
     uVar6 = 0x19;
   }
 LAB_0800aab6:
-  func_0800A134(param_1,uVar6,8);
+  FieldPlot_SetCropAndStage(param_1,uVar6,8);
 LAB_0800aad2:
   if (param_2 == 0) {
     if ((*param_1 & 3) == 2) {
@@ -1853,9 +1853,9 @@ LAB_0800aad2:
 }
 
 // =============================================================================
-// Function: Field_SeasonChangeClear @ 0x0800AB08
+// Function: FieldPlot_SeasonChangeClear @ 0x0800AB08
 // =============================================================================
-undefined4 Field_SeasonChangeClear(uint *param_1,int param_2)
+undefined4 FieldPlot_SeasonChangeClear(uint *param_1,int param_2)
 
 {
   int iVar1;
@@ -1912,7 +1912,7 @@ LAB_0800adec:
       if (9 < (iVar1 >> 3 & 0xffU)) {
         return in_lr;
       }
-      func_0800A134(param_1,0x15,8);
+      FieldPlot_SetCropAndStage(param_1,0x15,8);
       return in_lr;
     }
     if (param_2 != 2) {
@@ -1966,9 +1966,9 @@ case_0800AF1A:
 }
 
 // =============================================================================
-// Function: func_0800AF20 @ 0x0800AF20
+// Function: FieldPlot_GetTileGraphic @ 0x0800AF20
 // =============================================================================
-undefined8 func_0800AF20(uint *param_1)
+undefined8 FieldPlot_GetTileGraphic(uint *param_1)
 
 {
   uint uVar1;
@@ -1993,9 +1993,9 @@ LAB_0800af56:
 }
 
 // =============================================================================
-// Function: func_0800AF5C @ 0x0800AF5C
+// Function: FieldPlot_ResolveBorderTile @ 0x0800AF5C
 // =============================================================================
-undefined8 func_0800AF5C(uint *param_1,uint *param_2,uint *param_3)
+undefined8 FieldPlot_ResolveBorderTile(uint *param_1,uint *param_2,uint *param_3)
 
 {
   uint uVar1;

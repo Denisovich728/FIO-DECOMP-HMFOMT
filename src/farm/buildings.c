@@ -7,9 +7,9 @@
 #include "../../include/farm/furniture.h"
 
 // =============================================================================
-// Function: func_0800B814 @ 0x0800B814
+// Function: ToolChest_GetItem @ 0x0800B814
 // =============================================================================
-undefined8 func_0800B814(undefined4 *param_1,int param_2,uint param_3)
+undefined8 ToolChest_GetItem(undefined4 *param_1,int param_2,uint param_3)
 
 {
   char cVar1;
@@ -28,19 +28,19 @@ undefined8 func_0800B814(undefined4 *param_1,int param_2,uint param_3)
     puVar3 = param_1 + 0x40;
     for (; (param_3 != 0 && (param_1 != puVar3)); param_1 = param_1 + 1) {
       uStack_24 = param_3;
-      cVar1 = func_0800DEDC(param_1);
+      cVar1 = Item_Routine_0800DEDC(param_1);
       if (cVar1 == '\0') {
-        func_0800DEB8(&uStack_2c,param_1);
+        Item_Routine_0800DEB8(&uStack_2c,param_1);
         iVar2 = func_0x0800dcb4(&uStack_2c);
         if (iVar2 == param_2) {
-          iVar2 = func_0800DEF0(param_1);
+          iVar2 = Item_Routine_0800DEF0(param_1);
           uStack_1c = 99U - iVar2;
           puVar4 = &uStack_24;
           if (99U - iVar2 < uStack_24) {
             puVar4 = &uStack_1c;
           }
           uVar5 = *puVar4;
-          func_0800DF04(param_1,uVar5);
+          Item_Routine_0800DF04(param_1,uVar5);
           uStack_24 = uStack_24 - uVar5;
         }
       }
@@ -52,7 +52,7 @@ undefined8 func_0800B814(undefined4 *param_1,int param_2,uint param_3)
         }
         uVar5 = *puVar4;
         func_0x0800dca8(&uStack_28,param_2);
-        func_0800DE80(&uStack_2c,(uint)uStack_28,uVar5);
+        Item_Routine_0800DE80(&uStack_2c,(uint)uStack_28,uVar5);
         *param_1 = uStack_2c;
         uStack_24 = uStack_24 - uVar5;
       }
@@ -63,9 +63,9 @@ undefined8 func_0800B814(undefined4 *param_1,int param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_0800B8E4 @ 0x0800B8E4
+// Function: Building_Routine_0800B8E4 @ 0x0800B8E4
 // =============================================================================
-undefined8 func_0800B8E4(int param_1)
+undefined8 Building_Routine_0800B8E4(int param_1)
 
 {
   int iVar1;
@@ -75,7 +75,7 @@ undefined8 func_0800B8E4(int param_1)
   iVar2 = 0x3f;
   iVar1 = param_1;
   do {
-    func_0800E010(iVar1);
+    Item_Routine_0800E010(iVar1);
     iVar1 = iVar1 + 2;
     iVar2 = iVar2 + -1;
   } while (iVar2 != -1);
@@ -83,9 +83,9 @@ undefined8 func_0800B8E4(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800B910 @ 0x0800B910
+// Function: Fridge_GetItem @ 0x0800B910
 // =============================================================================
-undefined8 func_0800B910(int param_1,int param_2)
+undefined8 Fridge_GetItem(int param_1,int param_2)
 
 {
   char cVar1;
@@ -98,12 +98,12 @@ undefined8 func_0800B910(int param_1,int param_2)
   iVar3 = 0;
   iVar4 = param_1 + 0x80;
   for (; param_1 != iVar4; param_1 = param_1 + 2) {
-    cVar1 = func_0800E07C(param_1);
+    cVar1 = Item_Routine_0800E07C(param_1);
     if (cVar1 == '\0') {
-      auStack_1c[0] = func_0800E058(param_1);
+      auStack_1c[0] = Item_Routine_0800E058(param_1);
       iVar2 = func_0x0800df54(auStack_1c);
       if (iVar2 == param_2) {
-        iVar2 = func_0800E090(param_1);
+        iVar2 = Item_Routine_0800E090(param_1);
         iVar3 = (iVar3 + 99) - iVar2;
       }
     }
@@ -115,9 +115,9 @@ undefined8 func_0800B910(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800B974 @ 0x0800B974
+// Function: Building_Routine_0800B974 @ 0x0800B974
 // =============================================================================
-undefined8 func_0800B974(int param_1,int param_2)
+undefined8 Building_Routine_0800B974(int param_1,int param_2)
 
 {
   char cVar1;
@@ -130,12 +130,12 @@ undefined8 func_0800B974(int param_1,int param_2)
   iVar4 = 0;
   iVar3 = param_1 + 0x80;
   for (; param_1 != iVar3; param_1 = param_1 + 2) {
-    cVar1 = func_0800E07C(param_1);
+    cVar1 = Item_Routine_0800E07C(param_1);
     if (cVar1 == '\0') {
-      auStack_1c[0] = func_0800E058(param_1);
+      auStack_1c[0] = Item_Routine_0800E058(param_1);
       iVar2 = func_0x0800df54(auStack_1c);
       if (iVar2 == param_2) {
-        iVar2 = func_0800E090(param_1);
+        iVar2 = Item_Routine_0800E090(param_1);
         iVar4 = iVar4 + iVar2;
       }
     }
@@ -144,9 +144,9 @@ undefined8 func_0800B974(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800B9D0 @ 0x0800B9D0
+// Function: Building_Routine_0800B9D0 @ 0x0800B9D0
 // =============================================================================
-undefined8 func_0800B9D0(int param_1)
+undefined8 Building_Routine_0800B9D0(int param_1)
 
 {
   char cVar1;
@@ -157,7 +157,7 @@ undefined8 func_0800B9D0(int param_1)
   iVar3 = 0;
   iVar2 = param_1 + 0x80;
   for (; param_1 != iVar2; param_1 = param_1 + 2) {
-    cVar1 = func_0800E07C(param_1);
+    cVar1 = Item_Routine_0800E07C(param_1);
     if (cVar1 != '\0') goto LAB_0800b9fa;
     iVar3 = iVar3 + 1;
   }
@@ -179,7 +179,7 @@ undefined8 Shelf_Init(int param_1)
   
   iVar2 = 0x3f;
   for (iStack_c = param_1 + 0x80; iStack_c != param_1; iStack_c = iStack_c + -2) {
-    cVar1 = func_0800E07C(iStack_c + -2);
+    cVar1 = Item_Routine_0800E07C(iStack_c + -2);
     if (cVar1 != '\0') goto LAB_0800ba3a;
     iVar2 = iVar2 + -1;
   }
@@ -189,9 +189,9 @@ LAB_0800ba3a:
 }
 
 // =============================================================================
-// Function: func_0800BA44 @ 0x0800BA44
+// Function: Shelf_GetItem @ 0x0800BA44
 // =============================================================================
-undefined8 func_0800BA44(int param_1,int param_2)
+undefined8 Shelf_GetItem(int param_1,int param_2)
 
 {
   char cVar1;
@@ -204,9 +204,9 @@ undefined8 func_0800BA44(int param_1,int param_2)
   iVar4 = 0;
   iVar3 = param_1 + 0x80;
   for (; param_1 != iVar3; param_1 = param_1 + 2) {
-    cVar1 = func_0800E07C(param_1);
+    cVar1 = Item_Routine_0800E07C(param_1);
     if (cVar1 == '\0') {
-      auStack_1c[0] = func_0800E058(param_1);
+      auStack_1c[0] = Item_Routine_0800E058(param_1);
       iVar2 = func_0x0800df54(auStack_1c);
       if (iVar2 == param_2) goto LAB_0800ba92;
     }
@@ -218,9 +218,9 @@ LAB_0800ba92:
 }
 
 // =============================================================================
-// Function: func_0800BAA8 @ 0x0800BAA8
+// Function: Building_Routine_0800BAA8 @ 0x0800BAA8
 // =============================================================================
-void func_0800BAA8(int param_1,int param_2,uint param_3)
+void Building_Routine_0800BAA8(int param_1,int param_2,uint param_3)
 
 {
   char cVar1;
@@ -240,19 +240,19 @@ void func_0800BAA8(int param_1,int param_2,uint param_3)
   if (param_2 < 0x5f) {
     iVar5 = param_1 + 0x80;
     for (; (uStack_24 != 0 && (param_1 != iVar5)); param_1 = param_1 + 2) {
-      cVar1 = func_0800E07C(param_1);
+      cVar1 = Item_Routine_0800E07C(param_1);
       if (cVar1 == '\0') {
-        auStack_1b[0] = func_0800E058(param_1);
+        auStack_1b[0] = Item_Routine_0800E058(param_1);
         iVar2 = func_0x0800df54(auStack_1b);
         if (iVar2 == param_2) {
-          iVar2 = func_0800E090(param_1);
+          iVar2 = Item_Routine_0800E090(param_1);
           uStack_18 = 99U - iVar2;
           puVar4 = &uStack_24;
           if (99U - iVar2 < uStack_24) {
             puVar4 = &uStack_18;
           }
           uVar3 = *puVar4;
-          func_0800E0A4(param_1,uVar3);
+          Item_Routine_0800E0A4(param_1,uVar3);
           goto LAB_0800bb46;
         }
       }
@@ -264,8 +264,8 @@ void func_0800BAA8(int param_1,int param_2,uint param_3)
         }
         uVar3 = *puVar4;
         func_0x0800df50(&uStack_1c,param_2);
-        func_0800E028(auStack_28,uStack_1c,uVar3);
-        memcpy(param_1,auStack_28,2);
+        Item_Routine_0800E028(auStack_28,uStack_1c,uVar3);
+        gba_memcpy(param_1,auStack_28,2);
 LAB_0800bb46:
         uStack_24 = uStack_24 - uVar3;
       }
@@ -276,9 +276,9 @@ LAB_0800bb46:
 }
 
 // =============================================================================
-// Function: func_0800BB7C @ 0x0800BB7C
+// Function: RecordPlayer_PlayTrack @ 0x0800BB7C
 // =============================================================================
-undefined8 func_0800BB7C(uint *param_1)
+undefined8 RecordPlayer_PlayTrack(uint *param_1)
 
 {
   char cVar1;
@@ -296,9 +296,9 @@ undefined8 func_0800BB7C(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800BBA4 @ 0x0800BBA4
+// Function: Building_Routine_0800BBA4 @ 0x0800BBA4
 // =============================================================================
-undefined8 func_0800BBA4(undefined4 param_1,uint *param_2)
+undefined8 Building_Routine_0800BBA4(undefined4 param_1,uint *param_2)
 
 {
   char cVar1;
@@ -307,20 +307,20 @@ undefined8 func_0800BBA4(undefined4 param_1,uint *param_2)
   
   cVar1 = func_0x0800bb74(param_2);
   if (cVar1 == '\0') {
-    func_0800E010(param_1);
+    Item_Routine_0800E010(param_1);
   }
   else {
     *(byte *)param_2 = (byte)*param_2 & 0xfe;
     func_0x0800df50(auStack_10,((*param_2 & 0x1f) >> 1) + 0x40);
-    func_0800E028(param_1,auStack_10[0],1);
+    Item_Routine_0800E028(param_1,auStack_10[0],1);
   }
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800BBF0 @ 0x0800BBF0
+// Function: Building_Routine_0800BBF0 @ 0x0800BBF0
 // =============================================================================
-undefined8 func_0800BBF0(undefined4 param_1,uint *param_2,undefined4 param_3)
+undefined8 Building_Routine_0800BBF0(undefined4 param_1,uint *param_2,undefined4 param_3)
 
 {
   char cVar1;
@@ -336,10 +336,10 @@ undefined8 func_0800BBF0(undefined4 param_1,uint *param_2,undefined4 param_3)
     cVar1 = func_0x0800df54(param_3);
     *(byte *)param_2 = (byte)*param_2 & 0xe1 | (cVar1 - 0x40U & 0xf) << 1;
     func_0x0800df50(auStack_18,((uVar3 & 0x1f) >> 1) + 0x40);
-    func_0800E028(param_1,auStack_18[0],1);
+    Item_Routine_0800E028(param_1,auStack_18[0],1);
   }
   else {
-    func_0800E010(param_1);
+    Item_Routine_0800E010(param_1);
   }
   return CONCAT44(in_lr,param_1);
 }
@@ -365,9 +365,9 @@ undefined8 FarmHouse_Init(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_0800BCB0 @ 0x0800BCB0
+// Function: FarmHouse_GetLevel @ 0x0800BCB0
 // =============================================================================
-undefined4 func_0800BCB0(int param_1,int param_2)
+undefined4 FarmHouse_GetLevel(int param_1,int param_2)
 
 {
   uint uVar1;
@@ -383,9 +383,9 @@ undefined4 func_0800BCB0(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800BCD0 @ 0x0800BCD0
+// Function: FarmHouse_Upgrade @ 0x0800BCD0
 // =============================================================================
-undefined4 func_0800BCD0(int param_1,int param_2)
+undefined4 FarmHouse_Upgrade(int param_1,int param_2)
 
 {
   uint uVar1;
@@ -403,9 +403,9 @@ undefined4 func_0800BCD0(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800BD14 @ 0x0800BD14
+// Function: Building_Routine_0800BD14 @ 0x0800BD14
 // =============================================================================
-undefined8 func_0800BD14(int param_1,int param_2)
+undefined8 Building_Routine_0800BD14(int param_1,int param_2)
 
 {
   uint uVar1;
@@ -422,9 +422,9 @@ undefined8 func_0800BD14(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800BD40 @ 0x0800BD40
+// Function: Building_Routine_0800BD40 @ 0x0800BD40
 // =============================================================================
-void func_0800BD40(int param_1,int param_2)
+void Building_Routine_0800BD40(int param_1,int param_2)
 
 {
   uint uVar1;
@@ -442,9 +442,9 @@ void func_0800BD40(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800BDEC @ 0x0800BDEC
+// Function: Building_Routine_0800BDEC @ 0x0800BDEC
 // =============================================================================
-undefined8 func_0800BDEC(int param_1)
+undefined8 Building_Routine_0800BDEC(int param_1)
 
 {
   uint uVar1;
@@ -480,18 +480,18 @@ undefined8 Coop_Init(uint *param_1)
   *(byte *)((int)param_1 + 3) = *(byte *)((int)param_1 + 3) & 199 | 0xc0;
   *(undefined1 *)(param_1 + 1) = 0x17;
   *(undefined1 *)((int)param_1 + 5) = 0;
-  func_0800B660(param_1 + 2);
-  func_0800B8E4(param_1 + 0x42);
+  ShippingBin_Routine_0800B660(param_1 + 2);
+  Building_Routine_0800B8E4(param_1 + 0x42);
   func_0x0800bb60(param_1 + 0x62);
-  func_0800B2EC(param_1 + 99);
+  ShippingBin_StatEnt_GetAmountShipped(param_1 + 99);
   FarmHouse_Init(param_1 + 0x83);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800BF1C @ 0x0800BF1C
+// Function: Coop_GetChickenCount @ 0x0800BF1C
 // =============================================================================
-undefined8 func_0800BF1C(int param_1)
+undefined8 Coop_GetChickenCount(int param_1)
 
 {
   int iVar1;
@@ -505,9 +505,9 @@ undefined8 func_0800BF1C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800BF34 @ 0x0800BF34
+// Function: Building_Routine_0800BF34 @ 0x0800BF34
 // =============================================================================
-undefined8 func_0800BF34(int param_1)
+undefined8 Building_Routine_0800BF34(int param_1)
 
 {
   undefined4 in_lr;
@@ -522,9 +522,9 @@ undefined8 func_0800BF34(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800BF50 @ 0x0800BF50
+// Function: Building_Routine_0800BF50 @ 0x0800BF50
 // =============================================================================
-undefined8 func_0800BF50(int param_1)
+undefined8 Building_Routine_0800BF50(int param_1)
 
 {
   undefined4 in_lr;
@@ -539,9 +539,9 @@ undefined8 func_0800BF50(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C024 @ 0x0800C024
+// Function: Building_Routine_0800C024 @ 0x0800C024
 // =============================================================================
-undefined4 func_0800C024(byte *param_1)
+undefined4 Building_Routine_0800C024(byte *param_1)
 
 {
   byte bVar1;
@@ -555,9 +555,9 @@ undefined4 func_0800C024(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C048 @ 0x0800C048
+// Function: Building_Routine_0800C048 @ 0x0800C048
 // =============================================================================
-undefined8 func_0800C048(int param_1)
+undefined8 Building_Routine_0800C048(int param_1)
 
 {
   int iVar1;
@@ -571,9 +571,9 @@ undefined8 func_0800C048(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C060 @ 0x0800C060
+// Function: Building_Routine_0800C060 @ 0x0800C060
 // =============================================================================
-undefined8 func_0800C060(int param_1)
+undefined8 Building_Routine_0800C060(int param_1)
 
 {
   undefined4 in_lr;
@@ -588,9 +588,9 @@ undefined8 func_0800C060(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C07C @ 0x0800C07C
+// Function: Building_Routine_0800C07C @ 0x0800C07C
 // =============================================================================
-undefined8 func_0800C07C(int param_1)
+undefined8 Building_Routine_0800C07C(int param_1)
 
 {
   undefined4 in_lr;
@@ -605,9 +605,9 @@ undefined8 func_0800C07C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C098 @ 0x0800C098
+// Function: Building_Routine_0800C098 @ 0x0800C098
 // =============================================================================
-undefined4 func_0800C098(byte *param_1,byte param_2)
+undefined4 Building_Routine_0800C098(byte *param_1,byte param_2)
 
 {
   undefined4 in_lr;
@@ -619,9 +619,9 @@ undefined4 func_0800C098(byte *param_1,byte param_2)
 }
 
 // =============================================================================
-// Function: func_0800C0BC @ 0x0800C0BC
+// Function: Building_Routine_0800C0BC @ 0x0800C0BC
 // =============================================================================
-undefined4 func_0800C0BC(byte *param_1,byte param_2)
+undefined4 Building_Routine_0800C0BC(byte *param_1,byte param_2)
 
 {
   undefined4 in_lr;
@@ -633,9 +633,9 @@ undefined4 func_0800C0BC(byte *param_1,byte param_2)
 }
 
 // =============================================================================
-// Function: func_0800C0E0 @ 0x0800C0E0
+// Function: Building_Routine_0800C0E0 @ 0x0800C0E0
 // =============================================================================
-undefined4 func_0800C0E0(byte *param_1,char param_2)
+undefined4 Building_Routine_0800C0E0(byte *param_1,char param_2)
 
 {
   undefined4 in_lr;
@@ -647,9 +647,9 @@ undefined4 func_0800C0E0(byte *param_1,char param_2)
 }
 
 // =============================================================================
-// Function: func_0800C0FC @ 0x0800C0FC
+// Function: Building_Routine_0800C0FC @ 0x0800C0FC
 // =============================================================================
-undefined4 func_0800C0FC(byte *param_1)
+undefined4 Building_Routine_0800C0FC(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -661,9 +661,9 @@ undefined4 func_0800C0FC(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C118 @ 0x0800C118
+// Function: Building_Routine_0800C118 @ 0x0800C118
 // =============================================================================
-undefined4 func_0800C118(byte *param_1)
+undefined4 Building_Routine_0800C118(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -675,9 +675,9 @@ undefined4 func_0800C118(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C134 @ 0x0800C134
+// Function: Building_Routine_0800C134 @ 0x0800C134
 // =============================================================================
-void func_0800C134(byte *param_1)
+void Building_Routine_0800C134(byte *param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -690,9 +690,9 @@ void func_0800C134(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C15C @ 0x0800C15C
+// Function: Building_Routine_0800C15C @ 0x0800C15C
 // =============================================================================
-undefined4 func_0800C15C(byte *param_1)
+undefined4 Building_Routine_0800C15C(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -704,9 +704,9 @@ undefined4 func_0800C15C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C178 @ 0x0800C178
+// Function: Building_Routine_0800C178 @ 0x0800C178
 // =============================================================================
-void func_0800C178(byte *param_1)
+void Building_Routine_0800C178(byte *param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -719,9 +719,9 @@ void func_0800C178(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C1A0 @ 0x0800C1A0
+// Function: Building_Routine_0800C1A0 @ 0x0800C1A0
 // =============================================================================
-undefined4 func_0800C1A0(uint *param_1,uint param_2)
+undefined4 Building_Routine_0800C1A0(uint *param_1,uint param_2)
 
 {
   uint uVar1;
@@ -757,9 +757,9 @@ undefined4 func_0800C1A0(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C25C @ 0x0800C25C
+// Function: Building_Routine_0800C25C @ 0x0800C25C
 // =============================================================================
-undefined4 func_0800C25C(byte *param_1)
+undefined4 Building_Routine_0800C25C(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -771,24 +771,24 @@ undefined4 func_0800C25C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C27C @ 0x0800C27C
+// Function: Building_Routine_0800C27C @ 0x0800C27C
 // =============================================================================
-undefined4 func_0800C27C(byte *param_1)
+undefined4 Building_Routine_0800C27C(byte *param_1)
 
 {
   int iVar1;
   undefined4 in_lr;
   
-  if (((*param_1 & 3) != 0) && (iVar1 = func_0800C048(param_1), iVar1 != 0)) {
+  if (((*param_1 & 3) != 0) && (iVar1 = Building_Routine_0800C048(param_1), iVar1 != 0)) {
     param_1[4] = param_1[4] | 0x80;
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800C2A4 @ 0x0800C2A4
+// Function: Building_Routine_0800C2A4 @ 0x0800C2A4
 // =============================================================================
-undefined4 func_0800C2A4(int param_1)
+undefined4 Building_Routine_0800C2A4(int param_1)
 
 {
   undefined4 in_lr;
@@ -800,9 +800,9 @@ undefined4 func_0800C2A4(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C2BC @ 0x0800C2BC
+// Function: Building_Routine_0800C2BC @ 0x0800C2BC
 // =============================================================================
-undefined4 func_0800C2BC(int param_1)
+undefined4 Building_Routine_0800C2BC(int param_1)
 
 {
   undefined4 in_lr;
@@ -814,9 +814,9 @@ undefined4 func_0800C2BC(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C2D4 @ 0x0800C2D4
+// Function: Building_Routine_0800C2D4 @ 0x0800C2D4
 // =============================================================================
-undefined4 func_0800C2D4(int param_1)
+undefined4 Building_Routine_0800C2D4(int param_1)
 
 {
   undefined4 in_lr;
@@ -828,9 +828,9 @@ undefined4 func_0800C2D4(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C2EC @ 0x0800C2EC
+// Function: Building_Routine_0800C2EC @ 0x0800C2EC
 // =============================================================================
-undefined4 func_0800C2EC(int param_1)
+undefined4 Building_Routine_0800C2EC(int param_1)
 
 {
   undefined4 in_lr;
@@ -842,9 +842,9 @@ undefined4 func_0800C2EC(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C304 @ 0x0800C304
+// Function: Building_Routine_0800C304 @ 0x0800C304
 // =============================================================================
-undefined4 func_0800C304(int param_1)
+undefined4 Building_Routine_0800C304(int param_1)
 
 {
   undefined4 in_lr;
@@ -856,9 +856,9 @@ undefined4 func_0800C304(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C31C @ 0x0800C31C
+// Function: Building_Routine_0800C31C @ 0x0800C31C
 // =============================================================================
-undefined4 func_0800C31C(int param_1)
+undefined4 Building_Routine_0800C31C(int param_1)
 
 {
   undefined4 in_lr;
@@ -870,9 +870,9 @@ undefined4 func_0800C31C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C334 @ 0x0800C334
+// Function: Building_Routine_0800C334 @ 0x0800C334
 // =============================================================================
-undefined4 func_0800C334(int param_1)
+undefined4 Building_Routine_0800C334(int param_1)
 
 {
   undefined4 in_lr;
@@ -884,9 +884,9 @@ undefined4 func_0800C334(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C34C @ 0x0800C34C
+// Function: Building_Routine_0800C34C @ 0x0800C34C
 // =============================================================================
-undefined4 func_0800C34C(int param_1)
+undefined4 Building_Routine_0800C34C(int param_1)
 
 {
   undefined4 in_lr;
@@ -898,9 +898,9 @@ undefined4 func_0800C34C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C364 @ 0x0800C364
+// Function: Building_Routine_0800C364 @ 0x0800C364
 // =============================================================================
-undefined4 func_0800C364(int param_1,uint param_2)
+undefined4 Building_Routine_0800C364(int param_1,uint param_2)
 
 {
   undefined4 in_lr;
@@ -911,9 +911,9 @@ undefined4 func_0800C364(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C390 @ 0x0800C390
+// Function: Building_Routine_0800C390 @ 0x0800C390
 // =============================================================================
-undefined4 func_0800C390(uint *param_1,int param_2)
+undefined4 Building_Routine_0800C390(uint *param_1,int param_2)
 
 {
   ushort uVar1;
@@ -1006,9 +1006,9 @@ undefined8 Barn_Init(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C570 @ 0x0800C570
+// Function: Barn_GetCowCount @ 0x0800C570
 // =============================================================================
-undefined8 func_0800C570(byte *param_1)
+undefined8 Barn_GetCowCount(byte *param_1)
 
 {
   uint *puVar1;
@@ -1026,15 +1026,15 @@ undefined8 func_0800C570(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C598 @ 0x0800C598
+// Function: Building_Routine_0800C598 @ 0x0800C598
 // =============================================================================
-undefined8 func_0800C598(uint *param_1,uint param_2)
+undefined8 Building_Routine_0800C598(uint *param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   if (param_2 < uVar1) {
     uVar1 = -((*param_1 & 0xfffff) >> 0xc & 1 << (param_2 & 0xff)) >> 0x1f;
   }
@@ -1045,18 +1045,18 @@ undefined8 func_0800C598(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C5CC @ 0x0800C5CC
+// Function: Building_Routine_0800C5CC @ 0x0800C5CC
 // =============================================================================
-undefined8 func_0800C5CC(int param_1,uint param_2)
+undefined8 Building_Routine_0800C5CC(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   if (param_2 < uVar1) {
-    uVar2 = func_0800CCB8(param_1 + param_2 * 0x30 + 0x18);
+    uVar2 = Building_Routine_0800CCB8(param_1 + param_2 * 0x30 + 0x18);
   }
   else {
     uVar2 = 0;
@@ -1065,16 +1065,16 @@ undefined8 func_0800C5CC(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C5F4 @ 0x0800C5F4
+// Function: Building_Routine_0800C5F4 @ 0x0800C5F4
 // =============================================================================
-undefined8 func_0800C5F4(int param_1,uint param_2)
+undefined8 Building_Routine_0800C5F4(int param_1,uint param_2)
 
 {
   char cVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  uVar2 = func_0800C570();
+  uVar2 = Barn_GetCowCount();
   if (param_2 < uVar2) {
     param_1 = param_2 * 0x30 + 0x18 + param_1;
     do {
@@ -1090,9 +1090,9 @@ LAB_0800c62a:
 }
 
 // =============================================================================
-// Function: func_0800C630 @ 0x0800C630
+// Function: Building_Routine_0800C630 @ 0x0800C630
 // =============================================================================
-undefined8 func_0800C630(int param_1)
+undefined8 Building_Routine_0800C630(int param_1)
 
 {
   uint uVar1;
@@ -1101,13 +1101,13 @@ undefined8 func_0800C630(int param_1)
   int iVar4;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   iVar4 = 0;
   uVar3 = 0;
   if (uVar1 != 0) {
     param_1 = param_1 + 0x18;
     do {
-      iVar2 = func_0800CCB8(param_1);
+      iVar2 = Building_Routine_0800CCB8(param_1);
       if (iVar2 != 0) {
         iVar4 = iVar4 + 1;
       }
@@ -1119,9 +1119,9 @@ undefined8 func_0800C630(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C660 @ 0x0800C660
+// Function: Building_Routine_0800C660 @ 0x0800C660
 // =============================================================================
-undefined8 func_0800C660(byte *param_1)
+undefined8 Building_Routine_0800C660(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -1135,16 +1135,16 @@ undefined8 func_0800C660(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C678 @ 0x0800C678
+// Function: Building_Routine_0800C678 @ 0x0800C678
 // =============================================================================
-undefined8 func_0800C678(int param_1,uint param_2)
+undefined8 Building_Routine_0800C678(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800C660();
+  uVar1 = Building_Routine_0800C660();
   if (param_2 < uVar1) {
     uVar2 = func_0x0800cd38(param_1 + param_2 * 4 + 0x1d8);
   }
@@ -1155,15 +1155,15 @@ undefined8 func_0800C678(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C6A0 @ 0x0800C6A0
+// Function: Building_Routine_0800C6A0 @ 0x0800C6A0
 // =============================================================================
-undefined8 func_0800C6A0(int param_1,uint param_2)
+undefined8 Building_Routine_0800C6A0(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   if ((param_2 < uVar1) &&
      (uVar1 = (uint)*(ushort *)(param_1 + param_2 * 8 + 0x198) * 0x400000,
      uVar1 < _DAT_0800c6cc || uVar1 - _DAT_0800c6cc == 0)) {
@@ -1176,9 +1176,9 @@ undefined8 func_0800C6A0(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C6D8 @ 0x0800C6D8
+// Function: Building_Routine_0800C6D8 @ 0x0800C6D8
 // =============================================================================
-undefined8 func_0800C6D8(int param_1)
+undefined8 Building_Routine_0800C6D8(int param_1)
 
 {
   uint uVar1;
@@ -1194,15 +1194,15 @@ undefined8 func_0800C6D8(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800C6F0 @ 0x0800C6F0
+// Function: Building_Routine_0800C6F0 @ 0x0800C6F0
 // =============================================================================
-undefined8 func_0800C6F0(short *param_1,undefined4 param_2,uint param_3)
+undefined8 Building_Routine_0800C6F0(short *param_1,undefined4 param_2,uint param_3)
 
 {
   uint uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570(param_2);
+  uVar1 = Barn_GetCowCount(param_2);
   if (uVar1 <= param_3) {
     param_3 = func_0x080d0f4e(param_3);
   }
@@ -1212,18 +1212,18 @@ undefined8 func_0800C6F0(short *param_1,undefined4 param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_0800C720 @ 0x0800C720
+// Function: Building_Routine_0800C720 @ 0x0800C720
 // =============================================================================
-undefined8 func_0800C720(int param_1,uint param_2)
+undefined8 Building_Routine_0800C720(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800C660();
+  uVar1 = Building_Routine_0800C660();
   if (param_2 < uVar1) {
-    uVar2 = func_0800CD58(param_1 + param_2 * 4 + 0x1d8);
+    uVar2 = Building_Routine_0800CD58(param_1 + param_2 * 4 + 0x1d8);
   }
   else {
     uVar2 = 0;
@@ -1232,9 +1232,9 @@ undefined8 func_0800C720(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C76C @ 0x0800C76C
+// Function: Building_Routine_0800C76C @ 0x0800C76C
 // =============================================================================
-undefined4 func_0800C76C(byte *param_1)
+undefined4 Building_Routine_0800C76C(byte *param_1)
 
 {
   byte bVar1;
@@ -1248,9 +1248,9 @@ undefined4 func_0800C76C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800C794 @ 0x0800C794
+// Function: Building_Routine_0800C794 @ 0x0800C794
 // =============================================================================
-undefined4 func_0800C794(ushort *param_1,int param_2)
+undefined4 Building_Routine_0800C794(ushort *param_1,int param_2)
 
 {
   uint *puVar1;
@@ -1269,9 +1269,9 @@ undefined4 func_0800C794(ushort *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800C7D8 @ 0x0800C7D8
+// Function: Building_Routine_0800C7D8 @ 0x0800C7D8
 // =============================================================================
-undefined4 func_0800C7D8(ushort *param_1,uint param_2)
+undefined4 Building_Routine_0800C7D8(ushort *param_1,uint param_2)
 
 {
   ushort uVar1;
@@ -1290,16 +1290,16 @@ undefined4 func_0800C7D8(ushort *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C814 @ 0x0800C814
+// Function: Building_Routine_0800C814 @ 0x0800C814
 // =============================================================================
-undefined4 func_0800C814(uint *param_1,uint param_2)
+undefined4 Building_Routine_0800C814(uint *param_1,uint param_2)
 
 {
   uint uVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   if (param_2 < uVar1) {
     uVar1 = (*param_1 & 0xfffff) >> 0xc;
     uVar2 = 1 << (param_2 & 0xff);
@@ -1311,16 +1311,16 @@ undefined4 func_0800C814(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C850 @ 0x0800C850
+// Function: Building_Routine_0800C850 @ 0x0800C850
 // =============================================================================
-undefined4 func_0800C850(uint *param_1,uint param_2)
+undefined4 Building_Routine_0800C850(uint *param_1,uint param_2)
 
 {
   uint uVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   if (param_2 < uVar1) {
     uVar1 = (*param_1 & 0xfffff) >> 0xc;
     uVar2 = 1 << (param_2 & 0xff);
@@ -1332,18 +1332,18 @@ undefined4 func_0800C850(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C894 @ 0x0800C894
+// Function: Building_Routine_0800C894 @ 0x0800C894
 // =============================================================================
-undefined8 func_0800C894(int param_1,uint param_2)
+undefined8 Building_Routine_0800C894(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   if (param_2 < uVar1) {
-    uVar2 = func_0800CCD0(param_1 + param_2 * 0x30 + 0x18);
+    uVar2 = Building_Routine_0800CCD0(param_1 + param_2 * 0x30 + 0x18);
   }
   else {
     uVar2 = 0;
@@ -1352,9 +1352,9 @@ undefined8 func_0800C894(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C8BC @ 0x0800C8BC
+// Function: Building_Routine_0800C8BC @ 0x0800C8BC
 // =============================================================================
-undefined8 func_0800C8BC(int param_1,undefined4 param_2)
+undefined8 Building_Routine_0800C8BC(int param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -1362,8 +1362,8 @@ undefined8 func_0800C8BC(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   iVar2 = 0;
-  while (iVar2 = func_0800C5F4(param_1,iVar2), -1 < iVar2) {
-    cVar1 = func_0800CCE8(param_1 + iVar2 * 0x30 + 0x18,param_2);
+  while (iVar2 = Building_Routine_0800C5F4(param_1,iVar2), -1 < iVar2) {
+    cVar1 = Building_Routine_0800CCE8(param_1 + iVar2 * 0x30 + 0x18,param_2);
     if (cVar1 != '\0') goto LAB_0800c8f2;
     iVar2 = iVar2 + 1;
   }
@@ -1373,25 +1373,25 @@ LAB_0800c8f2:
 }
 
 // =============================================================================
-// Function: func_0800C8F8 @ 0x0800C8F8
+// Function: Building_Routine_0800C8F8 @ 0x0800C8F8
 // =============================================================================
-undefined4 func_0800C8F8(int param_1,uint param_2)
+undefined4 Building_Routine_0800C8F8(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   if (param_2 < uVar1) {
-    func_0800CD20(param_1 + param_2 * 0x30 + 0x18);
+    Building_Routine_0800CD20(param_1 + param_2 * 0x30 + 0x18);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800C91C @ 0x0800C91C
+// Function: Building_Routine_0800C91C @ 0x0800C91C
 // =============================================================================
-undefined4 func_0800C91C(int param_1,undefined4 param_2)
+undefined4 Building_Routine_0800C91C(int param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -1399,35 +1399,35 @@ undefined4 func_0800C91C(int param_1,undefined4 param_2)
   undefined4 uVar3;
   undefined4 in_lr;
   
-  iVar1 = func_0800C894();
+  iVar1 = Building_Routine_0800C894();
   if (iVar1 != 0) {
     uVar2 = func_0x0809b220();
     if (((*(byte *)(param_1 + 4) & 3) << 8 | (uint)*(byte *)(param_1 + 3)) < uVar2) {
       *(char *)(param_1 + 3) = (char)uVar2;
       *(byte *)(param_1 + 4) = *(byte *)(param_1 + 4) & 0xfc | (byte)(uVar2 >> 8) & 3;
-      uVar3 = func_0809B1F4(iVar1);
-      uVar2 = strlen();
+      uVar3 = Animal_Routine_0809B1F4(iVar1);
+      uVar2 = gba_strlen();
       if (0xc < uVar2) {
         uVar2 = 0xc;
       }
-      memcpy(param_1 + 8,uVar3,uVar2);
+      gba_memcpy(param_1 + 8,uVar3,uVar2);
       *(undefined1 *)(param_1 + 8 + uVar2) = 0;
     }
-    func_0800C8F8(param_1,param_2);
+    Building_Routine_0800C8F8(param_1,param_2);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800C994 @ 0x0800C994
+// Function: Building_Routine_0800C994 @ 0x0800C994
 // =============================================================================
-undefined4 func_0800C994(int param_1,uint param_2)
+undefined4 Building_Routine_0800C994(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0800C660();
+  uVar1 = Building_Routine_0800C660();
   if (param_2 < uVar1) {
     func_0x0800cd78(param_1 + param_2 * 4 + 0x1d8);
   }
@@ -1435,16 +1435,16 @@ undefined4 func_0800C994(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C9B8 @ 0x0800C9B8
+// Function: Building_Routine_0800C9B8 @ 0x0800C9B8
 // =============================================================================
-undefined4 func_0800C9B8(int param_1,uint param_2)
+undefined4 Building_Routine_0800C9B8(int param_1,uint param_2)
 
 {
   uint uVar1;
   ushort *puVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800C570();
+  uVar1 = Barn_GetCowCount();
   if (param_2 < uVar1) {
     puVar2 = (ushort *)(param_1 + param_2 * 8 + 0x198);
     *puVar2 = (ushort)_DAT_0800c9e8 & *puVar2 | 0x234;
@@ -1453,9 +1453,9 @@ undefined4 func_0800C9B8(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800C9EC @ 0x0800C9EC
+// Function: Building_Routine_0800C9EC @ 0x0800C9EC
 // =============================================================================
-undefined4 func_0800C9EC(uint *param_1)
+undefined4 Building_Routine_0800C9EC(uint *param_1)
 
 {
   byte bVar1;
@@ -1480,7 +1480,7 @@ undefined4 func_0800C9EC(uint *param_1)
   uVar4 = (uVar4 & _DAT_0800cab0) + (uVar4 >> 4 & _DAT_0800cab0);
   uVar4 = (uVar4 & _DAT_0800cab4) + (uVar4 >> 8 & _DAT_0800cab4) & _DAT_0800cab8;
   *param_1 = uVar7 & _DAT_0800cabc;
-  uStack_28 = func_0800C570(param_1);
+  uStack_28 = Barn_GetCowCount(param_1);
   uVar7 = 0;
   if (uStack_28 != 0) {
     puStack_24 = auStack_30;
@@ -1488,29 +1488,29 @@ undefined4 func_0800C9EC(uint *param_1)
     puVar8 = param_1 + 6;
     do {
       cVar2 = func_0x0800ccac(puVar8);
-      if ((cVar2 == '\0') && (iVar5 = func_0800CCD0(puVar8), iVar5 != 0)) {
+      if ((cVar2 == '\0') && (iVar5 = Building_Routine_0800CCD0(puVar8), iVar5 != 0)) {
         if (((int)((uint)*(byte *)((int)param_1 + 2) * 0x8000000) < 0) &&
            (uVar7 == *(byte *)((int)param_1 + 2) >> 5)) {
 LAB_0800caa0:
-          func_0809BCF0(iVar5);
+          Animal_Routine_0809BCF0(iVar5);
         }
         else {
           cVar2 = func_0x0809b4fc(iVar5);
           if (cVar2 == '\0') {
-            iVar6 = func_0809BCAC(iVar5);
+            iVar6 = Animal_Routine_0809BCAC(iVar5);
             if (iVar6 == 0) goto LAB_0800caa0;
-            if ((uVar4 != 0) && (func_0809B114(&uStack_38,iVar5), (uStack_38 & 0x3ff) == 0x11)) {
+            if ((uVar4 != 0) && (Animal_Routine_0809B114(&uStack_38,iVar5), (uStack_38 & 0x3ff) == 0x11)) {
               uVar4 = uVar4 - 1;
-              func_0809BCF0(iVar5);
+              Animal_Routine_0809BCF0(iVar5);
             }
           }
         }
-        func_0809BD38(iVar5);
-        cVar2 = func_0809BCC0(iVar5);
+        Animal_Routine_0809BD38(iVar5);
+        cVar2 = Chicken_GetAffection(iVar5);
         if (cVar2 != '\0') {
-          func_0809B114(puStack_24,iVar5);
-          bVar3 = func_0809BCFC(iVar5);
-          memcpy(&uStack_38,puStack_24,6);
+          Animal_Routine_0809B114(puStack_24,iVar5);
+          bVar3 = Animal_Routine_0809BCFC(iVar5);
+          gba_memcpy(&uStack_38,puStack_24,6);
           bVar1 = uStack_34._2_1_ & 0xf8;
           uStack_34._0_3_ = CONCAT12(bVar1 | bVar3 & 7,(undefined2)uStack_34);
           *puVar9 = uStack_38;
@@ -1522,14 +1522,14 @@ LAB_0800caa0:
       uVar7 = uVar7 + 1;
     } while (uVar7 < uStack_28);
   }
-  uVar4 = func_0800C660(param_1);
+  uVar4 = Building_Routine_0800C660(param_1);
   uVar7 = 0;
   if (uVar4 != 0) {
     param_1 = param_1 + 0x76;
     do {
       cVar2 = func_0x0800cd38(param_1);
       if (cVar2 != '\0') {
-        func_0800CD88(param_1);
+        Building_Routine_0800CD88(param_1);
       }
       param_1 = param_1 + 1;
       uVar7 = uVar7 + 1;
@@ -1539,16 +1539,16 @@ LAB_0800caa0:
 }
 
 // =============================================================================
-// Function: func_0800CB7C @ 0x0800CB7C
+// Function: Building_Routine_0800CB7C @ 0x0800CB7C
 // =============================================================================
-undefined4 func_0800CB7C(int param_1,uint param_2)
+undefined4 Building_Routine_0800CB7C(int param_1,uint param_2)
 
 {
   char cVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  uVar2 = func_0800C570();
+  uVar2 = Barn_GetCowCount();
   if (uVar2 <= param_2) {
     param_2 = func_0x080d0f4e(param_2);
   }
@@ -1560,9 +1560,9 @@ undefined4 func_0800CB7C(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800CBCC @ 0x0800CBCC
+// Function: Building_Routine_0800CBCC @ 0x0800CBCC
 // =============================================================================
-undefined8 func_0800CBCC(int param_1,int param_2)
+undefined8 Building_Routine_0800CBCC(int param_1,int param_2)
 
 {
   ushort uVar1;
@@ -1580,7 +1580,7 @@ undefined8 func_0800CBCC(int param_1,int param_2)
   uint uStack_24;
   undefined4 uStack_20;
   
-  cVar4 = func_0800C720();
+  cVar4 = Building_Routine_0800C720();
   if (cVar4 == '\0') {
     uVar5 = 0xffffffff;
   }
@@ -1600,21 +1600,21 @@ undefined8 func_0800CBCC(int param_1,int param_2)
     uStack_56 = CONCAT11(uStack_56._1_1_ & 3 | (byte)((uStack_20._2_2_ & 0x3f) << 2),(char)uVar1);
     uStack_54 = uVar2 & uStack_54 | uStack_20._2_2_ >> 6;
     uStack_20 = uVar3;
-    memcpy(auStack_60,&uStack_58,6);
+    gba_memcpy(auStack_60,&uStack_58,6);
     uStack_5a = 3;
-    func_0809BC8C(auStack_50,auStack_60,0,0);
+    Animal_Routine_0809BC8C(auStack_50,auStack_60,0,0);
     uVar5 = func_0x080d11e4();
     uVar5 = func_0x080d0ed0(uVar5,10);
-    func_0809B2A8(auStack_50,uVar5);
-    uVar5 = func_0800C8BC(param_1,auStack_50);
+    Animal_Routine_0809B2A8(auStack_50,uVar5);
+    uVar5 = Building_Routine_0800C8BC(param_1,auStack_50);
   }
   return CONCAT44(in_lr,uVar5);
 }
 
 // =============================================================================
-// Function: func_0800CCB8 @ 0x0800CCB8
+// Function: Building_Routine_0800CCB8 @ 0x0800CCB8
 // =============================================================================
-undefined8 func_0800CCB8(byte *param_1)
+undefined8 Building_Routine_0800CCB8(byte *param_1)
 
 {
   byte *pbVar1;
@@ -1628,9 +1628,9 @@ undefined8 func_0800CCB8(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800CCD0 @ 0x0800CCD0
+// Function: Building_Routine_0800CCD0 @ 0x0800CCD0
 // =============================================================================
-undefined8 func_0800CCD0(byte *param_1)
+undefined8 Building_Routine_0800CCD0(byte *param_1)
 
 {
   byte *pbVar1;
@@ -1644,9 +1644,9 @@ undefined8 func_0800CCD0(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800CCE8 @ 0x0800CCE8
+// Function: Building_Routine_0800CCE8 @ 0x0800CCE8
 // =============================================================================
-undefined8 func_0800CCE8(byte *param_1,int param_2)
+undefined8 Building_Routine_0800CCE8(byte *param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -1654,7 +1654,7 @@ undefined8 func_0800CCE8(byte *param_1,int param_2)
   
   if ((*param_1 & 1) == 0) {
     if (param_1 + 4 != (byte *)0x0) {
-      func_080D7C40(param_1 + 4);
+      VTable_Routine_080D7C40(param_1 + 4);
       *(undefined4 *)(param_1 + 0x28) = *(undefined4 *)(param_2 + 0x24);
       *(undefined4 *)(param_1 + 0x2c) = *(undefined4 *)(param_2 + 0x28);
     }
@@ -1668,9 +1668,9 @@ undefined8 func_0800CCE8(byte *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800CD20 @ 0x0800CD20
+// Function: Building_Routine_0800CD20 @ 0x0800CD20
 // =============================================================================
-undefined4 func_0800CD20(byte *param_1)
+undefined4 Building_Routine_0800CD20(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -1682,9 +1682,9 @@ undefined4 func_0800CD20(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800CD40 @ 0x0800CD40
+// Function: Building_Routine_0800CD40 @ 0x0800CD40
 // =============================================================================
-undefined8 func_0800CD40(uint *param_1)
+undefined8 Building_Routine_0800CD40(uint *param_1)
 
 {
   uint uVar1;
@@ -1700,9 +1700,9 @@ undefined8 func_0800CD40(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800CD58 @ 0x0800CD58
+// Function: Building_Routine_0800CD58 @ 0x0800CD58
 // =============================================================================
-void func_0800CD58(byte *param_1)
+void Building_Routine_0800CD58(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -1717,9 +1717,9 @@ void func_0800CD58(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800CD88 @ 0x0800CD88
+// Function: Building_Routine_0800CD88 @ 0x0800CD88
 // =============================================================================
-undefined4 func_0800CD88(byte *param_1)
+undefined4 Building_Routine_0800CD88(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -1731,9 +1731,9 @@ undefined4 func_0800CD88(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800CE74 @ 0x0800CE74
+// Function: Building_Routine_0800CE74 @ 0x0800CE74
 // =============================================================================
-undefined8 func_0800CE74(byte *param_1)
+undefined8 Building_Routine_0800CE74(byte *param_1)
 
 {
   uint *puVar1;
@@ -1751,15 +1751,15 @@ undefined8 func_0800CE74(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800CEA8 @ 0x0800CEA8
+// Function: Building_Routine_0800CEA8 @ 0x0800CEA8
 // =============================================================================
-undefined8 func_0800CEA8(uint *param_1,uint param_2)
+undefined8 Building_Routine_0800CEA8(uint *param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
     uVar1 = -((*param_1 & 0x1fffffff) >> 0xd & 1 << (param_2 & 0xff)) >> 0x1f;
   }
@@ -1770,9 +1770,9 @@ undefined8 func_0800CEA8(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800CED4 @ 0x0800CED4
+// Function: Building_Routine_0800CED4 @ 0x0800CED4
 // =============================================================================
-undefined8 func_0800CED4(int param_1,uint param_2)
+undefined8 Building_Routine_0800CED4(int param_1,uint param_2)
 
 {
   uint uVar1;
@@ -1789,18 +1789,18 @@ undefined8 func_0800CED4(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800CF10 @ 0x0800CF10
+// Function: Building_Routine_0800CF10 @ 0x0800CF10
 // =============================================================================
-undefined8 func_0800CF10(int param_1,uint param_2)
+undefined8 Building_Routine_0800CF10(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
-    uVar2 = func_0800DA2C(param_1 + param_2 * 0x3c + 0x2c);
+    uVar2 = FoodStack_SubtractAmount(param_1 + param_2 * 0x3c + 0x2c);
   }
   else {
     uVar2 = 0;
@@ -1809,18 +1809,18 @@ undefined8 func_0800CF10(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800CF38 @ 0x0800CF38
+// Function: Building_Routine_0800CF38 @ 0x0800CF38
 // =============================================================================
-undefined8 func_0800CF38(int param_1,uint param_2)
+undefined8 Building_Routine_0800CF38(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
-    uVar2 = func_0800DA48(param_1 + param_2 * 0x3c + 0x2c);
+    uVar2 = Article_Construct(param_1 + param_2 * 0x3c + 0x2c);
   }
   else {
     uVar2 = 0;
@@ -1829,18 +1829,18 @@ undefined8 func_0800CF38(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800CF60 @ 0x0800CF60
+// Function: Building_Routine_0800CF60 @ 0x0800CF60
 // =============================================================================
-undefined8 func_0800CF60(int param_1,uint param_2)
+undefined8 Building_Routine_0800CF60(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
-    uVar2 = func_0800DA14(param_1 + param_2 * 0x3c + 0x2c);
+    uVar2 = FoodStack_AddAmount(param_1 + param_2 * 0x3c + 0x2c);
   }
   else {
     uVar2 = 0;
@@ -1849,16 +1849,16 @@ undefined8 func_0800CF60(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800CF88 @ 0x0800CF88
+// Function: Building_Routine_0800CF88 @ 0x0800CF88
 // =============================================================================
-undefined8 func_0800CF88(int param_1,uint param_2)
+undefined8 Building_Routine_0800CF88(int param_1,uint param_2)
 
 {
   char cVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  uVar2 = func_0800CE74();
+  uVar2 = Building_Routine_0800CE74();
   if (param_2 < uVar2) {
     param_1 = param_2 * 0x3c + 0x2c + param_1;
     do {
@@ -1874,9 +1874,9 @@ LAB_0800cfbe:
 }
 
 // =============================================================================
-// Function: func_0800CFC4 @ 0x0800CFC4
+// Function: Building_Routine_0800CFC4 @ 0x0800CFC4
 // =============================================================================
-undefined8 func_0800CFC4(int param_1)
+undefined8 Building_Routine_0800CFC4(int param_1)
 
 {
   uint uVar1;
@@ -1885,13 +1885,13 @@ undefined8 func_0800CFC4(int param_1)
   int iVar4;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   iVar4 = 0;
   uVar3 = 0;
   if (uVar1 != 0) {
     param_1 = param_1 + 0x2c;
     do {
-      iVar2 = func_0800DA2C(param_1);
+      iVar2 = FoodStack_SubtractAmount(param_1);
       if (iVar2 != 0) {
         iVar4 = iVar4 + 1;
       }
@@ -1903,9 +1903,9 @@ undefined8 func_0800CFC4(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800CFF4 @ 0x0800CFF4
+// Function: Building_Routine_0800CFF4 @ 0x0800CFF4
 // =============================================================================
-undefined8 func_0800CFF4(int param_1)
+undefined8 Building_Routine_0800CFF4(int param_1)
 
 {
   uint uVar1;
@@ -1914,13 +1914,13 @@ undefined8 func_0800CFF4(int param_1)
   int iVar4;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   iVar4 = 0;
   uVar3 = 0;
   if (uVar1 != 0) {
     param_1 = param_1 + 0x2c;
     do {
-      iVar2 = func_0800DA48(param_1);
+      iVar2 = Article_Construct(param_1);
       if (iVar2 != 0) {
         iVar4 = iVar4 + 1;
       }

@@ -20,9 +20,9 @@ undefined8 Entity_InitWorldActors(int param_1)
 }
 
 // =============================================================================
-// Function: func_08020038 @ 0x08020038
+// Function: Entity_Routine_08020038 @ 0x08020038
 // =============================================================================
-void func_08020038(int param_1)
+void Entity_Routine_08020038(int param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -35,9 +35,9 @@ void func_08020038(int param_1)
 }
 
 // =============================================================================
-// Function: func_08020080 @ 0x08020080
+// Function: Entity_Routine_08020080 @ 0x08020080
 // =============================================================================
-undefined4 func_08020080(int param_1,int param_2)
+undefined4 Entity_Routine_08020080(int param_1,int param_2)
 
 {
   byte bVar1;
@@ -78,9 +78,9 @@ undefined4 func_08020080(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_080200C4 @ 0x080200C4
+// Function: Entity_Routine_080200C4 @ 0x080200C4
 // =============================================================================
-undefined4 func_080200C4(undefined4 *param_1,undefined2 param_2)
+undefined4 Entity_Routine_080200C4(undefined4 *param_1,undefined2 param_2)
 
 {
   char cVar1;
@@ -102,16 +102,16 @@ undefined4 func_080200C4(undefined4 *param_1,undefined2 param_2)
     }
     uVar3 = puVar5[-1];
 LAB_0802011c:
-    func_08008B6C(uVar3,param_2);
+    HW_Routine_08008B6C(uVar3,param_2);
     *(char *)(param_1 + 0xc) = '\x01';
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08020130 @ 0x08020130
+// Function: Entity_Routine_08020130 @ 0x08020130
 // =============================================================================
-undefined8 func_08020130(int param_1)
+undefined8 Entity_Routine_08020130(int param_1)
 
 {
   char cVar1;
@@ -130,7 +130,7 @@ undefined8 func_08020130(int param_1)
     if (*(short *)(iVar2 + 0x3e) != 0) {
       uVar3 = (uint)(-(int)*(short *)(iVar2 + 0x40) | (int)*(short *)(iVar2 + 0x40)) >> 0x1f;
     }
-    if ((uVar3 == 0) || (cVar1 = func_0805E894(iVar2 + 0x30), cVar1 != '\0')) {
+    if ((uVar3 == 0) || (cVar1 = Animal_Routine_0805E894(iVar2 + 0x30), cVar1 != '\0')) {
       uVar4 = 1;
     }
   }
@@ -138,9 +138,9 @@ undefined8 func_08020130(int param_1)
 }
 
 // =============================================================================
-// Function: func_08020170 @ 0x08020170
+// Function: Entity_Routine_08020170 @ 0x08020170
 // =============================================================================
-undefined4 func_08020170(int param_1,int *param_2)
+undefined4 Entity_Routine_08020170(int param_1,int *param_2)
 
 {
   int iVar1;
@@ -162,13 +162,13 @@ undefined4 func_08020170(int param_1,int *param_2)
     if (0 < iVar6) {
       iVar3 = *param_2;
       if (param_2[10] < iVar3) {
-        func_080AB85C(param_2);
+        NPC_Routine_080AB85C(param_2);
         iVar3 = *param_2;
       }
       if (iVar3 < iVar6) {
         iVar2 = *param_2;
         if (param_2[10] < iVar2) {
-          func_080AB85C(param_2);
+          NPC_Routine_080AB85C(param_2);
           iVar2 = *param_2;
         }
         iVar2 = (iVar7 + iVar2) * 0x10000;
@@ -177,13 +177,13 @@ undefined4 func_08020170(int param_1,int *param_2)
     if (iVar6 < 0) {
       iVar3 = param_2[1];
       if (iVar3 + param_2[10] < 0 != SCARRY4(iVar3,param_2[10])) {
-        func_080AB8D0(param_2);
+        NPC_Routine_080AB8D0(param_2);
         iVar3 = param_2[1];
       }
       if (iVar6 < iVar3) {
         iVar2 = param_2[1];
         if (iVar2 + param_2[10] < 0 != SCARRY4(iVar2,param_2[10])) {
-          func_080AB8D0(param_2);
+          NPC_Routine_080AB8D0(param_2);
           iVar2 = param_2[1];
         }
         iVar2 = (iVar7 + iVar2) * 0x10000;
@@ -192,13 +192,13 @@ undefined4 func_08020170(int param_1,int *param_2)
     if (iVar5 < 0) {
       iVar6 = param_2[2];
       if (iVar6 + param_2[10] < 0 != SCARRY4(iVar6,param_2[10])) {
-        func_080AB948(param_2);
+        NPC_Routine_080AB948(param_2);
         iVar6 = param_2[2];
       }
       if (iVar5 < iVar6) {
         iVar1 = param_2[2];
         if (iVar1 + param_2[10] < 0 != SCARRY4(iVar1,param_2[10])) {
-          func_080AB948(param_2);
+          NPC_Routine_080AB948(param_2);
           iVar1 = param_2[2];
         }
         iVar1 = (iVar4 + iVar1) * 0x10000;
@@ -207,13 +207,13 @@ undefined4 func_08020170(int param_1,int *param_2)
     if (0 < iVar5) {
       iVar6 = param_2[3];
       if (param_2[10] < iVar6) {
-        func_080AB9C4(param_2);
+        NPC_Routine_080AB9C4(param_2);
         iVar6 = param_2[3];
       }
       if (iVar6 < iVar5) {
         iVar1 = param_2[3];
         if (param_2[10] < iVar1) {
-          func_080AB9C4(param_2);
+          NPC_Routine_080AB9C4(param_2);
           iVar1 = param_2[3];
         }
         iVar1 = (iVar4 + iVar1) * 0x10000;
@@ -226,9 +226,9 @@ undefined4 func_08020170(int param_1,int *param_2)
 }
 
 // =============================================================================
-// Function: func_080202A0 @ 0x080202A0
+// Function: Entity_Routine_080202A0 @ 0x080202A0
 // =============================================================================
-void func_080202A0(short *param_1,int param_2)
+void Entity_Routine_080202A0(short *param_1,int param_2)
 
 {
   short sVar1;
@@ -244,9 +244,9 @@ void func_080202A0(short *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08020310 @ 0x08020310
+// Function: Entity_Routine_08020310 @ 0x08020310
 // =============================================================================
-undefined8 func_08020310(int param_1,int *param_2,int param_3,undefined4 param_4)
+undefined8 Entity_Routine_08020310(int param_1,int *param_2,int param_3,undefined4 param_4)
 
 {
   int iVar1;
@@ -254,8 +254,8 @@ undefined8 func_08020310(int param_1,int *param_2,int param_3,undefined4 param_4
   undefined4 in_lr;
   undefined1 auStack_1c [8];
   
-  func_0809B114(auStack_1c,param_3);
-  func_08020038(param_1,param_2,auStack_1c,0x340);
+  Animal_Routine_0809B114(auStack_1c,param_3);
+  Entity_Routine_08020038(param_1,param_2,auStack_1c,0x340);
   *(undefined4 *)(param_1 + 0x14) = _DAT_08020378;
   *(int *)(param_1 + 0x34) = param_3;
   *(undefined4 *)(param_1 + 0x38) = param_4;
@@ -263,40 +263,40 @@ undefined8 func_08020310(int param_1,int *param_2,int param_3,undefined4 param_4
   if ((*(int *)(param_3 + 0x20) == 5) &&
      (iVar1 = func_0x080d3914(param_2,0x4b,*(undefined4 *)(*param_2 + 0x40)), iVar1 != 0)) {
     if (*(short *)(iVar1 + 4) == *(short *)(param_1 + 4)) {
-      func_08038374(iVar1,*(undefined4 *)(param_1 + 8),*(undefined4 *)(param_1 + 0xc),
+      Entity_Routine_08038374(iVar1,*(undefined4 *)(param_1 + 8),*(undefined4 *)(param_1 + 0xc),
                     *(undefined2 *)(param_1 + 0x22),*(undefined1 *)(param_1 + 0x20));
     }
     else {
-      func_08020410(param_1,0);
+      Entity_Routine_08020410(param_1,0);
     }
   }
-  uVar2 = func_08021264(param_1);
-  func_080211E4(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
+  uVar2 = Entity_Routine_08021264(param_1);
+  Entity_Routine_080211E4(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08020410 @ 0x08020410
+// Function: Entity_Routine_08020410 @ 0x08020410
 // =============================================================================
-undefined4 func_08020410(int param_1,uint param_2)
+undefined4 Entity_Routine_08020410(int param_1,uint param_2)
 
 {
   undefined4 in_lr;
   uint uStack_10;
   
   if (*(int *)(*(int *)(param_1 + 0x34) + 0x20) == 5) {
-    func_080212C0(param_1);
+    Entity_Routine_080212C0(param_1);
   }
   uStack_10 = (uStack_10 & _DAT_08020458 | param_2 & 0xffff) & _DAT_0802045c;
   func_0x0809bb48(*(undefined4 *)(param_1 + 0x34),&uStack_10);
-  func_080211E4(param_1,0,*(undefined1 *)(param_1 + 0x20));
+  Entity_Routine_080211E4(param_1,0,*(undefined1 *)(param_1 + 0x20));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08020460 @ 0x08020460
+// Function: Entity_Routine_08020460 @ 0x08020460
 // =============================================================================
-undefined8 func_08020460(int param_1)
+undefined8 Entity_Routine_08020460(int param_1)
 
 {
   undefined4 in_lr;
@@ -305,16 +305,16 @@ undefined8 func_08020460(int param_1)
 }
 
 // =============================================================================
-// Function: func_08020474 @ 0x08020474
+// Function: Entity_Routine_08020474 @ 0x08020474
 // =============================================================================
-undefined4 func_08020474(int param_1)
+undefined4 Entity_Routine_08020474(int param_1)
 
 {
   short sVar1;
   int iVar2;
   undefined4 in_lr;
   
-  func_080204CC();
+  Entity_Routine_080204CC();
   *(undefined1 *)(param_1 + 0x30) = 0;
   if (*(short *)(param_1 + 0x24) == 0) {
     sVar1 = *(short *)(param_1 + 0x26);
@@ -331,26 +331,26 @@ undefined4 func_08020474(int param_1)
 }
 
 // =============================================================================
-// Function: func_080204A8 @ 0x080204A8
+// Function: Entity_Routine_080204A8 @ 0x080204A8
 // =============================================================================
-undefined4 func_080204A8(undefined4 param_1,undefined4 param_2)
+undefined4 Entity_Routine_080204A8(undefined4 param_1,undefined4 param_2)
 
 {
   char cVar1;
   undefined4 in_lr;
   
-  cVar1 = func_08032370();
+  cVar1 = Entity_Routine_08032370();
   if (cVar1 != '\0') {
-    func_080204CC(param_1);
+    Entity_Routine_080204CC(param_1);
   }
-  func_0803242C(param_1,param_2);
+  Entity_Routine_0803242C(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080204CC @ 0x080204CC
+// Function: Entity_Routine_080204CC @ 0x080204CC
 // =============================================================================
-undefined4 func_080204CC(undefined4 *param_1)
+undefined4 Entity_Routine_080204CC(undefined4 *param_1)
 
 {
   short sVar1;
@@ -431,7 +431,7 @@ undefined4 func_080204CC(undefined4 *param_1)
   
   piStack_44 = (int *)*param_1;
   iVar9 = param_1[0xd];
-  iVar5 = func_0809BB34(iVar9);
+  iVar5 = Animal_Routine_0809BB34(iVar9);
   uStack_40 = (uint)*(ushort *)(param_1 + 1);
   func_0x080d3918(&uStack_114,piStack_44,uStack_40,*(undefined4 *)(*piStack_44 + 0x34));
   func_0x080d3914(&uStack_a0,param_1,*(undefined4 *)(param_1[5] + 0xc));
@@ -490,17 +490,17 @@ undefined4 func_080204CC(undefined4 *param_1)
     uStack_ac = 0x20;
     uStack_a0 = uVar8;
     uStack_9c = uVar3;
-    memcpy(&iStack_108,&uStack_d4,0x34);
+    gba_memcpy(&iStack_108,&uStack_d4,0x34);
     if ((iVar6 != 0) && (*(ushort *)(iVar6 + 4) == uStack_40)) {
       func_0x080d3914(auStack_90,iVar6,*(undefined4 *)(*(int *)(iVar6 + 0x14) + 0xc));
-      func_080ABA90(&iStack_108,auStack_90,1);
+      NPC_Routine_080ABA90(&iStack_108,auStack_90,1);
     }
     if ((iVar7 != 0) && (*(ushort *)(iVar7 + 4) == uStack_40)) {
       func_0x080d3914(auStack_88,iVar7,*(undefined4 *)(*(int *)(iVar7 + 0x14) + 0xc));
-      func_080ABA90(&iStack_108,auStack_88,0);
+      NPC_Routine_080ABA90(&iStack_108,auStack_88,0);
     }
-    uVar8 = func_08021264(param_1);
-    func_080211E4(param_1,uVar8,*(undefined1 *)(param_1 + 8));
+    uVar8 = Entity_Routine_08021264(param_1);
+    Entity_Routine_080211E4(param_1,uVar8,*(undefined1 *)(param_1 + 8));
     if ((*(int *)(iVar9 + 0x20) == 5) &&
        ((iStack_34 != 0 ||
         (iStack_34 = func_0x080d3914(piStack_44,0x4b,*(undefined4 *)(*piStack_44 + 0x40)),
@@ -509,17 +509,17 @@ undefined4 func_080204CC(undefined4 *param_1)
       if (*(ushort *)(iStack_34 + 4) != uStack_40) {
         func_0x080210a0();
       }
-      func_08038398(iVar5,*(undefined2 *)((int)param_1 + 0x22),*(undefined1 *)(param_1 + 8));
+      Entity_Routine_08038398(iVar5,*(undefined2 *)((int)param_1 + 0x22),*(undefined1 *)(param_1 + 8));
     }
     goto SUB_080210a0;
   }
   if ((iVar6 != 0) && (*(ushort *)(iVar6 + 4) == uStack_40)) {
     func_0x080d3914(auStack_80,iVar6,*(undefined4 *)(*(int *)(iVar6 + 0x14) + 0xc));
-    func_080ABA90(&iStack_108,auStack_80,1);
+    NPC_Routine_080ABA90(&iStack_108,auStack_80,1);
   }
   if ((iVar7 != 0) && (*(ushort *)(iVar7 + 4) == uStack_40)) {
     func_0x080d3914(auStack_78,iVar7,*(undefined4 *)(*(int *)(iVar7 + 0x14) + 0xc));
-    func_080ABA90(&iStack_108,auStack_78,0);
+    NPC_Routine_080ABA90(&iStack_108,auStack_78,0);
   }
   if ((*pcStack_24 == '\0') && (iVar5 == 1)) {
     iVar5 = (int)*(short *)((int)param_1 + 10);
@@ -530,11 +530,11 @@ undefined4 func_080204CC(undefined4 *param_1)
     iStack_2c = iVar7;
     if (0 < iVar16) {
       if (iStack_e0 < iStack_108) {
-        func_080AB85C(&iStack_108);
+        NPC_Routine_080AB85C(&iStack_108);
       }
       if (iStack_108 == 0) {
         if (iStack_e0 < 0) {
-          func_080AB85C(&iStack_108);
+          NPC_Routine_080AB85C(&iStack_108);
         }
         if (cStack_f8 != '\0') {
           iVar7 = iVar7 + iStack_38;
@@ -543,11 +543,11 @@ undefined4 func_080204CC(undefined4 *param_1)
     }
     if (iVar16 < 0) {
       if (iStack_104 + iStack_e0 < 0 != SCARRY4(iStack_104,iStack_e0)) {
-        func_080AB8D0(&iStack_108);
+        NPC_Routine_080AB8D0(&iStack_108);
       }
       if (iStack_104 == 0) {
         if (iStack_e0 < 0) {
-          func_080AB8D0(&iStack_108);
+          NPC_Routine_080AB8D0(&iStack_108);
         }
         if (cStack_f7 != '\0') {
           iVar7 = iVar7 - iStack_38;
@@ -556,11 +556,11 @@ undefined4 func_080204CC(undefined4 *param_1)
     }
     if (iVar13 < 0) {
       if (iStack_100 + iStack_e0 < 0 != SCARRY4(iStack_100,iStack_e0)) {
-        func_080AB948(&iStack_108);
+        NPC_Routine_080AB948(&iStack_108);
       }
       if (iStack_100 == 0) {
         if (iStack_e0 < 0) {
-          func_080AB948(&iStack_108);
+          NPC_Routine_080AB948(&iStack_108);
         }
         if (cStack_f6 != '\0') {
           iVar5 = iVar5 - iStack_3c;
@@ -569,11 +569,11 @@ undefined4 func_080204CC(undefined4 *param_1)
     }
     if (0 < iVar13) {
       if (iStack_e0 < iStack_fc) {
-        func_080AB9C4(&iStack_108);
+        NPC_Routine_080AB9C4(&iStack_108);
       }
       if (iStack_fc == 0) {
         if (iStack_e0 < 0) {
-          func_080AB9C4(&iStack_108);
+          NPC_Routine_080AB9C4(&iStack_108);
         }
         if (cStack_f5 != '\0') {
           iVar5 = iVar5 + iStack_3c;
@@ -584,12 +584,12 @@ undefined4 func_080204CC(undefined4 *param_1)
       *(short *)(param_1 + 0xf) = (short)iVar5;
       *(short *)((int)param_1 + 0x3e) = (short)iVar7;
       *pcStack_24 = '\x01';
-      func_080211E4(param_1,0xc,*(undefined1 *)(param_1 + 8));
+      Entity_Routine_080211E4(param_1,0xc,*(undefined1 *)(param_1 + 8));
       if ((*(int *)(iVar9 + 0x20) == 5) &&
          (((iStack_34 != 0 ||
            (iStack_34 = func_0x080d3914(piStack_44,0x4b,*(undefined4 *)(*piStack_44 + 0x40)),
            iStack_34 != 0)) && (*(ushort *)(iStack_34 + 4) == uStack_40)))) {
-        func_08038398(iStack_34,*(undefined2 *)((int)param_1 + 0x22),*(undefined1 *)(param_1 + 8));
+        Entity_Routine_08038398(iStack_34,*(undefined2 *)((int)param_1 + 0x22),*(undefined1 *)(param_1 + 8));
       }
     }
   }
@@ -604,7 +604,7 @@ undefined4 func_080204CC(undefined4 *param_1)
       bVar2 = false;
       if (iVar5 < 0) {
         if (iStack_100 + iStack_e0 < 0 != SCARRY4(iStack_100,iStack_e0)) {
-          func_080AB948(&iStack_108);
+          NPC_Routine_080AB948(&iStack_108);
         }
         if (iStack_100 < -0xf) goto LAB_08020902;
 LAB_08020956:
@@ -614,19 +614,19 @@ LAB_08020956:
 LAB_08020902:
         if (0 < iVar5) {
           if (iStack_e0 < iStack_fc) {
-            func_080AB9C4(&iStack_108);
+            NPC_Routine_080AB9C4(&iStack_108);
           }
           if (iStack_fc < 0x10) goto LAB_08020956;
         }
         if (iVar7 < 0) {
           if (iStack_104 + iStack_e0 < 0 != SCARRY4(iStack_104,iStack_e0)) {
-            func_080AB8D0(&iStack_108);
+            NPC_Routine_080AB8D0(&iStack_108);
           }
           if (-0x10 < iStack_104) goto LAB_08020956;
         }
         if (0 < iVar7) {
           if (iStack_e0 < iStack_108) {
-            func_080AB85C(&iStack_108);
+            NPC_Routine_080AB85C(&iStack_108);
           }
           if (iStack_108 < 0x10) goto LAB_08020956;
         }
@@ -642,29 +642,29 @@ LAB_08020a48:
       goto SUB_080210a0;
     }
     sVar12 = 0;
-    if ((*pcStack_24 != '\0') || (cVar4 = func_08020130(param_1), cVar4 == '\0')) goto LAB_08020a48;
-    iVar5 = func_0809BB34(iVar9);
+    if ((*pcStack_24 != '\0') || (cVar4 = Entity_Routine_08020130(param_1), cVar4 == '\0')) goto LAB_08020a48;
+    iVar5 = Animal_Routine_0809BB34(iVar9);
     if ((iVar5 != 1) ||
        ((iVar5 = func_0x080d3914(piStack_44,0x2d,*(undefined4 *)(*piStack_44 + 0x40)), iVar5 == 0 ||
         (*(ushort *)(iVar5 + 4) != uStack_40)))) {
       iVar5 = func_0x080d3910(piStack_44,*(undefined4 *)(*piStack_44 + 0x144));
       bVar15 = *(byte *)(iVar5 + 10);
-      iVar5 = func_0809BB34(iVar9);
+      iVar5 = Animal_Routine_0809BB34(iVar9);
       iVar7 = (uint)(0xe < (bVar15 & 0x1f) - 6) * 0x68 + iVar5 * 0x34 + _DAT_08020a50;
-      iVar5 = func_080AB82C(iVar7,0xd);
+      iVar5 = NPC_Routine_080AB82C(iVar7,0xd);
       iVar7 = iVar7 + iVar5 * 4;
-      sVar12 = func_080AB788((uint)*(byte *)(iVar7 + 2) * 0x3c);
+      sVar12 = NPC_Routine_080AB788((uint)*(byte *)(iVar7 + 2) * 0x3c);
       sVar12 = (ushort)*(byte *)(iVar7 + 1) * 0x3c + sVar12;
       uVar14 = (uint)*(byte *)(param_1 + 8);
-      iVar7 = func_080AB788(4);
+      iVar7 = NPC_Routine_080AB788(4);
       if ((iVar7 != 0) && (iVar7 != 3)) {
-        uVar14 = func_080AB7A4(uVar14);
+        uVar14 = NPC_Routine_080AB7A4(uVar14);
       }
       *(char *)(iVar9 + 0x26) = (char)iVar5;
-      func_080211E4(param_1,iVar5,uVar14);
+      Entity_Routine_080211E4(param_1,iVar5,uVar14);
       goto LAB_08020a48;
     }
-    func_080200C4(param_1,0xa9);
+    Entity_Routine_080200C4(param_1,0xa9);
     uStack_70 = uStack_70 & _DAT_080209c0 & _DAT_080209c4;
     func_0x0809bb9c(iVar9);
     goto LAB_08020fd6;
@@ -700,10 +700,10 @@ LAB_08020a48:
       }
       if (uVar11 == 0) {
 LAB_08020ae4:
-        uVar8 = func_080ABC40(iVar13,iVar7,(int)sVar12,(int)sVar1,&iStack_108,
+        uVar8 = NPC_Routine_080ABC40(iVar13,iVar7,(int)sVar12,(int)sVar1,&iStack_108,
                               *(undefined1 *)(param_1 + 8));
-        func_080211E4(param_1,2,uVar8);
-        iVar5 = func_080AB788(0x1e);
+        Entity_Routine_080211E4(param_1,2,uVar8);
+        iVar5 = NPC_Routine_080AB788(0x1e);
         uVar11 = iVar5 + 1;
         *(short *)(iVar9 + 0x28) = sVar12;
         *(short *)(iVar9 + 0x2a) = sVar1;
@@ -755,19 +755,19 @@ LAB_08020bdc:
       }
       if ((iVar6 != 0) && (*(ushort *)(iVar6 + 4) == uStack_40)) {
         if (uVar11 == 0) {
-          uVar8 = func_080ABE58((int)*(short *)((int)param_1 + 10),
+          uVar8 = NPC_Routine_080ABE58((int)*(short *)((int)param_1 + 10),
                                 (int)*(short *)((int)param_1 + 0xe),(int)*(short *)(iVar6 + 10),
                                 (int)*(short *)(iVar6 + 0xe),&iStack_108,
                                 *(undefined1 *)(param_1 + 8));
-          func_080211E4(param_1,2,uVar8);
-          iVar5 = func_080AB788(0x1e);
+          Entity_Routine_080211E4(param_1,2,uVar8);
+          iVar5 = NPC_Routine_080AB788(0x1e);
           uVar11 = iVar5 + 1;
         }
         *(short *)(iVar9 + 0x24) = (short)uVar14;
         goto LAB_08020bdc;
       }
     }
-    func_080323C8(param_1);
+    Entity_Routine_080323C8(param_1);
     uStack_68 = (uStack_68 & _DAT_08020c0c | 0xb4) & _DAT_08020c10;
     break;
   case 0x8020c14:
@@ -792,7 +792,7 @@ LAB_08020d1a:
     iStack_34 = func_0x080d3914(piStack_44,0x4b,*(undefined4 *)(*piStack_44 + 0x40));
     if ((iStack_34 == 0) || (*(ushort *)(iStack_34 + 4) != uStack_40)) {
       if (uVar11 == 0) {
-        func_080200C4(param_1,0xaa);
+        Entity_Routine_080200C4(param_1,0xaa);
         goto LAB_08020d1a;
       }
       goto LAB_08020d0c;
@@ -809,10 +809,10 @@ LAB_08020d1a:
 LAB_08020c8e:
       if (uVar11 == 0) {
 LAB_08020cb2:
-        uVar8 = func_080ABC40(iVar6,iVar7,(int)sVar12,(int)sVar1,&iStack_108,
+        uVar8 = NPC_Routine_080ABC40(iVar6,iVar7,(int)sVar12,(int)sVar1,&iStack_108,
                               *(undefined1 *)(param_1 + 8));
-        func_080211E4(param_1,2,uVar8);
-        iVar5 = func_080AB788(0x1e);
+        Entity_Routine_080211E4(param_1,2,uVar8);
+        iVar5 = NPC_Routine_080AB788(0x1e);
         uVar11 = iVar5 + 1;
         *(short *)(iVar9 + 0x28) = sVar12;
         *(short *)(iVar9 + 0x2a) = sVar1;
@@ -840,7 +840,7 @@ LAB_08020d0c:
       iVar5 = -iVar5;
     }
     if (7 < iVar5) goto LAB_08020c8e;
-    uVar14 = func_080AB788(0x78);
+    uVar14 = NPC_Routine_080AB788(0x78);
     uStack_64 = uStack_64 & _DAT_08020d04 | uVar14 & 0xffff;
     func_0x0809bb80(iVar9);
     goto LAB_08020fd6;
@@ -852,14 +852,14 @@ LAB_08020d0c:
     }
     if ((iStack_34 != 0) && (*(ushort *)(iStack_34 + 4) == uStack_40)) {
       if (uVar14 == 0) {
-        func_080200C4(param_1,0xa9);
+        Entity_Routine_080200C4(param_1,0xa9);
         iVar5 = func_0x0809b228(iVar9);
         iVar5 = func_0x080d0eda(iVar5 * 0x3c0,0xfb);
         uStack_5c = iVar5 + 0x1e0U & 0xffff;
         func_0x0809bb8c(param_1[0xd]);
-        uVar8 = func_08021264(param_1);
-        func_080211E4(param_1,uVar8,*(undefined1 *)(param_1 + 8));
-        func_08038374(iStack_34,param_1[2],param_1[3],*(undefined2 *)((int)param_1 + 0x22),
+        uVar8 = Entity_Routine_08021264(param_1);
+        Entity_Routine_080211E4(param_1,uVar8,*(undefined1 *)(param_1 + 8));
+        Entity_Routine_08038374(iStack_34,param_1[2],param_1[3],*(undefined2 *)((int)param_1 + 0x22),
                       *(undefined1 *)(param_1 + 8));
       }
       else {
@@ -867,7 +867,7 @@ LAB_08020d0c:
       }
       goto SUB_080210a0;
     }
-    func_080200C4(param_1,0xaa);
+    Entity_Routine_080200C4(param_1,0xaa);
     uStack_54 = (uStack_54 & _DAT_08020ddc | 0xb4) & _DAT_08020de0;
     break;
   case 0x8020de4:
@@ -887,7 +887,7 @@ LAB_08020d0c:
     }
     if ((iStack_34 == 0) || (*(ushort *)(iStack_34 + 4) != uStack_40)) {
       if (uVar11 != 0) goto LAB_08020edc;
-      func_080200C4(param_1,0xaa);
+      Entity_Routine_080200C4(param_1,0xaa);
     }
     else if (((uVar14 != 0) && (iVar6 != 0)) && (*(ushort *)(iVar6 + 4) == uStack_40)) {
       iVar13 = (int)*(short *)((int)param_1 + 10);
@@ -904,17 +904,17 @@ LAB_08020d0c:
           iVar5 = -iVar5;
         }
         if (iVar5 < 0x10) {
-          func_080200C4(param_1,0xa9);
+          Entity_Routine_080200C4(param_1,0xa9);
           goto LAB_08020eea;
         }
       }
       if (uVar11 == 0) {
 LAB_08020e90:
-        uVar8 = func_080ABC40(iVar13,iVar7,iStack_28,(int)sVar12,&iStack_108,
+        uVar8 = NPC_Routine_080ABC40(iVar13,iVar7,iStack_28,(int)sVar12,&iStack_108,
                               *(undefined1 *)(param_1 + 8));
-        func_080211E4(param_1,2,uVar8);
-        func_08038398(iStack_34,*(undefined2 *)((int)param_1 + 0x22),*(undefined1 *)(param_1 + 8));
-        iVar5 = func_080AB788(0x1e);
+        Entity_Routine_080211E4(param_1,2,uVar8);
+        Entity_Routine_08038398(iStack_34,*(undefined2 *)((int)param_1 + 0x22),*(undefined1 *)(param_1 + 8));
+        iVar5 = NPC_Routine_080AB788(0x1e);
         uVar11 = iVar5 + 1;
         *(undefined2 *)(iVar9 + 0x28) = (undefined2)iStack_28;
         *(short *)(iVar9 + 0x2a) = sVar12;
@@ -938,7 +938,7 @@ LAB_08020edc:
       goto SUB_080210a0;
     }
 LAB_08020eea:
-    func_080212C0(param_1);
+    Entity_Routine_080212C0(param_1);
     uStack_50 = (uStack_50 & _DAT_08020f04 | 0xb4) & _DAT_08020f08;
     break;
   case 0x8020f0c:
@@ -954,8 +954,8 @@ LAB_08020eea:
     if ((iVar5 == 0) || (*(ushort *)(iVar5 + 4) != uStack_40)) {
       uStack_48 = (uStack_48 & _DAT_08021104 | 0xb4) & _DAT_08021108;
       func_0x0809bb48(iVar9);
-      uVar8 = func_08021264(param_1);
-      func_080211E4(param_1,uVar8,*(undefined1 *)(param_1 + 8));
+      uVar8 = Entity_Routine_08021264(param_1);
+      Entity_Routine_080211E4(param_1,uVar8,*(undefined1 *)(param_1 + 8));
       goto SUB_080210a0;
     }
     iVar7 = (int)*(short *)((int)param_1 + 10);
@@ -970,17 +970,17 @@ LAB_08020eea:
           iVar5 = -iVar5;
         }
         if (iVar5 < 0x10) {
-          func_080200C4(param_1,0xd2);
-          func_080211E4(param_1,0xb,*(undefined1 *)(param_1 + 8));
+          Entity_Routine_080200C4(param_1,0xd2);
+          Entity_Routine_080211E4(param_1,0xb,*(undefined1 *)(param_1 + 8));
           *(undefined1 *)(iVar9 + 0x26) = 1;
           *(undefined2 *)(iVar9 + 0x24) = 0x24;
           goto SUB_080210a0;
         }
       }
       if (uVar14 == 0) {
-        uVar8 = func_080ABC40(iVar7);
-        func_080211E4(param_1,2,uVar8);
-        iVar5 = func_080AB788(0x1e);
+        uVar8 = NPC_Routine_080ABC40(iVar7);
+        Entity_Routine_080211E4(param_1,2,uVar8);
+        iVar5 = NPC_Routine_080AB788(0x1e);
         uVar14 = iVar5 + 1;
       }
       *(undefined2 *)(iVar9 + 0x24) = (short)uVar14;
@@ -1002,15 +1002,15 @@ LAB_08020eea:
           func_0x080d3910(iVar5,*(undefined4 *)(*(int *)(iVar5 + 0x14) + 0x80));
         }
       }
-      uVar14 = func_080AB788(0xfb);
+      uVar14 = NPC_Routine_080AB788(0xfb);
       iVar5 = func_0x0809b374(iVar9);
       if (uVar14 < 0xfbU - iVar5) {
-        uVar14 = func_080AB788(0xb4);
+        uVar14 = NPC_Routine_080AB788(0xb4);
         uStack_4c = (uStack_4c & _DAT_08020fec | uVar14 & 0xffff) & _DAT_08020ff0;
         break;
       }
       *(undefined1 *)(iVar9 + 0x26) = 0;
-      iVar5 = func_080AB788(0x1e);
+      iVar5 = NPC_Routine_080AB788(0x1e);
       uVar14 = iVar5 + 1;
     }
     *(undefined2 *)(iVar9 + 0x24) = (short)uVar14;
@@ -1018,8 +1018,8 @@ LAB_08020eea:
   }
   func_0x0809bb48(iVar9);
 LAB_08020fd6:
-  uVar8 = func_08021264(param_1);
-  func_080211E4(param_1,uVar8,*(undefined1 *)(param_1 + 8));
+  uVar8 = Entity_Routine_08021264(param_1);
+  Entity_Routine_080211E4(param_1,uVar8,*(undefined1 *)(param_1 + 8));
 SUB_080210a0:
   if (((param_1[6] != 0) || (param_1[7] != 0)) &&
      ((uStack_40 == 2 ||
@@ -1029,7 +1029,7 @@ SUB_080210a0:
     if (*pcStack_24 != '\0') {
       piVar10 = (int *)0x0;
     }
-    func_08020170(param_1,piVar10);
+    Entity_Routine_08020170(param_1,piVar10);
   }
   if (((*(int *)(iVar9 + 0x20) == 5) && (iStack_34 != 0)) &&
      (*(ushort *)(iStack_34 + 4) == uStack_40)) {
@@ -1040,9 +1040,9 @@ SUB_080210a0:
 }
 
 // =============================================================================
-// Function: func_0802110C @ 0x0802110C
+// Function: Entity_Routine_0802110C @ 0x0802110C
 // =============================================================================
-undefined8 func_0802110C(int param_1,int param_2)
+undefined8 Entity_Routine_0802110C(int param_1,int param_2)
 
 {
   int iVar1;
@@ -1051,7 +1051,7 @@ undefined8 func_0802110C(int param_1,int param_2)
   
   iVar1 = _DAT_0802112c;
   param_2 = param_2 * 2;
-  iVar2 = func_0809BB34(*(undefined4 *)(param_1 + 0x34));
+  iVar2 = Animal_Routine_0809BB34(*(undefined4 *)(param_1 + 0x34));
   if (iVar2 == 1) {
     param_2 = param_2 + 0x1a;
   }
@@ -1059,9 +1059,9 @@ undefined8 func_0802110C(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08021130 @ 0x08021130
+// Function: Entity_Routine_08021130 @ 0x08021130
 // =============================================================================
-undefined8 func_08021130(int param_1,uint param_2)
+undefined8 Entity_Routine_08021130(int param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -1114,9 +1114,9 @@ LAB_080211cc:
 }
 
 // =============================================================================
-// Function: func_080211E4 @ 0x080211E4
+// Function: Entity_Routine_080211E4 @ 0x080211E4
 // =============================================================================
-undefined4 func_080211E4(int param_1,uint param_2,uint param_3)
+undefined4 Entity_Routine_080211E4(int param_1,uint param_2,uint param_3)
 
 {
   uint uVar1;
@@ -1127,25 +1127,25 @@ undefined4 func_080211E4(int param_1,uint param_2,uint param_3)
   if ((param_2 != 0xc) && (*(char *)(param_1 + 0x40) != '\0')) {
     param_2 = 0xc;
   }
-  uVar1 = func_0802110C(param_1,param_2);
+  uVar1 = Entity_Routine_0802110C(param_1,param_2);
   if (*(ushort *)(param_1 + 0x22) != uVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   if (*(byte *)(param_1 + 0x20) != param_3) {
-    func_08032198(param_1,param_3);
+    Entity_Routine_08032198(param_1,param_3);
   }
-  uVar2 = func_08021130(param_1,param_2);
-  func_08020080(param_1,uVar2);
+  uVar2 = Entity_Routine_08021130(param_1,param_2);
+  Entity_Routine_08020080(param_1,uVar2);
   if (param_2 != *(byte *)(param_1 + 0x41)) {
     iVar3 = -1;
     if (param_2 == 8) {
       iVar3 = 8;
     }
     if (iVar3 < 0) {
-      func_080323C8(param_1);
+      Entity_Routine_080323C8(param_1);
     }
     else {
-      func_08032384(param_1,iVar3,1);
+      Entity_Routine_08032384(param_1,iVar3,1);
     }
   }
   *(byte *)(param_1 + 0x41) = (byte)param_2;
@@ -1153,9 +1153,9 @@ undefined4 func_080211E4(int param_1,uint param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_08021264 @ 0x08021264
+// Function: Entity_Routine_08021264 @ 0x08021264
 // =============================================================================
-undefined8 func_08021264(int param_1)
+undefined8 Entity_Routine_08021264(int param_1)
 
 {
   uint uVar1;
@@ -1185,9 +1185,9 @@ case_0802129C:
 }
 
 // =============================================================================
-// Function: func_080212C0 @ 0x080212C0
+// Function: Entity_Routine_080212C0 @ 0x080212C0
 // =============================================================================
-undefined4 func_080212C0(undefined4 *param_1)
+undefined4 Entity_Routine_080212C0(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -1245,17 +1245,17 @@ LAB_08021382:
       iVar10 = iVar10 + -1;
       if (iVar10 < 0) break;
       func_0x080d3914(auStack_28,iVar3,*(undefined4 *)(*(int *)(iVar3 + 0x14) + 0xc));
-      cVar2 = func_080AC070(auStack_34,auStack_28);
+      cVar2 = NPC_Routine_080AC070(auStack_34,auStack_28);
     } while (cVar2 != '\0');
-    func_080384FC(iVar3);
+    Entity_Routine_080384FC(iVar3);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080213B0 @ 0x080213B0
+// Function: Entity_Routine_080213B0 @ 0x080213B0
 // =============================================================================
-undefined4 func_080213B0(int param_1)
+undefined4 Entity_Routine_080213B0(int param_1)
 
 {
   int iVar1;
@@ -1265,25 +1265,25 @@ undefined4 func_080213B0(int param_1)
   
   if (*(char *)(param_1 + 0x40) == '\0') {
     if (*(int *)(*(int *)(param_1 + 0x34) + 0x20) == 5) {
-      func_080212C0(param_1);
+      Entity_Routine_080212C0(param_1);
     }
-    iVar1 = func_080AB788(0x78);
+    iVar1 = NPC_Routine_080AB788(0x78);
     uStack_c = ((uStack_c & _DAT_08021434 | iVar1 + 0xf0U & 0xffff) & _DAT_08021438 | 0x3c0000) &
                _DAT_0802143c & _DAT_08021440;
     func_0x0809bb64(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-    uVar2 = func_08021264(param_1);
-    func_080211E4(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
-    func_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
-    func_08032384(param_1,2,0);
-    func_080200C4(param_1,0xaa);
+    uVar2 = Entity_Routine_08021264(param_1);
+    Entity_Routine_080211E4(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
+    Animal_Routine_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
+    Entity_Routine_08032384(param_1,2,0);
+    Entity_Routine_080200C4(param_1,0xaa);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08021444 @ 0x08021444
+// Function: Entity_Routine_08021444 @ 0x08021444
 // =============================================================================
-undefined4 func_08021444(int param_1,ushort *param_2)
+undefined4 Entity_Routine_08021444(int param_1,ushort *param_2)
 
 {
   int iVar1;
@@ -1305,14 +1305,14 @@ undefined4 func_08021444(int param_1,ushort *param_2)
     ;
     if (iVar5 * iVar5 + iVar4 * iVar4 <= iVar2 * iVar2) {
       if (*(int *)(*(int *)(param_1 + 0x34) + 0x20) == 5) {
-        func_080212C0(param_1);
+        Entity_Routine_080212C0(param_1);
       }
       iVar1 = func_0x080d0eda(iVar1 * 0x3c0,0xfb);
       auStack_20[0] = iVar1 + 0x1e0U & 0xffff;
       func_0x0809bb54(*(undefined4 *)(param_1 + 0x34),auStack_20);
       if (*(char *)(param_1 + 0x40) == '\0') {
-        uVar3 = func_08021264(param_1);
-        func_080211E4(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
+        uVar3 = Entity_Routine_08021264(param_1);
+        Entity_Routine_080211E4(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
       }
       func_0x0809b3bc(*(undefined4 *)(param_1 + 0x34));
     }
@@ -1321,9 +1321,9 @@ undefined4 func_08021444(int param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_0802151C @ 0x0802151C
+// Function: Entity_Routine_0802151C @ 0x0802151C
 // =============================================================================
-undefined4 func_0802151C(int param_1,ushort *param_2)
+undefined4 Entity_Routine_0802151C(int param_1,ushort *param_2)
 
 {
   int iVar1;
@@ -1334,7 +1334,7 @@ undefined4 func_0802151C(int param_1,ushort *param_2)
   undefined4 in_lr;
   uint auStack_20 [2];
   
-  iVar1 = func_0809BB34(*(undefined4 *)(param_1 + 0x34));
+  iVar1 = Animal_Routine_0809BB34(*(undefined4 *)(param_1 + 0x34));
   if ((iVar1 == 1) && ((*param_2 & 0x3ff) == *(ushort *)(param_1 + 4))) {
     iVar1 = func_0x0809b374(*(undefined4 *)(param_1 + 0x34));
     iVar2 = Entity_InitWorldActors();
@@ -1344,16 +1344,16 @@ undefined4 func_0802151C(int param_1,ushort *param_2)
                         (ushort)(*(byte *)((int)param_2 + 3) >> 2)) - (int)*(short *)(param_1 + 0xe)
     ;
     if (iVar5 * iVar5 + iVar4 * iVar4 <= iVar2 * iVar2) {
-      func_080200C4(param_1,0xa9);
+      Entity_Routine_080200C4(param_1,0xa9);
       if (*(int *)(*(int *)(param_1 + 0x34) + 0x20) == 5) {
-        func_080212C0(param_1);
+        Entity_Routine_080212C0(param_1);
       }
       iVar1 = func_0x080d0eda(iVar1 * 0x3c0,0xfb);
       auStack_20[0] = iVar1 + 0x1e0U & 0xffff;
       func_0x0809bb70(*(undefined4 *)(param_1 + 0x34),auStack_20);
       if (*(char *)(param_1 + 0x40) == '\0') {
-        uVar3 = func_08021264(param_1);
-        func_080211E4(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
+        uVar3 = Entity_Routine_08021264(param_1);
+        Entity_Routine_080211E4(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
       }
       func_0x0809b3b0(*(undefined4 *)(param_1 + 0x34));
     }
@@ -1362,9 +1362,9 @@ undefined4 func_0802151C(int param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_080215FC @ 0x080215FC
+// Function: Entity_Routine_080215FC @ 0x080215FC
 // =============================================================================
-void func_080215FC(short *param_1,int param_2)
+void Entity_Routine_080215FC(short *param_1,int param_2)
 
 {
   short sVar1;
@@ -1380,9 +1380,9 @@ void func_080215FC(short *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08021620 @ 0x08021620
+// Function: Entity_Routine_08021620 @ 0x08021620
 // =============================================================================
-undefined8 func_08021620(int param_1)
+undefined8 Entity_Routine_08021620(int param_1)
 
 {
   undefined4 uVar1;
@@ -1398,9 +1398,9 @@ undefined8 func_08021620(int param_1)
 }
 
 // =============================================================================
-// Function: func_08021634 @ 0x08021634
+// Function: Entity_Routine_08021634 @ 0x08021634
 // =============================================================================
-undefined8 func_08021634(int param_1)
+undefined8 Entity_Routine_08021634(int param_1)
 
 {
   undefined4 uVar1;
@@ -1409,13 +1409,13 @@ undefined8 func_08021634(int param_1)
   int iVar4;
   undefined4 in_lr;
   
-  uVar1 = func_0809BB34(*(undefined4 *)(param_1 + 0x34));
-  uVar2 = func_080005D4(0x8c);
+  uVar1 = Animal_Routine_0809BB34(*(undefined4 *)(param_1 + 0x34));
+  uVar2 = Dispatcher_Routine_080005D4(0x8c);
   uVar3 = func_0x0802161c(uVar1);
-  uVar1 = func_08021620(uVar1);
-  iVar4 = func_080324BC(uVar2,param_1,2,6,uVar3,uVar1,0,0);
+  uVar1 = Entity_Routine_08021620(uVar1);
+  iVar4 = Entity_Routine_080324BC(uVar2,param_1,2,6,uVar3,uVar1,0,0);
   if (*(char *)(param_1 + 0x41) == '\b') {
-    func_0805E860(iVar4 + 0x70,8);
+    Animal_Routine_0805E860(iVar4 + 0x70,8);
     *(undefined1 *)(iVar4 + 0x84) = 1;
     *(undefined1 *)(iVar4 + 0x86) = 0;
     *(undefined1 *)(iVar4 + 0x87) = 1;
@@ -1425,9 +1425,9 @@ undefined8 func_08021634(int param_1)
 }
 
 // =============================================================================
-// Function: func_080216BC @ 0x080216BC
+// Function: Entity_Routine_080216BC @ 0x080216BC
 // =============================================================================
-undefined8 func_080216BC(int param_1,int *param_2,undefined4 param_3)
+undefined8 Entity_Routine_080216BC(int param_1,int *param_2,undefined4 param_3)
 
 {
   byte bVar1;
@@ -1437,8 +1437,8 @@ undefined8 func_080216BC(int param_1,int *param_2,undefined4 param_3)
   undefined4 in_lr;
   undefined1 auStack_18 [8];
   
-  func_0809B114(auStack_18,param_3);
-  func_08020038(param_1,param_2,auStack_18,_DAT_08021734);
+  Animal_Routine_0809B114(auStack_18,param_3);
+  Entity_Routine_08020038(param_1,param_2,auStack_18,_DAT_08021734);
   *(undefined4 *)(param_1 + 0x14) = _DAT_08021738;
   *(undefined4 *)(param_1 + 0x34) = param_3;
   *(undefined1 *)(param_1 + 0x3d) = 0;
@@ -1449,15 +1449,15 @@ undefined8 func_080216BC(int param_1,int *param_2,undefined4 param_3)
     bVar1 = (byte)(-(uVar3 & 0xff) >> 0x1f);
   }
   *(byte *)(param_1 + 0x3e) = bVar1;
-  uVar4 = func_080220D4(param_1);
-  func_08022048(param_1,uVar4,*(undefined1 *)(param_1 + 0x20));
+  uVar4 = Entity_Routine_080220D4(param_1);
+  Entity_Routine_08022048(param_1,uVar4,*(undefined1 *)(param_1 + 0x20));
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_080217A8 @ 0x080217A8
+// Function: Entity_Routine_080217A8 @ 0x080217A8
 // =============================================================================
-undefined4 func_080217A8(int param_1,uint param_2)
+undefined4 Entity_Routine_080217A8(int param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -1466,15 +1466,15 @@ undefined4 func_080217A8(int param_1,uint param_2)
   
   uStack_c = (uStack_c & _DAT_080217e4 | param_2 & 0xffff) & _DAT_080217e8;
   func_0x0809bc24(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-  uVar1 = func_080220D4(param_1);
-  func_08022048(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+  uVar1 = Entity_Routine_080220D4(param_1);
+  Entity_Routine_08022048(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080217EC @ 0x080217EC
+// Function: Entity_Routine_080217EC @ 0x080217EC
 // =============================================================================
-undefined4 func_080217EC(undefined4 *param_1)
+undefined4 Entity_Routine_080217EC(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -1551,7 +1551,7 @@ undefined4 func_080217EC(undefined4 *param_1)
   piVar7 = (int *)*param_1;
   if (*(char *)((int)param_1 + 0x3e) != '\0') goto LAB_08021e6a;
   iStack_3c = param_1[0xd];
-  iVar13 = func_0809BC10(iStack_3c);
+  iVar13 = Animal_Routine_0809BC10(iStack_3c);
   uStack_38 = (uint)*(ushort *)(param_1 + 1);
   func_0x080d3918(&uStack_f0,piVar7,uStack_38,*(undefined4 *)(*piVar7 + 0x34));
   func_0x080d3914(&uStack_7c,param_1,*(undefined4 *)(param_1[5] + 0xc));
@@ -1585,11 +1585,11 @@ undefined4 func_080217EC(undefined4 *param_1)
   if ((*pcStack_24 == '\0') || (*(short *)(param_1 + 9) != 0)) {
     if ((iVar8 != 0) && (*(ushort *)(iVar8 + 4) == uStack_38)) {
       func_0x080d3914(auStack_5c,iVar8,*(undefined4 *)(*(int *)(iVar8 + 0x14) + 0xc));
-      func_080ABA90(&iStack_e4,auStack_5c,1);
+      NPC_Routine_080ABA90(&iStack_e4,auStack_5c,1);
     }
     if ((iVar9 != 0) && (*(ushort *)(iVar9 + 4) == uStack_38)) {
       func_0x080d3914(auStack_54,iVar9,*(undefined4 *)(*(int *)(iVar9 + 0x14) + 0xc));
-      func_080ABA90(&iStack_e4,auStack_54,0);
+      NPC_Routine_080ABA90(&iStack_e4,auStack_54,0);
     }
     if ((*pcStack_24 == '\0') && (iVar13 == 1)) {
       iVar13 = (int)*(short *)((int)param_1 + 10);
@@ -1600,11 +1600,11 @@ undefined4 func_080217EC(undefined4 *param_1)
       iStack_28 = iVar9;
       if (0 < iVar17) {
         if (iStack_bc < iStack_e4) {
-          func_080AB85C(&iStack_e4);
+          NPC_Routine_080AB85C(&iStack_e4);
         }
         if (iStack_e4 == 0) {
           if (iStack_bc < 0) {
-            func_080AB85C(&iStack_e4);
+            NPC_Routine_080AB85C(&iStack_e4);
           }
           if (cStack_d4 != '\0') {
             iVar9 = iVar9 + iStack_30;
@@ -1613,11 +1613,11 @@ undefined4 func_080217EC(undefined4 *param_1)
       }
       if (iVar17 < 0) {
         if (iStack_e0 + iStack_bc < 0 != SCARRY4(iStack_e0,iStack_bc)) {
-          func_080AB8D0(&iStack_e4);
+          NPC_Routine_080AB8D0(&iStack_e4);
         }
         if (iStack_e0 == 0) {
           if (iStack_bc < 0) {
-            func_080AB8D0(&iStack_e4);
+            NPC_Routine_080AB8D0(&iStack_e4);
           }
           if (cStack_d3 != '\0') {
             iVar9 = iVar9 - iStack_30;
@@ -1626,11 +1626,11 @@ undefined4 func_080217EC(undefined4 *param_1)
       }
       if (iVar12 < 0) {
         if (iStack_dc + iStack_bc < 0 != SCARRY4(iStack_dc,iStack_bc)) {
-          func_080AB948(&iStack_e4);
+          NPC_Routine_080AB948(&iStack_e4);
         }
         if (iStack_dc == 0) {
           if (iStack_bc < 0) {
-            func_080AB948(&iStack_e4);
+            NPC_Routine_080AB948(&iStack_e4);
           }
           if (cStack_d2 != '\0') {
             iVar13 = iVar13 - iStack_34;
@@ -1639,11 +1639,11 @@ undefined4 func_080217EC(undefined4 *param_1)
       }
       if (0 < iVar12) {
         if (iStack_bc < iStack_d8) {
-          func_080AB9C4(&iStack_e4);
+          NPC_Routine_080AB9C4(&iStack_e4);
         }
         if (iStack_d8 == 0) {
           if (iStack_bc < 0) {
-            func_080AB9C4(&iStack_e4);
+            NPC_Routine_080AB9C4(&iStack_e4);
           }
           if (cStack_d1 != '\0') {
             iVar13 = iVar13 + iStack_34;
@@ -1654,7 +1654,7 @@ undefined4 func_080217EC(undefined4 *param_1)
         *(short *)(param_1 + 0xe) = (short)iVar13;
         *(short *)((int)param_1 + 0x3a) = (short)iVar9;
         *pcStack_24 = '\x01';
-        func_08022048(param_1,6,*(undefined1 *)(param_1 + 8));
+        Entity_Routine_08022048(param_1,6,*(undefined1 *)(param_1 + 8));
       }
     }
     iVar13 = iStack_3c;
@@ -1693,10 +1693,10 @@ LAB_08021d46:
       if (*pcStack_24 == '\0') {
         if (uVar11 == 0) {
 LAB_08021d10:
-          uVar10 = func_080ABC40(iVar12,iVar9,(int)sVar6,(int)sVar2,&iStack_e4,
+          uVar10 = NPC_Routine_080ABC40(iVar12,iVar9,(int)sVar6,(int)sVar2,&iStack_e4,
                                  *(undefined1 *)(param_1 + 8));
-          func_08022048(param_1,2,uVar10);
-          iVar8 = func_080AB788(0x1e);
+          Entity_Routine_08022048(param_1,2,uVar10);
+          iVar8 = NPC_Routine_080AB788(0x1e);
           uVar11 = iVar8 + 1;
           *(short *)(iVar13 + 0x28) = sVar6;
           *(short *)(iVar13 + 0x2a) = sVar2;
@@ -1724,22 +1724,22 @@ LAB_08021d10:
         sVar6 = *(short *)(iStack_3c + 0x24);
         if (sVar6 == 0) {
           sVar6 = 0;
-          if ((*pcStack_24 == '\0') && (cVar5 = func_08020130(param_1), cVar5 != '\0')) {
+          if ((*pcStack_24 == '\0') && (cVar5 = Entity_Routine_08020130(param_1), cVar5 != '\0')) {
             iVar8 = func_0x080d3910(piVar7,*(undefined4 *)(*piVar7 + 0x144));
             bVar1 = *(byte *)(iVar8 + 10);
-            iVar8 = func_0809BC10(iStack_3c);
+            iVar8 = Animal_Routine_0809BC10(iStack_3c);
             iVar9 = (uint)(0xe < (bVar1 & 0x1f) - 6) * 0x38 + iVar8 * 0x1c + _DAT_08021c84;
-            iVar8 = func_080AB82C(iVar9,7);
+            iVar8 = NPC_Routine_080AB82C(iVar9,7);
             iVar9 = iVar9 + iVar8 * 4;
-            sVar6 = func_080AB788((uint)*(byte *)(iVar9 + 2) * 0x3c);
+            sVar6 = NPC_Routine_080AB788((uint)*(byte *)(iVar9 + 2) * 0x3c);
             sVar6 = (ushort)*(byte *)(iVar9 + 1) * 0x3c + sVar6;
             uVar16 = (uint)*(byte *)(param_1 + 8);
-            iVar9 = func_080AB788(4);
+            iVar9 = NPC_Routine_080AB788(4);
             if ((iVar9 != 0) && (iVar9 != 3)) {
-              uVar16 = func_080AB7A4(uVar16);
+              uVar16 = NPC_Routine_080AB7A4(uVar16);
             }
             *(char *)(iVar13 + 0x26) = (char)iVar8;
-            func_08022048(param_1,iVar8,uVar16);
+            Entity_Routine_08022048(param_1,iVar8,uVar16);
           }
         }
         else {
@@ -1748,7 +1748,7 @@ LAB_08021d10:
           bVar3 = false;
           if (iVar13 < 0) {
             if (iStack_dc + iStack_bc < 0 != SCARRY4(iStack_dc,iStack_bc)) {
-              func_080AB948(&iStack_e4);
+              NPC_Routine_080AB948(&iStack_e4);
             }
             if (iStack_dc < -0xf) goto LAB_08021b80;
 LAB_08021bd4:
@@ -1758,19 +1758,19 @@ LAB_08021bd4:
 LAB_08021b80:
             if (0 < iVar13) {
               if (iStack_bc < iStack_d8) {
-                func_080AB9C4(&iStack_e4);
+                NPC_Routine_080AB9C4(&iStack_e4);
               }
               if (iStack_d8 < 0x10) goto LAB_08021bd4;
             }
             if (iVar8 < 0) {
               if (iStack_e0 + iStack_bc < 0 != SCARRY4(iStack_e0,iStack_bc)) {
-                func_080AB8D0(&iStack_e4);
+                NPC_Routine_080AB8D0(&iStack_e4);
               }
               if (-0x10 < iStack_e0) goto LAB_08021bd4;
             }
             if (0 < iVar8) {
               if (iStack_bc < iStack_e4) {
-                func_080AB85C(&iStack_e4);
+                NPC_Routine_080AB85C(&iStack_e4);
               }
               if (iStack_e4 < 0x10) goto LAB_08021bd4;
             }
@@ -1798,7 +1798,7 @@ LAB_08021b80:
           iVar13 = -iVar13;
         }
         if (iVar13 < 8) {
-          func_0801FE78(param_1,2,0x2f0,0x94);
+          Farmer_Routine_0801FE78(param_1,2,0x2f0,0x94);
         }
       }
       else if ((uStack_38 == 2) && (cVar5 == '\x01')) {
@@ -1812,7 +1812,7 @@ LAB_08021b80:
             iVar13 = -iVar13;
           }
           if (iVar13 < 8) {
-            func_0801FE78(param_1,9,0x78,0xb0);
+            Farmer_Routine_0801FE78(param_1,9,0x78,0xb0);
           }
         }
       }
@@ -1820,8 +1820,8 @@ LAB_08021b80:
       if (sVar6 == 0) {
         uStack_40 = (uStack_40 & _DAT_08021e7c | 0xb4) & _DAT_08021e80;
         func_0x0809bc24(iStack_3c);
-        uVar10 = func_080220D4(param_1);
-        func_08022048(param_1,uVar10,*(char *)(param_1 + 8));
+        uVar10 = Entity_Routine_080220D4(param_1);
+        Entity_Routine_08022048(param_1,uVar10,*(char *)(param_1 + 8));
       }
       else {
         *psVar15 = sVar6 + -1;
@@ -1855,24 +1855,24 @@ LAB_08021b80:
     uStack_88 = 0x20;
     uStack_7c = uVar10;
     uStack_78 = uVar4;
-    memcpy(&iStack_e4,&uStack_b0,0x34);
+    gba_memcpy(&iStack_e4,&uStack_b0,0x34);
     if ((iVar8 != 0) && (*(ushort *)(iVar8 + 4) == uStack_38)) {
       func_0x080d3914(auStack_6c,iVar8,*(undefined4 *)(*(int *)(iVar8 + 0x14) + 0xc));
-      func_080ABA90(&iStack_e4,auStack_6c,1);
+      NPC_Routine_080ABA90(&iStack_e4,auStack_6c,1);
     }
     if ((iVar9 != 0) && (*(ushort *)(iVar9 + 4) == uStack_38)) {
       func_0x080d3914(auStack_64,iVar9,*(undefined4 *)(*(int *)(iVar9 + 0x14) + 0xc));
-      func_080ABA90(&iStack_e4,auStack_64,0);
+      NPC_Routine_080ABA90(&iStack_e4,auStack_64,0);
     }
 LAB_08021d5e:
-    uVar10 = func_080220D4(param_1);
-    func_08022048(param_1,uVar10,*(undefined1 *)(param_1 + 8));
+    uVar10 = Entity_Routine_080220D4(param_1);
+    Entity_Routine_08022048(param_1,uVar10,*(undefined1 *)(param_1 + 8));
   }
   piVar7 = &iStack_e4;
   if (*pcStack_24 != '\0') {
     piVar7 = (int *)0x0;
   }
-  func_08020170(param_1,piVar7);
+  Entity_Routine_08020170(param_1,piVar7);
 LAB_08021e6a:
   *(undefined1 *)(param_1 + 0xc) = 0;
   if (*(short *)(param_1 + 9) == 0) {
@@ -1890,9 +1890,9 @@ LAB_08021e6a:
 }
 
 // =============================================================================
-// Function: func_08021EA8 @ 0x08021EA8
+// Function: Entity_Routine_08021EA8 @ 0x08021EA8
 // =============================================================================
-undefined4 func_08021EA8(undefined4 *param_1,undefined4 param_2)
+undefined4 Entity_Routine_08021EA8(undefined4 *param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -1906,14 +1906,14 @@ undefined4 func_08021EA8(undefined4 *param_1,undefined4 param_2)
       return in_lr;
     }
   }
-  func_0803242C(param_1,param_2);
+  Entity_Routine_0803242C(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08021EE0 @ 0x08021EE0
+// Function: Entity_Routine_08021EE0 @ 0x08021EE0
 // =============================================================================
-undefined4 func_08021EE0(int param_1)
+undefined4 Entity_Routine_08021EE0(int param_1)
 
 {
   int iVar1;
@@ -1921,12 +1921,12 @@ undefined4 func_08021EE0(int param_1)
   undefined4 in_lr;
   uint uStack_10;
   
-  iVar1 = func_0809BC10(*(undefined4 *)(param_1 + 0x34));
+  iVar1 = Animal_Routine_0809BC10(*(undefined4 *)(param_1 + 0x34));
   if (iVar1 == 1) {
     uStack_10 = (uStack_10 & _DAT_08021f34 | 0x78) & _DAT_08021f38;
     func_0x0809bc24(*(undefined4 *)(param_1 + 0x34),&uStack_10);
-    uVar2 = func_080220D4(param_1);
-    func_08022048(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
+    uVar2 = Entity_Routine_080220D4(param_1);
+    Entity_Routine_08022048(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
     *(undefined1 *)(param_1 + 0x3e) = 1;
     func_0x0809b3b0(*(undefined4 *)(param_1 + 0x34));
   }
@@ -1934,9 +1934,9 @@ undefined4 func_08021EE0(int param_1)
 }
 
 // =============================================================================
-// Function: func_08021F3C @ 0x08021F3C
+// Function: Entity_Routine_08021F3C @ 0x08021F3C
 // =============================================================================
-undefined4 func_08021F3C(int param_1)
+undefined4 Entity_Routine_08021F3C(int param_1)
 
 {
   undefined4 uVar1;
@@ -1946,15 +1946,15 @@ undefined4 func_08021F3C(int param_1)
   *(undefined1 *)(param_1 + 0x3e) = 0;
   uStack_c = (uStack_c & _DAT_08021f80 | 0x78) & _DAT_08021f84;
   func_0x0809bc24(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-  uVar1 = func_080220D4(param_1);
-  func_08022048(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+  uVar1 = Entity_Routine_080220D4(param_1);
+  Entity_Routine_08022048(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08021F88 @ 0x08021F88
+// Function: Entity_Routine_08021F88 @ 0x08021F88
 // =============================================================================
-undefined8 func_08021F88(int param_1,int param_2)
+undefined8 Entity_Routine_08021F88(int param_1,int param_2)
 
 {
   int iVar1;
@@ -1962,14 +1962,14 @@ undefined8 func_08021F88(int param_1,int param_2)
   undefined4 in_lr;
   
   iVar1 = _DAT_08021fa8;
-  iVar2 = func_0809BC10(*(undefined4 *)(param_1 + 0x34));
+  iVar2 = Animal_Routine_0809BC10(*(undefined4 *)(param_1 + 0x34));
   return CONCAT44(in_lr,(uint)*(ushort *)((iVar2 * 7 + param_2) * 2 + iVar1));
 }
 
 // =============================================================================
-// Function: func_08021FAC @ 0x08021FAC
+// Function: Entity_Routine_08021FAC @ 0x08021FAC
 // =============================================================================
-undefined8 func_08021FAC(int param_1,uint param_2)
+undefined8 Entity_Routine_08021FAC(int param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -2022,9 +2022,9 @@ LAB_08022030:
 }
 
 // =============================================================================
-// Function: func_08022048 @ 0x08022048
+// Function: Entity_Routine_08022048 @ 0x08022048
 // =============================================================================
-undefined4 func_08022048(int param_1,uint param_2,uint param_3)
+undefined4 Entity_Routine_08022048(int param_1,uint param_2,uint param_3)
 
 {
   uint uVar1;
@@ -2035,25 +2035,25 @@ undefined4 func_08022048(int param_1,uint param_2,uint param_3)
   if ((param_2 != 6) && (*(char *)(param_1 + 0x3d) != '\0')) {
     param_2 = 6;
   }
-  uVar1 = func_08021F88(param_1,param_2);
+  uVar1 = Entity_Routine_08021F88(param_1,param_2);
   if (*(ushort *)(param_1 + 0x22) != uVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   if (*(byte *)(param_1 + 0x20) != param_3) {
-    func_08032198(param_1,param_3);
+    Entity_Routine_08032198(param_1,param_3);
   }
-  uVar2 = func_08021FAC(param_1,param_2);
-  func_08020080(param_1,uVar2);
+  uVar2 = Entity_Routine_08021FAC(param_1,param_2);
+  Entity_Routine_08020080(param_1,uVar2);
   if ((param_2 != *(byte *)(param_1 + 0x3c)) && (*(char *)(param_1 + 0x3e) == '\0')) {
     iVar3 = -1;
     if (param_2 == 4) {
       iVar3 = 8;
     }
     if (iVar3 < 0) {
-      func_080323C8(param_1);
+      Entity_Routine_080323C8(param_1);
     }
     else {
-      func_08032384(param_1,iVar3,1);
+      Entity_Routine_08032384(param_1,iVar3,1);
     }
   }
   *(byte *)(param_1 + 0x3c) = (byte)param_2;
@@ -2061,9 +2061,9 @@ undefined4 func_08022048(int param_1,uint param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_080220D4 @ 0x080220D4
+// Function: Entity_Routine_080220D4 @ 0x080220D4
 // =============================================================================
-undefined8 func_080220D4(int param_1)
+undefined8 Entity_Routine_080220D4(int param_1)
 
 {
   uint uVar1;
@@ -2092,9 +2092,9 @@ LAB_080220fc:
 }
 
 // =============================================================================
-// Function: func_08022100 @ 0x08022100
+// Function: Entity_Routine_08022100 @ 0x08022100
 // =============================================================================
-undefined4 func_08022100(int param_1)
+undefined4 Entity_Routine_08022100(int param_1)
 
 {
   undefined4 uVar1;
@@ -2105,17 +2105,17 @@ undefined4 func_08022100(int param_1)
     uStack_c = (uStack_c & _DAT_0802214c | 0xb4) & _DAT_08022150;
     func_0x0809bc24(*(int *)(param_1 + 0x34),&uStack_c);
     if (*(char *)(param_1 + 0x3d) == '\0') {
-      uVar1 = func_080220D4(param_1);
-      func_08022048(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+      uVar1 = Entity_Routine_080220D4(param_1);
+      Entity_Routine_08022048(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08022154 @ 0x08022154
+// Function: Entity_Routine_08022154 @ 0x08022154
 // =============================================================================
-ulonglong func_08022154(int param_1)
+ulonglong Entity_Routine_08022154(int param_1)
 
 {
   undefined4 uVar1;
@@ -2126,9 +2126,9 @@ ulonglong func_08022154(int param_1)
 }
 
 // =============================================================================
-// Function: func_08022164 @ 0x08022164
+// Function: Entity_Routine_08022164 @ 0x08022164
 // =============================================================================
-undefined4 func_08022164(int param_1)
+undefined4 Entity_Routine_08022164(int param_1)
 
 {
   char cVar1;
@@ -2136,18 +2136,18 @@ undefined4 func_08022164(int param_1)
   
   cVar1 = func_0x0809b230(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    func_0809B2A8(*(undefined4 *)(param_1 + 0x34),1);
-    func_0809B278(*(undefined4 *)(param_1 + 0x34));
+    Animal_Routine_0809B2A8(*(undefined4 *)(param_1 + 0x34),1);
+    Animal_Routine_0809B278(*(undefined4 *)(param_1 + 0x34));
   }
-  func_08032384(param_1,1,0);
-  func_080200C4(param_1,0xa7);
+  Entity_Routine_08032384(param_1,1,0);
+  Entity_Routine_080200C4(param_1,0xa7);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802219C @ 0x0802219C
+// Function: Entity_Routine_0802219C @ 0x0802219C
 // =============================================================================
-undefined4 func_0802219C(int param_1,uint param_2,uint param_3)
+undefined4 Entity_Routine_0802219C(int param_1,uint param_2,uint param_3)
 
 {
   undefined4 uVar1;
@@ -2156,22 +2156,22 @@ undefined4 func_0802219C(int param_1,uint param_2,uint param_3)
   
   if (0x3b < param_3) {
     if (*(byte *)(param_1 + 0x20) != param_2) {
-      func_08032198(param_1);
+      Entity_Routine_08032198(param_1);
     }
     uStack_10 = uStack_10 & _DAT_080221ec | 0x3c;
     func_0x0809bc40(*(undefined4 *)(param_1 + 0x34),&uStack_10);
     if (*(char *)(param_1 + 0x3d) == '\0') {
-      uVar1 = func_080220D4(param_1);
-      func_08022048(param_1,uVar1,*(byte *)(param_1 + 0x20));
+      uVar1 = Entity_Routine_080220D4(param_1);
+      Entity_Routine_08022048(param_1,uVar1,*(byte *)(param_1 + 0x20));
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080221F0 @ 0x080221F0
+// Function: Entity_Routine_080221F0 @ 0x080221F0
 // =============================================================================
-undefined4 func_080221F0(int param_1,ushort *param_2)
+undefined4 Entity_Routine_080221F0(int param_1,ushort *param_2)
 
 {
   int iVar1;
@@ -2194,8 +2194,8 @@ undefined4 func_080221F0(int param_1,ushort *param_2)
       auStack_1c[0] = ((uint)(iVar1 * 0x3c0) >> 8) + 0x1e0 & 0xffff;
       func_0x0809bc30(*(undefined4 *)(param_1 + 0x34),auStack_1c);
       if (*(char *)(param_1 + 0x3d) == '\0') {
-        uVar2 = func_080220D4(param_1);
-        func_08022048(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
+        uVar2 = Entity_Routine_080220D4(param_1);
+        Entity_Routine_08022048(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
       }
       func_0x0809b3bc(*(undefined4 *)(param_1 + 0x34));
     }
@@ -2204,26 +2204,26 @@ undefined4 func_080221F0(int param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_080222A8 @ 0x080222A8
+// Function: Entity_Routine_080222A8 @ 0x080222A8
 // =============================================================================
-undefined8 func_080222A8(int param_1,undefined4 param_2,undefined4 param_3)
+undefined8 Entity_Routine_080222A8(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_08022320(param_3);
-  uVar2 = func_08022334(param_3);
-  func_080324BC(param_1,param_2,5,0xd,uVar1,uVar2,0,0);
+  uVar1 = Entity_Routine_08022320(param_3);
+  uVar2 = Entity_Routine_08022334(param_3);
+  Entity_Routine_080324BC(param_1,param_2,5,0xd,uVar1,uVar2,0,0);
   *(undefined4 *)(param_1 + 4) = _DAT_080222f0;
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_080222F4 @ 0x080222F4
+// Function: Entity_Routine_080222F4 @ 0x080222F4
 // =============================================================================
-undefined4 func_080222F4(int *param_1,undefined4 param_2)
+undefined4 Entity_Routine_080222F4(int *param_1,undefined4 param_2)
 
 {
   undefined1 uVar1;
@@ -2231,7 +2231,7 @@ undefined4 func_080222F4(int *param_1,undefined4 param_2)
   undefined4 in_lr;
   
   iVar2 = *param_1;
-  uVar1 = func_08032900(*(undefined2 *)(iVar2 + 4),(int)*(short *)(iVar2 + 10),
+  uVar1 = Entity_Routine_08032900(*(undefined2 *)(iVar2 + 4),(int)*(short *)(iVar2 + 10),
                         (int)*(short *)(iVar2 + 0xe));
   *(undefined1 *)((int)param_1 + 0x8b) = uVar1;
   func_0x08032690(param_1,param_2);
@@ -2239,9 +2239,9 @@ undefined4 func_080222F4(int *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08022320 @ 0x08022320
+// Function: Entity_Routine_08022320 @ 0x08022320
 // =============================================================================
-undefined8 func_08022320(int param_1)
+undefined8 Entity_Routine_08022320(int param_1)
 
 {
   undefined4 uVar1;
@@ -2257,9 +2257,9 @@ undefined8 func_08022320(int param_1)
 }
 
 // =============================================================================
-// Function: func_08022334 @ 0x08022334
+// Function: Entity_Routine_08022334 @ 0x08022334
 // =============================================================================
-undefined8 func_08022334(int param_1)
+undefined8 Entity_Routine_08022334(int param_1)
 
 {
   undefined4 uVar1;
@@ -2275,9 +2275,9 @@ undefined8 func_08022334(int param_1)
 }
 
 // =============================================================================
-// Function: func_08022348 @ 0x08022348
+// Function: Entity_Routine_08022348 @ 0x08022348
 // =============================================================================
-undefined8 func_08022348(int param_1)
+undefined8 Entity_Routine_08022348(int param_1)
 
 {
   undefined4 uVar1;
@@ -2285,11 +2285,11 @@ undefined8 func_08022348(int param_1)
   int iVar3;
   undefined4 in_lr;
   
-  uVar1 = func_080005D4(0x8c);
-  uVar2 = func_0809BC10(*(undefined4 *)(param_1 + 0x34));
-  iVar3 = func_080222A8(uVar1,param_1,uVar2);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  uVar2 = Animal_Routine_0809BC10(*(undefined4 *)(param_1 + 0x34));
+  iVar3 = Entity_Routine_080222A8(uVar1,param_1,uVar2);
   if (*(char *)(param_1 + 0x3c) == '\x04') {
-    func_0805E860(iVar3 + 0x70,8);
+    Animal_Routine_0805E860(iVar3 + 0x70,8);
     *(undefined1 *)(iVar3 + 0x84) = 1;
     *(undefined1 *)(iVar3 + 0x86) = 0;
     *(undefined1 *)(iVar3 + 0x87) = 1;
@@ -2299,28 +2299,28 @@ undefined8 func_08022348(int param_1)
 }
 
 // =============================================================================
-// Function: func_080223A8 @ 0x080223A8
+// Function: Entity_Routine_080223A8 @ 0x080223A8
 // =============================================================================
-undefined8 func_080223A8(int param_1,undefined4 param_2,undefined4 param_3)
+undefined8 Entity_Routine_080223A8(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   undefined1 auStack_18 [8];
   
-  func_0809B114(auStack_18,param_3);
-  func_08020038(param_1,param_2,auStack_18,0x720);
+  Animal_Routine_0809B114(auStack_18,param_3);
+  Entity_Routine_08020038(param_1,param_2,auStack_18,0x720);
   *(undefined4 *)(param_1 + 0x14) = _DAT_080223ec;
   *(undefined4 *)(param_1 + 0x34) = param_3;
-  uVar1 = func_08022950(param_1);
-  func_080228B4(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+  uVar1 = Entity_Routine_08022950(param_1);
+  Entity_Routine_080228B4(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08022444 @ 0x08022444
+// Function: Entity_Routine_08022444 @ 0x08022444
 // =============================================================================
-undefined4 func_08022444(int param_1,uint param_2)
+undefined4 Entity_Routine_08022444(int param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -2329,22 +2329,22 @@ undefined4 func_08022444(int param_1,uint param_2)
   
   uStack_c = (uStack_c & _DAT_08022480 | param_2 & 0xffff) & _DAT_08022484;
   func_0x0809bd20(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-  uVar1 = func_08022950(param_1);
-  func_080228B4(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+  uVar1 = Entity_Routine_08022950(param_1);
+  Entity_Routine_080228B4(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08022488 @ 0x08022488
+// Function: Entity_Routine_08022488 @ 0x08022488
 // =============================================================================
-undefined4 func_08022488(int param_1)
+undefined4 Entity_Routine_08022488(int param_1)
 
 {
   short sVar1;
   int iVar2;
   undefined4 in_lr;
   
-  func_080224E4();
+  Entity_Routine_080224E4();
   *(undefined1 *)(param_1 + 0x30) = 0;
   if (*(short *)(param_1 + 0x24) == 0) {
     sVar1 = *(short *)(param_1 + 0x26);
@@ -2361,26 +2361,26 @@ undefined4 func_08022488(int param_1)
 }
 
 // =============================================================================
-// Function: func_080224BC @ 0x080224BC
+// Function: Entity_Routine_080224BC @ 0x080224BC
 // =============================================================================
-undefined4 func_080224BC(undefined4 param_1,undefined4 param_2)
+undefined4 Entity_Routine_080224BC(undefined4 param_1,undefined4 param_2)
 
 {
   char cVar1;
   undefined4 in_lr;
   
-  cVar1 = func_08032370();
+  cVar1 = Entity_Routine_08032370();
   if (cVar1 != '\0') {
-    func_080224E4(param_1,param_2);
+    Entity_Routine_080224E4(param_1,param_2);
   }
-  func_0803242C(param_1,param_2);
+  Entity_Routine_0803242C(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080224E4 @ 0x080224E4
+// Function: Entity_Routine_080224E4 @ 0x080224E4
 // =============================================================================
-undefined4 func_080224E4(undefined4 *param_1,int param_2)
+undefined4 Entity_Routine_080224E4(undefined4 *param_1,int param_2)
 
 {
   byte bVar1;
@@ -2428,7 +2428,7 @@ undefined4 func_080224E4(undefined4 *param_1,int param_2)
   uStack_30 = (uint)*(ushort *)(param_1 + 1);
   if ((uStack_30 == 2) && (*(char *)(param_2 + 4) != '\0')) {
     uVar5 = func_0x0809b51c(iVar13);
-    func_0809B57C(iVar13,1);
+    Animal_Routine_0809B57C(iVar13,1);
     uVar6 = func_0x0809b51c(iVar13);
     if ((uVar5 < 0xb4) &&
        (((0xb3 < uVar6 &&
@@ -2437,15 +2437,15 @@ undefined4 func_080224E4(undefined4 *param_1,int param_2)
       func_0x0809b638(iVar13);
     }
     if ((uVar5 < 0xf0) && (0xef < uVar6)) {
-      func_0809BCF0(iVar13);
+      Animal_Routine_0809BCF0(iVar13);
     }
     if (((uVar5 <= _DAT_08022670) && (_DAT_08022670 < uVar6)) &&
        (piVar7 = (int *)func_0x080d3910(piVar4,*(undefined4 *)(*piVar4 + 0x144)), *piVar7 == 0)) {
       cVar3 = func_0x0809b504(iVar13);
-      if ((cVar3 != '\0') && (uVar5 = func_080AB788(100), uVar5 < 0x1e)) {
+      if ((cVar3 != '\0') && (uVar5 = NPC_Routine_080AB788(100), uVar5 < 0x1e)) {
         func_0x0809b644(iVar13);
       }
-      func_0809B2A8(iVar13,1);
+      Animal_Routine_0809B2A8(iVar13,1);
     }
   }
   func_0x080d3918(&uStack_8c,piVar4,uStack_30,*(undefined4 *)(*piVar4 + 0x34));
@@ -2468,11 +2468,11 @@ undefined4 func_080224E4(undefined4 *param_1,int param_2)
   iVar9 = func_0x080d3914(piVar4,0x4a,*(undefined4 *)(*piVar4 + 0x40));
   if ((iVar8 != 0) && (*(ushort *)(iVar8 + 4) == uStack_30)) {
     func_0x080d3914(auStack_44,iVar8,*(undefined4 *)(*(int *)(iVar8 + 0x14) + 0xc));
-    func_080ABA90(&iStack_80,auStack_44,0);
+    NPC_Routine_080ABA90(&iStack_80,auStack_44,0);
   }
   if ((iVar9 != 0) && (*(ushort *)(iVar9 + 4) == uStack_30)) {
     func_0x080d3914(auStack_3c,iVar9,*(undefined4 *)(*(int *)(iVar9 + 0x14) + 0xc));
-    func_080ABA90(&iStack_80,auStack_3c,0);
+    NPC_Routine_080ABA90(&iStack_80,auStack_3c,0);
   }
   if (*(int *)(iVar13 + 0x24) != 0) {
     if (*(int *)(iVar13 + 0x24) == 1) {
@@ -2499,12 +2499,12 @@ undefined4 func_080224E4(undefined4 *param_1,int param_2)
             if (uVar6 != 0) {
               uVar14 = 4;
             }
-            uVar10 = func_080ABE58((int)*(short *)((int)param_1 + 10),
+            uVar10 = NPC_Routine_080ABE58((int)*(short *)((int)param_1 + 10),
                                    (int)*(short *)((int)param_1 + 0xe),(int)*(short *)(iVar8 + 10),
                                    (int)*(short *)(iVar8 + 0xe),&iStack_80,
                                    *(undefined1 *)(param_1 + 8));
-            func_080228B4(param_1,uVar14,uVar10);
-            iVar13 = func_080AB788(0x1e);
+            Entity_Routine_080228B4(param_1,uVar14,uVar10);
+            iVar13 = NPC_Routine_080AB788(0x1e);
             uVar12 = iVar13 + 1;
           }
           *puStack_2c = (short)uVar5;
@@ -2515,32 +2515,32 @@ undefined4 func_080224E4(undefined4 *param_1,int param_2)
       }
       uStack_34 = (uStack_34 & _DAT_080228ac | 0xb4) & _DAT_080228b0;
       func_0x0809bd20(iVar13,&uStack_34);
-      uVar14 = func_08022950(param_1);
-      func_080228B4(param_1,uVar14,*(undefined1 *)(param_1 + 8));
+      uVar14 = Entity_Routine_08022950(param_1);
+      Entity_Routine_080228B4(param_1,uVar14,*(undefined1 *)(param_1 + 8));
     }
     goto LAB_08022894;
   }
   sVar11 = *(short *)(iVar13 + 0x28);
   if (sVar11 == 0) {
-    cVar3 = func_08020130(param_1);
+    cVar3 = Entity_Routine_08020130(param_1);
     sVar11 = 0;
     if (cVar3 != '\0') {
       iVar9 = func_0x080d3910(piVar4,*(undefined4 *)(*piVar4 + 0x144));
       bVar1 = *(byte *)(iVar9 + 10);
-      iVar9 = func_0809BCAC(iVar13);
+      iVar9 = Animal_Routine_0809BCAC(iVar13);
       uVar5 = func_0x0809b50c(iVar13);
       iVar8 = (uint)(0xe < (bVar1 & 0x1f) - 6) * 0x50 + iVar9 * 0x28 + _DAT_080227b0 +
               (uVar5 & 0xff) * 0x14;
-      iVar9 = func_080AB82C(iVar8,5);
+      iVar9 = NPC_Routine_080AB82C(iVar8,5);
       iVar8 = iVar8 + iVar9 * 4;
-      sVar11 = func_080AB788((uint)*(byte *)(iVar8 + 2) * 0x3c);
+      sVar11 = NPC_Routine_080AB788((uint)*(byte *)(iVar8 + 2) * 0x3c);
       sVar11 = (ushort)*(byte *)(iVar8 + 1) * 0x3c + sVar11;
       uVar5 = (uint)*(byte *)(param_1 + 8);
-      iVar8 = func_080AB788(4);
+      iVar8 = NPC_Routine_080AB788(4);
       if ((iVar8 != 0) && (iVar8 != 3)) {
-        uVar5 = func_080AB7A4(uVar5);
+        uVar5 = NPC_Routine_080AB7A4(uVar5);
       }
-      func_080228B4(param_1,iVar9,uVar5);
+      Entity_Routine_080228B4(param_1,iVar9,uVar5);
       *(char *)(iVar13 + 0x2a) = (char)iVar9;
     }
   }
@@ -2550,7 +2550,7 @@ undefined4 func_080224E4(undefined4 *param_1,int param_2)
     bVar2 = false;
     if (iVar9 < 0) {
       if (iStack_78 + iStack_58 < 0 != SCARRY4(iStack_78,iStack_58)) {
-        func_080AB948(&iStack_80);
+        NPC_Routine_080AB948(&iStack_80);
       }
       if (iStack_78 < -0xf) goto LAB_080226a4;
 LAB_080226f8:
@@ -2560,19 +2560,19 @@ LAB_080226f8:
 LAB_080226a4:
       if (0 < iVar9) {
         if (iStack_58 < iStack_74) {
-          func_080AB9C4(&iStack_80);
+          NPC_Routine_080AB9C4(&iStack_80);
         }
         if (iStack_74 < 0x10) goto LAB_080226f8;
       }
       if (iVar8 < 0) {
         if (iStack_7c + iStack_58 < 0 != SCARRY4(iStack_7c,iStack_58)) {
-          func_080AB8D0(&iStack_80);
+          NPC_Routine_080AB8D0(&iStack_80);
         }
         if (-0x10 < iStack_7c) goto LAB_080226f8;
       }
       if (0 < iVar8) {
         if (iStack_58 < iStack_80) {
-          func_080AB85C(&iStack_80);
+          NPC_Routine_080AB85C(&iStack_80);
         }
         if (iStack_80 < 0x10) goto LAB_080226f8;
       }
@@ -2586,14 +2586,14 @@ LAB_080226a4:
   }
   *(short *)(iVar13 + 0x28) = sVar11;
 LAB_08022894:
-  func_08020170(param_1,&iStack_80);
+  Entity_Routine_08020170(param_1,&iStack_80);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080228B4 @ 0x080228B4
+// Function: Entity_Routine_080228B4 @ 0x080228B4
 // =============================================================================
-undefined4 func_080228B4(undefined4 *param_1,uint param_2,uint param_3)
+undefined4 Entity_Routine_080228B4(undefined4 *param_1,uint param_2,uint param_3)
 
 {
   uint uVar1;
@@ -2602,18 +2602,18 @@ undefined4 func_080228B4(undefined4 *param_1,uint param_2,uint param_3)
   int iVar4;
   undefined4 in_lr;
   
-  uVar1 = func_08022980();
+  uVar1 = Entity_Routine_08022980();
   if (*(ushort *)((int)param_1 + 0x22) != uVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   if (*(byte *)(param_1 + 8) != param_3) {
-    func_08032198(param_1,param_3);
+    Entity_Routine_08032198(param_1,param_3);
   }
-  uVar2 = func_080229A4(param_1,param_2);
-  func_08020080(param_1,uVar2);
+  uVar2 = Entity_Routine_080229A4(param_1,param_2);
+  Entity_Routine_08020080(param_1,uVar2);
   if (param_2 != *(byte *)(param_1 + 0xe)) {
     iVar4 = -1;
-    iVar3 = func_0809BCAC(param_1[0xd]);
+    iVar3 = Animal_Routine_0809BCAC(param_1[0xd]);
     uVar1 = 0;
     if (iVar3 != 0) {
       uVar1 = 3;
@@ -2624,10 +2624,10 @@ undefined4 func_080228B4(undefined4 *param_1,uint param_2,uint param_3)
       iVar4 = 8;
     }
     if (iVar4 < 0) {
-      func_080323C8(param_1);
+      Entity_Routine_080323C8(param_1);
     }
     else {
-      func_08032384(param_1,iVar4,1);
+      Entity_Routine_08032384(param_1,iVar4,1);
     }
   }
   *(byte *)(param_1 + 0xe) = (byte)param_2;
@@ -2635,9 +2635,9 @@ undefined4 func_080228B4(undefined4 *param_1,uint param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_08022950 @ 0x08022950
+// Function: Entity_Routine_08022950 @ 0x08022950
 // =============================================================================
-undefined8 func_08022950(int param_1)
+undefined8 Entity_Routine_08022950(int param_1)
 
 {
   int iVar1;
@@ -2661,9 +2661,9 @@ undefined8 func_08022950(int param_1)
 }
 
 // =============================================================================
-// Function: func_08022980 @ 0x08022980
+// Function: Entity_Routine_08022980 @ 0x08022980
 // =============================================================================
-undefined8 func_08022980(int param_1,int param_2)
+undefined8 Entity_Routine_08022980(int param_1,int param_2)
 
 {
   int iVar1;
@@ -2671,14 +2671,14 @@ undefined8 func_08022980(int param_1,int param_2)
   undefined4 in_lr;
   
   iVar1 = _DAT_080229a0;
-  iVar2 = func_0809BCAC(*(undefined4 *)(param_1 + 0x34));
+  iVar2 = Animal_Routine_0809BCAC(*(undefined4 *)(param_1 + 0x34));
   return CONCAT44(in_lr,(uint)*(ushort *)((iVar2 * 5 + param_2) * 2 + iVar1));
 }
 
 // =============================================================================
-// Function: func_080229A4 @ 0x080229A4
+// Function: Entity_Routine_080229A4 @ 0x080229A4
 // =============================================================================
-undefined8 func_080229A4(undefined4 param_1,int param_2)
+undefined8 Entity_Routine_080229A4(undefined4 param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -2694,9 +2694,9 @@ undefined8 func_080229A4(undefined4 param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_080229BC @ 0x080229BC
+// Function: Entity_Routine_080229BC @ 0x080229BC
 // =============================================================================
-void func_080229BC(int param_1)
+void Entity_Routine_080229BC(int param_1)
 
 {
   func_0x0809b50c(*(undefined4 *)(param_1 + 0x34));
@@ -2704,9 +2704,9 @@ void func_080229BC(int param_1)
 }
 
 // =============================================================================
-// Function: func_080229C8 @ 0x080229C8
+// Function: Entity_Routine_080229C8 @ 0x080229C8
 // =============================================================================
-undefined8 func_080229C8(int param_1)
+undefined8 Entity_Routine_080229C8(int param_1)
 
 {
   char cVar1;
@@ -2723,9 +2723,9 @@ undefined8 func_080229C8(int param_1)
 }
 
 // =============================================================================
-// Function: func_080229F8 @ 0x080229F8
+// Function: Entity_Routine_080229F8 @ 0x080229F8
 // =============================================================================
-undefined4 func_080229F8(int param_1)
+undefined4 Entity_Routine_080229F8(int param_1)
 
 {
   int iVar1;
@@ -2733,28 +2733,28 @@ undefined4 func_080229F8(int param_1)
   undefined4 in_lr;
   uint uStack_c;
   
-  iVar1 = func_080AB788(0x78);
+  iVar1 = NPC_Routine_080AB788(0x78);
   uStack_c = ((uStack_c & _DAT_08022a78 | iVar1 + 0xf0U & 0xffff) & _DAT_08022a7c | 0x3c0000) &
              _DAT_08022a80 & _DAT_08022a84;
   func_0x0809bd2c(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-  uVar2 = func_08022950(param_1);
-  func_080228B4(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
-  func_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
+  uVar2 = Entity_Routine_08022950(param_1);
+  Entity_Routine_080228B4(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
+  Animal_Routine_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
   func_0x0809b638(*(undefined4 *)(param_1 + 0x34));
-  func_08032384(param_1,2,0);
-  iVar1 = func_0809BCAC(*(undefined4 *)(param_1 + 0x34));
+  Entity_Routine_08032384(param_1,2,0);
+  iVar1 = Animal_Routine_0809BCAC(*(undefined4 *)(param_1 + 0x34));
   uVar2 = 0xa5;
   if (iVar1 == 1) {
     uVar2 = 0xa6;
   }
-  func_080200C4(param_1,uVar2);
+  Entity_Routine_080200C4(param_1,uVar2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08022A88 @ 0x08022A88
+// Function: Entity_Routine_08022A88 @ 0x08022A88
 // =============================================================================
-undefined4 func_08022A88(int param_1)
+undefined4 Entity_Routine_08022A88(int param_1)
 
 {
   char cVar1;
@@ -2769,9 +2769,9 @@ undefined4 func_08022A88(int param_1)
 }
 
 // =============================================================================
-// Function: func_08022AAC @ 0x08022AAC
+// Function: Entity_Routine_08022AAC @ 0x08022AAC
 // =============================================================================
-undefined4 func_08022AAC(int param_1)
+undefined4 Entity_Routine_08022AAC(int param_1)
 
 {
   int iVar1;
@@ -2779,28 +2779,28 @@ undefined4 func_08022AAC(int param_1)
   undefined4 in_lr;
   uint uStack_c;
   
-  iVar1 = func_080AB788(0x78);
+  iVar1 = NPC_Routine_080AB788(0x78);
   uStack_c = ((uStack_c & _DAT_08022b2c | iVar1 + 0xf0U & 0xffff) & _DAT_08022b30 | 0xbc0000) &
              _DAT_08022b34;
   func_0x0809bd2c(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-  uVar2 = func_08022950(param_1);
-  func_080228B4(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
-  func_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
+  uVar2 = Entity_Routine_08022950(param_1);
+  Entity_Routine_080228B4(param_1,uVar2,*(undefined1 *)(param_1 + 0x20));
+  Animal_Routine_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
   func_0x0809b638(*(undefined4 *)(param_1 + 0x34));
-  func_08032384(param_1,2,0);
-  iVar1 = func_0809BCAC(*(undefined4 *)(param_1 + 0x34));
+  Entity_Routine_08032384(param_1,2,0);
+  iVar1 = Animal_Routine_0809BCAC(*(undefined4 *)(param_1 + 0x34));
   uVar2 = 0xa5;
   if (iVar1 == 1) {
     uVar2 = 0xa6;
   }
-  func_080200C4(param_1,uVar2);
+  Entity_Routine_080200C4(param_1,uVar2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08022B38 @ 0x08022B38
+// Function: Entity_Routine_08022B38 @ 0x08022B38
 // =============================================================================
-void func_08022B38(short *param_1,int param_2)
+void Entity_Routine_08022B38(short *param_1,int param_2)
 
 {
   short sVar1;
@@ -2816,9 +2816,9 @@ void func_08022B38(short *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08022B5C @ 0x08022B5C
+// Function: Entity_Routine_08022B5C @ 0x08022B5C
 // =============================================================================
-undefined8 func_08022B5C(int param_1)
+undefined8 Entity_Routine_08022B5C(int param_1)
 
 {
   undefined4 uVar1;
@@ -2834,9 +2834,9 @@ undefined8 func_08022B5C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08022B70 @ 0x08022B70
+// Function: Entity_Routine_08022B70 @ 0x08022B70
 // =============================================================================
-undefined8 func_08022B70(undefined4 *param_1)
+undefined8 Entity_Routine_08022B70(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -2847,12 +2847,12 @@ undefined8 func_08022B70(undefined4 *param_1)
   char cVar6;
   undefined4 in_lr;
   
-  uVar1 = func_0809BCAC(param_1[0xd]);
-  uVar2 = func_080005D4(0x8c);
+  uVar1 = Animal_Routine_0809BCAC(param_1[0xd]);
+  uVar2 = Dispatcher_Routine_080005D4(0x8c);
   uVar3 = func_0x08022b58(uVar1);
-  uVar1 = func_08022B5C(uVar1);
-  iVar4 = func_080324BC(uVar2,param_1,2,9,uVar3,uVar1,0,0);
-  iVar5 = func_0809BCAC(param_1[0xd]);
+  uVar1 = Entity_Routine_08022B5C(uVar1);
+  iVar4 = Entity_Routine_080324BC(uVar2,param_1,2,9,uVar3,uVar1,0,0);
+  iVar5 = Animal_Routine_0809BCAC(param_1[0xd]);
   cVar6 = '\0';
   if (iVar5 != 0) {
     cVar6 = '\x03';
@@ -2860,7 +2860,7 @@ undefined8 func_08022B70(undefined4 *param_1)
   if ((*(char *)(param_1 + 0xe) == cVar6) &&
      (iVar5 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144)),
      0xe < (*(byte *)(iVar5 + 10) & 0x1f) - 6)) {
-    func_0805E860(iVar4 + 0x70,8);
+    Animal_Routine_0805E860(iVar4 + 0x70,8);
     *(undefined1 *)(iVar4 + 0x84) = 1;
     *(undefined1 *)(iVar4 + 0x86) = 0;
     *(undefined1 *)(iVar4 + 0x87) = 1;
@@ -2870,28 +2870,28 @@ undefined8 func_08022B70(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_08022C18 @ 0x08022C18
+// Function: Entity_Routine_08022C18 @ 0x08022C18
 // =============================================================================
-undefined8 func_08022C18(int param_1,undefined4 param_2,undefined4 param_3)
+undefined8 Entity_Routine_08022C18(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   undefined1 auStack_18 [8];
   
-  func_0809B114(auStack_18,param_3);
-  func_08020038(param_1,param_2,auStack_18,0x2b0);
+  Animal_Routine_0809B114(auStack_18,param_3);
+  Entity_Routine_08020038(param_1,param_2,auStack_18,0x2b0);
   *(undefined4 *)(param_1 + 0x14) = _DAT_08022c5c;
   *(undefined4 *)(param_1 + 0x34) = param_3;
-  uVar1 = func_08023378(param_1);
-  func_08023308(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+  uVar1 = Entity_Routine_08023378(param_1);
+  Entity_Routine_08023308(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08022CB4 @ 0x08022CB4
+// Function: Entity_Routine_08022CB4 @ 0x08022CB4
 // =============================================================================
-undefined4 func_08022CB4(int param_1,uint param_2)
+undefined4 Entity_Routine_08022CB4(int param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -2900,15 +2900,15 @@ undefined4 func_08022CB4(int param_1,uint param_2)
   
   uStack_c = (uStack_c & _DAT_08022cf0 | param_2 & 0xffff) & _DAT_08022cf4;
   func_0x0809b940(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-  uVar1 = func_08023378(param_1);
-  func_08023308(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+  uVar1 = Entity_Routine_08023378(param_1);
+  Entity_Routine_08023308(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08022CF8 @ 0x08022CF8
+// Function: Entity_Routine_08022CF8 @ 0x08022CF8
 // =============================================================================
-undefined4 func_08022CF8(undefined4 *param_1,int param_2)
+undefined4 Entity_Routine_08022CF8(undefined4 *param_1,int param_2)
 
 {
   short sVar1;
@@ -2971,7 +2971,7 @@ undefined4 func_08022CF8(undefined4 *param_1,int param_2)
   uStack_30 = (uint)*(ushort *)(param_1 + 1);
   if ((uStack_30 == 2) && (*(char *)(param_2 + 4) != '\0')) {
     uVar5 = func_0x0809b51c(iVar4);
-    func_0809B57C(iVar4,1);
+    Animal_Routine_0809B57C(iVar4,1);
     uVar6 = func_0x0809b51c(iVar4);
     if ((uVar5 < 0xb4) &&
        (((0xb3 < uVar6 &&
@@ -2984,16 +2984,16 @@ undefined4 func_08022CF8(undefined4 *param_1,int param_2)
       uStack_76 = *(undefined2 *)((int)param_1 + 0xe);
       cVar3 = func_0x080d3914(piVar16,&uStack_78,*(undefined4 *)(*piVar16 + 0x108));
       if (cVar3 != '\0') {
-        func_0809B8F0(iVar4);
+        Animal_Routine_0809B8F0(iVar4);
       }
     }
     if (((uVar5 <= _DAT_08022ea8) && (_DAT_08022ea8 < uVar6)) &&
        (piVar7 = (int *)func_0x080d3910(piVar16,*(undefined4 *)(*piVar16 + 0x144)), *piVar7 == 0)) {
       cVar3 = func_0x0809b504(iVar4);
-      if ((cVar3 != '\0') && (uVar5 = func_080AB788(100), uVar5 < 0x1e)) {
+      if ((cVar3 != '\0') && (uVar5 = NPC_Routine_080AB788(100), uVar5 < 0x1e)) {
         func_0x0809b644(iVar4);
       }
-      func_0809B2A8(iVar4,1);
+      Animal_Routine_0809B2A8(iVar4,1);
     }
   }
   func_0x080d3918(&uStack_b8,piVar16,uStack_30,*(undefined4 *)(*piVar16 + 0x34));
@@ -3016,11 +3016,11 @@ undefined4 func_08022CF8(undefined4 *param_1,int param_2)
   iVar9 = func_0x080d3914(piVar16,0x4a,*(undefined4 *)(*piVar16 + 0x40));
   if ((iVar8 != 0) && (*(ushort *)(iVar8 + 4) == uStack_30)) {
     func_0x080d3914(auStack_6c,iVar8,*(undefined4 *)(*(int *)(iVar8 + 0x14) + 0xc));
-    func_080ABA90(&iStack_ac,auStack_6c,0);
+    NPC_Routine_080ABA90(&iStack_ac,auStack_6c,0);
   }
   if ((iVar9 != 0) && (*(ushort *)(iVar9 + 4) == uStack_30)) {
     func_0x080d3914(auStack_64,iVar9,*(undefined4 *)(*(int *)(iVar9 + 0x14) + 0xc));
-    func_080ABA90(&iStack_ac,auStack_64,0);
+    NPC_Routine_080ABA90(&iStack_ac,auStack_64,0);
   }
   iVar9 = *(int *)(iVar4 + 0x28);
   if (iVar9 == 1) {
@@ -3047,12 +3047,12 @@ undefined4 func_08022CF8(undefined4 *param_1,int param_2)
           if (uVar6 != 0) {
             uVar17 = 6;
           }
-          uVar11 = func_080ABE58((int)*(short *)((int)param_1 + 10),
+          uVar11 = NPC_Routine_080ABE58((int)*(short *)((int)param_1 + 10),
                                  (int)*(short *)((int)param_1 + 0xe),(int)*(short *)(iVar8 + 10),
                                  (int)*(short *)(iVar8 + 0xe),&iStack_ac,
                                  *(undefined1 *)(param_1 + 8));
-          func_08023308(param_1,uVar17,uVar11);
-          iVar4 = func_080AB788(0x1e);
+          Entity_Routine_08023308(param_1,uVar17,uVar11);
+          iVar4 = NPC_Routine_080AB788(0x1e);
           uVar15 = iVar4 + 1;
         }
         *puStack_2c = (short)uVar5;
@@ -3065,8 +3065,8 @@ undefined4 func_08022CF8(undefined4 *param_1,int param_2)
     puVar12 = &uStack_5c;
 LAB_0802319e:
     func_0x0809b940(iVar4,puVar12);
-    uVar17 = func_08023378(param_1);
-    func_08023308(param_1,uVar17,*(undefined1 *)(param_1 + 8));
+    uVar17 = Entity_Routine_08023378(param_1);
+    Entity_Routine_08023308(param_1,uVar17,*(undefined1 *)(param_1 + 8));
     goto LAB_080232b8;
   }
   if (1 < iVar9) {
@@ -3094,7 +3094,7 @@ LAB_0802319e:
             uStack_48._2_2_ = (short)((uint)uStack_4c >> 0x10);
             iVar8 = (int)uStack_48._2_2_;
             uStack_48 = uVar17;
-            func_0801FE78(param_1,2,iVar9,iVar8 + 0x10);
+            Farmer_Routine_0801FE78(param_1,2,iVar9,iVar8 + 0x10);
           }
         }
         else if ((uStack_30 == 2) && (cVar3 == '\x01')) {
@@ -3122,7 +3122,7 @@ LAB_0802319e:
               uStack_38._2_2_ = (short)((uint)uStack_3c >> 0x10);
               iVar8 = (int)uStack_38._2_2_;
               uStack_38 = uVar17;
-              func_0801FE78(param_1,0x25,iVar9,iVar8 + -0x20);
+              Farmer_Routine_0801FE78(param_1,0x25,iVar9,iVar8 + -0x20);
               func_0x0809b608(iVar4);
             }
           }
@@ -3131,8 +3131,8 @@ LAB_0802319e:
         if (sVar14 == 0) {
           uStack_34 = (uStack_34 & _DAT_080232d8 | 0xb4) & _DAT_080232dc;
           func_0x0809b940(iVar4);
-          uVar17 = func_08023378(param_1);
-          func_08023308(param_1,uVar17,*(char *)(param_1 + 8));
+          uVar17 = Entity_Routine_08023378(param_1);
+          Entity_Routine_08023308(param_1,uVar17,*(char *)(param_1 + 8));
         }
         else {
           *(short *)(iVar4 + 0x2c) = sVar14 + -1;
@@ -3171,10 +3171,10 @@ LAB_0802318c:
     }
     if (uVar6 == 0) {
 LAB_08023158:
-      uVar17 = func_080ABC40(iVar13,iVar10,(int)sVar14,(int)sVar1,&iStack_ac,
+      uVar17 = NPC_Routine_080ABC40(iVar13,iVar10,(int)sVar14,(int)sVar1,&iStack_ac,
                              *(undefined1 *)(param_1 + 8));
-      func_08023308(param_1,1,uVar17);
-      iVar9 = func_080AB788(0x1e);
+      Entity_Routine_08023308(param_1,1,uVar17);
+      iVar9 = NPC_Routine_080AB788(0x1e);
       uVar6 = iVar9 + 1;
       *(short *)(iVar4 + 0x30) = sVar14;
       *(short *)(iVar4 + 0x32) = sVar1;
@@ -3199,7 +3199,7 @@ LAB_08023158:
   if (iVar9 != 0) goto LAB_080232b8;
   sVar14 = *(short *)(iVar4 + 0x2c);
   if (sVar14 == 0) {
-    cVar3 = func_08020130(param_1);
+    cVar3 = Entity_Routine_08020130(param_1);
     sVar14 = 0;
     if (cVar3 != '\0') {
       iVar9 = func_0x080d3910(piVar16,*(undefined4 *)(*piVar16 + 0x144));
@@ -3208,22 +3208,22 @@ LAB_08023158:
       iVar9 = (uVar5 & 0xff) * 0x1c;
       cVar3 = func_0x0809b8b0(iVar4);
       if (cVar3 == '\0') {
-        iVar10 = func_0809BD90(iVar4);
+        iVar10 = Animal_Routine_0809BD90(iVar4);
         iVar8 = iVar8 + iVar10 * 0x38 + iVar9;
       }
       else {
         iVar8 = iVar8 + iVar9 + 0xa8;
       }
-      iVar9 = func_080AB82C(iVar8,7);
+      iVar9 = NPC_Routine_080AB82C(iVar8,7);
       iVar8 = iVar8 + iVar9 * 4;
-      sVar14 = func_080AB788((uint)*(byte *)(iVar8 + 2) * 0x3c);
+      sVar14 = NPC_Routine_080AB788((uint)*(byte *)(iVar8 + 2) * 0x3c);
       sVar14 = (ushort)*(byte *)(iVar8 + 1) * 0x3c + sVar14;
       uVar5 = (uint)*(byte *)(param_1 + 8);
-      iVar8 = func_080AB788(4);
+      iVar8 = NPC_Routine_080AB788(4);
       if ((iVar8 != 0) && (iVar8 != 3)) {
-        uVar5 = func_080AB7A4(uVar5);
+        uVar5 = NPC_Routine_080AB7A4(uVar5);
       }
-      func_08023308(param_1,iVar9,uVar5);
+      Entity_Routine_08023308(param_1,iVar9,uVar5);
       *(char *)(iVar4 + 0x2e) = (char)iVar9;
     }
   }
@@ -3233,7 +3233,7 @@ LAB_08023158:
     bVar2 = false;
     if (iVar9 < 0) {
       if (iStack_a4 + iStack_84 < 0 != SCARRY4(iStack_a4,iStack_84)) {
-        func_080AB948(&iStack_ac);
+        NPC_Routine_080AB948(&iStack_ac);
       }
       if (iStack_a4 < -0xf) goto LAB_08022eec;
 LAB_08022f40:
@@ -3243,19 +3243,19 @@ LAB_08022f40:
 LAB_08022eec:
       if (0 < iVar9) {
         if (iStack_84 < iStack_a0) {
-          func_080AB9C4(&iStack_ac);
+          NPC_Routine_080AB9C4(&iStack_ac);
         }
         if (iStack_a0 < 0x10) goto LAB_08022f40;
       }
       if (iVar8 < 0) {
         if (iStack_a8 + iStack_84 < 0 != SCARRY4(iStack_a8,iStack_84)) {
-          func_080AB8D0(&iStack_ac);
+          NPC_Routine_080AB8D0(&iStack_ac);
         }
         if (-0x10 < iStack_a8) goto LAB_08022f40;
       }
       if (0 < iVar8) {
         if (iStack_84 < iStack_ac) {
-          func_080AB85C(&iStack_ac);
+          NPC_Routine_080AB85C(&iStack_ac);
         }
         if (iStack_ac < 0x10) goto LAB_08022f40;
       }
@@ -3269,7 +3269,7 @@ LAB_08022eec:
   }
   *(short *)(iVar4 + 0x2c) = sVar14;
 LAB_080232b8:
-  func_08020170(param_1,&iStack_ac);
+  Entity_Routine_08020170(param_1,&iStack_ac);
   *(undefined1 *)(param_1 + 0xc) = 0;
   if (*(short *)(param_1 + 9) == 0) {
     *(undefined2 *)(param_1 + 9) = *(undefined2 *)((int)param_1 + 0x26);
@@ -3285,9 +3285,9 @@ LAB_080232b8:
 }
 
 // =============================================================================
-// Function: func_08023308 @ 0x08023308
+// Function: Entity_Routine_08023308 @ 0x08023308
 // =============================================================================
-undefined4 func_08023308(int param_1,uint param_2,uint param_3)
+undefined4 Entity_Routine_08023308(int param_1,uint param_2,uint param_3)
 
 {
   uint uVar1;
@@ -3295,25 +3295,25 @@ undefined4 func_08023308(int param_1,uint param_2,uint param_3)
   int iVar3;
   undefined4 in_lr;
   
-  uVar1 = func_080233B4();
+  uVar1 = Entity_Routine_080233B4();
   if (*(ushort *)(param_1 + 0x22) != uVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   if (*(byte *)(param_1 + 0x20) != param_3) {
-    func_08032198(param_1,param_3);
+    Entity_Routine_08032198(param_1,param_3);
   }
-  uVar2 = func_08023400(param_1,param_2);
-  func_08020080(param_1,uVar2);
+  uVar2 = Entity_Routine_08023400(param_1,param_2);
+  Entity_Routine_08020080(param_1,uVar2);
   if (param_2 != *(byte *)(param_1 + 0x38)) {
     iVar3 = -1;
     if (param_2 == 4) {
       iVar3 = 8;
     }
     if (iVar3 < 0) {
-      func_080323C8(param_1);
+      Entity_Routine_080323C8(param_1);
     }
     else {
-      func_08032384(param_1,iVar3,1);
+      Entity_Routine_08032384(param_1,iVar3,1);
     }
   }
   *(byte *)(param_1 + 0x38) = (byte)param_2;
@@ -3321,9 +3321,9 @@ undefined4 func_08023308(int param_1,uint param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_08023378 @ 0x08023378
+// Function: Entity_Routine_08023378 @ 0x08023378
 // =============================================================================
-undefined8 func_08023378(int param_1)
+undefined8 Entity_Routine_08023378(int param_1)
 
 {
   int iVar1;
@@ -3357,9 +3357,9 @@ LAB_080233b0:
 }
 
 // =============================================================================
-// Function: func_080233B4 @ 0x080233B4
+// Function: Entity_Routine_080233B4 @ 0x080233B4
 // =============================================================================
-undefined8 func_080233B4(int param_1,int param_2)
+undefined8 Entity_Routine_080233B4(int param_1,int param_2)
 
 {
   int iVar1;
@@ -3371,12 +3371,12 @@ undefined8 func_080233B4(int param_1,int param_2)
   uVar4 = 0;
   cVar2 = func_0x0809b8b0(*(undefined4 *)(param_1 + 0x34));
   if (cVar2 != '\0') {
-    uVar4 = func_0809B8BC(*(undefined4 *)(param_1 + 0x34));
+    uVar4 = Animal_Routine_0809B8BC(*(undefined4 *)(param_1 + 0x34));
     uVar4 = (-uVar4 | uVar4) >> 0x1f;
   }
   iVar1 = _DAT_080233e4;
   if (uVar4 == 0) {
-    iVar3 = func_0809BD90(*(undefined4 *)(param_1 + 0x34));
+    iVar3 = Animal_Routine_0809BD90(*(undefined4 *)(param_1 + 0x34));
     iVar3 = param_2 * 2 + iVar3 * 0xe;
   }
   else {
@@ -3386,9 +3386,9 @@ undefined8 func_080233B4(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08023400 @ 0x08023400
+// Function: Entity_Routine_08023400 @ 0x08023400
 // =============================================================================
-undefined8 func_08023400(undefined4 param_1,int param_2)
+undefined8 Entity_Routine_08023400(undefined4 param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -3404,9 +3404,9 @@ undefined8 func_08023400(undefined4 param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08023414 @ 0x08023414
+// Function: Entity_Routine_08023414 @ 0x08023414
 // =============================================================================
-undefined4 func_08023414(int param_1,ushort *param_2)
+undefined4 Entity_Routine_08023414(int param_1,ushort *param_2)
 
 {
   char cVar1;
@@ -3441,12 +3441,12 @@ undefined4 func_08023414(int param_1,ushort *param_2)
       else {
         uVar8 = 0x1e;
       }
-      uVar4 = func_080AB788(100);
+      uVar4 = NPC_Routine_080AB788(100);
       if (uVar4 < uVar8) {
         auStack_20[0] = ((iVar2 * 0xf & 0x3ffffffU) >> 2) + 0x1e0 & 0xffff;
         func_0x0809b958(*(undefined4 *)(param_1 + 0x34),auStack_20);
-        uVar5 = func_08023378(param_1);
-        func_08023308(param_1,uVar5,*(undefined1 *)(param_1 + 0x20));
+        uVar5 = Entity_Routine_08023378(param_1);
+        Entity_Routine_08023308(param_1,uVar5,*(undefined1 *)(param_1 + 0x20));
       }
     }
   }
@@ -3454,9 +3454,9 @@ undefined4 func_08023414(int param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_080234F8 @ 0x080234F8
+// Function: Entity_Routine_080234F8 @ 0x080234F8
 // =============================================================================
-undefined4 func_080234F8(int param_1)
+undefined4 Entity_Routine_080234F8(int param_1)
 
 {
   undefined4 uVar1;
@@ -3466,16 +3466,16 @@ undefined4 func_080234F8(int param_1)
   if (*(int *)(*(int *)(param_1 + 0x34) + 0x28) == 3) {
     uStack_c = (uStack_c & _DAT_0802353c | 0xb4) & _DAT_08023540;
     func_0x0809b940(*(int *)(param_1 + 0x34),&uStack_c);
-    uVar1 = func_08023378(param_1);
-    func_08023308(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+    uVar1 = Entity_Routine_08023378(param_1);
+    Entity_Routine_08023308(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08023570 @ 0x08023570
+// Function: Entity_Routine_08023570 @ 0x08023570
 // =============================================================================
-ulonglong func_08023570(int param_1)
+ulonglong Entity_Routine_08023570(int param_1)
 
 {
   undefined4 uVar1;
@@ -3486,19 +3486,19 @@ ulonglong func_08023570(int param_1)
 }
 
 // =============================================================================
-// Function: func_08023580 @ 0x08023580
+// Function: Entity_Routine_08023580 @ 0x08023580
 // =============================================================================
-void func_08023580(int param_1)
+void Entity_Routine_08023580(int param_1)
 
 {
-  func_0809BDC0(*(undefined4 *)(param_1 + 0x34));
+  Animal_Routine_0809BDC0(*(undefined4 *)(param_1 + 0x34));
   return;
 }
 
 // =============================================================================
-// Function: func_0802358C @ 0x0802358C
+// Function: Entity_Routine_0802358C @ 0x0802358C
 // =============================================================================
-void func_0802358C(int param_1)
+void Entity_Routine_0802358C(int param_1)
 
 {
   func_0x0809b50c(*(undefined4 *)(param_1 + 0x34));
@@ -3506,9 +3506,9 @@ void func_0802358C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08023598 @ 0x08023598
+// Function: Entity_Routine_08023598 @ 0x08023598
 // =============================================================================
-undefined8 func_08023598(int param_1)
+undefined8 Entity_Routine_08023598(int param_1)
 
 {
   char cVar1;
@@ -3525,9 +3525,9 @@ undefined8 func_08023598(int param_1)
 }
 
 // =============================================================================
-// Function: func_080235C8 @ 0x080235C8
+// Function: Entity_Routine_080235C8 @ 0x080235C8
 // =============================================================================
-undefined4 func_080235C8(int param_1)
+undefined4 Entity_Routine_080235C8(int param_1)
 
 {
   char cVar1;
@@ -3538,24 +3538,24 @@ undefined4 func_080235C8(int param_1)
   
   cVar1 = func_0x0809b8b0(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    iVar2 = func_080AB788(0x78);
+    iVar2 = NPC_Routine_080AB788(0x78);
     uStack_c = ((uStack_c & _DAT_08023648 | iVar2 + 0xf0U & 0xffff) & _DAT_0802364c | 0x3c0000) &
                _DAT_08023650 & _DAT_08023654;
     func_0x0809b94c(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-    uVar3 = func_08023378(param_1);
-    func_08023308(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
+    uVar3 = Entity_Routine_08023378(param_1);
+    Entity_Routine_08023308(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
   }
-  func_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
+  Animal_Routine_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
   func_0x0809b638(*(undefined4 *)(param_1 + 0x34));
-  func_08032384(param_1,0,0);
-  func_080200C4(param_1,0xa2);
+  Entity_Routine_08032384(param_1,0,0);
+  Entity_Routine_080200C4(param_1,0xa2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08023658 @ 0x08023658
+// Function: Entity_Routine_08023658 @ 0x08023658
 // =============================================================================
-undefined4 func_08023658(int param_1)
+undefined4 Entity_Routine_08023658(int param_1)
 
 {
   undefined4 in_lr;
@@ -3565,9 +3565,9 @@ undefined4 func_08023658(int param_1)
 }
 
 // =============================================================================
-// Function: func_08023664 @ 0x08023664
+// Function: Entity_Routine_08023664 @ 0x08023664
 // =============================================================================
-undefined4 func_08023664(int param_1)
+undefined4 Entity_Routine_08023664(int param_1)
 
 {
   char cVar1;
@@ -3576,37 +3576,37 @@ undefined4 func_08023664(int param_1)
   
   cVar1 = func_0x0809b230(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    func_0809B2A8(*(undefined4 *)(param_1 + 0x34),1);
-    func_0809B278(*(undefined4 *)(param_1 + 0x34));
+    Animal_Routine_0809B2A8(*(undefined4 *)(param_1 + 0x34),1);
+    Animal_Routine_0809B278(*(undefined4 *)(param_1 + 0x34));
   }
   cVar1 = func_0x0809b504(*(undefined4 *)(param_1 + 0x34));
-  if ((cVar1 != '\0') && (uVar2 = func_080AB788(100), uVar2 < 0x1e)) {
+  if ((cVar1 != '\0') && (uVar2 = NPC_Routine_080AB788(100), uVar2 < 0x1e)) {
     func_0x0809b644(*(undefined4 *)(param_1 + 0x34));
   }
   cVar1 = func_0x0809b50c(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    func_08032384(param_1,1,0);
-    func_080200C4(param_1,0xa1);
+    Entity_Routine_08032384(param_1,1,0);
+    Entity_Routine_080200C4(param_1,0xa1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080236C4 @ 0x080236C4
+// Function: Entity_Routine_080236C4 @ 0x080236C4
 // =============================================================================
-void func_080236C4(int param_1)
+void Entity_Routine_080236C4(int param_1)
 
 {
-  func_08032384(param_1,1,0);
-  func_080200C4(param_1,0xa1);
-  func_0809BE44(*(undefined4 *)(param_1 + 0x34));
+  Entity_Routine_08032384(param_1,1,0);
+  Entity_Routine_080200C4(param_1,0xa1);
+  Animal_Routine_0809BE44(*(undefined4 *)(param_1 + 0x34));
   return;
 }
 
 // =============================================================================
-// Function: func_080236E4 @ 0x080236E4
+// Function: Entity_Routine_080236E4 @ 0x080236E4
 // =============================================================================
-undefined4 func_080236E4(int param_1)
+undefined4 Entity_Routine_080236E4(int param_1)
 
 {
   char cVar1;
@@ -3621,9 +3621,9 @@ undefined4 func_080236E4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08023708 @ 0x08023708
+// Function: Entity_Routine_08023708 @ 0x08023708
 // =============================================================================
-undefined4 func_08023708(int param_1)
+undefined4 Entity_Routine_08023708(int param_1)
 
 {
   char cVar1;
@@ -3634,24 +3634,24 @@ undefined4 func_08023708(int param_1)
   
   cVar1 = func_0x0809b8b0(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    iVar2 = func_080AB788(0x78);
+    iVar2 = NPC_Routine_080AB788(0x78);
     uStack_c = ((uStack_c & _DAT_08023788 | iVar2 + 0xf0U & 0xffff) & _DAT_0802378c | 0xbc0000) &
                _DAT_08023790;
     func_0x0809b94c(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-    uVar3 = func_08023378(param_1);
-    func_08023308(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
+    uVar3 = Entity_Routine_08023378(param_1);
+    Entity_Routine_08023308(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
   }
-  func_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
+  Animal_Routine_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
   func_0x0809b638(*(undefined4 *)(param_1 + 0x34));
-  func_08032384(param_1,0,0);
-  func_080200C4(param_1,0xa2);
+  Entity_Routine_08032384(param_1,0,0);
+  Entity_Routine_080200C4(param_1,0xa2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08023794 @ 0x08023794
+// Function: Entity_Routine_08023794 @ 0x08023794
 // =============================================================================
-undefined4 func_08023794(int param_1,uint param_2,uint param_3)
+undefined4 Entity_Routine_08023794(int param_1,uint param_2,uint param_3)
 
 {
   char cVar1;
@@ -3662,20 +3662,20 @@ undefined4 func_08023794(int param_1,uint param_2,uint param_3)
   cVar1 = func_0x0809b8b0(*(undefined4 *)(param_1 + 0x34));
   if ((cVar1 == '\0') && (0x3b < param_3)) {
     if (*(byte *)(param_1 + 0x20) != param_2) {
-      func_08032198(param_1,param_2);
+      Entity_Routine_08032198(param_1,param_2);
     }
     uStack_14 = uStack_14 & _DAT_080237ec | 0x3c;
     func_0x0809b968(*(undefined4 *)(param_1 + 0x34),&uStack_14);
-    uVar2 = func_08023378(param_1);
-    func_08023308(param_1,uVar2,*(byte *)(param_1 + 0x20));
+    uVar2 = Entity_Routine_08023378(param_1);
+    Entity_Routine_08023308(param_1,uVar2,*(byte *)(param_1 + 0x20));
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080237F0 @ 0x080237F0
+// Function: Entity_Routine_080237F0 @ 0x080237F0
 // =============================================================================
-undefined8 func_080237F0(uint param_1)
+undefined8 Entity_Routine_080237F0(uint param_1)
 
 {
   undefined4 uVar1;
@@ -3691,9 +3691,9 @@ undefined8 func_080237F0(uint param_1)
 }
 
 // =============================================================================
-// Function: func_08023804 @ 0x08023804
+// Function: Entity_Routine_08023804 @ 0x08023804
 // =============================================================================
-undefined8 func_08023804(int param_1)
+undefined8 Entity_Routine_08023804(int param_1)
 
 {
   undefined4 uVar1;
@@ -3712,9 +3712,9 @@ undefined8 func_08023804(int param_1)
 }
 
 // =============================================================================
-// Function: func_08023820 @ 0x08023820
+// Function: Entity_Routine_08023820 @ 0x08023820
 // =============================================================================
-undefined8 func_08023820(int param_1)
+undefined8 Entity_Routine_08023820(int param_1)
 
 {
   undefined4 uVar1;
@@ -3723,13 +3723,13 @@ undefined8 func_08023820(int param_1)
   int iVar4;
   undefined4 in_lr;
   
-  uVar1 = func_0809BD90(*(undefined4 *)(param_1 + 0x34));
-  uVar2 = func_080005D4(0x8c);
-  uVar3 = func_080237F0(uVar1);
-  uVar1 = func_08023804(uVar1);
-  iVar4 = func_080324BC(uVar2,param_1,4,0xc,uVar3,uVar1,0,0);
+  uVar1 = Animal_Routine_0809BD90(*(undefined4 *)(param_1 + 0x34));
+  uVar2 = Dispatcher_Routine_080005D4(0x8c);
+  uVar3 = Entity_Routine_080237F0(uVar1);
+  uVar1 = Entity_Routine_08023804(uVar1);
+  iVar4 = Entity_Routine_080324BC(uVar2,param_1,4,0xc,uVar3,uVar1,0,0);
   if (*(char *)(param_1 + 0x38) == '\x04') {
-    func_0805E860(iVar4 + 0x70,8);
+    Animal_Routine_0805E860(iVar4 + 0x70,8);
     *(undefined1 *)(iVar4 + 0x84) = 1;
     *(undefined1 *)(iVar4 + 0x86) = 0;
     *(undefined1 *)(iVar4 + 0x87) = 1;
@@ -3739,28 +3739,28 @@ undefined8 func_08023820(int param_1)
 }
 
 // =============================================================================
-// Function: func_080238A8 @ 0x080238A8
+// Function: Entity_Routine_080238A8 @ 0x080238A8
 // =============================================================================
-undefined8 func_080238A8(int param_1,undefined4 param_2,undefined4 param_3)
+undefined8 Entity_Routine_080238A8(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   undefined1 auStack_18 [8];
   
-  func_0809B114(auStack_18,param_3);
-  func_08020038(param_1,param_2,auStack_18,_DAT_080238ec);
+  Animal_Routine_0809B114(auStack_18,param_3);
+  Entity_Routine_08020038(param_1,param_2,auStack_18,_DAT_080238ec);
   *(undefined4 *)(param_1 + 0x14) = _DAT_080238f0;
   *(undefined4 *)(param_1 + 0x34) = param_3;
-  uVar1 = func_08024020(param_1);
-  func_08023FB0(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+  uVar1 = Entity_Routine_08024020(param_1);
+  Entity_Routine_08023FB0(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08023948 @ 0x08023948
+// Function: Entity_Routine_08023948 @ 0x08023948
 // =============================================================================
-undefined4 func_08023948(int param_1,uint param_2)
+undefined4 Entity_Routine_08023948(int param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -3769,15 +3769,15 @@ undefined4 func_08023948(int param_1,uint param_2)
   
   uStack_c = (uStack_c & _DAT_08023984 | param_2 & 0xffff) & _DAT_08023988;
   func_0x0809b940(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-  uVar1 = func_08024020(param_1);
-  func_08023FB0(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+  uVar1 = Entity_Routine_08024020(param_1);
+  Entity_Routine_08023FB0(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802398C @ 0x0802398C
+// Function: Entity_Routine_0802398C @ 0x0802398C
 // =============================================================================
-undefined4 func_0802398C(undefined4 *param_1,int param_2)
+undefined4 Entity_Routine_0802398C(undefined4 *param_1,int param_2)
 
 {
   short sVar1;
@@ -3840,7 +3840,7 @@ undefined4 func_0802398C(undefined4 *param_1,int param_2)
   uStack_30 = (uint)*(ushort *)(param_1 + 1);
   if ((uStack_30 == 2) && (*(char *)(param_2 + 4) != '\0')) {
     uVar5 = func_0x0809b51c(iVar4);
-    func_0809B57C(iVar4,1);
+    Animal_Routine_0809B57C(iVar4,1);
     uVar6 = func_0x0809b51c(iVar4);
     if ((uVar5 < 0xb4) &&
        (((0xb3 < uVar6 &&
@@ -3853,16 +3853,16 @@ undefined4 func_0802398C(undefined4 *param_1,int param_2)
       uStack_76 = *(undefined2 *)((int)param_1 + 0xe);
       cVar3 = func_0x080d3914(piVar16,&uStack_78,*(undefined4 *)(*piVar16 + 0x108));
       if (cVar3 != '\0') {
-        func_0809B8F0(iVar4);
+        Animal_Routine_0809B8F0(iVar4);
       }
     }
     if (((uVar5 <= _DAT_08023b3c) && (_DAT_08023b3c < uVar6)) &&
        (piVar7 = (int *)func_0x080d3910(piVar16,*(undefined4 *)(*piVar16 + 0x144)), *piVar7 == 0)) {
       cVar3 = func_0x0809b504(iVar4);
-      if ((cVar3 != '\0') && (uVar5 = func_080AB788(100), uVar5 < 0x1e)) {
+      if ((cVar3 != '\0') && (uVar5 = NPC_Routine_080AB788(100), uVar5 < 0x1e)) {
         func_0x0809b644(iVar4);
       }
-      func_0809B2A8(iVar4,1);
+      Animal_Routine_0809B2A8(iVar4,1);
     }
   }
   func_0x080d3918(&uStack_b8,piVar16,uStack_30,*(undefined4 *)(*piVar16 + 0x34));
@@ -3885,11 +3885,11 @@ undefined4 func_0802398C(undefined4 *param_1,int param_2)
   iVar9 = func_0x080d3914(piVar16,0x4a,*(undefined4 *)(*piVar16 + 0x40));
   if ((iVar8 != 0) && (*(ushort *)(iVar8 + 4) == uStack_30)) {
     func_0x080d3914(auStack_6c,iVar8,*(undefined4 *)(*(int *)(iVar8 + 0x14) + 0xc));
-    func_080ABA90(&iStack_ac,auStack_6c,0);
+    NPC_Routine_080ABA90(&iStack_ac,auStack_6c,0);
   }
   if ((iVar9 != 0) && (*(ushort *)(iVar9 + 4) == uStack_30)) {
     func_0x080d3914(auStack_64,iVar9,*(undefined4 *)(*(int *)(iVar9 + 0x14) + 0xc));
-    func_080ABA90(&iStack_ac,auStack_64,0);
+    NPC_Routine_080ABA90(&iStack_ac,auStack_64,0);
   }
   iVar9 = *(int *)(iVar4 + 0x28);
   if (iVar9 == 1) {
@@ -3916,12 +3916,12 @@ undefined4 func_0802398C(undefined4 *param_1,int param_2)
           if (uVar6 != 0) {
             uVar17 = 6;
           }
-          uVar11 = func_080ABE58((int)*(short *)((int)param_1 + 10),
+          uVar11 = NPC_Routine_080ABE58((int)*(short *)((int)param_1 + 10),
                                  (int)*(short *)((int)param_1 + 0xe),(int)*(short *)(iVar8 + 10),
                                  (int)*(short *)(iVar8 + 0xe),&iStack_ac,
                                  *(undefined1 *)(param_1 + 8));
-          func_08023FB0(param_1,uVar17,uVar11);
-          iVar4 = func_080AB788(0x1e);
+          Entity_Routine_08023FB0(param_1,uVar17,uVar11);
+          iVar4 = NPC_Routine_080AB788(0x1e);
           uVar15 = iVar4 + 1;
         }
         *puStack_2c = (short)uVar5;
@@ -3934,8 +3934,8 @@ undefined4 func_0802398C(undefined4 *param_1,int param_2)
     puVar12 = &uStack_5c;
 LAB_08023e46:
     func_0x0809b940(iVar4,puVar12);
-    uVar17 = func_08024020(param_1);
-    func_08023FB0(param_1,uVar17,*(undefined1 *)(param_1 + 8));
+    uVar17 = Entity_Routine_08024020(param_1);
+    Entity_Routine_08023FB0(param_1,uVar17,*(undefined1 *)(param_1 + 8));
     goto LAB_08023f60;
   }
   if (1 < iVar9) {
@@ -3963,7 +3963,7 @@ LAB_08023e46:
             uStack_48._2_2_ = (short)((uint)uStack_4c >> 0x10);
             iVar8 = (int)uStack_48._2_2_;
             uStack_48 = uVar17;
-            func_0801FE78(param_1,2,iVar9,iVar8 + 0x10);
+            Farmer_Routine_0801FE78(param_1,2,iVar9,iVar8 + 0x10);
           }
         }
         else if ((uStack_30 == 2) && (cVar3 == '\x01')) {
@@ -3991,7 +3991,7 @@ LAB_08023e46:
               uStack_38._2_2_ = (short)((uint)uStack_3c >> 0x10);
               iVar8 = (int)uStack_38._2_2_;
               uStack_38 = uVar17;
-              func_0801FE78(param_1,0x25,iVar9,iVar8 + -0x20);
+              Farmer_Routine_0801FE78(param_1,0x25,iVar9,iVar8 + -0x20);
               func_0x0809b608(iVar4);
             }
           }
@@ -4000,8 +4000,8 @@ LAB_08023e46:
         if (sVar14 == 0) {
           uStack_34 = (uStack_34 & _DAT_08023f80 | 0xb4) & _DAT_08023f84;
           func_0x0809b940(iVar4);
-          uVar17 = func_08024020(param_1);
-          func_08023FB0(param_1,uVar17,*(char *)(param_1 + 8));
+          uVar17 = Entity_Routine_08024020(param_1);
+          Entity_Routine_08023FB0(param_1,uVar17,*(char *)(param_1 + 8));
         }
         else {
           *(short *)(iVar4 + 0x2c) = sVar14 + -1;
@@ -4040,10 +4040,10 @@ LAB_08023e34:
     }
     if (uVar6 == 0) {
 LAB_08023e00:
-      uVar17 = func_080ABC40(iVar13,iVar10,(int)sVar14,(int)sVar1,&iStack_ac,
+      uVar17 = NPC_Routine_080ABC40(iVar13,iVar10,(int)sVar14,(int)sVar1,&iStack_ac,
                              *(undefined1 *)(param_1 + 8));
-      func_08023FB0(param_1,1,uVar17);
-      iVar9 = func_080AB788(0x1e);
+      Entity_Routine_08023FB0(param_1,1,uVar17);
+      iVar9 = NPC_Routine_080AB788(0x1e);
       uVar6 = iVar9 + 1;
       *(short *)(iVar4 + 0x30) = sVar14;
       *(short *)(iVar4 + 0x32) = sVar1;
@@ -4068,7 +4068,7 @@ LAB_08023e00:
   if (iVar9 != 0) goto LAB_08023f60;
   sVar14 = *(short *)(iVar4 + 0x2c);
   if (sVar14 == 0) {
-    cVar3 = func_08020130(param_1);
+    cVar3 = Entity_Routine_08020130(param_1);
     sVar14 = 0;
     if (cVar3 != '\0') {
       iVar9 = func_0x080d3910(piVar16,*(undefined4 *)(*piVar16 + 0x144));
@@ -4077,9 +4077,9 @@ LAB_08023e00:
       iVar9 = (uVar5 & 0xff) * 0x1c;
       cVar3 = func_0x0809b8b0(iVar4);
       if (cVar3 == '\0') {
-        cVar3 = func_0809BF00(iVar4);
+        cVar3 = Animal_Routine_0809BF00(iVar4);
         if (cVar3 == '\0') {
-          iVar10 = func_0809BEDC(iVar4);
+          iVar10 = Animal_Routine_0809BEDC(iVar4);
           iVar8 = iVar8 + iVar10 * 0x38 + iVar9;
         }
         else {
@@ -4089,16 +4089,16 @@ LAB_08023e00:
       else {
         iVar8 = iVar8 + iVar9 + 0xa8;
       }
-      iVar9 = func_080AB82C(iVar8,7);
+      iVar9 = NPC_Routine_080AB82C(iVar8,7);
       iVar8 = iVar8 + iVar9 * 4;
-      sVar14 = func_080AB788((uint)*(byte *)(iVar8 + 2) * 0x3c);
+      sVar14 = NPC_Routine_080AB788((uint)*(byte *)(iVar8 + 2) * 0x3c);
       sVar14 = (ushort)*(byte *)(iVar8 + 1) * 0x3c + sVar14;
       uVar5 = (uint)*(byte *)(param_1 + 8);
-      iVar8 = func_080AB788(4);
+      iVar8 = NPC_Routine_080AB788(4);
       if ((iVar8 != 0) && (iVar8 != 3)) {
-        uVar5 = func_080AB7A4(uVar5);
+        uVar5 = NPC_Routine_080AB7A4(uVar5);
       }
-      func_08023FB0(param_1,iVar9,uVar5);
+      Entity_Routine_08023FB0(param_1,iVar9,uVar5);
       *(char *)(iVar4 + 0x2e) = (char)iVar9;
     }
   }
@@ -4108,7 +4108,7 @@ LAB_08023e00:
     bVar2 = false;
     if (iVar9 < 0) {
       if (iStack_a4 + iStack_84 < 0 != SCARRY4(iStack_a4,iStack_84)) {
-        func_080AB948(&iStack_ac);
+        NPC_Routine_080AB948(&iStack_ac);
       }
       if (iStack_a4 < -0xf) goto LAB_08023b80;
 LAB_08023bd4:
@@ -4118,19 +4118,19 @@ LAB_08023bd4:
 LAB_08023b80:
       if (0 < iVar9) {
         if (iStack_84 < iStack_a0) {
-          func_080AB9C4(&iStack_ac);
+          NPC_Routine_080AB9C4(&iStack_ac);
         }
         if (iStack_a0 < 0x10) goto LAB_08023bd4;
       }
       if (iVar8 < 0) {
         if (iStack_a8 + iStack_84 < 0 != SCARRY4(iStack_a8,iStack_84)) {
-          func_080AB8D0(&iStack_ac);
+          NPC_Routine_080AB8D0(&iStack_ac);
         }
         if (-0x10 < iStack_a8) goto LAB_08023bd4;
       }
       if (0 < iVar8) {
         if (iStack_84 < iStack_ac) {
-          func_080AB85C(&iStack_ac);
+          NPC_Routine_080AB85C(&iStack_ac);
         }
         if (iStack_ac < 0x10) goto LAB_08023bd4;
       }
@@ -4144,7 +4144,7 @@ LAB_08023b80:
   }
   *(short *)(iVar4 + 0x2c) = sVar14;
 LAB_08023f60:
-  func_08020170(param_1,&iStack_ac);
+  Entity_Routine_08020170(param_1,&iStack_ac);
   *(undefined1 *)(param_1 + 0xc) = 0;
   if (*(short *)(param_1 + 9) == 0) {
     *(undefined2 *)(param_1 + 9) = *(undefined2 *)((int)param_1 + 0x26);
@@ -4160,9 +4160,9 @@ LAB_08023f60:
 }
 
 // =============================================================================
-// Function: func_08023FB0 @ 0x08023FB0
+// Function: Entity_Routine_08023FB0 @ 0x08023FB0
 // =============================================================================
-undefined4 func_08023FB0(int param_1,uint param_2,uint param_3)
+undefined4 Entity_Routine_08023FB0(int param_1,uint param_2,uint param_3)
 
 {
   uint uVar1;
@@ -4170,25 +4170,25 @@ undefined4 func_08023FB0(int param_1,uint param_2,uint param_3)
   int iVar3;
   undefined4 in_lr;
   
-  uVar1 = func_0802405C();
+  uVar1 = Entity_Routine_0802405C();
   if (*(ushort *)(param_1 + 0x22) != uVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   if (*(byte *)(param_1 + 0x20) != param_3) {
-    func_08032198(param_1,param_3);
+    Entity_Routine_08032198(param_1,param_3);
   }
-  uVar2 = func_080240BC(param_1,param_2);
-  func_08020080(param_1,uVar2);
+  uVar2 = Entity_Routine_080240BC(param_1,param_2);
+  Entity_Routine_08020080(param_1,uVar2);
   if (param_2 != *(byte *)(param_1 + 0x38)) {
     iVar3 = -1;
     if (param_2 == 4) {
       iVar3 = 8;
     }
     if (iVar3 < 0) {
-      func_080323C8(param_1);
+      Entity_Routine_080323C8(param_1);
     }
     else {
-      func_08032384(param_1,iVar3,1);
+      Entity_Routine_08032384(param_1,iVar3,1);
     }
   }
   *(byte *)(param_1 + 0x38) = (byte)param_2;
@@ -4196,9 +4196,9 @@ undefined4 func_08023FB0(int param_1,uint param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_08024020 @ 0x08024020
+// Function: Entity_Routine_08024020 @ 0x08024020
 // =============================================================================
-undefined8 func_08024020(int param_1)
+undefined8 Entity_Routine_08024020(int param_1)
 
 {
   int iVar1;
@@ -4232,9 +4232,9 @@ LAB_08024058:
 }
 
 // =============================================================================
-// Function: func_0802405C @ 0x0802405C
+// Function: Entity_Routine_0802405C @ 0x0802405C
 // =============================================================================
-undefined8 func_0802405C(int param_1,int param_2)
+undefined8 Entity_Routine_0802405C(int param_1,int param_2)
 
 {
   int iVar1;
@@ -4246,15 +4246,15 @@ undefined8 func_0802405C(int param_1,int param_2)
   uVar4 = 0;
   cVar2 = func_0x0809b8b0(*(undefined4 *)(param_1 + 0x34));
   if (cVar2 != '\0') {
-    uVar4 = func_0809B8BC(*(undefined4 *)(param_1 + 0x34));
+    uVar4 = Animal_Routine_0809B8BC(*(undefined4 *)(param_1 + 0x34));
     uVar4 = (-uVar4 | uVar4) >> 0x1f;
   }
   iVar1 = _DAT_0802408c;
   param_2 = param_2 * 2;
   if (uVar4 == 0) {
-    cVar2 = func_0809BF00(*(undefined4 *)(param_1 + 0x34));
+    cVar2 = Animal_Routine_0809BF00(*(undefined4 *)(param_1 + 0x34));
     if (cVar2 == '\0') {
-      iVar3 = func_0809BEDC(*(undefined4 *)(param_1 + 0x34));
+      iVar3 = Animal_Routine_0809BEDC(*(undefined4 *)(param_1 + 0x34));
       param_2 = param_2 + iVar3 * 0xe;
     }
     else {
@@ -4268,9 +4268,9 @@ undefined8 func_0802405C(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_080240BC @ 0x080240BC
+// Function: Entity_Routine_080240BC @ 0x080240BC
 // =============================================================================
-undefined8 func_080240BC(undefined4 param_1,int param_2)
+undefined8 Entity_Routine_080240BC(undefined4 param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -4286,9 +4286,9 @@ undefined8 func_080240BC(undefined4 param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_080240D0 @ 0x080240D0
+// Function: Entity_Routine_080240D0 @ 0x080240D0
 // =============================================================================
-undefined4 func_080240D0(int param_1,ushort *param_2)
+undefined4 Entity_Routine_080240D0(int param_1,ushort *param_2)
 
 {
   char cVar1;
@@ -4322,13 +4322,13 @@ undefined4 func_080240D0(int param_1,ushort *param_2)
       else {
         uVar7 = 0x1e;
       }
-      uVar3 = func_080AB788(100);
+      uVar3 = NPC_Routine_080AB788(100);
       if (uVar3 < uVar7) {
         iVar2 = func_0x0809b228(*(undefined4 *)(param_1 + 0x34));
         auStack_1c[0] = ((uint)(iVar2 * 0x3c0) >> 8) + 0x1e0 & 0xffff;
         func_0x0809b958(*(undefined4 *)(param_1 + 0x34),auStack_1c);
-        uVar4 = func_08024020(param_1);
-        func_08023FB0(param_1,uVar4,*(undefined1 *)(param_1 + 0x20));
+        uVar4 = Entity_Routine_08024020(param_1);
+        Entity_Routine_08023FB0(param_1,uVar4,*(undefined1 *)(param_1 + 0x20));
       }
     }
   }
@@ -4336,9 +4336,9 @@ undefined4 func_080240D0(int param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_080241AC @ 0x080241AC
+// Function: Entity_Routine_080241AC @ 0x080241AC
 // =============================================================================
-undefined4 func_080241AC(int param_1)
+undefined4 Entity_Routine_080241AC(int param_1)
 
 {
   undefined4 uVar1;
@@ -4348,16 +4348,16 @@ undefined4 func_080241AC(int param_1)
   if (*(int *)(*(int *)(param_1 + 0x34) + 0x28) == 3) {
     uStack_c = (uStack_c & _DAT_080241f0 | 0xb4) & _DAT_080241f4;
     func_0x0809b940(*(int *)(param_1 + 0x34),&uStack_c);
-    uVar1 = func_08024020(param_1);
-    func_08023FB0(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
+    uVar1 = Entity_Routine_08024020(param_1);
+    Entity_Routine_08023FB0(param_1,uVar1,*(undefined1 *)(param_1 + 0x20));
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08024224 @ 0x08024224
+// Function: Entity_Routine_08024224 @ 0x08024224
 // =============================================================================
-ulonglong func_08024224(int param_1)
+ulonglong Entity_Routine_08024224(int param_1)
 
 {
   undefined4 uVar1;
@@ -4368,19 +4368,19 @@ ulonglong func_08024224(int param_1)
 }
 
 // =============================================================================
-// Function: func_08024234 @ 0x08024234
+// Function: Entity_Routine_08024234 @ 0x08024234
 // =============================================================================
-void func_08024234(int param_1)
+void Entity_Routine_08024234(int param_1)
 
 {
-  func_0809BF18(*(undefined4 *)(param_1 + 0x34));
+  Animal_Routine_0809BF18(*(undefined4 *)(param_1 + 0x34));
   return;
 }
 
 // =============================================================================
-// Function: func_08024240 @ 0x08024240
+// Function: Entity_Routine_08024240 @ 0x08024240
 // =============================================================================
-void func_08024240(int param_1)
+void Entity_Routine_08024240(int param_1)
 
 {
   func_0x0809b50c(*(undefined4 *)(param_1 + 0x34));
@@ -4388,9 +4388,9 @@ void func_08024240(int param_1)
 }
 
 // =============================================================================
-// Function: func_0802424C @ 0x0802424C
+// Function: Entity_Routine_0802424C @ 0x0802424C
 // =============================================================================
-undefined8 func_0802424C(int param_1)
+undefined8 Entity_Routine_0802424C(int param_1)
 
 {
   char cVar1;
@@ -4407,9 +4407,9 @@ undefined8 func_0802424C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0802427C @ 0x0802427C
+// Function: Entity_Routine_0802427C @ 0x0802427C
 // =============================================================================
-undefined4 func_0802427C(int param_1)
+undefined4 Entity_Routine_0802427C(int param_1)
 
 {
   char cVar1;
@@ -4420,24 +4420,24 @@ undefined4 func_0802427C(int param_1)
   
   cVar1 = func_0x0809b8b0(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    iVar2 = func_080AB788(0x78);
+    iVar2 = NPC_Routine_080AB788(0x78);
     uStack_c = ((uStack_c & _DAT_080242fc | iVar2 + 0xf0U & 0xffff) & _DAT_08024300 | 0x3c0000) &
                _DAT_08024304 & _DAT_08024308;
     func_0x0809b94c(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-    uVar3 = func_08024020(param_1);
-    func_08023FB0(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
+    uVar3 = Entity_Routine_08024020(param_1);
+    Entity_Routine_08023FB0(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
   }
-  func_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
+  Animal_Routine_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
   func_0x0809b638(*(undefined4 *)(param_1 + 0x34));
-  func_08032384(param_1,0,0);
-  func_080200C4(param_1,0xa4);
+  Entity_Routine_08032384(param_1,0,0);
+  Entity_Routine_080200C4(param_1,0xa4);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802430C @ 0x0802430C
+// Function: Entity_Routine_0802430C @ 0x0802430C
 // =============================================================================
-undefined4 func_0802430C(int param_1)
+undefined4 Entity_Routine_0802430C(int param_1)
 
 {
   undefined4 in_lr;
@@ -4447,9 +4447,9 @@ undefined4 func_0802430C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08024318 @ 0x08024318
+// Function: Entity_Routine_08024318 @ 0x08024318
 // =============================================================================
-undefined4 func_08024318(int param_1)
+undefined4 Entity_Routine_08024318(int param_1)
 
 {
   char cVar1;
@@ -4458,45 +4458,45 @@ undefined4 func_08024318(int param_1)
   
   cVar1 = func_0x0809b230(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    func_0809B2A8(*(undefined4 *)(param_1 + 0x34),1);
-    func_0809B278(*(undefined4 *)(param_1 + 0x34));
+    Animal_Routine_0809B2A8(*(undefined4 *)(param_1 + 0x34),1);
+    Animal_Routine_0809B278(*(undefined4 *)(param_1 + 0x34));
   }
   cVar1 = func_0x0809b504(*(undefined4 *)(param_1 + 0x34));
-  if ((cVar1 != '\0') && (uVar2 = func_080AB788(100), uVar2 < 0x1e)) {
+  if ((cVar1 != '\0') && (uVar2 = NPC_Routine_080AB788(100), uVar2 < 0x1e)) {
     func_0x0809b644(*(undefined4 *)(param_1 + 0x34));
   }
   cVar1 = func_0x0809b50c(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    func_08032384(param_1,1,0);
-    func_080200C4(param_1,0xa3);
+    Entity_Routine_08032384(param_1,1,0);
+    Entity_Routine_080200C4(param_1,0xa3);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08024378 @ 0x08024378
+// Function: Entity_Routine_08024378 @ 0x08024378
 // =============================================================================
-undefined8 func_08024378(int param_1)
+undefined8 Entity_Routine_08024378(int param_1)
 
 {
   undefined4 uVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  func_08032384(param_1,1,0);
-  func_080200C4(param_1,0xa3);
-  uVar1 = func_0809BF84(*(undefined4 *)(param_1 + 0x34));
-  uVar2 = func_0802405C(param_1,*(undefined1 *)(param_1 + 0x38));
+  Entity_Routine_08032384(param_1,1,0);
+  Entity_Routine_080200C4(param_1,0xa3);
+  uVar1 = Animal_Routine_0809BF84(*(undefined4 *)(param_1 + 0x34));
+  uVar2 = Entity_Routine_0802405C(param_1,*(undefined1 *)(param_1 + 0x38));
   if (*(ushort *)(param_1 + 0x22) != uVar2) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return CONCAT44(in_lr,uVar1);
 }
 
 // =============================================================================
-// Function: func_080243B8 @ 0x080243B8
+// Function: Entity_Routine_080243B8 @ 0x080243B8
 // =============================================================================
-undefined4 func_080243B8(int param_1)
+undefined4 Entity_Routine_080243B8(int param_1)
 
 {
   char cVar1;
@@ -4511,9 +4511,9 @@ undefined4 func_080243B8(int param_1)
 }
 
 // =============================================================================
-// Function: func_080243DC @ 0x080243DC
+// Function: Entity_Routine_080243DC @ 0x080243DC
 // =============================================================================
-undefined4 func_080243DC(int param_1)
+undefined4 Entity_Routine_080243DC(int param_1)
 
 {
   char cVar1;
@@ -4524,24 +4524,24 @@ undefined4 func_080243DC(int param_1)
   
   cVar1 = func_0x0809b8b0(*(undefined4 *)(param_1 + 0x34));
   if (cVar1 == '\0') {
-    iVar2 = func_080AB788(0x78);
+    iVar2 = NPC_Routine_080AB788(0x78);
     uStack_c = ((uStack_c & _DAT_0802445c | iVar2 + 0xf0U & 0xffff) & _DAT_08024460 | 0xbc0000) &
                _DAT_08024464;
     func_0x0809b94c(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-    uVar3 = func_08024020(param_1);
-    func_08023FB0(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
+    uVar3 = Entity_Routine_08024020(param_1);
+    Entity_Routine_08023FB0(param_1,uVar3,*(undefined1 *)(param_1 + 0x20));
   }
-  func_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
+  Animal_Routine_0809B2DC(*(undefined4 *)(param_1 + 0x34),10);
   func_0x0809b638(*(undefined4 *)(param_1 + 0x34));
-  func_08032384(param_1,0,0);
-  func_080200C4(param_1,0xa4);
+  Entity_Routine_08032384(param_1,0,0);
+  Entity_Routine_080200C4(param_1,0xa4);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08024468 @ 0x08024468
+// Function: Entity_Routine_08024468 @ 0x08024468
 // =============================================================================
-undefined4 func_08024468(int param_1,uint param_2,uint param_3)
+undefined4 Entity_Routine_08024468(int param_1,uint param_2,uint param_3)
 
 {
   char cVar1;
@@ -4552,20 +4552,20 @@ undefined4 func_08024468(int param_1,uint param_2,uint param_3)
   cVar1 = func_0x0809b8b0(*(undefined4 *)(param_1 + 0x34));
   if ((cVar1 == '\0') && (0x3b < param_3)) {
     if (*(byte *)(param_1 + 0x20) != param_2) {
-      func_08032198(param_1,param_2);
+      Entity_Routine_08032198(param_1,param_2);
     }
     uStack_14 = uStack_14 & _DAT_080244c0 | 0x3c;
     func_0x0809b968(*(undefined4 *)(param_1 + 0x34),&uStack_14);
-    uVar2 = func_08024020(param_1);
-    func_08023FB0(param_1,uVar2,*(byte *)(param_1 + 0x20));
+    uVar2 = Entity_Routine_08024020(param_1);
+    Entity_Routine_08023FB0(param_1,uVar2,*(byte *)(param_1 + 0x20));
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080244C4 @ 0x080244C4
+// Function: Entity_Routine_080244C4 @ 0x080244C4
 // =============================================================================
-undefined8 func_080244C4(int param_1)
+undefined8 Entity_Routine_080244C4(int param_1)
 
 {
   undefined4 uVar1;
@@ -4581,9 +4581,9 @@ undefined8 func_080244C4(int param_1)
 }
 
 // =============================================================================
-// Function: func_080244D8 @ 0x080244D8
+// Function: Entity_Routine_080244D8 @ 0x080244D8
 // =============================================================================
-undefined8 func_080244D8(int param_1)
+undefined8 Entity_Routine_080244D8(int param_1)
 
 {
   undefined4 uVar1;
@@ -4599,9 +4599,9 @@ undefined8 func_080244D8(int param_1)
 }
 
 // =============================================================================
-// Function: func_080244EC @ 0x080244EC
+// Function: Entity_Routine_080244EC @ 0x080244EC
 // =============================================================================
-undefined8 func_080244EC(int param_1)
+undefined8 Entity_Routine_080244EC(int param_1)
 
 {
   undefined4 uVar1;
@@ -4610,13 +4610,13 @@ undefined8 func_080244EC(int param_1)
   int iVar4;
   undefined4 in_lr;
   
-  uVar1 = func_0809BEDC(*(undefined4 *)(param_1 + 0x34));
-  uVar2 = func_080005D4(0x8c);
-  uVar3 = func_080244C4(uVar1);
-  uVar1 = func_080244D8(uVar1);
-  iVar4 = func_080324BC(uVar2,param_1,4,0xb,uVar3,uVar1,0,0);
+  uVar1 = Animal_Routine_0809BEDC(*(undefined4 *)(param_1 + 0x34));
+  uVar2 = Dispatcher_Routine_080005D4(0x8c);
+  uVar3 = Entity_Routine_080244C4(uVar1);
+  uVar1 = Entity_Routine_080244D8(uVar1);
+  iVar4 = Entity_Routine_080324BC(uVar2,param_1,4,0xb,uVar3,uVar1,0,0);
   if (*(char *)(param_1 + 0x38) == '\x04') {
-    func_0805E860(iVar4 + 0x70,8);
+    Animal_Routine_0805E860(iVar4 + 0x70,8);
     *(undefined1 *)(iVar4 + 0x84) = 1;
     *(undefined1 *)(iVar4 + 0x86) = 0;
     *(undefined1 *)(iVar4 + 0x87) = 1;
@@ -4626,9 +4626,9 @@ undefined8 func_080244EC(int param_1)
 }
 
 // =============================================================================
-// Function: func_0802459C @ 0x0802459C
+// Function: Entity_Routine_0802459C @ 0x0802459C
 // =============================================================================
-undefined4 func_0802459C(int param_1)
+undefined4 Entity_Routine_0802459C(int param_1)
 
 {
   short sVar1;
@@ -4651,9 +4651,9 @@ undefined4 func_0802459C(int param_1)
 }
 
 // =============================================================================
-// Function: func_080245E0 @ 0x080245E0
+// Function: Entity_Routine_080245E0 @ 0x080245E0
 // =============================================================================
-undefined8 func_080245E0(int param_1)
+undefined8 Entity_Routine_080245E0(int param_1)
 
 {
   byte bVar1;
@@ -4739,9 +4739,9 @@ undefined8 func_080245E0(int param_1)
 }
 
 // =============================================================================
-// Function: func_08024724 @ 0x08024724
+// Function: Entity_Routine_08024724 @ 0x08024724
 // =============================================================================
-undefined8 func_08024724(short *param_1,undefined4 param_2,ushort *param_3)
+undefined8 Entity_Routine_08024724(short *param_1,undefined4 param_2,ushort *param_3)
 
 {
   short sVar1;
@@ -4794,7 +4794,7 @@ undefined8 func_08024724(short *param_1,undefined4 param_2,ushort *param_3)
   uint uStack_24;
   
   uStack_3c = param_2;
-  cVar3 = func_080AC070(param_2,param_3);
+  cVar3 = NPC_Routine_080AC070(param_2,param_3);
   if (cVar3 == '\0') {
 LAB_0802495c:
     *param_1 = 0;
@@ -4813,7 +4813,7 @@ LAB_0802495c:
     iStack_30 = iStack_34;
     uStack_2c = uVar5;
     iStack_28 = iVar7;
-    cVar3 = func_080AC070(uStack_3c,&uStack_7c);
+    cVar3 = NPC_Routine_080AC070(uStack_3c,&uStack_7c);
     if (cVar3 != '\x01') {
       *param_1 = 0;
       param_1[1] = sVar4;
@@ -4823,7 +4823,7 @@ LAB_0802495c:
     uStack_70 = param_3[2];
     sStack_72 = (short)iStack_30 + param_3[1];
     sStack_6e = (short)iStack_30 + param_3[3];
-    uVar6 = func_080AC070(uStack_3c);
+    uVar6 = NPC_Routine_080AC070(uStack_3c);
     uStack_24 = (uVar6 ^ 1) & 0xff;
     if (uStack_24 != 0) {
       *param_1 = 0;
@@ -4835,14 +4835,14 @@ LAB_0802495c:
     sVar1 = (short)uVar5;
     sStack_6c = *param_3 + sVar1;
     sStack_68 = param_3[2] + sVar1;
-    cVar3 = func_080AC070(uStack_3c);
+    cVar3 = NPC_Routine_080AC070(uStack_3c);
     if (cVar3 == '\x01') {
       uStack_62 = param_3[1];
       uStack_5e = param_3[3];
       sVar2 = (short)iVar7;
       sStack_64 = *param_3 + sVar2;
       sStack_60 = param_3[2] + sVar2;
-      cVar3 = func_080AC070(uStack_3c);
+      cVar3 = NPC_Routine_080AC070(uStack_3c);
       if (cVar3 != '\x01') {
         *param_1 = sVar2;
         param_1[1] = 0;
@@ -4852,14 +4852,14 @@ LAB_0802495c:
       sStack_5a = param_3[1] + sVar4;
       sStack_58 = param_3[2] + sVar1;
       sStack_56 = param_3[3] + sVar4;
-      cVar3 = func_080AC070(uStack_3c);
+      cVar3 = NPC_Routine_080AC070(uStack_3c);
       if (cVar3 == '\x01') {
         sStack_54 = *param_3 + sVar2;
         sVar4 = (short)uStack_38;
         sStack_52 = sVar4 + param_3[1];
         sStack_50 = param_3[2] + sVar2;
         sStack_4e = sVar4 + param_3[3];
-        cVar3 = func_080AC070(uStack_3c);
+        cVar3 = NPC_Routine_080AC070(uStack_3c);
         if (cVar3 != '\x01') {
           *param_1 = sVar2;
           param_1[1] = sVar4;
@@ -4870,14 +4870,14 @@ LAB_0802495c:
         sStack_4a = (short)iStack_30 + param_3[1];
         sStack_48 = sVar4 + param_3[2];
         sStack_46 = (short)iStack_30 + param_3[3];
-        cVar3 = func_080AC070(uStack_3c);
+        cVar3 = NPC_Routine_080AC070(uStack_3c);
         if (cVar3 == '\x01') {
           sVar4 = (short)iStack_28;
           sStack_44 = sVar4 + *param_3;
           sStack_42 = (short)iStack_34 + param_3[1];
           sStack_40 = sVar4 + param_3[2];
           sStack_3e = (short)iStack_34 + param_3[3];
-          cVar3 = func_080AC070(uStack_3c);
+          cVar3 = NPC_Routine_080AC070(uStack_3c);
           if (cVar3 == '\x01') goto LAB_0802495c;
           *param_1 = sVar4;
           piVar8 = &iStack_34;
@@ -4902,15 +4902,15 @@ LAB_08024960:
 }
 
 // =============================================================================
-// Function: func_08024974 @ 0x08024974
+// Function: Entity_Routine_08024974 @ 0x08024974
 // =============================================================================
-undefined8 func_08024974(int param_1,undefined4 param_2,int param_3)
+undefined8 Entity_Routine_08024974(int param_1,undefined4 param_2,int param_3)
 
 {
   short sVar1;
   undefined4 in_lr;
   
-  func_0802B908();
+  Entity_Routine_0802B908();
   *(undefined4 *)(param_1 + 0x14) = _DAT_08024a70;
   *(int *)(param_1 + 0x34) = param_3;
   *(int *)(param_1 + 0x38) = param_3 + _DAT_08024a74;
@@ -4958,17 +4958,17 @@ undefined8 func_08024974(int param_1,undefined4 param_2,int param_3)
   *(undefined1 *)(param_1 + 0xc4) = 0;
   *(undefined1 *)(param_1 + 0xc5) = 0;
   func_0x0802c2dc(param_1);
-  sVar1 = func_0802D158(param_1);
+  sVar1 = Entity_Routine_0802D158(param_1);
   if (*(short *)(param_1 + 0x22) != sVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08024B9C @ 0x08024B9C
+// Function: Entity_Routine_08024B9C @ 0x08024B9C
 // =============================================================================
-void func_08024B9C(int param_1)
+void Entity_Routine_08024B9C(int param_1)
 
 {
   char cVar1;
@@ -4979,35 +4979,35 @@ void func_08024B9C(int param_1)
   uVar3 = 2;
   if (*(short *)(param_1 + 4) == 0x13) {
     if (((*(byte *)(*(int *)(param_1 + 0x34) + _DAT_08024be4) & 0x1f) >> 3 == 1) ||
-       (cVar1 = func_0809C694(*(int *)(param_1 + 0x34) + _DAT_08024be4 + -0x25,0x4a), cVar1 != '\0')
+       (cVar1 = NPC_Routine_0809C694(*(int *)(param_1 + 0x34) + _DAT_08024be4 + -0x25,0x4a), cVar1 != '\0')
        ) {
       uVar3 = 1;
     }
   }
   *(undefined1 *)(param_1 + 0x21) = uVar3;
-  uVar2 = func_080005D4(0x284);
-  func_0802B260(uVar2,param_1);
+  uVar2 = Dispatcher_Routine_080005D4(0x284);
+  Entity_Routine_0802B260(uVar2,param_1);
   (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
 // =============================================================================
-// Function: func_08024BE8 @ 0x08024BE8
+// Function: Entity_Routine_08024BE8 @ 0x08024BE8
 // =============================================================================
-undefined4 func_08024BE8(undefined4 param_1)
+undefined4 Entity_Routine_08024BE8(undefined4 param_1)
 
 {
   undefined4 in_lr;
   
-  func_0801FDC0();
-  func_0802A588(param_1);
+  Farmer_Routine_0801FDC0();
+  Entity_Routine_0802A588(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08024BFC @ 0x08024BFC
+// Function: Entity_Routine_08024BFC @ 0x08024BFC
 // =============================================================================
-undefined4 * func_08024BFC(undefined4 *param_1,int param_2)
+undefined4 * Entity_Routine_08024BFC(undefined4 *param_1,int param_2)
 
 {
   char cVar1;
@@ -5018,7 +5018,7 @@ undefined4 * func_08024BFC(undefined4 *param_1,int param_2)
   
   cVar1 = func_0x080d3910(param_2,*(undefined4 *)(*(int *)(param_2 + 0x14) + 0x40));
   if (cVar1 == '\0') {
-    func_0803240C(&uStack_14,param_2);
+    Entity_Routine_0803240C(&uStack_14,param_2);
     uStack_1c = uStack_14;
     uStack_18 = uStack_10;
   }
@@ -5032,35 +5032,35 @@ undefined4 * func_08024BFC(undefined4 *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08024C54 @ 0x08024C54
+// Function: Entity_Routine_08024C54 @ 0x08024C54
 // =============================================================================
-undefined4 func_08024C54(int param_1)
+undefined4 Entity_Routine_08024C54(int param_1)
 
 {
   undefined4 in_lr;
   
   *(undefined1 *)(param_1 + 6) = 1;
-  func_080323C8();
+  Entity_Routine_080323C8();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08024C64 @ 0x08024C64
+// Function: Entity_Routine_08024C64 @ 0x08024C64
 // =============================================================================
-undefined4 func_08024C64(int param_1)
+undefined4 Entity_Routine_08024C64(int param_1)
 
 {
   undefined4 in_lr;
   
   *(undefined1 *)(param_1 + 6) = 0;
-  func_080323C8();
+  Entity_Routine_080323C8();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08024CA0 @ 0x08024CA0
+// Function: Entity_Routine_08024CA0 @ 0x08024CA0
 // =============================================================================
-undefined8 func_08024CA0(int param_1)
+undefined8 Entity_Routine_08024CA0(int param_1)
 
 {
   char cVar1;
@@ -5079,9 +5079,9 @@ undefined8 func_08024CA0(int param_1)
 }
 
 // =============================================================================
-// Function: func_08024CD0 @ 0x08024CD0
+// Function: Entity_Routine_08024CD0 @ 0x08024CD0
 // =============================================================================
-undefined4 func_08024CD0(undefined4 *param_1,undefined4 *param_2)
+undefined4 Entity_Routine_08024CD0(undefined4 *param_1,undefined4 *param_2)
 
 {
   byte bVar1;
@@ -5120,11 +5120,11 @@ undefined4 func_08024CD0(undefined4 *param_1,undefined4 *param_2)
   undefined1 uStack_27;
   uint uStack_24;
   
-  func_0802F0EC(param_1,*param_2,*(undefined1 *)(param_2 + 1));
-  func_0802CDCC(param_1);
-  sVar3 = func_0802D158(param_1);
+  Entity_Routine_0802F0EC(param_1,*param_2,*(undefined1 *)(param_2 + 1));
+  Entity_Routine_0802CDCC(param_1);
+  sVar3 = Entity_Routine_0802D158(param_1);
   if (*(short *)((int)param_1 + 0x22) != sVar3) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   if (*(short *)(param_1 + 9) == 0) {
     sVar3 = *(short *)((int)param_1 + 0x26);
@@ -5227,19 +5227,19 @@ LAB_08024eee:
 LAB_08024f7e:
   if (*(char *)(param_2 + 1) != '\0') {
     iVar10 = param_1[0xd] + _DAT_08025010;
-    cVar2 = func_0800DC34(iVar10);
+    cVar2 = Product_GetId(iVar10);
     if (cVar2 == '\0') {
-      uStack_28 = func_0800DC10(iVar10);
+      uStack_28 = Product_Construct(iVar10);
       iVar9 = func_0x0800db30();
       if (iVar9 == 0x4e) {
         func_0x080d3918(param_1,1,0,*(undefined4 *)(param_1[5] + 100));
       }
     }
-    cVar2 = func_0800DC34(iVar10);
+    cVar2 = Product_GetId(iVar10);
     if (cVar2 == '\0') {
-      uStack_27 = func_0800DC10(iVar10);
+      uStack_27 = Product_Construct(iVar10);
       iVar10 = func_0x0800db30();
-      if ((iVar10 == 0x4f) && (cVar2 = func_0800EE2C(param_1[0xd] + _DAT_08025014), cVar2 != '\0'))
+      if ((iVar10 == 0x4f) && (cVar2 = Farmer_Routine_0800EE2C(param_1[0xd] + _DAT_08025014), cVar2 != '\0'))
       {
         func_0x080d3918(param_1,0,0xffffffff,*(undefined4 *)(param_1[5] + 100));
       }
@@ -5249,9 +5249,9 @@ LAB_08024f7e:
 }
 
 // =============================================================================
-// Function: func_08025018 @ 0x08025018
+// Function: Entity_Routine_08025018 @ 0x08025018
 // =============================================================================
-undefined4 func_08025018(int param_1,undefined4 param_2)
+undefined4 Entity_Routine_08025018(int param_1,undefined4 param_2)
 
 {
   short sVar1;
@@ -5260,21 +5260,21 @@ undefined4 func_08025018(int param_1,undefined4 param_2)
   *(undefined1 *)(param_1 + 0xc1) = 0;
   if (*(char *)(param_1 + 0xc2) == '\0') {
     if (*(char *)(param_1 + 0xc0) != '\0') {
-      func_0802F0EC(param_1,0,0);
-      sVar1 = func_0802D158(param_1);
+      Entity_Routine_0802F0EC(param_1,0,0);
+      sVar1 = Entity_Routine_0802D158(param_1);
       if (*(short *)(param_1 + 0x22) != sVar1) {
-        func_080321B0(param_1);
+        Entity_Routine_080321B0(param_1);
       }
     }
-    func_0803242C(param_1,param_2);
+    Entity_Routine_0803242C(param_1,param_2);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08025068 @ 0x08025068
+// Function: Entity_Routine_08025068 @ 0x08025068
 // =============================================================================
-undefined8 func_08025068(int param_1,int param_2,int param_3,undefined4 param_4)
+undefined8 Entity_Routine_08025068(int param_1,int param_2,int param_3,undefined4 param_4)
 
 {
   undefined1 *puVar1;
@@ -5306,10 +5306,10 @@ undefined8 func_08025068(int param_1,int param_2,int param_3,undefined4 param_4)
   }
   uVar7 = func_0x0800e4f0(*(undefined4 *)(param_1 + 0x38));
   UNRECOVERED_JUMPTABLE = (code *)func_0x0800e51c(*(undefined4 *)(param_1 + 0x38));
-  func_0800E9E4(*(undefined4 *)(param_1 + 0x38),param_2);
+  Farmer_AddStamina(*(undefined4 *)(param_1 + 0x38),param_2);
   uVar8 = func_0x0800e4f0(*(undefined4 *)(param_1 + 0x38));
   uVar9 = func_0x0800e4fc(*(undefined4 *)(param_1 + 0x38));
-  func_0800EA68(*(undefined4 *)(param_1 + 0x38),param_3);
+  Farmer_AddFatigue(*(undefined4 *)(param_1 + 0x38),param_3);
   uVar10 = func_0x0800e4fc(*(undefined4 *)(param_1 + 0x38));
   uVar12 = _DAT_080250f8;
   if ((param_2 < 1) && (-1 < param_3)) goto LAB_08025158;
@@ -5641,10 +5641,10 @@ LAB_080251ea:
 }
 
 // =============================================================================
-// Function: func_080251FC @ 0x080251FC
+// Function: Entity_Routine_080251FC @ 0x080251FC
 // =============================================================================
 undefined8
-func_080251FC(undefined4 param_1,undefined4 param_2,undefined4 *param_3,short param_4,uint param_5)
+Entity_Routine_080251FC(undefined4 param_1,undefined4 param_2,undefined4 *param_3,short param_4,uint param_5)
 
 {
   char cVar1;
@@ -5660,7 +5660,7 @@ func_080251FC(undefined4 param_1,undefined4 param_2,undefined4 *param_3,short pa
     do {
       uStack_20 = CONCAT22(uStack_20._2_2_,(short)uStack_20 + param_4);
       uStack_1c = CONCAT22(uStack_1c._2_2_,(short)uStack_1c + param_4);
-      cVar1 = func_080AC070(param_2,&uStack_20);
+      cVar1 = NPC_Routine_080AC070(param_2,&uStack_20);
       if (cVar1 == '\0') break;
       uVar2 = uVar2 + 1;
     } while (uVar2 <= param_5);
@@ -5669,10 +5669,10 @@ func_080251FC(undefined4 param_1,undefined4 param_2,undefined4 *param_3,short pa
 }
 
 // =============================================================================
-// Function: func_08025248 @ 0x08025248
+// Function: Entity_Routine_08025248 @ 0x08025248
 // =============================================================================
 undefined8
-func_08025248(undefined4 param_1,undefined4 param_2,undefined4 *param_3,short param_4,uint param_5)
+Entity_Routine_08025248(undefined4 param_1,undefined4 param_2,undefined4 *param_3,short param_4,uint param_5)
 
 {
   char cVar1;
@@ -5688,7 +5688,7 @@ func_08025248(undefined4 param_1,undefined4 param_2,undefined4 *param_3,short pa
     do {
       uStack_20 = CONCAT22(uStack_20._2_2_ + param_4,(undefined2)uStack_20);
       uStack_1c = CONCAT22(uStack_1c._2_2_ + param_4,(undefined2)uStack_1c);
-      cVar1 = func_080AC070(param_2,&uStack_20);
+      cVar1 = NPC_Routine_080AC070(param_2,&uStack_20);
       if (cVar1 == '\0') break;
       uVar2 = uVar2 + 1;
     } while (uVar2 <= param_5);
@@ -5697,9 +5697,9 @@ func_08025248(undefined4 param_1,undefined4 param_2,undefined4 *param_3,short pa
 }
 
 // =============================================================================
-// Function: func_08025294 @ 0x08025294
+// Function: Entity_Routine_08025294 @ 0x08025294
 // =============================================================================
-undefined8 func_08025294(undefined4 param_1,undefined4 param_2,int param_3,short *param_4)
+undefined8 Entity_Routine_08025294(undefined4 param_1,undefined4 param_2,int param_3,short *param_4)
 
 {
   short sVar1;
@@ -5740,7 +5740,7 @@ undefined8 func_08025294(undefined4 param_1,undefined4 param_2,int param_3,short
         psVar8[3] = sVar3;
       }
     }
-    cVar5 = func_080AC070(param_2);
+    cVar5 = NPC_Routine_080AC070(param_2);
     if (cVar5 != '\x01') {
       uVar7 = 1;
       goto LAB_08025362;
@@ -5753,9 +5753,9 @@ LAB_08025362:
 }
 
 // =============================================================================
-// Function: func_0802536C @ 0x0802536C
+// Function: Entity_Routine_0802536C @ 0x0802536C
 // =============================================================================
-undefined4 func_0802536C(undefined4 *param_1,int param_2,uint param_3)
+undefined4 Entity_Routine_0802536C(undefined4 *param_1,int param_2,uint param_3)
 
 {
   undefined4 uVar1;
@@ -5807,7 +5807,7 @@ undefined4 func_0802536C(undefined4 *param_1,int param_2,uint param_3)
   func_0x080d3914(&uStack_68,param_1,*(undefined4 *)(param_1[5] + 0xc));
   if (param_2 == 1) {
     uStack_60 = -uStack_30;
-    func_080AC124(auStack_74,&uStack_68,0,&uStack_60,0,0);
+    NPC_Routine_080AC124(auStack_74,&uStack_68,0,&uStack_60,0,0);
     if (uStack_60 != 0) {
       iStack_24 = iStack_24 + uStack_60;
       uStack_68 = CONCAT22(uStack_68._2_2_ + (short)uStack_60,(short)uStack_68);
@@ -5825,7 +5825,7 @@ LAB_0802548e:
       return in_lr;
     }
     uStack_60 = uStack_30;
-    func_080AC124(auStack_74,&uStack_68,&uStack_60,0,0,0);
+    NPC_Routine_080AC124(auStack_74,&uStack_68,&uStack_60,0,0,0);
     if (uStack_60 != 0) {
       iStack_24 = iStack_24 + uStack_60;
       uStack_68 = CONCAT22(uStack_68._2_2_ + (short)uStack_60,(short)uStack_68);
@@ -5835,7 +5835,7 @@ LAB_0802548e:
   }
   else if (param_2 == 2) {
     uStack_60 = -uStack_30;
-    func_080AC124(auStack_74,&uStack_68,0,0,&uStack_60,0);
+    NPC_Routine_080AC124(auStack_74,&uStack_68,0,0,&uStack_60,0);
     if (uStack_60 != 0) {
       iStack_28 = iStack_28 + uStack_60;
       goto LAB_08025482;
@@ -5846,7 +5846,7 @@ LAB_0802548e:
       return in_lr;
     }
     uStack_60 = uStack_30;
-    func_080AC124(auStack_74,&uStack_68,0,0,0,&uStack_60);
+    NPC_Routine_080AC124(auStack_74,&uStack_68,0,0,0,&uStack_60);
     if (uStack_60 != 0) {
       iStack_28 = iStack_28 + uStack_60;
 LAB_08025482:
@@ -5898,19 +5898,19 @@ LAB_0802550a:
   iVar8 = param_2;
   if (-1 < param_2) {
     if (param_2 < 2) {
-      uStack_34 = func_080251FC(param_1,auStack_74,&uStack_5c,0xffffffff,8);
+      uStack_34 = Entity_Routine_080251FC(param_1,auStack_74,&uStack_5c,0xffffffff,8);
       if (uStack_34 < 9) {
         sStack_4c = -(short)uStack_34 + (short)uStack_68;
         uStack_4a = uStack_68._2_2_;
         sStack_48 = -(short)uStack_34 + (short)uStack_64;
         uStack_46 = uStack_64._2_2_;
-        cVar2 = func_080AC070(auStack_74);
+        cVar2 = NPC_Routine_080AC070(auStack_74);
         if (cVar2 != '\x01') {
           iVar8 = 2;
           goto LAB_08025664;
         }
       }
-      uStack_34 = func_080251FC(param_1,auStack_74,&uStack_5c,1,8);
+      uStack_34 = Entity_Routine_080251FC(param_1,auStack_74,&uStack_5c,1,8);
       uVar6 = uStack_34;
       if (uStack_34 < 9) {
         sStack_44 = (short)uStack_68 + (short)uStack_34;
@@ -5918,26 +5918,26 @@ LAB_0802550a:
         sStack_40 = (short)uStack_34 + (short)uStack_64;
         uStack_3e = uStack_64._2_2_;
         uStack_34 = uVar6;
-        cVar2 = func_080AC070(auStack_74);
+        cVar2 = NPC_Routine_080AC070(auStack_74);
         if (cVar2 != '\x01') {
           iVar8 = 3;
         }
       }
     }
     else if (param_2 < 4) {
-      uStack_34 = func_08025248(param_1,auStack_74,&uStack_5c,0xffffffff,8);
+      uStack_34 = Entity_Routine_08025248(param_1,auStack_74,&uStack_5c,0xffffffff,8);
       if (uStack_34 < 9) {
         uStack_54 = (short)uStack_68;
         sStack_52 = -(short)uStack_34 + uStack_68._2_2_;
         uStack_50 = (short)uStack_64;
         sStack_4e = -(short)uStack_34 + uStack_64._2_2_;
-        cVar2 = func_080AC070(auStack_74);
+        cVar2 = NPC_Routine_080AC070(auStack_74);
         if (cVar2 != '\x01') {
           iVar8 = 1;
           goto LAB_08025664;
         }
       }
-      uStack_34 = func_08025248(param_1,auStack_74,&uStack_5c,1,8);
+      uStack_34 = Entity_Routine_08025248(param_1,auStack_74,&uStack_5c,1,8);
       uVar6 = uStack_34;
       if (uStack_34 < 9) {
         uStack_3c = (short)uStack_68;
@@ -5945,7 +5945,7 @@ LAB_0802550a:
         uStack_38 = (short)uStack_64;
         sStack_36 = (short)uStack_34 + uStack_64._2_2_;
         uStack_34 = uVar6;
-        cVar2 = func_080AC070(auStack_74);
+        cVar2 = NPC_Routine_080AC070(auStack_74);
         if (cVar2 != '\x01') {
           iVar8 = 0;
         }
@@ -5955,7 +5955,7 @@ LAB_0802550a:
 LAB_08025664:
   if ((((iVar8 != param_2) && (uStack_34 < 4)) || (uStack_2c != 2)) ||
      ((*(char *)((int)param_1 + 0x3e) != '\x02' ||
-      (cVar2 = func_08025294(param_1,auStack_74,param_2,&uStack_68), cVar2 == '\0')))) {
+      (cVar2 = Entity_Routine_08025294(param_1,auStack_74,param_2,&uStack_68), cVar2 == '\0')))) {
     if (iVar8 != param_2) {
       puVar7 = &uStack_34;
       if (uStack_30 < uStack_34) {
@@ -5991,7 +5991,7 @@ LAB_08025664:
   }
   uVar5 = puVar11[-1];
 LAB_080256c4:
-  func_08008B6C(uVar5,0x69);
+  HW_Routine_08008B6C(uVar5,0x69);
   iVar8 = 0;
   sVar10 = 0;
   sVar3 = (short)iStack_24;
@@ -6036,9 +6036,9 @@ LAB_080257b2:
 }
 
 // =============================================================================
-// Function: func_080257D0 @ 0x080257D0
+// Function: Entity_Routine_080257D0 @ 0x080257D0
 // =============================================================================
-undefined4 func_080257D0(undefined4 *param_1,char param_2)
+undefined4 Entity_Routine_080257D0(undefined4 *param_1,char param_2)
 
 {
   char cVar1;
@@ -6050,10 +6050,10 @@ undefined4 func_080257D0(undefined4 *param_1,char param_2)
   undefined4 in_lr;
   
   if (param_2 == '\0') {
-    iVar2 = func_0800EB3C(param_1[0xe]);
+    iVar2 = Farmer_CycleHeldItemBack(param_1[0xe]);
   }
   else {
-    iVar2 = func_0800EBC4(param_1[0xe]);
+    iVar2 = Farmer_CycleHeldItemFront(param_1[0xe]);
   }
   if (iVar2 != 0) {
     *(undefined1 *)(param_1 + 0xf) = 0x13;
@@ -6069,15 +6069,15 @@ undefined4 func_080257D0(undefined4 *param_1,char param_2)
     }
     uVar4 = puVar6[-1];
 LAB_0802582c:
-    func_08008B6C(uVar4,0x6b);
+    HW_Routine_08008B6C(uVar4,0x6b);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08025838 @ 0x08025838
+// Function: Entity_Routine_08025838 @ 0x08025838
 // =============================================================================
-undefined4 func_08025838(undefined4 *param_1,char param_2)
+undefined4 Entity_Routine_08025838(undefined4 *param_1,char param_2)
 
 {
   char cVar1;
@@ -6089,13 +6089,13 @@ undefined4 func_08025838(undefined4 *param_1,char param_2)
   undefined4 in_lr;
   
   if (param_2 == '\0') {
-    iVar2 = func_0800EB3C(param_1[0xe]);
+    iVar2 = Farmer_CycleHeldItemBack(param_1[0xe]);
   }
   else {
-    iVar2 = func_0800EBC4(param_1[0xe]);
+    iVar2 = Farmer_CycleHeldItemFront(param_1[0xe]);
   }
   if (iVar2 != 0) {
-    func_0802A588(param_1);
+    Entity_Routine_0802A588(param_1);
     *(undefined1 *)(param_1 + 0xf) = 0x14;
     piVar3 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
     puVar6 = (undefined4 *)piVar3[1];
@@ -6108,15 +6108,15 @@ undefined4 func_08025838(undefined4 *param_1,char param_2)
     }
     uVar4 = puVar6[-1];
 LAB_08025894:
-    func_08008B6C(uVar4,0x6b);
+    HW_Routine_08008B6C(uVar4,0x6b);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080258A0 @ 0x080258A0
+// Function: Entity_Routine_080258A0 @ 0x080258A0
 // =============================================================================
-undefined4 func_080258A0(undefined4 *param_1)
+undefined4 Entity_Routine_080258A0(undefined4 *param_1)
 
 {
   char cVar1;
@@ -6129,10 +6129,10 @@ undefined4 func_080258A0(undefined4 *param_1)
   undefined4 in_lr;
   undefined4 uStack_10;
   
-  func_0800F294(&uStack_10,param_1[0xe] + 0x54);
-  cVar1 = func_0800F06C(&uStack_10);
+  HeldItem_ToRucksackItem(&uStack_10,param_1[0xe] + 0x54);
+  cVar1 = Farmer_Routine_0800F06C(&uStack_10);
   if (cVar1 == '\0') {
-    iVar3 = func_0800F634(param_1[0xe] + 0x60);
+    iVar3 = Farmer_Routine_0800F634(param_1[0xe] + 0x60);
     if (iVar3 != -1) {
       puVar4 = (undefined4 *)func_0x0800fcdc(param_1[0xe] + 0x60);
       *puVar4 = uStack_10;
@@ -6146,7 +6146,7 @@ undefined4 func_080258A0(undefined4 *param_1)
         if (puVar4 == puVar7) {
           uVar6 = puVar7[-1];
 LAB_0802591e:
-          func_08008B6C(uVar6,0x6b);
+          HW_Routine_08008B6C(uVar6,0x6b);
           return in_lr;
         }
         cVar1 = func_0x08008cd0(*puVar4);
@@ -6167,9 +6167,9 @@ LAB_0802591e:
 }
 
 // =============================================================================
-// Function: func_08025944 @ 0x08025944
+// Function: Entity_Routine_08025944 @ 0x08025944
 // =============================================================================
-undefined8 func_08025944(int param_1)
+undefined8 Entity_Routine_08025944(int param_1)
 
 {
   char cVar1;
@@ -6180,11 +6180,11 @@ undefined8 func_08025944(int param_1)
   undefined1 auStack_10 [4];
   
   iVar4 = *(int *)(param_1 + 0x38) + 0x5c;
-  cVar1 = func_0800DC34(iVar4);
+  cVar1 = Product_GetId(iVar4);
   if (cVar1 == '\0') {
     uVar3 = *(undefined4 *)(param_1 + 0x38);
-    uVar2 = func_0800DC10(iVar4);
-    auStack_10[0] = func_0800E550(uVar3,uVar2);
+    uVar2 = Product_Construct(iVar4);
+    auStack_10[0] = Farmer_GetUpgradedTool(uVar3,uVar2);
     iVar4 = func_0x0800db30(auStack_10);
     if (iVar4 - 5U < 0x29) {
       switch(*(uint *)(PTR_case_0802598C_08025988 + (iVar4 - 5U) * 4) & 0xfffffffe) {
@@ -6201,9 +6201,9 @@ LAB_08025a36:
 }
 
 // =============================================================================
-// Function: func_08025A40 @ 0x08025A40
+// Function: Entity_Routine_08025A40 @ 0x08025A40
 // =============================================================================
-undefined4 func_08025A40(undefined4 *param_1,char param_2)
+undefined4 Entity_Routine_08025A40(undefined4 *param_1,char param_2)
 
 {
   char cVar1;
@@ -6214,18 +6214,18 @@ undefined4 func_08025A40(undefined4 *param_1,char param_2)
   undefined4 *puVar6;
   undefined4 in_lr;
   
-  cVar1 = func_08025944();
+  cVar1 = Entity_Routine_08025944();
   if (cVar1 == '\0') {
     if (param_2 == '\0') {
-      iVar4 = func_0800EC4C(param_1[0xe]);
+      iVar4 = Farmer_CycleToolBack(param_1[0xe]);
     }
     else {
-      iVar4 = func_0800ECB0(param_1[0xe]);
+      iVar4 = Farmer_CycleToolFront(param_1[0xe]);
     }
     if (iVar4 != 0) {
       *(undefined1 *)(param_1 + 0xf) = 0x15;
       *(undefined1 *)((int)param_1 + 0x3d) = 0x14;
-      func_0802A510(param_1);
+      Entity_Routine_0802A510(param_1);
       piVar2 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
       puVar6 = (undefined4 *)piVar2[1];
       for (puVar5 = (undefined4 *)*piVar2; puVar5 != puVar6; puVar5 = puVar5 + 1) {
@@ -6237,7 +6237,7 @@ undefined4 func_08025A40(undefined4 *param_1,char param_2)
       }
       uVar3 = puVar6[-1];
 LAB_08025aee:
-      func_08008B6C(uVar3,0xbc);
+      HW_Routine_08008B6C(uVar3,0xbc);
     }
   }
   else {
@@ -6252,16 +6252,16 @@ LAB_08025aee:
     }
     uVar3 = puVar6[-1];
 LAB_08025a82:
-    func_08008B6C(uVar3,199);
+    HW_Routine_08008B6C(uVar3,199);
     *(undefined1 *)(param_1 + 0xf) = 0;
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08025AFC @ 0x08025AFC
+// Function: Entity_Routine_08025AFC @ 0x08025AFC
 // =============================================================================
-undefined8 func_08025AFC(int param_1)
+undefined8 Entity_Routine_08025AFC(int param_1)
 
 {
   undefined4 in_lr;
@@ -6270,9 +6270,9 @@ undefined8 func_08025AFC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08025B10 @ 0x08025B10
+// Function: Entity_Routine_08025B10 @ 0x08025B10
 // =============================================================================
-undefined8 func_08025B10(int param_1)
+undefined8 Entity_Routine_08025B10(int param_1)
 
 {
   ushort uVar1;
@@ -6282,7 +6282,7 @@ undefined8 func_08025B10(int param_1)
   undefined4 in_lr;
   
   iVar4 = 0;
-  cVar2 = func_08025AFC();
+  cVar2 = Entity_Routine_08025AFC();
   if ((cVar2 != '\0') && (*(int *)(*(int *)(param_1 + 0x34) + 8) - 1U < 2)) {
     iVar4 = 1;
   }
@@ -6297,7 +6297,7 @@ undefined8 func_08025B10(int param_1)
   if (iVar3 == 0) {
     iVar4 = iVar4 + 2;
   }
-  cVar2 = func_08025944(param_1);
+  cVar2 = Entity_Routine_08025944(param_1);
   if (cVar2 != '\0') {
     iVar4 = iVar4 + 10;
   }
@@ -6305,9 +6305,9 @@ undefined8 func_08025B10(int param_1)
 }
 
 // =============================================================================
-// Function: func_08025B64 @ 0x08025B64
+// Function: Entity_Routine_08025B64 @ 0x08025B64
 // =============================================================================
-undefined4 func_08025B64(undefined4 *param_1,uint param_2,undefined4 param_3,int param_4)
+undefined4 Entity_Routine_08025B64(undefined4 *param_1,uint param_2,undefined4 param_3,int param_4)
 
 {
   char cVar1;
@@ -6368,11 +6368,11 @@ case_08025C08:
     uVar4 = 0x2d;
 LAB_08025c56:
     func_0x0800db2c(puVar6,uVar4);
-    func_0802720C(param_1,puVar6);
+    Entity_Routine_0802720C(param_1,puVar6);
     return in_lr;
   case 0x8025c68:
     func_0x0800db2c(&uStack_2a,0x4d);
-    func_0802720C(param_1,&uStack_2a);
+    Entity_Routine_0802720C(param_1,&uStack_2a);
     piVar2 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
     puVar5 = (undefined4 *)*piVar2;
     puVar7 = (undefined4 *)piVar2[1];
@@ -6380,7 +6380,7 @@ LAB_08025c56:
       if (puVar5 == puVar7) {
         uVar4 = puVar7[-1];
 LAB_08025caa:
-        func_08008B6C(uVar4,0xb6);
+        HW_Routine_08008B6C(uVar4,0xb6);
         return in_lr;
       }
       cVar1 = func_0x08008cd0(*puVar5);
@@ -6396,12 +6396,12 @@ LAB_08025caa:
     if (iVar3 < 0) {
       iVar8 = iVar3 + 0xf;
     }
-    func_0802771C(param_1,iVar3 + (iVar8 >> 4) * -0x10 + 5);
+    Entity_Routine_0802771C(param_1,iVar3 + (iVar8 >> 4) * -0x10 + 5);
     return in_lr;
   case 0x8025cce:
     iVar8 = param_1[5];
     func_0x0800dca8(&uStack_34,0x36);
-    func_0800F004(auStack_38,(uint)uStack_34);
+    Farmer_Routine_0800F004(auStack_38,(uint)uStack_34);
     goto LAB_08025dfe;
   case 0x8025cf8:
     iVar8 = param_1[5];
@@ -6516,21 +6516,21 @@ LAB_08025caa:
   case 0x8025e0c:
     iVar8 = param_1[5];
     func_0x0800df50(auStack_13,0x33);
-    func_0800F040(auStack_38,auStack_13[0]);
+    Farmer_Routine_0800F040(auStack_38,auStack_13[0]);
     func_0x080d3918(param_1,auStack_38,0,*(undefined4 *)(iVar8 + 0x5c));
     return in_lr;
   }
   func_0x0800df50(puVar6,uVar4);
-  func_0800F040(auStack_38,*puVar6);
+  Farmer_Routine_0800F040(auStack_38,*puVar6);
 LAB_08025dfe:
   func_0x080d3918(param_1,auStack_38,0,*(undefined4 *)(iVar8 + 0x5c));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08025E38 @ 0x08025E38
+// Function: Entity_Routine_08025E38 @ 0x08025E38
 // =============================================================================
-undefined4 func_08025E38(undefined4 *param_1)
+undefined4 Entity_Routine_08025E38(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -6542,7 +6542,7 @@ undefined4 func_08025E38(undefined4 *param_1)
   undefined4 in_lr;
   
   func_0x0800f4c0(param_1[0xe] + 0x54);
-  func_0802A588(param_1);
+  Entity_Routine_0802A588(param_1);
   *(undefined1 *)(param_1 + 0xf) = 0x11;
   uVar4 = _DAT_08025ea8;
   bVar1 = *(byte *)(param_1 + 8);
@@ -6577,7 +6577,7 @@ LAB_08025ec2:
     if (puVar5 == puVar6) {
       uVar4 = puVar6[-1];
 LAB_08025ef0:
-      func_08008B6C(uVar4,0x6a);
+      HW_Routine_08008B6C(uVar4,0x6a);
       return in_lr;
     }
     cVar2 = func_0x08008cd0(*puVar5);
@@ -6590,9 +6590,9 @@ LAB_08025ef0:
 }
 
 // =============================================================================
-// Function: func_08025EFC @ 0x08025EFC
+// Function: Entity_Routine_08025EFC @ 0x08025EFC
 // =============================================================================
-undefined4 func_08025EFC(undefined4 *param_1,undefined1 param_2)
+undefined4 Entity_Routine_08025EFC(undefined4 *param_1,undefined1 param_2)
 
 {
   byte bVar1;
@@ -6604,7 +6604,7 @@ undefined4 func_08025EFC(undefined4 *param_1,undefined1 param_2)
   undefined4 in_lr;
   
   func_0x0800f4f0(param_1[0xe] + 0x54,param_2);
-  func_0802A588(param_1);
+  Entity_Routine_0802A588(param_1);
   *(undefined1 *)(param_1 + 0xf) = 0x11;
   uVar4 = _DAT_08025f70;
   bVar1 = *(byte *)(param_1 + 8);
@@ -6639,7 +6639,7 @@ LAB_08025f8a:
     if (puVar5 == puVar6) {
       uVar4 = puVar6[-1];
 LAB_08025fb8:
-      func_08008B6C(uVar4,0x6a);
+      HW_Routine_08008B6C(uVar4,0x6a);
       return in_lr;
     }
     cVar2 = func_0x08008cd0(*puVar5);
@@ -6652,9 +6652,9 @@ LAB_08025fb8:
 }
 
 // =============================================================================
-// Function: func_08025FC4 @ 0x08025FC4
+// Function: Entity_Routine_08025FC4 @ 0x08025FC4
 // =============================================================================
-undefined4 func_08025FC4(undefined4 *param_1)
+undefined4 Entity_Routine_08025FC4(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -6666,7 +6666,7 @@ undefined4 func_08025FC4(undefined4 *param_1)
   undefined4 in_lr;
   
   func_0x0800f4d8(param_1[0xe] + 0x54);
-  func_0802A588(param_1);
+  Entity_Routine_0802A588(param_1);
   *(undefined1 *)(param_1 + 0xf) = 0x11;
   uVar4 = _DAT_08026034;
   bVar1 = *(byte *)(param_1 + 8);
@@ -6701,7 +6701,7 @@ LAB_0802604e:
     if (puVar5 == puVar6) {
       uVar4 = puVar6[-1];
 LAB_0802607c:
-      func_08008B6C(uVar4,0x6a);
+      HW_Routine_08008B6C(uVar4,0x6a);
       return in_lr;
     }
     cVar2 = func_0x08008cd0(*puVar5);
@@ -6714,9 +6714,9 @@ LAB_0802607c:
 }
 
 // =============================================================================
-// Function: func_08026088 @ 0x08026088
+// Function: Entity_Routine_08026088 @ 0x08026088
 // =============================================================================
-undefined4 func_08026088(undefined4 *param_1,undefined2 param_2)
+undefined4 Entity_Routine_08026088(undefined4 *param_1,undefined2 param_2)
 
 {
   byte bVar1;
@@ -6728,7 +6728,7 @@ undefined4 func_08026088(undefined4 *param_1,undefined2 param_2)
   undefined4 in_lr;
   
   func_0x0800f510(param_1[0xe] + 0x54,param_2);
-  func_0802A588(param_1);
+  Entity_Routine_0802A588(param_1);
   *(undefined1 *)(param_1 + 0xf) = 0x11;
   uVar4 = _DAT_080260fc;
   bVar1 = *(byte *)(param_1 + 8);
@@ -6763,7 +6763,7 @@ LAB_08026116:
     if (puVar5 == puVar6) {
       uVar4 = puVar6[-1];
 LAB_08026144:
-      func_08008B6C(uVar4,0x6a);
+      HW_Routine_08008B6C(uVar4,0x6a);
       return in_lr;
     }
     cVar2 = func_0x08008cd0(*puVar5);
@@ -6776,9 +6776,9 @@ LAB_08026144:
 }
 
 // =============================================================================
-// Function: func_08026150 @ 0x08026150
+// Function: Entity_Routine_08026150 @ 0x08026150
 // =============================================================================
-undefined4 func_08026150(undefined4 *param_1,undefined4 *param_2,char param_3)
+undefined4 Entity_Routine_08026150(undefined4 *param_1,undefined4 *param_2,char param_3)
 
 {
   byte bVar1;
@@ -6801,33 +6801,33 @@ undefined4 func_08026150(undefined4 *param_1,undefined4 *param_2,char param_3)
   iVar3 = func_0x0800f09c(param_2);
   if (iVar3 == 0) {
     puVar7 = &uStack_1b;
-    func_0800F0A4(&uStack_24,param_2);
+    Farmer_Routine_0800F0A4(&uStack_24,param_2);
     func_0x0800e0fc(puVar7,(uint)uStack_24);
 LAB_080261b8:
     uStack_1c = *puVar7;
   }
   else if (iVar3 == 1) {
     puVar7 = auStack_1a;
-    uVar5 = func_0800F0E8(param_2);
-    func_0800E148(puVar7,uVar5);
+    uVar5 = Farmer_Routine_0800F0E8(param_2);
+    Item_Routine_0800E148(puVar7,uVar5);
     goto LAB_080261b8;
   }
   iVar3 = param_1[0xd];
-  iVar4 = func_0800E198(&uStack_1c);
+  iVar4 = Item_Routine_0800E198(&uStack_1c);
   if (iVar4 != 0) {
     uVar5 = func_0x0800e194(&uStack_1c);
-    cVar2 = func_0800B124(iVar3 + 0x54,uVar5);
+    cVar2 = ShippingBin_GetValueShipped(iVar3 + 0x54,uVar5);
     if (cVar2 == '\0') {
       uVar5 = func_0x0800e194(&uStack_1c);
-      func_0800B254(iVar3 + 0x54,uVar5);
+      ShippingBin_ResetValueShipped(iVar3 + 0x54,uVar5);
     }
   }
   uStack_20 = *param_2;
-  func_0800F418(param_1[0xe] + 0x54);
+  HeldItem_FromRucksackItem(param_1[0xe] + 0x54);
   if (param_3 != '\0') {
-    func_0800F528(param_1[0xe] + 0x54);
+    HeldItem_CanThrow(param_1[0xe] + 0x54);
   }
-  func_0802A588(param_1);
+  Entity_Routine_0802A588(param_1);
   *(undefined1 *)(param_1 + 0xf) = 0x11;
   uVar5 = _DAT_08026268;
   bVar1 = *(byte *)(param_1 + 8);
@@ -6862,7 +6862,7 @@ LAB_08026282:
     if (puVar8 == puVar9) {
       uVar5 = puVar9[-1];
 LAB_080262b0:
-      func_08008B6C(uVar5,0x6a);
+      HW_Routine_08008B6C(uVar5,0x6a);
       return in_lr;
     }
     cVar2 = func_0x08008cd0(*puVar8);
@@ -6875,9 +6875,9 @@ LAB_080262b0:
 }
 
 // =============================================================================
-// Function: func_080262C4 @ 0x080262C4
+// Function: Entity_Routine_080262C4 @ 0x080262C4
 // =============================================================================
-undefined8 func_080262C4(int param_1)
+undefined8 Entity_Routine_080262C4(int param_1)
 
 {
   char cVar1;
@@ -6890,19 +6890,19 @@ undefined8 func_080262C4(int param_1)
   byte abStack_10 [4];
   
   iVar5 = *(int *)(param_1 + 0x34) + _DAT_080262f8;
-  cVar1 = func_0800F190(iVar5);
+  cVar1 = HeldItem_IsEmpty(iVar5);
   if ((cVar1 == '\0') && (cVar1 = func_0x0800f388(iVar5), cVar1 == '\0')) {
     iVar2 = func_0x0800f204(iVar5);
     if (iVar2 == 0) {
       pbVar4 = abStack_10;
-      func_0800F20C(&uStack_14,iVar5);
+      HeldItem_GetFood(&uStack_14,iVar5);
       func_0x0800e0fc(pbVar4,(uint)uStack_14);
       goto LAB_08026342;
     }
     if (iVar2 == 1) {
       pbVar4 = abStack_10 + 1;
-      uVar3 = func_0800F258(iVar5);
-      func_0800E148(pbVar4,uVar3);
+      uVar3 = HeldItem_GetArticle(iVar5);
+      Item_Routine_0800E148(pbVar4,uVar3);
       goto LAB_08026342;
     }
   }
@@ -6913,9 +6913,9 @@ LAB_08026342:
 }
 
 // =============================================================================
-// Function: func_0802634C @ 0x0802634C
+// Function: Entity_Routine_0802634C @ 0x0802634C
 // =============================================================================
-undefined4 func_0802634C(undefined4 *param_1)
+undefined4 Entity_Routine_0802634C(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -6944,7 +6944,7 @@ undefined4 func_0802634C(undefined4 *param_1)
   puVar10 = (undefined4 *)param_1[4];
   if (puVar10 != (undefined4 *)0x0) {
     uVar5 = func_0x080d3910(*(int **)*puVar10,*(undefined4 *)(**(int **)*puVar10 + 100));
-    func_0805E850(puVar10 + 0x2d,uVar5,_DAT_080263d0);
+    Animal_Routine_0805E850(puVar10 + 0x2d,uVar5,_DAT_080263d0);
     *(undefined1 *)(puVar10 + 0x32) = 1;
     *(undefined1 *)((int)puVar10 + 0xca) = 0;
     *(undefined1 *)((int)puVar10 + 0xcb) = 1;
@@ -6957,7 +6957,7 @@ undefined4 func_0802634C(undefined4 *param_1)
   if (0x39 < uVar6) goto LAB_080267e4;
   switch(*(uint *)(uVar6 * 4 + _DAT_080263d8) & 0xfffffffe) {
   case 0x80264c4:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 != '\0') {
       bVar1 = *(byte *)((int)param_1 + 0x3e);
       if (bVar1 == 1) {
@@ -6988,18 +6988,18 @@ undefined4 func_0802634C(undefined4 *param_1)
     }
     goto LAB_080267d0;
   case 0x8026538:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 == '\0') goto case_080267AE;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_08026624;
     uVar11 = *(undefined2 *)
               (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
               _DAT_08026584);
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uStack_1c = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uStack_1c = Farmer_GetUpgradedTool(iVar8,uVar5);
     goto LAB_080266a6;
   case 0x8026588:
-    bVar1 = func_0800F190(param_1[0xe] + 0x54);
+    bVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x08026598:
     uVar11 = 0x192;
     if (bVar1 != 0) break;
@@ -7008,7 +7008,7 @@ case_080267AE:
     uVar11 = 0x152;
     break;
   case 0x802659e:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x192;
     if (cVar3 == '\0') {
       uVar11 = 0x152;
@@ -7035,15 +7035,15 @@ case_080267AE:
   case 0x80265d6:
     uVar11 = *(undefined2 *)(param_1 + 0x11);
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b;
     goto LAB_080266a4;
   case 0x80265f6:
     uVar11 = 0x1ea;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 1;
     goto LAB_080266a4;
   case 0x8026614:
@@ -7053,8 +7053,8 @@ case_080267AE:
         uVar11 = 0x186;
       }
       iVar8 = param_1[0xe];
-      uVar5 = func_0800DC10(iVar8 + 0x5c);
-      uVar2 = func_0800E550(iVar8,uVar5);
+      uVar5 = Product_Construct(iVar8 + 0x5c);
+      uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
       puVar7 = auStack_1b + 2;
       goto LAB_080266a4;
     }
@@ -7065,27 +7065,27 @@ case_08026624:
   case 0x8026654:
     uVar11 = 0x76;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 3;
     goto LAB_080266a4;
   case 0x802666e:
     uVar11 = 0x6e;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 4;
     goto LAB_080266a4;
   case 0x802668a:
     uVar11 = 0x72;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 5;
 LAB_080266a4:
     *puVar7 = uVar2;
 LAB_080266a6:
-    uVar4 = func_0800DB60(puVar7);
+    uVar4 = ArticleStack_IsEmpty(puVar7);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x80266ae:
@@ -7150,7 +7150,7 @@ LAB_080266a6:
     uVar11 = 0x11a;
     break;
   case 0x802676a:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x14a;
     if (cVar3 != '\0') {
       uVar11 = 0x10a;
@@ -7162,7 +7162,7 @@ LAB_080266a6:
     uVar6 = _DAT_080267a0;
 LAB_08026792:
     if (*(ushort *)(iVar8 + 0x22) != uVar6) {
-      func_080321B0(iVar8);
+      Entity_Routine_080321B0(iVar8);
     }
     break;
   case 0x80267a4:
@@ -7178,7 +7178,7 @@ LAB_08026792:
     uVar11 = 0x42;
     break;
   case 0x80267be:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x1c6;
     if (cVar3 != '\0') break;
 LAB_080267d0:
@@ -7191,7 +7191,7 @@ LAB_080267d0:
     }
   }
 LAB_080267e4:
-  func_080321B0(param_1,uVar11);
+  Entity_Routine_080321B0(param_1,uVar11);
   piVar9 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
   puVar10 = (undefined4 *)*piVar9;
   puVar12 = (undefined4 *)piVar9[1];
@@ -7199,7 +7199,7 @@ LAB_080267e4:
     if (puVar10 == puVar12) {
       uVar5 = puVar12[-1];
 LAB_0802681e:
-      func_08008B6C(uVar5,0xb6);
+      HW_Routine_08008B6C(uVar5,0xb6);
       *(undefined1 *)(param_1 + 0x30) = 1;
       return in_lr;
     }
@@ -7213,9 +7213,9 @@ LAB_0802681e:
 }
 
 // =============================================================================
-// Function: func_08026830 @ 0x08026830
+// Function: Entity_Routine_08026830 @ 0x08026830
 // =============================================================================
-undefined4 func_08026830(undefined4 *param_1)
+undefined4 Entity_Routine_08026830(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -7235,7 +7235,7 @@ undefined4 func_08026830(undefined4 *param_1)
   undefined1 *puVar7;
   
   puVar7 = &uStack_1c;
-  func_0800EAFC(param_1[0xe]);
+  Farmer_EatPowerBerry(param_1[0xe]);
   *(undefined1 *)(param_1 + 0x22) = 1;
   *(undefined1 *)((int)param_1 + 0x89) = 0;
   param_1[0x23] = _DAT_080268b0;
@@ -7244,7 +7244,7 @@ undefined4 func_08026830(undefined4 *param_1)
   puVar10 = (undefined4 *)param_1[4];
   if (puVar10 != (undefined4 *)0x0) {
     uVar5 = func_0x080d3910(*(int **)*puVar10,*(undefined4 *)(**(int **)*puVar10 + 100));
-    func_0805E850(puVar10 + 0x2d,uVar5,_DAT_080268b4);
+    Animal_Routine_0805E850(puVar10 + 0x2d,uVar5,_DAT_080268b4);
     *(undefined1 *)(puVar10 + 0x32) = 1;
     *(undefined1 *)((int)puVar10 + 0xca) = 0;
     *(undefined1 *)((int)puVar10 + 0xcb) = 1;
@@ -7257,7 +7257,7 @@ undefined4 func_08026830(undefined4 *param_1)
   if (0x39 < uVar6) goto LAB_08026cc8;
   switch(*(uint *)(uVar6 * 4 + _DAT_080268bc) & 0xfffffffe) {
   case 0x80269a8:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 != '\0') {
       bVar1 = *(byte *)((int)param_1 + 0x3e);
       if (bVar1 == 1) {
@@ -7288,18 +7288,18 @@ undefined4 func_08026830(undefined4 *param_1)
     }
     goto LAB_08026cb4;
   case 0x8026a1c:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 == '\0') goto case_08026C92;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_08026B08;
     uVar11 = *(undefined2 *)
               (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
               _DAT_08026a68);
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uStack_1c = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uStack_1c = Farmer_GetUpgradedTool(iVar8,uVar5);
     goto LAB_08026b8a;
   case 0x8026a6c:
-    bVar1 = func_0800F190(param_1[0xe] + 0x54);
+    bVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x08026a7c:
     uVar11 = 0x192;
     if (bVar1 != 0) break;
@@ -7308,7 +7308,7 @@ case_08026C92:
     uVar11 = 0x152;
     break;
   case 0x8026a82:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x192;
     if (cVar3 == '\0') {
       uVar11 = 0x152;
@@ -7335,15 +7335,15 @@ case_08026C92:
   case 0x8026aba:
     uVar11 = *(undefined2 *)(param_1 + 0x11);
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b;
     goto LAB_08026b88;
   case 0x8026ada:
     uVar11 = 0x1ea;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 1;
     goto LAB_08026b88;
   case 0x8026af8:
@@ -7353,8 +7353,8 @@ case_08026C92:
         uVar11 = 0x186;
       }
       iVar8 = param_1[0xe];
-      uVar5 = func_0800DC10(iVar8 + 0x5c);
-      uVar2 = func_0800E550(iVar8,uVar5);
+      uVar5 = Product_Construct(iVar8 + 0x5c);
+      uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
       puVar7 = auStack_1b + 2;
       goto LAB_08026b88;
     }
@@ -7365,27 +7365,27 @@ case_08026B08:
   case 0x8026b38:
     uVar11 = 0x76;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 3;
     goto LAB_08026b88;
   case 0x8026b52:
     uVar11 = 0x6e;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 4;
     goto LAB_08026b88;
   case 0x8026b6e:
     uVar11 = 0x72;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 5;
 LAB_08026b88:
     *puVar7 = uVar2;
 LAB_08026b8a:
-    uVar4 = func_0800DB60(puVar7);
+    uVar4 = ArticleStack_IsEmpty(puVar7);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x8026b92:
@@ -7450,7 +7450,7 @@ LAB_08026b8a:
     uVar11 = 0x11a;
     break;
   case 0x8026c4e:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x14a;
     if (cVar3 != '\0') {
       uVar11 = 0x10a;
@@ -7462,7 +7462,7 @@ LAB_08026b8a:
     uVar6 = _DAT_08026c84;
 LAB_08026c76:
     if (*(ushort *)(iVar8 + 0x22) != uVar6) {
-      func_080321B0(iVar8);
+      Entity_Routine_080321B0(iVar8);
     }
     break;
   case 0x8026c88:
@@ -7478,7 +7478,7 @@ LAB_08026c76:
     uVar11 = 0x42;
     break;
   case 0x8026ca2:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x1c6;
     if (cVar3 != '\0') break;
 LAB_08026cb4:
@@ -7491,7 +7491,7 @@ LAB_08026cb4:
     }
   }
 LAB_08026cc8:
-  func_080321B0(param_1,uVar11);
+  Entity_Routine_080321B0(param_1,uVar11);
   piVar9 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
   puVar10 = (undefined4 *)*piVar9;
   puVar12 = (undefined4 *)piVar9[1];
@@ -7499,7 +7499,7 @@ LAB_08026cc8:
     if (puVar10 == puVar12) {
       uVar5 = puVar12[-1];
 LAB_08026d02:
-      func_08008B6C(uVar5,0xb6);
+      HW_Routine_08008B6C(uVar5,0xb6);
       *(undefined1 *)(param_1 + 0x30) = 1;
       return in_lr;
     }
@@ -7513,9 +7513,9 @@ LAB_08026d02:
 }
 
 // =============================================================================
-// Function: func_08026D14 @ 0x08026D14
+// Function: Entity_Routine_08026D14 @ 0x08026D14
 // =============================================================================
-undefined4 func_08026D14(undefined4 *param_1,undefined2 param_2)
+undefined4 Entity_Routine_08026D14(undefined4 *param_1,undefined2 param_2)
 
 {
   byte bVar1;
@@ -7568,7 +7568,7 @@ LAB_08026d8a:
   puVar9 = (undefined4 *)param_1[4];
   if (puVar9 != (undefined4 *)0x0) {
     uVar5 = func_0x080d3910(*(int **)*puVar9,*(undefined4 *)(**(int **)*puVar9 + 0x68));
-    func_0805E850(puVar9 + 0x2d,uVar5,param_2);
+    Animal_Routine_0805E850(puVar9 + 0x2d,uVar5,param_2);
     *(undefined1 *)(puVar9 + 0x32) = 1;
     *(undefined1 *)((int)puVar9 + 0xca) = 0;
     *(undefined1 *)((int)puVar9 + 0xcb) = 1;
@@ -7578,7 +7578,7 @@ LAB_08026d8a:
   if (0x39 < *(byte *)(param_1 + 0xf)) goto LAB_080271f0;
   switch(*(uint *)((uint)*(byte *)(param_1 + 0xf) * 4 + _DAT_08026de4) & 0xfffffffe) {
   case 0x8026ed0:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 != '\0') {
       bVar1 = *(byte *)((int)param_1 + 0x3e);
       if (bVar1 == 1) {
@@ -7609,18 +7609,18 @@ LAB_08026d8a:
     }
     goto LAB_080271dc;
   case 0x8026f44:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 == '\0') goto case_080271BA;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_08027030;
     uVar10 = *(undefined2 *)
               (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
               _DAT_08026f90);
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uStack_1c = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uStack_1c = Farmer_GetUpgradedTool(iVar7,uVar5);
     goto LAB_080270b2;
   case 0x8026f94:
-    bVar1 = func_0800F190(param_1[0xe] + 0x54);
+    bVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x08026fa4:
     uVar10 = 0x192;
     if (bVar1 != 0) break;
@@ -7629,7 +7629,7 @@ case_080271BA:
     uVar10 = 0x152;
     break;
   case 0x8026faa:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar10 = 0x192;
     if (cVar3 == '\0') {
       uVar10 = 0x152;
@@ -7656,15 +7656,15 @@ case_080271BA:
   case 0x8026fe2:
     uVar10 = *(undefined2 *)(param_1 + 0x11);
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b;
     goto LAB_080270b0;
   case 0x8027002:
     uVar10 = 0x1ea;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 1;
     goto LAB_080270b0;
   case 0x8027020:
@@ -7674,8 +7674,8 @@ case_080271BA:
         uVar10 = 0x186;
       }
       iVar7 = param_1[0xe];
-      uVar5 = func_0800DC10(iVar7 + 0x5c);
-      uVar2 = func_0800E550(iVar7,uVar5);
+      uVar5 = Product_Construct(iVar7 + 0x5c);
+      uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
       puVar6 = auStack_1b + 2;
       goto LAB_080270b0;
     }
@@ -7686,27 +7686,27 @@ case_08027030:
   case 0x8027060:
     uVar10 = 0x76;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 3;
     goto LAB_080270b0;
   case 0x802707a:
     uVar10 = 0x6e;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 4;
     goto LAB_080270b0;
   case 0x8027096:
     uVar10 = 0x72;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 5;
 LAB_080270b0:
     *puVar6 = uVar2;
 LAB_080270b2:
-    uVar4 = func_0800DB60(puVar6);
+    uVar4 = ArticleStack_IsEmpty(puVar6);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x80270ba:
@@ -7771,7 +7771,7 @@ LAB_080270b2:
     uVar10 = 0x11a;
     break;
   case 0x8027176:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar10 = 0x14a;
     if (cVar3 != '\0') {
       uVar10 = 0x10a;
@@ -7783,7 +7783,7 @@ LAB_080270b2:
     uVar8 = _DAT_080271ac;
 LAB_0802719e:
     if (*(ushort *)(iVar7 + 0x22) != uVar8) {
-      func_080321B0(iVar7);
+      Entity_Routine_080321B0(iVar7);
     }
     break;
   case 0x80271b0:
@@ -7799,7 +7799,7 @@ LAB_0802719e:
     uVar10 = 0x42;
     break;
   case 0x80271ca:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar10 = 0x1c6;
     if (cVar3 != '\0') break;
 LAB_080271dc:
@@ -7812,15 +7812,15 @@ LAB_080271dc:
     }
   }
 LAB_080271f0:
-  func_080321B0(param_1,uVar10);
+  Entity_Routine_080321B0(param_1,uVar10);
   *(undefined1 *)(param_1 + 0x30) = 1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802720C @ 0x0802720C
+// Function: Entity_Routine_0802720C @ 0x0802720C
 // =============================================================================
-void func_0802720C(undefined4 *param_1,undefined4 param_2)
+void Entity_Routine_0802720C(undefined4 *param_1,undefined4 param_2)
 
 {
   byte bVar1;
@@ -7846,16 +7846,16 @@ void func_0802720C(undefined4 *param_1,undefined4 param_2)
   param_1[0x27] = 0x110000;
   puVar11 = (undefined4 *)param_1[4];
   if (puVar11 != (undefined4 *)0x0) {
-    uVar4 = func_0800DB60(param_2);
+    uVar4 = ArticleStack_IsEmpty(param_2);
     uVar6 = func_0x080d3910(*(int **)*puVar11,*(undefined4 *)(**(int **)*puVar11 + 100));
-    func_0805E850(puVar11 + 0x2d,uVar6,uVar4);
+    Animal_Routine_0805E850(puVar11 + 0x2d,uVar6,uVar4);
     *(undefined1 *)(puVar11 + 0x32) = 1;
     *(undefined1 *)((int)puVar11 + 0xca) = 0;
     *(undefined1 *)((int)puVar11 + 0xcb) = 1;
   }
   iVar10 = param_1[0xe];
   uVar6 = func_0x0800db30(param_2);
-  func_0800FEC8(iVar10 + 0x60,uVar6,1);
+  Farmer_Routine_0800FEC8(iVar10 + 0x60,uVar6,1);
   *(byte *)(param_1 + 0xf) = 0x34;
   *(char *)((int)param_1 + 0x3d) = 'x';
   uVar4 = 0x192;
@@ -7864,7 +7864,7 @@ void func_0802720C(undefined4 *param_1,undefined4 param_2)
   if (0x39 < uVar7) goto LAB_080276c8;
   switch(*(uint *)(uVar7 * 4 + _DAT_080272bc) & 0xfffffffe) {
   case 0x80273a8:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 != '\0') {
       bVar1 = *(byte *)((int)param_1 + 0x3e);
       if (bVar1 == 1) {
@@ -7895,18 +7895,18 @@ void func_0802720C(undefined4 *param_1,undefined4 param_2)
     }
     goto LAB_080276b4;
   case 0x802741c:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 == '\0') goto case_08027692;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_08027508;
     uVar4 = *(undefined2 *)
              (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
              _DAT_08027468);
     iVar10 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar10 + 0x5c);
-    uStack_24 = func_0800E550(iVar10,uVar6);
+    uVar6 = Product_Construct(iVar10 + 0x5c);
+    uStack_24 = Farmer_GetUpgradedTool(iVar10,uVar6);
     goto LAB_0802758a;
   case 0x802746c:
-    bVar1 = func_0800F190(param_1[0xe] + 0x54);
+    bVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x0802747c:
     uVar4 = 0x192;
     if (bVar1 != 0) break;
@@ -7915,7 +7915,7 @@ case_08027692:
     uVar4 = 0x152;
     break;
   case 0x8027482:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar4 = 0x192;
     if (cVar3 == '\0') {
       uVar4 = 0x152;
@@ -7942,15 +7942,15 @@ case_08027692:
   case 0x80274ba:
     uVar4 = *(undefined2 *)(param_1 + 0x11);
     iVar10 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar10 + 0x5c);
-    uVar2 = func_0800E550(iVar10,uVar6);
+    uVar6 = Product_Construct(iVar10 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar10,uVar6);
     puVar8 = auStack_23;
     goto LAB_08027588;
   case 0x80274da:
     uVar4 = 0x1ea;
     iVar10 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar10 + 0x5c);
-    uVar2 = func_0800E550(iVar10,uVar6);
+    uVar6 = Product_Construct(iVar10 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar10,uVar6);
     puVar8 = auStack_23 + 1;
     goto LAB_08027588;
   case 0x80274f8:
@@ -7960,8 +7960,8 @@ case_08027692:
         uVar4 = 0x186;
       }
       iVar10 = param_1[0xe];
-      uVar6 = func_0800DC10(iVar10 + 0x5c);
-      uVar2 = func_0800E550(iVar10,uVar6);
+      uVar6 = Product_Construct(iVar10 + 0x5c);
+      uVar2 = Farmer_GetUpgradedTool(iVar10,uVar6);
       puVar8 = auStack_23 + 2;
       goto LAB_08027588;
     }
@@ -7972,27 +7972,27 @@ case_08027508:
   case 0x8027538:
     uVar4 = 0x76;
     iVar10 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar10 + 0x5c);
-    uVar2 = func_0800E550(iVar10,uVar6);
+    uVar6 = Product_Construct(iVar10 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar10,uVar6);
     puVar8 = auStack_23 + 3;
     goto LAB_08027588;
   case 0x8027552:
     uVar4 = 0x6e;
     iVar10 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar10 + 0x5c);
-    uVar2 = func_0800E550(iVar10,uVar6);
+    uVar6 = Product_Construct(iVar10 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar10,uVar6);
     puVar8 = auStack_23 + 4;
     goto LAB_08027588;
   case 0x802756e:
     uVar4 = 0x72;
     iVar10 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar10 + 0x5c);
-    uVar2 = func_0800E550(iVar10,uVar6);
+    uVar6 = Product_Construct(iVar10 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar10,uVar6);
     puVar8 = auStack_23 + 5;
 LAB_08027588:
     *puVar8 = uVar2;
 LAB_0802758a:
-    uVar5 = func_0800DB60(puVar8);
+    uVar5 = ArticleStack_IsEmpty(puVar8);
     *(undefined2 *)(param_1 + 0x1f) = uVar5;
     break;
   case 0x8027592:
@@ -8057,7 +8057,7 @@ LAB_0802758a:
     uVar4 = 0x11a;
     break;
   case 0x802764e:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar4 = 0x14a;
     if (cVar3 != '\0') {
       uVar4 = 0x10a;
@@ -8069,7 +8069,7 @@ LAB_0802758a:
     uVar7 = _DAT_08027684;
 LAB_08027676:
     if (*(ushort *)(iVar10 + 0x22) != uVar7) {
-      func_080321B0(iVar10);
+      Entity_Routine_080321B0(iVar10);
     }
     break;
   case 0x8027688:
@@ -8085,7 +8085,7 @@ LAB_08027676:
     uVar4 = 0x42;
     break;
   case 0x80276a2:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar4 = 0x1c6;
     if (cVar3 != '\0') break;
 LAB_080276b4:
@@ -8098,7 +8098,7 @@ LAB_080276b4:
     }
   }
 LAB_080276c8:
-  func_080321B0(param_1,uVar4);
+  Entity_Routine_080321B0(param_1,uVar4);
   piVar9 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
   puVar11 = (undefined4 *)*piVar9;
   puVar12 = (undefined4 *)piVar9[1];
@@ -8106,7 +8106,7 @@ LAB_080276c8:
     if (puVar11 == puVar12) {
       uVar6 = puVar12[-1];
 LAB_08027702:
-      func_08008B6C(uVar6,0xbc);
+      HW_Routine_08008B6C(uVar6,0xbc);
       *(undefined1 *)(param_1 + 0x30) = 1;
       return;
     }
@@ -8120,9 +8120,9 @@ LAB_08027702:
 }
 
 // =============================================================================
-// Function: func_0802771C @ 0x0802771C
+// Function: Entity_Routine_0802771C @ 0x0802771C
 // =============================================================================
-undefined4 func_0802771C(undefined4 *param_1)
+undefined4 Entity_Routine_0802771C(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -8142,7 +8142,7 @@ undefined4 func_0802771C(undefined4 *param_1)
   undefined1 *puVar7;
   
   puVar7 = &uStack_1c;
-  func_0809ABD8(param_1[0xd] + _DAT_08027798);
+  Animal_Routine_0809ABD8(param_1[0xd] + _DAT_08027798);
   *(undefined1 *)(param_1 + 0x22) = 1;
   *(undefined1 *)((int)param_1 + 0x89) = 0;
   param_1[0x23] = 0;
@@ -8151,7 +8151,7 @@ undefined4 func_0802771C(undefined4 *param_1)
   puVar10 = (undefined4 *)param_1[4];
   if (puVar10 != (undefined4 *)0x0) {
     uVar5 = func_0x080d3910(*(int **)*puVar10,*(undefined4 *)(**(int **)*puVar10 + 100));
-    func_0805E850(puVar10 + 0x2d,uVar5,0x6a);
+    Animal_Routine_0805E850(puVar10 + 0x2d,uVar5,0x6a);
     *(undefined1 *)(puVar10 + 0x32) = 1;
     *(undefined1 *)((int)puVar10 + 0xca) = 0;
     *(undefined1 *)((int)puVar10 + 0xcb) = 1;
@@ -8163,7 +8163,7 @@ undefined4 func_0802771C(undefined4 *param_1)
   if (0x39 < uVar6) goto LAB_08027bb0;
   switch(*(uint *)(uVar6 * 4 + _DAT_080277a0) & 0xfffffffe) {
   case 0x802788c:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 != '\0') {
       bVar1 = *(byte *)((int)param_1 + 0x3e);
       if (bVar1 == 1) {
@@ -8194,18 +8194,18 @@ undefined4 func_0802771C(undefined4 *param_1)
     }
     goto LAB_08027b98;
   case 0x8027900:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 == '\0') goto case_08027B76;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_080279EC;
     uVar11 = *(undefined2 *)
               (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
               _DAT_0802794c);
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uStack_1c = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uStack_1c = Farmer_GetUpgradedTool(iVar8,uVar5);
     goto LAB_08027a6e;
   case 0x8027950:
-    bVar1 = func_0800F190(param_1[0xe] + 0x54);
+    bVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x08027960:
     uVar11 = 0x192;
     if (bVar1 != 0) break;
@@ -8214,7 +8214,7 @@ case_08027B76:
     uVar11 = 0x152;
     break;
   case 0x8027966:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x192;
     if (cVar3 == '\0') {
       uVar11 = 0x152;
@@ -8241,15 +8241,15 @@ case_08027B76:
   case 0x802799e:
     uVar11 = *(undefined2 *)(param_1 + 0x11);
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b;
     goto LAB_08027a6c;
   case 0x80279be:
     uVar11 = 0x1ea;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 1;
     goto LAB_08027a6c;
   case 0x80279dc:
@@ -8259,8 +8259,8 @@ case_08027B76:
         uVar11 = 0x186;
       }
       iVar8 = param_1[0xe];
-      uVar5 = func_0800DC10(iVar8 + 0x5c);
-      uVar2 = func_0800E550(iVar8,uVar5);
+      uVar5 = Product_Construct(iVar8 + 0x5c);
+      uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
       puVar7 = auStack_1b + 2;
       goto LAB_08027a6c;
     }
@@ -8271,27 +8271,27 @@ case_080279EC:
   case 0x8027a1c:
     uVar11 = 0x76;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 3;
     goto LAB_08027a6c;
   case 0x8027a36:
     uVar11 = 0x6e;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 4;
     goto LAB_08027a6c;
   case 0x8027a52:
     uVar11 = 0x72;
     iVar8 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar8 + 0x5c);
-    uVar2 = func_0800E550(iVar8,uVar5);
+    uVar5 = Product_Construct(iVar8 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar8,uVar5);
     puVar7 = auStack_1b + 5;
 LAB_08027a6c:
     *puVar7 = uVar2;
 LAB_08027a6e:
-    uVar4 = func_0800DB60(puVar7);
+    uVar4 = ArticleStack_IsEmpty(puVar7);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x8027a76:
@@ -8356,7 +8356,7 @@ LAB_08027a6e:
     uVar11 = 0x11a;
     break;
   case 0x8027b32:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x14a;
     if (cVar3 != '\0') {
       uVar11 = 0x10a;
@@ -8368,7 +8368,7 @@ LAB_08027a6e:
     uVar6 = _DAT_08027b68;
 LAB_08027b5a:
     if (*(ushort *)(iVar8 + 0x22) != uVar6) {
-      func_080321B0(iVar8);
+      Entity_Routine_080321B0(iVar8);
     }
     break;
   case 0x8027b6c:
@@ -8384,7 +8384,7 @@ LAB_08027b5a:
     uVar11 = 0x42;
     break;
   case 0x8027b86:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x1c6;
     if (cVar3 != '\0') break;
 LAB_08027b98:
@@ -8397,7 +8397,7 @@ LAB_08027b98:
     }
   }
 LAB_08027bb0:
-  func_080321B0(param_1,uVar11);
+  Entity_Routine_080321B0(param_1,uVar11);
   piVar9 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
   puVar10 = (undefined4 *)*piVar9;
   puVar12 = (undefined4 *)piVar9[1];
@@ -8405,7 +8405,7 @@ LAB_08027bb0:
     if (puVar10 == puVar12) {
       uVar5 = puVar12[-1];
 LAB_08027bea:
-      func_08008B6C(uVar5,0x6a);
+      HW_Routine_08008B6C(uVar5,0x6a);
       *(undefined1 *)(param_1 + 0x30) = 1;
       return in_lr;
     }
@@ -8419,9 +8419,9 @@ LAB_08027bea:
 }
 
 // =============================================================================
-// Function: func_08027BFC @ 0x08027BFC
+// Function: Entity_Routine_08027BFC @ 0x08027BFC
 // =============================================================================
-undefined8 func_08027BFC(undefined4 *param_1)
+undefined8 Entity_Routine_08027BFC(undefined4 *param_1)
 
 {
   char cVar1;
@@ -8447,7 +8447,7 @@ undefined8 func_08027BFC(undefined4 *param_1)
   
   puVar6 = &uStack_34;
   iVar11 = param_1[0xd] + _DAT_08027d00;
-  cVar1 = func_0800F190(iVar11);
+  cVar1 = HeldItem_IsEmpty(iVar11);
   if ((cVar1 == '\0') && (iVar11 = func_0x0800f204(iVar11), iVar11 == 4)) {
     iVar11 = func_0x0800ffd0(&UNK_00001ca0 + param_1[0xd]);
     if (iVar11 == 0) goto LAB_08028182;
@@ -8458,7 +8458,7 @@ undefined8 func_08027BFC(undefined4 *param_1)
     for (; iVar11 != iVar5; iVar11 = iVar11 + 1) {
       func_0x080d3914((int *)*param_1,iVar11,*(undefined4 *)(*(int *)*param_1 + 0x15c));
     }
-    func_08010024(&UNK_00001ca0 + param_1[0xd]);
+    Farmer_Routine_08010024(&UNK_00001ca0 + param_1[0xd]);
     param_1[0x23] = 0;
     param_1[0x24] = 0;
     param_1[0x27] = 0;
@@ -8466,7 +8466,7 @@ undefined8 func_08027BFC(undefined4 *param_1)
     if (puVar14 != (undefined4 *)0x0) {
       bVar2 = *(byte *)(param_1 + 8);
       uVar7 = func_0x080d3910(*(int **)*puVar14,*(undefined4 *)(**(int **)*puVar14 + 100));
-      func_0805E850(puVar14 + 0x2d,uVar7,bVar2 + 0x36);
+      Animal_Routine_0805E850(puVar14 + 0x2d,uVar7,bVar2 + 0x36);
       *(undefined1 *)(puVar14 + 0x32) = 1;
       *(undefined1 *)((int)puVar14 + 0xca) = 0;
       *(undefined1 *)((int)puVar14 + 0xcb) = 1;
@@ -8479,7 +8479,7 @@ undefined8 func_08027BFC(undefined4 *param_1)
     if (0x39 < uVar8) goto LAB_08028130;
     switch(*(uint *)(uVar8 * 4 + _DAT_08027d08) & 0xfffffffe) {
     case 0x8027df4:
-      cVar1 = func_0800F190(param_1[0xe] + 0x54);
+      cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       if (cVar1 == '\0') {
         bVar2 = *(byte *)((int)param_1 + 0x3e);
         if (bVar2 == 1) goto LAB_08028118;
@@ -8505,15 +8505,15 @@ undefined8 func_08027BFC(undefined4 *param_1)
       }
       break;
     case 0x8027e68:
-      cVar1 = func_0800F190(param_1[0xe] + 0x54);
+      cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       if (cVar1 != '\0') {
         if (*(byte *)((int)param_1 + 0x3f) < 6) {
           uVar13 = *(undefined2 *)
                     (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) *
                      2 + _DAT_08027eb4);
           iVar11 = param_1[0xe];
-          uVar7 = func_0800DC10(iVar11 + 0x5c);
-          uStack_34 = func_0800E550(iVar11,uVar7);
+          uVar7 = Product_Construct(iVar11 + 0x5c);
+          uStack_34 = Farmer_GetUpgradedTool(iVar11,uVar7);
           goto LAB_08027fc4;
         }
         goto case_08027F54;
@@ -8523,13 +8523,13 @@ case_080280F6:
       uVar13 = 0x152;
       break;
     case 0x8027eb8:
-      bVar2 = func_0800F190(param_1[0xe] + 0x54);
+      bVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x08027ec8:
       uVar13 = 0x192;
       if (bVar2 == 0) goto case_080280F6;
       break;
     case 0x8027ece:
-      cVar1 = func_0800F190(param_1[0xe] + 0x54);
+      cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       uVar13 = 0x192;
       if (cVar1 == '\0') {
         uVar13 = 0x152;
@@ -8556,15 +8556,15 @@ joined_r0x08027ec8:
     case 0x8027f06:
       uVar13 = *(undefined2 *)(param_1 + 0x11);
       iVar11 = param_1[0xe];
-      uVar7 = func_0800DC10(iVar11 + 0x5c);
-      uVar3 = func_0800E550(iVar11,uVar7);
+      uVar7 = Product_Construct(iVar11 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
       puVar6 = auStack_33;
       goto LAB_08027fe8;
     case 0x8027f26:
       uVar13 = 0x1ea;
       iVar11 = param_1[0xe];
-      uVar7 = func_0800DC10(iVar11 + 0x5c);
-      uVar3 = func_0800E550(iVar11,uVar7);
+      uVar7 = Product_Construct(iVar11 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
       puVar6 = auStack_33 + 1;
       goto LAB_08027f9c;
     case 0x8027f44:
@@ -8574,8 +8574,8 @@ joined_r0x08027ec8:
           uVar13 = 0x186;
         }
         iVar11 = param_1[0xe];
-        uVar7 = func_0800DC10(iVar11 + 0x5c);
-        uVar3 = func_0800E550(iVar11,uVar7);
+        uVar7 = Product_Construct(iVar11 + 0x5c);
+        uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
         puVar6 = auStack_33 + 2;
         goto LAB_08027fe8;
       }
@@ -8586,33 +8586,33 @@ case_08027F54:
     case 0x8027f84:
       uVar13 = 0x76;
       iVar11 = param_1[0xe];
-      uVar7 = func_0800DC10(iVar11 + 0x5c);
-      uVar3 = func_0800E550(iVar11,uVar7);
+      uVar7 = Product_Construct(iVar11 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
       puVar6 = auStack_33 + 3;
 LAB_08027f9c:
       *puVar6 = uVar3;
-      uVar4 = func_0800DB60();
+      uVar4 = ArticleStack_IsEmpty();
       *(undefined2 *)puVar12 = uVar4;
       break;
     case 0x8027fa8:
       uVar13 = 0x6e;
       iVar11 = param_1[0xe];
-      uVar7 = func_0800DC10(iVar11 + 0x5c);
-      auStack_33[4] = func_0800E550(iVar11,uVar7);
+      uVar7 = Product_Construct(iVar11 + 0x5c);
+      auStack_33[4] = Farmer_GetUpgradedTool(iVar11,uVar7);
       puVar6 = auStack_33 + 4;
 LAB_08027fc4:
-      uVar4 = func_0800DB60(puVar6);
+      uVar4 = ArticleStack_IsEmpty(puVar6);
       *(undefined2 *)puVar12 = uVar4;
       break;
     case 0x8027fce:
       uVar13 = 0x72;
       iVar11 = param_1[0xe];
-      uVar7 = func_0800DC10(iVar11 + 0x5c);
-      uVar3 = func_0800E550(iVar11,uVar7);
+      uVar7 = Product_Construct(iVar11 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
       puVar6 = auStack_33 + 5;
 LAB_08027fe8:
       *puVar6 = uVar3;
-      uVar4 = func_0800DB60();
+      uVar4 = ArticleStack_IsEmpty();
       *(undefined2 *)puVar12 = uVar4;
       break;
     case 0x8027ff4:
@@ -8680,7 +8680,7 @@ LAB_08027fe8:
       uVar13 = 0x11a;
       break;
     case 0x80280b2:
-      cVar1 = func_0800F190(param_1[0xe] + 0x54);
+      cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       uVar13 = 0x14a;
       if (cVar1 != '\0') {
         uVar13 = 0x10a;
@@ -8692,7 +8692,7 @@ LAB_08027fe8:
       uVar8 = _DAT_080280e8;
 LAB_080280da:
       if (*(ushort *)(iVar11 + 0x22) != uVar8) {
-        func_080321B0(iVar11);
+        Entity_Routine_080321B0(iVar11);
       }
       break;
     case 0x80280ec:
@@ -8708,7 +8708,7 @@ LAB_080280da:
       uVar13 = 0x42;
       break;
     case 0x8028106:
-      cVar1 = func_0800F190(param_1[0xe] + 0x54);
+      cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       uVar13 = 0x1c6;
       if (cVar1 == '\0') {
 LAB_08028118:
@@ -8722,7 +8722,7 @@ LAB_08028118:
       }
     }
 LAB_08028130:
-    func_080321B0(param_1,uVar13);
+    Entity_Routine_080321B0(param_1,uVar13);
     piVar9 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
     puVar14 = (undefined4 *)piVar9[1];
     for (puVar12 = (undefined4 *)*piVar9; puVar12 != puVar14; puVar12 = puVar12 + 1) {
@@ -8737,8 +8737,8 @@ LAB_08028168:
     uVar10 = 0x6e;
     goto LAB_0802862e;
   }
-  uStack_2d = func_080262C4(param_1);
-  iVar11 = func_0800E198(&uStack_2d);
+  uStack_2d = Entity_Routine_080262C4(param_1);
+  iVar11 = Item_Routine_0800E198(&uStack_2d);
   if (iVar11 == 0) {
 LAB_08028182:
     uVar7 = 0;
@@ -8754,7 +8754,7 @@ LAB_08028182:
   if (0x39 < uVar8) goto LAB_080285f4;
   switch(*(uint *)(uVar8 * 4 + _DAT_080281cc) & 0xfffffffe) {
   case 0x80282b8:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 == '\0') {
       bVar2 = *(byte *)((int)param_1 + 0x3e);
       if (bVar2 == 1) goto LAB_080285dc;
@@ -8780,15 +8780,15 @@ LAB_08028182:
     }
     break;
   case 0x802832c:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 != '\0') {
       if (*(byte *)((int)param_1 + 0x3f) < 6) {
         uVar13 = *(undefined2 *)
                   (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2
                   + _DAT_08028378);
         iVar11 = param_1[0xe];
-        uVar7 = func_0800DC10(iVar11 + 0x5c);
-        uVar3 = func_0800E550(iVar11,uVar7);
+        uVar7 = Product_Construct(iVar11 + 0x5c);
+        uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
         puVar6 = auStack_2c;
         goto LAB_080284ac;
       }
@@ -8799,13 +8799,13 @@ case_080285BA:
     uVar13 = 0x152;
     break;
   case 0x802837c:
-    bVar2 = func_0800F190(param_1[0xe] + 0x54);
+    bVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x0802838c:
     uVar13 = 0x192;
     if (bVar2 == 0) goto case_080285BA;
     break;
   case 0x8028392:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar13 = 0x192;
     if (cVar1 == '\0') {
       uVar13 = 0x152;
@@ -8832,15 +8832,15 @@ joined_r0x0802838c:
   case 0x80283ca:
     uVar13 = *(undefined2 *)(param_1 + 0x11);
     iVar11 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar11 + 0x5c);
-    uVar3 = func_0800E550(iVar11,uVar7);
+    uVar7 = Product_Construct(iVar11 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
     puVar6 = auStack_2c + 1;
     goto LAB_08028460;
   case 0x80283ea:
     uVar13 = 0x1ea;
     iVar11 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar11 + 0x5c);
-    uVar3 = func_0800E550(iVar11,uVar7);
+    uVar7 = Product_Construct(iVar11 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
     puVar6 = auStack_2c + 2;
     goto LAB_08028486;
   case 0x8028408:
@@ -8850,8 +8850,8 @@ joined_r0x0802838c:
         uVar13 = 0x186;
       }
       iVar11 = param_1[0xe];
-      uVar7 = func_0800DC10(iVar11 + 0x5c);
-      uVar3 = func_0800E550(iVar11,uVar7);
+      uVar7 = Product_Construct(iVar11 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
       puVar6 = auStack_2c + 3;
       goto LAB_080284ac;
     }
@@ -8862,34 +8862,34 @@ case_08028418:
   case 0x8028448:
     uVar13 = 0x76;
     iVar11 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar11 + 0x5c);
-    uVar3 = func_0800E550(iVar11,uVar7);
+    uVar7 = Product_Construct(iVar11 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
     puVar6 = auStack_2c + 4;
 LAB_08028460:
     *puVar6 = uVar3;
-    uVar4 = func_0800DB60();
+    uVar4 = ArticleStack_IsEmpty();
     *(undefined2 *)puVar12 = uVar4;
     break;
   case 0x802846c:
     uVar13 = 0x6e;
     iVar11 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar11 + 0x5c);
-    uVar3 = func_0800E550(iVar11,uVar7);
+    uVar7 = Product_Construct(iVar11 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
     puVar6 = auStack_2c + 5;
 LAB_08028486:
     *puVar6 = uVar3;
-    uVar4 = func_0800DB60();
+    uVar4 = ArticleStack_IsEmpty();
     *(undefined2 *)puVar12 = uVar4;
     break;
   case 0x8028492:
     uVar13 = 0x72;
     iVar11 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar11 + 0x5c);
-    uVar3 = func_0800E550(iVar11,uVar7);
+    uVar7 = Product_Construct(iVar11 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar11,uVar7);
     puVar6 = auStack_2c + 6;
 LAB_080284ac:
     *puVar6 = uVar3;
-    uVar4 = func_0800DB60();
+    uVar4 = ArticleStack_IsEmpty();
     *(undefined2 *)puVar12 = uVar4;
     break;
   case 0x80284b8:
@@ -8957,7 +8957,7 @@ LAB_080284ac:
     uVar13 = 0x11a;
     break;
   case 0x8028576:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar13 = 0x14a;
     if (cVar1 != '\0') {
       uVar13 = 0x10a;
@@ -8969,7 +8969,7 @@ LAB_080284ac:
     uVar8 = _DAT_080285ac;
 LAB_0802859e:
     if (*(ushort *)(iVar11 + 0x22) != uVar8) {
-      func_080321B0(iVar11);
+      Entity_Routine_080321B0(iVar11);
     }
     break;
   case 0x80285b0:
@@ -8985,7 +8985,7 @@ LAB_0802859e:
     uVar13 = 0x42;
     break;
   case 0x80285ca:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar13 = 0x1c6;
     if (cVar1 == '\0') {
 LAB_080285dc:
@@ -8999,7 +8999,7 @@ LAB_080285dc:
     }
   }
 LAB_080285f4:
-  func_080321B0(param_1,uVar13);
+  Entity_Routine_080321B0(param_1,uVar13);
   piVar9 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
   puVar14 = (undefined4 *)piVar9[1];
   for (puVar12 = (undefined4 *)*piVar9; puVar12 != puVar14; puVar12 = puVar12 + 1) {
@@ -9013,16 +9013,16 @@ LAB_080285f4:
 LAB_0802862c:
   uVar10 = 0x6c;
 LAB_0802862e:
-  func_08008B6C(uVar7,uVar10);
+  HW_Routine_08008B6C(uVar7,uVar10);
   uVar7 = 1;
 LAB_08028634:
   return CONCAT44(in_lr,uVar7);
 }
 
 // =============================================================================
-// Function: func_08028644 @ 0x08028644
+// Function: Entity_Routine_08028644 @ 0x08028644
 // =============================================================================
-undefined4 func_08028644(undefined4 *param_1)
+undefined4 Entity_Routine_08028644(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -9043,7 +9043,7 @@ undefined4 func_08028644(undefined4 *param_1)
   undefined1 *puVar7;
   
   puVar7 = &uStack_1c;
-  cVar2 = func_0800F190(param_1[0xd] + _DAT_08028690);
+  cVar2 = HeldItem_IsEmpty(param_1[0xd] + _DAT_08028690);
   if (cVar2 != '\0') {
     return in_lr;
   }
@@ -9081,7 +9081,7 @@ undefined4 func_08028644(undefined4 *param_1)
   if (0x39 < uVar6) goto LAB_08028b08;
   switch(*(uint *)(uVar6 * 4 + _DAT_080286f8) & 0xfffffffe) {
   case 0x80287e4:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 != '\0') {
       bVar3 = *(byte *)((int)param_1 + 0x3e);
       if (bVar3 == 1) {
@@ -9110,18 +9110,18 @@ undefined4 func_08028644(undefined4 *param_1)
     }
     goto joined_r0x080288b8;
   case 0x8028858:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 == '\0') goto case_08028ACE;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_08028944;
     uVar12 = *(undefined2 *)
               (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
               _DAT_080288a4);
     iVar8 = param_1[0xe];
-    uVar10 = func_0800DC10(iVar8 + 0x5c);
-    uStack_1c = func_0800E550(iVar8,uVar10);
+    uVar10 = Product_Construct(iVar8 + 0x5c);
+    uStack_1c = Farmer_GetUpgradedTool(iVar8,uVar10);
     goto LAB_080289c6;
   case 0x80288a8:
-    bVar3 = func_0800F190(param_1[0xe] + 0x54);
+    bVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x080288b8:
     uVar12 = 0x192;
     if (bVar3 == 0) {
@@ -9130,7 +9130,7 @@ case_08028ACE:
     }
     break;
   case 0x80288be:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar12 = 0x192;
     if (cVar2 == '\0') {
       uVar12 = 0x152;
@@ -9157,15 +9157,15 @@ case_08028ACE:
   case 0x80288f6:
     uVar12 = *(undefined2 *)(param_1 + 0x11);
     iVar8 = param_1[0xe];
-    uVar10 = func_0800DC10(iVar8 + 0x5c);
-    uVar4 = func_0800E550(iVar8,uVar10);
+    uVar10 = Product_Construct(iVar8 + 0x5c);
+    uVar4 = Farmer_GetUpgradedTool(iVar8,uVar10);
     puVar7 = auStack_1b;
     goto LAB_080289c4;
   case 0x8028916:
     uVar12 = 0x1ea;
     iVar8 = param_1[0xe];
-    uVar10 = func_0800DC10(iVar8 + 0x5c);
-    uVar4 = func_0800E550(iVar8,uVar10);
+    uVar10 = Product_Construct(iVar8 + 0x5c);
+    uVar4 = Farmer_GetUpgradedTool(iVar8,uVar10);
     puVar7 = auStack_1b + 1;
     goto LAB_080289c4;
   case 0x8028934:
@@ -9175,8 +9175,8 @@ case_08028ACE:
         uVar12 = 0x186;
       }
       iVar8 = param_1[0xe];
-      uVar10 = func_0800DC10(iVar8 + 0x5c);
-      uVar4 = func_0800E550(iVar8,uVar10);
+      uVar10 = Product_Construct(iVar8 + 0x5c);
+      uVar4 = Farmer_GetUpgradedTool(iVar8,uVar10);
       puVar7 = auStack_1b + 2;
       goto LAB_080289c4;
     }
@@ -9187,27 +9187,27 @@ case_08028944:
   case 0x8028974:
     uVar12 = 0x76;
     iVar8 = param_1[0xe];
-    uVar10 = func_0800DC10(iVar8 + 0x5c);
-    uVar4 = func_0800E550(iVar8,uVar10);
+    uVar10 = Product_Construct(iVar8 + 0x5c);
+    uVar4 = Farmer_GetUpgradedTool(iVar8,uVar10);
     puVar7 = auStack_1b + 3;
     goto LAB_080289c4;
   case 0x802898e:
     uVar12 = 0x6e;
     iVar8 = param_1[0xe];
-    uVar10 = func_0800DC10(iVar8 + 0x5c);
-    uVar4 = func_0800E550(iVar8,uVar10);
+    uVar10 = Product_Construct(iVar8 + 0x5c);
+    uVar4 = Farmer_GetUpgradedTool(iVar8,uVar10);
     puVar7 = auStack_1b + 4;
     goto LAB_080289c4;
   case 0x80289aa:
     uVar12 = 0x72;
     iVar8 = param_1[0xe];
-    uVar10 = func_0800DC10(iVar8 + 0x5c);
-    uVar4 = func_0800E550(iVar8,uVar10);
+    uVar10 = Product_Construct(iVar8 + 0x5c);
+    uVar4 = Farmer_GetUpgradedTool(iVar8,uVar10);
     puVar7 = auStack_1b + 5;
 LAB_080289c4:
     *puVar7 = uVar4;
 LAB_080289c6:
-    uVar5 = func_0800DB60(puVar7);
+    uVar5 = ArticleStack_IsEmpty(puVar7);
     *(undefined2 *)(param_1 + 0x1f) = uVar5;
     break;
   case 0x80289ce:
@@ -9272,7 +9272,7 @@ LAB_080289c6:
     uVar12 = 0x11a;
     break;
   case 0x8028a8a:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar12 = 0x14a;
     if (cVar2 != '\0') {
       uVar12 = 0x10a;
@@ -9284,7 +9284,7 @@ LAB_080289c6:
     uVar6 = _DAT_08028ac0;
 LAB_08028ab2:
     if (*(ushort *)(iVar8 + 0x22) != uVar6) {
-      func_080321B0(iVar8);
+      Entity_Routine_080321B0(iVar8);
     }
     break;
   case 0x8028ac4:
@@ -9302,7 +9302,7 @@ LAB_08028ab2:
     uVar12 = 0x42;
     break;
   case 0x8028ade:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar12 = 0x1c6;
     if (cVar2 != '\0') break;
 LAB_08028af0:
@@ -9315,7 +9315,7 @@ LAB_08028af0:
     }
   }
 LAB_08028b08:
-  func_080321B0(param_1,uVar12);
+  Entity_Routine_080321B0(param_1,uVar12);
   piVar9 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
   puVar11 = (undefined4 *)*piVar9;
   puVar13 = (undefined4 *)piVar9[1];
@@ -9323,7 +9323,7 @@ LAB_08028b08:
     if (puVar11 == puVar13) {
       uVar10 = puVar13[-1];
 LAB_08028b40:
-      func_08008B6C(uVar10,0x6c);
+      HW_Routine_08008B6C(uVar10,0x6c);
       return in_lr;
     }
     cVar2 = func_0x08008cd0(*puVar11);
@@ -9336,9 +9336,9 @@ LAB_08028b40:
 }
 
 // =============================================================================
-// Function: func_08028B50 @ 0x08028B50
+// Function: Entity_Routine_08028B50 @ 0x08028B50
 // =============================================================================
-undefined4 func_08028B50(undefined4 *param_1)
+undefined4 Entity_Routine_08028B50(undefined4 *param_1)
 
 {
   char cVar1;
@@ -9361,7 +9361,7 @@ undefined4 func_08028B50(undefined4 *param_1)
   *(undefined1 *)(param_1 + 0xf) = 0xe;
   *(undefined1 *)(param_1 + 0x30) = 1;
   iVar9 = param_1[0xd] + _DAT_08028ba0;
-  cVar1 = func_0800F190(iVar9);
+  cVar1 = HeldItem_IsEmpty(iVar9);
   if (((cVar1 == '\0') && (iVar9 = func_0x0800f204(iVar9), iVar9 < 4)) && (1 < iVar9)) {
     *(undefined1 *)(param_1 + 0xf) = 0xd;
     uVar7 = _DAT_08028be4;
@@ -9396,7 +9396,7 @@ LAB_08028bfa:
   if (0x39 < *(byte *)(param_1 + 0xf)) goto LAB_08029034;
   switch(*(uint *)((uint)*(byte *)(param_1 + 0xf) * 4 + _DAT_08028c24) & 0xfffffffe) {
   case 0x8028d10:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 != '\0') {
       bVar2 = *(byte *)((int)param_1 + 0x3e);
       if (bVar2 == 1) {
@@ -9427,18 +9427,18 @@ LAB_08028bfa:
     }
     goto LAB_0802901c;
   case 0x8028d84:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 == '\0') goto case_08028FFA;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_08028E70;
     uVar11 = *(undefined2 *)
               (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
               _DAT_08028dd0);
     iVar9 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar9 + 0x5c);
-    uStack_1c = func_0800E550(iVar9,uVar7);
+    uVar7 = Product_Construct(iVar9 + 0x5c);
+    uStack_1c = Farmer_GetUpgradedTool(iVar9,uVar7);
     goto LAB_08028ef2;
   case 0x8028dd4:
-    bVar2 = func_0800F190(param_1[0xe] + 0x54);
+    bVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x08028de4:
     uVar11 = 0x192;
     if (bVar2 != 0) break;
@@ -9447,7 +9447,7 @@ case_08028FFA:
     uVar11 = 0x152;
     break;
   case 0x8028dea:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x192;
     if (cVar1 == '\0') {
       uVar11 = 0x152;
@@ -9474,15 +9474,15 @@ case_08028FFA:
   case 0x8028e22:
     uVar11 = *(undefined2 *)(param_1 + 0x11);
     iVar9 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar9 + 0x5c);
-    uVar3 = func_0800E550(iVar9,uVar7);
+    uVar7 = Product_Construct(iVar9 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar9,uVar7);
     puVar5 = auStack_1b;
     goto LAB_08028ef0;
   case 0x8028e42:
     uVar11 = 0x1ea;
     iVar9 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar9 + 0x5c);
-    uVar3 = func_0800E550(iVar9,uVar7);
+    uVar7 = Product_Construct(iVar9 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar9,uVar7);
     puVar5 = auStack_1b + 1;
     goto LAB_08028ef0;
   case 0x8028e60:
@@ -9492,8 +9492,8 @@ case_08028FFA:
         uVar11 = 0x186;
       }
       iVar9 = param_1[0xe];
-      uVar7 = func_0800DC10(iVar9 + 0x5c);
-      uVar3 = func_0800E550(iVar9,uVar7);
+      uVar7 = Product_Construct(iVar9 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar9,uVar7);
       puVar5 = auStack_1b + 2;
       goto LAB_08028ef0;
     }
@@ -9504,27 +9504,27 @@ case_08028E70:
   case 0x8028ea0:
     uVar11 = 0x76;
     iVar9 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar9 + 0x5c);
-    uVar3 = func_0800E550(iVar9,uVar7);
+    uVar7 = Product_Construct(iVar9 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar9,uVar7);
     puVar5 = auStack_1b + 3;
     goto LAB_08028ef0;
   case 0x8028eba:
     uVar11 = 0x6e;
     iVar9 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar9 + 0x5c);
-    uVar3 = func_0800E550(iVar9,uVar7);
+    uVar7 = Product_Construct(iVar9 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar9,uVar7);
     puVar5 = auStack_1b + 4;
     goto LAB_08028ef0;
   case 0x8028ed6:
     uVar11 = 0x72;
     iVar9 = param_1[0xe];
-    uVar7 = func_0800DC10(iVar9 + 0x5c);
-    uVar3 = func_0800E550(iVar9,uVar7);
+    uVar7 = Product_Construct(iVar9 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar9,uVar7);
     puVar5 = auStack_1b + 5;
 LAB_08028ef0:
     *puVar5 = uVar3;
 LAB_08028ef2:
-    uVar4 = func_0800DB60(puVar5);
+    uVar4 = ArticleStack_IsEmpty(puVar5);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x8028efa:
@@ -9589,7 +9589,7 @@ LAB_08028ef2:
     uVar11 = 0x11a;
     break;
   case 0x8028fb6:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x14a;
     if (cVar1 != '\0') {
       uVar11 = 0x10a;
@@ -9601,7 +9601,7 @@ LAB_08028ef2:
     uVar8 = _DAT_08028fec;
 LAB_08028fde:
     if (*(ushort *)(iVar9 + 0x22) != uVar8) {
-      func_080321B0(iVar9);
+      Entity_Routine_080321B0(iVar9);
     }
     break;
   case 0x8028ff0:
@@ -9617,7 +9617,7 @@ LAB_08028fde:
     uVar11 = 0x42;
     break;
   case 0x802900a:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x1c6;
     if (cVar1 != '\0') break;
 LAB_0802901c:
@@ -9630,7 +9630,7 @@ LAB_0802901c:
     }
   }
 LAB_08029034:
-  func_080321B0(param_1,uVar11);
+  Entity_Routine_080321B0(param_1,uVar11);
   piVar6 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
   puVar10 = (undefined4 *)*piVar6;
   puVar12 = (undefined4 *)piVar6[1];
@@ -9638,7 +9638,7 @@ LAB_08029034:
     if (puVar10 == puVar12) {
       uVar7 = puVar12[-1];
 LAB_0802906c:
-      func_08008B6C(uVar7,0x6c);
+      HW_Routine_08008B6C(uVar7,0x6c);
       return in_lr;
     }
     cVar1 = func_0x08008cd0(*puVar10);
@@ -9651,9 +9651,9 @@ LAB_0802906c:
 }
 
 // =============================================================================
-// Function: func_0802907C @ 0x0802907C
+// Function: Entity_Routine_0802907C @ 0x0802907C
 // =============================================================================
-undefined4 func_0802907C(int param_1)
+undefined4 Entity_Routine_0802907C(int param_1)
 
 {
   char cVar1;
@@ -9663,11 +9663,11 @@ undefined4 func_0802907C(int param_1)
   undefined1 auStack_10 [4];
   
   iVar3 = *(int *)(param_1 + 0x34) + _DAT_080290d0;
-  cVar1 = func_0800F190(iVar3);
+  cVar1 = HeldItem_IsEmpty(iVar3);
   if (cVar1 == '\0') {
     iVar2 = func_0x0800f204(iVar3);
     if (iVar2 == 1) {
-      auStack_10[0] = func_0800F258(iVar3);
+      auStack_10[0] = HeldItem_GetArticle(iVar3);
       iVar3 = func_0x0800df54(auStack_10);
       if (iVar3 == 0x35) {
         func_0x0800ed2c(*(undefined4 *)(param_1 + 0x38));
@@ -9680,9 +9680,9 @@ undefined4 func_0802907C(int param_1)
 }
 
 // =============================================================================
-// Function: func_080290D4 @ 0x080290D4
+// Function: Entity_Routine_080290D4 @ 0x080290D4
 // =============================================================================
-undefined8 func_080290D4(undefined4 *param_1,undefined4 param_2,undefined1 param_3)
+undefined8 Entity_Routine_080290D4(undefined4 *param_1,undefined4 param_2,undefined1 param_3)
 
 {
   char cVar1;
@@ -9700,19 +9700,19 @@ undefined8 func_080290D4(undefined4 *param_1,undefined4 param_2,undefined1 param
   
   puVar6 = &uStack_1c;
   *(undefined1 *)(param_1 + 0x29) = 1;
-  cVar1 = func_0800F190(param_1[0xd] + _DAT_080290fc);
+  cVar1 = HeldItem_IsEmpty(param_1[0xd] + _DAT_080290fc);
   if (cVar1 == '\0') {
     uVar5 = 0;
     goto LAB_08029550;
   }
   *(undefined1 *)(param_1 + 0x30) = 1;
-  func_08026150(param_1,param_2,param_3);
+  Entity_Routine_08026150(param_1,param_2,param_3);
   uVar9 = 0x192;
   *(short *)(param_1 + 0x1f) = (short)_DAT_08029134;
   if (0x39 < *(byte *)(param_1 + 0xf)) goto LAB_08029544;
   switch(*(uint *)((uint)*(byte *)(param_1 + 0xf) * 4 + _DAT_08029138) & 0xfffffffe) {
   case 0x8029224:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 == '\0') {
       bVar2 = *(byte *)((int)param_1 + 0x3e);
       if (bVar2 == 1) goto LAB_08029530;
@@ -9738,24 +9738,24 @@ undefined8 func_080290D4(undefined4 *param_1,undefined4 param_2,undefined1 param
     }
     break;
   case 0x8029298:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 == '\0') goto case_0802950E;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_08029384;
     uVar9 = *(undefined2 *)
              (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
              _DAT_080292e4);
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uStack_1c = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uStack_1c = Farmer_GetUpgradedTool(iVar7,uVar5);
     goto LAB_08029406;
   case 0x80292e8:
-    bVar2 = func_0800F190(param_1[0xe] + 0x54);
+    bVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x080292f8:
     uVar9 = 0x192;
     if (bVar2 == 0) goto case_0802950E;
     break;
   case 0x80292fe:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x192;
     if (cVar1 == '\0') {
       uVar9 = 0x152;
@@ -9782,15 +9782,15 @@ joined_r0x080292f8:
   case 0x8029336:
     uVar9 = *(undefined2 *)(param_1 + 0x11);
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b;
     goto LAB_08029404;
   case 0x8029356:
     uVar9 = 0x1ea;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 1;
     goto LAB_08029404;
   case 0x8029374:
@@ -9800,8 +9800,8 @@ joined_r0x080292f8:
         uVar9 = 0x186;
       }
       iVar7 = param_1[0xe];
-      uVar5 = func_0800DC10(iVar7 + 0x5c);
-      uVar3 = func_0800E550(iVar7,uVar5);
+      uVar5 = Product_Construct(iVar7 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
       puVar6 = auStack_1b + 2;
       goto LAB_08029404;
     }
@@ -9812,27 +9812,27 @@ case_08029384:
   case 0x80293b4:
     uVar9 = 0x76;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 3;
     goto LAB_08029404;
   case 0x80293ce:
     uVar9 = 0x6e;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 4;
     goto LAB_08029404;
   case 0x80293ea:
     uVar9 = 0x72;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 5;
 LAB_08029404:
     *puVar6 = uVar3;
 LAB_08029406:
-    uVar4 = func_0800DB60(puVar6);
+    uVar4 = ArticleStack_IsEmpty(puVar6);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x802940e:
@@ -9900,7 +9900,7 @@ LAB_08029406:
     uVar9 = 0x11a;
     break;
   case 0x80294ca:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x14a;
     if (cVar1 != '\0') {
       uVar9 = 0x10a;
@@ -9912,7 +9912,7 @@ LAB_08029406:
     uVar8 = _DAT_08029500;
 LAB_080294f2:
     if (*(ushort *)(iVar7 + 0x22) != uVar8) {
-      func_080321B0(iVar7);
+      Entity_Routine_080321B0(iVar7);
     }
     break;
   case 0x8029504:
@@ -9932,7 +9932,7 @@ case_0802950E:
     uVar9 = 0x42;
     break;
   case 0x802951e:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x1c6;
     if (cVar1 == '\0') {
 LAB_08029530:
@@ -9946,16 +9946,16 @@ LAB_08029530:
     }
   }
 LAB_08029544:
-  func_080321B0(param_1,uVar9);
+  Entity_Routine_080321B0(param_1,uVar9);
   uVar5 = 1;
 LAB_08029550:
   return CONCAT44(in_lr,uVar5);
 }
 
 // =============================================================================
-// Function: func_08029558 @ 0x08029558
+// Function: Entity_Routine_08029558 @ 0x08029558
 // =============================================================================
-undefined8 func_08029558(undefined4 *param_1)
+undefined8 Entity_Routine_08029558(undefined4 *param_1)
 
 {
   char cVar1;
@@ -9973,19 +9973,19 @@ undefined8 func_08029558(undefined4 *param_1)
   
   puVar6 = &uStack_1c;
   *(undefined1 *)(param_1 + 0x29) = 1;
-  cVar1 = func_0800F190(param_1[0xd] + _DAT_08029578);
+  cVar1 = HeldItem_IsEmpty(param_1[0xd] + _DAT_08029578);
   if (cVar1 == '\0') {
     uVar5 = 0;
     goto LAB_080299c8;
   }
   *(undefined1 *)(param_1 + 0x30) = 1;
-  func_08025FC4(param_1);
+  Entity_Routine_08025FC4(param_1);
   uVar9 = 0x192;
   *(short *)(param_1 + 0x1f) = (short)_DAT_080295ac;
   if (0x39 < *(byte *)(param_1 + 0xf)) goto LAB_080299bc;
   switch(*(uint *)((uint)*(byte *)(param_1 + 0xf) * 4 + _DAT_080295b0) & 0xfffffffe) {
   case 0x802969c:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 == '\0') {
       bVar2 = *(byte *)((int)param_1 + 0x3e);
       if (bVar2 == 1) goto LAB_080299a8;
@@ -10011,24 +10011,24 @@ undefined8 func_08029558(undefined4 *param_1)
     }
     break;
   case 0x8029710:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 == '\0') goto case_08029986;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_080297FC;
     uVar9 = *(undefined2 *)
              (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
              _DAT_0802975c);
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uStack_1c = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uStack_1c = Farmer_GetUpgradedTool(iVar7,uVar5);
     goto LAB_0802987e;
   case 0x8029760:
-    bVar2 = func_0800F190(param_1[0xe] + 0x54);
+    bVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x08029770:
     uVar9 = 0x192;
     if (bVar2 == 0) goto case_08029986;
     break;
   case 0x8029776:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x192;
     if (cVar1 == '\0') {
       uVar9 = 0x152;
@@ -10055,15 +10055,15 @@ joined_r0x08029770:
   case 0x80297ae:
     uVar9 = *(undefined2 *)(param_1 + 0x11);
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b;
     goto LAB_0802987c;
   case 0x80297ce:
     uVar9 = 0x1ea;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 1;
     goto LAB_0802987c;
   case 0x80297ec:
@@ -10073,8 +10073,8 @@ joined_r0x08029770:
         uVar9 = 0x186;
       }
       iVar7 = param_1[0xe];
-      uVar5 = func_0800DC10(iVar7 + 0x5c);
-      uVar3 = func_0800E550(iVar7,uVar5);
+      uVar5 = Product_Construct(iVar7 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
       puVar6 = auStack_1b + 2;
       goto LAB_0802987c;
     }
@@ -10085,27 +10085,27 @@ case_080297FC:
   case 0x802982c:
     uVar9 = 0x76;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 3;
     goto LAB_0802987c;
   case 0x8029846:
     uVar9 = 0x6e;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 4;
     goto LAB_0802987c;
   case 0x8029862:
     uVar9 = 0x72;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar3 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_1b + 5;
 LAB_0802987c:
     *puVar6 = uVar3;
 LAB_0802987e:
-    uVar4 = func_0800DB60(puVar6);
+    uVar4 = ArticleStack_IsEmpty(puVar6);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x8029886:
@@ -10173,7 +10173,7 @@ LAB_0802987e:
     uVar9 = 0x11a;
     break;
   case 0x8029942:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x14a;
     if (cVar1 != '\0') {
       uVar9 = 0x10a;
@@ -10185,7 +10185,7 @@ LAB_0802987e:
     uVar8 = _DAT_08029978;
 LAB_0802996a:
     if (*(ushort *)(iVar7 + 0x22) != uVar8) {
-      func_080321B0(iVar7);
+      Entity_Routine_080321B0(iVar7);
     }
     break;
   case 0x802997c:
@@ -10205,7 +10205,7 @@ case_08029986:
     uVar9 = 0x42;
     break;
   case 0x8029996:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x1c6;
     if (cVar1 == '\0') {
 LAB_080299a8:
@@ -10219,30 +10219,30 @@ LAB_080299a8:
     }
   }
 LAB_080299bc:
-  func_080321B0(param_1,uVar9);
+  Entity_Routine_080321B0(param_1,uVar9);
   uVar5 = 1;
 LAB_080299c8:
   return CONCAT44(in_lr,uVar5);
 }
 
 // =============================================================================
-// Function: func_080299D0 @ 0x080299D0
+// Function: Entity_Routine_080299D0 @ 0x080299D0
 // =============================================================================
-undefined4 func_080299D0(int param_1)
+undefined4 Entity_Routine_080299D0(int param_1)
 
 {
   undefined4 in_lr;
   
   *(undefined1 *)(param_1 + 0xa4) = 0;
   *(undefined1 *)(param_1 + 0x88) = 0;
-  func_080321B0(param_1,0x192);
+  Entity_Routine_080321B0(param_1,0x192);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080299EC @ 0x080299EC
+// Function: Entity_Routine_080299EC @ 0x080299EC
 // =============================================================================
-undefined4 func_080299EC(undefined4 *param_1)
+undefined4 Entity_Routine_080299EC(undefined4 *param_1)
 
 {
   char cVar1;
@@ -10263,8 +10263,8 @@ undefined4 func_080299EC(undefined4 *param_1)
   
   puVar7 = &uStack_28;
   *(undefined1 *)(param_1 + 0x29) = 1;
-  func_0802A588(param_1);
-  cVar1 = func_0800F190(param_1[0xe] + 0x54);
+  Entity_Routine_0802A588(param_1);
+  cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
   if (cVar1 == '\0') {
     piVar5 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
     puVar12 = (undefined4 *)piVar5[1];
@@ -10277,7 +10277,7 @@ undefined4 func_080299EC(undefined4 *param_1)
     }
     uVar6 = puVar12[-1];
 LAB_08029a5a:
-    func_08008B6C(uVar6,0x6a);
+    HW_Routine_08008B6C(uVar6,0x6a);
     *(undefined1 *)(param_1 + 0xf) = 0x11;
     uVar6 = _DAT_08029ab8;
     bVar2 = *(byte *)(param_1 + 8);
@@ -10314,7 +10314,7 @@ LAB_08029ae4:
   if (0x39 < *(byte *)(param_1 + 0xf)) goto LAB_08029f10;
   switch(*(uint *)((uint)*(byte *)(param_1 + 0xf) * 4 + _DAT_08029b04) & 0xfffffffe) {
   case 0x8029bf0:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 != '\0') {
       bVar2 = *(byte *)((int)param_1 + 0x3e);
       if (bVar2 == 1) {
@@ -10345,18 +10345,18 @@ LAB_08029ae4:
     }
     goto LAB_08029efc;
   case 0x8029c64:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar1 == '\0') goto case_08029EDA;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_08029D50;
     uVar11 = *(undefined2 *)
               (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
               _DAT_08029cb0);
     iVar8 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar8 + 0x5c);
-    uStack_28 = func_0800E550(iVar8,uVar6);
+    uVar6 = Product_Construct(iVar8 + 0x5c);
+    uStack_28 = Farmer_GetUpgradedTool(iVar8,uVar6);
     goto LAB_08029dd2;
   case 0x8029cb4:
-    bVar2 = func_0800F190(param_1[0xe] + 0x54);
+    bVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x08029cc4:
     uVar11 = 0x192;
     if (bVar2 != 0) break;
@@ -10365,7 +10365,7 @@ case_08029EDA:
     uVar11 = 0x152;
     break;
   case 0x8029cca:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x192;
     if (cVar1 == '\0') {
       uVar11 = 0x152;
@@ -10392,15 +10392,15 @@ case_08029EDA:
   case 0x8029d02:
     uVar11 = *(undefined2 *)(param_1 + 0x11);
     iVar8 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar8 + 0x5c);
-    uVar3 = func_0800E550(iVar8,uVar6);
+    uVar6 = Product_Construct(iVar8 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar8,uVar6);
     puVar7 = auStack_27;
     goto LAB_08029dd0;
   case 0x8029d22:
     uVar11 = 0x1ea;
     iVar8 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar8 + 0x5c);
-    uVar3 = func_0800E550(iVar8,uVar6);
+    uVar6 = Product_Construct(iVar8 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar8,uVar6);
     puVar7 = auStack_27 + 1;
     goto LAB_08029dd0;
   case 0x8029d40:
@@ -10410,8 +10410,8 @@ case_08029EDA:
         uVar11 = 0x186;
       }
       iVar8 = param_1[0xe];
-      uVar6 = func_0800DC10(iVar8 + 0x5c);
-      uVar3 = func_0800E550(iVar8,uVar6);
+      uVar6 = Product_Construct(iVar8 + 0x5c);
+      uVar3 = Farmer_GetUpgradedTool(iVar8,uVar6);
       puVar7 = auStack_27 + 2;
       goto LAB_08029dd0;
     }
@@ -10422,27 +10422,27 @@ case_08029D50:
   case 0x8029d80:
     uVar11 = 0x76;
     iVar8 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar8 + 0x5c);
-    uVar3 = func_0800E550(iVar8,uVar6);
+    uVar6 = Product_Construct(iVar8 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar8,uVar6);
     puVar7 = auStack_27 + 3;
     goto LAB_08029dd0;
   case 0x8029d9a:
     uVar11 = 0x6e;
     iVar8 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar8 + 0x5c);
-    uVar3 = func_0800E550(iVar8,uVar6);
+    uVar6 = Product_Construct(iVar8 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar8,uVar6);
     puVar7 = auStack_27 + 4;
     goto LAB_08029dd0;
   case 0x8029db6:
     uVar11 = 0x72;
     iVar8 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar8 + 0x5c);
-    uVar3 = func_0800E550(iVar8,uVar6);
+    uVar6 = Product_Construct(iVar8 + 0x5c);
+    uVar3 = Farmer_GetUpgradedTool(iVar8,uVar6);
     puVar7 = auStack_27 + 5;
 LAB_08029dd0:
     *puVar7 = uVar3;
 LAB_08029dd2:
-    uVar4 = func_0800DB60(puVar7);
+    uVar4 = ArticleStack_IsEmpty(puVar7);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x8029dda:
@@ -10507,7 +10507,7 @@ LAB_08029dd2:
     uVar11 = 0x11a;
     break;
   case 0x8029e96:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x14a;
     if (cVar1 != '\0') {
       uVar11 = 0x10a;
@@ -10519,7 +10519,7 @@ LAB_08029dd2:
     uVar9 = _DAT_08029ecc;
 LAB_08029ebe:
     if (*(ushort *)(iVar8 + 0x22) != uVar9) {
-      func_080321B0(iVar8);
+      Entity_Routine_080321B0(iVar8);
     }
     break;
   case 0x8029ed0:
@@ -10535,7 +10535,7 @@ LAB_08029ebe:
     uVar11 = 0x42;
     break;
   case 0x8029eea:
-    cVar1 = func_0800F190(param_1[0xe] + 0x54);
+    cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar11 = 0x1c6;
     if (cVar1 != '\0') break;
 LAB_08029efc:
@@ -10548,15 +10548,15 @@ LAB_08029efc:
     }
   }
 LAB_08029f10:
-  func_080321B0(param_1,uVar11);
+  Entity_Routine_080321B0(param_1,uVar11);
   *(undefined1 *)(param_1 + 0x30) = 1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08029F30 @ 0x08029F30
+// Function: Entity_Routine_08029F30 @ 0x08029F30
 // =============================================================================
-undefined4 func_08029F30(undefined4 *param_1,undefined4 param_2)
+undefined4 Entity_Routine_08029F30(undefined4 *param_1,undefined4 param_2)
 
 {
   byte bVar1;
@@ -10582,9 +10582,9 @@ undefined4 func_08029F30(undefined4 *param_1,undefined4 param_2)
   puVar10 = (undefined4 *)param_1[4];
   if (puVar10 != (undefined4 *)0x0) {
     func_0x0800db2c(&uStack_20,param_2);
-    uVar4 = func_0800DB60(&uStack_20);
+    uVar4 = ArticleStack_IsEmpty(&uStack_20);
     uVar6 = func_0x080d3910(*(int **)*puVar10,*(undefined4 *)(**(int **)*puVar10 + 100));
-    func_0805E850(puVar10 + 0x2d,uVar6,uVar4);
+    Animal_Routine_0805E850(puVar10 + 0x2d,uVar6,uVar4);
     *(undefined1 *)(puVar10 + 0x32) = 1;
     *(undefined1 *)((int)puVar10 + 0xca) = 0;
     *(undefined1 *)((int)puVar10 + 0xcb) = 1;
@@ -10597,7 +10597,7 @@ undefined4 func_08029F30(undefined4 *param_1,undefined4 param_2)
   if (0x39 < uVar7) goto LAB_0802a3e0;
   switch(*(uint *)(uVar7 * 4 + _DAT_08029fd8) & 0xfffffffe) {
   case 0x802a0c4:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 != '\0') {
       bVar1 = *(byte *)((int)param_1 + 0x3e);
       if (bVar1 == 1) {
@@ -10628,15 +10628,15 @@ undefined4 func_08029F30(undefined4 *param_1,undefined4 param_2)
     }
     goto LAB_0802a3d0;
   case 0x802a138:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 != '\0') {
       if (*(byte *)((int)param_1 + 0x3f) < 6) {
         uVar4 = *(undefined2 *)
                  (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2 +
                  _DAT_0802a184);
         iVar9 = param_1[0xe];
-        uVar6 = func_0800DC10(iVar9 + 0x5c);
-        uVar2 = func_0800E550(iVar9,uVar6);
+        uVar6 = Product_Construct(iVar9 + 0x5c);
+        uVar2 = Farmer_GetUpgradedTool(iVar9,uVar6);
         puVar8 = auStack_1f;
         goto LAB_0802a2a4;
       }
@@ -10647,13 +10647,13 @@ case_0802A3AE:
     uVar4 = 0x152;
     break;
   case 0x802a188:
-    bVar1 = func_0800F190(param_1[0xe] + 0x54);
+    bVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x0802a198:
     uVar4 = 0x192;
     if (bVar1 != 0) break;
     goto case_0802A3AE;
   case 0x802a19e:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar4 = 0x192;
     if (cVar3 == '\0') {
       uVar4 = 0x152;
@@ -10680,15 +10680,15 @@ joined_r0x0802a198:
   case 0x802a1d6:
     uVar4 = *(undefined2 *)(param_1 + 0x11);
     iVar9 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar9 + 0x5c);
-    uVar2 = func_0800E550(iVar9,uVar6);
+    uVar6 = Product_Construct(iVar9 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar9,uVar6);
     puVar8 = auStack_1f + 1;
     goto LAB_0802a2a4;
   case 0x802a1f6:
     uVar4 = 0x1ea;
     iVar9 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar9 + 0x5c);
-    uVar2 = func_0800E550(iVar9,uVar6);
+    uVar6 = Product_Construct(iVar9 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar9,uVar6);
     puVar8 = auStack_1f + 2;
     goto LAB_0802a2a4;
   case 0x802a214:
@@ -10698,8 +10698,8 @@ joined_r0x0802a198:
         uVar4 = 0x186;
       }
       iVar9 = param_1[0xe];
-      uVar6 = func_0800DC10(iVar9 + 0x5c);
-      uVar2 = func_0800E550(iVar9,uVar6);
+      uVar6 = Product_Construct(iVar9 + 0x5c);
+      uVar2 = Farmer_GetUpgradedTool(iVar9,uVar6);
       puVar8 = auStack_1f + 3;
       goto LAB_0802a2a4;
     }
@@ -10710,26 +10710,26 @@ case_0802A224:
   case 0x802a252:
     uVar4 = 0x76;
     iVar9 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar9 + 0x5c);
-    uVar2 = func_0800E550(iVar9,uVar6);
+    uVar6 = Product_Construct(iVar9 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar9,uVar6);
     puVar8 = auStack_1f + 4;
     goto LAB_0802a2a4;
   case 0x802a26e:
     uVar4 = 0x6e;
     iVar9 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar9 + 0x5c);
-    uVar2 = func_0800E550(iVar9,uVar6);
+    uVar6 = Product_Construct(iVar9 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar9,uVar6);
     puVar8 = auStack_1f + 5;
     goto LAB_0802a2a4;
   case 0x802a28a:
     uVar4 = 0x72;
     iVar9 = param_1[0xe];
-    uVar6 = func_0800DC10(iVar9 + 0x5c);
-    uVar2 = func_0800E550(iVar9,uVar6);
+    uVar6 = Product_Construct(iVar9 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar9,uVar6);
     puVar8 = auStack_1f + 6;
 LAB_0802a2a4:
     *puVar8 = uVar2;
-    uVar5 = func_0800DB60();
+    uVar5 = ArticleStack_IsEmpty();
     *(undefined2 *)(param_1 + 0x1f) = uVar5;
     break;
   case 0x802a2ae:
@@ -10794,7 +10794,7 @@ LAB_0802a2a4:
     uVar4 = 0x11a;
     break;
   case 0x802a36a:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar4 = 0x14a;
     if (cVar3 != '\0') {
       uVar4 = 0x10a;
@@ -10806,7 +10806,7 @@ LAB_0802a2a4:
     uVar7 = _DAT_0802a3a0;
 LAB_0802a392:
     if (*(ushort *)(iVar9 + 0x22) != uVar7) {
-      func_080321B0(iVar9);
+      Entity_Routine_080321B0(iVar9);
     }
     break;
   case 0x802a3a4:
@@ -10822,7 +10822,7 @@ LAB_0802a392:
     uVar4 = 0x42;
     break;
   case 0x802a3be:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar4 = 0x1c6;
     if (cVar3 != '\0') break;
 LAB_0802a3d0:
@@ -10835,15 +10835,15 @@ LAB_0802a3d0:
     }
   }
 LAB_0802a3e0:
-  func_080321B0(param_1,uVar4);
+  Entity_Routine_080321B0(param_1,uVar4);
   *(undefined1 *)(param_1 + 0x30) = 1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802A400 @ 0x0802A400
+// Function: Entity_Routine_0802A400 @ 0x0802A400
 // =============================================================================
-undefined4 func_0802A400(int param_1,undefined4 param_2)
+undefined4 Entity_Routine_0802A400(int param_1,undefined4 param_2)
 
 {
   undefined1 uVar1;
@@ -10862,18 +10862,18 @@ undefined4 func_0802A400(int param_1,undefined4 param_2)
   *(undefined4 *)(param_1 + 0x9c) = 0x150000;
   puVar5 = *(undefined4 **)(param_1 + 0x10);
   if (puVar5 != (undefined4 *)0x0) {
-    uVar2 = func_0800DCE0(param_2);
+    uVar2 = Item_Routine_0800DCE0(param_2);
     uVar3 = func_0x080d3910(*(int **)*puVar5,*(undefined4 *)(**(int **)*puVar5 + 100));
-    func_0805E850(puVar5 + 0x2d,uVar3,uVar2);
+    Animal_Routine_0805E850(puVar5 + 0x2d,uVar3,uVar2);
     *(undefined1 *)(puVar5 + 0x32) = 1;
     *(undefined1 *)((int)puVar5 + 0xca) = 0;
     *(undefined1 *)((int)puVar5 + 0xcb) = 1;
   }
   iVar6 = *(int *)(param_1 + 0x14);
-  uVar3 = func_0800DD08(param_2);
-  uVar4 = func_0800DD3C(param_2);
+  uVar3 = Item_GetFoodStaminaEffect(param_2);
+  uVar4 = Item_GetFoodFatigueEffect(param_2);
   func_0x080d3918(param_1,uVar3,uVar4,*(undefined4 *)(iVar6 + 100));
-  iVar6 = func_0800DDAC(param_2);
+  iVar6 = Item_GetFoodIsDrinkOrLiquid(param_2);
   if (iVar6 == 0) {
     uVar1 = 0x36;
   }
@@ -10882,14 +10882,14 @@ undefined4 func_0802A400(int param_1,undefined4 param_2)
   }
   *(undefined1 *)(param_1 + 0x3c) = uVar1;
   *(undefined1 *)(param_1 + 0xc0) = 1;
-  func_080321B0(param_1,0x146);
+  Entity_Routine_080321B0(param_1,0x146);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802A4C0 @ 0x0802A4C0
+// Function: Entity_Routine_0802A4C0 @ 0x0802A4C0
 // =============================================================================
-undefined4 func_0802A4C0(int param_1,undefined4 param_2,int param_3)
+undefined4 Entity_Routine_0802A4C0(int param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 uVar1;
@@ -10903,7 +10903,7 @@ undefined4 func_0802A4C0(int param_1,undefined4 param_2,int param_3)
   puVar2 = *(undefined4 **)(param_1 + 0x10);
   if (puVar2 != (undefined4 *)0x0) {
     uVar1 = func_0x080d3910(*(int **)*puVar2,*(undefined4 *)(**(int **)*puVar2 + 100));
-    func_0805E850(puVar2 + 0x2d,uVar1,param_2);
+    Animal_Routine_0805E850(puVar2 + 0x2d,uVar1,param_2);
     *(undefined1 *)(puVar2 + 0x32) = 1;
     *(undefined1 *)((int)puVar2 + 0xca) = 0;
     *(undefined1 *)((int)puVar2 + 0xcb) = 1;
@@ -10912,9 +10912,9 @@ undefined4 func_0802A4C0(int param_1,undefined4 param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0802A510 @ 0x0802A510
+// Function: Entity_Routine_0802A510 @ 0x0802A510
 // =============================================================================
-undefined4 func_0802A510(int param_1)
+undefined4 Entity_Routine_0802A510(int param_1)
 
 {
   undefined2 uVar1;
@@ -10932,11 +10932,11 @@ undefined4 func_0802A510(int param_1)
   puVar4 = *(undefined4 **)(param_1 + 0x10);
   if (puVar4 != (undefined4 *)0x0) {
     iVar3 = *(int *)(param_1 + 0x38);
-    uVar2 = func_0800DC10(iVar3 + 0x5c);
-    auStack_18[0] = func_0800E550(iVar3,uVar2);
-    uVar1 = func_0800DB60(auStack_18);
+    uVar2 = Product_Construct(iVar3 + 0x5c);
+    auStack_18[0] = Farmer_GetUpgradedTool(iVar3,uVar2);
+    uVar1 = ArticleStack_IsEmpty(auStack_18);
     uVar2 = func_0x080d3910(*(int **)*puVar4,*(undefined4 *)(**(int **)*puVar4 + 100));
-    func_0805E850(puVar4 + 0x2d,uVar2,uVar1);
+    Animal_Routine_0805E850(puVar4 + 0x2d,uVar2,uVar1);
     *(undefined1 *)(puVar4 + 0x32) = 1;
     *(undefined1 *)((int)puVar4 + 0xca) = 0;
     *(undefined1 *)((int)puVar4 + 0xcb) = 1;
@@ -10945,9 +10945,9 @@ undefined4 func_0802A510(int param_1)
 }
 
 // =============================================================================
-// Function: func_0802AA84 @ 0x0802AA84
+// Function: Entity_Routine_0802AA84 @ 0x0802AA84
 // =============================================================================
-undefined8 func_0802AA84(int param_1)
+undefined8 Entity_Routine_0802AA84(int param_1)
 
 {
   char cVar1;
@@ -10965,45 +10965,45 @@ undefined8 func_0802AA84(int param_1)
   
   iVar7 = 0;
   iVar5 = *(int *)(param_1 + 0x34) + _DAT_0802aad8;
-  cVar1 = func_0800DC34(iVar5);
+  cVar1 = Product_GetId(iVar5);
   if (cVar1 == '\0') {
     iVar7 = *(int *)(param_1 + 0x34) + _DAT_0802aadc;
-    uVar2 = func_0800DC10(iVar5);
-    uStack_20 = func_0800E550(iVar7,uVar2);
-    iVar7 = func_080246BC(0);
+    uVar2 = Product_Construct(iVar5);
+    uStack_20 = Farmer_GetUpgradedTool(iVar7,uVar2);
+    iVar7 = Entity_Routine_080246BC(0);
   }
   iVar5 = *(int *)(param_1 + 0x34) + _DAT_0802aae0;
   for (uVar6 = 0; uVar3 = func_0x0800f5f8(iVar5), uVar6 < uVar3; uVar6 = uVar6 + 1) {
     uVar2 = func_0x0800f868(iVar5,uVar6);
-    cVar1 = func_0800DC34();
+    cVar1 = Product_GetId();
     if (cVar1 == '\0') {
       iVar4 = *(int *)(param_1 + 0x34) + _DAT_0802ab90;
-      uVar2 = func_0800DC10(uVar2);
-      uStack_1f = func_0800E550(iVar4,uVar2);
-      iVar7 = func_080246BC(iVar7);
+      uVar2 = Product_Construct(uVar2);
+      uStack_1f = Farmer_GetUpgradedTool(iVar4,uVar2);
+      iVar7 = Entity_Routine_080246BC(iVar7);
     }
   }
   iVar5 = *(int *)(param_1 + 0x34);
   uVar6 = 0;
   do {
     uVar2 = func_0x0800b408(iVar5 + 0x380,uVar6);
-    cVar1 = func_0800DC34();
+    cVar1 = Product_GetId();
     if (cVar1 == '\0') {
       iVar4 = *(int *)(param_1 + 0x34) + _DAT_0802ab90;
-      uVar2 = func_0800DC10(uVar2);
-      uStack_1e = func_0800E550(iVar4,uVar2);
-      iVar7 = func_080246BC(iVar7);
+      uVar2 = Product_Construct(uVar2);
+      uStack_1e = Farmer_GetUpgradedTool(iVar4,uVar2);
+      iVar7 = Entity_Routine_080246BC(iVar7);
     }
     uVar6 = uVar6 + 1;
   } while (uVar6 < 0x40);
-  memcpy(abStack_28,_DAT_0802ab94,7);
+  gba_memcpy(abStack_28,_DAT_0802ab94,7);
   return CONCAT44(in_lr,(uint)abStack_28[iVar7]);
 }
 
 // =============================================================================
-// Function: func_0802AB98 @ 0x0802AB98
+// Function: Entity_Routine_0802AB98 @ 0x0802AB98
 // =============================================================================
-short * func_0802AB98(short *param_1,int param_2,int param_3)
+short * Entity_Routine_0802AB98(short *param_1,int param_2,int param_3)
 
 {
   short sVar1;
@@ -11056,9 +11056,9 @@ LAB_0802ac1a:
 }
 
 // =============================================================================
-// Function: func_0802AC2C @ 0x0802AC2C
+// Function: Entity_Routine_0802AC2C @ 0x0802AC2C
 // =============================================================================
-undefined4 func_0802AC2C(undefined4 *param_1,int param_2,undefined4 param_3)
+undefined4 Entity_Routine_0802AC2C(undefined4 *param_1,int param_2,undefined4 param_3)
 
 {
   char cVar1;
@@ -11088,7 +11088,7 @@ undefined4 func_0802AC2C(undefined4 *param_1,int param_2,undefined4 param_3)
   uStack_3c = (uint)*(ushort *)(param_1 + 1);
   iStack_38 = (int)*(short *)((int)param_1 + 10);
   iStack_34 = (int)*(short *)((int)param_1 + 0xe);
-  func_0802AB98(&uStack_58,param_1,*(undefined1 *)(param_1 + 8));
+  Entity_Routine_0802AB98(&uStack_58,param_1,*(undefined1 *)(param_1 + 8));
   uStack_50 = uStack_58;
   uStack_4c = uStack_54;
   uStack_30 = 100;
@@ -11130,9 +11130,9 @@ LAB_0802ad20:
 }
 
 // =============================================================================
-// Function: func_0802AD80 @ 0x0802AD80
+// Function: Entity_Routine_0802AD80 @ 0x0802AD80
 // =============================================================================
-undefined4 func_0802AD80(undefined4 *param_1)
+undefined4 Entity_Routine_0802AD80(undefined4 *param_1)
 
 {
   int iVar1;
@@ -11154,7 +11154,7 @@ undefined4 func_0802AD80(undefined4 *param_1)
   
   puVar5 = &uStack_3c;
   iVar1 = func_0x0800e958(param_1[0xe]);
-  func_0800ED8C(param_1[0xe]);
+  Farmer_IncrementPedometerStep(param_1[0xe]);
   iVar2 = func_0x0800e958(param_1[0xe]);
   if (iVar1 == iVar2) {
     return in_lr;
@@ -11216,9 +11216,9 @@ LAB_0802ae6e:
 }
 
 // =============================================================================
-// Function: func_0802AEA4 @ 0x0802AEA4
+// Function: Entity_Routine_0802AEA4 @ 0x0802AEA4
 // =============================================================================
-undefined8 func_0802AEA4(undefined4 *param_1)
+undefined8 Entity_Routine_0802AEA4(undefined4 *param_1)
 
 {
   ushort uVar1;
@@ -11244,7 +11244,7 @@ undefined8 func_0802AEA4(undefined4 *param_1)
   func_0x080d3914(&uStack_20,param_1,*(undefined4 *)(param_1[5] + 0xc));
   uStack_18 = uStack_20;
   uStack_14 = uStack_1c;
-  cVar2 = func_080AC070(&iStack_2c,&uStack_18);
+  cVar2 = NPC_Routine_080AC070(&iStack_2c,&uStack_18);
   if (cVar2 == '\0') {
     if (_DAT_0802af2c < uVar1 - 0x34) {
 LAB_0802b048:
@@ -11344,9 +11344,9 @@ LAB_0802b04a:
 }
 
 // =============================================================================
-// Function: func_0802B054 @ 0x0802B054
+// Function: Entity_Routine_0802B054 @ 0x0802B054
 // =============================================================================
-undefined4 func_0802B054(undefined4 *param_1)
+undefined4 Entity_Routine_0802B054(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -11367,11 +11367,11 @@ undefined4 func_0802B054(undefined4 *param_1)
   undefined4 uStack_1c;
   undefined4 uStack_18;
   
-  cVar3 = func_0809DFAC(param_1[0xd] + _DAT_0802b130);
+  cVar3 = NPC_Routine_0809DFAC(param_1[0xd] + _DAT_0802b130);
   if (cVar3 == '\t') {
     bVar1 = *(byte *)(param_1[0xd] + _DAT_0802b134);
     if (((bVar1 & 0x30) == 0) && (iVar4 = func_0x0800f204(param_1[0xe] + 0x54), iVar4 == 1)) {
-      auStack_3c[0] = func_0800F258(param_1[0xe] + 0x54);
+      auStack_3c[0] = HeldItem_GetArticle(param_1[0xe] + 0x54);
       iVar4 = func_0x0800df54(auStack_3c);
       if (iVar4 == 0x25) {
         uStack_38 = 0x330;
@@ -11380,11 +11380,11 @@ undefined4 func_0802B054(undefined4 *param_1)
       }
     }
   }
-  cVar3 = func_0809E02C(param_1[0xd] + _DAT_0802b130);
+  cVar3 = NPC_Routine_0809E02C(param_1[0xd] + _DAT_0802b130);
   if (cVar3 == '\t') {
     bVar1 = *(byte *)(param_1[0xd] + _DAT_0802b138);
     if (((bVar1 & 0x18) == 0) && (iVar4 = func_0x0800f204(param_1[0xe] + 0x54), iVar4 == 1)) {
-      uStack_30 = func_0800F258(param_1[0xe] + 0x54);
+      uStack_30 = HeldItem_GetArticle(param_1[0xe] + 0x54);
       iVar4 = func_0x0800df54();
       if (iVar4 == 0x26) {
         uStack_2c = _DAT_0802b13c;
@@ -11397,7 +11397,7 @@ undefined4 func_0802B054(undefined4 *param_1)
     bVar2 = true;
     puVar5 = _DAT_0802b144;
     for (uVar6 = 0; uVar6 < 9; uVar6 = uVar6 + 1) {
-      cVar3 = func_0800B124(param_1[0xd] + 0x54,*puVar5);
+      cVar3 = ShippingBin_GetValueShipped(param_1[0xd] + 0x54,*puVar5);
       if (cVar3 == '\0') {
         bVar2 = false;
         break;
@@ -11408,7 +11408,7 @@ undefined4 func_0802B054(undefined4 *param_1)
     if (bVar2) {
       cVar3 = func_0x0809e184(param_1[0xd] + _DAT_0802b1d4);
       if ((((cVar3 != '\0') && (cVar3 = func_0x0809e194(param_1[0xd] + iVar4), cVar3 != '\0')) &&
-          (cVar3 = func_0809DFAC(param_1[0xd] + iVar4), cVar3 != '\0')) &&
+          (cVar3 = NPC_Routine_0809DFAC(param_1[0xd] + iVar4), cVar3 != '\0')) &&
          (cVar3 = func_0x0809e1a4(param_1[0xd] + iVar4), cVar3 != '\0')) {
         uStack_24 = _DAT_0802b1d8;
         uStack_20 = 0;
@@ -11420,16 +11420,16 @@ undefined4 func_0802B054(undefined4 *param_1)
     bVar2 = true;
     puVar5 = _DAT_0802b1e0;
     for (uVar6 = 0; uVar6 < 0xe; uVar6 = uVar6 + 1) {
-      cVar3 = func_0800B124(param_1[0xd] + 0x54,*puVar5);
+      cVar3 = ShippingBin_GetValueShipped(param_1[0xd] + 0x54,*puVar5);
       if (cVar3 == '\0') {
         bVar2 = false;
         break;
       }
       puVar5 = puVar5 + 1;
     }
-    if (((bVar2) && (cVar3 = func_0809C32C(&UNK_00003480 + param_1[0xd]), cVar3 != '\0')) &&
+    if (((bVar2) && (cVar3 = NPC_Routine_0809C32C(&UNK_00003480 + param_1[0xd]), cVar3 != '\0')) &&
        ((cVar3 = func_0x0809e174(param_1[0xd] + _DAT_0802b258), cVar3 != '\0' &&
-        (cVar3 = func_0809E02C(param_1[0xd] + _DAT_0802b258), cVar3 != '\0')))) {
+        (cVar3 = NPC_Routine_0809E02C(param_1[0xd] + _DAT_0802b258), cVar3 != '\0')))) {
       uStack_1c = _DAT_0802b25c;
       uStack_18 = 0;
       func_0x080d3918((int *)*param_1,&uStack_1c,0,*(undefined4 *)(*(int *)*param_1 + 0x140));
@@ -11439,9 +11439,9 @@ undefined4 func_0802B054(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_0802B3B4 @ 0x0802B3B4
+// Function: Entity_Routine_0802B3B4 @ 0x0802B3B4
 // =============================================================================
-undefined4 func_0802B3B4(int *param_1)
+undefined4 Entity_Routine_0802B3B4(int *param_1)
 
 {
   ushort uVar1;
@@ -11453,7 +11453,7 @@ undefined4 func_0802B3B4(int *param_1)
   uint uVar7;
   undefined4 in_lr;
   
-  func_0803260C();
+  Entity_Routine_0803260C();
   iVar5 = *param_1;
   puVar4 = (ushort *)(iVar5 + 0x7c);
   uVar1 = *puVar4;
@@ -11463,7 +11463,7 @@ undefined4 func_0802B3B4(int *param_1)
   if (*(char *)(iVar5 + 0x88) == '\x01') {
     piVar3 = (int *)((int)param_1 + 0xcb);
     if (*(char *)piVar3 == '\0') {
-      iVar5 = func_0805E8F0(param_1 + 0x2d);
+      iVar5 = Animal_Routine_0805E8F0(param_1 + 0x2d);
       if (-1 < iVar5 * 0x40000000) goto LAB_0802b414;
       piVar3 = param_1 + 0x32;
       cVar2 = '\x01';
@@ -11481,7 +11481,7 @@ LAB_0802b414:
   do {
     if ((char)*param_1 != '\0') {
       if (*(char *)((int)piVar3 + 0x17) == '\0') {
-        iVar5 = func_0805E8F0(piVar3);
+        iVar5 = Animal_Routine_0805E8F0(piVar3);
         if (iVar5 * 0x40000000 < 0) {
           *(undefined1 *)(piVar3 + 5) = 1;
         }
@@ -11503,9 +11503,9 @@ LAB_0802b414:
 }
 
 // =============================================================================
-// Function: func_0802B46C @ 0x0802B46C
+// Function: Entity_Routine_0802B46C @ 0x0802B46C
 // =============================================================================
-undefined4 func_0802B46C(int *param_1)
+undefined4 Entity_Routine_0802B46C(int *param_1)
 
 {
   byte bVar1;
@@ -11545,7 +11545,7 @@ LAB_0802b4de:
     iVar4 = uVar6 + 0x650;
   }
 LAB_0802b4e0:
-  func_0805E860(piVar5 + 0xb,iVar4);
+  Animal_Routine_0805E860(piVar5 + 0xb,iVar4);
   *(undefined1 *)(piVar5 + 0x10) = 1;
   *(undefined1 *)((int)piVar5 + 0x42) = 0;
   *(undefined1 *)((int)piVar5 + 0x43) = 1;
@@ -11558,9 +11558,9 @@ LAB_0802b4e0:
 }
 
 // =============================================================================
-// Function: func_0802B51C @ 0x0802B51C
+// Function: Entity_Routine_0802B51C @ 0x0802B51C
 // =============================================================================
-undefined4 func_0802B51C(int *param_1,undefined4 *param_2)
+undefined4 Entity_Routine_0802B51C(int *param_1,undefined4 *param_2)
 
 {
   ushort uVar1;
@@ -11607,7 +11607,7 @@ undefined4 func_0802B51C(int *param_1,undefined4 *param_2)
   uStack_60 = param_2[2];
   piStack_4c = param_1;
   puStack_48 = param_2;
-  iVar7 = func_08032900(uVar1,iVar14 >> 0x10,iVar6 >> 0x10);
+  iVar7 = Entity_Routine_08032900(uVar1,iVar14 >> 0x10,iVar6 >> 0x10);
   puVar5 = puStack_44;
   *(char *)((int)piStack_4c + 0x8b) = (char)iVar7;
   if ((*(char *)(puStack_44 + 0x22) == '\x01') && (*(char *)(puStack_44 + 0x29) != '\0')) {
@@ -11639,15 +11639,15 @@ undefined4 func_0802B51C(int *param_1,undefined4 *param_2)
       iVar6 = 0;
     }
     if ((iVar6 != 0) && ((char)piVar10[0x32] != '\0')) {
-      func_080A480C(piVar12,uStack_64,auStack_7c);
+      NPC_Routine_080A480C(piVar12,uStack_64,auStack_7c);
       if (*(char *)((int)piVar10 + 0xc9) == '\0') {
         if (*(char *)((int)piVar10 + 0xca) == '\0') {
-          func_080A4944(piVar12,auStack_74,1);
+          NPC_Routine_080A4944(piVar12,auStack_74,1);
           *(char *)((int)piVar10 + 0xca) = '\x01';
         }
       }
       else {
-        func_080A4944(piVar12,auStack_74,1);
+        NPC_Routine_080A4944(piVar12,auStack_74,1);
       }
       *(char *)(piVar10 + 0x32) = '\0';
     }
@@ -11675,15 +11675,15 @@ undefined4 func_0802B51C(int *param_1,undefined4 *param_2)
         iVar6 = 0;
       }
       if ((iVar6 != 0) && ((char)piVar10[0xf] != '\0')) {
-        func_080A480C(piVar10,*puStack_30,auStack_7c);
+        NPC_Routine_080A480C(piVar10,*puStack_30,auStack_7c);
         if (*(char *)((int)piVar10 + 0x3d) == '\0') {
           if (*(char *)((int)piVar10 + 0x3e) == '\0') {
-            func_080A4944(piVar10,auStack_74,1);
+            NPC_Routine_080A4944(piVar10,auStack_74,1);
             *(char *)((int)piVar10 + 0x3e) = '\x01';
           }
         }
         else {
-          func_080A4944(piVar10,auStack_74,1);
+          NPC_Routine_080A4944(piVar10,auStack_74,1);
         }
         *(char *)(piVar10 + 0xf) = '\0';
       }
@@ -11728,37 +11728,37 @@ undefined4 func_0802B51C(int *param_1,undefined4 *param_2)
 }
 
 // =============================================================================
-// Function: func_0802B8EC @ 0x0802B8EC
+// Function: Entity_Routine_0802B8EC @ 0x0802B8EC
 // =============================================================================
-void func_0802B8EC(undefined4 param_1,undefined4 param_2)
+void Entity_Routine_0802B8EC(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(200);
-  func_08024974(uVar1,param_1,param_2);
+  uVar1 = Dispatcher_Routine_080005D4(200);
+  Entity_Routine_08024974(uVar1,param_1,param_2);
   return;
 }
 
 // =============================================================================
-// Function: func_0802B908 @ 0x0802B908
+// Function: Entity_Routine_0802B908 @ 0x0802B908
 // =============================================================================
-undefined8 func_0802B908(int param_1,undefined4 param_2,int param_3)
+undefined8 Entity_Routine_0802B908(int param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 in_lr;
   undefined1 auStack_14 [8];
   
-  func_0800E924(auStack_14,param_3 + _DAT_0802b93c);
+  Farmer_GetLocation(auStack_14,param_3 + _DAT_0802b93c);
   Entity_UpdatePositions(param_1,param_2,auStack_14,2,0x192);
   *(undefined4 *)(param_1 + 0x14) = _DAT_0802b940;
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0802B944 @ 0x0802B944
+// Function: Entity_Routine_0802B944 @ 0x0802B944
 // =============================================================================
-undefined8 func_0802B944(int param_1,undefined4 param_2)
+undefined8 Entity_Routine_0802B944(int param_1,undefined4 param_2)
 
 {
   ushort uVar1;
@@ -11773,7 +11773,7 @@ undefined8 func_0802B944(int param_1,undefined4 param_2)
   uStack_20 = uVar1 & uStack_20 & 0x3ff | 0x234;
   uStack_1e = uVar1 & uStack_1e & 0x3ff;
   uStack_1c = uVar1 & uStack_1c;
-  memcpy(auStack_28,&uStack_20,6);
+  gba_memcpy(auStack_28,&uStack_20,6);
   uStack_22 = 0;
   Entity_UpdatePositions(param_1,param_2,auStack_28,2,0);
   *(undefined4 *)(param_1 + 0x14) = _DAT_0802b9bc;
@@ -11781,14 +11781,14 @@ undefined8 func_0802B944(int param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0802B9C0 @ 0x0802B9C0
+// Function: Entity_Routine_0802B9C0 @ 0x0802B9C0
 // =============================================================================
-undefined8 func_0802B9C0(int param_1)
+undefined8 Entity_Routine_0802B9C0(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_0802B944();
+  Entity_Routine_0802B944();
   *(undefined4 *)(param_1 + 0x14) = _DAT_0802ba0c;
   *(undefined1 *)(param_1 + 0x34) = 0;
   *(undefined1 *)(param_1 + 0x35) = 0;
@@ -11804,27 +11804,27 @@ undefined8 func_0802B9C0(int param_1)
   *(undefined2 *)(param_1 + 0x56) = 0;
   *(undefined1 *)(param_1 + 0x58) = 0;
   *(undefined1 *)(param_1 + 0x59) = 0;
-  func_0801FDC0(param_1);
+  Farmer_Routine_0801FDC0(param_1);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0802BA10 @ 0x0802BA10
+// Function: Entity_Routine_0802BA10 @ 0x0802BA10
 // =============================================================================
-void func_0802BA10(undefined4 param_1)
+void Entity_Routine_0802BA10(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0xd0);
-  func_0802BF2C(uVar1,param_1);
+  uVar1 = Dispatcher_Routine_080005D4(0xd0);
+  Entity_Routine_0802BF2C(uVar1,param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_0802BA28 @ 0x0802BA28
+// Function: Entity_Routine_0802BA28 @ 0x0802BA28
 // =============================================================================
-undefined4 func_0802BA28(int param_1,undefined4 param_2)
+undefined4 Entity_Routine_0802BA28(int param_1,undefined4 param_2)
 
 {
   short sVar1;
@@ -11832,24 +11832,24 @@ undefined4 func_0802BA28(int param_1,undefined4 param_2)
   
   if (*(char *)(param_1 + 0x58) == '\0') {
     if (*(char *)(param_1 + 0x54) != '\0') {
-      func_0802BA74(param_1);
-      sVar1 = func_0802BC48(param_1);
+      Entity_Routine_0802BA74(param_1);
+      sVar1 = Entity_Routine_0802BC48(param_1);
       if (*(short *)(param_1 + 0x22) != sVar1) {
-        func_080321B0(param_1);
+        Entity_Routine_080321B0(param_1);
       }
     }
   }
   else {
     *(char *)(param_1 + 0x58) = '\0';
   }
-  func_0803242C(param_1,param_2);
+  Entity_Routine_0803242C(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802BAE4 @ 0x0802BAE4
+// Function: Entity_Routine_0802BAE4 @ 0x0802BAE4
 // =============================================================================
-undefined4 func_0802BAE4(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+undefined4 Entity_Routine_0802BAE4(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   byte bVar1;
@@ -11911,9 +11911,9 @@ undefined4 func_0802BAE4(undefined4 param_1,undefined4 param_2,undefined4 param_
 }
 
 // =============================================================================
-// Function: func_0802BC48 @ 0x0802BC48
+// Function: Entity_Routine_0802BC48 @ 0x0802BC48
 // =============================================================================
-undefined8 func_0802BC48(int param_1)
+undefined8 Entity_Routine_0802BC48(int param_1)
 
 {
   undefined4 uVar1;
@@ -11948,9 +11948,9 @@ undefined8 func_0802BC48(int param_1)
 }
 
 // =============================================================================
-// Function: func_0802BCA4 @ 0x0802BCA4
+// Function: Entity_Routine_0802BCA4 @ 0x0802BCA4
 // =============================================================================
-undefined4 func_0802BCA4(int param_1,undefined4 param_2)
+undefined4 Entity_Routine_0802BCA4(int param_1,undefined4 param_2)
 
 {
   undefined2 uVar1;
@@ -11967,9 +11967,9 @@ undefined4 func_0802BCA4(int param_1,undefined4 param_2)
   puVar3 = *(undefined4 **)(param_1 + 0x10);
   if (puVar3 != (undefined4 *)0x0) {
     func_0x0800db2c(auStack_1c,param_2);
-    uVar1 = func_0800DB60(auStack_1c);
+    uVar1 = ArticleStack_IsEmpty(auStack_1c);
     uVar2 = func_0x080d3910(*(int **)*puVar3,*(undefined4 *)(**(int **)*puVar3 + 100));
-    func_0805E850(puVar3 + 0x2d,uVar2,uVar1);
+    Animal_Routine_0805E850(puVar3 + 0x2d,uVar2,uVar1);
     *(undefined1 *)(puVar3 + 0x32) = 1;
     *(undefined1 *)((int)puVar3 + 0xca) = 0;
     *(undefined1 *)((int)puVar3 + 0xcb) = 1;
@@ -11978,16 +11978,16 @@ undefined4 func_0802BCA4(int param_1,undefined4 param_2)
   *(undefined1 *)(param_1 + 0x34) = 4;
   *(undefined1 *)(param_1 + 0x35) = 0x14;
   *(undefined1 *)(param_1 + 0x58) = 1;
-  uVar1 = func_0802BC48(param_1);
-  func_080321B0(param_1,uVar1);
+  uVar1 = Entity_Routine_0802BC48(param_1);
+  Entity_Routine_080321B0(param_1,uVar1);
   *(undefined1 *)(param_1 + 0x54) = 1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802BD50 @ 0x0802BD50
+// Function: Entity_Routine_0802BD50 @ 0x0802BD50
 // =============================================================================
-undefined4 func_0802BD50(int param_1,undefined2 param_2,char param_3)
+undefined4 Entity_Routine_0802BD50(int param_1,undefined2 param_2,char param_3)
 
 {
   byte bVar1;
@@ -12010,7 +12010,7 @@ undefined4 func_0802BD50(int param_1,undefined2 param_2,char param_3)
     else {
       uVar3 = func_0x080d3910(*(int **)*puVar4,*(undefined4 *)(**(int **)*puVar4 + 0x68));
     }
-    func_0805E850(puVar4 + 0x2d,uVar3,param_2);
+    Animal_Routine_0805E850(puVar4 + 0x2d,uVar3,param_2);
     *(undefined1 *)(puVar4 + 0x32) = 1;
     *(undefined1 *)((int)puVar4 + 0xca) = 0;
     *(undefined1 *)((int)puVar4 + 0xcb) = 1;
@@ -12043,16 +12043,16 @@ LAB_0802be36:
   *(undefined4 *)(param_1 + 0x4c) = 0xc0000;
 LAB_0802be3a:
   *(undefined1 *)(param_1 + 0x58) = 1;
-  uVar2 = func_0802BC48(param_1);
-  func_080321B0(param_1,uVar2);
+  uVar2 = Entity_Routine_0802BC48(param_1);
+  Entity_Routine_080321B0(param_1,uVar2);
   *(undefined1 *)(param_1 + 0x54) = 1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802BE68 @ 0x0802BE68
+// Function: Entity_Routine_0802BE68 @ 0x0802BE68
 // =============================================================================
-undefined4 func_0802BE68(int param_1)
+undefined4 Entity_Routine_0802BE68(int param_1)
 
 {
   byte bVar1;
@@ -12087,16 +12087,16 @@ LAB_0802bec6:
 LAB_0802becc:
   *(undefined1 *)(param_1 + 0x34) = 1;
   *(undefined1 *)(param_1 + 0x58) = 1;
-  uVar2 = func_0802BC48(param_1);
-  func_080321B0(param_1,uVar2);
+  uVar2 = Entity_Routine_0802BC48(param_1);
+  Entity_Routine_080321B0(param_1,uVar2);
   *(undefined1 *)(param_1 + 0x54) = 1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802BEFC @ 0x0802BEFC
+// Function: Entity_Routine_0802BEFC @ 0x0802BEFC
 // =============================================================================
-undefined4 func_0802BEFC(int param_1)
+undefined4 Entity_Routine_0802BEFC(int param_1)
 
 {
   undefined2 uVar1;
@@ -12104,16 +12104,16 @@ undefined4 func_0802BEFC(int param_1)
   
   *(undefined1 *)(param_1 + 0x34) = 2;
   *(undefined1 *)(param_1 + 0x58) = 1;
-  uVar1 = func_0802BC48(param_1);
-  func_080321B0(param_1,uVar1);
+  uVar1 = Entity_Routine_0802BC48(param_1);
+  Entity_Routine_080321B0(param_1,uVar1);
   *(undefined1 *)(param_1 + 0x54) = 1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802BFA0 @ 0x0802BFA0
+// Function: Entity_Routine_0802BFA0 @ 0x0802BFA0
 // =============================================================================
-undefined4 func_0802BFA0(int *param_1)
+undefined4 Entity_Routine_0802BFA0(int *param_1)
 
 {
   char cVar1;
@@ -12121,11 +12121,11 @@ undefined4 func_0802BFA0(int *param_1)
   int *piVar3;
   undefined4 in_lr;
   
-  func_0803260C();
+  Entity_Routine_0803260C();
   if (*(char *)(*param_1 + 0x38) == '\x01') {
     piVar3 = (int *)((int)param_1 + 0xcb);
     if (*(char *)piVar3 == '\0') {
-      iVar2 = func_0805E8F0(param_1 + 0x2d);
+      iVar2 = Animal_Routine_0805E8F0(param_1 + 0x2d);
       if (-1 < iVar2 * 0x40000000) {
         return in_lr;
       }
@@ -12141,9 +12141,9 @@ undefined4 func_0802BFA0(int *param_1)
 }
 
 // =============================================================================
-// Function: func_0802BFE4 @ 0x0802BFE4
+// Function: Entity_Routine_0802BFE4 @ 0x0802BFE4
 // =============================================================================
-undefined4 func_0802BFE4(undefined4 *param_1,undefined4 *param_2)
+undefined4 Entity_Routine_0802BFE4(undefined4 *param_1,undefined4 *param_2)
 
 {
   short sVar1;
@@ -12181,7 +12181,7 @@ undefined4 func_0802BFE4(undefined4 *param_1,undefined4 *param_2)
   iStack_40 = puVar6[3];
   uStack_58 = *param_2;
   uStack_54 = param_2[2];
-  iStack_3c = func_08032900(uStack_48,iStack_24 >> 0x10,iStack_40 >> 0x10);
+  iStack_3c = Entity_Routine_08032900(uStack_48,iStack_24 >> 0x10,iStack_40 >> 0x10);
   *(undefined1 *)((int)param_1 + 0x8b) = (undefined1)iStack_3c;
   if (*(char *)(puVar6 + 0xe) == '\x01') {
     iStack_38 = (iStack_24 + puVar6[0xf] >> 0x10) - (int)*(short *)(param_2 + 3);
@@ -12217,15 +12217,15 @@ undefined4 func_0802BFE4(undefined4 *param_1,undefined4 *param_2)
       iVar9 = 0;
     }
     if ((iVar9 != 0) && (pcStack_28 = (char *)(param_1 + 0x32), *pcStack_28 != '\0')) {
-      func_080A480C(puVar8,*puStack_2c,auStack_70);
+      NPC_Routine_080A480C(puVar8,*puStack_2c,auStack_70);
       if (*(char *)((int)param_1 + 0xc9) == '\0') {
         if (*(char *)((int)param_1 + 0xca) == '\0') {
-          func_080A4944(puVar8,auStack_68,1);
+          NPC_Routine_080A4944(puVar8,auStack_68,1);
           *(char *)((int)param_1 + 0xca) = '\x01';
         }
       }
       else {
-        func_080A4944(puVar8,auStack_68,1);
+        NPC_Routine_080A4944(puVar8,auStack_68,1);
       }
       *pcStack_28 = '\0';
     }
@@ -12244,29 +12244,29 @@ undefined4 func_0802BFE4(undefined4 *param_1,undefined4 *param_2)
 }
 
 // =============================================================================
-// Function: func_0802C210 @ 0x0802C210
+// Function: Entity_Routine_0802C210 @ 0x0802C210
 // =============================================================================
-void func_0802C210(undefined4 param_1)
+void Entity_Routine_0802C210(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x5c);
-  func_0802B9C0(uVar1,param_1);
+  uVar1 = Dispatcher_Routine_080005D4(0x5c);
+  Entity_Routine_0802B9C0(uVar1,param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_0802C228 @ 0x0802C228
+// Function: Entity_Routine_0802C228 @ 0x0802C228
 // =============================================================================
-undefined4 func_0802C228(undefined4 *param_1,undefined4 param_2)
+undefined4 Entity_Routine_0802C228(undefined4 *param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   
   uVar1 = func_0x080d3910(*(int **)*param_1,*(undefined4 *)(**(int **)*param_1 + 100));
-  func_0805E850(param_1 + 0x2d,uVar1,param_2);
+  Animal_Routine_0805E850(param_1 + 0x2d,uVar1,param_2);
   *(undefined1 *)(param_1 + 0x32) = 1;
   *(undefined1 *)((int)param_1 + 0xca) = 0;
   *(undefined1 *)((int)param_1 + 0xcb) = 1;
@@ -12275,16 +12275,16 @@ undefined4 func_0802C228(undefined4 *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0802C264 @ 0x0802C264
+// Function: Entity_Routine_0802C264 @ 0x0802C264
 // =============================================================================
-undefined4 func_0802C264(undefined4 *param_1,undefined4 param_2)
+undefined4 Entity_Routine_0802C264(undefined4 *param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   
   uVar1 = func_0x080d3910(*(int **)*param_1,*(undefined4 *)(**(int **)*param_1 + 0x68));
-  func_0805E850(param_1 + 0x2d,uVar1,param_2);
+  Animal_Routine_0805E850(param_1 + 0x2d,uVar1,param_2);
   *(undefined1 *)(param_1 + 0x32) = 1;
   *(undefined1 *)((int)param_1 + 0xca) = 0;
   *(undefined1 *)((int)param_1 + 0xcb) = 1;
@@ -12292,16 +12292,16 @@ undefined4 func_0802C264(undefined4 *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0802C29C @ 0x0802C29C
+// Function: Entity_Routine_0802C29C @ 0x0802C29C
 // =============================================================================
-undefined4 func_0802C29C(undefined4 *param_1,undefined4 param_2)
+undefined4 Entity_Routine_0802C29C(undefined4 *param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   
   uVar1 = func_0x080d3910(*(int **)*param_1,*(undefined4 *)(**(int **)*param_1 + 100));
-  func_0805E850(param_1 + 0x2d,uVar1,param_2);
+  Animal_Routine_0805E850(param_1 + 0x2d,uVar1,param_2);
   *(undefined1 *)(param_1 + 0x32) = 1;
   *(undefined1 *)((int)param_1 + 0xca) = 0;
   *(undefined1 *)((int)param_1 + 0xcb) = 1;
@@ -12309,10 +12309,10 @@ undefined4 func_0802C29C(undefined4 *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0802C2E0 @ 0x0802C2E0
+// Function: Entity_Routine_0802C2E0 @ 0x0802C2E0
 // =============================================================================
 undefined4
-func_0802C2E0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+Entity_Routine_0802C2E0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 {
   byte bVar1;
@@ -12390,7 +12390,7 @@ func_0802C2E0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefine
     unaff_r8[5] = 0xc;
     unaff_r8[6] = unaff_r8 + 4;
   case 0x802c344:
-    func_0802A4C0(param_1,0xa2,1);
+    Entity_Routine_0802A4C0(param_1,0xa2,1);
     param_1[0x23] = 0;
     param_1[0x24] = 0;
     param_1[0x27] = 0x100000;
@@ -12440,10 +12440,10 @@ case_0802C3BC:
     uVar6 = puVar10[-1];
 LAB_0802c40c:
     iVar9 = _DAT_0802c438;
-    func_08008B6C(uVar6,*(undefined2 *)
+    HW_Routine_08008B6C(uVar6,*(undefined2 *)
                          (((uint)*(byte *)((int)param_1 + 0x3f) * 7 +
                           (uint)*(byte *)(param_1 + 0x10)) * 8 + _DAT_0802c438 + 2));
-    cVar4 = func_08025944(param_1);
+    cVar4 = Entity_Routine_08025944(param_1);
 joined_r0x0802c4b2:
     if (cVar4 == '\0') {
       iVar9 = (int)*(char *)(((uint)*(byte *)((int)param_1 + 0x3f) * 7 +
@@ -12473,10 +12473,10 @@ joined_r0x0802c4b2:
     uVar6 = puVar10[-1];
 LAB_0802c490:
     iVar9 = _DAT_0802c4c8;
-    func_08008B6C(uVar6,*(undefined2 *)
+    HW_Routine_08008B6C(uVar6,*(undefined2 *)
                          (((uint)*(byte *)((int)param_1 + 0x3f) * 7 +
                           (uint)*(byte *)(param_1 + 0x10)) * 8 + _DAT_0802c4c8 + 2));
-    cVar4 = func_08025944(param_1);
+    cVar4 = Entity_Routine_08025944(param_1);
     goto joined_r0x0802c4b2;
   case 0x802c4e4:
     *(undefined2 *)(param_1 + 0x11) = 0x1ae;
@@ -12491,7 +12491,7 @@ LAB_0802c490:
     }
     uVar6 = puVar10[-1];
 LAB_0802c522:
-    func_08008B6C(uVar6,0x9d);
+    HW_Routine_08008B6C(uVar6,0x9d);
     puVar7 = _DAT_0802c54c;
     break;
   case 0x802c554:
@@ -12507,7 +12507,7 @@ LAB_0802c522:
     }
     uVar6 = puVar10[-1];
 LAB_0802c592:
-    func_08008B6C(uVar6,0x9d);
+    HW_Routine_08008B6C(uVar6,0x9d);
     puVar7 = _DAT_0802c59c;
     break;
   case 0x802c5a4:
@@ -12523,7 +12523,7 @@ LAB_0802c592:
     }
     uVar6 = puVar10[-1];
 LAB_0802c5de:
-    func_08008B6C(uVar6,0x94);
+    HW_Routine_08008B6C(uVar6,0x94);
     goto LAB_0802c5e4;
   case 0x802c5ee:
     *(undefined2 *)(param_1 + 0x11) = 0x1aa;
@@ -12538,8 +12538,8 @@ LAB_0802c5de:
     }
     uVar6 = puVar10[-1];
 LAB_0802c62c:
-    func_08008B6C(uVar6,0x93);
-    func_0802AC2C(param_1,*_DAT_0802c664,_DAT_0802c664[1]);
+    HW_Routine_08008B6C(uVar6,0x93);
+    Entity_Routine_0802AC2C(param_1,*_DAT_0802c664,_DAT_0802c664[1]);
     if (*(byte *)((int)param_1 + 0xb2) - 0x2b < 0x1b) {
       iVar9 = func_0x080d3914((int *)*param_1,(uint)*(byte *)((int)param_1 + 0xb2),
                               *(undefined4 *)(*(int *)*param_1 + 0x40));
@@ -12566,7 +12566,7 @@ LAB_0802c5e4:
     }
     uVar6 = puVar10[-1];
 LAB_0802c6c0:
-    func_08008B6C(uVar6,0x9f);
+    HW_Routine_08008B6C(uVar6,0x9f);
     puVar7 = _DAT_0802c6cc;
     break;
   case 0x802c6d4:
@@ -12582,8 +12582,8 @@ LAB_0802c6c0:
     }
     uVar6 = puVar10[-1];
 LAB_0802c712:
-    func_08008B6C(uVar6,0xa0);
-    func_0802AC2C(param_1,*_DAT_0802c748,_DAT_0802c748[1]);
+    HW_Routine_08008B6C(uVar6,0xa0);
+    Entity_Routine_0802AC2C(param_1,*_DAT_0802c748,_DAT_0802c748[1]);
     if (*(byte *)((int)param_1 + 0xb2) - 0x2b < 0x1b) {
       iVar9 = func_0x080d3914((int *)*param_1,(uint)*(byte *)((int)param_1 + 0xb2),
                               *(undefined4 *)(*(int *)*param_1 + 0x40));
@@ -12609,7 +12609,7 @@ LAB_0802c712:
     }
     uVar6 = puVar10[-1];
 LAB_0802c7a4:
-    func_08008B6C(uVar6,0x9e);
+    HW_Routine_08008B6C(uVar6,0x9e);
     goto LAB_0802c83c;
   case 0x802c7b0:
     *(undefined2 *)(param_1 + 0x11) = 0x1a2;
@@ -12624,12 +12624,12 @@ LAB_0802c7a4:
     }
     uVar6 = puVar10[-1];
 LAB_0802c7ee:
-    func_08008B6C(uVar6,0x9d);
-    func_0802AC2C(param_1,*_DAT_0802c824,_DAT_0802c824[1]);
+    HW_Routine_08008B6C(uVar6,0x9d);
+    Entity_Routine_0802AC2C(param_1,*_DAT_0802c824,_DAT_0802c824[1]);
     bVar1 = *(byte *)((int)param_1 + 0xb2);
     goto joined_r0x0802c80a;
   }
-  func_0802AC2C(param_1,*puVar7,puVar7[1]);
+  Entity_Routine_0802AC2C(param_1,*puVar7,puVar7[1]);
   bVar1 = *(byte *)((int)param_1 + 0xb2);
 joined_r0x0802c80a:
   if (bVar1 - 0x2b < 0x1b) {
@@ -12645,15 +12645,15 @@ LAB_0802c83c:
   iVar9 = -4;
 LAB_0802c840:
   iVar8 = param_1[5];
-  uVar6 = func_08025B10(param_1);
+  uVar6 = Entity_Routine_08025B10(param_1);
   func_0x080d3918(param_1,iVar9,uVar6,*(undefined4 *)(iVar8 + 100));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802C860 @ 0x0802C860
+// Function: Entity_Routine_0802C860 @ 0x0802C860
 // =============================================================================
-undefined4 func_0802C860(undefined4 *param_1)
+undefined4 Entity_Routine_0802C860(undefined4 *param_1)
 
 {
   char cVar1;
@@ -12667,7 +12667,7 @@ undefined4 func_0802C860(undefined4 *param_1)
   
   *(undefined1 *)(param_1 + 0xf) = 10;
   *(undefined1 *)((int)param_1 + 0x3d) = 0x14;
-  func_0802A510(param_1);
+  Entity_Routine_0802A510(param_1);
   piVar2 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
   puVar4 = (undefined4 *)*piVar2;
   puVar6 = (undefined4 *)piVar2[1];
@@ -12675,19 +12675,19 @@ undefined4 func_0802C860(undefined4 *param_1)
     if (puVar4 == puVar6) {
       uVar3 = puVar6[-1];
 LAB_0802c8a8:
-      func_08008B6C(uVar3,0xbc);
+      HW_Routine_08008B6C(uVar3,0xbc);
       iVar5 = param_1[0xe];
-      uVar3 = func_0800DC10(iVar5 + 0x5c);
-      auStack_14[0] = func_0800E550(iVar5,uVar3);
+      uVar3 = Product_Construct(iVar5 + 0x5c);
+      auStack_14[0] = Farmer_GetUpgradedTool(iVar5,uVar3);
       iVar5 = func_0x0800db30(auStack_14);
       if (iVar5 == 0x4d) {
         iVar5 = param_1[5];
-        uVar3 = func_08025B10(param_1);
+        uVar3 = Entity_Routine_08025B10(param_1);
         func_0x080d3918(param_1,0xfffffffe,uVar3,*(undefined4 *)(iVar5 + 100));
       }
       else {
         iVar5 = param_1[5];
-        uVar3 = func_08025B10(param_1);
+        uVar3 = Entity_Routine_08025B10(param_1);
         func_0x080d3918(param_1,0,uVar3,*(undefined4 *)(iVar5 + 100));
       }
       return in_lr;
@@ -12702,9 +12702,9 @@ LAB_0802c8a8:
 }
 
 // =============================================================================
-// Function: func_0802C908 @ 0x0802C908
+// Function: Entity_Routine_0802C908 @ 0x0802C908
 // =============================================================================
-undefined4 func_0802C908(undefined4 *param_1)
+undefined4 Entity_Routine_0802C908(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -12739,7 +12739,7 @@ undefined4 func_0802C908(undefined4 *param_1)
         }
         uVar4 = puVar8[-1];
 LAB_0802c978:
-        func_08008B6C(uVar4,0xb8);
+        HW_Routine_08008B6C(uVar4,0xb8);
       }
     }
   }
@@ -12747,9 +12747,9 @@ LAB_0802c978:
 }
 
 // =============================================================================
-// Function: func_0802C984 @ 0x0802C984
+// Function: Entity_Routine_0802C984 @ 0x0802C984
 // =============================================================================
-undefined4 func_0802C984(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4)
+undefined4 Entity_Routine_0802C984(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
   byte bVar1;
@@ -12774,11 +12774,11 @@ undefined4 func_0802C984(undefined4 *param_1,undefined4 param_2,undefined4 param
   
   *(undefined1 *)(param_1 + 0x10) = 0;
   *(undefined1 *)((int)param_1 + 0x42) = 0;
-  cVar2 = func_0800DC34(param_1[0xe] + 0x5c);
+  cVar2 = Product_GetId(param_1[0xe] + 0x5c);
   if (cVar2 == '\0') {
     iVar8 = param_1[0xe];
-    uVar4 = func_0800DC10(iVar8 + 0x5c);
-    uStack_18 = func_0800E550(iVar8,uVar4);
+    uVar4 = Product_Construct(iVar8 + 0x5c);
+    uStack_18 = Farmer_GetUpgradedTool(iVar8,uVar4);
     uVar5 = func_0x0800db30();
     if (uVar5 < 0x51) {
       switch(*(uint *)(PTR_case_0802C9DC_0802c9d8 + uVar5 * 4) & 0xfffffffe) {
@@ -12852,7 +12852,7 @@ undefined4 func_0802C984(undefined4 *param_1,undefined4 param_2,undefined4 param
           *(undefined1 *)(param_1 + 0xf) = 0x1b;
           *(undefined1 *)((int)param_1 + 0x3f) = 0xf;
           iVar8 = param_1[5];
-          uVar4 = func_08025B10(param_1);
+          uVar4 = Entity_Routine_08025B10(param_1);
           func_0x080d3918(param_1,0xfffffffe,uVar4,*(undefined4 *)(iVar8 + 100));
           piVar12 = (int *)func_0x080d3910(piVar12,*(undefined4 *)(*piVar12 + 0x14c));
           puVar9 = (undefined4 *)*piVar12;
@@ -12861,7 +12861,7 @@ undefined4 func_0802C984(undefined4 *param_1,undefined4 param_2,undefined4 param
             if (puVar9 == puVar11) {
               uVar4 = puVar11[-1];
 LAB_0802cc18:
-              func_08008B6C(uVar4,0x92);
+              HW_Routine_08008B6C(uVar4,0x92);
               return in_lr;
             }
             cVar2 = func_0x08008cd0(*puVar9);
@@ -12928,8 +12928,8 @@ LAB_0802cc18:
     }
     *puVar7 = uVar3;
     iVar8 = param_1[0xe];
-    uVar4 = func_0800DC10(iVar8 + 0x5c);
-    uStack_17 = func_0800E550(iVar8,uVar4);
+    uVar4 = Product_Construct(iVar8 + 0x5c);
+    uStack_17 = Farmer_GetUpgradedTool(iVar8,uVar4);
     uVar5 = func_0x0800db30();
     if (uVar5 < 0x30) {
       switch(*(uint *)(PTR_case_0802CCC4_0802ccc0 + uVar5 * 4) & 0xfffffffe) {
@@ -12978,9 +12978,9 @@ LAB_0802cdc2:
 }
 
 // =============================================================================
-// Function: func_0802CDCC @ 0x0802CDCC
+// Function: Entity_Routine_0802CDCC @ 0x0802CDCC
 // =============================================================================
-undefined4 func_0802CDCC(undefined4 *param_1)
+undefined4 Entity_Routine_0802CDCC(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -13147,7 +13147,7 @@ LAB_0802d048:
     func_0x080d3914(&uStack_64,param_1,*(undefined4 *)(param_1[5] + 0xc));
     uStack_5c = uStack_64;
     uStack_58 = uStack_60;
-    cVar3 = func_080AC070(auStack_a0,&uStack_5c);
+    cVar3 = NPC_Routine_080AC070(auStack_a0,&uStack_5c);
     if (cVar3 != '\0') {
       param_1[2] = iVar4;
       param_1[3] = iVar6;
@@ -13159,23 +13159,23 @@ LAB_0802d048:
     sStack_52 = (short)iVar9 + uStack_5c._2_2_;
     sStack_50 = (short)iVar8 + (short)uStack_58;
     sStack_4e = (short)iVar9 + uStack_58._2_2_;
-    cVar3 = func_080AC070(auStack_a0);
+    cVar3 = NPC_Routine_080AC070(auStack_a0);
     if (cVar3 == '\x01') {
       if (iVar8 < 1) {
         if (iVar8 < 0) {
-          func_0802536C(param_1,2,-iVar8);
+          Entity_Routine_0802536C(param_1,2,-iVar8);
         }
         else if (iVar9 < 1) {
           if (iVar9 < 0) {
-            func_0802536C(param_1,1,-iVar9);
+            Entity_Routine_0802536C(param_1,1,-iVar9);
           }
         }
         else {
-          func_0802536C(param_1,0,iVar9);
+          Entity_Routine_0802536C(param_1,0,iVar9);
         }
       }
       else {
-        func_0802536C(param_1,3,iVar8);
+        Entity_Routine_0802536C(param_1,3,iVar8);
       }
       goto LAB_0802d122;
     }
@@ -13193,9 +13193,9 @@ LAB_0802d122:
 }
 
 // =============================================================================
-// Function: func_0802D158 @ 0x0802D158
+// Function: Entity_Routine_0802D158 @ 0x0802D158
 // =============================================================================
-undefined8 func_0802D158(undefined4 *param_1)
+undefined8 Entity_Routine_0802D158(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -13217,7 +13217,7 @@ undefined8 func_0802D158(undefined4 *param_1)
   if (0x39 < *(byte *)(param_1 + 0xf)) goto LAB_0802d590;
   switch(*(uint *)((uint)*(byte *)(param_1 + 0xf) * 4 + _DAT_0802d180) & 0xfffffffe) {
   case 0x802d26c:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 != '\0') {
       bVar1 = *(byte *)((int)param_1 + 0x3e);
       if (bVar1 == 1) {
@@ -13248,18 +13248,18 @@ undefined8 func_0802D158(undefined4 *param_1)
     }
     goto LAB_0802d57c;
   case 0x802d2e0:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar3 == '\0') goto case_0802D55A;
     if (5 < *(byte *)((int)param_1 + 0x3f)) goto case_0802D3CC;
     uVar9 = (uint)*(ushort *)
                    (((uint)*(byte *)((int)param_1 + 0x3f) * 7 + (uint)*(byte *)(param_1 + 0x10)) * 2
                    + _DAT_0802d32c);
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uStack_18 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uStack_18 = Farmer_GetUpgradedTool(iVar7,uVar5);
     goto LAB_0802d44e;
   case 0x802d330:
-    bVar1 = func_0800F190(param_1[0xe] + 0x54);
+    bVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
 joined_r0x0802d340:
     uVar9 = 0x192;
     if (bVar1 != 0) break;
@@ -13268,7 +13268,7 @@ case_0802D55A:
     uVar9 = 0x152;
     break;
   case 0x802d346:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x192;
     if (cVar3 == '\0') {
       uVar9 = 0x152;
@@ -13295,15 +13295,15 @@ case_0802D55A:
   case 0x802d37e:
     uVar9 = (uint)*(ushort *)(param_1 + 0x11);
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_17;
     goto LAB_0802d44c;
   case 0x802d39e:
     uVar9 = 0x1ea;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_17 + 1;
     goto LAB_0802d44c;
   case 0x802d3bc:
@@ -13313,8 +13313,8 @@ case_0802D55A:
         uVar9 = 0x186;
       }
       iVar7 = param_1[0xe];
-      uVar5 = func_0800DC10(iVar7 + 0x5c);
-      uVar2 = func_0800E550(iVar7,uVar5);
+      uVar5 = Product_Construct(iVar7 + 0x5c);
+      uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
       puVar6 = auStack_17 + 2;
       goto LAB_0802d44c;
     }
@@ -13325,27 +13325,27 @@ case_0802D3CC:
   case 0x802d3fc:
     uVar9 = 0x76;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_17 + 3;
     goto LAB_0802d44c;
   case 0x802d416:
     uVar9 = 0x6e;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_17 + 4;
     goto LAB_0802d44c;
   case 0x802d432:
     uVar9 = 0x72;
     iVar7 = param_1[0xe];
-    uVar5 = func_0800DC10(iVar7 + 0x5c);
-    uVar2 = func_0800E550(iVar7,uVar5);
+    uVar5 = Product_Construct(iVar7 + 0x5c);
+    uVar2 = Farmer_GetUpgradedTool(iVar7,uVar5);
     puVar6 = auStack_17 + 5;
 LAB_0802d44c:
     *puVar6 = uVar2;
 LAB_0802d44e:
-    uVar4 = func_0800DB60(puVar6);
+    uVar4 = ArticleStack_IsEmpty(puVar6);
     *(undefined2 *)(param_1 + 0x1f) = uVar4;
     break;
   case 0x802d45a:
@@ -13410,7 +13410,7 @@ LAB_0802d44e:
     uVar9 = 0x11a;
     break;
   case 0x802d516:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x14a;
     if (cVar3 != '\0') {
       uVar9 = 0x10a;
@@ -13422,7 +13422,7 @@ LAB_0802d44e:
     uVar8 = _DAT_0802d54c;
 LAB_0802d53e:
     if (*(ushort *)(iVar7 + 0x22) != uVar8) {
-      func_080321B0(iVar7);
+      Entity_Routine_080321B0(iVar7);
     }
     break;
   case 0x802d550:
@@ -13438,7 +13438,7 @@ LAB_0802d53e:
     uVar9 = 0x42;
     break;
   case 0x802d56a:
-    cVar3 = func_0800F190(param_1[0xe] + 0x54);
+    cVar3 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     uVar9 = 0x1c6;
     if (cVar3 != '\0') break;
 LAB_0802d57c:
@@ -13455,9 +13455,9 @@ LAB_0802d590:
 }
 
 // =============================================================================
-// Function: func_0802D59C @ 0x0802D59C
+// Function: Entity_Routine_0802D59C @ 0x0802D59C
 // =============================================================================
-undefined4 func_0802D59C(undefined4 *param_1,ushort *param_2)
+undefined4 Entity_Routine_0802D59C(undefined4 *param_1,ushort *param_2)
 
 {
   undefined1 *puVar1;
@@ -13488,7 +13488,7 @@ undefined4 func_0802D59C(undefined4 *param_1,ushort *param_2)
   *puVar1 = 0;
   pbVar2 = (byte *)(param_1 + 8);
   if ((*(char *)((int)param_1 + 0xc3) == '\0') && ((uVar9 & 1) != 0)) {
-    func_0801FE94(&uStack_40,param_1);
+    Farmer_Routine_0801FE94(&uStack_40,param_1);
     bVar6 = *pbVar2;
     if (bVar6 == 1) {
       uVar7 = (ushort)_DAT_0802d624;
@@ -13597,19 +13597,19 @@ LAB_0802d7f8:
   param_1[6] = (int)(uVar5 << 0x18) >> 8;
   param_1[7] = (int)(uVar8 << 0x18) >> 8;
   if (*pbVar2 != bVar6) {
-    func_08032198(param_1,bVar6);
+    Entity_Routine_08032198(param_1,bVar6);
   }
   iVar4 = func_0x080d3914((int *)*param_1,0x2c,*(undefined4 *)(*(int *)*param_1 + 0x40));
   if (*(byte *)(iVar4 + 0x20) != bVar6) {
-    func_08032198(iVar4,bVar6);
+    Entity_Routine_08032198(iVar4,bVar6);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802D844 @ 0x0802D844
+// Function: Entity_Routine_0802D844 @ 0x0802D844
 // =============================================================================
-undefined4 func_0802D844(int param_1,int param_2)
+undefined4 Entity_Routine_0802D844(int param_1,int param_2)
 
 {
   uint uVar1;
@@ -13620,34 +13620,34 @@ undefined4 func_0802D844(int param_1,int param_2)
     uVar1 = (uint)*(ushort *)(param_2 + 4);
   }
   if ((*(char *)(param_1 + 0xc3) != '\0') || ((_DAT_0802d88c & uVar1) != 0)) {
-    func_080323C8(param_1);
+    Entity_Routine_080323C8(param_1);
     *(undefined1 *)(param_1 + 0x3c) = 0x18;
     if ((uVar1 & 0x20) == 0) {
       if ((uVar1 & 0x10) == 0) {
         if ((uVar1 & 0x40) == 0) {
           if (((uVar1 & 0x80) != 0) && (*(char *)(param_1 + 0x20) != '\0')) {
-            func_08032198(param_1,0);
+            Entity_Routine_08032198(param_1,0);
           }
         }
         else if (*(char *)(param_1 + 0x20) != '\x01') {
-          func_08032198(param_1,1);
+          Entity_Routine_08032198(param_1,1);
         }
       }
       else if (*(char *)(param_1 + 0x20) != '\x03') {
-        func_08032198(param_1,3);
+        Entity_Routine_08032198(param_1,3);
       }
     }
     else if (*(char *)(param_1 + 0x20) != '\x02') {
-      func_08032198(param_1,2);
+      Entity_Routine_08032198(param_1,2);
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0802D8E8 @ 0x0802D8E8
+// Function: Entity_Routine_0802D8E8 @ 0x0802D8E8
 // =============================================================================
-undefined4 func_0802D8E8(undefined4 *param_1,ushort *param_2)
+undefined4 Entity_Routine_0802D8E8(undefined4 *param_1,ushort *param_2)
 
 {
   byte bVar1;
@@ -13674,13 +13674,13 @@ undefined4 func_0802D8E8(undefined4 *param_1,ushort *param_2)
   bVar1 = (byte)uVar2;
   if (uVar2 != 0) {
     if ((uVar3 & 0x7f) >> 6 != 0 || (uVar3 & 0x3f) >> 5 != 0) {
-      func_08025A40(param_1,1);
+      Entity_Routine_08025A40(param_1,1);
       return in_lr;
     }
     uStack_14 = (uStack_10 & 0x3ff) >> 9 |
                 (uStack_10 & 3) >> 1 | (uVar3 & 0xff) >> 7 | (uVar3 & 0x1f) >> 4;
     if (uStack_14 != 0) {
-      func_08025A40(param_1,0);
+      Entity_Routine_08025A40(param_1,0);
       return in_lr;
     }
     bVar1 = (byte)uStack_10 & 1;
@@ -13699,9 +13699,9 @@ undefined4 func_0802D8E8(undefined4 *param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_0802D9AC @ 0x0802D9AC
+// Function: Entity_Routine_0802D9AC @ 0x0802D9AC
 // =============================================================================
-undefined4 func_0802D9AC(undefined4 *param_1,ushort *param_2)
+undefined4 Entity_Routine_0802D9AC(undefined4 *param_1,ushort *param_2)
 
 {
   char cVar1;
@@ -13751,9 +13751,9 @@ undefined4 func_0802D9AC(undefined4 *param_1,ushort *param_2)
               if ((uStack_18 & 0x200) == 0) {
                 return in_lr;
               }
-              cVar1 = func_0800F190(param_1[0xe] + 0x54);
+              cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
               if (cVar1 != '\0') {
-                func_08025A40(param_1,0);
+                Entity_Routine_08025A40(param_1,0);
                 return in_lr;
               }
               cVar1 = func_0x0800f388(param_1[0xe] + 0x54);
@@ -13761,12 +13761,12 @@ undefined4 func_0802D9AC(undefined4 *param_1,ushort *param_2)
                 *(undefined1 *)(param_1 + 0xf) = 0;
                 return in_lr;
               }
-              func_0800F20C(auStack_2c,param_1[0xe] + 0x54);
+              HeldItem_GetFood(auStack_2c,param_1[0xe] + 0x54);
               iVar3 = param_1[5];
-              uVar4 = func_0800DD08(auStack_2c);
-              uVar5 = func_0800DD3C(auStack_2c);
+              uVar4 = Item_GetFoodStaminaEffect(auStack_2c);
+              uVar5 = Item_GetFoodFatigueEffect(auStack_2c);
               func_0x080d3918(param_1,uVar4,uVar5,*(undefined4 *)(iVar3 + 100));
-              iVar3 = func_0800DDAC(auStack_2c);
+              iVar3 = Item_GetFoodIsDrinkOrLiquid(auStack_2c);
               if (iVar3 == 0) {
                 *(undefined1 *)(param_1 + 0xf) = 0xf;
                 piVar2 = (int *)func_0x080d3910((int *)*param_1,
@@ -13781,7 +13781,7 @@ undefined4 func_0802D9AC(undefined4 *param_1,ushort *param_2)
                 }
                 uVar4 = puVar7[-1];
 LAB_0802db62:
-                func_08008B6C(uVar4,0x65);
+                HW_Routine_08008B6C(uVar4,0x65);
               }
               else {
                 *(undefined1 *)(param_1 + 0xf) = 0x10;
@@ -13797,7 +13797,7 @@ LAB_0802db62:
                 }
                 uVar4 = puVar7[-1];
 LAB_0802dba4:
-                func_08008B6C(uVar4,0x66);
+                HW_Routine_08008B6C(uVar4,0x66);
               }
               func_0x0802a7d8(param_1);
               func_0x0800f390(param_1[0xe] + 0x54);
@@ -13814,22 +13814,22 @@ LAB_0802dba4:
         }
       }
       else {
-        cVar1 = func_0800F190(param_1[0xe] + 0x54);
+        cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
         if (cVar1 == '\0') {
-          func_080257D0(param_1,0);
+          Entity_Routine_080257D0(param_1,0);
         }
         else {
-          func_08025838(param_1,0);
+          Entity_Routine_08025838(param_1,0);
         }
       }
     }
     else {
-      cVar1 = func_0800F190(param_1[0xe] + 0x54);
+      cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       if (cVar1 == '\0') {
-        func_080257D0(param_1,1);
+        Entity_Routine_080257D0(param_1,1);
       }
       else {
-        func_08025838(param_1,1);
+        Entity_Routine_08025838(param_1,1);
       }
     }
   }
@@ -13840,9 +13840,9 @@ LAB_0802dba4:
 }
 
 // =============================================================================
-// Function: func_0802DBF0 @ 0x0802DBF0
+// Function: Entity_Routine_0802DBF0 @ 0x0802DBF0
 // =============================================================================
-undefined4 func_0802DBF0(undefined4 *param_1,ushort *param_2)
+undefined4 Entity_Routine_0802DBF0(undefined4 *param_1,ushort *param_2)
 
 {
   byte bVar1;
@@ -13871,7 +13871,7 @@ LAB_0802de26:
     return in_lr;
   }
   if ((uStack_18 & 0x200) == 0) {
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 == '\0') {
 LAB_0802de86:
       *(undefined1 *)(param_1 + 0xf) = 0;
@@ -13889,19 +13889,19 @@ LAB_0802de86:
   else if ((uStack_14 & 0x7f) >> 6 == 0 && (uStack_14 & 0x3f) >> 5 == 0) {
     if ((uStack_14 & 0xff) >> 7 == 0 && (uStack_14 & 0x1f) >> 4 == 0) {
       if ((uStack_14 & 1) != 0) {
-        cVar2 = func_0800F190(param_1[0xe] + 0x54);
+        cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
         if (cVar2 != '\0') {
-          func_08025838(param_1,1);
+          Entity_Routine_08025838(param_1,1);
           return in_lr;
         }
-        func_080257D0(param_1,1);
+        Entity_Routine_080257D0(param_1,1);
         return in_lr;
       }
       bVar1 = (byte)uStack_14 & 2;
       if ((uStack_14 & 2) != 0) {
-        cVar2 = func_0800F190(param_1[0xe] + 0x54);
+        cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
         if (cVar2 != '\0') {
-          func_08025A40(param_1,0);
+          Entity_Routine_08025A40(param_1,0);
           return in_lr;
         }
         cVar2 = func_0x0800f388(param_1[0xe] + 0x54);
@@ -13909,12 +13909,12 @@ LAB_0802de86:
           *(undefined1 *)(param_1 + 0xf) = 0;
           return in_lr;
         }
-        func_0800F20C(auStack_1c,param_1[0xe] + 0x54);
+        HeldItem_GetFood(auStack_1c,param_1[0xe] + 0x54);
         iVar3 = param_1[5];
-        uVar6 = func_0800DD08(auStack_1c);
-        uVar4 = func_0800DD3C(auStack_1c);
+        uVar6 = Item_GetFoodStaminaEffect(auStack_1c);
+        uVar4 = Item_GetFoodFatigueEffect(auStack_1c);
         func_0x080d3918(param_1,uVar6,uVar4,*(undefined4 *)(iVar3 + 100));
-        iVar3 = func_0800DDAC(auStack_1c);
+        iVar3 = Item_GetFoodIsDrinkOrLiquid(auStack_1c);
         if (iVar3 == 0) {
           *(undefined1 *)(param_1 + 0xf) = 0xf;
           piVar5 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c))
@@ -13929,7 +13929,7 @@ LAB_0802de86:
           }
           uVar6 = puVar8[-1];
 LAB_0802ddba:
-          func_08008B6C(uVar6,0x65);
+          HW_Routine_08008B6C(uVar6,0x65);
         }
         else {
           *(undefined1 *)(param_1 + 0xf) = 0x10;
@@ -13945,7 +13945,7 @@ LAB_0802ddba:
           }
           uVar6 = puVar8[-1];
 LAB_0802ddfc:
-          func_08008B6C(uVar6,0x66);
+          HW_Routine_08008B6C(uVar6,0x66);
         }
         func_0x0802a7d8(param_1);
         func_0x0800f390(param_1[0xe] + 0x54);
@@ -13956,7 +13956,7 @@ LAB_0802ddfc:
       }
       goto LAB_0802de26;
     }
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 == '\0') goto LAB_0802de86;
     *(undefined1 *)(param_1 + 0xf) = 0x16;
     *(undefined1 *)((int)param_1 + 0x79) = 2;
@@ -13968,7 +13968,7 @@ LAB_0802ddfc:
     }
   }
   else {
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 == '\0') goto LAB_0802de86;
     *(undefined1 *)(param_1 + 0xf) = 0x16;
     *(undefined1 *)((int)param_1 + 0x79) = 1;
@@ -13981,7 +13981,7 @@ LAB_0802ddfc:
   }
   uVar6 = puVar8[-1];
 LAB_0802de7e:
-  func_08008B6C(uVar6,0x67);
+  HW_Routine_08008B6C(uVar6,0x67);
   return in_lr;
 LAB_0802de2e:
   uVar6 = *puVar7;
@@ -13989,9 +13989,9 @@ LAB_0802de2e:
 }
 
 // =============================================================================
-// Function: func_0802DE94 @ 0x0802DE94
+// Function: Entity_Routine_0802DE94 @ 0x0802DE94
 // =============================================================================
-undefined4 func_0802DE94(undefined4 *param_1,ushort *param_2)
+undefined4 Entity_Routine_0802DE94(undefined4 *param_1,ushort *param_2)
 
 {
   char cVar1;
@@ -14017,25 +14017,25 @@ undefined4 func_0802DE94(undefined4 *param_1,ushort *param_2)
   }
   if (*(char *)((int)param_1 + 0xc3) == '\0') {
     if ((uVar6 & 2) == 0) {
-      cVar1 = func_0800F190(param_1[0xe] + 0x54);
+      cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       if (cVar1 == '\0') {
-        func_080258A0(param_1);
+        Entity_Routine_080258A0(param_1);
         return in_lr;
       }
       uVar7 = 0;
       if (*(char *)((int)param_1 + 0x3f) != '\x0f') {
         if (*(char *)((int)param_1 + 0x3f) == '\x0e') {
-          func_0802C860(param_1);
+          Entity_Routine_0802C860(param_1);
           return in_lr;
         }
-        func_0802C2E0(param_1);
+        Entity_Routine_0802C2E0(param_1);
         return in_lr;
       }
     }
     else {
-      cVar1 = func_0800F190(param_1[0xe] + 0x54);
+      cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       if (cVar1 != '\0') {
-        func_0802C908(param_1);
+        Entity_Routine_0802C908(param_1);
       }
       if ((uStack_1c & 0x1f) >> 4 != 0 ||
           ((uStack_1c & 0x3f) >> 5 != 0 ||
@@ -14044,21 +14044,21 @@ undefined4 func_0802DE94(undefined4 *param_1,ushort *param_2)
           if (*(char *)(param_1 + 8) == '\x02') {
             return in_lr;
           }
-          func_08032198(param_1,2);
+          Entity_Routine_08032198(param_1,2);
           return in_lr;
         }
         if ((uStack_1c & 0x10) != 0) {
           if (*(char *)(param_1 + 8) == '\x03') {
             return in_lr;
           }
-          func_08032198(param_1,3);
+          Entity_Routine_08032198(param_1,3);
           return in_lr;
         }
         if ((uStack_1c & 0x40) != 0) {
           if (*(char *)(param_1 + 8) == '\x01') {
             return in_lr;
           }
-          func_08032198(param_1,1);
+          Entity_Routine_08032198(param_1,1);
           return in_lr;
         }
         if ((uStack_1c & 0x80) == 0) {
@@ -14067,7 +14067,7 @@ undefined4 func_0802DE94(undefined4 *param_1,ushort *param_2)
         if (*(char *)(param_1 + 8) == '\0') {
           return in_lr;
         }
-        func_08032198(param_1,0);
+        Entity_Routine_08032198(param_1,0);
         return in_lr;
       }
       uVar7 = uStack_1c >> 8 & 1;
@@ -14079,19 +14079,19 @@ undefined4 func_0802DE94(undefined4 *param_1,ushort *param_2)
         if ((uStack_1c & 0x200) == 0) {
           return in_lr;
         }
-        cVar1 = func_0800F190(param_1[0xe] + 0x54);
+        cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
         if (cVar1 != '\0') {
-          func_08025A40(param_1,0);
+          Entity_Routine_08025A40(param_1,0);
           return in_lr;
         }
         cVar1 = func_0x0800f388(param_1[0xe] + 0x54);
         if ((cVar1 == '\0') && (iVar2 = func_0x0800f204(param_1[0xe] + 0x54), iVar2 == 0)) {
-          func_0800F20C(auStack_20,param_1[0xe] + 0x54);
+          HeldItem_GetFood(auStack_20,param_1[0xe] + 0x54);
           iVar2 = param_1[5];
-          uVar3 = func_0800DD08(auStack_20);
-          uVar4 = func_0800DD3C(auStack_20);
+          uVar3 = Item_GetFoodStaminaEffect(auStack_20);
+          uVar4 = Item_GetFoodFatigueEffect(auStack_20);
           func_0x080d3918(param_1,uVar3,uVar4,*(undefined4 *)(iVar2 + 100));
-          iVar2 = func_0800DDAC(auStack_20);
+          iVar2 = Item_GetFoodIsDrinkOrLiquid(auStack_20);
           if (iVar2 == 0) {
             *(undefined1 *)(param_1 + 0xf) = 0xf;
             piVar5 = (int *)func_0x080d3910((int *)*param_1,
@@ -14106,7 +14106,7 @@ undefined4 func_0802DE94(undefined4 *param_1,ushort *param_2)
             }
             uVar3 = puVar9[-1];
 LAB_0802e056:
-            func_08008B6C(uVar3,0x65);
+            HW_Routine_08008B6C(uVar3,0x65);
           }
           else {
             *(undefined1 *)(param_1 + 0xf) = 0x10;
@@ -14122,7 +14122,7 @@ LAB_0802e056:
             }
             uVar3 = puVar9[-1];
 LAB_0802e098:
-            func_08008B6C(uVar3,0x66);
+            HW_Routine_08008B6C(uVar3,0x66);
           }
           func_0x0802a7d8(param_1);
           func_0x0800f390(param_1[0xe] + 0x54);
@@ -14144,9 +14144,9 @@ LAB_0802e0ae:
 }
 
 // =============================================================================
-// Function: func_0802E0FC @ 0x0802E0FC
+// Function: Entity_Routine_0802E0FC @ 0x0802E0FC
 // =============================================================================
-undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
+undefined4 Entity_Routine_0802E0FC(undefined4 *param_1,ushort *param_2)
 
 {
   ushort uVar1;
@@ -14224,12 +14224,12 @@ undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
     }
     bVar8 = uStack_7c._1_1_ & 2;
     if ((uStack_7c & 0x200) != 0) {
-      cVar2 = func_0800F190(param_1[0xe] + 0x54);
+      cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       if (cVar2 == '\0') {
-        func_080257D0(param_1,1);
+        Entity_Routine_080257D0(param_1,1);
         return in_lr;
       }
-      func_08025838(param_1,0);
+      Entity_Routine_08025838(param_1,0);
       return in_lr;
     }
     if ((uStack_7c & 0x100) == 0) {
@@ -14241,10 +14241,10 @@ undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
   puVar13 = param_1 + 0xf;
   *(undefined1 *)puVar13 = 0;
   piVar9 = (int *)*param_1;
-  func_0801FE94(auStack_a4,param_1);
+  Farmer_Routine_0801FE94(auStack_a4,param_1);
   pbVar12 = (byte *)(param_1 + 8);
   puStack_3c = auStack_a4;
-  func_0802AB98(&uStack_78,param_1,*pbVar12);
+  Entity_Routine_0802AB98(&uStack_78,param_1,*pbVar12);
   uStack_70 = uStack_78;
   uStack_6c = uStack_74;
   iVar3 = func_0x080d3918(piVar9,auStack_a4,&uStack_70,*(undefined4 *)(*piVar9 + 0x134));
@@ -14254,7 +14254,7 @@ undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
   puStack_28 = puVar13;
   switch(iVar3) {
   case 0x2b:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 != '\0') {
       piVar9 = (int *)*param_1;
       iVar4 = func_0x080d3914(piVar9,iVar3,*(undefined4 *)(*piVar9 + 0x40));
@@ -14262,18 +14262,18 @@ undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
         func_0x080d3914(iVar4,0x3c,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0x88));
       }
       func_0x080d3914(piVar9,iVar3,*(undefined4 *)(*piVar9 + 0x3c));
-      func_08025E38(param_1);
+      Entity_Routine_08025E38(param_1);
       return in_lr;
     }
     break;
   case 0x2c:
-    func_08009C3C(param_1[0xd] + 0x14);
-    iVar3 = func_0809BC10();
+    Farm_Routine_08009C3C(param_1[0xd] + 0x14);
+    iVar3 = Animal_Routine_0809BC10();
     if (iVar3 == 1) {
-      cVar2 = func_0800F190(param_1[0xe] + 0x54);
+      cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
       if (cVar2 == '\0') {
-        uStack_48 = func_080262C4(param_1);
-        iVar3 = func_0800E198(&uStack_48);
+        uStack_48 = Entity_Routine_080262C4(param_1);
+        iVar3 = Item_Routine_0800E198(&uStack_48);
         if (iVar3 != 0) {
           piVar9 = (int *)*param_1;
           func_0x080d3914(piVar9,&uStack_48,*(undefined4 *)(*piVar9 + 0x15c));
@@ -14282,7 +14282,7 @@ undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
           iVar3 = func_0x080d3914(piVar9,0x2c,*(undefined4 *)(*piVar9 + 0x40));
           if (iVar3 != 0) {
             func_0x080d3914(iVar3,0x3c,*(undefined4 *)(*(int *)(iVar3 + 0x14) + 0x88));
-            func_08032384(iVar3,5,0);
+            Entity_Routine_08032384(iVar3,5,0);
           }
           piVar9 = (int *)func_0x080d3910(piVar9,*(undefined4 *)(*piVar9 + 0x14c));
           puVar16 = (undefined4 *)piVar9[1];
@@ -14302,9 +14302,9 @@ undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
         uStack_64 = CONCAT22(uVar11 + 5,uVar14 + 7);
         uStack_60 = uStack_68;
         uStack_5c = uStack_64;
-        cVar2 = func_080AC070(&uStack_9c,&uStack_60);
+        cVar2 = NPC_Routine_080AC070(&uStack_9c,&uStack_60);
         if (cVar2 == '\x01') {
-          func_08024724(&uStack_58,&uStack_9c,&uStack_60);
+          Entity_Routine_08024724(&uStack_58,&uStack_9c,&uStack_60);
           uStack_54 = uStack_58;
           uVar7 = uStack_54;
           uStack_54._0_2_ = (short)uStack_58;
@@ -14316,11 +14316,11 @@ undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
           sStack_4c = uVar14 + 7;
           sStack_4a = uVar11 + 5;
           uStack_54 = uVar7;
-          cVar2 = func_080AC070(&uStack_9c);
+          cVar2 = NPC_Routine_080AC070(&uStack_9c);
           if (cVar2 == '\x01') break;
         }
         iVar3 = func_0x080d3914(piVar9,0x2c,*(undefined4 *)(*piVar9 + 0x40));
-        func_08021EE0();
+        Entity_Routine_08021EE0();
         *(uint *)(iVar3 + 8) = (uint)uVar14 * 0x10000;
         *(uint *)(iVar3 + 0xc) = (uint)uVar11 * 0x10000;
         *(undefined4 *)(iVar3 + 0x18) = 0;
@@ -14328,21 +14328,21 @@ undefined4 func_0802E0FC(undefined4 *param_1,ushort *param_2)
         bVar8 = *pbStack_2c;
         if (bVar8 == 1) {
           if (*(char *)(iVar3 + 0x20) != '\x03') {
-            func_08032198(iVar3,3);
+            Entity_Routine_08032198(iVar3,3);
           }
         }
         else if (bVar8 < 2) {
           if ((bVar8 == 0) && (*(char *)(iVar3 + 0x20) != '\x02')) {
-            func_08032198(iVar3,2);
+            Entity_Routine_08032198(iVar3,2);
           }
         }
         else if (bVar8 == 2) {
           if (*(char *)(iVar3 + 0x20) != '\x01') {
-            func_08032198(iVar3,1);
+            Entity_Routine_08032198(iVar3,1);
           }
         }
         else if ((bVar8 == 3) && (*(char *)(iVar3 + 0x20) != '\0')) {
-          func_08032198(iVar3,0);
+          Entity_Routine_08032198(iVar3,0);
         }
         uVar7 = func_0x080d0ec8((uint)uVar14 * 0x10000 - param_1[2],0x18);
         param_1[0x2e] = uVar7;
@@ -14375,7 +14375,7 @@ code_r0x0802e480:
   case 0x33:
   case 0x34:
   case 0x35:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 != '\0') {
       piVar9 = (int *)*param_1;
       iVar4 = func_0x080d3914(piVar9,iVar3,*(undefined4 *)(*piVar9 + 0x40));
@@ -14383,7 +14383,7 @@ code_r0x0802e480:
         func_0x080d3914(iVar4,0x3c,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0x88));
       }
       func_0x080d3914(piVar9,iVar3,*(undefined4 *)(*piVar9 + 0x3c));
-      func_08025EFC(param_1,iVar3 - 0x2eU & 0xff);
+      Entity_Routine_08025EFC(param_1,iVar3 - 0x2eU & 0xff);
       return in_lr;
     }
     break;
@@ -14404,26 +14404,26 @@ code_r0x0802e480:
   case 0x44:
   case 0x45:
     *(char *)((int)param_1 + 0xb1) = (char)iVar3 + -0x36;
-    iVar3 = func_0800D3D0(param_1[0xd] + 0x5f0);
+    iVar3 = Food_GetStaminaGain(param_1[0xd] + 0x5f0);
     uStack_38 = 0xd;
     if (iVar3 != 0) {
       uStack_38 = 8;
     }
     break;
   case 0x4a:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 != '\0') {
       func_0x080d3914((int *)*param_1,iVar3,*(undefined4 *)(*(int *)*param_1 + 0x3c));
-      func_08025FC4(param_1);
+      Entity_Routine_08025FC4(param_1);
       return in_lr;
     }
-    uStack_47 = func_080262C4(param_1);
-    iVar3 = func_0800E198(&uStack_47);
+    uStack_47 = Entity_Routine_080262C4(param_1);
+    iVar3 = Item_Routine_0800E198(&uStack_47);
     if (iVar3 != 0) {
       iVar3 = func_0x080d3914((int *)*param_1,0x4a,*(undefined4 *)(*(int *)*param_1 + 0x40));
       iVar4 = func_0x0800ffd0(*(undefined4 *)(iVar3 + 0x18));
       if (iVar4 != 0x1e) {
-        func_08037EB4(iVar3,&uStack_47);
+        Entity_Routine_08037EB4(iVar3,&uStack_47);
         *(undefined1 *)puStack_28 = 0xe;
         iStack_34 = 1;
         piVar9 = (int *)func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x14c));
@@ -14440,14 +14440,14 @@ LAB_0802e5f6:
     }
     break;
   case 0x4b:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 != '\0') {
       func_0x080d3914((int *)*param_1,0x4b,*(undefined4 *)(*(int *)*param_1 + 0x40));
       cVar2 = func_0x08038108();
       if (cVar2 == '\0') {
         func_0x080d3914((int *)*param_1,iVar3,*(undefined4 *)(*(int *)*param_1 + 0x3c));
         func_0x0800df50(auStack_46,0x35);
-        func_0800F040(&uStack_9c,auStack_46[0]);
+        Farmer_Routine_0800F040(&uStack_9c,auStack_46[0]);
         goto LAB_0802e786;
       }
     }
@@ -14460,9 +14460,9 @@ LAB_0802e5f6:
   case 0x51:
   case 0x52:
   case 0x53:
-    cVar2 = func_0800F190(param_1[0xe] + 0x54);
+    cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
     if (cVar2 != '\0') {
-      iVar4 = func_0800C6A0(param_1[0xd] + 0x410,iVar3 + -0x4c);
+      iVar4 = Building_Routine_0800C6A0(param_1[0xd] + 0x410,iVar3 + -0x4c);
       if (iVar4 != 0) {
         uVar15 = *(byte *)(iVar4 + 6) & 7;
         uVar7 = 0xf;
@@ -14491,11 +14491,11 @@ LAB_0802e5f6:
           }
         }
         func_0x080d3914((int *)*param_1,iVar3,*(undefined4 *)(*(int *)*param_1 + 0x3c));
-        func_0800C9B8(param_1[0xd] + 0x410,iVar3 + -0x4c);
+        Building_Routine_0800C9B8(param_1[0xd] + 0x410,iVar3 + -0x4c);
         func_0x0800dca8(&uStack_98,uVar7);
-        func_0800F004(&uStack_9c,uStack_98 & 0xffffff);
+        Farmer_Routine_0800F004(&uStack_9c,uStack_98 & 0xffffff);
 LAB_0802e786:
-        func_08026150(param_1,&uStack_9c,0);
+        Entity_Routine_08026150(param_1,&uStack_9c,0);
         return in_lr;
       }
     }
@@ -14508,7 +14508,7 @@ case_0802E7BA:
     return in_lr;
   }
   if (uStack_38 != 0) goto LAB_0802e906;
-  memcpy(&uStack_9c,puStack_3c,6);
+  gba_memcpy(&uStack_9c,puStack_3c,6);
   bVar8 = *pbStack_2c;
   if (bVar8 == 1) {
     uVar15 = ((uStack_98 & 0xffff & _DAT_0802e830) << 6 | (uint)(uStack_9c._3_1_ >> 2)) * 0x10000 +
@@ -14566,7 +14566,7 @@ LAB_0802e906:
     *(undefined1 *)puStack_28 = 0;
     return in_lr;
   }
-  cVar2 = func_0800F190(param_1[0xe] + 0x54);
+  cVar2 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
   if (cVar2 != '\0') {
     uVar10 = (uint)*(short *)((int)param_1 + 10);
     uVar15 = (uint)*(short *)((int)param_1 + 0xe);
@@ -14600,11 +14600,11 @@ LAB_0802e906:
     uStack_98 = CONCAT13(uStack_98._3_1_ & 3 | (byte)((uVar15 & 0x3f) << 2),(int3)uVar7);
     uStack_94 = uVar11 & uStack_94 | (ushort)((uVar15 & 0xffff) >> 6) & uVar1;
     func_0x080d3918((int *)*param_1,&uStack_98,&uStack_9c,*puStack_30);
-    cVar2 = func_0800F06C(&uStack_9c);
+    cVar2 = Farmer_Routine_0800F06C(&uStack_9c);
     if (cVar2 != '\0') {
       return in_lr;
     }
-    func_08026150(param_1,&uStack_9c,0);
+    Entity_Routine_08026150(param_1,&uStack_9c,0);
     return in_lr;
   }
   iVar3 = func_0x0802a7e0(param_1);
@@ -14698,8 +14698,8 @@ LAB_0802e9b4:
     func_0x0802a7d8(param_1);
     func_0x0800f390(param_1[0xe] + 0x54);
     iVar3 = param_1[0xd] + _DAT_0802eb10;
-    func_0801FE94(&uStack_9c,param_1);
-    memcpy(iVar3,&uStack_9c,6);
+    Farmer_Routine_0801FE94(&uStack_9c,param_1);
+    gba_memcpy(iVar3,&uStack_9c,6);
     func_0x080d3914((int *)*param_1,0x4b,*(undefined4 *)(*(int *)*param_1 + 0x38));
     iVar3 = func_0x080d3914((int *)*param_1,0x4b,*(undefined4 *)(*(int *)*param_1 + 0x40));
     if (iVar3 == 0) {
@@ -14715,12 +14715,12 @@ LAB_0802e9b4:
   }
   uVar7 = puVar16[-1];
 LAB_0802eb06:
-  func_08008B6C(uVar7,0x6c);
+  HW_Routine_08008B6C(uVar7,0x6c);
   return in_lr;
 LAB_0802e57e:
   uVar7 = *puVar13;
 LAB_0802e5fa:
-  func_08008B6C(uVar7,0x6e);
+  HW_Routine_08008B6C(uVar7,0x6e);
   goto case_0802E7BA;
 LAB_0802ea82:
   uVar7 = *puVar13;
@@ -14728,9 +14728,9 @@ LAB_0802ea82:
 }
 
 // =============================================================================
-// Function: func_0802EC00 @ 0x0802EC00
+// Function: Entity_Routine_0802EC00 @ 0x0802EC00
 // =============================================================================
-undefined4 func_0802EC00(undefined4 *param_1,ushort *param_2)
+undefined4 Entity_Routine_0802EC00(undefined4 *param_1,ushort *param_2)
 
 {
   char cVar1;
@@ -14764,16 +14764,16 @@ undefined4 func_0802EC00(undefined4 *param_1,ushort *param_2)
     func_0x080d3910(param_1,*(undefined4 *)(param_1[5] + 0x6c));
     return in_lr;
   }
-  cVar1 = func_0802AEA4(param_1);
+  cVar1 = Entity_Routine_0802AEA4(param_1);
   if (cVar1 != '\0') {
     *(undefined1 *)(param_1 + 0xf) = 0x35;
     *(undefined2 *)((int)param_1 + 0xa6) = 0;
     return in_lr;
   }
   iVar9 = param_1[0xe] + 0x54;
-  cVar1 = func_0800F190(iVar9);
+  cVar1 = HeldItem_IsEmpty(iVar9);
   if ((cVar1 != '\0') || (iVar3 = func_0x0800f204(iVar9), iVar3 != 5)) goto LAB_0802eda2;
-  iVar3 = func_0800F360(iVar9);
+  iVar3 = Farmer_Routine_0800F360(iVar9);
   if (iVar3 != _DAT_0802eca0) {
     if (_DAT_0802eca0 < iVar3) {
       if (iVar3 != 0x18c) {
@@ -14789,7 +14789,7 @@ undefined4 func_0802EC00(undefined4 *param_1,ushort *param_2)
                   if (puVar12 == puVar14) {
                     uVar7 = puVar14[-1];
 LAB_0802ed44:
-                    func_08008B6C(uVar7,0xb6);
+                    HW_Routine_08008B6C(uVar7,0xb6);
                     func_0x0800f390(param_1[0xe] + 0x54);
                     param_1[0x23] = _DAT_0802ed74;
                     param_1[0x24] = 0;
@@ -14835,7 +14835,7 @@ LAB_0802ed82:
         if ((iVar3 != 0xb) && (iVar3 != 0x62)) {
 LAB_0802eda2:
           pbVar5 = (byte *)((int)param_1 + 0x3e);
-          if ((*pbVar5 == 0) && (cVar1 = func_0800F190(iVar9), cVar1 != '\0')) {
+          if ((*pbVar5 == 0) && (cVar1 = HeldItem_IsEmpty(iVar9), cVar1 != '\0')) {
             puVar6 = (ushort *)((int)param_1 + 0xa6);
             if (600 < *puVar6) {
               *(undefined1 *)(param_1 + 0xf) = 0x17;
@@ -14869,9 +14869,9 @@ LAB_0802eda2:
           if ((uStack_28 & 2) != 0) {
             *(undefined1 *)(param_1 + 0xf) = 2;
             *puVar6 = (ushort)uStack_28 & 1;
-            cVar1 = func_0800F190(param_1[0xe] + 0x54);
+            cVar1 = HeldItem_IsEmpty(param_1[0xe] + 0x54);
             if (cVar1 != '\0') {
-              func_0802C984(param_1);
+              Entity_Routine_0802C984(param_1);
             }
             goto LAB_0802efa2;
           }
@@ -14917,7 +14917,7 @@ LAB_0802eda2:
             } while (uVar10 < 0x46);
           }
           if (*pbVar8 != bVar13) {
-            func_08032198(param_1,bVar13);
+            Entity_Routine_08032198(param_1,bVar13);
           }
           bVar13 = *pbVar8;
           if (bVar13 == 1) {
@@ -14955,12 +14955,12 @@ LAB_0802ef7e:
           param_1[6] = (int)(uVar10 << 0x18) >> 8;
           param_1[7] = (int)(uVar11 << 0x18) >> 8;
 LAB_0802efa2:
-          memcpy(abStack_34,_DAT_0802f038,3);
+          gba_memcpy(abStack_34,_DAT_0802f038,3);
           if ((abStack_34[*pbVar5] != 0) && (abStack_34[*pbVar5] <= *(byte *)(param_1 + 0x31))) {
             *(byte *)(param_1 + 0x31) = 0;
             piVar15 = (int *)*param_1;
             iVar9 = *piVar15;
-            func_0801FE94(auStack_30,param_1);
+            Farmer_Routine_0801FE94(auStack_30,param_1);
             cVar1 = func_0x080d3914(piVar15,auStack_30,*(undefined4 *)(iVar9 + 0x120));
             if (cVar1 == '\0') {
               piVar15 = (int *)func_0x080d3910((int *)*param_1,
@@ -14975,13 +14975,13 @@ LAB_0802efa2:
               }
               uVar7 = puVar14[-1];
 LAB_0802f0a8:
-              func_08008B6C(uVar7,0xd0);
+              HW_Routine_08008B6C(uVar7,0xd0);
             }
             else {
               if (param_1[4] != 0) {
-                func_0802B46C();
+                Entity_Routine_0802B46C();
               }
-              iVar9 = func_0800E324(param_1[0xd] + 0x10);
+              iVar9 = Farmer_Routine_0800E324(param_1[0xd] + 0x10);
               if (iVar9 == 3) {
                 piVar15 = (int *)func_0x080d3910((int *)*param_1,
                                                  *(undefined4 *)(*(int *)*param_1 + 0x14c));
@@ -14995,7 +14995,7 @@ LAB_0802f0a8:
                 }
                 uVar7 = puVar14[-1];
 LAB_0802f06e:
-                func_08008B6C(uVar7,0xd1);
+                HW_Routine_08008B6C(uVar7,0xd1);
               }
               else {
                 piVar15 = (int *)func_0x080d3910((int *)*param_1,
@@ -15010,7 +15010,7 @@ LAB_0802f06e:
                 }
                 uVar7 = puVar14[-1];
 LAB_0802f02e:
-                func_08008B6C(uVar7,0xd0);
+                HW_Routine_08008B6C(uVar7,0xd0);
               }
             }
           }
@@ -15018,14 +15018,14 @@ LAB_0802f02e:
             return in_lr;
           }
           if (*pbVar5 == 1) {
-            func_0802AD80(param_1);
+            Entity_Routine_0802AD80(param_1);
             return in_lr;
           }
           if (*pbVar5 != 2) {
             return in_lr;
           }
-          func_0802AD80(param_1);
-          func_0802AD80(param_1);
+          Entity_Routine_0802AD80(param_1);
+          Entity_Routine_0802AD80(param_1);
           return in_lr;
         }
       }
@@ -15050,16 +15050,16 @@ LAB_0802ed8a:
 }
 
 // =============================================================================
-// Function: func_08031F30 @ 0x08031F30
+// Function: Entity_Routine_08031F30 @ 0x08031F30
 // =============================================================================
-undefined4 func_08031F30(undefined4 *param_1,undefined4 param_2)
+undefined4 Entity_Routine_08031F30(undefined4 *param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   
   uVar1 = func_0x080d3910(*(int **)*param_1,*(undefined4 *)(**(int **)*param_1 + 0x68));
-  func_0805E850(param_1 + 0x2d,uVar1,param_2);
+  Animal_Routine_0805E850(param_1 + 0x2d,uVar1,param_2);
   *(undefined1 *)(param_1 + 0x32) = 1;
   *(undefined1 *)((int)param_1 + 0xca) = 0;
   *(undefined1 *)((int)param_1 + 0xcb) = 1;
@@ -15067,16 +15067,16 @@ undefined4 func_08031F30(undefined4 *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08031F68 @ 0x08031F68
+// Function: Entity_Routine_08031F68 @ 0x08031F68
 // =============================================================================
-undefined4 func_08031F68(undefined4 *param_1,undefined4 param_2)
+undefined4 Entity_Routine_08031F68(undefined4 *param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
   undefined4 in_lr;
   
   uVar1 = func_0x080d3910(*(int **)*param_1,*(undefined4 *)(**(int **)*param_1 + 100));
-  func_0805E850(param_1 + 0x2d,uVar1,param_2);
+  Animal_Routine_0805E850(param_1 + 0x2d,uVar1,param_2);
   *(undefined1 *)(param_1 + 0x32) = 1;
   *(undefined1 *)((int)param_1 + 0xca) = 0;
   *(undefined1 *)((int)param_1 + 0xcb) = 1;
@@ -15084,9 +15084,9 @@ undefined4 func_08031F68(undefined4 *param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_08031FA0 @ 0x08031FA0
+// Function: Entity_Routine_08031FA0 @ 0x08031FA0
 // =============================================================================
-undefined8 func_08031FA0(undefined4 *param_1)
+undefined8 Entity_Routine_08031FA0(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -15103,9 +15103,9 @@ undefined8 func_08031FA0(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_08031FCC @ 0x08031FCC
+// Function: Entity_Routine_08031FCC @ 0x08031FCC
 // =============================================================================
-undefined8 func_08031FCC(undefined4 param_1,int param_2)
+undefined8 Entity_Routine_08031FCC(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
@@ -15114,9 +15114,9 @@ undefined8 func_08031FCC(undefined4 param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08031FDC @ 0x08031FDC
+// Function: Entity_Routine_08031FDC @ 0x08031FDC
 // =============================================================================
-undefined4 func_08031FDC(undefined4 param_1,int *param_2,int param_3)
+undefined4 Entity_Routine_08031FDC(undefined4 param_1,int *param_2,int param_3)
 
 {
   int iVar1;
@@ -15141,9 +15141,9 @@ undefined4 func_08031FDC(undefined4 param_1,int *param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0803205C @ 0x0803205C
+// Function: Entity_Routine_0803205C @ 0x0803205C
 // =============================================================================
-undefined8 func_0803205C(int param_1)
+undefined8 Entity_Routine_0803205C(int param_1)
 
 {
   undefined4 uVar1;
@@ -15157,9 +15157,9 @@ undefined8 func_0803205C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08032090 @ 0x08032090
+// Function: Entity_Routine_08032090 @ 0x08032090
 // =============================================================================
-undefined8 func_08032090(int *param_1,undefined4 param_2)
+undefined8 Entity_Routine_08032090(int *param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -15202,77 +15202,77 @@ Entity_UpdatePositions(int param_1,undefined4 param_2,int param_3,undefined1 par
   *(undefined1 *)(param_1 + 0x20) = *(undefined1 *)(param_3 + 6);
   *(undefined1 *)(param_1 + 0x21) = param_4;
   func_0x08032300(param_1 + 0x28);
-  func_080321B0(param_1,param_5);
+  Entity_Routine_080321B0(param_1,param_5);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0803211C @ 0x0803211C
+// Function: Entity_Routine_0803211C @ 0x0803211C
 // =============================================================================
-undefined4 func_0803211C(int param_1,ushort *param_2)
+undefined4 Entity_Routine_0803211C(int param_1,ushort *param_2)
 
 {
   undefined4 in_lr;
   
-  func_0801FE78(param_1,*param_2 & 0x3ff,
+  Farmer_Routine_0801FE78(param_1,*param_2 & 0x3ff,
                 (int)(short)((ushort)((param_2[1] & _DAT_0803216c) << 6) |
                             (ushort)(*(byte *)((int)param_2 + 1) >> 2)),
                 (int)(short)((ushort)((param_2[2] & _DAT_0803216c) << 6) |
                             (ushort)(*(byte *)((int)param_2 + 3) >> 2)));
   if (*(char *)(param_1 + 0x20) != (char)param_2[3]) {
-    func_08032198(param_1);
+    Entity_Routine_08032198(param_1);
   }
   *(undefined4 *)(param_1 + 0x28) = 0;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08032170 @ 0x08032170
+// Function: Entity_Routine_08032170 @ 0x08032170
 // =============================================================================
-undefined8 func_08032170(int param_1,int param_2)
+undefined8 Entity_Routine_08032170(int param_1,int param_2)
 
 {
   undefined1 uVar1;
   undefined4 in_lr;
   undefined1 auStack_14 [8];
   
-  func_0801FE94(auStack_14);
+  Farmer_Routine_0801FE94(auStack_14);
   uVar1 = *(undefined1 *)(param_2 + 0x20);
-  memcpy(param_1,auStack_14,6);
+  gba_memcpy(param_1,auStack_14,6);
   *(undefined1 *)(param_1 + 6) = uVar1;
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08032198 @ 0x08032198
+// Function: Entity_Routine_08032198 @ 0x08032198
 // =============================================================================
-undefined4 func_08032198(int param_1,byte param_2)
+undefined4 Entity_Routine_08032198(int param_1,byte param_2)
 
 {
   undefined4 in_lr;
   
   *(byte *)(param_1 + 0x20) = param_2;
-  func_080321C8(param_1,(uint)*(ushort *)(param_1 + 0x22) + (uint)*(byte *)(param_1 + 0x20));
+  Entity_Routine_080321C8(param_1,(uint)*(ushort *)(param_1 + 0x22) + (uint)*(byte *)(param_1 + 0x20));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080321B0 @ 0x080321B0
+// Function: Entity_Routine_080321B0 @ 0x080321B0
 // =============================================================================
-undefined4 func_080321B0(int param_1,undefined2 param_2)
+undefined4 Entity_Routine_080321B0(int param_1,undefined2 param_2)
 
 {
   undefined4 in_lr;
   
   *(undefined2 *)(param_1 + 0x22) = param_2;
-  func_080321C8(param_1,(uint)*(ushort *)(param_1 + 0x22) + (uint)*(byte *)(param_1 + 0x20));
+  Entity_Routine_080321C8(param_1,(uint)*(ushort *)(param_1 + 0x22) + (uint)*(byte *)(param_1 + 0x20));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080321C8 @ 0x080321C8
+// Function: Entity_Routine_080321C8 @ 0x080321C8
 // =============================================================================
-undefined4 func_080321C8(undefined4 *param_1,undefined4 param_2)
+undefined4 Entity_Routine_080321C8(undefined4 *param_1,undefined4 param_2)
 
 {
   undefined2 uVar1;
@@ -15282,22 +15282,22 @@ undefined4 func_080321C8(undefined4 *param_1,undefined4 param_2)
   
   iVar3 = param_1[4];
   if (iVar3 != 0) {
-    func_0805E860(iVar3 + 0x30);
+    Animal_Routine_0805E860(iVar3 + 0x30);
     *(undefined1 *)(iVar3 + 0x44) = 1;
     *(undefined1 *)(iVar3 + 0x46) = 0;
     *(undefined1 *)(iVar3 + 0x47) = 1;
   }
   uVar2 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x68));
-  uVar1 = func_08032090(uVar2,param_2);
+  uVar1 = Entity_Routine_08032090(uVar2,param_2);
   *(undefined2 *)(param_1 + 9) = uVar1;
   *(undefined2 *)((int)param_1 + 0x26) = uVar1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08032208 @ 0x08032208
+// Function: Entity_Routine_08032208 @ 0x08032208
 // =============================================================================
-undefined4 func_08032208(undefined4 *param_1)
+undefined4 Entity_Routine_08032208(undefined4 *param_1)
 
 {
   undefined2 uVar1;
@@ -15355,13 +15355,13 @@ LAB_08032252:
   uStack_34 = uStack_3c;
   uStack_30 = uStack_38;
   func_0x080d3918(auStack_48,piVar8,uVar1,*(undefined4 *)(*piVar8 + 0x34));
-  cVar3 = func_080AC070(auStack_48,&uStack_34);
+  cVar3 = NPC_Routine_080AC070(auStack_48,&uStack_34);
   if (cVar3 == '\0') {
     sStack_2c = (short)iStack_24 + (short)uStack_34;
     sStack_2a = uStack_34._2_2_ + sVar2;
     sStack_28 = (short)iStack_24 + (short)uStack_30;
     sStack_26 = uStack_30._2_2_ + sVar2;
-    cVar3 = func_080AC070(auStack_48);
+    cVar3 = NPC_Routine_080AC070(auStack_48);
     if (cVar3 == '\x01') {
       return in_lr;
     }
@@ -15372,9 +15372,9 @@ LAB_08032252:
 }
 
 // =============================================================================
-// Function: func_08032308 @ 0x08032308
+// Function: Entity_Routine_08032308 @ 0x08032308
 // =============================================================================
-undefined4 func_08032308(int param_1,int param_2,int param_3)
+undefined4 Entity_Routine_08032308(int param_1,int param_2,int param_3)
 
 {
   undefined4 in_lr;
@@ -15395,9 +15395,9 @@ undefined4 func_08032308(int param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0803233C @ 0x0803233C
+// Function: Entity_Routine_0803233C @ 0x0803233C
 // =============================================================================
-undefined4 func_0803233C(int param_1,int param_2,int param_3)
+undefined4 Entity_Routine_0803233C(int param_1,int param_2,int param_3)
 
 {
   undefined4 in_lr;
@@ -15418,9 +15418,9 @@ undefined4 func_0803233C(int param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_08032370 @ 0x08032370
+// Function: Entity_Routine_08032370 @ 0x08032370
 // =============================================================================
-undefined8 func_08032370(int param_1)
+undefined8 Entity_Routine_08032370(int param_1)
 
 {
   undefined4 in_lr;
@@ -15429,9 +15429,9 @@ undefined8 func_08032370(int param_1)
 }
 
 // =============================================================================
-// Function: func_08032384 @ 0x08032384
+// Function: Entity_Routine_08032384 @ 0x08032384
 // =============================================================================
-undefined4 func_08032384(int param_1,undefined4 param_2,char param_3)
+undefined4 Entity_Routine_08032384(int param_1,undefined4 param_2,char param_3)
 
 {
   byte bVar1;
@@ -15440,7 +15440,7 @@ undefined4 func_08032384(int param_1,undefined4 param_2,char param_3)
   
   iVar2 = *(int *)(param_1 + 0x10);
   if (iVar2 != 0) {
-    func_0805E860(iVar2 + 0x70);
+    Animal_Routine_0805E860(iVar2 + 0x70);
     *(undefined1 *)(iVar2 + 0x84) = 1;
     *(undefined1 *)(iVar2 + 0x86) = 0;
     *(undefined1 *)(iVar2 + 0x87) = 1;
@@ -15454,9 +15454,9 @@ undefined4 func_08032384(int param_1,undefined4 param_2,char param_3)
 }
 
 // =============================================================================
-// Function: func_080323C8 @ 0x080323C8
+// Function: Entity_Routine_080323C8 @ 0x080323C8
 // =============================================================================
-undefined4 func_080323C8(int param_1)
+undefined4 Entity_Routine_080323C8(int param_1)
 
 {
   byte *pbVar1;
@@ -15470,9 +15470,9 @@ undefined4 func_080323C8(int param_1)
 }
 
 // =============================================================================
-// Function: func_080323E0 @ 0x080323E0
+// Function: Entity_Routine_080323E0 @ 0x080323E0
 // =============================================================================
-undefined4 func_080323E0(int param_1,undefined1 param_2)
+undefined4 Entity_Routine_080323E0(int param_1,undefined1 param_2)
 
 {
   undefined4 in_lr;
@@ -15484,9 +15484,9 @@ undefined4 func_080323E0(int param_1,undefined1 param_2)
 }
 
 // =============================================================================
-// Function: func_080323F0 @ 0x080323F0
+// Function: Entity_Routine_080323F0 @ 0x080323F0
 // =============================================================================
-undefined4 func_080323F0(int param_1,char param_2)
+undefined4 Entity_Routine_080323F0(int param_1,char param_2)
 
 {
   byte *pbVar1;
@@ -15500,9 +15500,9 @@ undefined4 func_080323F0(int param_1,char param_2)
 }
 
 // =============================================================================
-// Function: func_0803240C @ 0x0803240C
+// Function: Entity_Routine_0803240C @ 0x0803240C
 // =============================================================================
-void func_0803240C(short *param_1,int param_2)
+void Entity_Routine_0803240C(short *param_1,int param_2)
 
 {
   short sVar1;
@@ -15518,9 +15518,9 @@ void func_0803240C(short *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0803242C @ 0x0803242C
+// Function: Entity_Routine_0803242C @ 0x0803242C
 // =============================================================================
-undefined4 func_0803242C(int param_1,undefined4 param_2)
+undefined4 Entity_Routine_0803242C(int param_1,undefined4 param_2)
 
 {
   short sVar1;
@@ -15574,15 +15574,15 @@ LAB_08032496:
     *(int *)(param_1 + 8) = iVar2;
   }
 LAB_080324a6:
-  func_0801FE60(param_1,param_2);
+  Farmer_Routine_0801FE60(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080324BC @ 0x080324BC
+// Function: Entity_Routine_080324BC @ 0x080324BC
 // =============================================================================
 undefined8
-func_080324BC(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,
+Entity_Routine_080324BC(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,
              undefined1 param_5,char param_6,undefined1 param_7,undefined1 param_8)
 
 {
@@ -15592,11 +15592,11 @@ func_080324BC(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefin
   *param_1 = param_2;
   param_1[1] = _DAT_0803255c;
   uVar1 = func_0x080d3910((int *)*param_2,*(undefined4 *)(*(int *)*param_2 + 0x68));
-  func_080A4A00(param_1 + 2,uVar1,
+  NPC_Routine_080A4A00(param_1 + 2,uVar1,
                 (uint)*(ushort *)((int)param_2 + 0x22) + (uint)*(byte *)(param_2 + 8),*param_2,
                 param_3,param_4,param_8);
   uVar1 = func_0x080d3910((int *)*param_2,*(undefined4 *)(*(int *)*param_2 + 0x6c));
-  func_080A4A00(param_1 + 0x12,uVar1,0,*param_2,2,0xe,0);
+  NPC_Routine_080A4A00(param_1 + 0x12,uVar1,0,*param_2,2,0xe,0);
   *(undefined1 *)(param_1 + 0x22) = param_5;
   *(undefined1 *)((int)param_1 + 0x89) = 0;
   *(char *)((int)param_1 + 0x8a) = param_6 << 2;
@@ -15605,10 +15605,10 @@ func_080324BC(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefin
 }
 
 // =============================================================================
-// Function: func_08032560 @ 0x08032560
+// Function: Entity_Routine_08032560 @ 0x08032560
 // =============================================================================
 undefined8
-func_08032560(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,
+Entity_Routine_08032560(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,
              uint param_5,undefined1 param_6,char param_7,undefined1 param_8,undefined1 param_9)
 
 {
@@ -15618,11 +15618,11 @@ func_08032560(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefin
   *param_1 = param_2;
   param_1[1] = _DAT_08032608;
   uVar1 = func_0x080d3910((int *)*param_2,*(undefined4 *)(*(int *)*param_2 + 0x68));
-  func_080A49A0(param_1 + 2,uVar1,
+  NPC_Routine_080A49A0(param_1 + 2,uVar1,
                 (uint)*(ushort *)((int)param_2 + 0x22) + (uint)*(byte *)(param_2 + 8),*param_2,
                 param_3,param_4,param_5,param_9);
   uVar1 = func_0x080d3910((int *)*param_2,*(undefined4 *)(*(int *)*param_2 + 0x6c));
-  func_080A4A00(param_1 + 0x12,uVar1,0,*param_2,2,0xe,param_5 & 0xffffff00);
+  NPC_Routine_080A4A00(param_1 + 0x12,uVar1,0,*param_2,2,0xe,param_5 & 0xffffff00);
   *(undefined1 *)(param_1 + 0x22) = param_6;
   *(undefined1 *)((int)param_1 + 0x89) = 0;
   *(char *)((int)param_1 + 0x8a) = param_7 << 2;
@@ -15631,9 +15631,9 @@ func_08032560(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefin
 }
 
 // =============================================================================
-// Function: func_0803260C @ 0x0803260C
+// Function: Entity_Routine_0803260C @ 0x0803260C
 // =============================================================================
-void func_0803260C(int param_1)
+void Entity_Routine_0803260C(int param_1)
 
 {
   byte bVar1;
@@ -15646,7 +15646,7 @@ void func_0803260C(int param_1)
   
   pcVar5 = (char *)(param_1 + 0x47);
   if (*pcVar5 == '\0') {
-    iVar4 = func_0805E8F0(param_1 + 0x30);
+    iVar4 = Animal_Routine_0805E8F0(param_1 + 0x30);
     if (-1 < iVar4 * 0x40000000) goto LAB_08032634;
     pcVar5 = (char *)(param_1 + 0x44);
     cVar3 = '\x01';
@@ -15661,7 +15661,7 @@ LAB_08032634:
   if ((bVar1 & 3) != 0) {
     bVar2 = false;
     if (*(char *)(param_1 + 0x87) == '\0') {
-      iVar4 = func_0805E8F0(param_1 + 0x70);
+      iVar4 = Animal_Routine_0805E8F0(param_1 + 0x70);
       if (iVar4 * 0x40000000 < 0) {
         *(undefined1 *)(param_1 + 0x84) = 1;
       }
@@ -15682,9 +15682,9 @@ LAB_08032634:
 }
 
 // =============================================================================
-// Function: func_08032900 @ 0x08032900
+// Function: Entity_Routine_08032900 @ 0x08032900
 // =============================================================================
-undefined8 func_08032900(int param_1,int param_2,int param_3)
+undefined8 Entity_Routine_08032900(int param_1,int param_2,int param_3)
 
 {
   undefined4 uVar1;
@@ -15706,9 +15706,9 @@ undefined8 func_08032900(int param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_08032934 @ 0x08032934
+// Function: Entity_Routine_08032934 @ 0x08032934
 // =============================================================================
-void func_08032934(int param_1,undefined4 param_2,int param_3)
+void Entity_Routine_08032934(int param_1,undefined4 param_2,int param_3)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -15721,22 +15721,22 @@ void func_08032934(int param_1,undefined4 param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_080329B4 @ 0x080329B4
+// Function: Entity_Routine_080329B4 @ 0x080329B4
 // =============================================================================
-void func_080329B4(undefined4 param_1)
+void Entity_Routine_080329B4(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_08032A00(uVar1,param_1);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_08032A00(uVar1,param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_080329DC @ 0x080329DC
+// Function: Entity_Routine_080329DC @ 0x080329DC
 // =============================================================================
-void func_080329DC(short *param_1,int param_2)
+void Entity_Routine_080329DC(short *param_1,int param_2)
 
 {
   short sVar1;
@@ -15752,23 +15752,23 @@ void func_080329DC(short *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08032A00 @ 0x08032A00
+// Function: Entity_Routine_08032A00 @ 0x08032A00
 // =============================================================================
-void func_08032A00(int param_1,undefined4 param_2)
+void Entity_Routine_08032A00(int param_1,undefined4 param_2)
 
 {
   code *UNRECOVERED_JUMPTABLE;
   
-  func_080324BC(param_1,param_2,6,0x20,1,0,0,0);
+  Entity_Routine_080324BC(param_1,param_2,6,0x20,1,0,0,0);
   *(undefined4 *)(param_1 + 4) = _DAT_08032a2c;
   (*UNRECOVERED_JUMPTABLE)(param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_08032A30 @ 0x08032A30
+// Function: Entity_Routine_08032A30 @ 0x08032A30
 // =============================================================================
-undefined4 func_08032A30(int param_1)
+undefined4 Entity_Routine_08032A30(int param_1)
 
 {
   short sVar1;
@@ -15790,19 +15790,19 @@ undefined4 func_08032A30(int param_1)
 }
 
 // =============================================================================
-// Function: func_08032A58 @ 0x08032A58
+// Function: Entity_Routine_08032A58 @ 0x08032A58
 // =============================================================================
-void func_08032A58(int param_1)
+void Entity_Routine_08032A58(int param_1)
 
 {
-  func_0805E894(param_1 + 0x30);
+  Animal_Routine_0805E894(param_1 + 0x30);
   return;
 }
 
 // =============================================================================
-// Function: func_08032A64 @ 0x08032A64
+// Function: Entity_Routine_08032A64 @ 0x08032A64
 // =============================================================================
-undefined8 func_08032A64(int param_1)
+undefined8 Entity_Routine_08032A64(int param_1)
 
 {
   uint uVar1;
@@ -15816,15 +15816,15 @@ undefined8 func_08032A64(int param_1)
 }
 
 // =============================================================================
-// Function: func_08032AB4 @ 0x08032AB4
+// Function: Entity_Routine_08032AB4 @ 0x08032AB4
 // =============================================================================
-undefined4 func_08032AB4(int param_1,undefined4 param_2,char param_3)
+undefined4 Entity_Routine_08032AB4(int param_1,undefined4 param_2,char param_3)
 
 {
   byte bVar1;
   undefined4 in_lr;
   
-  func_0805E860(param_1 + 0x70);
+  Animal_Routine_0805E860(param_1 + 0x70);
   *(undefined1 *)(param_1 + 0x84) = 1;
   *(undefined1 *)(param_1 + 0x86) = 0;
   *(undefined1 *)(param_1 + 0x87) = 1;
@@ -15837,14 +15837,14 @@ undefined4 func_08032AB4(int param_1,undefined4 param_2,char param_3)
 }
 
 // =============================================================================
-// Function: func_08032B04 @ 0x08032B04
+// Function: Entity_Routine_08032B04 @ 0x08032B04
 // =============================================================================
-undefined4 func_08032B04(int param_1)
+undefined4 Entity_Routine_08032B04(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_0805E860(param_1 + 0x30);
+  Animal_Routine_0805E860(param_1 + 0x30);
   *(undefined1 *)(param_1 + 0x44) = 1;
   *(undefined1 *)(param_1 + 0x46) = 0;
   *(undefined1 *)(param_1 + 0x47) = 1;
@@ -15852,9 +15852,9 @@ undefined4 func_08032B04(int param_1)
 }
 
 // =============================================================================
-// Function: func_08032B2C @ 0x08032B2C
+// Function: Entity_Routine_08032B2C @ 0x08032B2C
 // =============================================================================
-undefined8 func_08032B2C(int param_1)
+undefined8 Entity_Routine_08032B2C(int param_1)
 
 {
   undefined4 in_lr;
@@ -15863,38 +15863,38 @@ undefined8 func_08032B2C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08032B44 @ 0x08032B44
+// Function: Entity_Routine_08032B44 @ 0x08032B44
 // =============================================================================
-undefined4 func_08032B44(int param_1,uint param_2)
+undefined4 Entity_Routine_08032B44(int param_1,uint param_2)
 
 {
   undefined4 in_lr;
   
   if (*(ushort *)(param_1 + 0x22) != param_2) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08032B68 @ 0x08032B68
+// Function: Entity_Routine_08032B68 @ 0x08032B68
 // =============================================================================
-undefined4 func_08032B68(int param_1,uint param_2)
+undefined4 Entity_Routine_08032B68(int param_1,uint param_2)
 
 {
   undefined4 in_lr;
   
   if (*(byte *)(param_1 + 0x20) != param_2) {
-    func_08032198(param_1);
+    Entity_Routine_08032198(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08032BB4 @ 0x08032BB4
+// Function: Entity_Routine_08032BB4 @ 0x08032BB4
 // =============================================================================
 undefined8
-func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,int param_6,
+Entity_Routine_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,int param_6,
              byte *param_7)
 
 {
@@ -15943,8 +15943,8 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
       uVar11 = func_0x0800ce9c(param_2);
       uVar6 = uStack_34;
       while (uVar6 < uVar11) {
-        iVar4 = func_0800D1B4(param_2,uVar10);
-        cVar2 = func_0800CED4(param_2,uVar10);
+        iVar4 = Tool_GetDesc(param_2,uVar10);
+        cVar2 = Building_Routine_0800CED4(param_2,uVar10);
         if (cVar2 == '\0') {
           if (-1 < iVar4) {
             func_0x0800d0c0(&uStack_58,param_2,uVar10);
@@ -15959,7 +15959,7 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
               uVar8 = uStack_60 & 0xfffffff0;
               uStack_60._2_2_ = (undefined2)(uVar8 >> 0x10);
               uStack_60 = CONCAT22(uStack_60._2_2_,CONCAT11((char)uVar10,(char)uVar8)) | 5;
-              cVar2 = func_0809E968(param_7,&uStack_60);
+              cVar2 = NPC_Routine_0809E968(param_7,&uStack_60);
               if (cVar2 == '\0') {
                 uStack_68 = uStack_60;
                 uStack_64 = uStack_5c;
@@ -15975,11 +15975,11 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
         uVar6 = uVar10;
       }
       uVar11 = 0;
-      uVar10 = func_0800CE74(iStack_3c + _DAT_08032d30);
+      uVar10 = Building_Routine_0800CE74(iStack_3c + _DAT_08032d30);
       uVar6 = 0;
       if (uVar10 != 0) {
         do {
-          iVar4 = func_0800CF60(param_2,uVar6);
+          iVar4 = Building_Routine_0800CF60(param_2,uVar6);
           if ((((iVar4 != 0) &&
                (iVar5 = func_0x080d3914(param_3,uVar6 + 0x36,*(undefined4 *)(*param_3 + 0x44)),
                iVar5 != 0)) && (*(short *)(iVar5 + 4) == 0x25)) &&
@@ -15996,7 +15996,7 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
         uStack_2c = uVar10;
         if (uVar10 != 0) {
           do {
-            cVar2 = func_0800CEA8(param_2,uVar8);
+            cVar2 = Building_Routine_0800CEA8(param_2,uVar8);
             if (cVar2 == '\0') {
               if (uVar8 < 0x10) {
                 uVar6 = uVar6 | 1 << (uVar8 & 0x1f);
@@ -16030,7 +16030,7 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
                 uVar11 = (-uVar11 | uVar11) >> 0x1f;
               }
               if (uVar11 != 0) {
-                func_0800D074(&uStack_50,param_2,uVar10);
+                Tool_GetName(&uStack_50,param_2,uVar10);
                 uStack_4c = uStack_50;
                 uVar11 = (*psStack_24 - param_5) * (*psStack_24 - param_5) +
                          (psStack_24[1] - param_6) * (psStack_24[1] - param_6);
@@ -16054,12 +16054,12 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
     iVar5 = iStack_3c + 0x3fc;
     iVar4 = func_0x0800c568(iVar5);
     if (iVar4 != 0) {
-      uVar10 = func_0800C570(iVar5);
+      uVar10 = Barn_GetCowCount(iVar5);
       uVar11 = 0;
       uVar6 = 0;
       if (uVar10 != 0) {
         do {
-          iVar4 = func_0800C5CC(iVar5,uVar6);
+          iVar4 = Building_Routine_0800C5CC(iVar5,uVar6);
           if ((((iVar4 != 0) &&
                (iVar3 = func_0x080d3914(param_3,uVar6 + 0x2e,*(undefined4 *)(*param_3 + 0x44)),
                iVar3 != 0)) && (*(short *)(iVar3 + 4) == 0x11)) &&
@@ -16076,7 +16076,7 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
         uStack_28 = uVar10;
         if (uVar10 != 0) {
           do {
-            cVar2 = func_0800C598(iVar5,uVar8);
+            cVar2 = Building_Routine_0800C598(iVar5,uVar8);
             if (cVar2 == '\0') {
               if (uVar8 < 8) {
                 uVar6 = uVar6 | 1 << (uVar8 & 0x1f);
@@ -16110,7 +16110,7 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
                 uVar11 = (-uVar11 | uVar11) >> 0x1f;
               }
               if (uVar11 != 0) {
-                func_0800C6F0(&uStack_48,iVar5,uVar10);
+                Building_Routine_0800C6F0(&uStack_48,iVar5,uVar10);
                 uStack_44 = uStack_48;
                 uVar11 = (*psStack_24 - param_5) * (*psStack_24 - param_5) +
                          (psStack_24[1] - param_6) * (psStack_24[1] - param_6);
@@ -16145,7 +16145,7 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
       uVar11 = uStack_60 & 0xfffffff0;
       uStack_60._2_2_ = (undefined2)(uVar11 >> 0x10);
       uStack_60 = CONCAT22(uStack_60._2_2_,CONCAT11((char)uVar10 + -0x36,(char)uVar11)) | 6;
-      cVar2 = func_0809E968(param_7,&uStack_60);
+      cVar2 = NPC_Routine_0809E968(param_7,&uStack_60);
       if (cVar2 == '\0') {
         uStack_68 = uStack_60;
         uStack_64 = uStack_5c;
@@ -16168,7 +16168,7 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
       uVar11 = uStack_60 & 0xfffffff0;
       uStack_60._2_2_ = (undefined2)(uVar11 >> 0x10);
       uStack_60 = CONCAT22(uStack_60._2_2_,CONCAT11((char)uVar10 + -0x4c,(char)uVar11)) | 8;
-      cVar2 = func_0809E968(param_7,&uStack_60);
+      cVar2 = NPC_Routine_0809E968(param_7,&uStack_60);
       if (cVar2 == '\0') {
         uStack_68 = uStack_60;
         uStack_64 = uStack_5c;
@@ -16183,10 +16183,10 @@ func_08032BB4(uint *param_1,int param_2,int *param_3,uint param_4,int param_5,in
 }
 
 // =============================================================================
-// Function: func_080330F4 @ 0x080330F4
+// Function: Entity_Routine_080330F4 @ 0x080330F4
 // =============================================================================
 undefined8
-func_080330F4(uint *param_1,int param_2,undefined4 param_3,ushort *param_4,int param_5,
+Entity_Routine_080330F4(uint *param_1,int param_2,undefined4 param_3,ushort *param_4,int param_5,
              undefined4 param_6)
 
 {
@@ -16258,7 +16258,7 @@ func_080330F4(uint *param_1,int param_2,undefined4 param_3,ushort *param_4,int p
           uStack_78._3_1_ = (undefined1)(uVar9 >> 0x18);
           uStack_78 = CONCAT13(uStack_78._3_1_,
                                CONCAT12((char)uVar14,CONCAT11((char)uVar13,(char)uVar9))) | 1;
-          cVar3 = func_0809E968(param_6,&uStack_78);
+          cVar3 = NPC_Routine_0809E968(param_6,&uStack_78);
           if (cVar3 == '\0') {
             uStack_80 = uStack_78;
             uStack_7c = uStack_74;
@@ -16290,22 +16290,22 @@ func_080330F4(uint *param_1,int param_2,undefined4 param_3,ushort *param_4,int p
             uVar9 = *(uint *)(iStack_3c + (uVar10 + uVar14 * 0x2b) * 4);
             if ((uVar9 & 0xfff) >> 8 == 5) {
               uStack_70 = uVar9;
-              Field_HarvestCrop(&uStack_78,&uStack_70);
-              cVar3 = func_0800F06C(&uStack_78);
+              FieldPlot_HarvestCrop(&uStack_78,&uStack_70);
+              cVar3 = Farmer_Routine_0800F06C(&uStack_78);
               if (cVar3 != '\0') goto LAB_080331ee;
               iVar8 = func_0x0800f09c(&uStack_78);
               if (iVar8 == 0) {
-                func_0800F0A4(&uStack_74,&uStack_78);
+                Farmer_Routine_0800F0A4(&uStack_74,&uStack_78);
                 func_0x0800e0fc(puStack_38,uStack_74 & 0xffffff);
                 puVar7 = puStack_38;
               }
               else {
                 if (iVar8 != 1) goto LAB_080331ee;
-                uVar6 = func_0800F0E8(&uStack_78);
-                func_0800E148(auStack_6b,uVar6);
+                uVar6 = Farmer_Routine_0800F0E8(&uStack_78);
+                Item_Routine_0800E148(auStack_6b,uVar6);
                 puVar7 = auStack_6b;
               }
-              uVar9 = func_0800E198(puVar7);
+              uVar9 = Item_Routine_0800E198(puVar7);
               uVar9 = (-uVar9 | uVar9) >> 0x1f;
             }
             else {
@@ -16317,7 +16317,7 @@ LAB_080331ee:
               uStack_78._3_1_ = (undefined1)(uVar9 >> 0x18);
               uStack_78 = CONCAT13(uStack_78._3_1_,
                                    CONCAT12((char)uVar14,CONCAT11((char)uVar10,(char)uVar9))) | 2;
-              cVar3 = func_0809E968(param_6,&uStack_78);
+              cVar3 = NPC_Routine_0809E968(param_6,&uStack_78);
               if (cVar3 == '\0') {
                 uStack_80 = uStack_78;
                 uStack_7c = uStack_74;
@@ -16345,16 +16345,16 @@ LAB_080331ee:
   uStack_4c = uStack_50;
   uVar4 = *param_4 & 0x3ff;
   if (uVar4 == 0x11) {
-    func_08032BB4(&uStack_78,param_2,param_3,0x11,iStack_44,iVar5,param_6);
+    Entity_Routine_08032BB4(&uStack_78,param_2,param_3,0x11,iStack_44,iVar5,param_6);
     uStack_80 = uStack_78;
     uStack_7c = uStack_74;
     if ((uStack_78 & 0xf) == 0) {
-      func_08032BB4(&uStack_78,param_2,param_3,2,(int)(short)uStack_5c,(int)uStack_5c._2_2_,param_6)
+      Entity_Routine_08032BB4(&uStack_78,param_2,param_3,2,(int)(short)uStack_5c,(int)uStack_5c._2_2_,param_6)
       ;
       uStack_80 = uStack_78;
       uStack_7c = uStack_74;
       if ((uStack_78 & 0xf) == 0) {
-        func_08032BB4(&uStack_78,param_2,param_3,0x25,(int)*psStack_30,(int)psStack_30[1],param_6);
+        Entity_Routine_08032BB4(&uStack_78,param_2,param_3,0x25,(int)*psStack_30,(int)psStack_30[1],param_6);
         uStack_80 = uStack_78;
         uStack_7c = uStack_74;
       }
@@ -16363,7 +16363,7 @@ LAB_080331ee:
   }
   if (uVar4 < 0x12) {
     if (uVar4 != 2) goto LAB_0803356a;
-    func_08032BB4(&uStack_78,param_2,param_3,2,iStack_44,iVar5,param_6);
+    Entity_Routine_08032BB4(&uStack_78,param_2,param_3,2,iStack_44,iVar5,param_6);
     uStack_80 = uStack_78;
     uStack_7c = uStack_74;
     if ((uStack_78 & 0xf) != 0) goto LAB_0803356a;
@@ -16376,7 +16376,7 @@ LAB_080331ee:
       sVar2 = psStack_30[1];
       goto LAB_080334ac;
     }
-    func_08032BB4(&uStack_78,param_2,param_3,0x11,(int)(short)uStack_4c,(int)uStack_4c._2_2_,param_6
+    Entity_Routine_08032BB4(&uStack_78,param_2,param_3,0x11,(int)(short)uStack_4c,(int)uStack_4c._2_2_,param_6
                  );
     uStack_80 = uStack_78;
     uStack_7c = uStack_74;
@@ -16387,7 +16387,7 @@ LAB_080331ee:
   }
   else {
     if (uVar4 != 0x25) goto LAB_0803356a;
-    func_08032BB4(&uStack_78,param_2,param_3,0x25,iStack_44,iVar5,param_6);
+    Entity_Routine_08032BB4(&uStack_78,param_2,param_3,0x25,iStack_44,iVar5,param_6);
     uStack_80 = uStack_78;
     uStack_7c = uStack_74;
     if ((uStack_78 & 0xf) != 0) goto LAB_0803356a;
@@ -16395,7 +16395,7 @@ LAB_080331ee:
     sVar1 = (short)uStack_64;
     sVar2 = uStack_64._2_2_;
 LAB_080334ac:
-    func_08032BB4(&uStack_78,param_2,param_3,uVar6,(int)sVar1,(int)sVar2,param_6);
+    Entity_Routine_08032BB4(&uStack_78,param_2,param_3,uVar6,(int)sVar1,(int)sVar2,param_6);
     uStack_80 = uStack_78;
     uStack_7c = uStack_74;
     if ((uStack_78 & 0xf) != 0) goto LAB_0803356a;
@@ -16403,7 +16403,7 @@ LAB_080334ac:
     sVar1 = (short)uStack_4c;
     sVar2 = uStack_4c._2_2_;
   }
-  func_08032BB4(&uStack_78,param_2,param_3,uVar6,(int)sVar1,(int)sVar2,param_6);
+  Entity_Routine_08032BB4(&uStack_78,param_2,param_3,uVar6,(int)sVar1,(int)sVar2,param_6);
   uStack_80 = uStack_78;
   uStack_7c = uStack_74;
 LAB_0803356a:
@@ -16413,9 +16413,9 @@ LAB_0803356a:
 }
 
 // =============================================================================
-// Function: func_08033584 @ 0x08033584
+// Function: Entity_Routine_08033584 @ 0x08033584
 // =============================================================================
-undefined8 func_08033584(byte *param_1,int param_2,int *param_3)
+undefined8 Entity_Routine_08033584(byte *param_1,int param_2,int *param_3)
 
 {
   char cVar1;
@@ -16445,21 +16445,21 @@ undefined8 func_08033584(byte *param_1,int param_2,int *param_3)
     uStack_18 = *(uint *)(param_2 + _DAT_0803364c + ((uint)param_1[2] * 0x2b + (uint)param_1[1]) * 4
                          );
     if ((uStack_18 & 0xfff) >> 8 == 5) {
-      Field_HarvestCrop(auStack_20,&uStack_18);
-      cVar1 = func_0800F06C(auStack_20);
+      FieldPlot_HarvestCrop(auStack_20,&uStack_18);
+      cVar1 = Farmer_Routine_0800F06C(auStack_20);
       if (cVar1 == '\0') {
         iVar4 = func_0x0800f09c(auStack_20);
         if (iVar4 == 0) {
-          func_0800F0A4(&uStack_1c,auStack_20);
+          Farmer_Routine_0800F0A4(&uStack_1c,auStack_20);
           func_0x0800e0fc(&uStack_14,(uint)uStack_1c);
-          uVar2 = func_0800E198(&uStack_14);
+          uVar2 = Item_Routine_0800E198(&uStack_14);
           uVar2 = (-uVar2 | uVar2) >> 0x1f;
           goto LAB_0803377a;
         }
         if (iVar4 == 1) {
-          uVar3 = func_0800F0E8(auStack_20);
-          func_0800E148(auStack_13,uVar3);
-          uVar2 = func_0800E198(auStack_13);
+          uVar3 = Farmer_Routine_0800F0E8(auStack_20);
+          Item_Routine_0800E148(auStack_13,uVar3);
+          uVar2 = Item_Routine_0800E198(auStack_13);
           uVar2 = (-uVar2 | uVar2) >> 0x1f;
           goto LAB_0803377a;
         }
@@ -16470,21 +16470,21 @@ undefined8 func_08033584(byte *param_1,int param_2,int *param_3)
     uVar2 = 0;
     iVar4 = func_0x0800c568(param_2 + 0x3fc);
     if (iVar4 == 0) goto LAB_0803377a;
-    cVar1 = func_0800C598(param_2 + 0x3fc,param_1[1]);
+    cVar1 = Building_Routine_0800C598(param_2 + 0x3fc,param_1[1]);
     goto LAB_080336f8;
   case 0x80336c0:
     uVar2 = 0;
     param_2 = param_2 + _DAT_080336dc;
     iVar4 = func_0x0800ce6c(param_2);
     if (iVar4 == 0) goto LAB_0803377a;
-    cVar1 = func_0800CEA8(param_2,param_1[1]);
+    cVar1 = Building_Routine_0800CEA8(param_2,param_1[1]);
     goto LAB_080336f8;
   case 0x80336e0:
     uVar2 = 0;
     param_2 = param_2 + _DAT_08033704;
     iVar4 = func_0x0800ce6c(param_2);
     if (iVar4 == 0) goto LAB_0803377a;
-    cVar1 = func_0800CED4(param_2,param_1[1]);
+    cVar1 = Building_Routine_0800CED4(param_2,param_1[1]);
 LAB_080336f8:
     uVar2 = 0;
     if (cVar1 == '\0') {
@@ -16519,9 +16519,9 @@ LAB_0803377a:
 }
 
 // =============================================================================
-// Function: func_08033784 @ 0x08033784
+// Function: Entity_Routine_08033784 @ 0x08033784
 // =============================================================================
-undefined8 func_08033784(byte *param_1,undefined4 param_2,int *param_3)
+undefined8 Entity_Routine_08033784(byte *param_1,undefined4 param_2,int *param_3)
 
 {
   uint uVar1;
@@ -16565,9 +16565,9 @@ LAB_080337fa:
 }
 
 // =============================================================================
-// Function: func_08033800 @ 0x08033800
+// Function: Entity_Routine_08033800 @ 0x08033800
 // =============================================================================
-undefined8 func_08033800(undefined2 *param_1,int *param_2,undefined4 param_3)
+undefined8 Entity_Routine_08033800(undefined2 *param_1,int *param_2,undefined4 param_3)
 
 {
   int iVar1;
@@ -16588,9 +16588,9 @@ undefined8 func_08033800(undefined2 *param_1,int *param_2,undefined4 param_3)
 }
 
 // =============================================================================
-// Function: func_08033830 @ 0x08033830
+// Function: Entity_Routine_08033830 @ 0x08033830
 // =============================================================================
-undefined8 func_08033830(short *param_1,byte *param_2,int param_3,undefined4 param_4)
+undefined8 Entity_Routine_08033830(short *param_1,byte *param_2,int param_3,undefined4 param_4)
 
 {
   byte bVar1;
@@ -16611,10 +16611,10 @@ case_08033874:
     param_1[1] = (ushort)bVar1 * 0x10 + 0xb8;
     break;
   case 0x8033892:
-    func_0800C6F0(param_1,param_3 + 0x3fc,param_2[1]);
+    Building_Routine_0800C6F0(param_1,param_3 + 0x3fc,param_2[1]);
     break;
   case 0x80338a2:
-    func_0800D074(param_1,param_3 + _DAT_080338b0,param_2[1]);
+    Tool_GetName(param_1,param_3 + _DAT_080338b0,param_2[1]);
     break;
   case 0x80338b4:
     func_0x0800d0c0(param_1,param_3 + _DAT_080338c4,param_2[1]);
@@ -16625,31 +16625,31 @@ case_08033874:
   case 0x80338ce:
     iVar2 = param_2[1] + 0x2e;
 LAB_080338d2:
-    func_08033800(param_1,param_4,iVar2);
+    Entity_Routine_08033800(param_1,param_4,iVar2);
     break;
   case 0x80338dc:
-    func_08033800(param_1,param_4,param_2[1] + 0x4c);
+    Entity_Routine_08033800(param_1,param_4,param_2[1] + 0x4c);
   }
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_080338F0 @ 0x080338F0
+// Function: Entity_Routine_080338F0 @ 0x080338F0
 // =============================================================================
-undefined8 func_080338F0(int param_1)
+undefined8 Entity_Routine_080338F0(int param_1)
 
 {
   uint uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_080AB788(0x200);
+  uVar1 = NPC_Routine_080AB788(0x200);
   return CONCAT44(in_lr,(uint)(uVar1 < param_1 + 0x100U));
 }
 
 // =============================================================================
-// Function: func_08033A80 @ 0x08033A80
+// Function: Entity_Routine_08033A80 @ 0x08033A80
 // =============================================================================
-undefined8 func_08033A80(int param_1)
+undefined8 Entity_Routine_08033A80(int param_1)
 
 {
   undefined4 uVar1;
@@ -16657,8 +16657,8 @@ undefined8 func_08033A80(int param_1)
   int iVar3;
   undefined4 in_lr;
   
-  uVar1 = func_080005D4(0xd4);
-  iVar2 = func_08034A14(uVar1,param_1);
+  uVar1 = Dispatcher_Routine_080005D4(0xd4);
+  iVar2 = Entity_Routine_08034A14(uVar1,param_1);
   iVar3 = -1;
   if (*(char *)(param_1 + 0x40) == '\x02') {
     iVar3 = 8;
@@ -16669,7 +16669,7 @@ undefined8 func_08033A80(int param_1)
     }
     if (iVar3 < 0) goto LAB_08033ada;
   }
-  func_0805E860(iVar2 + 0x70,iVar3);
+  Animal_Routine_0805E860(iVar2 + 0x70,iVar3);
   *(undefined1 *)(iVar2 + 0x84) = 1;
   *(undefined1 *)(iVar2 + 0x86) = 0;
   *(undefined1 *)(iVar2 + 0x87) = 1;
@@ -16679,9 +16679,9 @@ LAB_08033ada:
 }
 
 // =============================================================================
-// Function: func_08033AE4 @ 0x08033AE4
+// Function: Entity_Routine_08033AE4 @ 0x08033AE4
 // =============================================================================
-undefined4 func_08033AE4(int param_1)
+undefined4 Entity_Routine_08033AE4(int param_1)
 
 {
   undefined4 in_lr;
@@ -16693,22 +16693,22 @@ undefined4 func_08033AE4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08033B10 @ 0x08033B10
+// Function: Entity_Routine_08033B10 @ 0x08033B10
 // =============================================================================
-undefined4 func_08033B10(int param_1)
+undefined4 Entity_Routine_08033B10(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_0801FE20();
+  Farmer_Routine_0801FE20();
   func_0x0809e3dc(*(undefined4 *)(param_1 + 0x34));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08033B24 @ 0x08033B24
+// Function: Entity_Routine_08033B24 @ 0x08033B24
 // =============================================================================
-void func_08033B24(undefined4 *param_1)
+void Entity_Routine_08033B24(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -16720,9 +16720,9 @@ void func_08033B24(undefined4 *param_1)
   
   if ((*(byte *)(param_1[0xe] + (uint)*(byte *)(param_1 + 0xc) * 8) & 0xf) == 0) {
     uVar2 = *param_1;
-    func_0801FE94(auStack_18,param_1);
+    Farmer_Routine_0801FE94(auStack_18,param_1);
     uVar1 = func_0x0809e65c(param_1[0xd]);
-    func_080330F4(abStack_20,param_1[0xf],uVar2,auStack_18,uVar1,param_1[0xe]);
+    Entity_Routine_080330F4(abStack_20,param_1[0xf],uVar2,auStack_18,uVar1,param_1[0xe]);
     bVar3 = (abStack_20[0] & 0xf) == 0;
   }
   else {
@@ -16733,23 +16733,23 @@ void func_08033B24(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_08033B84 @ 0x08033B84
+// Function: Entity_Routine_08033B84 @ 0x08033B84
 // =============================================================================
-undefined4 func_08033B84(int param_1)
+undefined4 Entity_Routine_08033B84(int param_1)
 
 {
   undefined4 in_lr;
   
   if (*(int *)(param_1 + 0x10) != 0) {
-    func_08034BFC();
+    Entity_Routine_08034BFC();
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08033B94 @ 0x08033B94
+// Function: Entity_Routine_08033B94 @ 0x08033B94
 // =============================================================================
-undefined4 func_08033B94(undefined4 *param_1,int param_2,undefined4 param_3,undefined4 param_4)
+undefined4 Entity_Routine_08033B94(undefined4 *param_1,int param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined1 uVar1;
@@ -16825,57 +16825,57 @@ case_08033BD8:
          (*(byte *)((int)piVar7 + 10) & 0x1f) == 6 &&
          ((*(ushort *)((int)piVar7 + 10) & 0x7ff) >> 5 == *(byte *)(param_1 + 0xc) + 1)))))) {
       if (*piVar7 - 3U < 2) {
-        func_0809E75C(iVar5);
+        NPC_Routine_0809E75C(iVar5);
       }
       else {
-        func_0801FE78(param_1,2,0x168,0xfffffff8);
+        Farmer_Routine_0801FE78(param_1,2,0x168,0xfffffff8);
         func_0x0809e7d0(iVar5,auStack_84);
-        func_08034180(param_1,1,0,0x8000);
+        Entity_Routine_08034180(param_1,1,0,0x8000);
       }
     }
     goto LAB_08034110;
   case 0x8033c64:
     if (*(short *)(param_1 + 1) != 2) {
-      func_0801FE78(param_1,2,0x168,0xfffffff8);
-      func_08034180(param_1,1,0,0x8000);
+      Farmer_Routine_0801FE78(param_1,2,0x168,0xfffffff8);
+      Entity_Routine_08034180(param_1,1,0,0x8000);
     }
     if (*(short *)((int)param_1 + 0xe) < 0x78) goto LAB_08034110;
     break;
   case 0x8033c94:
     psStack_38 = (short *)(iVar5 + 0x20);
     if (*(short *)(iVar5 + 0x20) == 0) {
-      cVar3 = func_08034940(param_1);
+      cVar3 = Entity_Routine_08034940(param_1);
       if ((cVar3 == '\0') &&
          (((*(char *)(iVar5 + 0x23) != '\0' &&
            (cVar3 = *(char *)(iVar5 + 0x23) + -1, *(char *)(iVar5 + 0x23) = cVar3, cVar3 != '\0'))
-          || (cVar3 = func_08034260(param_1), cVar3 == '\0')))) {
+          || (cVar3 = Entity_Routine_08034260(param_1), cVar3 == '\0')))) {
         iVar5 = _DAT_08033d10;
-        iVar6 = func_080AB82C(_DAT_08033d10,5);
+        iVar6 = NPC_Routine_080AB82C(_DAT_08033d10,5);
         iVar5 = iVar6 * 4 + iVar5;
         *(char *)(psStack_38 + 1) = (char)iVar6;
-        sVar4 = func_080AB788((uint)*(byte *)(iVar5 + 2) * 0x3c);
+        sVar4 = NPC_Routine_080AB788((uint)*(byte *)(iVar5 + 2) * 0x3c);
         *psStack_38 = (ushort)*(byte *)(iVar5 + 1) * 0x3c + sVar4;
         uVar2 = *(ushort *)(param_1 + 1);
         sStack_80 = 0;
         sStack_7e = 0;
         if (uVar2 == 0x11) {
-          sStack_80 = func_080AB788(0x40);
+          sStack_80 = NPC_Routine_080AB788(0x40);
           sStack_80 = sStack_80 + 0x90;
-          sStack_7e = func_080AB788(0x30);
+          sStack_7e = NPC_Routine_080AB788(0x30);
           sStack_7e = sStack_7e + 0x70;
         }
         else if (uVar2 < 0x12) {
           if (uVar2 == 2) {
-            sStack_80 = func_080AB788(0x48);
+            sStack_80 = NPC_Routine_080AB788(0x48);
             sStack_80 = sStack_80 + 0x80;
-            sStack_7e = func_080AB788(0x48);
+            sStack_7e = NPC_Routine_080AB788(0x48);
             sStack_7e = sStack_7e + 0x128;
           }
         }
         else if (uVar2 == 0x25) {
-          sStack_80 = func_080AB788(0x68);
+          sStack_80 = NPC_Routine_080AB788(0x68);
           sStack_80 = sStack_80 + 0x48;
-          sStack_7e = func_080AB788(0x30);
+          sStack_7e = NPC_Routine_080AB788(0x30);
           sStack_7e = sStack_7e + 0x60;
         }
         uVar1 = *(undefined1 *)(param_1 + 8);
@@ -16895,10 +16895,10 @@ case_08033BD8:
         uStack_90 = 0x20;
         uStack_8c = 0;
         uStack_88 = 0;
-        uVar12 = func_080ABC40((int)*(short *)((int)param_1 + 10),
+        uVar12 = NPC_Routine_080ABC40((int)*(short *)((int)param_1 + 10),
                                (int)*(short *)((int)param_1 + 0xe),(int)sStack_80,(int)sStack_7e,
                                &uStack_b8,uVar1);
-        func_08034180(param_1,(char)psStack_38[1],uVar12,0x8000);
+        Entity_Routine_08034180(param_1,(char)psStack_38[1],uVar12,0x8000);
       }
     }
     else {
@@ -16908,13 +16908,13 @@ case_08033BD8:
   case 0x8033dfc:
     psStack_34 = (short *)(iVar5 + 0x20);
     iVar6 = param_1[0xe] + (uint)*(byte *)(param_1 + 0xc) * 8;
-    uVar10 = func_08033784(iVar6,param_1[0xf],piVar11);
+    uVar10 = Entity_Routine_08033784(iVar6,param_1[0xf],piVar11);
     uVar13 = (uint)*(ushort *)(param_1 + 1);
     iStack_30 = (int)*(short *)((int)param_1 + 10);
     iStack_2c = (int)*(short *)((int)param_1 + 0xe);
     uStack_74 = CONCAT22(*(short *)((int)param_1 + 0xe),*(short *)((int)param_1 + 10));
     if (uVar10 == uVar13) {
-      func_08033830(&uStack_70,iVar6,param_1[0xf],piVar11);
+      Entity_Routine_08033830(&uStack_70,iVar6,param_1[0xf],piVar11);
       uStack_74 = uStack_70;
     }
     else if (uVar13 == 0x11) {
@@ -16954,7 +16954,7 @@ LAB_08033e92:
           iVar6 = -iVar6;
         }
         if (iVar6 < 8) {
-          cVar3 = func_08034940(param_1);
+          cVar3 = Entity_Routine_08034940(param_1);
           if (cVar3 != '\0') goto LAB_08034110;
           if (uVar10 != uVar13) {
             uVar12 = 2;
@@ -16981,12 +16981,12 @@ LAB_08033e92:
               func_0x08009adc(&uStack_4c);
               uStack_58 = uStack_4c;
             }
-            func_0801FE78(param_1,uVar12,(int)(short)uStack_58,(int)uStack_58._2_2_);
-            func_08034180(param_1,0,*(undefined1 *)(param_1 + 8),0);
+            Farmer_Routine_0801FE78(param_1,uVar12,(int)(short)uStack_58,(int)uStack_58._2_2_);
+            Entity_Routine_08034180(param_1,0,*(undefined1 *)(param_1 + 8),0);
             *psStack_34 = 0;
             goto LAB_08034110;
           }
-          cVar3 = func_0803436C(param_1);
+          cVar3 = Entity_Routine_0803436C(param_1);
           if (cVar3 != '\0') {
             uStack_5c = uStack_5c & _DAT_08033f0c | 0x3c;
             func_0x0809e7f0(iVar5,&uStack_5c);
@@ -17002,12 +17002,12 @@ LAB_08033e92:
       *psStack_34 = *psStack_34 + -1;
       goto LAB_08034110;
     }
-    cVar3 = func_08034940(param_1);
+    cVar3 = Entity_Routine_08034940(param_1);
     if (cVar3 != '\0') goto LAB_08034110;
-    cVar3 = func_08033584(param_1[0xe] + (uint)*(byte *)(param_1 + 0xc) * 8,param_1[0xf],piVar11);
+    cVar3 = Entity_Routine_08033584(param_1[0xe] + (uint)*(byte *)(param_1 + 0xc) * 8,param_1[0xf],piVar11);
     if (cVar3 != '\0') {
       uVar12 = func_0x0809e65c(iVar5);
-      func_0809E66C(iVar5,uVar12);
+      NPC_Routine_0809E66C(iVar5,uVar12);
       uVar12 = func_0x08033914();
       iVar6 = uStack_74._2_2_ - iStack_2c;
       iVar5 = (short)uStack_74 - iStack_30;
@@ -17023,13 +17023,13 @@ LAB_08033e92:
       if (uStack_40 < 0xb4) {
         puVar8 = &uStack_40;
       }
-      sVar4 = func_080AB788(*puVar8);
+      sVar4 = NPC_Routine_080AB788(*puVar8);
       *psStack_34 = sVar4;
       uVar1 = *(undefined1 *)(param_1 + 8);
-      func_080ABA3C(&uStack_c4);
-      uVar9 = func_080ABC40(iStack_30,iStack_2c,(int)(short)uStack_74,(int)uStack_74._2_2_,
+      NPC_Routine_080ABA3C(&uStack_c4);
+      uVar9 = NPC_Routine_080ABC40(iStack_30,iStack_2c,(int)(short)uStack_74,(int)uStack_74._2_2_,
                             &uStack_c4,uVar1);
-      func_08034180(param_1,1,uVar9,uVar12);
+      Entity_Routine_08034180(param_1,1,uVar9,uVar12);
       goto LAB_08034110;
     }
     break;
@@ -17038,7 +17038,7 @@ LAB_08033e92:
       *(short *)(iVar5 + 0x20) = *(short *)(iVar5 + 0x20) + -1;
       goto LAB_08034110;
     }
-    cVar3 = func_08034940(param_1);
+    cVar3 = Entity_Routine_08034940(param_1);
     if (cVar3 != '\0') goto LAB_08034110;
     break;
   case 0x8034078:
@@ -17052,30 +17052,30 @@ LAB_08033e92:
       if (iVar6 <= _DAT_080340f4) {
         uVar12 = 3;
       }
-      func_08034180(param_1,1,uVar12,0x8000);
+      Entity_Routine_08034180(param_1,1,uVar12,0x8000);
       goto LAB_08034110;
     }
     if (-1 < (int)param_1[7]) {
-      func_08034180(param_1,1,1,0x8000);
+      Entity_Routine_08034180(param_1,1,1,0x8000);
       goto LAB_08034110;
     }
     if (-8 < *(short *)((int)param_1 + 0xe)) goto LAB_08034110;
-    func_0809E75C(iVar5);
+    NPC_Routine_0809E75C(iVar5);
     func_0x0809e7c8(iVar5,auStack_3c);
-    func_0809E804(&uStack_c4,*(undefined1 *)(param_1 + 0xc));
-    func_0803211C(param_1,&uStack_c4);
+    NPC_Routine_0809E804(&uStack_c4,*(undefined1 *)(param_1 + 0xc));
+    Entity_Routine_0803211C(param_1,&uStack_c4);
     uVar1 = *(undefined1 *)(param_1 + 8);
     uVar12 = 0;
 LAB_080340d2:
-    func_08034180(param_1,uVar12,uVar1,0);
+    Entity_Routine_08034180(param_1,uVar12,uVar1,0);
     goto LAB_08034110;
   }
-  func_080342D8(param_1);
+  Entity_Routine_080342D8(param_1);
 LAB_08034110:
   if (*(char *)((int)param_1 + 0x42) != '\0') {
     uVar10 = func_0x08034248(param_1,*(undefined1 *)(param_1 + 0x10));
     if (*(ushort *)((int)param_1 + 0x22) != uVar10) {
-      func_080321B0(param_1);
+      Entity_Routine_080321B0(param_1);
     }
     *(char *)((int)param_1 + 0x42) = '\0';
   }
@@ -17100,9 +17100,9 @@ LAB_08034110:
 }
 
 // =============================================================================
-// Function: func_08034180 @ 0x08034180
+// Function: Entity_Routine_08034180 @ 0x08034180
 // =============================================================================
-undefined4 func_08034180(int param_1,uint param_2,uint param_3,int param_4)
+undefined4 Entity_Routine_08034180(int param_1,uint param_2,uint param_3,int param_4)
 
 {
   uint uVar1;
@@ -17111,10 +17111,10 @@ undefined4 func_08034180(int param_1,uint param_2,uint param_3,int param_4)
   
   uVar1 = func_0x08034248();
   if (*(ushort *)(param_1 + 0x22) != uVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   if (*(byte *)(param_1 + 0x20) != param_3) {
-    func_08032198(param_1,param_3);
+    Entity_Routine_08032198(param_1,param_3);
   }
   *(undefined1 *)(param_1 + 0x42) = 0;
   if (param_2 == 1) {
@@ -17161,11 +17161,11 @@ LAB_0803420a:
         iVar2 = 5;
       }
       if (iVar2 < 0) {
-        func_080323C8(param_1);
+        Entity_Routine_080323C8(param_1);
         goto LAB_0803423e;
       }
     }
-    func_08032384(param_1,iVar2,1);
+    Entity_Routine_08032384(param_1,iVar2,1);
   }
 LAB_0803423e:
   *(byte *)(param_1 + 0x40) = (byte)param_2;
@@ -17173,9 +17173,9 @@ LAB_0803423e:
 }
 
 // =============================================================================
-// Function: func_08034260 @ 0x08034260
+// Function: Entity_Routine_08034260 @ 0x08034260
 // =============================================================================
-undefined8 func_08034260(undefined4 *param_1)
+undefined8 Entity_Routine_08034260(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -17187,9 +17187,9 @@ undefined8 func_08034260(undefined4 *param_1)
   
   if (*(char *)((int)param_1 + 0x41) == '\0') {
     uVar2 = *param_1;
-    func_0801FE94(auStack_20,param_1);
+    Farmer_Routine_0801FE94(auStack_20,param_1);
     uVar1 = func_0x0809e65c(param_1[0xd]);
-    func_080330F4(abStack_28,param_1[0xf],uVar2,auStack_20,uVar1,param_1[0xe]);
+    Entity_Routine_080330F4(abStack_28,param_1[0xf],uVar2,auStack_20,uVar1,param_1[0xe]);
     if ((abStack_28[0] & 0xf) == 0) {
       *(char *)((int)param_1 + 0x41) = '\x01';
       uVar1 = 0;
@@ -17208,9 +17208,9 @@ undefined8 func_08034260(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_080342D8 @ 0x080342D8
+// Function: Entity_Routine_080342D8 @ 0x080342D8
 // =============================================================================
-undefined4 func_080342D8(int param_1)
+undefined4 Entity_Routine_080342D8(int param_1)
 
 {
   char cVar1;
@@ -17222,25 +17222,25 @@ undefined4 func_080342D8(int param_1)
   uint uStack_10;
   
   func_0x0809e33c(*(undefined4 *)(param_1 + 0x34));
-  cVar1 = func_080338F0();
-  if ((cVar1 == '\0') || (cVar1 = func_08034260(param_1), cVar1 == '\0')) {
-    uVar2 = func_080AB788(0xb4);
+  cVar1 = Entity_Routine_080338F0();
+  if ((cVar1 == '\0') || (cVar1 = Entity_Routine_08034260(param_1), cVar1 == '\0')) {
+    uVar2 = NPC_Routine_080AB788(0xb4);
     uStack_10 = (uStack_10 & _DAT_08034360 | uVar2 & 0xffff) & _DAT_08034364;
     uVar5 = *(undefined4 *)(param_1 + 0x34);
     uVar3 = func_0x0809e65c(uVar5);
-    iVar4 = func_0809E66C(uVar5,uVar3);
-    uVar2 = func_080AB788(0x100 - iVar4);
+    iVar4 = NPC_Routine_0809E66C(uVar5,uVar3);
+    uVar2 = NPC_Routine_080AB788(0x100 - iVar4);
     uStack_10 = uStack_10 & _DAT_08034368 | ((uVar2 >> 6) + 2) * 0x1000000;
     func_0x0809e7d8(*(undefined4 *)(param_1 + 0x34),&uStack_10);
-    func_08034180(param_1,0,*(undefined1 *)(param_1 + 0x20),0);
+    Entity_Routine_08034180(param_1,0,*(undefined1 *)(param_1 + 0x20),0);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0803436C @ 0x0803436C
+// Function: Entity_Routine_0803436C @ 0x0803436C
 // =============================================================================
-undefined8 func_0803436C(undefined4 *param_1)
+undefined8 Entity_Routine_0803436C(undefined4 *param_1)
 
 {
   ushort uVar1;
@@ -17276,12 +17276,12 @@ undefined8 func_0803436C(undefined4 *param_1)
   uStack_4c = *puVar7;
   uStack_48 = puVar7[1];
   puStack_28 = param_1;
-  func_0809E994(param_1[0xe],*(byte *)(param_1 + 0xc),&uStack_44);
-  cVar3 = func_08033584(&uStack_4c,puStack_28[0xf],piStack_24);
+  NPC_Routine_0809E994(param_1[0xe],*(byte *)(param_1 + 0xc),&uStack_44);
+  cVar3 = Entity_Routine_08033584(&uStack_4c,puStack_28[0xf],piStack_24);
   if (cVar3 == '\0') goto case_080348FA;
   iVar10 = puStack_28[4];
   if (iVar10 != 0) {
-    func_08033830(&sStack_34,&uStack_4c,puStack_28[0xf],piStack_24);
+    Entity_Routine_08033830(&sStack_34,&uStack_4c,puStack_28[0xf],piStack_24);
     uVar4 = uStack_4c & 0xf;
     if (uVar4 == 4) {
       sVar2 = sStack_32 + 0x18;
@@ -17301,7 +17301,7 @@ undefined8 func_0803436C(undefined4 *param_1)
       }
     }
     sStack_32 = sVar2;
-    func_08034BFC(iVar10,*(undefined1 *)(puStack_28 + 0xc),(int)sStack_34,(int)sStack_32);
+    Entity_Routine_08034BFC(iVar10,*(undefined1 *)(puStack_28 + 0xc),(int)sStack_34,(int)sStack_32);
   }
   switch(uStack_4c & 0xf) {
   case 1:
@@ -17325,20 +17325,20 @@ undefined8 func_0803436C(undefined4 *param_1)
                          (int3)uVar6);
     uStack_38 = uStack_38 & 0xfc00 | *(ushort *)((int)puStack_28 + 0xe) >> 6;
     func_0x080d3918(piStack_24,&uStack_3c,&uStack_44,*(undefined4 *)(*piStack_24 + 0xe0));
-    cVar3 = func_0800F06C(&uStack_44);
+    cVar3 = Farmer_Routine_0800F06C(&uStack_44);
     if (cVar3 == '\0') {
       iVar10 = func_0x0800f09c(&uStack_44);
       if (iVar10 == 0) {
         iVar10 = *piStack_24;
-        func_0800F0A4(&uStack_3c,&uStack_44);
+        Farmer_Routine_0800F0A4(&uStack_3c,&uStack_44);
         func_0x0800e0fc(&uStack_30,uStack_3c & 0xffffff);
         func_0x080d3914(piStack_24,&uStack_30,*(undefined4 *)(iVar10 + 0x15c));
       }
       else {
         if (iVar10 != 1) break;
         iVar10 = *piStack_24;
-        uVar6 = func_0800F0E8(&uStack_44);
-        func_0800E148(&uStack_2f,uVar6);
+        uVar6 = Farmer_Routine_0800F0E8(&uStack_44);
+        Item_Routine_0800E148(&uStack_2f,uVar6);
         func_0x080d3914(piStack_24,&uStack_2f,*(undefined4 *)(iVar10 + 0x15c));
       }
       iVar10 = 0;
@@ -17346,30 +17346,30 @@ undefined8 func_0803436C(undefined4 *param_1)
     }
     break;
   case 3:
-    func_0800C7D8(puStack_28[0xf] + 0x3fc,1);
-    func_0800C814(puStack_28[0xf] + 0x3fc,uStack_4c._1_1_);
+    Building_Routine_0800C7D8(puStack_28[0xf] + 0x3fc,1);
+    Building_Routine_0800C814(puStack_28[0xf] + 0x3fc,uStack_4c._1_1_);
     uVar4 = uStack_4c >> 8 & 0xff;
     uVar6 = *(undefined4 *)(*piStack_24 + 0xa0);
     goto LAB_0803466e;
   case 4:
-    func_0800D280(puStack_28[0xf] + 0x5dc,1);
-    func_0800D2BC(puStack_28[0xf] + 0x5dc,uStack_4c._1_1_);
+    ToolStack_GetAmount(puStack_28[0xf] + 0x5dc,1);
+    ToolStack_AddAmount(puStack_28[0xf] + 0x5dc,uStack_4c._1_1_);
     uVar4 = uStack_4c >> 8 & 0xff;
     uVar6 = *(undefined4 *)(*piStack_24 + 0x9c);
     goto LAB_0803466e;
   case 5:
-    func_0800D280(puStack_28[0xf] + 0x5dc,1);
-    func_0800D334(puStack_28[0xf] + 0x5dc,uStack_4c._1_1_);
+    ToolStack_GetAmount(puStack_28[0xf] + 0x5dc,1);
+    Food_Construct(puStack_28[0xf] + 0x5dc,uStack_4c._1_1_);
     uVar4 = (uStack_4c >> 8 & 0xff) + 0x10;
     uVar6 = *(undefined4 *)(*piStack_24 + 0x9c);
 LAB_0803466e:
     func_0x080d3914(piStack_24,uVar4,uVar6);
     iVar10 = 2;
 LAB_080348fe:
-    memcpy(&uStack_44,_DAT_0803493c,3);
-    if ((iVar10 != 3) && (uVar4 = func_080AB788(200), uVar4 < *(byte *)((int)&uStack_44 + iVar10)))
+    gba_memcpy(&uStack_44,_DAT_0803493c,3);
+    if ((iVar10 != 3) && (uVar4 = NPC_Routine_080AB788(200), uVar4 < *(byte *)((int)&uStack_44 + iVar10)))
     {
-      func_0809E69C(puStack_28[0xd],iVar10,1);
+      NPC_Routine_0809E69C(puStack_28[0xd],iVar10,1);
     }
     uVar6 = 1;
     goto LAB_0803492a;
@@ -17433,7 +17433,7 @@ LAB_080348fe:
         }
         iVar9 = *piStack_24;
         func_0x0800df50(&uStack_2c,uVar8);
-        func_0800E148(&uStack_2d,uStack_2c);
+        Item_Routine_0800E148(&uStack_2d,uStack_2c);
         func_0x080d3914(piStack_24,&uStack_2d,*(undefined4 *)(iVar9 + 0x15c));
       }
       func_0x080d3914(iVar10,0x3c,*(undefined4 *)(*(int *)(iVar10 + 0x14) + 0x88));
@@ -17455,7 +17455,7 @@ LAB_080348fe:
     break;
   case 8:
     uVar4 = (uint)uStack_4c._1_1_;
-    iVar10 = func_0800C6A0(puStack_28[0xf] + 0x3fc);
+    iVar10 = Building_Routine_0800C6A0(puStack_28[0xf] + 0x3fc);
     if (iVar10 != 0) {
       uVar5 = *(byte *)(iVar10 + 6) & 7;
       uVar6 = 0xf;
@@ -17482,7 +17482,7 @@ LAB_080348fe:
         }
       }
       func_0x080d3914((int *)*puStack_28,uVar4 + 0x4c,*(undefined4 *)(*(int *)*puStack_28 + 0x3c));
-      func_0800C9B8(puStack_28[0xf] + 0x3fc,uStack_4c._1_1_);
+      Building_Routine_0800C9B8(puStack_28[0xf] + 0x3fc,uStack_4c._1_1_);
       iVar10 = *piStack_24;
       func_0x0800dca8(&uStack_44,uVar6);
       func_0x0800e0fc(auStack_2b,uStack_44 & 0xffffff);
@@ -17498,9 +17498,9 @@ LAB_0803492a:
 }
 
 // =============================================================================
-// Function: func_08034940 @ 0x08034940
+// Function: Entity_Routine_08034940 @ 0x08034940
 // =============================================================================
-undefined8 func_08034940(undefined4 *param_1)
+undefined8 Entity_Routine_08034940(undefined4 *param_1)
 
 {
   ushort uVar1;
@@ -17526,13 +17526,13 @@ undefined8 func_08034940(undefined4 *param_1)
   uVar1 = *(ushort *)(param_1 + 1);
   if (uVar1 == 0x11) {
     func_0x08009ae8(&sStack_14);
-    func_0801FE78(param_1,2,(int)sStack_14,(int)sStack_12);
+    Farmer_Routine_0801FE78(param_1,2,(int)sStack_14,(int)sStack_12);
   }
   else if ((0x11 < uVar1) && (uVar1 == 0x25)) {
     func_0x08009adc(&sStack_18);
-    func_0801FE78(param_1,2,(int)sStack_18,(int)sStack_16);
+    Farmer_Routine_0801FE78(param_1,2,(int)sStack_18,(int)sStack_16);
   }
-  func_0809E994(param_1[0xe],*(undefined1 *)(param_1 + 0xc));
+  NPC_Routine_0809E994(param_1[0xe],*(undefined1 *)(param_1 + 0xc));
   func_0x0809e7fc(param_1[0xd],auStack_10);
   if (*(short *)((int)param_1 + 10) == 0x168) {
     uVar4 = 1;
@@ -17543,16 +17543,16 @@ undefined8 func_08034940(undefined4 *param_1)
       uVar4 = 3;
     }
   }
-  func_08034180(param_1,1,uVar4,0x8000);
+  Entity_Routine_08034180(param_1,1,uVar4,0x8000);
   uVar4 = 1;
 LAB_08034a0a:
   return CONCAT44(in_lr,uVar4);
 }
 
 // =============================================================================
-// Function: func_08034AA0 @ 0x08034AA0
+// Function: Entity_Routine_08034AA0 @ 0x08034AA0
 // =============================================================================
-undefined4 func_08034AA0(int param_1)
+undefined4 Entity_Routine_08034AA0(int param_1)
 
 {
   char cVar1;
@@ -17560,13 +17560,13 @@ undefined4 func_08034AA0(int param_1)
   char *pcVar3;
   undefined4 in_lr;
   
-  func_0803260C();
+  Entity_Routine_0803260C();
   if (*(short *)(param_1 + 0xd0) == 0) {
     return in_lr;
   }
   pcVar3 = (char *)(param_1 + 0xcb);
   if (*pcVar3 == '\0') {
-    iVar2 = func_0805E8F0(param_1 + 0xb4);
+    iVar2 = Animal_Routine_0805E8F0(param_1 + 0xb4);
     if (-1 < iVar2 * 0x40000000) goto LAB_08034ad6;
     pcVar3 = (char *)(param_1 + 200);
     cVar1 = '\x01';
@@ -17581,9 +17581,9 @@ LAB_08034ad6:
 }
 
 // =============================================================================
-// Function: func_08034AE8 @ 0x08034AE8
+// Function: Entity_Routine_08034AE8 @ 0x08034AE8
 // =============================================================================
-undefined4 func_08034AE8(int param_1,undefined4 *param_2)
+undefined4 Entity_Routine_08034AE8(int param_1,undefined4 *param_2)
 
 {
   short sVar1;
@@ -17621,15 +17621,15 @@ undefined4 func_08034AE8(int param_1,undefined4 *param_2)
       iVar5 = 0;
     }
     if ((iVar5 != 0) && (*(char *)(param_1 + 200) != '\0')) {
-      func_080A480C(puVar6,uStack_28,auStack_40);
+      NPC_Routine_080A480C(puVar6,uStack_28,auStack_40);
       if (*(char *)(param_1 + 0xc9) == '\0') {
         if (*(char *)(param_1 + 0xca) == '\0') {
-          func_080A4944(puVar6,auStack_38,1);
+          NPC_Routine_080A4944(puVar6,auStack_38,1);
           *(char *)(param_1 + 0xca) = '\x01';
         }
       }
       else {
-        func_080A4944(puVar6,auStack_38,1);
+        NPC_Routine_080A4944(puVar6,auStack_38,1);
       }
       *(char *)(param_1 + 200) = '\0';
     }
@@ -17638,14 +17638,14 @@ undefined4 func_08034AE8(int param_1,undefined4 *param_2)
 }
 
 // =============================================================================
-// Function: func_08034BFC @ 0x08034BFC
+// Function: Entity_Routine_08034BFC @ 0x08034BFC
 // =============================================================================
-undefined4 func_08034BFC(int param_1,int param_2,undefined2 param_3,undefined2 param_4)
+undefined4 Entity_Routine_08034BFC(int param_1,int param_2,undefined2 param_3,undefined2 param_4)
 
 {
   undefined4 in_lr;
   
-  func_0805E860(param_1 + 0xb4,*(undefined2 *)(param_2 * 2 + _DAT_08034c3c));
+  Animal_Routine_0805E860(param_1 + 0xb4,*(undefined2 *)(param_2 * 2 + _DAT_08034c3c));
   *(undefined1 *)(param_1 + 200) = 1;
   *(undefined1 *)(param_1 + 0xca) = 0;
   *(undefined1 *)(param_1 + 0xcb) = 1;
@@ -17656,21 +17656,21 @@ undefined4 func_08034BFC(int param_1,int param_2,undefined2 param_3,undefined2 p
 }
 
 // =============================================================================
-// Function: func_08034C4C @ 0x08034C4C
+// Function: Entity_Routine_08034C4C @ 0x08034C4C
 // =============================================================================
-undefined4 func_08034C4C(int param_1,undefined4 param_2,undefined4 param_3)
+undefined4 Entity_Routine_08034C4C(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 in_lr;
   
-  func_08033B84(param_1,*(undefined1 *)(param_1 + 0x30),param_2,param_3);
+  Entity_Routine_08033B84(param_1,*(undefined1 *)(param_1 + 0x30),param_2,param_3);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08034C64 @ 0x08034C64
+// Function: Entity_Routine_08034C64 @ 0x08034C64
 // =============================================================================
-undefined8 func_08034C64(undefined4 param_1,ushort *param_2)
+undefined8 Entity_Routine_08034C64(undefined4 param_1,ushort *param_2)
 
 {
   undefined4 *puVar1;
@@ -17692,7 +17692,7 @@ undefined8 func_08034C64(undefined4 param_1,ushort *param_2)
     }
     iStack_14 = iVar2 * 0x3c + ((*param_2 & 0x7ff) >> 5);
     iVar4 = *(int *)(puVar5 + 2);
-    iVar2 = func_080D7ECC(iVar4,iVar4 + (uint)*puVar5 * 8,&iStack_14,0,0);
+    iVar2 = VTable_Routine_080D7ECC(iVar4,iVar4 + (uint)*puVar5 * 8,&iStack_14,0,0);
     uVar3 = (iVar2 - iVar4 >> 3) - 1;
     if ((uVar3 < *puVar5) && (iVar2 = *(int *)(uVar3 * 8 + *(int *)(puVar5 + 2) + 4), iVar2 != 0)) {
       uVar3 = -(*(ushort *)(iVar2 + 10) & 0x3ff ^ 0x1d) >> 0x1f;
@@ -17716,7 +17716,7 @@ Entity_ProcessCollisions(int param_1,undefined4 param_2,int param_3,undefined4 p
   undefined4 in_lr;
   undefined1 auStack_1c [8];
   
-  func_0809E32C(auStack_1c,param_3);
+  NPC_Routine_0809E32C(auStack_1c,param_3);
   uVar1 = param_6;
   if (*(ushort *)(param_3 + 0x12) != _DAT_08034d0c) {
     uVar1 = (uint)*(ushort *)(param_3 + 0x12);
@@ -17735,21 +17735,21 @@ Entity_ProcessCollisions(int param_1,undefined4 param_2,int param_3,undefined4 p
   *(undefined2 *)(param_1 + 0x44) = (undefined2)param_6;
   *(undefined2 *)(param_1 + 0x46) = param_7;
   if (*(ushort *)(*(int *)(param_1 + 0x30) + 0x12) == _DAT_08034d90) {
-    func_08034F00(param_1,1);
+    Entity_Routine_08034F00(param_1,1);
   }
   else {
     *(undefined1 *)(param_1 + 6) = 1;
     if (*(short *)(param_1 + 0x22) != *(short *)(param_3 + 0x12)) {
-      func_080321B0(param_1);
+      Entity_Routine_080321B0(param_1);
     }
   }
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08034DB0 @ 0x08034DB0
+// Function: Entity_Routine_08034DB0 @ 0x08034DB0
 // =============================================================================
-undefined4 func_08034DB0(int param_1,uint param_2)
+undefined4 Entity_Routine_08034DB0(int param_1,uint param_2)
 
 {
   int iVar1;
@@ -17759,7 +17759,7 @@ undefined4 func_08034DB0(int param_1,uint param_2)
   
   *(undefined4 *)(param_1 + 0x14) = _DAT_08034ddc;
   uVar2 = *(undefined4 *)(param_1 + 0x30);
-  func_08032170(auStack_18,param_1);
+  Entity_Routine_08032170(auStack_18,param_1);
   func_0x0809e368(uVar2,auStack_18);
   if (*(char *)(param_1 + 6) == '\0') {
     *(short *)(*(int *)(param_1 + 0x30) + 0x12) = (short)_DAT_08034e78;
@@ -17785,28 +17785,28 @@ undefined4 func_08034DB0(int param_1,uint param_2)
     func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
-    func_08000608(param_1);
+    Dispatcher_Routine_08000608(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08034E8C @ 0x08034E8C
+// Function: Entity_Routine_08034E8C @ 0x08034E8C
 // =============================================================================
-undefined4 func_08034E8C(int param_1)
+undefined4 Entity_Routine_08034E8C(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_0801FE20();
+  Farmer_Routine_0801FE20();
   func_0x0809e3dc(*(undefined4 *)(param_1 + 0x30));
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08034EA0 @ 0x08034EA0
+// Function: Entity_Routine_08034EA0 @ 0x08034EA0
 // =============================================================================
-undefined4 func_08034EA0(int param_1)
+undefined4 Entity_Routine_08034EA0(int param_1)
 
 {
   undefined4 in_lr;
@@ -17817,16 +17817,16 @@ undefined4 func_08034EA0(int param_1)
 }
 
 // =============================================================================
-// Function: func_08034EB4 @ 0x08034EB4
+// Function: Entity_Routine_08034EB4 @ 0x08034EB4
 // =============================================================================
-undefined4 func_08034EB4(int param_1)
+undefined4 Entity_Routine_08034EB4(int param_1)
 
 {
   short sVar1;
   int iVar2;
   undefined4 in_lr;
   
-  func_08035380();
+  Entity_Routine_08035380();
   if (*(short *)(param_1 + 0x24) == 0) {
     sVar1 = *(short *)(param_1 + 0x26);
   }
@@ -17842,9 +17842,9 @@ undefined4 func_08034EB4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08034EE0 @ 0x08034EE0
+// Function: Entity_Routine_08034EE0 @ 0x08034EE0
 // =============================================================================
-undefined8 func_08034EE0(int param_1)
+undefined8 Entity_Routine_08034EE0(int param_1)
 
 {
   uint uVar1;
@@ -17858,9 +17858,9 @@ undefined8 func_08034EE0(int param_1)
 }
 
 // =============================================================================
-// Function: func_08034F00 @ 0x08034F00
+// Function: Entity_Routine_08034F00 @ 0x08034F00
 // =============================================================================
-undefined4 func_08034F00(undefined4 *param_1,int param_2)
+undefined4 Entity_Routine_08034F00(undefined4 *param_1,int param_2)
 
 {
   byte bVar1;
@@ -17903,16 +17903,16 @@ LAB_08035312:
     if (1 < iStack_40) {
       func_0x0801ff38(param_1,0x234);
       uVar13 = param_1[0xc];
-      func_08032170(auStack_50,param_1);
+      Entity_Routine_08032170(auStack_50,param_1);
       func_0x0809e368(uVar13,auStack_50);
     }
     if (*(char *)(param_1 + 8) != '\0') {
-      func_08032198(param_1,0);
+      Entity_Routine_08032198(param_1,0);
     }
     param_1[6] = 0;
     param_1[7] = 0;
     if (*(short *)((int)param_1 + 0x22) != *(short *)(param_1 + 0x11)) {
-      func_080321B0(param_1);
+      Entity_Routine_080321B0(param_1);
     }
     *pbVar3 = 0;
     *pbStack_24 = 0;
@@ -17936,7 +17936,7 @@ LAB_08035312:
   if (2 < iStack_40) {
     iVar9 = *(int *)(puVar15 + 2);
     uStack_48 = uVar5;
-    iVar4 = func_080D7ECC(iVar9,iVar9 + (uint)*puVar15 * 8,&uStack_48,0,0);
+    iVar4 = VTable_Routine_080D7ECC(iVar9,iVar9 + (uint)*puVar15 * 8,&uStack_48,0,0);
     *pbStack_24 = (char)(iVar4 - iVar9 >> 3) - 1;
     *(undefined1 *)((int)param_1 + 0x3e) = 0;
   }
@@ -17948,11 +17948,11 @@ LAB_08035312:
   puVar11 = (ushort *)*puStack_3c;
   if ((puVar11 == (ushort *)0x0) || (*(ushort *)(puStack_3c + 1) == 0)) {
     if (1 < iStack_40) {
-      func_0801FE78(param_1,*(ushort *)((int)puStack_3c + 10) & 0x3ff,
+      Farmer_Routine_0801FE78(param_1,*(ushort *)((int)puStack_3c + 10) & 0x3ff,
                     (int)*(short *)((int)puStack_3c + 6),(int)*(short *)(puStack_3c + 2));
     }
     if ((uint)*(byte *)(param_1 + 8) != (*(byte *)((int)puStack_3c + 0xb) & 0xf) >> 2) {
-      func_08032198(param_1);
+      Entity_Routine_08032198(param_1);
     }
     param_1[6] = 0;
     param_1[7] = 0;
@@ -18033,7 +18033,7 @@ LAB_08035312:
     }
 LAB_08035266:
     if (1 < iStack_40) {
-      func_0801FE78(param_1,*(ushort *)((int)puStack_3c + 10) & 0x3ff,iVar4,iVar9);
+      Farmer_Routine_0801FE78(param_1,*(ushort *)((int)puStack_3c + 10) & 0x3ff,iVar4,iVar9);
     }
   }
   else {
@@ -18044,7 +18044,7 @@ LAB_08035266:
     }
     puStack_34 = puVar11;
     if (2 < iStack_40) {
-      iVar10 = func_080DC96C(puVar11,puVar11 + (uint)*(ushort *)(puStack_3c + 1) * 4,&uStack_44,0,0)
+      iVar10 = VTable_Routine_080DC96C(puVar11,puVar11 + (uint)*(ushort *)(puStack_3c + 1) * 4,&uStack_44,0,0)
       ;
       *pbVar6 = (byte)(iVar10 - (int)puVar11 >> 3);
       if (*(ushort *)(puStack_3c + 1) <= (ushort)*pbVar6) {
@@ -18126,12 +18126,12 @@ LAB_08035266:
     }
   }
   if (*pbStack_28 != uVar14) {
-    func_08032198(param_1,uVar14);
+    Entity_Routine_08032198(param_1,uVar14);
   }
 LAB_080352ca:
   if (1 < iStack_40) {
     uVar13 = param_1[0xc];
-    func_08032170(auStack_50,param_1);
+    Entity_Routine_08032170(auStack_50,param_1);
     func_0x0809e368(uVar13,auStack_50);
   }
   if ((iStack_38 == 0) ||
@@ -18144,14 +18144,14 @@ LAB_080352ca:
   if (*(short *)((int)param_1 + 0x22) == *psVar8) {
     return in_lr;
   }
-  func_080321B0(param_1);
+  Entity_Routine_080321B0(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08035380 @ 0x08035380
+// Function: Entity_Routine_08035380 @ 0x08035380
 // =============================================================================
-undefined4 func_08035380(undefined4 *param_1)
+undefined4 Entity_Routine_08035380(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -18518,9 +18518,9 @@ LAB_080358ec:
 }
 
 // =============================================================================
-// Function: func_08035908 @ 0x08035908
+// Function: Entity_Routine_08035908 @ 0x08035908
 // =============================================================================
-undefined4 func_08035908(int param_1,uint param_2)
+undefined4 Entity_Routine_08035908(int param_1,uint param_2)
 
 {
   char cVar1;
@@ -18533,16 +18533,16 @@ undefined4 func_08035908(int param_1,uint param_2)
     cVar1 = func_0x080d3910(param_1,*(undefined4 *)(*(int *)(param_1 + 0x14) + 0x28));
     if (((cVar1 == '\0') && (*(ushort *)(param_1 + 0x22) == uVar2)) &&
        (*(ushort *)(param_1 + 0x22) != param_2)) {
-      func_080321B0(param_1,param_2);
+      Entity_Routine_080321B0(param_1,param_2);
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08035940 @ 0x08035940
+// Function: Entity_Routine_08035940 @ 0x08035940
 // =============================================================================
-undefined4 func_08035940(int param_1,uint param_2)
+undefined4 Entity_Routine_08035940(int param_1,uint param_2)
 
 {
   char cVar1;
@@ -18555,16 +18555,16 @@ undefined4 func_08035940(int param_1,uint param_2)
     cVar1 = func_0x080d3910(param_1,*(undefined4 *)(*(int *)(param_1 + 0x14) + 0x28));
     if (((cVar1 == '\0') && (*(ushort *)(param_1 + 0x22) == uVar2)) &&
        (*(ushort *)(param_1 + 0x22) != param_2)) {
-      func_080321B0(param_1,param_2);
+      Entity_Routine_080321B0(param_1,param_2);
     }
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08035978 @ 0x08035978
+// Function: Entity_Routine_08035978 @ 0x08035978
 // =============================================================================
-undefined8 func_08035978(undefined4 *param_1)
+undefined8 Entity_Routine_08035978(undefined4 *param_1)
 
 {
   char cVar1;
@@ -18617,9 +18617,9 @@ LAB_08035a3c:
 }
 
 // =============================================================================
-// Function: func_08035A48 @ 0x08035A48
+// Function: Entity_Routine_08035A48 @ 0x08035A48
 // =============================================================================
-undefined4 func_08035A48(int param_1,ushort *param_2)
+undefined4 Entity_Routine_08035A48(int param_1,ushort *param_2)
 
 {
   char cVar1;
@@ -18639,10 +18639,10 @@ undefined4 func_08035A48(int param_1,ushort *param_2)
       if (iVar2 < 0) {
         iVar2 = -iVar2;
       }
-      if (((iVar2 < 0x70) && (cVar1 = func_08035978(param_1), cVar1 == '\0')) &&
+      if (((iVar2 < 0x70) && (cVar1 = Entity_Routine_08035978(param_1), cVar1 == '\0')) &&
          (cVar1 = func_0x080d3910(param_1,*(undefined4 *)(*(int *)(param_1 + 0x14) + 0x28)),
          cVar1 == '\0')) {
-        func_08032384(param_1,2,0);
+        Entity_Routine_08032384(param_1,2,0);
         *(undefined1 *)(param_1 + 0x3f) = 0x78;
         func_0x080d3914(param_1,1,*(undefined4 *)(*(int *)(param_1 + 0x14) + 0x3c));
       }
@@ -18652,9 +18652,9 @@ undefined4 func_08035A48(int param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_08035AE0 @ 0x08035AE0
+// Function: Entity_Routine_08035AE0 @ 0x08035AE0
 // =============================================================================
-undefined8 func_08035AE0(int param_1)
+undefined8 Entity_Routine_08035AE0(int param_1)
 
 {
   undefined4 uVar1;
@@ -18668,9 +18668,9 @@ undefined8 func_08035AE0(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035AFC @ 0x08035AFC
+// Function: Entity_Routine_08035AFC @ 0x08035AFC
 // =============================================================================
-undefined8 func_08035AFC(int param_1)
+undefined8 Entity_Routine_08035AFC(int param_1)
 
 {
   undefined4 in_lr;
@@ -18681,22 +18681,22 @@ undefined8 func_08035AFC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035B38 @ 0x08035B38
+// Function: Entity_Routine_08035B38 @ 0x08035B38
 // =============================================================================
-void func_08035B38(undefined4 param_1)
+void Entity_Routine_08035B38(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035B64 @ 0x08035B64
+// Function: Entity_Routine_08035B64 @ 0x08035B64
 // =============================================================================
-undefined8 func_08035B64(int param_1)
+undefined8 Entity_Routine_08035B64(int param_1)
 
 {
   undefined4 in_lr;
@@ -18707,22 +18707,22 @@ undefined8 func_08035B64(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035B9C @ 0x08035B9C
+// Function: Entity_Routine_08035B9C @ 0x08035B9C
 // =============================================================================
-void func_08035B9C(undefined4 param_1)
+void Entity_Routine_08035B9C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035BC8 @ 0x08035BC8
+// Function: Entity_Routine_08035BC8 @ 0x08035BC8
 // =============================================================================
-undefined8 func_08035BC8(int param_1)
+undefined8 Entity_Routine_08035BC8(int param_1)
 
 {
   undefined4 in_lr;
@@ -18733,9 +18733,9 @@ undefined8 func_08035BC8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035C04 @ 0x08035C04
+// Function: Entity_Routine_08035C04 @ 0x08035C04
 // =============================================================================
-undefined4 func_08035C04(undefined4 *param_1)
+undefined4 Entity_Routine_08035C04(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -18752,58 +18752,58 @@ undefined4 func_08035C04(undefined4 *param_1)
   uVar1 = _DAT_08035c48;
   iVar5 = param_1[0xd];
   iVar6 = iVar5 + _DAT_08035c50;
-  iVar3 = func_080A0490(iVar6);
+  iVar3 = NPC_Routine_080A0490(iVar6);
   uVar7 = uVar1;
   if ((((iVar3 == 3) && (*(short *)(param_1 + 1) == 0x1d)) &&
-      (cVar2 = func_08035AE0(param_1), uVar7 = _DAT_08035c58, cVar2 == '\0')) &&
+      (cVar2 = Entity_Routine_08035AE0(param_1), uVar7 = _DAT_08035c58, cVar2 == '\0')) &&
      ((((*(byte *)(iVar5 + _DAT_08035c54) & 0x7f) >> 5 != 1 &&
-       (iVar3 = func_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
+       (iVar3 = NPC_Routine_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
       (uVar4 = func_0x0809ead8(), uVar4 < 0x3c)))) {
     iVar3 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144));
-    cVar2 = func_08034C64(iVar5,iVar3 + 10);
+    cVar2 = Entity_Routine_08034C64(iVar5,iVar3 + 10);
     if (cVar2 != '\0') {
       uVar7 = _DAT_08035cb0;
       uVar8 = _DAT_08035cb4;
     }
   }
-  func_08035908(param_1,uVar7);
-  func_08035940(param_1,uVar8);
+  Entity_Routine_08035908(param_1,uVar7);
+  Entity_Routine_08035940(param_1,uVar8);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08035CB8 @ 0x08035CB8
+// Function: Entity_Routine_08035CB8 @ 0x08035CB8
 // =============================================================================
-undefined4 func_08035CB8(undefined4 param_1,int param_2)
+undefined4 Entity_Routine_08035CB8(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_08034F00();
+  Entity_Routine_08034F00();
   if (1 < param_2) {
-    func_08035C04(param_1);
+    Entity_Routine_08035C04(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08035CD4 @ 0x08035CD4
+// Function: Entity_Routine_08035CD4 @ 0x08035CD4
 // =============================================================================
-void func_08035CD4(undefined4 param_1)
+void Entity_Routine_08035CD4(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  func_08035C04();
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
+  Entity_Routine_08035C04();
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035D04 @ 0x08035D04
+// Function: Entity_Routine_08035D04 @ 0x08035D04
 // =============================================================================
-undefined8 func_08035D04(int param_1)
+undefined8 Entity_Routine_08035D04(int param_1)
 
 {
   undefined4 in_lr;
@@ -18814,22 +18814,22 @@ undefined8 func_08035D04(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035D40 @ 0x08035D40
+// Function: Entity_Routine_08035D40 @ 0x08035D40
 // =============================================================================
-void func_08035D40(undefined4 param_1)
+void Entity_Routine_08035D40(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,3,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,3,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035D70 @ 0x08035D70
+// Function: Entity_Routine_08035D70 @ 0x08035D70
 // =============================================================================
-undefined8 func_08035D70(int param_1)
+undefined8 Entity_Routine_08035D70(int param_1)
 
 {
   undefined4 in_lr;
@@ -18840,22 +18840,22 @@ undefined8 func_08035D70(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035DAC @ 0x08035DAC
+// Function: Entity_Routine_08035DAC @ 0x08035DAC
 // =============================================================================
-void func_08035DAC(undefined4 param_1)
+void Entity_Routine_08035DAC(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,1,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,1,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035DD8 @ 0x08035DD8
+// Function: Entity_Routine_08035DD8 @ 0x08035DD8
 // =============================================================================
-undefined8 func_08035DD8(int param_1)
+undefined8 Entity_Routine_08035DD8(int param_1)
 
 {
   undefined4 in_lr;
@@ -18866,22 +18866,22 @@ undefined8 func_08035DD8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035E14 @ 0x08035E14
+// Function: Entity_Routine_08035E14 @ 0x08035E14
 // =============================================================================
-void func_08035E14(undefined4 param_1)
+void Entity_Routine_08035E14(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035E40 @ 0x08035E40
+// Function: Entity_Routine_08035E40 @ 0x08035E40
 // =============================================================================
-undefined8 func_08035E40(int param_1)
+undefined8 Entity_Routine_08035E40(int param_1)
 
 {
   undefined4 in_lr;
@@ -18892,35 +18892,35 @@ undefined8 func_08035E40(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035E7C @ 0x08035E7C
+// Function: Entity_Routine_08035E7C @ 0x08035E7C
 // =============================================================================
-void func_08035E7C(undefined4 param_1)
+void Entity_Routine_08035E7C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035EE4 @ 0x08035EE4
+// Function: Entity_Routine_08035EE4 @ 0x08035EE4
 // =============================================================================
-void func_08035EE4(undefined4 param_1)
+void Entity_Routine_08035EE4(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035F10 @ 0x08035F10
+// Function: Entity_Routine_08035F10 @ 0x08035F10
 // =============================================================================
-undefined8 func_08035F10(int param_1)
+undefined8 Entity_Routine_08035F10(int param_1)
 
 {
   undefined4 in_lr;
@@ -18931,22 +18931,22 @@ undefined8 func_08035F10(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035F48 @ 0x08035F48
+// Function: Entity_Routine_08035F48 @ 0x08035F48
 // =============================================================================
-void func_08035F48(undefined4 param_1)
+void Entity_Routine_08035F48(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035F74 @ 0x08035F74
+// Function: Entity_Routine_08035F74 @ 0x08035F74
 // =============================================================================
-undefined8 func_08035F74(int param_1)
+undefined8 Entity_Routine_08035F74(int param_1)
 
 {
   undefined4 in_lr;
@@ -18957,22 +18957,22 @@ undefined8 func_08035F74(int param_1)
 }
 
 // =============================================================================
-// Function: func_08035FB0 @ 0x08035FB0
+// Function: Entity_Routine_08035FB0 @ 0x08035FB0
 // =============================================================================
-void func_08035FB0(undefined4 param_1)
+void Entity_Routine_08035FB0(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08035FE0 @ 0x08035FE0
+// Function: Entity_Routine_08035FE0 @ 0x08035FE0
 // =============================================================================
-undefined8 func_08035FE0(int param_1)
+undefined8 Entity_Routine_08035FE0(int param_1)
 
 {
   undefined4 in_lr;
@@ -18983,22 +18983,22 @@ undefined8 func_08035FE0(int param_1)
 }
 
 // =============================================================================
-// Function: func_0803601C @ 0x0803601C
+// Function: Entity_Routine_0803601C @ 0x0803601C
 // =============================================================================
-void func_0803601C(undefined4 param_1)
+void Entity_Routine_0803601C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036048 @ 0x08036048
+// Function: Entity_Routine_08036048 @ 0x08036048
 // =============================================================================
-undefined8 func_08036048(int param_1)
+undefined8 Entity_Routine_08036048(int param_1)
 
 {
   undefined4 in_lr;
@@ -19009,9 +19009,9 @@ undefined8 func_08036048(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036084 @ 0x08036084
+// Function: Entity_Routine_08036084 @ 0x08036084
 // =============================================================================
-undefined4 func_08036084(undefined4 *param_1)
+undefined4 Entity_Routine_08036084(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -19028,58 +19028,58 @@ undefined4 func_08036084(undefined4 *param_1)
   uVar1 = _DAT_080360c8;
   iVar5 = param_1[0xd];
   iVar6 = iVar5 + _DAT_080360d0;
-  iVar3 = func_080A0490(iVar6);
+  iVar3 = NPC_Routine_080A0490(iVar6);
   uVar7 = uVar1;
   if ((((iVar3 == 0xc) && (*(short *)(param_1 + 1) == 0x1d)) &&
-      (cVar2 = func_08035AE0(param_1), uVar7 = _DAT_080360d8, cVar2 == '\0')) &&
+      (cVar2 = Entity_Routine_08035AE0(param_1), uVar7 = _DAT_080360d8, cVar2 == '\0')) &&
      ((((*(byte *)(iVar5 + _DAT_080360d4) & 0x7f) >> 5 != 1 &&
-       (iVar3 = func_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
+       (iVar3 = NPC_Routine_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
       (uVar4 = func_0x0809ead8(), uVar4 < 0x3c)))) {
     iVar3 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144));
-    cVar2 = func_08034C64(iVar5,iVar3 + 10);
+    cVar2 = Entity_Routine_08034C64(iVar5,iVar3 + 10);
     if (cVar2 != '\0') {
       uVar7 = _DAT_08036130;
       uVar8 = _DAT_08036134;
     }
   }
-  func_08035908(param_1,uVar7);
-  func_08035940(param_1,uVar8);
+  Entity_Routine_08035908(param_1,uVar7);
+  Entity_Routine_08035940(param_1,uVar8);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08036138 @ 0x08036138
+// Function: Entity_Routine_08036138 @ 0x08036138
 // =============================================================================
-undefined4 func_08036138(undefined4 param_1,int param_2)
+undefined4 Entity_Routine_08036138(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_08034F00();
+  Entity_Routine_08034F00();
   if (1 < param_2) {
-    func_08036084(param_1);
+    Entity_Routine_08036084(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08036154 @ 0x08036154
+// Function: Entity_Routine_08036154 @ 0x08036154
 // =============================================================================
-void func_08036154(undefined4 param_1)
+void Entity_Routine_08036154(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  func_08036084();
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
+  Entity_Routine_08036084();
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036184 @ 0x08036184
+// Function: Entity_Routine_08036184 @ 0x08036184
 // =============================================================================
-undefined8 func_08036184(int param_1)
+undefined8 Entity_Routine_08036184(int param_1)
 
 {
   undefined4 in_lr;
@@ -19090,22 +19090,22 @@ undefined8 func_08036184(int param_1)
 }
 
 // =============================================================================
-// Function: func_080361C0 @ 0x080361C0
+// Function: Entity_Routine_080361C0 @ 0x080361C0
 // =============================================================================
-void func_080361C0(undefined4 param_1)
+void Entity_Routine_080361C0(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_080361EC @ 0x080361EC
+// Function: Entity_Routine_080361EC @ 0x080361EC
 // =============================================================================
-undefined8 func_080361EC(int param_1)
+undefined8 Entity_Routine_080361EC(int param_1)
 
 {
   undefined4 in_lr;
@@ -19116,22 +19116,22 @@ undefined8 func_080361EC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036228 @ 0x08036228
+// Function: Entity_Routine_08036228 @ 0x08036228
 // =============================================================================
-void func_08036228(undefined4 param_1)
+void Entity_Routine_08036228(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036258 @ 0x08036258
+// Function: Entity_Routine_08036258 @ 0x08036258
 // =============================================================================
-undefined8 func_08036258(int param_1)
+undefined8 Entity_Routine_08036258(int param_1)
 
 {
   undefined4 in_lr;
@@ -19142,22 +19142,22 @@ undefined8 func_08036258(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036290 @ 0x08036290
+// Function: Entity_Routine_08036290 @ 0x08036290
 // =============================================================================
-void func_08036290(undefined4 param_1)
+void Entity_Routine_08036290(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_080362C0 @ 0x080362C0
+// Function: Entity_Routine_080362C0 @ 0x080362C0
 // =============================================================================
-undefined8 func_080362C0(int param_1)
+undefined8 Entity_Routine_080362C0(int param_1)
 
 {
   undefined4 in_lr;
@@ -19168,22 +19168,22 @@ undefined8 func_080362C0(int param_1)
 }
 
 // =============================================================================
-// Function: func_080362FC @ 0x080362FC
+// Function: Entity_Routine_080362FC @ 0x080362FC
 // =============================================================================
-void func_080362FC(undefined4 param_1)
+void Entity_Routine_080362FC(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,1,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,1,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036328 @ 0x08036328
+// Function: Entity_Routine_08036328 @ 0x08036328
 // =============================================================================
-undefined8 func_08036328(int param_1)
+undefined8 Entity_Routine_08036328(int param_1)
 
 {
   undefined4 in_lr;
@@ -19194,22 +19194,22 @@ undefined8 func_08036328(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036364 @ 0x08036364
+// Function: Entity_Routine_08036364 @ 0x08036364
 // =============================================================================
-void func_08036364(undefined4 param_1)
+void Entity_Routine_08036364(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036390 @ 0x08036390
+// Function: Entity_Routine_08036390 @ 0x08036390
 // =============================================================================
-undefined8 func_08036390(int param_1)
+undefined8 Entity_Routine_08036390(int param_1)
 
 {
   undefined4 in_lr;
@@ -19220,22 +19220,22 @@ undefined8 func_08036390(int param_1)
 }
 
 // =============================================================================
-// Function: func_080363CC @ 0x080363CC
+// Function: Entity_Routine_080363CC @ 0x080363CC
 // =============================================================================
-void func_080363CC(undefined4 param_1)
+void Entity_Routine_080363CC(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_080363F8 @ 0x080363F8
+// Function: Entity_Routine_080363F8 @ 0x080363F8
 // =============================================================================
-undefined8 func_080363F8(int param_1)
+undefined8 Entity_Routine_080363F8(int param_1)
 
 {
   undefined4 in_lr;
@@ -19246,9 +19246,9 @@ undefined8 func_080363F8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036430 @ 0x08036430
+// Function: Entity_Routine_08036430 @ 0x08036430
 // =============================================================================
-undefined4 func_08036430(undefined4 *param_1)
+undefined4 Entity_Routine_08036430(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -19265,71 +19265,71 @@ undefined4 func_08036430(undefined4 *param_1)
   uVar1 = _DAT_08036474;
   iVar5 = param_1[0xd];
   iVar6 = iVar5 + _DAT_0803647c;
-  iVar3 = func_080A0490(iVar6);
+  iVar3 = NPC_Routine_080A0490(iVar6);
   uVar7 = uVar1;
   if ((((iVar3 == 0x13) && (*(short *)(param_1 + 1) == 0x1d)) &&
-      (cVar2 = func_08035AE0(param_1), uVar7 = _DAT_08036484, cVar2 == '\0')) &&
+      (cVar2 = Entity_Routine_08035AE0(param_1), uVar7 = _DAT_08036484, cVar2 == '\0')) &&
      ((((*(byte *)(iVar5 + _DAT_08036480) & 0x1f) >> 3 != 1 &&
-       (iVar3 = func_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
+       (iVar3 = NPC_Routine_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
       (uVar4 = func_0x0809ead8(), uVar4 < 0x3c)))) {
     iVar3 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144));
-    cVar2 = func_08034C64(iVar5,iVar3 + 10);
+    cVar2 = Entity_Routine_08034C64(iVar5,iVar3 + 10);
     if (cVar2 != '\0') {
       uVar7 = _DAT_080364dc;
       uVar8 = _DAT_080364e0;
     }
   }
-  func_08035908(param_1,uVar7);
-  func_08035940(param_1,uVar8);
+  Entity_Routine_08035908(param_1,uVar7);
+  Entity_Routine_08035940(param_1,uVar8);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080364E4 @ 0x080364E4
+// Function: Entity_Routine_080364E4 @ 0x080364E4
 // =============================================================================
-undefined4 func_080364E4(undefined4 param_1,int param_2)
+undefined4 Entity_Routine_080364E4(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_08034F00();
+  Entity_Routine_08034F00();
   if (1 < param_2) {
-    func_08036430(param_1);
+    Entity_Routine_08036430(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08036500 @ 0x08036500
+// Function: Entity_Routine_08036500 @ 0x08036500
 // =============================================================================
-void func_08036500(undefined4 param_1)
+void Entity_Routine_08036500(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  func_08036430();
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
+  Entity_Routine_08036430();
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036564 @ 0x08036564
+// Function: Entity_Routine_08036564 @ 0x08036564
 // =============================================================================
-void func_08036564(undefined4 param_1)
+void Entity_Routine_08036564(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036590 @ 0x08036590
+// Function: Entity_Routine_08036590 @ 0x08036590
 // =============================================================================
-undefined8 func_08036590(int param_1)
+undefined8 Entity_Routine_08036590(int param_1)
 
 {
   undefined4 in_lr;
@@ -19340,9 +19340,9 @@ undefined8 func_08036590(int param_1)
 }
 
 // =============================================================================
-// Function: func_080365CC @ 0x080365CC
+// Function: Entity_Routine_080365CC @ 0x080365CC
 // =============================================================================
-undefined4 func_080365CC(undefined4 *param_1)
+undefined4 Entity_Routine_080365CC(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -19359,58 +19359,58 @@ undefined4 func_080365CC(undefined4 *param_1)
   uVar1 = _DAT_08036610;
   iVar5 = param_1[0xd];
   iVar6 = iVar5 + _DAT_08036618;
-  iVar3 = func_080A0490(iVar6);
+  iVar3 = NPC_Routine_080A0490(iVar6);
   uVar7 = uVar1;
   if ((((iVar3 == 0x15) && (*(short *)(param_1 + 1) == 0x1d)) &&
-      (cVar2 = func_08035AE0(param_1), uVar7 = _DAT_08036620, cVar2 == '\0')) &&
+      (cVar2 = Entity_Routine_08035AE0(param_1), uVar7 = _DAT_08036620, cVar2 == '\0')) &&
      ((((*(byte *)(iVar5 + _DAT_0803661c) & 7) >> 1 != 1 &&
-       (iVar3 = func_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
+       (iVar3 = NPC_Routine_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
       (uVar4 = func_0x0809ead8(), uVar4 < 0x3c)))) {
     iVar3 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144));
-    cVar2 = func_08034C64(iVar5,iVar3 + 10);
+    cVar2 = Entity_Routine_08034C64(iVar5,iVar3 + 10);
     if (cVar2 != '\0') {
       uVar7 = _DAT_08036678;
       uVar8 = _DAT_0803667c;
     }
   }
-  func_08035908(param_1,uVar7);
-  func_08035940(param_1,uVar8);
+  Entity_Routine_08035908(param_1,uVar7);
+  Entity_Routine_08035940(param_1,uVar8);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08036680 @ 0x08036680
+// Function: Entity_Routine_08036680 @ 0x08036680
 // =============================================================================
-undefined4 func_08036680(undefined4 param_1,int param_2)
+undefined4 Entity_Routine_08036680(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_08034F00();
+  Entity_Routine_08034F00();
   if (1 < param_2) {
-    func_080365CC(param_1);
+    Entity_Routine_080365CC(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0803669C @ 0x0803669C
+// Function: Entity_Routine_0803669C @ 0x0803669C
 // =============================================================================
-void func_0803669C(undefined4 param_1)
+void Entity_Routine_0803669C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  func_080365CC();
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
+  Entity_Routine_080365CC();
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_080366CC @ 0x080366CC
+// Function: Entity_Routine_080366CC @ 0x080366CC
 // =============================================================================
-undefined8 func_080366CC(int param_1)
+undefined8 Entity_Routine_080366CC(int param_1)
 
 {
   undefined4 in_lr;
@@ -19421,22 +19421,22 @@ undefined8 func_080366CC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036704 @ 0x08036704
+// Function: Entity_Routine_08036704 @ 0x08036704
 // =============================================================================
-void func_08036704(undefined4 param_1)
+void Entity_Routine_08036704(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036730 @ 0x08036730
+// Function: Entity_Routine_08036730 @ 0x08036730
 // =============================================================================
-undefined8 func_08036730(int param_1)
+undefined8 Entity_Routine_08036730(int param_1)
 
 {
   undefined4 in_lr;
@@ -19447,9 +19447,9 @@ undefined8 func_08036730(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036768 @ 0x08036768
+// Function: Entity_Routine_08036768 @ 0x08036768
 // =============================================================================
-undefined4 func_08036768(int param_1)
+undefined4 Entity_Routine_08036768(int param_1)
 
 {
   int iVar1;
@@ -19462,45 +19462,45 @@ undefined4 func_08036768(int param_1)
     iVar1 = _DAT_080367a0 + 0x18;
     uVar2 = 1;
   }
-  func_08035908(param_1,iVar1);
-  func_08035940(param_1,_DAT_080367a8);
+  Entity_Routine_08035908(param_1,iVar1);
+  Entity_Routine_08035940(param_1,_DAT_080367a8);
   *(undefined1 *)(param_1 + 0x21) = uVar2;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080367AC @ 0x080367AC
+// Function: Entity_Routine_080367AC @ 0x080367AC
 // =============================================================================
-undefined4 func_080367AC(undefined4 param_1,int param_2)
+undefined4 Entity_Routine_080367AC(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_08034F00();
+  Entity_Routine_08034F00();
   if (1 < param_2) {
-    func_08036768(param_1);
+    Entity_Routine_08036768(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080367C8 @ 0x080367C8
+// Function: Entity_Routine_080367C8 @ 0x080367C8
 // =============================================================================
-void func_080367C8(undefined4 param_1)
+void Entity_Routine_080367C8(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  func_08036768();
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
+  Entity_Routine_08036768();
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_080367F8 @ 0x080367F8
+// Function: Entity_Routine_080367F8 @ 0x080367F8
 // =============================================================================
-undefined8 func_080367F8(int param_1)
+undefined8 Entity_Routine_080367F8(int param_1)
 
 {
   undefined4 in_lr;
@@ -19511,22 +19511,22 @@ undefined8 func_080367F8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036834 @ 0x08036834
+// Function: Entity_Routine_08036834 @ 0x08036834
 // =============================================================================
-void func_08036834(undefined4 param_1)
+void Entity_Routine_08036834(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036860 @ 0x08036860
+// Function: Entity_Routine_08036860 @ 0x08036860
 // =============================================================================
-void func_08036860(int param_1)
+void Entity_Routine_08036860(int param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -19538,22 +19538,22 @@ void func_08036860(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036898 @ 0x08036898
+// Function: Entity_Routine_08036898 @ 0x08036898
 // =============================================================================
-void func_08036898(undefined4 param_1)
+void Entity_Routine_08036898(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_080368C4 @ 0x080368C4
+// Function: Entity_Routine_080368C4 @ 0x080368C4
 // =============================================================================
-undefined8 func_080368C4(int param_1)
+undefined8 Entity_Routine_080368C4(int param_1)
 
 {
   undefined4 in_lr;
@@ -19564,9 +19564,9 @@ undefined8 func_080368C4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036900 @ 0x08036900
+// Function: Entity_Routine_08036900 @ 0x08036900
 // =============================================================================
-undefined4 func_08036900(undefined4 *param_1)
+undefined4 Entity_Routine_08036900(undefined4 *param_1)
 
 {
   undefined4 uVar1;
@@ -19583,58 +19583,58 @@ undefined4 func_08036900(undefined4 *param_1)
   uVar1 = _DAT_08036950;
   iVar5 = param_1[0xd];
   iVar6 = iVar5 + _DAT_08036958;
-  iVar3 = func_080A0490(iVar6);
+  iVar3 = NPC_Routine_080A0490(iVar6);
   uVar7 = uVar1;
   if ((((iVar3 == 0x19) && (*(short *)(param_1 + 1) == 0x1d)) &&
-      (cVar2 = func_08035AE0(param_1), uVar7 = _DAT_08036964, cVar2 == '\0')) &&
+      (cVar2 = Entity_Routine_08035AE0(param_1), uVar7 = _DAT_08036964, cVar2 == '\0')) &&
      ((((byte)((*(byte *)(iVar5 + _DAT_08036960) & 1) << 1 | *(byte *)(iVar5 + _DAT_0803695c) >> 7)
-        != 1 && (iVar3 = func_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
+        != 1 && (iVar3 = NPC_Routine_080A0384(iVar6), uVar7 = uVar1, iVar3 != 0)) &&
       (uVar4 = func_0x0809ead8(), uVar4 < 0x3c)))) {
     iVar3 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144));
-    cVar2 = func_08034C64(iVar5,iVar3 + 10);
+    cVar2 = Entity_Routine_08034C64(iVar5,iVar3 + 10);
     if (cVar2 != '\0') {
       uVar7 = _DAT_080369bc;
       uVar8 = _DAT_080369c0;
     }
   }
-  func_08035908(param_1,uVar7);
-  func_08035940(param_1,uVar8);
+  Entity_Routine_08035908(param_1,uVar7);
+  Entity_Routine_08035940(param_1,uVar8);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080369C4 @ 0x080369C4
+// Function: Entity_Routine_080369C4 @ 0x080369C4
 // =============================================================================
-undefined4 func_080369C4(undefined4 param_1,int param_2)
+undefined4 Entity_Routine_080369C4(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_08034F00();
+  Entity_Routine_08034F00();
   if (1 < param_2) {
-    func_08036900(param_1);
+    Entity_Routine_08036900(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080369E0 @ 0x080369E0
+// Function: Entity_Routine_080369E0 @ 0x080369E0
 // =============================================================================
-void func_080369E0(undefined4 param_1)
+void Entity_Routine_080369E0(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  func_08036900();
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
+  Entity_Routine_08036900();
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036A10 @ 0x08036A10
+// Function: Entity_Routine_08036A10 @ 0x08036A10
 // =============================================================================
-undefined8 func_08036A10(int param_1)
+undefined8 Entity_Routine_08036A10(int param_1)
 
 {
   undefined4 in_lr;
@@ -19645,22 +19645,22 @@ undefined8 func_08036A10(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036A4C @ 0x08036A4C
+// Function: Entity_Routine_08036A4C @ 0x08036A4C
 // =============================================================================
-void func_08036A4C(undefined4 param_1)
+void Entity_Routine_08036A4C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036A78 @ 0x08036A78
+// Function: Entity_Routine_08036A78 @ 0x08036A78
 // =============================================================================
-undefined8 func_08036A78(int param_1)
+undefined8 Entity_Routine_08036A78(int param_1)
 
 {
   undefined4 in_lr;
@@ -19671,9 +19671,9 @@ undefined8 func_08036A78(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036AB4 @ 0x08036AB4
+// Function: Entity_Routine_08036AB4 @ 0x08036AB4
 // =============================================================================
-undefined4 func_08036AB4(int param_1)
+undefined4 Entity_Routine_08036AB4(int param_1)
 
 {
   ushort uVar1;
@@ -19693,57 +19693,57 @@ undefined4 func_08036AB4(int param_1)
   uVar2 = _DAT_08036af8;
   uVar3 = _DAT_08036afc;
 LAB_08036ae4:
-  func_08035908(param_1,uVar2);
-  func_08035940(param_1,uVar3);
+  Entity_Routine_08035908(param_1,uVar2);
+  Entity_Routine_08035940(param_1,uVar3);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08036B00 @ 0x08036B00
+// Function: Entity_Routine_08036B00 @ 0x08036B00
 // =============================================================================
-undefined4 func_08036B00(undefined4 param_1,int param_2)
+undefined4 Entity_Routine_08036B00(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_08034F00();
+  Entity_Routine_08034F00();
   if (1 < param_2) {
-    func_08036AB4(param_1);
+    Entity_Routine_08036AB4(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08036B1C @ 0x08036B1C
+// Function: Entity_Routine_08036B1C @ 0x08036B1C
 // =============================================================================
-void func_08036B1C(undefined4 param_1)
+void Entity_Routine_08036B1C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  func_08036AB4();
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
+  Entity_Routine_08036AB4();
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,5,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036B80 @ 0x08036B80
+// Function: Entity_Routine_08036B80 @ 0x08036B80
 // =============================================================================
-void func_08036B80(undefined4 param_1)
+void Entity_Routine_08036B80(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036BB0 @ 0x08036BB0
+// Function: Entity_Routine_08036BB0 @ 0x08036BB0
 // =============================================================================
-undefined4 func_08036BB0(undefined4 *param_1)
+undefined4 Entity_Routine_08036BB0(undefined4 *param_1)
 
 {
   short sVar1;
@@ -19752,7 +19752,7 @@ undefined4 func_08036BB0(undefined4 *param_1)
   
   sVar1 = *(short *)((int)param_1 + 10);
   sVar2 = *(short *)((int)param_1 + 0xe);
-  func_08034EB4(param_1);
+  Entity_Routine_08034EB4(param_1);
   if (((*(short *)(param_1 + 1) == 2) &&
       (((sVar1 != 0xf4 || (sVar2 != 0xab)) && (*(short *)((int)param_1 + 10) == 0xf4)))) &&
      (*(short *)((int)param_1 + 0xe) == 0xab)) {
@@ -19762,9 +19762,9 @@ undefined4 func_08036BB0(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_08036BF8 @ 0x08036BF8
+// Function: Entity_Routine_08036BF8 @ 0x08036BF8
 // =============================================================================
-undefined4 func_08036BF8(undefined4 *param_1,int param_2)
+undefined4 Entity_Routine_08036BF8(undefined4 *param_1,int param_2)
 
 {
   short sVar1;
@@ -19773,7 +19773,7 @@ undefined4 func_08036BF8(undefined4 *param_1,int param_2)
   
   sVar1 = *(short *)((int)param_1 + 10);
   sVar2 = *(short *)((int)param_1 + 0xe);
-  func_08034F00(param_1,param_2);
+  Entity_Routine_08034F00(param_1,param_2);
   if ((((1 < param_2) && (*(short *)(param_1 + 1) == 2)) && ((sVar1 != 0xf4 || (sVar2 != 0xab)))) &&
      ((*(short *)((int)param_1 + 10) == 0xf4 && (*(short *)((int)param_1 + 0xe) == 0xab)))) {
     func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x114));
@@ -19782,9 +19782,9 @@ undefined4 func_08036BF8(undefined4 *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08036C48 @ 0x08036C48
+// Function: Entity_Routine_08036C48 @ 0x08036C48
 // =============================================================================
-void func_08036C48(int param_1)
+void Entity_Routine_08036C48(int param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -19796,22 +19796,22 @@ void func_08036C48(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036C80 @ 0x08036C80
+// Function: Entity_Routine_08036C80 @ 0x08036C80
 // =============================================================================
-void func_08036C80(undefined4 param_1)
+void Entity_Routine_08036C80(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036CAC @ 0x08036CAC
+// Function: Entity_Routine_08036CAC @ 0x08036CAC
 // =============================================================================
-void func_08036CAC(int param_1)
+void Entity_Routine_08036CAC(int param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -19823,22 +19823,22 @@ void func_08036CAC(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036CDC @ 0x08036CDC
+// Function: Entity_Routine_08036CDC @ 0x08036CDC
 // =============================================================================
-void func_08036CDC(undefined4 param_1)
+void Entity_Routine_08036CDC(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,2,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036D0C @ 0x08036D0C
+// Function: Entity_Routine_08036D0C @ 0x08036D0C
 // =============================================================================
-void func_08036D0C(int param_1)
+void Entity_Routine_08036D0C(int param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -19850,22 +19850,22 @@ void func_08036D0C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036D3C @ 0x08036D3C
+// Function: Entity_Routine_08036D3C @ 0x08036D3C
 // =============================================================================
-void func_08036D3C(undefined4 param_1)
+void Entity_Routine_08036D3C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036D68 @ 0x08036D68
+// Function: Entity_Routine_08036D68 @ 0x08036D68
 // =============================================================================
-undefined8 func_08036D68(int param_1)
+undefined8 Entity_Routine_08036D68(int param_1)
 
 {
   undefined4 in_lr;
@@ -19876,22 +19876,22 @@ undefined8 func_08036D68(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036D98 @ 0x08036D98
+// Function: Entity_Routine_08036D98 @ 0x08036D98
 // =============================================================================
-void func_08036D98(undefined4 param_1)
+void Entity_Routine_08036D98(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036DC4 @ 0x08036DC4
+// Function: Entity_Routine_08036DC4 @ 0x08036DC4
 // =============================================================================
-undefined8 func_08036DC4(int param_1)
+undefined8 Entity_Routine_08036DC4(int param_1)
 
 {
   undefined4 in_lr;
@@ -19902,22 +19902,22 @@ undefined8 func_08036DC4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036E00 @ 0x08036E00
+// Function: Entity_Routine_08036E00 @ 0x08036E00
 // =============================================================================
-void func_08036E00(undefined4 param_1)
+void Entity_Routine_08036E00(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0x1b,1,0,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08036E2C @ 0x08036E2C
+// Function: Entity_Routine_08036E2C @ 0x08036E2C
 // =============================================================================
-undefined8 func_08036E2C(int param_1)
+undefined8 Entity_Routine_08036E2C(int param_1)
 
 {
   undefined4 in_lr;
@@ -19929,9 +19929,9 @@ undefined8 func_08036E2C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08036E70 @ 0x08036E70
+// Function: Entity_Routine_08036E70 @ 0x08036E70
 // =============================================================================
-undefined4 func_08036E70(int param_1)
+undefined4 Entity_Routine_08036E70(int param_1)
 
 {
   undefined4 uVar1;
@@ -19942,51 +19942,51 @@ undefined4 func_08036E70(int param_1)
   undefined4 uVar6;
   undefined4 in_lr;
   
-  iVar3 = func_080A0384(*(int *)(param_1 + 0x34) + _DAT_08036ea0);
+  iVar3 = NPC_Routine_080A0384(*(int *)(param_1 + 0x34) + _DAT_08036ea0);
   uVar6 = _DAT_08036ea8;
   uVar1 = _DAT_08036ea4;
   if (iVar3 != 0) {
     uVar4 = func_0x0809ead8();
     if (uVar4 < 0x3c) {
-      cVar2 = func_08035AE0(param_1);
+      cVar2 = Entity_Routine_08035AE0(param_1);
       uVar5 = uVar1;
       if (cVar2 != '\0') {
         uVar5 = 0xc;
       }
     }
     else {
-      cVar2 = func_08035AE0(param_1);
+      cVar2 = Entity_Routine_08035AE0(param_1);
       uVar5 = _DAT_08036ebc;
       if ((cVar2 == '\0') && (cVar2 = func_0x0809eae0(iVar3), uVar5 = uVar1, cVar2 == '\0')) {
         uVar5 = _DAT_08036ee8;
         uVar6 = _DAT_08036eec;
       }
     }
-    func_08035908(param_1,uVar5);
-    func_08035940(param_1,uVar6);
+    Entity_Routine_08035908(param_1,uVar5);
+    Entity_Routine_08035940(param_1,uVar6);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08036EF0 @ 0x08036EF0
+// Function: Entity_Routine_08036EF0 @ 0x08036EF0
 // =============================================================================
-undefined4 func_08036EF0(undefined4 param_1,int param_2)
+undefined4 Entity_Routine_08036EF0(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_08034F00();
+  Entity_Routine_08034F00();
   if (1 < param_2) {
-    func_08036E70(param_1);
+    Entity_Routine_08036E70(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08036F0C @ 0x08036F0C
+// Function: Entity_Routine_08036F0C @ 0x08036F0C
 // =============================================================================
-undefined8 func_08036F0C(int param_1)
+undefined8 Entity_Routine_08036F0C(int param_1)
 
 {
   char cVar1;
@@ -19995,27 +19995,27 @@ undefined8 func_08036F0C(int param_1)
   undefined4 uVar4;
   undefined4 in_lr;
   
-  iVar2 = func_080A0384(*(int *)(param_1 + 0x34) + _DAT_08036f58);
+  iVar2 = NPC_Routine_080A0384(*(int *)(param_1 + 0x34) + _DAT_08036f58);
   if (iVar2 == 0) {
     uVar4 = 0;
   }
   else {
-    func_08036E70(param_1);
+    Entity_Routine_08036E70(param_1);
     cVar1 = func_0x0809eae0(iVar2);
     uVar4 = 1;
     if (cVar1 != '\0') {
       uVar4 = 4;
     }
-    uVar3 = func_080005D4(0x8c);
-    uVar4 = func_080324BC(uVar3,param_1,4,0x1b,0,uVar4,0,0);
+    uVar3 = Dispatcher_Routine_080005D4(0x8c);
+    uVar4 = Entity_Routine_080324BC(uVar3,param_1,4,0x1b,0,uVar4,0,0);
   }
   return CONCAT44(in_lr,uVar4);
 }
 
 // =============================================================================
-// Function: func_08036F68 @ 0x08036F68
+// Function: Entity_Routine_08036F68 @ 0x08036F68
 // =============================================================================
-undefined4 func_08036F68(int param_1,undefined4 param_2)
+undefined4 Entity_Routine_08036F68(int param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -20033,8 +20033,8 @@ undefined4 func_08036F68(int param_1,undefined4 param_2)
   
   pbVar6 = (byte *)&uStack_24;
   if ((((*(int *)(param_1 + 0x10) != 0) &&
-       (iVar3 = func_080A0384(*(int *)(param_1 + 0x34) + _DAT_08036fa8), iVar3 != 0)) &&
-      (uVar4 = func_0x0809ead8(), uVar4 < 0x3c)) && (cVar1 = func_08035AE0(param_1), cVar1 != '\0'))
+       (iVar3 = NPC_Routine_080A0384(*(int *)(param_1 + 0x34) + _DAT_08036fa8), iVar3 != 0)) &&
+      (uVar4 = func_0x0809ead8(), uVar4 < 0x3c)) && (cVar1 = Entity_Routine_08035AE0(param_1), cVar1 != '\0'))
   {
     sVar2 = *(short *)(param_1 + 0x48);
     if (sVar2 == 0) {
@@ -20046,7 +20046,7 @@ undefined4 func_08036F68(int param_1,undefined4 param_2)
       uVar4 = func_0x080d0ed0(uVar5,100);
       for (uVar7 = 0; uVar7 < 4; uVar7 = uVar7 + 1) {
         if (uVar4 < *pbVar6) {
-          func_08035908(param_1,*(undefined2 *)(pbVar6 + 2));
+          Entity_Routine_08035908(param_1,*(undefined2 *)(pbVar6 + 2));
           break;
         }
         uVar4 = uVar4 - *pbVar6;
@@ -20061,14 +20061,14 @@ undefined4 func_08036F68(int param_1,undefined4 param_2)
     }
     *(short *)(param_1 + 0x48) = sVar2;
   }
-  func_08034EB4(param_1,param_2);
+  Entity_Routine_08034EB4(param_1,param_2);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08037098 @ 0x08037098
+// Function: Entity_Routine_08037098 @ 0x08037098
 // =============================================================================
-undefined4 func_08037098(int param_1,int param_2)
+undefined4 Entity_Routine_08037098(int param_1,int param_2)
 
 {
   byte bVar1;
@@ -20106,9 +20106,9 @@ undefined4 func_08037098(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_080370D8 @ 0x080370D8
+// Function: Entity_Routine_080370D8 @ 0x080370D8
 // =============================================================================
-undefined8 func_080370D8(int param_1)
+undefined8 Entity_Routine_080370D8(int param_1)
 
 {
   char cVar1;
@@ -20127,7 +20127,7 @@ undefined8 func_080370D8(int param_1)
     if (*(short *)(iVar2 + 0x3e) != 0) {
       uVar3 = (uint)(-(int)*(short *)(iVar2 + 0x40) | (int)*(short *)(iVar2 + 0x40)) >> 0x1f;
     }
-    if ((uVar3 == 0) || (cVar1 = func_0805E894(iVar2 + 0x30), cVar1 != '\0')) {
+    if ((uVar3 == 0) || (cVar1 = Animal_Routine_0805E894(iVar2 + 0x30), cVar1 != '\0')) {
       uVar4 = 1;
     }
   }
@@ -20135,9 +20135,9 @@ undefined8 func_080370D8(int param_1)
 }
 
 // =============================================================================
-// Function: func_08037118 @ 0x08037118
+// Function: Entity_Routine_08037118 @ 0x08037118
 // =============================================================================
-undefined4 func_08037118(int param_1,int *param_2)
+undefined4 Entity_Routine_08037118(int param_1,int *param_2)
 
 {
   int iVar1;
@@ -20158,13 +20158,13 @@ undefined4 func_08037118(int param_1,int *param_2)
   if (0 < iVar6) {
     iVar5 = *param_2;
     if (param_2[10] < iVar5) {
-      func_080AB85C(param_2);
+      NPC_Routine_080AB85C(param_2);
       iVar5 = *param_2;
     }
     if (iVar5 < iVar6) {
       iVar2 = *param_2;
       if (param_2[10] < iVar2) {
-        func_080AB85C(param_2);
+        NPC_Routine_080AB85C(param_2);
         iVar2 = *param_2;
       }
       iVar2 = (iVar7 + iVar2) * 0x10000;
@@ -20173,13 +20173,13 @@ undefined4 func_08037118(int param_1,int *param_2)
   if (iVar6 < 0) {
     iVar5 = param_2[1];
     if (iVar5 + param_2[10] < 0 != SCARRY4(iVar5,param_2[10])) {
-      func_080AB8D0(param_2);
+      NPC_Routine_080AB8D0(param_2);
       iVar5 = param_2[1];
     }
     if (iVar6 < iVar5) {
       iVar2 = param_2[1];
       if (iVar2 + param_2[10] < 0 != SCARRY4(iVar2,param_2[10])) {
-        func_080AB8D0(param_2);
+        NPC_Routine_080AB8D0(param_2);
         iVar2 = param_2[1];
       }
       iVar2 = (iVar7 + iVar2) * 0x10000;
@@ -20188,13 +20188,13 @@ undefined4 func_08037118(int param_1,int *param_2)
   if (iVar4 < 0) {
     iVar6 = param_2[2];
     if (iVar6 + param_2[10] < 0 != SCARRY4(iVar6,param_2[10])) {
-      func_080AB948(param_2);
+      NPC_Routine_080AB948(param_2);
       iVar6 = param_2[2];
     }
     if (iVar4 < iVar6) {
       iVar1 = param_2[2];
       if (iVar1 + param_2[10] < 0 != SCARRY4(iVar1,param_2[10])) {
-        func_080AB948(param_2);
+        NPC_Routine_080AB948(param_2);
         iVar1 = param_2[2];
       }
       iVar1 = (iVar3 + iVar1) * 0x10000;
@@ -20203,13 +20203,13 @@ undefined4 func_08037118(int param_1,int *param_2)
   if (0 < iVar4) {
     iVar6 = param_2[3];
     if (param_2[10] < iVar6) {
-      func_080AB9C4(param_2);
+      NPC_Routine_080AB9C4(param_2);
       iVar6 = param_2[3];
     }
     if (iVar6 < iVar4) {
       iVar1 = param_2[3];
       if (param_2[10] < iVar1) {
-        func_080AB9C4(param_2);
+        NPC_Routine_080AB9C4(param_2);
         iVar1 = param_2[3];
       }
       iVar1 = (iVar3 + iVar1) * 0x10000;
@@ -20221,9 +20221,9 @@ undefined4 func_08037118(int param_1,int *param_2)
 }
 
 // =============================================================================
-// Function: func_0803726C @ 0x0803726C
+// Function: Entity_Routine_0803726C @ 0x0803726C
 // =============================================================================
-undefined4 func_0803726C(undefined4 *param_1)
+undefined4 Entity_Routine_0803726C(undefined4 *param_1)
 
 {
   short sVar1;
@@ -20278,16 +20278,16 @@ undefined4 func_0803726C(undefined4 *param_1)
   iVar4 = func_0x080d3914((int *)*param_1,0,*(undefined4 *)(*(int *)*param_1 + 0x40));
   if ((iVar4 != 0) && (*(ushort *)(iVar4 + 4) == uVar2)) {
     func_0x080d3914(auStack_34,iVar4,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0xc));
-    func_080ABA90(&iStack_70,auStack_34,0);
+    NPC_Routine_080ABA90(&iStack_70,auStack_34,0);
   }
   iVar4 = func_0x080d3914((int *)*param_1,0x4a,*(undefined4 *)(*(int *)*param_1 + 0x40));
   if ((iVar4 != 0) && (*(ushort *)(iVar4 + 4) == uVar2)) {
     func_0x080d3914(auStack_2c,iVar4,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0xc));
-    func_080ABA90(&iStack_70,auStack_2c,0);
+    NPC_Routine_080ABA90(&iStack_70,auStack_2c,0);
   }
   if ((0 < (int)*(short *)(param_1 + 0xe) - (int)*(short *)(param_1 + 0xd)) &&
      (0 < (int)*(short *)((int)param_1 + 0x3a) - (int)*(short *)((int)param_1 + 0x36))) {
-    func_080ABA90(&iStack_70,param_1 + 0xd,0);
+    NPC_Routine_080ABA90(&iStack_70,param_1 + 0xd,0);
   }
   sVar1 = *(short *)((int)param_1 + 0x3e);
   if (sVar1 == 0) {
@@ -20298,7 +20298,7 @@ undefined4 func_0803726C(undefined4 *param_1)
     iVar6 = param_1[7];
     if (iVar4 < 0) {
       if (iStack_68 + iStack_48 < 0 != SCARRY4(iStack_68,iStack_48)) {
-        func_080AB948(&iStack_70);
+        NPC_Routine_080AB948(&iStack_70);
       }
       if (iStack_68 < 0) goto LAB_08037390;
 LAB_080373e4:
@@ -20308,19 +20308,19 @@ LAB_080373e4:
 LAB_08037390:
       if (0 < iVar4) {
         if (iStack_48 < iStack_64) {
-          func_080AB9C4(&iStack_70);
+          NPC_Routine_080AB9C4(&iStack_70);
         }
         if (iStack_64 < 1) goto LAB_080373e4;
       }
       if (iVar6 < 0) {
         if (iStack_6c + iStack_48 < 0 != SCARRY4(iStack_6c,iStack_48)) {
-          func_080AB8D0(&iStack_70);
+          NPC_Routine_080AB8D0(&iStack_70);
         }
         if (-1 < iStack_6c) goto LAB_080373e4;
       }
       if (0 < iVar6) {
         if (iStack_48 < iStack_70) {
-          func_080AB85C(&iStack_70);
+          NPC_Routine_080AB85C(&iStack_70);
         }
         if (iStack_70 < 1) goto LAB_080373e4;
       }
@@ -20328,7 +20328,7 @@ LAB_08037390:
     }
   }
   *(short *)((int)param_1 + 0x3e) = sVar1;
-  func_08037118(param_1,&iStack_70);
+  Entity_Routine_08037118(param_1,&iStack_70);
 LAB_08037402:
   if (*(short *)(param_1 + 9) == 0) {
     sVar1 = *(short *)((int)param_1 + 0x26);
@@ -20345,9 +20345,9 @@ LAB_08037402:
 }
 
 // =============================================================================
-// Function: func_08037434 @ 0x08037434
+// Function: Entity_Routine_08037434 @ 0x08037434
 // =============================================================================
-undefined4 func_08037434(int param_1)
+undefined4 Entity_Routine_08037434(int param_1)
 
 {
   undefined4 in_lr;
@@ -20356,27 +20356,27 @@ undefined4 func_08037434(int param_1)
     func_0x080d3910(param_1,*(undefined4 *)(*(int *)(param_1 + 0x14) + 0x3c));
   }
   *(undefined2 *)(param_1 + 0x3e) = 0;
-  func_0801FDC0(param_1);
+  Farmer_Routine_0801FDC0(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0803745C @ 0x0803745C
+// Function: Entity_Routine_0803745C @ 0x0803745C
 // =============================================================================
-undefined4 func_0803745C(int param_1)
+undefined4 Entity_Routine_0803745C(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_0801FE20();
+  Farmer_Routine_0801FE20();
   *(undefined1 *)(param_1 + 0x40) = 0;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08037470 @ 0x08037470
+// Function: Entity_Routine_08037470 @ 0x08037470
 // =============================================================================
-void func_08037470(short *param_1,int param_2)
+void Entity_Routine_08037470(short *param_1,int param_2)
 
 {
   short sVar1;
@@ -20392,9 +20392,9 @@ void func_08037470(short *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08037494 @ 0x08037494
+// Function: Entity_Routine_08037494 @ 0x08037494
 // =============================================================================
-undefined8 func_08037494(undefined4 *param_1)
+undefined8 Entity_Routine_08037494(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -20407,41 +20407,41 @@ undefined8 func_08037494(undefined4 *param_1)
   
   iVar2 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144));
   iVar6 = (uint)(0xe < (*(byte *)(iVar2 + 10) & 0x1f) - 6) * 0x14 + _DAT_08037538;
-  iVar2 = func_080AB82C(iVar6,5);
+  iVar2 = NPC_Routine_080AB82C(iVar6,5);
   iVar6 = iVar6 + iVar2 * 4;
-  iVar3 = func_080AB788((uint)*(byte *)(iVar6 + 2) * 0x3c);
+  iVar3 = NPC_Routine_080AB788((uint)*(byte *)(iVar6 + 2) * 0x3c);
   bVar1 = *(byte *)(iVar6 + 1);
-  iVar6 = func_080AB788(4);
+  iVar6 = NPC_Routine_080AB788(4);
   if (((iVar6 != 0) && (iVar6 != 3)) &&
-     (uVar4 = func_080AB7A4(*(byte *)(param_1 + 8)), *(byte *)(param_1 + 8) != uVar4)) {
-    func_08032198(param_1);
+     (uVar4 = NPC_Routine_080AB7A4(*(byte *)(param_1 + 8)), *(byte *)(param_1 + 8) != uVar4)) {
+    Entity_Routine_08032198(param_1);
   }
-  uVar5 = func_08037628(param_1,iVar2);
-  func_08037098(param_1,uVar5);
+  uVar5 = Entity_Routine_08037628(param_1,iVar2);
+  Entity_Routine_08037098(param_1,uVar5);
   uVar4 = func_0x08037618(param_1,iVar2);
   if (*(ushort *)((int)param_1 + 0x22) != uVar4) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return CONCAT44(in_lr,(uint)bVar1 * 0x3c + iVar3);
 }
 
 // =============================================================================
-// Function: func_0803753C @ 0x0803753C
+// Function: Entity_Routine_0803753C @ 0x0803753C
 // =============================================================================
-void func_0803753C(undefined4 param_1)
+void Entity_Routine_0803753C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,2,9,0,7,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,2,9,0,7,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08037568 @ 0x08037568
+// Function: Entity_Routine_08037568 @ 0x08037568
 // =============================================================================
-undefined4 func_08037568(undefined4 *param_1)
+undefined4 Entity_Routine_08037568(undefined4 *param_1)
 
 {
   int *piVar1;
@@ -20457,13 +20457,13 @@ undefined4 func_08037568(undefined4 *param_1)
       uVar2 = func_0x080d0f4e(uVar2,7);
     }
     if (((uVar2 & 7) != 0) && (*piVar1 == 0)) {
-      func_080A17A0(auStack_18,*(byte *)(param_1 + 0x11) & 3);
-      func_0803211C(param_1,auStack_18);
+      NPC_Routine_080A17A0(auStack_18,*(byte *)(param_1 + 0x11) & 3);
+      Entity_Routine_0803211C(param_1,auStack_18);
       uVar2 = func_0x08037618(param_1,0);
       if (*(ushort *)((int)param_1 + 0x22) == uVar2) {
         return in_lr;
       }
-      func_080321B0(param_1);
+      Entity_Routine_080321B0(param_1);
       return in_lr;
     }
   }
@@ -20472,9 +20472,9 @@ undefined4 func_08037568(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_08037628 @ 0x08037628
+// Function: Entity_Routine_08037628 @ 0x08037628
 // =============================================================================
-undefined8 func_08037628(undefined4 param_1,int param_2)
+undefined8 Entity_Routine_08037628(undefined4 param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -20490,9 +20490,9 @@ undefined8 func_08037628(undefined4 param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0803763C @ 0x0803763C
+// Function: Entity_Routine_0803763C @ 0x0803763C
 // =============================================================================
-undefined8 func_0803763C(undefined4 *param_1)
+undefined8 Entity_Routine_0803763C(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -20505,41 +20505,41 @@ undefined8 func_0803763C(undefined4 *param_1)
   
   iVar2 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144));
   iVar6 = (uint)(0xe < (*(byte *)(iVar2 + 10) & 0x1f) - 6) * 0x1c + _DAT_080376e0;
-  iVar2 = func_080AB82C(iVar6,7);
+  iVar2 = NPC_Routine_080AB82C(iVar6,7);
   iVar6 = iVar6 + iVar2 * 4;
-  iVar3 = func_080AB788((uint)*(byte *)(iVar6 + 2) * 0x3c);
+  iVar3 = NPC_Routine_080AB788((uint)*(byte *)(iVar6 + 2) * 0x3c);
   bVar1 = *(byte *)(iVar6 + 1);
-  iVar6 = func_080AB788(4);
+  iVar6 = NPC_Routine_080AB788(4);
   if (((iVar6 != 0) && (iVar6 != 3)) &&
-     (uVar4 = func_080AB7A4(*(byte *)(param_1 + 8)), *(byte *)(param_1 + 8) != uVar4)) {
-    func_08032198(param_1);
+     (uVar4 = NPC_Routine_080AB7A4(*(byte *)(param_1 + 8)), *(byte *)(param_1 + 8) != uVar4)) {
+    Entity_Routine_08032198(param_1);
   }
-  uVar5 = func_080377D4(param_1,iVar2);
-  func_08037098(param_1,uVar5);
+  uVar5 = Entity_Routine_080377D4(param_1,iVar2);
+  Entity_Routine_08037098(param_1,uVar5);
   uVar4 = func_0x080377c4(param_1,iVar2);
   if (*(ushort *)((int)param_1 + 0x22) != uVar4) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return CONCAT44(in_lr,(uint)bVar1 * 0x3c + iVar3);
 }
 
 // =============================================================================
-// Function: func_080376E4 @ 0x080376E4
+// Function: Entity_Routine_080376E4 @ 0x080376E4
 // =============================================================================
-void func_080376E4(undefined4 param_1)
+void Entity_Routine_080376E4(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,4,0xc,2,0xc,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,4,0xc,2,0xc,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08037714 @ 0x08037714
+// Function: Entity_Routine_08037714 @ 0x08037714
 // =============================================================================
-undefined4 func_08037714(undefined4 *param_1)
+undefined4 Entity_Routine_08037714(undefined4 *param_1)
 
 {
   int *piVar1;
@@ -20555,13 +20555,13 @@ undefined4 func_08037714(undefined4 *param_1)
       uVar2 = func_0x080d0f4e(uVar2,7);
     }
     if (((uVar2 & 7) != 1) && (*piVar1 == 0)) {
-      func_080A1890(auStack_18,*(byte *)(param_1 + 0x11) & 3);
-      func_0803211C(param_1,auStack_18);
+      NPC_Routine_080A1890(auStack_18,*(byte *)(param_1 + 0x11) & 3);
+      Entity_Routine_0803211C(param_1,auStack_18);
       uVar2 = func_0x080377c4(param_1,0);
       if (*(ushort *)((int)param_1 + 0x22) == uVar2) {
         return in_lr;
       }
-      func_080321B0(param_1);
+      Entity_Routine_080321B0(param_1);
       return in_lr;
     }
   }
@@ -20570,9 +20570,9 @@ undefined4 func_08037714(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_080377D4 @ 0x080377D4
+// Function: Entity_Routine_080377D4 @ 0x080377D4
 // =============================================================================
-undefined8 func_080377D4(undefined4 param_1,int param_2)
+undefined8 Entity_Routine_080377D4(undefined4 param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -20588,9 +20588,9 @@ undefined8 func_080377D4(undefined4 param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_080377E8 @ 0x080377E8
+// Function: Entity_Routine_080377E8 @ 0x080377E8
 // =============================================================================
-undefined8 func_080377E8(undefined4 *param_1)
+undefined8 Entity_Routine_080377E8(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -20603,60 +20603,60 @@ undefined8 func_080377E8(undefined4 *param_1)
   
   iVar2 = func_0x080d3910((int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0x144));
   iVar6 = (uint)(0xe < (*(byte *)(iVar2 + 10) & 0x1f) - 6) * 0x34 + _DAT_08037888;
-  iVar2 = func_080AB82C(iVar6,0xd);
+  iVar2 = NPC_Routine_080AB82C(iVar6,0xd);
   iVar6 = iVar6 + iVar2 * 4;
-  iVar3 = func_080AB788((uint)*(byte *)(iVar6 + 2) * 0x3c);
+  iVar3 = NPC_Routine_080AB788((uint)*(byte *)(iVar6 + 2) * 0x3c);
   bVar1 = *(byte *)(iVar6 + 1);
-  iVar6 = func_080AB788(4);
+  iVar6 = NPC_Routine_080AB788(4);
   if (((iVar6 != 0) && (iVar6 != 3)) &&
-     (uVar4 = func_080AB7A4(*(byte *)(param_1 + 8)), *(byte *)(param_1 + 8) != uVar4)) {
-    func_08032198(param_1);
+     (uVar4 = NPC_Routine_080AB7A4(*(byte *)(param_1 + 8)), *(byte *)(param_1 + 8) != uVar4)) {
+    Entity_Routine_08032198(param_1);
   }
-  uVar5 = func_080378FC(param_1,iVar2);
-  func_08037098(param_1,uVar5);
+  uVar5 = Entity_Routine_080378FC(param_1,iVar2);
+  Entity_Routine_08037098(param_1,uVar5);
   uVar4 = func_0x080378ec(param_1,iVar2);
   if (*(ushort *)((int)param_1 + 0x22) != uVar4) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return CONCAT44(in_lr,(uint)bVar1 * 0x3c + iVar3);
 }
 
 // =============================================================================
-// Function: func_0803788C @ 0x0803788C
+// Function: Entity_Routine_0803788C @ 0x0803788C
 // =============================================================================
-void func_0803788C(undefined4 param_1)
+void Entity_Routine_0803788C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,2,0x1b,0,8,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,2,0x1b,0,8,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_080378B8 @ 0x080378B8
+// Function: Entity_Routine_080378B8 @ 0x080378B8
 // =============================================================================
-undefined4 func_080378B8(int param_1)
+undefined4 Entity_Routine_080378B8(int param_1)
 
 {
   uint uVar1;
   undefined4 in_lr;
   undefined1 auStack_10 [8];
   
-  func_080A198C(auStack_10);
-  func_0803211C(param_1,auStack_10);
+  NPC_Routine_080A198C(auStack_10);
+  Entity_Routine_0803211C(param_1,auStack_10);
   uVar1 = func_0x080378ec(param_1,0);
   if (*(ushort *)(param_1 + 0x22) != uVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080378FC @ 0x080378FC
+// Function: Entity_Routine_080378FC @ 0x080378FC
 // =============================================================================
-undefined8 func_080378FC(undefined4 param_1,uint param_2)
+undefined8 Entity_Routine_080378FC(undefined4 param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -20679,9 +20679,9 @@ case_08037944:
 }
 
 // =============================================================================
-// Function: func_08037958 @ 0x08037958
+// Function: Entity_Routine_08037958 @ 0x08037958
 // =============================================================================
-undefined8 func_08037958(int param_1)
+undefined8 Entity_Routine_08037958(int param_1)
 
 {
   byte bVar1;
@@ -20693,60 +20693,60 @@ undefined8 func_08037958(int param_1)
   undefined4 in_lr;
   
   iVar6 = _DAT_080379d4;
-  iVar2 = func_080AB82C(_DAT_080379d4,3);
+  iVar2 = NPC_Routine_080AB82C(_DAT_080379d4,3);
   iVar6 = iVar2 * 4 + iVar6;
-  iVar3 = func_080AB788((uint)*(byte *)(iVar6 + 2) * 0x3c);
+  iVar3 = NPC_Routine_080AB788((uint)*(byte *)(iVar6 + 2) * 0x3c);
   bVar1 = *(byte *)(iVar6 + 1);
-  iVar6 = func_080AB788(4);
+  iVar6 = NPC_Routine_080AB788(4);
   if (((iVar6 != 0) && (iVar6 != 3)) &&
-     (uVar4 = func_080AB7A4(*(byte *)(param_1 + 0x20)), *(byte *)(param_1 + 0x20) != uVar4)) {
-    func_08032198(param_1);
+     (uVar4 = NPC_Routine_080AB7A4(*(byte *)(param_1 + 0x20)), *(byte *)(param_1 + 0x20) != uVar4)) {
+    Entity_Routine_08032198(param_1);
   }
-  uVar5 = func_08037A48(param_1,iVar2);
-  func_08037098(param_1,uVar5);
+  uVar5 = Entity_Routine_08037A48(param_1,iVar2);
+  Entity_Routine_08037098(param_1,uVar5);
   uVar4 = func_0x08037a38(param_1,iVar2);
   if (*(ushort *)(param_1 + 0x22) != uVar4) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return CONCAT44(in_lr,(uint)bVar1 * 0x3c + iVar3);
 }
 
 // =============================================================================
-// Function: func_080379D8 @ 0x080379D8
+// Function: Entity_Routine_080379D8 @ 0x080379D8
 // =============================================================================
-void func_080379D8(undefined4 param_1)
+void Entity_Routine_080379D8(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,2,0x1b,0,8,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,2,0x1b,0,8,0,0);
   return;
 }
 
 // =============================================================================
-// Function: func_08037A04 @ 0x08037A04
+// Function: Entity_Routine_08037A04 @ 0x08037A04
 // =============================================================================
-undefined4 func_08037A04(int param_1)
+undefined4 Entity_Routine_08037A04(int param_1)
 
 {
   uint uVar1;
   undefined4 in_lr;
   undefined1 auStack_10 [8];
   
-  func_080A19EC(auStack_10);
-  func_0803211C(param_1,auStack_10);
+  NPC_Routine_080A19EC(auStack_10);
+  Entity_Routine_0803211C(param_1,auStack_10);
   uVar1 = func_0x08037a38(param_1,0);
   if (*(ushort *)(param_1 + 0x22) != uVar1) {
-    func_080321B0(param_1);
+    Entity_Routine_080321B0(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08037A48 @ 0x08037A48
+// Function: Entity_Routine_08037A48 @ 0x08037A48
 // =============================================================================
-undefined8 func_08037A48(undefined4 param_1,int param_2)
+undefined8 Entity_Routine_08037A48(undefined4 param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -20762,9 +20762,9 @@ undefined8 func_08037A48(undefined4 param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08037A5C @ 0x08037A5C
+// Function: Entity_Routine_08037A5C @ 0x08037A5C
 // =============================================================================
-undefined8 func_08037A5C(undefined4 param_1,undefined4 param_2,byte param_3)
+undefined8 Entity_Routine_08037A5C(undefined4 param_1,undefined4 param_2,byte param_3)
 
 {
   int iVar1;
@@ -20774,7 +20774,7 @@ undefined8 func_08037A5C(undefined4 param_1,undefined4 param_2,byte param_3)
   undefined2 uStack_18;
   undefined2 uStack_16;
   
-  iVar1 = func_080005D4(0x48);
+  iVar1 = Dispatcher_Routine_080005D4(0x48);
   func_0x08037008(iVar1,param_1,param_2,_DAT_08037ac8,0);
   *(undefined4 *)(iVar1 + 0x14) = _DAT_08037acc;
   *(byte *)(iVar1 + 0x44) = *(byte *)(iVar1 + 0x44) & 0xfc | param_3 & 3;
@@ -20787,9 +20787,9 @@ undefined8 func_08037A5C(undefined4 param_1,undefined4 param_2,byte param_3)
 }
 
 // =============================================================================
-// Function: func_08037AD0 @ 0x08037AD0
+// Function: Entity_Routine_08037AD0 @ 0x08037AD0
 // =============================================================================
-undefined8 func_08037AD0(undefined4 param_1,undefined4 param_2,byte param_3)
+undefined8 Entity_Routine_08037AD0(undefined4 param_1,undefined4 param_2,byte param_3)
 
 {
   int iVar1;
@@ -20799,7 +20799,7 @@ undefined8 func_08037AD0(undefined4 param_1,undefined4 param_2,byte param_3)
   undefined2 uStack_18;
   undefined2 uStack_16;
   
-  iVar1 = func_080005D4(0x48);
+  iVar1 = Dispatcher_Routine_080005D4(0x48);
   func_0x08037008(iVar1,param_1,param_2,0x2ac,0xb);
   *(undefined4 *)(iVar1 + 0x14) = _DAT_08037b44;
   *(byte *)(iVar1 + 0x44) = *(byte *)(iVar1 + 0x44) & 0xfc | param_3 & 3;
@@ -20812,39 +20812,39 @@ undefined8 func_08037AD0(undefined4 param_1,undefined4 param_2,byte param_3)
 }
 
 // =============================================================================
-// Function: func_08037B48 @ 0x08037B48
+// Function: Entity_Routine_08037B48 @ 0x08037B48
 // =============================================================================
-undefined8 func_08037B48(undefined4 param_1,undefined4 param_2)
+undefined8 Entity_Routine_08037B48(undefined4 param_1,undefined4 param_2)
 
 {
   int iVar1;
   undefined4 in_lr;
   
-  iVar1 = func_080005D4(0x44);
+  iVar1 = Dispatcher_Routine_080005D4(0x44);
   func_0x08037008(iVar1,param_1,param_2,_DAT_08037b78,0xc);
   *(undefined4 *)(iVar1 + 0x14) = _DAT_08037b7c;
   return CONCAT44(in_lr,iVar1);
 }
 
 // =============================================================================
-// Function: func_08037B80 @ 0x08037B80
+// Function: Entity_Routine_08037B80 @ 0x08037B80
 // =============================================================================
-undefined8 func_08037B80(undefined4 param_1,undefined4 param_2)
+undefined8 Entity_Routine_08037B80(undefined4 param_1,undefined4 param_2)
 
 {
   int iVar1;
   undefined4 in_lr;
   
-  iVar1 = func_080005D4(0x44);
+  iVar1 = Dispatcher_Routine_080005D4(0x44);
   func_0x08037008(iVar1,param_1,param_2,_DAT_08037bb0,10);
   *(undefined4 *)(iVar1 + 0x14) = _DAT_08037bb4;
   return CONCAT44(in_lr,iVar1);
 }
 
 // =============================================================================
-// Function: func_08037BB8 @ 0x08037BB8
+// Function: Entity_Routine_08037BB8 @ 0x08037BB8
 // =============================================================================
-undefined8 func_08037BB8(int param_1,undefined4 param_2,undefined4 param_3)
+undefined8 Entity_Routine_08037BB8(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 in_lr;
@@ -20855,9 +20855,9 @@ undefined8 func_08037BB8(int param_1,undefined4 param_2,undefined4 param_3)
 }
 
 // =============================================================================
-// Function: func_08037BE0 @ 0x08037BE0
+// Function: Entity_Routine_08037BE0 @ 0x08037BE0
 // =============================================================================
-void func_08037BE0(int param_1,undefined4 param_2,undefined4 param_3)
+void Entity_Routine_08037BE0(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -20869,9 +20869,9 @@ void func_08037BE0(int param_1,undefined4 param_2,undefined4 param_3)
 }
 
 // =============================================================================
-// Function: func_08037C08 @ 0x08037C08
+// Function: Entity_Routine_08037C08 @ 0x08037C08
 // =============================================================================
-undefined8 func_08037C08(int param_1,undefined4 param_2,undefined4 param_3,byte param_4)
+undefined8 Entity_Routine_08037C08(int param_1,undefined4 param_2,undefined4 param_3,byte param_4)
 
 {
   undefined4 in_lr;
@@ -20892,9 +20892,9 @@ undefined8 func_08037C08(int param_1,undefined4 param_2,undefined4 param_3,byte 
 }
 
 // =============================================================================
-// Function: func_08037C68 @ 0x08037C68
+// Function: Entity_Routine_08037C68 @ 0x08037C68
 // =============================================================================
-undefined8 func_08037C68(int param_1,undefined4 param_2,undefined4 param_3,byte param_4)
+undefined8 Entity_Routine_08037C68(int param_1,undefined4 param_2,undefined4 param_3,byte param_4)
 
 {
   undefined4 in_lr;
@@ -20915,9 +20915,9 @@ undefined8 func_08037C68(int param_1,undefined4 param_2,undefined4 param_3,byte 
 }
 
 // =============================================================================
-// Function: func_08037CC4 @ 0x08037CC4
+// Function: Entity_Routine_08037CC4 @ 0x08037CC4
 // =============================================================================
-void func_08037CC4(int param_1)
+void Entity_Routine_08037CC4(int param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -20929,22 +20929,22 @@ void func_08037CC4(int param_1)
 }
 
 // =============================================================================
-// Function: func_08037CF0 @ 0x08037CF0
+// Function: Entity_Routine_08037CF0 @ 0x08037CF0
 // =============================================================================
-void func_08037CF0(undefined4 param_1)
+void Entity_Routine_08037CF0(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x54);
-  func_08037D08(uVar1,param_1);
+  uVar1 = Dispatcher_Routine_080005D4(0x54);
+  Entity_Routine_08037D08(uVar1,param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_08037D74 @ 0x08037D74
+// Function: Entity_Routine_08037D74 @ 0x08037D74
 // =============================================================================
-undefined4 func_08037D74(int *param_1,undefined4 *param_2)
+undefined4 Entity_Routine_08037D74(int *param_1,undefined4 *param_2)
 
 {
   undefined4 uVar1;
@@ -20963,23 +20963,23 @@ undefined4 func_08037D74(int *param_1,undefined4 *param_2)
     iVar2 = 0;
   }
   if ((iVar2 != 0) && ((char)param_1[0x14] != '\0')) {
-    func_080A480C(param_1 + 2,uVar1,param_1 + 0xe);
-    func_080A4944(param_1 + 2,param_1 + 0x10,1);
+    NPC_Routine_080A480C(param_1 + 2,uVar1,param_1 + 0xe);
+    NPC_Routine_080A4944(param_1 + 2,param_1 + 0x10,1);
     *(char *)(param_1 + 0x14) = '\0';
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08037E18 @ 0x08037E18
+// Function: Entity_Routine_08037E18 @ 0x08037E18
 // =============================================================================
-undefined8 func_08037E18(int param_1,undefined4 param_2,undefined4 param_3)
+undefined8 Entity_Routine_08037E18(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 in_lr;
   undefined1 auStack_18 [8];
   
-  func_0800FFE0(auStack_18,param_3);
+  Farmer_Routine_0800FFE0(auStack_18,param_3);
   func_0x0801fd78(param_1,param_2,auStack_18);
   *(undefined4 *)(param_1 + 0x14) = _DAT_08037e44;
   *(undefined4 *)(param_1 + 0x18) = param_3;
@@ -20987,27 +20987,27 @@ undefined8 func_08037E18(int param_1,undefined4 param_2,undefined4 param_3)
 }
 
 // =============================================================================
-// Function: func_08037E9C @ 0x08037E9C
+// Function: Entity_Routine_08037E9C @ 0x08037E9C
 // =============================================================================
-void func_08037E9C(undefined4 param_1)
+void Entity_Routine_08037E9C(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x58);
-  func_08037EF0(uVar1,param_1);
+  uVar1 = Dispatcher_Routine_080005D4(0x58);
+  Entity_Routine_08037EF0(uVar1,param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_08037EB4 @ 0x08037EB4
+// Function: Entity_Routine_08037EB4 @ 0x08037EB4
 // =============================================================================
-undefined4 func_08037EB4(int param_1,undefined1 *param_2)
+undefined4 Entity_Routine_08037EB4(int param_1,undefined1 *param_2)
 
 {
   undefined4 in_lr;
   
-  func_0800FFF4(*(undefined4 *)(param_1 + 0x18),*param_2);
+  Farmer_Routine_0800FFF4(*(undefined4 *)(param_1 + 0x18),*param_2);
   if (*(int *)(param_1 + 0x10) != 0) {
     func_0x08037f74();
   }
@@ -21015,9 +21015,9 @@ undefined4 func_08037EB4(int param_1,undefined1 *param_2)
 }
 
 // =============================================================================
-// Function: func_08037ED0 @ 0x08037ED0
+// Function: Entity_Routine_08037ED0 @ 0x08037ED0
 // =============================================================================
-void func_08037ED0(short *param_1,int param_2)
+void Entity_Routine_08037ED0(short *param_1,int param_2)
 
 {
   short sVar1;
@@ -21033,9 +21033,9 @@ void func_08037ED0(short *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08037F60 @ 0x08037F60
+// Function: Entity_Routine_08037F60 @ 0x08037F60
 // =============================================================================
-undefined4 func_08037F60(int param_1)
+undefined4 Entity_Routine_08037F60(int param_1)
 
 {
   char cVar1;
@@ -21049,9 +21049,9 @@ undefined4 func_08037F60(int param_1)
 }
 
 // =============================================================================
-// Function: func_08037F7C @ 0x08037F7C
+// Function: Entity_Routine_08037F7C @ 0x08037F7C
 // =============================================================================
-undefined4 func_08037F7C(int *param_1,undefined4 *param_2)
+undefined4 Entity_Routine_08037F7C(int *param_1,undefined4 *param_2)
 
 {
   undefined4 uVar1;
@@ -21074,17 +21074,17 @@ undefined4 func_08037F7C(int *param_1,undefined4 *param_2)
     iVar2 = 0;
   }
   if ((iVar2 != 0) && ((char)param_1[0x14] != '\0')) {
-    func_080A480C(param_1 + 2,uVar1,param_1 + 0xe);
-    func_080A4944(param_1 + 2,param_1 + 0x10,1);
+    NPC_Routine_080A480C(param_1 + 2,uVar1,param_1 + 0xe);
+    NPC_Routine_080A4944(param_1 + 2,param_1 + 0x10,1);
     *(char *)(param_1 + 0x14) = '\0';
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08038028 @ 0x08038028
+// Function: Entity_Routine_08038028 @ 0x08038028
 // =============================================================================
-undefined8 func_08038028(int param_1,int *param_2,undefined4 param_3)
+undefined8 Entity_Routine_08038028(int param_1,int *param_2,undefined4 param_3)
 
 {
   char cVar1;
@@ -21100,17 +21100,17 @@ undefined8 func_08038028(int param_1,int *param_2,undefined4 param_3)
   *(undefined2 *)(param_1 + 0x28) = 0x31;
   iVar2 = func_0x080d3914(param_2,0x2b,*(undefined4 *)(*param_2 + 0x40));
   if (((iVar2 != 0) && (*(short *)(iVar2 + 4) == *(short *)(param_1 + 4))) &&
-     (cVar1 = func_08020460(iVar2), cVar1 != '\0')) {
-    func_08038374(param_1,*(undefined4 *)(iVar2 + 8),*(undefined4 *)(iVar2 + 0xc),
+     (cVar1 = Entity_Routine_08020460(iVar2), cVar1 != '\0')) {
+    Entity_Routine_08038374(param_1,*(undefined4 *)(iVar2 + 8),*(undefined4 *)(iVar2 + 0xc),
                   *(undefined2 *)(iVar2 + 0x22),*(undefined1 *)(iVar2 + 0x20));
   }
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08038110 @ 0x08038110
+// Function: Entity_Routine_08038110 @ 0x08038110
 // =============================================================================
-undefined4 func_08038110(undefined4 *param_1)
+undefined4 Entity_Routine_08038110(undefined4 *param_1)
 
 {
   byte bVar1;
@@ -21150,8 +21150,8 @@ undefined4 func_08038110(undefined4 *param_1)
   if (iVar4 < 1) {
     param_1[7] = 0;
     *(char *)((int)param_1 + 0x25) = '\0';
-    func_0801FE94(&iStack_50,param_1);
-    memcpy(param_1[6],&iStack_50,6);
+    Farmer_Routine_0801FE94(&iStack_50,param_1);
+    gba_memcpy(param_1[6],&iStack_50,6);
     if (((iStack_5c == 0) || ((uStack_54 & 0xffff) < (uint)((int)param_1[2] >> 0x13))) ||
        (uStack_54 >> 0x10 < (uint)((int)param_1[3] >> 0x13))) {
       piVar3 = (int *)0x0;
@@ -21175,7 +21175,7 @@ undefined4 func_08038110(undefined4 *param_1)
     if (iVar4 == 0) {
       return in_lr;
     }
-    func_0802151C(iVar4,&iStack_50);
+    Entity_Routine_0802151C(iVar4,&iStack_50);
     return in_lr;
   }
   func_0x080d3914(&uStack_28,param_1,*(undefined4 *)(param_1[5] + 0xc));
@@ -21195,7 +21195,7 @@ undefined4 func_08038110(undefined4 *param_1)
   iVar6 = param_1[3];
   bVar1 = *(byte *)(param_1 + 9);
   if (bVar1 == 1) {
-    func_080ABBC4(&iStack_50);
+    NPC_Routine_080ABBC4(&iStack_50);
     iStack_50 = iStack_4c * 0x10000;
     if (iStack_50 - _DAT_080381d0 == 0 || iStack_50 < _DAT_080381d0) {
       iVar6 = iVar6 + _DAT_080381d0;
@@ -21205,7 +21205,7 @@ undefined4 func_08038110(undefined4 *param_1)
   else {
     if (1 < bVar1) {
       if (bVar1 == 2) {
-        func_080ABBEC(&iStack_50);
+        NPC_Routine_080ABBEC(&iStack_50);
         iStack_44 = iStack_48 * 0x10000;
         if (iStack_44 - _DAT_08038258 == 0 || iStack_44 < _DAT_08038258) {
           iVar4 = iVar4 + _DAT_08038258;
@@ -21214,7 +21214,7 @@ undefined4 func_08038110(undefined4 *param_1)
       }
       else {
         if (bVar1 != 3) goto LAB_08038250;
-        func_080ABC14(&iStack_50);
+        NPC_Routine_080ABC14(&iStack_50);
         iStack_44 = iStack_44 * 0x10000;
         if (iStack_44 - _DAT_08038228 != 0 && _DAT_08038228 <= iStack_44) {
           iStack_44 = _DAT_0803822c;
@@ -21224,7 +21224,7 @@ undefined4 func_08038110(undefined4 *param_1)
       goto LAB_08038250;
     }
     if (bVar1 != 0) goto LAB_08038250;
-    func_080ABBA0(&iStack_50);
+    NPC_Routine_080ABBA0(&iStack_50);
     iStack_50 = iStack_50 * 0x10000;
     if (iStack_50 - _DAT_080381f4 != 0 && _DAT_080381f4 <= iStack_50) {
       iVar6 = iVar6 + _DAT_08038200;
@@ -21239,9 +21239,9 @@ LAB_08038250:
 }
 
 // =============================================================================
-// Function: func_08038300 @ 0x08038300
+// Function: Entity_Routine_08038300 @ 0x08038300
 // =============================================================================
-undefined4 func_08038300(int param_1)
+undefined4 Entity_Routine_08038300(int param_1)
 
 {
   int iVar1;
@@ -21251,40 +21251,40 @@ undefined4 func_08038300(int param_1)
   if (iVar1 != 0) {
     func_0x080d3910(iVar1,*(undefined4 *)(*(int *)(iVar1 + 4) + 0xc));
   }
-  func_08038110(param_1);
+  Entity_Routine_08038110(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08038320 @ 0x08038320
+// Function: Entity_Routine_08038320 @ 0x08038320
 // =============================================================================
-undefined4 func_08038320(undefined4 param_1)
+undefined4 Entity_Routine_08038320(undefined4 param_1)
 
 {
   undefined4 in_lr;
   
-  func_0801FE60();
-  func_08038110(param_1);
+  Farmer_Routine_0801FE60();
+  Entity_Routine_08038110(param_1);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08038334 @ 0x08038334
+// Function: Entity_Routine_08038334 @ 0x08038334
 // =============================================================================
-void func_08038334(undefined4 param_1)
+void Entity_Routine_08038334(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x48);
-  func_0803853C(uVar1,param_1);
+  uVar1 = Dispatcher_Routine_080005D4(0x48);
+  Entity_Routine_0803853C(uVar1,param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_0803834C @ 0x0803834C
+// Function: Entity_Routine_0803834C @ 0x0803834C
 // =============================================================================
-void func_0803834C(short *param_1,int param_2)
+void Entity_Routine_0803834C(short *param_1,int param_2)
 
 {
   short sVar1;
@@ -21300,10 +21300,10 @@ void func_0803834C(short *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08038374 @ 0x08038374
+// Function: Entity_Routine_08038374 @ 0x08038374
 // =============================================================================
 undefined4
-func_08038374(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+Entity_Routine_08038374(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
              undefined4 param_5)
 
 {
@@ -21312,14 +21312,14 @@ func_08038374(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param
   *(undefined1 *)(param_1 + 0x26) = 1;
   *(undefined4 *)(param_1 + 8) = param_2;
   *(undefined4 *)(param_1 + 0xc) = param_3;
-  func_08038398(param_1,param_4,param_5);
+  Entity_Routine_08038398(param_1,param_4,param_5);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08038398 @ 0x08038398
+// Function: Entity_Routine_08038398 @ 0x08038398
 // =============================================================================
-undefined4 func_08038398(int param_1,int param_2,int param_3)
+undefined4 Entity_Routine_08038398(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -21351,7 +21351,7 @@ undefined4 func_08038398(int param_1,int param_2,int param_3)
   if (iVar1 + param_3 != (uint)*(ushort *)(param_1 + 0x28)) {
     iVar2 = *(int *)(param_1 + 0x10);
     if (iVar2 != 0) {
-      func_0805E860(iVar2 + 0x30);
+      Animal_Routine_0805E860(iVar2 + 0x30);
       *(undefined1 *)(iVar2 + 0x44) = 1;
       *(undefined1 *)(iVar2 + 0x46) = 0;
       *(undefined1 *)(iVar2 + 0x47) = 1;
@@ -21362,9 +21362,9 @@ undefined4 func_08038398(int param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_080384FC @ 0x080384FC
+// Function: Entity_Routine_080384FC @ 0x080384FC
 // =============================================================================
-undefined4 func_080384FC(int param_1)
+undefined4 Entity_Routine_080384FC(int param_1)
 
 {
   int iVar1;
@@ -21373,7 +21373,7 @@ undefined4 func_080384FC(int param_1)
   if (*(short *)(param_1 + 0x28) != 0x31) {
     iVar1 = *(int *)(param_1 + 0x10);
     if (iVar1 != 0) {
-      func_0805E860(iVar1 + 0x30,0x31);
+      Animal_Routine_0805E860(iVar1 + 0x30,0x31);
       *(undefined1 *)(iVar1 + 0x44) = 1;
       *(undefined1 *)(iVar1 + 0x46) = 0;
       *(undefined1 *)(iVar1 + 0x47) = 1;
@@ -21385,9 +21385,9 @@ undefined4 func_080384FC(int param_1)
 }
 
 // =============================================================================
-// Function: func_0803853C @ 0x0803853C
+// Function: Entity_Routine_0803853C @ 0x0803853C
 // =============================================================================
-undefined8 func_0803853C(undefined4 *param_1,undefined4 *param_2)
+undefined8 Entity_Routine_0803853C(undefined4 *param_1,undefined4 *param_2)
 
 {
   undefined4 uVar1;
@@ -21396,14 +21396,14 @@ undefined8 func_0803853C(undefined4 *param_1,undefined4 *param_2)
   *param_1 = param_2;
   param_1[1] = _DAT_0803857c;
   uVar1 = func_0x080d3910((int *)*param_2,*(undefined4 *)(*(int *)*param_2 + 100));
-  func_080A4A00(param_1 + 2,uVar1,*(undefined2 *)(param_2 + 10),*param_2,2,7,0);
+  NPC_Routine_080A4A00(param_1 + 2,uVar1,*(undefined2 *)(param_2 + 10),*param_2,2,7,0);
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08038580 @ 0x08038580
+// Function: Entity_Routine_08038580 @ 0x08038580
 // =============================================================================
-undefined4 func_08038580(int param_1)
+undefined4 Entity_Routine_08038580(int param_1)
 
 {
   char cVar1;
@@ -21413,7 +21413,7 @@ undefined4 func_08038580(int param_1)
   
   pcVar3 = (char *)(param_1 + 0x47);
   if (*pcVar3 == '\0') {
-    iVar2 = func_0805E8F0(param_1 + 0x30);
+    iVar2 = Animal_Routine_0805E8F0(param_1 + 0x30);
     if (-1 < iVar2 * 0x40000000) {
       return in_lr;
     }
@@ -21428,9 +21428,9 @@ undefined4 func_08038580(int param_1)
 }
 
 // =============================================================================
-// Function: func_080385B0 @ 0x080385B0
+// Function: Entity_Routine_080385B0 @ 0x080385B0
 // =============================================================================
-undefined4 func_080385B0(int *param_1,undefined4 *param_2)
+undefined4 Entity_Routine_080385B0(int *param_1,undefined4 *param_2)
 
 {
   short sVar1;
@@ -21491,15 +21491,15 @@ undefined4 func_080385B0(int *param_1,undefined4 *param_2)
     iVar3 = 0;
   }
   if ((iVar3 != 0) && ((char)param_1[0x11] != '\0')) {
-    func_080A480C(piVar7,*puStack_24,auStack_54);
+    NPC_Routine_080A480C(piVar7,*puStack_24,auStack_54);
     if (*(char *)((int)param_1 + 0x45) == '\0') {
       if (*(char *)((int)param_1 + 0x46) == '\0') {
-        func_080A4944(piVar7,auStack_4c,1);
+        NPC_Routine_080A4944(piVar7,auStack_4c,1);
         *(char *)((int)param_1 + 0x46) = '\x01';
       }
     }
     else {
-      func_080A4944(piVar7,auStack_4c,1);
+      NPC_Routine_080A4944(piVar7,auStack_4c,1);
     }
     *(char *)(param_1 + 0x11) = '\0';
   }
@@ -21511,9 +21511,9 @@ undefined4 func_080385B0(int *param_1,undefined4 *param_2)
 }
 
 // =============================================================================
-// Function: func_08038740 @ 0x08038740
+// Function: Entity_Routine_08038740 @ 0x08038740
 // =============================================================================
-undefined8 func_08038740(int param_1,undefined4 param_2,undefined4 param_3)
+undefined8 Entity_Routine_08038740(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 in_lr;
@@ -21525,36 +21525,36 @@ undefined8 func_08038740(int param_1,undefined4 param_2,undefined4 param_3)
 }
 
 // =============================================================================
-// Function: func_080387A0 @ 0x080387A0
+// Function: Entity_Routine_080387A0 @ 0x080387A0
 // =============================================================================
-void func_080387A0(undefined4 param_1)
+void Entity_Routine_080387A0(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = func_080005D4(0x18);
-  func_08038820(uVar1,param_1);
+  uVar1 = Dispatcher_Routine_080005D4(0x18);
+  Entity_Routine_08038820(uVar1,param_1);
   return;
 }
 
 // =============================================================================
-// Function: func_080387B8 @ 0x080387B8
+// Function: Entity_Routine_080387B8 @ 0x080387B8
 // =============================================================================
-undefined4 func_080387B8(int param_1)
+undefined4 Entity_Routine_080387B8(int param_1)
 
 {
   undefined4 in_lr;
   
   if (*(int *)(param_1 + 0x10) != 0) {
-    func_08038DF0();
+    Entity_Routine_08038DF0();
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080387C8 @ 0x080387C8
+// Function: Entity_Routine_080387C8 @ 0x080387C8
 // =============================================================================
-undefined4 func_080387C8(int param_1)
+undefined4 Entity_Routine_080387C8(int param_1)
 
 {
   undefined4 in_lr;
@@ -21566,9 +21566,9 @@ undefined4 func_080387C8(int param_1)
 }
 
 // =============================================================================
-// Function: func_080387D8 @ 0x080387D8
+// Function: Entity_Routine_080387D8 @ 0x080387D8
 // =============================================================================
-undefined8 func_080387D8(int param_1)
+undefined8 Entity_Routine_080387D8(int param_1)
 
 {
   undefined4 uVar1;
@@ -21578,43 +21578,43 @@ undefined8 func_080387D8(int param_1)
     uVar1 = 1;
   }
   else {
-    uVar1 = func_08038EA0();
+    uVar1 = Entity_Routine_08038EA0();
   }
   return CONCAT44(in_lr,uVar1);
 }
 
 // =============================================================================
-// Function: func_080387EC @ 0x080387EC
+// Function: Entity_Routine_080387EC @ 0x080387EC
 // =============================================================================
-undefined4 func_080387EC(int param_1)
+undefined4 Entity_Routine_080387EC(int param_1)
 
 {
   undefined4 in_lr;
   
   if (*(int *)(param_1 + 0x10) != 0) {
-    func_08038EB8();
+    Entity_Routine_08038EB8();
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080387FC @ 0x080387FC
+// Function: Entity_Routine_080387FC @ 0x080387FC
 // =============================================================================
-undefined4 func_080387FC(int param_1)
+undefined4 Entity_Routine_080387FC(int param_1)
 
 {
   undefined4 in_lr;
   
   if (*(int *)(param_1 + 0x10) != 0) {
-    func_08038EE0();
+    Entity_Routine_08038EE0();
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0803880C @ 0x0803880C
+// Function: Entity_Routine_0803880C @ 0x0803880C
 // =============================================================================
-undefined8 func_0803880C(int param_1)
+undefined8 Entity_Routine_0803880C(int param_1)
 
 {
   undefined4 uVar1;
@@ -21630,9 +21630,9 @@ undefined8 func_0803880C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08038820 @ 0x08038820
+// Function: Entity_Routine_08038820 @ 0x08038820
 // =============================================================================
-undefined8 func_08038820(undefined4 *param_1,undefined4 *param_2)
+undefined8 Entity_Routine_08038820(undefined4 *param_1,undefined4 *param_2)
 
 {
   int iVar1;
@@ -21647,10 +21647,10 @@ undefined8 func_08038820(undefined4 *param_1,undefined4 *param_2)
   *param_1 = param_2;
   param_1[1] = _DAT_0803889c;
   if ((*(byte *)(param_2[6] + 0x54) & 0x7f) >> 5 == 1) {
-    iVar1 = func_080005D4(0x4c);
+    iVar1 = Dispatcher_Routine_080005D4(0x4c);
     piVar4 = (int *)*param_2;
     piVar2 = (int *)func_0x080d3910(piVar4,*(undefined4 *)(*piVar4 + 0x74));
-    func_080A4740(iVar1,piVar4,6,0x1b);
+    NPC_Routine_080A4740(iVar1,piVar4,6,0x1b);
     *(undefined4 *)(iVar1 + 0x24) = _DAT_080388a0;
     iVar5 = *piVar2;
     func_0x080d3918(apuStack_28,piVar2,0,*(undefined4 *)(iVar5 + 0xc));
@@ -21664,25 +21664,25 @@ undefined8 func_08038820(undefined4 *param_1,undefined4 *param_2)
   param_1[3] = 0;
   param_1[4] = 0;
   param_1[5] = 0;
-  uVar3 = func_080005D4(0x194);
-  piVar2 = (int *)func_080DCB7C(uVar3,*(undefined4 *)*param_1,
+  uVar3 = Dispatcher_Routine_080005D4(0x194);
+  piVar2 = (int *)VTable_Routine_080DCB7C(uVar3,*(undefined4 *)*param_1,
                                 (*(byte *)(param_2[6] + 0x5d) & 0xf) >> 2 == 1);
   piVar4 = (int *)param_1[5];
   if ((piVar2 != piVar4) && (piVar4 != (int *)0x0)) {
     iVar1 = *piVar4;
     for (piVar6 = piVar4 + 1; piVar6 != piVar4 + iVar1 * 0x14 + 1; piVar6 = piVar6 + 0x14) {
-      func_080A47B4(piVar6,2);
+      NPC_Routine_080A47B4(piVar6,2);
     }
-    func_08000608(piVar4);
+    Dispatcher_Routine_08000608(piVar4);
   }
   param_1[5] = piVar2;
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_08038928 @ 0x08038928
+// Function: Entity_Routine_08038928 @ 0x08038928
 // =============================================================================
-undefined4 func_08038928(int param_1)
+undefined4 Entity_Routine_08038928(int param_1)
 
 {
   uint *puVar1;
@@ -21705,7 +21705,7 @@ undefined4 func_08038928(int param_1)
     puVar8 = puVar1 + 0xb;
     do {
       if (*(char *)((int)puVar5 + 3) == '\0') {
-        iVar2 = func_0805E8F0(puVar8);
+        iVar2 = Animal_Routine_0805E8F0(puVar8);
         if (iVar2 * 0x40000000 < 0) {
           *(undefined1 *)puVar5 = 1;
         }
@@ -21741,7 +21741,7 @@ undefined4 func_08038928(int param_1)
     do {
       if (*pcVar9 == '\0') {
         if (*(char *)(iVar6 + 0x17) == '\0') {
-          iVar2 = func_0805E8F0(iVar6);
+          iVar2 = Animal_Routine_0805E8F0(iVar6);
           if (iVar2 * 0x40000000 < 0) {
             *(undefined1 *)(iVar6 + 0x14) = 1;
           }
@@ -21769,7 +21769,7 @@ undefined4 func_08038928(int param_1)
         for (piVar7 = piVar11 + 1; piVar7 != piVar11 + iVar2 * 0x10 + 1; piVar7 = piVar7 + 0x10) {
           func_0x080d3914(piVar7,2,*(undefined4 *)(piVar7[9] + 8));
         }
-        func_08000608(piVar11);
+        Dispatcher_Routine_08000608(piVar11);
       }
       *(undefined4 *)(param_1 + 0x10) = 0;
     }
@@ -21778,9 +21778,9 @@ undefined4 func_08038928(int param_1)
 }
 
 // =============================================================================
-// Function: func_08038A70 @ 0x08038A70
+// Function: Entity_Routine_08038A70 @ 0x08038A70
 // =============================================================================
-undefined4 func_08038A70(int param_1,undefined4 *param_2)
+undefined4 Entity_Routine_08038A70(int param_1,undefined4 *param_2)
 
 {
   undefined4 uVar1;
@@ -21850,15 +21850,15 @@ undefined4 func_08038A70(int param_1,undefined4 *param_2)
           iVar5 = 0;
         }
         if ((iVar5 != 0) && ((char)*puVar7 != '\0')) {
-          func_080A480C(puVar3,uStack_70,auStack_90);
+          NPC_Routine_080A480C(puVar3,uStack_70,auStack_90);
           if (*(char *)((int)puVar7 + 1) == '\0') {
             if (*(char *)((int)puVar7 + 2) == '\0') {
-              func_080A4944(puVar3,auStack_88,1);
+              NPC_Routine_080A4944(puVar3,auStack_88,1);
               *(char *)((int)puVar7 + 2) = '\x01';
             }
           }
           else {
-            func_080A4944(puVar3,auStack_88,1);
+            NPC_Routine_080A4944(puVar3,auStack_88,1);
           }
           *(char *)puVar7 = '\0';
         }
@@ -21883,8 +21883,8 @@ undefined4 func_08038A70(int param_1,undefined4 *param_2)
       iVar5 = 0;
     }
     if ((iVar5 != 0) && (*(char *)(puVar4 + 0x12) != '\0')) {
-      func_080A480C(puVar4,uStack_68,puVar4 + 0xc);
-      func_080A4944(puVar4,puVar4 + 0xe,1);
+      NPC_Routine_080A480C(puVar4,uStack_68,puVar4 + 0xc);
+      NPC_Routine_080A4944(puVar4,puVar4 + 0xe,1);
       *(char *)(puVar4 + 0x12) = '\0';
     }
   }
@@ -21902,8 +21902,8 @@ undefined4 func_08038A70(int param_1,undefined4 *param_2)
       iVar5 = 0;
     }
     if ((iVar5 != 0) && (*(char *)(puVar4 + 0x12) != '\0')) {
-      func_080A480C(puVar4,uStack_60,puVar4 + 0xc);
-      func_080A4944(puVar4,puVar4 + 0xe,0);
+      NPC_Routine_080A480C(puVar4,uStack_60,puVar4 + 0xc);
+      NPC_Routine_080A4944(puVar4,puVar4 + 0xe,0);
       *(char *)(puVar4 + 0x12) = '\0';
     }
   }
@@ -21930,15 +21930,15 @@ undefined4 func_08038A70(int param_1,undefined4 *param_2)
           iVar5 = 0;
         }
         if ((iVar5 != 0) && (*(char *)(puVar4 + 0xf) != '\0')) {
-          func_080A480C(puVar4,uStack_58,auStack_90);
+          NPC_Routine_080A480C(puVar4,uStack_58,auStack_90);
           if (*(char *)((int)puVar4 + 0x3d) == '\0') {
             if (*(char *)((int)puVar4 + 0x3e) == '\0') {
-              func_080A4944(puVar4,auStack_88,1);
+              NPC_Routine_080A4944(puVar4,auStack_88,1);
               *(char *)((int)puVar4 + 0x3e) = '\x01';
             }
           }
           else {
-            func_080A4944(puVar4,auStack_88,1);
+            NPC_Routine_080A4944(puVar4,auStack_88,1);
           }
           *(char *)(puVar4 + 0xf) = '\0';
         }
@@ -21953,9 +21953,9 @@ undefined4 func_08038A70(int param_1,undefined4 *param_2)
 }
 
 // =============================================================================
-// Function: func_08038DF0 @ 0x08038DF0
+// Function: Entity_Routine_08038DF0 @ 0x08038DF0
 // =============================================================================
-undefined4 func_08038DF0(undefined4 *param_1)
+undefined4 Entity_Routine_08038DF0(undefined4 *param_1)
 
 {
   int iVar1;
@@ -21965,10 +21965,10 @@ undefined4 func_08038DF0(undefined4 *param_1)
   undefined4 in_lr;
   undefined2 *apuStack_20 [2];
   
-  iVar1 = func_080005D4(0x54);
+  iVar1 = Dispatcher_Routine_080005D4(0x54);
   piVar3 = *(int **)*param_1;
   piVar2 = (int *)func_0x080d3910(piVar3,*(undefined4 *)(*piVar3 + 0x70));
-  func_080A4740(iVar1,piVar3,6,0x1b);
+  NPC_Routine_080A4740(iVar1,piVar3,6,0x1b);
   *(undefined4 *)(iVar1 + 0x24) = _DAT_08038e8c;
   iVar4 = *piVar2;
   func_0x080d3918(apuStack_20,piVar2,0,*(undefined4 *)(iVar4 + 0xc));
@@ -21979,17 +21979,17 @@ undefined4 func_08038DF0(undefined4 *param_1)
   *(undefined1 *)(iVar1 + 0x51) = 0;
   iVar4 = param_1[3];
   if ((iVar1 != iVar4) && (iVar4 != 0)) {
-    func_080A47B4(iVar4,2);
-    func_08000608(iVar4);
+    NPC_Routine_080A47B4(iVar4,2);
+    Dispatcher_Routine_08000608(iVar4);
   }
   param_1[3] = iVar1;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08038EA0 @ 0x08038EA0
+// Function: Entity_Routine_08038EA0 @ 0x08038EA0
 // =============================================================================
-undefined8 func_08038EA0(int param_1)
+undefined8 Entity_Routine_08038EA0(int param_1)
 
 {
   undefined4 in_lr;
@@ -21998,9 +21998,9 @@ undefined8 func_08038EA0(int param_1)
 }
 
 // =============================================================================
-// Function: func_08038EB8 @ 0x08038EB8
+// Function: Entity_Routine_08038EB8 @ 0x08038EB8
 // =============================================================================
-undefined4 func_08038EB8(int param_1)
+undefined4 Entity_Routine_08038EB8(int param_1)
 
 {
   int iVar1;
@@ -22008,17 +22008,17 @@ undefined4 func_08038EB8(int param_1)
   
   iVar1 = *(int *)(param_1 + 0xc);
   if ((iVar1 != 0) && (iVar1 != 0)) {
-    func_080A47B4(iVar1,2);
-    func_08000608(iVar1);
+    NPC_Routine_080A47B4(iVar1,2);
+    Dispatcher_Routine_08000608(iVar1);
   }
   *(undefined4 *)(param_1 + 0xc) = 0;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08038EE0 @ 0x08038EE0
+// Function: Entity_Routine_08038EE0 @ 0x08038EE0
 // =============================================================================
-undefined4 func_08038EE0(undefined4 *param_1)
+undefined4 Entity_Routine_08038EE0(undefined4 *param_1)
 
 {
   uint *puVar1;
@@ -22044,7 +22044,7 @@ undefined4 func_08038EE0(undefined4 *param_1)
   undefined1 uStack_22;
   undefined1 uStack_21;
   
-  puVar1 = (uint *)func_080005D4(0x14c);
+  puVar1 = (uint *)Dispatcher_Routine_080005D4(0x14c);
   piVar7 = *(int **)*param_1;
   *puVar1 = 0;
   puVar10 = auStack_64;
@@ -22065,11 +22065,11 @@ undefined4 func_08038EE0(undefined4 *param_1)
     case 0x8038fdc:
       uVar2 = func_0x080d3910(piVar7,*(undefined4 *)(*piVar7 + 0x78));
       auStack_64[0] = 0;
-      func_080A4A00(auStack_60,uVar2,0,piVar7,4,0x1c);
+      NPC_Routine_080A4A00(auStack_60,uVar2,0,piVar7,4,0x1c);
       if (*puVar1 < 5) {
         puVar8 = puVar1 + *puVar1 * 0x10 + 1;
         if (puVar8 != (uint *)0x0) {
-          func_080DC840(puVar8,auStack_60);
+          VTable_Routine_080DC840(puVar8,auStack_60);
           puVar8[9] = _DAT_080390cc;
           puVar8[10] = uStack_38;
           puVar8[0xb] = uStack_34;
@@ -22083,15 +22083,15 @@ undefined4 func_08038EE0(undefined4 *param_1)
         }
         *puVar1 = *puVar1 + 1;
       }
-      func_080A47B4(auStack_60,2);
+      NPC_Routine_080A47B4(auStack_60,2);
       goto LAB_08039064;
     }
     auStack_64[0] = 0;
-    func_080A4A00(auStack_60,uVar2,uVar4,piVar7,4,0x1c);
+    NPC_Routine_080A4A00(auStack_60,uVar2,uVar4,piVar7,4,0x1c);
     if (*puVar1 < 5) {
       puVar8 = puVar1 + *puVar1 * 0x10 + 1;
       if (puVar8 != (uint *)0x0) {
-        func_080DC840(puVar8,auStack_60);
+        VTable_Routine_080DC840(puVar8,auStack_60);
         puVar8[9] = _DAT_08038fd8;
         puVar8[10] = uStack_38;
         puVar8[0xb] = uStack_34;
@@ -22105,7 +22105,7 @@ undefined4 func_08038EE0(undefined4 *param_1)
       }
       *puVar1 = *puVar1 + 1;
     }
-    func_080A47B4(auStack_60,2);
+    NPC_Routine_080A47B4(auStack_60,2);
 LAB_08039064:
     *(undefined1 *)((int)(puVar1 + 0x51) + (int)puVar9) = 0;
     puVar5 = (undefined4 *)&UNK_00000001;
@@ -22118,7 +22118,7 @@ LAB_08039064:
         for (puVar6 = puVar8 + 1; puVar6 != puVar8 + uVar3 * 0x10 + 1; puVar6 = puVar6 + 0x10) {
           func_0x080d3914(puVar6,2,*(undefined4 *)(puVar6[9] + 8));
         }
-        func_08000608(puVar8);
+        Dispatcher_Routine_08000608(puVar8);
       }
       param_1[4] = puVar1;
       return in_lr;
@@ -22127,14 +22127,14 @@ LAB_08039064:
 }
 
 // =============================================================================
-// Function: func_080390DC @ 0x080390DC
+// Function: Entity_Routine_080390DC @ 0x080390DC
 // =============================================================================
-undefined4 func_080390DC(int param_1)
+undefined4 Entity_Routine_080390DC(int param_1)
 
 {
   undefined4 in_lr;
   
-  func_0805E860(param_1 + 0x30);
+  Animal_Routine_0805E860(param_1 + 0x30);
   *(undefined1 *)(param_1 + 0x44) = 1;
   *(undefined1 *)(param_1 + 0x46) = 0;
   *(undefined1 *)(param_1 + 0x47) = 1;
@@ -22142,9 +22142,9 @@ undefined4 func_080390DC(int param_1)
 }
 
 // =============================================================================
-// Function: func_0803911C @ 0x0803911C
+// Function: Entity_Routine_0803911C @ 0x0803911C
 // =============================================================================
-undefined8 func_0803911C(int param_1)
+undefined8 Entity_Routine_0803911C(int param_1)
 
 {
   int iVar1;
@@ -22155,9 +22155,9 @@ undefined8 func_0803911C(int param_1)
 }
 
 // =============================================================================
-// Function: func_08039134 @ 0x08039134
+// Function: Entity_Routine_08039134 @ 0x08039134
 // =============================================================================
-undefined8 func_08039134(int *param_1,uint param_2,int param_3,int param_4)
+undefined8 Entity_Routine_08039134(int *param_1,uint param_2,int param_3,int param_4)
 
 {
   char cVar1;
@@ -22187,9 +22187,9 @@ undefined8 func_08039134(int *param_1,uint param_2,int param_3,int param_4)
 }
 
 // =============================================================================
-// Function: func_080391C0 @ 0x080391C0
+// Function: Entity_Routine_080391C0 @ 0x080391C0
 // =============================================================================
-undefined8 func_080391C0(int param_1,int param_2)
+undefined8 Entity_Routine_080391C0(int param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -22206,9 +22206,9 @@ undefined8 func_080391C0(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08039204 @ 0x08039204
+// Function: Entity_Routine_08039204 @ 0x08039204
 // =============================================================================
-undefined4 func_08039204(undefined4 param_1,int param_2,undefined4 param_3)
+undefined4 Entity_Routine_08039204(undefined4 param_1,int param_2,undefined4 param_3)
 
 {
   char cVar1;
@@ -22256,17 +22256,17 @@ undefined4 func_08039204(undefined4 param_1,int param_2,undefined4 param_3)
       if (iVar4 < 0x10) goto LAB_080392ea;
     }
     if (uVar7 == 0) {
-      cVar1 = func_080391C0(iVar3,iVar9);
+      cVar1 = Entity_Routine_080391C0(iVar3,iVar9);
       if (cVar1 == '\0') {
-        uVar7 = func_080ABC40(iVar3,iVar9,(int)sVar5,iVar8,uStack_28,*(byte *)(param_2 + 0x20));
+        uVar7 = NPC_Routine_080ABC40(iVar3,iVar9,(int)sVar5,iVar8,uStack_28,*(byte *)(param_2 + 0x20));
         if (*(byte *)(param_2 + 0x20) != uVar7) {
-          func_08032198(param_2);
+          Entity_Routine_08032198(param_2);
         }
       }
       else if ((bool)*(char *)(param_2 + 0x20) != iVar8 <= iVar9) {
-        func_08032198(param_2);
+        Entity_Routine_08032198(param_2);
       }
-      iVar2 = func_080AB788(0x1e);
+      iVar2 = NPC_Routine_080AB788(0x1e);
       uVar7 = iVar2 + 1;
     }
     *puStack_24 = (short)uVar7;
@@ -22280,9 +22280,9 @@ LAB_080392ea:
 }
 
 // =============================================================================
-// Function: func_0803955C @ 0x0803955C
+// Function: Entity_Routine_0803955C @ 0x0803955C
 // =============================================================================
-undefined4 func_0803955C(undefined4 param_1,undefined4 *param_2)
+undefined4 Entity_Routine_0803955C(undefined4 param_1,undefined4 *param_2)
 
 {
   short sVar1;
@@ -22308,7 +22308,7 @@ undefined4 func_0803955C(undefined4 param_1,undefined4 *param_2)
       sVar1 = *(short *)(param_2 + 1);
       sVar2 = *(short *)((int)param_2 + 10);
       sVar3 = *(short *)((int)param_2 + 0xe);
-      uVar6 = func_08039134(piVar9,sVar1,(int)sVar2,(int)sVar3);
+      uVar6 = Entity_Routine_08039134(piVar9,sVar1,(int)sVar2,(int)sVar3);
       if (uVar6 == 100) {
         uVar6 = (uint)*(byte *)(iVar5 + 0x13);
       }
@@ -22330,29 +22330,29 @@ undefined4 func_0803955C(undefined4 param_1,undefined4 *param_2)
           }
         }
       }
-      func_0809C068(iVar5,4);
+      NPC_Routine_0809C068(iVar5,4);
       uVar10 = param_2[0xd];
       iVar8 = 100;
       iVar5 = func_0x0809c060(uVar10);
       if (iVar5 == 0) {
-        func_080200C4(param_2,0xaa);
+        Entity_Routine_080200C4(param_2,0xaa);
       }
       else {
-        iVar8 = func_08039134(*param_2,*(undefined2 *)(param_2 + 1),
+        iVar8 = Entity_Routine_08039134(*param_2,*(undefined2 *)(param_2 + 1),
                               (int)*(short *)((int)param_2 + 10),(int)*(short *)((int)param_2 + 0xe)
                              );
       }
       if (iVar8 != 100) {
-        uVar6 = func_080AB788(100);
+        uVar6 = NPC_Routine_080AB788(100);
         if (uVar6 < 0x46) {
           uStack_30 = uStack_30 & _DAT_08039674;
-          iVar5 = func_080AB788(8);
+          iVar5 = NPC_Routine_080AB788(8);
           uStack_2c = (uStack_2c & _DAT_08039678 | (iVar5 + 3U & 0xff) << 0x10) & _DAT_0803967c |
                       iVar8 << 0x18;
           func_0x0809c0ac(uVar10,&uStack_30);
           return in_lr;
         }
-        iVar5 = func_080AB788(0x3c);
+        iVar5 = NPC_Routine_080AB788(0x3c);
         uStack_28 = (uStack_28 & _DAT_080396ac | iVar5 + 0x78U & 0xffff) & _DAT_080396b0 &
                     _DAT_080396b4 | iVar8 << 0x18;
         func_0x0809c0bc(uVar10,&uStack_28);
@@ -22364,16 +22364,16 @@ undefined4 func_0803955C(undefined4 param_1,undefined4 *param_2)
     }
     iVar8 = 0x24;
     *(undefined1 *)(iVar5 + 0x12) = 1;
-    func_080200C4(param_2,0xab);
+    Entity_Routine_080200C4(param_2,0xab);
   }
   *(short *)(iVar5 + 0x10) = (short)iVar8;
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_080396F4 @ 0x080396F4
+// Function: Entity_Routine_080396F4 @ 0x080396F4
 // =============================================================================
-undefined8 func_080396F4(undefined4 param_1,int param_2)
+undefined8 Entity_Routine_080396F4(undefined4 param_1,int param_2)
 
 {
   undefined4 uVar1;
@@ -22387,9 +22387,9 @@ undefined8 func_080396F4(undefined4 param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_08039708 @ 0x08039708
+// Function: Entity_Routine_08039708 @ 0x08039708
 // =============================================================================
-undefined4 func_08039708(undefined4 param_1,undefined4 *param_2,undefined4 param_3)
+undefined4 Entity_Routine_08039708(undefined4 param_1,undefined4 *param_2,undefined4 param_3)
 
 {
   int iVar1;
@@ -22426,13 +22426,13 @@ undefined4 func_08039708(undefined4 param_1,undefined4 *param_2,undefined4 param
     iVar2 = func_0x080d3914((int *)*param_2,uVar3,*(undefined4 *)(*(int *)*param_2 + 0x40));
     if ((iVar2 != 0) && (*(short *)(iVar2 + 4) == *(short *)(param_2 + 1))) {
       if (uVar5 == 0) {
-        uVar5 = func_080ABE58((int)*(short *)((int)param_2 + 10),(int)*(short *)((int)param_2 + 0xe)
+        uVar5 = NPC_Routine_080ABE58((int)*(short *)((int)param_2 + 10),(int)*(short *)((int)param_2 + 0xe)
                               ,(int)*(short *)(iVar2 + 10),(int)*(short *)(iVar2 + 0xe),param_3,
                               *(byte *)(param_2 + 8));
         if (*(byte *)(param_2 + 8) != uVar5) {
-          func_08032198(param_2);
+          Entity_Routine_08032198(param_2);
         }
-        iVar2 = func_080AB788(0x1e);
+        iVar2 = NPC_Routine_080AB788(0x1e);
         uVar5 = iVar2 + 1;
       }
       *(short *)(iVar1 + 0x10) = (short)uVar4;
@@ -22441,15 +22441,15 @@ undefined4 func_08039708(undefined4 param_1,undefined4 *param_2,undefined4 param
       return in_lr;
     }
   }
-  func_080323C8(param_2);
+  Entity_Routine_080323C8(param_2);
   uVar3 = param_2[0xd];
   iVar2 = 100;
   iVar1 = func_0x0809c060(uVar3);
   if (iVar1 == 0) {
-    func_080200C4(param_2,0xaa);
+    Entity_Routine_080200C4(param_2,0xaa);
   }
   else {
-    iVar2 = func_08039134(*param_2,*(undefined2 *)(param_2 + 1),(int)*(short *)((int)param_2 + 10),
+    iVar2 = Entity_Routine_08039134(*param_2,*(undefined2 *)(param_2 + 1),(int)*(short *)((int)param_2 + 10),
                           (int)*(short *)((int)param_2 + 0xe));
   }
   if (iVar2 == 100) {
@@ -22457,16 +22457,16 @@ undefined4 func_08039708(undefined4 param_1,undefined4 *param_2,undefined4 param
     func_0x0809c0a0(uVar3,&uStack_24);
   }
   else {
-    uVar4 = func_080AB788(100);
+    uVar4 = NPC_Routine_080AB788(100);
     if (uVar4 < 0x46) {
       uStack_30 = uStack_30 & _DAT_08039834;
-      iVar1 = func_080AB788(8);
+      iVar1 = NPC_Routine_080AB788(8);
       uStack_2c = (uStack_2c & _DAT_08039838 | (iVar1 + 3U & 0xff) << 0x10) & _DAT_0803983c |
                   iVar2 << 0x18;
       func_0x0809c0ac(uVar3,&uStack_30);
     }
     else {
-      iVar1 = func_080AB788(0x3c);
+      iVar1 = NPC_Routine_080AB788(0x3c);
       uStack_28 = (uStack_28 & _DAT_0803986c | iVar1 + 0x78U & 0xffff) & _DAT_08039870 &
                   _DAT_08039874 | iVar2 << 0x18;
       func_0x0809c0bc(uVar3,&uStack_28);
@@ -22476,24 +22476,24 @@ undefined4 func_08039708(undefined4 param_1,undefined4 *param_2,undefined4 param
 }
 
 // =============================================================================
-// Function: func_08039A30 @ 0x08039A30
+// Function: Entity_Routine_08039A30 @ 0x08039A30
 // =============================================================================
-void func_08039A30(undefined4 param_1)
+void Entity_Routine_08039A30(undefined4 param_1)
 
 {
   undefined4 uVar1;
   code *UNRECOVERED_JUMPTABLE;
   
-  uVar1 = func_080005D4(0x8c);
-  func_080324BC(uVar1,param_1,2,0x1b,0,8,0,0);
+  uVar1 = Dispatcher_Routine_080005D4(0x8c);
+  Entity_Routine_080324BC(uVar1,param_1,2,0x1b,0,8,0,0);
   (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
 // =============================================================================
-// Function: func_08039D5C @ 0x08039D5C
+// Function: Entity_Routine_08039D5C @ 0x08039D5C
 // =============================================================================
-undefined8 func_08039D5C(undefined4 param_1,uint param_2)
+undefined8 Entity_Routine_08039D5C(undefined4 param_1,uint param_2)
 
 {
   undefined4 uVar1;
@@ -22520,9 +22520,9 @@ case_08039D90:
 }
 
 // =============================================================================
-// Function: func_08039DA8 @ 0x08039DA8
+// Function: Entity_Routine_08039DA8 @ 0x08039DA8
 // =============================================================================
-undefined4 func_08039DA8(int param_1)
+undefined4 Entity_Routine_08039DA8(int param_1)
 
 {
   int iVar1;
@@ -22530,21 +22530,21 @@ undefined4 func_08039DA8(int param_1)
   uint uStack_c;
   
   if (*(int *)(*(int *)(param_1 + 0x34) + 0xc) != 1) {
-    iVar1 = func_080AB788(0x78);
+    iVar1 = NPC_Routine_080AB788(0x78);
     uStack_c = ((uStack_c & _DAT_08039e08 | iVar1 + 0xf0U & 0xffff) & _DAT_08039e0c | 0x3c0000) &
                _DAT_08039e10 & _DAT_08039e14;
     func_0x0809c0c8(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-    func_0809C068(*(undefined4 *)(param_1 + 0x34),0xf);
-    func_08032384(param_1,2,0);
-    func_080200C4(param_1,0xaa);
+    NPC_Routine_0809C068(*(undefined4 *)(param_1 + 0x34),0xf);
+    Entity_Routine_08032384(param_1,2,0);
+    Entity_Routine_080200C4(param_1,0xaa);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08039E18 @ 0x08039E18
+// Function: Entity_Routine_08039E18 @ 0x08039E18
 // =============================================================================
-undefined4 func_08039E18(int param_1)
+undefined4 Entity_Routine_08039E18(int param_1)
 
 {
   int iVar1;
@@ -22552,21 +22552,21 @@ undefined4 func_08039E18(int param_1)
   uint uStack_c;
   
   if (*(int *)(*(int *)(param_1 + 0x34) + 0xc) != 1) {
-    iVar1 = func_080AB788(0x78);
+    iVar1 = NPC_Routine_080AB788(0x78);
     uStack_c = ((uStack_c & _DAT_08039e7c | iVar1 + 0xf0U & 0xffff) & _DAT_08039e80 | 0xbc0000) &
                _DAT_08039e84;
     func_0x0809c0c8(*(undefined4 *)(param_1 + 0x34),&uStack_c);
-    func_0809C068(*(undefined4 *)(param_1 + 0x34),4);
-    func_08032384(param_1,2,0);
-    func_080200C4(param_1,0xaa);
+    NPC_Routine_0809C068(*(undefined4 *)(param_1 + 0x34),4);
+    Entity_Routine_08032384(param_1,2,0);
+    Entity_Routine_080200C4(param_1,0xaa);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08039E98 @ 0x08039E98
+// Function: Entity_Routine_08039E98 @ 0x08039E98
 // =============================================================================
-undefined8 func_08039E98(undefined4 *param_1,int *param_2,undefined4 param_3,int param_4)
+undefined8 Entity_Routine_08039E98(undefined4 *param_1,int *param_2,undefined4 param_3,int param_4)
 
 {
   undefined4 uVar1;
@@ -22580,11 +22580,11 @@ undefined8 func_08039E98(undefined4 *param_1,int *param_2,undefined4 param_3,int
   *param_1 = param_2;
   *(short *)(param_1 + 1) = (short)param_3;
   uVar1 = func_0x080d3910(param_2,*(undefined4 *)(*param_2 + 0x68));
-  func_080A4A00(param_1 + 2,uVar1,param_3,param_2,3,0x1b,0);
+  NPC_Routine_080A4A00(param_1 + 2,uVar1,param_3,param_2,3,0x1b,0);
   if (param_4 == 1) {
-    iVar2 = func_080005D4(0x4c);
+    iVar2 = Dispatcher_Routine_080005D4(0x4c);
     piVar3 = (int *)func_0x080d3910(param_2,*(undefined4 *)(*param_2 + 0x68));
-    func_080A4740(iVar2,param_2,2,0xf);
+    NPC_Routine_080A4740(iVar2,param_2,2,0xf);
     *(undefined4 *)(iVar2 + 0x24) = _DAT_08039f34;
     iVar4 = *piVar3;
     func_0x080d3918(apuStack_24,piVar3,_DAT_08039f38,*(undefined4 *)(iVar4 + 0xc));
@@ -22599,9 +22599,9 @@ undefined8 func_08039E98(undefined4 *param_1,int *param_2,undefined4 param_3,int
 }
 
 // =============================================================================
-// Function: func_08039F50 @ 0x08039F50
+// Function: Entity_Routine_08039F50 @ 0x08039F50
 // =============================================================================
-undefined4 func_08039F50(int param_1,uint param_2)
+undefined4 Entity_Routine_08039F50(int param_1,uint param_2)
 
 {
   int iVar1;
@@ -22612,18 +22612,18 @@ undefined4 func_08039F50(int param_1,uint param_2)
   if (iVar1 != 0) {
     func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x24) + 8));
   }
-  func_080A47B4(param_1 + 8,2);
+  NPC_Routine_080A47B4(param_1 + 8,2);
   if ((param_2 & 1) != 0) {
-    func_08000608(param_1);
+    Dispatcher_Routine_08000608(param_1);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08039F90 @ 0x08039F90
+// Function: Entity_Routine_08039F90 @ 0x08039F90
 // =============================================================================
 undefined4
-func_08039F90(int param_1,int *param_2,undefined4 param_3,undefined4 param_4,int param_5,int param_6
+Entity_Routine_08039F90(int param_1,int *param_2,undefined4 param_3,undefined4 param_4,int param_5,int param_6
              ,int param_7,uint param_8)
 
 {
@@ -22667,15 +22667,15 @@ func_08039F90(int param_1,int *param_2,undefined4 param_3,undefined4 param_4,int
     iVar3 = 0;
   }
   if ((iVar3 != 0) && (*(char *)(param_1 + 0x44) != '\0')) {
-    func_080A480C(iVar4,uStack_34,auStack_4c);
+    NPC_Routine_080A480C(iVar4,uStack_34,auStack_4c);
     if (*(char *)(param_1 + 0x45) == '\0') {
       if (*(char *)(param_1 + 0x46) == '\0') {
-        func_080A4944(iVar4,auStack_44,1);
+        NPC_Routine_080A4944(iVar4,auStack_44,1);
         *(char *)(param_1 + 0x46) = '\x01';
       }
     }
     else {
-      func_080A4944(iVar4,auStack_44,1);
+      NPC_Routine_080A4944(iVar4,auStack_44,1);
     }
     *(char *)(param_1 + 0x44) = '\0';
   }
@@ -22691,8 +22691,8 @@ func_08039F90(int param_1,int *param_2,undefined4 param_3,undefined4 param_4,int
       iVar3 = 0;
     }
     if ((iVar3 != 0) && (*(char *)(puVar2 + 0x12) != '\0')) {
-      func_080A480C(puVar2,uStack_34,puVar2 + 0xc);
-      func_080A4944(puVar2,puVar2 + 0xe,1);
+      NPC_Routine_080A480C(puVar2,uStack_34,puVar2 + 0xc);
+      NPC_Routine_080A4944(puVar2,puVar2 + 0xe,1);
       *(char *)(puVar2 + 0x12) = '\0';
     }
   }
@@ -22700,9 +22700,9 @@ func_08039F90(int param_1,int *param_2,undefined4 param_3,undefined4 param_4,int
 }
 
 // =============================================================================
-// Function: func_0803A144 @ 0x0803A144
+// Function: Entity_Routine_0803A144 @ 0x0803A144
 // =============================================================================
-void func_0803A144(undefined4 param_1,int param_2,int param_3)
+void Entity_Routine_0803A144(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -22710,7 +22710,7 @@ void func_0803A144(undefined4 param_1,int param_2,int param_3)
   
   cVar2 = (char)param_3;
   if (param_3 * 0x1000000 < 0) {
-    cVar2 = func_080AB788(3);
+    cVar2 = NPC_Routine_080AB788(3);
   }
   iVar1 = _DAT_0803a17c;
   *(undefined2 *)(param_2 + 4) = *(undefined2 *)(cVar2 * 4 + _DAT_0803a17c);
@@ -22719,9 +22719,9 @@ void func_0803A144(undefined4 param_1,int param_2,int param_3)
 }
 
 // =============================================================================
-// Function: func_0803A180 @ 0x0803A180
+// Function: Entity_Routine_0803A180 @ 0x0803A180
 // =============================================================================
-void func_0803A180(undefined4 *param_1,int *param_2,int param_3)
+void Entity_Routine_0803A180(undefined4 *param_1,int *param_2,int param_3)
 
 {
   ushort uVar1;
@@ -22768,26 +22768,26 @@ void func_0803A180(undefined4 *param_1,int *param_2,int param_3)
   if ((*(char *)((int)param_2 + 0x12) != '\0') && (*(char *)((int)param_2 + 0x12) == '\x01')) {
     iVar4 = *param_2;
     if (iVar4 == 1) {
-      func_080AB8D0(&iStack_58);
+      NPC_Routine_080AB8D0(&iStack_58);
       if (iStack_54 < -1) {
         param_2[3] = param_2[3] - param_3;
         goto LAB_0803a2a6;
       }
     }
     else if (iVar4 < 2) {
-      if ((iVar4 == 0) && (func_080AB85C(&iStack_58), 1 < iStack_58)) {
+      if ((iVar4 == 0) && (NPC_Routine_080AB85C(&iStack_58), 1 < iStack_58)) {
         param_2[3] = param_2[3] + param_3;
         goto LAB_0803a2a6;
       }
     }
     else if (iVar4 == 2) {
-      func_080AB948(&iStack_58);
+      NPC_Routine_080AB948(&iStack_58);
       if (iStack_50 < -1) {
         param_2[2] = param_2[2] - param_3;
         goto LAB_0803a2a6;
       }
     }
-    else if ((iVar4 == 3) && (func_080AB9C4(&iStack_58), 1 < iStack_4c)) {
+    else if ((iVar4 == 3) && (NPC_Routine_080AB9C4(&iStack_58), 1 < iStack_4c)) {
       iVar4 = param_2[2];
       param_2[2] = iVar4 + param_3;
       if (iVar4 + param_3 >> 0x10 < 0x245) goto LAB_0803a2a6;
@@ -22800,7 +22800,7 @@ LAB_0803a2a6:
   *(undefined2 *)((int)param_2 + 6) = *(undefined2 *)((int)param_2 + 0xe);
   pcVar5 = (char *)((int)param_1 + 0x47);
   if (*pcVar5 == '\0') {
-    iVar4 = func_0805E8F0(param_1 + 0xc);
+    iVar4 = Animal_Routine_0805E8F0(param_1 + 0xc);
     if (-1 < iVar4 * 0x40000000) goto LAB_0803a2d6;
     pcVar5 = (char *)(param_1 + 0x11);
     cVar2 = '\x01';
@@ -22813,16 +22813,16 @@ LAB_0803a2d6:
   uVar1 = *(ushort *)(param_2 + 4);
   *(short *)(param_2 + 4) = (short)(uVar1 - 1);
   if ((int)((uVar1 - 1) * 0x10000) < 0) {
-    sVar3 = func_080AB788(3);
+    sVar3 = NPC_Routine_080AB788(3);
     if (sVar3 == 3) {
       *(undefined1 *)((int)param_2 + 0x12) = 0;
     }
     else {
       *(undefined1 *)((int)param_2 + 0x12) = 1;
-      iVar4 = func_080AB7A4(*param_2);
+      iVar4 = NPC_Routine_080AB7A4(*param_2);
       *param_2 = iVar4;
     }
-    sVar3 = func_080AB788(0x1f);
+    sVar3 = NPC_Routine_080AB788(0x1f);
     *(short *)(param_2 + 4) = sVar3 + 0x10;
     uVar6 = 1;
   }
@@ -22831,9 +22831,9 @@ LAB_0803a2d6:
 }
 
 // =============================================================================
-// Function: func_0803A350 @ 0x0803A350
+// Function: Entity_Routine_0803A350 @ 0x0803A350
 // =============================================================================
-undefined4 func_0803A350(undefined4 *param_1,undefined2 param_2)
+undefined4 Entity_Routine_0803A350(undefined4 *param_1,undefined2 param_2)
 
 {
   char cVar1;
@@ -22850,7 +22850,7 @@ undefined4 func_0803A350(undefined4 *param_1,undefined2 param_2)
     if (puVar4 == puVar5) {
       uVar3 = puVar5[-1];
 LAB_0803a386:
-      func_08008B6C(uVar3,param_2);
+      HW_Routine_08008B6C(uVar3,param_2);
       return in_lr;
     }
     cVar1 = func_0x08008cd0(*puVar4);
@@ -22863,9 +22863,9 @@ LAB_0803a386:
 }
 
 // =============================================================================
-// Function: func_0803A394 @ 0x0803A394
+// Function: Entity_Routine_0803A394 @ 0x0803A394
 // =============================================================================
-undefined4 func_0803A394(int param_1,undefined4 param_2,int param_3,char param_4)
+undefined4 Entity_Routine_0803A394(int param_1,undefined4 param_2,int param_3,char param_4)
 
 {
   undefined1 uVar1;
@@ -22889,7 +22889,7 @@ undefined4 func_0803A394(int param_1,undefined4 param_2,int param_3,char param_4
   if (param_4 == '\0') {
     iVar8 = 10;
   }
-  sVar2 = func_080AB788(99);
+  sVar2 = NPC_Routine_080AB788(99);
   iStack_28 = 0;
   uStack_24 = 0;
   iVar9 = 0;
@@ -22929,21 +22929,21 @@ LAB_0803a458:
     iStack_28 = iStack_28 + 9;
   }
   if (1 < uStack_24) {
-    iVar3 = func_080AB788(uStack_24 - 1);
+    iVar3 = NPC_Routine_080AB788(uStack_24 - 1);
     uStack_24 = iVar3 + 1;
   }
   do {
     if ((int)uStack_24 < 1) {
       return in_lr;
     }
-    iVar3 = func_080AB788(0x188);
+    iVar3 = NPC_Routine_080AB788(0x188);
     iVar3 = iVar3 + 0xb8;
     if (iVar3 < 0xf0) {
-      sVar2 = func_080AB788(0x38);
+      sVar2 = NPC_Routine_080AB788(0x38);
       sVar2 = sVar2 + 0x1f0;
     }
     else {
-      sVar2 = func_080AB788(0x30);
+      sVar2 = NPC_Routine_080AB788(0x30);
       sVar2 = sVar2 + 0x228;
     }
     if (0xb < iStack_28 - 1U) goto LAB_0803a776;
@@ -22953,28 +22953,28 @@ LAB_0803a458:
       param_1 = 0x803a8b0;
       sVar2 = -0x5acc;
     case 0x803a4f4:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,_DAT_0803a554,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a554,1);
       uVar4 = _DAT_0803a558;
       break;
     case 0x803a55c:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,0x10,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,0x10,1);
       uVar4 = _DAT_0803a574;
       break;
     case 0x803a578:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,_DAT_0803a590,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a590,1);
       uVar4 = _DAT_0803a594;
       break;
     case 0x803a598:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,_DAT_0803a5b0,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a5b0,1);
       uVar4 = _DAT_0803a5b4;
       break;
     case 0x803a5b8:
-      iVar8 = func_080005D4(0x6c);
-      func_08039E98(iVar8,param_2,_DAT_0803a600,1);
+      iVar8 = Dispatcher_Routine_080005D4(0x6c);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a600,1);
       *(undefined4 *)(iVar8 + 0x4c) = _DAT_0803a604;
       *(undefined4 *)(iVar8 + 0x50) = 0;
       *(short *)(iVar8 + 0x54) = (short)iVar3;
@@ -22986,11 +22986,11 @@ LAB_0803a458:
       *(undefined4 *)(iVar8 + 0x68) = 0;
       goto LAB_0803a536;
     case 0x803a608:
-      iVar3 = func_080005D4(0x88);
-      func_08039E98(iVar3,param_2,0x2a4,1);
+      iVar3 = Dispatcher_Routine_080005D4(0x88);
+      Entity_Routine_08039E98(iVar3,param_2,0x2a4,1);
       *(undefined4 *)(iVar3 + 0x4c) = _DAT_0803a66c;
       *(undefined4 *)(iVar3 + 0x50) = 0;
-      uVar1 = func_0803A144(iVar3,iVar3 + 0x50,0xffffffff);
+      uVar1 = Entity_Routine_0803A144(iVar3,iVar3 + 0x50,0xffffffff);
       *(undefined1 *)(iVar3 + 0x78) = uVar1;
       *(undefined1 *)(iVar3 + 0x79) = 0xff;
       *(undefined2 *)(iVar3 + 0x60) = 0;
@@ -23000,36 +23000,36 @@ LAB_0803a458:
       *(undefined1 *)(iVar3 + 0x84) = 0xf8;
       goto LAB_0803a75a;
     case 0x803a670:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,_DAT_0803a688,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a688,1);
       uVar4 = _DAT_0803a68c;
       break;
     case 0x803a690:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,_DAT_0803a6a8,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a6a8,1);
       uVar4 = _DAT_0803a6ac;
       break;
     case 0x803a6b0:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,_DAT_0803a6c8,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a6c8,1);
       uVar4 = _DAT_0803a6cc;
       break;
     case 0x803a6d0:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,_DAT_0803a6e8,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a6e8,1);
       uVar4 = _DAT_0803a6ec;
       break;
     case 0x803a6f0:
-      iVar8 = func_080005D4(100);
-      func_08039E98(iVar8,param_2,_DAT_0803a708,1);
+      iVar8 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar8,param_2,_DAT_0803a708,1);
       uVar4 = _DAT_0803a70c;
       break;
     case 0x803a710:
-      iVar3 = func_080005D4(100);
-      func_08039E98(iVar3,param_2,0x15,0);
+      iVar3 = Dispatcher_Routine_080005D4(100);
+      Entity_Routine_08039E98(iVar3,param_2,0x15,0);
       *(undefined4 *)(iVar3 + 0x4c) = _DAT_0803a794;
       *(undefined4 *)(iVar3 + 0x50) = 0;
-      func_0803A144(iVar3,iVar3 + 0x50,0xffffffff);
+      Entity_Routine_0803A144(iVar3,iVar3 + 0x50,0xffffffff);
       *(undefined2 *)(iVar3 + 0x60) = 0;
       *(undefined1 *)(iVar3 + 0x62) = 0;
       *(int *)(iVar3 + 0x58) = (int)*(short *)(iVar3 + 0x54) << 0x10;
@@ -23067,9 +23067,9 @@ LAB_0803a776:
 }
 
 // =============================================================================
-// Function: func_0803A798 @ 0x0803A798
+// Function: Entity_Routine_0803A798 @ 0x0803A798
 // =============================================================================
-undefined8 func_0803A798(undefined4 param_1,undefined4 param_2)
+undefined8 Entity_Routine_0803A798(undefined4 param_1,undefined4 param_2)
 
 {
   ushort uVar1;
@@ -23079,7 +23079,7 @@ undefined8 func_0803A798(undefined4 param_1,undefined4 param_2)
   ushort uStack_1a;
   ushort uStack_18;
   
-  iVar2 = func_080005D4(0x20);
+  iVar2 = Dispatcher_Routine_080005D4(0x20);
   uVar1 = (ushort)_DAT_0803a7fc;
   uStack_1c = uVar1 & uStack_1c & 0x3ff;
   uStack_1a = uVar1 & uStack_1a & 0x3ff;
@@ -23092,9 +23092,9 @@ undefined8 func_0803A798(undefined4 param_1,undefined4 param_2)
 }
 
 // =============================================================================
-// Function: func_0803A840 @ 0x0803A840
+// Function: Entity_Routine_0803A840 @ 0x0803A840
 // =============================================================================
-undefined4 func_0803A840(int param_1)
+undefined4 Entity_Routine_0803A840(int param_1)
 
 {
   char cVar1;
@@ -23104,7 +23104,7 @@ undefined4 func_0803A840(int param_1)
   
   pcVar3 = (char *)(param_1 + 0x47);
   if (*pcVar3 == '\0') {
-    iVar2 = func_0805E8F0(param_1 + 0x30);
+    iVar2 = Animal_Routine_0805E8F0(param_1 + 0x30);
     if (-1 < iVar2 * 0x40000000) {
       return in_lr;
     }

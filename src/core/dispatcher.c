@@ -20,15 +20,15 @@ undefined8 SramProxy_ReadSaveData(undefined4 param_1)
   uint uStack_14;
   uint uStack_10;
   
-  func_080006E4(param_1,auStack_34,0,0x20);
+  SramProxy_ReadBlock(param_1,auStack_34,0,0x20);
   puVar1 = _DAT_08000324;
   uStack_14 = (uint)*_DAT_08000324;
   if (uStack_14 == 0) {
-    func_080006E4(param_1,&uStack_14,0x20,4);
+    SramProxy_ReadBlock(param_1,&uStack_14,0x20,4);
     uStack_10 = (uint)*puVar1;
-    if ((uStack_10 == 0) && (func_080006E4(param_1,&uStack_10,0x24,4), *puVar1 == 0)) {
+    if ((uStack_10 == 0) && (SramProxy_ReadBlock(param_1,&uStack_10,0x24,4), *puVar1 == 0)) {
       uVar2 = 0;
-      iVar3 = memcmp(auStack_34,_DAT_08000354,0x20);
+      iVar3 = gba_memcmp(auStack_34,_DAT_08000354,0x20);
       if ((iVar3 == 0) && (((uStack_14 & 3) == uStack_14 && (uStack_10 < 2)))) {
         uVar2 = 1;
       }
@@ -50,13 +50,13 @@ undefined4 SramProxy_WriteSaveData(undefined4 param_1)
   undefined4 in_lr;
   uint uStack_10;
   
-  func_080006A4(param_1,0,_DAT_08000398,0x20);
+  SramProxy_WriteBlock(param_1,0,_DAT_08000398,0x20);
   puVar1 = _DAT_0800039c;
   uStack_10 = (uint)*_DAT_0800039c;
   if (uStack_10 == 0) {
-    func_080006A4(param_1,0x20,&uStack_10,4);
+    SramProxy_WriteBlock(param_1,0x20,&uStack_10,4);
     if (*puVar1 == 0) {
-      func_080006A4(param_1,0x24,&uStack_10,4);
+      SramProxy_WriteBlock(param_1,0x24,&uStack_10,4);
     }
   }
   return in_lr;
@@ -75,7 +75,7 @@ undefined8 SramProxy_VerifyChecksum(undefined4 param_1)
   cVar1 = SramProxy_ReadSaveData();
   if (cVar1 != '\0') {
     uStack_c = 0;
-    func_080006E4(param_1,&uStack_c,0x20,4);
+    SramProxy_ReadBlock(param_1,&uStack_c,0x20,4);
     if (*_DAT_080003cc == 0) goto LAB_080003d2;
   }
   uStack_c = 0;
@@ -84,45 +84,45 @@ LAB_080003d2:
 }
 
 // =============================================================================
-// Function: func_080003E8 @ 0x080003E8
+// Function: SramProxy_ReadSaveSlot @ 0x080003E8
 // =============================================================================
-undefined4 func_080003E8(undefined4 param_1,uint param_2)
+undefined4 SramProxy_ReadSaveSlot(undefined4 param_1,uint param_2)
 
 {
   undefined4 in_lr;
   uint uStack_10;
   
   uStack_10 = 0;
-  func_080006E4(param_1,&uStack_10,0x20,4);
+  SramProxy_ReadBlock(param_1,&uStack_10,0x20,4);
   if (*_DAT_08000428 == 0) {
     uStack_10 = uStack_10 | 1 << (param_2 & 0xff);
-    func_080006A4(param_1,0x20,&uStack_10,4);
+    SramProxy_WriteBlock(param_1,0x20,&uStack_10,4);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800042C @ 0x0800042C
+// Function: SramProxy_WriteSaveSlot @ 0x0800042C
 // =============================================================================
-undefined4 func_0800042C(undefined4 param_1,uint param_2)
+undefined4 SramProxy_WriteSaveSlot(undefined4 param_1,uint param_2)
 
 {
   undefined4 in_lr;
   uint uStack_10;
   
   uStack_10 = 0;
-  func_080006E4(param_1,&uStack_10,0x20,4);
+  SramProxy_ReadBlock(param_1,&uStack_10,0x20,4);
   if (*_DAT_0800046c == 0) {
     uStack_10 = uStack_10 & ~(1 << (param_2 & 0xff));
-    func_080006A4(param_1,0x20,&uStack_10,4);
+    SramProxy_WriteBlock(param_1,0x20,&uStack_10,4);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08000470 @ 0x08000470
+// Function: SramProxy_FlushSlotBuffer @ 0x08000470
 // =============================================================================
-undefined4 func_08000470(undefined4 param_1,undefined4 param_2)
+undefined4 SramProxy_FlushSlotBuffer(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 in_lr;
@@ -131,14 +131,14 @@ undefined4 func_08000470(undefined4 param_1,undefined4 param_2)
   
   uStack_8 = param_2;
   uStack_4 = in_lr;
-  func_080006A4(param_1,0x24,&uStack_8,4);
+  SramProxy_WriteBlock(param_1,0x24,&uStack_8,4);
   return uStack_4;
 }
 
 // =============================================================================
-// Function: func_08000488 @ 0x08000488
+// Function: SramProxy_VerifySlotChecksum @ 0x08000488
 // =============================================================================
-undefined8 func_08000488(undefined4 param_1)
+undefined8 SramProxy_VerifySlotChecksum(undefined4 param_1)
 
 {
   char cVar1;
@@ -148,7 +148,7 @@ undefined8 func_08000488(undefined4 param_1)
   cVar1 = SramProxy_ReadSaveData();
   if (cVar1 != '\0') {
     uStack_c = 0;
-    func_080006E4(param_1,&uStack_c,0x24,4);
+    SramProxy_ReadBlock(param_1,&uStack_c,0x24,4);
     if (*_DAT_080004b4 == 0) goto LAB_080004ba;
   }
   uStack_c = 0;
@@ -216,9 +216,9 @@ ulonglong Interrupt_WaitForVBlank(undefined2 param_1)
 }
 
 // =============================================================================
-// Function: func_08000540 @ 0x08000540
+// Function: Interrupt_SetCallback @ 0x08000540
 // =============================================================================
-ulonglong func_08000540(undefined4 param_1,undefined2 param_2)
+ulonglong Interrupt_SetCallback(undefined4 param_1,undefined2 param_2)
 
 {
   undefined4 uVar1;
@@ -229,9 +229,9 @@ ulonglong func_08000540(undefined4 param_1,undefined2 param_2)
 }
 
 // =============================================================================
-// Function: func_08000554 @ 0x08000554
+// Function: Interrupt_ClearPending @ 0x08000554
 // =============================================================================
-undefined4 func_08000554(undefined2 param_1)
+undefined4 Interrupt_ClearPending(undefined2 param_1)
 
 {
   undefined4 in_lr;
@@ -241,9 +241,9 @@ undefined4 func_08000554(undefined2 param_1)
 }
 
 // =============================================================================
-// Function: func_08000568 @ 0x08000568
+// Function: Interrupt_DisableFlag @ 0x08000568
 // =============================================================================
-undefined4 func_08000568(undefined2 param_1)
+undefined4 Interrupt_DisableFlag(undefined2 param_1)
 
 {
   undefined4 in_lr;
@@ -253,38 +253,38 @@ undefined4 func_08000568(undefined2 param_1)
 }
 
 // =============================================================================
-// Function: func_08000584 @ 0x08000584
+// Function: Dispatcher_Routine_08000584 @ 0x08000584
 // =============================================================================
-void func_08000584(void)
+void Dispatcher_Routine_08000584(void)
 
 {
-  func_080005D4();
+  Dispatcher_Routine_080005D4();
   return;
 }
 
 // =============================================================================
-// Function: func_08000590 @ 0x08000590
+// Function: Dispatcher_Routine_08000590 @ 0x08000590
 // =============================================================================
-undefined4 func_08000590(void)
+undefined4 Dispatcher_Routine_08000590(void)
 
 {
   undefined4 in_lr;
   
-  func_08000608();
+  Dispatcher_Routine_08000608();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800059C @ 0x0800059C
+// Function: Dispatcher_Routine_0800059C @ 0x0800059C
 // =============================================================================
-void func_0800059C(undefined4 param_1)
+void Dispatcher_Routine_0800059C(undefined4 param_1)
 
 {
   int iVar1;
   code *UNRECOVERED_JUMPTABLE;
   
   do {
-    iVar1 = malloc(param_1);
+    iVar1 = malloc_gba(param_1);
     if (iVar1 != 0) {
 LAB_080005be:
       (*UNRECOVERED_JUMPTABLE)(iVar1);
@@ -299,15 +299,15 @@ LAB_080005be:
 }
 
 // =============================================================================
-// Function: func_080005D4 @ 0x080005D4
+// Function: Dispatcher_Routine_080005D4 @ 0x080005D4
 // =============================================================================
-undefined8 func_080005D4(void)
+undefined8 Dispatcher_Routine_080005D4(void)
 
 {
   int iVar1;
   undefined4 in_lr;
   
-  iVar1 = func_0800059C();
+  iVar1 = Dispatcher_Routine_0800059C();
   if (iVar1 == 0) {
     iVar1 = 0;
   }
@@ -315,80 +315,80 @@ undefined8 func_080005D4(void)
 }
 
 // =============================================================================
-// Function: func_080005E4 @ 0x080005E4
+// Function: Dispatcher_Routine_080005E4 @ 0x080005E4
 // =============================================================================
-void func_080005E4(void)
+void Dispatcher_Routine_080005E4(void)
 
 {
-  func_080005D4();
+  Dispatcher_Routine_080005D4();
   return;
 }
 
 // =============================================================================
-// Function: func_080005F0 @ 0x080005F0
+// Function: Dispatcher_Routine_080005F0 @ 0x080005F0
 // =============================================================================
-void func_080005F0(void)
+void Dispatcher_Routine_080005F0(void)
 
 {
-  func_0800059C();
+  Dispatcher_Routine_0800059C();
   return;
 }
 
 // =============================================================================
-// Function: func_080005FC @ 0x080005FC
+// Function: Dispatcher_Routine_080005FC @ 0x080005FC
 // =============================================================================
-void func_080005FC(void)
+void Dispatcher_Routine_080005FC(void)
 
 {
-  func_080005F0();
+  Dispatcher_Routine_080005F0();
   return;
 }
 
 // =============================================================================
-// Function: func_08000608 @ 0x08000608
+// Function: Dispatcher_Routine_08000608 @ 0x08000608
 // =============================================================================
-undefined4 func_08000608(void)
+undefined4 Dispatcher_Routine_08000608(void)
 
 {
   undefined4 in_lr;
   
-  free();
+  cpp_operator_delete();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08000614 @ 0x08000614
+// Function: Dispatcher_Routine_08000614 @ 0x08000614
 // =============================================================================
-undefined4 func_08000614(void)
+undefined4 Dispatcher_Routine_08000614(void)
 
 {
   undefined4 in_lr;
   
-  func_08000608();
+  Dispatcher_Routine_08000608();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_08000620 @ 0x08000620
+// Function: Dispatcher_Routine_08000620 @ 0x08000620
 // =============================================================================
-undefined4 func_08000620(void)
+undefined4 Dispatcher_Routine_08000620(void)
 
 {
   undefined4 in_lr;
   
-  free();
+  cpp_operator_delete();
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800062C @ 0x0800062C
+// Function: Dispatcher_Routine_0800062C @ 0x0800062C
 // =============================================================================
-undefined4 func_0800062C(void)
+undefined4 Dispatcher_Routine_0800062C(void)
 
 {
   undefined4 in_lr;
   
-  func_08000620();
+  Dispatcher_Routine_08000620();
   return in_lr;
 }
 
@@ -408,9 +408,9 @@ undefined8 SramProxy_LoadGlobalSettings(undefined4 param_1)
 }
 
 // =============================================================================
-// Function: func_08000664 @ 0x08000664
+// Function: SramProxy_SaveGlobalSettings @ 0x08000664
 // =============================================================================
-undefined8 func_08000664(undefined4 param_1)
+undefined8 SramProxy_SaveGlobalSettings(undefined4 param_1)
 
 {
   uint uVar1;
@@ -424,16 +424,16 @@ undefined8 func_08000664(undefined4 param_1)
   } while (uVar1 < 8);
   uVar1 = 0;
   do {
-    func_080006A4(param_1,uVar1,auStack_18,8);
+    SramProxy_WriteBlock(param_1,uVar1,auStack_18,8);
     uVar1 = uVar1 + 8;
   } while (uVar1 < 0x8000);
   return CONCAT44(in_lr,1);
 }
 
 // =============================================================================
-// Function: func_080006A4 @ 0x080006A4
+// Function: SramProxy_WriteBlock @ 0x080006A4
 // =============================================================================
-undefined8 func_080006A4(undefined4 param_1,uint param_2,undefined4 param_3,int param_4)
+undefined8 SramProxy_WriteBlock(undefined4 param_1,uint param_2,undefined4 param_3,int param_4)
 
 {
   uint uVar1;
@@ -443,9 +443,9 @@ undefined8 func_080006A4(undefined4 param_1,uint param_2,undefined4 param_3,int 
   uVar1 = 0;
   *_DAT_080006e0 = 0;
   if (param_4 != 0) {
-    iVar2 = func_080D38D4(param_3,param_2 | 0xe000000);
+    iVar2 = VTable_Routine_080D38D4(param_3,param_2 | 0xe000000);
     if (iVar2 != 0) {
-      func_08000728(param_1,0x100);
+      SramProxy_CalculateChecksum(param_1,0x100);
     }
     uVar1 = (uint)(iVar2 == 0);
   }
@@ -453,24 +453,24 @@ undefined8 func_080006A4(undefined4 param_1,uint param_2,undefined4 param_3,int 
 }
 
 // =============================================================================
-// Function: func_080006E4 @ 0x080006E4
+// Function: SramProxy_ReadBlock @ 0x080006E4
 // =============================================================================
-undefined8 func_080006E4(undefined4 param_1,undefined4 param_2,uint param_3,int param_4)
+undefined8 SramProxy_ReadBlock(undefined4 param_1,undefined4 param_2,uint param_3,int param_4)
 
 {
   undefined4 in_lr;
   
   *_DAT_08000708 = 0;
   if (param_4 != 0) {
-    func_080D379C(param_3 | 0xe000000,param_2);
+    VTable_Routine_080D379C(param_3 | 0xe000000,param_2);
   }
   return CONCAT44(in_lr,(uint)(param_4 != 0));
 }
 
 // =============================================================================
-// Function: func_08000714 @ 0x08000714
+// Function: SramProxy_SetWaitstates @ 0x08000714
 // =============================================================================
-void func_08000714(int param_1)
+void SramProxy_SetWaitstates(int param_1)
 
 {
   func_0x080d100c((*(byte *)(param_1 + 4) & 3) + 3);
@@ -478,9 +478,9 @@ void func_08000714(int param_1)
 }
 
 // =============================================================================
-// Function: func_08000728 @ 0x08000728
+// Function: SramProxy_CalculateChecksum @ 0x08000728
 // =============================================================================
-undefined4 func_08000728(undefined4 param_1,ushort param_2)
+undefined4 SramProxy_CalculateChecksum(undefined4 param_1,ushort param_2)
 
 {
   ushort *puVar1;
@@ -553,16 +553,16 @@ undefined4 func_08000728(undefined4 param_1,ushort param_2)
 }
 
 // =============================================================================
-// Function: func_080007EC @ 0x080007EC
+// Function: SramProxy_VerifyBufferParity @ 0x080007EC
 // =============================================================================
-undefined4 func_080007EC(undefined4 *param_1,uint param_2)
+undefined4 SramProxy_VerifyBufferParity(undefined4 *param_1,uint param_2)
 
 {
   undefined4 in_lr;
   
   *param_1 = _DAT_08000808;
   if ((param_2 & 1) != 0) {
-    func_08000608(param_1);
+    Dispatcher_Routine_08000608(param_1);
   }
   return in_lr;
 }

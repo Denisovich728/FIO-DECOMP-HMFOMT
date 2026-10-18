@@ -7,9 +7,9 @@
 #include "../../include/player/item.h"
 
 // =============================================================================
-// Function: func_0800D024 @ 0x0800D024
+// Function: Tool_Construct @ 0x0800D024
 // =============================================================================
-undefined8 func_0800D024(int param_1)
+undefined8 Tool_Construct(int param_1)
 
 {
   char cVar1;
@@ -18,7 +18,7 @@ undefined8 func_0800D024(int param_1)
   int iVar4;
   undefined4 in_lr;
   
-  uVar2 = func_0800CE74();
+  uVar2 = Building_Routine_0800CE74();
   iVar4 = 0;
   uVar3 = 0;
   if (uVar2 != 0) {
@@ -36,9 +36,9 @@ undefined8 func_0800D024(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800D058 @ 0x0800D058
+// Function: Tool_GetId @ 0x0800D058
 // =============================================================================
-undefined8 func_0800D058(int param_1)
+undefined8 Tool_GetId(int param_1)
 
 {
   uint uVar1;
@@ -54,9 +54,9 @@ undefined8 func_0800D058(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800D074 @ 0x0800D074
+// Function: Tool_GetName @ 0x0800D074
 // =============================================================================
-void func_0800D074(short *param_1,undefined4 param_2,uint param_3)
+void Tool_GetName(short *param_1,undefined4 param_2,uint param_3)
 
 {
   uint uVar1;
@@ -64,7 +64,7 @@ void func_0800D074(short *param_1,undefined4 param_2,uint param_3)
   short sVar3;
   code *UNRECOVERED_JUMPTABLE;
   
-  uVar1 = func_0800CE74(param_2);
+  uVar1 = Building_Routine_0800CE74(param_2);
   if (uVar1 <= param_3) {
     param_3 = func_0x080d0f4e(param_3);
   }
@@ -86,9 +86,9 @@ void func_0800D074(short *param_1,undefined4 param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_0800D158 @ 0x0800D158
+// Function: Tool_GetIconId @ 0x0800D158
 // =============================================================================
-undefined8 func_0800D158(int param_1,uint param_2)
+undefined8 Tool_GetIconId(int param_1,uint param_2)
 
 {
   uint uVar1;
@@ -99,11 +99,11 @@ undefined8 func_0800D158(int param_1,uint param_2)
   
   uVar1 = func_0x0800ce9c();
   if ((((param_2 < uVar1) && (uVar1 = (uint)*(char *)(param_1 + 7 + param_2), -1 < (int)uVar1)) &&
-      (uVar2 = func_0800CE74(param_1), uVar1 < uVar2)) &&
-     (iVar3 = func_0800DA14(param_1 + uVar1 * 0x3c + 0x2c), iVar3 != 0)) {
+      (uVar2 = Building_Routine_0800CE74(param_1), uVar1 < uVar2)) &&
+     (iVar3 = FoodStack_AddAmount(param_1 + uVar1 * 0x3c + 0x2c), iVar3 != 0)) {
     uVar4 = 0;
-    uVar1 = func_0809B8D4();
-    if ((0x14 < uVar1) || (uVar1 = func_0809B8BC(iVar3), 0x1d < uVar1)) {
+    uVar1 = Animal_Routine_0809B8D4();
+    if ((0x14 < uVar1) || (uVar1 = Animal_Routine_0809B8BC(iVar3), 0x1d < uVar1)) {
       uVar4 = 1;
     }
   }
@@ -114,9 +114,9 @@ undefined8 func_0800D158(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D1B4 @ 0x0800D1B4
+// Function: Tool_GetDesc @ 0x0800D1B4
 // =============================================================================
-undefined8 func_0800D1B4(int param_1,uint param_2)
+undefined8 Tool_GetDesc(int param_1,uint param_2)
 
 {
   uint uVar1;
@@ -134,9 +134,9 @@ undefined8 func_0800D1B4(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D1D8 @ 0x0800D1D8
+// Function: ToolStack_Construct @ 0x0800D1D8
 // =============================================================================
-undefined8 func_0800D1D8(undefined4 *param_1)
+undefined8 ToolStack_Construct(undefined4 *param_1)
 
 {
   undefined4 in_lr;
@@ -149,9 +149,9 @@ undefined8 func_0800D1D8(undefined4 *param_1)
 }
 
 // =============================================================================
-// Function: func_0800D214 @ 0x0800D214
+// Function: ToolStack_GetTool @ 0x0800D214
 // =============================================================================
-undefined4 func_0800D214(byte *param_1)
+undefined4 ToolStack_GetTool(byte *param_1)
 
 {
   byte bVar1;
@@ -165,9 +165,9 @@ undefined4 func_0800D214(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800D23C @ 0x0800D23C
+// Function: ToolStack_IsEmpty @ 0x0800D23C
 // =============================================================================
-undefined4 func_0800D23C(ushort *param_1,int param_2)
+undefined4 ToolStack_IsEmpty(ushort *param_1,int param_2)
 
 {
   uint *puVar1;
@@ -186,9 +186,9 @@ undefined4 func_0800D23C(ushort *param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800D280 @ 0x0800D280
+// Function: ToolStack_GetAmount @ 0x0800D280
 // =============================================================================
-undefined4 func_0800D280(ushort *param_1,uint param_2)
+undefined4 ToolStack_GetAmount(ushort *param_1,uint param_2)
 
 {
   ushort uVar1;
@@ -207,16 +207,16 @@ undefined4 func_0800D280(ushort *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D2BC @ 0x0800D2BC
+// Function: ToolStack_AddAmount @ 0x0800D2BC
 // =============================================================================
-undefined4 func_0800D2BC(uint *param_1,uint param_2)
+undefined4 ToolStack_AddAmount(uint *param_1,uint param_2)
 
 {
   uint uVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
     uVar1 = (*param_1 & 0x1fffffff) >> 0xd;
     uVar2 = 1 << (param_2 & 0xff);
@@ -228,16 +228,16 @@ undefined4 func_0800D2BC(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D2FC @ 0x0800D2FC
+// Function: ToolStack_SubtractAmount @ 0x0800D2FC
 // =============================================================================
-undefined4 func_0800D2FC(uint *param_1,uint param_2)
+undefined4 ToolStack_SubtractAmount(uint *param_1,uint param_2)
 
 {
   uint uVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
     uVar1 = (*param_1 & 0x1fffffff) >> 0xd;
     uVar2 = 1 << (param_2 & 0xff);
@@ -249,9 +249,9 @@ undefined4 func_0800D2FC(uint *param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D334 @ 0x0800D334
+// Function: Food_Construct @ 0x0800D334
 // =============================================================================
-undefined4 func_0800D334(int param_1,uint param_2)
+undefined4 Food_Construct(int param_1,uint param_2)
 
 {
   uint uVar1;
@@ -270,9 +270,9 @@ undefined4 func_0800D334(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D36C @ 0x0800D36C
+// Function: Food_GetId @ 0x0800D36C
 // =============================================================================
-undefined4 func_0800D36C(int param_1,uint param_2)
+undefined4 Food_GetId(int param_1,uint param_2)
 
 {
   uint uVar1;
@@ -291,9 +291,9 @@ undefined4 func_0800D36C(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D3A0 @ 0x0800D3A0
+// Function: Food_GetName @ 0x0800D3A0
 // =============================================================================
-undefined4 func_0800D3A0(int param_1)
+undefined4 Food_GetName(int param_1)
 
 {
   undefined4 in_lr;
@@ -305,9 +305,9 @@ undefined4 func_0800D3A0(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800D3B8 @ 0x0800D3B8
+// Function: Food_GetIconId @ 0x0800D3B8
 // =============================================================================
-undefined4 func_0800D3B8(int param_1)
+undefined4 Food_GetIconId(int param_1)
 
 {
   undefined4 in_lr;
@@ -319,18 +319,18 @@ undefined4 func_0800D3B8(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800D3D0 @ 0x0800D3D0
+// Function: Food_GetStaminaGain @ 0x0800D3D0
 // =============================================================================
-undefined8 func_0800D3D0(int param_1,uint param_2)
+undefined8 Food_GetStaminaGain(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
-    uVar2 = func_0800DA7C(param_1 + param_2 * 0x3c + 0x2c);
+    uVar2 = Article_GetName(param_1 + param_2 * 0x3c + 0x2c);
   }
   else {
     uVar2 = 0;
@@ -339,18 +339,18 @@ undefined8 func_0800D3D0(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D3F8 @ 0x0800D3F8
+// Function: Food_GetFatigueGain @ 0x0800D3F8
 // =============================================================================
-undefined8 func_0800D3F8(int param_1,uint param_2)
+undefined8 Food_GetFatigueGain(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
-    uVar2 = func_0800DA98(param_1 + param_2 * 0x3c + 0x2c);
+    uVar2 = Article_GetIconId(param_1 + param_2 * 0x3c + 0x2c);
   }
   else {
     uVar2 = 0;
@@ -359,18 +359,18 @@ undefined8 func_0800D3F8(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D420 @ 0x0800D420
+// Function: Food_GetStaminaBonus @ 0x0800D420
 // =============================================================================
-undefined8 func_0800D420(int param_1,uint param_2)
+undefined8 Food_GetStaminaBonus(int param_1,uint param_2)
 
 {
   uint uVar1;
   undefined4 uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0800CE74();
+  uVar1 = Building_Routine_0800CE74();
   if (param_2 < uVar1) {
-    uVar2 = func_0800DA64(param_1 + param_2 * 0x3c + 0x2c);
+    uVar2 = Article_GetId(param_1 + param_2 * 0x3c + 0x2c);
   }
   else {
     uVar2 = 0;
@@ -379,9 +379,9 @@ undefined8 func_0800D420(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D448 @ 0x0800D448
+// Function: Food_GetFatigueBonus @ 0x0800D448
 // =============================================================================
-undefined8 func_0800D448(int param_1,undefined4 param_2)
+undefined8 Food_GetFatigueBonus(int param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -389,8 +389,8 @@ undefined8 func_0800D448(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   iVar2 = 0;
-  while (iVar2 = func_0800CF88(param_1,iVar2), -1 < iVar2) {
-    cVar1 = func_0800DAB4(param_1 + iVar2 * 0x3c + 0x2c,param_2);
+  while (iVar2 = Building_Routine_0800CF88(param_1,iVar2), -1 < iVar2) {
+    cVar1 = Article_CanBeDiscarded(param_1 + iVar2 * 0x3c + 0x2c,param_2);
     if (cVar1 != '\0') goto LAB_0800d47e;
     iVar2 = iVar2 + 1;
   }
@@ -400,9 +400,9 @@ LAB_0800d47e:
 }
 
 // =============================================================================
-// Function: func_0800D484 @ 0x0800D484
+// Function: Food_IsDrink @ 0x0800D484
 // =============================================================================
-undefined8 func_0800D484(int param_1,undefined4 param_2)
+undefined8 Food_IsDrink(int param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -410,8 +410,8 @@ undefined8 func_0800D484(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   iVar2 = 0;
-  while (iVar2 = func_0800CF88(param_1,iVar2), -1 < iVar2) {
-    cVar1 = func_0800DAE4(param_1 + iVar2 * 0x3c + 0x2c,param_2);
+  while (iVar2 = Building_Routine_0800CF88(param_1,iVar2), -1 < iVar2) {
+    cVar1 = Article_GetDesc(param_1 + iVar2 * 0x3c + 0x2c,param_2);
     if (cVar1 != '\0') goto LAB_0800d4ba;
     iVar2 = iVar2 + 1;
   }
@@ -421,21 +421,21 @@ LAB_0800d4ba:
 }
 
 // =============================================================================
-// Function: func_0800D4C0 @ 0x0800D4C0
+// Function: Food_GetDesc @ 0x0800D4C0
 // =============================================================================
-undefined4 func_0800D4C0(int param_1,int param_2)
+undefined4 Food_GetDesc(int param_1,int param_2)
 
 {
   undefined4 in_lr;
   
-  func_0800DB14(param_1 + param_2 * 0x3c + 0x2c);
+  ArticleStack_Construct(param_1 + param_2 * 0x3c + 0x2c);
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800D4D4 @ 0x0800D4D4
+// Function: Food_AddBonuses @ 0x0800D4D4
 // =============================================================================
-undefined4 func_0800D4D4(int param_1,undefined4 param_2)
+undefined4 Food_AddBonuses(int param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -444,20 +444,20 @@ undefined4 func_0800D4D4(int param_1,undefined4 param_2)
   undefined4 uVar4;
   undefined4 in_lr;
   
-  iVar1 = func_0800D420();
+  iVar1 = Food_GetStaminaBonus();
   if (iVar1 != 0) {
     uVar2 = func_0x0809b220();
-    iVar3 = func_0800D3D0(param_1,param_2);
+    iVar3 = Food_GetStaminaGain(param_1,param_2);
     if (iVar3 == 0) {
       if ((*(uint *)(param_1 + 4) & 0xffffff) >> 0xe < uVar2) {
         *(uint *)(param_1 + 4) =
              _DAT_0800d5ac & *(uint *)(param_1 + 4) | (uVar2 & _DAT_0800d5a8) << 0xe;
-        uVar4 = func_0809B1F4(iVar1);
-        uVar2 = strlen();
+        uVar4 = Animal_Routine_0809B1F4(iVar1);
+        uVar2 = gba_strlen();
         if (0xc < uVar2) {
           uVar2 = 0xc;
         }
-        memcpy(param_1 + 0x1c,uVar4,uVar2);
+        gba_memcpy(param_1 + 0x1c,uVar4,uVar2);
         *(undefined1 *)(param_1 + 0x1c + uVar2) = 0;
       }
     }
@@ -465,23 +465,23 @@ undefined4 func_0800D4D4(int param_1,undefined4 param_2)
       *(ushort *)(param_1 + 4) =
            (ushort)_DAT_0800d54c & *(ushort *)(param_1 + 4) | (ushort)((uVar2 & _DAT_0800d548) << 4)
       ;
-      uVar4 = func_0809B1F4(iVar1);
-      uVar2 = strlen();
+      uVar4 = Animal_Routine_0809B1F4(iVar1);
+      uVar2 = gba_strlen();
       if (0xc < uVar2) {
         uVar2 = 0xc;
       }
-      memcpy(param_1 + 0xc,uVar4,uVar2);
+      gba_memcpy(param_1 + 0xc,uVar4,uVar2);
       *(undefined1 *)(param_1 + 0xc + uVar2) = 0;
     }
-    func_0800D4C0(param_1,param_2);
+    Food_GetDesc(param_1,param_2);
   }
   return in_lr;
 }
 
 // =============================================================================
-// Function: func_0800D5B0 @ 0x0800D5B0
+// Function: FoodStack_Construct @ 0x0800D5B0
 // =============================================================================
-undefined4 func_0800D5B0(uint *param_1)
+undefined4 FoodStack_Construct(uint *param_1)
 
 {
   ushort uVar1;
@@ -533,11 +533,11 @@ undefined4 func_0800D5B0(uint *param_1)
   if (uStack_28 != 0) {
     do {
       iVar9 = (int)*(char *)((int)param_1 + uVar14 + 7);
-      if (((-1 < iVar9) && (iVar9 = func_0800DA64(param_1 + iVar9 * 0xf + 0xb), iVar9 != 0)) &&
+      if (((-1 < iVar9) && (iVar9 = Article_GetId(param_1 + iVar9 * 0xf + 0xb), iVar9 != 0)) &&
          (cVar7 = func_0x0809b8b0(), cVar7 != '\0')) {
         if (((*(byte *)((int)param_1 + 3) & 0x7f) >> 5 & 1 << (uVar14 & 0xff)) != 0) {
           iVar16 = iVar16 + -1;
-          func_0809B8F0(iVar9);
+          Animal_Routine_0809B8F0(iVar9);
         }
         func_0x0800d0c0(&uStack_30,param_1,uVar14);
         uStack_2c = uStack_30;
@@ -555,7 +555,7 @@ undefined4 func_0800D5B0(uint *param_1)
                             );
         uStack_34 = uVar2 & uStack_34 | uStack_2c._2_2_ >> 6 & (ushort)_DAT_0800d79c;
         uStack_2c = uVar3;
-        memcpy(auStack_40,&uStack_38,6);
+        gba_memcpy(auStack_40,&uStack_38,6);
         uStack_3a = 3;
         func_0x0809b124(iVar9,auStack_40);
       }
@@ -563,37 +563,37 @@ undefined4 func_0800D5B0(uint *param_1)
     } while (uVar14 < uStack_28);
   }
   *(byte *)((int)param_1 + 3) = *(byte *)((int)param_1 + 3) & 0x9f;
-  uStack_24 = func_0800CE74(param_1);
+  uStack_24 = Building_Routine_0800CE74(param_1);
   uVar14 = 0;
   if (uStack_24 != 0) {
     puVar15 = param_1 + 0xb;
     do {
       cVar7 = func_0x0800da08(puVar15);
       if (cVar7 == '\0') {
-        iVar9 = func_0800DA7C(puVar15);
-        iVar10 = func_0800DA98(puVar15);
+        iVar9 = Article_GetName(puVar15);
+        iVar10 = Article_GetIconId(puVar15);
         if ((iVar9 != 0) || (iVar10 != 0)) {
           iVar13 = iVar9;
           if (iVar9 == 0) {
             iVar13 = iVar10;
           }
           if ((*(char *)((int)param_1 + 3) < '\0') && (uVar14 == ((byte)param_1[1] & 0xf))) {
-            func_0809B8F0(iVar13);
+            Animal_Routine_0809B8F0(iVar13);
           }
           else {
             cVar7 = func_0x0809b4fc(iVar13);
             if ((cVar7 == '\0') &&
                (((cVar7 = func_0x0809b8b0(iVar13), cVar7 == '\0' && (iVar16 != 0)) &&
-                (func_0809B114(auStack_40,iVar13), (auStack_40[0] & 0x3ff) == 0x25)))) {
+                (Animal_Routine_0809B114(auStack_40,iVar13), (auStack_40[0] & 0x3ff) == 0x25)))) {
               iVar16 = iVar16 + -1;
-              func_0809B8F0(iVar13);
+              Animal_Routine_0809B8F0(iVar13);
             }
           }
           if (iVar9 == 0) {
-            func_0809BFB4(iVar10);
+            Animal_Routine_0809BFB4(iVar10);
           }
           else {
-            func_0809BE74(iVar9);
+            Animal_Routine_0809BE74(iVar9);
           }
         }
       }
@@ -605,16 +605,16 @@ undefined4 func_0800D5B0(uint *param_1)
 }
 
 // =============================================================================
-// Function: func_0800D80C @ 0x0800D80C
+// Function: FoodStack_GetFood @ 0x0800D80C
 // =============================================================================
-undefined4 func_0800D80C(int param_1,uint param_2)
+undefined4 FoodStack_GetFood(int param_1,uint param_2)
 
 {
   char cVar1;
   uint uVar2;
   undefined4 in_lr;
   
-  uVar2 = func_0800CE74();
+  uVar2 = Building_Routine_0800CE74();
   if (uVar2 <= param_2) {
     param_2 = func_0x080d0f4e(param_2);
   }
@@ -627,9 +627,9 @@ undefined4 func_0800D80C(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800D864 @ 0x0800D864
+// Function: FoodStack_IsEmpty @ 0x0800D864
 // =============================================================================
-undefined4 func_0800D864(int param_1,uint param_2,uint param_3)
+undefined4 FoodStack_IsEmpty(int param_1,uint param_2,uint param_3)
 
 {
   char cVar1;
@@ -638,8 +638,8 @@ undefined4 func_0800D864(int param_1,uint param_2,uint param_3)
   undefined4 in_lr;
   
   uVar2 = func_0x0800ce9c();
-  if ((((param_2 < uVar2) && (uVar2 = func_0800CE74(param_1), param_3 < uVar2)) &&
-      (iVar3 = func_0800DA64(param_1 + param_3 * 0x3c + 0x2c), iVar3 != 0)) &&
+  if ((((param_2 < uVar2) && (uVar2 = Building_Routine_0800CE74(param_1), param_3 < uVar2)) &&
+      (iVar3 = Article_GetId(param_1 + param_3 * 0x3c + 0x2c), iVar3 != 0)) &&
      (cVar1 = func_0x0809b8b0(), cVar1 != '\0')) {
     *(char *)(param_1 + 7 + param_2) = (char)param_3;
   }
@@ -647,9 +647,9 @@ undefined4 func_0800D864(int param_1,uint param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_0800D8A8 @ 0x0800D8A8
+// Function: FoodStack_GetAmount @ 0x0800D8A8
 // =============================================================================
-void func_0800D8A8(int param_1,int param_2)
+void FoodStack_GetAmount(int param_1,int param_2)
 
 {
   ushort uVar1;
@@ -670,12 +670,12 @@ void func_0800D8A8(int param_1,int param_2)
   uint uStack_28;
   undefined4 uStack_24;
   
-  cVar3 = func_0800D158();
+  cVar3 = Tool_GetIconId();
   if (cVar3 != '\0') {
     pcVar4 = (char *)(param_1 + 7 + param_2);
     cVar3 = *pcVar4;
     *pcVar4 = -1;
-    func_0800D1D8(&uStack_28,param_1,param_2);
+    ToolStack_Construct(&uStack_28,param_1,param_2);
     uStack_24 = uStack_28;
     uVar6 = uStack_24;
     uStack_24._0_2_ = (ushort)uStack_28;
@@ -689,33 +689,33 @@ void func_0800D8A8(int param_1,int param_2)
     uStack_66 = CONCAT11(uStack_66._1_1_ & 3 | (byte)((uStack_24._2_2_ & 0x3f) << 2),(char)uVar1);
     uStack_64 = uVar2 & uStack_64 | uStack_24._2_2_ >> 6;
     uStack_24 = uVar6;
-    memcpy(auStack_70,&uStack_68,6);
+    gba_memcpy(auStack_70,&uStack_68,6);
     uStack_6a = 2;
     iVar8 = param_1 + cVar3 * 0x3c + 0x2c;
-    iVar5 = func_0800DA7C(iVar8);
+    iVar5 = Article_GetName(iVar8);
     if (iVar5 != 0) {
       func_0x0809b91c();
-      func_0809BD70(auStack_60,auStack_70,0,0);
+      Animal_Routine_0809BD70(auStack_60,auStack_70,0,0);
       uVar6 = func_0x0809b228(iVar5);
       if (1 < uVar6 >> 1) {
         uVar7 = func_0x080d11e4();
         uVar7 = func_0x080d0f4e(uVar7,uVar6 >> 1);
-        func_0809B2A8(auStack_60,uVar7);
+        Animal_Routine_0809B2A8(auStack_60,uVar7);
       }
-      uVar7 = func_0800D448(param_1,auStack_60);
+      uVar7 = Food_GetFatigueBonus(param_1,auStack_60);
       goto LAB_0800d9ec;
     }
-    iVar5 = func_0800DA98(iVar8);
+    iVar5 = Article_GetIconId(iVar8);
     if (iVar5 != 0) {
       func_0x0809b91c();
-      func_0809BEBC(&uStack_68,auStack_70,0,0);
+      Animal_Routine_0809BEBC(&uStack_68,auStack_70,0,0);
       uVar6 = func_0x0809b228(iVar5);
       if (1 < uVar6 >> 1) {
         uVar7 = func_0x080d11e4();
         uVar7 = func_0x080d0f4e(uVar7,uVar6 >> 1);
-        func_0809B2A8(&uStack_68,uVar7);
+        Animal_Routine_0809B2A8(&uStack_68,uVar7);
       }
-      uVar7 = func_0800D484(param_1,&uStack_68);
+      uVar7 = Food_IsDrink(param_1,&uStack_68);
       goto LAB_0800d9ec;
     }
   }
@@ -726,9 +726,9 @@ LAB_0800d9ec:
 }
 
 // =============================================================================
-// Function: func_0800DA14 @ 0x0800DA14
+// Function: FoodStack_AddAmount @ 0x0800DA14
 // =============================================================================
-undefined8 func_0800DA14(byte *param_1)
+undefined8 FoodStack_AddAmount(byte *param_1)
 
 {
   byte *pbVar1;
@@ -742,9 +742,9 @@ undefined8 func_0800DA14(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DA2C @ 0x0800DA2C
+// Function: FoodStack_SubtractAmount @ 0x0800DA2C
 // =============================================================================
-undefined8 func_0800DA2C(byte *param_1)
+undefined8 FoodStack_SubtractAmount(byte *param_1)
 
 {
   byte *pbVar1;
@@ -758,9 +758,9 @@ undefined8 func_0800DA2C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DA48 @ 0x0800DA48
+// Function: Article_Construct @ 0x0800DA48
 // =============================================================================
-undefined8 func_0800DA48(byte *param_1)
+undefined8 Article_Construct(byte *param_1)
 
 {
   byte *pbVar1;
@@ -774,9 +774,9 @@ undefined8 func_0800DA48(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DA64 @ 0x0800DA64
+// Function: Article_GetId @ 0x0800DA64
 // =============================================================================
-undefined8 func_0800DA64(byte *param_1)
+undefined8 Article_GetId(byte *param_1)
 
 {
   byte *pbVar1;
@@ -790,9 +790,9 @@ undefined8 func_0800DA64(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DA7C @ 0x0800DA7C
+// Function: Article_GetName @ 0x0800DA7C
 // =============================================================================
-undefined8 func_0800DA7C(byte *param_1)
+undefined8 Article_GetName(byte *param_1)
 
 {
   byte *pbVar1;
@@ -806,9 +806,9 @@ undefined8 func_0800DA7C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DA98 @ 0x0800DA98
+// Function: Article_GetIconId @ 0x0800DA98
 // =============================================================================
-undefined8 func_0800DA98(byte *param_1)
+undefined8 Article_GetIconId(byte *param_1)
 
 {
   byte *pbVar1;
@@ -822,9 +822,9 @@ undefined8 func_0800DA98(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DAB4 @ 0x0800DAB4
+// Function: Article_CanBeDiscarded @ 0x0800DAB4
 // =============================================================================
-undefined8 func_0800DAB4(byte *param_1)
+undefined8 Article_CanBeDiscarded(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -832,7 +832,7 @@ undefined8 func_0800DAB4(byte *param_1)
   
   if ((*param_1 & 1) == 0) {
     if (param_1 != (byte *)0xfffffffc) {
-      func_080D7BC4();
+      VTable_Routine_080D7BC4();
     }
     *param_1 = *param_1 | 3;
     uVar1 = 1;
@@ -844,9 +844,9 @@ undefined8 func_0800DAB4(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DAE4 @ 0x0800DAE4
+// Function: Article_GetDesc @ 0x0800DAE4
 // =============================================================================
-undefined8 func_0800DAE4(byte *param_1)
+undefined8 Article_GetDesc(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -854,7 +854,7 @@ undefined8 func_0800DAE4(byte *param_1)
   
   if ((*param_1 & 1) == 0) {
     if (param_1 != (byte *)0xfffffffc) {
-      func_080D7B50();
+      VTable_Routine_080D7B50();
     }
     uVar1 = 1;
     *param_1 = *param_1 & 0xfd | 1;
@@ -866,9 +866,9 @@ undefined8 func_0800DAE4(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DB14 @ 0x0800DB14
+// Function: ArticleStack_Construct @ 0x0800DB14
 // =============================================================================
-undefined4 func_0800DB14(byte *param_1)
+undefined4 ArticleStack_Construct(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -880,9 +880,9 @@ undefined4 func_0800DB14(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DB34 @ 0x0800DB34
+// Function: ArticleStack_GetArticle @ 0x0800DB34
 // =============================================================================
-undefined8 func_0800DB34(byte *param_1)
+undefined8 ArticleStack_GetArticle(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -896,9 +896,9 @@ undefined8 func_0800DB34(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DB60 @ 0x0800DB60
+// Function: ArticleStack_IsEmpty @ 0x0800DB60
 // =============================================================================
-undefined8 func_0800DB60(byte *param_1)
+undefined8 ArticleStack_IsEmpty(byte *param_1)
 
 {
   uint uVar1;
@@ -912,9 +912,9 @@ undefined8 func_0800DB60(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DB8C @ 0x0800DB8C
+// Function: ArticleStack_GetAmount @ 0x0800DB8C
 // =============================================================================
-undefined8 func_0800DB8C(byte *param_1)
+undefined8 ArticleStack_GetAmount(byte *param_1)
 
 {
   int iVar1;
@@ -929,9 +929,9 @@ undefined8 func_0800DB8C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DBC8 @ 0x0800DBC8
+// Function: ArticleStack_AddAmount @ 0x0800DBC8
 // =============================================================================
-undefined8 func_0800DBC8(int param_1)
+undefined8 ArticleStack_AddAmount(int param_1)
 
 {
   undefined4 in_lr;
@@ -942,9 +942,9 @@ undefined8 func_0800DBC8(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800DBE0 @ 0x0800DBE0
+// Function: ArticleStack_SubtractAmount @ 0x0800DBE0
 // =============================================================================
-undefined8 func_0800DBE0(undefined1 *param_1,undefined1 param_2,uint param_3)
+undefined8 ArticleStack_SubtractAmount(undefined1 *param_1,undefined1 param_2,uint param_3)
 
 {
   undefined1 uVar1;
@@ -971,9 +971,9 @@ undefined8 func_0800DBE0(undefined1 *param_1,undefined1 param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_0800DC10 @ 0x0800DC10
+// Function: Product_Construct @ 0x0800DC10
 // =============================================================================
-undefined8 func_0800DC10(byte *param_1)
+undefined8 Product_Construct(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -991,9 +991,9 @@ undefined8 func_0800DC10(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DC34 @ 0x0800DC34
+// Function: Product_GetId @ 0x0800DC34
 // =============================================================================
-undefined8 func_0800DC34(int param_1)
+undefined8 Product_GetId(int param_1)
 
 {
   undefined4 in_lr;
@@ -1002,9 +1002,9 @@ undefined8 func_0800DC34(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800DC48 @ 0x0800DC48
+// Function: Product_GetPrice @ 0x0800DC48
 // =============================================================================
-undefined8 func_0800DC48(int param_1)
+undefined8 Product_GetPrice(int param_1)
 
 {
   uint uVar1;
@@ -1020,9 +1020,9 @@ undefined8 func_0800DC48(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800DC5C @ 0x0800DC5C
+// Function: Product_GetName @ 0x0800DC5C
 // =============================================================================
-undefined4 func_0800DC5C(int param_1,int param_2)
+undefined4 Product_GetName(int param_1,int param_2)
 
 {
   uint *puVar1;
@@ -1043,9 +1043,9 @@ undefined4 func_0800DC5C(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800DC8C @ 0x0800DC8C
+// Function: Product_GetIconId @ 0x0800DC8C
 // =============================================================================
-undefined4 func_0800DC8C(int param_1,uint param_2)
+undefined4 Product_GetIconId(int param_1,uint param_2)
 
 {
   byte bVar1;
@@ -1066,9 +1066,9 @@ undefined4 func_0800DC8C(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800DCB8 @ 0x0800DCB8
+// Function: Item_Routine_0800DCB8 @ 0x0800DCB8
 // =============================================================================
-undefined8 func_0800DCB8(byte *param_1)
+undefined8 Item_Routine_0800DCB8(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -1082,9 +1082,9 @@ undefined8 func_0800DCB8(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DCE0 @ 0x0800DCE0
+// Function: Item_Routine_0800DCE0 @ 0x0800DCE0
 // =============================================================================
-undefined8 func_0800DCE0(byte *param_1)
+undefined8 Item_Routine_0800DCE0(byte *param_1)
 
 {
   uint uVar1;
@@ -1100,10 +1100,10 @@ undefined8 func_0800DCE0(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DD08 / Item_GetFoodStaminaEffect @ 0x0800DD08
+// Function: Item_GetFoodStaminaEffect @ 0x0800DD08
 // Description: Computes net stamina effect from Food/Crop entry +5 (signed byte)
 // =============================================================================
-undefined8 func_0800DD08(byte *param_1)
+undefined8 Item_GetFoodStaminaEffect(byte *param_1)
 
 {
   int iVar1;
@@ -1120,10 +1120,10 @@ undefined8 func_0800DD08(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DD3C / Item_GetFoodFatigueEffect @ 0x0800DD3C
+// Function: Item_GetFoodFatigueEffect @ 0x0800DD3C
 // Description: Computes net fatigue effect from Food/Crop entry +6 (signed byte)
 // =============================================================================
-undefined8 func_0800DD3C(byte *param_1)
+undefined8 Item_GetFoodFatigueEffect(byte *param_1)
 
 {
   int iVar1;
@@ -1140,9 +1140,9 @@ undefined8 func_0800DD3C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DD6C @ 0x0800DD6C
+// Function: Item_Routine_0800DD6C @ 0x0800DD6C
 // =============================================================================
-undefined8 func_0800DD6C(byte *param_1)
+undefined8 Item_Routine_0800DD6C(byte *param_1)
 
 {
   int iVar1;
@@ -1158,9 +1158,9 @@ undefined8 func_0800DD6C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DD8C @ 0x0800DD8C
+// Function: Item_Routine_0800DD8C @ 0x0800DD8C
 // =============================================================================
-undefined8 func_0800DD8C(byte *param_1)
+undefined8 Item_Routine_0800DD8C(byte *param_1)
 
 {
   int iVar1;
@@ -1176,9 +1176,9 @@ undefined8 func_0800DD8C(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DDAC @ 0x0800DDAC
+// Function: Item_GetFoodIsDrinkOrLiquid @ 0x0800DDAC
 // =============================================================================
-undefined8 func_0800DDAC(byte *param_1)
+undefined8 Item_GetFoodIsDrinkOrLiquid(byte *param_1)
 
 {
   uint uVar1;
@@ -1194,9 +1194,9 @@ undefined8 func_0800DDAC(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DDD4 @ 0x0800DDD4
+// Function: Item_Routine_0800DDD4 @ 0x0800DDD4
 // =============================================================================
-undefined8 func_0800DDD4(byte *param_1)
+undefined8 Item_Routine_0800DDD4(byte *param_1)
 
 {
   int iVar1;
@@ -1211,9 +1211,9 @@ undefined8 func_0800DDD4(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DE0C @ 0x0800DE0C
+// Function: Item_Routine_0800DE0C @ 0x0800DE0C
 // =============================================================================
-undefined4 func_0800DE0C(byte *param_1,char param_2,char param_3)
+undefined4 Item_Routine_0800DE0C(byte *param_1,char param_2,char param_3)
 
 {
   int iVar1;
@@ -1238,9 +1238,9 @@ undefined4 func_0800DE0C(byte *param_1,char param_2,char param_3)
 }
 
 // =============================================================================
-// Function: func_0800DE68 @ 0x0800DE68
+// Function: Item_Routine_0800DE68 @ 0x0800DE68
 // =============================================================================
-undefined8 func_0800DE68(int param_1)
+undefined8 Item_Routine_0800DE68(int param_1)
 
 {
   undefined4 in_lr;
@@ -1251,9 +1251,9 @@ undefined8 func_0800DE68(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800DE80 @ 0x0800DE80
+// Function: Item_Routine_0800DE80 @ 0x0800DE80
 // =============================================================================
-undefined8 func_0800DE80(int param_1,undefined4 param_2,uint param_3)
+undefined8 Item_Routine_0800DE80(int param_1,undefined4 param_2,uint param_3)
 
 {
   undefined1 uVar1;
@@ -1265,7 +1265,7 @@ undefined8 func_0800DE80(int param_1,undefined4 param_2,uint param_3)
   
   uStack_14 = param_2;
   uStack_c = param_3;
-  memcpy(param_1,&uStack_14,3);
+  gba_memcpy(param_1,&uStack_14,3);
   if (uStack_c == 0) {
     uVar1 = 1;
   }
@@ -1282,9 +1282,9 @@ undefined8 func_0800DE80(int param_1,undefined4 param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_0800DEB8 @ 0x0800DEB8
+// Function: Item_Routine_0800DEB8 @ 0x0800DEB8
 // =============================================================================
-undefined8 func_0800DEB8(undefined4 param_1,int param_2)
+undefined8 Item_Routine_0800DEB8(undefined4 param_1,int param_2)
 
 {
   undefined4 in_lr;
@@ -1293,15 +1293,15 @@ undefined8 func_0800DEB8(undefined4 param_1,int param_2)
     func_0x0800dca8(param_1,0xab);
   }
   else {
-    memcpy(param_1,param_2,3);
+    gba_memcpy(param_1,param_2,3);
   }
   return CONCAT44(in_lr,param_1);
 }
 
 // =============================================================================
-// Function: func_0800DEDC @ 0x0800DEDC
+// Function: Item_Routine_0800DEDC @ 0x0800DEDC
 // =============================================================================
-undefined8 func_0800DEDC(int param_1)
+undefined8 Item_Routine_0800DEDC(int param_1)
 
 {
   undefined4 in_lr;
@@ -1310,9 +1310,9 @@ undefined8 func_0800DEDC(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800DEF0 @ 0x0800DEF0
+// Function: Item_Routine_0800DEF0 @ 0x0800DEF0
 // =============================================================================
-undefined8 func_0800DEF0(int param_1)
+undefined8 Item_Routine_0800DEF0(int param_1)
 
 {
   uint uVar1;
@@ -1328,9 +1328,9 @@ undefined8 func_0800DEF0(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800DF04 @ 0x0800DF04
+// Function: Item_Routine_0800DF04 @ 0x0800DF04
 // =============================================================================
-undefined4 func_0800DF04(int param_1,int param_2)
+undefined4 Item_Routine_0800DF04(int param_1,int param_2)
 
 {
   uint *puVar1;
@@ -1351,9 +1351,9 @@ undefined4 func_0800DF04(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800DF34 @ 0x0800DF34
+// Function: Item_Routine_0800DF34 @ 0x0800DF34
 // =============================================================================
-undefined4 func_0800DF34(int param_1,uint param_2)
+undefined4 Item_Routine_0800DF34(int param_1,uint param_2)
 
 {
   byte bVar1;
@@ -1374,9 +1374,9 @@ undefined4 func_0800DF34(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800DF58 @ 0x0800DF58
+// Function: Item_Routine_0800DF58 @ 0x0800DF58
 // =============================================================================
-undefined8 func_0800DF58(byte *param_1)
+undefined8 Item_Routine_0800DF58(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -1390,9 +1390,9 @@ undefined8 func_0800DF58(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DF84 @ 0x0800DF84
+// Function: Item_Routine_0800DF84 @ 0x0800DF84
 // =============================================================================
-undefined8 func_0800DF84(byte *param_1)
+undefined8 Item_Routine_0800DF84(byte *param_1)
 
 {
   uint uVar1;
@@ -1406,9 +1406,9 @@ undefined8 func_0800DF84(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DFB0 @ 0x0800DFB0
+// Function: Item_Routine_0800DFB0 @ 0x0800DFB0
 // =============================================================================
-undefined8 func_0800DFB0(byte *param_1)
+undefined8 Item_Routine_0800DFB0(byte *param_1)
 
 {
   byte bVar1;
@@ -1430,9 +1430,9 @@ LAB_0800dfd0:
 }
 
 // =============================================================================
-// Function: func_0800DFD4 @ 0x0800DFD4
+// Function: Item_Routine_0800DFD4 @ 0x0800DFD4
 // =============================================================================
-undefined8 func_0800DFD4(byte *param_1)
+undefined8 Item_Routine_0800DFD4(byte *param_1)
 
 {
   int iVar1;
@@ -1447,9 +1447,9 @@ undefined8 func_0800DFD4(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800E010 @ 0x0800E010
+// Function: Item_Routine_0800E010 @ 0x0800E010
 // =============================================================================
-undefined8 func_0800E010(int param_1)
+undefined8 Item_Routine_0800E010(int param_1)
 
 {
   undefined4 in_lr;
@@ -1460,9 +1460,9 @@ undefined8 func_0800E010(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800E028 @ 0x0800E028
+// Function: Item_Routine_0800E028 @ 0x0800E028
 // =============================================================================
-undefined8 func_0800E028(undefined1 *param_1,undefined1 param_2,uint param_3)
+undefined8 Item_Routine_0800E028(undefined1 *param_1,undefined1 param_2,uint param_3)
 
 {
   undefined1 uVar1;
@@ -1489,9 +1489,9 @@ undefined8 func_0800E028(undefined1 *param_1,undefined1 param_2,uint param_3)
 }
 
 // =============================================================================
-// Function: func_0800E058 @ 0x0800E058
+// Function: Item_Routine_0800E058 @ 0x0800E058
 // =============================================================================
-undefined8 func_0800E058(byte *param_1)
+undefined8 Item_Routine_0800E058(byte *param_1)
 
 {
   undefined4 in_lr;
@@ -1509,9 +1509,9 @@ undefined8 func_0800E058(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800E07C @ 0x0800E07C
+// Function: Item_Routine_0800E07C @ 0x0800E07C
 // =============================================================================
-undefined8 func_0800E07C(int param_1)
+undefined8 Item_Routine_0800E07C(int param_1)
 
 {
   undefined4 in_lr;
@@ -1520,9 +1520,9 @@ undefined8 func_0800E07C(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800E090 @ 0x0800E090
+// Function: Item_Routine_0800E090 @ 0x0800E090
 // =============================================================================
-undefined8 func_0800E090(int param_1)
+undefined8 Item_Routine_0800E090(int param_1)
 
 {
   uint uVar1;
@@ -1538,9 +1538,9 @@ undefined8 func_0800E090(int param_1)
 }
 
 // =============================================================================
-// Function: func_0800E0A4 @ 0x0800E0A4
+// Function: Item_Routine_0800E0A4 @ 0x0800E0A4
 // =============================================================================
-undefined4 func_0800E0A4(int param_1,int param_2)
+undefined4 Item_Routine_0800E0A4(int param_1,int param_2)
 
 {
   uint *puVar1;
@@ -1561,9 +1561,9 @@ undefined4 func_0800E0A4(int param_1,int param_2)
 }
 
 // =============================================================================
-// Function: func_0800E0D4 @ 0x0800E0D4
+// Function: Item_Routine_0800E0D4 @ 0x0800E0D4
 // =============================================================================
-undefined4 func_0800E0D4(int param_1,uint param_2)
+undefined4 Item_Routine_0800E0D4(int param_1,uint param_2)
 
 {
   byte bVar1;
@@ -1584,9 +1584,9 @@ undefined4 func_0800E0D4(int param_1,uint param_2)
 }
 
 // =============================================================================
-// Function: func_0800E148 @ 0x0800E148
+// Function: Item_Routine_0800E148 @ 0x0800E148
 // =============================================================================
-undefined8 func_0800E148(undefined1 *param_1,undefined1 param_2)
+undefined8 Item_Routine_0800E148(undefined1 *param_1,undefined1 param_2)
 
 {
   uint uVar1;
@@ -1611,9 +1611,9 @@ LAB_0800e184:
 }
 
 // =============================================================================
-// Function: func_0800E198 @ 0x0800E198
+// Function: Item_Routine_0800E198 @ 0x0800E198
 // =============================================================================
-void func_0800E198(byte *param_1)
+void Item_Routine_0800E198(byte *param_1)
 
 {
   ushort uVar1;
@@ -1630,9 +1630,9 @@ void func_0800E198(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800E1C0 @ 0x0800E1C0
+// Function: Item_Routine_0800E1C0 @ 0x0800E1C0
 // =============================================================================
-undefined8 func_0800E1C0(byte *param_1)
+undefined8 Item_Routine_0800E1C0(byte *param_1)
 
 {
   undefined4 uVar1;
@@ -1646,20 +1646,20 @@ undefined8 func_0800E1C0(byte *param_1)
     piVar2 = (int *)((uint)*param_1 * 4 + _DAT_0800e1f0);
     if (*piVar2 * 0x10000 < 0) {
       func_0x0800df50(auStack_c,*(undefined1 *)((int)piVar2 + 2));
-      uVar1 = func_0800DF58(auStack_c);
+      uVar1 = Item_Routine_0800DF58(auStack_c);
     }
     else {
       func_0x0800dca8(auStack_10,*(undefined1 *)((int)piVar2 + 2));
-      uVar1 = func_0800DCB8(auStack_10);
+      uVar1 = Item_Routine_0800DCB8(auStack_10);
     }
   }
   return CONCAT44(in_lr,uVar1);
 }
 
 // =============================================================================
-// Function: func_0800E214 @ 0x0800E214
+// Function: Item_Routine_0800E214 @ 0x0800E214
 // =============================================================================
-undefined8 func_0800E214(byte *param_1)
+undefined8 Item_Routine_0800E214(byte *param_1)
 
 {
   uint uVar1;
@@ -1672,11 +1672,11 @@ undefined8 func_0800E214(byte *param_1)
     piVar2 = (int *)((uint)*param_1 * 4 + _DAT_0800e244);
     if (*piVar2 * 0x10000 < 0) {
       func_0x0800df50(auStack_c,*(undefined1 *)((int)piVar2 + 2));
-      uVar1 = func_0800DF84(auStack_c);
+      uVar1 = Item_Routine_0800DF84(auStack_c);
     }
     else {
       func_0x0800dca8(auStack_10,*(undefined1 *)((int)piVar2 + 2));
-      uVar1 = func_0800DCE0(auStack_10);
+      uVar1 = Item_Routine_0800DCE0(auStack_10);
     }
     uVar1 = uVar1 & 0xffff;
   }
@@ -1687,9 +1687,9 @@ undefined8 func_0800E214(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800E268 @ 0x0800E268
+// Function: Item_Routine_0800E268 @ 0x0800E268
 // =============================================================================
-undefined8 func_0800E268(ushort *param_1)
+undefined8 Item_Routine_0800E268(ushort *param_1)
 
 {
   undefined4 in_lr;
@@ -1707,9 +1707,9 @@ undefined8 func_0800E268(ushort *param_1)
 }
 
 // =============================================================================
-// Function: func_0800E290 @ 0x0800E290
+// Function: Item_Routine_0800E290 @ 0x0800E290
 // =============================================================================
-undefined8 func_0800E290(undefined4 param_1,ushort *param_2)
+undefined8 Item_Routine_0800E290(undefined4 param_1,ushort *param_2)
 
 {
   undefined4 in_lr;
@@ -1724,9 +1724,9 @@ undefined8 func_0800E290(undefined4 param_1,ushort *param_2)
 }
 
 // =============================================================================
-// Function: func_0800E2B8 @ 0x0800E2B8
+// Function: Item_Routine_0800E2B8 @ 0x0800E2B8
 // =============================================================================
-undefined8 func_0800E2B8(ushort *param_1)
+undefined8 Item_Routine_0800E2B8(ushort *param_1)
 
 {
   undefined4 in_lr;

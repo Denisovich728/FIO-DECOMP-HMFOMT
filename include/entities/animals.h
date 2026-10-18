@@ -52,10 +52,22 @@ typedef struct Horse {
     bool is_adult;
 } Horse;
 
-// Function prototypes
+// =============================================================================
+// Function Prototypes
+// =============================================================================
 void Animal_UpdateDailyHealth(AnimalBase *animal);
 void Cow_ProduceMilk(Cow *cow);
 void Sheep_ProduceWool(Sheep *sheep);
 void Chicken_LayEgg(Chicken *chicken);
+void Dog_PlayFrisbee(Dog *dog);
+
+u32  BarnAnimal_GetAffection(const AnimalBase *animal);
+void BarnAnimal_SetAffection(AnimalBase *animal, u32 affection);
+bool BarnAnimal_IsSick(const AnimalBase *animal);
+void BarnAnimal_SetSick(AnimalBase *animal, bool sick);
+
+u32  Chicken_GetAffection(const Chicken *chicken);
+bool Chicken_IsFedToday(const Chicken *chicken);
+void Chicken_SetFedToday(Chicken *chicken, bool fed);
 
 #endif // ANIMALS_H

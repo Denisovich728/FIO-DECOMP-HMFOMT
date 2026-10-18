@@ -1100,7 +1100,8 @@ undefined8 func_0800DCE0(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DD08 @ 0x0800DD08
+// Function: func_0800DD08 / Item_GetFoodStaminaEffect @ 0x0800DD08
+// Description: Computes net stamina effect from Food/Crop entry +5 (signed byte)
 // =============================================================================
 undefined8 func_0800DD08(byte *param_1)
 
@@ -1109,6 +1110,7 @@ undefined8 func_0800DD08(byte *param_1)
   undefined4 in_lr;
   
   if (*param_1 < 0xab) {
+    // Reads signed byte at FoodCropDef offset +0x05 (Stamina effect)
     iVar1 = (int)*(char *)((uint)*param_1 * 0x10 + _DAT_0800dd38 + 5) + (int)(char)param_1[1];
   }
   else {
@@ -1118,7 +1120,8 @@ undefined8 func_0800DD08(byte *param_1)
 }
 
 // =============================================================================
-// Function: func_0800DD3C @ 0x0800DD3C
+// Function: func_0800DD3C / Item_GetFoodFatigueEffect @ 0x0800DD3C
+// Description: Computes net fatigue effect from Food/Crop entry +6 (signed byte)
 // =============================================================================
 undefined8 func_0800DD3C(byte *param_1)
 
@@ -1127,6 +1130,7 @@ undefined8 func_0800DD3C(byte *param_1)
   undefined4 in_lr;
   
   if (*param_1 < 0xab) {
+    // Reads signed byte at FoodCropDef offset +0x06 (Fatigue effect)
     iVar1 = (int)*(char *)((uint)*param_1 * 0x10 + _DAT_0800dd68 + 6) + (int)(char)param_1[2];
   }
   else {

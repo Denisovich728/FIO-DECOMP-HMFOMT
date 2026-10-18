@@ -132,9 +132,11 @@ typedef enum NativeCallId {
     CALL_Unlock_Player_Input        = 0x069,
     CALL_Lock_Player_Input          = 0x06A,
 
-    // Social, Friendship & Love (0x076 - 0x08E)
+    // Social, Friendship, Love & Recipes (0x076 - 0x08E)
     CALL_Set_Goddess_Appearance_Flash = 0x076,
-    CALL_GameCube_Link_Command      = 0x079,
+    CALL_Has_Player_Learned_Recipe    = 0x077,
+    CALL_Get_GameCube_Link_Level      = 0x078,
+    CALL_Unlock_Cooking_Recipe        = 0x079,
     CALL_Is_NPC_Birthday            = 0x07B,
     CALL_Chek_Friendship_Points     = 0x07C,
     CALL_Give_Friendship_Points     = 0x07D,
@@ -147,7 +149,20 @@ typedef enum NativeCallId {
     CALL_Add_Festival_Friendship_Bonus = 0x08A,
     CALL_Open_Shop_Buy_UI           = 0x08B,
     CALL_Open_Shop_Quantity_UI      = 0x08C,
-    CALL_Reset_NPC_Schedule         = 0x08D
+    CALL_Reset_NPC_Schedule         = 0x08D,
+
+    // Nature Sprites & Farming Subsystems (0x0CC - 0x0CD)
+    CALL_Get_Sprite_Remaining_Work_Days = 0x0CC,
+    CALL_Get_Sprite_Skill_Level         = 0x0CD,
+
+    // Livestock & Animal Care (0x102 - 0x114)
+    CALL_Get_Animal_Name            = 0x102,
+    CALL_Get_Targeted_Animal_Index  = 0x103,
+    CALL_Has_Animal_Been_Talked_To  = 0x104,
+    CALL_Set_Animal_Talked_To      = 0x105,
+    CALL_Get_Animal_Days_Pregnant   = 0x107,
+    CALL_Is_Animal_Sick             = 0x108,
+    CALL_Is_Barn_Animal_Cow         = 0x114
 } NativeCallId;
 
 // =============================================================================

@@ -24,7 +24,7 @@ undefined8 Tool_Construct(int param_1)
   if (uVar2 != 0) {
     param_1 = param_1 + 0x2c;
     do {
-      cVar1 = func_0x0800da08(param_1);
+      cVar1 = Item_IsValid(param_1);
       if (cVar1 == '\0') {
         iVar4 = iVar4 + 1;
       }
@@ -62,11 +62,10 @@ void Tool_GetName(short *param_1,undefined4 param_2,uint param_3)
   uint uVar1;
   short sVar2;
   short sVar3;
-  code *UNRECOVERED_JUMPTABLE;
   
   uVar1 = Building_Routine_0800CE74(param_2);
   if (uVar1 <= param_3) {
-    param_3 = func_0x080d0f4e(param_3);
+    param_3 = math_modsi3(param_3);
   }
   sVar2 = ((ushort)param_3 & 3) * 0x28;
   if (param_3 < 8) {
@@ -81,8 +80,7 @@ void Tool_GetName(short *param_1,undefined4 param_2,uint param_3)
   }
   *param_1 = sVar2;
   param_1[1] = sVar3;
-  (*UNRECOVERED_JUMPTABLE)(param_1);
-  return;
+  return param_1;
 }
 
 // =============================================================================
@@ -97,7 +95,7 @@ undefined8 Tool_GetIconId(int param_1,uint param_2)
   undefined4 uVar4;
   undefined4 in_lr;
   
-  uVar1 = func_0x0800ce9c();
+  uVar1 = Item_HasStarQuality();
   if ((((param_2 < uVar1) && (uVar1 = (uint)*(char *)(param_1 + 7 + param_2), -1 < (int)uVar1)) &&
       (uVar2 = Building_Routine_0800CE74(param_1), uVar1 < uVar2)) &&
      (iVar3 = FoodStack_AddAmount(param_1 + uVar1 * 0x3c + 0x2c), iVar3 != 0)) {
@@ -123,7 +121,7 @@ undefined8 Tool_GetDesc(int param_1,uint param_2)
   int iVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0x0800ce9c();
+  uVar1 = Item_HasStarQuality();
   if (param_2 < uVar1) {
     iVar2 = (int)*(char *)(param_1 + 7 + param_2);
   }
@@ -142,7 +140,7 @@ undefined8 ToolStack_Construct(undefined4 *param_1)
   undefined4 in_lr;
   undefined4 uStack_c;
   
-  func_0x0800d0c0(&uStack_c);
+  Tool_CalculateStaminaCost(&uStack_c);
   uStack_c = CONCAT22(uStack_c._2_2_,(short)uStack_c + 0x20);
   *param_1 = uStack_c;
   return CONCAT44(in_lr,param_1);
@@ -258,7 +256,7 @@ undefined4 Food_Construct(int param_1,uint param_2)
   uint uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0x0800ce9c();
+  uVar1 = Item_HasStarQuality();
   if (param_2 < uVar1) {
     uVar1 = (*(byte *)(param_1 + 3) & 0x7f) >> 5;
     uVar2 = 1 << (param_2 & 0xff);
@@ -279,7 +277,7 @@ undefined4 Food_GetId(int param_1,uint param_2)
   uint uVar2;
   undefined4 in_lr;
   
-  uVar1 = func_0x0800ce9c();
+  uVar1 = Item_HasStarQuality();
   if (param_2 < uVar1) {
     uVar1 = (*(byte *)(param_1 + 3) & 0x7f) >> 5;
     uVar2 = 1 << (param_2 & 0xff);
@@ -446,7 +444,7 @@ undefined4 Food_AddBonuses(int param_1,undefined4 param_2)
   
   iVar1 = Food_GetStaminaBonus();
   if (iVar1 != 0) {
-    uVar2 = func_0x0809b220();
+    uVar2 = Animal_Routine_0809B220();
     iVar3 = Food_GetStaminaGain(param_1,param_2);
     if (iVar3 == 0) {
       if ((*(uint *)(param_1 + 4) & 0xffffff) >> 0xe < uVar2) {
@@ -528,18 +526,18 @@ undefined4 FoodStack_Construct(uint *param_1)
   iVar16 = uVar11 + uVar8 +
            (((*(byte *)((int)param_1 + 3) & 0x7f) >> 5 & uVar14) +
             ((*(byte *)((int)param_1 + 3) & 0x7f) >> 6 & uVar14) & uVar3 & uVar4 & uVar5 & uVar6);
-  uStack_28 = func_0x0800ce9c(param_1);
+  uStack_28 = Item_HasStarQuality(param_1);
   uVar14 = 0;
   if (uStack_28 != 0) {
     do {
       iVar9 = (int)*(char *)((int)param_1 + uVar14 + 7);
       if (((-1 < iVar9) && (iVar9 = Article_GetId(param_1 + iVar9 * 0xf + 0xb), iVar9 != 0)) &&
-         (cVar7 = func_0x0809b8b0(), cVar7 != '\0')) {
+         (cVar7 = Animal_Routine_0809B8B0(), cVar7 != '\0')) {
         if (((*(byte *)((int)param_1 + 3) & 0x7f) >> 5 & 1 << (uVar14 & 0xff)) != 0) {
           iVar16 = iVar16 + -1;
           Animal_Routine_0809B8F0(iVar9);
         }
-        func_0x0800d0c0(&uStack_30,param_1,uVar14);
+        Tool_CalculateStaminaCost(&uStack_30,param_1,uVar14);
         uStack_2c = uStack_30;
         uVar3 = uStack_2c;
         uStack_2c._0_2_ = (ushort)uStack_30;
@@ -557,7 +555,7 @@ undefined4 FoodStack_Construct(uint *param_1)
         uStack_2c = uVar3;
         gba_memcpy(auStack_40,&uStack_38,6);
         uStack_3a = 3;
-        func_0x0809b124(iVar9,auStack_40);
+        Animal_Routine_0809B124(iVar9,auStack_40);
       }
       uVar14 = uVar14 + 1;
     } while (uVar14 < uStack_28);
@@ -568,7 +566,7 @@ undefined4 FoodStack_Construct(uint *param_1)
   if (uStack_24 != 0) {
     puVar15 = param_1 + 0xb;
     do {
-      cVar7 = func_0x0800da08(puVar15);
+      cVar7 = Item_IsValid(puVar15);
       if (cVar7 == '\0') {
         iVar9 = Article_GetName(puVar15);
         iVar10 = Article_GetIconId(puVar15);
@@ -581,9 +579,9 @@ undefined4 FoodStack_Construct(uint *param_1)
             Animal_Routine_0809B8F0(iVar13);
           }
           else {
-            cVar7 = func_0x0809b4fc(iVar13);
+            cVar7 = Animal_Routine_0809B4FC(iVar13);
             if ((cVar7 == '\0') &&
-               (((cVar7 = func_0x0809b8b0(iVar13), cVar7 == '\0' && (iVar16 != 0)) &&
+               (((cVar7 = Animal_Routine_0809B8B0(iVar13), cVar7 == '\0' && (iVar16 != 0)) &&
                 (Animal_Routine_0809B114(auStack_40,iVar13), (auStack_40[0] & 0x3ff) == 0x25)))) {
               iVar16 = iVar16 + -1;
               Animal_Routine_0809B8F0(iVar13);
@@ -616,9 +614,9 @@ undefined4 FoodStack_GetFood(int param_1,uint param_2)
   
   uVar2 = Building_Routine_0800CE74();
   if (uVar2 <= param_2) {
-    param_2 = func_0x080d0f4e(param_2);
+    param_2 = math_modsi3(param_2);
   }
-  cVar1 = func_0x0800da08(param_1 + param_2 * 0x3c + 0x2c);
+  cVar1 = Item_IsValid(param_1 + param_2 * 0x3c + 0x2c);
   if (cVar1 == '\0') {
     *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) | 0x80;
     *(byte *)(param_1 + 4) = *(byte *)(param_1 + 4) & 0xf0 | (byte)param_2 & 0xf;
@@ -637,10 +635,10 @@ undefined4 FoodStack_IsEmpty(int param_1,uint param_2,uint param_3)
   int iVar3;
   undefined4 in_lr;
   
-  uVar2 = func_0x0800ce9c();
+  uVar2 = Item_HasStarQuality();
   if ((((param_2 < uVar2) && (uVar2 = Building_Routine_0800CE74(param_1), param_3 < uVar2)) &&
       (iVar3 = Article_GetId(param_1 + param_3 * 0x3c + 0x2c), iVar3 != 0)) &&
-     (cVar1 = func_0x0809b8b0(), cVar1 != '\0')) {
+     (cVar1 = Animal_Routine_0809B8B0(), cVar1 != '\0')) {
     *(char *)(param_1 + 7 + param_2) = (char)param_3;
   }
   return in_lr;
@@ -660,7 +658,6 @@ void FoodStack_GetAmount(int param_1,int param_2)
   uint uVar6;
   undefined4 uVar7;
   int iVar8;
-  code *UNRECOVERED_JUMPTABLE;
   undefined1 auStack_70 [6];
   undefined1 uStack_6a;
   undefined2 uStack_68;
@@ -694,12 +691,12 @@ void FoodStack_GetAmount(int param_1,int param_2)
     iVar8 = param_1 + cVar3 * 0x3c + 0x2c;
     iVar5 = Article_GetName(iVar8);
     if (iVar5 != 0) {
-      func_0x0809b91c();
+      Animal_Routine_0809B91C();
       Animal_Routine_0809BD70(auStack_60,auStack_70,0,0);
-      uVar6 = func_0x0809b228(iVar5);
+      uVar6 = Animal_Routine_0809B228(iVar5);
       if (1 < uVar6 >> 1) {
-        uVar7 = func_0x080d11e4();
-        uVar7 = func_0x080d0f4e(uVar7,uVar6 >> 1);
+        uVar7 = math_rand();
+        uVar7 = math_modsi3(uVar7,uVar6 >> 1);
         Animal_Routine_0809B2A8(auStack_60,uVar7);
       }
       uVar7 = Food_GetFatigueBonus(param_1,auStack_60);
@@ -707,12 +704,12 @@ void FoodStack_GetAmount(int param_1,int param_2)
     }
     iVar5 = Article_GetIconId(iVar8);
     if (iVar5 != 0) {
-      func_0x0809b91c();
+      Animal_Routine_0809B91C();
       Animal_Routine_0809BEBC(&uStack_68,auStack_70,0,0);
-      uVar6 = func_0x0809b228(iVar5);
+      uVar6 = Animal_Routine_0809B228(iVar5);
       if (1 < uVar6 >> 1) {
-        uVar7 = func_0x080d11e4();
-        uVar7 = func_0x080d0f4e(uVar7,uVar6 >> 1);
+        uVar7 = math_rand();
+        uVar7 = math_modsi3(uVar7,uVar6 >> 1);
         Animal_Routine_0809B2A8(&uStack_68,uVar7);
       }
       uVar7 = Food_IsDrink(param_1,&uStack_68);
@@ -721,8 +718,7 @@ void FoodStack_GetAmount(int param_1,int param_2)
   }
   uVar7 = 0xffffffff;
 LAB_0800d9ec:
-  (*UNRECOVERED_JUMPTABLE)(uVar7);
-  return;
+  return uVar7;
 }
 
 // =============================================================================
@@ -936,7 +932,7 @@ undefined8 ArticleStack_AddAmount(int param_1)
 {
   undefined4 in_lr;
   
-  func_0x0800db2c(param_1,0x51);
+  Item_SetId(param_1,0x51);
   *(undefined1 *)(param_1 + 1) = 0;
   return CONCAT44(in_lr,param_1);
 }
@@ -982,7 +978,7 @@ undefined8 Product_Construct(byte *param_1)
   
   uStack_4 = in_lr;
   if (param_1[1] == 0) {
-    func_0x0800db2c(abStack_8,0x51);
+    Item_SetId(abStack_8,0x51);
   }
   else {
     abStack_8[0] = *param_1;
@@ -1245,7 +1241,7 @@ undefined8 Item_Routine_0800DE68(int param_1)
 {
   undefined4 in_lr;
   
-  func_0x0800dca8(param_1,0xab);
+  Item_SetIdAndClearQuality(param_1,0xab);
   *(undefined1 *)(param_1 + 3) = 0;
   return CONCAT44(in_lr,param_1);
 }
@@ -1290,7 +1286,7 @@ undefined8 Item_Routine_0800DEB8(undefined4 param_1,int param_2)
   undefined4 in_lr;
   
   if (*(char *)(param_2 + 3) == '\0') {
-    func_0x0800dca8(param_1,0xab);
+    Item_SetIdAndClearQuality(param_1,0xab);
   }
   else {
     gba_memcpy(param_1,param_2,3);
@@ -1454,7 +1450,7 @@ undefined8 Item_Routine_0800E010(int param_1)
 {
   undefined4 in_lr;
   
-  func_0x0800df50(param_1,0x5f);
+  Item_SetQuality(param_1,0x5f);
   *(undefined1 *)(param_1 + 1) = 0;
   return CONCAT44(in_lr,param_1);
 }
@@ -1500,7 +1496,7 @@ undefined8 Item_Routine_0800E058(byte *param_1)
   
   uStack_4 = in_lr;
   if (param_1[1] == 0) {
-    func_0x0800df50(abStack_8,0x5f);
+    Item_SetQuality(abStack_8,0x5f);
   }
   else {
     abStack_8[0] = *param_1;
@@ -1597,7 +1593,7 @@ undefined8 Item_Routine_0800E148(undefined1 *param_1,undefined1 param_2)
   
   *param_1 = 0x67;
   auStack_c[0] = param_2;
-  uVar1 = func_0x0800df54(auStack_c);
+  uVar1 = Item_GetQuality(auStack_c);
   iVar3 = 0;
   piVar2 = _DAT_0800e164;
   while ((-1 < *piVar2 * 0x10000 || (*(byte *)((int)piVar2 + 2) != uVar1))) {
@@ -1617,7 +1613,6 @@ void Item_Routine_0800E198(byte *param_1)
 
 {
   ushort uVar1;
-  code *UNRECOVERED_JUMPTABLE;
   
   if (*param_1 < 0x67) {
     uVar1 = *(ushort *)((uint)*param_1 * 4 + _DAT_0800e1bc) & 0x7fff;
@@ -1625,8 +1620,7 @@ void Item_Routine_0800E198(byte *param_1)
   else {
     uVar1 = 0;
   }
-  (*UNRECOVERED_JUMPTABLE)(uVar1);
-  return;
+  return uVar1;
 }
 
 // =============================================================================
@@ -1645,11 +1639,11 @@ undefined8 Item_Routine_0800E1C0(byte *param_1)
   if (*param_1 < 0x67) {
     piVar2 = (int *)((uint)*param_1 * 4 + _DAT_0800e1f0);
     if (*piVar2 * 0x10000 < 0) {
-      func_0x0800df50(auStack_c,*(undefined1 *)((int)piVar2 + 2));
+      Item_SetQuality(auStack_c,*(undefined1 *)((int)piVar2 + 2));
       uVar1 = Item_Routine_0800DF58(auStack_c);
     }
     else {
-      func_0x0800dca8(auStack_10,*(undefined1 *)((int)piVar2 + 2));
+      Item_SetIdAndClearQuality(auStack_10,*(undefined1 *)((int)piVar2 + 2));
       uVar1 = Item_Routine_0800DCB8(auStack_10);
     }
   }
@@ -1671,11 +1665,11 @@ undefined8 Item_Routine_0800E214(byte *param_1)
   if (*param_1 < 0x67) {
     piVar2 = (int *)((uint)*param_1 * 4 + _DAT_0800e244);
     if (*piVar2 * 0x10000 < 0) {
-      func_0x0800df50(auStack_c,*(undefined1 *)((int)piVar2 + 2));
+      Item_SetQuality(auStack_c,*(undefined1 *)((int)piVar2 + 2));
       uVar1 = Item_Routine_0800DF84(auStack_c);
     }
     else {
-      func_0x0800dca8(auStack_10,*(undefined1 *)((int)piVar2 + 2));
+      Item_SetIdAndClearQuality(auStack_10,*(undefined1 *)((int)piVar2 + 2));
       uVar1 = Item_Routine_0800DCE0(auStack_10);
     }
     uVar1 = uVar1 & 0xffff;
@@ -1698,10 +1692,10 @@ undefined8 Item_Routine_0800E268(ushort *param_1)
   
   uStack_4 = in_lr;
   if ((*param_1 & 3) == 0) {
-    func_0x0800db2c(abStack_8,*param_1 >> 2);
+    Item_SetId(abStack_8,*param_1 >> 2);
   }
   else {
-    func_0x0800db2c(abStack_8,0x51);
+    Item_SetId(abStack_8,0x51);
   }
   return CONCAT44(uStack_4,(uint)abStack_8[0]);
 }
@@ -1715,10 +1709,10 @@ undefined8 Item_Routine_0800E290(undefined4 param_1,ushort *param_2)
   undefined4 in_lr;
   
   if ((*param_2 & 3) == 1) {
-    func_0x0800dca8(param_1,*param_2 >> 2);
+    Item_SetIdAndClearQuality(param_1,*param_2 >> 2);
   }
   else {
-    func_0x0800dca8(param_1,0xab);
+    Item_SetIdAndClearQuality(param_1,0xab);
   }
   return CONCAT44(in_lr,param_1);
 }
@@ -1735,10 +1729,10 @@ undefined8 Item_Routine_0800E2B8(ushort *param_1)
   
   uStack_4 = in_lr;
   if ((*param_1 & 3) == 2) {
-    func_0x0800df50(abStack_8,*param_1 >> 2);
+    Item_SetQuality(abStack_8,*param_1 >> 2);
   }
   else {
-    func_0x0800df50(abStack_8,0x5f);
+    Item_SetQuality(abStack_8,0x5f);
   }
   return CONCAT44(uStack_4,(uint)abStack_8[0]);
 }

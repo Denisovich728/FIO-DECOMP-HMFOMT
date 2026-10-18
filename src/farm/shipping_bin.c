@@ -23,7 +23,7 @@ undefined8 ShippingBin_Init(undefined4 *param_1)
   puVar2 = param_1;
   do {
     puVar2 = puVar2 + 1;
-    func_0x0800b26c(puVar2);
+    ShippingBin_Routine_0800B26C(puVar2);
     iVar1 = _DAT_0800b11c;
     iVar4 = iVar4 + -1;
   } while (iVar4 != -1);
@@ -45,7 +45,7 @@ undefined8 ShippingBin_GetValueShipped(int param_1,int param_2)
   undefined4 in_lr;
   
   if (param_2 < 0x67) {
-    uVar1 = func_0x0800b280(param_1 + param_2 * 4 + 4);
+    uVar1 = ShippingBin_Routine_0800B280(param_1 + param_2 * 4 + 4);
   }
   else {
     uVar1 = 0;
@@ -86,7 +86,7 @@ undefined8 ShippingBin_GetAmountShipped(int param_1)
   uVar4 = 0;
   while( true ) {
     param_1 = param_1 + 4;
-    cVar1 = func_0x0800b280(param_1);
+    cVar1 = ShippingBin_Routine_0800B280(param_1);
     if ((cVar1 == '\0') || (iVar2 = ShippingBin_ForceEnableDisplay(param_1), iVar2 == 0)) break;
     uVar4 = uVar4 + 1;
     if (0x66 < uVar4) {
@@ -114,7 +114,7 @@ undefined8 ShippingBin_HasShippedOneOfEachProduct(int param_1)
   uVar4 = 0;
   while( true ) {
     iVar3 = param_1 + (uint)*(byte *)(uVar4 + _DAT_0800b1b8) * 4 + 4;
-    cVar1 = func_0x0800b280(iVar3);
+    cVar1 = ShippingBin_Routine_0800B280(iVar3);
     if ((cVar1 == '\0') || (iVar3 = ShippingBin_ForceEnableDisplay(iVar3), iVar3 == 0)) break;
     uVar4 = uVar4 + 1;
     if (0xe < uVar4) {
@@ -142,7 +142,7 @@ undefined8 ShippingBin_HasShippedOneOfEachCrop(int param_1)
   uVar4 = 0;
   while( true ) {
     iVar3 = param_1 + (uint)*(byte *)(uVar4 + _DAT_0800b1f8) * 4 + 4;
-    cVar1 = func_0x0800b280(iVar3);
+    cVar1 = ShippingBin_Routine_0800B280(iVar3);
     if ((cVar1 == '\0') || (iVar3 = ShippingBin_ForceEnableDisplay(iVar3), iVar3 == 0)) break;
     uVar4 = uVar4 + 1;
     if (0x13 < uVar4) {
@@ -168,7 +168,7 @@ undefined4 ShippingBin_ShipItem(int *param_1,undefined4 param_2)
   
   uVar1 = Item_Routine_0800E198(param_2);
   if (uVar1 != 0) {
-    iVar2 = func_0x0800e194(param_2);
+    iVar2 = Item_Routine_0800E194(param_2);
     ShippingBin_StatEnt_Init(param_1 + iVar2 + 1);
     uVar3 = _DAT_0800b248 - *param_1;
     if (uVar1 < uVar3) {
@@ -274,22 +274,22 @@ undefined8 ShippingBin_StatEnt_GetAmountShipped(int param_1)
     iVar1 = iVar1 + 2;
     iVar2 = iVar2 + -1;
   } while (iVar2 != -1);
-  func_0x0800db2c(&uStack_34,0);
+  Item_SetId(&uStack_34,0);
   ArticleStack_SubtractAmount(auStack_38,uStack_34,1);
   gba_memcpy(param_1,auStack_38,2);
-  func_0x0800db2c(&uStack_33,0x10);
+  Item_SetId(&uStack_33,0x10);
   ArticleStack_SubtractAmount(auStack_38,uStack_33,1);
   gba_memcpy(param_1 + 2,auStack_38,2);
-  func_0x0800db2c(&uStack_32,8);
+  Item_SetId(&uStack_32,8);
   ArticleStack_SubtractAmount(auStack_38,uStack_32,1);
   gba_memcpy(param_1 + 4,auStack_38,2);
-  func_0x0800db2c(puStack_2c,0x18);
+  Item_SetId(puStack_2c,0x18);
   ArticleStack_SubtractAmount(auStack_38,uStack_31,1);
   gba_memcpy(param_1 + 6,auStack_38,2);
-  func_0x0800db2c(puStack_28,0x20);
+  Item_SetId(puStack_28,0x20);
   ArticleStack_SubtractAmount(auStack_38,uStack_30,1);
   gba_memcpy(param_1 + 8,auStack_38,2);
-  func_0x0800db2c(puStack_24,0x4c);
+  Item_SetId(puStack_24,0x4c);
   ArticleStack_SubtractAmount(auStack_38,auStack_2f[0],1);
   gba_memcpy(param_1 + 10,auStack_38,2);
   return CONCAT44(in_lr,param_1);
@@ -314,7 +314,7 @@ undefined8 ShippingBin_StatEnt_ShipOne(int param_1,int param_2)
     cVar1 = Product_GetId(param_1);
     if (cVar1 == '\0') {
       auStack_1c[0] = Product_Construct(param_1);
-      iVar2 = func_0x0800db30(auStack_1c);
+      iVar2 = Item_GetId(auStack_1c);
       if (iVar2 == param_2) {
         iVar2 = Product_GetPrice(param_1);
         iVar3 = (iVar3 + 99) - iVar2;
@@ -346,7 +346,7 @@ undefined8 ShippingBin_StatEnt_ForceEnableDisplay(int param_1,int param_2)
     cVar1 = Product_GetId(param_1);
     if (cVar1 == '\0') {
       auStack_1c[0] = Product_Construct(param_1);
-      iVar2 = func_0x0800db30(auStack_1c);
+      iVar2 = Item_GetId(auStack_1c);
       if (iVar2 == param_2) {
         iVar2 = Product_GetPrice(param_1);
         iVar4 = iVar4 + iVar2;
@@ -420,7 +420,7 @@ undefined8 ShippingBin_Routine_0800B544(int param_1,int param_2)
     cVar1 = Product_GetId(param_1);
     if (cVar1 == '\0') {
       auStack_1c[0] = Product_Construct(param_1);
-      iVar2 = func_0x0800db30(auStack_1c);
+      iVar2 = Item_GetId(auStack_1c);
       if (iVar2 == param_2) goto LAB_0800b592;
     }
     iVar4 = iVar4 + 1;
@@ -456,7 +456,7 @@ undefined8 ShippingBin_Routine_0800B5A8(int param_1,int param_2,uint param_3)
       cVar1 = Product_GetId(param_1);
       if (cVar1 == '\0') {
         auStack_1b[0] = Product_Construct(param_1);
-        iVar2 = func_0x0800db30(auStack_1b);
+        iVar2 = Item_GetId(auStack_1b);
         if (iVar2 == param_2) {
           iVar2 = Product_GetPrice(param_1);
           uStack_18 = 99U - iVar2;
@@ -476,7 +476,7 @@ undefined8 ShippingBin_Routine_0800B5A8(int param_1,int param_2,uint param_3)
           puVar4 = &uStack_20;
         }
         uVar3 = *puVar4;
-        func_0x0800db2c(&uStack_1c,param_2);
+        Item_SetId(&uStack_1c,param_2);
         ArticleStack_SubtractAmount(auStack_28,uStack_1c,uVar3);
         gba_memcpy(param_1,auStack_28,2);
 LAB_0800b646:
@@ -527,7 +527,7 @@ undefined8 ShippingBin_Routine_0800B68C(int param_1,int param_2)
     cVar1 = Item_Routine_0800DEDC(param_1);
     if (cVar1 == '\0') {
       Item_Routine_0800DEB8(auStack_18,param_1);
-      iVar2 = func_0x0800dcb4(auStack_18);
+      iVar2 = Item_Routine_0800DCB4(auStack_18);
       if (iVar2 == param_2) {
         iVar2 = Item_Routine_0800DEF0(param_1);
         iVar3 = (iVar3 + 99) - iVar2;
@@ -559,7 +559,7 @@ undefined8 ShippingBin_Routine_0800B6E8(int param_1,int param_2)
     cVar1 = Item_Routine_0800DEDC(param_1);
     if (cVar1 == '\0') {
       Item_Routine_0800DEB8(auStack_18,param_1);
-      iVar2 = func_0x0800dcb4(auStack_18);
+      iVar2 = Item_Routine_0800DCB4(auStack_18);
       if (iVar2 == param_2) {
         iVar2 = Item_Routine_0800DEF0(param_1);
         iVar4 = iVar4 + iVar2;
@@ -633,7 +633,7 @@ undefined8 ShippingBin_Routine_0800B7B8(int param_1,int param_2)
     cVar1 = Item_Routine_0800DEDC(param_1);
     if (cVar1 == '\0') {
       Item_Routine_0800DEB8(auStack_18,param_1);
-      iVar2 = func_0x0800dcb4(auStack_18);
+      iVar2 = Item_Routine_0800DCB4(auStack_18);
       if (iVar2 == param_2) goto LAB_0800b802;
     }
     iVar4 = iVar4 + 1;

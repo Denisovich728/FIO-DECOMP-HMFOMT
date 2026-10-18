@@ -29,14 +29,14 @@ undefined4 Farm_Routine_0800901C(int *param_1)
   uVar4 = param_1[3];
   iVar5 = param_1[2];
   if ((uVar4 & 0x4000000) == 0) {
-    func_0x080d3750(ppuVar2,iVar5,uVar4);
+    CpuSet(ppuVar2,iVar5,uVar4);
   }
   else {
     uVar1 = _DAT_0800907c & uVar4 & 7;
     iVar3 = (_DAT_0800907c & uVar4) - uVar1;
     if ((iVar3 != 0) || (uVar1 == 0)) {
       uStack_18 = uVar1;
-      func_0x080d374c(ppuVar2,iVar5,uVar4 - uVar1);
+      CpuFastSet(ppuVar2,iVar5,uVar4 - uVar1);
       iVar5 = iVar5 + iVar3 * 4;
       if ((uVar4 & 0x1000000) == 0) {
         ppuVar2 = (undefined1 **)((int)ppuVar2 + iVar3 * 4);
@@ -45,7 +45,7 @@ undefined4 Farm_Routine_0800901C(int *param_1)
         return in_lr;
       }
     }
-    func_0x080d3750(ppuVar2,iVar5,uVar4 - iVar3);
+    CpuSet(ppuVar2,iVar5,uVar4 - iVar3);
   }
   return in_lr;
 }
@@ -77,21 +77,21 @@ undefined4 Farm_Routine_08009094(int *param_1,int *param_2)
     uVar5 = param_1[3];
     iVar2 = param_1[2];
     if ((uVar5 & 0x4000000) == 0) {
-      func_0x080d3750(ppuVar3,iVar2,uVar5);
+      CpuSet(ppuVar3,iVar2,uVar5);
     }
     else {
       uVar1 = _DAT_08009108 & uVar5 & 7;
       iVar4 = (_DAT_08009108 & uVar5) - uVar1;
       if ((iVar4 != 0) || (uVar1 == 0)) {
         iStack_20 = iVar2;
-        func_0x080d374c(ppuVar3,iVar2,uVar5 - uVar1);
+        CpuFastSet(ppuVar3,iVar2,uVar5 - uVar1);
         iVar2 = iStack_20 + iVar4 * 4;
         if ((uVar5 & 0x1000000) == 0) {
           ppuVar3 = (undefined1 **)((int)ppuVar3 + iVar4 * 4);
         }
         if (uVar1 == 0) goto LAB_08009116;
       }
-      func_0x080d3750(ppuVar3,iVar2,uVar5 - iVar4);
+      CpuSet(ppuVar3,iVar2,uVar5 - iVar4);
     }
 LAB_08009116:
     param_1 = param_1 + 4;
@@ -107,7 +107,7 @@ undefined8 Farm_Routine_08009140(undefined2 *param_1)
   undefined2 uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0x0800912c();
+  uVar1 = Farm_Routine_0800912C();
   *param_1 = uVar1;
   return CONCAT44(in_lr,param_1);
 }
@@ -120,7 +120,7 @@ void Farm_Routine_08009158(undefined2 *param_1)
 {
   undefined2 uVar1;
   
-  uVar1 = func_0x0800912c();
+  uVar1 = Farm_Routine_0800912C();
   *param_1 = uVar1;
   return;
 }
@@ -146,7 +146,7 @@ undefined8 Farm_Routine_0800917C(undefined2 *param_1)
 {
   undefined4 in_lr;
   
-  func_0x08009154();
+  Farm_Routine_08009154();
   param_1[2] = *param_1;
   return CONCAT44(in_lr,param_1);
 }
@@ -504,7 +504,7 @@ undefined8 Farm_Routine_080094E0(int param_1)
   short sVar1;
   undefined4 in_lr;
   
-  sVar1 = func_0x080094a4(param_1 + 0xc);
+  sVar1 = Farm_Routine_080094A4(param_1 + 0xc);
   return CONCAT44(in_lr,(uint)(-(int)sVar1 | (int)sVar1) >> 0x1f);
 }
 
@@ -517,7 +517,7 @@ undefined8 Farm_Routine_080094F8(int param_1)
   short sVar1;
   undefined4 in_lr;
   
-  sVar1 = func_0x080094a4(param_1 + 0xc);
+  sVar1 = Farm_Routine_080094A4(param_1 + 0xc);
   return CONCAT44(in_lr,(int)sVar1);
 }
 
@@ -530,7 +530,7 @@ undefined8 Farm_Routine_08009508(int param_1,short param_2)
   short sVar1;
   undefined4 in_lr;
   
-  sVar1 = func_0x080093a0(param_1 + 0xc,(int)param_2);
+  sVar1 = Farm_Routine_080093A0(param_1 + 0xc,(int)param_2);
   return CONCAT44(in_lr,(int)sVar1);
 }
 
@@ -564,7 +564,7 @@ undefined4 Farm_Routine_0800952C(int param_1,short param_2)
 void Farm_Routine_0800953C(int param_1)
 
 {
-  func_0x08009344(param_1 + 0xc);
+  Farm_Routine_08009344(param_1 + 0xc);
   return;
 }
 
@@ -610,7 +610,7 @@ undefined4 Farm_Routine_0800959C(int param_1,undefined4 param_2)
   
   *(undefined4 *)(param_1 + 8) = _DAT_080095bc;
   Farm_Routine_0800956C(param_1);
-  func_0x080098dc(param_1,param_2);
+  Farm_Routine_080098DC(param_1,param_2);
   return in_lr;
 }
 
@@ -658,7 +658,7 @@ undefined4 Farm_Routine_08009638(undefined4 param_1,undefined4 param_2)
   undefined4 in_lr;
   
   uVar1 = Interrupt_WaitForVBlank(1);
-  func_0x080099b0(param_1,param_2);
+  Farm_Routine_080099B0(param_1,param_2);
   if ((uVar1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
@@ -675,7 +675,7 @@ undefined4 Farm_Routine_08009674(undefined4 param_1,undefined4 param_2)
   undefined4 in_lr;
   
   uVar1 = Interrupt_WaitForVBlank(1);
-  func_0x080099d4(param_1,param_2);
+  Farm_Routine_080099D4(param_1,param_2);
   if ((uVar1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
@@ -692,7 +692,7 @@ undefined8 Farm_Routine_080096B0(undefined4 *param_1)
   undefined2 auStack_c [2];
   
   auStack_c[0] = 0;
-  func_0x080d3750(auStack_c,param_1,_DAT_080096ec);
+  CpuSet(auStack_c,param_1,_DAT_080096ec);
   *param_1 = 0x80;
   *(undefined2 *)(param_1 + 8) = 0x100;
   *(undefined2 *)((int)param_1 + 0x22) = 0;
@@ -726,8 +726,8 @@ undefined4 Farm_Routine_08009710(int param_1)
 {
   undefined4 in_lr;
   
-  func_0x080d374c(param_1,0x4000000,0x10);
-  func_0x080d3750(param_1 + 0x40,_DAT_08009738,_DAT_0800973c);
+  CpuFastSet(param_1,0x4000000,0x10);
+  CpuSet(param_1 + 0x40,_DAT_08009738,_DAT_0800973c);
   *_DAT_08009740 = *(undefined2 *)(param_1 + 0x14);
   return in_lr;
 }
@@ -775,7 +775,7 @@ undefined4 Farm_Routine_08009790(int param_1)
 {
   undefined4 in_lr;
   
-  func_0x080d374c(param_1 + 4,0x7000000,0x100);
+  CpuFastSet(param_1 + 4,0x7000000,0x100);
   return in_lr;
 }
 
@@ -870,7 +870,7 @@ undefined4 Farm_Routine_08009878(int param_1)
 {
   undefined4 in_lr;
   
-  func_0x080d374c(param_1 + 4,0x7000000,0x100);
+  CpuFastSet(param_1 + 4,0x7000000,0x100);
   Farm_Routine_08009834(param_1);
   return in_lr;
 }
@@ -923,9 +923,9 @@ undefined8 Farm_Routine_08009908(int param_1)
   iVar3 = *(int *)(param_1 + 0xc);
   while (iVar2 = iVar3, iVar2 != param_1 + 0x10) {
     iVar3 = *(int *)(iVar2 + 4);
-    cVar1 = func_0x080d3910(iVar2,*(undefined4 *)(*(int *)(iVar2 + 8) + 8));
+    cVar1 = _call_via_r1(iVar2,*(undefined4 *)(*(int *)(iVar2 + 8) + 8));
     if (cVar1 == '\0') {
-      func_0x080d3914(param_1,iVar2,*(undefined4 *)(*(int *)(param_1 + 8) + 0x14));
+      _call_via_r2(param_1,iVar2,*(undefined4 *)(*(int *)(param_1 + 8) + 0x14));
     }
   }
   return CONCAT44(in_lr,1);
@@ -1027,11 +1027,11 @@ undefined8 Farm_Routine_08009A48(int param_1,undefined4 param_2)
   ShippingBin_Init(param_1 + 0x40);
   Coop_Init(param_1 + 0x1e0);
   Barn_Init(param_1 + 0x3fc);
-  func_0x0800cdbc(param_1 + _DAT_08009ad0);
+  Stable_Init(param_1 + _DAT_08009ad0);
   iVar2 = param_1 + _DAT_08009ad4;
   iVar3 = _DAT_08009ad8;
   do {
-    func_0x08009f8c(iVar2);
+    Farm_Routine_08009F8C(iVar2);
     iVar2 = iVar2 + 4;
     iVar3 = iVar3 + -1;
   } while (iVar3 != -1);
@@ -1167,14 +1167,12 @@ void Farm_Routine_08009C3C(int param_1)
 
 {
   int iVar1;
-  code *UNRECOVERED_JUMPTABLE;
   
   iVar1 = 0;
   if ((int)((uint)*(byte *)(param_1 + 0x11) * 0x20000000) < 0) {
     iVar1 = param_1 + 0x14;
   }
-  (*UNRECOVERED_JUMPTABLE)(iVar1);
-  return;
+  return iVar1;
 }
 
 // =============================================================================
@@ -1311,7 +1309,7 @@ undefined8 FieldPlot_TillSoil(uint *param_1,char param_2)
       iVar3 = 1;
     }
     if (iVar3 == 1) {
-      uVar2 = func_0x080d11e4();
+      uVar2 = math_rand();
       uVar2 = uVar2 & 0xff;
       if (uVar2 < 10) {
         iVar3 = 2;
@@ -1600,11 +1598,11 @@ LAB_0800a662:
     sVar1 = *(short *)(uVar2 * 0xc + iVar4 + 10);
     if (sVar1 != 0xff) {
       if (uVar2 < 0xf) {
-        func_0x0800dca8(&uStack_14);
+        Item_SetIdAndClearQuality(&uStack_14);
         Farmer_Routine_0800F004(param_1,(uint)uStack_14);
       }
       else {
-        func_0x0800df50(auStack_10,sVar1);
+        Item_SetQuality(auStack_10,sVar1);
         Farmer_Routine_0800F040(param_1,auStack_10[0]);
       }
       goto LAB_0800a6be;
@@ -1617,7 +1615,7 @@ LAB_0800a662:
     goto LAB_0800a662;
   }
 case_0800A678:
-  func_0x0800efec(param_1);
+  Farmer_Routine_0800EFEC(param_1);
 LAB_0800a6be:
   return CONCAT44(in_lr,param_1);
 }
@@ -1632,7 +1630,7 @@ undefined8 FieldPlot_CanPlaceItem(uint *param_1,undefined4 param_2)
   undefined4 uVar2;
   undefined4 in_lr;
   
-  if ((((*param_1 & 0xfff) >> 8 == 0) && (iVar1 = func_0x0800df54(param_2), 0x30 < iVar1)) &&
+  if ((((*param_1 & 0xfff) >> 8 == 0) && (iVar1 = Item_GetQuality(param_2), 0x30 < iVar1)) &&
      ((iVar1 < 0x33 || ((iVar1 < 0x5b && (0x58 < iVar1)))))) {
     uVar2 = 1;
   }
@@ -1656,7 +1654,7 @@ undefined4 FieldPlot_PlaceItem(uint *param_1,undefined4 param_2)
   
   cVar1 = FieldPlot_CanPlaceItem();
   if (cVar1 != '\0') {
-    iVar3 = func_0x0800df54(param_2);
+    iVar3 = Item_GetQuality(param_2);
     if (iVar3 == 0x32) {
       bVar4 = (byte)*param_1 & 3;
       bVar2 = 0x5c;
@@ -1794,7 +1792,7 @@ LAB_0800a97e:
   if (uVar1 == 0) {
     uVar5 = uVar5 & 3;
     if ((uVar5 == 0) || (uVar5 == 3)) {
-      iVar3 = func_0x080d11e4();
+      iVar3 = math_rand();
       uVar1 = iVar3 >> 3 & 0xff;
       uVar5 = (uint)pbVar2[4];
       if (uVar5 <= uVar1) {
@@ -1810,11 +1808,11 @@ LAB_0800a97e:
     }
     else {
       if (uVar5 != 1) goto LAB_0800aad2;
-      iVar3 = func_0x080d11e4();
+      iVar3 = math_rand();
       uVar1 = iVar3 >> 3 & 0xff;
       uVar5 = (uint)pbVar2[1];
       if (uVar1 < uVar5) {
-        func_0x0800a120(param_1,0);
+        FieldPlot_WaterPlot(param_1,0);
         goto LAB_0800aad2;
       }
       if (pbVar2[2] + uVar5 <= uVar1) {
@@ -1828,14 +1826,14 @@ LAB_0800a97e:
   }
   else {
     if (uVar1 == 1) {
-      iVar3 = func_0x080d11e4();
+      iVar3 = math_rand();
       if ((iVar3 >> 3 & 0xffU) < (uint)pbVar2[7]) {
         *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
       }
       goto LAB_0800aad2;
     }
     if (((uVar5 & 0xff) >> 2 != 0x18) ||
-       (iVar3 = func_0x080d11e4(), (uint)*pbVar2 <= (iVar3 >> 3 & 0xffU))) goto LAB_0800aad2;
+       (iVar3 = math_rand(), (uint)*pbVar2 <= (iVar3 >> 3 & 0xffU))) goto LAB_0800aad2;
     uVar6 = 0x19;
   }
 LAB_0800aab6:
@@ -1843,11 +1841,11 @@ LAB_0800aab6:
 LAB_0800aad2:
   if (param_2 == 0) {
     if ((*param_1 & 3) == 2) {
-      func_0x0800a120(param_1,1);
+      FieldPlot_WaterPlot(param_1,1);
     }
   }
   else if ((*param_1 & 3) == 1) {
-    func_0x0800a120(param_1,2);
+    FieldPlot_WaterPlot(param_1,2);
   }
   return in_lr;
 }
@@ -1891,7 +1889,7 @@ LAB_0800adec:
       if (param_2 != 0) {
         return in_lr;
       }
-      func_0x0800a120(param_1,0);
+      FieldPlot_WaterPlot(param_1,0);
       if (((*param_1 & 0xfff) >> 8 != 0) && (uVar3 = (*param_1 & 0xff) >> 2, uVar3 < 0x27)) {
         switch(*(uint *)(PTR_case_0800AB54_0800ab50 + uVar3 * 4) & 0xfffffffe) {
         case 0x800ab54:
@@ -1908,7 +1906,7 @@ LAB_0800adec:
       if ((_DAT_0800ac50 & (ushort)*param_1) != 0) {
         return in_lr;
       }
-      iVar1 = func_0x080d11e4();
+      iVar1 = math_rand();
       if (9 < (iVar1 >> 3 & 0xffU)) {
         return in_lr;
       }

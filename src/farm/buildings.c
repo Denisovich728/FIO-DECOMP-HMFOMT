@@ -31,7 +31,7 @@ undefined8 ToolChest_GetItem(undefined4 *param_1,int param_2,uint param_3)
       cVar1 = Item_Routine_0800DEDC(param_1);
       if (cVar1 == '\0') {
         Item_Routine_0800DEB8(&uStack_2c,param_1);
-        iVar2 = func_0x0800dcb4(&uStack_2c);
+        iVar2 = Item_Routine_0800DCB4(&uStack_2c);
         if (iVar2 == param_2) {
           iVar2 = Item_Routine_0800DEF0(param_1);
           uStack_1c = 99U - iVar2;
@@ -51,7 +51,7 @@ undefined8 ToolChest_GetItem(undefined4 *param_1,int param_2,uint param_3)
           puVar4 = &uStack_20;
         }
         uVar5 = *puVar4;
-        func_0x0800dca8(&uStack_28,param_2);
+        Item_SetIdAndClearQuality(&uStack_28,param_2);
         Item_Routine_0800DE80(&uStack_2c,(uint)uStack_28,uVar5);
         *param_1 = uStack_2c;
         uStack_24 = uStack_24 - uVar5;
@@ -101,7 +101,7 @@ undefined8 Fridge_GetItem(int param_1,int param_2)
     cVar1 = Item_Routine_0800E07C(param_1);
     if (cVar1 == '\0') {
       auStack_1c[0] = Item_Routine_0800E058(param_1);
-      iVar2 = func_0x0800df54(auStack_1c);
+      iVar2 = Item_GetQuality(auStack_1c);
       if (iVar2 == param_2) {
         iVar2 = Item_Routine_0800E090(param_1);
         iVar3 = (iVar3 + 99) - iVar2;
@@ -133,7 +133,7 @@ undefined8 Building_Routine_0800B974(int param_1,int param_2)
     cVar1 = Item_Routine_0800E07C(param_1);
     if (cVar1 == '\0') {
       auStack_1c[0] = Item_Routine_0800E058(param_1);
-      iVar2 = func_0x0800df54(auStack_1c);
+      iVar2 = Item_GetQuality(auStack_1c);
       if (iVar2 == param_2) {
         iVar2 = Item_Routine_0800E090(param_1);
         iVar4 = iVar4 + iVar2;
@@ -207,7 +207,7 @@ undefined8 Shelf_GetItem(int param_1,int param_2)
     cVar1 = Item_Routine_0800E07C(param_1);
     if (cVar1 == '\0') {
       auStack_1c[0] = Item_Routine_0800E058(param_1);
-      iVar2 = func_0x0800df54(auStack_1c);
+      iVar2 = Item_GetQuality(auStack_1c);
       if (iVar2 == param_2) goto LAB_0800ba92;
     }
     iVar4 = iVar4 + 1;
@@ -228,7 +228,6 @@ void Building_Routine_0800BAA8(int param_1,int param_2,uint param_3)
   uint uVar3;
   uint *puVar4;
   int iVar5;
-  code *UNRECOVERED_JUMPTABLE;
   undefined1 auStack_28 [4];
   uint uStack_24;
   uint uStack_20;
@@ -243,7 +242,7 @@ void Building_Routine_0800BAA8(int param_1,int param_2,uint param_3)
       cVar1 = Item_Routine_0800E07C(param_1);
       if (cVar1 == '\0') {
         auStack_1b[0] = Item_Routine_0800E058(param_1);
-        iVar2 = func_0x0800df54(auStack_1b);
+        iVar2 = Item_GetQuality(auStack_1b);
         if (iVar2 == param_2) {
           iVar2 = Item_Routine_0800E090(param_1);
           uStack_18 = 99U - iVar2;
@@ -263,7 +262,7 @@ void Building_Routine_0800BAA8(int param_1,int param_2,uint param_3)
           puVar4 = &uStack_20;
         }
         uVar3 = *puVar4;
-        func_0x0800df50(&uStack_1c,param_2);
+        Item_SetQuality(&uStack_1c,param_2);
         Item_Routine_0800E028(auStack_28,uStack_1c,uVar3);
         gba_memcpy(param_1,auStack_28,2);
 LAB_0800bb46:
@@ -271,8 +270,7 @@ LAB_0800bb46:
       }
     }
   }
-  (*UNRECOVERED_JUMPTABLE)(uStack_24);
-  return;
+  return uStack_24;
 }
 
 // =============================================================================
@@ -285,7 +283,7 @@ undefined8 RecordPlayer_PlayTrack(uint *param_1)
   uint uVar2;
   undefined4 in_lr;
   
-  cVar1 = func_0x0800bb74();
+  cVar1 = Building_Routine_0800BB74();
   if (cVar1 == '\0') {
     uVar2 = 199;
   }
@@ -305,13 +303,13 @@ undefined8 Building_Routine_0800BBA4(undefined4 param_1,uint *param_2)
   undefined4 in_lr;
   undefined1 auStack_10 [4];
   
-  cVar1 = func_0x0800bb74(param_2);
+  cVar1 = Building_Routine_0800BB74(param_2);
   if (cVar1 == '\0') {
     Item_Routine_0800E010(param_1);
   }
   else {
     *(byte *)param_2 = (byte)*param_2 & 0xfe;
-    func_0x0800df50(auStack_10,((*param_2 & 0x1f) >> 1) + 0x40);
+    Item_SetQuality(auStack_10,((*param_2 & 0x1f) >> 1) + 0x40);
     Item_Routine_0800E028(param_1,auStack_10[0],1);
   }
   return CONCAT44(in_lr,param_1);
@@ -329,13 +327,13 @@ undefined8 Building_Routine_0800BBF0(undefined4 param_1,uint *param_2,undefined4
   undefined4 in_lr;
   undefined1 auStack_18 [4];
   
-  iVar2 = func_0x0800df54(param_3);
+  iVar2 = Item_GetQuality(param_3);
   if ((iVar2 < 0x4f) && (0x3f < iVar2)) {
     *(byte *)param_2 = (byte)*param_2 | 1;
     uVar3 = *param_2;
-    cVar1 = func_0x0800df54(param_3);
+    cVar1 = Item_GetQuality(param_3);
     *(byte *)param_2 = (byte)*param_2 & 0xe1 | (cVar1 - 0x40U & 0xf) << 1;
-    func_0x0800df50(auStack_18,((uVar3 & 0x1f) >> 1) + 0x40);
+    Item_SetQuality(auStack_18,((uVar3 & 0x1f) >> 1) + 0x40);
     Item_Routine_0800E028(param_1,auStack_18[0],1);
   }
   else {
@@ -429,7 +427,6 @@ void Building_Routine_0800BD40(int param_1,int param_2)
 {
   uint uVar1;
   uint uVar2;
-  code *UNRECOVERED_JUMPTABLE;
   
   uVar2 = param_2 - 0x4d;
   uVar1 = 0;
@@ -437,8 +434,7 @@ void Building_Routine_0800BD40(int param_1,int param_2)
     uVar1 = *(uint *)(param_1 + 8 + (uVar2 >> 5) * 4) & 1 << (uVar2 & 0x1f);
     uVar1 = (-uVar1 | uVar1) >> 0x1f;
   }
-  (*UNRECOVERED_JUMPTABLE)(uVar1);
-  return;
+  return uVar1;
 }
 
 // =============================================================================
@@ -482,7 +478,7 @@ undefined8 Coop_Init(uint *param_1)
   *(undefined1 *)((int)param_1 + 5) = 0;
   ShippingBin_Routine_0800B660(param_1 + 2);
   Building_Routine_0800B8E4(param_1 + 0x42);
-  func_0x0800bb60(param_1 + 0x62);
+  Building_Routine_0800BB60(param_1 + 0x62);
   ShippingBin_StatEnt_GetAmountShipped(param_1 + 99);
   FarmHouse_Init(param_1 + 0x83);
   return CONCAT44(in_lr,param_1);
@@ -680,12 +676,10 @@ undefined4 Building_Routine_0800C118(byte *param_1)
 void Building_Routine_0800C134(byte *param_1)
 
 {
-  code *UNRECOVERED_JUMPTABLE;
   
   if ((*param_1 & 3) != 0) {
     param_1[1] = param_1[1] | 4;
   }
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
@@ -709,12 +703,10 @@ undefined4 Building_Routine_0800C15C(byte *param_1)
 void Building_Routine_0800C178(byte *param_1)
 
 {
-  code *UNRECOVERED_JUMPTABLE;
   
   if ((*param_1 & 3) != 0) {
     param_1[1] = param_1[1] | 0x20;
   }
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
@@ -948,7 +940,7 @@ undefined4 Building_Routine_0800C390(uint *param_1,int param_2)
     *param_1 = _DAT_0800c44c & *param_1 | 0x2f8000;
   }
 LAB_0800c420:
-  if (((*param_1 & 0x7800000) == 0) && (bVar2 = func_0x080d11e4(), bVar2 < 0x65)) {
+  if (((*param_1 & 0x7800000) == 0) && (bVar2 = math_rand(), bVar2 < 0x65)) {
     *param_1 = *param_1 & _DAT_0800c44c | 0x2f8000;
   }
   return in_lr;
@@ -1078,7 +1070,7 @@ undefined8 Building_Routine_0800C5F4(int param_1,uint param_2)
   if (param_2 < uVar2) {
     param_1 = param_2 * 0x30 + 0x18 + param_1;
     do {
-      cVar1 = func_0x0800ccac(param_1);
+      cVar1 = Building_Routine_0800CCAC(param_1);
       if (cVar1 != '\0') goto LAB_0800c62a;
       param_1 = param_1 + 0x30;
       param_2 = param_2 + 1;
@@ -1146,7 +1138,7 @@ undefined8 Building_Routine_0800C678(int param_1,uint param_2)
   
   uVar1 = Building_Routine_0800C660();
   if (param_2 < uVar1) {
-    uVar2 = func_0x0800cd38(param_1 + param_2 * 4 + 0x1d8);
+    uVar2 = Building_Routine_0800CD38(param_1 + param_2 * 4 + 0x1d8);
   }
   else {
     uVar2 = 0;
@@ -1204,7 +1196,7 @@ undefined8 Building_Routine_0800C6F0(short *param_1,undefined4 param_2,uint para
   
   uVar1 = Barn_GetCowCount(param_2);
   if (uVar1 <= param_3) {
-    param_3 = func_0x080d0f4e(param_3);
+    param_3 = math_modsi3(param_3);
   }
   *param_1 = (short)param_3 * 0x18 + 0x88;
   param_1[1] = 0x60;
@@ -1401,7 +1393,7 @@ undefined4 Building_Routine_0800C91C(int param_1,undefined4 param_2)
   
   iVar1 = Building_Routine_0800C894();
   if (iVar1 != 0) {
-    uVar2 = func_0x0809b220();
+    uVar2 = Animal_Routine_0809B220();
     if (((*(byte *)(param_1 + 4) & 3) << 8 | (uint)*(byte *)(param_1 + 3)) < uVar2) {
       *(char *)(param_1 + 3) = (char)uVar2;
       *(byte *)(param_1 + 4) = *(byte *)(param_1 + 4) & 0xfc | (byte)(uVar2 >> 8) & 3;
@@ -1429,7 +1421,7 @@ undefined4 Building_Routine_0800C994(int param_1,uint param_2)
   
   uVar1 = Building_Routine_0800C660();
   if (param_2 < uVar1) {
-    func_0x0800cd78(param_1 + param_2 * 4 + 0x1d8);
+    Building_Routine_0800CD78(param_1 + param_2 * 4 + 0x1d8);
   }
   return in_lr;
 }
@@ -1487,7 +1479,7 @@ undefined4 Building_Routine_0800C9EC(uint *param_1)
     puVar9 = param_1 + 0x66;
     puVar8 = param_1 + 6;
     do {
-      cVar2 = func_0x0800ccac(puVar8);
+      cVar2 = Building_Routine_0800CCAC(puVar8);
       if ((cVar2 == '\0') && (iVar5 = Building_Routine_0800CCD0(puVar8), iVar5 != 0)) {
         if (((int)((uint)*(byte *)((int)param_1 + 2) * 0x8000000) < 0) &&
            (uVar7 == *(byte *)((int)param_1 + 2) >> 5)) {
@@ -1495,7 +1487,7 @@ LAB_0800caa0:
           Animal_Routine_0809BCF0(iVar5);
         }
         else {
-          cVar2 = func_0x0809b4fc(iVar5);
+          cVar2 = Animal_Routine_0809B4FC(iVar5);
           if (cVar2 == '\0') {
             iVar6 = Animal_Routine_0809BCAC(iVar5);
             if (iVar6 == 0) goto LAB_0800caa0;
@@ -1527,7 +1519,7 @@ LAB_0800caa0:
   if (uVar4 != 0) {
     param_1 = param_1 + 0x76;
     do {
-      cVar2 = func_0x0800cd38(param_1);
+      cVar2 = Building_Routine_0800CD38(param_1);
       if (cVar2 != '\0') {
         Building_Routine_0800CD88(param_1);
       }
@@ -1550,9 +1542,9 @@ undefined4 Building_Routine_0800CB7C(int param_1,uint param_2)
   
   uVar2 = Barn_GetCowCount();
   if (uVar2 <= param_2) {
-    param_2 = func_0x080d0f4e(param_2);
+    param_2 = math_modsi3(param_2);
   }
-  cVar1 = func_0x0800ccac(param_1 + param_2 * 0x30 + 0x18);
+  cVar1 = Building_Routine_0800CCAC(param_1 + param_2 * 0x30 + 0x18);
   if (cVar1 == '\0') {
     *(byte *)(param_1 + 2) = *(byte *)(param_1 + 2) & 0x1f | 0x10 | (byte)(param_2 << 5);
   }
@@ -1585,8 +1577,8 @@ undefined8 Building_Routine_0800CBCC(int param_1,int param_2)
     uVar5 = 0xffffffff;
   }
   else {
-    func_0x0800cdb0(param_1 + param_2 * 4 + 0x1d8);
-    func_0x0800c748(&uStack_24,param_1,param_2);
+    Building_Routine_0800CDB0(param_1 + param_2 * 4 + 0x1d8);
+    Building_Routine_0800C748(&uStack_24,param_1,param_2);
     uStack_20 = uStack_24;
     uVar3 = uStack_20;
     uStack_20._0_2_ = (ushort)uStack_24;
@@ -1603,8 +1595,8 @@ undefined8 Building_Routine_0800CBCC(int param_1,int param_2)
     gba_memcpy(auStack_60,&uStack_58,6);
     uStack_5a = 3;
     Animal_Routine_0809BC8C(auStack_50,auStack_60,0,0);
-    uVar5 = func_0x080d11e4();
-    uVar5 = func_0x080d0ed0(uVar5,10);
+    uVar5 = math_rand();
+    uVar5 = math_umodsi3(uVar5,10);
     Animal_Routine_0809B2A8(auStack_50,uVar5);
     uVar5 = Building_Routine_0800C8BC(param_1,auStack_50);
   }
@@ -1706,14 +1698,12 @@ void Building_Routine_0800CD58(byte *param_1)
 
 {
   undefined4 uVar1;
-  code *UNRECOVERED_JUMPTABLE;
   
   uVar1 = 0;
   if ((*(int *)param_1 * 0x20000000 < 0) && ((*param_1 & 3) == 0)) {
     uVar1 = 1;
   }
-  (*UNRECOVERED_JUMPTABLE)(uVar1);
-  return;
+  return uVar1;
 }
 
 // =============================================================================
@@ -1778,7 +1768,7 @@ undefined8 Building_Routine_0800CED4(int param_1,uint param_2)
   uint uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0x0800ce9c();
+  uVar1 = Item_HasStarQuality();
   if (param_2 < uVar1) {
     uVar1 = -((*(byte *)(param_1 + 3) & 0x7f) >> 5 & 1 << (param_2 & 0xff)) >> 0x1f;
   }
@@ -1862,7 +1852,7 @@ undefined8 Building_Routine_0800CF88(int param_1,uint param_2)
   if (param_2 < uVar2) {
     param_1 = param_2 * 0x3c + 0x2c + param_1;
     do {
-      cVar1 = func_0x0800da08(param_1);
+      cVar1 = Item_IsValid(param_1);
       if (cVar1 != '\0') goto LAB_0800cfbe;
       param_1 = param_1 + 0x3c;
       param_2 = param_2 + 1;

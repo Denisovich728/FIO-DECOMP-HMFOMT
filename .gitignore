@@ -18,6 +18,7 @@ assets/animations/previews/
 build/
 bin/
 obj/
+output/
 *.o
 *.a
 *.elf

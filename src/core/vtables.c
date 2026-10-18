@@ -48,7 +48,7 @@ undefined4 VTable_Routine_080D379C(undefined4 param_1,undefined4 param_2,undefin
     puVar3 = puVar3 + 1;
     puVar2 = puVar2 + 1;
   }
-  func_0x080d3918(param_1,param_2,param_3,(int)&uStack_90 + 1);
+  _call_via_r3(param_1,param_2,param_3,(int)&uStack_90 + 1);
   return in_lr;
 }
 
@@ -114,7 +114,7 @@ void VTable_Routine_080D3870(undefined4 param_1,undefined4 param_2,undefined4 pa
     puVar3 = puVar3 + 1;
     puVar2 = puVar2 + 1;
   }
-  func_0x080d3918(param_1,param_2,param_3,(int)&uStack_d0 + 1);
+  _call_via_r3(param_1,param_2,param_3,(int)&uStack_d0 + 1);
   return;
 }
 
@@ -386,8 +386,8 @@ void VTable_Routine_080D3BC0(undefined4 param_1)
       do {
       } while( true );
     }
-    func_0x080d390c();
-    iVar2 = malloc_gba(param_1);
+    VTable_Routine_080D390C();
+    iVar2 = runtime_malloc_aligned(param_1);
   } while (iVar2 == 0);
   return;
 }
@@ -402,7 +402,7 @@ undefined8 VTable_Routine_080D3BE8(undefined4 *param_1)
   undefined4 in_lr;
   
   Dispatcher_Routine_080005D4(4);
-  uVar1 = func_0x08004c48();
+  uVar1 = HW_Routine_08004C48();
   *param_1 = uVar1;
   return CONCAT44(in_lr,param_1);
 }
@@ -454,21 +454,20 @@ void VTable_Routine_080D3C78(int param_1,undefined4 param_2)
 {
   undefined4 uVar1;
   int iVar2;
-  code *UNRECOVERED_JUMPTABLE;
   
   iVar2 = param_1 + _DAT_080d3e70;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   iVar2 = param_1 + _DAT_080d3e74;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_080079E8(iVar2,2);
   iVar2 = param_1 + _DAT_080d3e78;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   iVar2 = param_1 + _DAT_080d3e7c;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_080079E8(iVar2,2);
-  func_0x080073e0(param_1 + 0x6d00,*(undefined4 *)(param_1 + 0x6d04));
+  HW_Routine_080073E0(param_1 + 0x6d00,*(undefined4 *)(param_1 + 0x6d04));
   HW_Routine_08007184(param_1 + 0x6d00,2);
   iVar2 = param_1 + _DAT_080d3e80;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
@@ -477,7 +476,7 @@ void VTable_Routine_080D3C78(int param_1,undefined4 param_2)
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_080079E8(iVar2,2);
   iVar2 = param_1 + _DAT_080d3e88;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   iVar2 = param_1 + _DAT_080d3e8c;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
@@ -489,13 +488,13 @@ void VTable_Routine_080D3C78(int param_1,undefined4 param_2)
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_080079E8(iVar2,2);
   iVar2 = param_1 + _DAT_080d3e98;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   iVar2 = param_1 + _DAT_080d3e9c;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_080079E8(iVar2,2);
   iVar2 = param_1 + _DAT_080d3ea0;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   iVar2 = param_1 + _DAT_080d3ea4;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
@@ -504,18 +503,18 @@ void VTable_Routine_080D3C78(int param_1,undefined4 param_2)
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_080079E8(iVar2,2);
   iVar2 = param_1 + _DAT_080d3eac;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   iVar2 = param_1 + _DAT_080d3eb0;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_080079E8(iVar2,2);
   iVar2 = param_1 + _DAT_080d3eb4;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   iVar2 = param_1 + _DAT_080d3eb8;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_080079E8(iVar2,2);
-  func_0x080073e0(param_1 + 0x6c80,*(undefined4 *)(param_1 + 0x6c84));
+  HW_Routine_080073E0(param_1 + 0x6c80,*(undefined4 *)(param_1 + 0x6c84));
   HW_Routine_08007184(param_1 + 0x6c80,2);
   iVar2 = param_1 + _DAT_080d3ebc;
   HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar2 + 4));
@@ -528,7 +527,6 @@ void VTable_Routine_080D3C78(int param_1,undefined4 param_2)
   *(undefined4 *)(param_1 + _DAT_080d3ed0) = uVar1;
   *(undefined4 *)(param_1 + iVar2 + -0x30) = uVar1;
   HW_Routine_080086BC(param_1,param_2);
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
@@ -645,7 +643,7 @@ undefined4 VTable_Routine_080D406C(int param_1,undefined4 param_2)
   int *piVar1;
   undefined4 in_lr;
   
-  func_0x080073e0(param_1 + 0x54,*(undefined4 *)(param_1 + 0x58));
+  HW_Routine_080073E0(param_1 + 0x54,*(undefined4 *)(param_1 + 0x58));
   HW_Routine_08007184(param_1 + 0x54,2);
   HW_Routine_08007C28(param_1 + 0x4c,*(undefined4 *)(param_1 + 0x50));
   HW_Routine_080079E8(param_1 + 0x4c,2);
@@ -653,7 +651,7 @@ undefined4 VTable_Routine_080D406C(int param_1,undefined4 param_2)
   Animal_Routine_08050D0C(param_1 + 0x10,2);
   piVar1 = *(int **)(param_1 + 0xc);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   HW_Routine_080086BC(param_1,param_2);
   return in_lr;
@@ -2147,7 +2145,6 @@ void VTable_Routine_080D6C58(undefined4 *param_1,int param_2)
   ushort *puVar4;
   int iVar5;
   int iVar6;
-  code *UNRECOVERED_JUMPTABLE;
   undefined4 uStack_30;
   undefined4 *puStack_2c;
   undefined4 *puStack_28;
@@ -2190,8 +2187,7 @@ void VTable_Routine_080D6C58(undefined4 *param_1,int param_2)
   *puStack_24 = puVar2;
   uStack_30 = 0;
   puStack_28 = puVar2;
-  (*UNRECOVERED_JUMPTABLE)(param_1);
-  return;
+  return param_1;
 }
 
 // =============================================================================
@@ -2250,7 +2246,7 @@ undefined4 VTable_Routine_080D6DB8(int *param_1,uint param_2)
       }
       else {
         iVar7 = param_2 * 8;
-        iVar4 = malloc_gba(iVar7);
+        iVar4 = runtime_malloc_aligned(iVar7);
         if (iVar4 == 0) {
           iVar4 = VTable_Routine_080D3BC0(iVar7);
         }
@@ -2264,7 +2260,7 @@ undefined4 VTable_Routine_080D6DB8(int *param_1,uint param_2)
       }
       else {
         iVar7 = param_2 * 8;
-        iVar2 = malloc_gba(iVar7);
+        iVar2 = runtime_malloc_aligned(iVar7);
         iVar4 = iVar2;
         if (iVar2 == 0) {
           iVar2 = VTable_Routine_080D3BC0(iVar7);
@@ -2273,7 +2269,7 @@ undefined4 VTable_Routine_080D6DB8(int *param_1,uint param_2)
       }
       for (; iVar5 != iVar6; iVar5 = iVar5 + 8) {
         if (iVar2 != 0) {
-          func_0x08007128(iVar2);
+          HW_Routine_08007128(iVar2);
           uVar3 = HW_Routine_0800745C(iVar2,*(undefined4 *)(iVar5 + 4));
           *(undefined4 *)(iVar2 + 4) = uVar3;
         }
@@ -2281,7 +2277,7 @@ undefined4 VTable_Routine_080D6DB8(int *param_1,uint param_2)
       }
       iVar6 = param_1[1];
       for (iVar5 = *param_1; iVar5 != iVar6; iVar5 = iVar5 + 8) {
-        func_0x080073e0(iVar5,*(undefined4 *)(iVar5 + 4));
+        HW_Routine_080073E0(iVar5,*(undefined4 *)(iVar5 + 4));
         HW_Routine_08007184(iVar5,2);
       }
       if (*param_1 != 0) {
@@ -2303,8 +2299,8 @@ undefined4 VTable_Routine_080D6ECC(undefined1 *param_1)
 {
   undefined4 in_lr;
   
-  func_0x080d6eac(param_1 + 4);
-  func_0x080d6eac(param_1 + 0x20);
+  VTable_Routine_080D6EAC(param_1 + 4);
+  VTable_Routine_080D6EAC(param_1 + 0x20);
   *param_1 = 1;
   param_1[1] = 0;
   return in_lr;
@@ -2333,8 +2329,8 @@ undefined4 VTable_Routine_080D6F3C(undefined1 *param_1)
 {
   undefined4 in_lr;
   
-  func_0x080d6f1c(param_1 + 0x20);
-  func_0x080d6f1c(param_1 + 4);
+  VTable_Routine_080D6F1C(param_1 + 0x20);
+  VTable_Routine_080D6F1C(param_1 + 4);
   *param_1 = 0;
   param_1[1] = 1;
   return in_lr;
@@ -2371,7 +2367,7 @@ undefined4 VTable_Routine_080D6F7C(undefined1 *param_1,uint param_2,uint param_3
   uStack_14 = param_3;
   if ((param_2 < 0x40) && (param_3 != 0)) {
     if ((param_2 == 0) && (0x3f < param_3)) {
-      func_0x080d6e98();
+      VTable_Routine_080D6E98();
     }
     else {
       if (param_2 < 0x20) {
@@ -2419,7 +2415,7 @@ undefined4 VTable_Routine_080D7014(byte *param_1,uint param_2,uint param_3)
   uStack_14 = param_3;
   if ((param_2 < 0x80) && (param_3 != 0)) {
     if ((param_2 == 0) && (0x7f < param_3)) {
-      func_0x080d6eac(param_1);
+      VTable_Routine_080D6EAC(param_1);
     }
     else {
       if (param_2 < 0x40) {
@@ -2554,7 +2550,7 @@ undefined4 VTable_Routine_080D71AC(undefined1 *param_1,uint param_2,uint param_3
   uStack_14 = param_3;
   if ((param_2 < 0x40) && (param_3 != 0)) {
     if ((param_2 == 0) && (0x3f < param_3)) {
-      func_0x080d6f0c();
+      VTable_Routine_080D6F0C();
     }
     else {
       if (param_2 < 0x20) {
@@ -2602,7 +2598,7 @@ undefined4 VTable_Routine_080D7240(undefined1 *param_1,uint param_2,uint param_3
   uStack_18 = param_3;
   if ((param_2 < 0x80) && (param_3 != 0)) {
     if ((param_2 == 0) && (0x7f < param_3)) {
-      func_0x080d6f1c(param_1);
+      VTable_Routine_080D6F1C(param_1);
     }
     else {
       if (param_2 < 0x40) {
@@ -2752,7 +2748,7 @@ undefined8 VTable_Routine_080D73E4(int *param_1,uint param_2)
     } while (iVar4 < 2);
   }
   else if ((param_2 == 6) && (*(char *)((int)param_1 + 1) != '\0')) {
-    func_0x080d6e98(param_1);
+    VTable_Routine_080D6E98(param_1);
     uVar1 = 0;
     goto LAB_080d7474;
   }
@@ -2792,7 +2788,7 @@ undefined8 VTable_Routine_080D7480(byte *param_1,uint param_2)
     } while (iVar3 < 2);
   }
   else if ((param_2 == 7) && (param_1[1] != 0)) {
-    func_0x080d6eac(param_1);
+    VTable_Routine_080D6EAC(param_1);
     uVar1 = 0;
     goto LAB_080d74e8;
   }
@@ -2905,7 +2901,7 @@ undefined4 VTable_Routine_080D75E0(undefined1 *param_1,uint param_2,uint param_3
     param_1[1] = uVar1;
   }
   else if (param_3 == 6) {
-    func_0x080d6f0c(param_1);
+    VTable_Routine_080D6F0C(param_1);
   }
   return in_lr;
 }
@@ -2934,7 +2930,7 @@ undefined4 VTable_Routine_080D7634(undefined1 *param_1,uint param_2,uint param_3
     param_1[1] = bVar1;
   }
   else if (param_3 == 7) {
-    func_0x080d6f1c(param_1);
+    VTable_Routine_080D6F1C(param_1);
   }
   return in_lr;
 }
@@ -3041,7 +3037,7 @@ undefined4 VTable_Routine_080D772C(int *param_1,uint param_2)
       }
       else {
         iVar7 = param_2 * 8;
-        iVar4 = malloc_gba(iVar7);
+        iVar4 = runtime_malloc_aligned(iVar7);
         if (iVar4 == 0) {
           iVar4 = VTable_Routine_080D3BC0(iVar7);
         }
@@ -3055,7 +3051,7 @@ undefined4 VTable_Routine_080D772C(int *param_1,uint param_2)
       }
       else {
         iVar7 = param_2 * 8;
-        iVar2 = malloc_gba(iVar7);
+        iVar2 = runtime_malloc_aligned(iVar7);
         iVar4 = iVar2;
         if (iVar2 == 0) {
           iVar2 = VTable_Routine_080D3BC0(iVar7);
@@ -3194,7 +3190,7 @@ undefined4 VTable_Routine_080D78BC(int param_1,undefined4 param_2)
   
   *(undefined4 *)(param_1 + 8) = _DAT_080d78dc;
   Farm_Routine_0800956C(param_1);
-  func_0x080098dc(param_1,param_2);
+  Farm_Routine_080098DC(param_1,param_2);
   return in_lr;
 }
 
@@ -3206,7 +3202,7 @@ undefined4 VTable_Routine_080D78E0(void)
 {
   undefined4 in_lr;
   
-  func_0x080d3910(*(int *)*_ASSET_BLOCK_080D78F4,
+  _call_via_r1(*(int *)*_ASSET_BLOCK_080D78F4,
                   *(undefined4 *)(*(int *)(*(int *)*_ASSET_BLOCK_080D78F4 + 8) + 8));
   return in_lr;
 }
@@ -3255,7 +3251,7 @@ undefined4 VTable_Routine_080D7A34(undefined4 param_1,undefined4 param_2)
   undefined4 in_lr;
   
   uVar1 = Interrupt_WaitForVBlank(1);
-  func_0x080099b0(param_1,param_2);
+  Farm_Routine_080099B0(param_1,param_2);
   if ((uVar1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
@@ -3272,7 +3268,7 @@ undefined4 VTable_Routine_080D7A70(undefined4 param_1,undefined4 param_2)
   undefined4 in_lr;
   
   uVar1 = Interrupt_WaitForVBlank(1);
-  func_0x080099d4(param_1,param_2);
+  Farm_Routine_080099D4(param_1,param_2);
   if ((uVar1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
@@ -3580,10 +3576,10 @@ undefined4 VTable_Routine_080D7F08(int param_1)
   
   uVar2 = 1;
   do {
-    iVar1 = func_0x080d3914(*(int **)(param_1 + 0xa8),uVar2,
+    iVar1 = _call_via_r2(*(int **)(param_1 + 0xa8),uVar2,
                             *(undefined4 *)(**(int **)(param_1 + 0xa8) + 0x40));
     if (iVar1 != 0) {
-      func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x14) + 0x3c));
+      _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x14) + 0x3c));
     }
     uVar2 = uVar2 + 1;
   } while (uVar2 < 0x24);
@@ -3598,7 +3594,7 @@ undefined4 VTable_Routine_080D7F3C(int param_1)
 {
   undefined4 in_lr;
   
-  func_0x080d3910(*(int **)(param_1 + 0xa8),*(undefined4 *)(**(int **)(param_1 + 0xa8) + 0x124));
+  _call_via_r1(*(int **)(param_1 + 0xa8),*(undefined4 *)(**(int **)(param_1 + 0xa8) + 0x124));
   *(undefined4 *)(param_1 + 0x9c) = 2;
   return in_lr;
 }
@@ -3670,7 +3666,7 @@ VTable_Routine_080D7F9C(int param_1,int param_2,int param_3,uint param_4,uint pa
   iStack_28 = param_1;
   iStack_24 = param_2;
   if (param_2 < 0x4a) {
-    iVar4 = func_0x080d3914(*(int **)(param_1 + 0xa8),param_2,
+    iVar4 = _call_via_r2(*(int **)(param_1 + 0xa8),param_2,
                             *(undefined4 *)(**(int **)(param_1 + 0xa8) + 0x40));
     if (iVar4 != 0) {
       uVar3 = (ushort)_DAT_080d8050;
@@ -3685,11 +3681,11 @@ VTable_Routine_080D7F9C(int param_1,int param_2,int param_3,uint param_4,uint pa
       gba_memcpy(&uStack_38,&uStack_30,6);
       uStack_32 = param_6;
       Entity_Routine_0803211C(iVar4,&uStack_38);
-      func_0x080d3910(iVar4,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0x20));
+      _call_via_r1(iVar4,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0x20));
     }
   }
   else {
-    iVar4 = func_0x080d3914(*(int **)(param_1 + 0xa8),param_2,
+    iVar4 = _call_via_r2(*(int **)(param_1 + 0xa8),param_2,
                             *(undefined4 *)(**(int **)(param_1 + 0xa8) + 0x40));
     if (iVar4 != 0) {
       uVar3 = (ushort)_DAT_080d8130;
@@ -3706,7 +3702,7 @@ VTable_Routine_080D7F9C(int param_1,int param_2,int param_3,uint param_4,uint pa
                                 (ushort)(param_4 & 0x3f)),
                     (int)(short)((ushort)((uStack_34 & _DAT_080d8130) << 6) |
                                 (ushort)(param_5 & 0x3f)));
-      func_0x080d3910(iVar4,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0x20));
+      _call_via_r1(iVar4,*(undefined4 *)(*(int *)(iVar4 + 0x14) + 0x20));
     }
   }
   if (iStack_24 == 0) {
@@ -3744,31 +3740,31 @@ undefined4 VTable_Routine_080DB0EC(int *param_1,uint param_2)
   }
   iVar1 = param_1[0x2e];
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   iVar1 = param_1[0x2d];
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   piVar2 = (int *)param_1[0x2c];
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   if (param_1[0x2b] != 0) {
     Animal_Routine_08050D0C(param_1[0x2b],3);
   }
   piVar2 = (int *)param_1[0x2a];
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = (int *)param_1[0x29];
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   if (param_1[0x28] != 0) {
     Farm_Routine_08009324(param_1[0x28],3);
   }
-  func_0x080098dc(param_1 + 0x1b,2);
+  Farm_Routine_080098DC(param_1 + 0x1b,2);
   HW_Routine_08008A68(param_1 + 0x1a,2);
   for (iVar1 = *param_1; iVar1 != param_1[1]; iVar1 = iVar1 + 0x10) {
   }
@@ -3864,7 +3860,7 @@ undefined4 VTable_Routine_080DB2EC(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 8);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -3915,7 +3911,7 @@ undefined4 VTable_Routine_080DB36C(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -3950,7 +3946,7 @@ undefined4 VTable_Routine_080DB3DC(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -3986,7 +3982,7 @@ undefined4 VTable_Routine_080DB44C(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4031,7 +4027,7 @@ undefined4 VTable_Routine_080DB4C8(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4073,7 +4069,7 @@ undefined4 VTable_Routine_080DB540(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4115,7 +4111,7 @@ undefined4 VTable_Routine_080DB5B8(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4157,7 +4153,7 @@ undefined4 VTable_Routine_080DB630(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4196,7 +4192,7 @@ undefined4 VTable_Routine_080DB6A4(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4231,7 +4227,7 @@ undefined4 VTable_Routine_080DB714(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4266,7 +4262,7 @@ undefined4 VTable_Routine_080DB784(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4301,7 +4297,7 @@ undefined4 VTable_Routine_080DB7F4(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4336,7 +4332,7 @@ undefined4 VTable_Routine_080DB864(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4371,7 +4367,7 @@ undefined4 VTable_Routine_080DB8D4(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4406,7 +4402,7 @@ undefined4 VTable_Routine_080DB944(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4442,7 +4438,7 @@ undefined4 VTable_Routine_080DB9B4(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4477,7 +4473,7 @@ undefined4 VTable_Routine_080DBA24(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4513,7 +4509,7 @@ undefined4 VTable_Routine_080DBA94(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4549,7 +4545,7 @@ undefined4 VTable_Routine_080DBB04(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4585,7 +4581,7 @@ undefined4 VTable_Routine_080DBB74(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4620,7 +4616,7 @@ undefined4 VTable_Routine_080DBBE4(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4655,7 +4651,7 @@ undefined4 VTable_Routine_080DBC50(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4690,7 +4686,7 @@ undefined4 VTable_Routine_080DBCC0(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4726,7 +4722,7 @@ undefined4 VTable_Routine_080DBD30(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4762,7 +4758,7 @@ undefined4 VTable_Routine_080DBDA0(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4797,7 +4793,7 @@ undefined4 VTable_Routine_080DBE10(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4832,7 +4828,7 @@ undefined4 VTable_Routine_080DBE80(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4867,7 +4863,7 @@ undefined4 VTable_Routine_080DBEF0(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4902,7 +4898,7 @@ undefined4 VTable_Routine_080DBF60(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4937,7 +4933,7 @@ undefined4 VTable_Routine_080DBFD0(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -4972,7 +4968,7 @@ undefined4 VTable_Routine_080DC040(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -5010,7 +5006,7 @@ undefined4 VTable_Routine_080DC0C0(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -5046,7 +5042,7 @@ undefined4 VTable_Routine_080DC130(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -5081,7 +5077,7 @@ undefined4 VTable_Routine_080DC1A0(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -5128,7 +5124,7 @@ undefined4 VTable_Routine_080DC21C(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 8);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -5199,7 +5195,7 @@ undefined4 VTable_Routine_080DC2B4(int param_1,ushort param_2,uint param_3,uint 
   uStack_2a = CONCAT11(uStack_2a._1_1_ & 3 | (byte)((param_4 & 0x3f) << 2),(char)uVar1);
   uStack_28 = uVar2 & uStack_28 | (ushort)((param_4 & 0xffff) >> 6) & uVar3;
   iStack_24 = param_1;
-  func_0x080d3918(*(int **)(param_1 + 0xa8),&uStack_2c,1,
+  _call_via_r3(*(int **)(param_1 + 0xa8),&uStack_2c,1,
                   *(undefined4 *)(**(int **)(param_1 + 0xa8) + 0xb4));
   VTable_Routine_080D7F08(iStack_24);
   return in_lr;
@@ -5216,7 +5212,7 @@ VTable_Routine_080DC360(int param_1,undefined4 param_2,undefined4 param_3,undefi
   undefined4 uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0x080d3910(*(int **)(param_1 + 0xa8),
+  uVar1 = _call_via_r1(*(int **)(param_1 + 0xa8),
                           *(undefined4 *)(**(int **)(param_1 + 0xa8) + 0x14));
   VTable_Routine_080D7F9C(param_1,param_2,uVar1,param_3,param_4,param_5);
   return in_lr;
@@ -5238,12 +5234,12 @@ undefined8 VTable_Routine_080DC3A0(undefined4 *param_1,int param_2)
   
   piStack_24 = (int *)0x0;
   Animal_Routine_08093A58(auStack_30,&piStack_24,*(undefined4 *)(param_2 + 8));
-  func_0x08093ad4(&piStack_24,auStack_30);
+  Animal_Routine_08093AD4(&piStack_24,auStack_30);
   if (piStack_24 != (int *)0x0) {
-    func_0x080d3914(piStack_24,3,*(undefined4 *)(*piStack_24 + 8));
+    _call_via_r2(piStack_24,3,*(undefined4 *)(*piStack_24 + 8));
   }
   iVar2 = *(int *)(param_2 + 4);
-  uVar1 = func_0x08093ac8(auStack_30);
+  uVar1 = Animal_Routine_08093AC8(auStack_30);
   *(undefined4 *)(iVar2 + 0xc) = uVar1;
   uStack_1c = *(undefined4 *)(param_2 + 4);
   *(undefined4 *)(param_2 + 4) = 0;
@@ -5265,7 +5261,7 @@ undefined4 VTable_Routine_080DC404(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   SramProxy_VerifyBufferParity(param_1,param_2);
   return in_lr;
@@ -5300,7 +5296,7 @@ undefined4 VTable_Routine_080DC474(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 8);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -5335,7 +5331,7 @@ undefined4 VTable_Routine_080DC4E4(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -5371,7 +5367,7 @@ undefined4 VTable_Routine_080DC554(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -5467,7 +5463,7 @@ undefined4 VTable_Routine_080DC628(int param_1,uint param_2)
   *(undefined4 *)(param_1 + 0x14) = _DAT_080dc658;
   iVar1 = *(int *)(param_1 + 0x10);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
@@ -5556,7 +5552,7 @@ undefined4 VTable_Routine_080DC6F0(int param_1,uint param_2)
   *(undefined4 *)(param_1 + 0x14) = _DAT_080dc720;
   iVar1 = *(int *)(param_1 + 0x10);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
@@ -5619,7 +5615,7 @@ undefined4 VTable_Routine_080DC7CC(int param_1,uint param_2)
   *(undefined4 *)(param_1 + 0x14) = _DAT_080dc7fc;
   iVar1 = *(int *)(param_1 + 0x10);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
@@ -5639,7 +5635,7 @@ undefined4 VTable_Routine_080DC800(int param_1,uint param_2)
   *(undefined4 *)(param_1 + 0x14) = _DAT_080dc830;
   iVar1 = *(int *)(param_1 + 0x10);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
@@ -5716,7 +5712,7 @@ undefined4 VTable_Routine_080DC8C4(int param_1,uint param_2)
   *(undefined4 *)(param_1 + 0x14) = _DAT_080dc8f4;
   iVar1 = *(int *)(param_1 + 0x10);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
@@ -6280,7 +6276,7 @@ undefined8 VTable_Routine_080DCB7C(uint *param_1,int *param_2,uint param_3)
   
   uStack_30 = param_3 & 0xff;
   *param_1 = 0;
-  uVar3 = func_0x080d3910(param_2,*(undefined4 *)(*param_2 + 0x7c));
+  uVar3 = _call_via_r1(param_2,*(undefined4 *)(*param_2 + 0x7c));
   if (uStack_30 == 0) {
     uVar2 = *_DAT_080dcc90;
   }
@@ -6305,18 +6301,18 @@ undefined8 VTable_Routine_080DCB7C(uint *param_1,int *param_2,uint param_3)
   uStack_2c = 0;
   puStack_28 = auStack_33;
   do {
-    uVar3 = func_0x080d11e4();
-    iVar4 = func_0x080d0ed0(uVar3,3);
-    uVar3 = func_0x080d11e4();
-    iVar5 = func_0x080d0f4e(uVar3,0x1e0);
+    uVar3 = math_rand();
+    iVar4 = math_umodsi3(uVar3,3);
+    uVar3 = math_rand();
+    iVar5 = math_modsi3(uVar3,0x1e0);
     iVar7 = _DAT_080dcc98;
-    uVar3 = func_0x080d11e4();
-    iVar6 = func_0x080d0ed0(uVar3,3);
+    uVar3 = math_rand();
+    iVar6 = math_umodsi3(uVar3,3);
     bVar1 = *(byte *)(iVar6 + iVar7);
-    uVar3 = func_0x080d11e4();
-    iVar7 = func_0x080d0ed0(uVar3,3);
+    uVar3 = math_rand();
+    iVar7 = math_umodsi3(uVar3,3);
     uVar3 = *(undefined4 *)(iVar7 * 4 + _DAT_080dcc9c);
-    uVar8 = func_0x080d3910(param_2,*(undefined4 *)(*param_2 + 0x7c));
+    uVar8 = _call_via_r1(param_2,*(undefined4 *)(*param_2 + 0x7c));
     if (uStack_30 == 0) {
       uVar2 = *(undefined2 *)(iVar4 * 8 + _DAT_080dcd28);
     }
@@ -6397,7 +6393,7 @@ undefined4 VTable_Routine_080DCDB0(int param_1,uint param_2)
   if (piVar1 != (int *)0x0) {
     iVar2 = *piVar1;
     for (piVar3 = piVar1 + 1; piVar3 != piVar1 + iVar2 * 0x10 + 1; piVar3 = piVar3 + 0x10) {
-      func_0x080d3914(piVar3,2,*(undefined4 *)(piVar3[9] + 8));
+      _call_via_r2(piVar3,2,*(undefined4 *)(piVar3[9] + 8));
     }
     Dispatcher_Routine_08000608(piVar1);
   }
@@ -6430,7 +6426,7 @@ undefined4 VTable_Routine_080DCE60(int param_1,uint param_2)
   *(undefined4 *)(param_1 + 0x14) = _DAT_080dce90;
   iVar1 = *(int *)(param_1 + 0x10);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
@@ -6482,7 +6478,7 @@ undefined4 VTable_Routine_080DCEEC(int param_1,uint param_2)
   *(undefined4 *)(param_1 + 0x14) = _DAT_080dcf1c;
   iVar1 = *(int *)(param_1 + 0x10);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
@@ -6596,7 +6592,7 @@ undefined4 VTable_Routine_080DD460(int param_1)
   
   cVar1 = *(char *)(param_1 + 0x62);
   if (cVar1 == '\0') {
-    iVar3 = func_0x080d11e4();
+    iVar3 = math_rand();
     if ((iVar3 >> 4 & 3U) != 0) {
       Entity_Routine_0803A350(param_1,0xcf);
     }
@@ -6732,7 +6728,7 @@ undefined4 VTable_Routine_080DD5E4(undefined4 *param_1)
   undefined4 uStack_24;
   
   piVar5 = (int *)*param_1;
-  iVar3 = func_0x080d3914(piVar5,0,*(undefined4 *)(*piVar5 + 0x40));
+  iVar3 = _call_via_r2(piVar5,0,*(undefined4 *)(*piVar5 + 0x40));
   if (iVar3 != 0) {
     sVar1 = *(short *)(iVar3 + 10);
     sVar2 = *(short *)(iVar3 + 0xe);
@@ -6748,7 +6744,7 @@ undefined4 VTable_Routine_080DD5E4(undefined4 *param_1)
         iVar3 = -iVar3;
       }
       if (iVar3 < 0x10) {
-        func_0x080d3918(&uStack_68,piVar5,0,*(undefined4 *)(*piVar5 + 0x34));
+        _call_via_r3(&uStack_68,piVar5,0,*(undefined4 *)(*piVar5 + 0x34));
         uStack_28 = CONCAT22(*psVar8 + -8,*psVar4 + -8);
         uStack_24 = CONCAT22(*psVar8 + 8,*psVar4 + 8);
         uStack_5c = 0x21;
@@ -6998,7 +6994,7 @@ undefined4 VTable_Routine_080DD9CC(int param_1)
         *puVar8 = (ushort)(uVar1 - 1);
         if ((int)((uVar1 - 1) * 0x10000) < 1) {
           *puVar8 = 0x168;
-          iVar7 = func_0x080d11e4();
+          iVar7 = math_rand();
           if ((iVar7 >> 4 & 3U) != 0) {
             Entity_Routine_0803A350(param_1,0xce);
           }
@@ -7041,17 +7037,17 @@ undefined4 VTable_Routine_080DD9CC(int param_1)
           else {
             *(undefined4 *)(param_1 + 0x50) = 3;
           }
-          uVar6 = func_0x080d0ec8(*(undefined4 *)(param_1 + 0x7c),iVar13);
+          uVar6 = math_udivsi3(*(undefined4 *)(param_1 + 0x7c),iVar13);
           *(undefined4 *)(param_1 + 0x7c) = uVar6;
-          uVar6 = func_0x080d0ec8(*(undefined4 *)(param_1 + 0x80),iVar13);
+          uVar6 = math_udivsi3(*(undefined4 *)(param_1 + 0x80),iVar13);
           *(undefined4 *)(param_1 + 0x80) = uVar6;
           *(short *)(param_1 + 0x60) = (short)(iVar7 >> 0x11);
         }
         else {
           *(uint *)(param_1 + 0x50) = (uint)(iVar11 < 0);
-          uVar6 = func_0x080d0ec8(*(undefined4 *)(param_1 + 0x7c),iVar12);
+          uVar6 = math_udivsi3(*(undefined4 *)(param_1 + 0x7c),iVar12);
           *(undefined4 *)(param_1 + 0x7c) = uVar6;
-          uVar6 = func_0x080d0ec8(*(undefined4 *)(param_1 + 0x80),iVar12);
+          uVar6 = math_udivsi3(*(undefined4 *)(param_1 + 0x80),iVar12);
           *(undefined4 *)(param_1 + 0x80) = uVar6;
           *(short *)(param_1 + 0x60) = (short)(iVar9 >> 0x11);
         }
@@ -7171,8 +7167,8 @@ LAB_080ddd8e:
       *(undefined1 *)(param_1 + 0x47) = 1;
       goto LAB_080ddd8e;
     }
-    sVar2 = func_0x0803a320(param_1,(int)((uint)*puVar4 << 0x10) >> 0x14 & 0xff);
-    iVar3 = func_0x0803a334(param_1,((int)((uint)*puVar4 << 0x10) >> 0x14 & 0x7fU) << 1);
+    sVar2 = Entity_Routine_0803A320(param_1,(int)((uint)*puVar4 << 0x10) >> 0x14 & 0xff);
+    iVar3 = Entity_Routine_0803A334(param_1,((int)((uint)*puVar4 << 0x10) >> 0x14 & 0x7fU) << 1);
     *puVar4 = *(short *)(param_1 + 0x66) + *puVar4;
     iVar5 = *(int *)(param_1 + 0x58) + sVar2 * 0x40;
     *(int *)(param_1 + 0x58) = iVar5;
@@ -7185,13 +7181,13 @@ LAB_080ddd8e:
   else {
     if (cVar1 < '\x02') {
       if (cVar1 == '\0') {
-        iVar3 = func_0x080d11e4();
+        iVar3 = math_rand();
         iVar3 = (iVar3 >> 8 & 1U) + 1;
         *(char *)(param_1 + 0x62) = (char)iVar3;
         if (iVar3 == 1) {
           sVar2 = NPC_Routine_080AB788(4);
           *(short *)(param_1 + 0x60) = sVar2 * 0x100 + 0x100;
-          iVar3 = func_0x080d11e4();
+          iVar3 = math_rand();
           *(short *)(param_1 + 100) = (short)((iVar3 >> 8 & 1U) << 0xb);
         }
         else {
@@ -7454,7 +7450,7 @@ undefined4 VTable_Routine_080DE134(undefined4 *param_1,undefined4 *param_2)
   iVar1 = param_1[2];
   for (piVar4 = param_1 + 3; piVar4 != param_1 + iVar1 + 3; piVar4 = piVar4 + 1) {
     if (*piVar4 != 0) {
-      func_0x080d391c(*piVar4,uVar2,uVar3,uVar5);
+      _call_via_r4(*piVar4,uVar2,uVar3,uVar5);
     }
   }
   return in_lr;
@@ -7476,7 +7472,7 @@ undefined4 VTable_Routine_080DE184(int param_1)
       piVar3 = piVar3 + 1) {
     iVar2 = *piVar3;
     if (iVar2 != 0) {
-      func_0x080d3910(iVar2,*(undefined4 *)(*(int *)(iVar2 + 0x4c) + 0xc));
+      _call_via_r1(iVar2,*(undefined4 *)(*(int *)(iVar2 + 0x4c) + 0xc));
     }
   }
   return in_lr;
@@ -7497,7 +7493,7 @@ undefined4 VTable_Routine_080DE1B4(int param_1,uint param_2)
       uStack_18 = uStack_18 + -4) {
     iVar1 = *(int *)(uStack_18 + -4);
     if (iVar1 != 0) {
-      func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x4c) + 8));
+      _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x4c) + 8));
     }
   }
   *(undefined4 *)(param_1 + 4) = _DAT_080de21c;
@@ -7634,10 +7630,10 @@ void VTable_Routine_080E0094(undefined4 param_1,int param_2)
   iVar17 = param_2 + 4;
   uStack_50 = param_1;
   HW_Routine_08008724(iVar17);
-  puVar2 = (undefined2 *)func_0x08008918(iVar17);
+  puVar2 = (undefined2 *)HW_GetSpriteAttr1Offset(iVar17);
   iStack_c0._0_2_ = 0x1040;
   *puVar2 = 0x1040;
-  iVar17 = func_0x08008918(iVar17);
+  iVar17 = HW_GetSpriteAttr1Offset(iVar17);
   iStack_c0 = CONCAT22(iStack_c0._2_2_,0x3f);
   *(undefined2 *)(iVar17 + 0x50) = 0x3f;
   piVar16 = (int *)(param_2 + 0x388);
@@ -7657,7 +7653,7 @@ void VTable_Routine_080E0094(undefined4 param_1,int param_2)
     }
     else {
       iVar17 = (iStack_90 + *piVar12) * 4;
-      piVar12 = (int *)malloc_gba(iVar17);
+      piVar12 = (int *)runtime_malloc_aligned(iVar17);
       if (piVar12 == (int *)0x0) {
         piVar12 = (int *)VTable_Routine_080D3BC0(iVar17);
       }
@@ -7714,7 +7710,7 @@ void VTable_Routine_080E0094(undefined4 param_1,int param_2)
     }
     else {
       iVar13 = (iStack_84 + *piVar12) * 4;
-      piVar12 = (int *)malloc_gba(iVar13);
+      piVar12 = (int *)runtime_malloc_aligned(iVar13);
       if (piVar12 == (int *)0x0) {
         piVar12 = (int *)VTable_Routine_080D3BC0(iVar13);
       }
@@ -7760,7 +7756,7 @@ void VTable_Routine_080E0094(undefined4 param_1,int param_2)
     }
     else {
       iVar13 = (iStack_78 + *piVar12) * 4;
-      piVar12 = (int *)malloc_gba(iVar13);
+      piVar12 = (int *)runtime_malloc_aligned(iVar13);
       if (piVar12 == (int *)0x0) {
         piVar12 = (int *)VTable_Routine_080D3BC0(iVar13);
       }
@@ -7806,7 +7802,7 @@ void VTable_Routine_080E0094(undefined4 param_1,int param_2)
     }
     else {
       iVar13 = (iStack_6c + *piVar12) * 4;
-      piVar12 = (int *)malloc_gba(iVar13);
+      piVar12 = (int *)runtime_malloc_aligned(iVar13);
       if (piVar12 == (int *)0x0) {
         piVar12 = (int *)VTable_Routine_080D3BC0(iVar13);
       }
@@ -7849,14 +7845,14 @@ void VTable_Routine_080E0094(undefined4 param_1,int param_2)
   *pppiVar11 = (int **)0x0;
   pppiVar11 = *(int ****)(param_2 + 0x368);
   if (((int ***)ppiVar6 != pppiVar11) && (pppiVar11 != (int ***)0x0)) {
-    func_0x080d3914(pppiVar11,3,(*pppiVar11)[2]);
+    _call_via_r2(pppiVar11,3,(*pppiVar11)[2]);
   }
   *(int ***)(param_2 + 0x368) = ppiVar6;
   if ((int ***)ppiStack_bc != (int ***)0x0) {
-    func_0x080d3914(ppiStack_bc,3,(int *)(*ppiStack_bc)[2]);
+    _call_via_r2(ppiStack_bc,3,(int *)(*ppiStack_bc)[2]);
   }
   uVar4 = Dispatcher_Routine_080005D4(4);
-  uVar5 = func_0x08008918(iVar17);
+  uVar5 = HW_GetSpriteAttr1Offset(iVar17);
   ppiVar6 = (int **)Farm_Routine_08009300(uVar4,uVar5);
   iVar13 = 0x370;
   pppiVar11 = (int ***)(param_2 + 0x370);
@@ -7870,11 +7866,11 @@ void VTable_Routine_080E0094(undefined4 param_1,int param_2)
     HW_Routine_080088B8(iVar17);
     if (*(int *)(param_2 + 0x364) != 1) {
       iVar18 = 0x80e0463;
-      iVar8 = func_0x080088dc(iVar17);
+      iVar8 = HW_Routine_080088DC(iVar17);
       if ((*(ushort *)(iVar8 + 8) & 8) != 0) {
         pppiVar11 = (int ***)(param_2 + 0x370);
         iVar18 = 0x80e0479;
-        sVar1 = func_0x080094a4(*pppiVar11);
+        sVar1 = Farm_Routine_080094A4(*pppiVar11);
         if (-1 < (-(int)sVar1 | (int)sVar1)) {
           if (*(int *)(param_2 + 0x36c) == 0) {
 LAB_080e04a2:
@@ -7885,10 +7881,10 @@ LAB_080e04a2:
           }
           else {
             iVar18 = 0x80e0495;
-            iVar8 = func_0x08050d34();
+            iVar8 = Animal_Routine_08050D34();
             if (iVar8 != 1) {
               iVar18 = 0x80e049f;
-              iVar8 = func_0x08050d34(*(int *)(param_2 + 0x36c));
+              iVar8 = Animal_Routine_08050D34(*(int *)(param_2 + 0x36c));
               if (iVar8 != 2) goto LAB_080e04a2;
             }
           }
@@ -7897,13 +7893,13 @@ LAB_080e04a2:
     }
     piVar14 = (int *)0x36c;
     if (*(int *)(param_2 + 0x36c) != 0) {
-      iVar13 = func_0x080088dc(iVar17);
+      iVar13 = HW_Routine_080088DC(iVar17);
       iVar8 = *(int *)(param_2 + 0x36c);
       pppiVar11 = (int ***)&piStack_b8;
       Farm_Routine_080091E8(pppiVar11,(uint)*(ushort *)(iVar13 + 8) & (_DAT_080e0540 | 0xf7));
-      piVar14 = (int *)func_0x08008920(iVar17);
-      iVar13 = func_0x08008918(iVar17);
-      uVar4 = func_0x08008940(iVar17);
+      piVar14 = (int *)HW_GetSpriteAttr2Offset(iVar17);
+      iVar13 = HW_GetSpriteAttr1Offset(iVar17);
+      uVar4 = HW_GetPaletteBankOffset(iVar17);
       uVar5 = HW_Routine_0800894C(iVar17);
       iVar18 = 0x80e0519;
       Animal_Routine_08050D3C(iVar8,pppiVar11,piVar14,iVar13,uVar4,uVar5,param_2 + 0x380);
@@ -7970,22 +7966,22 @@ LAB_080e04a2:
       do {
       } while( true );
     }
-    uStack_5c = func_0x080088dc(iVar17);
-    func_0x080d3914(*(int **)(param_2 + 0x368),&uStack_5c,
+    uStack_5c = HW_Routine_080088DC(iVar17);
+    _call_via_r2(*(int **)(param_2 + 0x368),&uStack_5c,
                     *(undefined4 *)(**(int **)(param_2 + 0x368) + 0xc));
     if (*(char *)(param_2 + 0x3a0) == '\0') {
-      iVar13 = func_0x08008910(iVar17);
-      pppiVar11 = (int ***)func_0x08008918(iVar17);
-      ppiVar6 = (int **)func_0x08008920(iVar17);
-      iStack_b4 = func_0x08008940(iVar17);
+      iVar13 = HW_GetSpriteAttr0Offset(iVar17);
+      pppiVar11 = (int ***)HW_GetSpriteAttr1Offset(iVar17);
+      ppiVar6 = (int **)HW_GetSpriteAttr2Offset(iVar17);
+      iStack_b4 = HW_GetPaletteBankOffset(iVar17);
       iStack_c0 = iVar13;
       ppiStack_bc = (int **)pppiVar11;
       piStack_b8 = (int *)ppiVar6;
-      func_0x080d3914(*(int **)(param_2 + 0x368),&iStack_c0,
+      _call_via_r2(*(int **)(param_2 + 0x368),&iStack_c0,
                       *(undefined4 *)(**(int **)(param_2 + 0x368) + 0x10));
     }
     else {
-      piVar14 = (int *)func_0x08008910(iVar17);
+      piVar14 = (int *)HW_GetSpriteAttr0Offset(iVar17);
       pppiVar11 = _DAT_080e07d4;
       uVar4 = _DAT_080e07d8;
       if (*(char *)(param_2 + (int)_DAT_080e07d4) != '\0') {
@@ -8007,7 +8003,7 @@ LAB_080e04a2:
         }
         else {
           iVar13 = (iStack_58 + *piVar12) * 0x10;
-          pppiVar9 = (int ***)malloc_gba(iVar13);
+          pppiVar9 = (int ***)runtime_malloc_aligned(iVar13);
           if (pppiVar9 == (int ***)0x0) {
             pppiVar9 = (int ***)VTable_Routine_080D3BC0(iVar13);
           }
@@ -8098,7 +8094,7 @@ undefined4 VTable_Routine_080E09BC(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -8139,7 +8135,7 @@ undefined8 VTable_Routine_080E0A08(int param_1)
   puVar5 = *(uint **)(param_1 + 0xc);
   puVar4 = *(uint **)(param_1 + 0x10);
   if (*(char *)(param_1 + 0x15) == '\0') {
-    func_0x080d374c(puVar5,puVar4,(uint)*(byte *)(param_1 + 0x14) << 3);
+    CpuFastSet(puVar5,puVar4,(uint)*(byte *)(param_1 + 0x14) << 3);
     uVar2 = 0;
   }
   else {
@@ -8206,7 +8202,7 @@ undefined4 VTable_Routine_080E0C38(undefined4 *param_1,uint param_2)
     puVar1 = param_1 + 0x107;
     do {
       puVar2 = puVar1 + -6;
-      func_0x080d3914(puVar2,0,*(undefined4 *)(puVar1[-4] + 0xc));
+      _call_via_r2(puVar2,0,*(undefined4 *)(puVar1[-4] + 0xc));
       puVar1 = puVar2;
     } while (param_1 + 0xe3 != puVar2);
   }
@@ -8240,7 +8236,7 @@ undefined4 VTable_Routine_080E0C38(undefined4 *param_1,uint param_2)
     Dispatcher_Routine_08000608(iVar3);
   }
   Farm_Routine_080098AC(param_1 + 0xe,2);
-  func_0x080073e0(param_1 + 0xc,param_1[0xd]);
+  HW_Routine_080073E0(param_1 + 0xc,param_1[0xd]);
   HW_Routine_08007184(param_1 + 0xc,2);
   *param_1 = _DAT_080e0d4c;
   if ((param_2 & 1) != 0) {
@@ -8290,7 +8286,7 @@ undefined4 VTable_Routine_080E0D70(undefined4 *param_1,uint param_2)
   HW_Routine_08007C28(param_1 + 0xc5,param_1[0xc6]);
   HW_Routine_080079E8(param_1 + 0xc5,2);
   Farm_Routine_080098AC(param_1 + 0xbf,2);
-  func_0x080073e0(param_1 + 0xbd,param_1[0xbe]);
+  HW_Routine_080073E0(param_1 + 0xbd,param_1[0xbe]);
   HW_Routine_08007184(param_1 + 0xbd,2);
   Farm_Routine_080098AC(param_1 + 0xb6,2);
   HW_Routine_08007C28(param_1 + 0xb4,param_1[0xb5]);
@@ -8302,7 +8298,7 @@ undefined4 VTable_Routine_080E0D70(undefined4 *param_1,uint param_2)
   HW_Routine_08007C28(param_1 + 0x61,param_1[0x62]);
   HW_Routine_080079E8(param_1 + 0x61,2);
   Farm_Routine_080098AC(param_1 + 0x1a,2);
-  func_0x080073e0(param_1 + 0x18,param_1[0x19]);
+  HW_Routine_080073E0(param_1 + 0x18,param_1[0x19]);
   HW_Routine_08007184(param_1 + 0x18,2);
   uVar1 = _DAT_080e0e7c;
   param_1[0xc] = _DAT_080e0e7c;
@@ -8393,7 +8389,7 @@ undefined4 VTable_Routine_080E0EFC(uint param_1,int param_2)
   *pcVar2 = '\0';
   do {
     pcVar2 = pcVar2 + -1;
-    uVar1 = func_0x080d0eda(param_1,10);
+    uVar1 = math_divsi3(param_1,10);
     *pcVar2 = (char)param_1 + (char)uVar1 * -10 + '0';
     param_1 = uVar1;
   } while (uVar1 != 0);
@@ -8449,7 +8445,7 @@ longlong VTable_Routine_080E0F90(int param_1)
         if ((-piVar6[2] | piVar6[2]) < 0) {
           iVar5 = *piVar6;
           iVar3 = HW_Routine_08007D4C(piVar6 + 1);
-          func_0x080d374c(iVar5 + 4,iVar3 * 0x20 + _DAT_080e1014,0x40);
+          CpuFastSet(iVar5 + 4,iVar3 * 0x20 + _DAT_080e1014,0x40);
         }
         *(undefined1 *)(piVar6 + 3) = 0;
       }
@@ -8600,7 +8596,7 @@ undefined4 VTable_Routine_080E1148(int param_1,undefined4 param_2)
 {
   undefined4 in_lr;
   
-  func_0x080073e0(param_1 + 0xb0,*(undefined4 *)(param_1 + 0xb4));
+  HW_Routine_080073E0(param_1 + 0xb0,*(undefined4 *)(param_1 + 0xb4));
   HW_Routine_08007184(param_1 + 0xb0,2);
   HW_Routine_08007C28(param_1 + 0xa8,*(undefined4 *)(param_1 + 0xac));
   HW_Routine_080079E8(param_1 + 0xa8,2);
@@ -8622,7 +8618,7 @@ undefined8 VTable_Routine_080E118C(undefined1 *param_1,int param_2,int param_3)
   undefined1 auStack_14 [4];
   
   if (param_3 == 0xff) {
-    func_0x0800df50(auStack_14,*(undefined2 *)(param_2 + 4));
+    Item_SetQuality(auStack_14,*(undefined2 *)(param_2 + 4));
     uVar1 = Item_Routine_0800DF58(auStack_14);
     uVar2 = gba_strlen();
     if (0x1f < uVar2) {
@@ -8657,7 +8653,7 @@ undefined4 VTable_Routine_080E11EC(int param_1,undefined4 param_2)
     iVar3 = param_1 + 0x558;
     while (param_1 + 0x548 != iVar3) {
       iVar2 = iVar3 + -8;
-      func_0x080073e0(iVar2,*(undefined4 *)(iVar3 + -4));
+      HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar3 + -4));
       HW_Routine_08007184(iVar2,2);
       iVar3 = iVar2;
     }
@@ -8667,48 +8663,48 @@ undefined4 VTable_Routine_080E11EC(int param_1,undefined4 param_2)
   if ((param_1 != -0x500) && (iVar3 = param_1 + 0x540, param_1 + 0x500 != param_1 + 0x540)) {
     do {
       iVar2 = iVar3 + -0x10;
-      func_0x080073e0(iVar3 + -8,*(undefined4 *)(iVar3 + -4));
+      HW_Routine_080073E0(iVar3 + -8,*(undefined4 *)(iVar3 + -4));
       HW_Routine_08007184(iVar3 + -8,2);
       HW_Routine_08007C28(iVar2,*(undefined4 *)(iVar3 + -0xc));
       HW_Routine_080079E8(iVar2,2);
       iVar3 = iVar2;
     } while (param_1 + 0x500 != iVar2);
   }
-  func_0x080073e0(param_1 + 0x4f8,*(undefined4 *)(param_1 + 0x4fc));
+  HW_Routine_080073E0(param_1 + 0x4f8,*(undefined4 *)(param_1 + 0x4fc));
   HW_Routine_08007184(param_1 + 0x4f8,2);
   HW_Routine_08007C28(param_1 + 0x4f0,*(undefined4 *)(param_1 + 0x4f4));
   HW_Routine_080079E8(param_1 + 0x4f0,2);
-  func_0x080073e0(param_1 + 0x4e8,*(undefined4 *)(param_1 + 0x4ec));
+  HW_Routine_080073E0(param_1 + 0x4e8,*(undefined4 *)(param_1 + 0x4ec));
   HW_Routine_08007184(param_1 + 0x4e8,2);
   HW_Routine_08007C28(param_1 + 0x4e0,*(undefined4 *)(param_1 + 0x4e4));
   HW_Routine_080079E8(param_1 + 0x4e0,2);
-  func_0x080073e0(param_1 + 0x4d8,*(undefined4 *)(param_1 + 0x4dc));
+  HW_Routine_080073E0(param_1 + 0x4d8,*(undefined4 *)(param_1 + 0x4dc));
   HW_Routine_08007184(param_1 + 0x4d8,2);
   HW_Routine_08007C28(param_1 + 0x4d0,*(undefined4 *)(param_1 + 0x4d4));
   HW_Routine_080079E8(param_1 + 0x4d0,2);
   HW_Routine_08007C28(param_1 + 0x4c8,*(undefined4 *)(param_1 + 0x4cc));
   HW_Routine_080079E8(param_1 + 0x4c8,2);
-  func_0x080073e0(param_1 + 0x4c0,*(undefined4 *)(param_1 + 0x4c4));
+  HW_Routine_080073E0(param_1 + 0x4c0,*(undefined4 *)(param_1 + 0x4c4));
   HW_Routine_08007184(param_1 + 0x4c0,2);
   HW_Routine_08007C28(param_1 + 0x4b8,*(undefined4 *)(param_1 + 0x4bc));
   HW_Routine_080079E8(param_1 + 0x4b8,2);
-  func_0x080073e0(param_1 + 0x4b0,*(undefined4 *)(param_1 + 0x4b4));
+  HW_Routine_080073E0(param_1 + 0x4b0,*(undefined4 *)(param_1 + 0x4b4));
   HW_Routine_08007184(param_1 + 0x4b0,2);
   HW_Routine_08007C28(param_1 + 0x4a8,*(undefined4 *)(param_1 + 0x4ac));
   HW_Routine_080079E8(param_1 + 0x4a8,2);
-  func_0x080073e0(param_1 + 0x4a0,*(undefined4 *)(param_1 + 0x4a4));
+  HW_Routine_080073E0(param_1 + 0x4a0,*(undefined4 *)(param_1 + 0x4a4));
   HW_Routine_08007184(param_1 + 0x4a0,2);
   HW_Routine_08007C28(param_1 + 0x498,*(undefined4 *)(param_1 + 0x49c));
   HW_Routine_080079E8(param_1 + 0x498,2);
-  func_0x080073e0(param_1 + 0x490,*(undefined4 *)(param_1 + 0x494));
+  HW_Routine_080073E0(param_1 + 0x490,*(undefined4 *)(param_1 + 0x494));
   HW_Routine_08007184(param_1 + 0x490,2);
   HW_Routine_08007C28(param_1 + 0x488,*(undefined4 *)(param_1 + 0x48c));
   HW_Routine_080079E8(param_1 + 0x488,2);
-  func_0x080073e0(param_1 + 0x480,*(undefined4 *)(param_1 + 0x484));
+  HW_Routine_080073E0(param_1 + 0x480,*(undefined4 *)(param_1 + 0x484));
   HW_Routine_08007184(param_1 + 0x480,2);
   HW_Routine_08007C28(param_1 + 0x478,*(undefined4 *)(param_1 + 0x47c));
   HW_Routine_080079E8(param_1 + 0x478,2);
-  func_0x080073e0(param_1 + 0x470,*(undefined4 *)(param_1 + 0x474));
+  HW_Routine_080073E0(param_1 + 0x470,*(undefined4 *)(param_1 + 0x474));
   HW_Routine_08007184(param_1 + 0x470,2);
   HW_Routine_08007C28(param_1 + 0x468,*(undefined4 *)(param_1 + 0x46c));
   HW_Routine_080079E8(param_1 + 0x468,2);
@@ -8876,15 +8872,15 @@ undefined4 VTable_Routine_080E18A4(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   *(undefined4 *)(param_1 + _DAT_080e1958) = _DAT_080e195c;
-  func_0x080073e0(param_1 + 0x144,*(undefined4 *)(param_1 + 0x148));
+  HW_Routine_080073E0(param_1 + 0x144,*(undefined4 *)(param_1 + 0x148));
   HW_Routine_08007184(param_1 + 0x144,2);
   HW_Routine_08007C28(param_1 + 0x13c,*(undefined4 *)(param_1 + 0x140));
   HW_Routine_080079E8(param_1 + 0x13c,2);
-  func_0x080073e0(param_1 + 0x134,*(undefined4 *)(param_1 + 0x138));
+  HW_Routine_080073E0(param_1 + 0x134,*(undefined4 *)(param_1 + 0x138));
   HW_Routine_08007184(param_1 + 0x134,2);
   HW_Routine_08007C28(param_1 + 300,*(undefined4 *)(param_1 + 0x130));
   HW_Routine_080079E8(param_1 + 300,2);
-  func_0x080073e0(param_1 + 0x124,*(undefined4 *)(param_1 + 0x128));
+  HW_Routine_080073E0(param_1 + 0x124,*(undefined4 *)(param_1 + 0x128));
   HW_Routine_08007184(param_1 + 0x124,2);
   HW_Routine_08007C28(param_1 + 0x11c,*(undefined4 *)(param_1 + 0x120));
   HW_Routine_080079E8(param_1 + 0x11c,2);
@@ -9032,7 +9028,7 @@ undefined8 VTable_Routine_080E1A70(undefined4 *param_1)
     psVar3 = (short *)(uVar5 * 0x10 + _DAT_080e1c08 + (int)param_1);
     do {
       if ((int)*psVar3 <= *(short *)(param_1 + 0x164) + 0xa0) {
-        pbVar2 = (byte *)func_0x08008920(*param_1);
+        pbVar2 = (byte *)HW_GetSpriteAttr2Offset(*param_1);
         ScriptEngine_Routine_0804EA94(&uStack_34,*(undefined4 *)(psVar3 + 2),
                       (int)*psVar3 - (int)*(short *)(param_1 + 0x164),0x10,2,1,1,0);
         bVar1 = *pbVar2;
@@ -9059,7 +9055,7 @@ undefined8 VTable_Routine_080E1A70(undefined4 *param_1)
     psVar3 = (short *)(uVar5 * 0x10 + _DAT_080e1c10 + (int)param_1);
     do {
       if ((int)*psVar3 <= *(short *)(param_1 + 0x164) + 0xa0) {
-        pbVar2 = (byte *)func_0x08008920(*param_1);
+        pbVar2 = (byte *)HW_GetSpriteAttr2Offset(*param_1);
         ScriptEngine_Routine_0804EA94(&uStack_2c,*(undefined4 *)(psVar3 + 2),
                       (int)*psVar3 - (int)*(short *)(param_1 + 0x164),5,1,1,0,0);
         bVar1 = *pbVar2;
@@ -9126,7 +9122,7 @@ undefined8 VTable_Routine_080E1C70(undefined4 *param_1)
     psVar3 = (short *)(uVar5 * 0x10 + _DAT_080e1d4c + (int)param_1);
     do {
       if ((int)*psVar3 <= *(short *)(param_1 + 0x164) + 0xa0) {
-        pbVar2 = (byte *)func_0x08008920(*param_1);
+        pbVar2 = (byte *)HW_GetSpriteAttr2Offset(*param_1);
         ScriptEngine_Routine_0804EA94(&uStack_28,*(undefined4 *)(psVar3 + 2),
                       (int)*psVar3 - (int)*(short *)(param_1 + 0x164),5,1,1,0,0);
         bVar1 = *pbVar2;
@@ -9248,7 +9244,7 @@ undefined4 VTable_Routine_080E1DD4(int param_1,undefined4 param_2)
   *(undefined4 *)(param_1 + 0xc) = _DAT_080e1e20;
   iVar2 = *(int *)(param_1 + 8);
   if (iVar2 != 0) {
-    func_0x080d3914(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + _DAT_080e1e24) + 8));
+    _call_via_r2(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + _DAT_080e1e24) + 8));
   }
   HW_Routine_080086BC(param_1,param_2);
   return in_lr;
@@ -9273,7 +9269,7 @@ undefined4 VTable_Routine_080E1E28(int param_1,undefined4 param_2)
     iVar5 = param_1 + _DAT_080e1f80;
     do {
       iVar4 = iVar3 + -8;
-      func_0x080073e0(iVar4,*(undefined4 *)(iVar3 + -4));
+      HW_Routine_080073E0(iVar4,*(undefined4 *)(iVar3 + -4));
       HW_Routine_08007184(iVar4,2);
       iVar3 = iVar4;
     } while (iVar5 != iVar4);
@@ -9291,13 +9287,13 @@ undefined4 VTable_Routine_080E1E28(int param_1,undefined4 param_2)
     } while (iVar5 != iVar4);
   }
   iVar3 = param_1 + _DAT_080e1f90;
-  func_0x080073e0(iVar3,*(undefined4 *)(iVar3 + 4));
+  HW_Routine_080073E0(iVar3,*(undefined4 *)(iVar3 + 4));
   HW_Routine_08007184(iVar3,2);
   iVar3 = param_1 + _DAT_080e1f94;
   HW_Routine_08007C28(iVar3,*(undefined4 *)(iVar3 + 4));
   HW_Routine_080079E8(iVar3,2);
   iVar3 = param_1 + _DAT_080e1f98;
-  func_0x080073e0(iVar3,*(undefined4 *)(iVar3 + 4));
+  HW_Routine_080073E0(iVar3,*(undefined4 *)(iVar3 + 4));
   HW_Routine_08007184(iVar3,2);
   iVar3 = param_1 + _DAT_080e1f9c;
   HW_Routine_08007C28(iVar3,*(undefined4 *)(iVar3 + 4));
@@ -9324,7 +9320,7 @@ undefined4 VTable_Routine_080E1E28(int param_1,undefined4 param_2)
   }
   piVar6 = *(int **)(param_1 + 8);
   if (piVar6 != (int *)0x0) {
-    func_0x080d3914(piVar6,3,*(undefined4 *)(*piVar6 + 8));
+    _call_via_r2(piVar6,3,*(undefined4 *)(*piVar6 + 8));
   }
   HW_Routine_080086BC(param_1,param_2);
   return in_lr;
@@ -9338,11 +9334,11 @@ undefined4 VTable_Routine_080E1FAC(int param_1,undefined4 param_2)
 {
   undefined4 in_lr;
   
-  func_0x080073e0(param_1 + 0x30,*(undefined4 *)(param_1 + 0x34));
+  HW_Routine_080073E0(param_1 + 0x30,*(undefined4 *)(param_1 + 0x34));
   HW_Routine_08007184(param_1 + 0x30,2);
   HW_Routine_08007C28(param_1 + 0x28,*(undefined4 *)(param_1 + 0x2c));
   HW_Routine_080079E8(param_1 + 0x28,2);
-  func_0x080073e0(param_1 + 0x20,*(undefined4 *)(param_1 + 0x24));
+  HW_Routine_080073E0(param_1 + 0x20,*(undefined4 *)(param_1 + 0x24));
   HW_Routine_08007184(param_1 + 0x20,2);
   HW_Routine_08007C28(param_1 + 0x18,*(undefined4 *)(param_1 + 0x1c));
   HW_Routine_080079E8(param_1 + 0x18,2);
@@ -9382,7 +9378,7 @@ undefined4 VTable_Routine_080E2018(int param_1,undefined4 param_2)
   Animal_Routine_080756D0(param_1 + 0x18,2);
   piVar2 = *(int **)(param_1 + 0xc);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   HW_Routine_080086BC(param_1,param_2);
   return in_lr;
@@ -9463,7 +9459,7 @@ undefined4 VTable_Routine_080E211C(int param_1,undefined4 param_2)
   *(undefined4 *)(param_1 + 0xc) = _DAT_080e2168;
   iVar2 = *(int *)(param_1 + 8);
   if (iVar2 != 0) {
-    func_0x080d3914(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + _DAT_080e216c) + 8));
+    _call_via_r2(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + _DAT_080e216c) + 8));
   }
   HW_Routine_080086BC(param_1,param_2);
   return in_lr;
@@ -9605,7 +9601,7 @@ undefined8 VTable_Routine_080E2294(int *param_1,int param_2,int param_3,int para
   
   if ((param_4 == *(int *)(param_2 + 4)) ||
      ((param_6 == 0 && ((param_3 != 0 || (*param_5 < *(uint *)(param_4 + 0x10))))))) {
-    iVar1 = malloc_gba(0x18);
+    iVar1 = runtime_malloc_aligned(0x18);
     if (iVar1 == 0) {
       iVar1 = VTable_Routine_080D3BC0(0x18);
     }
@@ -9624,7 +9620,7 @@ undefined8 VTable_Routine_080E2294(int *param_1,int param_2,int param_3,int para
     }
   }
   else {
-    iVar1 = malloc_gba(0x18);
+    iVar1 = runtime_malloc_aligned(0x18);
     if (iVar1 == 0) {
       iVar1 = VTable_Routine_080D3BC0(0x18);
     }
@@ -10021,7 +10017,7 @@ undefined8 VTable_Routine_080E27FC(int *param_1,int param_2,int param_3,int para
   
   if ((param_4 == *(int *)(param_2 + 4)) ||
      ((param_6 == 0 && ((param_3 != 0 || (*param_5 < *(uint *)(param_4 + 0x10))))))) {
-    iVar1 = malloc_gba(0x18);
+    iVar1 = runtime_malloc_aligned(0x18);
     if (iVar1 == 0) {
       iVar1 = VTable_Routine_080D3BC0(0x18);
     }
@@ -10040,7 +10036,7 @@ undefined8 VTable_Routine_080E27FC(int *param_1,int param_2,int param_3,int para
     }
   }
   else {
-    iVar1 = malloc_gba(0x18);
+    iVar1 = runtime_malloc_aligned(0x18);
     if (iVar1 == 0) {
       iVar1 = VTable_Routine_080D3BC0(0x18);
     }
@@ -10399,7 +10395,7 @@ undefined8 VTable_Routine_080E2DC8(int param_1)
   
   HW_Routine_08007874();
   *(undefined4 *)(param_1 + 8) = 0;
-  puVar1 = (undefined1 *)malloc_gba(0x18);
+  puVar1 = (undefined1 *)runtime_malloc_aligned(0x18);
   if (puVar1 == (undefined1 *)0x0) {
     puVar1 = (undefined1 *)VTable_Routine_080D3BC0(0x18);
   }
@@ -10410,9 +10406,9 @@ undefined8 VTable_Routine_080E2DC8(int param_1)
   *(undefined4 *)(puVar1 + 4) = 0;
   *(int *)(*(int *)(param_1 + 8) + 8) = *(int *)(param_1 + 8);
   *(int *)(*(int *)(param_1 + 8) + 0xc) = *(int *)(param_1 + 8);
-  func_0x08007128(param_1 + 0x14);
+  HW_Routine_08007128(param_1 + 0x14);
   *(undefined4 *)(param_1 + 0x1c) = 0;
-  puVar1 = (undefined1 *)malloc_gba(0x18);
+  puVar1 = (undefined1 *)runtime_malloc_aligned(0x18);
   if (puVar1 == (undefined1 *)0x0) {
     puVar1 = (undefined1 *)VTable_Routine_080D3BC0(0x18);
   }
@@ -10438,7 +10434,7 @@ undefined4 VTable_Routine_080E2E34(int param_1,undefined4 param_2)
   *(undefined4 *)(param_1 + 0xc) = _DAT_080e2e64;
   iVar1 = *(int *)(param_1 + 8);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + _DAT_080e2e68) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + _DAT_080e2e68) + 8));
   }
   HW_Routine_080086BC(param_1,param_2);
   return in_lr;
@@ -10489,7 +10485,7 @@ undefined8 VTable_Routine_080E2EA4(int *param_1,int param_2,int param_3,int para
   if (param_4 != *(int *)(param_2 + 4)) {
     if (param_6 != 0) {
 LAB_080e2f1e:
-      iVar1 = malloc_gba(0x18);
+      iVar1 = runtime_malloc_aligned(0x18);
       if (iVar1 == 0) {
         iVar1 = VTable_Routine_080D3BC0(0x18);
       }
@@ -10512,7 +10508,7 @@ LAB_080e2f1e:
       if (!bVar3) goto LAB_080e2f1e;
     }
   }
-  iVar1 = malloc_gba(0x18);
+  iVar1 = runtime_malloc_aligned(0x18);
   if (iVar1 == 0) {
     iVar1 = VTable_Routine_080D3BC0(0x18);
   }
@@ -10794,7 +10790,7 @@ undefined4 VTable_Routine_080E32E8(int param_1,undefined4 param_2)
   Animal_Routine_08050D0C(param_1 + 0x18,2);
   piVar3 = *(int **)(param_1 + 0xc);
   if (piVar3 != (int *)0x0) {
-    func_0x080d3914(piVar3,3,*(undefined4 *)(*piVar3 + 8));
+    _call_via_r2(piVar3,3,*(undefined4 *)(*piVar3 + 8));
   }
   HW_Routine_080086BC(param_1,param_2);
   return in_lr;
@@ -10835,17 +10831,17 @@ undefined4 VTable_Routine_080E33D0(int param_1,undefined4 param_2)
     cpp_operator_delete();
   }
   iVar2 = param_1 + _DAT_080e3480;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   HW_Routine_08007C28(param_1 + 0x830,*(undefined4 *)(param_1 + 0x834));
   HW_Routine_080079E8(param_1 + 0x830,2);
   iVar2 = param_1 + _DAT_080e3484;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   HW_Routine_08007C28(param_1 + 0x820,*(undefined4 *)(param_1 + 0x824));
   HW_Routine_080079E8(param_1 + 0x820,2);
   iVar2 = param_1 + _DAT_080e3488;
-  func_0x080073e0(iVar2,*(undefined4 *)(iVar2 + 4));
+  HW_Routine_080073E0(iVar2,*(undefined4 *)(iVar2 + 4));
   HW_Routine_08007184(iVar2,2);
   HW_Routine_08007C28(param_1 + 0x810,*(undefined4 *)(param_1 + 0x814));
   HW_Routine_080079E8(param_1 + 0x810,2);
@@ -10887,7 +10883,7 @@ undefined4 VTable_Routine_080E34DC(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   Scene_Destructor(param_1,param_2);
   return in_lr;
@@ -10903,11 +10899,11 @@ undefined4 VTable_Routine_080E3504(int param_1,undefined4 param_2)
   undefined4 in_lr;
   
   if (*(int *)(param_1 + 0x94) != 0) {
-    func_0x080ce3dc(*(int *)(param_1 + 0x94),3);
+    M4A_Routine_080CE3DC(*(int *)(param_1 + 0x94),3);
   }
   iVar1 = *(int *)(param_1 + 0x90);
   if (iVar1 != 0) {
-    func_0x080073e0(iVar1 + 0x74,*(undefined4 *)(iVar1 + 0x78));
+    HW_Routine_080073E0(iVar1 + 0x74,*(undefined4 *)(iVar1 + 0x78));
     HW_Routine_08007184(iVar1 + 0x74,2);
     HW_Routine_08007C28(iVar1 + 0x6c,*(undefined4 *)(iVar1 + 0x70));
     HW_Routine_080079E8(iVar1 + 0x6c,2);
@@ -10917,7 +10913,7 @@ undefined4 VTable_Routine_080E3504(int param_1,undefined4 param_2)
   iVar1 = *(int *)(param_1 + 0x8c);
   if (iVar1 != 0) {
     *(undefined4 *)(iVar1 + 0x24) = _DAT_080e35d8;
-    func_0x080073e0(iVar1 + 0x1c,*(undefined4 *)(iVar1 + 0x20));
+    HW_Routine_080073E0(iVar1 + 0x1c,*(undefined4 *)(iVar1 + 0x20));
     HW_Routine_08007184(iVar1 + 0x1c,2);
     HW_Routine_08007C28(iVar1 + 0x14,*(undefined4 *)(iVar1 + 0x18));
     HW_Routine_080079E8(iVar1 + 0x14,2);
@@ -10926,11 +10922,11 @@ undefined4 VTable_Routine_080E3504(int param_1,undefined4 param_2)
   Animal_Routine_08050D0C(param_1 + 0x80,2);
   iVar1 = *(int *)(param_1 + 0x7c);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x210) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x210) + 8));
   }
   iVar1 = *(int *)(param_1 + 0x78);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x210) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 0x210) + 8));
   }
   *(undefined4 *)(param_1 + 0x10) = _DAT_080e35d8;
   HW_Routine_080086BC(param_1,param_2);
@@ -11017,11 +11013,11 @@ LAB_080e3bf6:
     }
     else if (param_3 == 0xff) {
       if (*(ushort *)(param_2 + 4) < 0xac) {
-        func_0x0800dca8(auStack_18,*(ushort *)(param_2 + 4) - 1);
+        Item_SetIdAndClearQuality(auStack_18,*(ushort *)(param_2 + 4) - 1);
         iVar2 = Item_Routine_0800DCB8(auStack_18);
       }
       else {
-        func_0x0800df50(auStack_14,*(ushort *)(param_2 + 4) - 0xac);
+        Item_SetQuality(auStack_14,*(ushort *)(param_2 + 4) - 0xac);
         iVar2 = Item_Routine_0800DF58(auStack_14);
       }
       goto LAB_080e3bf6;
@@ -11046,21 +11042,21 @@ undefined4 VTable_Routine_080E3C3C(int param_1,undefined4 param_2)
   *(undefined4 *)(param_1 + _DAT_080e3d88) = _DAT_080e3d8c;
   HW_Routine_08007C28(param_1 + 0x328,*(undefined4 *)(param_1 + 0x32c));
   HW_Routine_080079E8(param_1 + 0x328,2);
-  func_0x080073e0(param_1 + 800,*(undefined4 *)(param_1 + 0x324));
+  HW_Routine_080073E0(param_1 + 800,*(undefined4 *)(param_1 + 0x324));
   HW_Routine_08007184(param_1 + 800,2);
   HW_Routine_08007C28(param_1 + 0x318,*(undefined4 *)(param_1 + 0x31c));
   HW_Routine_080079E8(param_1 + 0x318,2);
   HW_Routine_08007C28(param_1 + 0x310,*(undefined4 *)(param_1 + 0x314));
   HW_Routine_080079E8(param_1 + 0x310,2);
-  func_0x080073e0(param_1 + 0x308,*(undefined4 *)(param_1 + 0x30c));
+  HW_Routine_080073E0(param_1 + 0x308,*(undefined4 *)(param_1 + 0x30c));
   HW_Routine_08007184(param_1 + 0x308,2);
   HW_Routine_08007C28(param_1 + 0x300,*(undefined4 *)(param_1 + 0x304));
   HW_Routine_080079E8(param_1 + 0x300,2);
-  func_0x080073e0(param_1 + 0x2f8,*(undefined4 *)(param_1 + 0x2fc));
+  HW_Routine_080073E0(param_1 + 0x2f8,*(undefined4 *)(param_1 + 0x2fc));
   HW_Routine_08007184(param_1 + 0x2f8,2);
   HW_Routine_08007C28(param_1 + 0x2f0,*(undefined4 *)(param_1 + 0x2f4));
   HW_Routine_080079E8(param_1 + 0x2f0,2);
-  func_0x080073e0(param_1 + 0x2e8,*(undefined4 *)(param_1 + 0x2ec));
+  HW_Routine_080073E0(param_1 + 0x2e8,*(undefined4 *)(param_1 + 0x2ec));
   HW_Routine_08007184(param_1 + 0x2e8,2);
   HW_Routine_08007C28(param_1 + 0x2e0,*(undefined4 *)(param_1 + 0x2e4));
   HW_Routine_080079E8(param_1 + 0x2e0,2);
@@ -11072,11 +11068,11 @@ undefined4 VTable_Routine_080E3C3C(int param_1,undefined4 param_2)
   Animal_Routine_08050D0C(param_1 + 0x80,2);
   iVar2 = *(int *)(param_1 + 0x7c);
   if (iVar2 != 0) {
-    func_0x080d3914(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + 0x210) + 8));
+    _call_via_r2(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + 0x210) + 8));
   }
   iVar2 = *(int *)(param_1 + 0x78);
   if (iVar2 != 0) {
-    func_0x080d3914(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + 0x210) + 8));
+    _call_via_r2(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + 0x210) + 8));
   }
   *(undefined4 *)(param_1 + 0x10) = uVar1;
   HW_Routine_080086BC(param_1,param_2);
@@ -11382,11 +11378,11 @@ undefined4 VTable_Routine_080E41B0(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 8);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   iVar2 = *(int *)(param_1 + 4);
   if (iVar2 != 0) {
-    func_0x080d3914(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + 4) + 8));
+    _call_via_r2(iVar2,3,*(undefined4 *)(*(int *)(iVar2 + 4) + 8));
   }
   SramProxy_VerifyBufferParity(param_1,param_2);
   return in_lr;
@@ -11403,7 +11399,7 @@ undefined4 VTable_Routine_080E41E8(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   SramProxy_VerifyBufferParity(param_1,param_2);
   return in_lr;
@@ -11420,7 +11416,7 @@ undefined4 VTable_Routine_080E4210(int param_1,undefined4 param_2)
   
   piVar1 = *(int **)(param_1 + 4);
   if (piVar1 != (int *)0x0) {
-    func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+    _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
   }
   SramProxy_VerifyBufferParity(param_1,param_2);
   return in_lr;
@@ -11450,7 +11446,7 @@ undefined8 VTable_Routine_080E4244(int *param_1,int param_2,int param_3,int para
   
   if ((param_4 == *(int *)(param_2 + 4)) ||
      ((param_6 == 0 && ((param_3 != 0 || (*param_5 < *(int *)(param_4 + 0x10))))))) {
-    iVar1 = malloc_gba(0x18);
+    iVar1 = runtime_malloc_aligned(0x18);
     if (iVar1 == 0) {
       iVar1 = VTable_Routine_080D3BC0(0x18);
     }
@@ -11469,7 +11465,7 @@ undefined8 VTable_Routine_080E4244(int *param_1,int param_2,int param_3,int para
     }
   }
   else {
-    iVar1 = malloc_gba(0x18);
+    iVar1 = runtime_malloc_aligned(0x18);
     if (iVar1 == 0) {
       iVar1 = VTable_Routine_080D3BC0(0x18);
     }
@@ -11577,7 +11573,7 @@ undefined8 VTable_Routine_080E43FC(int param_1)
   undefined4 in_lr;
   
   *(undefined4 *)(param_1 + 0xc) = 0;
-  puVar1 = (undefined1 *)malloc_gba(0x18);
+  puVar1 = (undefined1 *)runtime_malloc_aligned(0x18);
   if (puVar1 == (undefined1 *)0x0) {
     puVar1 = (undefined1 *)VTable_Routine_080D3BC0(0x18);
   }
@@ -11685,7 +11681,7 @@ undefined4 VTable_Routine_080E4510(int param_1,uint param_2)
   *(undefined4 *)(param_1 + 0x14) = _DAT_080e4540;
   iVar1 = *(int *)(param_1 + 0x10);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   if ((param_2 & 1) != 0) {
     Dispatcher_Routine_08000608(param_1);
@@ -11718,7 +11714,6 @@ void VTable_Routine_080E4564(int param_1,undefined4 param_2)
   int *piVar2;
   undefined4 *puVar3;
   undefined4 *puVar4;
-  code *UNRECOVERED_JUMPTABLE;
   
   VTable_Routine_080E4860(param_1 + _DAT_080e4818,2);
   Farm_Routine_080098AC(param_1 + _DAT_080e481c,2);
@@ -11807,45 +11802,44 @@ void VTable_Routine_080E4564(int param_1,undefined4 param_2)
   Dispatcher_Routine_08000608(*(undefined4 *)(param_1 + 0x460));
   iVar1 = *(int *)(param_1 + _DAT_080e484c);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 8) + 0xc));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 8) + 0xc));
   }
   piVar2 = *(int **)(param_1 + 0x438);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4850);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x430);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4854);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x428);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4858);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x420);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e485c);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   if (*(int *)(param_1 + 0x418) != 0) {
     Animal_Routine_08050D0C(*(int *)(param_1 + 0x418),3);
   }
   HW_Routine_080086BC(param_1,param_2);
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
@@ -12015,50 +12009,50 @@ undefined4 VTable_Routine_080E4940(int param_1,undefined4 param_2)
   }
   iVar1 = *(int *)(param_1 + 0x7a0);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 8) + 0xc));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 8) + 0xc));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4cc4);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x798);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4cc8);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x790);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4ccc);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x788);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4cd0);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x780);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   puVar3 = (undefined4 *)(param_1 + _DAT_080e4cd4);
   piVar2 = (int *)*puVar3;
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   puVar6 = (undefined4 *)(param_1 + _DAT_080e4cd8);
   if (puVar6 != (undefined4 *)0x0) {
     while (puVar6 != puVar3) {
       puVar4 = puVar3 + -2;
-      func_0x080073e0(puVar4,puVar3[-1]);
+      HW_Routine_080073E0(puVar4,puVar3[-1]);
       HW_Routine_08007184(puVar4,2);
       puVar3 = puVar4;
     }
@@ -12068,16 +12062,16 @@ undefined4 VTable_Routine_080E4940(int param_1,undefined4 param_2)
     iVar7 = param_1 + _DAT_080e4d44;
     do {
       iVar5 = iVar1 + -8;
-      func_0x080073e0(iVar5,*(undefined4 *)(iVar1 + -4));
+      HW_Routine_080073E0(iVar5,*(undefined4 *)(iVar1 + -4));
       HW_Routine_08007184(iVar5,2);
       iVar1 = iVar5;
     } while (iVar7 != iVar5);
   }
   iVar1 = param_1 + _DAT_080e4d48;
-  func_0x080073e0(iVar1,*(undefined4 *)(iVar1 + 4));
+  HW_Routine_080073E0(iVar1,*(undefined4 *)(iVar1 + 4));
   HW_Routine_08007184(iVar1,2);
   iVar1 = param_1 + _DAT_080e4d4c;
-  func_0x080073e0(iVar1,*(undefined4 *)(iVar1 + 4));
+  HW_Routine_080073E0(iVar1,*(undefined4 *)(iVar1 + 4));
   HW_Routine_08007184(iVar1,2);
   if (*(int *)(param_1 + 0x718) != 0) {
     Animal_Routine_08050D0C(*(int *)(param_1 + 0x718),3);
@@ -12094,7 +12088,6 @@ void VTable_Routine_080E4D50(int param_1,undefined4 param_2)
 {
   int iVar1;
   int *piVar2;
-  code *UNRECOVERED_JUMPTABLE;
   
   VTable_Routine_080E4F34(param_1 + 0x5b0,2);
   Farm_Routine_080098AC(param_1 + _DAT_080e4f00,2);
@@ -12115,45 +12108,44 @@ void VTable_Routine_080E4D50(int param_1,undefined4 param_2)
   Dispatcher_Routine_08000608(*(undefined4 *)(param_1 + 0x460));
   iVar1 = *(int *)(param_1 + _DAT_080e4f20);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 8) + 0xc));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 8) + 0xc));
   }
   piVar2 = *(int **)(param_1 + 0x438);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4f24);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x430);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4f28);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x428);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4f2c);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x420);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e4f30);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   if (*(int *)(param_1 + 0x418) != 0) {
     Animal_Routine_08050D0C(*(int *)(param_1 + 0x418),3);
   }
   HW_Routine_080086BC(param_1,param_2);
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
@@ -12199,7 +12191,6 @@ void VTable_Routine_080E4FF0(int param_1,undefined4 param_2)
   int *piVar2;
   undefined4 *puVar3;
   undefined4 *puVar4;
-  code *UNRECOVERED_JUMPTABLE;
   
   VTable_Routine_080E5324(param_1 + _DAT_080e5250,2);
   Farm_Routine_080098AC(param_1 + 0x830,2);
@@ -12248,49 +12239,48 @@ void VTable_Routine_080E4FF0(int param_1,undefined4 param_2)
   Dispatcher_Routine_08000608(*(undefined4 *)(param_1 + 0x550));
   iVar1 = *(int *)(param_1 + _DAT_080e5288);
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 8) + 0xc));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 8) + 0xc));
   }
   piVar2 = *(int **)(param_1 + 0x540);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e528c);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x538);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e5290);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x530);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e5294);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x528);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + _DAT_080e5298);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   piVar2 = *(int **)(param_1 + 0x520);
   if (piVar2 != (int *)0x0) {
-    func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+    _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
   }
   if (*(int *)(param_1 + _DAT_080e529c) != 0) {
     Animal_Routine_08050D0C(*(int *)(param_1 + _DAT_080e529c),3);
   }
   HW_Routine_080086BC(param_1,param_2);
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 
@@ -12398,7 +12388,7 @@ undefined8 VTable_Routine_080E542C(undefined4 *param_1,undefined4 *param_2)
   *_DAT_080e546c = (int)param_1;
   param_1[2] = iVar3;
   param_1[3] = _DAT_080e5470;
-  uVar2 = func_0x080d100c(2,_DAT_080e5474);
+  uVar2 = M4A_Routine_080D100C(2,_DAT_080e5474);
   param_1[4] = uVar2;
   Interrupt_SetMasterEnable(4);
   return CONCAT44(in_lr,param_1);
@@ -12435,7 +12425,7 @@ undefined8 VTable_Routine_080E54F0(int *param_1,int param_2,int param_3,int para
   
   if ((param_4 == *(int *)(param_2 + 4)) ||
      ((param_6 == 0 && ((param_3 != 0 || (*param_5 < *(uint *)(param_4 + 0x10))))))) {
-    iVar1 = malloc_gba(0x18);
+    iVar1 = runtime_malloc_aligned(0x18);
     if (iVar1 == 0) {
       iVar1 = VTable_Routine_080D3BC0(0x18);
     }
@@ -12454,7 +12444,7 @@ undefined8 VTable_Routine_080E54F0(int *param_1,int param_2,int param_3,int para
     }
   }
   else {
-    iVar1 = malloc_gba(0x18);
+    iVar1 = runtime_malloc_aligned(0x18);
     if (iVar1 == 0) {
       iVar1 = VTable_Routine_080D3BC0(0x18);
     }
@@ -12694,14 +12684,13 @@ void VTable_Routine_080E5898(int param_1,undefined4 param_2)
   int iVar1;
   int iVar2;
   int *piVar3;
-  code *UNRECOVERED_JUMPTABLE;
   
   *(undefined4 *)(param_1 + 0x210) = _DAT_080e5968;
   if ((param_1 != -0x2ec) && (param_1 + 0x2ec != param_1 + 0x32c)) {
     iVar2 = param_1 + 0x32c;
     do {
       iVar1 = iVar2 + -8;
-      func_0x080073e0(iVar1,*(undefined4 *)(iVar2 + -4));
+      HW_Routine_080073E0(iVar1,*(undefined4 *)(iVar2 + -4));
       HW_Routine_08007184(iVar1,2);
       iVar2 = iVar1;
     } while (param_1 + 0x2ec != iVar1);
@@ -12716,7 +12705,7 @@ void VTable_Routine_080E5898(int param_1,undefined4 param_2)
       iVar2 = iVar1;
     } while (param_1 + 0x2ac != iVar1);
   }
-  func_0x080073e0(param_1 + 0x2a4,*(undefined4 *)(param_1 + 0x2a8));
+  HW_Routine_080073E0(param_1 + 0x2a4,*(undefined4 *)(param_1 + 0x2a8));
   HW_Routine_08007184(param_1 + 0x2a4,2);
   HW_Routine_08007C28(param_1 + 0x29c,*(undefined4 *)(param_1 + 0x2a0));
   HW_Routine_080079E8(param_1 + 0x29c,2);
@@ -12724,7 +12713,6 @@ void VTable_Routine_080E5898(int param_1,undefined4 param_2)
       ) {
   }
   M4A_Routine_080CADF0(param_1,param_2);
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 

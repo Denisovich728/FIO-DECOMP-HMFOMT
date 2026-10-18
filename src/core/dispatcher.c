@@ -169,7 +169,7 @@ undefined4 Interrupt_InitVBlank(void)
   *_DAT_080004ec = _DAT_080004f0;
   uVar1 = 0;
   do {
-    func_0x080d100c(uVar1,0);
+    M4A_Routine_080D100C(uVar1,0);
     uVar1 = uVar1 + 1;
   } while (uVar1 < 0xe);
   return in_lr;
@@ -184,7 +184,7 @@ ulonglong Interrupt_EnableHBlank(int param_1)
   undefined4 uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0x080d3910(param_1 << 0x10,_DAT_08000508);
+  uVar1 = _call_via_r1(param_1 << 0x10,_DAT_08000508);
   return CONCAT44(in_lr,uVar1) & 0xffffffff0000ffff;
 }
 
@@ -211,7 +211,7 @@ ulonglong Interrupt_WaitForVBlank(undefined2 param_1)
   undefined4 uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0x080d3910(param_1,_DAT_0800053c);
+  uVar1 = _call_via_r1(param_1,_DAT_0800053c);
   return CONCAT44(in_lr,uVar1) & 0xffffffff0000ffff;
 }
 
@@ -224,7 +224,7 @@ ulonglong Interrupt_SetCallback(undefined4 param_1,undefined2 param_2)
   undefined4 uVar1;
   undefined4 in_lr;
   
-  uVar1 = func_0x080d101c(param_1,param_2);
+  uVar1 = M4A_Routine_080D101C(param_1,param_2);
   return CONCAT44(in_lr,uVar1) & 0xffffffff0000ffff;
 }
 
@@ -236,7 +236,7 @@ undefined4 Interrupt_ClearPending(undefined2 param_1)
 {
   undefined4 in_lr;
   
-  func_0x080d3754(0,param_1);
+  IntrWait(0,param_1);
   return in_lr;
 }
 
@@ -248,7 +248,7 @@ undefined4 Interrupt_DisableFlag(undefined2 param_1)
 {
   undefined4 in_lr;
   
-  func_0x080d3754(1,param_1);
+  IntrWait(1,param_1);
   return in_lr;
 }
 
@@ -281,20 +281,18 @@ void Dispatcher_Routine_0800059C(undefined4 param_1)
 
 {
   int iVar1;
-  code *UNRECOVERED_JUMPTABLE;
   
   do {
-    iVar1 = malloc_gba(param_1);
+    iVar1 = runtime_malloc_aligned(param_1);
     if (iVar1 != 0) {
 LAB_080005be:
-      (*UNRECOVERED_JUMPTABLE)(iVar1);
-      return;
+      return iVar1;
     }
     if (*_DAT_080005b8 == 0) {
       iVar1 = 0;
       goto LAB_080005be;
     }
-    func_0x080d390c();
+    VTable_Routine_080D390C();
   } while( true );
 }
 
@@ -473,7 +471,7 @@ undefined8 SramProxy_ReadBlock(undefined4 param_1,undefined4 param_2,uint param_
 void SramProxy_SetWaitstates(int param_1)
 
 {
-  func_0x080d100c((*(byte *)(param_1 + 4) & 3) + 3);
+  M4A_Routine_080D100C((*(byte *)(param_1 + 4) & 3) + 3);
   return;
 }
 

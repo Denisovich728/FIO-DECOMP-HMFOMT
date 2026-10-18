@@ -40,18 +40,18 @@ undefined4 Scene_Routine_0800082C(int *param_1)
   
   if (*param_1 != 0) {
     do {
-      func_0x080d3914(&piStack_2c,(int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0xc));
+      _call_via_r2(&piStack_2c,(int *)*param_1,*(undefined4 *)(*(int *)*param_1 + 0xc));
       piVar1 = piStack_2c;
       piStack_20 = piStack_2c;
       piStack_2c = (int *)0x0;
       piVar2 = (int *)*param_1;
       ppiStack_24 = &piStack_2c;
       if ((piVar2 != (int *)0x0) && (piVar2 != (int *)0x0)) {
-        func_0x080d3914(piVar2,3,*(undefined4 *)(*piVar2 + 8));
+        _call_via_r2(piVar2,3,*(undefined4 *)(*piVar2 + 8));
       }
       *param_1 = 0;
       if (piVar1 == (int *)0x0) break;
-      func_0x080d3914(&piStack_28,piVar1,*(undefined4 *)(*piVar1 + 0xc));
+      _call_via_r2(&piStack_28,piVar1,*(undefined4 *)(*piVar1 + 0xc));
       piVar2 = piStack_28;
       piStack_18 = piStack_28;
       piStack_28 = (int *)0x0;
@@ -59,20 +59,20 @@ undefined4 Scene_Routine_0800082C(int *param_1)
       piVar3 = (int *)*param_1;
       ppiStack_1c = &piStack_28;
       if ((piVar2 != piVar3) && (piVar3 != (int *)0x0)) {
-        func_0x080d3914(piVar3,3,*(undefined4 *)(*piVar3 + 8));
+        _call_via_r2(piVar3,3,*(undefined4 *)(*piVar3 + 8));
       }
       *param_1 = (int)piVar2;
       if (piStack_2c != (int *)0x0) {
-        func_0x080d3914(piStack_2c,3,*(undefined4 *)(*piStack_2c + 8));
+        _call_via_r2(piStack_2c,3,*(undefined4 *)(*piStack_2c + 8));
       }
       if (piVar1 != (int *)0x0) {
-        func_0x080d3914(piVar1,3,*(undefined4 *)(*piVar1 + 8));
+        _call_via_r2(piVar1,3,*(undefined4 *)(*piVar1 + 8));
       }
     } while (*param_1 != 0);
   }
   param_1 = (int *)*param_1;
   if (param_1 != (int *)0x0) {
-    func_0x080d3914(param_1,3,*(undefined4 *)(*param_1 + 8));
+    _call_via_r2(param_1,3,*(undefined4 *)(*param_1 + 8));
   }
   return in_lr;
 }
@@ -136,18 +136,18 @@ undefined4 Scene_Routine_08000E1C(int param_1)
   
   HW_Routine_08008724();
   Scene_Routine_08000F5C(param_1);
-  iVar3 = func_0x08008918(param_1);
+  iVar3 = HW_GetSpriteAttr1Offset(param_1);
   *(undefined2 *)(iVar3 + 0x50) = 0x3f;
   puVar4 = (uint *)Dispatcher_Routine_080005D4(0x10);
-  uVar5 = func_0x08008918(param_1);
+  uVar5 = HW_GetSpriteAttr1Offset(param_1);
   bVar2 = false;
   *puVar4 = 0;
   puVar4[1] = 0;
   puVar4[2] = _DAT_08000eb0;
   Farm_Routine_08009300(puVar4 + 3,uVar5);
   Farm_Routine_0800934C(puVar4 + 3,_DAT_08000eb4,1,0);
-  iVar3 = func_0x08008940(param_1);
-  func_0x080d3914(iVar3,puVar4,*(undefined4 *)(*(int *)(iVar3 + 8) + 0x10));
+  iVar3 = HW_GetPaletteBankOffset(param_1);
+  _call_via_r2(iVar3,puVar4,*(undefined4 *)(*(int *)(iVar3 + 8) + 0x10));
   *(undefined2 *)(param_1 + _DAT_08000eb8) = 0;
   HW_Routine_08008B6C(param_1 + 8,0);
   psVar8 = (short *)(param_1 + _DAT_08000eb8);
@@ -158,14 +158,14 @@ undefined4 Scene_Routine_08000E1C(int param_1)
     if (sVar1 == 1) {
       piVar7 = (int *)(param_1 + _DAT_08000f28);
       *piVar7 = *piVar7 + -1;
-      uVar6 = func_0x080088cc(param_1);
+      uVar6 = HW_Routine_080088CC(param_1);
       if ((uVar6 & 8) != 0) {
         *piVar7 = 0;
       }
       if (*piVar7 < 1) {
         Farm_Routine_08009378(puVar4 + 3,_DAT_08000f2c,1,0);
-        iVar3 = func_0x08008940(param_1);
-        func_0x080d3914(iVar3,puVar4,*(undefined4 *)(*(int *)(iVar3 + 8) + 0x10));
+        iVar3 = HW_GetPaletteBankOffset(param_1);
+        _call_via_r2(iVar3,puVar4,*(undefined4 *)(*(int *)(iVar3 + 8) + 0x10));
         *psVar8 = 2;
       }
     }
@@ -180,7 +180,7 @@ undefined4 Scene_Routine_08000E1C(int param_1)
     }
   } while (!bVar2);
   if (puVar4 != (uint *)0x0) {
-    func_0x080d3914(puVar4,3,*(undefined4 *)(puVar4[2] + 0xc));
+    _call_via_r2(puVar4,3,*(undefined4 *)(puVar4[2] + 0xc));
   }
   return in_lr;
 }
@@ -199,16 +199,16 @@ undefined4 Scene_Routine_08000F5C(undefined4 param_1)
   HW_Routine_08008EB8(0,_DAT_08000fe0,0x20);
   uVar1 = _DAT_08000fe4;
   HW_Routine_08008EB8(0xffffffff,_DAT_08000fe4,0x800);
-  func_0x080d102c(_DAT_08000fe8,0x6000000);
+  Unpack_ArcanoMarvelous_0x70(_DAT_08000fe8,0x6000000);
   HW_Routine_08008E64(_DAT_08000fec,0x5000000,0x20);
-  func_0x080d102c(_DAT_08000ff0,uVar1);
-  puVar2 = (undefined2 *)func_0x08008918(param_1);
+  Unpack_ArcanoMarvelous_0x70(_DAT_08000ff0,uVar1);
+  puVar2 = (undefined2 *)HW_GetSpriteAttr1Offset(param_1);
   *puVar2 = 0x840;
-  iVar3 = func_0x08008918(param_1);
+  iVar3 = HW_GetSpriteAttr1Offset(param_1);
   *(short *)(iVar3 + 0xe) = (short)_DAT_08000ff4;
-  iVar3 = func_0x08008918(param_1);
+  iVar3 = HW_GetSpriteAttr1Offset(param_1);
   *(undefined2 *)(iVar3 + 0x1c) = 0;
-  iVar3 = func_0x08008918(param_1);
+  iVar3 = HW_GetSpriteAttr1Offset(param_1);
   *(undefined2 *)(iVar3 + 0x1e) = 0;
   return in_lr;
 }
@@ -246,18 +246,18 @@ undefined8 Scene_Routine_08000FF8(int param_1)
   
   HW_Routine_08008724();
   Scene_Routine_080019D8(param_1);
-  iVar4 = func_0x08008918(param_1);
+  iVar4 = HW_GetSpriteAttr1Offset(param_1);
   *(undefined2 *)(iVar4 + 0x50) = 0x3f;
   puVar5 = (uint *)Dispatcher_Routine_080005D4(0x10);
-  uVar6 = func_0x08008918(param_1);
+  uVar6 = HW_GetSpriteAttr1Offset(param_1);
   uVar16 = 0;
   *puVar5 = 0;
   puVar5[1] = 0;
   puVar5[2] = _DAT_0800112c;
   Farm_Routine_08009300(puVar5 + 3,uVar6);
   Farm_Routine_0800934C(puVar5 + 3,_DAT_08001130,1,0);
-  iVar4 = func_0x08008940(param_1);
-  func_0x080d3914(iVar4,puVar5,*(undefined4 *)(*(int *)(iVar4 + 8) + 0x10));
+  iVar4 = HW_GetPaletteBankOffset(param_1);
+  _call_via_r2(iVar4,puVar5,*(undefined4 *)(*(int *)(iVar4 + 8) + 0x10));
   HW_Routine_08008B6C(param_1 + 8,0x23);
   *(undefined2 *)(param_1 + _DAT_08001134) = 0x400;
   iVar4 = _DAT_08001138;
@@ -277,14 +277,14 @@ undefined8 Scene_Routine_08000FF8(int param_1)
   uStack_28 = 0;
   iStack_24 = 0;
   do {
-    func_0x080d11e4();
+    math_rand();
     HW_Routine_080087C8(param_1);
     HW_Routine_080088B8(param_1);
     if (iStack_30 == 0) {
       bVar2 = false;
-      uVar7 = func_0x080088cc(param_1);
-      if ((((uVar7 & 1) != 0) || (uVar7 = func_0x080088cc(param_1), (uVar7 & 2) != 0)) ||
-         (uVar7 = func_0x080088cc(param_1), (uVar7 & 8) != 0)) {
+      uVar7 = HW_Routine_080088CC(param_1);
+      if ((((uVar7 & 1) != 0) || (uVar7 = HW_Routine_080088CC(param_1), (uVar7 & 2) != 0)) ||
+         (uVar7 = HW_Routine_080088CC(param_1), (uVar7 & 8) != 0)) {
         bVar2 = true;
       }
       if (bVar2) {
@@ -429,8 +429,8 @@ LAB_08001412:
       case 0x80014ec:
         if (*(char *)(param_1 + _DAT_08001550) == '\x02') {
           bVar2 = false;
-          uVar7 = func_0x080088cc(param_1);
-          if (((uVar7 & 0x20) != 0) || (uVar7 = func_0x080088cc(param_1), (uVar7 & 0x10) != 0)) {
+          uVar7 = HW_Routine_080088CC(param_1);
+          if (((uVar7 & 0x20) != 0) || (uVar7 = HW_Routine_080088CC(param_1), (uVar7 & 0x10) != 0)) {
             bVar2 = true;
           }
           if (bVar2) {
@@ -454,8 +454,8 @@ LAB_08001412:
           }
         }
         bVar2 = false;
-        uVar7 = func_0x080088cc(param_1);
-        if (((uVar7 & 1) != 0) || (uVar7 = func_0x080088cc(param_1), (uVar7 & 8) != 0)) {
+        uVar7 = HW_Routine_080088CC(param_1);
+        if (((uVar7 & 1) != 0) || (uVar7 = HW_Routine_080088CC(param_1), (uVar7 & 8) != 0)) {
           bVar2 = true;
         }
         if (bVar2) {
@@ -488,8 +488,8 @@ LAB_08001646:
         break;
       case 0x8001654:
         Farm_Routine_08009378(puVar5 + 3,_DAT_0800167c,1,0);
-        iVar8 = func_0x08008940(param_1);
-        func_0x080d3914(iVar8,puVar5,*(undefined4 *)(*(int *)(iVar8 + 8) + 0x10));
+        iVar8 = HW_GetPaletteBankOffset(param_1);
+        _call_via_r2(iVar8,puVar5,*(undefined4 *)(*(int *)(iVar8 + 8) + 0x10));
         *(undefined2 *)(param_1 + _DAT_08001680) = 0x10;
         break;
       case 0x8001684:
@@ -598,19 +598,19 @@ LAB_08001950:
       }
     }
 case_08001952:
-    iVar8 = func_0x08008918(param_1);
+    iVar8 = HW_GetSpriteAttr1Offset(param_1);
     puVar15 = (undefined2 *)(param_1 + _DAT_080019d4);
     *(undefined2 *)(iVar8 + 0x10) = *puVar15;
-    iVar8 = func_0x08008918(param_1);
+    iVar8 = HW_GetSpriteAttr1Offset(param_1);
     *(undefined2 *)(iVar8 + 0x14) = *puVar15;
-    iVar8 = func_0x08008918(param_1);
+    iVar8 = HW_GetSpriteAttr1Offset(param_1);
     *(undefined2 *)(iVar8 + 0x18) = *puVar15;
-    iVar8 = func_0x08008918(param_1);
+    iVar8 = HW_GetSpriteAttr1Offset(param_1);
     *(undefined2 *)(iVar8 + 0x1c) = *puVar15;
     Scene_Routine_080024E0(param_1);
     if (iStack_24 != 0) {
       if (puVar5 != (uint *)0x0) {
-        func_0x080d3914(puVar5,3,*(undefined4 *)(puVar5[2] + 0xc));
+        _call_via_r2(puVar5,3,*(undefined4 *)(puVar5[2] + 0xc));
       }
       return CONCAT44(in_lr,uStack_28);
     }
@@ -707,7 +707,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   HW_Routine_08008EB8(0xffffffff,_DAT_08001db8,0x1000);
   HW_Routine_08008EB8(0xffffffff,_DAT_08001dbc,0x1000);
   HW_Routine_08008EB8(0xffffffff,_DAT_08001dc0,0x1000);
-  func_0x080d102c(_DAT_08001dc4,0x6000000);
+  Unpack_ArcanoMarvelous_0x70(_DAT_08001dc4,0x6000000);
   HW_Routine_08008E64(_DAT_08001dc8,0x5000000,0x200);
   iVar12 = 0;
   *(undefined1 **)(&stack0xffffffe0 + _DAT_08001dcc + iVar1) = &stack0xfffffff8 + iVar1;
@@ -723,7 +723,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(int *)(&stack0xffffffe0 + _DAT_08001e10 + iVar1) = param_1 + _DAT_08001e0c;
   *(int *)(&stack0xffffffe0 + _DAT_08001e18 + iVar1) = param_1 + _DAT_08001e14;
   do {
-    func_0x080d102c(*(undefined4 *)(iVar12 * 4 + _DAT_08001e1c),puVar46);
+    Unpack_ArcanoMarvelous_0x70(*(undefined4 *)(iVar12 * 4 + _DAT_08001e1c),puVar46);
     iVar2 = iVar12 * 0x1000;
     iVar10 = 0;
     iVar12 = iVar12 + 1;
@@ -747,43 +747,43 @@ undefined4 Scene_Routine_080019D8(int param_1)
       } while (-1 < iVar5);
     } while (iVar10 < 0x20);
   } while (iVar12 < 4);
-  puVar3 = (undefined2 *)func_0x08008918(param_1);
+  puVar3 = (undefined2 *)HW_GetSpriteAttr1Offset(param_1);
   *puVar17 = 8000;
   *puVar3 = 8000;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar18 = (short)_DAT_08001e34;
   *(short *)(iVar12 + 8) = (short)_DAT_08001e34;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar19 = (short)_DAT_08001e38;
   *(short *)(iVar12 + 10) = (short)_DAT_08001e38;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar20 = (short)_DAT_08001e3c;
   *(short *)(iVar12 + 0xc) = (short)_DAT_08001e3c;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar21 = (short)_DAT_08001e40;
   *(short *)(iVar12 + 0xe) = (short)_DAT_08001e40;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar22 = 0;
   *(undefined2 *)(iVar12 + 0x10) = 0;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar23 = 0;
   *(undefined2 *)(iVar12 + 0x12) = 0;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar24 = 0;
   *(undefined2 *)(iVar12 + 0x14) = 0;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar25 = 0;
   *(undefined2 *)(iVar12 + 0x16) = 0;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar26 = 0;
   *(undefined2 *)(iVar12 + 0x18) = 0;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar27 = 0;
   *(undefined2 *)(iVar12 + 0x1a) = 0;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar28 = 0;
   *(undefined2 *)(iVar12 + 0x1c) = 0;
-  iVar12 = func_0x08008918(param_1);
+  iVar12 = HW_GetSpriteAttr1Offset(param_1);
   *puVar29 = 0;
   *(undefined2 *)(iVar12 + 0x1e) = 0;
   *puVar30 = 0;
@@ -795,7 +795,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(undefined4 *)(&stack0xfffffff8 + iVar1) = 0;
   *(undefined2 *)(*(int *)(&stack0xffffffe0 + _DAT_08001dcc + iVar1) + 4) = 0;
   piVar6 = *(int **)(param_1 + _DAT_08001e44);
-  func_0x080d3918(&stack0x00000000 + iVar1,piVar6,
+  _call_via_r3(&stack0x00000000 + iVar1,piVar6,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_08001dd8 + iVar1) +
                    (uint)*(ushort *)((undefined4 *)(param_1 + _DAT_08001e44) + 3) * 4),
@@ -832,7 +832,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(undefined4 *)(param_1 + _DAT_08001e58) = _DAT_08001e5c;
   puVar4 = (undefined4 *)(param_1 + iVar12 + -0xa0);
   piVar6 = (int *)*puVar4;
-  func_0x080d3918(puVar16,piVar6,
+  _call_via_r3(puVar16,piVar6,
                   *(undefined2 *)
                    (**(int **)(&stack0x00001000 + iVar1) + (uint)*(ushort *)(puVar4 + 3) * 4),
                   *(undefined4 *)(*piVar6 + 0x10));
@@ -859,7 +859,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(undefined4 *)(param_1 + _DAT_08001e64) = 0x580000;
   puVar4 = (undefined4 *)(param_1 + _DAT_08001e68);
   Animal_Routine_0805E860(puVar4,0x160);
-  func_0x080d3918(puVar16,(int *)*puVar4,
+  _call_via_r3(puVar16,(int *)*puVar4,
                   *(undefined2 *)
                    (**(int **)(&stack0x00000fe0 + iVar1) + (uint)*(ushort *)(puVar4 + 3) * 4),
                   *(undefined4 *)(*(int *)*puVar4 + 0x10));
@@ -888,7 +888,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(undefined4 *)(param_1 + _DAT_08001e74) = 0x940000;
   puVar4 = (undefined4 *)(param_1 + _DAT_08001e78);
   Animal_Routine_0805E860(puVar4,_DAT_08001e7c);
-  func_0x080d3918(puVar16,(int *)*puVar4,
+  _call_via_r3(puVar16,(int *)*puVar4,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_08001de8 + iVar1) +
                    (uint)*(ushort *)(puVar4 + 3) * 4),*(undefined4 *)(*(int *)*puVar4 + 0x10));
@@ -916,7 +916,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(undefined4 *)(param_1 + _DAT_08002260) = 0x1080000;
   *(undefined4 *)(param_1 + _DAT_08002264) = 0x940000;
   piVar6 = *(int **)(param_1 + _DAT_08002268);
-  func_0x080d3918(puVar16,piVar6,
+  _call_via_r3(puVar16,piVar6,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_0800226c + iVar1) +
                    (uint)*(ushort *)((undefined4 *)(param_1 + _DAT_08002268) + 3) * 4),
@@ -946,7 +946,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(undefined4 *)(param_1 + _DAT_08002278) = 0x540000;
   Animal_Routine_0805E860((undefined4 *)(param_1 + 0x6b00),_DAT_0800227c);
   piVar6 = *(int **)(param_1 + 0x6b00);
-  func_0x080d3918(puVar16,piVar6,
+  _call_via_r3(puVar16,piVar6,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_08002280 + iVar1) +
                    (uint)*(ushort *)(param_1 + 0x6b0c) * 4),*(undefined4 *)(*piVar6 + 0x10));
@@ -975,7 +975,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(undefined4 *)(param_1 + _DAT_0800228c) = 0x940000;
   puVar4 = (undefined4 *)(param_1 + _DAT_08002290);
   Animal_Routine_0805E860(puVar4,_DAT_08002294);
-  func_0x080d3918(puVar16,(int *)*puVar4,
+  _call_via_r3(puVar16,(int *)*puVar4,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_08002298 + iVar1) +
                    (uint)*(ushort *)(puVar4 + 3) * 4),*(undefined4 *)(*(int *)*puVar4 + 0x10));
@@ -998,7 +998,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   puVar4 = (undefined4 *)(param_1 + _DAT_080022a8);
   Animal_Routine_0805E860(puVar4,0x730);
   Animal_Routine_0805E860(param_1 + _DAT_080022ac,0x730);
-  func_0x080d3918(puVar16,(int *)*puVar4,
+  _call_via_r3(puVar16,(int *)*puVar4,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_080022b0 + iVar1) +
                    (uint)*(ushort *)(puVar4 + 3) * 4),*(undefined4 *)(*(int *)*puVar4 + 0x10));
@@ -1031,7 +1031,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   puVar4 = (undefined4 *)(param_1 + 0x6b80);
   Animal_Routine_0805E860(puVar4,_DAT_080022c4);
   piVar6 = *(int **)(&stack0xffffffe0 + _DAT_080022c8 + iVar1);
-  func_0x080d3918(puVar16,(int *)*puVar4,
+  _call_via_r3(puVar16,(int *)*puVar4,
                   *(undefined2 *)(*piVar6 + (uint)*(ushort *)(param_1 + 0x6b8c) * 4),
                   *(undefined4 *)(*(int *)*puVar4 + 0x10));
   gba_memcpy(puVar16,puVar16,0x20);
@@ -1063,7 +1063,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   }
   HW_Routine_08008E64(uVar11,iVar12 * 0x20 + _DAT_080022d4,uVar8);
   Animal_Routine_0805E860(puVar4,_DAT_080022d8);
-  func_0x080d3918(puVar16,(int *)*puVar4,
+  _call_via_r3(puVar16,(int *)*puVar4,
                   *(undefined2 *)(*piVar6 + (uint)*(ushort *)(param_1 + 0x6b8c) * 4),
                   *(undefined4 *)(*(int *)*puVar4 + 0x10));
   gba_memcpy(puVar16,puVar16,0x20);
@@ -1088,7 +1088,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   }
   HW_Routine_08008E64(uVar11,iVar12 * 0x20 + _DAT_080022d4,uVar8);
   Animal_Routine_0805E860(puVar4,_DAT_080022e0);
-  func_0x080d3918(puVar16,(int *)*puVar4,
+  _call_via_r3(puVar16,(int *)*puVar4,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_080022c8 + iVar1) +
                    (uint)*(ushort *)(param_1 + 0x6b8c) * 4),*(undefined4 *)(*(int *)*puVar4 + 0x10))
@@ -1116,7 +1116,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   HW_Routine_08008E64(uVar11,iVar12 * 0x20 + _DAT_080022d4,uVar8);
   puVar4 = (undefined4 *)(param_1 + _DAT_080022e8);
   Animal_Routine_0805E860(puVar4,1);
-  func_0x080d3918(puVar16,(int *)*puVar4,
+  _call_via_r3(puVar16,(int *)*puVar4,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_080022ec + iVar1) +
                    (uint)*(ushort *)(puVar4 + 3) * 4),*(undefined4 *)(*(int *)*puVar4 + 0x10));
@@ -1151,7 +1151,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   *(undefined4 *)(param_1 + _DAT_080024a0) = 0x700000;
   Animal_Routine_0805E860((undefined4 *)(param_1 + 0x6c00),4);
   piVar6 = *(int **)(param_1 + 0x6c00);
-  func_0x080d3918(puVar16,piVar6,
+  _call_via_r3(puVar16,piVar6,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_080024a4 + iVar1) +
                    (uint)*(ushort *)(param_1 + 0x6c0c) * 4),*(undefined4 *)(*piVar6 + 0x10));
@@ -1178,7 +1178,7 @@ undefined4 Scene_Routine_080019D8(int param_1)
   HW_Routine_08008E64(uVar11,iVar12 * 0x20 + _DAT_0800249c,uVar8);
   *(undefined4 *)(param_1 + _DAT_080024ac) = 0x700000;
   piVar6 = *(int **)(param_1 + _DAT_080024b0);
-  func_0x080d3918(puVar16,piVar6,
+  _call_via_r3(puVar16,piVar6,
                   *(undefined2 *)
                    (**(int **)(&stack0xffffffe0 + _DAT_080024b4 + iVar1) +
                    (uint)*(ushort *)((undefined4 *)(param_1 + _DAT_080024b0) + 3) * 4),
@@ -1349,7 +1349,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   pcVar7 = (char *)(_DAT_0800290c + param_1);
   if (*pcVar7 != '\0') {
     puVar6 = (undefined4 *)(param_1 + _DAT_08002910);
-    func_0x080d3918(&iStack_88,(int *)*puVar6,
+    _call_via_r3(&iStack_88,(int *)*puVar6,
                     *(undefined2 *)
                      (*(int *)(param_1 + _DAT_08002914) + (uint)*(ushort *)(puVar6 + 3) * 4),
                     *(undefined4 *)(*(int *)*puVar6 + 0x10));
@@ -1368,7 +1368,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     uStack_be = HW_Routine_08007D4C(param_1 + _DAT_08002918,*(undefined4 *)(param_1 + _DAT_08002918 + 4));
     uStack_c0 = HW_Routine_080074C0(param_1 + _DAT_0800291c,*(undefined4 *)(param_1 + _DAT_0800291c + 4));
     uStack_ac = 1;
-    uVar1 = func_0x08008920(param_1);
+    uVar1 = HW_GetSpriteAttr2Offset(param_1);
     uVar4 = 0;
     if (iStack_a8 != 0) {
       uVar4 = uStack_a4 & 0xffff;
@@ -1378,7 +1378,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     puVar9 = (undefined4 *)(param_1 + _DAT_08002924);
     uVar1 = Animal_Routine_0805E8F0(puVar9);
     *puVar6 = uVar1;
-    func_0x080d3918(&iStack_88,(int *)*puVar9,
+    _call_via_r3(&iStack_88,(int *)*puVar9,
                     *(undefined2 *)
                      (*(int *)(param_1 + _DAT_08002928) + (uint)*(ushort *)(puVar9 + 3) * 4),
                     *(undefined4 *)(*(int *)*puVar9 + 0x10));
@@ -1395,7 +1395,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     sStack_c2 = *(undefined2 *)((int)puVar9 + 0x1e);
     uStack_be = HW_Routine_08007D4C(param_1 + _DAT_0800292c,*(undefined4 *)(param_1 + _DAT_0800292c + 4));
     uStack_c0 = HW_Routine_080074C0(param_1 + 0x6d00,*(undefined4 *)(param_1 + 0x6d04));
-    uVar1 = func_0x08008920(param_1);
+    uVar1 = HW_GetSpriteAttr2Offset(param_1);
     uVar4 = 0;
     if (iStack_a8 != 0) {
       uVar4 = uStack_a4 & 0xffff;
@@ -1406,7 +1406,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       uVar1 = Animal_Routine_0805E8F0((undefined4 *)(param_1 + 0x6c00));
       *puVar6 = uVar1;
       piVar2 = *(int **)(param_1 + 0x6c00);
-      func_0x080d3918(&iStack_88,piVar2,
+      _call_via_r3(&iStack_88,piVar2,
                       *(undefined2 *)
                        (*(int *)(param_1 + _DAT_08002934) + (uint)*(ushort *)(param_1 + 0x6c0c) * 4)
                       ,*(undefined4 *)(*piVar2 + 0x10));
@@ -1424,7 +1424,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       uStack_be = HW_Routine_08007D4C(param_1 + _DAT_08002938,*(undefined4 *)(param_1 + _DAT_08002938 + 4)
                                );
       uStack_c0 = HW_Routine_080074C0(param_1 + 0x6d00,*(undefined4 *)(param_1 + 0x6d04));
-      uVar1 = func_0x08008920(param_1);
+      uVar1 = HW_GetSpriteAttr2Offset(param_1);
       uVar4 = 0;
       if (iStack_a8 != 0) {
         uVar4 = uStack_a4 & 0xffff;
@@ -1433,7 +1433,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     }
     puVar6 = (undefined4 *)(param_1 + _DAT_0800293c);
     Animal_Routine_0805E8F0(puVar6);
-    func_0x080d3918(&iStack_88,(int *)*puVar6,
+    _call_via_r3(&iStack_88,(int *)*puVar6,
                     *(undefined2 *)
                      (*(int *)(param_1 + _DAT_08002940) + (uint)*(ushort *)(puVar6 + 3) * 4),
                     *(undefined4 *)(*(int *)*puVar6 + 0x10));
@@ -1450,7 +1450,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     sStack_c2 = *(undefined2 *)((int)puVar6 + 0x1e);
     uStack_be = HW_Routine_08007D4C(param_1 + _DAT_08002944,*(undefined4 *)(param_1 + _DAT_08002944 + 4));
     uStack_c0 = HW_Routine_080074C0(param_1 + _DAT_08002948,*(undefined4 *)(param_1 + _DAT_08002948 + 4));
-    uVar1 = func_0x08008920(param_1);
+    uVar1 = HW_GetSpriteAttr2Offset(param_1);
     uVar4 = 0;
     if (iStack_a8 != 0) {
       uVar4 = uStack_a4 & 0xffff;
@@ -1458,7 +1458,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     Animal_Routine_0805E99C(uVar1,iStack_a8,uVar4,&sStack_c4);
   }
   puVar6 = (undefined4 *)(param_1 + _DAT_0800294c);
-  func_0x080d3918(&iStack_88,(int *)*puVar6,
+  _call_via_r3(&iStack_88,(int *)*puVar6,
                   *(undefined2 *)
                    (*(int *)(param_1 + _DAT_08002950) + (uint)*(ushort *)(puVar6 + 3) * 4),
                   *(undefined4 *)(*(int *)*puVar6 + 0x10));
@@ -1477,21 +1477,21 @@ undefined4 Scene_Routine_080024E0(int param_1)
   uStack_be = 0;
   uStack_c0 = 0;
   uStack_ac = 1;
-  uVar1 = func_0x08008920(param_1);
+  uVar1 = HW_GetSpriteAttr2Offset(param_1);
   uVar4 = 0;
   if (iStack_a8 != 0) {
     uVar4 = uStack_a4 & 0xffff;
   }
   Animal_Routine_0805E99C(uVar1,iStack_a8,uVar4,&sStack_c4);
   if (9 < *(short *)(param_1 + _DAT_08002954)) {
-    iVar8 = func_0x08008920(param_1);
+    iVar8 = HW_GetSpriteAttr2Offset(param_1);
     psVar10 = (short *)(param_1 + _DAT_08002958);
     *(short *)(iVar8 + 10) = *psVar10;
     *(short *)(iVar8 + 0x12) = psVar10[1];
     *(short *)(iVar8 + 0x1a) = psVar10[2];
     *(short *)(iVar8 + 0x22) = psVar10[3];
     puVar6 = (undefined4 *)(_DAT_0800295c + param_1);
-    func_0x080d3918(&iStack_88,(int *)*puVar6,
+    _call_via_r3(&iStack_88,(int *)*puVar6,
                     *(undefined2 *)
                      (*(int *)(param_1 + _DAT_08002960) + (uint)*(ushort *)(puVar6 + 3) * 4),
                     *(undefined4 *)(*(int *)*puVar6 + 0x10));
@@ -1519,7 +1519,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     uStack_ac = 1;
   }
   puVar6 = (undefined4 *)(param_1 + _DAT_08002a68);
-  func_0x080d3918(&iStack_88,(int *)*puVar6,
+  _call_via_r3(&iStack_88,(int *)*puVar6,
                   *(undefined2 *)
                    (*(int *)(param_1 + _DAT_08002a6c) + (uint)*(ushort *)(puVar6 + 3) * 4),
                   *(undefined4 *)(*(int *)*puVar6 + 0x10));
@@ -1545,7 +1545,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   piStack_30 = (int *)(param_1 + _DAT_08002a80);
   piStack_2c = (int *)(param_1 + _DAT_08002a84);
   if ((int)((uint)*(byte *)(param_1 + _DAT_08002a74) * 0x40000000) < 0) {
-    piVar2 = (int *)func_0x08008910(param_1);
+    piVar2 = (int *)HW_GetSpriteAttr0Offset(param_1);
     iVar11 = iStack_a0;
     iVar8 = HW_Routine_08007D4C(iVar8,*(undefined4 *)(iVar8 + 4));
     uVar4 = 0;
@@ -1568,7 +1568,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       }
       else {
         iVar8 = (iStack_68 + *piVar2) * 0x10;
-        piStack_24 = (int *)malloc_gba(iVar8);
+        piStack_24 = (int *)runtime_malloc_aligned(iVar8);
         if (piStack_24 == (int *)0x0) {
           piStack_24 = (int *)VTable_Routine_080D3BC0(iVar8);
         }
@@ -1629,7 +1629,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       piStack_28[1] = piStack_28[1] + 0x10;
     }
   }
-  uVar1 = func_0x08008920(param_1);
+  uVar1 = HW_GetSpriteAttr2Offset(param_1);
   uVar4 = 0;
   if (iStack_a8 != 0) {
     uVar4 = uStack_a4 & 0xffff;
@@ -1637,7 +1637,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   Animal_Routine_0805E99C(uVar1,iStack_a8,uVar4,&sStack_c4);
   Scene_Routine_080035C0(param_1,(int)sStack_c4,(int)sStack_c2,1);
   puVar6 = (undefined4 *)(param_1 + _DAT_08002c88);
-  func_0x080d3918(&iStack_88,(int *)*puVar6,
+  _call_via_r3(&iStack_88,(int *)*puVar6,
                   *(undefined2 *)(*piStack_38 + (uint)*(ushort *)(puVar6 + 3) * 4),
                   *(undefined4 *)(*(int *)*puVar6 + 0x10));
   gba_memcpy(&iStack_88,&iStack_88,0x20);
@@ -1657,7 +1657,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   uStack_c0 = HW_Routine_080074C0(param_1 + _DAT_08002c90,*(undefined4 *)(param_1 + _DAT_08002c90 + 4));
   uStack_ac = 1;
   if ((int)((uint)*(byte *)(param_1 + _DAT_08002c94) * 0x40000000) < 0) {
-    piVar2 = (int *)func_0x08008910(param_1);
+    piVar2 = (int *)HW_GetSpriteAttr0Offset(param_1);
     iVar11 = iStack_a0;
     iVar8 = HW_Routine_08007D4C(iVar8,*(undefined4 *)(iVar8 + 4));
     uVar4 = 0;
@@ -1680,7 +1680,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       }
       else {
         iVar8 = (iStack_60 + *piVar2) * 0x10;
-        piVar2 = (int *)malloc_gba(iVar8);
+        piVar2 = (int *)runtime_malloc_aligned(iVar8);
         if (piVar2 == (int *)0x0) {
           piVar2 = (int *)VTable_Routine_080D3BC0(iVar8);
         }
@@ -1738,7 +1738,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       piStack_28[1] = piStack_28[1] + 0x10;
     }
   }
-  uVar1 = func_0x08008920(param_1);
+  uVar1 = HW_GetSpriteAttr2Offset(param_1);
   uVar4 = 0;
   if (iStack_a8 != 0) {
     uVar4 = uStack_a4 & 0xffff;
@@ -1747,7 +1747,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   Scene_Routine_080035C0(param_1,(int)sStack_c4,(int)sStack_c2,0);
   if (*(char *)(param_1 + _DAT_08002e80) != '\0') {
     puVar6 = (undefined4 *)(param_1 + _DAT_08002e84);
-    func_0x080d3918(&iStack_88,(int *)*puVar6,
+    _call_via_r3(&iStack_88,(int *)*puVar6,
                     *(undefined2 *)
                      (*(int *)(param_1 + _DAT_08002e88) + (uint)*(ushort *)(puVar6 + 3) * 4),
                     *(undefined4 *)(*(int *)*puVar6 + 0x10));
@@ -1768,7 +1768,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     uStack_c0 = HW_Routine_080074C0(param_1 + _DAT_08002e90,*(undefined4 *)(param_1 + _DAT_08002e90 + 4));
     uStack_ac = 1;
     if ((int)((uint)*(byte *)(param_1 + _DAT_08002e94) * 0x40000000) < 0) {
-      piVar2 = (int *)func_0x08008910(param_1);
+      piVar2 = (int *)HW_GetSpriteAttr0Offset(param_1);
       iVar11 = iStack_a0;
       iVar8 = HW_Routine_08007D4C(iVar8,*(undefined4 *)(iVar8 + 4));
       uVar4 = 0;
@@ -1791,7 +1791,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
         }
         else {
           iVar8 = (iStack_58 + *piVar2) * 0x10;
-          piVar2 = (int *)malloc_gba(iVar8);
+          piVar2 = (int *)runtime_malloc_aligned(iVar8);
           if (piVar2 == (int *)0x0) {
             piVar2 = (int *)VTable_Routine_080D3BC0(iVar8);
           }
@@ -1849,7 +1849,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
         piStack_28[1] = piStack_28[1] + 0x10;
       }
     }
-    uVar1 = func_0x08008920(param_1);
+    uVar1 = HW_GetSpriteAttr2Offset(param_1);
     uVar4 = 0;
     if (iStack_a8 != 0) {
       uVar4 = uStack_a4 & 0xffff;
@@ -1860,7 +1860,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     }
     sStack_c4 = *(short *)(param_1 + _DAT_080030c0 + 0x1a);
     sStack_c2 = *(short *)(param_1 + _DAT_080030c0 + 0x1e);
-    uVar1 = func_0x08008920(param_1);
+    uVar1 = HW_GetSpriteAttr2Offset(param_1);
     uVar4 = 0;
     if (iStack_a8 != 0) {
       uVar4 = uStack_a4 & 0xffff;
@@ -1871,7 +1871,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
     }
   }
   puVar6 = (undefined4 *)(param_1 + _DAT_080030c4);
-  func_0x080d3918(&iStack_88,(int *)*puVar6,
+  _call_via_r3(&iStack_88,(int *)*puVar6,
                   *(undefined2 *)(*piStack_34 + (uint)*(ushort *)(puVar6 + 3) * 4),
                   *(undefined4 *)(*(int *)*puVar6 + 0x10));
   gba_memcpy(&iStack_88,&iStack_88,0x20);
@@ -1891,7 +1891,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   uStack_c0 = HW_Routine_080074C0(param_1 + _DAT_080030d0,*(undefined4 *)(param_1 + _DAT_080030d0 + 4));
   uStack_ac = 1;
   if ((int)((uint)*(byte *)(param_1 + _DAT_080030d4) * 0x40000000) < 0) {
-    piVar2 = (int *)func_0x08008910(param_1);
+    piVar2 = (int *)HW_GetSpriteAttr0Offset(param_1);
     iVar11 = iStack_a0;
     iVar8 = HW_Routine_08007D4C(iVar8,*(undefined4 *)(iVar8 + 4));
     uVar4 = 0;
@@ -1914,7 +1914,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       }
       else {
         iVar8 = (iStack_50 + *piVar2) * 0x10;
-        piVar2 = (int *)malloc_gba(iVar8);
+        piVar2 = (int *)runtime_malloc_aligned(iVar8);
         if (piVar2 == (int *)0x0) {
           piVar2 = (int *)VTable_Routine_080D3BC0(iVar8);
         }
@@ -1972,14 +1972,14 @@ undefined4 Scene_Routine_080024E0(int param_1)
       piStack_28[1] = piStack_28[1] + 0x10;
     }
   }
-  uVar1 = func_0x08008920(param_1);
+  uVar1 = HW_GetSpriteAttr2Offset(param_1);
   uVar4 = 0;
   if (iStack_a8 != 0) {
     uVar4 = uStack_a4 & 0xffff;
   }
   Animal_Routine_0805E99C(uVar1,iStack_a8,uVar4,&sStack_c4);
   Scene_Routine_080035C0(param_1,(int)sStack_c4,(int)sStack_c2,2);
-  func_0x080d3918(&iStack_88,*(int **)(param_1 + 0x6b00),
+  _call_via_r3(&iStack_88,*(int **)(param_1 + 0x6b00),
                   *(undefined2 *)(*piStack_30 + (uint)*(ushort *)(param_1 + 0x6b0c) * 4),
                   *(undefined4 *)(**(int **)(param_1 + 0x6b00) + 0x10));
   gba_memcpy(&iStack_88,&iStack_88,0x20);
@@ -1999,7 +1999,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   uStack_c0 = HW_Routine_080074C0(param_1 + _DAT_080032b8,*(undefined4 *)(param_1 + _DAT_080032b8 + 4));
   uStack_ac = 1;
   if ((int)((uint)*(byte *)(param_1 + _DAT_080032bc) * 0x40000000) < 0) {
-    piVar2 = (int *)func_0x08008910(param_1);
+    piVar2 = (int *)HW_GetSpriteAttr0Offset(param_1);
     iVar11 = iStack_a0;
     iVar8 = HW_Routine_08007D4C(iVar8,*(undefined4 *)(iVar8 + 4));
     uVar4 = 0;
@@ -2022,7 +2022,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       }
       else {
         iVar8 = (iStack_48 + *piVar2) * 0x10;
-        piVar2 = (int *)malloc_gba(iVar8);
+        piVar2 = (int *)runtime_malloc_aligned(iVar8);
         if (piVar2 == (int *)0x0) {
           piVar2 = (int *)VTable_Routine_080D3BC0(iVar8);
         }
@@ -2080,7 +2080,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       piStack_28[1] = piStack_28[1] + 0x10;
     }
   }
-  uVar1 = func_0x08008920(param_1);
+  uVar1 = HW_GetSpriteAttr2Offset(param_1);
   uVar4 = 0;
   if (iStack_a8 != 0) {
     uVar4 = uStack_a4 & 0xffff;
@@ -2088,7 +2088,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   Animal_Routine_0805E99C(uVar1,iStack_a8,uVar4,&sStack_c4);
   Scene_Routine_080035C0(param_1,(int)sStack_c4,(int)sStack_c2,2);
   puVar6 = (undefined4 *)(param_1 + _DAT_08003498);
-  func_0x080d3918(&iStack_88,(int *)*puVar6,
+  _call_via_r3(&iStack_88,(int *)*puVar6,
                   *(undefined2 *)(*piStack_2c + (uint)*(ushort *)(puVar6 + 3) * 4),
                   *(undefined4 *)(*(int *)*puVar6 + 0x10));
   gba_memcpy(&iStack_88,&iStack_88,0x20);
@@ -2108,7 +2108,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
   uStack_c0 = HW_Routine_080074C0(param_1 + _DAT_080034a0,*(undefined4 *)(param_1 + _DAT_080034a0 + 4));
   uStack_ac = 1;
   if ((int)((uint)*(byte *)(param_1 + _DAT_080034a4) * 0x40000000) < 0) {
-    piVar2 = (int *)func_0x08008910(param_1);
+    piVar2 = (int *)HW_GetSpriteAttr0Offset(param_1);
     iVar11 = iStack_a0;
     iVar8 = HW_Routine_08007D4C(iVar8,*(undefined4 *)(iVar8 + 4));
     uVar4 = 0;
@@ -2131,7 +2131,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       }
       else {
         iVar8 = (iStack_40 + *piVar2) * 0x10;
-        piVar2 = (int *)malloc_gba(iVar8);
+        piVar2 = (int *)runtime_malloc_aligned(iVar8);
         if (piVar2 == (int *)0x0) {
           piVar2 = (int *)VTable_Routine_080D3BC0(iVar8);
         }
@@ -2189,7 +2189,7 @@ undefined4 Scene_Routine_080024E0(int param_1)
       piStack_28[1] = piStack_28[1] + 0x10;
     }
   }
-  uVar1 = func_0x08008920(param_1);
+  uVar1 = HW_GetSpriteAttr2Offset(param_1);
   uVar4 = 0;
   if (iStack_a8 != 0) {
     uVar4 = uStack_a4 & 0xffff;
@@ -2270,7 +2270,7 @@ undefined4 Scene_Routine_080035C0(int param_1,undefined2 param_2,undefined2 para
   }
   uStack_6e = HW_Routine_08007D4C(param_1 + iVar1,*(undefined4 *)(param_1 + iVar1 + 4));
 LAB_08003666:
-  func_0x080d3918(&iStack_38,*(int **)(param_1 + 0x6b80),
+  _call_via_r3(&iStack_38,*(int **)(param_1 + 0x6b80),
                   *(undefined2 *)
                    (*(int *)(param_1 + _DAT_080036f0) + (uint)*(ushort *)(param_1 + 0x6b8c) * 4),
                   *(undefined4 *)(**(int **)(param_1 + 0x6b80) + 0x10));
@@ -2288,7 +2288,7 @@ LAB_08003666:
   uStack_72 = param_3;
   uStack_70 = HW_Routine_080074C0(param_1 + _DAT_080036f4,*(undefined4 *)(param_1 + _DAT_080036f4 + 4));
   uStack_5c = 1;
-  uVar2 = func_0x08008920(param_1);
+  uVar2 = HW_GetSpriteAttr2Offset(param_1);
   uVar3 = 0;
   if (iStack_58 != 0) {
     uVar3 = uStack_54 & 0xffff;
@@ -2325,7 +2325,7 @@ undefined4 Scene_Routine_0800371C(undefined4 *param_1,undefined4 param_2)
   *param_1 = _DAT_08003748;
   iVar1 = param_1[1];
   if (iVar1 != 0) {
-    func_0x080d3914(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
+    _call_via_r2(iVar1,3,*(undefined4 *)(*(int *)(iVar1 + 4) + 8));
   }
   SramProxy_VerifyBufferParity(param_1,param_2);
   return in_lr;
@@ -2357,16 +2357,16 @@ undefined4 Scene_Routine_08003B40(undefined4 param_1)
   uint auStack_1c [3];
   undefined1 auStack_10 [4];
   
-  iVar1 = func_0x08008918();
+  iVar1 = HW_GetSpriteAttr1Offset();
   *(undefined2 *)(iVar1 + 0x50) = 0x3f;
-  uVar2 = func_0x08008918(param_1);
+  uVar2 = HW_GetSpriteAttr1Offset(param_1);
   auStack_1c[0] = 0;
   auStack_1c[1] = 0;
   auStack_1c[2] = _DAT_08003b8c;
   Farm_Routine_08009300(auStack_10,uVar2);
   Farm_Routine_0800934C(auStack_10,_DAT_08003b90,1,1);
-  iVar1 = func_0x08008940(param_1);
-  func_0x080d3914(iVar1,auStack_1c,*(undefined4 *)(*(int *)(iVar1 + 8) + 0x10));
+  iVar1 = HW_GetPaletteBankOffset(param_1);
+  _call_via_r2(iVar1,auStack_1c,*(undefined4 *)(*(int *)(iVar1 + 8) + 0x10));
   while ((int)(-auStack_1c[0] | auStack_1c[0]) < 0) {
     HW_Routine_080087C8(param_1);
   }
@@ -2386,16 +2386,16 @@ undefined4 Scene_Routine_08003BB4(undefined4 param_1)
   uint auStack_1c [3];
   undefined1 auStack_10 [4];
   
-  iVar1 = func_0x08008918();
+  iVar1 = HW_GetSpriteAttr1Offset();
   *(undefined2 *)(iVar1 + 0x50) = 0x3f;
-  uVar2 = func_0x08008918(param_1);
+  uVar2 = HW_GetSpriteAttr1Offset(param_1);
   auStack_1c[0] = 0;
   auStack_1c[1] = 0;
   auStack_1c[2] = _DAT_08003c00;
   Farm_Routine_08009300(auStack_10,uVar2);
   Farm_Routine_08009378(auStack_10,_DAT_08003c04,1,1);
-  iVar1 = func_0x08008940(param_1);
-  func_0x080d3914(iVar1,auStack_1c,*(undefined4 *)(*(int *)(iVar1 + 8) + 0x10));
+  iVar1 = HW_GetPaletteBankOffset(param_1);
+  _call_via_r2(iVar1,auStack_1c,*(undefined4 *)(*(int *)(iVar1 + 8) + 0x10));
   while ((int)(-auStack_1c[0] | auStack_1c[0]) < 0) {
     HW_Routine_080087C8(param_1);
   }
@@ -2416,10 +2416,10 @@ undefined4 Scene_Routine_08003C28(int param_1)
   undefined4 uVar5;
   undefined4 in_lr;
   
-  uVar1 = func_0x080088dc();
-  uVar2 = func_0x08008920(param_1);
-  uVar3 = func_0x08008918(param_1);
-  uVar4 = func_0x08008940(param_1);
+  uVar1 = HW_Routine_080088DC();
+  uVar2 = HW_GetSpriteAttr2Offset(param_1);
+  uVar3 = HW_GetSpriteAttr1Offset(param_1);
+  uVar4 = HW_GetPaletteBankOffset(param_1);
   uVar5 = HW_Routine_0800894C(param_1);
   Animal_Routine_08050D3C(param_1 + 0x10,uVar1,uVar2,uVar3,uVar4,uVar5,param_1 + 0x14);
   return in_lr;
@@ -2540,7 +2540,7 @@ undefined4 Scene_Routine_08003DF0(int param_1,uint param_2,uint param_3,undefine
   if ((param_2 == 1) && (*(int *)(param_1 + 0x80) != 1)) {
     uStack_14 = _DAT_08003e84 & uStack_14 | 0x200;
   }
-  iVar1 = func_0x08008920(param_1);
+  iVar1 = HW_GetSpriteAttr2Offset(param_1);
   puVar2 = (uint *)(iVar1 + (param_2 & 0x7f) * 8 + 4);
   *puVar2 = uStack_14;
   *(undefined2 *)(puVar2 + 1) = param_4;
@@ -2564,7 +2564,7 @@ undefined4 Scene_Routine_08003E88(undefined4 param_1,int param_2,uint param_3,un
   uVar3 = ((param_3 & _DAT_08003ee0 & 0x1ffffff) >> 0x10) + 0x10 & _DAT_08003ee4;
   uVar1 = _DAT_08003ee8 &
           (param_3 & _DAT_08003ee0 | (param_3 & 0xff) + 8 + (param_2 * 2 + 1) * 8 & 0xff);
-  iVar2 = func_0x08008920(param_1);
+  iVar2 = HW_GetSpriteAttr2Offset(param_1);
   *(uint *)(iVar2 + 0x34) = uVar1 | uVar3 << 0x10;
   *(undefined2 *)(iVar2 + 0x38) = param_4;
   return in_lr;
@@ -2593,7 +2593,7 @@ undefined8 Scene_Routine_08003F9C(int param_1)
   if (*(int *)(param_1 + 8) != 0) {
     uVar2 = (uint)*(byte *)(param_1 + 0x85);
     iVar5 = param_1 + 0x90;
-    uStack_34 = func_0x080003dc(iVar5,uVar2);
+    uStack_34 = SramProxy_GetSaveSlotOffset(iVar5,uVar2);
     iVar6 = 3;
     iStack_28 = param_1 + 0x10;
     puStack_2c = (undefined4 *)(param_1 + 0x8c);

@@ -16,7 +16,7 @@ void GBA_Header_Boot(void)
 {
   uint uVar1;
   int *piVar2;
-  code *UNRECOVERED_JUMPTABLE;
+  code *init_func;
   bool bVar3;
   
   software_interrupt(0x10000);
@@ -31,8 +31,8 @@ void GBA_Header_Boot(void)
   bVar3 = *piRam08000174 == 0;
   while( true ) {
     if (!bVar3) {
-      UNRECOVERED_JUMPTABLE = (code *)*piVar2;
-      bVar3 = UNRECOVERED_JUMPTABLE == (code *)0x0;
+      init_func = (code *)*piVar2;
+      bVar3 = init_func == (code *)0x0;
       piVar2 = piVar2 + 1;
     }
     if (!bVar3) break;
@@ -41,7 +41,7 @@ void GBA_Header_Boot(void)
       return;
     }
   }
-  (*UNRECOVERED_JUMPTABLE)();
+  (*init_func)();
   return;
 }
 
@@ -55,7 +55,7 @@ void crt0_entry(void)
 {
   uint uVar1;
   int *piVar2;
-  code *UNRECOVERED_JUMPTABLE;
+  code *init_func;
   bool bVar3;
   
   software_interrupt(0x10000);
@@ -70,8 +70,8 @@ void crt0_entry(void)
   bVar3 = *piRam08000174 == 0;
   while( true ) {
     if (!bVar3) {
-      UNRECOVERED_JUMPTABLE = (code *)*piVar2;
-      bVar3 = UNRECOVERED_JUMPTABLE == (code *)0x0;
+      init_func = (code *)*piVar2;
+      bVar3 = init_func == (code *)0x0;
       piVar2 = piVar2 + 1;
     }
     if (!bVar3) break;
@@ -80,7 +80,7 @@ void crt0_entry(void)
       return;
     }
   }
-  (*UNRECOVERED_JUMPTABLE)();
+  (*init_func)();
   return;
 }
 
@@ -113,7 +113,7 @@ void MainLoop_Callback(void)
   iVar3 = _DAT_080002dc;
   *(ushort *)(_DAT_080002dc + 10) = uVar1 & *(ushort *)(_DAT_080002dc + 10);
   *(ushort *)(iVar3 + 10) = uVar2 & *(ushort *)(iVar3 + 10);
-  func_0x080d375c(0xff);
+  Interrupt_DisableMaster(0xff);
   do {
   } while( true );
 }

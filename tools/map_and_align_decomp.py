@@ -376,7 +376,46 @@ CURATED_SYMBOLS = {
     0x0875BEC0: 'ramfunc_MasterIRQ_ROM',
     0x0875BF84: 'ramfunc_UpdateIRQ_ROM',
     0x0875C170: 'ramfunc_8_ROM',
-    0x0875C194: 'ramfunc_9_ROM'
+    0x0875C194: 'ramfunc_9_ROM',
+
+    # Runtime, Math & GCC Interworking Trampolines
+    0x080D0EC8: 'math_udivsi3',
+    0x080D0EDA: 'math_divsi3',
+    0x080D0ED0: 'math_umodsi3',
+    0x080D0F4E: 'math_modsi3',
+    0x080D11E4: 'math_rand',
+    0x080D11F8: 'math_srand',
+    0x080D01F8: 'runtime_malloc_aligned',
+    0x080D0280: 'runtime_free',
+    0x080D375C: 'Interrupt_DisableMaster',
+    0x080D3910: '_call_via_r1',
+    0x080D3914: '_call_via_r2',
+    0x080D3918: '_call_via_r3',
+    0x080D391C: '_call_via_r4',
+    0x080D3920: '_call_via_r5',
+    0x080D3924: '_call_via_r6',
+    0x080D3928: '_call_via_r7',
+    0x080D392C: '_call_via_r8',
+    0x080D3930: '_call_via_r9',
+    0x080D3934: '_call_via_sl',
+    0x080D3938: '_call_via_fp',
+    0x080D393C: '_call_via_ip',
+    0x080D3940: '_call_via_sp',
+
+    # Fundamental Item & Hardware Primitives
+    0x08008910: 'HW_GetSpriteAttr0Offset',
+    0x08008918: 'HW_GetSpriteAttr1Offset',
+    0x08008920: 'HW_GetSpriteAttr2Offset',
+    0x08008940: 'HW_GetPaletteBankOffset',
+    0x0804DA28: 'ScriptEngine_SetFlagBit',
+    0x0800CE9C: 'Item_HasStarQuality',
+    0x0800D0C0: 'Tool_CalculateStaminaCost',
+    0x0800DA08: 'Item_IsValid',
+    0x0800DB2C: 'Item_SetId',
+    0x0800DB30: 'Item_GetId',
+    0x0800DCA8: 'Item_SetIdAndClearQuality',
+    0x0800DF50: 'Item_SetQuality',
+    0x0800DF54: 'Item_GetQuality'
 }
 
 PREFIX_MAP = {
@@ -470,7 +509,7 @@ def build_master_map():
                         'file': rel
                     }
 
-    # 2. Scan for any external call targets (e.g. func_08XXXXXX called but defined elsewhere or in ASM)
+    # 2. Scan for any external call targets (e.g. func_08XXXXXX, func_0x08XXXXXX, sub_08XXXXXX, sub_0x08XXXXXX)
     all_source_text = ""
     for root, dirs, files in os.walk(SRC_DIR):
         for f in files:
@@ -478,7 +517,7 @@ def build_master_map():
                 with open(os.path.join(root, f), 'r', encoding='utf-8', errors='ignore') as fp:
                     all_source_text += fp.read()
                     
-    ext_matches = set(re.findall(r'\b((?:func|sub)_(08[0-9a-fA-F]{6}))\b', all_source_text))
+    ext_matches = set(re.findall(r'\b((?:func|sub)_(?:0x)?([0-9a-fA-F]{8}))\b', all_source_text, re.IGNORECASE))
     for full_sym, addr_str in ext_matches:
         addr = int(addr_str, 16)
         if addr not in master_map:
@@ -510,6 +549,10 @@ def apply_symbol_replacements(master_map):
         replace_dict[f"func_{addr_hex_lower}"] = canon
         replace_dict[f"sub_{addr_hex}"] = canon
         replace_dict[f"sub_{addr_hex_lower}"] = canon
+        replace_dict[f"func_0x{addr_hex}"] = canon
+        replace_dict[f"func_0x{addr_hex_lower}"] = canon
+        replace_dict[f"sub_0x{addr_hex}"] = canon
+        replace_dict[f"sub_0x{addr_hex_lower}"] = canon
         
         orig = info['original_name']
         if orig and orig != canon and not orig.startswith('func_') and not orig.startswith('sub_'):

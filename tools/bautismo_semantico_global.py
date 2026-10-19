@@ -21,6 +21,28 @@ FUNCTION_RENAMES = {
     "NPC_Routine_0809C600": "NPC_EventQueue_Push",
     "NPC_Routine_0809C644": "NPC_EventQueue_Remove",
     "NPC_Routine_0809C6BC": "NPC_ResetData",
+    # NPC Friendship & Social Mechanics
+    "NPC_Routine_0809E370": "NPC_AddFriendship",
+    "NPC_Routine_0809E38C": "NPC_ReduceFriendship",
+    "NPC_Routine_0809E39C": "NPC_SetTalkedToday",
+    "NPC_Routine_0809E3E8": "NPC_ProcessGiftGiven",
+    # Bachelorettes & Affection System
+    "NPC_Routine_0809E458": "Bachelorette_ResetAffection",
+    "NPC_Routine_0809E4C4": "Bachelorette_AddAffection",
+    "NPC_Routine_0809E4E8": "Bachelorette_ReduceAffection",
+    "NPC_Routine_0809E4F8": "Bachelorette_IncrementTalkCount",
+    "NPC_Routine_0809E520": "Bachelorette_IncrementGiftCount",
+    "NPC_Routine_0809E574": "Bachelorette_ProcessDailyAffection",
+    "NPC_Routine_0809E628": "Bachelorette_ResetAffectionData",
+    "NPC_Routine_0809E66C": "Bachelorette_GetStatsByte",
+    "NPC_Routine_0809E688": "Bachelorette_GetHeartStatsByte",
+    # Harvest Sprites (Nature Sprites) & Minigames
+    "NPC_Routine_080B0708": "HarvestSprite_Minigame_UpdateCountdownTimer",
+    "NPC_Routine_080B0934": "HarvestSprite_Minigame_HideUI",
+    "NPC_Routine_080B0970": "HarvestSprite_Minigame_ShowUI",
+    "NPC_Routine_080B09B0": "HarvestSprite_Minigame_SetupDifficultyAndTargets",
+    "NPC_Routine_080B0AA0": "HarvestSprite_Minigame_InitState",
+    "NPC_Routine_080B0BB8": "HarvestSprite_Minigame_UpdateFrame",
     # Shipping & Farm Records
     "NPC_Routine_0809CD98": "Shipping_RecordShippedItemCount",
     "NPC_Routine_0809CDCC": "Shipping_AreAllCropsShipped",

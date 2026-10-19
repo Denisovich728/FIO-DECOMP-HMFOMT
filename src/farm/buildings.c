@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: ToolChest_GetItem @ 0x0800B814
 // =============================================================================
-undefined8 ToolChest_GetItem(undefined4 *arg_1,int arg_2,uint arg_3)
+u32 ToolChest_GetItem(undefined4 *arg_1,int arg_2,uint arg_3)
 
 {
   char c_char1;
@@ -64,7 +64,7 @@ undefined8 ToolChest_GetItem(undefined4 *arg_1,int arg_2,uint arg_3)
 // =============================================================================
 // Function: Building_Routine_0800B8E4 @ 0x0800B8E4
 // =============================================================================
-undefined8 Building_Routine_0800B8E4(int arg_1)
+u32 Building_Routine_0800B8E4(int arg_1)
 
 {
   int i_val1;
@@ -83,7 +83,7 @@ undefined8 Building_Routine_0800B8E4(int arg_1)
 // =============================================================================
 // Function: Fridge_GetItem @ 0x0800B910
 // =============================================================================
-undefined8 Fridge_GetItem(int arg_1,int arg_2)
+u32 Fridge_GetItem(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -114,7 +114,7 @@ undefined8 Fridge_GetItem(int arg_1,int arg_2)
 // =============================================================================
 // Function: Building_Routine_0800B974 @ 0x0800B974
 // =============================================================================
-undefined8 Building_Routine_0800B974(int arg_1,int arg_2)
+u32 Building_Routine_0800B974(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -142,7 +142,7 @@ undefined8 Building_Routine_0800B974(int arg_1,int arg_2)
 // =============================================================================
 // Function: Building_Routine_0800B9D0 @ 0x0800B9D0
 // =============================================================================
-undefined8 Building_Routine_0800B9D0(int arg_1)
+u32 Building_Routine_0800B9D0(int arg_1)
 
 {
   char c_char1;
@@ -164,7 +164,7 @@ LAB_0800b9fa:
 // =============================================================================
 // Function: Shelf_Init @ 0x0800BA00
 // =============================================================================
-undefined8 Shelf_Init(int arg_1)
+u32 Shelf_Init(int arg_1)
 
 {
   char c_char1;
@@ -185,7 +185,7 @@ LAB_0800ba3a:
 // =============================================================================
 // Function: Shelf_GetItem @ 0x0800BA44
 // =============================================================================
-undefined8 Shelf_GetItem(int arg_1,int arg_2)
+u32 Shelf_GetItem(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -269,7 +269,7 @@ LAB_0800bb46:
 // =============================================================================
 // Function: RecordPlayer_PlayTrack @ 0x0800BB7C
 // =============================================================================
-undefined8 RecordPlayer_PlayTrack(uint *arg_1)
+u32 RecordPlayer_PlayTrack(uint *arg_1)
 
 {
   char c_char1;
@@ -288,7 +288,7 @@ undefined8 RecordPlayer_PlayTrack(uint *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800BBA4 @ 0x0800BBA4
 // =============================================================================
-undefined8 Building_Routine_0800BBA4(undefined4 arg_1,uint *arg_2)
+u32 Building_Routine_0800BBA4(undefined4 arg_1,uint *arg_2)
 
 {
   char c_char1;
@@ -309,7 +309,7 @@ undefined8 Building_Routine_0800BBA4(undefined4 arg_1,uint *arg_2)
 // =============================================================================
 // Function: Building_Routine_0800BBF0 @ 0x0800BBF0
 // =============================================================================
-undefined8 Building_Routine_0800BBF0(undefined4 arg_1,uint *arg_2,undefined4 arg_3)
+u32 Building_Routine_0800BBF0(undefined4 arg_1,uint *arg_2,undefined4 arg_3)
 
 {
   char c_char1;
@@ -335,7 +335,7 @@ undefined8 Building_Routine_0800BBF0(undefined4 arg_1,uint *arg_2,undefined4 arg
 // =============================================================================
 // Function: FarmHouse_Init @ 0x0800BC58
 // =============================================================================
-undefined8 FarmHouse_Init(undefined4 *arg_1)
+u32 FarmHouse_Init(undefined4 *arg_1)
 
 {
   undefined4 *p_uint1;
@@ -354,7 +354,7 @@ undefined8 FarmHouse_Init(undefined4 *arg_1)
 // =============================================================================
 // Function: FarmHouse_GetLevel @ 0x0800BCB0
 // =============================================================================
-undefined4 FarmHouse_GetLevel(int arg_1,int arg_2)
+void FarmHouse_GetLevel(int arg_1,int arg_2)
 
 {
   uint u_val1;
@@ -371,7 +371,7 @@ undefined4 FarmHouse_GetLevel(int arg_1,int arg_2)
 // =============================================================================
 // Function: FarmHouse_Upgrade @ 0x0800BCD0
 // =============================================================================
-undefined4 FarmHouse_Upgrade(int arg_1,int arg_2)
+void FarmHouse_Upgrade(int arg_1,int arg_2)
 
 {
   uint u_val1;
@@ -390,7 +390,7 @@ undefined4 FarmHouse_Upgrade(int arg_1,int arg_2)
 // =============================================================================
 // Function: Building_Routine_0800BD14 @ 0x0800BD14
 // =============================================================================
-undefined8 Building_Routine_0800BD14(int arg_1,int arg_2)
+u32 Building_Routine_0800BD14(int arg_1,int arg_2)
 
 {
   uint u_val1;
@@ -426,7 +426,7 @@ void Building_Routine_0800BD40(int arg_1,int arg_2)
 // =============================================================================
 // Function: Building_Routine_0800BDEC @ 0x0800BDEC
 // =============================================================================
-undefined8 Building_Routine_0800BDEC(int arg_1)
+u32 Building_Routine_0800BDEC(int arg_1)
 
 {
   uint u_val1;
@@ -450,7 +450,7 @@ undefined8 Building_Routine_0800BDEC(int arg_1)
 // =============================================================================
 // Function: Coop_Init @ 0x0800BE70
 // =============================================================================
-undefined8 Coop_Init(uint *arg_1)
+u32 Coop_Init(uint *arg_1)
 
 {
   
@@ -471,7 +471,7 @@ undefined8 Coop_Init(uint *arg_1)
 // =============================================================================
 // Function: Coop_GetChickenCount @ 0x0800BF1C
 // =============================================================================
-undefined8 Coop_GetChickenCount(int arg_1)
+u32 Coop_GetChickenCount(int arg_1)
 
 {
   int i_val1;
@@ -486,7 +486,7 @@ undefined8 Coop_GetChickenCount(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800BF34 @ 0x0800BF34
 // =============================================================================
-undefined8 Building_Routine_0800BF34(int arg_1)
+u32 Building_Routine_0800BF34(int arg_1)
 
 {
   
@@ -502,7 +502,7 @@ undefined8 Building_Routine_0800BF34(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800BF50 @ 0x0800BF50
 // =============================================================================
-undefined8 Building_Routine_0800BF50(int arg_1)
+u32 Building_Routine_0800BF50(int arg_1)
 
 {
   
@@ -518,7 +518,7 @@ undefined8 Building_Routine_0800BF50(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C024 @ 0x0800C024
 // =============================================================================
-undefined4 Building_Routine_0800C024(byte *arg_1)
+void Building_Routine_0800C024(byte *arg_1)
 
 {
   byte b_flag1;
@@ -533,7 +533,7 @@ undefined4 Building_Routine_0800C024(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C048 @ 0x0800C048
 // =============================================================================
-undefined8 Building_Routine_0800C048(int arg_1)
+u32 Building_Routine_0800C048(int arg_1)
 
 {
   int i_val1;
@@ -548,7 +548,7 @@ undefined8 Building_Routine_0800C048(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C060 @ 0x0800C060
 // =============================================================================
-undefined8 Building_Routine_0800C060(int arg_1)
+u32 Building_Routine_0800C060(int arg_1)
 
 {
   
@@ -564,7 +564,7 @@ undefined8 Building_Routine_0800C060(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C07C @ 0x0800C07C
 // =============================================================================
-undefined8 Building_Routine_0800C07C(int arg_1)
+u32 Building_Routine_0800C07C(int arg_1)
 
 {
   
@@ -580,7 +580,7 @@ undefined8 Building_Routine_0800C07C(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C098 @ 0x0800C098
 // =============================================================================
-undefined4 Building_Routine_0800C098(byte *arg_1,byte arg_2)
+void Building_Routine_0800C098(byte *arg_1,byte arg_2)
 
 {
   
@@ -593,7 +593,7 @@ undefined4 Building_Routine_0800C098(byte *arg_1,byte arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C0BC @ 0x0800C0BC
 // =============================================================================
-undefined4 Building_Routine_0800C0BC(byte *arg_1,byte arg_2)
+void Building_Routine_0800C0BC(byte *arg_1,byte arg_2)
 
 {
   
@@ -606,7 +606,7 @@ undefined4 Building_Routine_0800C0BC(byte *arg_1,byte arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C0E0 @ 0x0800C0E0
 // =============================================================================
-undefined4 Building_Routine_0800C0E0(byte *arg_1,char arg_2)
+void Building_Routine_0800C0E0(byte *arg_1,char arg_2)
 
 {
   
@@ -619,7 +619,7 @@ undefined4 Building_Routine_0800C0E0(byte *arg_1,char arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C0FC @ 0x0800C0FC
 // =============================================================================
-undefined4 Building_Routine_0800C0FC(byte *arg_1)
+void Building_Routine_0800C0FC(byte *arg_1)
 
 {
   
@@ -632,7 +632,7 @@ undefined4 Building_Routine_0800C0FC(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C118 @ 0x0800C118
 // =============================================================================
-undefined4 Building_Routine_0800C118(byte *arg_1)
+void Building_Routine_0800C118(byte *arg_1)
 
 {
   
@@ -658,7 +658,7 @@ void Building_Routine_0800C134(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C15C @ 0x0800C15C
 // =============================================================================
-undefined4 Building_Routine_0800C15C(byte *arg_1)
+void Building_Routine_0800C15C(byte *arg_1)
 
 {
   
@@ -684,7 +684,7 @@ void Building_Routine_0800C178(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C1A0 @ 0x0800C1A0
 // =============================================================================
-undefined4 Building_Routine_0800C1A0(uint *arg_1,uint arg_2)
+void Building_Routine_0800C1A0(uint *arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -721,7 +721,7 @@ undefined4 Building_Routine_0800C1A0(uint *arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C25C @ 0x0800C25C
 // =============================================================================
-undefined4 Building_Routine_0800C25C(byte *arg_1)
+void Building_Routine_0800C25C(byte *arg_1)
 
 {
   
@@ -734,7 +734,7 @@ undefined4 Building_Routine_0800C25C(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C27C @ 0x0800C27C
 // =============================================================================
-undefined4 Building_Routine_0800C27C(byte *arg_1)
+void Building_Routine_0800C27C(byte *arg_1)
 
 {
   int i_val1;
@@ -748,7 +748,7 @@ undefined4 Building_Routine_0800C27C(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C2A4 @ 0x0800C2A4
 // =============================================================================
-undefined4 Building_Routine_0800C2A4(int arg_1)
+void Building_Routine_0800C2A4(int arg_1)
 
 {
   
@@ -761,7 +761,7 @@ undefined4 Building_Routine_0800C2A4(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C2BC @ 0x0800C2BC
 // =============================================================================
-undefined4 Building_Routine_0800C2BC(int arg_1)
+void Building_Routine_0800C2BC(int arg_1)
 
 {
   
@@ -774,7 +774,7 @@ undefined4 Building_Routine_0800C2BC(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C2D4 @ 0x0800C2D4
 // =============================================================================
-undefined4 Building_Routine_0800C2D4(int arg_1)
+void Building_Routine_0800C2D4(int arg_1)
 
 {
   
@@ -787,7 +787,7 @@ undefined4 Building_Routine_0800C2D4(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C2EC @ 0x0800C2EC
 // =============================================================================
-undefined4 Building_Routine_0800C2EC(int arg_1)
+void Building_Routine_0800C2EC(int arg_1)
 
 {
   
@@ -800,7 +800,7 @@ undefined4 Building_Routine_0800C2EC(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C304 @ 0x0800C304
 // =============================================================================
-undefined4 Building_Routine_0800C304(int arg_1)
+void Building_Routine_0800C304(int arg_1)
 
 {
   
@@ -813,7 +813,7 @@ undefined4 Building_Routine_0800C304(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C31C @ 0x0800C31C
 // =============================================================================
-undefined4 Building_Routine_0800C31C(int arg_1)
+void Building_Routine_0800C31C(int arg_1)
 
 {
   
@@ -826,7 +826,7 @@ undefined4 Building_Routine_0800C31C(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C334 @ 0x0800C334
 // =============================================================================
-undefined4 Building_Routine_0800C334(int arg_1)
+void Building_Routine_0800C334(int arg_1)
 
 {
   
@@ -839,7 +839,7 @@ undefined4 Building_Routine_0800C334(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C34C @ 0x0800C34C
 // =============================================================================
-undefined4 Building_Routine_0800C34C(int arg_1)
+void Building_Routine_0800C34C(int arg_1)
 
 {
   
@@ -852,7 +852,7 @@ undefined4 Building_Routine_0800C34C(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C364 @ 0x0800C364
 // =============================================================================
-undefined4 Building_Routine_0800C364(int arg_1,uint arg_2)
+void Building_Routine_0800C364(int arg_1,uint arg_2)
 
 {
   
@@ -864,7 +864,7 @@ undefined4 Building_Routine_0800C364(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C390 @ 0x0800C390
 // =============================================================================
-undefined4 Building_Routine_0800C390(uint *arg_1,int arg_2)
+void Building_Routine_0800C390(uint *arg_1,int arg_2)
 
 {
   ushort u_val1;
@@ -907,7 +907,7 @@ LAB_0800c420:
 // =============================================================================
 // Function: Barn_Init @ 0x0800C450
 // =============================================================================
-undefined8 Barn_Init(uint *arg_1)
+u32 Barn_Init(uint *arg_1)
 
 {
   ushort u_val1;
@@ -957,7 +957,7 @@ undefined8 Barn_Init(uint *arg_1)
 // =============================================================================
 // Function: Barn_GetCowCount @ 0x0800C570
 // =============================================================================
-undefined8 Barn_GetCowCount(byte *arg_1)
+u32 Barn_GetCowCount(byte *arg_1)
 
 {
   uint *p_uint1;
@@ -976,7 +976,7 @@ undefined8 Barn_GetCowCount(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C598 @ 0x0800C598
 // =============================================================================
-undefined8 Building_Routine_0800C598(uint *arg_1,uint arg_2)
+u32 Building_Routine_0800C598(uint *arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -994,7 +994,7 @@ undefined8 Building_Routine_0800C598(uint *arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C5CC @ 0x0800C5CC
 // =============================================================================
-undefined8 Building_Routine_0800C5CC(int arg_1,uint arg_2)
+u32 Building_Routine_0800C5CC(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1013,7 +1013,7 @@ undefined8 Building_Routine_0800C5CC(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C5F4 @ 0x0800C5F4
 // =============================================================================
-undefined8 Building_Routine_0800C5F4(int arg_1,uint arg_2)
+u32 Building_Routine_0800C5F4(int arg_1,uint arg_2)
 
 {
   char c_char1;
@@ -1037,7 +1037,7 @@ LAB_0800c62a:
 // =============================================================================
 // Function: Building_Routine_0800C630 @ 0x0800C630
 // =============================================================================
-undefined8 Building_Routine_0800C630(int arg_1)
+u32 Building_Routine_0800C630(int arg_1)
 
 {
   uint u_val1;
@@ -1065,7 +1065,7 @@ undefined8 Building_Routine_0800C630(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C660 @ 0x0800C660
 // =============================================================================
-undefined8 Building_Routine_0800C660(byte *arg_1)
+u32 Building_Routine_0800C660(byte *arg_1)
 
 {
   undefined4 u_val1;
@@ -1080,7 +1080,7 @@ undefined8 Building_Routine_0800C660(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C678 @ 0x0800C678
 // =============================================================================
-undefined8 Building_Routine_0800C678(int arg_1,uint arg_2)
+u32 Building_Routine_0800C678(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1099,7 +1099,7 @@ undefined8 Building_Routine_0800C678(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C6A0 @ 0x0800C6A0
 // =============================================================================
-undefined8 Building_Routine_0800C6A0(int arg_1,uint arg_2)
+u32 Building_Routine_0800C6A0(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1119,7 +1119,7 @@ undefined8 Building_Routine_0800C6A0(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C6D8 @ 0x0800C6D8
 // =============================================================================
-undefined8 Building_Routine_0800C6D8(int arg_1)
+u32 Building_Routine_0800C6D8(int arg_1)
 
 {
   uint u_val1;
@@ -1136,7 +1136,7 @@ undefined8 Building_Routine_0800C6D8(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C6F0 @ 0x0800C6F0
 // =============================================================================
-undefined8 Building_Routine_0800C6F0(short *arg_1,undefined4 arg_2,uint arg_3)
+u32 Building_Routine_0800C6F0(short *arg_1,undefined4 arg_2,uint arg_3)
 
 {
   uint u_val1;
@@ -1153,7 +1153,7 @@ undefined8 Building_Routine_0800C6F0(short *arg_1,undefined4 arg_2,uint arg_3)
 // =============================================================================
 // Function: Building_Routine_0800C720 @ 0x0800C720
 // =============================================================================
-undefined8 Building_Routine_0800C720(int arg_1,uint arg_2)
+u32 Building_Routine_0800C720(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1172,7 +1172,7 @@ undefined8 Building_Routine_0800C720(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C76C @ 0x0800C76C
 // =============================================================================
-undefined4 Building_Routine_0800C76C(byte *arg_1)
+void Building_Routine_0800C76C(byte *arg_1)
 
 {
   byte b_flag1;
@@ -1187,7 +1187,7 @@ undefined4 Building_Routine_0800C76C(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800C794 @ 0x0800C794
 // =============================================================================
-undefined4 Building_Routine_0800C794(ushort *arg_1,int arg_2)
+void Building_Routine_0800C794(ushort *arg_1,int arg_2)
 
 {
   uint *p_uint1;
@@ -1207,7 +1207,7 @@ undefined4 Building_Routine_0800C794(ushort *arg_1,int arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C7D8 @ 0x0800C7D8
 // =============================================================================
-undefined4 Building_Routine_0800C7D8(ushort *arg_1,uint arg_2)
+void Building_Routine_0800C7D8(ushort *arg_1,uint arg_2)
 
 {
   ushort u_val1;
@@ -1227,7 +1227,7 @@ undefined4 Building_Routine_0800C7D8(ushort *arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C814 @ 0x0800C814
 // =============================================================================
-undefined4 Building_Routine_0800C814(uint *arg_1,uint arg_2)
+void Building_Routine_0800C814(uint *arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1247,7 +1247,7 @@ undefined4 Building_Routine_0800C814(uint *arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C850 @ 0x0800C850
 // =============================================================================
-undefined4 Building_Routine_0800C850(uint *arg_1,uint arg_2)
+void Building_Routine_0800C850(uint *arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1267,7 +1267,7 @@ undefined4 Building_Routine_0800C850(uint *arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C894 @ 0x0800C894
 // =============================================================================
-undefined8 Building_Routine_0800C894(int arg_1,uint arg_2)
+u32 Building_Routine_0800C894(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1286,7 +1286,7 @@ undefined8 Building_Routine_0800C894(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C8BC @ 0x0800C8BC
 // =============================================================================
-undefined8 Building_Routine_0800C8BC(int arg_1,undefined4 arg_2)
+u32 Building_Routine_0800C8BC(int arg_1,undefined4 arg_2)
 
 {
   char c_char1;
@@ -1306,7 +1306,7 @@ LAB_0800c8f2:
 // =============================================================================
 // Function: Building_Routine_0800C8F8 @ 0x0800C8F8
 // =============================================================================
-undefined4 Building_Routine_0800C8F8(int arg_1,uint arg_2)
+void Building_Routine_0800C8F8(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1321,7 +1321,7 @@ undefined4 Building_Routine_0800C8F8(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C91C @ 0x0800C91C
 // =============================================================================
-undefined4 Building_Routine_0800C91C(int arg_1,undefined4 arg_2)
+void Building_Routine_0800C91C(int arg_1,undefined4 arg_2)
 
 {
   int i_val1;
@@ -1350,7 +1350,7 @@ undefined4 Building_Routine_0800C91C(int arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C994 @ 0x0800C994
 // =============================================================================
-undefined4 Building_Routine_0800C994(int arg_1,uint arg_2)
+void Building_Routine_0800C994(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1365,7 +1365,7 @@ undefined4 Building_Routine_0800C994(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C9B8 @ 0x0800C9B8
 // =============================================================================
-undefined4 Building_Routine_0800C9B8(int arg_1,uint arg_2)
+void Building_Routine_0800C9B8(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1382,7 +1382,7 @@ undefined4 Building_Routine_0800C9B8(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800C9EC @ 0x0800C9EC
 // =============================================================================
-undefined4 Building_Routine_0800C9EC(uint *arg_1)
+void Building_Routine_0800C9EC(uint *arg_1)
 
 {
   byte b_flag1;
@@ -1467,7 +1467,7 @@ LAB_0800caa0:
 // =============================================================================
 // Function: Building_Routine_0800CB7C @ 0x0800CB7C
 // =============================================================================
-undefined4 Building_Routine_0800CB7C(int arg_1,uint arg_2)
+void Building_Routine_0800CB7C(int arg_1,uint arg_2)
 
 {
   char c_char1;
@@ -1487,7 +1487,7 @@ undefined4 Building_Routine_0800CB7C(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800CBCC @ 0x0800CBCC
 // =============================================================================
-undefined8 Building_Routine_0800CBCC(int arg_1,int arg_2)
+u32 Building_Routine_0800CBCC(int arg_1,int arg_2)
 
 {
   ushort u_val1;
@@ -1538,7 +1538,7 @@ undefined8 Building_Routine_0800CBCC(int arg_1,int arg_2)
 // =============================================================================
 // Function: Building_Routine_0800CCB8 @ 0x0800CCB8
 // =============================================================================
-undefined8 Building_Routine_0800CCB8(byte *arg_1)
+u32 Building_Routine_0800CCB8(byte *arg_1)
 
 {
   byte *pbVar1;
@@ -1553,7 +1553,7 @@ undefined8 Building_Routine_0800CCB8(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800CCD0 @ 0x0800CCD0
 // =============================================================================
-undefined8 Building_Routine_0800CCD0(byte *arg_1)
+u32 Building_Routine_0800CCD0(byte *arg_1)
 
 {
   byte *pbVar1;
@@ -1568,7 +1568,7 @@ undefined8 Building_Routine_0800CCD0(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800CCE8 @ 0x0800CCE8
 // =============================================================================
-undefined8 Building_Routine_0800CCE8(byte *arg_1,int arg_2)
+u32 Building_Routine_0800CCE8(byte *arg_1,int arg_2)
 
 {
   undefined4 u_val1;
@@ -1591,7 +1591,7 @@ undefined8 Building_Routine_0800CCE8(byte *arg_1,int arg_2)
 // =============================================================================
 // Function: Building_Routine_0800CD20 @ 0x0800CD20
 // =============================================================================
-undefined4 Building_Routine_0800CD20(byte *arg_1)
+void Building_Routine_0800CD20(byte *arg_1)
 
 {
   
@@ -1604,7 +1604,7 @@ undefined4 Building_Routine_0800CD20(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800CD40 @ 0x0800CD40
 // =============================================================================
-undefined8 Building_Routine_0800CD40(uint *arg_1)
+u32 Building_Routine_0800CD40(uint *arg_1)
 
 {
   uint u_val1;
@@ -1636,7 +1636,7 @@ void Building_Routine_0800CD58(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800CD88 @ 0x0800CD88
 // =============================================================================
-undefined4 Building_Routine_0800CD88(byte *arg_1)
+void Building_Routine_0800CD88(byte *arg_1)
 
 {
   
@@ -1649,7 +1649,7 @@ undefined4 Building_Routine_0800CD88(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800CE74 @ 0x0800CE74
 // =============================================================================
-undefined8 Building_Routine_0800CE74(byte *arg_1)
+u32 Building_Routine_0800CE74(byte *arg_1)
 
 {
   uint *p_uint1;
@@ -1668,7 +1668,7 @@ undefined8 Building_Routine_0800CE74(byte *arg_1)
 // =============================================================================
 // Function: Building_Routine_0800CEA8 @ 0x0800CEA8
 // =============================================================================
-undefined8 Building_Routine_0800CEA8(uint *arg_1,uint arg_2)
+u32 Building_Routine_0800CEA8(uint *arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1686,7 +1686,7 @@ undefined8 Building_Routine_0800CEA8(uint *arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800CED4 @ 0x0800CED4
 // =============================================================================
-undefined8 Building_Routine_0800CED4(int arg_1,uint arg_2)
+u32 Building_Routine_0800CED4(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1704,7 +1704,7 @@ undefined8 Building_Routine_0800CED4(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800CF10 @ 0x0800CF10
 // =============================================================================
-undefined8 Building_Routine_0800CF10(int arg_1,uint arg_2)
+u32 Building_Routine_0800CF10(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1723,7 +1723,7 @@ undefined8 Building_Routine_0800CF10(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800CF38 @ 0x0800CF38
 // =============================================================================
-undefined8 Building_Routine_0800CF38(int arg_1,uint arg_2)
+u32 Building_Routine_0800CF38(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1742,7 +1742,7 @@ undefined8 Building_Routine_0800CF38(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800CF60 @ 0x0800CF60
 // =============================================================================
-undefined8 Building_Routine_0800CF60(int arg_1,uint arg_2)
+u32 Building_Routine_0800CF60(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -1761,7 +1761,7 @@ undefined8 Building_Routine_0800CF60(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Building_Routine_0800CF88 @ 0x0800CF88
 // =============================================================================
-undefined8 Building_Routine_0800CF88(int arg_1,uint arg_2)
+u32 Building_Routine_0800CF88(int arg_1,uint arg_2)
 
 {
   char c_char1;
@@ -1785,7 +1785,7 @@ LAB_0800cfbe:
 // =============================================================================
 // Function: Building_Routine_0800CFC4 @ 0x0800CFC4
 // =============================================================================
-undefined8 Building_Routine_0800CFC4(int arg_1)
+u32 Building_Routine_0800CFC4(int arg_1)
 
 {
   uint u_val1;
@@ -1813,7 +1813,7 @@ undefined8 Building_Routine_0800CFC4(int arg_1)
 // =============================================================================
 // Function: Building_Routine_0800CFF4 @ 0x0800CFF4
 // =============================================================================
-undefined8 Building_Routine_0800CFF4(int arg_1)
+u32 Building_Routine_0800CFF4(int arg_1)
 
 {
   uint u_val1;

@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: SramProxy_ReadSaveData @ 0x080002E0
 // =============================================================================
-undefined8 SramProxy_ReadSaveData(undefined4 arg_1)
+u32 SramProxy_ReadSaveData(undefined4 arg_1)
 
 {
   ushort *p_uint1;
@@ -42,7 +42,7 @@ LAB_0800034c:
 // =============================================================================
 // Function: SramProxy_WriteSaveData @ 0x08000358
 // =============================================================================
-undefined4 SramProxy_WriteSaveData(undefined4 arg_1)
+void SramProxy_WriteSaveData(undefined4 arg_1)
 
 {
   ushort *p_uint1;
@@ -63,7 +63,7 @@ undefined4 SramProxy_WriteSaveData(undefined4 arg_1)
 // =============================================================================
 // Function: SramProxy_VerifyChecksum @ 0x080003A0
 // =============================================================================
-undefined8 SramProxy_VerifyChecksum(undefined4 arg_1)
+u32 SramProxy_VerifyChecksum(undefined4 arg_1)
 
 {
   char c_char1;
@@ -83,7 +83,7 @@ LAB_080003d2:
 // =============================================================================
 // Function: SramProxy_ReadSaveSlot @ 0x080003E8
 // =============================================================================
-undefined4 SramProxy_ReadSaveSlot(undefined4 arg_1,uint arg_2)
+void SramProxy_ReadSaveSlot(undefined4 arg_1,uint arg_2)
 
 {
   uint stack_val_10;
@@ -100,7 +100,7 @@ undefined4 SramProxy_ReadSaveSlot(undefined4 arg_1,uint arg_2)
 // =============================================================================
 // Function: SramProxy_WriteSaveSlot @ 0x0800042C
 // =============================================================================
-undefined4 SramProxy_WriteSaveSlot(undefined4 arg_1,uint arg_2)
+void SramProxy_WriteSaveSlot(undefined4 arg_1,uint arg_2)
 
 {
   uint stack_val_10;
@@ -117,7 +117,7 @@ undefined4 SramProxy_WriteSaveSlot(undefined4 arg_1,uint arg_2)
 // =============================================================================
 // Function: SramProxy_FlushSlotBuffer @ 0x08000470
 // =============================================================================
-undefined4 SramProxy_FlushSlotBuffer(undefined4 arg_1,undefined4 arg_2)
+u32 SramProxy_FlushSlotBuffer(undefined4 arg_1,undefined4 arg_2)
 
 {
   undefined4 stack_val_8;
@@ -131,7 +131,7 @@ undefined4 SramProxy_FlushSlotBuffer(undefined4 arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: SramProxy_VerifySlotChecksum @ 0x08000488
 // =============================================================================
-undefined8 SramProxy_VerifySlotChecksum(undefined4 arg_1)
+u32 SramProxy_VerifySlotChecksum(undefined4 arg_1)
 
 {
   char c_char1;
@@ -151,7 +151,7 @@ LAB_080004ba:
 // =============================================================================
 // Function: Interrupt_InitVBlank @ 0x080004C4
 // =============================================================================
-undefined4 Interrupt_InitVBlank(void)
+void Interrupt_InitVBlank(void)
 
 {
   uint loop_i;
@@ -169,7 +169,7 @@ undefined4 Interrupt_InitVBlank(void)
 // =============================================================================
 // Function: Interrupt_EnableHBlank @ 0x080004F4
 // =============================================================================
-ulonglong Interrupt_EnableHBlank(int arg_1)
+u32 Interrupt_EnableHBlank(int arg_1)
 
 {
   undefined4 u_val1;
@@ -181,7 +181,7 @@ ulonglong Interrupt_EnableHBlank(int arg_1)
 // =============================================================================
 // Function: Interrupt_SetMasterEnable @ 0x0800050C
 // =============================================================================
-ulonglong Interrupt_SetMasterEnable(undefined2 arg_1)
+u32 Interrupt_SetMasterEnable(undefined2 arg_1)
 
 {
   undefined4 u_val1;
@@ -194,7 +194,7 @@ ulonglong Interrupt_SetMasterEnable(undefined2 arg_1)
 // =============================================================================
 // Function: Interrupt_WaitForVBlank @ 0x08000528
 // =============================================================================
-ulonglong Interrupt_WaitForVBlank(undefined2 arg_1)
+u32 Interrupt_WaitForVBlank(undefined2 arg_1)
 
 {
   undefined4 u_val1;
@@ -206,7 +206,7 @@ ulonglong Interrupt_WaitForVBlank(undefined2 arg_1)
 // =============================================================================
 // Function: Interrupt_SetCallback @ 0x08000540
 // =============================================================================
-ulonglong Interrupt_SetCallback(undefined4 arg_1,undefined2 arg_2)
+u32 Interrupt_SetCallback(undefined4 arg_1,undefined2 arg_2)
 
 {
   undefined4 u_val1;
@@ -218,7 +218,7 @@ ulonglong Interrupt_SetCallback(undefined4 arg_1,undefined2 arg_2)
 // =============================================================================
 // Function: Interrupt_ClearPending @ 0x08000554
 // =============================================================================
-undefined4 Interrupt_ClearPending(undefined2 arg_1)
+void Interrupt_ClearPending(undefined2 arg_1)
 
 {
   
@@ -229,7 +229,7 @@ undefined4 Interrupt_ClearPending(undefined2 arg_1)
 // =============================================================================
 // Function: Interrupt_DisableFlag @ 0x08000568
 // =============================================================================
-undefined4 Interrupt_DisableFlag(undefined2 arg_1)
+void Interrupt_DisableFlag(undefined2 arg_1)
 
 {
   
@@ -250,7 +250,7 @@ void Dispatcher_Routine_08000584(void)
 // =============================================================================
 // Function: Dispatcher_Routine_08000590 @ 0x08000590
 // =============================================================================
-undefined4 Dispatcher_Routine_08000590(void)
+void Dispatcher_Routine_08000590(void)
 
 {
   
@@ -283,7 +283,7 @@ LAB_080005be:
 // =============================================================================
 // Function: Dispatcher_Routine_080005D4 @ 0x080005D4
 // =============================================================================
-undefined8 Dispatcher_Routine_080005D4(void)
+u32 Dispatcher_Routine_080005D4(void)
 
 {
   int i_val1;
@@ -328,7 +328,7 @@ void Dispatcher_Routine_080005FC(void)
 // =============================================================================
 // Function: Dispatcher_Routine_08000608 @ 0x08000608
 // =============================================================================
-undefined4 Dispatcher_Routine_08000608(void)
+void Dispatcher_Routine_08000608(void)
 
 {
   
@@ -339,7 +339,7 @@ undefined4 Dispatcher_Routine_08000608(void)
 // =============================================================================
 // Function: Dispatcher_Routine_08000614 @ 0x08000614
 // =============================================================================
-undefined4 Dispatcher_Routine_08000614(void)
+void Dispatcher_Routine_08000614(void)
 
 {
   
@@ -350,7 +350,7 @@ undefined4 Dispatcher_Routine_08000614(void)
 // =============================================================================
 // Function: Dispatcher_Routine_08000620 @ 0x08000620
 // =============================================================================
-undefined4 Dispatcher_Routine_08000620(void)
+void Dispatcher_Routine_08000620(void)
 
 {
   
@@ -361,7 +361,7 @@ undefined4 Dispatcher_Routine_08000620(void)
 // =============================================================================
 // Function: Dispatcher_Routine_0800062C @ 0x0800062C
 // =============================================================================
-undefined4 Dispatcher_Routine_0800062C(void)
+void Dispatcher_Routine_0800062C(void)
 
 {
   
@@ -372,7 +372,7 @@ undefined4 Dispatcher_Routine_0800062C(void)
 // =============================================================================
 // Function: SramProxy_LoadGlobalSettings @ 0x08000640
 // =============================================================================
-undefined8 SramProxy_LoadGlobalSettings(undefined4 arg_1)
+u32 SramProxy_LoadGlobalSettings(undefined4 arg_1)
 
 {
   
@@ -386,7 +386,7 @@ undefined8 SramProxy_LoadGlobalSettings(undefined4 arg_1)
 // =============================================================================
 // Function: SramProxy_SaveGlobalSettings @ 0x08000664
 // =============================================================================
-undefined8 SramProxy_SaveGlobalSettings(undefined4 arg_1)
+u32 SramProxy_SaveGlobalSettings(undefined4 arg_1)
 
 {
   uint u_val1;
@@ -408,7 +408,7 @@ undefined8 SramProxy_SaveGlobalSettings(undefined4 arg_1)
 // =============================================================================
 // Function: SramProxy_WriteBlock @ 0x080006A4
 // =============================================================================
-undefined8 SramProxy_WriteBlock(undefined4 arg_1,uint arg_2,undefined4 arg_3,int arg_4)
+u32 SramProxy_WriteBlock(undefined4 arg_1,uint arg_2,undefined4 arg_3,int arg_4)
 
 {
   uint u_val1;
@@ -429,7 +429,7 @@ undefined8 SramProxy_WriteBlock(undefined4 arg_1,uint arg_2,undefined4 arg_3,int
 // =============================================================================
 // Function: SramProxy_ReadBlock @ 0x080006E4
 // =============================================================================
-undefined8 SramProxy_ReadBlock(undefined4 arg_1,undefined4 arg_2,uint arg_3,int arg_4)
+u32 SramProxy_ReadBlock(undefined4 arg_1,undefined4 arg_2,uint arg_3,int arg_4)
 
 {
   
@@ -453,7 +453,7 @@ void SramProxy_SetWaitstates(int arg_1)
 // =============================================================================
 // Function: SramProxy_CalculateChecksum @ 0x08000728
 // =============================================================================
-undefined4 SramProxy_CalculateChecksum(undefined4 arg_1,ushort arg_2)
+void SramProxy_CalculateChecksum(undefined4 arg_1,ushort arg_2)
 
 {
   ushort *p_uint1;
@@ -527,7 +527,7 @@ undefined4 SramProxy_CalculateChecksum(undefined4 arg_1,ushort arg_2)
 // =============================================================================
 // Function: SramProxy_VerifyBufferParity @ 0x080007EC
 // =============================================================================
-undefined4 SramProxy_VerifyBufferParity(undefined4 *arg_1,uint arg_2)
+void SramProxy_VerifyBufferParity(undefined4 *arg_1,uint arg_2)
 
 {
   

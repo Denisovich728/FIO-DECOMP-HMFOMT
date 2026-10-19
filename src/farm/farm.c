@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: Farm_Routine_0800901C @ 0x0800901C
 // =============================================================================
-undefined4 Farm_Routine_0800901C(int *arg_1)
+void Farm_Routine_0800901C(int *arg_1)
 
 {
   uint u_val1;
@@ -52,7 +52,7 @@ undefined4 Farm_Routine_0800901C(int *arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009094 @ 0x08009094
 // =============================================================================
-undefined4 Farm_Routine_08009094(int *arg_1,int *arg_2)
+void Farm_Routine_08009094(int *arg_1,int *arg_2)
 
 {
   uint u_val1;
@@ -99,7 +99,7 @@ LAB_08009116:
 // =============================================================================
 // Function: Farm_Routine_08009140 @ 0x08009140
 // =============================================================================
-undefined8 Farm_Routine_08009140(undefined2 *arg_1)
+u32 Farm_Routine_08009140(undefined2 *arg_1)
 
 {
   undefined2 u_val1;
@@ -125,7 +125,7 @@ void Farm_Routine_08009158(undefined2 *arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009168 @ 0x08009168
 // =============================================================================
-undefined8 Farm_Routine_08009168(undefined2 *arg_1)
+u32 Farm_Routine_08009168(undefined2 *arg_1)
 
 {
   
@@ -137,7 +137,7 @@ undefined8 Farm_Routine_08009168(undefined2 *arg_1)
 // =============================================================================
 // Function: Farm_Routine_0800917C @ 0x0800917C
 // =============================================================================
-undefined8 Farm_Routine_0800917C(undefined2 *arg_1)
+u32 Farm_Routine_0800917C(undefined2 *arg_1)
 
 {
   
@@ -164,7 +164,7 @@ void Farm_Routine_08009190(ushort *arg_1)
 // =============================================================================
 // Function: Farm_Routine_080091A4 @ 0x080091A4
 // =============================================================================
-undefined8 Farm_Routine_080091A4(int arg_1,undefined2 arg_2,undefined2 arg_3)
+u32 Farm_Routine_080091A4(int arg_1,undefined2 arg_2,undefined2 arg_3)
 
 {
   undefined2 *p_uint1;
@@ -183,7 +183,7 @@ undefined8 Farm_Routine_080091A4(int arg_1,undefined2 arg_2,undefined2 arg_3)
 // =============================================================================
 // Function: Farm_Routine_080091E8 @ 0x080091E8
 // =============================================================================
-undefined8 Farm_Routine_080091E8(int arg_1)
+u32 Farm_Routine_080091E8(int arg_1)
 
 {
   undefined2 *p_uint1;
@@ -202,7 +202,7 @@ undefined8 Farm_Routine_080091E8(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009224 @ 0x08009224
 // =============================================================================
-undefined8 Farm_Routine_08009224(int arg_1,undefined2 arg_2,undefined2 arg_3,undefined4 arg_4)
+u32 Farm_Routine_08009224(int arg_1,undefined2 arg_2,undefined2 arg_3,undefined4 arg_4)
 
 {
   undefined2 *p_uint1;
@@ -221,7 +221,7 @@ undefined8 Farm_Routine_08009224(int arg_1,undefined2 arg_2,undefined2 arg_3,und
 // =============================================================================
 // Function: Farm_Routine_08009268 @ 0x08009268
 // =============================================================================
-undefined8 Farm_Routine_08009268(ushort *arg_1)
+u32 Farm_Routine_08009268(ushort *arg_1)
 
 {
   ushort u_val1;
@@ -268,7 +268,7 @@ undefined8 Farm_Routine_08009268(ushort *arg_1)
 // =============================================================================
 // Function: Farm_Routine_080092C8 @ 0x080092C8
 // =============================================================================
-undefined4 Farm_Routine_080092C8(ushort *arg_1,ushort arg_2)
+void Farm_Routine_080092C8(ushort *arg_1,ushort arg_2)
 
 {
   ushort u_val1;
@@ -294,7 +294,7 @@ undefined4 Farm_Routine_080092C8(ushort *arg_1,ushort arg_2)
 // =============================================================================
 // Function: Farm_Routine_08009300 @ 0x08009300
 // =============================================================================
-undefined8 Farm_Routine_08009300(int *arg_1,undefined4 arg_2)
+u32 Farm_Routine_08009300(int *arg_1,undefined4 arg_2)
 
 {
   undefined4 *p_uint1;
@@ -312,7 +312,7 @@ undefined8 Farm_Routine_08009300(int *arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Farm_Routine_08009324 @ 0x08009324
 // =============================================================================
-undefined4 Farm_Routine_08009324(undefined4 *arg_1,uint arg_2)
+void Farm_Routine_08009324(undefined4 *arg_1,uint arg_2)
 
 {
   
@@ -326,7 +326,7 @@ undefined4 Farm_Routine_08009324(undefined4 *arg_1,uint arg_2)
 // =============================================================================
 // Function: Farm_Routine_0800934C @ 0x0800934C
 // =============================================================================
-undefined4 Farm_Routine_0800934C(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
+void Farm_Routine_0800934C(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
 
 {
   int i_val1;
@@ -346,7 +346,7 @@ undefined4 Farm_Routine_0800934C(int *arg_1,short arg_2,undefined4 arg_3,int arg
 // =============================================================================
 // Function: Farm_Routine_08009378 @ 0x08009378
 // =============================================================================
-undefined4 Farm_Routine_08009378(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
+void Farm_Routine_08009378(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
 
 {
   int i_val1;
@@ -366,7 +366,7 @@ undefined4 Farm_Routine_08009378(int *arg_1,short arg_2,undefined4 arg_3,int arg
 // =============================================================================
 // Function: Farm_Routine_080093AC @ 0x080093AC
 // =============================================================================
-undefined8 Farm_Routine_080093AC(undefined4 *arg_1)
+u32 Farm_Routine_080093AC(undefined4 *arg_1)
 
 {
   short s_val1;
@@ -469,7 +469,7 @@ void Farm_Routine_080094AC(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_080094B8 @ 0x080094B8
 // =============================================================================
-undefined4 Farm_Routine_080094B8(int arg_1,undefined4 arg_2)
+void Farm_Routine_080094B8(int arg_1,undefined4 arg_2)
 
 {
   
@@ -482,7 +482,7 @@ undefined4 Farm_Routine_080094B8(int arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Farm_Routine_080094E0 @ 0x080094E0
 // =============================================================================
-undefined8 Farm_Routine_080094E0(int arg_1)
+u32 Farm_Routine_080094E0(int arg_1)
 
 {
   short s_val1;
@@ -494,7 +494,7 @@ undefined8 Farm_Routine_080094E0(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_080094F8 @ 0x080094F8
 // =============================================================================
-undefined8 Farm_Routine_080094F8(int arg_1)
+u32 Farm_Routine_080094F8(int arg_1)
 
 {
   short s_val1;
@@ -506,7 +506,7 @@ undefined8 Farm_Routine_080094F8(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009508 @ 0x08009508
 // =============================================================================
-undefined8 Farm_Routine_08009508(int arg_1,short arg_2)
+u32 Farm_Routine_08009508(int arg_1,short arg_2)
 
 {
   short s_val1;
@@ -518,7 +518,7 @@ undefined8 Farm_Routine_08009508(int arg_1,short arg_2)
 // =============================================================================
 // Function: Farm_Routine_0800951C @ 0x0800951C
 // =============================================================================
-undefined4 Farm_Routine_0800951C(int arg_1,short arg_2)
+void Farm_Routine_0800951C(int arg_1,short arg_2)
 
 {
   
@@ -529,7 +529,7 @@ undefined4 Farm_Routine_0800951C(int arg_1,short arg_2)
 // =============================================================================
 // Function: Farm_Routine_0800952C @ 0x0800952C
 // =============================================================================
-undefined4 Farm_Routine_0800952C(int arg_1,short arg_2)
+void Farm_Routine_0800952C(int arg_1,short arg_2)
 
 {
   
@@ -550,7 +550,7 @@ void Farm_Routine_0800953C(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009548 @ 0x08009548
 // =============================================================================
-undefined8 Farm_Routine_08009548(undefined4 *arg_1)
+u32 Farm_Routine_08009548(undefined4 *arg_1)
 
 {
   
@@ -564,7 +564,7 @@ undefined8 Farm_Routine_08009548(undefined4 *arg_1)
 // =============================================================================
 // Function: Farm_Routine_0800956C @ 0x0800956C
 // =============================================================================
-undefined4 Farm_Routine_0800956C(undefined4 arg_1)
+void Farm_Routine_0800956C(undefined4 arg_1)
 
 {
   ushort u_val1;
@@ -580,7 +580,7 @@ undefined4 Farm_Routine_0800956C(undefined4 arg_1)
 // =============================================================================
 // Function: Farm_Routine_0800959C @ 0x0800959C
 // =============================================================================
-undefined4 Farm_Routine_0800959C(int arg_1,undefined4 arg_2)
+void Farm_Routine_0800959C(int arg_1,undefined4 arg_2)
 
 {
   
@@ -593,7 +593,7 @@ undefined4 Farm_Routine_0800959C(int arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Farm_Routine_080095C0 @ 0x080095C0
 // =============================================================================
-undefined4 Farm_Routine_080095C0(undefined4 arg_1,undefined4 arg_2)
+void Farm_Routine_080095C0(undefined4 arg_1,undefined4 arg_2)
 
 {
   ushort u_val1;
@@ -609,7 +609,7 @@ undefined4 Farm_Routine_080095C0(undefined4 arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Farm_Routine_080095FC @ 0x080095FC
 // =============================================================================
-undefined4 Farm_Routine_080095FC(undefined4 arg_1,undefined4 arg_2)
+void Farm_Routine_080095FC(undefined4 arg_1,undefined4 arg_2)
 
 {
   ushort u_val1;
@@ -625,7 +625,7 @@ undefined4 Farm_Routine_080095FC(undefined4 arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Farm_Routine_08009638 @ 0x08009638
 // =============================================================================
-undefined4 Farm_Routine_08009638(undefined4 arg_1,undefined4 arg_2)
+void Farm_Routine_08009638(undefined4 arg_1,undefined4 arg_2)
 
 {
   ushort u_val1;
@@ -641,7 +641,7 @@ undefined4 Farm_Routine_08009638(undefined4 arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Farm_Routine_08009674 @ 0x08009674
 // =============================================================================
-undefined4 Farm_Routine_08009674(undefined4 arg_1,undefined4 arg_2)
+void Farm_Routine_08009674(undefined4 arg_1,undefined4 arg_2)
 
 {
   ushort u_val1;
@@ -657,7 +657,7 @@ undefined4 Farm_Routine_08009674(undefined4 arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Farm_Routine_080096B0 @ 0x080096B0
 // =============================================================================
-undefined8 Farm_Routine_080096B0(undefined4 *arg_1)
+u32 Farm_Routine_080096B0(undefined4 *arg_1)
 
 {
   undefined2 stack_buf_c [2];
@@ -679,7 +679,7 @@ undefined8 Farm_Routine_080096B0(undefined4 *arg_1)
 // =============================================================================
 // Function: Farm_Routine_080096F0 @ 0x080096F0
 // =============================================================================
-undefined4 Farm_Routine_080096F0(int arg_1)
+void Farm_Routine_080096F0(int arg_1)
 
 {
   
@@ -691,7 +691,7 @@ undefined4 Farm_Routine_080096F0(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009710 @ 0x08009710
 // =============================================================================
-undefined4 Farm_Routine_08009710(int arg_1)
+void Farm_Routine_08009710(int arg_1)
 
 {
   
@@ -704,7 +704,7 @@ undefined4 Farm_Routine_08009710(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009744 @ 0x08009744
 // =============================================================================
-undefined8 Farm_Routine_08009744(byte *arg_1,byte arg_2,byte arg_3)
+u32 Farm_Routine_08009744(byte *arg_1,byte arg_2,byte arg_3)
 
 {
   byte *pbVar1;
@@ -726,7 +726,7 @@ undefined8 Farm_Routine_08009744(byte *arg_1,byte arg_2,byte arg_3)
 // =============================================================================
 // Function: Farm_Routine_0800977C @ 0x0800977C
 // =============================================================================
-undefined4 Farm_Routine_0800977C(int arg_1)
+void Farm_Routine_0800977C(int arg_1)
 
 {
   
@@ -737,7 +737,7 @@ undefined4 Farm_Routine_0800977C(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009790 @ 0x08009790
 // =============================================================================
-undefined4 Farm_Routine_08009790(int arg_1)
+void Farm_Routine_08009790(int arg_1)
 
 {
   
@@ -748,7 +748,7 @@ undefined4 Farm_Routine_08009790(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_080097A4 @ 0x080097A4
 // =============================================================================
-undefined4 Farm_Routine_080097A4(byte *arg_1)
+void Farm_Routine_080097A4(byte *arg_1)
 
 {
   byte b_flag1;
@@ -792,7 +792,7 @@ undefined4 Farm_Routine_080097A4(byte *arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009834 @ 0x08009834
 // =============================================================================
-undefined4 Farm_Routine_08009834(byte *arg_1)
+void Farm_Routine_08009834(byte *arg_1)
 
 {
   byte b_flag1;
@@ -816,7 +816,7 @@ undefined4 Farm_Routine_08009834(byte *arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009864 @ 0x08009864
 // =============================================================================
-undefined4 Farm_Routine_08009864(undefined4 arg_1)
+void Farm_Routine_08009864(undefined4 arg_1)
 
 {
   
@@ -828,7 +828,7 @@ undefined4 Farm_Routine_08009864(undefined4 arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009878 @ 0x08009878
 // =============================================================================
-undefined4 Farm_Routine_08009878(int arg_1)
+void Farm_Routine_08009878(int arg_1)
 
 {
   
@@ -840,7 +840,7 @@ undefined4 Farm_Routine_08009878(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009898 @ 0x08009898
 // =============================================================================
-undefined4 Farm_Routine_08009898(undefined4 arg_1)
+void Farm_Routine_08009898(undefined4 arg_1)
 
 {
   
@@ -852,7 +852,7 @@ undefined4 Farm_Routine_08009898(undefined4 arg_1)
 // =============================================================================
 // Function: Farm_Routine_080098AC @ 0x080098AC
 // =============================================================================
-undefined4 Farm_Routine_080098AC(undefined4 *arg_1,uint arg_2)
+void Farm_Routine_080098AC(undefined4 *arg_1,uint arg_2)
 
 {
   undefined4 *p_uint1;
@@ -872,7 +872,7 @@ undefined4 Farm_Routine_080098AC(undefined4 *arg_1,uint arg_2)
 // =============================================================================
 // Function: Farm_Routine_08009908 @ 0x08009908
 // =============================================================================
-undefined8 Farm_Routine_08009908(int arg_1)
+u32 Farm_Routine_08009908(int arg_1)
 
 {
   char c_char1;
@@ -893,7 +893,7 @@ undefined8 Farm_Routine_08009908(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009940 @ 0x08009940
 // =============================================================================
-undefined4 Farm_Routine_08009940(int arg_1,undefined4 *arg_2)
+void Farm_Routine_08009940(int arg_1,undefined4 *arg_2)
 
 {
   undefined4 *p_uint1;
@@ -914,7 +914,7 @@ undefined4 Farm_Routine_08009940(int arg_1,undefined4 *arg_2)
 // =============================================================================
 // Function: Farm_Routine_08009968 @ 0x08009968
 // =============================================================================
-undefined4 Farm_Routine_08009968(undefined4 arg_1,undefined4 *arg_2)
+void Farm_Routine_08009968(undefined4 arg_1,undefined4 *arg_2)
 
 {
   undefined4 *p_uint1;
@@ -932,7 +932,7 @@ undefined4 Farm_Routine_08009968(undefined4 arg_1,undefined4 *arg_2)
 // =============================================================================
 // Function: Farm_Routine_08009984 @ 0x08009984
 // =============================================================================
-undefined4 Farm_Routine_08009984(int arg_1)
+void Farm_Routine_08009984(int arg_1)
 
 {
   undefined4 *p_uint1;
@@ -953,7 +953,7 @@ undefined4 Farm_Routine_08009984(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_080099EC @ 0x080099EC
 // =============================================================================
-undefined8 Farm_Routine_080099EC(int arg_1)
+u32 Farm_Routine_080099EC(int arg_1)
 
 {
   
@@ -963,7 +963,7 @@ undefined8 Farm_Routine_080099EC(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009A48 @ 0x08009A48
 // =============================================================================
-undefined8 Farm_Routine_08009A48(int arg_1,undefined4 arg_2)
+u32 Farm_Routine_08009A48(int arg_1,undefined4 arg_2)
 
 {
   uint u_val1;
@@ -995,7 +995,7 @@ undefined8 Farm_Routine_08009A48(int arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Farm_GetFieldState @ 0x08009B00
 // =============================================================================
-undefined8 Farm_GetFieldState(int arg_1)
+u32 Farm_GetFieldState(int arg_1)
 
 {
   int i_val1;
@@ -1010,7 +1010,7 @@ undefined8 Farm_GetFieldState(int arg_1)
 // =============================================================================
 // Function: Farm_HasPlantedCrop @ 0x08009B20
 // =============================================================================
-undefined8 Farm_HasPlantedCrop(int arg_1)
+u32 Farm_HasPlantedCrop(int arg_1)
 
 {
   undefined4 u_val1;
@@ -1045,7 +1045,7 @@ LAB_08009b5a:
 // =============================================================================
 // Function: Farm_AddLumber @ 0x08009B68
 // =============================================================================
-undefined4 Farm_AddLumber(int arg_1,int arg_2)
+void Farm_AddLumber(int arg_1,int arg_2)
 
 {
   uint *p_uint1;
@@ -1067,7 +1067,7 @@ undefined4 Farm_AddLumber(int arg_1,int arg_2)
 // =============================================================================
 // Function: Farm_TakeLumber @ 0x08009BAC
 // =============================================================================
-undefined4 Farm_TakeLumber(int arg_1,uint arg_2)
+void Farm_TakeLumber(int arg_1,uint arg_2)
 
 {
   ushort u_val1;
@@ -1087,7 +1087,7 @@ undefined4 Farm_TakeLumber(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Farm_Routine_08009BE4 @ 0x08009BE4
 // =============================================================================
-undefined4 Farm_Routine_08009BE4(int arg_1,int arg_2)
+void Farm_Routine_08009BE4(int arg_1,int arg_2)
 
 {
   undefined4 u_val1;
@@ -1127,7 +1127,7 @@ void Farm_Routine_08009C3C(int arg_1)
 // =============================================================================
 // Function: Farm_Routine_08009FC8 @ 0x08009FC8
 // =============================================================================
-undefined8 Farm_Routine_08009FC8(uint *arg_1,byte arg_2,char arg_3,byte arg_4)
+u32 Farm_Routine_08009FC8(uint *arg_1,byte arg_2,char arg_3,byte arg_4)
 
 {
   byte b_flag1;
@@ -1143,7 +1143,7 @@ undefined8 Farm_Routine_08009FC8(uint *arg_1,byte arg_2,char arg_3,byte arg_4)
 // =============================================================================
 // Function: FieldPlot_GetState @ 0x0800A014
 // =============================================================================
-undefined8 FieldPlot_GetState(uint *arg_1)
+u32 FieldPlot_GetState(uint *arg_1)
 
 {
   uint u_val1;
@@ -1166,7 +1166,7 @@ undefined8 FieldPlot_GetState(uint *arg_1)
 // =============================================================================
 // Function: FieldPlot_IsTilled @ 0x0800A07C
 // =============================================================================
-undefined8 FieldPlot_IsTilled(uint *arg_1)
+u32 FieldPlot_IsTilled(uint *arg_1)
 
 {
   uint u_val1;
@@ -1185,7 +1185,7 @@ undefined8 FieldPlot_IsTilled(uint *arg_1)
 // =============================================================================
 // Function: FieldPlot_GetCropType @ 0x0800A0A4
 // =============================================================================
-undefined8 FieldPlot_GetCropType(uint *arg_1)
+u32 FieldPlot_GetCropType(uint *arg_1)
 
 {
   uint u_val1;
@@ -1214,7 +1214,7 @@ undefined8 FieldPlot_GetCropType(uint *arg_1)
 // =============================================================================
 // Function: FieldPlot_SetCropAndStage @ 0x0800A134
 // =============================================================================
-undefined4 FieldPlot_SetCropAndStage(uint *arg_1,char arg_2,int arg_3)
+void FieldPlot_SetCropAndStage(uint *arg_1,char arg_2,int arg_3)
 
 {
   byte b_flag1;
@@ -1232,7 +1232,7 @@ undefined4 FieldPlot_SetCropAndStage(uint *arg_1,char arg_2,int arg_3)
 // =============================================================================
 // Function: FieldPlot_TillSoil @ 0x0800A190
 // =============================================================================
-undefined8 FieldPlot_TillSoil(uint *arg_1,char arg_2)
+u32 FieldPlot_TillSoil(uint *arg_1,char arg_2)
 
 {
   byte b_flag1;
@@ -1285,7 +1285,7 @@ LAB_0800a230:
 // =============================================================================
 // Function: FieldPlot_PlantSeeds @ 0x0800A238
 // =============================================================================
-undefined8 FieldPlot_PlantSeeds(uint *arg_1,int arg_2)
+u32 FieldPlot_PlantSeeds(uint *arg_1,int arg_2)
 
 {
   undefined4 u_val1;
@@ -1354,7 +1354,7 @@ LAB_0800a336:
 // =============================================================================
 // Function: FieldPlot_StrikeWithHammer @ 0x0800A33C
 // =============================================================================
-undefined8 FieldPlot_StrikeWithHammer(uint *arg_1,int arg_2)
+u32 FieldPlot_StrikeWithHammer(uint *arg_1,int arg_2)
 
 {
   uint u_val1;
@@ -1399,7 +1399,7 @@ LAB_0800a3c2:
 // =============================================================================
 // Function: FieldPlot_ChopBranch @ 0x0800A3C8
 // =============================================================================
-undefined8 FieldPlot_ChopBranch(uint *arg_1)
+u32 FieldPlot_ChopBranch(uint *arg_1)
 
 {
   uint u_val1;
@@ -1436,7 +1436,7 @@ LAB_0800a432:
 // =============================================================================
 // Function: FieldPlot_ClearWeeds @ 0x0800A438
 // =============================================================================
-undefined8 FieldPlot_ClearWeeds(uint *arg_1)
+u32 FieldPlot_ClearWeeds(uint *arg_1)
 
 {
   bool b_flag1;
@@ -1451,7 +1451,7 @@ undefined8 FieldPlot_ClearWeeds(uint *arg_1)
 // =============================================================================
 // Function: FieldPlot_SetDebris @ 0x0800A460
 // =============================================================================
-undefined4 FieldPlot_SetDebris(uint *arg_1,char arg_2)
+void FieldPlot_SetDebris(uint *arg_1,char arg_2)
 
 {
   
@@ -1466,7 +1466,7 @@ undefined4 FieldPlot_SetDebris(uint *arg_1,char arg_2)
 // =============================================================================
 // Function: FieldPlot_HarvestCrop @ 0x0800A4A4
 // =============================================================================
-undefined8 FieldPlot_HarvestCrop(undefined **arg_1,uint *arg_2)
+u32 FieldPlot_HarvestCrop(undefined **arg_1,uint *arg_2)
 
 {
   short s_val1;
@@ -1560,7 +1560,7 @@ LAB_0800a6be:
 // =============================================================================
 // Function: FieldPlot_CanPlaceItem @ 0x0800A6C8
 // =============================================================================
-undefined8 FieldPlot_CanPlaceItem(uint *arg_1,undefined4 arg_2)
+u32 FieldPlot_CanPlaceItem(uint *arg_1,undefined4 arg_2)
 
 {
   int i_val1;
@@ -1579,7 +1579,7 @@ undefined8 FieldPlot_CanPlaceItem(uint *arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: FieldPlot_PlaceItem @ 0x0800A6F4
 // =============================================================================
-undefined4 FieldPlot_PlaceItem(uint *arg_1,undefined4 arg_2)
+void FieldPlot_PlaceItem(uint *arg_1,undefined4 arg_2)
 
 {
   char c_char1;
@@ -1626,7 +1626,7 @@ undefined4 FieldPlot_PlaceItem(uint *arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: FieldPlot_IsPassable @ 0x0800A78C
 // =============================================================================
-undefined8 FieldPlot_IsPassable(uint *arg_1)
+u32 FieldPlot_IsPassable(uint *arg_1)
 
 {
   uint u_val1;
@@ -1645,7 +1645,7 @@ undefined8 FieldPlot_IsPassable(uint *arg_1)
 // =============================================================================
 // Function: Farm_Routine_0800A7B0 @ 0x0800A7B0
 // =============================================================================
-undefined4 Farm_Routine_0800A7B0(uint *arg_1,int arg_2,byte *arg_3)
+void Farm_Routine_0800A7B0(uint *arg_1,int arg_2,byte *arg_3)
 
 {
   uint u_val1;
@@ -1786,7 +1786,7 @@ LAB_0800aad2:
 // =============================================================================
 // Function: FieldPlot_SeasonChangeClear @ 0x0800AB08
 // =============================================================================
-undefined4 FieldPlot_SeasonChangeClear(uint *arg_1,int arg_2)
+void FieldPlot_SeasonChangeClear(uint *arg_1,int arg_2)
 
 {
   int i_val1;
@@ -1898,7 +1898,7 @@ case_0800AF1A:
 // =============================================================================
 // Function: FieldPlot_GetTileGraphic @ 0x0800AF20
 // =============================================================================
-undefined8 FieldPlot_GetTileGraphic(uint *arg_1)
+u32 FieldPlot_GetTileGraphic(uint *arg_1)
 
 {
   uint u_val1;
@@ -1924,7 +1924,7 @@ LAB_0800af56:
 // =============================================================================
 // Function: FieldPlot_ResolveBorderTile @ 0x0800AF5C
 // =============================================================================
-undefined8 FieldPlot_ResolveBorderTile(uint *arg_1,uint *arg_2,uint *arg_3)
+u32 FieldPlot_ResolveBorderTile(uint *arg_1,uint *arg_2,uint *arg_3)
 
 {
   uint u_val1;

@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: ScriptEngine_Construct @ 0x0803AB30
 // =============================================================================
-undefined8 ScriptEngine_Construct(undefined4 *ctx,int *opcode)
+u32 ScriptEngine_Construct(undefined4 *ctx,int *opcode)
 
 {
   undefined2 u_val1;
@@ -93,7 +93,7 @@ undefined8 ScriptEngine_Construct(undefined4 *ctx,int *opcode)
 // =============================================================================
 // Function: ScriptEngine_Destruct @ 0x0803AC78
 // =============================================================================
-undefined4 ScriptEngine_Destruct(undefined4 *ctx,uint opcode)
+void ScriptEngine_Destruct(undefined4 *ctx,uint opcode)
 
 {
   undefined4 *p_uint1;
@@ -116,7 +116,7 @@ undefined4 ScriptEngine_Destruct(undefined4 *ctx,uint opcode)
 // =============================================================================
 // Function: ScriptEngine_ClearVM @ 0x0803ACD8
 // =============================================================================
-undefined4 ScriptEngine_ClearVM(undefined4 *ctx,int *opcode)
+void ScriptEngine_ClearVM(undefined4 *ctx,int *opcode)
 
 {
   int i_val1;
@@ -417,7 +417,7 @@ void ScriptEngine_GetVariable(undefined4 *ctx,int *opcode,int *arg1,int arg2,uin
 // =============================================================================
 // Function: ScriptEngine_ParseHeaderChunks @ 0x0803B128
 // =============================================================================
-undefined4 ScriptEngine_ParseHeaderChunks(undefined4 *ctx,int *opcode)
+void ScriptEngine_ParseHeaderChunks(undefined4 *ctx,int *opcode)
 
 {
   int i_val1;
@@ -541,7 +541,7 @@ undefined4 ScriptEngine_ParseHeaderChunks(undefined4 *ctx,int *opcode)
 // =============================================================================
 // Function: ScriptEngine_AllocateStack @ 0x0803B2A8
 // =============================================================================
-undefined4 ScriptEngine_AllocateStack(undefined4 *ctx)
+void ScriptEngine_AllocateStack(undefined4 *ctx)
 
 {
   undefined4 u_val1;
@@ -599,7 +599,7 @@ undefined4 ScriptEngine_AllocateStack(undefined4 *ctx)
 // =============================================================================
 // Function: ScriptEngine_FreeStack @ 0x0803B368
 // =============================================================================
-undefined4 ScriptEngine_FreeStack(undefined4 *ctx,undefined4 opcode)
+void ScriptEngine_FreeStack(undefined4 *ctx,undefined4 opcode)
 
 {
   short s_val1;
@@ -668,7 +668,7 @@ ScriptEngine_StackPush(undefined4 *ctx,undefined4 *opcode,undefined4 arg1,undefi
 // =============================================================================
 // Function: ScriptEngine_StackPop @ 0x0803B474
 // =============================================================================
-undefined4 ScriptEngine_StackPop(int ctx,int opcode,int arg1)
+void ScriptEngine_StackPop(int ctx,int opcode,int arg1)
 
 {
   ushort u_val1;
@@ -689,7 +689,7 @@ undefined4 ScriptEngine_StackPop(int ctx,int opcode,int arg1)
 // =============================================================================
 // Function: ScriptEngine_StackTop @ 0x0803B4B0
 // =============================================================================
-undefined8 ScriptEngine_StackTop(undefined4 *ctx,undefined4 opcode)
+u32 ScriptEngine_StackTop(undefined4 *ctx,undefined4 opcode)
 
 {
   undefined4 *p_uint1;
@@ -710,7 +710,7 @@ undefined8 ScriptEngine_StackTop(undefined4 *ctx,undefined4 opcode)
 // =============================================================================
 // Function: ScriptEngine_SetPC @ 0x0803B4DC
 // =============================================================================
-undefined8 ScriptEngine_SetPC(undefined1 *ctx,int opcode,int arg1)
+u32 ScriptEngine_SetPC(undefined1 *ctx,int opcode,int arg1)
 
 {
   char c_char1;
@@ -808,7 +808,7 @@ LAB_0803b6ac:
 // =============================================================================
 // Function: ScriptEngine_GetPC @ 0x0803B6B8
 // =============================================================================
-undefined4 ScriptEngine_GetPC(int ctx,int opcode,undefined4 arg1)
+void ScriptEngine_GetPC(int ctx,int opcode,undefined4 arg1)
 
 {
   uint u_val1;
@@ -946,7 +946,7 @@ ScriptEngine_LookupJumpTable(short *ctx,short opcode,short arg1,short arg2,short
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BAAC @ 0x0803BAAC
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803BAAC(short *ctx,ushort *opcode,int arg1,int arg2)
+u32 ScriptEngine_Routine_0803BAAC(short *ctx,ushort *opcode,int arg1,int arg2)
 
 {
   byte b_flag1;
@@ -1038,7 +1038,7 @@ LAB_0803bb18:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BCF8 @ 0x0803BCF8
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BCF8(int ctx)
+void ScriptEngine_Routine_0803BCF8(int ctx)
 
 {
   
@@ -1059,7 +1059,7 @@ undefined4 ScriptEngine_Routine_0803BCF8(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BD60 @ 0x0803BD60
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BD60(int ctx)
+void ScriptEngine_Routine_0803BD60(int ctx)
 
 {
   
@@ -1073,7 +1073,7 @@ undefined4 ScriptEngine_Routine_0803BD60(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BD88 @ 0x0803BD88
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BD88(int ctx)
+void ScriptEngine_Routine_0803BD88(int ctx)
 
 {
   
@@ -1087,7 +1087,7 @@ undefined4 ScriptEngine_Routine_0803BD88(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BDB8 @ 0x0803BDB8
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BDB8(int ctx)
+void ScriptEngine_Routine_0803BDB8(int ctx)
 
 {
   
@@ -1118,7 +1118,7 @@ void ScriptEngine_Routine_0803BDFC(undefined4 *ctx,undefined4 opcode,undefined4 
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BE50 @ 0x0803BE50
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BE50(int *ctx,uint opcode)
+void ScriptEngine_Routine_0803BE50(int *ctx,uint opcode)
 
 {
   int i_val1;
@@ -1150,7 +1150,7 @@ void ScriptEngine_Routine_0803BEB0(undefined4 *ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BEBC @ 0x0803BEBC
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BEBC(undefined4 *ctx)
+void ScriptEngine_Routine_0803BEBC(undefined4 *ctx)
 
 {
   
@@ -1161,7 +1161,7 @@ undefined4 ScriptEngine_Routine_0803BEBC(undefined4 *ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BEC8 @ 0x0803BEC8
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BEC8(undefined4 *ctx)
+void ScriptEngine_Routine_0803BEC8(undefined4 *ctx)
 
 {
   
@@ -1172,7 +1172,7 @@ undefined4 ScriptEngine_Routine_0803BEC8(undefined4 *ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BED4 @ 0x0803BED4
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BED4(undefined4 *ctx)
+void ScriptEngine_Routine_0803BED4(undefined4 *ctx)
 
 {
   
@@ -1183,7 +1183,7 @@ undefined4 ScriptEngine_Routine_0803BED4(undefined4 *ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BEE0 @ 0x0803BEE0
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BEE0(undefined4 *ctx)
+void ScriptEngine_Routine_0803BEE0(undefined4 *ctx)
 
 {
   
@@ -1194,7 +1194,7 @@ undefined4 ScriptEngine_Routine_0803BEE0(undefined4 *ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BEFC @ 0x0803BEFC
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BEFC(undefined4 *ctx)
+void ScriptEngine_Routine_0803BEFC(undefined4 *ctx)
 
 {
   
@@ -1205,7 +1205,7 @@ undefined4 ScriptEngine_Routine_0803BEFC(undefined4 *ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BF08 @ 0x0803BF08
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BF08(undefined4 *ctx)
+void ScriptEngine_Routine_0803BF08(undefined4 *ctx)
 
 {
   
@@ -1260,7 +1260,7 @@ ScriptEngine_Routine_0803BF78(int ctx,undefined4 opcode,undefined4 arg1,undefine
 // =============================================================================
 // Function: ScriptEngine_Routine_0803BFC8 @ 0x0803BFC8
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803BFC8(int ctx,undefined4 opcode)
+void ScriptEngine_Routine_0803BFC8(int ctx,undefined4 opcode)
 
 {
   
@@ -1536,7 +1536,7 @@ LAB_0803c506:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803C518 @ 0x0803C518
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803C518(int ctx)
+void ScriptEngine_Routine_0803C518(int ctx)
 
 {
   
@@ -1549,7 +1549,7 @@ undefined4 ScriptEngine_Routine_0803C518(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803C52C @ 0x0803C52C
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803C52C(int ctx)
+void ScriptEngine_Routine_0803C52C(int ctx)
 
 {
   
@@ -1577,7 +1577,7 @@ ScriptEngine_Routine_0803C54C(int ctx,undefined4 opcode,undefined4 arg1,undefine
 // =============================================================================
 // Function: ScriptEngine_Routine_0803C588 @ 0x0803C588
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803C588(int ctx,undefined4 opcode)
+void ScriptEngine_Routine_0803C588(int ctx,undefined4 opcode)
 
 {
   
@@ -1590,7 +1590,7 @@ undefined4 ScriptEngine_Routine_0803C588(int ctx,undefined4 opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803C7A0 @ 0x0803C7A0
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803C7A0(int *ctx,uint opcode)
+void ScriptEngine_Routine_0803C7A0(int *ctx,uint opcode)
 
 {
   
@@ -1606,7 +1606,7 @@ undefined4 ScriptEngine_Routine_0803C7A0(int *ctx,uint opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803C7C8 @ 0x0803C7C8
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *ctx,int opcode,int arg1,byte *arg2,int arg_5)
+void ScriptEngine_Routine_0803C7C8(undefined4 *ctx,int opcode,int arg1,byte *arg2,int arg_5)
 
 {
   byte b_flag1;
@@ -1807,7 +1807,7 @@ undefined4 ScriptEngine_Routine_0803C7C8(undefined4 *ctx,int opcode,int arg1,byt
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D080 @ 0x0803D080
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D080(int *ctx,int opcode)
+void ScriptEngine_Routine_0803D080(int *ctx,int opcode)
 
 {
   int i_val1;
@@ -1847,7 +1847,7 @@ LAB_0803d0b4:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D240 @ 0x0803D240
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D240(int *ctx,uint opcode)
+void ScriptEngine_Routine_0803D240(int *ctx,uint opcode)
 
 {
   int i_val1;
@@ -1889,7 +1889,7 @@ undefined4 ScriptEngine_Routine_0803D240(int *ctx,uint opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D2E8 @ 0x0803D2E8
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D2E8(int *ctx,char opcode)
+void ScriptEngine_Routine_0803D2E8(int *ctx,char opcode)
 
 {
   int i_val1;
@@ -1910,7 +1910,7 @@ undefined4 ScriptEngine_Routine_0803D2E8(int *ctx,char opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D340 @ 0x0803D340
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D340(int *ctx,undefined4 opcode)
+void ScriptEngine_Routine_0803D340(int *ctx,undefined4 opcode)
 
 {
   int i_val1;
@@ -1932,7 +1932,7 @@ undefined4 ScriptEngine_Routine_0803D340(int *ctx,undefined4 opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D3A0 @ 0x0803D3A0
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D3A0(int *ctx,undefined *opcode)
+u32 ScriptEngine_Routine_0803D3A0(int *ctx,undefined *opcode)
 
 {
   char c_char1;
@@ -2008,7 +2008,7 @@ LAB_0803d3e6:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D404 @ 0x0803D404
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D404(int *ctx,uint opcode)
+void ScriptEngine_Routine_0803D404(int *ctx,uint opcode)
 
 {
   int i_val1;
@@ -2026,7 +2026,7 @@ undefined4 ScriptEngine_Routine_0803D404(int *ctx,uint opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D440 @ 0x0803D440
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D440(int *ctx)
+void ScriptEngine_Routine_0803D440(int *ctx)
 
 {
   int i_val1;
@@ -2044,7 +2044,7 @@ undefined4 ScriptEngine_Routine_0803D440(int *ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D464 @ 0x0803D464
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D464(int ctx)
+void ScriptEngine_Routine_0803D464(int ctx)
 
 {
   
@@ -2055,7 +2055,7 @@ undefined4 ScriptEngine_Routine_0803D464(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D470 @ 0x0803D470
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D470(int ctx)
+void ScriptEngine_Routine_0803D470(int ctx)
 
 {
   
@@ -2066,7 +2066,7 @@ undefined4 ScriptEngine_Routine_0803D470(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D47C @ 0x0803D47C
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D47C(int ctx)
+void ScriptEngine_Routine_0803D47C(int ctx)
 
 {
   
@@ -2077,7 +2077,7 @@ undefined4 ScriptEngine_Routine_0803D47C(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D488 @ 0x0803D488
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D488(int ctx)
+void ScriptEngine_Routine_0803D488(int ctx)
 
 {
   
@@ -2088,7 +2088,7 @@ undefined4 ScriptEngine_Routine_0803D488(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D494 @ 0x0803D494
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D494(int ctx,undefined1 opcode)
+void ScriptEngine_Routine_0803D494(int ctx,undefined1 opcode)
 
 {
   
@@ -2099,7 +2099,7 @@ undefined4 ScriptEngine_Routine_0803D494(int ctx,undefined1 opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D4A4 @ 0x0803D4A4
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D4A4(int ctx)
+void ScriptEngine_Routine_0803D4A4(int ctx)
 
 {
   
@@ -2110,7 +2110,7 @@ undefined4 ScriptEngine_Routine_0803D4A4(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D4B0 @ 0x0803D4B0
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D4B0(int ctx)
+void ScriptEngine_Routine_0803D4B0(int ctx)
 
 {
   
@@ -2121,7 +2121,7 @@ undefined4 ScriptEngine_Routine_0803D4B0(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D4BC @ 0x0803D4BC
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D4BC(int ctx)
+void ScriptEngine_Routine_0803D4BC(int ctx)
 
 {
   
@@ -2132,7 +2132,7 @@ undefined4 ScriptEngine_Routine_0803D4BC(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D4C8 @ 0x0803D4C8
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D4C8(int ctx,undefined4 opcode,undefined1 arg1)
+void ScriptEngine_Routine_0803D4C8(int ctx,undefined4 opcode,undefined1 arg1)
 
 {
   
@@ -2164,7 +2164,7 @@ ScriptEngine_Routine_0803D4D8(int ctx,undefined4 opcode,undefined4 arg1,undefine
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D52C @ 0x0803D52C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803D52C(char *ctx,uint *opcode)
+u32 ScriptEngine_Routine_0803D52C(char *ctx,uint *opcode)
 
 {
   byte b_flag1;
@@ -2219,7 +2219,7 @@ undefined8 ScriptEngine_Routine_0803D52C(char *ctx,uint *opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D644 @ 0x0803D644
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803D644(int ctx,int opcode)
+u32 ScriptEngine_Routine_0803D644(int ctx,int opcode)
 
 {
   byte *pbVar1;
@@ -2240,7 +2240,7 @@ undefined8 ScriptEngine_Routine_0803D644(int ctx,int opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803D688 @ 0x0803D688
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803D688(int ctx,undefined4 *opcode,undefined4 arg1)
+void ScriptEngine_Routine_0803D688(int ctx,undefined4 *opcode,undefined4 arg1)
 
 {
   byte b_flag1;
@@ -2298,7 +2298,7 @@ undefined4 ScriptEngine_Routine_0803D688(int ctx,undefined4 *opcode,undefined4 a
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DA24 @ 0x0803DA24
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DA24(int ctx)
+u32 ScriptEngine_Routine_0803DA24(int ctx)
 
 {
   char c_char1;
@@ -2337,7 +2337,7 @@ undefined8 ScriptEngine_Routine_0803DA24(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DA7C @ 0x0803DA7C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DA7C(int ctx)
+u32 ScriptEngine_Routine_0803DA7C(int ctx)
 
 {
   char c_char1;
@@ -2473,7 +2473,7 @@ LAB_0803dc54:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DC64 @ 0x0803DC64
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DC64(int ctx)
+u32 ScriptEngine_Routine_0803DC64(int ctx)
 
 {
   char c_char1;
@@ -2507,7 +2507,7 @@ undefined8 ScriptEngine_Routine_0803DC64(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DCB4 @ 0x0803DCB4
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DCB4(int ctx)
+u32 ScriptEngine_Routine_0803DCB4(int ctx)
 
 {
   char c_char1;
@@ -2580,7 +2580,7 @@ LAB_0803dde0:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DDE8 @ 0x0803DDE8
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DDE8(int ctx)
+u32 ScriptEngine_Routine_0803DDE8(int ctx)
 
 {
   char c_char1;
@@ -2631,7 +2631,7 @@ LAB_0803debe:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DECC @ 0x0803DECC
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DECC(int ctx)
+u32 ScriptEngine_Routine_0803DECC(int ctx)
 
 {
   char c_char1;
@@ -2654,7 +2654,7 @@ undefined8 ScriptEngine_Routine_0803DECC(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DEF8 @ 0x0803DEF8
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DEF8(int ctx)
+u32 ScriptEngine_Routine_0803DEF8(int ctx)
 
 {
   char c_char1;
@@ -2693,7 +2693,7 @@ undefined8 ScriptEngine_Routine_0803DEF8(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DF50 @ 0x0803DF50
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DF50(int ctx)
+u32 ScriptEngine_Routine_0803DF50(int ctx)
 
 {
   char c_char1;
@@ -2721,7 +2721,7 @@ undefined8 ScriptEngine_Routine_0803DF50(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DF94 @ 0x0803DF94
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DF94(int ctx)
+u32 ScriptEngine_Routine_0803DF94(int ctx)
 
 {
   char c_char1;
@@ -2758,7 +2758,7 @@ undefined8 ScriptEngine_Routine_0803DF94(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803DFE8 @ 0x0803DFE8
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803DFE8(int ctx)
+u32 ScriptEngine_Routine_0803DFE8(int ctx)
 
 {
   char c_char1;
@@ -2896,7 +2896,7 @@ LAB_0803e194:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E1A4 @ 0x0803E1A4
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E1A4(int ctx)
+u32 ScriptEngine_Routine_0803E1A4(int ctx)
 
 {
   char c_char1;
@@ -2935,7 +2935,7 @@ undefined8 ScriptEngine_Routine_0803E1A4(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E1FC @ 0x0803E1FC
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E1FC(int ctx)
+u32 ScriptEngine_Routine_0803E1FC(int ctx)
 
 {
   char c_char1;
@@ -2970,7 +2970,7 @@ undefined8 ScriptEngine_Routine_0803E1FC(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E264 @ 0x0803E264
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E264(int ctx)
+u32 ScriptEngine_Routine_0803E264(int ctx)
 
 {
   char c_char1;
@@ -3088,7 +3088,7 @@ LAB_0803e3fe:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E40C @ 0x0803E40C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E40C(int ctx)
+u32 ScriptEngine_Routine_0803E40C(int ctx)
 
 {
   undefined4 u_val1;
@@ -3108,7 +3108,7 @@ undefined8 ScriptEngine_Routine_0803E40C(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E448 @ 0x0803E448
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E448(int ctx)
+u32 ScriptEngine_Routine_0803E448(int ctx)
 
 {
   char c_char1;
@@ -3147,7 +3147,7 @@ undefined8 ScriptEngine_Routine_0803E448(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E4A0 @ 0x0803E4A0
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E4A0(int ctx)
+u32 ScriptEngine_Routine_0803E4A0(int ctx)
 
 {
   char c_char1;
@@ -3266,7 +3266,7 @@ LAB_0803e610:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E620 @ 0x0803E620
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E620(int ctx)
+u32 ScriptEngine_Routine_0803E620(int ctx)
 
 {
   char c_char1;
@@ -3308,7 +3308,7 @@ undefined8 ScriptEngine_Routine_0803E620(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E684 @ 0x0803E684
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E684(int ctx)
+u32 ScriptEngine_Routine_0803E684(int ctx)
 
 {
   char c_char1;
@@ -3345,7 +3345,7 @@ undefined8 ScriptEngine_Routine_0803E684(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E6EC @ 0x0803E6EC
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E6EC(int ctx)
+u32 ScriptEngine_Routine_0803E6EC(int ctx)
 
 {
   char c_char1;
@@ -3398,7 +3398,7 @@ undefined8 ScriptEngine_Routine_0803E6EC(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E780 @ 0x0803E780
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E780(int ctx)
+u32 ScriptEngine_Routine_0803E780(int ctx)
 
 {
   char c_char1;
@@ -3507,7 +3507,7 @@ LAB_0803e8da:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E8E8 @ 0x0803E8E8
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E8E8(int ctx)
+u32 ScriptEngine_Routine_0803E8E8(int ctx)
 
 {
   char c_char1;
@@ -3550,7 +3550,7 @@ LAB_0803e968:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E970 @ 0x0803E970
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E970(int ctx)
+u32 ScriptEngine_Routine_0803E970(int ctx)
 
 {
   char c_char1;
@@ -3590,7 +3590,7 @@ undefined8 ScriptEngine_Routine_0803E970(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803E9E4 @ 0x0803E9E4
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803E9E4(int ctx)
+u32 ScriptEngine_Routine_0803E9E4(int ctx)
 
 {
   char c_char1;
@@ -3632,7 +3632,7 @@ undefined8 ScriptEngine_Routine_0803E9E4(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EA5C @ 0x0803EA5C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EA5C(int ctx)
+u32 ScriptEngine_Routine_0803EA5C(int ctx)
 
 {
   undefined4 u_val1;
@@ -3652,7 +3652,7 @@ undefined8 ScriptEngine_Routine_0803EA5C(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EA98 @ 0x0803EA98
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EA98(int ctx)
+u32 ScriptEngine_Routine_0803EA98(int ctx)
 
 {
   char c_char1;
@@ -3680,7 +3680,7 @@ undefined8 ScriptEngine_Routine_0803EA98(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EADC @ 0x0803EADC
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EADC(int ctx)
+u32 ScriptEngine_Routine_0803EADC(int ctx)
 
 {
   char c_char1;
@@ -3719,7 +3719,7 @@ undefined8 ScriptEngine_Routine_0803EADC(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EB40 @ 0x0803EB40
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EB40(int ctx)
+u32 ScriptEngine_Routine_0803EB40(int ctx)
 
 {
   char c_char1;
@@ -3760,7 +3760,7 @@ LAB_0803eb94:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EB9C @ 0x0803EB9C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EB9C(int ctx)
+u32 ScriptEngine_Routine_0803EB9C(int ctx)
 
 {
   char c_char1;
@@ -3823,7 +3823,7 @@ undefined8 ScriptEngine_Routine_0803EB9C(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EC44 @ 0x0803EC44
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EC44(int ctx)
+u32 ScriptEngine_Routine_0803EC44(int ctx)
 
 {
   char c_char1;
@@ -3871,7 +3871,7 @@ undefined8 ScriptEngine_Routine_0803EC44(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803ECC0 @ 0x0803ECC0
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803ECC0(int ctx)
+u32 ScriptEngine_Routine_0803ECC0(int ctx)
 
 {
   char c_char1;
@@ -3955,7 +3955,7 @@ LAB_0803edc4:
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EDCC @ 0x0803EDCC
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EDCC(int ctx)
+u32 ScriptEngine_Routine_0803EDCC(int ctx)
 
 {
   char c_char1;
@@ -3999,7 +3999,7 @@ undefined8 ScriptEngine_Routine_0803EDCC(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EE50 @ 0x0803EE50
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EE50(int ctx)
+u32 ScriptEngine_Routine_0803EE50(int ctx)
 
 {
   char c_char1;
@@ -4033,7 +4033,7 @@ undefined8 ScriptEngine_Routine_0803EE50(int ctx)
 // =============================================================================
 // Function: ScriptEngine_HandleDialogTrigger @ 0x0803EE94
 // =============================================================================
-undefined8 ScriptEngine_HandleDialogTrigger(undefined4 *ctx)
+u32 ScriptEngine_HandleDialogTrigger(undefined4 *ctx)
 
 {
   
@@ -4047,7 +4047,7 @@ undefined8 ScriptEngine_HandleDialogTrigger(undefined4 *ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EEC8 @ 0x0803EEC8
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803EEC8(int ctx,uint opcode)
+void ScriptEngine_Routine_0803EEC8(int ctx,uint opcode)
 
 {
   
@@ -4061,7 +4061,7 @@ undefined4 ScriptEngine_Routine_0803EEC8(int ctx,uint opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803EEEC @ 0x0803EEEC
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803EEEC(undefined4 *ctx,int opcode)
+u32 ScriptEngine_Routine_0803EEEC(undefined4 *ctx,int opcode)
 
 {
   int i_val1;
@@ -4122,7 +4122,7 @@ LAB_0803efca:
 // =============================================================================
 // Function: AScriptEngine_Execute @ 0x0803EFD8
 // =============================================================================
-undefined8 AScriptEngine_Execute(int *arg_1)
+u32 AScriptEngine_Execute(int *arg_1)
 
 {
   int i_val1;
@@ -4145,7 +4145,7 @@ undefined8 AScriptEngine_Execute(int *arg_1)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803F084 @ 0x0803F084
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803F084(int ctx,int opcode)
+u32 ScriptEngine_Routine_0803F084(int ctx,int opcode)
 
 {
   char c_char1;
@@ -4180,7 +4180,7 @@ void ScriptEngine_Routine_0803F0B4(int ctx,int opcode)
 // =============================================================================
 // Function: ScriptEngine_GetStringById @ 0x0803F7E0
 // =============================================================================
-undefined8 ScriptEngine_GetStringById(int ctx,uint opcode)
+u32 ScriptEngine_GetStringById(int ctx,uint opcode)
 
 {
   int vel_x;
@@ -4210,7 +4210,7 @@ void ScriptEngine_StartEventScript(int ctx,undefined4 opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0803F83C @ 0x0803F83C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0803F83C(int ctx,undefined4 opcode,undefined4 arg1)
+u32 ScriptEngine_Routine_0803F83C(int ctx,undefined4 opcode,undefined4 arg1)
 
 {
   
@@ -4225,7 +4225,7 @@ undefined8 ScriptEngine_Routine_0803F83C(int ctx,undefined4 opcode,undefined4 ar
 // =============================================================================
 // Function: ScriptEngine_Routine_0803F878 @ 0x0803F878
 // =============================================================================
-undefined4 ScriptEngine_Routine_0803F878(int ctx,int opcode,undefined4 arg1)
+void ScriptEngine_Routine_0803F878(int ctx,int opcode,undefined4 arg1)
 
 {
   
@@ -4237,7 +4237,7 @@ undefined4 ScriptEngine_Routine_0803F878(int ctx,int opcode,undefined4 arg1)
 // =============================================================================
 // Function: ScriptEngine_PushStack32 @ 0x0803F8B8
 // =============================================================================
-undefined4 ScriptEngine_PushStack32(int ctx,undefined4 opcode)
+void ScriptEngine_PushStack32(int ctx,undefined4 opcode)
 
 {
   uint u_val1;
@@ -4253,7 +4253,7 @@ undefined4 ScriptEngine_PushStack32(int ctx,undefined4 opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_08045584 @ 0x08045584
 // =============================================================================
-undefined8 ScriptEngine_Routine_08045584(int ctx,undefined4 opcode,char arg1)
+u32 ScriptEngine_Routine_08045584(int ctx,undefined4 opcode,char arg1)
 
 {
   int i_val1;
@@ -4374,10 +4374,10 @@ ScriptEngine_Routine_08045638(int ctx,undefined2 opcode,undefined4 arg1,int arg2
         }
         if (arg_5 <= u_val6) break;
         if (arg_6 == '\0') {
-          NPC_Routine_0809E4F8(i_val5);
+          Bachelorette_IncrementTalkCount(i_val5);
         }
         else {
-          NPC_Routine_0809E520(i_val5);
+          Bachelorette_IncrementGiftCount(i_val5);
         }
       }
       c_char3 = NPC_Routine_0809C694(i_val9,opcode);
@@ -4451,7 +4451,7 @@ ScriptEngine_Routine_08045638(int ctx,undefined2 opcode,undefined4 arg1,int arg2
 // =============================================================================
 // Function: ScriptEngine_Routine_0804590C @ 0x0804590C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804590C(uint *ctx,uint opcode)
+u32 ScriptEngine_Routine_0804590C(uint *ctx,uint opcode)
 
 {
   byte b_flag1;
@@ -6968,7 +6968,7 @@ ScriptEngine_Routine_08048FDE:
 // =============================================================================
 // Function: ScriptEngine_Routine_08048FFC @ 0x08048FFC
 // =============================================================================
-undefined4 ScriptEngine_Routine_08048FFC(uint ctx,int opcode,uint arg1)
+u32 ScriptEngine_Routine_08048FFC(uint ctx,int opcode,uint arg1)
 
 {
   char c_char1;
@@ -9857,7 +9857,7 @@ case_0804DA2E:
 // =============================================================================
 // Function: ScriptEngine_Routine_0804E0F8 @ 0x0804E0F8
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804E0F8(int ctx,int opcode)
+u32 ScriptEngine_Routine_0804E0F8(int ctx,int opcode)
 
 {
   char c_char1;
@@ -9893,7 +9893,7 @@ LAB_0804e172:
 // =============================================================================
 // Function: ScriptEngine_Routine_0804E17C @ 0x0804E17C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804E17C(int ctx,undefined4 opcode)
+u32 ScriptEngine_Routine_0804E17C(int ctx,undefined4 opcode)
 
 {
   char c_char1;
@@ -9917,7 +9917,7 @@ undefined8 ScriptEngine_Routine_0804E17C(int ctx,undefined4 opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804E1D4 @ 0x0804E1D4
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804E1D4(int ctx,undefined4 opcode)
+u32 ScriptEngine_Routine_0804E1D4(int ctx,undefined4 opcode)
 
 {
   char c_char1;
@@ -9941,7 +9941,7 @@ undefined8 ScriptEngine_Routine_0804E1D4(int ctx,undefined4 opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804E22C @ 0x0804E22C
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804E22C(int ctx,int opcode)
+u32 ScriptEngine_Routine_0804E22C(int ctx,int opcode)
 
 {
   char c_char1;
@@ -9975,7 +9975,7 @@ LAB_0804e2b6:
 // =============================================================================
 // Function: ScriptEngine_Routine_0804E2C0 @ 0x0804E2C0
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804E2C0(int ctx,int opcode)
+u32 ScriptEngine_Routine_0804E2C0(int ctx,int opcode)
 
 {
   char c_char1;
@@ -10009,7 +10009,7 @@ LAB_0804e34a:
 // =============================================================================
 // Function: ScriptEngine_Routine_0804E354 @ 0x0804E354
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804E354(int ctx,int opcode)
+u32 ScriptEngine_Routine_0804E354(int ctx,int opcode)
 
 {
   char c_char1;
@@ -10149,7 +10149,7 @@ void ScriptEngine_Routine_0804E4AC(uint ctx,int opcode,uint arg1,uint arg2,undef
 // =============================================================================
 // Function: ScriptEngine_Routine_0804E7A0 @ 0x0804E7A0
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804E7A0(uint ctx,undefined4 opcode,uint arg1)
+u32 ScriptEngine_Routine_0804E7A0(uint ctx,undefined4 opcode,uint arg1)
 
 {
   uint stack_val_8;
@@ -10283,7 +10283,7 @@ ScriptEngine_Routine_0804E958(uint ctx,undefined4 opcode,uint arg1,undefined4 ar
 // =============================================================================
 // Function: ScriptEngine_Routine_0804E9D0 @ 0x0804E9D0
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804E9D0(uint ctx,undefined4 opcode,undefined4 arg1)
+void ScriptEngine_Routine_0804E9D0(uint ctx,undefined4 opcode,undefined4 arg1)
 
 {
   
@@ -10349,7 +10349,7 @@ void ScriptEngine_Routine_0804EA58(undefined4 *ctx,undefined4 opcode,undefined2 
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EA80 @ 0x0804EA80
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804EA80(int ctx)
+void ScriptEngine_Routine_0804EA80(int ctx)
 
 {
   
@@ -10381,7 +10381,7 @@ void ScriptEngine_Routine_0804EA94(uint *ctx,uint opcode,uint arg1,uint arg2,uin
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EB64 @ 0x0804EB64
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804EB64(int ctx,undefined1 *opcode,uint arg1)
+void ScriptEngine_Routine_0804EB64(int ctx,undefined1 *opcode,uint arg1)
 
 {
   undefined1 *p_uint1;
@@ -10471,7 +10471,7 @@ LAB_0804ec44:
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EC84 @ 0x0804EC84
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804EC84(int ctx,char *opcode,uint arg1)
+void ScriptEngine_Routine_0804EC84(int ctx,char *opcode,uint arg1)
 
 {
   uint u_val1;
@@ -10518,7 +10518,7 @@ undefined4 ScriptEngine_Routine_0804EC84(int ctx,char *opcode,uint arg1)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804ED28 @ 0x0804ED28
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804ED28(int ctx,ushort *opcode,short arg1,short arg2,int arg_5)
+void ScriptEngine_Routine_0804ED28(int ctx,ushort *opcode,short arg1,short arg2,int arg_5)
 
 {
   ushort u_val1;
@@ -10561,7 +10561,7 @@ void ScriptEngine_Routine_0804ED7C(undefined4 *ctx,undefined4 opcode,undefined4 
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EDA0 @ 0x0804EDA0
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804EDA0(int ctx)
+void ScriptEngine_Routine_0804EDA0(int ctx)
 
 {
   
@@ -10573,7 +10573,7 @@ undefined4 ScriptEngine_Routine_0804EDA0(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EDB4 @ 0x0804EDB4
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804EDB4(int ctx,ushort *opcode,short arg1,short arg2,int arg_5)
+void ScriptEngine_Routine_0804EDB4(int ctx,ushort *opcode,short arg1,short arg2,int arg_5)
 
 {
   ushort u_val1;
@@ -10612,7 +10612,7 @@ void ScriptEngine_Routine_0804EDF8(undefined4 *ctx,undefined4 opcode,undefined4 
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EE1C @ 0x0804EE1C
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804EE1C(int ctx)
+void ScriptEngine_Routine_0804EE1C(int ctx)
 
 {
   
@@ -10624,7 +10624,7 @@ undefined4 ScriptEngine_Routine_0804EE1C(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EE30 @ 0x0804EE30
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804EE30(int ctx,ushort *opcode,short arg1,short arg2)
+void ScriptEngine_Routine_0804EE30(int ctx,ushort *opcode,short arg1,short arg2)
 
 {
   int div_result;
@@ -10660,7 +10660,7 @@ void ScriptEngine_Routine_0804EE64(undefined4 *ctx,undefined4 opcode,undefined4 
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EE88 @ 0x0804EE88
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804EE88(int ctx)
+void ScriptEngine_Routine_0804EE88(int ctx)
 
 {
   
@@ -10724,7 +10724,7 @@ longlong ScriptEngine_Routine_0804EEFC(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EF20 @ 0x0804EF20
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804EF20(int ctx)
+u32 ScriptEngine_Routine_0804EF20(int ctx)
 
 {
   byte b_flag1;
@@ -10770,7 +10770,7 @@ undefined8 ScriptEngine_Routine_0804EF20(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804EFAC @ 0x0804EFAC
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804EFAC(int ctx,int opcode)
+u32 ScriptEngine_Routine_0804EFAC(int ctx,int opcode)
 
 {
   ushort u_val1;
@@ -10816,7 +10816,7 @@ undefined8 ScriptEngine_Routine_0804EFAC(int ctx,int opcode)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804F060 @ 0x0804F060
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804F060(int ctx)
+void ScriptEngine_Routine_0804F060(int ctx)
 
 {
   byte b_flag1;
@@ -10855,7 +10855,7 @@ undefined4 ScriptEngine_Routine_0804F060(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804F0E0 @ 0x0804F0E0
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804F0E0(int ctx)
+void ScriptEngine_Routine_0804F0E0(int ctx)
 
 {
   int i_val1;
@@ -10887,7 +10887,7 @@ undefined4 ScriptEngine_Routine_0804F0E0(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804F160 @ 0x0804F160
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804F160(int ctx)
+u32 ScriptEngine_Routine_0804F160(int ctx)
 
 {
   
@@ -10897,7 +10897,7 @@ undefined8 ScriptEngine_Routine_0804F160(int ctx)
 // =============================================================================
 // Function: ScriptEngine_Routine_0804F178 @ 0x0804F178
 // =============================================================================
-undefined8 ScriptEngine_Routine_0804F178(int ctx)
+u32 ScriptEngine_Routine_0804F178(int ctx)
 
 {
   undefined4 u_val1;
@@ -11123,7 +11123,7 @@ ScriptEngine_Routine_0804F288(uint *ctx,byte opcode,uint arg1,byte arg2,uint arg
 // =============================================================================
 // Function: ScriptEngine_Routine_0804F69C @ 0x0804F69C
 // =============================================================================
-undefined4 ScriptEngine_Routine_0804F69C(int ctx,uint opcode)
+void ScriptEngine_Routine_0804F69C(int ctx,uint opcode)
 
 {
   undefined4 u_val1;

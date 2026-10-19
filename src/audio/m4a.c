@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: M4A_Routine_080C0910 @ 0x080C0910
 // =============================================================================
-undefined4 M4A_Routine_080C0910(int handle)
+void M4A_Routine_080C0910(int handle)
 
 {
   char c_char1;
@@ -51,7 +51,7 @@ undefined4 M4A_Routine_080C0910(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C09D8 @ 0x080C09D8
 // =============================================================================
-ulonglong M4A_Routine_080C09D8(int handle)
+u32 M4A_Routine_080C09D8(int handle)
 
 {
   int i_val1;
@@ -106,7 +106,7 @@ LAB_080c0b44:
 // =============================================================================
 // Function: M4A_Routine_080C0B70 @ 0x080C0B70
 // =============================================================================
-undefined4 M4A_Routine_080C0B70(undefined4 handle)
+void M4A_Routine_080C0B70(undefined4 handle)
 
 {
   uint u_val1;
@@ -122,7 +122,7 @@ undefined4 M4A_Routine_080C0B70(undefined4 handle)
 // =============================================================================
 // Function: M4A_Routine_080C0B94 @ 0x080C0B94
 // =============================================================================
-undefined4 M4A_Routine_080C0B94(int handle)
+void M4A_Routine_080C0B94(int handle)
 
 {
   char c_char1;
@@ -200,7 +200,7 @@ LAB_080c0c88:
 // =============================================================================
 // Function: M4A_Routine_080C0CA4 @ 0x080C0CA4
 // =============================================================================
-undefined4 M4A_Routine_080C0CA4(int handle)
+void M4A_Routine_080C0CA4(int handle)
 
 {
   uint u_val1;
@@ -243,7 +243,7 @@ undefined4 M4A_Routine_080C0CA4(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C0D1C @ 0x080C0D1C
 // =============================================================================
-undefined8 M4A_Routine_080C0D1C(undefined4 *handle,undefined4 channel)
+u32 M4A_Routine_080C0D1C(undefined4 *handle,undefined4 channel)
 
 {
   undefined4 u_val1;
@@ -258,7 +258,7 @@ undefined8 M4A_Routine_080C0D1C(undefined4 *handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080C0D44 @ 0x080C0D44
 // =============================================================================
-undefined4 M4A_Routine_080C0D44(undefined4 *handle,undefined4 channel)
+void M4A_Routine_080C0D44(undefined4 *handle,undefined4 channel)
 
 {
   int i_val1;
@@ -286,7 +286,7 @@ void M4A_Routine_080C0D74(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C0D90 @ 0x080C0D90
 // =============================================================================
-undefined8 M4A_Routine_080C0D90(undefined4 *handle,int channel)
+u32 M4A_Routine_080C0D90(undefined4 *handle,int channel)
 
 {
   undefined4 facing_buffer [3];
@@ -299,7 +299,7 @@ undefined8 M4A_Routine_080C0D90(undefined4 *handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080C0DCC @ 0x080C0DCC
 // =============================================================================
-undefined8 M4A_Routine_080C0DCC(int handle,undefined4 *channel)
+u32 M4A_Routine_080C0DCC(int handle,undefined4 *channel)
 
 {
   int i_val1;
@@ -555,7 +555,7 @@ undefined8 M4A_Routine_080C0DCC(int handle,undefined4 *channel)
 // =============================================================================
 // Function: M4A_Routine_080C14BC @ 0x080C14BC
 // =============================================================================
-undefined4 M4A_Routine_080C14BC(void)
+void M4A_Routine_080C14BC(void)
 
 {
   
@@ -566,7 +566,7 @@ undefined4 M4A_Routine_080C14BC(void)
 // =============================================================================
 // Function: M4A_Routine_080C14C8 @ 0x080C14C8
 // =============================================================================
-undefined4 M4A_Routine_080C14C8(int handle)
+void M4A_Routine_080C14C8(int handle)
 
 {
   undefined4 u_val1;
@@ -626,7 +626,7 @@ undefined4 M4A_Routine_080C14C8(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C160C @ 0x080C160C
 // =============================================================================
-undefined4 M4A_Routine_080C160C(undefined4 handle)
+void M4A_Routine_080C160C(undefined4 handle)
 
 {
   undefined4 u_val1;
@@ -655,7 +655,7 @@ undefined4 M4A_Routine_080C160C(undefined4 handle)
 // =============================================================================
 // Function: M4A_Routine_080C16D4 @ 0x080C16D4
 // =============================================================================
-undefined4 M4A_Routine_080C16D4(int handle)
+void M4A_Routine_080C16D4(int handle)
 
 {
   undefined2 u_val1;
@@ -2869,7 +2869,7 @@ void M4A_Routine_080C2D54(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C38E4 @ 0x080C38E4
 // =============================================================================
-undefined4 M4A_Routine_080C38E4(int handle,int channel)
+void M4A_Routine_080C38E4(int handle,int channel)
 
 {
   byte b_flag1;
@@ -3008,7 +3008,7 @@ undefined4 M4A_Routine_080C38E4(int handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080C3B18 @ 0x080C3B18
 // =============================================================================
-undefined4 M4A_Routine_080C3B18(int handle)
+void M4A_Routine_080C3B18(int handle)
 
 {
   byte b_flag1;
@@ -3060,7 +3060,7 @@ undefined4 M4A_Routine_080C3B18(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C3C18 @ 0x080C3C18
 // =============================================================================
-undefined4 M4A_Routine_080C3C18(int handle)
+void M4A_Routine_080C3C18(int handle)
 
 {
   int i_val1;
@@ -3105,7 +3105,7 @@ undefined4 M4A_Routine_080C3C18(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C3D04 @ 0x080C3D04
 // =============================================================================
-undefined4 M4A_Routine_080C3D04(int handle)
+u32 M4A_Routine_080C3D04(int handle)
 
 {
   int i_val1;
@@ -3713,7 +3713,7 @@ M4A_Routine_080C513A:
 // =============================================================================
 // Function: M4A_Routine_080C516C @ 0x080C516C
 // =============================================================================
-undefined4 M4A_Routine_080C516C(int handle)
+void M4A_Routine_080C516C(int handle)
 
 {
   undefined1 *p_uint1;
@@ -3818,7 +3818,7 @@ undefined4 M4A_Routine_080C516C(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C5378 @ 0x080C5378
 // =============================================================================
-undefined4 M4A_Routine_080C5378(int handle)
+void M4A_Routine_080C5378(int handle)
 
 {
   byte *pbVar1;
@@ -4026,7 +4026,7 @@ void M4A_Routine_080C5648(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C5710 @ 0x080C5710
 // =============================================================================
-undefined4 M4A_Routine_080C5710(int handle)
+void M4A_Routine_080C5710(int handle)
 
 {
   undefined4 u_val1;
@@ -4263,7 +4263,7 @@ undefined4 M4A_Routine_080C5710(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C5A6C @ 0x080C5A6C
 // =============================================================================
-undefined4 M4A_Routine_080C5A6C(int handle)
+void M4A_Routine_080C5A6C(int handle)
 
 {
   int i_val1;
@@ -4650,7 +4650,7 @@ undefined4 M4A_Routine_080C5A6C(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C608C @ 0x080C608C
 // =============================================================================
-undefined4 M4A_Routine_080C608C(int handle)
+void M4A_Routine_080C608C(int handle)
 
 {
   undefined2 u_val1;
@@ -6103,7 +6103,7 @@ LAB_080c76aa:
 // =============================================================================
 // Function: M4A_Routine_080C76D4 @ 0x080C76D4
 // =============================================================================
-undefined4 M4A_Routine_080C76D4(int handle)
+void M4A_Routine_080C76D4(int handle)
 
 {
   byte b_flag1;
@@ -6307,7 +6307,7 @@ LAB_080c7b12:
 // =============================================================================
 // Function: M4A_Routine_080C7B7C @ 0x080C7B7C
 // =============================================================================
-undefined8 M4A_Routine_080C7B7C(uint *handle,undefined4 channel,uint param,uint val)
+u32 M4A_Routine_080C7B7C(uint *handle,undefined4 channel,uint param,uint val)
 
 {
   uint u_val1;
@@ -6327,7 +6327,7 @@ undefined8 M4A_Routine_080C7B7C(uint *handle,undefined4 channel,uint param,uint 
 // =============================================================================
 // Function: M4A_Routine_080C7BF0 @ 0x080C7BF0
 // =============================================================================
-undefined4 M4A_Routine_080C7BF0(int handle)
+void M4A_Routine_080C7BF0(int handle)
 
 {
   int i_val1;
@@ -6405,7 +6405,7 @@ LAB_080c7cbe:
 // =============================================================================
 // Function: M4A_Routine_080C7D78 @ 0x080C7D78
 // =============================================================================
-undefined4 M4A_Routine_080C7D78(int handle)
+void M4A_Routine_080C7D78(int handle)
 
 {
   uint u_val1;
@@ -6434,7 +6434,7 @@ undefined4 M4A_Routine_080C7D78(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C7DF8 @ 0x080C7DF8
 // =============================================================================
-undefined4 M4A_Routine_080C7DF8(int handle)
+void M4A_Routine_080C7DF8(int handle)
 
 {
   uint u_val1;
@@ -6492,7 +6492,7 @@ LAB_080c7e92:
 // =============================================================================
 // Function: M4A_Routine_080C7EA8 @ 0x080C7EA8
 // =============================================================================
-undefined8 M4A_Routine_080C7EA8(undefined4 *handle,undefined4 channel)
+u32 M4A_Routine_080C7EA8(undefined4 *handle,undefined4 channel)
 
 {
   undefined4 u_val1;
@@ -6507,7 +6507,7 @@ undefined8 M4A_Routine_080C7EA8(undefined4 *handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080C7ED0 @ 0x080C7ED0
 // =============================================================================
-undefined4 M4A_Routine_080C7ED0(undefined4 *handle,undefined4 channel)
+void M4A_Routine_080C7ED0(undefined4 *handle,undefined4 channel)
 
 {
   int i_val1;
@@ -6535,7 +6535,7 @@ void M4A_Routine_080C7F00(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C7F1C @ 0x080C7F1C
 // =============================================================================
-undefined8 M4A_Routine_080C7F1C(undefined4 *handle,int channel)
+u32 M4A_Routine_080C7F1C(undefined4 *handle,int channel)
 
 {
   undefined4 facing_buffer [3];
@@ -6548,7 +6548,7 @@ undefined8 M4A_Routine_080C7F1C(undefined4 *handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080C7F58 @ 0x080C7F58
 // =============================================================================
-undefined8 M4A_Routine_080C7F58(int handle,undefined4 channel)
+u32 M4A_Routine_080C7F58(int handle,undefined4 channel)
 
 {
   int i_val1;
@@ -6768,7 +6768,7 @@ undefined8 M4A_Routine_080C7F58(int handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080C8360 @ 0x080C8360
 // =============================================================================
-undefined4 M4A_Routine_080C8360(int handle,undefined4 channel)
+void M4A_Routine_080C8360(int handle,undefined4 channel)
 
 {
   undefined4 u_val1;
@@ -6845,7 +6845,7 @@ undefined4 M4A_Routine_080C8360(int handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080C8550 @ 0x080C8550
 // =============================================================================
-undefined4 M4A_Routine_080C8550(int handle)
+void M4A_Routine_080C8550(int handle)
 
 {
   undefined4 u_val1;
@@ -6860,7 +6860,7 @@ undefined4 M4A_Routine_080C8550(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C85A0 @ 0x080C85A0
 // =============================================================================
-undefined4 M4A_Routine_080C85A0(int handle)
+void M4A_Routine_080C85A0(int handle)
 
 {
   undefined4 *p_uint1;
@@ -7530,7 +7530,7 @@ undefined4 M4A_Routine_080C85A0(int handle)
 // =============================================================================
 // Function: M4A_Routine_080C9020 @ 0x080C9020
 // =============================================================================
-undefined4 M4A_Routine_080C9020(int handle,int channel)
+void M4A_Routine_080C9020(int handle,int channel)
 
 {
   bool b_flag1;
@@ -8001,7 +8001,7 @@ LAB_080c9262:
 // =============================================================================
 // Function: M4A_Routine_080C96C4 @ 0x080C96C4
 // =============================================================================
-undefined4 M4A_Routine_080C96C4(int handle)
+void M4A_Routine_080C96C4(int handle)
 
 {
   byte b_flag1;
@@ -9017,7 +9017,7 @@ undefined4 M4A_Routine_080C96C4(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CA6F4 @ 0x080CA6F4
 // =============================================================================
-undefined4 M4A_Routine_080CA6F4(void)
+void M4A_Routine_080CA6F4(void)
 
 {
   ushort u_val1;
@@ -9049,7 +9049,7 @@ undefined4 M4A_Routine_080CA6F4(void)
 // =============================================================================
 // Function: M4A_Routine_080CA770 @ 0x080CA770
 // =============================================================================
-undefined8 M4A_Routine_080CA770(undefined4 *handle,undefined4 channel)
+u32 M4A_Routine_080CA770(undefined4 *handle,undefined4 channel)
 
 {
   int *p_int1;
@@ -9161,7 +9161,7 @@ undefined8 M4A_Routine_080CA770(undefined4 *handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080CA8B4 @ 0x080CA8B4
 // =============================================================================
-undefined4 M4A_Routine_080CA8B4(undefined4 *handle,undefined4 channel,uint param,int val)
+void M4A_Routine_080CA8B4(undefined4 *handle,undefined4 channel,uint param,int val)
 
 {
   uint u_val1;
@@ -9207,7 +9207,7 @@ undefined4 M4A_Routine_080CA8B4(undefined4 *handle,undefined4 channel,uint param
 // =============================================================================
 // Function: M4A_Routine_080CA98C @ 0x080CA98C
 // =============================================================================
-undefined4 M4A_Routine_080CA98C(int *handle)
+void M4A_Routine_080CA98C(int *handle)
 
 {
   undefined4 u_val1;
@@ -9298,7 +9298,7 @@ LAB_080caa1a:
 // =============================================================================
 // Function: M4A_Routine_080CAAF4 @ 0x080CAAF4
 // =============================================================================
-undefined4 M4A_Routine_080CAAF4(undefined4 *handle)
+void M4A_Routine_080CAAF4(undefined4 *handle)
 
 {
   undefined4 u_val1;
@@ -9334,7 +9334,7 @@ undefined4 M4A_Routine_080CAAF4(undefined4 *handle)
 // =============================================================================
 // Function: M4A_Routine_080CABA0 @ 0x080CABA0
 // =============================================================================
-undefined4 M4A_Routine_080CABA0(int handle,undefined4 channel)
+void M4A_Routine_080CABA0(int handle,undefined4 channel)
 
 {
   
@@ -9352,7 +9352,7 @@ undefined4 M4A_Routine_080CABA0(int handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080CABEC @ 0x080CABEC
 // =============================================================================
-undefined4 M4A_Routine_080CABEC(int handle,undefined4 channel)
+void M4A_Routine_080CABEC(int handle,undefined4 channel)
 
 {
   
@@ -9421,7 +9421,7 @@ M4A_Routine_080CAC7C(undefined4 *handle,undefined4 channel,undefined2 param,unde
 // =============================================================================
 // Function: M4A_Routine_080CADB4 @ 0x080CADB4
 // =============================================================================
-undefined8 M4A_Routine_080CADB4(undefined4 *handle,undefined4 channel)
+u32 M4A_Routine_080CADB4(undefined4 *handle,undefined4 channel)
 
 {
   int i_val1;
@@ -9442,7 +9442,7 @@ undefined8 M4A_Routine_080CADB4(undefined4 *handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080CADF0 @ 0x080CADF0
 // =============================================================================
-undefined4 M4A_Routine_080CADF0(int handle,uint channel)
+void M4A_Routine_080CADF0(int handle,uint channel)
 
 {
   undefined4 *p_uint1;
@@ -9544,7 +9544,7 @@ M4A_Routine_080CAEEC(int *handle,undefined4 channel,undefined4 param,undefined2 
 // =============================================================================
 // Function: M4A_Routine_080CAF6C @ 0x080CAF6C
 // =============================================================================
-undefined4 M4A_Routine_080CAF6C(int handle)
+void M4A_Routine_080CAF6C(int handle)
 
 {
   undefined4 *p_uint1;
@@ -9624,7 +9624,7 @@ M4A_Routine_080CAFC4(int handle,undefined4 channel,undefined4 param,uint val,und
 // =============================================================================
 // Function: M4A_Routine_080CB090 @ 0x080CB090
 // =============================================================================
-undefined4 M4A_Routine_080CB090(int handle)
+void M4A_Routine_080CB090(int handle)
 
 {
   int *p_int1;
@@ -9767,7 +9767,7 @@ undefined4 M4A_Routine_080CB090(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CB304 @ 0x080CB304
 // =============================================================================
-undefined4 M4A_Routine_080CB304(int handle,int channel,undefined4 param,undefined2 val,uint arg_5)
+void M4A_Routine_080CB304(int handle,int channel,undefined4 param,undefined2 val,uint arg_5)
 
 {
   uint *p_uint1;
@@ -10198,7 +10198,7 @@ void M4A_Routine_080CB63C(int handle,int channel,undefined4 param,undefined4 val
 // =============================================================================
 // Function: M4A_Routine_080CBAF0 @ 0x080CBAF0
 // =============================================================================
-undefined4 M4A_Routine_080CBAF0(int handle,undefined4 channel,undefined2 param)
+void M4A_Routine_080CBAF0(int handle,undefined4 channel,undefined2 param)
 
 {
   int *p_int1;
@@ -10398,7 +10398,7 @@ undefined4 M4A_Routine_080CBAF0(int handle,undefined4 channel,undefined2 param)
 // =============================================================================
 // Function: M4A_Routine_080CBDD4 @ 0x080CBDD4
 // =============================================================================
-undefined4 M4A_Routine_080CBDD4(int handle)
+void M4A_Routine_080CBDD4(int handle)
 
 {
   int *p_int1;
@@ -10598,7 +10598,7 @@ undefined4 M4A_Routine_080CBDD4(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CC0B4 @ 0x080CC0B4
 // =============================================================================
-undefined4 M4A_Routine_080CC0B4(int handle)
+void M4A_Routine_080CC0B4(int handle)
 
 {
   uint u_val1;
@@ -10615,7 +10615,7 @@ undefined4 M4A_Routine_080CC0B4(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CC150 @ 0x080CC150
 // =============================================================================
-undefined4 M4A_Routine_080CC150(void)
+void M4A_Routine_080CC150(void)
 
 {
   
@@ -10718,7 +10718,7 @@ M4A_Routine_080CC15C(int handle,undefined4 channel,undefined4 param,uint val,und
 // =============================================================================
 // Function: M4A_Routine_080CC310 @ 0x080CC310
 // =============================================================================
-undefined4 M4A_Routine_080CC310(int handle)
+void M4A_Routine_080CC310(int handle)
 
 {
   uint loop_i;
@@ -10868,7 +10868,7 @@ undefined4 M4A_Routine_080CC310(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CC58C @ 0x080CC58C
 // =============================================================================
-undefined4 M4A_Routine_080CC58C(int handle,byte *channel)
+void M4A_Routine_080CC58C(int handle,byte *channel)
 
 {
   byte b_flag1;
@@ -10943,7 +10943,7 @@ undefined4 M4A_Routine_080CC58C(int handle,byte *channel)
 // =============================================================================
 // Function: M4A_Routine_080CCD48 @ 0x080CCD48
 // =============================================================================
-undefined4 M4A_Routine_080CCD48(int handle,int channel,uint param)
+void M4A_Routine_080CCD48(int handle,int channel,uint param)
 
 {
   uint u_val1;
@@ -10966,7 +10966,7 @@ undefined4 M4A_Routine_080CCD48(int handle,int channel,uint param)
 // =============================================================================
 // Function: M4A_Routine_080CCDEC @ 0x080CCDEC
 // =============================================================================
-undefined4 M4A_Routine_080CCDEC(int handle,int channel)
+void M4A_Routine_080CCDEC(int handle,int channel)
 
 {
   uint u_val1;
@@ -10983,7 +10983,7 @@ undefined4 M4A_Routine_080CCDEC(int handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080CCE58 @ 0x080CCE58
 // =============================================================================
-undefined4 M4A_Routine_080CCE58(int handle,undefined4 channel,undefined2 param,uint val)
+void M4A_Routine_080CCE58(int handle,undefined4 channel,undefined2 param,uint val)
 
 {
   int i_val1;
@@ -11190,7 +11190,7 @@ undefined4 M4A_Routine_080CCE58(int handle,undefined4 channel,undefined2 param,u
 // =============================================================================
 // Function: M4A_Routine_080CD14C @ 0x080CD14C
 // =============================================================================
-undefined4 M4A_Routine_080CD14C(int handle,undefined4 channel,undefined4 param,uint val)
+void M4A_Routine_080CD14C(int handle,undefined4 channel,undefined4 param,uint val)
 
 {
   int i_val1;
@@ -11397,7 +11397,7 @@ undefined4 M4A_Routine_080CD14C(int handle,undefined4 channel,undefined4 param,u
 // =============================================================================
 // Function: M4A_Routine_080CD43C @ 0x080CD43C
 // =============================================================================
-undefined4 M4A_Routine_080CD43C(int handle,uint channel)
+void M4A_Routine_080CD43C(int handle,uint channel)
 
 {
   uint u_val1;
@@ -11419,7 +11419,7 @@ undefined4 M4A_Routine_080CD43C(int handle,uint channel)
 // =============================================================================
 // Function: M4A_Routine_080CD4D4 @ 0x080CD4D4
 // =============================================================================
-undefined4 M4A_Routine_080CD4D4(int handle)
+void M4A_Routine_080CD4D4(int handle)
 
 {
   uint u_val1;
@@ -11435,7 +11435,7 @@ undefined4 M4A_Routine_080CD4D4(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CD620 @ 0x080CD620
 // =============================================================================
-undefined4 M4A_Routine_080CD620(int handle)
+void M4A_Routine_080CD620(int handle)
 
 {
   int i_val1;
@@ -11593,7 +11593,7 @@ undefined4 M4A_Routine_080CD620(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CD8A0 @ 0x080CD8A0
 // =============================================================================
-undefined4 M4A_Routine_080CD8A0(int handle)
+void M4A_Routine_080CD8A0(int handle)
 
 {
   undefined4 u_val1;
@@ -11627,7 +11627,7 @@ undefined4 M4A_Routine_080CD8A0(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CD9B0 @ 0x080CD9B0
 // =============================================================================
-undefined8 M4A_Routine_080CD9B0(int *handle,int channel,int param)
+u32 M4A_Routine_080CD9B0(int *handle,int channel,int param)
 
 {
   int i_val1;
@@ -11664,7 +11664,7 @@ undefined8 M4A_Routine_080CD9B0(int *handle,int channel,int param)
 // =============================================================================
 // Function: M4A_Routine_080CDA44 @ 0x080CDA44
 // =============================================================================
-undefined8 M4A_Routine_080CDA44(int *handle)
+u32 M4A_Routine_080CDA44(int *handle)
 
 {
   uint u_val1;
@@ -11715,7 +11715,7 @@ LAB_080cda92:
 // =============================================================================
 // Function: M4A_Routine_080CDB08 @ 0x080CDB08
 // =============================================================================
-undefined8 M4A_Routine_080CDB08(int *handle)
+u32 M4A_Routine_080CDB08(int *handle)
 
 {
   uint u_val1;
@@ -11774,7 +11774,7 @@ LAB_080cdb5a:
 // =============================================================================
 // Function: M4A_Routine_080CDC00 @ 0x080CDC00
 // =============================================================================
-undefined8 M4A_Routine_080CDC00(int *handle)
+u32 M4A_Routine_080CDC00(int *handle)
 
 {
   int i_val1;
@@ -11843,7 +11843,7 @@ LAB_080cdcbe:
 // =============================================================================
 // Function: M4A_Routine_080CDCD0 @ 0x080CDCD0
 // =============================================================================
-undefined8 M4A_Routine_080CDCD0(int *handle)
+u32 M4A_Routine_080CDCD0(int *handle)
 
 {
   int i_val1;
@@ -11906,7 +11906,7 @@ undefined8 M4A_Routine_080CDCD0(int *handle)
 // =============================================================================
 // Function: M4A_Routine_080CDD7C @ 0x080CDD7C
 // =============================================================================
-undefined8 M4A_Routine_080CDD7C(int *handle)
+u32 M4A_Routine_080CDD7C(int *handle)
 
 {
   int i_val1;
@@ -11933,7 +11933,7 @@ undefined8 M4A_Routine_080CDD7C(int *handle)
 // =============================================================================
 // Function: M4A_Routine_080CDDAC @ 0x080CDDAC
 // =============================================================================
-undefined4 M4A_Routine_080CDDAC(int *handle,int channel)
+void M4A_Routine_080CDDAC(int *handle,int channel)
 
 {
   
@@ -11947,7 +11947,7 @@ undefined4 M4A_Routine_080CDDAC(int *handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080CDDD4 @ 0x080CDDD4
 // =============================================================================
-undefined4 M4A_Routine_080CDDD4(int *handle)
+void M4A_Routine_080CDDD4(int *handle)
 
 {
   undefined2 u_val1;
@@ -12193,7 +12193,7 @@ undefined4 M4A_Routine_080CDDD4(int *handle)
 // =============================================================================
 // Function: M4A_Routine_080CE120 @ 0x080CE120
 // =============================================================================
-undefined8 M4A_Routine_080CE120(undefined4 *handle,int channel,int param,undefined4 val)
+u32 M4A_Routine_080CE120(undefined4 *handle,int channel,int param,undefined4 val)
 
 {
   undefined4 stack_val_18;
@@ -12230,7 +12230,7 @@ undefined8 M4A_Routine_080CE120(undefined4 *handle,int channel,int param,undefin
 // =============================================================================
 // Function: M4A_Routine_080CE184 @ 0x080CE184
 // =============================================================================
-undefined8 M4A_Routine_080CE184(undefined4 handle,int channel,int param)
+u32 M4A_Routine_080CE184(undefined4 handle,int channel,int param)
 
 {
   int i_val1;
@@ -12247,7 +12247,7 @@ undefined8 M4A_Routine_080CE184(undefined4 handle,int channel,int param)
 // =============================================================================
 // Function: M4A_Routine_080CE19C @ 0x080CE19C
 // =============================================================================
-undefined8 M4A_Routine_080CE19C(int handle)
+u32 M4A_Routine_080CE19C(int handle)
 
 {
   
@@ -12262,7 +12262,7 @@ undefined8 M4A_Routine_080CE19C(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CE1C4 @ 0x080CE1C4
 // =============================================================================
-undefined8 M4A_Routine_080CE1C4(undefined4 handle,undefined4 channel,int param)
+u32 M4A_Routine_080CE1C4(undefined4 handle,undefined4 channel,int param)
 
 {
   int item_id;
@@ -12312,7 +12312,7 @@ LAB_080ce28e:
 // =============================================================================
 // Function: M4A_Routine_080CE294 @ 0x080CE294
 // =============================================================================
-undefined4 M4A_Routine_080CE294(int handle)
+void M4A_Routine_080CE294(int handle)
 
 {
   
@@ -12328,7 +12328,7 @@ undefined4 M4A_Routine_080CE294(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CE2C4 @ 0x080CE2C4
 // =============================================================================
-undefined4 M4A_Routine_080CE2C4(int handle)
+void M4A_Routine_080CE2C4(int handle)
 
 {
   
@@ -12348,7 +12348,7 @@ undefined4 M4A_Routine_080CE2C4(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CE2FC @ 0x080CE2FC
 // =============================================================================
-undefined8 M4A_Routine_080CE2FC(undefined4 *handle,undefined4 channel)
+u32 M4A_Routine_080CE2FC(undefined4 *handle,undefined4 channel)
 
 {
   undefined4 u_val1;
@@ -12478,7 +12478,7 @@ M4A_Routine_080CE510(undefined4 *handle,undefined4 channel,undefined4 param,unde
 // =============================================================================
 // Function: M4A_Routine_080CE598 @ 0x080CE598
 // =============================================================================
-undefined4 M4A_Routine_080CE598(undefined4 *handle)
+void M4A_Routine_080CE598(undefined4 *handle)
 
 {
   int *p_int1;
@@ -12612,7 +12612,7 @@ undefined4 M4A_Routine_080CE598(undefined4 *handle)
 // =============================================================================
 // Function: M4A_Routine_080CE790 @ 0x080CE790
 // =============================================================================
-undefined4 M4A_Routine_080CE790(int *handle)
+void M4A_Routine_080CE790(int *handle)
 
 {
   undefined2 u_val1;
@@ -12877,7 +12877,7 @@ undefined4 M4A_Routine_080CE790(int *handle)
 // =============================================================================
 // Function: M4A_Routine_080CEB5C @ 0x080CEB5C
 // =============================================================================
-undefined4 M4A_Routine_080CEB5C(int handle,int channel)
+void M4A_Routine_080CEB5C(int handle,int channel)
 
 {
   
@@ -12889,7 +12889,7 @@ undefined4 M4A_Routine_080CEB5C(int handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080CEB80 @ 0x080CEB80
 // =============================================================================
-undefined8 M4A_Routine_080CEB80(int handle)
+u32 M4A_Routine_080CEB80(int handle)
 
 {
   uint u_val1;
@@ -12909,7 +12909,7 @@ undefined8 M4A_Routine_080CEB80(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CEBC0 @ 0x080CEBC0
 // =============================================================================
-undefined8 M4A_Routine_080CEBC0(int handle)
+u32 M4A_Routine_080CEBC0(int handle)
 
 {
   int i_val1;
@@ -12929,7 +12929,7 @@ undefined8 M4A_Routine_080CEBC0(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CEC00 @ 0x080CEC00
 // =============================================================================
-undefined8 M4A_Routine_080CEC00(undefined4 *handle,undefined4 channel)
+u32 M4A_Routine_080CEC00(undefined4 *handle,undefined4 channel)
 
 {
   undefined4 u_val1;
@@ -12965,7 +12965,7 @@ undefined8 M4A_Routine_080CEC00(undefined4 *handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080CEC84 @ 0x080CEC84
 // =============================================================================
-undefined4 M4A_Routine_080CEC84(undefined4 *handle,undefined4 channel,undefined4 param)
+void M4A_Routine_080CEC84(undefined4 *handle,undefined4 channel,undefined4 param)
 
 {
   int i_val1;
@@ -12988,7 +12988,7 @@ undefined4 M4A_Routine_080CEC84(undefined4 *handle,undefined4 channel,undefined4
 // =============================================================================
 // Function: M4A_Routine_080CFA38 @ 0x080CFA38
 // =============================================================================
-undefined8 M4A_Routine_080CFA38(undefined4 handle,undefined1 *channel,undefined4 param)
+u32 M4A_Routine_080CFA38(undefined4 handle,undefined1 *channel,undefined4 param)
 
 {
   char c_char1;
@@ -13052,7 +13052,7 @@ LAB_080cfb18:
 // =============================================================================
 // Function: M4A_Routine_080CFB28 @ 0x080CFB28
 // =============================================================================
-undefined8 M4A_Routine_080CFB28(int handle)
+u32 M4A_Routine_080CFB28(int handle)
 
 {
   int i_val1;
@@ -13073,7 +13073,7 @@ undefined8 M4A_Routine_080CFB28(int handle)
 // =============================================================================
 // Function: M4A_Routine_080CFC7C @ 0x080CFC7C
 // =============================================================================
-undefined4 M4A_Routine_080CFC7C(int handle,int *channel)
+void M4A_Routine_080CFC7C(int handle,int *channel)
 
 {
   int *p_int1;
@@ -13254,7 +13254,7 @@ undefined4 M4A_Routine_080CFC7C(int handle,int *channel)
 // =============================================================================
 // Function: M4A_Routine_080CFEA8 @ 0x080CFEA8
 // =============================================================================
-undefined4 M4A_Routine_080CFEA8(int handle,int channel,int param,undefined4 val,int arg_5)
+void M4A_Routine_080CFEA8(int handle,int channel,int param,undefined4 val,int arg_5)
 
 {
   byte b_flag1;
@@ -13292,7 +13292,7 @@ undefined4 M4A_Routine_080CFEA8(int handle,int channel,int param,undefined4 val,
 // =============================================================================
 // Function: M4A_Routine_080CFFC0 @ 0x080CFFC0
 // =============================================================================
-undefined4 M4A_Routine_080CFFC0(int handle,int channel,int param,undefined4 *val)
+void M4A_Routine_080CFFC0(int handle,int channel,int param,undefined4 *val)
 
 {
   bool b_flag1;
@@ -13412,7 +13412,7 @@ undefined4 M4A_Routine_080CFFC0(int handle,int channel,int param,undefined4 *val
 // =============================================================================
 // Function: runtime_malloc_aligned @ 0x080D01F8
 // =============================================================================
-undefined8 runtime_malloc_aligned(int arg_1)
+u32 runtime_malloc_aligned(int arg_1)
 
 {
   uint u_val1;
@@ -13455,7 +13455,7 @@ LAB_080d025a:
 // =============================================================================
 // Function: cpp_operator_delete @ 0x080D0260
 // =============================================================================
-undefined4 cpp_operator_delete(int arg_1)
+void cpp_operator_delete(int arg_1)
 
 {
   int *p_int1;
@@ -13488,7 +13488,7 @@ undefined4 cpp_operator_delete(int arg_1)
 // =============================================================================
 // Function: M4A_Routine_080D02B8 @ 0x080D02B8
 // =============================================================================
-undefined8 M4A_Routine_080D02B8(int handle)
+u32 M4A_Routine_080D02B8(int handle)
 
 {
   undefined4 u_val1;
@@ -13505,7 +13505,7 @@ undefined8 M4A_Routine_080D02B8(int handle)
 // =============================================================================
 // Function: M4A_Routine_080D02CC @ 0x080D02CC
 // =============================================================================
-undefined4 M4A_Routine_080D02CC(undefined4 *handle)
+void M4A_Routine_080D02CC(undefined4 *handle)
 
 {
   int *p_int1;
@@ -13524,7 +13524,7 @@ undefined4 M4A_Routine_080D02CC(undefined4 *handle)
 // =============================================================================
 // Function: M4A_Routine_080D02F0 @ 0x080D02F0
 // =============================================================================
-undefined4 M4A_Routine_080D02F0(void)
+u32 M4A_Routine_080D02F0(void)
 
 {
   int *p_int1;
@@ -13554,7 +13554,7 @@ undefined4 M4A_Routine_080D02F0(void)
 // =============================================================================
 // Function: M4A_Routine_080D0340 @ 0x080D0340
 // =============================================================================
-undefined4 M4A_Routine_080D0340(void)
+void M4A_Routine_080D0340(void)
 
 {
   
@@ -13568,7 +13568,7 @@ undefined4 M4A_Routine_080D0340(void)
 // =============================================================================
 // Function: M4A_Routine_080D035C @ 0x080D035C
 // =============================================================================
-undefined4 M4A_Routine_080D035C(void)
+void M4A_Routine_080D035C(void)
 
 {
   int *p_int1;
@@ -13627,7 +13627,7 @@ undefined4 M4A_Routine_080D035C(void)
 // =============================================================================
 // Function: M4A_Routine_080D0454 @ 0x080D0454
 // =============================================================================
-undefined4 M4A_Routine_080D0454(void)
+void M4A_Routine_080D0454(void)
 
 {
   int *p_int1;
@@ -13651,7 +13651,7 @@ undefined4 M4A_Routine_080D0454(void)
 // =============================================================================
 // Function: M4A_Routine_080D0490 @ 0x080D0490
 // =============================================================================
-undefined4 M4A_Routine_080D0490(undefined4 handle,int channel)
+void M4A_Routine_080D0490(undefined4 handle,int channel)
 
 {
   int *p_int1;
@@ -13671,7 +13671,7 @@ undefined4 M4A_Routine_080D0490(undefined4 handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080D04F4 @ 0x080D04F4
 // =============================================================================
-undefined4 M4A_Routine_080D04F4(undefined4 handle,int channel)
+void M4A_Routine_080D04F4(undefined4 handle,int channel)
 
 {
   int *p_int1;
@@ -13691,7 +13691,7 @@ undefined4 M4A_Routine_080D04F4(undefined4 handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080D0558 @ 0x080D0558
 // =============================================================================
-undefined4 M4A_Routine_080D0558(undefined4 handle,int channel,undefined4 param,int val)
+void M4A_Routine_080D0558(undefined4 handle,int channel,undefined4 param,int val)
 
 {
   int *p_int1;
@@ -13712,7 +13712,7 @@ undefined4 M4A_Routine_080D0558(undefined4 handle,int channel,undefined4 param,i
 // =============================================================================
 // Function: M4A_Routine_080D05DC @ 0x080D05DC
 // =============================================================================
-undefined4 M4A_Routine_080D05DC(void)
+void M4A_Routine_080D05DC(void)
 
 {
   int *p_int1;
@@ -13750,7 +13750,7 @@ undefined4 M4A_Routine_080D05DC(void)
 // =============================================================================
 // Function: M4A_Routine_080D0644 @ 0x080D0644
 // =============================================================================
-undefined4 M4A_Routine_080D0644(undefined4 handle,undefined4 channel)
+void M4A_Routine_080D0644(undefined4 handle,undefined4 channel)
 
 {
   int *p_int1;
@@ -13768,7 +13768,7 @@ undefined4 M4A_Routine_080D0644(undefined4 handle,undefined4 channel)
 // =============================================================================
 // Function: M4A_Routine_080D06A8 @ 0x080D06A8
 // =============================================================================
-undefined4 M4A_Routine_080D06A8(void)
+void M4A_Routine_080D06A8(void)
 
 {
   
@@ -13779,7 +13779,7 @@ undefined4 M4A_Routine_080D06A8(void)
 // =============================================================================
 // Function: M4A_Routine_080D06B4 @ 0x080D06B4
 // =============================================================================
-undefined8 M4A_Routine_080D06B4(void)
+u32 M4A_Routine_080D06B4(void)
 
 {
   
@@ -13789,7 +13789,7 @@ undefined8 M4A_Routine_080D06B4(void)
 // =============================================================================
 // Function: M4A_Routine_080D06DC @ 0x080D06DC
 // =============================================================================
-undefined8 M4A_Routine_080D06DC(void)
+u32 M4A_Routine_080D06DC(void)
 
 {
   undefined4 u_val1;
@@ -13808,7 +13808,7 @@ undefined8 M4A_Routine_080D06DC(void)
 // =============================================================================
 // Function: M4A_Routine_080D0704 @ 0x080D0704
 // =============================================================================
-undefined4 M4A_Routine_080D0704(void)
+void M4A_Routine_080D0704(void)
 
 {
   ushort u_val1;
@@ -13843,7 +13843,7 @@ undefined4 M4A_Routine_080D0704(void)
 // =============================================================================
 // Function: M4A_Routine_080D078C @ 0x080D078C
 // =============================================================================
-undefined8 M4A_Routine_080D078C(int *handle)
+u32 M4A_Routine_080D078C(int *handle)
 
 {
   int *p_int1;
@@ -13954,7 +13954,7 @@ LAB_080d0912:
 // =============================================================================
 // Function: M4A_Routine_080D091C @ 0x080D091C
 // =============================================================================
-undefined8 M4A_Routine_080D091C(void)
+u32 M4A_Routine_080D091C(void)
 
 {
   undefined4 u_val1;
@@ -14009,7 +14009,7 @@ undefined8 M4A_Routine_080D091C(void)
 // =============================================================================
 // Function: M4A_Routine_080D0A14 @ 0x080D0A14
 // =============================================================================
-undefined4 M4A_Routine_080D0A14(void)
+void M4A_Routine_080D0A14(void)
 
 {
   undefined4 *p_uint1;
@@ -14028,7 +14028,7 @@ undefined4 M4A_Routine_080D0A14(void)
 // =============================================================================
 // Function: M4A_Routine_080D0A94 @ 0x080D0A94
 // =============================================================================
-undefined4 M4A_Routine_080D0A94(void)
+void M4A_Routine_080D0A94(void)
 
 {
   int *p_int1;
@@ -14043,7 +14043,7 @@ undefined4 M4A_Routine_080D0A94(void)
 // =============================================================================
 // Function: M4A_Routine_080D0ABC @ 0x080D0ABC
 // =============================================================================
-undefined4 M4A_Routine_080D0ABC(void)
+void M4A_Routine_080D0ABC(void)
 
 {
   undefined2 u_val1;
@@ -14060,7 +14060,7 @@ undefined4 M4A_Routine_080D0ABC(void)
 // =============================================================================
 // Function: M4A_Routine_080D0AE0 @ 0x080D0AE0
 // =============================================================================
-undefined4 M4A_Routine_080D0AE0(void)
+void M4A_Routine_080D0AE0(void)
 
 {
   undefined2 u_val1;
@@ -14078,7 +14078,7 @@ undefined4 M4A_Routine_080D0AE0(void)
 // =============================================================================
 // Function: M4A_Routine_080D0B14 @ 0x080D0B14
 // =============================================================================
-undefined4 M4A_Routine_080D0B14(int handle,int channel)
+void M4A_Routine_080D0B14(int handle,int channel)
 
 {
   undefined2 u_val1;
@@ -14107,7 +14107,7 @@ undefined4 M4A_Routine_080D0B14(int handle,int channel)
 // =============================================================================
 // Function: M4A_Routine_080D0BA8 @ 0x080D0BA8
 // =============================================================================
-undefined4 M4A_Routine_080D0BA8(undefined4 *handle)
+void M4A_Routine_080D0BA8(undefined4 *handle)
 
 {
   undefined4 u_val1;
@@ -14139,7 +14139,7 @@ undefined4 M4A_Routine_080D0BA8(undefined4 *handle)
 // =============================================================================
 // Function: M4A_Routine_080D0BE0 @ 0x080D0BE0
 // =============================================================================
-undefined4 M4A_Routine_080D0BE0(void)
+void M4A_Routine_080D0BE0(void)
 
 {
   int i_val1;
@@ -14157,7 +14157,7 @@ undefined4 M4A_Routine_080D0BE0(void)
 // =============================================================================
 // Function: M4A_Routine_080D0C10 @ 0x080D0C10
 // =============================================================================
-undefined8 M4A_Routine_080D0C10(void)
+u32 M4A_Routine_080D0C10(void)
 
 {
   
@@ -14167,7 +14167,7 @@ undefined8 M4A_Routine_080D0C10(void)
 // =============================================================================
 // Function: M4A_Routine_080D0C2C @ 0x080D0C2C
 // =============================================================================
-undefined4 M4A_Routine_080D0C2C(void)
+void M4A_Routine_080D0C2C(void)
 
 {
   int i_val1;
@@ -14185,7 +14185,7 @@ undefined4 M4A_Routine_080D0C2C(void)
 // =============================================================================
 // Function: M4A_Routine_080D0CB4 @ 0x080D0CB4
 // =============================================================================
-undefined8 M4A_Routine_080D0CB4(int handle,char *channel)
+u32 M4A_Routine_080D0CB4(int handle,char *channel)
 
 {
   undefined4 u_val1;
@@ -14200,7 +14200,7 @@ undefined8 M4A_Routine_080D0CB4(int handle,char *channel)
 // =============================================================================
 // Function: M4A_Routine_080D0CD4 @ 0x080D0CD4
 // =============================================================================
-undefined8 M4A_Routine_080D0CD4(uint handle)
+u32 M4A_Routine_080D0CD4(uint handle)
 
 {
   int i_val1;
@@ -14228,7 +14228,7 @@ LAB_080d0d22:
 // =============================================================================
 // Function: M4A_Routine_080D0D28 @ 0x080D0D28
 // =============================================================================
-undefined8 M4A_Routine_080D0D28(int handle,int channel)
+u32 M4A_Routine_080D0D28(int handle,int channel)
 
 {
   undefined4 u_val1;
@@ -14932,7 +14932,7 @@ void M4A_Routine_080D14EC(void)
 // =============================================================================
 // Function: M4A_Routine_080D1F20 @ 0x080D1F20
 // =============================================================================
-undefined8 M4A_Routine_080D1F20(int handle,int channel,byte *param)
+u32 M4A_Routine_080D1F20(int handle,int channel,byte *param)
 
 {
   byte b_flag1;
@@ -15104,7 +15104,7 @@ LAB_080d2106:
 // =============================================================================
 // Function: M4A_Routine_080D22CC @ 0x080D22CC
 // =============================================================================
-undefined4 M4A_Routine_080D22CC(void)
+void M4A_Routine_080D22CC(void)
 
 {
   
@@ -15115,7 +15115,7 @@ undefined4 M4A_Routine_080D22CC(void)
 // =============================================================================
 // Function: M4A_Routine_080D2304 @ 0x080D2304
 // =============================================================================
-undefined4 M4A_Routine_080D2304(uint handle)
+void M4A_Routine_080D2304(uint handle)
 
 {
   int *p_int1;
@@ -15139,7 +15139,7 @@ undefined4 M4A_Routine_080D2304(uint handle)
 // =============================================================================
 // Function: M4A_Routine_080D2350 @ 0x080D2350
 // =============================================================================
-undefined4 M4A_Routine_080D2350(uint handle)
+void M4A_Routine_080D2350(uint handle)
 
 {
   int *p_int1;
@@ -15166,7 +15166,7 @@ undefined4 M4A_Routine_080D2350(uint handle)
 // =============================================================================
 // Function: M4A_Routine_080D240C @ 0x080D240C
 // =============================================================================
-undefined4 M4A_Routine_080D240C(void)
+void M4A_Routine_080D240C(void)
 
 {
   uint u_val1;
@@ -15183,7 +15183,7 @@ undefined4 M4A_Routine_080D240C(void)
 // =============================================================================
 // Function: M4A_Routine_080D2438 @ 0x080D2438
 // =============================================================================
-undefined4 M4A_Routine_080D2438(void)
+void M4A_Routine_080D2438(void)
 
 {
   
@@ -15194,7 +15194,7 @@ undefined4 M4A_Routine_080D2438(void)
 // =============================================================================
 // Function: M4A_Routine_080D2444 @ 0x080D2444
 // =============================================================================
-undefined4 M4A_Routine_080D2444(void)
+void M4A_Routine_080D2444(void)
 
 {
   uint u_val1;
@@ -15211,7 +15211,7 @@ undefined4 M4A_Routine_080D2444(void)
 // =============================================================================
 // Function: M4A_Routine_080D2470 @ 0x080D2470
 // =============================================================================
-undefined4 M4A_Routine_080D2470(undefined4 handle,undefined2 channel)
+void M4A_Routine_080D2470(undefined4 handle,undefined2 channel)
 
 {
   
@@ -15222,7 +15222,7 @@ undefined4 M4A_Routine_080D2470(undefined4 handle,undefined2 channel)
 // =============================================================================
 // Function: M4A_Routine_080D24C8 @ 0x080D24C8
 // =============================================================================
-undefined4 M4A_Routine_080D24C8(int handle)
+void M4A_Routine_080D24C8(int handle)
 
 {
   byte *pbVar1;
@@ -15250,7 +15250,7 @@ undefined4 M4A_Routine_080D24C8(int handle)
 // =============================================================================
 // Function: M4A_Routine_080D2510 @ 0x080D2510
 // =============================================================================
-undefined4 M4A_Routine_080D2510(int handle)
+void M4A_Routine_080D2510(int handle)
 
 {
   undefined2 *p_uint1;
@@ -15309,7 +15309,7 @@ undefined4 M4A_Routine_080D2510(int handle)
 // =============================================================================
 // Function: M4A_Routine_080D262C @ 0x080D262C
 // =============================================================================
-undefined4 M4A_Routine_080D262C(undefined4 handle)
+void M4A_Routine_080D262C(undefined4 handle)
 
 {
   
@@ -15320,7 +15320,7 @@ undefined4 M4A_Routine_080D262C(undefined4 handle)
 // =============================================================================
 // Function: M4A_Routine_080D2640 @ 0x080D2640
 // =============================================================================
-undefined4 M4A_Routine_080D2640(undefined4 handle)
+void M4A_Routine_080D2640(undefined4 handle)
 
 {
   
@@ -15331,7 +15331,7 @@ undefined4 M4A_Routine_080D2640(undefined4 handle)
 // =============================================================================
 // Function: M4A_Routine_080D2654 @ 0x080D2654
 // =============================================================================
-undefined4 M4A_Routine_080D2654(undefined4 *handle)
+void M4A_Routine_080D2654(undefined4 *handle)
 
 {
   undefined2 *p_uint1;
@@ -15380,7 +15380,7 @@ undefined4 M4A_Routine_080D2654(undefined4 *handle)
 // =============================================================================
 // Function: M4A_Routine_080D27F0 @ 0x080D27F0
 // =============================================================================
-undefined4 M4A_Routine_080D27F0(uint handle)
+void M4A_Routine_080D27F0(uint handle)
 
 {
   int *p_int1;
@@ -15421,7 +15421,7 @@ undefined4 M4A_Routine_080D27F0(uint handle)
 // =============================================================================
 // Function: M4A_Routine_080D28DC @ 0x080D28DC
 // =============================================================================
-undefined4 M4A_Routine_080D28DC(void)
+u32 M4A_Routine_080D28DC(void)
 
 {
   undefined2 *p_uint1;
@@ -15450,7 +15450,7 @@ undefined4 M4A_Routine_080D28DC(void)
 // =============================================================================
 // Function: M4A_Routine_080D2958 @ 0x080D2958
 // =============================================================================
-undefined4 M4A_Routine_080D2958(void)
+void M4A_Routine_080D2958(void)
 
 {
   undefined2 *p_uint1;
@@ -15472,7 +15472,7 @@ undefined4 M4A_Routine_080D2958(void)
 // =============================================================================
 // Function: M4A_Routine_080D2994 @ 0x080D2994
 // =============================================================================
-undefined4 M4A_Routine_080D2994(int handle,undefined1 *channel,byte param)
+void M4A_Routine_080D2994(int handle,undefined1 *channel,byte param)
 
 {
   int i_val1;
@@ -15570,7 +15570,7 @@ LAB_080d2ae2:
 // =============================================================================
 // Function: M4A_Routine_080D2DA4 @ 0x080D2DA4
 // =============================================================================
-undefined4 M4A_Routine_080D2DA4(int handle)
+void M4A_Routine_080D2DA4(int handle)
 
 {
   byte b_flag1;
@@ -15609,7 +15609,7 @@ LAB_080d2df0:
 // =============================================================================
 // Function: M4A_Routine_080D2E0C @ 0x080D2E0C
 // =============================================================================
-undefined4 M4A_Routine_080D2E0C(void)
+void M4A_Routine_080D2E0C(void)
 
 {
   undefined4 *p_uint1;

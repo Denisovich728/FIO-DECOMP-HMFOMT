@@ -11760,55 +11760,55 @@
     "file": "entities/npc.c"
   },
   "0x0809E370": {
-    "canonical_name": "NPC_Routine_0809E370",
+    "canonical_name": "NPC_AddFriendship",
     "original_name": "NPC_Routine_0809E370",
     "address_hex": "0x0809E370",
     "file": "entities/npc.c"
   },
   "0x0809E38C": {
-    "canonical_name": "NPC_Routine_0809E38C",
+    "canonical_name": "NPC_ReduceFriendship",
     "original_name": "NPC_Routine_0809E38C",
     "address_hex": "0x0809E38C",
     "file": "entities/npc.c"
   },
   "0x0809E39C": {
-    "canonical_name": "NPC_Routine_0809E39C",
+    "canonical_name": "NPC_SetTalkedToday",
     "original_name": "NPC_Routine_0809E39C",
     "address_hex": "0x0809E39C",
     "file": "entities/npc.c"
   },
   "0x0809E3E8": {
-    "canonical_name": "NPC_Routine_0809E3E8",
+    "canonical_name": "NPC_ProcessGiftGiven",
     "original_name": "NPC_Routine_0809E3E8",
     "address_hex": "0x0809E3E8",
     "file": "entities/npc.c"
   },
   "0x0809E458": {
-    "canonical_name": "NPC_Routine_0809E458",
+    "canonical_name": "Bachelorette_ResetAffection",
     "original_name": "NPC_Routine_0809E458",
     "address_hex": "0x0809E458",
     "file": "entities/npc.c"
   },
   "0x0809E4C4": {
-    "canonical_name": "NPC_Routine_0809E4C4",
+    "canonical_name": "Bachelorette_AddAffection",
     "original_name": "NPC_Routine_0809E4C4",
     "address_hex": "0x0809E4C4",
     "file": "entities/npc.c"
   },
   "0x0809E4E8": {
-    "canonical_name": "NPC_Routine_0809E4E8",
+    "canonical_name": "Bachelorette_ReduceAffection",
     "original_name": "NPC_Routine_0809E4E8",
     "address_hex": "0x0809E4E8",
     "file": "entities/npc.c"
   },
   "0x0809E4F8": {
-    "canonical_name": "NPC_Routine_0809E4F8",
+    "canonical_name": "Bachelorette_IncrementTalkCount",
     "original_name": "NPC_Routine_0809E4F8",
     "address_hex": "0x0809E4F8",
     "file": "entities/npc.c"
   },
   "0x0809E520": {
-    "canonical_name": "NPC_Routine_0809E520",
+    "canonical_name": "Bachelorette_IncrementGiftCount",
     "original_name": "NPC_Routine_0809E520",
     "address_hex": "0x0809E520",
     "file": "entities/npc.c"
@@ -11820,25 +11820,25 @@
     "file": "entities/npc.c"
   },
   "0x0809E574": {
-    "canonical_name": "NPC_Routine_0809E574",
+    "canonical_name": "Bachelorette_ProcessDailyAffection",
     "original_name": "NPC_Routine_0809E574",
     "address_hex": "0x0809E574",
     "file": "entities/npc.c"
   },
   "0x0809E628": {
-    "canonical_name": "NPC_Routine_0809E628",
+    "canonical_name": "Bachelorette_ResetAffectionData",
     "original_name": "NPC_Routine_0809E628",
     "address_hex": "0x0809E628",
     "file": "entities/npc.c"
   },
   "0x0809E66C": {
-    "canonical_name": "NPC_Routine_0809E66C",
+    "canonical_name": "Bachelorette_GetStatsByte",
     "original_name": "NPC_Routine_0809E66C",
     "address_hex": "0x0809E66C",
     "file": "entities/npc.c"
   },
   "0x0809E688": {
-    "canonical_name": "NPC_Routine_0809E688",
+    "canonical_name": "Bachelorette_GetHeartStatsByte",
     "original_name": "NPC_Routine_0809E688",
     "address_hex": "0x0809E688",
     "file": "entities/npc.c"
@@ -13068,37 +13068,37 @@
     "file": "entities/npc.c"
   },
   "0x080B0708": {
-    "canonical_name": "NPC_Routine_080B0708",
+    "canonical_name": "HarvestSprite_Minigame_UpdateCountdownTimer",
     "original_name": "NPC_Routine_080B0708",
     "address_hex": "0x080B0708",
     "file": "entities/npc.c"
   },
   "0x080B0934": {
-    "canonical_name": "NPC_Routine_080B0934",
+    "canonical_name": "HarvestSprite_Minigame_HideUI",
     "original_name": "NPC_Routine_080B0934",
     "address_hex": "0x080B0934",
     "file": "entities/npc.c"
   },
   "0x080B0970": {
-    "canonical_name": "NPC_Routine_080B0970",
+    "canonical_name": "HarvestSprite_Minigame_ShowUI",
     "original_name": "NPC_Routine_080B0970",
     "address_hex": "0x080B0970",
     "file": "entities/npc.c"
   },
   "0x080B09B0": {
-    "canonical_name": "NPC_Routine_080B09B0",
+    "canonical_name": "HarvestSprite_Minigame_SetupDifficultyAndTargets",
     "original_name": "NPC_Routine_080B09B0",
     "address_hex": "0x080B09B0",
     "file": "entities/npc.c"
   },
   "0x080B0AA0": {
-    "canonical_name": "NPC_Routine_080B0AA0",
+    "canonical_name": "HarvestSprite_Minigame_InitState",
     "original_name": "NPC_Routine_080B0AA0",
     "address_hex": "0x080B0AA0",
     "file": "entities/npc.c"
   },
   "0x080B0BB8": {
-    "canonical_name": "NPC_Routine_080B0BB8",
+    "canonical_name": "HarvestSprite_Minigame_UpdateFrame",
     "original_name": "NPC_Routine_080B0BB8",
     "address_hex": "0x080B0BB8",
     "file": "entities/npc.c"

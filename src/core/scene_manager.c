@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: Scene_Destructor @ 0x0800080C
 // =============================================================================
-undefined4 Scene_Destructor(undefined4 *arg_1,uint arg_2)
+void Scene_Destructor(undefined4 *arg_1,uint arg_2)
 
 {
   
@@ -23,7 +23,7 @@ undefined4 Scene_Destructor(undefined4 *arg_1,uint arg_2)
 // =============================================================================
 // Function: Scene_Routine_0800082C @ 0x0800082C
 // =============================================================================
-undefined4 Scene_Routine_0800082C(int *arg_1)
+void Scene_Routine_0800082C(int *arg_1)
 
 {
   int *p_int1;
@@ -78,7 +78,7 @@ undefined4 Scene_Routine_0800082C(int *arg_1)
 // =============================================================================
 // Function: Scene_Routine_08000D64 @ 0x08000D64
 // =============================================================================
-undefined8 Scene_Routine_08000D64(undefined4 *arg_1,int arg_2)
+u32 Scene_Routine_08000D64(undefined4 *arg_1,int arg_2)
 
 {
   int i_val1;
@@ -118,7 +118,7 @@ LAB_08000d9a:
 // =============================================================================
 // Function: Scene_Routine_08000E1C @ 0x08000E1C
 // =============================================================================
-undefined4 Scene_Routine_08000E1C(int arg_1)
+void Scene_Routine_08000E1C(int arg_1)
 
 {
   short s_val1;
@@ -184,7 +184,7 @@ undefined4 Scene_Routine_08000E1C(int arg_1)
 // =============================================================================
 // Function: Scene_Routine_08000F5C @ 0x08000F5C
 // =============================================================================
-undefined4 Scene_Routine_08000F5C(undefined4 arg_1)
+void Scene_Routine_08000F5C(undefined4 arg_1)
 
 {
   undefined4 u_val1;
@@ -211,7 +211,7 @@ undefined4 Scene_Routine_08000F5C(undefined4 arg_1)
 // =============================================================================
 // Function: Scene_Routine_08000FF8 @ 0x08000FF8
 // =============================================================================
-undefined8 Scene_Routine_08000FF8(int arg_1)
+u32 Scene_Routine_08000FF8(int arg_1)
 
 {
   ushort u_val1;
@@ -614,7 +614,7 @@ case_08001952:
 // =============================================================================
 // Function: Scene_Routine_080019D8 @ 0x080019D8
 // =============================================================================
-undefined4 Scene_Routine_080019D8(int arg_1)
+u32 Scene_Routine_080019D8(int arg_1)
 
 {
   int i_val1;
@@ -1242,7 +1242,7 @@ undefined4 Scene_Routine_080019D8(int arg_1)
 // =============================================================================
 // Function: Scene_Routine_080024E0 @ 0x080024E0
 // =============================================================================
-undefined4 Scene_Routine_080024E0(int arg_1)
+void Scene_Routine_080024E0(int arg_1)
 
 {
   undefined4 u_val1;
@@ -2195,7 +2195,7 @@ undefined4 Scene_Routine_080024E0(int arg_1)
 // =============================================================================
 // Function: Scene_Routine_080035C0 @ 0x080035C0
 // =============================================================================
-undefined4 Scene_Routine_080035C0(int arg_1,undefined2 arg_2,undefined2 arg_3,int arg_4)
+void Scene_Routine_080035C0(int arg_1,undefined2 arg_2,undefined2 arg_3,int arg_4)
 
 {
   int i_val1;
@@ -2292,7 +2292,7 @@ LAB_08003666:
 // =============================================================================
 // Function: Scene_Routine_080036F8 @ 0x080036F8
 // =============================================================================
-undefined8 Scene_Routine_080036F8(undefined4 *arg_1)
+u32 Scene_Routine_080036F8(undefined4 *arg_1)
 
 {
   undefined4 u_val1;
@@ -2307,7 +2307,7 @@ undefined8 Scene_Routine_080036F8(undefined4 *arg_1)
 // =============================================================================
 // Function: Scene_Routine_0800371C @ 0x0800371C
 // =============================================================================
-undefined4 Scene_Routine_0800371C(undefined4 *arg_1,undefined4 arg_2)
+void Scene_Routine_0800371C(undefined4 *arg_1,undefined4 arg_2)
 
 {
   int i_val1;
@@ -2324,7 +2324,7 @@ undefined4 Scene_Routine_0800371C(undefined4 *arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: Scene_Routine_0800374C @ 0x0800374C
 // =============================================================================
-undefined8 Scene_Routine_0800374C(undefined4 *arg_1,int arg_2)
+u32 Scene_Routine_0800374C(undefined4 *arg_1,int arg_2)
 
 {
   undefined4 facing_buffer [3];
@@ -2337,7 +2337,7 @@ undefined8 Scene_Routine_0800374C(undefined4 *arg_1,int arg_2)
 // =============================================================================
 // Function: Scene_Routine_08003B40 @ 0x08003B40
 // =============================================================================
-undefined4 Scene_Routine_08003B40(undefined4 arg_1)
+void Scene_Routine_08003B40(undefined4 arg_1)
 
 {
   int i_val1;
@@ -2365,7 +2365,7 @@ undefined4 Scene_Routine_08003B40(undefined4 arg_1)
 // =============================================================================
 // Function: Scene_Routine_08003BB4 @ 0x08003BB4
 // =============================================================================
-undefined4 Scene_Routine_08003BB4(undefined4 arg_1)
+void Scene_Routine_08003BB4(undefined4 arg_1)
 
 {
   int i_val1;
@@ -2393,7 +2393,7 @@ undefined4 Scene_Routine_08003BB4(undefined4 arg_1)
 // =============================================================================
 // Function: Scene_Routine_08003C28 @ 0x08003C28
 // =============================================================================
-undefined4 Scene_Routine_08003C28(int arg_1)
+void Scene_Routine_08003C28(int arg_1)
 
 {
   undefined4 u_val1;
@@ -2414,7 +2414,7 @@ undefined4 Scene_Routine_08003C28(int arg_1)
 // =============================================================================
 // Function: Scene_Routine_08003C80 @ 0x08003C80
 // =============================================================================
-undefined4 Scene_Routine_08003C80(void)
+u32 Scene_Routine_08003C80(void)
 
 {
   int i_val1;
@@ -2505,7 +2505,7 @@ undefined4 Scene_Routine_08003C80(void)
 // =============================================================================
 // Function: Scene_Routine_08003DF0 @ 0x08003DF0
 // =============================================================================
-undefined4 Scene_Routine_08003DF0(int arg_1,uint arg_2,uint arg_3,undefined2 arg_4)
+void Scene_Routine_08003DF0(int arg_1,uint arg_2,uint arg_3,undefined2 arg_4)
 
 {
   int i_val1;
@@ -2535,7 +2535,7 @@ undefined4 Scene_Routine_08003DF0(int arg_1,uint arg_2,uint arg_3,undefined2 arg
 // =============================================================================
 // Function: Scene_Routine_08003E88 @ 0x08003E88
 // =============================================================================
-undefined4 Scene_Routine_08003E88(undefined4 arg_1,int arg_2,uint arg_3,undefined2 arg_4)
+void Scene_Routine_08003E88(undefined4 arg_1,int arg_2,uint arg_3,undefined2 arg_4)
 
 {
   uint u_val1;
@@ -2557,7 +2557,7 @@ undefined4 Scene_Routine_08003E88(undefined4 arg_1,int arg_2,uint arg_3,undefine
 // =============================================================================
 // Function: Scene_Routine_08003F9C @ 0x08003F9C
 // =============================================================================
-undefined8 Scene_Routine_08003F9C(int arg_1)
+u32 Scene_Routine_08003F9C(int arg_1)
 
 {
   ushort u_val1;

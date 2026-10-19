@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: ShippingBin_Init @ 0x0800B0DC
 // =============================================================================
-undefined8 ShippingBin_Init(undefined4 *arg_1)
+u32 ShippingBin_Init(undefined4 *arg_1)
 
 {
   int i_val1;
@@ -37,7 +37,7 @@ undefined8 ShippingBin_Init(undefined4 *arg_1)
 // =============================================================================
 // Function: ShippingBin_GetValueShipped @ 0x0800B124
 // =============================================================================
-undefined8 ShippingBin_GetValueShipped(int arg_1,int arg_2)
+u32 ShippingBin_GetValueShipped(int arg_1,int arg_2)
 
 {
   undefined4 u_val1;
@@ -54,7 +54,7 @@ undefined8 ShippingBin_GetValueShipped(int arg_1,int arg_2)
 // =============================================================================
 // Function: ShippingBin_IsDisplayEnabled @ 0x0800B140
 // =============================================================================
-undefined8 ShippingBin_IsDisplayEnabled(int arg_1,int arg_2)
+u32 ShippingBin_IsDisplayEnabled(int arg_1,int arg_2)
 
 {
   undefined4 u_val1;
@@ -71,7 +71,7 @@ undefined8 ShippingBin_IsDisplayEnabled(int arg_1,int arg_2)
 // =============================================================================
 // Function: ShippingBin_GetAmountShipped @ 0x0800B15C
 // =============================================================================
-undefined8 ShippingBin_GetAmountShipped(int arg_1)
+u32 ShippingBin_GetAmountShipped(int arg_1)
 
 {
   char c_char1;
@@ -98,7 +98,7 @@ LAB_0800b186:
 // =============================================================================
 // Function: ShippingBin_HasShippedOneOfEachProduct @ 0x0800B18C
 // =============================================================================
-undefined8 ShippingBin_HasShippedOneOfEachProduct(int arg_1)
+u32 ShippingBin_HasShippedOneOfEachProduct(int arg_1)
 
 {
   char c_char1;
@@ -125,7 +125,7 @@ LAB_0800b1c4:
 // =============================================================================
 // Function: ShippingBin_HasShippedOneOfEachCrop @ 0x0800B1CC
 // =============================================================================
-undefined8 ShippingBin_HasShippedOneOfEachCrop(int arg_1)
+u32 ShippingBin_HasShippedOneOfEachCrop(int arg_1)
 
 {
   char c_char1;
@@ -152,7 +152,7 @@ LAB_0800b204:
 // =============================================================================
 // Function: ShippingBin_ShipItem @ 0x0800B20C
 // =============================================================================
-undefined4 ShippingBin_ShipItem(int *arg_1,undefined4 arg_2)
+void ShippingBin_ShipItem(int *arg_1,undefined4 arg_2)
 
 {
   uint u_val1;
@@ -175,7 +175,7 @@ undefined4 ShippingBin_ShipItem(int *arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: ShippingBin_ResetValueShipped @ 0x0800B254
 // =============================================================================
-undefined4 ShippingBin_ResetValueShipped(int arg_1,int arg_2)
+void ShippingBin_ResetValueShipped(int arg_1,int arg_2)
 
 {
   
@@ -188,7 +188,7 @@ undefined4 ShippingBin_ResetValueShipped(int arg_1,int arg_2)
 // =============================================================================
 // Function: ShippingBin_ForceEnableDisplay @ 0x0800B288
 // =============================================================================
-undefined8 ShippingBin_ForceEnableDisplay(uint *arg_1)
+u32 ShippingBin_ForceEnableDisplay(uint *arg_1)
 
 {
   uint u_val1;
@@ -205,7 +205,7 @@ undefined8 ShippingBin_ForceEnableDisplay(uint *arg_1)
 // =============================================================================
 // Function: ShippingBin_StatEnt_Init @ 0x0800B29C
 // =============================================================================
-undefined4 ShippingBin_StatEnt_Init(uint *arg_1)
+void ShippingBin_StatEnt_Init(uint *arg_1)
 
 {
   uint u_val1;
@@ -223,7 +223,7 @@ undefined4 ShippingBin_StatEnt_Init(uint *arg_1)
 // =============================================================================
 // Function: ShippingBin_StatEnt_IsDisplayEnabled @ 0x0800B2D4
 // =============================================================================
-undefined4 ShippingBin_StatEnt_IsDisplayEnabled(int *arg_1)
+void ShippingBin_StatEnt_IsDisplayEnabled(int *arg_1)
 
 {
   
@@ -236,7 +236,7 @@ undefined4 ShippingBin_StatEnt_IsDisplayEnabled(int *arg_1)
 // =============================================================================
 // Function: ShippingBin_StatEnt_GetAmountShipped @ 0x0800B2EC
 // =============================================================================
-undefined8 ShippingBin_StatEnt_GetAmountShipped(int arg_1)
+u32 ShippingBin_StatEnt_GetAmountShipped(int arg_1)
 
 {
   int i_val1;
@@ -286,7 +286,7 @@ undefined8 ShippingBin_StatEnt_GetAmountShipped(int arg_1)
 // =============================================================================
 // Function: ShippingBin_StatEnt_ShipOne @ 0x0800B410
 // =============================================================================
-undefined8 ShippingBin_StatEnt_ShipOne(int arg_1,int arg_2)
+u32 ShippingBin_StatEnt_ShipOne(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -317,7 +317,7 @@ undefined8 ShippingBin_StatEnt_ShipOne(int arg_1,int arg_2)
 // =============================================================================
 // Function: ShippingBin_StatEnt_ForceEnableDisplay @ 0x0800B474
 // =============================================================================
-undefined8 ShippingBin_StatEnt_ForceEnableDisplay(int arg_1,int arg_2)
+u32 ShippingBin_StatEnt_ForceEnableDisplay(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -345,7 +345,7 @@ undefined8 ShippingBin_StatEnt_ForceEnableDisplay(int arg_1,int arg_2)
 // =============================================================================
 // Function: ShippingBin_HasShippedOneOfEachMineral @ 0x0800B4D0
 // =============================================================================
-undefined8 ShippingBin_HasShippedOneOfEachMineral(int arg_1)
+u32 ShippingBin_HasShippedOneOfEachMineral(int arg_1)
 
 {
   char c_char1;
@@ -367,7 +367,7 @@ LAB_0800b4fa:
 // =============================================================================
 // Function: ShippingBin_Routine_0800B500 @ 0x0800B500
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B500(int arg_1)
+u32 ShippingBin_Routine_0800B500(int arg_1)
 
 {
   char c_char1;
@@ -388,7 +388,7 @@ LAB_0800b53a:
 // =============================================================================
 // Function: ShippingBin_Routine_0800B544 @ 0x0800B544
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B544(int arg_1,int arg_2)
+u32 ShippingBin_Routine_0800B544(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -416,7 +416,7 @@ LAB_0800b592:
 // =============================================================================
 // Function: ShippingBin_Routine_0800B5A8 @ 0x0800B5A8
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B5A8(int arg_1,int arg_2,uint arg_3)
+u32 ShippingBin_Routine_0800B5A8(int arg_1,int arg_2,uint arg_3)
 
 {
   char c_char1;
@@ -473,7 +473,7 @@ LAB_0800b646:
 // =============================================================================
 // Function: ShippingBin_Routine_0800B660 @ 0x0800B660
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B660(int arg_1)
+u32 ShippingBin_Routine_0800B660(int arg_1)
 
 {
   int i_val1;
@@ -492,7 +492,7 @@ undefined8 ShippingBin_Routine_0800B660(int arg_1)
 // =============================================================================
 // Function: ShippingBin_Routine_0800B68C @ 0x0800B68C
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B68C(int arg_1,int arg_2)
+u32 ShippingBin_Routine_0800B68C(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -523,7 +523,7 @@ undefined8 ShippingBin_Routine_0800B68C(int arg_1,int arg_2)
 // =============================================================================
 // Function: ShippingBin_Routine_0800B6E8 @ 0x0800B6E8
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B6E8(int arg_1,int arg_2)
+u32 ShippingBin_Routine_0800B6E8(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -551,7 +551,7 @@ undefined8 ShippingBin_Routine_0800B6E8(int arg_1,int arg_2)
 // =============================================================================
 // Function: ShippingBin_Routine_0800B73C @ 0x0800B73C
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B73C(int arg_1)
+u32 ShippingBin_Routine_0800B73C(int arg_1)
 
 {
   char c_char1;
@@ -573,7 +573,7 @@ LAB_0800b768:
 // =============================================================================
 // Function: ShippingBin_Routine_0800B770 @ 0x0800B770
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B770(int arg_1)
+u32 ShippingBin_Routine_0800B770(int arg_1)
 
 {
   char c_char1;
@@ -594,7 +594,7 @@ LAB_0800b7ae:
 // =============================================================================
 // Function: ShippingBin_Routine_0800B7B8 @ 0x0800B7B8
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B7B8(int arg_1,int arg_2)
+u32 ShippingBin_Routine_0800B7B8(int arg_1,int arg_2)
 
 {
   char c_char1;

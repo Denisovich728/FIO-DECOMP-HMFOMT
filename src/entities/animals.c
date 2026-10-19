@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: Animal_Routine_0805039C @ 0x0805039C
 // =============================================================================
-undefined4 Animal_Routine_0805039C(int animal)
+void Animal_Routine_0805039C(int animal)
 
 {
   
@@ -30,7 +30,7 @@ undefined4 Animal_Routine_0805039C(int animal)
 // =============================================================================
 // Function: Animal_Routine_080503E4 @ 0x080503E4
 // =============================================================================
-undefined4 Animal_Routine_080503E4(int animal)
+void Animal_Routine_080503E4(int animal)
 
 {
   
@@ -43,7 +43,7 @@ undefined4 Animal_Routine_080503E4(int animal)
 // =============================================================================
 // Function: Animal_Routine_080503FC @ 0x080503FC
 // =============================================================================
-undefined4 Animal_Routine_080503FC(int animal)
+void Animal_Routine_080503FC(int animal)
 
 {
   
@@ -56,7 +56,7 @@ undefined4 Animal_Routine_080503FC(int animal)
 // =============================================================================
 // Function: Animal_Routine_08050410 @ 0x08050410
 // =============================================================================
-undefined4 Animal_Routine_08050410(int animal)
+void Animal_Routine_08050410(int animal)
 
 {
   
@@ -69,7 +69,7 @@ undefined4 Animal_Routine_08050410(int animal)
 // =============================================================================
 // Function: Animal_Routine_08050424 @ 0x08050424
 // =============================================================================
-undefined4 Animal_Routine_08050424(int animal,undefined4 amount,undefined2 food_type,undefined4 out_stat)
+void Animal_Routine_08050424(int animal,undefined4 amount,undefined2 food_type,undefined4 out_stat)
 
 {
   int pos_x;
@@ -178,7 +178,7 @@ LAB_08050768:
 // =============================================================================
 // Function: Animal_Routine_080507D0 @ 0x080507D0
 // =============================================================================
-undefined8 Animal_Routine_080507D0(uint animal,int amount)
+u32 Animal_Routine_080507D0(uint animal,int amount)
 
 {
   
@@ -194,7 +194,7 @@ undefined8 Animal_Routine_080507D0(uint animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080507F8 @ 0x080507F8
 // =============================================================================
-undefined4 Animal_Routine_080507F8(int animal,byte *amount,undefined4 food_type,undefined4 out_stat)
+void Animal_Routine_080507F8(int animal,byte *amount,undefined4 food_type,undefined4 out_stat)
 
 {
   undefined4 u_val1;
@@ -230,7 +230,7 @@ undefined4 Animal_Routine_080507F8(int animal,byte *amount,undefined4 food_type,
 // =============================================================================
 // Function: Animal_Routine_08050868 @ 0x08050868
 // =============================================================================
-undefined8 Animal_Routine_08050868(undefined4 animal,int amount,uint food_type)
+u32 Animal_Routine_08050868(undefined4 animal,int amount,uint food_type)
 
 {
   
@@ -400,7 +400,7 @@ LAB_08050ad2:
 // =============================================================================
 // Function: Animal_Routine_08050AD8 @ 0x08050AD8
 // =============================================================================
-undefined4 Animal_Routine_08050AD8(int animal,uint amount)
+void Animal_Routine_08050AD8(int animal,uint amount)
 
 {
   byte b_flag1;
@@ -428,7 +428,7 @@ undefined4 Animal_Routine_08050AD8(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08050C2C @ 0x08050C2C
 // =============================================================================
-undefined4 Animal_Routine_08050C2C(int animal,uint amount)
+void Animal_Routine_08050C2C(int animal,uint amount)
 
 {
   
@@ -445,7 +445,7 @@ undefined4 Animal_Routine_08050C2C(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08050C70 @ 0x08050C70
 // =============================================================================
-undefined8 Animal_Routine_08050C70(undefined4 *animal)
+u32 Animal_Routine_08050C70(undefined4 *animal)
 
 {
   undefined4 stack_val_14;
@@ -480,7 +480,7 @@ Animal_Routine_08050CC0(undefined4 *animal,undefined4 amount,undefined4 food_typ
 // =============================================================================
 // Function: Animal_Routine_08050D0C @ 0x08050D0C
 // =============================================================================
-undefined4 Animal_Routine_08050D0C(int *animal,uint amount)
+void Animal_Routine_08050D0C(int *animal,uint amount)
 
 {
   
@@ -506,7 +506,7 @@ void Animal_Routine_08050D3C(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050D5C @ 0x08050D5C
 // =============================================================================
-undefined4 Animal_Routine_08050D5C(undefined4 *animal)
+void Animal_Routine_08050D5C(undefined4 *animal)
 
 {
   
@@ -517,7 +517,7 @@ undefined4 Animal_Routine_08050D5C(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050D68 @ 0x08050D68
 // =============================================================================
-undefined4 Animal_Routine_08050D68(undefined4 *animal)
+void Animal_Routine_08050D68(undefined4 *animal)
 
 {
   
@@ -528,7 +528,7 @@ undefined4 Animal_Routine_08050D68(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050D74 @ 0x08050D74
 // =============================================================================
-undefined4 Animal_Routine_08050D74(undefined4 *animal)
+void Animal_Routine_08050D74(undefined4 *animal)
 
 {
   
@@ -539,7 +539,7 @@ undefined4 Animal_Routine_08050D74(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050D80 @ 0x08050D80
 // =============================================================================
-undefined4 Animal_Routine_08050D80(undefined4 *animal)
+void Animal_Routine_08050D80(undefined4 *animal)
 
 {
   
@@ -550,7 +550,7 @@ undefined4 Animal_Routine_08050D80(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050D8C @ 0x08050D8C
 // =============================================================================
-undefined4 Animal_Routine_08050D8C(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08050D8C(undefined4 *animal,undefined4 amount)
 
 {
   
@@ -561,7 +561,7 @@ undefined4 Animal_Routine_08050D8C(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08050DA0 @ 0x08050DA0
 // =============================================================================
-undefined4 Animal_Routine_08050DA0(undefined4 *animal,undefined4 amount,undefined4 food_type)
+void Animal_Routine_08050DA0(undefined4 *animal,undefined4 amount,undefined4 food_type)
 
 {
   
@@ -572,7 +572,7 @@ undefined4 Animal_Routine_08050DA0(undefined4 *animal,undefined4 amount,undefine
 // =============================================================================
 // Function: Animal_Routine_08050DB4 @ 0x08050DB4
 // =============================================================================
-undefined4 Animal_Routine_08050DB4(undefined4 *animal,undefined4 amount,undefined2 food_type)
+void Animal_Routine_08050DB4(undefined4 *animal,undefined4 amount,undefined2 food_type)
 
 {
   
@@ -583,7 +583,7 @@ undefined4 Animal_Routine_08050DB4(undefined4 *animal,undefined4 amount,undefine
 // =============================================================================
 // Function: Animal_Routine_08050DC8 @ 0x08050DC8
 // =============================================================================
-undefined4 Animal_Routine_08050DC8(undefined4 *animal,undefined4 amount,undefined2 food_type)
+void Animal_Routine_08050DC8(undefined4 *animal,undefined4 amount,undefined2 food_type)
 
 {
   
@@ -594,7 +594,7 @@ undefined4 Animal_Routine_08050DC8(undefined4 *animal,undefined4 amount,undefine
 // =============================================================================
 // Function: Animal_Routine_08050DF0 @ 0x08050DF0
 // =============================================================================
-undefined8 Animal_Routine_08050DF0(int *animal)
+u32 Animal_Routine_08050DF0(int *animal)
 
 {
   undefined4 u_val1;
@@ -611,7 +611,7 @@ undefined8 Animal_Routine_08050DF0(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08050E0C @ 0x08050E0C
 // =============================================================================
-undefined4 Animal_Routine_08050E0C(undefined4 *animal)
+void Animal_Routine_08050E0C(undefined4 *animal)
 
 {
   
@@ -622,7 +622,7 @@ undefined4 Animal_Routine_08050E0C(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050E30 @ 0x08050E30
 // =============================================================================
-undefined4 Animal_Routine_08050E30(undefined4 *animal)
+void Animal_Routine_08050E30(undefined4 *animal)
 
 {
   
@@ -633,7 +633,7 @@ undefined4 Animal_Routine_08050E30(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050E50 @ 0x08050E50
 // =============================================================================
-undefined4 Animal_Routine_08050E50(undefined4 *animal)
+void Animal_Routine_08050E50(undefined4 *animal)
 
 {
   
@@ -644,7 +644,7 @@ undefined4 Animal_Routine_08050E50(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050E5C @ 0x08050E5C
 // =============================================================================
-undefined4 Animal_Routine_08050E5C(undefined4 *animal)
+void Animal_Routine_08050E5C(undefined4 *animal)
 
 {
   
@@ -655,7 +655,7 @@ undefined4 Animal_Routine_08050E5C(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050E68 @ 0x08050E68
 // =============================================================================
-undefined4 Animal_Routine_08050E68(undefined4 *animal)
+void Animal_Routine_08050E68(undefined4 *animal)
 
 {
   
@@ -666,7 +666,7 @@ undefined4 Animal_Routine_08050E68(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050E74 @ 0x08050E74
 // =============================================================================
-undefined4 Animal_Routine_08050E74(undefined4 *animal)
+void Animal_Routine_08050E74(undefined4 *animal)
 
 {
   
@@ -677,7 +677,7 @@ undefined4 Animal_Routine_08050E74(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050E80 @ 0x08050E80
 // =============================================================================
-undefined4 Animal_Routine_08050E80(undefined4 *animal)
+void Animal_Routine_08050E80(undefined4 *animal)
 
 {
   
@@ -688,7 +688,7 @@ undefined4 Animal_Routine_08050E80(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08050E8C @ 0x08050E8C
 // =============================================================================
-undefined4 Animal_Routine_08050E8C(undefined4 *animal)
+void Animal_Routine_08050E8C(undefined4 *animal)
 
 {
   
@@ -743,7 +743,7 @@ void Animal_Routine_08050EE4(undefined4 *animal,byte amount,uint food_type,uint 
 // =============================================================================
 // Function: Animal_Routine_08050F4C @ 0x08050F4C
 // =============================================================================
-undefined8 Animal_Routine_08050F4C(int animal)
+u32 Animal_Routine_08050F4C(int animal)
 
 {
   
@@ -753,7 +753,7 @@ undefined8 Animal_Routine_08050F4C(int animal)
 // =============================================================================
 // Function: Animal_Routine_08050FA0 @ 0x08050FA0
 // =============================================================================
-undefined4 Animal_Routine_08050FA0(int animal,byte *amount)
+void Animal_Routine_08050FA0(int animal,byte *amount)
 
 {
   byte b_flag1;
@@ -818,7 +818,7 @@ undefined4 Animal_Routine_08050FA0(int animal,byte *amount)
 // =============================================================================
 // Function: Animal_Routine_080510E8 @ 0x080510E8
 // =============================================================================
-undefined4 Animal_Routine_080510E8(int animal)
+void Animal_Routine_080510E8(int animal)
 
 {
   int i_val1;
@@ -858,7 +858,7 @@ undefined4 Animal_Routine_080510E8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805116C @ 0x0805116C
 // =============================================================================
-undefined8 Animal_Routine_0805116C(undefined4 *animal,undefined4 amount,undefined4 food_type)
+u32 Animal_Routine_0805116C(undefined4 *animal,undefined4 amount,undefined4 food_type)
 
 {
   undefined4 *p_uint1;
@@ -951,7 +951,7 @@ undefined8 Animal_Routine_0805116C(undefined4 *animal,undefined4 amount,undefine
 // =============================================================================
 // Function: Animal_Routine_080512B8 @ 0x080512B8
 // =============================================================================
-undefined8 Animal_Routine_080512B8(int animal,int amount)
+u32 Animal_Routine_080512B8(int animal,int amount)
 
 {
   
@@ -1021,7 +1021,7 @@ Animal_Routine_08051320(int animal,uint amount,uint food_type,int out_stat,int a
 // =============================================================================
 // Function: Animal_Routine_08051504 @ 0x08051504
 // =============================================================================
-undefined8 Animal_Routine_08051504(undefined4 *animal,int amount)
+u32 Animal_Routine_08051504(undefined4 *animal,int amount)
 
 {
   short s_val1;
@@ -1122,7 +1122,7 @@ undefined8 Animal_Routine_08051504(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080516F0 @ 0x080516F0
 // =============================================================================
-undefined4 Animal_Routine_080516F0(int animal)
+u32 Animal_Routine_080516F0(int animal)
 
 {
   byte b_flag1;
@@ -1373,7 +1373,7 @@ undefined4 Animal_Routine_080516F0(int animal)
 // =============================================================================
 // Function: Animal_Routine_08051D30 @ 0x08051D30
 // =============================================================================
-undefined4 Animal_Routine_08051D30(int animal,int amount,int food_type,int out_stat)
+void Animal_Routine_08051D30(int animal,int amount,int food_type,int out_stat)
 
 {
   short *psVar1;
@@ -1399,7 +1399,7 @@ undefined4 Animal_Routine_08051D30(int animal,int amount,int food_type,int out_s
 // =============================================================================
 // Function: Animal_Routine_08051D70 @ 0x08051D70
 // =============================================================================
-undefined4 Animal_Routine_08051D70(int animal)
+void Animal_Routine_08051D70(int animal)
 
 {
   short s_val1;
@@ -1711,7 +1711,7 @@ void Animal_Routine_0805218C(undefined4 *animal,undefined4 *amount,undefined4 fo
 // =============================================================================
 // Function: Animal_Routine_080521BC @ 0x080521BC
 // =============================================================================
-undefined4 Animal_Routine_080521BC(undefined4 *animal,undefined4 amount)
+void Animal_Routine_080521BC(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -1733,7 +1733,7 @@ undefined4 Animal_Routine_080521BC(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_080521FC @ 0x080521FC
 // =============================================================================
-undefined8 Animal_Routine_080521FC(undefined4 *animal,int amount)
+u32 Animal_Routine_080521FC(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -1752,7 +1752,7 @@ undefined8 Animal_Routine_080521FC(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08052230 @ 0x08052230
 // =============================================================================
-undefined4 Animal_Routine_08052230(char *animal,int amount)
+void Animal_Routine_08052230(char *animal,int amount)
 
 {
   char c_char1;
@@ -2112,7 +2112,7 @@ void Animal_Routine_080522F8(int animal,undefined4 amount,uint food_type)
 // =============================================================================
 // Function: Animal_Routine_08052984 @ 0x08052984
 // =============================================================================
-undefined8 Animal_Routine_08052984(undefined4 *animal,int amount)
+u32 Animal_Routine_08052984(undefined4 *animal,int amount)
 
 {
   ushort u_val1;
@@ -2643,7 +2643,7 @@ LAB_080532da:
 // =============================================================================
 // Function: Animal_Routine_08053634 @ 0x08053634
 // =============================================================================
-undefined4 Animal_Routine_08053634(int animal)
+u32 Animal_Routine_08053634(int animal)
 
 {
   short s_val1;
@@ -2746,7 +2746,7 @@ LAB_08053764:
 // =============================================================================
 // Function: Animal_Routine_08053960 @ 0x08053960
 // =============================================================================
-undefined8 Animal_Routine_08053960(int animal)
+u32 Animal_Routine_08053960(int animal)
 
 {
   int i_val1;
@@ -3562,7 +3562,7 @@ Animal_Routine_08054D0A:
 // =============================================================================
 // Function: Animal_Routine_08054D34 @ 0x08054D34
 // =============================================================================
-undefined8 Animal_Routine_08054D34(int animal)
+u32 Animal_Routine_08054D34(int animal)
 
 {
   byte b_flag1;
@@ -3683,7 +3683,7 @@ LAB_08054f34:
 // =============================================================================
 // Function: Animal_Routine_08054F40 @ 0x08054F40
 // =============================================================================
-undefined4 Animal_Routine_08054F40(int animal)
+void Animal_Routine_08054F40(int animal)
 
 {
   undefined4 u_val1;
@@ -3732,7 +3732,7 @@ undefined4 Animal_Routine_08054F40(int animal)
 // =============================================================================
 // Function: Animal_Routine_080550AC @ 0x080550AC
 // =============================================================================
-undefined4 Animal_Routine_080550AC(int animal,int amount)
+void Animal_Routine_080550AC(int animal,int amount)
 
 {
   short s_val1;
@@ -3872,7 +3872,7 @@ undefined4 Animal_Routine_080550AC(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08055264 @ 0x08055264
 // =============================================================================
-undefined4 Animal_Routine_08055264(int animal)
+void Animal_Routine_08055264(int animal)
 
 {
   short s_val1;
@@ -4228,7 +4228,7 @@ undefined4 Animal_Routine_08055264(int animal)
 // =============================================================================
 // Function: Animal_Routine_080558C4 @ 0x080558C4
 // =============================================================================
-undefined4 Animal_Routine_080558C4(int animal)
+void Animal_Routine_080558C4(int animal)
 
 {
   byte b_flag1;
@@ -6333,7 +6333,7 @@ Animal_Routine_08056442:
 // =============================================================================
 // Function: Animal_Routine_080579B4 @ 0x080579B4
 // =============================================================================
-undefined4 Animal_Routine_080579B4(undefined4 animal,uint *amount,int food_type,short *out_stat,int arg_5)
+void Animal_Routine_080579B4(undefined4 animal,uint *amount,int food_type,short *out_stat,int arg_5)
 
 {
   byte b_flag1;
@@ -6414,7 +6414,7 @@ undefined4 Animal_Routine_080579B4(undefined4 animal,uint *amount,int food_type,
 // =============================================================================
 // Function: Animal_Routine_08057B84 @ 0x08057B84
 // =============================================================================
-undefined4 Animal_Routine_08057B84(int animal)
+void Animal_Routine_08057B84(int animal)
 
 {
   byte b_flag1;
@@ -6454,7 +6454,7 @@ undefined4 Animal_Routine_08057B84(int animal)
 // =============================================================================
 // Function: Animal_Routine_08057CB0 @ 0x08057CB0
 // =============================================================================
-undefined4 Animal_Routine_08057CB0(undefined4 animal,int amount,int food_type,int out_stat,int arg_5)
+void Animal_Routine_08057CB0(undefined4 animal,int amount,int food_type,int out_stat,int arg_5)
 
 {
   int i_val1;
@@ -6488,7 +6488,7 @@ undefined4 Animal_Routine_08057CB0(undefined4 animal,int amount,int food_type,in
 // =============================================================================
 // Function: Animal_Routine_08057D34 @ 0x08057D34
 // =============================================================================
-undefined4 Animal_Routine_08057D34(int animal,undefined2 amount,undefined2 food_type,int out_stat)
+void Animal_Routine_08057D34(int animal,undefined2 amount,undefined2 food_type,int out_stat)
 
 {
   undefined4 u_val1;
@@ -6555,7 +6555,7 @@ void Animal_Routine_08057DD8(undefined4 *animal,undefined4 *amount,undefined4 fo
 // =============================================================================
 // Function: Animal_Routine_08057E1C @ 0x08057E1C
 // =============================================================================
-undefined4 Animal_Routine_08057E1C(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08057E1C(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -6577,7 +6577,7 @@ undefined4 Animal_Routine_08057E1C(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08057E5C @ 0x08057E5C
 // =============================================================================
-undefined8 Animal_Routine_08057E5C(undefined4 *animal,int amount)
+u32 Animal_Routine_08057E5C(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -6596,7 +6596,7 @@ undefined8 Animal_Routine_08057E5C(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08057E90 @ 0x08057E90
 // =============================================================================
-undefined4 Animal_Routine_08057E90(int animal,byte amount,undefined4 food_type)
+void Animal_Routine_08057E90(int animal,byte amount,undefined4 food_type)
 
 {
   char c_char1;
@@ -6637,7 +6637,7 @@ undefined4 Animal_Routine_08057E90(int animal,byte amount,undefined4 food_type)
 // =============================================================================
 // Function: Animal_Routine_08057F24 @ 0x08057F24
 // =============================================================================
-undefined4 Animal_Routine_08057F24(int animal)
+void Animal_Routine_08057F24(int animal)
 
 {
   byte b_flag1;
@@ -6651,7 +6651,7 @@ undefined4 Animal_Routine_08057F24(int animal)
 // =============================================================================
 // Function: Animal_Routine_08057F4C @ 0x08057F4C
 // =============================================================================
-undefined8 Animal_Routine_08057F4C(int animal)
+u32 Animal_Routine_08057F4C(int animal)
 
 {
   
@@ -6661,7 +6661,7 @@ undefined8 Animal_Routine_08057F4C(int animal)
 // =============================================================================
 // Function: Animal_Routine_08057F64 @ 0x08057F64
 // =============================================================================
-undefined4 Animal_Routine_08057F64(int animal,uint amount)
+void Animal_Routine_08057F64(int animal,uint amount)
 
 {
   int i_val1;
@@ -6728,7 +6728,7 @@ LAB_08057fd8:
 // =============================================================================
 // Function: Animal_Routine_0805806C @ 0x0805806C
 // =============================================================================
-undefined8 Animal_Routine_0805806C(int animal,undefined4 amount,uint food_type)
+u32 Animal_Routine_0805806C(int animal,undefined4 amount,uint food_type)
 
 {
   char c_char1;
@@ -7136,7 +7136,7 @@ undefined8 Animal_Routine_0805806C(int animal,undefined4 amount,uint food_type)
 // =============================================================================
 // Function: Animal_Routine_080588AC @ 0x080588AC
 // =============================================================================
-undefined8 Animal_Routine_080588AC(undefined4 *animal,int amount)
+u32 Animal_Routine_080588AC(undefined4 *animal,int amount)
 
 {
   bool b_flag1;
@@ -7794,7 +7794,7 @@ LAB_0805982c:
 // =============================================================================
 // Function: Animal_Routine_08059878 @ 0x08059878
 // =============================================================================
-undefined4 Animal_Routine_08059878(int animal)
+u32 Animal_Routine_08059878(int animal)
 
 {
   char c_char1;
@@ -7912,7 +7912,7 @@ LAB_080599d8:
 // =============================================================================
 // Function: Animal_Routine_08059C94 @ 0x08059C94
 // =============================================================================
-undefined4 Animal_Routine_08059C94(int animal)
+void Animal_Routine_08059C94(int animal)
 
 {
   undefined2 u_val1;
@@ -8050,7 +8050,7 @@ undefined4 Animal_Routine_08059C94(int animal)
 // =============================================================================
 // Function: Animal_Routine_08059FE0 @ 0x08059FE0
 // =============================================================================
-undefined4 Animal_Routine_08059FE0(int animal,int amount)
+u32 Animal_Routine_08059FE0(int animal,int amount)
 
 {
   ushort u_val1;
@@ -8235,7 +8235,7 @@ undefined4 Animal_Routine_08059FE0(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0805A3F0 @ 0x0805A3F0
 // =============================================================================
-undefined4 Animal_Routine_0805A3F0(void)
+u32 Animal_Routine_0805A3F0(void)
 
 {
   undefined1 *p_uint1;
@@ -8302,7 +8302,7 @@ undefined4 Animal_Routine_0805A3F0(void)
 // =============================================================================
 // Function: Animal_Routine_0805A4DC @ 0x0805A4DC
 // =============================================================================
-undefined4 Animal_Routine_0805A4DC(int animal,int amount)
+void Animal_Routine_0805A4DC(int animal,int amount)
 
 {
   int loop_i;
@@ -8403,7 +8403,7 @@ Animal_Routine_0805A6E4(int animal,undefined2 amount,undefined2 food_type,undefi
 // =============================================================================
 // Function: Animal_Routine_0805A744 @ 0x0805A744
 // =============================================================================
-undefined4 Animal_Routine_0805A744(int animal)
+void Animal_Routine_0805A744(int animal)
 
 {
   byte b_flag1;
@@ -8584,7 +8584,7 @@ undefined4 Animal_Routine_0805A744(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805AB08 @ 0x0805AB08
 // =============================================================================
-undefined4 Animal_Routine_0805AB08(int animal)
+void Animal_Routine_0805AB08(int animal)
 
 {
   int i_val1;
@@ -8671,7 +8671,7 @@ undefined4 Animal_Routine_0805AB08(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805AD14 @ 0x0805AD14
 // =============================================================================
-undefined4 Animal_Routine_0805AD14(int animal)
+void Animal_Routine_0805AD14(int animal)
 
 {
   ushort u_val1;
@@ -9125,7 +9125,7 @@ undefined4 Animal_Routine_0805AD14(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805B38C @ 0x0805B38C
 // =============================================================================
-undefined4 Animal_Routine_0805B38C(int animal)
+void Animal_Routine_0805B38C(int animal)
 
 {
   undefined4 u_val1;
@@ -9617,7 +9617,7 @@ undefined4 Animal_Routine_0805B38C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805BC34 @ 0x0805BC34
 // =============================================================================
-undefined4 Animal_Routine_0805BC34(int animal)
+void Animal_Routine_0805BC34(int animal)
 
 {
   undefined2 u_val1;
@@ -10158,7 +10158,7 @@ LAB_0805bfea:
 // =============================================================================
 // Function: Animal_Routine_0805C63C @ 0x0805C63C
 // =============================================================================
-undefined4 Animal_Routine_0805C63C(undefined4 animal,uint *amount,int food_type,short *out_stat,int arg_5)
+void Animal_Routine_0805C63C(undefined4 animal,uint *amount,int food_type,short *out_stat,int arg_5)
 
 {
   byte b_flag1;
@@ -10239,7 +10239,7 @@ undefined4 Animal_Routine_0805C63C(undefined4 animal,uint *amount,int food_type,
 // =============================================================================
 // Function: Animal_Routine_0805C80C @ 0x0805C80C
 // =============================================================================
-undefined4 Animal_Routine_0805C80C(int animal)
+void Animal_Routine_0805C80C(int animal)
 
 {
   byte b_flag1;
@@ -10314,7 +10314,7 @@ undefined4 Animal_Routine_0805C80C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805C96C @ 0x0805C96C
 // =============================================================================
-undefined8 Animal_Routine_0805C96C(int animal)
+u32 Animal_Routine_0805C96C(int animal)
 
 {
   ushort u_val1;
@@ -10623,7 +10623,7 @@ Animal_Routine_0805CEB8(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_0805CEFC @ 0x0805CEFC
 // =============================================================================
-undefined4 Animal_Routine_0805CEFC(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0805CEFC(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -10645,7 +10645,7 @@ undefined4 Animal_Routine_0805CEFC(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0805CF3C @ 0x0805CF3C
 // =============================================================================
-undefined8 Animal_Routine_0805CF3C(undefined4 *animal,int amount)
+u32 Animal_Routine_0805CF3C(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -10664,7 +10664,7 @@ undefined8 Animal_Routine_0805CF3C(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0805D170 @ 0x0805D170
 // =============================================================================
-undefined8 Animal_Routine_0805D170(undefined4 *animal,int amount)
+u32 Animal_Routine_0805D170(undefined4 *animal,int amount)
 
 {
   bool b_flag1;
@@ -10915,7 +10915,7 @@ LAB_0805d6ca:
 // =============================================================================
 // Function: Animal_Routine_0805D760 @ 0x0805D760
 // =============================================================================
-undefined4 Animal_Routine_0805D760(int animal)
+void Animal_Routine_0805D760(int animal)
 
 {
   short s_val1;
@@ -11035,7 +11035,7 @@ case_0805D9A8:
 // =============================================================================
 // Function: Animal_Routine_0805D9C0 @ 0x0805D9C0
 // =============================================================================
-undefined4 Animal_Routine_0805D9C0(int animal)
+void Animal_Routine_0805D9C0(int animal)
 
 {
   undefined2 u_val1;
@@ -11116,7 +11116,7 @@ undefined4 Animal_Routine_0805D9C0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805DC24 @ 0x0805DC24
 // =============================================================================
-undefined4 Animal_Routine_0805DC24(int animal)
+u32 Animal_Routine_0805DC24(int animal)
 
 {
   undefined4 *p_uint1;
@@ -11234,7 +11234,7 @@ undefined4 Animal_Routine_0805DC24(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805DE24 @ 0x0805DE24
 // =============================================================================
-undefined4 Animal_Routine_0805DE24(int animal)
+void Animal_Routine_0805DE24(int animal)
 
 {
   int loop_i;
@@ -11322,7 +11322,7 @@ Animal_Routine_0805DF68(int animal,undefined2 amount,undefined2 food_type,undefi
 // =============================================================================
 // Function: Animal_Routine_0805DFC4 @ 0x0805DFC4
 // =============================================================================
-undefined4 Animal_Routine_0805DFC4(int animal)
+void Animal_Routine_0805DFC4(int animal)
 
 {
   byte b_flag1;
@@ -11693,7 +11693,7 @@ undefined4 Animal_Routine_0805DFC4(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805E624 @ 0x0805E624
 // =============================================================================
-undefined8 Animal_Routine_0805E624(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_0805E624(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -11711,7 +11711,7 @@ undefined8 Animal_Routine_0805E624(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_0805E658 @ 0x0805E658
 // =============================================================================
-undefined4 Animal_Routine_0805E658(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0805E658(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -11733,7 +11733,7 @@ undefined4 Animal_Routine_0805E658(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0805E698 @ 0x0805E698
 // =============================================================================
-undefined8 Animal_Routine_0805E698(undefined4 *animal,int amount)
+u32 Animal_Routine_0805E698(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -11752,7 +11752,7 @@ undefined8 Animal_Routine_0805E698(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0805E6CC @ 0x0805E6CC
 // =============================================================================
-undefined8 Animal_Routine_0805E6CC(undefined4 *animal,undefined2 *amount)
+u32 Animal_Routine_0805E6CC(undefined4 *animal,undefined2 *amount)
 
 {
   
@@ -11828,7 +11828,7 @@ int * Animal_Routine_0805E760(int *animal,int amount,uint food_type)
 // =============================================================================
 // Function: Animal_Routine_0805E790 @ 0x0805E790
 // =============================================================================
-undefined8 Animal_Routine_0805E790(int *animal,int amount,uint food_type)
+u32 Animal_Routine_0805E790(int *animal,int amount,uint food_type)
 
 {
   undefined2 u_val1;
@@ -11880,7 +11880,7 @@ undefined8 Animal_Routine_0805E790(int *animal,int amount,uint food_type)
 // =============================================================================
 // Function: Animal_Routine_0805E824 @ 0x0805E824
 // =============================================================================
-undefined8 Animal_Routine_0805E824(undefined4 *animal,int *amount,undefined4 food_type,undefined2 out_stat)
+u32 Animal_Routine_0805E824(undefined4 *animal,int *amount,undefined4 food_type,undefined2 out_stat)
 
 {
   
@@ -11896,7 +11896,7 @@ undefined8 Animal_Routine_0805E824(undefined4 *animal,int *amount,undefined4 foo
 // =============================================================================
 // Function: Animal_Routine_0805E850 @ 0x0805E850
 // =============================================================================
-undefined4 Animal_Routine_0805E850(undefined4 *animal,undefined4 amount,undefined4 food_type)
+void Animal_Routine_0805E850(undefined4 *animal,undefined4 amount,undefined4 food_type)
 
 {
   
@@ -11908,7 +11908,7 @@ undefined4 Animal_Routine_0805E850(undefined4 *animal,undefined4 amount,undefine
 // =============================================================================
 // Function: Animal_Routine_0805E860 @ 0x0805E860
 // =============================================================================
-undefined4 Animal_Routine_0805E860(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0805E860(undefined4 *animal,undefined4 amount)
 
 {
   undefined4 stack_val_10;
@@ -11926,7 +11926,7 @@ undefined4 Animal_Routine_0805E860(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0805E894 @ 0x0805E894
 // =============================================================================
-undefined8 Animal_Routine_0805E894(int animal)
+u32 Animal_Routine_0805E894(int animal)
 
 {
   undefined4 u_val1;
@@ -11974,7 +11974,7 @@ LAB_0805e8ea:
 // =============================================================================
 // Function: Animal_Routine_0805E8F0 @ 0x0805E8F0
 // =============================================================================
-undefined8 Animal_Routine_0805E8F0(int animal)
+u32 Animal_Routine_0805E8F0(int animal)
 
 {
   int i_val1;
@@ -12042,7 +12042,7 @@ undefined8 Animal_Routine_0805E8F0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805E99C @ 0x0805E99C
 // =============================================================================
-undefined4 Animal_Routine_0805E99C(byte *animal,uint *amount,int food_type,short *out_stat)
+void Animal_Routine_0805E99C(byte *animal,uint *amount,int food_type,short *out_stat)
 
 {
   byte b_flag1;
@@ -12145,7 +12145,7 @@ undefined4 Animal_Routine_0805E99C(byte *animal,uint *amount,int food_type,short
 // =============================================================================
 // Function: Animal_Routine_0805EC24 @ 0x0805EC24
 // =============================================================================
-undefined4 Animal_Routine_0805EC24(int *animal,int *amount,uint food_type,uint out_stat,short *arg_5)
+void Animal_Routine_0805EC24(int *animal,int *amount,uint food_type,uint out_stat,short *arg_5)
 
 {
   int i_val1;
@@ -12223,7 +12223,7 @@ undefined4 Animal_Routine_0805EC24(int *animal,int *amount,uint food_type,uint o
 // =============================================================================
 // Function: Animal_Routine_0805ED4C @ 0x0805ED4C
 // =============================================================================
-undefined8 Animal_Routine_0805ED4C(int animal,undefined4 amount)
+u32 Animal_Routine_0805ED4C(int animal,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -12265,7 +12265,7 @@ undefined8 Animal_Routine_0805ED4C(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0805EE44 @ 0x0805EE44
 // =============================================================================
-undefined8 Animal_Routine_0805EE44(undefined4 *animal,int amount)
+u32 Animal_Routine_0805EE44(undefined4 *animal,int amount)
 
 {
   short s_val1;
@@ -12433,7 +12433,7 @@ LAB_0805f59e:
 // =============================================================================
 // Function: Animal_Routine_0805F5F4 @ 0x0805F5F4
 // =============================================================================
-undefined4 Animal_Routine_0805F5F4(int animal)
+u32 Animal_Routine_0805F5F4(int animal)
 
 {
   short s_val1;
@@ -12505,7 +12505,7 @@ undefined4 Animal_Routine_0805F5F4(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805F9AC @ 0x0805F9AC
 // =============================================================================
-undefined4 Animal_Routine_0805F9AC(undefined4 animal)
+u32 Animal_Routine_0805F9AC(undefined4 animal)
 
 {
   int saved_r4;
@@ -12523,7 +12523,7 @@ undefined4 Animal_Routine_0805F9AC(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0805F9B0 @ 0x0805F9B0
 // =============================================================================
-undefined4 Animal_Routine_0805F9B0(undefined4 animal)
+u32 Animal_Routine_0805F9B0(undefined4 animal)
 
 {
   int saved_r4;
@@ -12639,7 +12639,7 @@ Animal_Routine_0805FA54(undefined4 animal,undefined4 amount,undefined4 food_type
 // =============================================================================
 // Function: Animal_Routine_0805FBB8 @ 0x0805FBB8
 // =============================================================================
-undefined4 Animal_Routine_0805FBB8(int animal)
+void Animal_Routine_0805FBB8(int animal)
 
 {
   undefined2 *p_uint1;
@@ -12687,7 +12687,7 @@ undefined4 Animal_Routine_0805FBB8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0805FCD0 @ 0x0805FCD0
 // =============================================================================
-undefined8 Animal_Routine_0805FCD0(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_0805FCD0(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -12705,7 +12705,7 @@ undefined8 Animal_Routine_0805FCD0(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_0805FD44 @ 0x0805FD44
 // =============================================================================
-undefined8 Animal_Routine_0805FD44(undefined4 *animal,int amount)
+u32 Animal_Routine_0805FD44(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -12724,7 +12724,7 @@ undefined8 Animal_Routine_0805FD44(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0805FD78 @ 0x0805FD78
 // =============================================================================
-undefined8 Animal_Routine_0805FD78(int animal,undefined4 amount,undefined1 food_type)
+u32 Animal_Routine_0805FD78(int animal,undefined4 amount,undefined1 food_type)
 
 {
   uint u_val1;
@@ -12815,7 +12815,7 @@ undefined8 Animal_Routine_0805FD78(int animal,undefined4 amount,undefined1 food_
 // =============================================================================
 // Function: Animal_Routine_0805FF14 @ 0x0805FF14
 // =============================================================================
-undefined8 Animal_Routine_0805FF14(undefined4 animal,undefined4 amount,int food_type)
+u32 Animal_Routine_0805FF14(undefined4 animal,undefined4 amount,int food_type)
 
 {
   short *psVar1;
@@ -16322,7 +16322,7 @@ Animal_Routine_08061E00:
 // =============================================================================
 // Function: Animal_Routine_08062E9C @ 0x08062E9C
 // =============================================================================
-undefined8 Animal_Routine_08062E9C(undefined4 *animal)
+u32 Animal_Routine_08062E9C(undefined4 *animal)
 
 {
   int i_val1;
@@ -17436,7 +17436,7 @@ undefined8 Animal_Routine_08062E9C(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08063E04 @ 0x08063E04
 // =============================================================================
-undefined8 Animal_Routine_08063E04(int animal,uint amount,undefined4 food_type)
+u32 Animal_Routine_08063E04(int animal,uint amount,undefined4 food_type)
 
 {
   undefined *p_uint1;
@@ -17455,7 +17455,7 @@ undefined8 Animal_Routine_08063E04(int animal,uint amount,undefined4 food_type)
 // =============================================================================
 // Function: Animal_Routine_08063E58 @ 0x08063E58
 // =============================================================================
-undefined8 Animal_Routine_08063E58(void)
+u32 Animal_Routine_08063E58(void)
 
 {
   
@@ -17466,7 +17466,7 @@ undefined8 Animal_Routine_08063E58(void)
 // =============================================================================
 // Function: Animal_Routine_08063E64 @ 0x08063E64
 // =============================================================================
-undefined8 Animal_Routine_08063E64(void)
+u32 Animal_Routine_08063E64(void)
 
 {
   undefined4 u_val1;
@@ -17488,7 +17488,7 @@ undefined8 Animal_Routine_08063E64(void)
 // =============================================================================
 // Function: Animal_Routine_08063E8C @ 0x08063E8C
 // =============================================================================
-undefined8 Animal_Routine_08063E8C(undefined4 animal)
+u32 Animal_Routine_08063E8C(undefined4 animal)
 
 {
   char c_char1;
@@ -17794,7 +17794,7 @@ Animal_Routine_08063EB8(int animal,uint amount,undefined4 food_type,undefined4 o
 // =============================================================================
 // Function: Animal_Routine_0806644C @ 0x0806644C
 // =============================================================================
-undefined8 Animal_Routine_0806644C(undefined4 *animal,undefined4 amount,undefined4 food_type)
+u32 Animal_Routine_0806644C(undefined4 *animal,undefined4 amount,undefined4 food_type)
 
 {
   short s_val1;
@@ -19669,7 +19669,7 @@ LAB_08067fd6:
 // =============================================================================
 // Function: Animal_Routine_08068344 @ 0x08068344
 // =============================================================================
-undefined8 Animal_Routine_08068344(undefined4 *animal,undefined4 amount,undefined4 food_type)
+u32 Animal_Routine_08068344(undefined4 *animal,undefined4 amount,undefined4 food_type)
 
 {
   char c_char1;
@@ -21218,7 +21218,7 @@ LAB_08069b62:
 // =============================================================================
 // Function: Animal_Routine_08069C34 @ 0x08069C34
 // =============================================================================
-undefined4 Animal_Routine_08069C34(int animal,uint amount)
+void Animal_Routine_08069C34(int animal,uint amount)
 
 {
   undefined4 u_val1;
@@ -21268,7 +21268,7 @@ undefined4 Animal_Routine_08069C34(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08069D84 @ 0x08069D84
 // =============================================================================
-undefined4 Animal_Routine_08069D84(int animal,int amount)
+void Animal_Routine_08069D84(int animal,int amount)
 
 {
   undefined2 u_val1;
@@ -21323,7 +21323,7 @@ Animal_Routine_08069E14(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_08069E58 @ 0x08069E58
 // =============================================================================
-undefined4 Animal_Routine_08069E58(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08069E58(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -21345,7 +21345,7 @@ undefined4 Animal_Routine_08069E58(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08069E98 @ 0x08069E98
 // =============================================================================
-undefined8 Animal_Routine_08069E98(undefined4 *animal,int amount)
+u32 Animal_Routine_08069E98(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -21360,7 +21360,7 @@ undefined8 Animal_Routine_08069E98(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08069EB4 @ 0x08069EB4
 // =============================================================================
-undefined8 Animal_Routine_08069EB4(int animal)
+u32 Animal_Routine_08069EB4(int animal)
 
 {
   uint u_val1;
@@ -21372,7 +21372,7 @@ undefined8 Animal_Routine_08069EB4(int animal)
 // =============================================================================
 // Function: Animal_Routine_08069ED4 @ 0x08069ED4
 // =============================================================================
-undefined8 Animal_Routine_08069ED4(int animal)
+u32 Animal_Routine_08069ED4(int animal)
 
 {
   uint u_val1;
@@ -21420,7 +21420,7 @@ Animal_Routine_0806D8C8(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_0806D918 @ 0x0806D918
 // =============================================================================
-undefined4 Animal_Routine_0806D918(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0806D918(undefined4 *animal,undefined4 amount)
 
 {
   int i_val1;
@@ -21437,7 +21437,7 @@ undefined4 Animal_Routine_0806D918(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0806D948 @ 0x0806D948
 // =============================================================================
-undefined8 Animal_Routine_0806D948(undefined4 *animal,int amount)
+u32 Animal_Routine_0806D948(undefined4 *animal,int amount)
 
 {
   undefined4 facing_buffer [3];
@@ -21532,7 +21532,7 @@ LAB_0806daf4:
 // =============================================================================
 // Function: Animal_Routine_0806DEC0 @ 0x0806DEC0
 // =============================================================================
-undefined4 Animal_Routine_0806DEC0(int animal)
+void Animal_Routine_0806DEC0(int animal)
 
 {
   byte b_flag1;
@@ -21644,7 +21644,7 @@ undefined4 Animal_Routine_0806DEC0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0806E02C @ 0x0806E02C
 // =============================================================================
-undefined4 Animal_Routine_0806E02C(int animal)
+void Animal_Routine_0806E02C(int animal)
 
 {
   char c_char1;
@@ -21727,7 +21727,7 @@ undefined4 Animal_Routine_0806E02C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0806E164 @ 0x0806E164
 // =============================================================================
-undefined8 Animal_Routine_0806E164(int animal)
+u32 Animal_Routine_0806E164(int animal)
 
 {
   bool b_flag1;
@@ -21762,7 +21762,7 @@ undefined8 Animal_Routine_0806E164(int animal)
 // =============================================================================
 // Function: Animal_Routine_0806E1E8 @ 0x0806E1E8
 // =============================================================================
-undefined8 Animal_Routine_0806E1E8(int animal)
+u32 Animal_Routine_0806E1E8(int animal)
 
 {
   uint u_val1;
@@ -21788,7 +21788,7 @@ undefined8 Animal_Routine_0806E1E8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0806E234 @ 0x0806E234
 // =============================================================================
-undefined4 Animal_Routine_0806E234(int animal)
+void Animal_Routine_0806E234(int animal)
 
 {
   undefined2 u_val1;
@@ -21860,7 +21860,7 @@ undefined4 Animal_Routine_0806E234(int animal)
 // =============================================================================
 // Function: Animal_Routine_0806E43C @ 0x0806E43C
 // =============================================================================
-undefined4 Animal_Routine_0806E43C(int animal)
+void Animal_Routine_0806E43C(int animal)
 
 {
   char c_char1;
@@ -21906,7 +21906,7 @@ undefined4 Animal_Routine_0806E43C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0806E578 @ 0x0806E578
 // =============================================================================
-undefined4 Animal_Routine_0806E578(int animal)
+void Animal_Routine_0806E578(int animal)
 
 {
   char c_char1;
@@ -22066,7 +22066,7 @@ Animal_Routine_0806E78C(int animal,undefined2 amount,undefined2 food_type,undefi
 // =============================================================================
 // Function: Animal_Routine_0806E7E0 @ 0x0806E7E0
 // =============================================================================
-undefined4 Animal_Routine_0806E7E0(int animal)
+void Animal_Routine_0806E7E0(int animal)
 
 {
   byte b_flag1;
@@ -22143,7 +22143,7 @@ undefined4 Animal_Routine_0806E7E0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0806E9D8 @ 0x0806E9D8
 // =============================================================================
-undefined8 Animal_Routine_0806E9D8(undefined4 *animal,undefined4 amount)
+u32 Animal_Routine_0806E9D8(undefined4 *animal,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -22158,7 +22158,7 @@ undefined8 Animal_Routine_0806E9D8(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0806EA00 @ 0x0806EA00
 // =============================================================================
-undefined4 Animal_Routine_0806EA00(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0806EA00(undefined4 *animal,undefined4 amount)
 
 {
   int i_val1;
@@ -22175,7 +22175,7 @@ undefined4 Animal_Routine_0806EA00(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0806EA30 @ 0x0806EA30
 // =============================================================================
-undefined8 Animal_Routine_0806EA30(undefined4 *animal,int amount)
+u32 Animal_Routine_0806EA30(undefined4 *animal,int amount)
 
 {
   undefined4 facing_buffer [3];
@@ -22188,7 +22188,7 @@ undefined8 Animal_Routine_0806EA30(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0806EAF4 @ 0x0806EAF4
 // =============================================================================
-undefined4 Animal_Routine_0806EAF4(undefined4 animal)
+void Animal_Routine_0806EAF4(undefined4 animal)
 
 {
   int i_val1;
@@ -22217,7 +22217,7 @@ undefined4 Animal_Routine_0806EAF4(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0806EB70 @ 0x0806EB70
 // =============================================================================
-undefined4 Animal_Routine_0806EB70(undefined4 animal,int amount,int food_type)
+void Animal_Routine_0806EB70(undefined4 animal,int amount,int food_type)
 
 {
   undefined2 *p_uint1;
@@ -22293,7 +22293,7 @@ Animal_Routine_0806EC28(undefined4 animal,int amount,uint food_type,uint out_sta
 // =============================================================================
 // Function: Animal_Routine_0806EC94 @ 0x0806EC94
 // =============================================================================
-undefined4 Animal_Routine_0806EC94(int animal)
+void Animal_Routine_0806EC94(int animal)
 
 {
   int i_val1;
@@ -22409,7 +22409,7 @@ undefined4 Animal_Routine_0806EC94(int animal)
 // =============================================================================
 // Function: Animal_Routine_0806EFC0 @ 0x0806EFC0
 // =============================================================================
-undefined4 Animal_Routine_0806EFC0(int animal,int amount,int food_type)
+void Animal_Routine_0806EFC0(int animal,int amount,int food_type)
 
 {
   undefined2 u_val1;
@@ -22497,7 +22497,7 @@ undefined4 Animal_Routine_0806EFC0(int animal,int amount,int food_type)
 // =============================================================================
 // Function: Animal_Routine_0806FBA4 @ 0x0806FBA4
 // =============================================================================
-undefined4 Animal_Routine_0806FBA4(int animal,int amount)
+void Animal_Routine_0806FBA4(int animal,int amount)
 
 {
   uint u_val1;
@@ -22991,7 +22991,7 @@ Animal_Routine_080700B8(undefined4 animal,int amount,uint food_type,uint out_sta
 // =============================================================================
 // Function: Animal_Routine_08070140 @ 0x08070140
 // =============================================================================
-undefined4 Animal_Routine_08070140(int animal)
+void Animal_Routine_08070140(int animal)
 
 {
   undefined4 u_val1;
@@ -23029,7 +23029,7 @@ undefined4 Animal_Routine_08070140(int animal)
 // =============================================================================
 // Function: Animal_Routine_080701BC @ 0x080701BC
 // =============================================================================
-undefined8 Animal_Routine_080701BC(undefined4 *animal,undefined4 amount,undefined4 *food_type)
+u32 Animal_Routine_080701BC(undefined4 *animal,undefined4 amount,undefined4 *food_type)
 
 {
   ushort u_val1;
@@ -23296,7 +23296,7 @@ LAB_080707b4:
 // =============================================================================
 // Function: Animal_Routine_080709D8 @ 0x080709D8
 // =============================================================================
-undefined4 Animal_Routine_080709D8(undefined4 *animal,undefined4 amount)
+void Animal_Routine_080709D8(undefined4 *animal,undefined4 amount)
 
 {
   int i_val1;
@@ -23313,7 +23313,7 @@ undefined4 Animal_Routine_080709D8(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08070A08 @ 0x08070A08
 // =============================================================================
-undefined8 Animal_Routine_08070A08(undefined4 *animal,int amount)
+u32 Animal_Routine_08070A08(undefined4 *animal,int amount)
 
 {
   undefined2 *p_uint1;
@@ -23386,7 +23386,7 @@ undefined8 Animal_Routine_08070A08(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08070B70 @ 0x08070B70
 // =============================================================================
-undefined8 Animal_Routine_08070B70(int animal,undefined4 amount)
+u32 Animal_Routine_08070B70(int animal,undefined4 amount)
 
 {
   uint u_val1;
@@ -23431,7 +23431,7 @@ undefined8 Animal_Routine_08070B70(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08070C24 @ 0x08070C24
 // =============================================================================
-undefined8 Animal_Routine_08070C24(int animal)
+u32 Animal_Routine_08070C24(int animal)
 
 {
   undefined4 u_val1;
@@ -23462,7 +23462,7 @@ undefined8 Animal_Routine_08070C24(int animal)
 // =============================================================================
 // Function: Animal_Routine_08070C88 @ 0x08070C88
 // =============================================================================
-undefined4 Animal_Routine_08070C88(int animal)
+void Animal_Routine_08070C88(int animal)
 
 {
   
@@ -23474,7 +23474,7 @@ undefined4 Animal_Routine_08070C88(int animal)
 // =============================================================================
 // Function: Animal_Routine_08070CA4 @ 0x08070CA4
 // =============================================================================
-undefined8 Animal_Routine_08070CA4(int animal)
+u32 Animal_Routine_08070CA4(int animal)
 
 {
   short s_val1;
@@ -23521,7 +23521,7 @@ LAB_08070dca:
 // =============================================================================
 // Function: Animal_Routine_08070DE4 @ 0x08070DE4
 // =============================================================================
-undefined8 Animal_Routine_08070DE4(undefined4 *animal,undefined4 amount,undefined4 food_type)
+u32 Animal_Routine_08070DE4(undefined4 *animal,undefined4 amount,undefined4 food_type)
 
 {
   uint u_val1;
@@ -23905,7 +23905,7 @@ undefined8 Animal_Routine_08070DE4(undefined4 *animal,undefined4 amount,undefine
 // =============================================================================
 // Function: Animal_Routine_080713AC @ 0x080713AC
 // =============================================================================
-undefined8 Animal_Routine_080713AC(void)
+u32 Animal_Routine_080713AC(void)
 
 {
   
@@ -24871,7 +24871,7 @@ LAB_08071ee8:
 // =============================================================================
 // Function: Animal_Routine_080722D0 @ 0x080722D0
 // =============================================================================
-undefined8 Animal_Routine_080722D0(void)
+u32 Animal_Routine_080722D0(void)
 
 {
   
@@ -24882,7 +24882,7 @@ undefined8 Animal_Routine_080722D0(void)
 // =============================================================================
 // Function: Animal_Routine_080722DC @ 0x080722DC
 // =============================================================================
-undefined8 Animal_Routine_080722DC(undefined4 *animal,undefined4 amount,undefined4 food_type)
+u32 Animal_Routine_080722DC(undefined4 *animal,undefined4 amount,undefined4 food_type)
 
 {
   uint *p_uint1;
@@ -28285,7 +28285,7 @@ undefined8 Animal_Routine_080722DC(undefined4 *animal,undefined4 amount,undefine
 // =============================================================================
 // Function: Animal_Routine_08075220 @ 0x08075220
 // =============================================================================
-undefined4 Animal_Routine_08075220(int animal,int amount,int food_type)
+void Animal_Routine_08075220(int animal,int amount,int food_type)
 
 {
   int i_val1;
@@ -28321,7 +28321,7 @@ undefined4 Animal_Routine_08075220(int animal,int amount,int food_type)
 // =============================================================================
 // Function: Animal_Routine_08075328 @ 0x08075328
 // =============================================================================
-undefined8 Animal_Routine_08075328(void)
+u32 Animal_Routine_08075328(void)
 
 {
   
@@ -28434,7 +28434,7 @@ Animal_Routine_08075334(int animal,undefined4 amount,undefined2 food_type,undefi
 // =============================================================================
 // Function: Animal_Routine_08075450 @ 0x08075450
 // =============================================================================
-undefined8 Animal_Routine_08075450(int animal,undefined4 amount)
+u32 Animal_Routine_08075450(int animal,undefined4 amount)
 
 {
   int i_val1;
@@ -28448,7 +28448,7 @@ undefined8 Animal_Routine_08075450(int animal,undefined4 amount)
   loop_i = 0;
   do {
     i_val1 = NPC_Routine_080A031C(*(int *)(0x58C + animal) + 0x1CD4,loop_i);
-    if ((i_val1 != 0) && (u_val2 = NPC_Routine_0809E688(i_val1,amount), u_val4 < u_val2)) {
+    if ((i_val1 != 0) && (u_val2 = Bachelorette_GetHeartStatsByte(i_val1,amount), u_val4 < u_val2)) {
       u_val4 = u_val2;
       i_val5 = loop_i;
     }
@@ -28460,7 +28460,7 @@ undefined8 Animal_Routine_08075450(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807549C @ 0x0807549C
 // =============================================================================
-undefined4 Animal_Routine_0807549C(int animal,int amount)
+void Animal_Routine_0807549C(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -28490,7 +28490,7 @@ undefined4 Animal_Routine_0807549C(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807555C @ 0x0807555C
 // =============================================================================
-undefined4 Animal_Routine_0807555C(int animal,int amount)
+void Animal_Routine_0807555C(int animal,int amount)
 
 {
   undefined2 u_val1;
@@ -28544,7 +28544,7 @@ void Animal_Routine_080755EC(undefined4 *animal,undefined4 *amount,undefined4 fo
 // =============================================================================
 // Function: Animal_Routine_0807561C @ 0x0807561C
 // =============================================================================
-undefined4 Animal_Routine_0807561C(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0807561C(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -28566,7 +28566,7 @@ undefined4 Animal_Routine_0807561C(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807565C @ 0x0807565C
 // =============================================================================
-undefined8 Animal_Routine_0807565C(undefined4 *animal,int amount)
+u32 Animal_Routine_0807565C(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -28581,7 +28581,7 @@ undefined8 Animal_Routine_0807565C(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08075678 @ 0x08075678
 // =============================================================================
-undefined4 Animal_Routine_08075678(void)
+void Animal_Routine_08075678(void)
 
 {
   
@@ -28592,7 +28592,7 @@ undefined4 Animal_Routine_08075678(void)
 // =============================================================================
 // Function: Animal_Routine_080756B0 @ 0x080756B0
 // =============================================================================
-undefined8 Animal_Routine_080756B0(undefined4 *animal)
+u32 Animal_Routine_080756B0(undefined4 *animal)
 
 {
   undefined4 u_val1;
@@ -28607,7 +28607,7 @@ undefined8 Animal_Routine_080756B0(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_080756D0 @ 0x080756D0
 // =============================================================================
-undefined4 Animal_Routine_080756D0(int *animal,uint amount)
+void Animal_Routine_080756D0(int *animal,uint amount)
 
 {
   int i_val1;
@@ -28670,7 +28670,7 @@ undefined4 Animal_Routine_080756D0(int *animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_080757E8 @ 0x080757E8
 // =============================================================================
-undefined4 Animal_Routine_080757E8(int *animal,int *amount)
+void Animal_Routine_080757E8(int *animal,int *amount)
 
 {
   int i_val1;
@@ -28807,7 +28807,7 @@ LAB_0807591e:
 // =============================================================================
 // Function: Animal_Routine_08075A14 @ 0x08075A14
 // =============================================================================
-undefined8 Animal_Routine_08075A14(int *animal,uint amount)
+u32 Animal_Routine_08075A14(int *animal,uint amount)
 
 {
   undefined4 u_val1;
@@ -28844,7 +28844,7 @@ undefined8 Animal_Routine_08075A14(int *animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08075A7C @ 0x08075A7C
 // =============================================================================
-undefined8 Animal_Routine_08075A7C(int *animal,uint amount)
+u32 Animal_Routine_08075A7C(int *animal,uint amount)
 
 {
   undefined4 u_val1;
@@ -28881,7 +28881,7 @@ undefined8 Animal_Routine_08075A7C(int *animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08075AE8 @ 0x08075AE8
 // =============================================================================
-undefined4 Animal_Routine_08075AE8(undefined4 *animal)
+void Animal_Routine_08075AE8(undefined4 *animal)
 
 {
   
@@ -28947,7 +28947,7 @@ void Animal_Routine_08075B00(undefined4 *animal,int amount,undefined4 food_type,
 // =============================================================================
 // Function: Animal_Routine_08075BC8 @ 0x08075BC8
 // =============================================================================
-undefined4 Animal_Routine_08075BC8(int *animal,uint amount,uint food_type)
+void Animal_Routine_08075BC8(int *animal,uint amount,uint food_type)
 
 {
   uint u_val1;
@@ -28991,7 +28991,7 @@ undefined4 Animal_Routine_08075BC8(int *animal,uint amount,uint food_type)
 // =============================================================================
 // Function: Animal_Routine_08075C88 @ 0x08075C88
 // =============================================================================
-undefined4 Animal_Routine_08075C88(int animal,short amount)
+void Animal_Routine_08075C88(int animal,short amount)
 
 {
   int i_val1;
@@ -29087,7 +29087,7 @@ LAB_08075daa:
 // =============================================================================
 // Function: Animal_Routine_08075DB8 @ 0x08075DB8
 // =============================================================================
-undefined4 Animal_Routine_08075DB8(int animal,short amount)
+void Animal_Routine_08075DB8(int animal,short amount)
 
 {
   
@@ -29100,7 +29100,7 @@ undefined4 Animal_Routine_08075DB8(int animal,short amount)
 // =============================================================================
 // Function: Animal_Routine_08075DD4 @ 0x08075DD4
 // =============================================================================
-undefined4 Animal_Routine_08075DD4(int animal)
+void Animal_Routine_08075DD4(int animal)
 
 {
   
@@ -29112,7 +29112,7 @@ undefined4 Animal_Routine_08075DD4(int animal)
 // =============================================================================
 // Function: Animal_Routine_08075DEC @ 0x08075DEC
 // =============================================================================
-undefined4 Animal_Routine_08075DEC(int animal)
+void Animal_Routine_08075DEC(int animal)
 
 {
   
@@ -29140,7 +29140,7 @@ longlong Animal_Routine_08075E00(int animal)
 // =============================================================================
 // Function: Animal_Routine_08075E24 @ 0x08075E24
 // =============================================================================
-undefined4 Animal_Routine_08075E24(int animal,short amount)
+void Animal_Routine_08075E24(int animal,short amount)
 
 {
   
@@ -29176,7 +29176,7 @@ void Animal_Routine_08075E50(int animal,undefined4 amount,undefined4 food_type,u
 // =============================================================================
 // Function: Animal_Routine_0807628C @ 0x0807628C
 // =============================================================================
-undefined4 Animal_Routine_0807628C(int animal)
+void Animal_Routine_0807628C(int animal)
 
 {
   undefined4 u_val1;
@@ -29652,7 +29652,7 @@ undefined4 Animal_Routine_0807628C(int animal)
 // =============================================================================
 // Function: Animal_Routine_080769A0 @ 0x080769A0
 // =============================================================================
-undefined4 Animal_Routine_080769A0(int animal)
+void Animal_Routine_080769A0(int animal)
 
 {
   bool b_flag1;
@@ -29759,7 +29759,7 @@ LAB_08076b16:
 // =============================================================================
 // Function: Animal_Routine_08076B64 @ 0x08076B64
 // =============================================================================
-undefined4 Animal_Routine_08076B64(int animal)
+void Animal_Routine_08076B64(int animal)
 
 {
   int pos_x;
@@ -29775,7 +29775,7 @@ undefined4 Animal_Routine_08076B64(int animal)
 // =============================================================================
 // Function: Animal_Routine_08076B94 @ 0x08076B94
 // =============================================================================
-undefined4 Animal_Routine_08076B94(int animal,int *amount)
+void Animal_Routine_08076B94(int animal,int *amount)
 
 {
   int pos_x;
@@ -29798,7 +29798,7 @@ undefined4 Animal_Routine_08076B94(int animal,int *amount)
 // =============================================================================
 // Function: Animal_Routine_08076E0C @ 0x08076E0C
 // =============================================================================
-undefined4 Animal_Routine_08076E0C(int animal,uint amount)
+void Animal_Routine_08076E0C(int animal,uint amount)
 
 {
   int *p_int1;
@@ -29837,7 +29837,7 @@ undefined4 Animal_Routine_08076E0C(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08076EA8 @ 0x08076EA8
 // =============================================================================
-undefined8 Animal_Routine_08076EA8(undefined4 *animal)
+u32 Animal_Routine_08076EA8(undefined4 *animal)
 
 {
   byte b_flag1;
@@ -30192,7 +30192,7 @@ undefined8 Animal_Routine_08076EA8(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_08077490 @ 0x08077490
 // =============================================================================
-undefined8 Animal_Routine_08077490(undefined4 *animal,int amount)
+u32 Animal_Routine_08077490(undefined4 *animal,int amount)
 
 {
   bool b_flag1;
@@ -30332,7 +30332,7 @@ undefined8 Animal_Routine_08077490(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08077810 @ 0x08077810
 // =============================================================================
-undefined4 Animal_Routine_08077810(undefined4 animal)
+u32 Animal_Routine_08077810(undefined4 animal)
 
 {
   int i_val1;
@@ -30433,7 +30433,7 @@ undefined4 Animal_Routine_08077810(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_080779B4 @ 0x080779B4
 // =============================================================================
-undefined4 Animal_Routine_080779B4(int animal)
+void Animal_Routine_080779B4(int animal)
 
 {
   int i_val1;
@@ -30454,7 +30454,7 @@ undefined4 Animal_Routine_080779B4(int animal)
 // =============================================================================
 // Function: Animal_Routine_08077A1C @ 0x08077A1C
 // =============================================================================
-undefined4 Animal_Routine_08077A1C(int animal)
+void Animal_Routine_08077A1C(int animal)
 
 {
   char c_char1;
@@ -30603,7 +30603,7 @@ undefined4 Animal_Routine_08077A1C(int animal)
 // =============================================================================
 // Function: Animal_Routine_08077C40 @ 0x08077C40
 // =============================================================================
-undefined8 Animal_Routine_08077C40(undefined4 *animal,undefined4 *amount)
+u32 Animal_Routine_08077C40(undefined4 *animal,undefined4 *amount)
 
 {
   undefined4 u_val1;
@@ -30621,7 +30621,7 @@ undefined8 Animal_Routine_08077C40(undefined4 *animal,undefined4 *amount)
 // =============================================================================
 // Function: Animal_Routine_08077C6C @ 0x08077C6C
 // =============================================================================
-undefined4 Animal_Routine_08077C6C(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08077C6C(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -30643,7 +30643,7 @@ undefined4 Animal_Routine_08077C6C(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08077CAC @ 0x08077CAC
 // =============================================================================
-undefined8 Animal_Routine_08077CAC(undefined4 *animal,int amount)
+u32 Animal_Routine_08077CAC(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -30662,7 +30662,7 @@ undefined8 Animal_Routine_08077CAC(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08077CE0 @ 0x08077CE0
 // =============================================================================
-undefined4 Animal_Routine_08077CE0(undefined4 animal)
+void Animal_Routine_08077CE0(undefined4 animal)
 
 {
   int i_val1;
@@ -30691,7 +30691,7 @@ undefined4 Animal_Routine_08077CE0(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_08077D5C @ 0x08077D5C
 // =============================================================================
-undefined4 Animal_Routine_08077D5C(undefined4 animal)
+void Animal_Routine_08077D5C(undefined4 animal)
 
 {
   int i_val1;
@@ -30720,7 +30720,7 @@ undefined4 Animal_Routine_08077D5C(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_08077DD8 @ 0x08077DD8
 // =============================================================================
-undefined4 Animal_Routine_08077DD8(int animal)
+void Animal_Routine_08077DD8(int animal)
 
 {
   undefined4 u_val1;
@@ -30741,7 +30741,7 @@ undefined4 Animal_Routine_08077DD8(int animal)
 // =============================================================================
 // Function: Animal_Routine_08077E34 @ 0x08077E34
 // =============================================================================
-undefined4 Animal_Routine_08077E34(undefined4 animal,int amount,undefined2 *food_type)
+void Animal_Routine_08077E34(undefined4 animal,int amount,undefined2 *food_type)
 
 {
   int i_val1;
@@ -30800,7 +30800,7 @@ Animal_Routine_08077E64(undefined4 animal,int amount,uint food_type,uint out_sta
 // =============================================================================
 // Function: Animal_Routine_08077EC0 @ 0x08077EC0
 // =============================================================================
-undefined4 Animal_Routine_08077EC0(int animal)
+void Animal_Routine_08077EC0(int animal)
 
 {
   char c_char1;
@@ -30869,7 +30869,7 @@ undefined4 Animal_Routine_08077EC0(int animal)
 // =============================================================================
 // Function: Animal_Routine_080782C4 @ 0x080782C4
 // =============================================================================
-undefined8 Animal_Routine_080782C4(undefined4 animal,uint amount,uint food_type,int out_stat)
+u32 Animal_Routine_080782C4(undefined4 animal,uint amount,uint food_type,int out_stat)
 
 {
   undefined4 u_val1;
@@ -30885,7 +30885,7 @@ undefined8 Animal_Routine_080782C4(undefined4 animal,uint amount,uint food_type,
 // =============================================================================
 // Function: Animal_Routine_080782EC @ 0x080782EC
 // =============================================================================
-undefined4 Animal_Routine_080782EC(int animal,ushort *amount,uint food_type)
+void Animal_Routine_080782EC(int animal,ushort *amount,uint food_type)
 
 {
   ushort *p_uint1;
@@ -31109,7 +31109,7 @@ LAB_08078440:
 // =============================================================================
 // Function: Animal_Routine_080785C8 @ 0x080785C8
 // =============================================================================
-undefined4 Animal_Routine_080785C8(int animal)
+void Animal_Routine_080785C8(int animal)
 
 {
   undefined4 u_val1;
@@ -31367,7 +31367,7 @@ LAB_08078aa6:
 // =============================================================================
 // Function: Animal_Routine_08078AE8 @ 0x08078AE8
 // =============================================================================
-undefined4 Animal_Routine_08078AE8(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08078AE8(undefined4 *animal,undefined4 amount)
 
 {
   int i_val1;
@@ -31384,7 +31384,7 @@ undefined4 Animal_Routine_08078AE8(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08078B18 @ 0x08078B18
 // =============================================================================
-undefined8 Animal_Routine_08078B18(undefined4 *animal,int amount)
+u32 Animal_Routine_08078B18(undefined4 *animal,int amount)
 
 {
   ushort u_val1;
@@ -31519,7 +31519,7 @@ LAB_08078dde:
 // =============================================================================
 // Function: Animal_Routine_08078E40 @ 0x08078E40
 // =============================================================================
-undefined8 Animal_Routine_08078E40(int animal,undefined4 amount,int food_type)
+u32 Animal_Routine_08078E40(int animal,undefined4 amount,int food_type)
 
 {
   int i_val1;
@@ -31980,7 +31980,7 @@ LAB_080797ec:
 // =============================================================================
 // Function: Animal_Routine_08079A64 @ 0x08079A64
 // =============================================================================
-undefined4 Animal_Routine_08079A64(int animal)
+void Animal_Routine_08079A64(int animal)
 
 {
   char c_char1;
@@ -32120,7 +32120,7 @@ undefined4 Animal_Routine_08079A64(int animal)
 // =============================================================================
 // Function: Animal_Routine_08079DC0 @ 0x08079DC0
 // =============================================================================
-undefined4 Animal_Routine_08079DC0(int animal)
+void Animal_Routine_08079DC0(int animal)
 
 {
   ushort u_val1;
@@ -32247,7 +32247,7 @@ undefined4 Animal_Routine_08079DC0(int animal)
 // =============================================================================
 // Function: Animal_Routine_08079F8C @ 0x08079F8C
 // =============================================================================
-undefined4 Animal_Routine_08079F8C(int animal)
+void Animal_Routine_08079F8C(int animal)
 
 {
   char c_char1;
@@ -32420,7 +32420,7 @@ undefined4 Animal_Routine_08079F8C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807A2AC @ 0x0807A2AC
 // =============================================================================
-undefined8 Animal_Routine_0807A2AC(int animal,undefined4 amount)
+u32 Animal_Routine_0807A2AC(int animal,undefined4 amount)
 
 {
   uint u_val1;
@@ -32600,7 +32600,7 @@ LAB_0807a53e:
 // =============================================================================
 // Function: Animal_Routine_0807A554 @ 0x0807A554
 // =============================================================================
-undefined4 Animal_Routine_0807A554(int animal)
+void Animal_Routine_0807A554(int animal)
 
 {
   ushort u_val1;
@@ -32723,7 +32723,7 @@ undefined4 Animal_Routine_0807A554(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807A708 @ 0x0807A708
 // =============================================================================
-undefined4 Animal_Routine_0807A708(int animal,char *amount,char *food_type)
+void Animal_Routine_0807A708(int animal,char *amount,char *food_type)
 
 {
   char c_char1;
@@ -32820,7 +32820,7 @@ LAB_0807a84c:
 // =============================================================================
 // Function: Animal_Routine_0807A878 @ 0x0807A878
 // =============================================================================
-undefined4 Animal_Routine_0807A878(int animal)
+void Animal_Routine_0807A878(int animal)
 
 {
   int i_val1;
@@ -32887,7 +32887,7 @@ undefined4 Animal_Routine_0807A878(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807A98C @ 0x0807A98C
 // =============================================================================
-undefined4 Animal_Routine_0807A98C(int animal)
+void Animal_Routine_0807A98C(int animal)
 
 {
   byte b_flag1;
@@ -33246,7 +33246,7 @@ undefined4 Animal_Routine_0807A98C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807AF78 @ 0x0807AF78
 // =============================================================================
-undefined4 Animal_Routine_0807AF78(int animal,int amount)
+void Animal_Routine_0807AF78(int animal,int amount)
 
 {
   short s_val1;
@@ -33277,7 +33277,7 @@ LAB_0807afb8:
 // =============================================================================
 // Function: Animal_Routine_0807AFF4 @ 0x0807AFF4
 // =============================================================================
-undefined8 Animal_Routine_0807AFF4(int animal)
+u32 Animal_Routine_0807AFF4(int animal)
 
 {
   uint *p_uint1;
@@ -33317,7 +33317,7 @@ Animal_Routine_0807B038(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_0807B07C @ 0x0807B07C
 // =============================================================================
-undefined4 Animal_Routine_0807B07C(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0807B07C(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -33339,7 +33339,7 @@ undefined4 Animal_Routine_0807B07C(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807B0BC @ 0x0807B0BC
 // =============================================================================
-undefined8 Animal_Routine_0807B0BC(undefined4 *animal,int amount)
+u32 Animal_Routine_0807B0BC(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -33358,7 +33358,7 @@ undefined8 Animal_Routine_0807B0BC(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807B0F0 @ 0x0807B0F0
 // =============================================================================
-undefined8 Animal_Routine_0807B0F0(int animal,undefined4 amount,int food_type)
+u32 Animal_Routine_0807B0F0(int animal,undefined4 amount,int food_type)
 
 {
   undefined4 u_val1;
@@ -33394,7 +33394,7 @@ undefined8 Animal_Routine_0807B0F0(int animal,undefined4 amount,int food_type)
 // =============================================================================
 // Function: Animal_Routine_0807B174 @ 0x0807B174
 // =============================================================================
-undefined4 Animal_Routine_0807B174(int animal)
+void Animal_Routine_0807B174(int animal)
 
 {
   
@@ -33406,7 +33406,7 @@ undefined4 Animal_Routine_0807B174(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807B188 @ 0x0807B188
 // =============================================================================
-undefined8 Animal_Routine_0807B188(int animal)
+u32 Animal_Routine_0807B188(int animal)
 
 {
   undefined2 u_val1;
@@ -33564,7 +33564,7 @@ undefined8 Animal_Routine_0807B188(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807B3B0 @ 0x0807B3B0
 // =============================================================================
-undefined8 Animal_Routine_0807B3B0(int animal)
+u32 Animal_Routine_0807B3B0(int animal)
 
 {
   char c_char1;
@@ -33901,7 +33901,7 @@ undefined8 Animal_Routine_0807B3B0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807B8F4 @ 0x0807B8F4
 // =============================================================================
-undefined8 Animal_Routine_0807B8F4(undefined4 animal,undefined4 amount)
+u32 Animal_Routine_0807B8F4(undefined4 animal,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -33923,7 +33923,7 @@ undefined8 Animal_Routine_0807B8F4(undefined4 animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807B920 @ 0x0807B920
 // =============================================================================
-undefined4 Animal_Routine_0807B920(int animal,int amount)
+void Animal_Routine_0807B920(int animal,int amount)
 
 {
   char c_char1;
@@ -34222,7 +34222,7 @@ LAB_0807bca4:
 // =============================================================================
 // Function: Animal_Routine_0807BEC8 @ 0x0807BEC8
 // =============================================================================
-undefined8 Animal_Routine_0807BEC8(int animal)
+u32 Animal_Routine_0807BEC8(int animal)
 
 {
   bool b_flag1;
@@ -35021,7 +35021,7 @@ Animal_Routine_0807D070(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_0807D0B4 @ 0x0807D0B4
 // =============================================================================
-undefined4 Animal_Routine_0807D0B4(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0807D0B4(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -35043,7 +35043,7 @@ undefined4 Animal_Routine_0807D0B4(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807D0F4 @ 0x0807D0F4
 // =============================================================================
-undefined8 Animal_Routine_0807D0F4(undefined4 *animal,int amount)
+u32 Animal_Routine_0807D0F4(undefined4 *animal,int amount)
 
 {
   int i_val1;
@@ -35082,7 +35082,7 @@ undefined8 Animal_Routine_0807D0F4(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807D194 @ 0x0807D194
 // =============================================================================
-undefined8 Animal_Routine_0807D194(int animal)
+u32 Animal_Routine_0807D194(int animal)
 
 {
   
@@ -35097,7 +35097,7 @@ undefined8 Animal_Routine_0807D194(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807D1C8 @ 0x0807D1C8
 // =============================================================================
-undefined4 Animal_Routine_0807D1C8(int animal)
+void Animal_Routine_0807D1C8(int animal)
 
 {
   
@@ -35109,7 +35109,7 @@ undefined4 Animal_Routine_0807D1C8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807D1DC @ 0x0807D1DC
 // =============================================================================
-undefined4 Animal_Routine_0807D1DC(int animal,int amount)
+void Animal_Routine_0807D1DC(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -35125,7 +35125,7 @@ undefined4 Animal_Routine_0807D1DC(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807DD38 @ 0x0807DD38
 // =============================================================================
-undefined8 Animal_Routine_0807DD38(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_0807DD38(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -35143,7 +35143,7 @@ undefined8 Animal_Routine_0807DD38(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_0807DD68 @ 0x0807DD68
 // =============================================================================
-undefined4 Animal_Routine_0807DD68(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0807DD68(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -35165,7 +35165,7 @@ undefined4 Animal_Routine_0807DD68(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807DDA8 @ 0x0807DDA8
 // =============================================================================
-undefined8 Animal_Routine_0807DDA8(undefined4 *animal,int amount)
+u32 Animal_Routine_0807DDA8(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -35180,7 +35180,7 @@ undefined8 Animal_Routine_0807DDA8(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807DDC4 @ 0x0807DDC4
 // =============================================================================
-undefined8 Animal_Routine_0807DDC4(int animal,undefined4 amount,undefined4 food_type)
+u32 Animal_Routine_0807DDC4(int animal,undefined4 amount,undefined4 food_type)
 
 {
   
@@ -35195,7 +35195,7 @@ undefined8 Animal_Routine_0807DDC4(int animal,undefined4 amount,undefined4 food_
 // =============================================================================
 // Function: Animal_Routine_0807DDF8 @ 0x0807DDF8
 // =============================================================================
-undefined4 Animal_Routine_0807DDF8(int animal)
+void Animal_Routine_0807DDF8(int animal)
 
 {
   
@@ -35207,7 +35207,7 @@ undefined4 Animal_Routine_0807DDF8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807DE0C @ 0x0807DE0C
 // =============================================================================
-undefined4 Animal_Routine_0807DE0C(undefined4 animal,int amount)
+void Animal_Routine_0807DE0C(undefined4 animal,int amount)
 
 {
   undefined4 u_val1;
@@ -35222,7 +35222,7 @@ undefined4 Animal_Routine_0807DE0C(undefined4 animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807DE3C @ 0x0807DE3C
 // =============================================================================
-undefined4 Animal_Routine_0807DE3C(int animal)
+void Animal_Routine_0807DE3C(int animal)
 
 {
   char c_char1;
@@ -35540,7 +35540,7 @@ Animal_Routine_0807E438(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_0807E478 @ 0x0807E478
 // =============================================================================
-undefined4 Animal_Routine_0807E478(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0807E478(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -35562,7 +35562,7 @@ undefined4 Animal_Routine_0807E478(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807E4B8 @ 0x0807E4B8
 // =============================================================================
-undefined8 Animal_Routine_0807E4B8(undefined4 *animal,int amount)
+u32 Animal_Routine_0807E4B8(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -35577,7 +35577,7 @@ undefined8 Animal_Routine_0807E4B8(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807E4D4 @ 0x0807E4D4
 // =============================================================================
-undefined8 Animal_Routine_0807E4D4(int animal)
+u32 Animal_Routine_0807E4D4(int animal)
 
 {
   
@@ -35592,7 +35592,7 @@ undefined8 Animal_Routine_0807E4D4(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807E508 @ 0x0807E508
 // =============================================================================
-undefined4 Animal_Routine_0807E508(int animal)
+void Animal_Routine_0807E508(int animal)
 
 {
   
@@ -35604,7 +35604,7 @@ undefined4 Animal_Routine_0807E508(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807E51C @ 0x0807E51C
 // =============================================================================
-undefined4 Animal_Routine_0807E51C(int animal,int amount)
+void Animal_Routine_0807E51C(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -35638,7 +35638,7 @@ void Animal_Routine_0807EE14(undefined4 *animal,undefined4 *amount,undefined4 fo
 // =============================================================================
 // Function: Animal_Routine_0807EE44 @ 0x0807EE44
 // =============================================================================
-undefined4 Animal_Routine_0807EE44(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0807EE44(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -35660,7 +35660,7 @@ undefined4 Animal_Routine_0807EE44(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807EE84 @ 0x0807EE84
 // =============================================================================
-undefined8 Animal_Routine_0807EE84(undefined4 *animal,int amount)
+u32 Animal_Routine_0807EE84(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -35675,7 +35675,7 @@ undefined8 Animal_Routine_0807EE84(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807EEA0 @ 0x0807EEA0
 // =============================================================================
-undefined8 Animal_Routine_0807EEA0(int animal)
+u32 Animal_Routine_0807EEA0(int animal)
 
 {
   
@@ -35690,7 +35690,7 @@ undefined8 Animal_Routine_0807EEA0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807EED4 @ 0x0807EED4
 // =============================================================================
-undefined4 Animal_Routine_0807EED4(int animal,undefined4 amount)
+void Animal_Routine_0807EED4(int animal,undefined4 amount)
 
 {
   
@@ -35703,7 +35703,7 @@ undefined4 Animal_Routine_0807EED4(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807EF14 @ 0x0807EF14
 // =============================================================================
-undefined4 Animal_Routine_0807EF14(int animal,int amount)
+void Animal_Routine_0807EF14(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -35728,7 +35728,7 @@ undefined4 Animal_Routine_0807EF14(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807EF90 @ 0x0807EF90
 // =============================================================================
-undefined4 Animal_Routine_0807EF90(int animal)
+void Animal_Routine_0807EF90(int animal)
 
 {
   uint loop_i;
@@ -36065,7 +36065,7 @@ void Animal_Routine_0807F580(undefined4 *animal,undefined4 *amount,undefined4 fo
 // =============================================================================
 // Function: Animal_Routine_0807F5B0 @ 0x0807F5B0
 // =============================================================================
-undefined4 Animal_Routine_0807F5B0(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0807F5B0(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -36087,7 +36087,7 @@ undefined4 Animal_Routine_0807F5B0(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0807F5F0 @ 0x0807F5F0
 // =============================================================================
-undefined8 Animal_Routine_0807F5F0(undefined4 *animal,int amount)
+u32 Animal_Routine_0807F5F0(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -36102,7 +36102,7 @@ undefined8 Animal_Routine_0807F5F0(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807F60C @ 0x0807F60C
 // =============================================================================
-undefined8 Animal_Routine_0807F60C(undefined4 *animal,int amount)
+u32 Animal_Routine_0807F60C(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -36123,7 +36123,7 @@ undefined8 Animal_Routine_0807F60C(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0807F63C @ 0x0807F63C
 // =============================================================================
-undefined8 Animal_Routine_0807F63C(int animal)
+u32 Animal_Routine_0807F63C(int animal)
 
 {
   
@@ -36138,7 +36138,7 @@ undefined8 Animal_Routine_0807F63C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807F670 @ 0x0807F670
 // =============================================================================
-undefined4 Animal_Routine_0807F670(int animal)
+void Animal_Routine_0807F670(int animal)
 
 {
   
@@ -36150,7 +36150,7 @@ undefined4 Animal_Routine_0807F670(int animal)
 // =============================================================================
 // Function: Animal_Routine_0807F684 @ 0x0807F684
 // =============================================================================
-undefined4 Animal_Routine_0807F684(int animal,int amount)
+void Animal_Routine_0807F684(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -36308,7 +36308,7 @@ void Animal_Routine_0807F6E8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808045C @ 0x0808045C
 // =============================================================================
-undefined8 Animal_Routine_0808045C(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_0808045C(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -36326,7 +36326,7 @@ undefined8 Animal_Routine_0808045C(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_0808048C @ 0x0808048C
 // =============================================================================
-undefined4 Animal_Routine_0808048C(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0808048C(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -36348,7 +36348,7 @@ undefined4 Animal_Routine_0808048C(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_080804CC @ 0x080804CC
 // =============================================================================
-undefined8 Animal_Routine_080804CC(undefined4 *animal,int amount)
+u32 Animal_Routine_080804CC(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -36363,7 +36363,7 @@ undefined8 Animal_Routine_080804CC(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080804E8 @ 0x080804E8
 // =============================================================================
-undefined8 Animal_Routine_080804E8(undefined4 animal,int amount)
+u32 Animal_Routine_080804E8(undefined4 animal,int amount)
 
 {
   
@@ -36373,7 +36373,7 @@ undefined8 Animal_Routine_080804E8(undefined4 animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080804F8 @ 0x080804F8
 // =============================================================================
-undefined8 Animal_Routine_080804F8(int animal)
+u32 Animal_Routine_080804F8(int animal)
 
 {
   
@@ -36388,7 +36388,7 @@ undefined8 Animal_Routine_080804F8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808052C @ 0x0808052C
 // =============================================================================
-undefined4 Animal_Routine_0808052C(int animal)
+void Animal_Routine_0808052C(int animal)
 
 {
   
@@ -36400,7 +36400,7 @@ undefined4 Animal_Routine_0808052C(int animal)
 // =============================================================================
 // Function: Animal_Routine_08080D94 @ 0x08080D94
 // =============================================================================
-undefined8 Animal_Routine_08080D94(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_08080D94(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -36418,7 +36418,7 @@ undefined8 Animal_Routine_08080D94(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_08080DC4 @ 0x08080DC4
 // =============================================================================
-undefined4 Animal_Routine_08080DC4(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08080DC4(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -36440,7 +36440,7 @@ undefined4 Animal_Routine_08080DC4(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08080E04 @ 0x08080E04
 // =============================================================================
-undefined8 Animal_Routine_08080E04(undefined4 *animal,int amount)
+u32 Animal_Routine_08080E04(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -36455,7 +36455,7 @@ undefined8 Animal_Routine_08080E04(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08080E20 @ 0x08080E20
 // =============================================================================
-undefined8 Animal_Routine_08080E20(int animal)
+u32 Animal_Routine_08080E20(int animal)
 
 {
   
@@ -36470,7 +36470,7 @@ undefined8 Animal_Routine_08080E20(int animal)
 // =============================================================================
 // Function: Animal_Routine_08080E54 @ 0x08080E54
 // =============================================================================
-undefined4 Animal_Routine_08080E54(int animal)
+void Animal_Routine_08080E54(int animal)
 
 {
   
@@ -36482,7 +36482,7 @@ undefined4 Animal_Routine_08080E54(int animal)
 // =============================================================================
 // Function: Animal_Routine_08081108 @ 0x08081108
 // =============================================================================
-undefined4 Animal_Routine_08081108(undefined4 animal,int amount)
+void Animal_Routine_08081108(undefined4 animal,int amount)
 
 {
   undefined4 u_val1;
@@ -36502,7 +36502,7 @@ undefined4 Animal_Routine_08081108(undefined4 animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808114C @ 0x0808114C
 // =============================================================================
-undefined4 Animal_Routine_0808114C(int animal)
+void Animal_Routine_0808114C(int animal)
 
 {
   char c_char1;
@@ -36895,7 +36895,7 @@ LAB_080817f0:
 // =============================================================================
 // Function: Animal_Routine_08081A40 @ 0x08081A40
 // =============================================================================
-undefined8 Animal_Routine_08081A40(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_08081A40(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -36913,7 +36913,7 @@ undefined8 Animal_Routine_08081A40(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_08081A70 @ 0x08081A70
 // =============================================================================
-undefined4 Animal_Routine_08081A70(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08081A70(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -36935,7 +36935,7 @@ undefined4 Animal_Routine_08081A70(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08081AB0 @ 0x08081AB0
 // =============================================================================
-undefined8 Animal_Routine_08081AB0(undefined4 *animal,int amount)
+u32 Animal_Routine_08081AB0(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -36950,7 +36950,7 @@ undefined8 Animal_Routine_08081AB0(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08081ACC @ 0x08081ACC
 // =============================================================================
-undefined8 Animal_Routine_08081ACC(int animal)
+u32 Animal_Routine_08081ACC(int animal)
 
 {
   
@@ -36965,7 +36965,7 @@ undefined8 Animal_Routine_08081ACC(int animal)
 // =============================================================================
 // Function: Animal_Routine_08081B00 @ 0x08081B00
 // =============================================================================
-undefined4 Animal_Routine_08081B00(int animal,undefined4 amount)
+void Animal_Routine_08081B00(int animal,undefined4 amount)
 
 {
   
@@ -36978,7 +36978,7 @@ undefined4 Animal_Routine_08081B00(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08081B40 @ 0x08081B40
 // =============================================================================
-undefined4 Animal_Routine_08081B40(int animal,int amount)
+void Animal_Routine_08081B40(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -37003,7 +37003,7 @@ undefined4 Animal_Routine_08081B40(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08081BBC @ 0x08081BBC
 // =============================================================================
-undefined4 Animal_Routine_08081BBC(int animal)
+void Animal_Routine_08081BBC(int animal)
 
 {
   int i_val1;
@@ -37287,7 +37287,7 @@ undefined4 Animal_Routine_08081BBC(int animal)
 // =============================================================================
 // Function: Animal_Routine_08082114 @ 0x08082114
 // =============================================================================
-undefined8 Animal_Routine_08082114(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_08082114(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -37305,7 +37305,7 @@ undefined8 Animal_Routine_08082114(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_08082144 @ 0x08082144
 // =============================================================================
-undefined4 Animal_Routine_08082144(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08082144(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -37327,7 +37327,7 @@ undefined4 Animal_Routine_08082144(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08082184 @ 0x08082184
 // =============================================================================
-undefined8 Animal_Routine_08082184(undefined4 *animal,int amount)
+u32 Animal_Routine_08082184(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -37342,7 +37342,7 @@ undefined8 Animal_Routine_08082184(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080821A0 @ 0x080821A0
 // =============================================================================
-undefined8 Animal_Routine_080821A0(undefined4 *animal,int amount)
+u32 Animal_Routine_080821A0(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -37399,7 +37399,7 @@ Animal_Routine_080821D0(int animal,undefined4 amount,char food_type,undefined4 o
 // =============================================================================
 // Function: Animal_Routine_08082250 @ 0x08082250
 // =============================================================================
-undefined4 Animal_Routine_08082250(int animal)
+void Animal_Routine_08082250(int animal)
 
 {
   
@@ -37491,7 +37491,7 @@ Animal_Routine_08082264(int animal,undefined4 amount,undefined4 food_type,undefi
 // =============================================================================
 // Function: Animal_Routine_0808234C @ 0x0808234C
 // =============================================================================
-undefined4 Animal_Routine_0808234C(int animal,undefined4 amount,uint food_type,int out_stat)
+void Animal_Routine_0808234C(int animal,undefined4 amount,uint food_type,int out_stat)
 
 {
   undefined2 u_val1;
@@ -37751,7 +37751,7 @@ undefined4 Animal_Routine_0808234C(int animal,undefined4 amount,uint food_type,i
 // =============================================================================
 // Function: Animal_Routine_0808268C @ 0x0808268C
 // =============================================================================
-undefined4 Animal_Routine_0808268C(int animal)
+void Animal_Routine_0808268C(int animal)
 
 {
   undefined2 u_val1;
@@ -37961,7 +37961,7 @@ LAB_080829f2:
 // =============================================================================
 // Function: Animal_Routine_08082A9C @ 0x08082A9C
 // =============================================================================
-undefined4 Animal_Routine_08082A9C(int animal,int amount,uint food_type)
+void Animal_Routine_08082A9C(int animal,int amount,uint food_type)
 
 {
   bool b_flag1;
@@ -38032,7 +38032,7 @@ LAB_08082bfe:
 // =============================================================================
 // Function: Animal_Routine_08082C14 @ 0x08082C14
 // =============================================================================
-undefined4 Animal_Routine_08082C14(undefined4 animal,int amount)
+void Animal_Routine_08082C14(undefined4 animal,int amount)
 
 {
   undefined4 u_val1;
@@ -38064,7 +38064,7 @@ undefined4 Animal_Routine_08082C14(undefined4 animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08082C74 @ 0x08082C74
 // =============================================================================
-undefined8 Animal_Routine_08082C74(int animal,int amount)
+u32 Animal_Routine_08082C74(int animal,int amount)
 
 {
   char c_char1;
@@ -38117,7 +38117,7 @@ Animal_Routine_08083A7C(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_08083AEC @ 0x08083AEC
 // =============================================================================
-undefined4 Animal_Routine_08083AEC(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08083AEC(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -38139,7 +38139,7 @@ undefined4 Animal_Routine_08083AEC(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08083B2C @ 0x08083B2C
 // =============================================================================
-undefined8 Animal_Routine_08083B2C(undefined4 *animal,int amount)
+u32 Animal_Routine_08083B2C(undefined4 *animal,int amount)
 
 {
   int i_val1;
@@ -38181,7 +38181,7 @@ undefined8 Animal_Routine_08083B2C(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08083BD4 @ 0x08083BD4
 // =============================================================================
-undefined8 Animal_Routine_08083BD4(int animal)
+u32 Animal_Routine_08083BD4(int animal)
 
 {
   undefined4 u_val1;
@@ -38213,7 +38213,7 @@ undefined8 Animal_Routine_08083BD4(int animal)
 // =============================================================================
 // Function: Animal_Routine_08083C50 @ 0x08083C50
 // =============================================================================
-undefined4 Animal_Routine_08083C50(int animal)
+void Animal_Routine_08083C50(int animal)
 
 {
   
@@ -38225,7 +38225,7 @@ undefined4 Animal_Routine_08083C50(int animal)
 // =============================================================================
 // Function: Animal_Routine_08083C64 @ 0x08083C64
 // =============================================================================
-undefined8 Animal_Routine_08083C64(int animal)
+u32 Animal_Routine_08083C64(int animal)
 
 {
   char c_char1;
@@ -38490,7 +38490,7 @@ LAB_08083d60:
 // =============================================================================
 // Function: Animal_Routine_08084050 @ 0x08084050
 // =============================================================================
-undefined8 Animal_Routine_08084050(int animal,int amount)
+u32 Animal_Routine_08084050(int animal,int amount)
 
 {
   int *p_int1;
@@ -38531,7 +38531,7 @@ undefined8 Animal_Routine_08084050(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080840F4 @ 0x080840F4
 // =============================================================================
-undefined4 Animal_Routine_080840F4(int animal,uint amount)
+void Animal_Routine_080840F4(int animal,uint amount)
 
 {
   uint u_val1;
@@ -39111,7 +39111,7 @@ LAB_0808518c:
 // =============================================================================
 // Function: Animal_Routine_080854F4 @ 0x080854F4
 // =============================================================================
-undefined8 Animal_Routine_080854F4(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_080854F4(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -39129,7 +39129,7 @@ undefined8 Animal_Routine_080854F4(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_08085528 @ 0x08085528
 // =============================================================================
-undefined4 Animal_Routine_08085528(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08085528(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -39151,7 +39151,7 @@ undefined4 Animal_Routine_08085528(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08085568 @ 0x08085568
 // =============================================================================
-undefined8 Animal_Routine_08085568(undefined4 *animal,int amount)
+u32 Animal_Routine_08085568(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -39166,7 +39166,7 @@ undefined8 Animal_Routine_08085568(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08085584 @ 0x08085584
 // =============================================================================
-undefined8 Animal_Routine_08085584(int animal,undefined4 amount,int food_type)
+u32 Animal_Routine_08085584(int animal,undefined4 amount,int food_type)
 
 {
   undefined4 u_val1;
@@ -39215,7 +39215,7 @@ undefined8 Animal_Routine_08085584(int animal,undefined4 amount,int food_type)
 // =============================================================================
 // Function: Animal_Routine_0808562C @ 0x0808562C
 // =============================================================================
-undefined4 Animal_Routine_0808562C(int animal)
+void Animal_Routine_0808562C(int animal)
 
 {
   
@@ -39227,7 +39227,7 @@ undefined4 Animal_Routine_0808562C(int animal)
 // =============================================================================
 // Function: Animal_Routine_08085640 @ 0x08085640
 // =============================================================================
-undefined8 Animal_Routine_08085640(int animal)
+u32 Animal_Routine_08085640(int animal)
 
 {
   undefined2 u_val1;
@@ -39385,7 +39385,7 @@ undefined8 Animal_Routine_08085640(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808586C @ 0x0808586C
 // =============================================================================
-undefined8 Animal_Routine_0808586C(int animal,int amount)
+u32 Animal_Routine_0808586C(int animal,int amount)
 
 {
   char c_char1;
@@ -39795,7 +39795,7 @@ LAB_080859a6:
 // =============================================================================
 // Function: Animal_Routine_08085EC4 @ 0x08085EC4
 // =============================================================================
-undefined8 Animal_Routine_08085EC4(undefined4 animal,undefined4 amount)
+u32 Animal_Routine_08085EC4(undefined4 animal,undefined4 amount)
 
 {
   uint *p_uint1;
@@ -39814,7 +39814,7 @@ undefined8 Animal_Routine_08085EC4(undefined4 animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08085EEC @ 0x08085EEC
 // =============================================================================
-undefined8 Animal_Routine_08085EEC(int animal)
+u32 Animal_Routine_08085EEC(int animal)
 
 {
   uint u_val1;
@@ -40455,7 +40455,7 @@ Animal_Routine_080868A8:
 // =============================================================================
 // Function: Animal_Routine_080868E4 @ 0x080868E4
 // =============================================================================
-undefined8 Animal_Routine_080868E4(int animal,undefined4 amount,int food_type)
+u32 Animal_Routine_080868E4(int animal,undefined4 amount,int food_type)
 
 {
   uint u_val1;
@@ -40514,7 +40514,7 @@ LAB_08086994:
 // =============================================================================
 // Function: Animal_Routine_080869A0 @ 0x080869A0
 // =============================================================================
-undefined8 Animal_Routine_080869A0(int animal)
+u32 Animal_Routine_080869A0(int animal)
 
 {
   char c_char1;
@@ -40553,7 +40553,7 @@ LAB_080869e4:
 // =============================================================================
 // Function: Animal_Routine_08086A08 @ 0x08086A08
 // =============================================================================
-undefined8 Animal_Routine_08086A08(int animal)
+u32 Animal_Routine_08086A08(int animal)
 
 {
   bool b_flag1;
@@ -41612,7 +41612,7 @@ Animal_Routine_08088168(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_080881AC @ 0x080881AC
 // =============================================================================
-undefined4 Animal_Routine_080881AC(undefined4 *animal,undefined4 amount)
+void Animal_Routine_080881AC(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -41634,7 +41634,7 @@ undefined4 Animal_Routine_080881AC(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_080881EC @ 0x080881EC
 // =============================================================================
-undefined8 Animal_Routine_080881EC(undefined4 *animal,int amount)
+u32 Animal_Routine_080881EC(undefined4 *animal,int amount)
 
 {
   int i_val1;
@@ -41685,7 +41685,7 @@ undefined8 Animal_Routine_080881EC(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080882AC @ 0x080882AC
 // =============================================================================
-undefined8 Animal_Routine_080882AC(int animal)
+u32 Animal_Routine_080882AC(int animal)
 
 {
   int i_val1;
@@ -41708,7 +41708,7 @@ undefined8 Animal_Routine_080882AC(int animal)
 // =============================================================================
 // Function: Animal_Routine_08088304 @ 0x08088304
 // =============================================================================
-undefined4 Animal_Routine_08088304(int animal)
+void Animal_Routine_08088304(int animal)
 
 {
   
@@ -41720,7 +41720,7 @@ undefined4 Animal_Routine_08088304(int animal)
 // =============================================================================
 // Function: Animal_Routine_080884F4 @ 0x080884F4
 // =============================================================================
-undefined4 Animal_Routine_080884F4(int animal,int amount)
+void Animal_Routine_080884F4(int animal,int amount)
 
 {
   char c_char1;
@@ -41753,7 +41753,7 @@ undefined4 Animal_Routine_080884F4(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08088574 @ 0x08088574
 // =============================================================================
-undefined4 Animal_Routine_08088574(int animal)
+void Animal_Routine_08088574(int animal)
 
 {
   undefined4 u_val1;
@@ -41766,7 +41766,7 @@ undefined4 Animal_Routine_08088574(int animal)
 // =============================================================================
 // Function: Animal_Routine_08088590 @ 0x08088590
 // =============================================================================
-undefined4 Animal_Routine_08088590(int animal)
+void Animal_Routine_08088590(int animal)
 
 {
   undefined4 u_val1;
@@ -41779,7 +41779,7 @@ undefined4 Animal_Routine_08088590(int animal)
 // =============================================================================
 // Function: Animal_Routine_080885AC @ 0x080885AC
 // =============================================================================
-undefined4 Animal_Routine_080885AC(int animal,int amount)
+void Animal_Routine_080885AC(int animal,int amount)
 
 {
   char c_char1;
@@ -41837,7 +41837,7 @@ undefined4 Animal_Routine_080885AC(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08088688 @ 0x08088688
 // =============================================================================
-ulonglong Animal_Routine_08088688(int animal,int amount,int food_type)
+u32 Animal_Routine_08088688(int animal,int amount,int food_type)
 
 {
   char c_char1;
@@ -42065,7 +42065,7 @@ case_08088B8C:
 // =============================================================================
 // Function: Animal_Routine_08088BA0 @ 0x08088BA0
 // =============================================================================
-ulonglong Animal_Routine_08088BA0(int animal,int amount,int food_type)
+u32 Animal_Routine_08088BA0(int animal,int amount,int food_type)
 
 {
   char c_char1;
@@ -42663,7 +42663,7 @@ Animal_Routine_08089AC0:
 // =============================================================================
 // Function: Animal_Routine_08089AD8 @ 0x08089AD8
 // =============================================================================
-undefined4 Animal_Routine_08089AD8(int animal,int amount,int food_type)
+void Animal_Routine_08089AD8(int animal,int amount,int food_type)
 
 {
   char c_char1;
@@ -42951,7 +42951,7 @@ LAB_0808a2d8:
 // =============================================================================
 // Function: Animal_Routine_0808A4C0 @ 0x0808A4C0
 // =============================================================================
-undefined4 Animal_Routine_0808A4C0(int animal,int amount)
+void Animal_Routine_0808A4C0(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -43004,7 +43004,7 @@ void Animal_Routine_0808AB38(undefined4 *animal,undefined4 *amount,undefined4 fo
 // =============================================================================
 // Function: Animal_Routine_0808AB68 @ 0x0808AB68
 // =============================================================================
-undefined4 Animal_Routine_0808AB68(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0808AB68(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -43026,7 +43026,7 @@ undefined4 Animal_Routine_0808AB68(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0808ABA8 @ 0x0808ABA8
 // =============================================================================
-undefined8 Animal_Routine_0808ABA8(undefined4 *animal,int amount)
+u32 Animal_Routine_0808ABA8(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -43062,7 +43062,7 @@ void Animal_Routine_0808ABC4(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808AC28 @ 0x0808AC28
 // =============================================================================
-undefined8 Animal_Routine_0808AC28(int animal,undefined *amount)
+u32 Animal_Routine_0808AC28(int animal,undefined *amount)
 
 {
   char c_char1;
@@ -43380,7 +43380,7 @@ case_0808B158:
 // =============================================================================
 // Function: Animal_Routine_0808B16C @ 0x0808B16C
 // =============================================================================
-ulonglong Animal_Routine_0808B16C(int animal,int amount,int food_type)
+u32 Animal_Routine_0808B16C(int animal,int amount,int food_type)
 
 {
   char c_char1;
@@ -43803,7 +43803,7 @@ Animal_Routine_0808BA4A:
 // =============================================================================
 // Function: Animal_Routine_0808BC14 @ 0x0808BC14
 // =============================================================================
-undefined4 Animal_Routine_0808BC14(int animal,int amount)
+void Animal_Routine_0808BC14(int animal,int amount)
 
 {
   int i_val1;
@@ -43847,7 +43847,7 @@ undefined4 Animal_Routine_0808BC14(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808BCD0 @ 0x0808BCD0
 // =============================================================================
-undefined4 Animal_Routine_0808BCD0(int animal,uint amount)
+void Animal_Routine_0808BCD0(int animal,uint amount)
 
 {
   char c_char1;
@@ -43895,7 +43895,7 @@ undefined4 Animal_Routine_0808BCD0(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_0808BF8C @ 0x0808BF8C
 // =============================================================================
-undefined4 Animal_Routine_0808BF8C(int animal,int amount)
+void Animal_Routine_0808BF8C(int animal,int amount)
 
 {
   char c_char1;
@@ -43961,7 +43961,7 @@ undefined4 Animal_Routine_0808BF8C(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808C0BC @ 0x0808C0BC
 // =============================================================================
-undefined4 Animal_Routine_0808C0BC(int animal)
+void Animal_Routine_0808C0BC(int animal)
 
 {
   bool b_flag1;
@@ -44196,7 +44196,7 @@ void Animal_Routine_0808C56C(undefined4 *animal,undefined4 *amount,undefined4 fo
 // =============================================================================
 // Function: Animal_Routine_0808C59C @ 0x0808C59C
 // =============================================================================
-undefined4 Animal_Routine_0808C59C(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0808C59C(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -44218,7 +44218,7 @@ undefined4 Animal_Routine_0808C59C(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0808C5DC @ 0x0808C5DC
 // =============================================================================
-undefined8 Animal_Routine_0808C5DC(undefined4 *animal,int amount)
+u32 Animal_Routine_0808C5DC(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -44233,7 +44233,7 @@ undefined8 Animal_Routine_0808C5DC(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808C5F8 @ 0x0808C5F8
 // =============================================================================
-undefined8 Animal_Routine_0808C5F8(int animal)
+u32 Animal_Routine_0808C5F8(int animal)
 
 {
   int i_val1;
@@ -44256,7 +44256,7 @@ undefined8 Animal_Routine_0808C5F8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808C650 @ 0x0808C650
 // =============================================================================
-undefined4 Animal_Routine_0808C650(int animal)
+void Animal_Routine_0808C650(int animal)
 
 {
   
@@ -44268,7 +44268,7 @@ undefined4 Animal_Routine_0808C650(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808C840 @ 0x0808C840
 // =============================================================================
-undefined4 Animal_Routine_0808C840(int animal,int amount)
+void Animal_Routine_0808C840(int animal,int amount)
 
 {
   char c_char1;
@@ -44300,7 +44300,7 @@ undefined4 Animal_Routine_0808C840(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808C8BC @ 0x0808C8BC
 // =============================================================================
-undefined4 Animal_Routine_0808C8BC(int animal)
+void Animal_Routine_0808C8BC(int animal)
 
 {
   undefined4 u_val1;
@@ -44313,7 +44313,7 @@ undefined4 Animal_Routine_0808C8BC(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808C8D8 @ 0x0808C8D8
 // =============================================================================
-undefined4 Animal_Routine_0808C8D8(int animal)
+void Animal_Routine_0808C8D8(int animal)
 
 {
   undefined4 u_val1;
@@ -44326,7 +44326,7 @@ undefined4 Animal_Routine_0808C8D8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808C8F4 @ 0x0808C8F4
 // =============================================================================
-undefined4 Animal_Routine_0808C8F4(int animal,int amount)
+void Animal_Routine_0808C8F4(int animal,int amount)
 
 {
   char c_char1;
@@ -44385,7 +44385,7 @@ undefined4 Animal_Routine_0808C8F4(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808C9D0 @ 0x0808C9D0
 // =============================================================================
-ulonglong Animal_Routine_0808C9D0(int animal,int amount,int *food_type)
+u32 Animal_Routine_0808C9D0(int animal,int amount,int *food_type)
 
 {
   char c_char1;
@@ -44619,7 +44619,7 @@ case_0808CEB0:
 // =============================================================================
 // Function: Animal_Routine_0808CEC4 @ 0x0808CEC4
 // =============================================================================
-ulonglong Animal_Routine_0808CEC4(int animal,int amount,int food_type)
+u32 Animal_Routine_0808CEC4(int animal,int amount,int food_type)
 
 {
   char c_char1;
@@ -45208,7 +45208,7 @@ Animal_Routine_0808DD3A:
 // =============================================================================
 // Function: Animal_Routine_0808DD54 @ 0x0808DD54
 // =============================================================================
-undefined4 Animal_Routine_0808DD54(int animal,int amount,int food_type)
+void Animal_Routine_0808DD54(int animal,int amount,int food_type)
 
 {
   char c_char1;
@@ -45474,7 +45474,7 @@ LAB_0808e426:
 // =============================================================================
 // Function: Animal_Routine_0808E65C @ 0x0808E65C
 // =============================================================================
-undefined4 Animal_Routine_0808E65C(int animal,int amount)
+void Animal_Routine_0808E65C(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -45508,7 +45508,7 @@ undefined4 Animal_Routine_0808E65C(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808ECD8 @ 0x0808ECD8
 // =============================================================================
-undefined8 Animal_Routine_0808ECD8(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_0808ECD8(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -45526,7 +45526,7 @@ undefined8 Animal_Routine_0808ECD8(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_0808ED08 @ 0x0808ED08
 // =============================================================================
-undefined4 Animal_Routine_0808ED08(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0808ED08(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -45548,7 +45548,7 @@ undefined4 Animal_Routine_0808ED08(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0808ED48 @ 0x0808ED48
 // =============================================================================
-undefined8 Animal_Routine_0808ED48(undefined4 *animal,int amount)
+u32 Animal_Routine_0808ED48(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -45563,7 +45563,7 @@ undefined8 Animal_Routine_0808ED48(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808ED64 @ 0x0808ED64
 // =============================================================================
-undefined8 Animal_Routine_0808ED64(int animal)
+u32 Animal_Routine_0808ED64(int animal)
 
 {
   int i_val1;
@@ -45584,7 +45584,7 @@ undefined8 Animal_Routine_0808ED64(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808EDB8 @ 0x0808EDB8
 // =============================================================================
-undefined4 Animal_Routine_0808EDB8(int animal)
+void Animal_Routine_0808EDB8(int animal)
 
 {
   
@@ -45596,7 +45596,7 @@ undefined4 Animal_Routine_0808EDB8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808EDCC @ 0x0808EDCC
 // =============================================================================
-undefined4 Animal_Routine_0808EDCC(int animal,uint amount)
+void Animal_Routine_0808EDCC(int animal,uint amount)
 
 {
   char c_char1;
@@ -45644,7 +45644,7 @@ undefined4 Animal_Routine_0808EDCC(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_0808EE9C @ 0x0808EE9C
 // =============================================================================
-undefined4 Animal_Routine_0808EE9C(int animal,int amount)
+void Animal_Routine_0808EE9C(int animal,int amount)
 
 {
   char c_char1;
@@ -45679,7 +45679,7 @@ undefined4 Animal_Routine_0808EE9C(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0808EF30 @ 0x0808EF30
 // =============================================================================
-undefined4 Animal_Routine_0808EF30(int animal)
+void Animal_Routine_0808EF30(int animal)
 
 {
   undefined4 u_val1;
@@ -45692,7 +45692,7 @@ undefined4 Animal_Routine_0808EF30(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808EF4C @ 0x0808EF4C
 // =============================================================================
-undefined4 Animal_Routine_0808EF4C(int animal)
+void Animal_Routine_0808EF4C(int animal)
 
 {
   undefined4 u_val1;
@@ -45705,7 +45705,7 @@ undefined4 Animal_Routine_0808EF4C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0808EF68 @ 0x0808EF68
 // =============================================================================
-undefined4 Animal_Routine_0808EF68(int animal,int amount)
+void Animal_Routine_0808EF68(int animal,int amount)
 
 {
   char c_char1;
@@ -45764,7 +45764,7 @@ LAB_0808f048:
 // =============================================================================
 // Function: Animal_Routine_0808F080 @ 0x0808F080
 // =============================================================================
-ulonglong Animal_Routine_0808F080(int animal,int amount,int food_type)
+u32 Animal_Routine_0808F080(int animal,int amount,int food_type)
 
 {
   char c_char1;
@@ -46075,7 +46075,7 @@ LAB_0808f766:
 // =============================================================================
 // Function: Animal_Routine_0808F784 @ 0x0808F784
 // =============================================================================
-ulonglong Animal_Routine_0808F784(int animal,int amount,int food_type)
+u32 Animal_Routine_0808F784(int animal,int amount,int food_type)
 
 {
   char c_char1;
@@ -46794,7 +46794,7 @@ Animal_Routine_080908B0:
 // =============================================================================
 // Function: Animal_Routine_08090960 @ 0x08090960
 // =============================================================================
-undefined4 Animal_Routine_08090960(int animal)
+void Animal_Routine_08090960(int animal)
 
 {
   bool b_flag1;
@@ -47021,7 +47021,7 @@ LAB_08090e0c:
 // =============================================================================
 // Function: Animal_Routine_08090E54 @ 0x08090E54
 // =============================================================================
-undefined8 Animal_Routine_08090E54(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_08090E54(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -47039,7 +47039,7 @@ undefined8 Animal_Routine_08090E54(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_08090E84 @ 0x08090E84
 // =============================================================================
-undefined4 Animal_Routine_08090E84(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08090E84(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -47061,7 +47061,7 @@ undefined4 Animal_Routine_08090E84(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08090EC4 @ 0x08090EC4
 // =============================================================================
-undefined8 Animal_Routine_08090EC4(undefined4 *animal,int amount)
+u32 Animal_Routine_08090EC4(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -47076,7 +47076,7 @@ undefined8 Animal_Routine_08090EC4(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08090EE0 @ 0x08090EE0
 // =============================================================================
-undefined8 Animal_Routine_08090EE0(int animal,undefined4 *amount,undefined4 food_type,undefined1 out_stat)
+u32 Animal_Routine_08090EE0(int animal,undefined4 *amount,undefined4 food_type,undefined1 out_stat)
 
 {
   int i_val1;
@@ -47104,7 +47104,7 @@ undefined8 Animal_Routine_08090EE0(int animal,undefined4 *amount,undefined4 food
 // =============================================================================
 // Function: Animal_Routine_08090FCC @ 0x08090FCC
 // =============================================================================
-undefined4 Animal_Routine_08090FCC(int animal,uint amount)
+void Animal_Routine_08090FCC(int animal,uint amount)
 
 {
   char c_char1;
@@ -47151,7 +47151,7 @@ undefined4 Animal_Routine_08090FCC(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08091280 @ 0x08091280
 // =============================================================================
-undefined4 Animal_Routine_08091280(int animal,int amount)
+void Animal_Routine_08091280(int animal,int amount)
 
 {
   char c_char1;
@@ -47217,7 +47217,7 @@ undefined4 Animal_Routine_08091280(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080913B0 @ 0x080913B0
 // =============================================================================
-undefined8 Animal_Routine_080913B0(undefined4 animal,undefined1 amount)
+u32 Animal_Routine_080913B0(undefined4 animal,undefined1 amount)
 
 {
   int item_id;
@@ -47240,7 +47240,7 @@ undefined8 Animal_Routine_080913B0(undefined4 animal,undefined1 amount)
 // =============================================================================
 // Function: Animal_Routine_080913DC @ 0x080913DC
 // =============================================================================
-undefined8 Animal_Routine_080913DC(undefined4 animal,undefined1 amount)
+u32 Animal_Routine_080913DC(undefined4 animal,undefined1 amount)
 
 {
   int i_val1;
@@ -47265,7 +47265,7 @@ undefined8 Animal_Routine_080913DC(undefined4 animal,undefined1 amount)
 // =============================================================================
 // Function: Animal_Routine_08091420 @ 0x08091420
 // =============================================================================
-undefined8 Animal_Routine_08091420(undefined4 animal,uint amount,int food_type)
+u32 Animal_Routine_08091420(undefined4 animal,uint amount,int food_type)
 
 {
   uint u_val1;
@@ -47310,7 +47310,7 @@ undefined8 Animal_Routine_08091420(undefined4 animal,uint amount,int food_type)
 // =============================================================================
 // Function: Animal_Routine_080914A0 @ 0x080914A0
 // =============================================================================
-undefined8 Animal_Routine_080914A0(undefined4 animal,uint amount,int food_type)
+u32 Animal_Routine_080914A0(undefined4 animal,uint amount,int food_type)
 
 {
   uint u_val1;
@@ -47353,7 +47353,7 @@ undefined8 Animal_Routine_080914A0(undefined4 animal,uint amount,int food_type)
 // =============================================================================
 // Function: Animal_Routine_0809152C @ 0x0809152C
 // =============================================================================
-undefined8 Animal_Routine_0809152C(undefined4 *animal,int amount)
+u32 Animal_Routine_0809152C(undefined4 *animal,int amount)
 
 {
   bool b_flag1;
@@ -48116,7 +48116,7 @@ Animal_Routine_08092570(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_080925C4 @ 0x080925C4
 // =============================================================================
-undefined4 Animal_Routine_080925C4(undefined4 *animal,undefined4 amount)
+void Animal_Routine_080925C4(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -48138,7 +48138,7 @@ undefined4 Animal_Routine_080925C4(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08092604 @ 0x08092604
 // =============================================================================
-undefined8 Animal_Routine_08092604(undefined4 *animal,int amount)
+u32 Animal_Routine_08092604(undefined4 *animal,int amount)
 
 {
   undefined4 facing_buffer [3];
@@ -48151,7 +48151,7 @@ undefined8 Animal_Routine_08092604(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08092640 @ 0x08092640
 // =============================================================================
-undefined8 Animal_Routine_08092640(int animal)
+u32 Animal_Routine_08092640(int animal)
 
 {
   int i_val1;
@@ -48172,7 +48172,7 @@ undefined8 Animal_Routine_08092640(int animal)
 // =============================================================================
 // Function: Animal_Routine_08092690 @ 0x08092690
 // =============================================================================
-undefined4 Animal_Routine_08092690(int animal)
+void Animal_Routine_08092690(int animal)
 
 {
   
@@ -48184,7 +48184,7 @@ undefined4 Animal_Routine_08092690(int animal)
 // =============================================================================
 // Function: Animal_Routine_080926A4 @ 0x080926A4
 // =============================================================================
-undefined4 Animal_Routine_080926A4(int animal,uint amount)
+void Animal_Routine_080926A4(int animal,uint amount)
 
 {
   char c_char1;
@@ -48229,7 +48229,7 @@ undefined4 Animal_Routine_080926A4(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08092940 @ 0x08092940
 // =============================================================================
-undefined4 Animal_Routine_08092940(int animal,int amount)
+void Animal_Routine_08092940(int animal,int amount)
 
 {
   char c_char1;
@@ -48295,7 +48295,7 @@ undefined4 Animal_Routine_08092940(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08092CD0 @ 0x08092CD0
 // =============================================================================
-undefined4 Animal_Routine_08092CD0(int animal,int amount)
+void Animal_Routine_08092CD0(int animal,int amount)
 
 {
   undefined4 u_val1;
@@ -48322,7 +48322,7 @@ undefined4 Animal_Routine_08092CD0(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08092D64 @ 0x08092D64
 // =============================================================================
-undefined4 Animal_Routine_08092D64(int animal)
+void Animal_Routine_08092D64(int animal)
 
 {
   bool b_flag1;
@@ -48510,7 +48510,7 @@ LAB_08093044:
 // =============================================================================
 // Function: Animal_Routine_080931B0 @ 0x080931B0
 // =============================================================================
-undefined8 Animal_Routine_080931B0(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_080931B0(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -48528,7 +48528,7 @@ undefined8 Animal_Routine_080931B0(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_080931E0 @ 0x080931E0
 // =============================================================================
-undefined4 Animal_Routine_080931E0(undefined4 *animal,undefined4 amount)
+void Animal_Routine_080931E0(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -48550,7 +48550,7 @@ undefined4 Animal_Routine_080931E0(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08093220 @ 0x08093220
 // =============================================================================
-undefined8 Animal_Routine_08093220(undefined4 *animal,int amount)
+u32 Animal_Routine_08093220(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -48565,7 +48565,7 @@ undefined8 Animal_Routine_08093220(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08093364 @ 0x08093364
 // =============================================================================
-undefined4 Animal_Routine_08093364(int animal)
+u32 Animal_Routine_08093364(int animal)
 
 {
   undefined *p_uint1;
@@ -48868,7 +48868,7 @@ case_08093A14:
 // =============================================================================
 // Function: Animal_Routine_08093A58 @ 0x08093A58
 // =============================================================================
-undefined8 Animal_Routine_08093A58(undefined4 *animal,undefined4 *amount,undefined4 food_type)
+u32 Animal_Routine_08093A58(undefined4 *animal,undefined4 *amount,undefined4 food_type)
 
 {
   undefined4 u_val1;
@@ -48886,7 +48886,7 @@ undefined8 Animal_Routine_08093A58(undefined4 *animal,undefined4 *amount,undefin
 // =============================================================================
 // Function: Animal_Routine_08093A88 @ 0x08093A88
 // =============================================================================
-undefined4 Animal_Routine_08093A88(undefined4 *animal,undefined4 amount)
+void Animal_Routine_08093A88(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -48908,7 +48908,7 @@ undefined4 Animal_Routine_08093A88(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08093B18 @ 0x08093B18
 // =============================================================================
-undefined8 Animal_Routine_08093B18(int animal)
+u32 Animal_Routine_08093B18(int animal)
 
 {
   int i_val1;
@@ -48937,7 +48937,7 @@ undefined8 Animal_Routine_08093B18(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093B94 @ 0x08093B94
 // =============================================================================
-undefined4 Animal_Routine_08093B94(int animal)
+void Animal_Routine_08093B94(int animal)
 
 {
   
@@ -48952,7 +48952,7 @@ undefined4 Animal_Routine_08093B94(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093BD8 @ 0x08093BD8
 // =============================================================================
-undefined4 Animal_Routine_08093BD8(int animal)
+void Animal_Routine_08093BD8(int animal)
 
 {
   
@@ -48964,7 +48964,7 @@ undefined4 Animal_Routine_08093BD8(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093BFC @ 0x08093BFC
 // =============================================================================
-undefined8 Animal_Routine_08093BFC(void)
+u32 Animal_Routine_08093BFC(void)
 
 {
   uint u_val1;
@@ -48976,7 +48976,7 @@ undefined8 Animal_Routine_08093BFC(void)
 // =============================================================================
 // Function: Animal_Routine_08093C14 @ 0x08093C14
 // =============================================================================
-undefined4 Animal_Routine_08093C14(int animal)
+void Animal_Routine_08093C14(int animal)
 
 {
   
@@ -48988,7 +48988,7 @@ undefined4 Animal_Routine_08093C14(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093C40 @ 0x08093C40
 // =============================================================================
-undefined8 Animal_Routine_08093C40(int animal)
+u32 Animal_Routine_08093C40(int animal)
 
 {
   int i_val1;
@@ -49021,7 +49021,7 @@ undefined8 Animal_Routine_08093C40(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093CC0 @ 0x08093CC0
 // =============================================================================
-undefined4 Animal_Routine_08093CC0(int animal)
+void Animal_Routine_08093CC0(int animal)
 
 {
   
@@ -49035,7 +49035,7 @@ undefined4 Animal_Routine_08093CC0(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093CFC @ 0x08093CFC
 // =============================================================================
-undefined4 Animal_Routine_08093CFC(int animal)
+void Animal_Routine_08093CFC(int animal)
 
 {
   
@@ -49047,7 +49047,7 @@ undefined4 Animal_Routine_08093CFC(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093D24 @ 0x08093D24
 // =============================================================================
-undefined4 Animal_Routine_08093D24(int animal)
+void Animal_Routine_08093D24(int animal)
 
 {
   
@@ -49059,7 +49059,7 @@ undefined4 Animal_Routine_08093D24(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093D4C @ 0x08093D4C
 // =============================================================================
-undefined8 Animal_Routine_08093D4C(void)
+u32 Animal_Routine_08093D4C(void)
 
 {
   uint u_val1;
@@ -49071,7 +49071,7 @@ undefined8 Animal_Routine_08093D4C(void)
 // =============================================================================
 // Function: Animal_Routine_08093D64 @ 0x08093D64
 // =============================================================================
-undefined4 Animal_Routine_08093D64(int animal)
+void Animal_Routine_08093D64(int animal)
 
 {
   
@@ -49103,7 +49103,7 @@ void Animal_Routine_08093D98(void)
 // =============================================================================
 // Function: Animal_Routine_08093DCC @ 0x08093DCC
 // =============================================================================
-undefined4 Animal_Routine_08093DCC(undefined4 *animal,uint amount)
+void Animal_Routine_08093DCC(undefined4 *animal,uint amount)
 
 {
   
@@ -49137,7 +49137,7 @@ Animal_Routine_08093DEC(int *animal,undefined4 amount,undefined4 food_type,int o
 // =============================================================================
 // Function: Animal_Routine_08093E20 @ 0x08093E20
 // =============================================================================
-undefined4 Animal_Routine_08093E20(int *animal)
+void Animal_Routine_08093E20(int *animal)
 
 {
   int i_val1;
@@ -49195,7 +49195,7 @@ undefined4 Animal_Routine_08093E20(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08093EEC @ 0x08093EEC
 // =============================================================================
-undefined4 Animal_Routine_08093EEC(int animal)
+void Animal_Routine_08093EEC(int animal)
 
 {
   int i_val1;
@@ -49216,7 +49216,7 @@ undefined4 Animal_Routine_08093EEC(int animal)
 // =============================================================================
 // Function: Animal_Routine_08093F28 @ 0x08093F28
 // =============================================================================
-undefined4 Animal_Routine_08093F28(int *animal)
+void Animal_Routine_08093F28(int *animal)
 
 {
   
@@ -49228,7 +49228,7 @@ undefined4 Animal_Routine_08093F28(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08093F48 @ 0x08093F48
 // =============================================================================
-undefined4 Animal_Routine_08093F48(int *animal,int amount)
+void Animal_Routine_08093F48(int *animal,int amount)
 
 {
   char c_char1;
@@ -49255,7 +49255,7 @@ undefined4 Animal_Routine_08093F48(int *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08093FB0 @ 0x08093FB0
 // =============================================================================
-undefined4 Animal_Routine_08093FB0(int *animal)
+void Animal_Routine_08093FB0(int *animal)
 
 {
   
@@ -49266,7 +49266,7 @@ undefined4 Animal_Routine_08093FB0(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08093FC4 @ 0x08093FC4
 // =============================================================================
-undefined4 Animal_Routine_08093FC4(int *animal)
+void Animal_Routine_08093FC4(int *animal)
 
 {
   char c_char1;
@@ -49287,7 +49287,7 @@ undefined4 Animal_Routine_08093FC4(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08094000 @ 0x08094000
 // =============================================================================
-undefined4 Animal_Routine_08094000(int *animal)
+void Animal_Routine_08094000(int *animal)
 
 {
   char c_char1;
@@ -49308,7 +49308,7 @@ undefined4 Animal_Routine_08094000(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08094048 @ 0x08094048
 // =============================================================================
-undefined4 Animal_Routine_08094048(int *animal)
+void Animal_Routine_08094048(int *animal)
 
 {
   char c_char1;
@@ -49341,7 +49341,7 @@ undefined4 Animal_Routine_08094048(int *animal)
 // =============================================================================
 // Function: Animal_Routine_080940C0 @ 0x080940C0
 // =============================================================================
-undefined4 Animal_Routine_080940C0(int animal,int amount)
+void Animal_Routine_080940C0(int animal,int amount)
 
 {
   undefined1 u_val1;
@@ -49363,7 +49363,7 @@ undefined4 Animal_Routine_080940C0(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_080940E4 @ 0x080940E4
 // =============================================================================
-undefined4 Animal_Routine_080940E4(int *animal)
+void Animal_Routine_080940E4(int *animal)
 
 {
   
@@ -49379,7 +49379,7 @@ undefined4 Animal_Routine_080940E4(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08094110 @ 0x08094110
 // =============================================================================
-undefined4 Animal_Routine_08094110(int *animal,int amount)
+void Animal_Routine_08094110(int *animal,int amount)
 
 {
   char c_char1;
@@ -49441,7 +49441,7 @@ Animal_Routine_08094288(int *animal,undefined4 amount,undefined4 food_type,int o
 // =============================================================================
 // Function: Animal_Routine_080942BC @ 0x080942BC
 // =============================================================================
-undefined4 Animal_Routine_080942BC(int *animal)
+void Animal_Routine_080942BC(int *animal)
 
 {
   int i_val1;
@@ -49499,7 +49499,7 @@ undefined4 Animal_Routine_080942BC(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08094388 @ 0x08094388
 // =============================================================================
-undefined4 Animal_Routine_08094388(int animal)
+void Animal_Routine_08094388(int animal)
 
 {
   int i_val1;
@@ -49520,7 +49520,7 @@ undefined4 Animal_Routine_08094388(int animal)
 // =============================================================================
 // Function: Animal_Routine_080947BC @ 0x080947BC
 // =============================================================================
-undefined8 Animal_Routine_080947BC(int *animal,int amount)
+u32 Animal_Routine_080947BC(int *animal,int amount)
 
 {
   int loop_i;
@@ -49550,7 +49550,7 @@ undefined8 Animal_Routine_080947BC(int *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08094814 @ 0x08094814
 // =============================================================================
-undefined4 Animal_Routine_08094814(int animal,uint amount)
+void Animal_Routine_08094814(int animal,uint amount)
 
 {
   
@@ -49569,7 +49569,7 @@ undefined4 Animal_Routine_08094814(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_08094844 @ 0x08094844
 // =============================================================================
-undefined4 Animal_Routine_08094844(int *animal)
+void Animal_Routine_08094844(int *animal)
 
 {
   undefined4 u_val1;
@@ -49602,7 +49602,7 @@ undefined4 Animal_Routine_08094844(int *animal)
 // =============================================================================
 // Function: Animal_Routine_08094914 @ 0x08094914
 // =============================================================================
-undefined4 Animal_Routine_08094914(int animal,undefined4 amount)
+void Animal_Routine_08094914(int animal,undefined4 amount)
 
 {
   
@@ -49613,7 +49613,7 @@ undefined4 Animal_Routine_08094914(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08094920 @ 0x08094920
 // =============================================================================
-undefined4 Animal_Routine_08094920(int animal,undefined4 amount)
+void Animal_Routine_08094920(int animal,undefined4 amount)
 
 {
   
@@ -49624,7 +49624,7 @@ undefined4 Animal_Routine_08094920(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08094930 @ 0x08094930
 // =============================================================================
-undefined4 Animal_Routine_08094930(int animal,undefined4 amount)
+void Animal_Routine_08094930(int animal,undefined4 amount)
 
 {
   
@@ -49635,7 +49635,7 @@ undefined4 Animal_Routine_08094930(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08094940 @ 0x08094940
 // =============================================================================
-undefined4 Animal_Routine_08094940(int animal,undefined4 amount)
+void Animal_Routine_08094940(int animal,undefined4 amount)
 
 {
   
@@ -49646,7 +49646,7 @@ undefined4 Animal_Routine_08094940(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0809494C @ 0x0809494C
 // =============================================================================
-undefined4 Animal_Routine_0809494C(int animal,undefined4 amount)
+void Animal_Routine_0809494C(int animal,undefined4 amount)
 
 {
   
@@ -49657,7 +49657,7 @@ undefined4 Animal_Routine_0809494C(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0809495C @ 0x0809495C
 // =============================================================================
-undefined4 Animal_Routine_0809495C(int animal,undefined4 amount)
+void Animal_Routine_0809495C(int animal,undefined4 amount)
 
 {
   
@@ -49668,7 +49668,7 @@ undefined4 Animal_Routine_0809495C(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08094974 @ 0x08094974
 // =============================================================================
-undefined4 Animal_Routine_08094974(undefined4 animal,int amount,int food_type,uint out_stat)
+void Animal_Routine_08094974(undefined4 animal,int amount,int food_type,uint out_stat)
 
 {
   uint loop_i;
@@ -49686,7 +49686,7 @@ undefined4 Animal_Routine_08094974(undefined4 animal,int amount,int food_type,ui
 // =============================================================================
 // Function: Animal_Routine_08094994 @ 0x08094994
 // =============================================================================
-undefined4 Animal_Routine_08094994(undefined4 animal,char *amount,char *food_type)
+void Animal_Routine_08094994(undefined4 animal,char *amount,char *food_type)
 
 {
   char c_char1;
@@ -49729,7 +49729,7 @@ joined_r0x080949ec:
 // =============================================================================
 // Function: Animal_Routine_08094A00 @ 0x08094A00
 // =============================================================================
-undefined4 Animal_Routine_08094A00(undefined4 animal,undefined1 *amount,byte *food_type)
+void Animal_Routine_08094A00(undefined4 animal,undefined1 *amount,byte *food_type)
 
 {
   int i_val1;
@@ -49754,7 +49754,7 @@ undefined4 Animal_Routine_08094A00(undefined4 animal,undefined1 *amount,byte *fo
 // =============================================================================
 // Function: Animal_Routine_08094A3C @ 0x08094A3C
 // =============================================================================
-undefined4 Animal_Routine_08094A3C(undefined1 *animal,byte *amount)
+void Animal_Routine_08094A3C(undefined1 *animal,byte *amount)
 
 {
   byte b_flag1;
@@ -49792,7 +49792,7 @@ undefined4 Animal_Routine_08094A3C(undefined1 *animal,byte *amount)
 // =============================================================================
 // Function: Animal_Routine_08094AC0 @ 0x08094AC0
 // =============================================================================
-undefined8 Animal_Routine_08094AC0(int animal,undefined4 amount,uint food_type)
+u32 Animal_Routine_08094AC0(int animal,undefined4 amount,uint food_type)
 
 {
   char c_char1;
@@ -50026,7 +50026,7 @@ undefined8 Animal_Routine_08094AC0(int animal,undefined4 amount,uint food_type)
 // =============================================================================
 // Function: Animal_Routine_08094F6C @ 0x08094F6C
 // =============================================================================
-undefined8 Animal_Routine_08094F6C(undefined4 *animal,int amount)
+u32 Animal_Routine_08094F6C(undefined4 *animal,int amount)
 
 {
   byte b_flag1;
@@ -50149,7 +50149,7 @@ LAB_080950b4:
 // =============================================================================
 // Function: Animal_Routine_080951B4 @ 0x080951B4
 // =============================================================================
-undefined8 Animal_Routine_080951B4(int animal)
+u32 Animal_Routine_080951B4(int animal)
 
 {
   char c_char1;
@@ -50358,7 +50358,7 @@ LAB_080953b4:
 // =============================================================================
 // Function: Animal_Routine_08095580 @ 0x08095580
 // =============================================================================
-undefined4 Animal_Routine_08095580(int animal)
+void Animal_Routine_08095580(int animal)
 
 {
   char c_char1;
@@ -50793,7 +50793,7 @@ LAB_08095c04:
 // =============================================================================
 // Function: Animal_Routine_08096B88 @ 0x08096B88
 // =============================================================================
-undefined4 Animal_Routine_08096B88(int animal)
+void Animal_Routine_08096B88(int animal)
 
 {
   undefined1 u_val1;
@@ -51035,7 +51035,7 @@ undefined4 Animal_Routine_08096B88(int animal)
 // =============================================================================
 // Function: Animal_Routine_08096EE8 @ 0x08096EE8
 // =============================================================================
-undefined8 Animal_Routine_08096EE8(int animal,undefined4 *amount,int food_type,int out_stat)
+u32 Animal_Routine_08096EE8(int animal,undefined4 *amount,int food_type,int out_stat)
 
 {
   char c_char1;
@@ -51080,7 +51080,7 @@ LAB_08096fa4:
 // =============================================================================
 // Function: Animal_Routine_08096FB4 @ 0x08096FB4
 // =============================================================================
-undefined8 Animal_Routine_08096FB4(int animal,undefined4 amount)
+u32 Animal_Routine_08096FB4(int animal,undefined4 amount)
 
 {
   char c_char1;
@@ -51166,7 +51166,7 @@ undefined8 Animal_Routine_08096FB4(int animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_08097114 @ 0x08097114
 // =============================================================================
-undefined4 Animal_Routine_08097114(int animal,undefined4 amount)
+void Animal_Routine_08097114(int animal,undefined4 amount)
 
 {
   char c_char1;
@@ -51411,7 +51411,7 @@ void Animal_Routine_080972AC(int animal)
 // =============================================================================
 // Function: Animal_Routine_080977A0 @ 0x080977A0
 // =============================================================================
-undefined8 Animal_Routine_080977A0(undefined4 animal,undefined4 amount,ushort *food_type)
+u32 Animal_Routine_080977A0(undefined4 animal,undefined4 amount,ushort *food_type)
 
 {
   ushort *p_uint1;
@@ -51456,7 +51456,7 @@ undefined8 Animal_Routine_080977A0(undefined4 animal,undefined4 amount,ushort *f
 // =============================================================================
 // Function: Animal_Routine_08097800 @ 0x08097800
 // =============================================================================
-undefined8 Animal_Routine_08097800(int animal,ushort *amount)
+u32 Animal_Routine_08097800(int animal,ushort *amount)
 
 {
   ushort u_val1;
@@ -51654,7 +51654,7 @@ LAB_08097acc:
 // =============================================================================
 // Function: Animal_Routine_08097AE4 @ 0x08097AE4
 // =============================================================================
-undefined8 Animal_Routine_08097AE4(int animal,int amount)
+u32 Animal_Routine_08097AE4(int animal,int amount)
 
 {
   char c_char1;
@@ -51761,7 +51761,7 @@ undefined8 Animal_Routine_08097AE4(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08097D38 @ 0x08097D38
 // =============================================================================
-undefined4 Animal_Routine_08097D38(uint animal)
+u32 Animal_Routine_08097D38(uint animal)
 
 {
   ushort u_val1;
@@ -51844,7 +51844,7 @@ case_08097FFE:
 // =============================================================================
 // Function: Animal_Routine_0809800C @ 0x0809800C
 // =============================================================================
-undefined4 Animal_Routine_0809800C(int animal)
+void Animal_Routine_0809800C(int animal)
 
 {
   char c_char1;
@@ -52039,7 +52039,7 @@ undefined4 Animal_Routine_0809800C(int animal)
 // =============================================================================
 // Function: Animal_Routine_080983E8 @ 0x080983E8
 // =============================================================================
-undefined4 Animal_Routine_080983E8(int animal)
+void Animal_Routine_080983E8(int animal)
 
 {
   byte b_flag1;
@@ -52405,7 +52405,7 @@ undefined4 Animal_Routine_080983E8(int animal)
 // =============================================================================
 // Function: Animal_Routine_080989DC @ 0x080989DC
 // =============================================================================
-undefined4 Animal_Routine_080989DC(int animal,int amount)
+void Animal_Routine_080989DC(int animal,int amount)
 
 {
   undefined4 *p_uint1;
@@ -52577,7 +52577,7 @@ undefined4 Animal_Routine_080989DC(int animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_08099000 @ 0x08099000
 // =============================================================================
-undefined4 Animal_Routine_08099000(int animal,char amount)
+void Animal_Routine_08099000(int animal,char amount)
 
 {
   byte b_flag1;
@@ -52628,7 +52628,7 @@ undefined4 Animal_Routine_08099000(int animal,char amount)
 // =============================================================================
 // Function: Animal_Routine_08099144 @ 0x08099144
 // =============================================================================
-undefined4 Animal_Routine_08099144(int animal,uint amount,uint food_type,uint out_stat)
+void Animal_Routine_08099144(int animal,uint amount,uint food_type,uint out_stat)
 
 {
   undefined2 u_val1;
@@ -52993,7 +52993,7 @@ undefined4 Animal_Routine_08099144(int animal,uint amount,uint food_type,uint ou
 // =============================================================================
 // Function: Animal_Routine_08099ACC @ 0x08099ACC
 // =============================================================================
-undefined4 Animal_Routine_08099ACC(int animal)
+void Animal_Routine_08099ACC(int animal)
 
 {
   byte b_flag1;
@@ -53531,7 +53531,7 @@ undefined4 Animal_Routine_08099ACC(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809A3E0 @ 0x0809A3E0
 // =============================================================================
-undefined4 Animal_Routine_0809A3E0(int animal)
+void Animal_Routine_0809A3E0(int animal)
 
 {
   undefined2 u_val1;
@@ -53636,7 +53636,7 @@ Animal_Routine_0809A4D4(undefined4 *animal,undefined4 *amount,undefined4 food_ty
 // =============================================================================
 // Function: Animal_Routine_0809A518 @ 0x0809A518
 // =============================================================================
-undefined4 Animal_Routine_0809A518(undefined4 *animal,undefined4 amount)
+void Animal_Routine_0809A518(undefined4 *animal,undefined4 amount)
 
 {
   int *p_int1;
@@ -53658,7 +53658,7 @@ undefined4 Animal_Routine_0809A518(undefined4 *animal,undefined4 amount)
 // =============================================================================
 // Function: Animal_Routine_0809A558 @ 0x0809A558
 // =============================================================================
-undefined8 Animal_Routine_0809A558(undefined4 *animal,int amount)
+u32 Animal_Routine_0809A558(undefined4 *animal,int amount)
 
 {
   undefined4 u_val1;
@@ -53677,7 +53677,7 @@ undefined8 Animal_Routine_0809A558(undefined4 *animal,int amount)
 // =============================================================================
 // Function: Animal_Routine_0809A58C @ 0x0809A58C
 // =============================================================================
-undefined8 Animal_Routine_0809A58C(uint *animal,int amount)
+u32 Animal_Routine_0809A58C(uint *animal,int amount)
 
 {
   ushort u_val1;
@@ -53906,7 +53906,7 @@ LAB_0809a7a4:
 // =============================================================================
 // Function: Animal_Routine_0809A8AC @ 0x0809A8AC
 // =============================================================================
-undefined8 Animal_Routine_0809A8AC(undefined2 *animal)
+u32 Animal_Routine_0809A8AC(undefined2 *animal)
 
 {
   short s_val1;
@@ -53963,7 +53963,7 @@ undefined8 Animal_Routine_0809A8AC(undefined2 *animal)
 // =============================================================================
 // Function: Animal_Routine_0809A970 @ 0x0809A970
 // =============================================================================
-undefined4 Animal_Routine_0809A970(int animal,undefined2 *amount,int food_type)
+void Animal_Routine_0809A970(int animal,undefined2 *amount,int food_type)
 
 {
   undefined2 *p_uint1;
@@ -53987,7 +53987,7 @@ undefined4 Animal_Routine_0809A970(int animal,undefined2 *amount,int food_type)
 // =============================================================================
 // Function: Animal_Routine_0809A9C0 @ 0x0809A9C0
 // =============================================================================
-undefined4 Animal_Routine_0809A9C0(short *animal,short *amount)
+void Animal_Routine_0809A9C0(short *animal,short *amount)
 
 {
   undefined4 u_val1;
@@ -54021,7 +54021,7 @@ undefined4 Animal_Routine_0809A9C0(short *animal,short *amount)
 // =============================================================================
 // Function: Animal_Routine_0809AA28 @ 0x0809AA28
 // =============================================================================
-undefined8 Animal_Routine_0809AA28(int animal)
+u32 Animal_Routine_0809AA28(int animal)
 
 {
   uint u_val1;
@@ -54040,7 +54040,7 @@ undefined8 Animal_Routine_0809AA28(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809AA58 @ 0x0809AA58
 // =============================================================================
-undefined8 Animal_Routine_0809AA58(undefined1 *animal,uint amount)
+u32 Animal_Routine_0809AA58(undefined1 *animal,uint amount)
 
 {
   uint u_val1;
@@ -54082,7 +54082,7 @@ undefined8 Animal_Routine_0809AA58(undefined1 *animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_0809AAD4 @ 0x0809AAD4
 // =============================================================================
-undefined8 Animal_Routine_0809AAD4(ushort *animal)
+u32 Animal_Routine_0809AAD4(ushort *animal)
 
 {
   uint u_val1;
@@ -54101,7 +54101,7 @@ undefined8 Animal_Routine_0809AAD4(ushort *animal)
 // =============================================================================
 // Function: Animal_Routine_0809AB08 @ 0x0809AB08
 // =============================================================================
-undefined8 Animal_Routine_0809AB08(uint *animal,ushort *amount,int food_type)
+u32 Animal_Routine_0809AB08(uint *animal,ushort *amount,int food_type)
 
 {
   ushort *p_uint1;
@@ -54154,7 +54154,7 @@ undefined8 Animal_Routine_0809AB08(uint *animal,ushort *amount,int food_type)
 // =============================================================================
 // Function: Animal_Routine_0809AB8C @ 0x0809AB8C
 // =============================================================================
-undefined8 Animal_Routine_0809AB8C(undefined4 *animal)
+u32 Animal_Routine_0809AB8C(undefined4 *animal)
 
 {
   
@@ -54173,7 +54173,7 @@ undefined8 Animal_Routine_0809AB8C(undefined4 *animal)
 // =============================================================================
 // Function: Animal_Routine_0809ABD8 @ 0x0809ABD8
 // =============================================================================
-undefined4 Animal_Routine_0809ABD8(uint *animal,uint amount)
+void Animal_Routine_0809ABD8(uint *animal,uint amount)
 
 {
   int i_val1;
@@ -54231,7 +54231,7 @@ undefined4 Animal_Routine_0809ABD8(uint *animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_0809ACC0 @ 0x0809ACC0
 // =============================================================================
-undefined8 Animal_Routine_0809ACC0(uint *animal,uint amount)
+u32 Animal_Routine_0809ACC0(uint *animal,uint amount)
 
 {
   int i_val1;
@@ -54291,7 +54291,7 @@ undefined8 Animal_Routine_0809ACC0(uint *animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_0809ADA8 @ 0x0809ADA8
 // =============================================================================
-undefined4 Animal_Routine_0809ADA8(int animal)
+void Animal_Routine_0809ADA8(int animal)
 
 {
   uint u_val1;
@@ -54349,7 +54349,7 @@ undefined4 Animal_Routine_0809ADA8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809AE6C @ 0x0809AE6C
 // =============================================================================
-undefined4 Animal_Routine_0809AE6C(int animal)
+void Animal_Routine_0809AE6C(int animal)
 
 {
   uint u_val1;
@@ -54440,7 +54440,7 @@ undefined4 Animal_Routine_0809AE6C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809B018 @ 0x0809B018
 // =============================================================================
-undefined8 Animal_Routine_0809B018(int animal,uint amount)
+u32 Animal_Routine_0809B018(int animal,uint amount)
 
 {
   
@@ -54456,7 +54456,7 @@ undefined8 Animal_Routine_0809B018(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_0809B038 @ 0x0809B038
 // =============================================================================
-undefined8 Animal_Routine_0809B038(int animal,uint amount)
+u32 Animal_Routine_0809B038(int animal,uint amount)
 
 {
   uint *p_uint1;
@@ -54475,7 +54475,7 @@ undefined8 Animal_Routine_0809B038(int animal,uint amount)
 // =============================================================================
 // Function: Animal_Routine_0809B05C @ 0x0809B05C
 // =============================================================================
-undefined8 Animal_Routine_0809B05C(int animal)
+u32 Animal_Routine_0809B05C(int animal)
 
 {
   uint *p_uint1;
@@ -54490,7 +54490,7 @@ undefined8 Animal_Routine_0809B05C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809B084 @ 0x0809B084
 // =============================================================================
-undefined8 Animal_Routine_0809B084(int animal)
+u32 Animal_Routine_0809B084(int animal)
 
 {
   int i_val1;
@@ -54507,7 +54507,7 @@ undefined8 Animal_Routine_0809B084(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809B0B0 @ 0x0809B0B0
 // =============================================================================
-undefined8 Animal_Routine_0809B0B0(int animal)
+u32 Animal_Routine_0809B0B0(int animal)
 
 {
   uint *p_uint1;
@@ -54522,7 +54522,7 @@ undefined8 Animal_Routine_0809B0B0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809B0D8 @ 0x0809B0D8
 // =============================================================================
-undefined8 Animal_Routine_0809B0D8(int animal)
+u32 Animal_Routine_0809B0D8(int animal)
 
 {
   int *p_int1;
@@ -54567,7 +54567,7 @@ void Actor_CopyLocation2(undefined4 *actor,undefined4 *target_pos)
 // =============================================================================
 // Function: Animal_Routine_0809B12C @ 0x0809B12C
 // =============================================================================
-undefined8 Animal_Routine_0809B12C(int animal,undefined4 amount,undefined4 food_type,ushort out_stat)
+u32 Animal_Routine_0809B12C(int animal,undefined4 amount,undefined4 food_type,ushort out_stat)
 
 {
   uint u_val1;
@@ -54589,7 +54589,7 @@ undefined8 Animal_Routine_0809B12C(int animal,undefined4 amount,undefined4 food_
 // =============================================================================
 // Function: Actor_ClearLocation @ 0x0809B1A4
 // =============================================================================
-undefined8 Actor_ClearLocation(int actor,undefined4 target_pos,ushort facing)
+u32 Actor_ClearLocation(int actor,undefined4 target_pos,ushort facing)
 
 {
   
@@ -54605,7 +54605,7 @@ undefined8 Actor_ClearLocation(int actor,undefined4 target_pos,ushort facing)
 // =============================================================================
 // Function: Animal_Routine_0809B1F4 @ 0x0809B1F4
 // =============================================================================
-undefined8 Animal_Routine_0809B1F4(int animal)
+u32 Animal_Routine_0809B1F4(int animal)
 
 {
   int i_val1;
@@ -54637,7 +54637,7 @@ void NPC_SetName(int npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_SetTalkedToday @ 0x0809B278
 // =============================================================================
-undefined4 NPC_SetTalkedToday(int npc)
+void NPC_SetTalkedToday(int npc)
 
 {
   
@@ -54650,7 +54650,7 @@ undefined4 NPC_SetTalkedToday(int npc)
 // =============================================================================
 // Function: NPC_SetGiftGivenToday @ 0x0809B290
 // =============================================================================
-undefined4 NPC_SetGiftGivenToday(int npc)
+void NPC_SetGiftGivenToday(int npc)
 
 {
   
@@ -54663,7 +54663,7 @@ undefined4 NPC_SetGiftGivenToday(int npc)
 // =============================================================================
 // Function: NPC_AddFriendship @ 0x0809B2A8
 // =============================================================================
-undefined4 NPC_AddFriendship(int npc,int amount)
+void NPC_AddFriendship(int npc,int amount)
 
 {
   uint u_val1;
@@ -54682,7 +54682,7 @@ undefined4 NPC_AddFriendship(int npc,int amount)
 // =============================================================================
 // Function: NPC_ReduceFriendship @ 0x0809B2DC
 // =============================================================================
-undefined4 NPC_ReduceFriendship(undefined4 npc,int amount)
+void NPC_ReduceFriendship(undefined4 npc,int amount)
 
 {
   
@@ -54693,7 +54693,7 @@ undefined4 NPC_ReduceFriendship(undefined4 npc,int amount)
 // =============================================================================
 // Function: NPC_DailyUpdate @ 0x0809B2E8
 // =============================================================================
-undefined4 NPC_DailyUpdate(int npc)
+void NPC_DailyUpdate(int npc)
 
 {
   uint u_val1;
@@ -54711,7 +54711,7 @@ undefined4 NPC_DailyUpdate(int npc)
 // =============================================================================
 // Function: NPC_ResetLocation @ 0x0809B32C
 // =============================================================================
-undefined8 NPC_ResetLocation(int npc)
+u32 NPC_ResetLocation(int npc)
 
 {
   
@@ -54724,7 +54724,7 @@ undefined8 NPC_ResetLocation(int npc)
 // =============================================================================
 // Function: NPC_ResetLocation2 @ 0x0809B350
 // =============================================================================
-undefined8 NPC_ResetLocation2(int npc)
+u32 NPC_ResetLocation2(int npc)
 
 {
   
@@ -54737,7 +54737,7 @@ undefined8 NPC_ResetLocation2(int npc)
 // =============================================================================
 // Function: NPC_AddAffection @ 0x0809B388
 // =============================================================================
-undefined4 NPC_AddAffection(int npc,int amount)
+void NPC_AddAffection(int npc,int amount)
 
 {
   uint u_val1;
@@ -54756,7 +54756,7 @@ undefined4 NPC_AddAffection(int npc,int amount)
 // =============================================================================
 // Function: NPC_ReduceAffection @ 0x0809B3A4
 // =============================================================================
-undefined4 NPC_ReduceAffection(undefined4 npc,int amount)
+void NPC_ReduceAffection(undefined4 npc,int amount)
 
 {
   
@@ -54767,7 +54767,7 @@ undefined4 NPC_ReduceAffection(undefined4 npc,int amount)
 // =============================================================================
 // Function: NPC_DailyAffectionDecay @ 0x0809B3C8
 // =============================================================================
-undefined4 NPC_DailyAffectionDecay(int npc,char amount)
+void NPC_DailyAffectionDecay(int npc,char amount)
 
 {
   char c_char1;
@@ -54801,7 +54801,7 @@ undefined4 NPC_DailyAffectionDecay(int npc,char amount)
 // =============================================================================
 // Function: Animal_Routine_0809B454 @ 0x0809B454
 // =============================================================================
-undefined8 Animal_Routine_0809B454(int animal)
+u32 Animal_Routine_0809B454(int animal)
 
 {
   ushort u_val1;
@@ -54820,7 +54820,7 @@ undefined8 Animal_Routine_0809B454(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809B4A4 @ 0x0809B4A4
 // =============================================================================
-undefined8 Animal_Routine_0809B4A4(int animal,undefined4 amount,undefined4 food_type,byte out_stat)
+u32 Animal_Routine_0809B4A4(int animal,undefined4 amount,undefined4 food_type,byte out_stat)
 
 {
   ushort u_val1;
@@ -54838,7 +54838,7 @@ undefined8 Animal_Routine_0809B4A4(int animal,undefined4 amount,undefined4 food_
 // =============================================================================
 // Function: Animal_Routine_0809B538 @ 0x0809B538
 // =============================================================================
-undefined8 Animal_Routine_0809B538(undefined4 animal)
+u32 Animal_Routine_0809B538(undefined4 animal)
 
 {
   char c_char1;
@@ -54873,7 +54873,7 @@ undefined8 Animal_Routine_0809B538(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0809B57C @ 0x0809B57C
 // =============================================================================
-undefined4 Animal_Routine_0809B57C(int animal,int amount)
+void Animal_Routine_0809B57C(int animal,int amount)
 
 {
   uint u_val1;
@@ -54917,7 +54917,7 @@ undefined4 Animal_Routine_0809B57C(int animal,int amount)
 // =============================================================================
 // Function: NPC_SetHeartEventFlag @ 0x0809B65C
 // =============================================================================
-undefined4 NPC_SetHeartEventFlag(int npc)
+void NPC_SetHeartEventFlag(int npc)
 
 {
   
@@ -54930,7 +54930,7 @@ undefined4 NPC_SetHeartEventFlag(int npc)
 // =============================================================================
 // Function: Animal_Routine_0809B674 @ 0x0809B674
 // =============================================================================
-undefined4 Animal_Routine_0809B674(int animal,byte *amount)
+void Animal_Routine_0809B674(int animal,byte *amount)
 
 {
   byte b_flag1;
@@ -55047,7 +55047,7 @@ LAB_0809b794:
 // =============================================================================
 // Function: NPC_ClearDailyFlags @ 0x0809B828
 // =============================================================================
-undefined8 NPC_ClearDailyFlags(int npc)
+u32 NPC_ClearDailyFlags(int npc)
 
 {
   
@@ -55063,7 +55063,7 @@ undefined8 NPC_ClearDailyFlags(int npc)
 // =============================================================================
 // Function: NPC_ClearDailyFlags2 @ 0x0809B870
 // =============================================================================
-undefined8 NPC_ClearDailyFlags2(int npc)
+u32 NPC_ClearDailyFlags2(int npc)
 
 {
   
@@ -55079,7 +55079,7 @@ undefined8 NPC_ClearDailyFlags2(int npc)
 // =============================================================================
 // Function: Animal_Routine_0809B8BC @ 0x0809B8BC
 // =============================================================================
-undefined8 Animal_Routine_0809B8BC(int animal)
+u32 Animal_Routine_0809B8BC(int animal)
 
 {
   uint u_val1;
@@ -55096,7 +55096,7 @@ undefined8 Animal_Routine_0809B8BC(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809B8D4 @ 0x0809B8D4
 // =============================================================================
-undefined8 Animal_Routine_0809B8D4(int animal)
+u32 Animal_Routine_0809B8D4(int animal)
 
 {
   uint u_val1;
@@ -55113,7 +55113,7 @@ undefined8 Animal_Routine_0809B8D4(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809B8F0 @ 0x0809B8F0
 // =============================================================================
-undefined4 Animal_Routine_0809B8F0(void)
+void Animal_Routine_0809B8F0(void)
 
 {
   
@@ -55124,7 +55124,7 @@ undefined4 Animal_Routine_0809B8F0(void)
 // =============================================================================
 // Function: NPC_SetScheduleFlags @ 0x0809B970
 // =============================================================================
-undefined4 NPC_SetScheduleFlags(int npc)
+void NPC_SetScheduleFlags(int npc)
 
 {
   byte b_flag1;
@@ -55155,7 +55155,7 @@ undefined4 NPC_SetScheduleFlags(int npc)
 // =============================================================================
 // Function: NPC_InitScheduleWaypoint @ 0x0809B9D4
 // =============================================================================
-undefined8 NPC_InitScheduleWaypoint(int npc,undefined4 amount)
+u32 NPC_InitScheduleWaypoint(int npc,undefined4 amount)
 
 {
   ushort u_val1;
@@ -55184,7 +55184,7 @@ undefined8 NPC_InitScheduleWaypoint(int npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_UpdateScheduleWaypoint @ 0x0809BA8C
 // =============================================================================
-undefined8 NPC_UpdateScheduleWaypoint(int npc)
+u32 NPC_UpdateScheduleWaypoint(int npc)
 
 {
   ushort u_val1;
@@ -55225,7 +55225,7 @@ void Animal_Routine_0809BB34(void)
 // =============================================================================
 // Function: Animal_Routine_0809BBA8 @ 0x0809BBA8
 // =============================================================================
-undefined4 Animal_Routine_0809BBA8(int animal)
+void Animal_Routine_0809BBA8(int animal)
 
 {
   byte *pbVar1;
@@ -55239,7 +55239,7 @@ undefined4 Animal_Routine_0809BBA8(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BBD0 @ 0x0809BBD0
 // =============================================================================
-undefined8 Animal_Routine_0809BBD0(int animal)
+u32 Animal_Routine_0809BBD0(int animal)
 
 {
   
@@ -55253,7 +55253,7 @@ undefined8 Animal_Routine_0809BBD0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BBF0 @ 0x0809BBF0
 // =============================================================================
-undefined8 Animal_Routine_0809BBF0(int animal)
+u32 Animal_Routine_0809BBF0(int animal)
 
 {
   
@@ -55279,7 +55279,7 @@ void Animal_Routine_0809BC10(void)
 // =============================================================================
 // Function: Animal_Routine_0809BC48 @ 0x0809BC48
 // =============================================================================
-undefined4 Animal_Routine_0809BC48(int animal)
+void Animal_Routine_0809BC48(int animal)
 
 {
   
@@ -55293,7 +55293,7 @@ undefined4 Animal_Routine_0809BC48(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BC64 @ 0x0809BC64
 // =============================================================================
-undefined8 Animal_Routine_0809BC64(int animal)
+u32 Animal_Routine_0809BC64(int animal)
 
 {
   
@@ -55307,7 +55307,7 @@ undefined8 Animal_Routine_0809BC64(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BC8C @ 0x0809BC8C
 // =============================================================================
-undefined8 Animal_Routine_0809BC8C(int animal)
+u32 Animal_Routine_0809BC8C(int animal)
 
 {
   
@@ -55321,7 +55321,7 @@ undefined8 Animal_Routine_0809BC8C(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BCAC @ 0x0809BCAC
 // =============================================================================
-undefined8 Animal_Routine_0809BCAC(void)
+u32 Animal_Routine_0809BCAC(void)
 
 {
   uint u_val1;
@@ -55333,7 +55333,7 @@ undefined8 Animal_Routine_0809BCAC(void)
 // =============================================================================
 // Function: Chicken_GetAffection @ 0x0809BCC0
 // =============================================================================
-undefined8 Chicken_GetAffection(undefined4 chicken)
+u32 Chicken_GetAffection(undefined4 chicken)
 
 {
   char c_char1;
@@ -55352,7 +55352,7 @@ undefined8 Chicken_GetAffection(undefined4 chicken)
 // =============================================================================
 // Function: Animal_Routine_0809BCF0 @ 0x0809BCF0
 // =============================================================================
-undefined4 Animal_Routine_0809BCF0(void)
+void Animal_Routine_0809BCF0(void)
 
 {
   
@@ -55363,7 +55363,7 @@ undefined4 Animal_Routine_0809BCF0(void)
 // =============================================================================
 // Function: Animal_Routine_0809BCFC @ 0x0809BCFC
 // =============================================================================
-undefined8 Animal_Routine_0809BCFC(void)
+u32 Animal_Routine_0809BCFC(void)
 
 {
   int i_val1;
@@ -55385,7 +55385,7 @@ undefined8 Animal_Routine_0809BCFC(void)
 // =============================================================================
 // Function: Animal_Routine_0809BD38 @ 0x0809BD38
 // =============================================================================
-undefined4 Animal_Routine_0809BD38(undefined4 animal)
+void Animal_Routine_0809BD38(undefined4 animal)
 
 {
   
@@ -55396,7 +55396,7 @@ undefined4 Animal_Routine_0809BD38(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0809BD48 @ 0x0809BD48
 // =============================================================================
-undefined8 Animal_Routine_0809BD48(int animal)
+u32 Animal_Routine_0809BD48(int animal)
 
 {
   
@@ -55408,7 +55408,7 @@ undefined8 Animal_Routine_0809BD48(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BD70 @ 0x0809BD70
 // =============================================================================
-undefined8 Animal_Routine_0809BD70(int animal)
+u32 Animal_Routine_0809BD70(int animal)
 
 {
   
@@ -55420,7 +55420,7 @@ undefined8 Animal_Routine_0809BD70(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BD90 @ 0x0809BD90
 // =============================================================================
-undefined8 Animal_Routine_0809BD90(undefined4 animal)
+u32 Animal_Routine_0809BD90(undefined4 animal)
 
 {
   uint u_val1;
@@ -55444,7 +55444,7 @@ undefined8 Animal_Routine_0809BD90(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0809BDC0 @ 0x0809BDC0
 // =============================================================================
-undefined8 Animal_Routine_0809BDC0(int animal)
+u32 Animal_Routine_0809BDC0(int animal)
 
 {
   char c_char1;
@@ -55464,7 +55464,7 @@ undefined8 Animal_Routine_0809BDC0(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BE08 @ 0x0809BE08
 // =============================================================================
-undefined8 Animal_Routine_0809BE08(undefined4 animal)
+u32 Animal_Routine_0809BE08(undefined4 animal)
 
 {
   char c_char1;
@@ -55483,7 +55483,7 @@ undefined8 Animal_Routine_0809BE08(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0809BE44 @ 0x0809BE44
 // =============================================================================
-undefined8 Animal_Routine_0809BE44(int animal)
+u32 Animal_Routine_0809BE44(int animal)
 
 {
   int i_val1;
@@ -55506,7 +55506,7 @@ undefined8 Animal_Routine_0809BE44(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BE74 @ 0x0809BE74
 // =============================================================================
-undefined4 Animal_Routine_0809BE74(int animal)
+void Animal_Routine_0809BE74(int animal)
 
 {
   
@@ -55518,7 +55518,7 @@ undefined4 Animal_Routine_0809BE74(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BE94 @ 0x0809BE94
 // =============================================================================
-undefined8 Animal_Routine_0809BE94(int animal)
+u32 Animal_Routine_0809BE94(int animal)
 
 {
   
@@ -55530,7 +55530,7 @@ undefined8 Animal_Routine_0809BE94(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BEBC @ 0x0809BEBC
 // =============================================================================
-undefined8 Animal_Routine_0809BEBC(int animal)
+u32 Animal_Routine_0809BEBC(int animal)
 
 {
   
@@ -55542,7 +55542,7 @@ undefined8 Animal_Routine_0809BEBC(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BEDC @ 0x0809BEDC
 // =============================================================================
-undefined8 Animal_Routine_0809BEDC(undefined4 animal)
+u32 Animal_Routine_0809BEDC(undefined4 animal)
 
 {
   uint u_val1;
@@ -55563,7 +55563,7 @@ undefined8 Animal_Routine_0809BEDC(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0809BF00 @ 0x0809BF00
 // =============================================================================
-undefined8 Animal_Routine_0809BF00(int animal)
+u32 Animal_Routine_0809BF00(int animal)
 
 {
   uint u_val1;
@@ -55578,7 +55578,7 @@ undefined8 Animal_Routine_0809BF00(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BF18 @ 0x0809BF18
 // =============================================================================
-undefined8 Animal_Routine_0809BF18(undefined4 animal)
+u32 Animal_Routine_0809BF18(undefined4 animal)
 
 {
   char c_char1;
@@ -55597,7 +55597,7 @@ undefined8 Animal_Routine_0809BF18(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0809BF48 @ 0x0809BF48
 // =============================================================================
-undefined8 Animal_Routine_0809BF48(undefined4 animal)
+u32 Animal_Routine_0809BF48(undefined4 animal)
 
 {
   char c_char1;
@@ -55617,7 +55617,7 @@ undefined8 Animal_Routine_0809BF48(undefined4 animal)
 // =============================================================================
 // Function: Animal_Routine_0809BF84 @ 0x0809BF84
 // =============================================================================
-undefined8 Animal_Routine_0809BF84(int animal)
+u32 Animal_Routine_0809BF84(int animal)
 
 {
   int i_val1;
@@ -55640,7 +55640,7 @@ undefined8 Animal_Routine_0809BF84(int animal)
 // =============================================================================
 // Function: Animal_Routine_0809BFB4 @ 0x0809BFB4
 // =============================================================================
-undefined4 Animal_Routine_0809BFB4(int animal)
+void Animal_Routine_0809BFB4(int animal)
 
 {
   byte b_flag1;

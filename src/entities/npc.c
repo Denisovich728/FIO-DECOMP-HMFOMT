@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: NPC_UpdateSchedule @ 0x0809BFE8
 // =============================================================================
-undefined8 NPC_UpdateSchedule(int npc)
+u32 NPC_UpdateSchedule(int npc)
 
 {
   ushort u_val1;
@@ -34,7 +34,7 @@ undefined8 NPC_UpdateSchedule(int npc)
 // =============================================================================
 // Function: NPC_ReduceMood @ 0x0809C068
 // =============================================================================
-undefined4 NPC_ReduceMood(int npc,int amount)
+void NPC_ReduceMood(int npc,int amount)
 
 {
   
@@ -52,7 +52,7 @@ undefined4 NPC_ReduceMood(int npc,int amount)
 // =============================================================================
 // Function: NPC_ResetScheduleWaypoint @ 0x0809C0D4
 // =============================================================================
-undefined4 NPC_ResetScheduleWaypoint(int npc)
+void NPC_ResetScheduleWaypoint(int npc)
 
 {
   ushort u_val1;
@@ -97,7 +97,7 @@ void NPC_ClearWaypoints(undefined1 *npc)
 // =============================================================================
 // Function: NPC_EvaluateGiftReaction @ 0x0809C160
 // =============================================================================
-undefined8 NPC_EvaluateGiftReaction(undefined4 npc,undefined4 amount,undefined4 *extra_arg)
+u32 NPC_EvaluateGiftReaction(undefined4 npc,undefined4 amount,undefined4 *extra_arg)
 
 {
   int item_id;
@@ -203,7 +203,7 @@ LAB_0809c226:
 // =============================================================================
 // Function: NPC_Routine_0809C22C @ 0x0809C22C
 // =============================================================================
-undefined8 NPC_Routine_0809C22C(undefined4 npc,int amount,undefined4 extra_arg,undefined4 out_data)
+u32 NPC_Routine_0809C22C(undefined4 npc,int amount,undefined4 extra_arg,undefined4 out_data)
 
 {
   undefined4 u_val1;
@@ -261,7 +261,7 @@ undefined8 NPC_Routine_0809C22C(undefined4 npc,int amount,undefined4 extra_arg,u
 // =============================================================================
 // Function: NPC_IsCurrentTaskActive @ 0x0809C304
 // =============================================================================
-undefined8 NPC_IsCurrentTaskActive(int npc)
+u32 NPC_IsCurrentTaskActive(int npc)
 
 {
   int i_val1;
@@ -273,7 +273,7 @@ undefined8 NPC_IsCurrentTaskActive(int npc)
 // =============================================================================
 // Function: NPC_IsCurrentTaskCompleted @ 0x0809C318
 // =============================================================================
-undefined8 NPC_IsCurrentTaskCompleted(int npc)
+u32 NPC_IsCurrentTaskCompleted(int npc)
 
 {
   int i_val1;
@@ -285,7 +285,7 @@ undefined8 NPC_IsCurrentTaskCompleted(int npc)
 // =============================================================================
 // Function: NPC_AreAllTasksCompleted @ 0x0809C32C
 // =============================================================================
-undefined8 NPC_AreAllTasksCompleted(byte *npc)
+u32 NPC_AreAllTasksCompleted(byte *npc)
 
 {
   uint u_val1;
@@ -304,7 +304,7 @@ undefined8 NPC_AreAllTasksCompleted(byte *npc)
 // =============================================================================
 // Function: NPC_AreAllTasksActive @ 0x0809C38C
 // =============================================================================
-undefined8 NPC_AreAllTasksActive(int npc)
+u32 NPC_AreAllTasksActive(int npc)
 
 {
   uint u_val1;
@@ -321,7 +321,7 @@ undefined8 NPC_AreAllTasksActive(int npc)
 // =============================================================================
 // Function: NPC_StartCurrentTask @ 0x0809C3BC
 // =============================================================================
-undefined4 NPC_StartCurrentTask(int npc)
+void NPC_StartCurrentTask(int npc)
 
 {
   int i_val1;
@@ -337,7 +337,7 @@ undefined4 NPC_StartCurrentTask(int npc)
 // =============================================================================
 // Function: NPC_UpdateTaskTimer @ 0x0809C3E0
 // =============================================================================
-undefined8 NPC_UpdateTaskTimer(int npc,int amount)
+u32 NPC_UpdateTaskTimer(int npc,int amount)
 
 {
   byte b_flag1;
@@ -363,7 +363,7 @@ undefined8 NPC_UpdateTaskTimer(int npc,int amount)
 // =============================================================================
 // Function: NPC_ResetTaskTimer @ 0x0809C420
 // =============================================================================
-undefined4 NPC_ResetTaskTimer(int npc,int amount)
+void NPC_ResetTaskTimer(int npc,int amount)
 
 {
   
@@ -376,7 +376,7 @@ undefined4 NPC_ResetTaskTimer(int npc,int amount)
 // =============================================================================
 // Function: NPC_CheckTaskStatus @ 0x0809C444
 // =============================================================================
-undefined8 NPC_CheckTaskStatus(int npc)
+u32 NPC_CheckTaskStatus(int npc)
 
 {
   int i_val1;
@@ -394,7 +394,7 @@ undefined8 NPC_CheckTaskStatus(int npc)
 // =============================================================================
 // Function: NPC_StepTaskState @ 0x0809C474
 // =============================================================================
-undefined8 NPC_StepTaskState(int npc)
+u32 NPC_StepTaskState(int npc)
 
 {
   int i_val1;
@@ -417,7 +417,7 @@ undefined8 NPC_StepTaskState(int npc)
 // =============================================================================
 // Function: NPC_CompleteTaskState @ 0x0809C4B4
 // =============================================================================
-undefined8 NPC_CompleteTaskState(int npc)
+u32 NPC_CompleteTaskState(int npc)
 
 {
   int i_val1;
@@ -435,7 +435,7 @@ undefined8 NPC_CompleteTaskState(int npc)
 // =============================================================================
 // Function: NPC_CheckEventFlag @ 0x0809C4EC
 // =============================================================================
-ulonglong NPC_CheckEventFlag(uint *npc,uint amount)
+u32 NPC_CheckEventFlag(uint *npc,uint amount)
 
 {
   uint u_val1;
@@ -451,7 +451,7 @@ ulonglong NPC_CheckEventFlag(uint *npc,uint amount)
 // =============================================================================
 // Function: NPC_GetEventWaypoint @ 0x0809C510
 // =============================================================================
-undefined8 NPC_GetEventWaypoint(undefined4 *npc,uint *amount,uint extra_arg,char out_data)
+u32 NPC_GetEventWaypoint(undefined4 *npc,uint *amount,uint extra_arg,char out_data)
 
 {
   byte mood_byte;
@@ -504,7 +504,7 @@ LAB_0809c5a6:
 // =============================================================================
 // Function: NPC_SetEventFlag @ 0x0809C5B4
 // =============================================================================
-undefined4 NPC_SetEventFlag(uint *npc,uint amount)
+void NPC_SetEventFlag(uint *npc,uint amount)
 
 {
   
@@ -517,7 +517,7 @@ undefined4 NPC_SetEventFlag(uint *npc,uint amount)
 // =============================================================================
 // Function: NPC_ClearEventFlag @ 0x0809C5D0
 // =============================================================================
-undefined4 NPC_ClearEventFlag(uint *npc,uint amount)
+void NPC_ClearEventFlag(uint *npc,uint amount)
 
 {
   
@@ -530,7 +530,7 @@ undefined4 NPC_ClearEventFlag(uint *npc,uint amount)
 // =============================================================================
 // Function: NPC_EventQueue_Push @ 0x0809C600
 // =============================================================================
-undefined4 NPC_EventQueue_Push(uint *npc,undefined2 amount)
+void NPC_EventQueue_Push(uint *npc,undefined2 amount)
 
 {
   int i_val1;
@@ -555,7 +555,7 @@ undefined4 NPC_EventQueue_Push(uint *npc,undefined2 amount)
 // =============================================================================
 // Function: NPC_EventQueue_Remove @ 0x0809C644
 // =============================================================================
-undefined4 NPC_EventQueue_Remove(int *npc,undefined2 amount)
+void NPC_EventQueue_Remove(int *npc,undefined2 amount)
 
 {
   int i_val1;
@@ -580,7 +580,7 @@ undefined4 NPC_EventQueue_Remove(int *npc,undefined2 amount)
 // =============================================================================
 // Function: NPC_Routine_0809C694 @ 0x0809C694
 // =============================================================================
-undefined8 NPC_Routine_0809C694(int npc,short amount)
+u32 NPC_Routine_0809C694(int npc,short amount)
 
 {
   
@@ -590,7 +590,7 @@ undefined8 NPC_Routine_0809C694(int npc,short amount)
 // =============================================================================
 // Function: NPC_ResetData @ 0x0809C6BC
 // =============================================================================
-undefined8 NPC_ResetData(undefined4 *npc)
+u32 NPC_ResetData(undefined4 *npc)
 
 {
   ushort u_val1;
@@ -786,7 +786,7 @@ void NPC_Routine_0809CD78(undefined4 *npc)
 // =============================================================================
 // Function: Shipping_RecordShippedItemCount @ 0x0809CD98
 // =============================================================================
-undefined8 Shipping_RecordShippedItemCount(int records,int item_id,uint count)
+u32 Shipping_RecordShippedItemCount(int records,int item_id,uint count)
 
 {
   uint *p_uint1;
@@ -808,7 +808,7 @@ undefined8 Shipping_RecordShippedItemCount(int records,int item_id,uint count)
 // =============================================================================
 // Function: Shipping_AreAllCropsShipped @ 0x0809CDCC
 // =============================================================================
-undefined8 Shipping_AreAllCropsShipped(int records)
+u32 Shipping_AreAllCropsShipped(int records)
 
 {
   int *p_int1;
@@ -831,7 +831,7 @@ undefined8 Shipping_AreAllCropsShipped(int records)
 // =============================================================================
 // Function: Shipping_CalculateTotalFarmShippedValue @ 0x0809CDEC
 // =============================================================================
-undefined8 Shipping_CalculateTotalFarmShippedValue(int records)
+u32 Shipping_CalculateTotalFarmShippedValue(int records)
 
 {
   int *p_int1;
@@ -855,7 +855,7 @@ undefined8 Shipping_CalculateTotalFarmShippedValue(int records)
 // =============================================================================
 // Function: Shipping_GetItemCategoryFlag @ 0x0809CE30
 // =============================================================================
-undefined8 Shipping_GetItemCategoryFlag(undefined4 records,int item_id)
+u32 Shipping_GetItemCategoryFlag(undefined4 records,int item_id)
 
 {
   undefined4 u_val1;
@@ -888,7 +888,7 @@ case_0809CE60:
 // =============================================================================
 // Function: Field_ClearPlotGrid @ 0x0809CE8C
 // =============================================================================
-undefined8 Field_ClearPlotGrid(undefined4 *field)
+u32 Field_ClearPlotGrid(undefined4 *field)
 
 {
   undefined4 u_val1;
@@ -1069,7 +1069,7 @@ NPC_Routine_0809CF34(uint *npc,undefined4 *amount,int extra_arg,int out_data,und
 // =============================================================================
 // Function: NPC_Routine_0809D168 @ 0x0809D168
 // =============================================================================
-undefined4 NPC_Routine_0809D168(int npc,undefined4 amount,int extra_arg,byte *out_data)
+void NPC_Routine_0809D168(int npc,undefined4 amount,int extra_arg,byte *out_data)
 
 {
   int i_val1;
@@ -1214,7 +1214,7 @@ LAB_0809d2d0:
 // =============================================================================
 // Function: NPC_Routine_0809D418 @ 0x0809D418
 // =============================================================================
-undefined8 NPC_Routine_0809D418(undefined4 npc,uint amount)
+u32 NPC_Routine_0809D418(undefined4 npc,uint amount)
 
 {
   int i_val1;
@@ -1263,7 +1263,7 @@ undefined8 NPC_Routine_0809D418(undefined4 npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_0809D470 @ 0x0809D470
 // =============================================================================
-undefined8 NPC_Routine_0809D470(undefined4 npc,uint amount)
+u32 NPC_Routine_0809D470(undefined4 npc,uint amount)
 
 {
   uint u_val1;
@@ -1323,7 +1323,7 @@ LAB_0809d4fa:
 // =============================================================================
 // Function: NPC_Routine_0809D500 @ 0x0809D500
 // =============================================================================
-undefined4 NPC_Routine_0809D500(int npc,undefined4 amount,int extra_arg,byte *out_data)
+void NPC_Routine_0809D500(int npc,undefined4 amount,int extra_arg,byte *out_data)
 
 {
   bool b_flag1;
@@ -1470,7 +1470,7 @@ LAB_0809d660:
 // =============================================================================
 // Function: NPC_Routine_0809D79C @ 0x0809D79C
 // =============================================================================
-undefined8 NPC_Routine_0809D79C(undefined4 npc,uint amount)
+u32 NPC_Routine_0809D79C(undefined4 npc,uint amount)
 
 {
   uint u_val1;
@@ -1503,7 +1503,7 @@ LAB_0809d7d2:
 // =============================================================================
 // Function: NPC_Routine_0809D7D8 @ 0x0809D7D8
 // =============================================================================
-undefined8 NPC_Routine_0809D7D8(undefined4 npc,uint amount)
+u32 NPC_Routine_0809D7D8(undefined4 npc,uint amount)
 
 {
   int i_val1;
@@ -1604,7 +1604,7 @@ LAB_0809d89a:
 // =============================================================================
 // Function: NPC_Routine_0809D8A4 @ 0x0809D8A4
 // =============================================================================
-undefined8 NPC_Routine_0809D8A4(int *npc)
+u32 NPC_Routine_0809D8A4(int *npc)
 
 {
   undefined4 u_val1;
@@ -1619,7 +1619,7 @@ undefined8 NPC_Routine_0809D8A4(int *npc)
 // =============================================================================
 // Function: NPC_Routine_0809D8B8 @ 0x0809D8B8
 // =============================================================================
-undefined8 NPC_Routine_0809D8B8(int *npc)
+u32 NPC_Routine_0809D8B8(int *npc)
 
 {
   undefined4 u_val1;
@@ -1637,7 +1637,7 @@ undefined8 NPC_Routine_0809D8B8(int *npc)
 // =============================================================================
 // Function: NPC_Routine_0809D8E8 @ 0x0809D8E8
 // =============================================================================
-undefined8 NPC_Routine_0809D8E8(int npc,int amount,int extra_arg,undefined4 out_data)
+u32 NPC_Routine_0809D8E8(int npc,int amount,int extra_arg,undefined4 out_data)
 
 {
   byte b_flag1;
@@ -1678,7 +1678,7 @@ undefined8 NPC_Routine_0809D8E8(int npc,int amount,int extra_arg,undefined4 out_
 // =============================================================================
 // Function: NPC_Routine_0809D9B4 @ 0x0809D9B4
 // =============================================================================
-undefined8 NPC_Routine_0809D9B4(int npc,int amount,int extra_arg,undefined4 out_data)
+u32 NPC_Routine_0809D9B4(int npc,int amount,int extra_arg,undefined4 out_data)
 
 {
   int i_val1;
@@ -1697,7 +1697,7 @@ undefined8 NPC_Routine_0809D9B4(int npc,int amount,int extra_arg,undefined4 out_
 // =============================================================================
 // Function: NPC_Routine_0809DA00 @ 0x0809DA00
 // =============================================================================
-undefined8 NPC_Routine_0809DA00(int npc,int amount,int extra_arg,int out_data)
+u32 NPC_Routine_0809DA00(int npc,int amount,int extra_arg,int out_data)
 
 {
   byte b_flag1;
@@ -2022,7 +2022,7 @@ case_0809DF1C:
 // =============================================================================
 // Function: NPC_Routine_0809DF2C @ 0x0809DF2C
 // =============================================================================
-undefined8 NPC_Routine_0809DF2C(undefined4 npc,int amount,int extra_arg)
+u32 NPC_Routine_0809DF2C(undefined4 npc,int amount,int extra_arg)
 
 {
   int i_val1;
@@ -2073,7 +2073,7 @@ undefined8 NPC_Routine_0809DF2C(undefined4 npc,int amount,int extra_arg)
 // =============================================================================
 // Function: NPC_Routine_0809DFAC @ 0x0809DFAC
 // =============================================================================
-undefined8 NPC_Routine_0809DFAC(int npc)
+u32 NPC_Routine_0809DFAC(int npc)
 
 {
   byte b_flag1;
@@ -2113,7 +2113,7 @@ undefined8 NPC_Routine_0809DFAC(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809E02C @ 0x0809E02C
 // =============================================================================
-undefined8 NPC_Routine_0809E02C(int npc)
+u32 NPC_Routine_0809E02C(int npc)
 
 {
   uint u_val1;
@@ -2151,7 +2151,7 @@ undefined8 NPC_Routine_0809E02C(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809E0AC @ 0x0809E0AC
 // =============================================================================
-ulonglong NPC_Routine_0809E0AC(int npc,int amount,undefined1 *extra_arg)
+u32 NPC_Routine_0809E0AC(int npc,int amount,undefined1 *extra_arg)
 
 {
   undefined1 u_val1;
@@ -2202,7 +2202,7 @@ ulonglong NPC_Routine_0809E0AC(int npc,int amount,undefined1 *extra_arg)
 // =============================================================================
 // Function: NPC_Routine_0809E118 @ 0x0809E118
 // =============================================================================
-undefined4 NPC_Routine_0809E118(int npc,int amount)
+void NPC_Routine_0809E118(int npc,int amount)
 
 {
   char *p_char1;
@@ -2264,9 +2264,9 @@ void NPC_Routine_0809E32C(undefined4 *npc,undefined4 *amount)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E370 @ 0x0809E370
+// Function: NPC_AddFriendship @ 0x0809E370
 // =============================================================================
-undefined4 NPC_Routine_0809E370(int npc,int amount)
+void NPC_AddFriendship(int npc,int amount)
 
 {
   uint u_val1;
@@ -2283,20 +2283,20 @@ undefined4 NPC_Routine_0809E370(int npc,int amount)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E38C @ 0x0809E38C
+// Function: NPC_ReduceFriendship @ 0x0809E38C
 // =============================================================================
-undefined4 NPC_Routine_0809E38C(undefined4 npc,int amount)
+void NPC_ReduceFriendship(undefined4 npc,int amount)
 
 {
   
-  NPC_Routine_0809E370(npc,-amount);
+  NPC_AddFriendship(npc,-amount);
   return;
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E39C @ 0x0809E39C
+// Function: NPC_SetTalkedToday @ 0x0809E39C
 // =============================================================================
-undefined4 NPC_Routine_0809E39C(int npc)
+void NPC_SetTalkedToday(int npc)
 
 {
   
@@ -2311,9 +2311,9 @@ undefined4 NPC_Routine_0809E39C(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E3E8 @ 0x0809E3E8
+// Function: NPC_ProcessGiftGiven @ 0x0809E3E8
 // =============================================================================
-undefined4 NPC_Routine_0809E3E8(int npc,uint amount)
+void NPC_ProcessGiftGiven(int npc,uint amount)
 
 {
   byte b_flag1;
@@ -2329,20 +2329,20 @@ undefined4 NPC_Routine_0809E3E8(int npc,uint amount)
       *(byte *)(npc + 9) = b_flag1 & 0xe0 | (char)u_val2 + 1U & 0x1f;
     }
     if (amount < 10) {
-      NPC_Routine_0809E38C(npc,1);
+      NPC_ReduceFriendship(npc,1);
     }
   }
   if ((int)((uint)*(byte *)(npc + 9) * 0x4000000) < 0) {
-    NPC_Routine_0809E370(npc,1);
+    NPC_AddFriendship(npc,1);
   }
   *(byte *)(npc + 9) = *(byte *)(npc + 9) & 0x1f;
   return;
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E458 @ 0x0809E458
+// Function: Bachelorette_ResetAffection @ 0x0809E458
 // =============================================================================
-undefined8 NPC_Routine_0809E458(int npc)
+u32 Bachelorette_ResetAffection(int npc)
 
 {
   
@@ -2355,9 +2355,9 @@ undefined8 NPC_Routine_0809E458(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E4C4 @ 0x0809E4C4
+// Function: Bachelorette_AddAffection @ 0x0809E4C4
 // =============================================================================
-undefined4 NPC_Routine_0809E4C4(int npc,int amount)
+void Bachelorette_AddAffection(int npc,int amount)
 
 {
   uint u_val1;
@@ -2374,20 +2374,20 @@ undefined4 NPC_Routine_0809E4C4(int npc,int amount)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E4E8 @ 0x0809E4E8
+// Function: Bachelorette_ReduceAffection @ 0x0809E4E8
 // =============================================================================
-undefined4 NPC_Routine_0809E4E8(undefined4 npc,int amount)
+void Bachelorette_ReduceAffection(undefined4 npc,int amount)
 
 {
   
-  NPC_Routine_0809E4C4(npc,-amount);
+  Bachelorette_AddAffection(npc,-amount);
   return;
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E4F8 @ 0x0809E4F8
+// Function: Bachelorette_IncrementTalkCount @ 0x0809E4F8
 // =============================================================================
-undefined4 NPC_Routine_0809E4F8(int npc)
+void Bachelorette_IncrementTalkCount(int npc)
 
 {
   byte b_flag1;
@@ -2400,9 +2400,9 @@ undefined4 NPC_Routine_0809E4F8(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E520 @ 0x0809E520
+// Function: Bachelorette_IncrementGiftCount @ 0x0809E520
 // =============================================================================
-undefined4 NPC_Routine_0809E520(int npc)
+void Bachelorette_IncrementGiftCount(int npc)
 
 {
   uint u_val1;
@@ -2419,7 +2419,7 @@ undefined4 NPC_Routine_0809E520(int npc)
 // =============================================================================
 // Function: Bachelorette_AddHeartPoints @ 0x0809E550
 // =============================================================================
-undefined4 Bachelorette_AddHeartPoints(int arg_1)
+void Bachelorette_AddHeartPoints(int arg_1)
 
 {
   uint u_val1;
@@ -2432,9 +2432,9 @@ undefined4 Bachelorette_AddHeartPoints(int arg_1)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E574 @ 0x0809E574
+// Function: Bachelorette_ProcessDailyAffection @ 0x0809E574
 // =============================================================================
-undefined4 NPC_Routine_0809E574(int npc,char amount,uint extra_arg)
+void Bachelorette_ProcessDailyAffection(int npc,char amount,uint extra_arg)
 
 {
   char c_char1;
@@ -2444,16 +2444,16 @@ undefined4 NPC_Routine_0809E574(int npc,char amount,uint extra_arg)
   
   c_char1 = NPC_Routine_0809E350();
   if (c_char1 != '\0') {
-    NPC_Routine_0809E4C4(npc,200);
+    Bachelorette_AddAffection(npc,200);
   }
-  NPC_Routine_0809E3E8(npc,extra_arg);
+  NPC_ProcessGiftGiven(npc,extra_arg);
   i_val2 = NPC_Routine_0809E340(npc);
   if ((i_val2 != 0) && (extra_arg < 10)) {
-    NPC_Routine_0809E4E8(npc,200);
+    Bachelorette_ReduceAffection(npc,200);
   }
   if (amount != '\0') {
     if ((*(byte *)(npc + 0x16) & 7) < 6) {
-      NPC_Routine_0809E4E8(npc,100);
+      Bachelorette_ReduceAffection(npc,100);
     }
     else {
       u_val3 = NPC_Routine_0809E340(npc);
@@ -2461,7 +2461,7 @@ undefined4 NPC_Routine_0809E574(int npc,char amount,uint extra_arg)
         u_val4 = math_rand();
         i_val2 = math_umodsi3(u_val4,100);
         if (i_val2 < 10) {
-          NPC_Routine_0809E4E8(npc,1000);
+          Bachelorette_ReduceAffection(npc,1000);
         }
       }
     }
@@ -2478,9 +2478,9 @@ undefined4 NPC_Routine_0809E574(int npc,char amount,uint extra_arg)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E628 @ 0x0809E628
+// Function: Bachelorette_ResetAffectionData @ 0x0809E628
 // =============================================================================
-undefined8 NPC_Routine_0809E628(int npc)
+u32 Bachelorette_ResetAffectionData(int npc)
 
 {
   
@@ -2497,9 +2497,9 @@ undefined8 NPC_Routine_0809E628(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E66C @ 0x0809E66C
+// Function: Bachelorette_GetStatsByte @ 0x0809E66C
 // =============================================================================
-undefined8 NPC_Routine_0809E66C(int npc,uint amount)
+u32 Bachelorette_GetStatsByte(int npc,uint amount)
 
 {
   uint u_val1;
@@ -2514,9 +2514,9 @@ undefined8 NPC_Routine_0809E66C(int npc,uint amount)
 }
 
 // =============================================================================
-// Function: NPC_Routine_0809E688 @ 0x0809E688
+// Function: Bachelorette_GetHeartStatsByte @ 0x0809E688
 // =============================================================================
-undefined8 NPC_Routine_0809E688(int npc,uint amount)
+u32 Bachelorette_GetHeartStatsByte(int npc,uint amount)
 
 {
   uint u_val1;
@@ -2533,7 +2533,7 @@ undefined8 NPC_Routine_0809E688(int npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_0809E69C @ 0x0809E69C
 // =============================================================================
-undefined4 NPC_Routine_0809E69C(int npc,uint amount,int extra_arg)
+void NPC_Routine_0809E69C(int npc,uint amount,int extra_arg)
 
 {
   uint u_val1;
@@ -2554,7 +2554,7 @@ undefined4 NPC_Routine_0809E69C(int npc,uint amount,int extra_arg)
 // =============================================================================
 // Function: NPC_Routine_0809E6C4 @ 0x0809E6C4
 // =============================================================================
-undefined4 NPC_Routine_0809E6C4(int npc,byte amount,byte extra_arg)
+void NPC_Routine_0809E6C4(int npc,byte amount,byte extra_arg)
 
 {
   
@@ -2565,7 +2565,7 @@ undefined4 NPC_Routine_0809E6C4(int npc,byte amount,byte extra_arg)
 // =============================================================================
 // Function: NPC_Routine_0809E75C @ 0x0809E75C
 // =============================================================================
-undefined4 NPC_Routine_0809E75C(int npc)
+void NPC_Routine_0809E75C(int npc)
 
 {
   byte b_flag1;
@@ -2579,7 +2579,7 @@ undefined4 NPC_Routine_0809E75C(int npc)
     if (u_val2 == 0) {
       *(byte *)(npc + 0x1a) = b_flag1 | 3;
     }
-    NPC_Routine_0809E38C(npc,2);
+    NPC_ReduceFriendship(npc,2);
   }
   return;
 }
@@ -2587,14 +2587,14 @@ undefined4 NPC_Routine_0809E75C(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809E7A0 @ 0x0809E7A0
 // =============================================================================
-undefined4 NPC_Routine_0809E7A0(int npc)
+void NPC_Routine_0809E7A0(int npc)
 
 {
   undefined4 u_val1;
   
   u_val1 = math_rand();
   u_val1 = math_umodsi3(u_val1,100);
-  NPC_Routine_0809E3E8(npc,u_val1);
+  NPC_ProcessGiftGiven(npc,u_val1);
   *(byte *)(npc + 0x1a) = *(byte *)(npc + 0x1a) & 0xdf;
   return;
 }
@@ -2602,7 +2602,7 @@ undefined4 NPC_Routine_0809E7A0(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809E804 @ 0x0809E804
 // =============================================================================
-undefined8 NPC_Routine_0809E804(int npc,uint amount)
+u32 NPC_Routine_0809E804(int npc,uint amount)
 
 {
   byte b_flag1;
@@ -2641,7 +2641,7 @@ undefined8 NPC_Routine_0809E804(int npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_0809E8E4 @ 0x0809E8E4
 // =============================================================================
-undefined8 NPC_Routine_0809E8E4(uint *npc,uint *amount)
+u32 NPC_Routine_0809E8E4(uint *npc,uint *amount)
 
 {
   undefined4 u_val1;
@@ -2693,7 +2693,7 @@ case_0809E960:
 // =============================================================================
 // Function: NPC_Routine_0809E968 @ 0x0809E968
 // =============================================================================
-undefined8 NPC_Routine_0809E968(int npc,undefined4 amount)
+u32 NPC_Routine_0809E968(int npc,undefined4 amount)
 
 {
   uint u_val1;
@@ -2706,7 +2706,7 @@ undefined8 NPC_Routine_0809E968(int npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_0809E994 @ 0x0809E994
 // =============================================================================
-undefined8 NPC_Routine_0809E994(int npc,int amount)
+u32 NPC_Routine_0809E994(int npc,int amount)
 
 {
   uint *p_uint1;
@@ -2723,7 +2723,7 @@ undefined8 NPC_Routine_0809E994(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_0809E9B8 @ 0x0809E9B8
 // =============================================================================
-undefined8 NPC_Routine_0809E9B8(int npc)
+u32 NPC_Routine_0809E9B8(int npc)
 
 {
   ushort u_val1;
@@ -2783,7 +2783,7 @@ void NPC_Routine_0809EA6C(int npc,undefined1 *amount,undefined4 extra_arg)
 // =============================================================================
 // Function: NPC_Routine_0809EAF8 @ 0x0809EAF8
 // =============================================================================
-undefined4 NPC_Routine_0809EAF8(int npc)
+void NPC_Routine_0809EAF8(int npc)
 
 {
   char c_char1;
@@ -2791,7 +2791,7 @@ undefined4 NPC_Routine_0809EAF8(int npc)
   
   u_val2 = math_rand();
   u_val2 = math_umodsi3(u_val2,100);
-  NPC_Routine_0809E3E8(npc,u_val2);
+  NPC_ProcessGiftGiven(npc,u_val2);
   c_char1 = *(char *)(npc + 0x25);
   if (c_char1 != -1) {
     *(char *)(npc + 0x25) = c_char1 + '\x01';
@@ -2802,7 +2802,7 @@ undefined4 NPC_Routine_0809EAF8(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809EB20 @ 0x0809EB20
 // =============================================================================
-undefined4 NPC_Routine_0809EB20(int npc,undefined4 amount)
+void NPC_Routine_0809EB20(int npc,undefined4 amount)
 
 {
   uint u_val1;
@@ -2819,7 +2819,7 @@ undefined4 NPC_Routine_0809EB20(int npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_0809EB4C @ 0x0809EB4C
 // =============================================================================
-undefined8 NPC_Routine_0809EB4C(int npc)
+u32 NPC_Routine_0809EB4C(int npc)
 
 {
   
@@ -2832,7 +2832,7 @@ undefined8 NPC_Routine_0809EB4C(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809EB70 @ 0x0809EB70
 // =============================================================================
-undefined8 NPC_Routine_0809EB70(int npc)
+u32 NPC_Routine_0809EB70(int npc)
 
 {
   undefined4 u_val1;
@@ -2847,7 +2847,7 @@ undefined8 NPC_Routine_0809EB70(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809EB8C @ 0x0809EB8C
 // =============================================================================
-undefined8 NPC_Routine_0809EB8C(int npc)
+u32 NPC_Routine_0809EB8C(int npc)
 
 {
   byte b_flag1;
@@ -2864,7 +2864,7 @@ undefined8 NPC_Routine_0809EB8C(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809EBEC @ 0x0809EBEC
 // =============================================================================
-undefined4 NPC_Routine_0809EBEC(int npc)
+void NPC_Routine_0809EBEC(int npc)
 
 {
   byte b_flag1;
@@ -2872,7 +2872,7 @@ undefined4 NPC_Routine_0809EBEC(int npc)
   
   u_val2 = math_rand();
   u_val2 = math_umodsi3(u_val2,100);
-  NPC_Routine_0809E3E8(npc,u_val2);
+  NPC_ProcessGiftGiven(npc,u_val2);
   b_flag1 = *(byte *)(npc + 0x14);
   if ((char)b_flag1 < '\0') {
     *(byte *)(npc + 0x14) = b_flag1 & 0x7f;
@@ -2887,7 +2887,7 @@ undefined4 NPC_Routine_0809EBEC(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809EC48 @ 0x0809EC48
 // =============================================================================
-undefined4 NPC_Routine_0809EC48(int npc)
+void NPC_Routine_0809EC48(int npc)
 
 {
   byte b_flag1;
@@ -2913,7 +2913,7 @@ LAB_0809ec80:
 // =============================================================================
 // Function: NPC_Routine_0809EC90 @ 0x0809EC90
 // =============================================================================
-undefined8 NPC_Routine_0809EC90(int npc)
+u32 NPC_Routine_0809EC90(int npc)
 
 {
   
@@ -2927,7 +2927,7 @@ undefined8 NPC_Routine_0809EC90(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809ECE0 @ 0x0809ECE0
 // =============================================================================
-undefined8 NPC_Routine_0809ECE0(int npc)
+u32 NPC_Routine_0809ECE0(int npc)
 
 {
   undefined4 u_val1;
@@ -2942,7 +2942,7 @@ undefined8 NPC_Routine_0809ECE0(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809ED04 @ 0x0809ED04
 // =============================================================================
-undefined8 NPC_Routine_0809ED04(int npc)
+u32 NPC_Routine_0809ED04(int npc)
 
 {
   byte b_flag1;
@@ -3072,7 +3072,7 @@ case_0809EE12:
 // =============================================================================
 // Function: NPC_Routine_0809EE20 @ 0x0809EE20
 // =============================================================================
-undefined4 NPC_Routine_0809EE20(int npc,byte amount,ushort extra_arg)
+void NPC_Routine_0809EE20(int npc,byte amount,ushort extra_arg)
 
 {
   
@@ -3085,7 +3085,7 @@ undefined4 NPC_Routine_0809EE20(int npc,byte amount,ushort extra_arg)
 // =============================================================================
 // Function: NPC_Routine_0809EE4C @ 0x0809EE4C
 // =============================================================================
-undefined4 NPC_Routine_0809EE4C(int npc)
+void NPC_Routine_0809EE4C(int npc)
 
 {
   ushort u_val1;
@@ -3093,7 +3093,7 @@ undefined4 NPC_Routine_0809EE4C(int npc)
   
   u_val2 = math_rand();
   u_val2 = math_umodsi3(u_val2,100);
-  NPC_Routine_0809E3E8(npc,u_val2);
+  NPC_ProcessGiftGiven(npc,u_val2);
   u_val1 = *(ushort *)(npc + 0x14);
   if ((u_val1 & 0x1c0) != 0) {
     *(ushort *)(npc + 0x14) =
@@ -3105,7 +3105,7 @@ undefined4 NPC_Routine_0809EE4C(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809EE8C @ 0x0809EE8C
 // =============================================================================
-undefined8 NPC_Routine_0809EE8C(int npc)
+u32 NPC_Routine_0809EE8C(int npc)
 
 {
   
@@ -3118,7 +3118,7 @@ undefined8 NPC_Routine_0809EE8C(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809EEA4 @ 0x0809EEA4
 // =============================================================================
-undefined8 NPC_Routine_0809EEA4(int npc,uint amount)
+u32 NPC_Routine_0809EEA4(int npc,uint amount)
 
 {
   undefined4 u_val1;
@@ -3136,7 +3136,7 @@ undefined8 NPC_Routine_0809EEA4(int npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_0809EED0 @ 0x0809EED0
 // =============================================================================
-undefined8 NPC_Routine_0809EED0(int npc)
+u32 NPC_Routine_0809EED0(int npc)
 
 {
   char c_char1;
@@ -3151,7 +3151,7 @@ undefined8 NPC_Routine_0809EED0(int npc)
 // =============================================================================
 // Function: NPC_Routine_0809EEE8 @ 0x0809EEE8
 // =============================================================================
-undefined8 NPC_Routine_0809EEE8(uint *npc)
+u32 NPC_Routine_0809EEE8(uint *npc)
 
 {
   ushort *p_uint1;
@@ -3221,7 +3221,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   gba_memcpy(p_uint2,p_uint1,6);
   (&stack0x00000006)[i_val4] = 0;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E458(npc + 0x26,p_uint2);
+  Bachelorette_ResetAffection(npc + 0x26,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000018 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000019)[i_val4] = (&stack0x00000019)[i_val4] & 3;
@@ -3320,7 +3320,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   gba_memcpy(p_uint2,p_uint1,6);
   (&stack0x00000096)[i_val4] = 0;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E458(npc + 0x55,p_uint2);
+  Bachelorette_ResetAffection(npc + 0x55,p_uint2);
   p_uint1 = (ushort *)(&stack0x000000a8 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x000000a9)[i_val4] = (&stack0x000000a9)[i_val4] & 3;
@@ -3397,7 +3397,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000106)[i_val4] = 0;
   p_uint2 = &stack0x00000100 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E458(npc + 0x79,p_uint2);
+  Bachelorette_ResetAffection(npc + 0x79,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000118 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000119)[i_val4] = (&stack0x00000119)[i_val4] & 3;
@@ -3419,7 +3419,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000126)[i_val4] = 0;
   p_uint2 = &stack0x00000120 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E458(npc + 0x84,p_uint2);
+  Bachelorette_ResetAffection(npc + 0x84,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000138 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000139)[i_val4] = (&stack0x00000139)[i_val4] & 3;
@@ -3463,7 +3463,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000166)[i_val4] = 0;
   p_uint2 = &stack0x00000160 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E458(npc + 0x99,p_uint2);
+  Bachelorette_ResetAffection(npc + 0x99,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000178 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000179)[i_val4] = (&stack0x00000179)[i_val4] & 3;
@@ -3529,7 +3529,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x000001c6)[i_val4] = 0;
   p_uint2 = &stack0x000001c0 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E458(npc + 0xb9,p_uint2);
+  Bachelorette_ResetAffection(npc + 0xb9,p_uint2);
   p_uint1 = (ushort *)(&stack0x000001d8 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x000001d9)[i_val4] = (&stack0x000001d9)[i_val4] & 3;
@@ -3574,7 +3574,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000206)[i_val4] = 0;
   p_uint2 = &stack0x00000200 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E628(npc + 0xcf,p_uint2);
+  Bachelorette_ResetAffectionData(npc + 0xcf,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000218 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000219)[i_val4] = (&stack0x00000219)[i_val4] & 3;
@@ -3585,7 +3585,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000216)[i_val4] = 0;
   p_uint2 = &stack0x00000210 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E628(npc + 0xd8,p_uint2);
+  Bachelorette_ResetAffectionData(npc + 0xd8,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000228 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000229)[i_val4] = (&stack0x00000229)[i_val4] & 3;
@@ -3596,7 +3596,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000226)[i_val4] = 0;
   p_uint2 = &stack0x00000220 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E628(npc + 0xe1,p_uint2);
+  Bachelorette_ResetAffectionData(npc + 0xe1,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000238 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000239)[i_val4] = (&stack0x00000239)[i_val4] & 3;
@@ -3607,7 +3607,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000236)[i_val4] = 0;
   p_uint2 = &stack0x00000230 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E628(npc + 0xea,p_uint2);
+  Bachelorette_ResetAffectionData(npc + 0xea,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000248 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000249)[i_val4] = (&stack0x00000249)[i_val4] & 3;
@@ -3618,7 +3618,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000246)[i_val4] = 0;
   p_uint2 = &stack0x00000240 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E628(npc + 0xf3,p_uint2);
+  Bachelorette_ResetAffectionData(npc + 0xf3,p_uint2);
   p_uint1 = (ushort *)(&stack0x00000258 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
   (&stack0x00000259)[i_val4] = (&stack0x00000259)[i_val4] & 3;
@@ -3629,7 +3629,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000256)[i_val4] = 0;
   p_uint2 = &stack0x00000250 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E628(npc + 0xfc,p_uint2);
+  Bachelorette_ResetAffectionData(npc + 0xfc,p_uint2);
   pbVar5 = (byte *)(0x414 + (int)npc);
   p_uint1 = (ushort *)(&stack0x00000268 + i_val4);
   *p_uint1 = u_val3 & *p_uint1 | 0x234;
@@ -3641,7 +3641,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
   (&stack0x00000266)[i_val4] = 0;
   p_uint2 = &stack0x00000260 + i_val4;
   gba_memcpy(p_uint2,p_uint2,8);
-  NPC_Routine_0809E628(pbVar5,p_uint2);
+  Bachelorette_ResetAffectionData(pbVar5,p_uint2);
   p_uint6 = npc + 0x10e;
   i_val7 = 6;
   do {
@@ -3657,7 +3657,7 @@ undefined8 NPC_Routine_0809EEE8(uint *npc)
 // =============================================================================
 // Function: NPC_Routine_080A0030 @ 0x080A0030
 // =============================================================================
-undefined8 NPC_Routine_080A0030(int npc,int amount)
+u32 NPC_Routine_080A0030(int npc,int amount)
 
 {
   int i_val1;
@@ -3804,7 +3804,7 @@ LAB_080a01f0:
 // =============================================================================
 // Function: NPC_Routine_080A01F8 @ 0x080A01F8
 // =============================================================================
-undefined8 NPC_Routine_080A01F8(int npc,int amount)
+u32 NPC_Routine_080A01F8(int npc,int amount)
 
 {
   int i_val1;
@@ -3842,7 +3842,7 @@ LAB_080a02ac:
 // =============================================================================
 // Function: NPC_Routine_080A02B0 @ 0x080A02B0
 // =============================================================================
-undefined8 NPC_Routine_080A02B0(int npc,int amount)
+u32 NPC_Routine_080A02B0(int npc,int amount)
 
 {
   int i_val1;
@@ -3884,7 +3884,7 @@ LAB_080a02e8:
 // =============================================================================
 // Function: NPC_Routine_080A031C @ 0x080A031C
 // =============================================================================
-undefined8 NPC_Routine_080A031C(int npc,uint amount)
+u32 NPC_Routine_080A031C(int npc,uint amount)
 
 {
   int i_val1;
@@ -3926,7 +3926,7 @@ LAB_080a0350:
 // =============================================================================
 // Function: NPC_Routine_080A0384 @ 0x080A0384
 // =============================================================================
-undefined8 NPC_Routine_080A0384(int npc)
+u32 NPC_Routine_080A0384(int npc)
 
 {
   int i_val1;
@@ -3941,7 +3941,7 @@ undefined8 NPC_Routine_080A0384(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A041C @ 0x080A041C
 // =============================================================================
-undefined8 NPC_Routine_080A041C(int npc)
+u32 NPC_Routine_080A041C(int npc)
 
 {
   uint u_val1;
@@ -3990,7 +3990,7 @@ undefined8 NPC_Routine_080A041C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A0490 @ 0x080A0490
 // =============================================================================
-undefined8 NPC_Routine_080A0490(int npc)
+u32 NPC_Routine_080A0490(int npc)
 
 {
   uint u_val1;
@@ -4039,7 +4039,7 @@ undefined8 NPC_Routine_080A0490(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A0504 @ 0x080A0504
 // =============================================================================
-undefined8 NPC_Routine_080A0504(void)
+u32 NPC_Routine_080A0504(void)
 
 {
   uint u_val1;
@@ -4051,7 +4051,7 @@ undefined8 NPC_Routine_080A0504(void)
 // =============================================================================
 // Function: NPC_Routine_080A0518 @ 0x080A0518
 // =============================================================================
-undefined8 NPC_Routine_080A0518(undefined4 npc)
+u32 NPC_Routine_080A0518(undefined4 npc)
 
 {
   int i_val1;
@@ -4084,7 +4084,7 @@ case_080A056C:
 // =============================================================================
 // Function: NPC_Routine_080A05A8 @ 0x080A05A8
 // =============================================================================
-undefined8 NPC_Routine_080A05A8(int npc,int amount)
+u32 NPC_Routine_080A05A8(int npc,int amount)
 
 {
   
@@ -4122,7 +4122,7 @@ void NPC_Routine_080A05C4(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080A06B0 @ 0x080A06B0
 // =============================================================================
-undefined8 NPC_Routine_080A06B0(int npc,int amount)
+u32 NPC_Routine_080A06B0(int npc,int amount)
 
 {
   int i_val1;
@@ -4269,7 +4269,7 @@ LAB_080a0870:
 // =============================================================================
 // Function: NPC_Routine_080A0878 @ 0x080A0878
 // =============================================================================
-undefined8 NPC_Routine_080A0878(int npc,int amount)
+u32 NPC_Routine_080A0878(int npc,int amount)
 
 {
   int i_val1;
@@ -4307,7 +4307,7 @@ LAB_080a092c:
 // =============================================================================
 // Function: NPC_Routine_080A0930 @ 0x080A0930
 // =============================================================================
-undefined8 NPC_Routine_080A0930(int npc,int amount)
+u32 NPC_Routine_080A0930(int npc,int amount)
 
 {
   int i_val1;
@@ -4349,7 +4349,7 @@ LAB_080a0968:
 // =============================================================================
 // Function: NPC_Routine_080A099C @ 0x080A099C
 // =============================================================================
-undefined8 NPC_Routine_080A099C(int npc,uint amount)
+u32 NPC_Routine_080A099C(int npc,uint amount)
 
 {
   int i_val1;
@@ -4391,7 +4391,7 @@ LAB_080a09d0:
 // =============================================================================
 // Function: NPC_Routine_080A0A04 @ 0x080A0A04
 // =============================================================================
-undefined8 NPC_Routine_080A0A04(int npc)
+u32 NPC_Routine_080A0A04(int npc)
 
 {
   int i_val1;
@@ -4406,7 +4406,7 @@ undefined8 NPC_Routine_080A0A04(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A0A1C @ 0x080A0A1C
 // =============================================================================
-undefined4 NPC_Routine_080A0A1C(byte *npc,int amount)
+void NPC_Routine_080A0A1C(byte *npc,int amount)
 
 {
   uint *p_uint1;
@@ -4425,7 +4425,7 @@ undefined4 NPC_Routine_080A0A1C(byte *npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080A0A54 @ 0x080A0A54
 // =============================================================================
-undefined4 NPC_Routine_080A0A54(ushort *npc,int amount)
+void NPC_Routine_080A0A54(ushort *npc,int amount)
 
 {
   uint *p_uint1;
@@ -4444,7 +4444,7 @@ undefined4 NPC_Routine_080A0A54(ushort *npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080A0A90 @ 0x080A0A90
 // =============================================================================
-undefined4 NPC_Routine_080A0A90(uint *npc)
+void NPC_Routine_080A0A90(uint *npc)
 
 {
   uint *p_uint1;
@@ -4466,7 +4466,7 @@ undefined4 NPC_Routine_080A0A90(uint *npc)
 // =============================================================================
 // Function: NPC_Routine_080A0AD8 @ 0x080A0AD8
 // =============================================================================
-undefined8 NPC_Routine_080A0AD8(int npc,int amount)
+u32 NPC_Routine_080A0AD8(int npc,int amount)
 
 {
   
@@ -4485,7 +4485,7 @@ undefined8 NPC_Routine_080A0AD8(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080A17A0 @ 0x080A17A0
 // =============================================================================
-undefined8 NPC_Routine_080A17A0(int npc,int amount)
+u32 NPC_Routine_080A17A0(int npc,int amount)
 
 {
   ushort u_val1;
@@ -4525,7 +4525,7 @@ undefined8 NPC_Routine_080A17A0(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080A1890 @ 0x080A1890
 // =============================================================================
-undefined8 NPC_Routine_080A1890(int npc,int amount)
+u32 NPC_Routine_080A1890(int npc,int amount)
 
 {
   ushort u_val1;
@@ -4563,7 +4563,7 @@ LAB_080a197e:
 // =============================================================================
 // Function: NPC_Routine_080A198C @ 0x080A198C
 // =============================================================================
-undefined8 NPC_Routine_080A198C(int npc)
+u32 NPC_Routine_080A198C(int npc)
 
 {
   ushort u_val1;
@@ -4583,7 +4583,7 @@ undefined8 NPC_Routine_080A198C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A19EC @ 0x080A19EC
 // =============================================================================
-undefined8 NPC_Routine_080A19EC(int npc)
+u32 NPC_Routine_080A19EC(int npc)
 
 {
   ushort u_val1;
@@ -4603,7 +4603,7 @@ undefined8 NPC_Routine_080A19EC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A1A4C @ 0x080A1A4C
 // =============================================================================
-undefined4 NPC_Routine_080A1A4C(int npc)
+void NPC_Routine_080A1A4C(int npc)
 
 {
   int loop_i;
@@ -4627,7 +4627,7 @@ undefined4 NPC_Routine_080A1A4C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A1C94 @ 0x080A1C94
 // =============================================================================
-undefined4 NPC_Routine_080A1C94(int npc)
+void NPC_Routine_080A1C94(int npc)
 
 {
   uint u_val1;
@@ -4644,7 +4644,7 @@ undefined4 NPC_Routine_080A1C94(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A1CBC @ 0x080A1CBC
 // =============================================================================
-undefined8 NPC_Routine_080A1CBC(int *npc,undefined4 amount,int extra_arg)
+u32 NPC_Routine_080A1CBC(int *npc,undefined4 amount,int extra_arg)
 
 {
   int i_val1;
@@ -4681,7 +4681,7 @@ LAB_080a1d06:
 // =============================================================================
 // Function: NPC_Routine_080A1D20 @ 0x080A1D20
 // =============================================================================
-undefined8 NPC_Routine_080A1D20(undefined4 npc,int amount,short *extra_arg,int out_data)
+u32 NPC_Routine_080A1D20(undefined4 npc,int amount,short *extra_arg,int out_data)
 
 {
   char c_char1;
@@ -4760,7 +4760,7 @@ undefined8 NPC_Routine_080A1D20(undefined4 npc,int amount,short *extra_arg,int o
 // =============================================================================
 // Function: NPC_Routine_080A1EA8 @ 0x080A1EA8
 // =============================================================================
-undefined8 NPC_Routine_080A1EA8(undefined4 npc,uint amount,int extra_arg)
+u32 NPC_Routine_080A1EA8(undefined4 npc,uint amount,int extra_arg)
 
 {
   
@@ -4786,7 +4786,7 @@ undefined8 NPC_Routine_080A1EA8(undefined4 npc,uint amount,int extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A1ED4 @ 0x080A1ED4
 // =============================================================================
-ulonglong NPC_Routine_080A1ED4(int npc)
+u32 NPC_Routine_080A1ED4(int npc)
 
 {
   uint u_val1;
@@ -4799,7 +4799,7 @@ ulonglong NPC_Routine_080A1ED4(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A1EF4 @ 0x080A1EF4
 // =============================================================================
-undefined8 NPC_Routine_080A1EF4(int npc,uint amount)
+u32 NPC_Routine_080A1EF4(int npc,uint amount)
 
 {
   byte b_flag1;
@@ -4865,7 +4865,7 @@ LAB_080a1fbc:
 // =============================================================================
 // Function: NPC_Routine_080A1FC4 @ 0x080A1FC4
 // =============================================================================
-undefined4 NPC_Routine_080A1FC4(int npc,uint amount,int extra_arg)
+void NPC_Routine_080A1FC4(int npc,uint amount,int extra_arg)
 
 {
   byte b_flag1;
@@ -5028,7 +5028,7 @@ LAB_080a2202:
 // =============================================================================
 // Function: NPC_Routine_080A220C @ 0x080A220C
 // =============================================================================
-undefined8 NPC_Routine_080A220C(int npc,undefined4 amount)
+u32 NPC_Routine_080A220C(int npc,undefined4 amount)
 
 {
   byte b_flag1;
@@ -5191,7 +5191,7 @@ LAB_080a259c:
 // =============================================================================
 // Function: NPC_Routine_080A25B0 @ 0x080A25B0
 // =============================================================================
-undefined8 NPC_Routine_080A25B0(undefined4 *npc,int amount)
+u32 NPC_Routine_080A25B0(undefined4 *npc,int amount)
 
 {
   bool b_flag1;
@@ -5370,7 +5370,7 @@ LAB_080a275a:
 // =============================================================================
 // Function: NPC_Routine_080A2940 @ 0x080A2940
 // =============================================================================
-undefined4 NPC_Routine_080A2940(int npc)
+void NPC_Routine_080A2940(int npc)
 
 {
   undefined4 u_val1;
@@ -5504,7 +5504,7 @@ undefined4 NPC_Routine_080A2940(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A2BA4 @ 0x080A2BA4
 // =============================================================================
-undefined4 NPC_Routine_080A2BA4(int npc)
+void NPC_Routine_080A2BA4(int npc)
 
 {
   undefined4 u_val1;
@@ -5736,7 +5736,7 @@ undefined4 NPC_Routine_080A2BA4(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A303C @ 0x080A303C
 // =============================================================================
-undefined4 NPC_Routine_080A303C(int npc)
+void NPC_Routine_080A303C(int npc)
 
 {
   byte b_flag1;
@@ -5844,7 +5844,7 @@ undefined4 NPC_Routine_080A303C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A32A4 @ 0x080A32A4
 // =============================================================================
-undefined4 NPC_Routine_080A32A4(int npc)
+void NPC_Routine_080A32A4(int npc)
 
 {
   undefined2 u_val1;
@@ -6063,7 +6063,7 @@ LAB_080a35c0:
 // =============================================================================
 // Function: NPC_Routine_080A3618 @ 0x080A3618
 // =============================================================================
-undefined4 NPC_Routine_080A3618(int npc,undefined2 amount,undefined2 extra_arg,int out_data,int arg_5)
+void NPC_Routine_080A3618(int npc,undefined2 amount,undefined2 extra_arg,int out_data,int arg_5)
 
 {
   short s_val1;
@@ -6161,7 +6161,7 @@ LAB_080a370e:
 // =============================================================================
 // Function: NPC_Routine_080A3744 @ 0x080A3744
 // =============================================================================
-undefined8 NPC_Routine_080A3744(undefined4 *npc,undefined4 *amount,undefined4 extra_arg)
+u32 NPC_Routine_080A3744(undefined4 *npc,undefined4 *amount,undefined4 extra_arg)
 
 {
   undefined4 u_val1;
@@ -6179,7 +6179,7 @@ undefined8 NPC_Routine_080A3744(undefined4 *npc,undefined4 *amount,undefined4 ex
 // =============================================================================
 // Function: NPC_Routine_080A3774 @ 0x080A3774
 // =============================================================================
-undefined8 NPC_Routine_080A3774(undefined4 *npc,int amount)
+u32 NPC_Routine_080A3774(undefined4 *npc,int amount)
 
 {
   undefined4 u_val1;
@@ -6198,7 +6198,7 @@ undefined8 NPC_Routine_080A3774(undefined4 *npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080A37A8 @ 0x080A37A8
 // =============================================================================
-undefined8 NPC_Routine_080A37A8(undefined4 *npc,int amount)
+u32 NPC_Routine_080A37A8(undefined4 *npc,int amount)
 
 {
   byte b_flag1;
@@ -6275,7 +6275,7 @@ undefined8 NPC_Routine_080A37A8(undefined4 *npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080A3900 @ 0x080A3900
 // =============================================================================
-undefined8 NPC_Routine_080A3900(undefined4 *npc,int amount,undefined4 extra_arg)
+u32 NPC_Routine_080A3900(undefined4 *npc,int amount,undefined4 extra_arg)
 
 {
   undefined1 u_val1;
@@ -6320,7 +6320,7 @@ undefined8 NPC_Routine_080A3900(undefined4 *npc,int amount,undefined4 extra_arg)
   }
   u_val3 = NPC_Routine_080A0930(*(int *)(amount + 8) + 0x1CD4,*(undefined4 *)(amount + 0xc),extra_arg
                        );
-  stack_val_28 = NPC_Routine_0809E688(u_val3,2);
+  stack_val_28 = Bachelorette_GetHeartStatsByte(u_val3,2);
   NPC_Routine_080B3BE4(stack_buf_38,&stack_val_2c);
   NPC_Routine_080B3C3C(&piStack_30,stack_buf_38);
   if (piStack_30 != (int *)0x0) {
@@ -6344,7 +6344,7 @@ undefined8 NPC_Routine_080A3900(undefined4 *npc,int amount,undefined4 extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A39FC @ 0x080A39FC
 // =============================================================================
-undefined8 NPC_Routine_080A39FC(undefined4 *npc,int amount,undefined4 extra_arg)
+u32 NPC_Routine_080A39FC(undefined4 *npc,int amount,undefined4 extra_arg)
 
 {
   undefined1 u_val1;
@@ -6389,7 +6389,7 @@ undefined8 NPC_Routine_080A39FC(undefined4 *npc,int amount,undefined4 extra_arg)
   }
   u_val3 = NPC_Routine_080A0930(*(int *)(amount + 8) + 0x1CD4,*(undefined4 *)(amount + 0xc),extra_arg
                        );
-  stack_val_28 = NPC_Routine_0809E688(u_val3,0);
+  stack_val_28 = Bachelorette_GetHeartStatsByte(u_val3,0);
   M4A_Routine_080C0D1C(stack_buf_38,&stack_val_2c);
   M4A_Routine_080C0D90(&piStack_30,stack_buf_38);
   if (piStack_30 != (int *)0x0) {
@@ -6413,7 +6413,7 @@ undefined8 NPC_Routine_080A39FC(undefined4 *npc,int amount,undefined4 extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A3AF8 @ 0x080A3AF8
 // =============================================================================
-undefined8 NPC_Routine_080A3AF8(undefined4 *npc,int amount,undefined4 extra_arg,int out_data)
+u32 NPC_Routine_080A3AF8(undefined4 *npc,int amount,undefined4 extra_arg,int out_data)
 
 {
   undefined1 u_val1;
@@ -6459,7 +6459,7 @@ undefined8 NPC_Routine_080A3AF8(undefined4 *npc,int amount,undefined4 extra_arg,
   }
   u_val3 = NPC_Routine_080A0930(*(int *)(amount + 8) + 0x1CD4,*(undefined4 *)(amount + 0xc),extra_arg
                         ,out_data);
-  stack_val_28 = NPC_Routine_0809E688(u_val3,1);
+  stack_val_28 = Bachelorette_GetHeartStatsByte(u_val3,1);
   M4A_Routine_080C7EA8(stack_buf_38,&stack_val_2c);
   M4A_Routine_080C7F1C(&piStack_30,stack_buf_38);
   if (piStack_30 != (int *)0x0) {
@@ -6483,7 +6483,7 @@ undefined8 NPC_Routine_080A3AF8(undefined4 *npc,int amount,undefined4 extra_arg,
 // =============================================================================
 // Function: NPC_Routine_080A3BF4 @ 0x080A3BF4
 // =============================================================================
-undefined4 NPC_Routine_080A3BF4(undefined4 *npc,undefined4 amount)
+void NPC_Routine_080A3BF4(undefined4 *npc,undefined4 amount)
 
 {
   int *p_int1;
@@ -6517,7 +6517,7 @@ void NPC_Routine_080A3C24(undefined4 *npc,undefined4 *amount,undefined4 extra_ar
 // =============================================================================
 // Function: NPC_Routine_080A3C40 @ 0x080A3C40
 // =============================================================================
-undefined4 NPC_Routine_080A3C40(undefined4 *npc,undefined4 amount)
+void NPC_Routine_080A3C40(undefined4 *npc,undefined4 amount)
 
 {
   int *p_int1;
@@ -6551,7 +6551,7 @@ void NPC_Routine_080A3C70(undefined4 *npc,undefined4 *amount,undefined4 extra_ar
 // =============================================================================
 // Function: NPC_Routine_080A3C8C @ 0x080A3C8C
 // =============================================================================
-undefined4 NPC_Routine_080A3C8C(undefined4 *npc,undefined4 amount)
+void NPC_Routine_080A3C8C(undefined4 *npc,undefined4 amount)
 
 {
   int *p_int1;
@@ -6601,7 +6601,7 @@ void NPC_Routine_080A3CD8(undefined4 *npc,undefined4 *amount,undefined4 extra_ar
 // =============================================================================
 // Function: NPC_Routine_080A3CF4 @ 0x080A3CF4
 // =============================================================================
-undefined8 NPC_Routine_080A3CF4(undefined4 *npc,int amount)
+u32 NPC_Routine_080A3CF4(undefined4 *npc,int amount)
 
 {
   undefined4 u_val1;
@@ -6719,7 +6719,7 @@ uint * NPC_Routine_080A3E90(uint *npc,undefined4 amount,ushort *extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A3F4C @ 0x080A3F4C
 // =============================================================================
-undefined8 NPC_Routine_080A3F4C(undefined4 *npc,int amount,uint extra_arg,int out_data)
+u32 NPC_Routine_080A3F4C(undefined4 *npc,int amount,uint extra_arg,int out_data)
 
 {
   byte b_flag1;
@@ -7065,7 +7065,7 @@ LAB_080a454c:
 // =============================================================================
 // Function: NPC_Routine_080A45A8 @ 0x080A45A8
 // =============================================================================
-undefined8 NPC_Routine_080A45A8(ushort *npc)
+u32 NPC_Routine_080A45A8(ushort *npc)
 
 {
   int i_val1;
@@ -7108,7 +7108,7 @@ LAB_080a4642:
 // =============================================================================
 // Function: NPC_Routine_080A4650 @ 0x080A4650
 // =============================================================================
-undefined8 NPC_Routine_080A4650(uint npc,uint amount,int extra_arg,int out_data)
+u32 NPC_Routine_080A4650(uint npc,uint amount,int extra_arg,int out_data)
 
 {
   ushort u_val1;
@@ -7129,7 +7129,7 @@ undefined8 NPC_Routine_080A4650(uint npc,uint amount,int extra_arg,int out_data)
 // =============================================================================
 // Function: NPC_Routine_080A4740 @ 0x080A4740
 // =============================================================================
-undefined8 NPC_Routine_080A4740(undefined4 *npc,int *amount,undefined4 extra_arg,undefined4 out_data)
+u32 NPC_Routine_080A4740(undefined4 *npc,int *amount,undefined4 extra_arg,undefined4 out_data)
 
 {
   undefined1 u_val1;
@@ -7156,7 +7156,7 @@ undefined8 NPC_Routine_080A4740(undefined4 *npc,int *amount,undefined4 extra_arg
 // =============================================================================
 // Function: NPC_Routine_080A47B4 @ 0x080A47B4
 // =============================================================================
-undefined4 NPC_Routine_080A47B4(undefined4 *npc,uint amount)
+void NPC_Routine_080A47B4(undefined4 *npc,uint amount)
 
 {
   undefined4 *p_uint1;
@@ -7184,7 +7184,7 @@ undefined4 NPC_Routine_080A47B4(undefined4 *npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_080A480C @ 0x080A480C
 // =============================================================================
-undefined4 NPC_Routine_080A480C(int npc,int *amount,int *extra_arg)
+void NPC_Routine_080A480C(int npc,int *amount,int *extra_arg)
 
 {
   int i_val1;
@@ -7294,7 +7294,7 @@ undefined4 NPC_Routine_080A480C(int npc,int *amount,int *extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A4944 @ 0x080A4944
 // =============================================================================
-undefined4 NPC_Routine_080A4944(undefined4 *npc,int *amount,undefined1 extra_arg)
+void NPC_Routine_080A4944(undefined4 *npc,int *amount,undefined1 extra_arg)
 
 {
   undefined4 u_val1;
@@ -7382,7 +7382,7 @@ NPC_Routine_080A4A4C(int npc,undefined4 amount,undefined4 extra_arg,undefined4 o
 // =============================================================================
 // Function: NPC_Routine_080A4B6C @ 0x080A4B6C
 // =============================================================================
-undefined4 NPC_Routine_080A4B6C(int npc,uint amount)
+void NPC_Routine_080A4B6C(int npc,uint amount)
 
 {
   int *p_int1;
@@ -7421,7 +7421,7 @@ undefined4 NPC_Routine_080A4B6C(int npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_080A4F50 @ 0x080A4F50
 // =============================================================================
-undefined4 NPC_Routine_080A4F50(int npc,int *amount,int extra_arg,char *out_data)
+void NPC_Routine_080A4F50(int npc,int *amount,int extra_arg,char *out_data)
 
 {
   byte b_flag1;
@@ -7889,7 +7889,7 @@ NPC_Routine_080A56DC(uint *npc,ushort *amount,undefined4 extra_arg,undefined4 ou
 // =============================================================================
 // Function: NPC_Routine_080A5760 @ 0x080A5760
 // =============================================================================
-undefined4 NPC_Routine_080A5760(int npc,undefined4 amount,undefined4 extra_arg,undefined4 out_data)
+void NPC_Routine_080A5760(int npc,undefined4 amount,undefined4 extra_arg,undefined4 out_data)
 
 {
   undefined4 u_val1;
@@ -7982,7 +7982,7 @@ undefined4 NPC_Routine_080A5760(int npc,undefined4 amount,undefined4 extra_arg,u
 // =============================================================================
 // Function: NPC_Routine_080A58EC @ 0x080A58EC
 // =============================================================================
-undefined8 NPC_Routine_080A58EC(undefined2 *npc,int amount,int extra_arg,int out_data)
+u32 NPC_Routine_080A58EC(undefined2 *npc,int amount,int extra_arg,int out_data)
 
 {
   int i_val1;
@@ -8017,7 +8017,7 @@ undefined8 NPC_Routine_080A58EC(undefined2 *npc,int amount,int extra_arg,int out
 // =============================================================================
 // Function: NPC_Routine_080A5960 @ 0x080A5960
 // =============================================================================
-undefined4 NPC_Routine_080A5960(int npc,undefined4 amount,undefined4 extra_arg)
+void NPC_Routine_080A5960(int npc,undefined4 amount,undefined4 extra_arg)
 
 {
   undefined1 facing_buffer [4];
@@ -8041,7 +8041,7 @@ undefined4 NPC_Routine_080A5960(int npc,undefined4 amount,undefined4 extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A59BC @ 0x080A59BC
 // =============================================================================
-undefined4 NPC_Routine_080A59BC(int npc,undefined4 amount,undefined4 extra_arg,int out_data)
+void NPC_Routine_080A59BC(int npc,undefined4 amount,undefined4 extra_arg,int out_data)
 
 {
   uint u_val1;
@@ -8092,7 +8092,7 @@ undefined4 NPC_Routine_080A59BC(int npc,undefined4 amount,undefined4 extra_arg,i
 // =============================================================================
 // Function: NPC_Routine_080A5A9C @ 0x080A5A9C
 // =============================================================================
-undefined8 NPC_Routine_080A5A9C(int npc)
+u32 NPC_Routine_080A5A9C(int npc)
 
 {
   
@@ -8102,7 +8102,7 @@ undefined8 NPC_Routine_080A5A9C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A5AB0 @ 0x080A5AB0
 // =============================================================================
-undefined4 NPC_Routine_080A5AB0(undefined4 npc,ushort *amount,int extra_arg,int *out_data)
+void NPC_Routine_080A5AB0(undefined4 npc,ushort *amount,int extra_arg,int *out_data)
 
 {
   int *p_int1;
@@ -8206,7 +8206,7 @@ undefined4 NPC_Routine_080A5AB0(undefined4 npc,ushort *amount,int extra_arg,int 
 // =============================================================================
 // Function: NPC_Routine_080A5BD8 @ 0x080A5BD8
 // =============================================================================
-undefined4 NPC_Routine_080A5BD8(int npc,byte *amount,int extra_arg,int out_data)
+void NPC_Routine_080A5BD8(int npc,byte *amount,int extra_arg,int out_data)
 
 {
   ushort u_val1;
@@ -8262,7 +8262,7 @@ undefined4 NPC_Routine_080A5BD8(int npc,byte *amount,int extra_arg,int out_data)
 // =============================================================================
 // Function: NPC_Routine_080A5CC0 @ 0x080A5CC0
 // =============================================================================
-undefined4 NPC_Routine_080A5CC0(int npc)
+void NPC_Routine_080A5CC0(int npc)
 
 {
   int i_val1;
@@ -8292,7 +8292,7 @@ undefined4 NPC_Routine_080A5CC0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A5D14 @ 0x080A5D14
 // =============================================================================
-undefined4 NPC_Routine_080A5D14(int npc,int amount)
+void NPC_Routine_080A5D14(int npc,int amount)
 
 {
   undefined4 u_val1;
@@ -8329,7 +8329,7 @@ LAB_080a5da8:
 // =============================================================================
 // Function: NPC_Routine_080A5DB8 @ 0x080A5DB8
 // =============================================================================
-undefined4 NPC_Routine_080A5DB8(int npc,int amount,int extra_arg)
+void NPC_Routine_080A5DB8(int npc,int amount,int extra_arg)
 
 {
   int i_val1;
@@ -8352,7 +8352,7 @@ undefined4 NPC_Routine_080A5DB8(int npc,int amount,int extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A5DFC @ 0x080A5DFC
 // =============================================================================
-undefined4 NPC_Routine_080A5DFC(int npc,uint amount,uint extra_arg)
+void NPC_Routine_080A5DFC(int npc,uint amount,uint extra_arg)
 
 {
   int i_val1;
@@ -8382,7 +8382,7 @@ undefined4 NPC_Routine_080A5DFC(int npc,uint amount,uint extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A5EA0 @ 0x080A5EA0
 // =============================================================================
-undefined4 NPC_Routine_080A5EA0(int npc)
+void NPC_Routine_080A5EA0(int npc)
 
 {
   undefined4 *p_uint1;
@@ -8395,7 +8395,7 @@ undefined4 NPC_Routine_080A5EA0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A5EB8 @ 0x080A5EB8
 // =============================================================================
-undefined8 NPC_Routine_080A5EB8(int *npc,ushort *amount)
+u32 NPC_Routine_080A5EB8(int *npc,ushort *amount)
 
 {
   uint u_val1;
@@ -8445,7 +8445,7 @@ LAB_080a5f6a:
 // =============================================================================
 // Function: NPC_Routine_080A5F78 @ 0x080A5F78
 // =============================================================================
-undefined4 NPC_Routine_080A5F78(int npc,int amount,short *extra_arg,uint out_data,uint arg_5)
+void NPC_Routine_080A5F78(int npc,int amount,short *extra_arg,uint out_data,uint arg_5)
 
 {
   ushort u_val1;
@@ -8484,7 +8484,7 @@ undefined4 NPC_Routine_080A5F78(int npc,int amount,short *extra_arg,uint out_dat
 // =============================================================================
 // Function: NPC_Routine_080A6138 @ 0x080A6138
 // =============================================================================
-undefined4 NPC_Routine_080A6138(int npc)
+void NPC_Routine_080A6138(int npc)
 
 {
   int i_val1;
@@ -8516,7 +8516,7 @@ LAB_080a6180:
 // =============================================================================
 // Function: NPC_Routine_080A6194 @ 0x080A6194
 // =============================================================================
-undefined4 NPC_Routine_080A6194(int npc)
+void NPC_Routine_080A6194(int npc)
 
 {
   int i_val1;
@@ -8548,7 +8548,7 @@ LAB_080a61dc:
 // =============================================================================
 // Function: NPC_Routine_080A61F0 @ 0x080A61F0
 // =============================================================================
-undefined4 NPC_Routine_080A61F0(int npc)
+void NPC_Routine_080A61F0(int npc)
 
 {
   
@@ -8565,7 +8565,7 @@ undefined4 NPC_Routine_080A61F0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A6234 @ 0x080A6234
 // =============================================================================
-undefined4 NPC_Routine_080A6234(int npc)
+void NPC_Routine_080A6234(int npc)
 
 {
   
@@ -8582,7 +8582,7 @@ undefined4 NPC_Routine_080A6234(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A6278 @ 0x080A6278
 // =============================================================================
-undefined4 NPC_Routine_080A6278(int npc)
+void NPC_Routine_080A6278(int npc)
 
 {
   
@@ -8599,7 +8599,7 @@ undefined4 NPC_Routine_080A6278(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A62BC @ 0x080A62BC
 // =============================================================================
-undefined4 NPC_Routine_080A62BC(int npc)
+void NPC_Routine_080A62BC(int npc)
 
 {
   
@@ -8616,7 +8616,7 @@ undefined4 NPC_Routine_080A62BC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A6300 @ 0x080A6300
 // =============================================================================
-undefined4 NPC_Routine_080A6300(int npc)
+void NPC_Routine_080A6300(int npc)
 
 {
   int i_val1;
@@ -8651,7 +8651,7 @@ LAB_080a6348:
 // =============================================================================
 // Function: NPC_Routine_080A635C @ 0x080A635C
 // =============================================================================
-undefined4 NPC_Routine_080A635C(int npc)
+void NPC_Routine_080A635C(int npc)
 
 {
   int i_val1;
@@ -8686,7 +8686,7 @@ LAB_080a63a4:
 // =============================================================================
 // Function: NPC_Routine_080A63B8 @ 0x080A63B8
 // =============================================================================
-undefined4 NPC_Routine_080A63B8(int npc,int amount)
+void NPC_Routine_080A63B8(int npc,int amount)
 
 {
   int i_val1;
@@ -8741,7 +8741,7 @@ int NPC_Routine_080A643C(int npc,int amount,int extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080A6474 @ 0x080A6474
 // =============================================================================
-undefined8 NPC_Routine_080A6474(int npc,undefined4 amount)
+u32 NPC_Routine_080A6474(int npc,undefined4 amount)
 
 {
   
@@ -8762,7 +8762,7 @@ undefined8 NPC_Routine_080A6474(int npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_080A64B8 @ 0x080A64B8
 // =============================================================================
-undefined4 NPC_Routine_080A64B8(int *npc)
+void NPC_Routine_080A64B8(int *npc)
 
 {
   int i_val1;
@@ -8791,7 +8791,7 @@ undefined4 NPC_Routine_080A64B8(int *npc)
 // =============================================================================
 // Function: NPC_Routine_080A6524 @ 0x080A6524
 // =============================================================================
-undefined4 NPC_Routine_080A6524(int *npc,undefined4 amount)
+void NPC_Routine_080A6524(int *npc,undefined4 amount)
 
 {
   byte b_flag1;
@@ -8859,7 +8859,7 @@ undefined4 NPC_Routine_080A6524(int *npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_080A6640 @ 0x080A6640
 // =============================================================================
-undefined4 NPC_Routine_080A6640(int npc)
+void NPC_Routine_080A6640(int npc)
 
 {
   
@@ -8874,7 +8874,7 @@ undefined4 NPC_Routine_080A6640(int npc)
 // =============================================================================
 // Function: NPC_Routine_080A748C @ 0x080A748C
 // =============================================================================
-undefined4 NPC_Routine_080A748C(int *npc,int *amount)
+void NPC_Routine_080A748C(int *npc,int *amount)
 
 {
   char c_char1;
@@ -11099,7 +11099,7 @@ case_080A9224:
 // =============================================================================
 // Function: NPC_Routine_080AA270 @ 0x080AA270
 // =============================================================================
-undefined4 NPC_Routine_080AA270(int *npc,int amount,int extra_arg)
+void NPC_Routine_080AA270(int *npc,int amount,int extra_arg)
 
 {
   char c_char1;
@@ -11260,7 +11260,7 @@ LAB_080aa2b6:
 // =============================================================================
 // Function: NPC_Routine_080AA540 @ 0x080AA540
 // =============================================================================
-undefined4 NPC_Routine_080AA540(int npc,int amount,int extra_arg,uint out_data,int arg_5)
+void NPC_Routine_080AA540(int npc,int amount,int extra_arg,uint out_data,int arg_5)
 
 {
   int i_val1;
@@ -11324,7 +11324,7 @@ case_080AA67A:
 // =============================================================================
 // Function: NPC_Routine_080AA6D0 @ 0x080AA6D0
 // =============================================================================
-undefined4 NPC_Routine_080AA6D0(int npc,int amount,int extra_arg,undefined4 out_data,int arg_5)
+void NPC_Routine_080AA6D0(int npc,int amount,int extra_arg,undefined4 out_data,int arg_5)
 
 {
   byte b_flag1;
@@ -11376,7 +11376,7 @@ undefined4 NPC_Routine_080AA6D0(int npc,int amount,int extra_arg,undefined4 out_
 // =============================================================================
 // Function: NPC_Routine_080AA850 @ 0x080AA850
 // =============================================================================
-undefined4 NPC_Routine_080AA850(int npc,undefined4 amount)
+void NPC_Routine_080AA850(int npc,undefined4 amount)
 
 {
   int i_val1;
@@ -11394,7 +11394,7 @@ undefined4 NPC_Routine_080AA850(int npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_080AA89C @ 0x080AA89C
 // =============================================================================
-undefined4 NPC_Routine_080AA89C(int npc)
+void NPC_Routine_080AA89C(int npc)
 
 {
   
@@ -11406,7 +11406,7 @@ undefined4 NPC_Routine_080AA89C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AA8BC @ 0x080AA8BC
 // =============================================================================
-undefined4 NPC_Routine_080AA8BC(int npc)
+void NPC_Routine_080AA8BC(int npc)
 
 {
   
@@ -11418,7 +11418,7 @@ undefined4 NPC_Routine_080AA8BC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AA8DC @ 0x080AA8DC
 // =============================================================================
-undefined4 NPC_Routine_080AA8DC(int *npc)
+void NPC_Routine_080AA8DC(int *npc)
 
 {
   
@@ -11497,7 +11497,7 @@ LAB_080aa9b8:
 // =============================================================================
 // Function: NPC_Routine_080AACB8 @ 0x080AACB8
 // =============================================================================
-undefined4 NPC_Routine_080AACB8(undefined1 *npc)
+void NPC_Routine_080AACB8(undefined1 *npc)
 
 {
   byte b_flag1;
@@ -11576,7 +11576,7 @@ LAB_080aad90:
 // =============================================================================
 // Function: NPC_Routine_080AAE14 @ 0x080AAE14
 // =============================================================================
-undefined4 NPC_Routine_080AAE14(undefined4 *npc,undefined4 amount,undefined4 extra_arg)
+void NPC_Routine_080AAE14(undefined4 *npc,undefined4 amount,undefined4 extra_arg)
 
 {
   
@@ -11595,7 +11595,7 @@ undefined4 NPC_Routine_080AAE14(undefined4 *npc,undefined4 amount,undefined4 ext
 // =============================================================================
 // Function: NPC_Routine_080AAE44 @ 0x080AAE44
 // =============================================================================
-undefined8 NPC_Routine_080AAE44(undefined4 *npc,int *amount,int extra_arg)
+u32 NPC_Routine_080AAE44(undefined4 *npc,int *amount,int extra_arg)
 
 {
   int pos_x;
@@ -11647,7 +11647,7 @@ undefined8 NPC_Routine_080AAE44(undefined4 *npc,int *amount,int extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080AAF9C @ 0x080AAF9C
 // =============================================================================
-undefined4 NPC_Routine_080AAF9C(int *npc,int amount)
+void NPC_Routine_080AAF9C(int *npc,int amount)
 
 {
   
@@ -11660,7 +11660,7 @@ undefined4 NPC_Routine_080AAF9C(int *npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080AAFB8 @ 0x080AAFB8
 // =============================================================================
-undefined8 NPC_Routine_080AAFB8(int npc)
+u32 NPC_Routine_080AAFB8(int npc)
 
 {
   int i_val1;
@@ -11672,7 +11672,7 @@ undefined8 NPC_Routine_080AAFB8(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AAFC8 @ 0x080AAFC8
 // =============================================================================
-undefined8 NPC_Routine_080AAFC8(int *npc,int *amount,int extra_arg)
+u32 NPC_Routine_080AAFC8(int *npc,int *amount,int extra_arg)
 
 {
   undefined1 u_val1;
@@ -11991,7 +11991,7 @@ LAB_080ab1bc:
 // =============================================================================
 // Function: NPC_Routine_080AB2E4 @ 0x080AB2E4
 // =============================================================================
-undefined4 NPC_Routine_080AB2E4(int *npc,uint amount)
+void NPC_Routine_080AB2E4(int *npc,uint amount)
 
 {
   undefined4 *p_uint1;
@@ -12032,7 +12032,7 @@ undefined4 NPC_Routine_080AB2E4(int *npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_080AB380 @ 0x080AB380
 // =============================================================================
-undefined4 NPC_Routine_080AB380(int *npc)
+void NPC_Routine_080AB380(int *npc)
 
 {
   int i_val1;
@@ -12091,7 +12091,7 @@ undefined4 NPC_Routine_080AB380(int *npc)
 // =============================================================================
 // Function: NPC_Routine_080AB410 @ 0x080AB410
 // =============================================================================
-undefined4 NPC_Routine_080AB410(int *npc,undefined4 amount,int *extra_arg)
+void NPC_Routine_080AB410(int *npc,undefined4 amount,int *extra_arg)
 
 {
   short s_val1;
@@ -12263,7 +12263,7 @@ undefined4 NPC_Routine_080AB410(int *npc,undefined4 amount,int *extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080AB788 @ 0x080AB788
 // =============================================================================
-undefined8 NPC_Routine_080AB788(int npc)
+u32 NPC_Routine_080AB788(int npc)
 
 {
   uint u_val1;
@@ -12275,7 +12275,7 @@ undefined8 NPC_Routine_080AB788(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AB7A4 @ 0x080AB7A4
 // =============================================================================
-undefined8 NPC_Routine_080AB7A4(int npc,int amount)
+u32 NPC_Routine_080AB7A4(int npc,int amount)
 
 {
   
@@ -12343,7 +12343,7 @@ LAB_080ab826:
 // =============================================================================
 // Function: NPC_Routine_080AB82C @ 0x080AB82C
 // =============================================================================
-undefined8 NPC_Routine_080AB82C(byte *npc,uint amount)
+u32 NPC_Routine_080AB82C(byte *npc,uint amount)
 
 {
   uint u_val1;
@@ -12370,7 +12370,7 @@ LAB_080ab854:
 // =============================================================================
 // Function: NPC_Routine_080AB85C @ 0x080AB85C
 // =============================================================================
-undefined4 NPC_Routine_080AB85C(undefined4 *npc)
+void NPC_Routine_080AB85C(undefined4 *npc)
 
 {
   byte b_flag1;
@@ -12400,7 +12400,7 @@ undefined4 NPC_Routine_080AB85C(undefined4 *npc)
 // =============================================================================
 // Function: NPC_Routine_080AB8D0 @ 0x080AB8D0
 // =============================================================================
-undefined4 NPC_Routine_080AB8D0(int npc)
+void NPC_Routine_080AB8D0(int npc)
 
 {
   byte b_flag1;
@@ -12430,7 +12430,7 @@ undefined4 NPC_Routine_080AB8D0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AB948 @ 0x080AB948
 // =============================================================================
-undefined4 NPC_Routine_080AB948(int npc)
+void NPC_Routine_080AB948(int npc)
 
 {
   byte b_flag1;
@@ -12460,7 +12460,7 @@ undefined4 NPC_Routine_080AB948(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AB9C4 @ 0x080AB9C4
 // =============================================================================
-undefined4 NPC_Routine_080AB9C4(int npc)
+void NPC_Routine_080AB9C4(int npc)
 
 {
   byte b_flag1;
@@ -12490,7 +12490,7 @@ undefined4 NPC_Routine_080AB9C4(int npc)
 // =============================================================================
 // Function: NPC_Routine_080ABA3C @ 0x080ABA3C
 // =============================================================================
-undefined8 NPC_Routine_080ABA3C(undefined4 npc)
+u32 NPC_Routine_080ABA3C(undefined4 npc)
 
 {
   undefined4 stack_val_3c;
@@ -12539,7 +12539,7 @@ undefined8 NPC_Routine_080ABA3C(undefined4 npc)
 // =============================================================================
 // Function: NPC_Routine_080ABA90 @ 0x080ABA90
 // =============================================================================
-undefined4 NPC_Routine_080ABA90(int *npc,short *amount,int extra_arg)
+void NPC_Routine_080ABA90(int *npc,short *amount,int extra_arg)
 
 {
   int i_val1;
@@ -12600,7 +12600,7 @@ undefined4 NPC_Routine_080ABA90(int *npc,short *amount,int extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080ABBA0 @ 0x080ABBA0
 // =============================================================================
-undefined4 NPC_Routine_080ABBA0(undefined4 *npc)
+void NPC_Routine_080ABBA0(undefined4 *npc)
 
 {
   
@@ -12612,7 +12612,7 @@ undefined4 NPC_Routine_080ABBA0(undefined4 *npc)
 // =============================================================================
 // Function: NPC_Routine_080ABBC4 @ 0x080ABBC4
 // =============================================================================
-undefined4 NPC_Routine_080ABBC4(int npc)
+void NPC_Routine_080ABBC4(int npc)
 
 {
   
@@ -12624,7 +12624,7 @@ undefined4 NPC_Routine_080ABBC4(int npc)
 // =============================================================================
 // Function: NPC_Routine_080ABBEC @ 0x080ABBEC
 // =============================================================================
-undefined4 NPC_Routine_080ABBEC(int npc)
+void NPC_Routine_080ABBEC(int npc)
 
 {
   
@@ -12636,7 +12636,7 @@ undefined4 NPC_Routine_080ABBEC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080ABC14 @ 0x080ABC14
 // =============================================================================
-undefined4 NPC_Routine_080ABC14(int npc)
+void NPC_Routine_080ABC14(int npc)
 
 {
   
@@ -12984,7 +12984,7 @@ LAB_080ac008:
 // =============================================================================
 // Function: NPC_Routine_080AC070 @ 0x080AC070
 // =============================================================================
-undefined8 NPC_Routine_080AC070(int *npc,ushort *amount)
+u32 NPC_Routine_080AC070(int *npc,ushort *amount)
 
 {
   int i_val1;
@@ -13370,7 +13370,7 @@ LAB_080ac5bc:
 // =============================================================================
 // Function: NPC_Routine_080AC5D0 @ 0x080AC5D0
 // =============================================================================
-undefined8 NPC_Routine_080AC5D0(int *npc,int amount,int extra_arg)
+u32 NPC_Routine_080AC5D0(int *npc,int amount,int extra_arg)
 
 {
   int i_val1;
@@ -13427,7 +13427,7 @@ LAB_080ac618:
 // =============================================================================
 // Function: NPC_Routine_080AC674 @ 0x080AC674
 // =============================================================================
-undefined8 NPC_Routine_080AC674(int *npc,int *amount)
+u32 NPC_Routine_080AC674(int *npc,int *amount)
 
 {
   int i_val1;
@@ -13506,7 +13506,7 @@ undefined8 NPC_Routine_080AC674(int *npc,int *amount)
 // =============================================================================
 // Function: NPC_Routine_080AC85C @ 0x080AC85C
 // =============================================================================
-undefined4 NPC_Routine_080AC85C(int *npc,uint amount)
+void NPC_Routine_080AC85C(int *npc,uint amount)
 
 {
   int i_val1;
@@ -13570,7 +13570,7 @@ undefined4 NPC_Routine_080AC85C(int *npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_080AC96C @ 0x080AC96C
 // =============================================================================
-undefined8 NPC_Routine_080AC96C(int npc,int amount)
+u32 NPC_Routine_080AC96C(int npc,int amount)
 
 {
   byte b_flag1;
@@ -13607,7 +13607,7 @@ LAB_080ac9e4:
 // =============================================================================
 // Function: NPC_Routine_080ACAF0 @ 0x080ACAF0
 // =============================================================================
-undefined4 NPC_Routine_080ACAF0(int npc,undefined4 *amount)
+void NPC_Routine_080ACAF0(int npc,undefined4 *amount)
 
 {
   char c_char1;
@@ -13684,7 +13684,7 @@ undefined4 NPC_Routine_080ACAF0(int npc,undefined4 *amount)
 // =============================================================================
 // Function: NPC_Routine_080ACC10 @ 0x080ACC10
 // =============================================================================
-undefined4 NPC_Routine_080ACC10(int npc,undefined4 *amount)
+u32 NPC_Routine_080ACC10(int npc,undefined4 *amount)
 
 {
   byte b_flag1;
@@ -14051,7 +14051,7 @@ undefined4 NPC_Routine_080ACC10(int npc,undefined4 *amount)
 // =============================================================================
 // Function: NPC_Routine_080AD3B0 @ 0x080AD3B0
 // =============================================================================
-undefined4 NPC_Routine_080AD3B0(int npc,undefined4 amount)
+void NPC_Routine_080AD3B0(int npc,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -14175,7 +14175,7 @@ case_080AD4E4:
 // =============================================================================
 // Function: NPC_Routine_080AD5D8 @ 0x080AD5D8
 // =============================================================================
-undefined8 NPC_Routine_080AD5D8(int npc,uint amount)
+u32 NPC_Routine_080AD5D8(int npc,uint amount)
 
 {
   undefined2 u_val1;
@@ -14272,7 +14272,7 @@ LAB_080ad692:
 // =============================================================================
 // Function: NPC_Routine_080AD69C @ 0x080AD69C
 // =============================================================================
-undefined8 NPC_Routine_080AD69C(undefined4 *npc,int amount,uint extra_arg)
+u32 NPC_Routine_080AD69C(undefined4 *npc,int amount,uint extra_arg)
 
 {
   undefined2 u_val1;
@@ -14321,7 +14321,7 @@ LAB_080ad714:
 // =============================================================================
 // Function: NPC_Routine_080AD724 @ 0x080AD724
 // =============================================================================
-undefined8 NPC_Routine_080AD724(undefined4 *npc)
+u32 NPC_Routine_080AD724(undefined4 *npc)
 
 {
   undefined4 u_val1;
@@ -14338,7 +14338,7 @@ undefined8 NPC_Routine_080AD724(undefined4 *npc)
 // =============================================================================
 // Function: NPC_Routine_080AD8C4 @ 0x080AD8C4
 // =============================================================================
-undefined4 NPC_Routine_080AD8C4(int npc,int amount,int extra_arg,uint out_data)
+u32 NPC_Routine_080AD8C4(int npc,int amount,int extra_arg,uint out_data)
 
 {
   uint u_val1;
@@ -14396,7 +14396,7 @@ code_r0x080ad930:
 // =============================================================================
 // Function: NPC_Routine_080AD938 @ 0x080AD938
 // =============================================================================
-undefined4 NPC_Routine_080AD938(int npc)
+void NPC_Routine_080AD938(int npc)
 
 {
   
@@ -14407,7 +14407,7 @@ undefined4 NPC_Routine_080AD938(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD944 @ 0x080AD944
 // =============================================================================
-undefined4 NPC_Routine_080AD944(int npc)
+void NPC_Routine_080AD944(int npc)
 
 {
   
@@ -14440,7 +14440,7 @@ longlong NPC_Routine_080AD960(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD970 @ 0x080AD970
 // =============================================================================
-undefined4 NPC_Routine_080AD970(int npc)
+void NPC_Routine_080AD970(int npc)
 
 {
   
@@ -14451,7 +14451,7 @@ undefined4 NPC_Routine_080AD970(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD97C @ 0x080AD97C
 // =============================================================================
-undefined4 NPC_Routine_080AD97C(int npc)
+void NPC_Routine_080AD97C(int npc)
 
 {
   
@@ -14462,7 +14462,7 @@ undefined4 NPC_Routine_080AD97C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD988 @ 0x080AD988
 // =============================================================================
-undefined4 NPC_Routine_080AD988(int npc)
+void NPC_Routine_080AD988(int npc)
 
 {
   
@@ -14473,7 +14473,7 @@ undefined4 NPC_Routine_080AD988(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD994 @ 0x080AD994
 // =============================================================================
-undefined4 NPC_Routine_080AD994(int npc)
+void NPC_Routine_080AD994(int npc)
 
 {
   
@@ -14484,7 +14484,7 @@ undefined4 NPC_Routine_080AD994(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD9A0 @ 0x080AD9A0
 // =============================================================================
-undefined4 NPC_Routine_080AD9A0(int npc)
+void NPC_Routine_080AD9A0(int npc)
 
 {
   
@@ -14495,7 +14495,7 @@ undefined4 NPC_Routine_080AD9A0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD9AC @ 0x080AD9AC
 // =============================================================================
-undefined4 NPC_Routine_080AD9AC(int npc)
+void NPC_Routine_080AD9AC(int npc)
 
 {
   
@@ -14506,7 +14506,7 @@ undefined4 NPC_Routine_080AD9AC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD9B8 @ 0x080AD9B8
 // =============================================================================
-undefined4 NPC_Routine_080AD9B8(int npc)
+void NPC_Routine_080AD9B8(int npc)
 
 {
   
@@ -14517,7 +14517,7 @@ undefined4 NPC_Routine_080AD9B8(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD9C4 @ 0x080AD9C4
 // =============================================================================
-undefined4 NPC_Routine_080AD9C4(int npc)
+void NPC_Routine_080AD9C4(int npc)
 
 {
   
@@ -14528,7 +14528,7 @@ undefined4 NPC_Routine_080AD9C4(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AD9D0 @ 0x080AD9D0
 // =============================================================================
-undefined4 NPC_Routine_080AD9D0(int npc)
+void NPC_Routine_080AD9D0(int npc)
 
 {
   
@@ -14539,7 +14539,7 @@ undefined4 NPC_Routine_080AD9D0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080ADA84 @ 0x080ADA84
 // =============================================================================
-undefined8 NPC_Routine_080ADA84(undefined4 npc,undefined4 amount)
+u32 NPC_Routine_080ADA84(undefined4 npc,undefined4 amount)
 
 {
   int i_val1;
@@ -14552,7 +14552,7 @@ undefined8 NPC_Routine_080ADA84(undefined4 npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_080ADAA8 @ 0x080ADAA8
 // =============================================================================
-undefined8 NPC_Routine_080ADAA8(undefined4 npc,undefined4 amount)
+u32 NPC_Routine_080ADAA8(undefined4 npc,undefined4 amount)
 
 {
   int i_val1;
@@ -14565,7 +14565,7 @@ undefined8 NPC_Routine_080ADAA8(undefined4 npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_080ADACC @ 0x080ADACC
 // =============================================================================
-undefined4 NPC_Routine_080ADACC(int npc,undefined4 amount,int extra_arg,undefined1 out_data)
+void NPC_Routine_080ADACC(int npc,undefined4 amount,int extra_arg,undefined1 out_data)
 
 {
   int i_val1;
@@ -14598,7 +14598,7 @@ void NPC_Routine_080ADAFC(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080ADB54 @ 0x080ADB54
 // =============================================================================
-undefined4 NPC_Routine_080ADB54(int npc,int amount)
+void NPC_Routine_080ADB54(int npc,int amount)
 
 {
   int i_val1;
@@ -14627,7 +14627,7 @@ void NPC_Routine_080ADB78(int npc)
 // =============================================================================
 // Function: NPC_Routine_080ADC00 @ 0x080ADC00
 // =============================================================================
-undefined8 NPC_Routine_080ADC00(undefined4 *npc)
+u32 NPC_Routine_080ADC00(undefined4 *npc)
 
 {
   undefined4 *p_uint1;
@@ -14648,7 +14648,7 @@ undefined8 NPC_Routine_080ADC00(undefined4 *npc)
 // =============================================================================
 // Function: NPC_Routine_080ADC84 @ 0x080ADC84
 // =============================================================================
-undefined4 NPC_Routine_080ADC84(undefined4 *npc,uint amount)
+void NPC_Routine_080ADC84(undefined4 *npc,uint amount)
 
 {
   
@@ -14689,7 +14689,7 @@ void NPC_Routine_080ADD08(undefined4 *npc,int *amount)
 // =============================================================================
 // Function: NPC_Routine_080ADF40 @ 0x080ADF40
 // =============================================================================
-undefined8 NPC_Routine_080ADF40(int npc)
+u32 NPC_Routine_080ADF40(int npc)
 
 {
   ushort u_val1;
@@ -15029,7 +15029,7 @@ void NPC_Routine_080ADF6C(int npc,undefined4 *amount)
 // =============================================================================
 // Function: NPC_Routine_080AE6C0 @ 0x080AE6C0
 // =============================================================================
-undefined4 NPC_Routine_080AE6C0(void)
+void NPC_Routine_080AE6C0(void)
 
 {
   
@@ -15040,7 +15040,7 @@ undefined4 NPC_Routine_080AE6C0(void)
 // =============================================================================
 // Function: NPC_Routine_080AE6CC @ 0x080AE6CC
 // =============================================================================
-undefined4 NPC_Routine_080AE6CC(int npc)
+void NPC_Routine_080AE6CC(int npc)
 
 {
   undefined4 u_val1;
@@ -15087,7 +15087,7 @@ undefined4 NPC_Routine_080AE6CC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AE7D0 @ 0x080AE7D0
 // =============================================================================
-undefined4 NPC_Routine_080AE7D0(undefined4 npc)
+void NPC_Routine_080AE7D0(undefined4 npc)
 
 {
   undefined4 u_val1;
@@ -16100,7 +16100,7 @@ void NPC_Routine_080AE894(int npc)
 // =============================================================================
 // Function: NPC_Routine_080AF814 @ 0x080AF814
 // =============================================================================
-undefined4 NPC_Routine_080AF814(int npc)
+void NPC_Routine_080AF814(int npc)
 
 {
   byte b_flag1;
@@ -17032,9 +17032,9 @@ undefined4 NPC_Routine_080AF814(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_080B0708 @ 0x080B0708
+// Function: HarvestSprite_Minigame_UpdateCountdownTimer @ 0x080B0708
 // =============================================================================
-undefined4 NPC_Routine_080B0708(int npc,int amount)
+void HarvestSprite_Minigame_UpdateCountdownTimer(int npc,int amount)
 
 {
   byte b_flag1;
@@ -17170,9 +17170,9 @@ undefined4 NPC_Routine_080B0708(int npc,int amount)
 }
 
 // =============================================================================
-// Function: NPC_Routine_080B0934 @ 0x080B0934
+// Function: HarvestSprite_Minigame_HideUI @ 0x080B0934
 // =============================================================================
-undefined4 NPC_Routine_080B0934(int npc)
+void HarvestSprite_Minigame_HideUI(int npc)
 
 {
   int i_val1;
@@ -17190,9 +17190,9 @@ undefined4 NPC_Routine_080B0934(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_080B0970 @ 0x080B0970
+// Function: HarvestSprite_Minigame_ShowUI @ 0x080B0970
 // =============================================================================
-undefined4 NPC_Routine_080B0970(int npc)
+void HarvestSprite_Minigame_ShowUI(int npc)
 
 {
   int i_val1;
@@ -17210,9 +17210,9 @@ undefined4 NPC_Routine_080B0970(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_080B09B0 @ 0x080B09B0
+// Function: HarvestSprite_Minigame_SetupDifficultyAndTargets @ 0x080B09B0
 // =============================================================================
-undefined4 NPC_Routine_080B09B0(int npc)
+void HarvestSprite_Minigame_SetupDifficultyAndTargets(int npc)
 
 {
   byte b_flag1;
@@ -17269,9 +17269,9 @@ undefined4 NPC_Routine_080B09B0(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_080B0AA0 @ 0x080B0AA0
+// Function: HarvestSprite_Minigame_InitState @ 0x080B0AA0
 // =============================================================================
-undefined4 NPC_Routine_080B0AA0(int npc)
+void HarvestSprite_Minigame_InitState(int npc)
 
 {
   int i_val1;
@@ -17326,9 +17326,9 @@ undefined4 NPC_Routine_080B0AA0(int npc)
 }
 
 // =============================================================================
-// Function: NPC_Routine_080B0BB8 @ 0x080B0BB8
+// Function: HarvestSprite_Minigame_UpdateFrame @ 0x080B0BB8
 // =============================================================================
-undefined4 NPC_Routine_080B0BB8(int npc)
+u32 HarvestSprite_Minigame_UpdateFrame(int npc)
 
 {
   char c_char1;
@@ -17462,7 +17462,7 @@ undefined4 NPC_Routine_080B0BB8(int npc)
       else if (stack_val_70 == 5) {
         stack_val_50 = 1;
         if (stack_val_48 != 0) {
-          NPC_Routine_080B0AA0(npc);
+          HarvestSprite_Minigame_InitState(npc);
           Animal_Routine_08050D5C(*(undefined4 *)(npc + 0x418));
           stack_val_70 = 6;
           stack_val_68 = 0;
@@ -17971,7 +17971,7 @@ NPC_Routine_080B1B0C:
 // =============================================================================
 // Function: NPC_Routine_080B1B40 @ 0x080B1B40
 // =============================================================================
-undefined4 NPC_Routine_080B1B40(int npc)
+void NPC_Routine_080B1B40(int npc)
 
 {
   undefined4 *p_uint1;
@@ -18065,7 +18065,7 @@ undefined4 NPC_Routine_080B1B40(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B1D34 @ 0x080B1D34
 // =============================================================================
-undefined4 NPC_Routine_080B1D34(int npc)
+void NPC_Routine_080B1D34(int npc)
 
 {
   undefined2 *p_uint1;
@@ -18094,7 +18094,7 @@ undefined4 NPC_Routine_080B1D34(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B1D94 @ 0x080B1D94
 // =============================================================================
-undefined4 NPC_Routine_080B1D94(int npc)
+void NPC_Routine_080B1D94(int npc)
 
 {
   undefined4 u_val1;
@@ -18323,7 +18323,7 @@ undefined4 NPC_Routine_080B1D94(int npc)
       NPC_Routine_080B3948(npc);
       loop_i = stack_val_2c + 1;
       stack_val_2c = loop_i;
-      NPC_Routine_080B0708(npc,loop_i);
+      HarvestSprite_Minigame_UpdateCountdownTimer(npc,loop_i);
       if (loop_i == 0x3c) {
         stack_val_2c = 0;
       }
@@ -18341,7 +18341,7 @@ undefined4 NPC_Routine_080B1D94(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B2114 @ 0x080B2114
 // =============================================================================
-undefined4 NPC_Routine_080B2114(int npc)
+void NPC_Routine_080B2114(int npc)
 
 {
   byte b_flag1;
@@ -19304,7 +19304,7 @@ undefined4 NPC_Routine_080B2114(int npc)
     }
     p_int13[1] = p_int13[1] + 0x10;
   }
-  NPC_Routine_080B0934(npc);
+  HarvestSprite_Minigame_HideUI(npc);
   HW_Routine_08008C38(0x80C + npc,0xcd,0xFFFF);
   NPC_Routine_080AF814(npc);
   stack_val_6c = 0;
@@ -19616,7 +19616,7 @@ LAB_080b34b2:
 // =============================================================================
 // Function: NPC_Routine_080B34DC @ 0x080B34DC
 // =============================================================================
-undefined4 NPC_Routine_080B34DC(int npc)
+void NPC_Routine_080B34DC(int npc)
 
 {
   int loop_i;
@@ -19636,7 +19636,7 @@ undefined4 NPC_Routine_080B34DC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B3518 @ 0x080B3518
 // =============================================================================
-undefined4 NPC_Routine_080B3518(int npc)
+void NPC_Routine_080B3518(int npc)
 
 {
   byte b_flag1;
@@ -19732,7 +19732,7 @@ LAB_080b3696:
 // =============================================================================
 // Function: NPC_Routine_080B36B4 @ 0x080B36B4
 // =============================================================================
-undefined4 NPC_Routine_080B36B4(int npc)
+void NPC_Routine_080B36B4(int npc)
 
 {
   short s_val1;
@@ -19842,7 +19842,7 @@ undefined4 NPC_Routine_080B36B4(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B3948 @ 0x080B3948
 // =============================================================================
-undefined4 NPC_Routine_080B3948(int npc)
+void NPC_Routine_080B3948(int npc)
 
 {
   char c_char1;
@@ -19870,7 +19870,7 @@ undefined4 NPC_Routine_080B3948(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B3A28 @ 0x080B3A28
 // =============================================================================
-undefined4 NPC_Routine_080B3A28(int npc)
+void NPC_Routine_080B3A28(int npc)
 
 {
   int i_val1;
@@ -19936,7 +19936,7 @@ undefined4 NPC_Routine_080B3A28(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B3BA8 @ 0x080B3BA8
 // =============================================================================
-undefined4 NPC_Routine_080B3BA8(int npc)
+void NPC_Routine_080B3BA8(int npc)
 
 {
   int *p_int1;
@@ -19945,11 +19945,11 @@ undefined4 NPC_Routine_080B3BA8(int npc)
   p_int1 = (int *)(npc + 0x83C);
   if (*p_int1 == 0) {
     *p_int1 = 1;
-    NPC_Routine_080B0934(npc);
+    HarvestSprite_Minigame_HideUI(npc);
   }
   else {
     *p_int1 = 0;
-    NPC_Routine_080B0970(npc);
+    HarvestSprite_Minigame_ShowUI(npc);
   }
   return;
 }
@@ -19957,7 +19957,7 @@ undefined4 NPC_Routine_080B3BA8(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B3BE4 @ 0x080B3BE4
 // =============================================================================
-undefined8 NPC_Routine_080B3BE4(undefined4 *npc,undefined4 amount)
+u32 NPC_Routine_080B3BE4(undefined4 *npc,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -19972,7 +19972,7 @@ undefined8 NPC_Routine_080B3BE4(undefined4 *npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_080B3C0C @ 0x080B3C0C
 // =============================================================================
-undefined4 NPC_Routine_080B3C0C(undefined4 *npc,undefined4 amount)
+void NPC_Routine_080B3C0C(undefined4 *npc,undefined4 amount)
 
 {
   int i_val1;
@@ -19989,7 +19989,7 @@ undefined4 NPC_Routine_080B3C0C(undefined4 *npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_080B3C3C @ 0x080B3C3C
 // =============================================================================
-undefined8 NPC_Routine_080B3C3C(undefined4 *npc,int amount)
+u32 NPC_Routine_080B3C3C(undefined4 *npc,int amount)
 
 {
   undefined4 facing_buffer [3];
@@ -20463,7 +20463,7 @@ void NPC_Routine_080B3CC8(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080B45E4 @ 0x080B45E4
 // =============================================================================
-undefined4 NPC_Routine_080B45E4(void)
+void NPC_Routine_080B45E4(void)
 
 {
   
@@ -20474,7 +20474,7 @@ undefined4 NPC_Routine_080B45E4(void)
 // =============================================================================
 // Function: NPC_Routine_080B45F0 @ 0x080B45F0
 // =============================================================================
-undefined4 NPC_Routine_080B45F0(int npc)
+void NPC_Routine_080B45F0(int npc)
 
 {
   int i_val1;
@@ -20508,7 +20508,7 @@ undefined4 NPC_Routine_080B45F0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B469C @ 0x080B469C
 // =============================================================================
-undefined4 NPC_Routine_080B469C(int npc)
+void NPC_Routine_080B469C(int npc)
 
 {
   undefined2 u_val1;
@@ -21221,7 +21221,7 @@ LAB_080b4cdc:
 // =============================================================================
 // Function: NPC_Routine_080B5318 @ 0x080B5318
 // =============================================================================
-undefined4 NPC_Routine_080B5318(int npc)
+void NPC_Routine_080B5318(int npc)
 
 {
   uint loop_i;
@@ -21368,7 +21368,7 @@ LAB_080b55ba:
 // =============================================================================
 // Function: NPC_Routine_080B55D0 @ 0x080B55D0
 // =============================================================================
-undefined4 NPC_Routine_080B55D0(int npc)
+u32 NPC_Routine_080B55D0(int npc)
 
 {
   int i_val1;
@@ -21450,7 +21450,7 @@ undefined4 NPC_Routine_080B55D0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B5788 @ 0x080B5788
 // =============================================================================
-undefined4 NPC_Routine_080B5788(int npc)
+void NPC_Routine_080B5788(int npc)
 
 {
   undefined1 *p_uint1;
@@ -21490,7 +21490,7 @@ undefined4 NPC_Routine_080B5788(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B5824 @ 0x080B5824
 // =============================================================================
-undefined4 NPC_Routine_080B5824(int npc)
+void NPC_Routine_080B5824(int npc)
 
 {
   byte b_flag1;
@@ -23247,7 +23247,7 @@ undefined4 NPC_Routine_080B5824(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B7164 @ 0x080B7164
 // =============================================================================
-undefined4 NPC_Routine_080B7164(int npc,int amount)
+void NPC_Routine_080B7164(int npc,int amount)
 
 {
   undefined2 *p_uint1;
@@ -23509,7 +23509,7 @@ undefined4 NPC_Routine_080B7164(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080B757C @ 0x080B757C
 // =============================================================================
-undefined4 NPC_Routine_080B757C(int npc)
+void NPC_Routine_080B757C(int npc)
 
 {
   int loop_i;
@@ -23546,7 +23546,7 @@ undefined4 NPC_Routine_080B757C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B7648 @ 0x080B7648
 // =============================================================================
-undefined4 NPC_Routine_080B7648(int npc)
+void NPC_Routine_080B7648(int npc)
 
 {
   undefined2 u_val1;
@@ -24494,7 +24494,7 @@ LAB_080b7fc4:
 // =============================================================================
 // Function: NPC_Routine_080B8578 @ 0x080B8578
 // =============================================================================
-undefined4 NPC_Routine_080B8578(int npc)
+void NPC_Routine_080B8578(int npc)
 
 {
   char c_char1;
@@ -24593,7 +24593,7 @@ LAB_080b8794:
 // =============================================================================
 // Function: NPC_Routine_080B87C4 @ 0x080B87C4
 // =============================================================================
-undefined4 NPC_Routine_080B87C4(int npc)
+void NPC_Routine_080B87C4(int npc)
 
 {
   undefined2 *p_uint1;
@@ -24629,7 +24629,7 @@ undefined4 NPC_Routine_080B87C4(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B888C @ 0x080B888C
 // =============================================================================
-undefined4 NPC_Routine_080B888C(int npc)
+void NPC_Routine_080B888C(int npc)
 
 {
   int i_val1;
@@ -24883,7 +24883,7 @@ undefined4 NPC_Routine_080B888C(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B8DAC @ 0x080B8DAC
 // =============================================================================
-ulonglong NPC_Routine_080B8DAC(int npc,int amount,int extra_arg,uint out_data)
+u32 NPC_Routine_080B8DAC(int npc,int amount,int extra_arg,uint out_data)
 
 {
   
@@ -24898,7 +24898,7 @@ ulonglong NPC_Routine_080B8DAC(int npc,int amount,int extra_arg,uint out_data)
 // =============================================================================
 // Function: NPC_Routine_080B8DF4 @ 0x080B8DF4
 // =============================================================================
-undefined4 NPC_Routine_080B8DF4(int npc,uint amount)
+void NPC_Routine_080B8DF4(int npc,uint amount)
 
 {
   undefined2 u_val1;
@@ -24948,7 +24948,7 @@ undefined4 NPC_Routine_080B8DF4(int npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_080B8EBC @ 0x080B8EBC
 // =============================================================================
-undefined4 NPC_Routine_080B8EBC(int npc,uint amount,int extra_arg)
+void NPC_Routine_080B8EBC(int npc,uint amount,int extra_arg)
 
 {
   byte b_flag1;
@@ -25225,7 +25225,7 @@ LAB_080b8f3a:
 // =============================================================================
 // Function: NPC_Routine_080B92B4 @ 0x080B92B4
 // =============================================================================
-undefined4 NPC_Routine_080B92B4(int npc)
+void NPC_Routine_080B92B4(int npc)
 
 {
   char c_char1;
@@ -25301,7 +25301,7 @@ LAB_080b93f0:
 // =============================================================================
 // Function: NPC_Routine_080B9428 @ 0x080B9428
 // =============================================================================
-undefined4 NPC_Routine_080B9428(int npc)
+void NPC_Routine_080B9428(int npc)
 
 {
   
@@ -25319,7 +25319,7 @@ undefined4 NPC_Routine_080B9428(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B9464 @ 0x080B9464
 // =============================================================================
-undefined8 NPC_Routine_080B9464(undefined4 npc,uint amount,uint extra_arg)
+u32 NPC_Routine_080B9464(undefined4 npc,uint amount,uint extra_arg)
 
 {
   int i_val1;
@@ -25338,7 +25338,7 @@ undefined8 NPC_Routine_080B9464(undefined4 npc,uint amount,uint extra_arg)
 // =============================================================================
 // Function: NPC_Routine_080B94A8 @ 0x080B94A8
 // =============================================================================
-undefined4 NPC_Routine_080B94A8(int npc,uint amount,uint extra_arg)
+void NPC_Routine_080B94A8(int npc,uint amount,uint extra_arg)
 
 {
   byte b_flag1;
@@ -25464,7 +25464,7 @@ LAB_080b9728:
 // =============================================================================
 // Function: NPC_Routine_080B9734 @ 0x080B9734
 // =============================================================================
-undefined4 NPC_Routine_080B9734(int npc)
+void NPC_Routine_080B9734(int npc)
 
 {
   uint u_val1;
@@ -25517,7 +25517,7 @@ LAB_080b97cc:
 // =============================================================================
 // Function: NPC_Routine_080B97FC @ 0x080B97FC
 // =============================================================================
-undefined4 NPC_Routine_080B97FC(int npc,char amount)
+void NPC_Routine_080B97FC(int npc,char amount)
 
 {
   undefined4 u_val1;
@@ -25537,7 +25537,7 @@ undefined4 NPC_Routine_080B97FC(int npc,char amount)
 // =============================================================================
 // Function: NPC_Routine_080B9828 @ 0x080B9828
 // =============================================================================
-undefined4 NPC_Routine_080B9828(int npc,char amount)
+void NPC_Routine_080B9828(int npc,char amount)
 
 {
   undefined4 *p_uint1;
@@ -25555,7 +25555,7 @@ undefined4 NPC_Routine_080B9828(int npc,char amount)
 // =============================================================================
 // Function: NPC_Routine_080B9844 @ 0x080B9844
 // =============================================================================
-undefined4 NPC_Routine_080B9844(int npc,uint amount)
+void NPC_Routine_080B9844(int npc,uint amount)
 
 {
   char c_char1;
@@ -25687,7 +25687,7 @@ LAB_080b9aa4:
 // =============================================================================
 // Function: NPC_Routine_080B9AC0 @ 0x080B9AC0
 // =============================================================================
-undefined4 NPC_Routine_080B9AC0(int npc)
+void NPC_Routine_080B9AC0(int npc)
 
 {
   uint u_val1;
@@ -25730,7 +25730,7 @@ undefined4 NPC_Routine_080B9AC0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080B9B50 @ 0x080B9B50
 // =============================================================================
-undefined4 NPC_Routine_080B9B50(int npc,uint amount)
+void NPC_Routine_080B9B50(int npc,uint amount)
 
 {
   byte b_flag1;
@@ -25878,7 +25878,7 @@ LAB_080b9df6:
 // =============================================================================
 // Function: NPC_Routine_080B9E1C @ 0x080B9E1C
 // =============================================================================
-undefined4 NPC_Routine_080B9E1C(int npc,uint amount)
+void NPC_Routine_080B9E1C(int npc,uint amount)
 
 {
   uint u_val1;
@@ -25938,7 +25938,7 @@ LAB_080b9ee6:
 // =============================================================================
 // Function: NPC_Routine_080B9F0C @ 0x080B9F0C
 // =============================================================================
-undefined4 NPC_Routine_080B9F0C(int npc,uint amount)
+void NPC_Routine_080B9F0C(int npc,uint amount)
 
 {
   uint u_val1;
@@ -25954,7 +25954,7 @@ undefined4 NPC_Routine_080B9F0C(int npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_080B9F38 @ 0x080B9F38
 // =============================================================================
-undefined4 NPC_Routine_080B9F38(int npc,uint amount)
+void NPC_Routine_080B9F38(int npc,uint amount)
 
 {
   uint u_val1;
@@ -25970,7 +25970,7 @@ undefined4 NPC_Routine_080B9F38(int npc,uint amount)
 // =============================================================================
 // Function: NPC_Routine_080B9F64 @ 0x080B9F64
 // =============================================================================
-undefined8 NPC_Routine_080B9F64(int npc,uint amount,uint extra_arg)
+u32 NPC_Routine_080B9F64(int npc,uint amount,uint extra_arg)
 
 {
   int i_val1;
@@ -26069,7 +26069,7 @@ LAB_080ba0a0:
 // =============================================================================
 // Function: NPC_Routine_080BA0C4 @ 0x080BA0C4
 // =============================================================================
-undefined4 NPC_Routine_080BA0C4(int npc)
+void NPC_Routine_080BA0C4(int npc)
 
 {
   byte b_flag1;
@@ -26175,7 +26175,7 @@ LAB_080ba19c:
 // =============================================================================
 // Function: NPC_Routine_080BA1A4 @ 0x080BA1A4
 // =============================================================================
-undefined4 NPC_Routine_080BA1A4(int npc)
+void NPC_Routine_080BA1A4(int npc)
 
 {
   short s_val1;
@@ -26206,7 +26206,7 @@ undefined4 NPC_Routine_080BA1A4(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BA204 @ 0x080BA204
 // =============================================================================
-undefined4 NPC_Routine_080BA204(int npc)
+void NPC_Routine_080BA204(int npc)
 
 {
   byte b_flag1;
@@ -26247,7 +26247,7 @@ LAB_080ba27e:
 // =============================================================================
 // Function: NPC_Routine_080BA284 @ 0x080BA284
 // =============================================================================
-undefined4 NPC_Routine_080BA284(int npc)
+void NPC_Routine_080BA284(int npc)
 
 {
   byte b_flag1;
@@ -26279,7 +26279,7 @@ undefined4 NPC_Routine_080BA284(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BA2C4 @ 0x080BA2C4
 // =============================================================================
-undefined8 NPC_Routine_080BA2C4(int npc,int amount)
+u32 NPC_Routine_080BA2C4(int npc,int amount)
 
 {
   char c_char1;
@@ -26396,7 +26396,7 @@ LAB_080ba54a:
 // =============================================================================
 // Function: NPC_Routine_080BA574 @ 0x080BA574
 // =============================================================================
-undefined4 NPC_Routine_080BA574(int npc,int amount,undefined4 extra_arg,undefined4 out_data)
+void NPC_Routine_080BA574(int npc,int amount,undefined4 extra_arg,undefined4 out_data)
 
 {
   
@@ -26426,7 +26426,7 @@ undefined4 NPC_Routine_080BA574(int npc,int amount,undefined4 extra_arg,undefine
 // =============================================================================
 // Function: NPC_Routine_080BA608 @ 0x080BA608
 // =============================================================================
-undefined4 NPC_Routine_080BA608(int npc)
+void NPC_Routine_080BA608(int npc)
 
 {
   int i_val1;
@@ -26464,7 +26464,7 @@ undefined4 NPC_Routine_080BA608(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BA6B8 @ 0x080BA6B8
 // =============================================================================
-undefined4 NPC_Routine_080BA6B8(int npc)
+void NPC_Routine_080BA6B8(int npc)
 
 {
   int i_val1;
@@ -26495,7 +26495,7 @@ undefined4 NPC_Routine_080BA6B8(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BA734 @ 0x080BA734
 // =============================================================================
-undefined4 NPC_Routine_080BA734(int npc)
+void NPC_Routine_080BA734(int npc)
 
 {
   int i_val1;
@@ -26530,7 +26530,7 @@ undefined4 NPC_Routine_080BA734(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BA7E4 @ 0x080BA7E4
 // =============================================================================
-undefined4 NPC_Routine_080BA7E4(int npc,int amount)
+void NPC_Routine_080BA7E4(int npc,int amount)
 
 {
   int *p_int1;
@@ -26880,7 +26880,7 @@ undefined4 NPC_Routine_080BA7E4(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080BAC9C @ 0x080BAC9C
 // =============================================================================
-undefined4 NPC_Routine_080BAC9C(int npc,int amount)
+void NPC_Routine_080BAC9C(int npc,int amount)
 
 {
   undefined2 u_val1;
@@ -27718,7 +27718,7 @@ undefined4 NPC_Routine_080BAC9C(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080BB890 @ 0x080BB890
 // =============================================================================
-undefined8 NPC_Routine_080BB890(int npc,int amount,int extra_arg,int out_data)
+u32 NPC_Routine_080BB890(int npc,int amount,int extra_arg,int out_data)
 
 {
   uint u_val1;
@@ -27750,7 +27750,7 @@ LAB_080bb8e0:
 // =============================================================================
 // Function: NPC_Routine_080BB8EC @ 0x080BB8EC
 // =============================================================================
-undefined4 NPC_Routine_080BB8EC(int npc,int amount)
+void NPC_Routine_080BB8EC(int npc,int amount)
 
 {
   undefined2 u_val1;
@@ -28401,7 +28401,7 @@ undefined4 NPC_Routine_080BB8EC(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080BC254 @ 0x080BC254
 // =============================================================================
-undefined8 NPC_Routine_080BC254(int npc,int amount,int extra_arg,int out_data)
+u32 NPC_Routine_080BC254(int npc,int amount,int extra_arg,int out_data)
 
 {
   undefined1 *p_uint1;
@@ -28424,7 +28424,7 @@ undefined8 NPC_Routine_080BC254(int npc,int amount,int extra_arg,int out_data)
 // =============================================================================
 // Function: NPC_Routine_080BC288 @ 0x080BC288
 // =============================================================================
-undefined4 NPC_Routine_080BC288(int npc,int amount)
+void NPC_Routine_080BC288(int npc,int amount)
 
 {
   ushort u_val1;
@@ -28836,7 +28836,7 @@ undefined4 NPC_Routine_080BC288(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080BC898 @ 0x080BC898
 // =============================================================================
-undefined8 NPC_Routine_080BC898(undefined4 *npc,undefined4 amount)
+u32 NPC_Routine_080BC898(undefined4 *npc,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -28851,7 +28851,7 @@ undefined8 NPC_Routine_080BC898(undefined4 *npc,undefined4 amount)
 // =============================================================================
 // Function: NPC_Routine_080BC8C0 @ 0x080BC8C0
 // =============================================================================
-undefined4 NPC_Routine_080BC8C0(undefined4 *npc,undefined4 amount)
+void NPC_Routine_080BC8C0(undefined4 *npc,undefined4 amount)
 
 {
   int i_val1;
@@ -28878,7 +28878,7 @@ void NPC_Routine_080BC8F0(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BC8FC @ 0x080BC8FC
 // =============================================================================
-undefined8 NPC_Routine_080BC8FC(undefined4 *npc,int amount)
+u32 NPC_Routine_080BC8FC(undefined4 *npc,int amount)
 
 {
   undefined4 facing_buffer [3];
@@ -28891,7 +28891,7 @@ undefined8 NPC_Routine_080BC8FC(undefined4 *npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080BCEBC @ 0x080BCEBC
 // =============================================================================
-undefined4 NPC_Routine_080BCEBC(void)
+void NPC_Routine_080BCEBC(void)
 
 {
   
@@ -28902,7 +28902,7 @@ undefined4 NPC_Routine_080BCEBC(void)
 // =============================================================================
 // Function: NPC_Routine_080BCEC8 @ 0x080BCEC8
 // =============================================================================
-undefined4 NPC_Routine_080BCEC8(int npc)
+void NPC_Routine_080BCEC8(int npc)
 
 {
   undefined4 u_val1;
@@ -28940,7 +28940,7 @@ undefined4 NPC_Routine_080BCEC8(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BCFAC @ 0x080BCFAC
 // =============================================================================
-undefined4 NPC_Routine_080BCFAC(undefined4 npc)
+void NPC_Routine_080BCFAC(undefined4 npc)
 
 {
   undefined4 u_val1;
@@ -28968,7 +28968,7 @@ undefined4 NPC_Routine_080BCFAC(undefined4 npc)
 // =============================================================================
 // Function: NPC_Routine_080BD064 @ 0x080BD064
 // =============================================================================
-undefined4 NPC_Routine_080BD064(int npc)
+void NPC_Routine_080BD064(int npc)
 
 {
   undefined2 u_val1;
@@ -29966,7 +29966,7 @@ undefined4 NPC_Routine_080BD064(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BDF40 @ 0x080BDF40
 // =============================================================================
-undefined4 NPC_Routine_080BDF40(int npc)
+void NPC_Routine_080BDF40(int npc)
 
 {
   byte b_flag1;
@@ -30457,7 +30457,7 @@ undefined4 NPC_Routine_080BDF40(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BE728 @ 0x080BE728
 // =============================================================================
-undefined4 NPC_Routine_080BE728(int npc,int amount)
+void NPC_Routine_080BE728(int npc,int amount)
 
 {
   byte b_flag1;
@@ -30596,7 +30596,7 @@ undefined4 NPC_Routine_080BE728(int npc,int amount)
 // =============================================================================
 // Function: NPC_Routine_080BE954 @ 0x080BE954
 // =============================================================================
-undefined4 NPC_Routine_080BE954(int npc)
+void NPC_Routine_080BE954(int npc)
 
 {
   byte b_flag1;
@@ -30646,7 +30646,7 @@ undefined4 NPC_Routine_080BE954(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BEA34 @ 0x080BEA34
 // =============================================================================
-undefined4 NPC_Routine_080BEA34(int npc)
+void NPC_Routine_080BEA34(int npc)
 
 {
   int i_val1;
@@ -30679,7 +30679,7 @@ undefined4 NPC_Routine_080BEA34(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BEAD4 @ 0x080BEAD4
 // =============================================================================
-undefined4 NPC_Routine_080BEAD4(int npc)
+void NPC_Routine_080BEAD4(int npc)
 
 {
   bool b_flag1;
@@ -30969,7 +30969,7 @@ LAB_080bf0c0:
 // =============================================================================
 // Function: NPC_Routine_080BF0EC @ 0x080BF0EC
 // =============================================================================
-undefined4 NPC_Routine_080BF0EC(int npc)
+void NPC_Routine_080BF0EC(int npc)
 
 {
   undefined4 *p_uint1;
@@ -31062,7 +31062,7 @@ undefined4 NPC_Routine_080BF0EC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BF2EC @ 0x080BF2EC
 // =============================================================================
-undefined4 NPC_Routine_080BF2EC(int npc)
+void NPC_Routine_080BF2EC(int npc)
 
 {
   undefined2 *p_uint1;
@@ -31089,7 +31089,7 @@ undefined4 NPC_Routine_080BF2EC(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BF348 @ 0x080BF348
 // =============================================================================
-undefined4 NPC_Routine_080BF348(int npc)
+void NPC_Routine_080BF348(int npc)
 
 {
   undefined4 u_val1;
@@ -31363,7 +31363,7 @@ undefined4 NPC_Routine_080BF348(int npc)
 // =============================================================================
 // Function: NPC_Routine_080BF764 @ 0x080BF764
 // =============================================================================
-undefined4 NPC_Routine_080BF764(int npc)
+void NPC_Routine_080BF764(int npc)
 
 {
   undefined2 u_val1;

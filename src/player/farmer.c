@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: Farmer_Init @ 0x0800E2E4
 // =============================================================================
-undefined8 Farmer_Init(uint farmer)
+u32 Farmer_Init(uint farmer)
 
 {
   int i_val1;
@@ -24,7 +24,7 @@ undefined8 Farmer_Init(uint farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800E304 @ 0x0800E304
 // =============================================================================
-undefined8 Farmer_Routine_0800E304(uint farmer)
+u32 Farmer_Routine_0800E304(uint farmer)
 
 {
   int i_val1;
@@ -39,7 +39,7 @@ undefined8 Farmer_Routine_0800E304(uint farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800E324 @ 0x0800E324
 // =============================================================================
-ulonglong Farmer_Routine_0800E324(int farmer)
+u32 Farmer_Routine_0800E324(int farmer)
 
 {
   uint u_val1;
@@ -56,7 +56,7 @@ ulonglong Farmer_Routine_0800E324(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800E354 @ 0x0800E354
 // =============================================================================
-undefined8 Farmer_Routine_0800E354(int farmer,undefined4 amount,undefined1 *slot_id)
+u32 Farmer_Routine_0800E354(int farmer,undefined4 amount,undefined1 *slot_id)
 
 {
   ushort u_val1;
@@ -128,7 +128,7 @@ undefined8 Farmer_Routine_0800E354(int farmer,undefined4 amount,undefined1 *slot
 // =============================================================================
 // Function: Farmer_IsOverworked @ 0x0800E504
 // =============================================================================
-undefined8 Farmer_IsOverworked(int farmer)
+u32 Farmer_IsOverworked(int farmer)
 
 {
   
@@ -138,7 +138,7 @@ undefined8 Farmer_IsOverworked(int farmer)
 // =============================================================================
 // Function: Farmer_GetUpgradedTool @ 0x0800E550
 // =============================================================================
-undefined8 Farmer_GetUpgradedTool(int farmer,byte amount)
+u32 Farmer_GetUpgradedTool(int farmer,byte amount)
 
 {
   undefined4 u_val1;
@@ -374,7 +374,7 @@ void Farmer_GetLocation(undefined4 *farmer,int amount)
 // =============================================================================
 // Function: Farmer_AddStamina @ 0x0800E9E4
 // =============================================================================
-undefined4 Farmer_AddStamina(int farmer,int amount)
+void Farmer_AddStamina(int farmer,int amount)
 
 {
   uint *p_uint1;
@@ -401,7 +401,7 @@ undefined4 Farmer_AddStamina(int farmer,int amount)
 // =============================================================================
 // Function: Farmer_ReduceStamina @ 0x0800EA38
 // =============================================================================
-undefined4 Farmer_ReduceStamina(undefined4 farmer,int amount)
+void Farmer_ReduceStamina(undefined4 farmer,int amount)
 
 {
   
@@ -412,7 +412,7 @@ undefined4 Farmer_ReduceStamina(undefined4 farmer,int amount)
 // =============================================================================
 // Function: Farmer_RestoreStamina @ 0x0800EA44
 // =============================================================================
-undefined4 Farmer_RestoreStamina(int farmer)
+void Farmer_RestoreStamina(int farmer)
 
 {
   ushort u_val1;
@@ -426,7 +426,7 @@ undefined4 Farmer_RestoreStamina(int farmer)
 // =============================================================================
 // Function: Farmer_AddFatigue @ 0x0800EA68
 // =============================================================================
-undefined4 Farmer_AddFatigue(int farmer,int amount)
+void Farmer_AddFatigue(int farmer,int amount)
 
 {
   uint u_val1;
@@ -471,7 +471,7 @@ undefined4 Farmer_AddFatigue(int farmer,int amount)
 // =============================================================================
 // Function: Farmer_ReduceFatigue @ 0x0800EAD4
 // =============================================================================
-undefined4 Farmer_ReduceFatigue(undefined4 farmer,int amount)
+void Farmer_ReduceFatigue(undefined4 farmer,int amount)
 
 {
   
@@ -482,7 +482,7 @@ undefined4 Farmer_ReduceFatigue(undefined4 farmer,int amount)
 // =============================================================================
 // Function: Farmer_EatPowerBerry @ 0x0800EAFC
 // =============================================================================
-undefined4 Farmer_EatPowerBerry(int farmer)
+void Farmer_EatPowerBerry(int farmer)
 
 {
   byte b_flag1;
@@ -500,7 +500,7 @@ undefined4 Farmer_EatPowerBerry(int farmer)
 // =============================================================================
 // Function: Farmer_CycleHeldItemBack @ 0x0800EB3C
 // =============================================================================
-undefined8 Farmer_CycleHeldItemBack(int farmer)
+u32 Farmer_CycleHeldItemBack(int farmer)
 
 {
   char c_char1;
@@ -543,7 +543,7 @@ LAB_0800eb72:
 // =============================================================================
 // Function: Farmer_CycleHeldItemFront @ 0x0800EBC4
 // =============================================================================
-undefined8 Farmer_CycleHeldItemFront(int farmer)
+u32 Farmer_CycleHeldItemFront(int farmer)
 
 {
   char c_char1;
@@ -586,7 +586,7 @@ LAB_0800ebfa:
 // =============================================================================
 // Function: Farmer_CycleToolBack @ 0x0800EC4C
 // =============================================================================
-undefined8 Farmer_CycleToolBack(int farmer)
+u32 Farmer_CycleToolBack(int farmer)
 
 {
   char c_char1;
@@ -616,7 +616,7 @@ undefined8 Farmer_CycleToolBack(int farmer)
 // =============================================================================
 // Function: Farmer_CycleToolFront @ 0x0800ECB0
 // =============================================================================
-undefined8 Farmer_CycleToolFront(int farmer)
+u32 Farmer_CycleToolFront(int farmer)
 
 {
   char c_char1;
@@ -646,7 +646,7 @@ undefined8 Farmer_CycleToolFront(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800ED54 @ 0x0800ED54
 // =============================================================================
-undefined4 Farmer_Routine_0800ED54(int farmer,int amount)
+void Farmer_Routine_0800ED54(int farmer,int amount)
 
 {
   uint u_val1;
@@ -666,7 +666,7 @@ undefined4 Farmer_Routine_0800ED54(int farmer,int amount)
 // =============================================================================
 // Function: Farmer_IncrementPedometerStep @ 0x0800ED8C
 // =============================================================================
-undefined4 Farmer_IncrementPedometerStep(int farmer)
+void Farmer_IncrementPedometerStep(int farmer)
 
 {
   byte b_flag1;
@@ -708,7 +708,7 @@ LAB_0800ede2:
 // =============================================================================
 // Function: Farmer_Routine_0800EE2C @ 0x0800EE2C
 // =============================================================================
-undefined8 Farmer_Routine_0800EE2C(int farmer)
+u32 Farmer_Routine_0800EE2C(int farmer)
 
 {
   byte b_flag1;
@@ -730,7 +730,7 @@ undefined8 Farmer_Routine_0800EE2C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800EE60 @ 0x0800EE60
 // =============================================================================
-undefined4 Farmer_Routine_0800EE60(int farmer)
+void Farmer_Routine_0800EE60(int farmer)
 
 {
   byte b_flag1;
@@ -758,7 +758,7 @@ undefined4 Farmer_Routine_0800EE60(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800EECC @ 0x0800EECC
 // =============================================================================
-undefined8 Farmer_Routine_0800EECC(int farmer,uint amount)
+u32 Farmer_Routine_0800EECC(int farmer,uint amount)
 
 {
   ushort u_val1;
@@ -775,7 +775,7 @@ undefined8 Farmer_Routine_0800EECC(int farmer,uint amount)
 // =============================================================================
 // Function: Farmer_Routine_0800EEF8 @ 0x0800EEF8
 // =============================================================================
-undefined4 Farmer_Routine_0800EEF8(int farmer)
+void Farmer_Routine_0800EEF8(int farmer)
 
 {
   uint u_val1;
@@ -797,7 +797,7 @@ undefined4 Farmer_Routine_0800EEF8(int farmer)
 // =============================================================================
 // Function: ToolLevel_AddExperience @ 0x0800EF88
 // =============================================================================
-undefined4 ToolLevel_AddExperience(ushort *arg_1,int arg_2)
+void ToolLevel_AddExperience(ushort *arg_1,int arg_2)
 
 {
   uint *p_uint1;
@@ -817,7 +817,7 @@ undefined4 ToolLevel_AddExperience(ushort *arg_1,int arg_2)
 // =============================================================================
 // Function: ToolLevel_SetTierLevel @ 0x0800EFB4
 // =============================================================================
-undefined4 ToolLevel_SetTierLevel(uint *arg_1,uint arg_2)
+void ToolLevel_SetTierLevel(uint *arg_1,uint arg_2)
 
 {
   
@@ -830,7 +830,7 @@ undefined4 ToolLevel_SetTierLevel(uint *arg_1,uint arg_2)
 // =============================================================================
 // Function: Farmer_Routine_0800F004 @ 0x0800F004
 // =============================================================================
-undefined8 Farmer_Routine_0800F004(byte *farmer,undefined4 amount)
+u32 Farmer_Routine_0800F004(byte *farmer,undefined4 amount)
 
 {
   byte b_flag1;
@@ -850,7 +850,7 @@ undefined8 Farmer_Routine_0800F004(byte *farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0800F040 @ 0x0800F040
 // =============================================================================
-undefined8 Farmer_Routine_0800F040(byte *farmer,undefined1 amount)
+u32 Farmer_Routine_0800F040(byte *farmer,undefined1 amount)
 
 {
   byte b_flag1;
@@ -866,7 +866,7 @@ undefined8 Farmer_Routine_0800F040(byte *farmer,undefined1 amount)
 // =============================================================================
 // Function: Farmer_Routine_0800F06C @ 0x0800F06C
 // =============================================================================
-undefined8 Farmer_Routine_0800F06C(byte *farmer)
+u32 Farmer_Routine_0800F06C(byte *farmer)
 
 {
   undefined4 u_val1;
@@ -891,7 +891,7 @@ LAB_0800f098:
 // =============================================================================
 // Function: Farmer_Routine_0800F0A4 @ 0x0800F0A4
 // =============================================================================
-undefined8 Farmer_Routine_0800F0A4(undefined4 farmer,byte *amount)
+u32 Farmer_Routine_0800F0A4(undefined4 farmer,byte *amount)
 
 {
   undefined1 temp_coords [4];
@@ -910,7 +910,7 @@ undefined8 Farmer_Routine_0800F0A4(undefined4 farmer,byte *amount)
 // =============================================================================
 // Function: Farmer_Routine_0800F0E8 @ 0x0800F0E8
 // =============================================================================
-undefined8 Farmer_Routine_0800F0E8(byte *farmer)
+u32 Farmer_Routine_0800F0E8(byte *farmer)
 
 {
   byte stack_val_c;
@@ -929,7 +929,7 @@ undefined8 Farmer_Routine_0800F0E8(byte *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800F124 @ 0x0800F124
 // =============================================================================
-undefined8 Farmer_Routine_0800F124(byte *farmer)
+u32 Farmer_Routine_0800F124(byte *farmer)
 
 {
   uint u_val1;
@@ -951,7 +951,7 @@ undefined8 Farmer_Routine_0800F124(byte *farmer)
 // =============================================================================
 // Function: HeldItem_IsEmpty @ 0x0800F190
 // =============================================================================
-undefined8 HeldItem_IsEmpty(byte *arg_1)
+u32 HeldItem_IsEmpty(byte *arg_1)
 
 {
   uint u_val1;
@@ -991,7 +991,7 @@ LAB_0800f1fc:
 // =============================================================================
 // Function: HeldItem_GetFood @ 0x0800F20C
 // =============================================================================
-undefined8 HeldItem_GetFood(undefined4 arg_1,byte *arg_2)
+u32 HeldItem_GetFood(undefined4 arg_1,byte *arg_2)
 
 {
   undefined1 temp_coords [4];
@@ -1010,7 +1010,7 @@ undefined8 HeldItem_GetFood(undefined4 arg_1,byte *arg_2)
 // =============================================================================
 // Function: HeldItem_GetArticle @ 0x0800F258
 // =============================================================================
-undefined8 HeldItem_GetArticle(byte *arg_1)
+u32 HeldItem_GetArticle(byte *arg_1)
 
 {
   byte stack_val_c;
@@ -1029,7 +1029,7 @@ undefined8 HeldItem_GetArticle(byte *arg_1)
 // =============================================================================
 // Function: HeldItem_ToRucksackItem @ 0x0800F294
 // =============================================================================
-undefined8 HeldItem_ToRucksackItem(undefined4 *arg_1,byte *arg_2)
+u32 HeldItem_ToRucksackItem(undefined4 *arg_1,byte *arg_2)
 
 {
   undefined4 stack_val_24;
@@ -1064,7 +1064,7 @@ undefined8 HeldItem_ToRucksackItem(undefined4 *arg_1,byte *arg_2)
 // =============================================================================
 // Function: Farmer_Routine_0800F344 @ 0x0800F344
 // =============================================================================
-undefined8 Farmer_Routine_0800F344(byte *farmer)
+u32 Farmer_Routine_0800F344(byte *farmer)
 
 {
   uint u_val1;
@@ -1078,7 +1078,7 @@ undefined8 Farmer_Routine_0800F344(byte *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800F360 @ 0x0800F360
 // =============================================================================
-undefined8 Farmer_Routine_0800F360(byte *farmer)
+u32 Farmer_Routine_0800F360(byte *farmer)
 
 {
   uint u_val1;
@@ -1092,7 +1092,7 @@ undefined8 Farmer_Routine_0800F360(byte *farmer)
 // =============================================================================
 // Function: HeldItem_SetFood @ 0x0800F3B0
 // =============================================================================
-undefined4 HeldItem_SetFood(byte *arg_1,undefined4 arg_2)
+void HeldItem_SetFood(byte *arg_1,undefined4 arg_2)
 
 {
   byte b_flag1;
@@ -1112,7 +1112,7 @@ undefined4 HeldItem_SetFood(byte *arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: HeldItem_SetArticle @ 0x0800F3E8
 // =============================================================================
-undefined4 HeldItem_SetArticle(byte *arg_1,undefined1 arg_2)
+void HeldItem_SetArticle(byte *arg_1,undefined1 arg_2)
 
 {
   byte b_flag1;
@@ -1128,7 +1128,7 @@ undefined4 HeldItem_SetArticle(byte *arg_1,undefined1 arg_2)
 // =============================================================================
 // Function: HeldItem_FromRucksackItem @ 0x0800F418
 // =============================================================================
-undefined4 HeldItem_FromRucksackItem(byte *arg_1,undefined4 arg_2)
+void HeldItem_FromRucksackItem(byte *arg_1,undefined4 arg_2)
 
 {
   byte b_flag1;
@@ -1168,7 +1168,7 @@ undefined4 HeldItem_FromRucksackItem(byte *arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: HeldItem_CanThrow @ 0x0800F528
 // =============================================================================
-undefined8 HeldItem_CanThrow(byte *arg_1)
+u32 HeldItem_CanThrow(byte *arg_1)
 
 {
   uint u_val1;
@@ -1190,7 +1190,7 @@ undefined8 HeldItem_CanThrow(byte *arg_1)
 // =============================================================================
 // Function: Farmer_Routine_0800F574 @ 0x0800F574
 // =============================================================================
-undefined8 Farmer_Routine_0800F574(undefined4 *farmer)
+u32 Farmer_Routine_0800F574(undefined4 *farmer)
 
 {
   int i_val1;
@@ -1228,7 +1228,7 @@ undefined8 Farmer_Routine_0800F574(undefined4 *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800F5D8 @ 0x0800F5D8
 // =============================================================================
-undefined8 Farmer_Routine_0800F5D8(uint *farmer)
+u32 Farmer_Routine_0800F5D8(uint *farmer)
 
 {
   uint u_val1;
@@ -1250,7 +1250,7 @@ undefined8 Farmer_Routine_0800F5D8(uint *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800F604 @ 0x0800F604
 // =============================================================================
-undefined8 Farmer_Routine_0800F604(int *farmer)
+u32 Farmer_Routine_0800F604(int *farmer)
 
 {
   char c_char1;
@@ -1274,7 +1274,7 @@ LAB_0800f62c:
 // =============================================================================
 // Function: Farmer_Routine_0800F634 @ 0x0800F634
 // =============================================================================
-undefined8 Farmer_Routine_0800F634(int *farmer)
+u32 Farmer_Routine_0800F634(int *farmer)
 
 {
   char c_char1;
@@ -1296,7 +1296,7 @@ LAB_0800f662:
 // =============================================================================
 // Function: Farmer_Routine_0800F668 @ 0x0800F668
 // =============================================================================
-undefined8 Farmer_Routine_0800F668(int *farmer)
+u32 Farmer_Routine_0800F668(int *farmer)
 
 {
   char c_char1;
@@ -1317,7 +1317,7 @@ LAB_0800f6aa:
 // =============================================================================
 // Function: Farmer_Routine_0800F6B4 @ 0x0800F6B4
 // =============================================================================
-undefined8 Farmer_Routine_0800F6B4(int *farmer,int amount)
+u32 Farmer_Routine_0800F6B4(int *farmer,int amount)
 
 {
   char c_char1;
@@ -1345,7 +1345,7 @@ LAB_0800f70a:
 // =============================================================================
 // Function: Farmer_Routine_0800F714 @ 0x0800F714
 // =============================================================================
-undefined8 Farmer_Routine_0800F714(int *farmer,int amount)
+u32 Farmer_Routine_0800F714(int *farmer,int amount)
 
 {
   char c_char1;
@@ -1373,7 +1373,7 @@ LAB_0800f770:
 // =============================================================================
 // Function: Farmer_Routine_0800F77C @ 0x0800F77C
 // =============================================================================
-undefined8 Farmer_Routine_0800F77C(int *farmer)
+u32 Farmer_Routine_0800F77C(int *farmer)
 
 {
   char c_char1;
@@ -1394,7 +1394,7 @@ undefined8 Farmer_Routine_0800F77C(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800F7AC @ 0x0800F7AC
 // =============================================================================
-undefined8 Farmer_Routine_0800F7AC(int *farmer,int amount)
+u32 Farmer_Routine_0800F7AC(int *farmer,int amount)
 
 {
   char c_char1;
@@ -1421,7 +1421,7 @@ undefined8 Farmer_Routine_0800F7AC(int *farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0800F804 @ 0x0800F804
 // =============================================================================
-undefined8 Farmer_Routine_0800F804(int *farmer,int amount)
+u32 Farmer_Routine_0800F804(int *farmer,int amount)
 
 {
   char c_char1;
@@ -1448,7 +1448,7 @@ undefined8 Farmer_Routine_0800F804(int *farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0800F874 @ 0x0800F874
 // =============================================================================
-undefined8 Farmer_Routine_0800F874(int farmer)
+u32 Farmer_Routine_0800F874(int farmer)
 
 {
   char c_char1;
@@ -1476,7 +1476,7 @@ LAB_0800f8a0:
 // =============================================================================
 // Function: Farmer_Routine_0800F8A8 @ 0x0800F8A8
 // =============================================================================
-undefined8 Farmer_Routine_0800F8A8(int farmer)
+u32 Farmer_Routine_0800F8A8(int farmer)
 
 {
   char c_char1;
@@ -1499,7 +1499,7 @@ LAB_0800f8da:
 // =============================================================================
 // Function: Farmer_Routine_0800F8E0 @ 0x0800F8E0
 // =============================================================================
-undefined8 Farmer_Routine_0800F8E0(int farmer)
+u32 Farmer_Routine_0800F8E0(int farmer)
 
 {
   char c_char1;
@@ -1520,7 +1520,7 @@ LAB_0800f924:
 // =============================================================================
 // Function: Farmer_Routine_0800F92C @ 0x0800F92C
 // =============================================================================
-undefined8 Farmer_Routine_0800F92C(int farmer,int amount)
+u32 Farmer_Routine_0800F92C(int farmer,int amount)
 
 {
   char c_char1;
@@ -1549,7 +1549,7 @@ LAB_0800f982:
 // =============================================================================
 // Function: Farmer_Routine_0800F990 @ 0x0800F990
 // =============================================================================
-undefined8 Farmer_Routine_0800F990(int farmer,int amount)
+u32 Farmer_Routine_0800F990(int farmer,int amount)
 
 {
   char c_char1;
@@ -1581,7 +1581,7 @@ undefined8 Farmer_Routine_0800F990(int farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0800F9FC @ 0x0800F9FC
 // =============================================================================
-undefined8 Farmer_Routine_0800F9FC(int farmer,int amount)
+u32 Farmer_Routine_0800F9FC(int farmer,int amount)
 
 {
   char c_char1;
@@ -1610,7 +1610,7 @@ undefined8 Farmer_Routine_0800F9FC(int farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0800FA60 @ 0x0800FA60
 // =============================================================================
-undefined4 Farmer_Routine_0800FA60(uint *farmer)
+void Farmer_Routine_0800FA60(uint *farmer)
 
 {
   uint u_val1;
@@ -1732,7 +1732,7 @@ undefined4 Farmer_Routine_0800FA60(uint *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800FCE4 @ 0x0800FCE4
 // =============================================================================
-undefined8 Farmer_Routine_0800FCE4(undefined4 *farmer,int amount,int slot_id)
+u32 Farmer_Routine_0800FCE4(undefined4 *farmer,int amount,int slot_id)
 
 {
   char c_char1;
@@ -1757,7 +1757,7 @@ undefined8 Farmer_Routine_0800FCE4(undefined4 *farmer,int amount,int slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0800FD20 @ 0x0800FD20
 // =============================================================================
-undefined8 Farmer_Routine_0800FD20(undefined4 farmer)
+u32 Farmer_Routine_0800FD20(undefined4 farmer)
 
 {
   
@@ -1768,7 +1768,7 @@ undefined8 Farmer_Routine_0800FD20(undefined4 farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800FD38 @ 0x0800FD38
 // =============================================================================
-undefined8 Farmer_Routine_0800FD38(undefined4 farmer)
+u32 Farmer_Routine_0800FD38(undefined4 farmer)
 
 {
   
@@ -1779,7 +1779,7 @@ undefined8 Farmer_Routine_0800FD38(undefined4 farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800FD50 @ 0x0800FD50
 // =============================================================================
-undefined8 Farmer_Routine_0800FD50(int *farmer,int amount,int slot_id)
+u32 Farmer_Routine_0800FD50(int *farmer,int amount,int slot_id)
 
 {
   char c_char1;
@@ -1810,7 +1810,7 @@ undefined8 Farmer_Routine_0800FD50(int *farmer,int amount,int slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0800FDC4 @ 0x0800FDC4
 // =============================================================================
-undefined8 Farmer_Routine_0800FDC4(int *farmer,int amount,int slot_id)
+u32 Farmer_Routine_0800FDC4(int *farmer,int amount,int slot_id)
 
 {
   char c_char1;
@@ -1836,7 +1836,7 @@ undefined8 Farmer_Routine_0800FDC4(int *farmer,int amount,int slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0800FE24 @ 0x0800FE24
 // =============================================================================
-undefined8 Farmer_Routine_0800FE24(undefined4 farmer,int amount,int slot_id)
+u32 Farmer_Routine_0800FE24(undefined4 farmer,int amount,int slot_id)
 
 {
   char c_char1;
@@ -1861,7 +1861,7 @@ undefined8 Farmer_Routine_0800FE24(undefined4 farmer,int amount,int slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0800FE78 @ 0x0800FE78
 // =============================================================================
-undefined8 Farmer_Routine_0800FE78(undefined4 farmer,int amount,undefined4 slot_id)
+u32 Farmer_Routine_0800FE78(undefined4 farmer,int amount,undefined4 slot_id)
 
 {
   undefined1 temp_coords [4];
@@ -1874,7 +1874,7 @@ undefined8 Farmer_Routine_0800FE78(undefined4 farmer,int amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_0800FEA0 @ 0x0800FEA0
 // =============================================================================
-undefined8 Farmer_Routine_0800FEA0(undefined4 farmer,int amount,undefined4 slot_id)
+u32 Farmer_Routine_0800FEA0(undefined4 farmer,int amount,undefined4 slot_id)
 
 {
   undefined1 temp_coords [4];
@@ -1887,7 +1887,7 @@ undefined8 Farmer_Routine_0800FEA0(undefined4 farmer,int amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_0800FEC8 @ 0x0800FEC8
 // =============================================================================
-undefined8 Farmer_Routine_0800FEC8(int farmer,int amount,uint slot_id)
+u32 Farmer_Routine_0800FEC8(int farmer,int amount,uint slot_id)
 
 {
   char c_char1;
@@ -1964,7 +1964,7 @@ void Farmer_Routine_0800FF8C(undefined4 *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0800FFE0 @ 0x0800FFE0
 // =============================================================================
-undefined8 Farmer_Routine_0800FFE0(undefined4 farmer,int amount)
+u32 Farmer_Routine_0800FFE0(undefined4 farmer,int amount)
 
 {
   
@@ -1975,7 +1975,7 @@ undefined8 Farmer_Routine_0800FFE0(undefined4 farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0800FFF4 @ 0x0800FFF4
 // =============================================================================
-undefined4 Farmer_Routine_0800FFF4(uint *farmer,undefined1 amount)
+void Farmer_Routine_0800FFF4(uint *farmer,undefined1 amount)
 
 {
   undefined1 *p_uint1;
@@ -1993,7 +1993,7 @@ undefined4 Farmer_Routine_0800FFF4(uint *farmer,undefined1 amount)
 // =============================================================================
 // Function: Farmer_Routine_08010014 @ 0x08010014
 // =============================================================================
-undefined4 Farmer_Routine_08010014(int farmer,undefined4 amount)
+void Farmer_Routine_08010014(int farmer,undefined4 amount)
 
 {
   
@@ -2004,7 +2004,7 @@ undefined4 Farmer_Routine_08010014(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08010024 @ 0x08010024
 // =============================================================================
-undefined4 Farmer_Routine_08010024(int *farmer)
+void Farmer_Routine_08010024(int *farmer)
 
 {
   int *p_int1;
@@ -2056,7 +2056,7 @@ void Farmer_Routine_0801004C(undefined4 *farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_08010158 @ 0x08010158
 // =============================================================================
-undefined4 Farmer_Routine_08010158(undefined4 *farmer,undefined4 amount)
+void Farmer_Routine_08010158(undefined4 *farmer,undefined4 amount)
 
 {
   
@@ -2074,7 +2074,7 @@ undefined4 Farmer_Routine_08010158(undefined4 *farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080101A0 @ 0x080101A0
 // =============================================================================
-undefined8 Farmer_Routine_080101A0(undefined4 *farmer,int *amount)
+u32 Farmer_Routine_080101A0(undefined4 *farmer,int *amount)
 
 {
   int i_val1;
@@ -2587,7 +2587,7 @@ LAB_08010e10:
 // =============================================================================
 // Function: Farmer_Routine_08010E68 @ 0x08010E68
 // =============================================================================
-undefined8 Farmer_Routine_08010E68(int farmer)
+u32 Farmer_Routine_08010E68(int farmer)
 
 {
   uint u_val1;
@@ -2621,7 +2621,7 @@ undefined8 Farmer_Routine_08010E68(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801140C @ 0x0801140C
 // =============================================================================
-undefined8 Farmer_Routine_0801140C(int farmer)
+u32 Farmer_Routine_0801140C(int farmer)
 
 {
   uint u_val1;
@@ -2643,7 +2643,7 @@ undefined8 Farmer_Routine_0801140C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08011464 @ 0x08011464
 // =============================================================================
-undefined8 Farmer_Routine_08011464(uint *farmer,uint amount)
+u32 Farmer_Routine_08011464(uint *farmer,uint amount)
 
 {
   bool b_flag1;
@@ -2661,7 +2661,7 @@ undefined8 Farmer_Routine_08011464(uint *farmer,uint amount)
 // =============================================================================
 // Function: Farmer_Routine_08011498 @ 0x08011498
 // =============================================================================
-undefined8 Farmer_Routine_08011498(int farmer,uint amount)
+u32 Farmer_Routine_08011498(int farmer,uint amount)
 
 {
   bool b_flag1;
@@ -2680,7 +2680,7 @@ undefined8 Farmer_Routine_08011498(int farmer,uint amount)
 // =============================================================================
 // Function: Farmer_Routine_080114C8 @ 0x080114C8
 // =============================================================================
-undefined8 Farmer_Routine_080114C8(int farmer,uint amount)
+u32 Farmer_Routine_080114C8(int farmer,uint amount)
 
 {
   bool b_flag1;
@@ -2698,7 +2698,7 @@ undefined8 Farmer_Routine_080114C8(int farmer,uint amount)
 // =============================================================================
 // Function: Farmer_Routine_08011524 @ 0x08011524
 // =============================================================================
-undefined8 Farmer_Routine_08011524(int farmer)
+u32 Farmer_Routine_08011524(int farmer)
 
 {
   undefined4 u_val1;
@@ -2713,7 +2713,7 @@ undefined8 Farmer_Routine_08011524(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08011550 @ 0x08011550
 // =============================================================================
-undefined4 Farmer_Routine_08011550(int *farmer)
+void Farmer_Routine_08011550(int *farmer)
 
 {
   
@@ -2727,7 +2727,7 @@ undefined4 Farmer_Routine_08011550(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_08011568 @ 0x08011568
 // =============================================================================
-undefined4 Farmer_Routine_08011568(int *farmer)
+void Farmer_Routine_08011568(int *farmer)
 
 {
   
@@ -2740,7 +2740,7 @@ undefined4 Farmer_Routine_08011568(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_08011588 @ 0x08011588
 // =============================================================================
-undefined8 Farmer_Routine_08011588(byte *farmer,int amount)
+u32 Farmer_Routine_08011588(byte *farmer,int amount)
 
 {
   int i_val1;
@@ -2758,7 +2758,7 @@ undefined8 Farmer_Routine_08011588(byte *farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_080115B0 @ 0x080115B0
 // =============================================================================
-undefined8 Farmer_Routine_080115B0(undefined4 farmer,undefined4 amount,int slot_id)
+u32 Farmer_Routine_080115B0(undefined4 farmer,undefined4 amount,int slot_id)
 
 {
   undefined4 u_val1;
@@ -2801,7 +2801,7 @@ LAB_0801163e:
 // =============================================================================
 // Function: Farmer_Routine_08011650 @ 0x08011650
 // =============================================================================
-undefined8 Farmer_Routine_08011650(int farmer,undefined4 amount,int slot_id,uint *flags)
+u32 Farmer_Routine_08011650(int farmer,undefined4 amount,int slot_id,uint *flags)
 
 {
   ushort u_val1;
@@ -2938,7 +2938,7 @@ LAB_0801191e:
 // =============================================================================
 // Function: Farmer_Routine_08011934 @ 0x08011934
 // =============================================================================
-undefined4 Farmer_Routine_08011934(int farmer,int amount,int slot_id)
+void Farmer_Routine_08011934(int farmer,int amount,int slot_id)
 
 {
   int i_val1;
@@ -3143,7 +3143,7 @@ undefined4 Farmer_Routine_08011934(int farmer,int amount,int slot_id)
 // =============================================================================
 // Function: Farmer_Routine_08011FE8 @ 0x08011FE8
 // =============================================================================
-undefined4 Farmer_Routine_08011FE8(undefined4 *farmer,undefined4 amount)
+void Farmer_Routine_08011FE8(undefined4 *farmer,undefined4 amount)
 
 {
   int i_val1;
@@ -3161,7 +3161,7 @@ undefined4 Farmer_Routine_08011FE8(undefined4 *farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08012028 @ 0x08012028
 // =============================================================================
-undefined8 Farmer_Routine_08012028(undefined4 *farmer,int amount)
+u32 Farmer_Routine_08012028(undefined4 *farmer,int amount)
 
 {
   undefined4 facing_buffer [3];
@@ -3193,7 +3193,7 @@ Farmer_Routine_08012064(int farmer,undefined4 amount,undefined4 slot_id,undefine
 // =============================================================================
 // Function: Farmer_Routine_080120A4 @ 0x080120A4
 // =============================================================================
-undefined8 Farmer_Routine_080120A4(int farmer,undefined4 amount)
+u32 Farmer_Routine_080120A4(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -3212,7 +3212,7 @@ undefined8 Farmer_Routine_080120A4(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080120C4 @ 0x080120C4
 // =============================================================================
-undefined8 Farmer_Routine_080120C4(int farmer,undefined4 amount)
+u32 Farmer_Routine_080120C4(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -3231,7 +3231,7 @@ undefined8 Farmer_Routine_080120C4(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080120E4 @ 0x080120E4
 // =============================================================================
-undefined4 Farmer_Routine_080120E4(int farmer,undefined4 amount,uint slot_id)
+void Farmer_Routine_080120E4(int farmer,undefined4 amount,uint slot_id)
 
 {
   int *p_int1;
@@ -3248,7 +3248,7 @@ undefined4 Farmer_Routine_080120E4(int farmer,undefined4 amount,uint slot_id)
 // =============================================================================
 // Function: Farmer_Routine_08012114 @ 0x08012114
 // =============================================================================
-undefined8 Farmer_Routine_08012114(int farmer,undefined4 amount)
+u32 Farmer_Routine_08012114(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -3269,7 +3269,7 @@ undefined8 Farmer_Routine_08012114(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08012134 @ 0x08012134
 // =============================================================================
-undefined8 Farmer_Routine_08012134(int farmer,undefined4 amount)
+u32 Farmer_Routine_08012134(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -3288,7 +3288,7 @@ undefined8 Farmer_Routine_08012134(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08012154 @ 0x08012154
 // =============================================================================
-undefined4 Farmer_Routine_08012154(int farmer,undefined4 amount,undefined1 slot_id)
+void Farmer_Routine_08012154(int farmer,undefined4 amount,undefined1 slot_id)
 
 {
   int *p_int1;
@@ -3305,7 +3305,7 @@ undefined4 Farmer_Routine_08012154(int farmer,undefined4 amount,undefined1 slot_
 // =============================================================================
 // Function: Farmer_Routine_08012174 @ 0x08012174
 // =============================================================================
-undefined4 Farmer_Routine_08012174(int farmer,undefined4 amount,undefined4 slot_id,undefined4 flags)
+void Farmer_Routine_08012174(int farmer,undefined4 amount,undefined4 slot_id,undefined4 flags)
 
 {
   int *p_int1;
@@ -3322,7 +3322,7 @@ undefined4 Farmer_Routine_08012174(int farmer,undefined4 amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_0801219C @ 0x0801219C
 // =============================================================================
-undefined4 Farmer_Routine_0801219C(int farmer,undefined4 amount,undefined4 slot_id,undefined4 flags)
+void Farmer_Routine_0801219C(int farmer,undefined4 amount,undefined4 slot_id,undefined4 flags)
 
 {
   int *p_int1;
@@ -3339,7 +3339,7 @@ undefined4 Farmer_Routine_0801219C(int farmer,undefined4 amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_080121C4 @ 0x080121C4
 // =============================================================================
-undefined4 Farmer_Routine_080121C4(int farmer,undefined4 amount)
+void Farmer_Routine_080121C4(int farmer,undefined4 amount)
 
 {
   int i_val1;
@@ -3358,7 +3358,7 @@ undefined4 Farmer_Routine_080121C4(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080121EC @ 0x080121EC
 // =============================================================================
-undefined4 Farmer_Routine_080121EC(int farmer,undefined4 amount,uint slot_id)
+void Farmer_Routine_080121EC(int farmer,undefined4 amount,uint slot_id)
 
 {
   int *p_int1;
@@ -3375,7 +3375,7 @@ undefined4 Farmer_Routine_080121EC(int farmer,undefined4 amount,uint slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0801221C @ 0x0801221C
 // =============================================================================
-undefined4 Farmer_Routine_0801221C(int farmer,undefined4 amount)
+void Farmer_Routine_0801221C(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -3392,7 +3392,7 @@ undefined4 Farmer_Routine_0801221C(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801223C @ 0x0801223C
 // =============================================================================
-undefined4 Farmer_Routine_0801223C(int farmer,undefined4 amount,int slot_id,int flags)
+void Farmer_Routine_0801223C(int farmer,undefined4 amount,int slot_id,int flags)
 
 {
   int *p_int1;
@@ -3410,7 +3410,7 @@ undefined4 Farmer_Routine_0801223C(int farmer,undefined4 amount,int slot_id,int 
 // =============================================================================
 // Function: Farmer_Routine_08012274 @ 0x08012274
 // =============================================================================
-undefined4 Farmer_Routine_08012274(int farmer,undefined4 amount,undefined4 slot_id,uint flags)
+void Farmer_Routine_08012274(int farmer,undefined4 amount,undefined4 slot_id,uint flags)
 
 {
   int *p_int1;
@@ -3427,7 +3427,7 @@ undefined4 Farmer_Routine_08012274(int farmer,undefined4 amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_080122A0 @ 0x080122A0
 // =============================================================================
-undefined4 Farmer_Routine_080122A0(int farmer,undefined4 amount)
+void Farmer_Routine_080122A0(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -3444,7 +3444,7 @@ undefined4 Farmer_Routine_080122A0(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080122BC @ 0x080122BC
 // =============================================================================
-undefined4 Farmer_Routine_080122BC(int farmer,undefined4 amount,undefined4 slot_id)
+void Farmer_Routine_080122BC(int farmer,undefined4 amount,undefined4 slot_id)
 
 {
   int *p_int1;
@@ -3461,7 +3461,7 @@ undefined4 Farmer_Routine_080122BC(int farmer,undefined4 amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_080122E0 @ 0x080122E0
 // =============================================================================
-undefined4 Farmer_Routine_080122E0(int farmer,ushort amount,uint slot_id,uint flags)
+void Farmer_Routine_080122E0(int farmer,ushort amount,uint slot_id,uint flags)
 
 {
   ushort u_val1;
@@ -3492,7 +3492,7 @@ undefined4 Farmer_Routine_080122E0(int farmer,ushort amount,uint slot_id,uint fl
 // =============================================================================
 // Function: Farmer_Routine_0801238C @ 0x0801238C
 // =============================================================================
-undefined4 Farmer_Routine_0801238C(void)
+void Farmer_Routine_0801238C(void)
 
 {
   
@@ -3503,7 +3503,7 @@ undefined4 Farmer_Routine_0801238C(void)
 // =============================================================================
 // Function: Farmer_Routine_080123A4 @ 0x080123A4
 // =============================================================================
-undefined4 Farmer_Routine_080123A4(int farmer)
+void Farmer_Routine_080123A4(int farmer)
 
 {
   char c_char1;
@@ -3522,7 +3522,7 @@ undefined4 Farmer_Routine_080123A4(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080123CC @ 0x080123CC
 // =============================================================================
-undefined4 Farmer_Routine_080123CC(int farmer,int amount,undefined2 slot_id,undefined2 *flags)
+void Farmer_Routine_080123CC(int farmer,int amount,undefined2 slot_id,undefined2 *flags)
 
 {
   int i_val1;
@@ -3555,7 +3555,7 @@ undefined4 Farmer_Routine_080123CC(int farmer,int amount,undefined2 slot_id,unde
 // =============================================================================
 // Function: Farmer_Routine_08012454 @ 0x08012454
 // =============================================================================
-undefined4 Farmer_Routine_08012454(int farmer)
+void Farmer_Routine_08012454(int farmer)
 
 {
   
@@ -3566,7 +3566,7 @@ undefined4 Farmer_Routine_08012454(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08012464 @ 0x08012464
 // =============================================================================
-undefined4 Farmer_Routine_08012464(int farmer,int amount,undefined2 slot_id)
+void Farmer_Routine_08012464(int farmer,int amount,undefined2 slot_id)
 
 {
   char c_char1;
@@ -3605,7 +3605,7 @@ LAB_0801248c:
 // =============================================================================
 // Function: Farmer_Routine_080124C4 @ 0x080124C4
 // =============================================================================
-undefined4 Farmer_Routine_080124C4(void)
+void Farmer_Routine_080124C4(void)
 
 {
   
@@ -3616,7 +3616,7 @@ undefined4 Farmer_Routine_080124C4(void)
 // =============================================================================
 // Function: Farmer_Routine_080124D0 @ 0x080124D0
 // =============================================================================
-undefined4 Farmer_Routine_080124D0(int farmer)
+void Farmer_Routine_080124D0(int farmer)
 
 {
   int *p_int1;
@@ -3678,7 +3678,7 @@ undefined4 Farmer_Routine_080124D0(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080125EC @ 0x080125EC
 // =============================================================================
-undefined4 Farmer_Routine_080125EC(int farmer)
+void Farmer_Routine_080125EC(int farmer)
 
 {
   int i_val1;
@@ -3707,7 +3707,7 @@ undefined4 Farmer_Routine_080125EC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08012658 @ 0x08012658
 // =============================================================================
-undefined4 Farmer_Routine_08012658(int farmer)
+void Farmer_Routine_08012658(int farmer)
 
 {
   int i_val1;
@@ -3726,7 +3726,7 @@ undefined4 Farmer_Routine_08012658(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801268C @ 0x0801268C
 // =============================================================================
-undefined4 Farmer_Routine_0801268C(int farmer,undefined4 amount,undefined2 slot_id)
+void Farmer_Routine_0801268C(int farmer,undefined4 amount,undefined2 slot_id)
 
 {
   int i_val1;
@@ -3742,7 +3742,7 @@ undefined4 Farmer_Routine_0801268C(int farmer,undefined4 amount,undefined2 slot_
 // =============================================================================
 // Function: Farmer_Routine_080126BC @ 0x080126BC
 // =============================================================================
-undefined4 Farmer_Routine_080126BC(int farmer,undefined4 amount)
+void Farmer_Routine_080126BC(int farmer,undefined4 amount)
 
 {
   int i_val1;
@@ -3758,7 +3758,7 @@ undefined4 Farmer_Routine_080126BC(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080126E4 @ 0x080126E4
 // =============================================================================
-undefined4 Farmer_Routine_080126E4(int farmer)
+void Farmer_Routine_080126E4(int farmer)
 
 {
   undefined4 u_val1;
@@ -3778,7 +3778,7 @@ undefined4 Farmer_Routine_080126E4(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08012720 @ 0x08012720
 // =============================================================================
-undefined4 Farmer_Routine_08012720(int farmer)
+void Farmer_Routine_08012720(int farmer)
 
 {
   int i_val1;
@@ -3795,7 +3795,7 @@ undefined4 Farmer_Routine_08012720(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801274C @ 0x0801274C
 // =============================================================================
-undefined4 Farmer_Routine_0801274C(int farmer)
+void Farmer_Routine_0801274C(int farmer)
 
 {
   
@@ -3808,7 +3808,7 @@ undefined4 Farmer_Routine_0801274C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08012760 @ 0x08012760
 // =============================================================================
-undefined4 Farmer_Routine_08012760(int farmer)
+void Farmer_Routine_08012760(int farmer)
 
 {
   int i_val1;
@@ -3825,7 +3825,7 @@ undefined4 Farmer_Routine_08012760(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801278C @ 0x0801278C
 // =============================================================================
-undefined4 Farmer_Routine_0801278C(int farmer)
+void Farmer_Routine_0801278C(int farmer)
 
 {
   
@@ -3838,7 +3838,7 @@ undefined4 Farmer_Routine_0801278C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080127A0 @ 0x080127A0
 // =============================================================================
-undefined4 Farmer_Routine_080127A0(int farmer,int amount)
+void Farmer_Routine_080127A0(int farmer,int amount)
 
 {
   int i_val1;
@@ -3881,7 +3881,7 @@ undefined4 Farmer_Routine_080127A0(int farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0801284C @ 0x0801284C
 // =============================================================================
-undefined4 Farmer_Routine_0801284C(int farmer)
+void Farmer_Routine_0801284C(int farmer)
 
 {
   
@@ -3980,7 +3980,7 @@ LAB_0801296c:
 // =============================================================================
 // Function: Farmer_Routine_0801297C @ 0x0801297C
 // =============================================================================
-undefined8 Farmer_Routine_0801297C(int farmer,uint amount,int slot_id,char flags,char arg_5)
+u32 Farmer_Routine_0801297C(int farmer,uint amount,int slot_id,char flags,char arg_5)
 
 {
   ushort u_val1;
@@ -4060,7 +4060,7 @@ LAB_08012a98:
 // =============================================================================
 // Function: Farmer_Routine_08012AA4 @ 0x08012AA4
 // =============================================================================
-undefined4 Farmer_Routine_08012AA4(int farmer,undefined4 amount,undefined4 slot_id)
+void Farmer_Routine_08012AA4(int farmer,undefined4 amount,undefined4 slot_id)
 
 {
   int i_val1;
@@ -4075,7 +4075,7 @@ undefined4 Farmer_Routine_08012AA4(int farmer,undefined4 amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_08012ACC @ 0x08012ACC
 // =============================================================================
-undefined4 Farmer_Routine_08012ACC(int farmer)
+void Farmer_Routine_08012ACC(int farmer)
 
 {
   
@@ -4086,7 +4086,7 @@ undefined4 Farmer_Routine_08012ACC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08012ADC @ 0x08012ADC
 // =============================================================================
-undefined4 Farmer_Routine_08012ADC(int farmer,undefined4 amount,undefined4 slot_id,undefined4 flags)
+void Farmer_Routine_08012ADC(int farmer,undefined4 amount,undefined4 slot_id,undefined4 flags)
 
 {
   int i_val1;
@@ -4101,7 +4101,7 @@ undefined4 Farmer_Routine_08012ADC(int farmer,undefined4 amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_08012B04 @ 0x08012B04
 // =============================================================================
-undefined4 Farmer_Routine_08012B04(int farmer)
+void Farmer_Routine_08012B04(int farmer)
 
 {
   undefined4 u_val1;
@@ -4115,7 +4115,7 @@ undefined4 Farmer_Routine_08012B04(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080134A4 @ 0x080134A4
 // =============================================================================
-undefined4 Farmer_Routine_080134A4(int farmer)
+void Farmer_Routine_080134A4(int farmer)
 
 {
   undefined4 *p_uint1;
@@ -4154,7 +4154,7 @@ undefined4 Farmer_Routine_080134A4(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08013EF8 @ 0x08013EF8
 // =============================================================================
-undefined4 Farmer_Routine_08013EF8(int farmer,undefined4 amount)
+void Farmer_Routine_08013EF8(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -4187,7 +4187,7 @@ undefined4 Farmer_Routine_08013EF8(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08014034 @ 0x08014034
 // =============================================================================
-undefined4 Farmer_Routine_08014034(int farmer)
+void Farmer_Routine_08014034(int farmer)
 
 {
   int *p_int1;
@@ -4200,7 +4200,7 @@ undefined4 Farmer_Routine_08014034(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801404C @ 0x0801404C
 // =============================================================================
-undefined4 Farmer_Routine_0801404C(int farmer)
+void Farmer_Routine_0801404C(int farmer)
 
 {
   int *p_int1;
@@ -4213,7 +4213,7 @@ undefined4 Farmer_Routine_0801404C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08014064 @ 0x08014064
 // =============================================================================
-undefined4 Farmer_Routine_08014064(int farmer)
+void Farmer_Routine_08014064(int farmer)
 
 {
   int *p_int1;
@@ -4226,7 +4226,7 @@ undefined4 Farmer_Routine_08014064(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801407C @ 0x0801407C
 // =============================================================================
-undefined4 Farmer_Routine_0801407C(int farmer)
+void Farmer_Routine_0801407C(int farmer)
 
 {
   int *p_int1;
@@ -4239,7 +4239,7 @@ undefined4 Farmer_Routine_0801407C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08014094 @ 0x08014094
 // =============================================================================
-undefined4 Farmer_Routine_08014094(int farmer)
+void Farmer_Routine_08014094(int farmer)
 
 {
   int *p_int1;
@@ -4252,7 +4252,7 @@ undefined4 Farmer_Routine_08014094(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080140AC @ 0x080140AC
 // =============================================================================
-undefined4 Farmer_Routine_080140AC(int farmer)
+void Farmer_Routine_080140AC(int farmer)
 
 {
   int *p_int1;
@@ -4265,7 +4265,7 @@ undefined4 Farmer_Routine_080140AC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080140C4 @ 0x080140C4
 // =============================================================================
-undefined4 Farmer_Routine_080140C4(int farmer,undefined4 amount)
+void Farmer_Routine_080140C4(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -4278,7 +4278,7 @@ undefined4 Farmer_Routine_080140C4(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080140DC @ 0x080140DC
 // =============================================================================
-undefined4 Farmer_Routine_080140DC(int farmer,undefined4 amount)
+void Farmer_Routine_080140DC(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -4291,7 +4291,7 @@ undefined4 Farmer_Routine_080140DC(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080140F4 @ 0x080140F4
 // =============================================================================
-undefined4 Farmer_Routine_080140F4(int farmer)
+void Farmer_Routine_080140F4(int farmer)
 
 {
   int *p_int1;
@@ -4319,7 +4319,7 @@ void Farmer_Routine_0801410C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801412C @ 0x0801412C
 // =============================================================================
-undefined8 Farmer_Routine_0801412C(int farmer)
+u32 Farmer_Routine_0801412C(int farmer)
 
 {
   char c_char1;
@@ -4340,7 +4340,7 @@ undefined8 Farmer_Routine_0801412C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08014164 @ 0x08014164
 // =============================================================================
-undefined8 Farmer_Routine_08014164(int farmer,undefined4 amount,undefined1 slot_id)
+u32 Farmer_Routine_08014164(int farmer,undefined4 amount,undefined1 slot_id)
 
 {
   int *p_int1;
@@ -4358,7 +4358,7 @@ undefined8 Farmer_Routine_08014164(int farmer,undefined4 amount,undefined1 slot_
 // =============================================================================
 // Function: Farmer_Routine_08014198 @ 0x08014198
 // =============================================================================
-undefined8 Farmer_Routine_08014198(int farmer)
+u32 Farmer_Routine_08014198(int farmer)
 
 {
   int *p_int1;
@@ -4376,7 +4376,7 @@ undefined8 Farmer_Routine_08014198(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080141C4 @ 0x080141C4
 // =============================================================================
-undefined4 Farmer_Routine_080141C4(int farmer)
+void Farmer_Routine_080141C4(int farmer)
 
 {
   int *p_int1;
@@ -4394,7 +4394,7 @@ undefined4 Farmer_Routine_080141C4(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080141EC @ 0x080141EC
 // =============================================================================
-undefined4 Farmer_Routine_080141EC(int farmer)
+void Farmer_Routine_080141EC(int farmer)
 
 {
   int *p_int1;
@@ -4412,7 +4412,7 @@ undefined4 Farmer_Routine_080141EC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08014214 @ 0x08014214
 // =============================================================================
-undefined4 Farmer_Routine_08014214(int farmer)
+void Farmer_Routine_08014214(int farmer)
 
 {
   int *p_int1;
@@ -4453,7 +4453,7 @@ void Farmer_Routine_0801424C(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08014264 @ 0x08014264
 // =============================================================================
-undefined4 Farmer_Routine_08014264(int farmer,undefined4 amount,undefined4 slot_id)
+void Farmer_Routine_08014264(int farmer,undefined4 amount,undefined4 slot_id)
 
 {
   int *p_int1;
@@ -4470,7 +4470,7 @@ undefined4 Farmer_Routine_08014264(int farmer,undefined4 amount,undefined4 slot_
 // =============================================================================
 // Function: Farmer_Routine_08014290 @ 0x08014290
 // =============================================================================
-undefined4 Farmer_Routine_08014290(int farmer,undefined4 amount)
+void Farmer_Routine_08014290(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -4487,7 +4487,7 @@ undefined4 Farmer_Routine_08014290(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080142B8 @ 0x080142B8
 // =============================================================================
-undefined4 Farmer_Routine_080142B8(int farmer,undefined4 amount)
+void Farmer_Routine_080142B8(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -4500,7 +4500,7 @@ undefined4 Farmer_Routine_080142B8(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080142D4 @ 0x080142D4
 // =============================================================================
-undefined4 Farmer_Routine_080142D4(int farmer)
+void Farmer_Routine_080142D4(int farmer)
 
 {
   int *p_int1;
@@ -4513,7 +4513,7 @@ undefined4 Farmer_Routine_080142D4(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08014318 @ 0x08014318
 // =============================================================================
-undefined4 Farmer_Routine_08014318(int farmer,undefined4 amount)
+void Farmer_Routine_08014318(int farmer,undefined4 amount)
 
 {
   char c_char1;
@@ -4542,7 +4542,7 @@ undefined4 Farmer_Routine_08014318(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08014694 @ 0x08014694
 // =============================================================================
-undefined4 Farmer_Routine_08014694(int farmer,undefined4 amount)
+void Farmer_Routine_08014694(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -4555,7 +4555,7 @@ undefined4 Farmer_Routine_08014694(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080146B0 @ 0x080146B0
 // =============================================================================
-undefined4 Farmer_Routine_080146B0(int farmer,undefined4 amount)
+void Farmer_Routine_080146B0(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -4568,7 +4568,7 @@ undefined4 Farmer_Routine_080146B0(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080146CC @ 0x080146CC
 // =============================================================================
-undefined4 Farmer_Routine_080146CC(int farmer,undefined4 amount)
+void Farmer_Routine_080146CC(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -4584,7 +4584,7 @@ undefined4 Farmer_Routine_080146CC(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_080146FC @ 0x080146FC
 // =============================================================================
-undefined4 Farmer_Routine_080146FC(int farmer,undefined2 amount)
+void Farmer_Routine_080146FC(int farmer,undefined2 amount)
 
 {
   int *p_int1;
@@ -4873,7 +4873,7 @@ undefined4 Farmer_Routine_080146FC(int farmer,undefined2 amount)
 // =============================================================================
 // Function: Farmer_Routine_08014AF8 @ 0x08014AF8
 // =============================================================================
-undefined4 Farmer_Routine_08014AF8(int farmer)
+void Farmer_Routine_08014AF8(int farmer)
 
 {
   int i_val1;
@@ -4927,7 +4927,7 @@ undefined4 Farmer_Routine_08014AF8(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08014BD8 @ 0x08014BD8
 // =============================================================================
-undefined4 Farmer_Routine_08014BD8(int farmer)
+void Farmer_Routine_08014BD8(int farmer)
 
 {
   int i_val1;
@@ -4951,7 +4951,7 @@ undefined4 Farmer_Routine_08014BD8(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08014C0C @ 0x08014C0C
 // =============================================================================
-undefined4 Farmer_Routine_08014C0C(int farmer,undefined4 amount,undefined4 slot_id)
+void Farmer_Routine_08014C0C(int farmer,undefined4 amount,undefined4 slot_id)
 
 {
   int *p_int1;
@@ -5020,7 +5020,7 @@ Farmer_Routine_08014C34(int farmer,int amount,int slot_id,ushort flags,uint arg_
 // =============================================================================
 // Function: Farmer_Routine_08014D30 @ 0x08014D30
 // =============================================================================
-undefined4 Farmer_Routine_08014D30(int farmer,int amount)
+void Farmer_Routine_08014D30(int farmer,int amount)
 
 {
   int *p_int1;
@@ -5068,7 +5068,7 @@ void Farmer_Routine_08014D7C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08014D9C @ 0x08014D9C
 // =============================================================================
-undefined4 Farmer_Routine_08014D9C(int farmer)
+u32 Farmer_Routine_08014D9C(int farmer)
 
 {
   int i_val1;
@@ -5345,7 +5345,7 @@ undefined4 Farmer_Routine_08014D9C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08015210 @ 0x08015210
 // =============================================================================
-undefined4 Farmer_Routine_08015210(int farmer)
+void Farmer_Routine_08015210(int farmer)
 
 {
   char c_char1;
@@ -5402,7 +5402,7 @@ undefined4 Farmer_Routine_08015210(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801531C @ 0x0801531C
 // =============================================================================
-undefined4 Farmer_Routine_0801531C(int farmer)
+u32 Farmer_Routine_0801531C(int farmer)
 
 {
   int i_val1;
@@ -5679,7 +5679,7 @@ undefined4 Farmer_Routine_0801531C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08015790 @ 0x08015790
 // =============================================================================
-undefined4 Farmer_Routine_08015790(int farmer)
+void Farmer_Routine_08015790(int farmer)
 
 {
   char c_char1;
@@ -5736,7 +5736,7 @@ undefined4 Farmer_Routine_08015790(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801589C @ 0x0801589C
 // =============================================================================
-undefined4 Farmer_Routine_0801589C(int farmer,undefined2 amount)
+void Farmer_Routine_0801589C(int farmer,undefined2 amount)
 
 {
   int *p_int1;
@@ -5754,7 +5754,7 @@ undefined4 Farmer_Routine_0801589C(int farmer,undefined2 amount)
 // =============================================================================
 // Function: Farmer_Routine_080158CC @ 0x080158CC
 // =============================================================================
-undefined4 Farmer_Routine_080158CC(int farmer)
+void Farmer_Routine_080158CC(int farmer)
 
 {
   int *p_int1;
@@ -5772,7 +5772,7 @@ undefined4 Farmer_Routine_080158CC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080158F8 @ 0x080158F8
 // =============================================================================
-undefined4 Farmer_Routine_080158F8(int farmer)
+void Farmer_Routine_080158F8(int farmer)
 
 {
   int *p_int1;
@@ -5790,7 +5790,7 @@ undefined4 Farmer_Routine_080158F8(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08015920 @ 0x08015920
 // =============================================================================
-undefined8 Farmer_Routine_08015920(int farmer,int amount)
+u32 Farmer_Routine_08015920(int farmer,int amount)
 
 {
   int *p_int1;
@@ -5856,7 +5856,7 @@ void Farmer_Routine_08015990(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080159B0 @ 0x080159B0
 // =============================================================================
-undefined4 Farmer_Routine_080159B0(int farmer,int amount,int slot_id)
+void Farmer_Routine_080159B0(int farmer,int amount,int slot_id)
 
 {
   bool b_flag1;
@@ -6139,7 +6139,7 @@ LAB_08015dd6:
 // =============================================================================
 // Function: Farmer_Routine_08015E30 @ 0x08015E30
 // =============================================================================
-undefined4 Farmer_Routine_08015E30(int farmer)
+void Farmer_Routine_08015E30(int farmer)
 
 {
   ushort u_val1;
@@ -6714,7 +6714,7 @@ undefined4 Farmer_Routine_08015E30(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016758 @ 0x08016758
 // =============================================================================
-undefined4 Farmer_Routine_08016758(int farmer)
+void Farmer_Routine_08016758(int farmer)
 
 {
   undefined2 u_val1;
@@ -6731,7 +6731,7 @@ undefined4 Farmer_Routine_08016758(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016784 @ 0x08016784
 // =============================================================================
-undefined8 Farmer_Routine_08016784(int farmer)
+u32 Farmer_Routine_08016784(int farmer)
 
 {
   char c_char1;
@@ -6773,7 +6773,7 @@ void Farmer_Routine_080167CC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_080167DC @ 0x080167DC
 // =============================================================================
-undefined4 Farmer_Routine_080167DC(int farmer)
+void Farmer_Routine_080167DC(int farmer)
 
 {
   char c_char1;
@@ -6801,7 +6801,7 @@ undefined4 Farmer_Routine_080167DC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016834 @ 0x08016834
 // =============================================================================
-undefined4 Farmer_Routine_08016834(int farmer,uint amount,int slot_id)
+void Farmer_Routine_08016834(int farmer,uint amount,int slot_id)
 
 {
   int i_val1;
@@ -6836,7 +6836,7 @@ undefined4 Farmer_Routine_08016834(int farmer,uint amount,int slot_id)
 // =============================================================================
 // Function: Farmer_Routine_080168D4 @ 0x080168D4
 // =============================================================================
-undefined4 Farmer_Routine_080168D4(int farmer,uint amount)
+void Farmer_Routine_080168D4(int farmer,uint amount)
 
 {
   char c_char1;
@@ -6933,7 +6933,7 @@ undefined4 Farmer_Routine_080168D4(int farmer,uint amount)
 // =============================================================================
 // Function: Farmer_Routine_08016AFC @ 0x08016AFC
 // =============================================================================
-undefined8 Farmer_Routine_08016AFC(int farmer,uint amount)
+u32 Farmer_Routine_08016AFC(int farmer,uint amount)
 
 {
   undefined4 u_val1;
@@ -6971,7 +6971,7 @@ LAB_08016b70:
 // =============================================================================
 // Function: Farmer_Routine_08016BA4 @ 0x08016BA4
 // =============================================================================
-undefined4 Farmer_Routine_08016BA4(int farmer,undefined4 amount)
+void Farmer_Routine_08016BA4(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -6984,7 +6984,7 @@ undefined4 Farmer_Routine_08016BA4(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08016BC0 @ 0x08016BC0
 // =============================================================================
-undefined4 Farmer_Routine_08016BC0(int farmer,undefined4 amount)
+void Farmer_Routine_08016BC0(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -6997,7 +6997,7 @@ undefined4 Farmer_Routine_08016BC0(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08016BDC @ 0x08016BDC
 // =============================================================================
-undefined4 Farmer_Routine_08016BDC(int farmer)
+void Farmer_Routine_08016BDC(int farmer)
 
 {
   int *p_int1;
@@ -7010,7 +7010,7 @@ undefined4 Farmer_Routine_08016BDC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016BF4 @ 0x08016BF4
 // =============================================================================
-undefined4 Farmer_Routine_08016BF4(int farmer)
+void Farmer_Routine_08016BF4(int farmer)
 
 {
   int *p_int1;
@@ -7023,7 +7023,7 @@ undefined4 Farmer_Routine_08016BF4(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016C10 @ 0x08016C10
 // =============================================================================
-undefined4 Farmer_Routine_08016C10(int farmer)
+void Farmer_Routine_08016C10(int farmer)
 
 {
   int *p_int1;
@@ -7036,7 +7036,7 @@ undefined4 Farmer_Routine_08016C10(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016C2C @ 0x08016C2C
 // =============================================================================
-undefined4 Farmer_Routine_08016C2C(int farmer)
+void Farmer_Routine_08016C2C(int farmer)
 
 {
   int *p_int1;
@@ -7050,7 +7050,7 @@ undefined4 Farmer_Routine_08016C2C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016C48 @ 0x08016C48
 // =============================================================================
-undefined4 Farmer_Routine_08016C48(int farmer)
+void Farmer_Routine_08016C48(int farmer)
 
 {
   int *p_int1;
@@ -7067,7 +7067,7 @@ undefined4 Farmer_Routine_08016C48(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016C6C @ 0x08016C6C
 // =============================================================================
-undefined4 Farmer_Routine_08016C6C(int farmer)
+void Farmer_Routine_08016C6C(int farmer)
 
 {
   int *p_int1;
@@ -7081,7 +7081,7 @@ undefined4 Farmer_Routine_08016C6C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016C88 @ 0x08016C88
 // =============================================================================
-undefined4 Farmer_Routine_08016C88(int farmer)
+void Farmer_Routine_08016C88(int farmer)
 
 {
   int *p_int1;
@@ -7098,7 +7098,7 @@ undefined4 Farmer_Routine_08016C88(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016CAC @ 0x08016CAC
 // =============================================================================
-undefined4 Farmer_Routine_08016CAC(int farmer)
+void Farmer_Routine_08016CAC(int farmer)
 
 {
   int *p_int1;
@@ -7113,7 +7113,7 @@ undefined4 Farmer_Routine_08016CAC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016CCC @ 0x08016CCC
 // =============================================================================
-undefined4 Farmer_Routine_08016CCC(int farmer)
+void Farmer_Routine_08016CCC(int farmer)
 
 {
   int *p_int1;
@@ -7128,7 +7128,7 @@ undefined4 Farmer_Routine_08016CCC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016CEC @ 0x08016CEC
 // =============================================================================
-undefined4 Farmer_Routine_08016CEC(int farmer,undefined4 amount)
+void Farmer_Routine_08016CEC(int farmer,undefined4 amount)
 
 {
   char c_char1;
@@ -7152,7 +7152,7 @@ undefined4 Farmer_Routine_08016CEC(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08016D34 @ 0x08016D34
 // =============================================================================
-undefined4 Farmer_Routine_08016D34(int farmer,undefined4 amount)
+void Farmer_Routine_08016D34(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -7189,7 +7189,7 @@ void Farmer_Routine_08016D48(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016DB0 @ 0x08016DB0
 // =============================================================================
-undefined4 Farmer_Routine_08016DB0(int farmer)
+void Farmer_Routine_08016DB0(int farmer)
 
 {
   int i_val1;
@@ -7236,7 +7236,7 @@ undefined4 Farmer_Routine_08016DB0(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016E7C @ 0x08016E7C
 // =============================================================================
-undefined4 Farmer_Routine_08016E7C(int farmer)
+void Farmer_Routine_08016E7C(int farmer)
 
 {
   int *p_int1;
@@ -7251,7 +7251,7 @@ undefined4 Farmer_Routine_08016E7C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016E9C @ 0x08016E9C
 // =============================================================================
-undefined4 Farmer_Routine_08016E9C(int farmer)
+void Farmer_Routine_08016E9C(int farmer)
 
 {
   int *p_int1;
@@ -7269,7 +7269,7 @@ undefined4 Farmer_Routine_08016E9C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08016EC4 @ 0x08016EC4
 // =============================================================================
-undefined4 Farmer_Routine_08016EC4(void)
+void Farmer_Routine_08016EC4(void)
 
 {
   
@@ -7280,7 +7280,7 @@ undefined4 Farmer_Routine_08016EC4(void)
 // =============================================================================
 // Function: Farmer_Routine_08016EF0 @ 0x08016EF0
 // =============================================================================
-undefined4 Farmer_Routine_08016EF0(int farmer,undefined4 amount)
+void Farmer_Routine_08016EF0(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -7293,7 +7293,7 @@ undefined4 Farmer_Routine_08016EF0(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08016F0C @ 0x08016F0C
 // =============================================================================
-undefined4 Farmer_Routine_08016F0C(int farmer,undefined1 amount)
+void Farmer_Routine_08016F0C(int farmer,undefined1 amount)
 
 {
   int *p_int1;
@@ -7308,7 +7308,7 @@ undefined4 Farmer_Routine_08016F0C(int farmer,undefined1 amount)
 // =============================================================================
 // Function: Farmer_Routine_08016F34 @ 0x08016F34
 // =============================================================================
-undefined4 Farmer_Routine_08016F34(int farmer,undefined4 amount)
+void Farmer_Routine_08016F34(int farmer,undefined4 amount)
 
 {
   int *p_int1;
@@ -7326,7 +7326,7 @@ undefined4 Farmer_Routine_08016F34(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08016F60 @ 0x08016F60
 // =============================================================================
-undefined4 Farmer_Routine_08016F60(int farmer)
+void Farmer_Routine_08016F60(int farmer)
 
 {
   char c_char1;
@@ -7434,7 +7434,7 @@ Farmer_Routine_08016FA4(int farmer,int amount,int slot_id,uint flags,uint arg_5,
 // =============================================================================
 // Function: Farmer_Routine_08017180 @ 0x08017180
 // =============================================================================
-undefined4 Farmer_Routine_08017180(int farmer,uint amount,byte *slot_id,int flags,int arg_5)
+void Farmer_Routine_08017180(int farmer,uint amount,byte *slot_id,int flags,int arg_5)
 
 {
   byte b_flag1;
@@ -7476,7 +7476,7 @@ undefined4 Farmer_Routine_08017180(int farmer,uint amount,byte *slot_id,int flag
 // =============================================================================
 // Function: Farmer_Routine_0801740C @ 0x0801740C
 // =============================================================================
-undefined8 Farmer_Routine_0801740C(uint *farmer,undefined4 amount,undefined4 slot_id,int flags)
+u32 Farmer_Routine_0801740C(uint *farmer,undefined4 amount,undefined4 slot_id,int flags)
 
 {
   undefined1 u_val1;
@@ -7522,7 +7522,7 @@ case_08017458:
 // =============================================================================
 // Function: Farmer_Routine_0801746C @ 0x0801746C
 // =============================================================================
-undefined8 Farmer_Routine_0801746C(uint *farmer)
+u32 Farmer_Routine_0801746C(uint *farmer)
 
 {
   undefined1 u_val1;
@@ -7843,7 +7843,7 @@ LAB_080178ae:
 // =============================================================================
 // Function: Farmer_Routine_080179CC @ 0x080179CC
 // =============================================================================
-undefined4 Farmer_Routine_080179CC(undefined4 *farmer,uint amount)
+void Farmer_Routine_080179CC(undefined4 *farmer,uint amount)
 
 {
   char c_char1;
@@ -7965,7 +7965,7 @@ LAB_08017a28:
 // =============================================================================
 // Function: Farmer_Routine_08017C00 @ 0x08017C00
 // =============================================================================
-undefined8 Farmer_Routine_08017C00(int farmer)
+u32 Farmer_Routine_08017C00(int farmer)
 
 {
   int i_val1;
@@ -7985,7 +7985,7 @@ undefined8 Farmer_Routine_08017C00(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08017C30 @ 0x08017C30
 // =============================================================================
-undefined4 Farmer_Routine_08017C30(int *farmer,undefined4 *amount)
+void Farmer_Routine_08017C30(int *farmer,undefined4 *amount)
 
 {
   byte b_flag1;
@@ -9374,7 +9374,7 @@ Farmer_Routine_08019870:
 // =============================================================================
 // Function: Farmer_Routine_08019B90 @ 0x08019B90
 // =============================================================================
-undefined4 Farmer_Routine_08019B90(int farmer)
+void Farmer_Routine_08019B90(int farmer)
 
 {
   int i_val1;
@@ -9393,7 +9393,7 @@ undefined4 Farmer_Routine_08019B90(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_08019BEC @ 0x08019BEC
 // =============================================================================
-undefined4 Farmer_Routine_08019BEC(int *farmer,ushort *amount,uint slot_id)
+void Farmer_Routine_08019BEC(int *farmer,ushort *amount,uint slot_id)
 
 {
   ushort u_val1;
@@ -9557,7 +9557,7 @@ LAB_08019e52:
 // =============================================================================
 // Function: Farmer_Routine_08019F38 @ 0x08019F38
 // =============================================================================
-undefined8 Farmer_Routine_08019F38(int farmer,undefined4 amount)
+u32 Farmer_Routine_08019F38(int farmer,undefined4 amount)
 
 {
   char c_char1;
@@ -9579,7 +9579,7 @@ undefined8 Farmer_Routine_08019F38(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08019F7C @ 0x08019F7C
 // =============================================================================
-undefined8 Farmer_Routine_08019F7C(int farmer,undefined4 amount)
+u32 Farmer_Routine_08019F7C(int farmer,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -9602,7 +9602,7 @@ undefined8 Farmer_Routine_08019F7C(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_08019FE8 @ 0x08019FE8
 // =============================================================================
-undefined8 Farmer_Routine_08019FE8(int farmer,undefined4 amount)
+u32 Farmer_Routine_08019FE8(int farmer,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -9625,7 +9625,7 @@ undefined8 Farmer_Routine_08019FE8(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801A054 @ 0x0801A054
 // =============================================================================
-undefined8 Farmer_Routine_0801A054(undefined4 *farmer,int amount,uint slot_id)
+u32 Farmer_Routine_0801A054(undefined4 *farmer,int amount,uint slot_id)
 
 {
   undefined2 u_val1;
@@ -9690,7 +9690,7 @@ undefined8 Farmer_Routine_0801A054(undefined4 *farmer,int amount,uint slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0801A13C @ 0x0801A13C
 // =============================================================================
-undefined4 Farmer_Routine_0801A13C(int farmer,int amount,int slot_id,char flags)
+void Farmer_Routine_0801A13C(int farmer,int amount,int slot_id,char flags)
 
 {
   bool b_flag1;
@@ -10041,7 +10041,7 @@ LAB_0801a7b0:
 // =============================================================================
 // Function: Farmer_Routine_0801A8C0 @ 0x0801A8C0
 // =============================================================================
-undefined8 Farmer_Routine_0801A8C0(undefined4 farmer,uint amount)
+u32 Farmer_Routine_0801A8C0(undefined4 farmer,uint amount)
 
 {
   undefined4 u_val1;
@@ -10064,7 +10064,7 @@ undefined8 Farmer_Routine_0801A8C0(undefined4 farmer,uint amount)
 // =============================================================================
 // Function: Farmer_Routine_0801B498 @ 0x0801B498
 // =============================================================================
-undefined8 Farmer_Routine_0801B498(int farmer,ushort *amount,short *slot_id)
+u32 Farmer_Routine_0801B498(int farmer,ushort *amount,short *slot_id)
 
 {
   int *p_int1;
@@ -10129,7 +10129,7 @@ LAB_0801b59c:
 // =============================================================================
 // Function: Farmer_Routine_0801B9E8 @ 0x0801B9E8
 // =============================================================================
-undefined8 Farmer_Routine_0801B9E8(int farmer,undefined4 amount,int slot_id,char flags)
+u32 Farmer_Routine_0801B9E8(int farmer,undefined4 amount,int slot_id,char flags)
 
 {
   int i_val1;
@@ -10485,7 +10485,7 @@ LAB_0801c0b6:
 // =============================================================================
 // Function: Farmer_Routine_0801C0F8 @ 0x0801C0F8
 // =============================================================================
-undefined8 Farmer_Routine_0801C0F8(int farmer,ushort *amount,int *slot_id)
+u32 Farmer_Routine_0801C0F8(int farmer,ushort *amount,int *slot_id)
 
 {
   short s_val1;
@@ -10529,7 +10529,7 @@ undefined8 Farmer_Routine_0801C0F8(int farmer,ushort *amount,int *slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0801C198 @ 0x0801C198
 // =============================================================================
-undefined8 Farmer_Routine_0801C198(int farmer,ushort *amount,short *slot_id)
+u32 Farmer_Routine_0801C198(int farmer,ushort *amount,short *slot_id)
 
 {
   short s_val1;
@@ -10592,7 +10592,7 @@ LAB_0801c28c:
 // =============================================================================
 // Function: Farmer_Routine_0801C29C @ 0x0801C29C
 // =============================================================================
-undefined8 Farmer_Routine_0801C29C(int *farmer,ushort *amount)
+u32 Farmer_Routine_0801C29C(int *farmer,ushort *amount)
 
 {
   bool b_flag1;
@@ -10676,7 +10676,7 @@ undefined8 Farmer_Routine_0801C29C(int *farmer,ushort *amount)
 // =============================================================================
 // Function: Farmer_Routine_0801C3E0 @ 0x0801C3E0
 // =============================================================================
-undefined4 Farmer_Routine_0801C3E0(int *farmer)
+void Farmer_Routine_0801C3E0(int *farmer)
 
 {
   bool b_flag1;
@@ -10718,7 +10718,7 @@ undefined4 Farmer_Routine_0801C3E0(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801C49C @ 0x0801C49C
 // =============================================================================
-undefined8 Farmer_Routine_0801C49C(int *farmer,ushort *amount,undefined4 *slot_id)
+u32 Farmer_Routine_0801C49C(int *farmer,ushort *amount,undefined4 *slot_id)
 
 {
   char c_char1;
@@ -10808,7 +10808,7 @@ Farmer_Routine_0801C550(int *farmer,int amount,uint slot_id,uint flags,byte arg_
 // =============================================================================
 // Function: Farmer_Routine_0801C69C @ 0x0801C69C
 // =============================================================================
-undefined4 Farmer_Routine_0801C69C(int farmer,int amount)
+void Farmer_Routine_0801C69C(int farmer,int amount)
 
 {
   int i_val1;
@@ -10829,7 +10829,7 @@ undefined4 Farmer_Routine_0801C69C(int farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0801C6EC @ 0x0801C6EC
 // =============================================================================
-undefined8 Farmer_Routine_0801C6EC(int *farmer,int amount,int slot_id,undefined4 flags)
+u32 Farmer_Routine_0801C6EC(int *farmer,int amount,int slot_id,undefined4 flags)
 
 {
   bool b_flag1;
@@ -10977,7 +10977,7 @@ longlong Farmer_Routine_0801C874(int *farmer,int amount,int slot_id,undefined4 f
 // =============================================================================
 // Function: Farmer_Routine_0801CA1C @ 0x0801CA1C
 // =============================================================================
-undefined8 Farmer_Routine_0801CA1C(int farmer,undefined4 amount,int slot_id)
+u32 Farmer_Routine_0801CA1C(int farmer,undefined4 amount,int slot_id)
 
 {
   char c_char1;
@@ -11028,7 +11028,7 @@ LAB_0801caca:
 // =============================================================================
 // Function: Farmer_Routine_0801CAD8 @ 0x0801CAD8
 // =============================================================================
-undefined8 Farmer_Routine_0801CAD8(int *farmer,ushort *amount,undefined4 *slot_id)
+u32 Farmer_Routine_0801CAD8(int *farmer,ushort *amount,undefined4 *slot_id)
 
 {
   char c_char1;
@@ -11074,7 +11074,7 @@ undefined8 Farmer_Routine_0801CAD8(int *farmer,ushort *amount,undefined4 *slot_i
 // =============================================================================
 // Function: Farmer_Routine_0801CBB0 @ 0x0801CBB0
 // =============================================================================
-undefined8 Farmer_Routine_0801CBB0(int *farmer,int amount,int slot_id)
+u32 Farmer_Routine_0801CBB0(int *farmer,int amount,int slot_id)
 
 {
   char c_char1;
@@ -11147,7 +11147,7 @@ undefined8 Farmer_Routine_0801CBB0(int *farmer,int amount,int slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0801CCE4 @ 0x0801CCE4
 // =============================================================================
-undefined8 Farmer_Routine_0801CCE4(int *farmer,int amount,int slot_id,undefined4 flags)
+u32 Farmer_Routine_0801CCE4(int *farmer,int amount,int slot_id,undefined4 flags)
 
 {
   bool b_flag1;
@@ -11250,7 +11250,7 @@ longlong Farmer_Routine_0801CDBC(int *farmer,int amount,int slot_id,undefined4 f
 // =============================================================================
 // Function: Farmer_Routine_0801CEFC @ 0x0801CEFC
 // =============================================================================
-undefined8 Farmer_Routine_0801CEFC(int farmer,undefined4 amount,int slot_id)
+u32 Farmer_Routine_0801CEFC(int farmer,undefined4 amount,int slot_id)
 
 {
   char c_char1;
@@ -11301,7 +11301,7 @@ LAB_0801cfaa:
 // =============================================================================
 // Function: Farmer_Routine_0801CFB8 @ 0x0801CFB8
 // =============================================================================
-undefined8 Farmer_Routine_0801CFB8(int *farmer,int amount,int slot_id)
+u32 Farmer_Routine_0801CFB8(int *farmer,int amount,int slot_id)
 
 {
   char c_char1;
@@ -11373,7 +11373,7 @@ undefined8 Farmer_Routine_0801CFB8(int *farmer,int amount,int slot_id)
 // =============================================================================
 // Function: Farmer_Routine_0801D104 @ 0x0801D104
 // =============================================================================
-undefined8 Farmer_Routine_0801D104(int farmer,ushort *amount,undefined4 slot_id,uint flags,char *arg_5)
+u32 Farmer_Routine_0801D104(int farmer,ushort *amount,undefined4 slot_id,uint flags,char *arg_5)
 
 {
   int i_val1;
@@ -11457,7 +11457,7 @@ LAB_0801d22a:
 // =============================================================================
 // Function: Farmer_Routine_0801D23C @ 0x0801D23C
 // =============================================================================
-undefined8 Farmer_Routine_0801D23C(int *farmer,ushort *amount)
+u32 Farmer_Routine_0801D23C(int *farmer,ushort *amount)
 
 {
   char c_char1;
@@ -11572,7 +11572,7 @@ LAB_0801d3ec:
 // =============================================================================
 // Function: Farmer_Routine_0801D3FC @ 0x0801D3FC
 // =============================================================================
-undefined8 Farmer_Routine_0801D3FC(int *farmer,ushort *amount)
+u32 Farmer_Routine_0801D3FC(int *farmer,ushort *amount)
 
 {
   bool b_flag1;
@@ -11642,7 +11642,7 @@ LAB_0801d4d8:
 // =============================================================================
 // Function: Farmer_Routine_0801D4E0 @ 0x0801D4E0
 // =============================================================================
-undefined4 Farmer_Routine_0801D4E0(int *farmer,ushort *amount,undefined4 slot_id)
+void Farmer_Routine_0801D4E0(int *farmer,ushort *amount,undefined4 slot_id)
 
 {
   bool b_flag1;
@@ -11705,7 +11705,7 @@ undefined4 Farmer_Routine_0801D4E0(int *farmer,ushort *amount,undefined4 slot_id
 // =============================================================================
 // Function: Farmer_Routine_0801D5BC @ 0x0801D5BC
 // =============================================================================
-undefined4 Farmer_Routine_0801D5BC(int *farmer,ushort *amount,undefined4 *slot_id)
+void Farmer_Routine_0801D5BC(int *farmer,ushort *amount,undefined4 *slot_id)
 
 {
   bool b_flag1;
@@ -11774,7 +11774,7 @@ undefined4 Farmer_Routine_0801D5BC(int *farmer,ushort *amount,undefined4 *slot_i
 // =============================================================================
 // Function: Farmer_Routine_0801D6AC @ 0x0801D6AC
 // =============================================================================
-undefined8 Farmer_Routine_0801D6AC(undefined4 *farmer,int amount,ushort *slot_id)
+u32 Farmer_Routine_0801D6AC(undefined4 *farmer,int amount,ushort *slot_id)
 
 {
   char c_char1;
@@ -11829,7 +11829,7 @@ undefined8 Farmer_Routine_0801D6AC(undefined4 *farmer,int amount,ushort *slot_id
 // =============================================================================
 // Function: Farmer_Routine_0801D7B0 @ 0x0801D7B0
 // =============================================================================
-undefined4 Farmer_Routine_0801D7B0(int *farmer,ushort *amount,undefined4 slot_id)
+void Farmer_Routine_0801D7B0(int *farmer,ushort *amount,undefined4 slot_id)
 
 {
   bool b_flag1;
@@ -11892,7 +11892,7 @@ undefined4 Farmer_Routine_0801D7B0(int *farmer,ushort *amount,undefined4 slot_id
 // =============================================================================
 // Function: Farmer_Routine_0801D88C @ 0x0801D88C
 // =============================================================================
-undefined8 Farmer_Routine_0801D88C(undefined4 farmer,undefined4 amount,undefined4 slot_id)
+u32 Farmer_Routine_0801D88C(undefined4 farmer,undefined4 amount,undefined4 slot_id)
 
 {
   char c_char1;
@@ -11927,7 +11927,7 @@ undefined8 Farmer_Routine_0801D88C(undefined4 farmer,undefined4 amount,undefined
 // =============================================================================
 // Function: Farmer_Routine_0801D8CC @ 0x0801D8CC
 // =============================================================================
-undefined4 Farmer_Routine_0801D8CC(int farmer)
+void Farmer_Routine_0801D8CC(int farmer)
 
 {
   int i_val1;
@@ -11956,7 +11956,7 @@ undefined4 Farmer_Routine_0801D8CC(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801D948 @ 0x0801D948
 // =============================================================================
-undefined4 Farmer_Routine_0801D948(int farmer)
+void Farmer_Routine_0801D948(int farmer)
 
 {
   int i_val1;
@@ -11981,7 +11981,7 @@ undefined4 Farmer_Routine_0801D948(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801D9A8 @ 0x0801D9A8
 // =============================================================================
-undefined4 Farmer_Routine_0801D9A8(int farmer)
+void Farmer_Routine_0801D9A8(int farmer)
 
 {
   
@@ -11992,7 +11992,7 @@ undefined4 Farmer_Routine_0801D9A8(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801D9BC @ 0x0801D9BC
 // =============================================================================
-undefined8 Farmer_Routine_0801D9BC(int *farmer)
+u32 Farmer_Routine_0801D9BC(int *farmer)
 
 {
   char c_char1;
@@ -12076,7 +12076,7 @@ void Farmer_Routine_0801DB44(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DB58 @ 0x0801DB58
 // =============================================================================
-undefined4 Farmer_Routine_0801DB58(int *farmer)
+void Farmer_Routine_0801DB58(int *farmer)
 
 {
   int i_val1;
@@ -12125,7 +12125,7 @@ undefined4 Farmer_Routine_0801DB58(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DC24 @ 0x0801DC24
 // =============================================================================
-undefined4 Farmer_Routine_0801DC24(int *farmer,undefined4 amount)
+void Farmer_Routine_0801DC24(int *farmer,undefined4 amount)
 
 {
   undefined4 u_val1;
@@ -12158,7 +12158,7 @@ undefined4 Farmer_Routine_0801DC24(int *farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801DCA8 @ 0x0801DCA8
 // =============================================================================
-undefined4 Farmer_Routine_0801DCA8(int farmer)
+void Farmer_Routine_0801DCA8(int farmer)
 
 {
   int i_val1;
@@ -12176,7 +12176,7 @@ undefined4 Farmer_Routine_0801DCA8(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DCD4 @ 0x0801DCD4
 // =============================================================================
-undefined4 Farmer_Routine_0801DCD4(int *farmer)
+void Farmer_Routine_0801DCD4(int *farmer)
 
 {
   undefined4 u_val1;
@@ -12196,7 +12196,7 @@ undefined4 Farmer_Routine_0801DCD4(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD18 @ 0x0801DD18
 // =============================================================================
-undefined4 Farmer_Routine_0801DD18(int farmer)
+void Farmer_Routine_0801DD18(int farmer)
 
 {
   
@@ -12207,7 +12207,7 @@ undefined4 Farmer_Routine_0801DD18(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD24 @ 0x0801DD24
 // =============================================================================
-undefined4 Farmer_Routine_0801DD24(int farmer)
+void Farmer_Routine_0801DD24(int farmer)
 
 {
   
@@ -12218,7 +12218,7 @@ undefined4 Farmer_Routine_0801DD24(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD30 @ 0x0801DD30
 // =============================================================================
-undefined4 Farmer_Routine_0801DD30(int farmer)
+void Farmer_Routine_0801DD30(int farmer)
 
 {
   
@@ -12229,7 +12229,7 @@ undefined4 Farmer_Routine_0801DD30(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD3C @ 0x0801DD3C
 // =============================================================================
-undefined4 Farmer_Routine_0801DD3C(int farmer)
+void Farmer_Routine_0801DD3C(int farmer)
 
 {
   
@@ -12240,7 +12240,7 @@ undefined4 Farmer_Routine_0801DD3C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD48 @ 0x0801DD48
 // =============================================================================
-undefined4 Farmer_Routine_0801DD48(int farmer)
+void Farmer_Routine_0801DD48(int farmer)
 
 {
   
@@ -12251,7 +12251,7 @@ undefined4 Farmer_Routine_0801DD48(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD54 @ 0x0801DD54
 // =============================================================================
-undefined4 Farmer_Routine_0801DD54(int farmer)
+void Farmer_Routine_0801DD54(int farmer)
 
 {
   
@@ -12262,7 +12262,7 @@ undefined4 Farmer_Routine_0801DD54(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD60 @ 0x0801DD60
 // =============================================================================
-undefined4 Farmer_Routine_0801DD60(int farmer)
+void Farmer_Routine_0801DD60(int farmer)
 
 {
   
@@ -12273,7 +12273,7 @@ undefined4 Farmer_Routine_0801DD60(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD6C @ 0x0801DD6C
 // =============================================================================
-undefined4 Farmer_Routine_0801DD6C(int farmer)
+void Farmer_Routine_0801DD6C(int farmer)
 
 {
   
@@ -12284,7 +12284,7 @@ undefined4 Farmer_Routine_0801DD6C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DD78 @ 0x0801DD78
 // =============================================================================
-undefined4 Farmer_Routine_0801DD78(int farmer)
+void Farmer_Routine_0801DD78(int farmer)
 
 {
   
@@ -12314,7 +12314,7 @@ void Farmer_Routine_0801DD84(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DDCC @ 0x0801DDCC
 // =============================================================================
-undefined4 Farmer_Routine_0801DDCC(int farmer,undefined4 amount)
+void Farmer_Routine_0801DDCC(int farmer,undefined4 amount)
 
 {
   
@@ -12326,7 +12326,7 @@ undefined4 Farmer_Routine_0801DDCC(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801DDF8 @ 0x0801DDF8
 // =============================================================================
-undefined4 Farmer_Routine_0801DDF8(int farmer,undefined4 amount)
+void Farmer_Routine_0801DDF8(int farmer,undefined4 amount)
 
 {
   
@@ -12338,7 +12338,7 @@ undefined4 Farmer_Routine_0801DDF8(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801DE24 @ 0x0801DE24
 // =============================================================================
-undefined4 Farmer_Routine_0801DE24(int farmer)
+void Farmer_Routine_0801DE24(int farmer)
 
 {
   
@@ -12349,7 +12349,7 @@ undefined4 Farmer_Routine_0801DE24(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DE30 @ 0x0801DE30
 // =============================================================================
-undefined4 Farmer_Routine_0801DE30(int farmer)
+void Farmer_Routine_0801DE30(int farmer)
 
 {
   
@@ -12360,7 +12360,7 @@ undefined4 Farmer_Routine_0801DE30(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DE3C @ 0x0801DE3C
 // =============================================================================
-undefined4 Farmer_Routine_0801DE3C(int farmer)
+void Farmer_Routine_0801DE3C(int farmer)
 
 {
   
@@ -12371,7 +12371,7 @@ undefined4 Farmer_Routine_0801DE3C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801DE48 @ 0x0801DE48
 // =============================================================================
-undefined4 Farmer_Routine_0801DE48(int farmer)
+void Farmer_Routine_0801DE48(int farmer)
 
 {
   
@@ -12403,7 +12403,7 @@ void Farmer_Routine_0801DE54(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801DEB4 @ 0x0801DEB4
 // =============================================================================
-undefined8 Farmer_Routine_0801DEB4(int *farmer,short *amount)
+u32 Farmer_Routine_0801DEB4(int *farmer,short *amount)
 
 {
   int i_val1;
@@ -12516,7 +12516,7 @@ undefined8 Farmer_Routine_0801DEB4(int *farmer,short *amount)
 // =============================================================================
 // Function: Farmer_Routine_0801E084 @ 0x0801E084
 // =============================================================================
-undefined4 Farmer_Routine_0801E084(int *farmer)
+void Farmer_Routine_0801E084(int *farmer)
 
 {
   bool b_flag1;
@@ -12771,7 +12771,7 @@ case_0801E630:
 // =============================================================================
 // Function: Farmer_Routine_0801E67C @ 0x0801E67C
 // =============================================================================
-undefined4 Farmer_Routine_0801E67C(int *farmer)
+void Farmer_Routine_0801E67C(int *farmer)
 
 {
   undefined2 u_val1;
@@ -12975,7 +12975,7 @@ case_0801E714:
 // =============================================================================
 // Function: Farmer_Routine_0801E90C @ 0x0801E90C
 // =============================================================================
-undefined4 Farmer_Routine_0801E90C(int *farmer)
+void Farmer_Routine_0801E90C(int *farmer)
 
 {
   int i_val1;
@@ -13088,7 +13088,7 @@ undefined4 Farmer_Routine_0801E90C(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801EAA0 @ 0x0801EAA0
 // =============================================================================
-undefined4 Farmer_Routine_0801EAA0(int *farmer,undefined4 amount)
+u32 Farmer_Routine_0801EAA0(int *farmer,undefined4 amount)
 
 {
   byte b_flag1;
@@ -13270,7 +13270,7 @@ undefined4 Farmer_Routine_0801EAA0(int *farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801EE00 @ 0x0801EE00
 // =============================================================================
-undefined8 Farmer_Routine_0801EE00(int *farmer,ushort *amount,undefined4 slot_id)
+u32 Farmer_Routine_0801EE00(int *farmer,ushort *amount,undefined4 slot_id)
 
 {
   bool b_flag1;
@@ -13446,7 +13446,7 @@ LAB_0801efa8:
 // =============================================================================
 // Function: Farmer_Routine_0801F14C @ 0x0801F14C
 // =============================================================================
-undefined4 Farmer_Routine_0801F14C(int *farmer)
+void Farmer_Routine_0801F14C(int *farmer)
 
 {
   undefined4 u_val1;
@@ -13508,7 +13508,7 @@ case_0801F2CA:
 // =============================================================================
 // Function: Farmer_Routine_0801F2DC @ 0x0801F2DC
 // =============================================================================
-undefined4 Farmer_Routine_0801F2DC(int *farmer)
+void Farmer_Routine_0801F2DC(int *farmer)
 
 {
   byte b_flag1;
@@ -13565,7 +13565,7 @@ LAB_0801f38a:
 // =============================================================================
 // Function: Farmer_Routine_0801F3E4 @ 0x0801F3E4
 // =============================================================================
-undefined4 Farmer_Routine_0801F3E4(int *farmer)
+void Farmer_Routine_0801F3E4(int *farmer)
 
 {
   undefined2 u_val1;
@@ -13639,7 +13639,7 @@ undefined4 Farmer_Routine_0801F3E4(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801F518 @ 0x0801F518
 // =============================================================================
-undefined4 Farmer_Routine_0801F518(int *farmer,int amount)
+void Farmer_Routine_0801F518(int *farmer,int amount)
 
 {
   char c_char1;
@@ -13689,7 +13689,7 @@ undefined4 Farmer_Routine_0801F518(int *farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0801F5F0 @ 0x0801F5F0
 // =============================================================================
-undefined4 Farmer_Routine_0801F5F0(int farmer)
+void Farmer_Routine_0801F5F0(int farmer)
 
 {
   
@@ -13701,7 +13701,7 @@ undefined4 Farmer_Routine_0801F5F0(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801F614 @ 0x0801F614
 // =============================================================================
-undefined4 Farmer_Routine_0801F614(int *farmer)
+void Farmer_Routine_0801F614(int *farmer)
 
 {
   undefined4 u_val1;
@@ -13766,7 +13766,7 @@ undefined4 Farmer_Routine_0801F614(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801F77C @ 0x0801F77C
 // =============================================================================
-undefined4 Farmer_Routine_0801F77C(int *farmer)
+void Farmer_Routine_0801F77C(int *farmer)
 
 {
   char c_char1;
@@ -13848,7 +13848,7 @@ undefined4 Farmer_Routine_0801F77C(int *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801F924 @ 0x0801F924
 // =============================================================================
-undefined4 Farmer_Routine_0801F924(int *farmer,undefined4 amount)
+void Farmer_Routine_0801F924(int *farmer,undefined4 amount)
 
 {
   byte b_flag1;
@@ -13960,7 +13960,7 @@ void Farmer_Routine_0801FAB8(int *farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801FAC8 @ 0x0801FAC8
 // =============================================================================
-undefined4 Farmer_Routine_0801FAC8(int farmer,int amount)
+void Farmer_Routine_0801FAC8(int farmer,int amount)
 
 {
   undefined4 u_val1;
@@ -14027,7 +14027,7 @@ Farmer_Routine_0801FB7C(undefined4 *farmer,undefined4 amount,undefined4 slot_id,
 // =============================================================================
 // Function: Farmer_Routine_0801FC78 @ 0x0801FC78
 // =============================================================================
-undefined4 Farmer_Routine_0801FC78(int farmer)
+void Farmer_Routine_0801FC78(int farmer)
 
 {
   int i_val1;
@@ -14045,7 +14045,7 @@ undefined4 Farmer_Routine_0801FC78(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801FD0C @ 0x0801FD0C
 // =============================================================================
-undefined4 Farmer_Routine_0801FD0C(int farmer,int amount)
+void Farmer_Routine_0801FD0C(int farmer,int amount)
 
 {
   int i_val1;
@@ -14074,7 +14074,7 @@ void Farmer_Routine_0801FD3C(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801FDC0 @ 0x0801FDC0
 // =============================================================================
-undefined4 Farmer_Routine_0801FDC0(undefined4 *farmer)
+void Farmer_Routine_0801FDC0(undefined4 *farmer)
 
 {
   uint u_val1;
@@ -14101,7 +14101,7 @@ undefined4 Farmer_Routine_0801FDC0(undefined4 *farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801FE20 @ 0x0801FE20
 // =============================================================================
-undefined4 Farmer_Routine_0801FE20(int farmer)
+void Farmer_Routine_0801FE20(int farmer)
 
 {
   int i_val1;
@@ -14117,7 +14117,7 @@ undefined4 Farmer_Routine_0801FE20(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801FE48 @ 0x0801FE48
 // =============================================================================
-undefined4 Farmer_Routine_0801FE48(int farmer,undefined4 amount)
+void Farmer_Routine_0801FE48(int farmer,undefined4 amount)
 
 {
   int i_val1;
@@ -14132,7 +14132,7 @@ undefined4 Farmer_Routine_0801FE48(int farmer,undefined4 amount)
 // =============================================================================
 // Function: Farmer_Routine_0801FE60 @ 0x0801FE60
 // =============================================================================
-undefined4 Farmer_Routine_0801FE60(int farmer)
+void Farmer_Routine_0801FE60(int farmer)
 
 {
   int i_val1;
@@ -14147,7 +14147,7 @@ undefined4 Farmer_Routine_0801FE60(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801FE78 @ 0x0801FE78
 // =============================================================================
-undefined4 Farmer_Routine_0801FE78(int farmer,undefined4 amount,int slot_id,int flags)
+void Farmer_Routine_0801FE78(int farmer,undefined4 amount,int slot_id,int flags)
 
 {
   
@@ -14183,7 +14183,7 @@ void Farmer_Routine_0801FE94(ushort *farmer,int amount)
 // =============================================================================
 // Function: Farmer_Routine_0801FF54 @ 0x0801FF54
 // =============================================================================
-undefined4 Farmer_Routine_0801FF54(int farmer)
+void Farmer_Routine_0801FF54(int farmer)
 
 {
   int i_val1;
@@ -14198,7 +14198,7 @@ undefined4 Farmer_Routine_0801FF54(int farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801FF84 @ 0x0801FF84
 // =============================================================================
-undefined4 Farmer_Routine_0801FF84(undefined4 farmer)
+void Farmer_Routine_0801FF84(undefined4 farmer)
 
 {
   
@@ -14209,7 +14209,7 @@ undefined4 Farmer_Routine_0801FF84(undefined4 farmer)
 // =============================================================================
 // Function: Farmer_Routine_0801FF98 @ 0x0801FF98
 // =============================================================================
-undefined4 Farmer_Routine_0801FF98(undefined4 farmer,ushort *amount)
+void Farmer_Routine_0801FF98(undefined4 farmer,ushort *amount)
 
 {
   

@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: Tool_Construct @ 0x0800D024
 // =============================================================================
-undefined8 Tool_Construct(int arg_1)
+u32 Tool_Construct(int arg_1)
 
 {
   char c_char1;
@@ -37,7 +37,7 @@ undefined8 Tool_Construct(int arg_1)
 // =============================================================================
 // Function: Tool_GetId @ 0x0800D058
 // =============================================================================
-undefined8 Tool_GetId(int arg_1)
+u32 Tool_GetId(int arg_1)
 
 {
   uint u_val1;
@@ -84,7 +84,7 @@ void Tool_GetName(short *arg_1,undefined4 arg_2,uint arg_3)
 // =============================================================================
 // Function: Tool_GetIconId @ 0x0800D158
 // =============================================================================
-undefined8 Tool_GetIconId(int arg_1,uint arg_2)
+u32 Tool_GetIconId(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -111,7 +111,7 @@ undefined8 Tool_GetIconId(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Tool_GetDesc @ 0x0800D1B4
 // =============================================================================
-undefined8 Tool_GetDesc(int arg_1,uint arg_2)
+u32 Tool_GetDesc(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -130,7 +130,7 @@ undefined8 Tool_GetDesc(int arg_1,uint arg_2)
 // =============================================================================
 // Function: ToolStack_Construct @ 0x0800D1D8
 // =============================================================================
-undefined8 ToolStack_Construct(undefined4 *arg_1)
+u32 ToolStack_Construct(undefined4 *arg_1)
 
 {
   undefined4 stack_val_c;
@@ -144,7 +144,7 @@ undefined8 ToolStack_Construct(undefined4 *arg_1)
 // =============================================================================
 // Function: ToolStack_GetTool @ 0x0800D214
 // =============================================================================
-undefined4 ToolStack_GetTool(byte *arg_1)
+void ToolStack_GetTool(byte *arg_1)
 
 {
   byte b_flag1;
@@ -159,7 +159,7 @@ undefined4 ToolStack_GetTool(byte *arg_1)
 // =============================================================================
 // Function: ToolStack_IsEmpty @ 0x0800D23C
 // =============================================================================
-undefined4 ToolStack_IsEmpty(ushort *arg_1,int arg_2)
+void ToolStack_IsEmpty(ushort *arg_1,int arg_2)
 
 {
   uint *p_uint1;
@@ -179,7 +179,7 @@ undefined4 ToolStack_IsEmpty(ushort *arg_1,int arg_2)
 // =============================================================================
 // Function: ToolStack_GetAmount @ 0x0800D280
 // =============================================================================
-undefined4 ToolStack_GetAmount(ushort *arg_1,uint arg_2)
+void ToolStack_GetAmount(ushort *arg_1,uint arg_2)
 
 {
   ushort u_val1;
@@ -199,7 +199,7 @@ undefined4 ToolStack_GetAmount(ushort *arg_1,uint arg_2)
 // =============================================================================
 // Function: ToolStack_AddAmount @ 0x0800D2BC
 // =============================================================================
-undefined4 ToolStack_AddAmount(uint *arg_1,uint arg_2)
+void ToolStack_AddAmount(uint *arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -219,7 +219,7 @@ undefined4 ToolStack_AddAmount(uint *arg_1,uint arg_2)
 // =============================================================================
 // Function: ToolStack_SubtractAmount @ 0x0800D2FC
 // =============================================================================
-undefined4 ToolStack_SubtractAmount(uint *arg_1,uint arg_2)
+void ToolStack_SubtractAmount(uint *arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -239,7 +239,7 @@ undefined4 ToolStack_SubtractAmount(uint *arg_1,uint arg_2)
 // =============================================================================
 // Function: Food_Construct @ 0x0800D334
 // =============================================================================
-undefined4 Food_Construct(int arg_1,uint arg_2)
+void Food_Construct(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -259,7 +259,7 @@ undefined4 Food_Construct(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Food_GetId @ 0x0800D36C
 // =============================================================================
-undefined4 Food_GetId(int arg_1,uint arg_2)
+void Food_GetId(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -279,7 +279,7 @@ undefined4 Food_GetId(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Food_GetName @ 0x0800D3A0
 // =============================================================================
-undefined4 Food_GetName(int arg_1)
+void Food_GetName(int arg_1)
 
 {
   
@@ -292,7 +292,7 @@ undefined4 Food_GetName(int arg_1)
 // =============================================================================
 // Function: Food_GetIconId @ 0x0800D3B8
 // =============================================================================
-undefined4 Food_GetIconId(int arg_1)
+void Food_GetIconId(int arg_1)
 
 {
   
@@ -305,7 +305,7 @@ undefined4 Food_GetIconId(int arg_1)
 // =============================================================================
 // Function: Food_GetStaminaGain @ 0x0800D3D0
 // =============================================================================
-undefined8 Food_GetStaminaGain(int arg_1,uint arg_2)
+u32 Food_GetStaminaGain(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -324,7 +324,7 @@ undefined8 Food_GetStaminaGain(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Food_GetFatigueGain @ 0x0800D3F8
 // =============================================================================
-undefined8 Food_GetFatigueGain(int arg_1,uint arg_2)
+u32 Food_GetFatigueGain(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -343,7 +343,7 @@ undefined8 Food_GetFatigueGain(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Food_GetStaminaBonus @ 0x0800D420
 // =============================================================================
-undefined8 Food_GetStaminaBonus(int arg_1,uint arg_2)
+u32 Food_GetStaminaBonus(int arg_1,uint arg_2)
 
 {
   uint u_val1;
@@ -362,7 +362,7 @@ undefined8 Food_GetStaminaBonus(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Food_GetFatigueBonus @ 0x0800D448
 // =============================================================================
-undefined8 Food_GetFatigueBonus(int arg_1,undefined4 arg_2)
+u32 Food_GetFatigueBonus(int arg_1,undefined4 arg_2)
 
 {
   char c_char1;
@@ -382,7 +382,7 @@ LAB_0800d47e:
 // =============================================================================
 // Function: Food_IsDrink @ 0x0800D484
 // =============================================================================
-undefined8 Food_IsDrink(int arg_1,undefined4 arg_2)
+u32 Food_IsDrink(int arg_1,undefined4 arg_2)
 
 {
   char c_char1;
@@ -402,7 +402,7 @@ LAB_0800d4ba:
 // =============================================================================
 // Function: Food_GetDesc @ 0x0800D4C0
 // =============================================================================
-undefined4 Food_GetDesc(int arg_1,int arg_2)
+void Food_GetDesc(int arg_1,int arg_2)
 
 {
   
@@ -413,7 +413,7 @@ undefined4 Food_GetDesc(int arg_1,int arg_2)
 // =============================================================================
 // Function: Food_AddBonuses @ 0x0800D4D4
 // =============================================================================
-undefined4 Food_AddBonuses(int arg_1,undefined4 arg_2)
+void Food_AddBonuses(int arg_1,undefined4 arg_2)
 
 {
   int i_val1;
@@ -458,7 +458,7 @@ undefined4 Food_AddBonuses(int arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: FoodStack_Construct @ 0x0800D5B0
 // =============================================================================
-undefined4 FoodStack_Construct(uint *arg_1)
+void FoodStack_Construct(uint *arg_1)
 
 {
   ushort u_val1;
@@ -583,7 +583,7 @@ undefined4 FoodStack_Construct(uint *arg_1)
 // =============================================================================
 // Function: FoodStack_GetFood @ 0x0800D80C
 // =============================================================================
-undefined4 FoodStack_GetFood(int arg_1,uint arg_2)
+void FoodStack_GetFood(int arg_1,uint arg_2)
 
 {
   char c_char1;
@@ -604,7 +604,7 @@ undefined4 FoodStack_GetFood(int arg_1,uint arg_2)
 // =============================================================================
 // Function: FoodStack_IsEmpty @ 0x0800D864
 // =============================================================================
-undefined4 FoodStack_IsEmpty(int arg_1,uint arg_2,uint arg_3)
+void FoodStack_IsEmpty(int arg_1,uint arg_2,uint arg_3)
 
 {
   char c_char1;
@@ -700,7 +700,7 @@ LAB_0800d9ec:
 // =============================================================================
 // Function: FoodStack_AddAmount @ 0x0800DA14
 // =============================================================================
-undefined8 FoodStack_AddAmount(byte *arg_1)
+u32 FoodStack_AddAmount(byte *arg_1)
 
 {
   byte *pbVar1;
@@ -715,7 +715,7 @@ undefined8 FoodStack_AddAmount(byte *arg_1)
 // =============================================================================
 // Function: FoodStack_SubtractAmount @ 0x0800DA2C
 // =============================================================================
-undefined8 FoodStack_SubtractAmount(byte *arg_1)
+u32 FoodStack_SubtractAmount(byte *arg_1)
 
 {
   byte *pbVar1;
@@ -730,7 +730,7 @@ undefined8 FoodStack_SubtractAmount(byte *arg_1)
 // =============================================================================
 // Function: Article_Construct @ 0x0800DA48
 // =============================================================================
-undefined8 Article_Construct(byte *arg_1)
+u32 Article_Construct(byte *arg_1)
 
 {
   byte *pbVar1;
@@ -745,7 +745,7 @@ undefined8 Article_Construct(byte *arg_1)
 // =============================================================================
 // Function: Article_GetId @ 0x0800DA64
 // =============================================================================
-undefined8 Article_GetId(byte *arg_1)
+u32 Article_GetId(byte *arg_1)
 
 {
   byte *pbVar1;
@@ -760,7 +760,7 @@ undefined8 Article_GetId(byte *arg_1)
 // =============================================================================
 // Function: Article_GetName @ 0x0800DA7C
 // =============================================================================
-undefined8 Article_GetName(byte *arg_1)
+u32 Article_GetName(byte *arg_1)
 
 {
   byte *pbVar1;
@@ -775,7 +775,7 @@ undefined8 Article_GetName(byte *arg_1)
 // =============================================================================
 // Function: Article_GetIconId @ 0x0800DA98
 // =============================================================================
-undefined8 Article_GetIconId(byte *arg_1)
+u32 Article_GetIconId(byte *arg_1)
 
 {
   byte *pbVar1;
@@ -790,7 +790,7 @@ undefined8 Article_GetIconId(byte *arg_1)
 // =============================================================================
 // Function: Article_CanBeDiscarded @ 0x0800DAB4
 // =============================================================================
-undefined8 Article_CanBeDiscarded(byte *arg_1)
+u32 Article_CanBeDiscarded(byte *arg_1)
 
 {
   undefined4 u_val1;
@@ -811,7 +811,7 @@ undefined8 Article_CanBeDiscarded(byte *arg_1)
 // =============================================================================
 // Function: Article_GetDesc @ 0x0800DAE4
 // =============================================================================
-undefined8 Article_GetDesc(byte *arg_1)
+u32 Article_GetDesc(byte *arg_1)
 
 {
   undefined4 u_val1;
@@ -832,7 +832,7 @@ undefined8 Article_GetDesc(byte *arg_1)
 // =============================================================================
 // Function: ArticleStack_Construct @ 0x0800DB14
 // =============================================================================
-undefined4 ArticleStack_Construct(byte *arg_1)
+void ArticleStack_Construct(byte *arg_1)
 
 {
   
@@ -845,7 +845,7 @@ undefined4 ArticleStack_Construct(byte *arg_1)
 // =============================================================================
 // Function: ArticleStack_GetArticle @ 0x0800DB34
 // =============================================================================
-undefined8 ArticleStack_GetArticle(byte *arg_1)
+u32 ArticleStack_GetArticle(byte *arg_1)
 
 {
   undefined4 u_val1;
@@ -860,7 +860,7 @@ undefined8 ArticleStack_GetArticle(byte *arg_1)
 // =============================================================================
 // Function: ArticleStack_IsEmpty @ 0x0800DB60
 // =============================================================================
-undefined8 ArticleStack_IsEmpty(byte *arg_1)
+u32 ArticleStack_IsEmpty(byte *arg_1)
 
 {
   uint u_val1;
@@ -875,7 +875,7 @@ undefined8 ArticleStack_IsEmpty(byte *arg_1)
 // =============================================================================
 // Function: ArticleStack_GetAmount @ 0x0800DB8C
 // =============================================================================
-undefined8 ArticleStack_GetAmount(byte *arg_1)
+u32 ArticleStack_GetAmount(byte *arg_1)
 
 {
   int i_val1;
@@ -891,7 +891,7 @@ undefined8 ArticleStack_GetAmount(byte *arg_1)
 // =============================================================================
 // Function: ArticleStack_AddAmount @ 0x0800DBC8
 // =============================================================================
-undefined8 ArticleStack_AddAmount(int arg_1)
+u32 ArticleStack_AddAmount(int arg_1)
 
 {
   
@@ -903,7 +903,7 @@ undefined8 ArticleStack_AddAmount(int arg_1)
 // =============================================================================
 // Function: ArticleStack_SubtractAmount @ 0x0800DBE0
 // =============================================================================
-undefined8 ArticleStack_SubtractAmount(undefined1 *arg_1,undefined1 arg_2,uint arg_3)
+u32 ArticleStack_SubtractAmount(undefined1 *arg_1,undefined1 arg_2,uint arg_3)
 
 {
   undefined1 u_val1;
@@ -931,7 +931,7 @@ undefined8 ArticleStack_SubtractAmount(undefined1 *arg_1,undefined1 arg_2,uint a
 // =============================================================================
 // Function: Product_Construct @ 0x0800DC10
 // =============================================================================
-undefined8 Product_Construct(byte *arg_1)
+u32 Product_Construct(byte *arg_1)
 
 {
   byte stack_bytes_8 [4];
@@ -948,7 +948,7 @@ undefined8 Product_Construct(byte *arg_1)
 // =============================================================================
 // Function: Product_GetId @ 0x0800DC34
 // =============================================================================
-undefined8 Product_GetId(int arg_1)
+u32 Product_GetId(int arg_1)
 
 {
   
@@ -958,7 +958,7 @@ undefined8 Product_GetId(int arg_1)
 // =============================================================================
 // Function: Product_GetPrice @ 0x0800DC48
 // =============================================================================
-undefined8 Product_GetPrice(int arg_1)
+u32 Product_GetPrice(int arg_1)
 
 {
   uint u_val1;
@@ -975,7 +975,7 @@ undefined8 Product_GetPrice(int arg_1)
 // =============================================================================
 // Function: Product_GetName @ 0x0800DC5C
 // =============================================================================
-undefined4 Product_GetName(int arg_1,int arg_2)
+void Product_GetName(int arg_1,int arg_2)
 
 {
   uint *p_uint1;
@@ -997,7 +997,7 @@ undefined4 Product_GetName(int arg_1,int arg_2)
 // =============================================================================
 // Function: Product_GetIconId @ 0x0800DC8C
 // =============================================================================
-undefined4 Product_GetIconId(int arg_1,uint arg_2)
+void Product_GetIconId(int arg_1,uint arg_2)
 
 {
   byte b_flag1;
@@ -1019,7 +1019,7 @@ undefined4 Product_GetIconId(int arg_1,uint arg_2)
 // =============================================================================
 // Function: Item_Routine_0800DCB8 @ 0x0800DCB8
 // =============================================================================
-undefined8 Item_Routine_0800DCB8(byte *item)
+u32 Item_Routine_0800DCB8(byte *item)
 
 {
   undefined4 u_val1;
@@ -1034,7 +1034,7 @@ undefined8 Item_Routine_0800DCB8(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800DCE0 @ 0x0800DCE0
 // =============================================================================
-undefined8 Item_Routine_0800DCE0(byte *item)
+u32 Item_Routine_0800DCE0(byte *item)
 
 {
   uint u_val1;
@@ -1089,7 +1089,7 @@ undefined8 Item_GetFoodFatigueEffect(byte *food_item)
 // =============================================================================
 // Function: Item_Routine_0800DD6C @ 0x0800DD6C
 // =============================================================================
-undefined8 Item_Routine_0800DD6C(byte *item)
+u32 Item_Routine_0800DD6C(byte *item)
 
 {
   int i_val1;
@@ -1106,7 +1106,7 @@ undefined8 Item_Routine_0800DD6C(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800DD8C @ 0x0800DD8C
 // =============================================================================
-undefined8 Item_Routine_0800DD8C(byte *item)
+u32 Item_Routine_0800DD8C(byte *item)
 
 {
   int i_val1;
@@ -1123,7 +1123,7 @@ undefined8 Item_Routine_0800DD8C(byte *item)
 // =============================================================================
 // Function: Item_GetFoodIsDrinkOrLiquid @ 0x0800DDAC
 // =============================================================================
-undefined8 Item_GetFoodIsDrinkOrLiquid(byte *item)
+u32 Item_GetFoodIsDrinkOrLiquid(byte *item)
 
 {
   uint u_val1;
@@ -1140,7 +1140,7 @@ undefined8 Item_GetFoodIsDrinkOrLiquid(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800DDD4 @ 0x0800DDD4
 // =============================================================================
-undefined8 Item_Routine_0800DDD4(byte *item)
+u32 Item_Routine_0800DDD4(byte *item)
 
 {
   int i_val1;
@@ -1156,7 +1156,7 @@ undefined8 Item_Routine_0800DDD4(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800DE0C @ 0x0800DE0C
 // =============================================================================
-undefined4 Item_Routine_0800DE0C(byte *item,char slot,char quantity)
+void Item_Routine_0800DE0C(byte *item,char slot,char quantity)
 
 {
   int i_val1;
@@ -1182,7 +1182,7 @@ undefined4 Item_Routine_0800DE0C(byte *item,char slot,char quantity)
 // =============================================================================
 // Function: Item_Routine_0800DE68 @ 0x0800DE68
 // =============================================================================
-undefined8 Item_Routine_0800DE68(int item)
+u32 Item_Routine_0800DE68(int item)
 
 {
   
@@ -1194,7 +1194,7 @@ undefined8 Item_Routine_0800DE68(int item)
 // =============================================================================
 // Function: Item_Routine_0800DE80 @ 0x0800DE80
 // =============================================================================
-undefined8 Item_Routine_0800DE80(int item,undefined4 slot,uint quantity)
+u32 Item_Routine_0800DE80(int item,undefined4 slot,uint quantity)
 
 {
   undefined1 u_val1;
@@ -1224,7 +1224,7 @@ undefined8 Item_Routine_0800DE80(int item,undefined4 slot,uint quantity)
 // =============================================================================
 // Function: Item_Routine_0800DEB8 @ 0x0800DEB8
 // =============================================================================
-undefined8 Item_Routine_0800DEB8(undefined4 item,int slot)
+u32 Item_Routine_0800DEB8(undefined4 item,int slot)
 
 {
   
@@ -1240,7 +1240,7 @@ undefined8 Item_Routine_0800DEB8(undefined4 item,int slot)
 // =============================================================================
 // Function: Item_Routine_0800DEDC @ 0x0800DEDC
 // =============================================================================
-undefined8 Item_Routine_0800DEDC(int item)
+u32 Item_Routine_0800DEDC(int item)
 
 {
   
@@ -1250,7 +1250,7 @@ undefined8 Item_Routine_0800DEDC(int item)
 // =============================================================================
 // Function: Item_Routine_0800DEF0 @ 0x0800DEF0
 // =============================================================================
-undefined8 Item_Routine_0800DEF0(int item)
+u32 Item_Routine_0800DEF0(int item)
 
 {
   uint u_val1;
@@ -1267,7 +1267,7 @@ undefined8 Item_Routine_0800DEF0(int item)
 // =============================================================================
 // Function: Item_Routine_0800DF04 @ 0x0800DF04
 // =============================================================================
-undefined4 Item_Routine_0800DF04(int item,int slot)
+void Item_Routine_0800DF04(int item,int slot)
 
 {
   uint *p_uint1;
@@ -1289,7 +1289,7 @@ undefined4 Item_Routine_0800DF04(int item,int slot)
 // =============================================================================
 // Function: Item_Routine_0800DF34 @ 0x0800DF34
 // =============================================================================
-undefined4 Item_Routine_0800DF34(int item,uint slot)
+void Item_Routine_0800DF34(int item,uint slot)
 
 {
   byte b_flag1;
@@ -1311,7 +1311,7 @@ undefined4 Item_Routine_0800DF34(int item,uint slot)
 // =============================================================================
 // Function: Item_Routine_0800DF58 @ 0x0800DF58
 // =============================================================================
-undefined8 Item_Routine_0800DF58(byte *item)
+u32 Item_Routine_0800DF58(byte *item)
 
 {
   undefined4 u_val1;
@@ -1326,7 +1326,7 @@ undefined8 Item_Routine_0800DF58(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800DF84 @ 0x0800DF84
 // =============================================================================
-undefined8 Item_Routine_0800DF84(byte *item)
+u32 Item_Routine_0800DF84(byte *item)
 
 {
   uint u_val1;
@@ -1341,7 +1341,7 @@ undefined8 Item_Routine_0800DF84(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800DFB0 @ 0x0800DFB0
 // =============================================================================
-undefined8 Item_Routine_0800DFB0(byte *item)
+u32 Item_Routine_0800DFB0(byte *item)
 
 {
   byte b_flag1;
@@ -1364,7 +1364,7 @@ LAB_0800dfd0:
 // =============================================================================
 // Function: Item_Routine_0800DFD4 @ 0x0800DFD4
 // =============================================================================
-undefined8 Item_Routine_0800DFD4(byte *item)
+u32 Item_Routine_0800DFD4(byte *item)
 
 {
   int i_val1;
@@ -1380,7 +1380,7 @@ undefined8 Item_Routine_0800DFD4(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800E010 @ 0x0800E010
 // =============================================================================
-undefined8 Item_Routine_0800E010(int item)
+u32 Item_Routine_0800E010(int item)
 
 {
   
@@ -1392,7 +1392,7 @@ undefined8 Item_Routine_0800E010(int item)
 // =============================================================================
 // Function: Item_Routine_0800E028 @ 0x0800E028
 // =============================================================================
-undefined8 Item_Routine_0800E028(undefined1 *item,undefined1 slot,uint quantity)
+u32 Item_Routine_0800E028(undefined1 *item,undefined1 slot,uint quantity)
 
 {
   undefined1 u_val1;
@@ -1420,7 +1420,7 @@ undefined8 Item_Routine_0800E028(undefined1 *item,undefined1 slot,uint quantity)
 // =============================================================================
 // Function: Item_Routine_0800E058 @ 0x0800E058
 // =============================================================================
-undefined8 Item_Routine_0800E058(byte *item)
+u32 Item_Routine_0800E058(byte *item)
 
 {
   byte stack_bytes_8 [4];
@@ -1437,7 +1437,7 @@ undefined8 Item_Routine_0800E058(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800E07C @ 0x0800E07C
 // =============================================================================
-undefined8 Item_Routine_0800E07C(int item)
+u32 Item_Routine_0800E07C(int item)
 
 {
   
@@ -1447,7 +1447,7 @@ undefined8 Item_Routine_0800E07C(int item)
 // =============================================================================
 // Function: Item_Routine_0800E090 @ 0x0800E090
 // =============================================================================
-undefined8 Item_Routine_0800E090(int item)
+u32 Item_Routine_0800E090(int item)
 
 {
   uint u_val1;
@@ -1464,7 +1464,7 @@ undefined8 Item_Routine_0800E090(int item)
 // =============================================================================
 // Function: Item_Routine_0800E0A4 @ 0x0800E0A4
 // =============================================================================
-undefined4 Item_Routine_0800E0A4(int item,int slot)
+void Item_Routine_0800E0A4(int item,int slot)
 
 {
   uint *p_uint1;
@@ -1486,7 +1486,7 @@ undefined4 Item_Routine_0800E0A4(int item,int slot)
 // =============================================================================
 // Function: Item_Routine_0800E0D4 @ 0x0800E0D4
 // =============================================================================
-undefined4 Item_Routine_0800E0D4(int item,uint slot)
+void Item_Routine_0800E0D4(int item,uint slot)
 
 {
   byte b_flag1;
@@ -1508,7 +1508,7 @@ undefined4 Item_Routine_0800E0D4(int item,uint slot)
 // =============================================================================
 // Function: Item_Routine_0800E148 @ 0x0800E148
 // =============================================================================
-undefined8 Item_Routine_0800E148(undefined1 *item,undefined1 slot)
+u32 Item_Routine_0800E148(undefined1 *item,undefined1 slot)
 
 {
   uint u_val1;
@@ -1551,7 +1551,7 @@ void Item_Routine_0800E198(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800E1C0 @ 0x0800E1C0
 // =============================================================================
-undefined8 Item_Routine_0800E1C0(byte *item)
+u32 Item_Routine_0800E1C0(byte *item)
 
 {
   undefined4 u_val1;
@@ -1577,7 +1577,7 @@ undefined8 Item_Routine_0800E1C0(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800E214 @ 0x0800E214
 // =============================================================================
-undefined8 Item_Routine_0800E214(byte *item)
+u32 Item_Routine_0800E214(byte *item)
 
 {
   uint u_val1;
@@ -1606,7 +1606,7 @@ undefined8 Item_Routine_0800E214(byte *item)
 // =============================================================================
 // Function: Item_Routine_0800E268 @ 0x0800E268
 // =============================================================================
-undefined8 Item_Routine_0800E268(ushort *item)
+u32 Item_Routine_0800E268(ushort *item)
 
 {
   byte stack_bytes_8 [4];
@@ -1623,7 +1623,7 @@ undefined8 Item_Routine_0800E268(ushort *item)
 // =============================================================================
 // Function: Item_Routine_0800E290 @ 0x0800E290
 // =============================================================================
-undefined8 Item_Routine_0800E290(undefined4 item,ushort *slot)
+u32 Item_Routine_0800E290(undefined4 item,ushort *slot)
 
 {
   
@@ -1639,7 +1639,7 @@ undefined8 Item_Routine_0800E290(undefined4 item,ushort *slot)
 // =============================================================================
 // Function: Item_Routine_0800E2B8 @ 0x0800E2B8
 // =============================================================================
-undefined8 Item_Routine_0800E2B8(ushort *item)
+u32 Item_Routine_0800E2B8(ushort *item)
 
 {
   byte stack_bytes_8 [4];

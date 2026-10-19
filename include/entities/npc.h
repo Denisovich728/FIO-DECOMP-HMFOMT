@@ -63,18 +63,50 @@ typedef struct NPCData {
     bool talkedToday;
 } NPCData;
 
+// Direct field access macros for NPC / Bachelorette runtime
+#define NPC_MOOD_BYTE(npc)          (*(u8 *)((u8 *)(npc) + 8))
+#define NPC_TALKED_FLAG(npc)        (*(u8 *)((u8 *)(npc) + 9))
+#define NPC_SCHEDULE_TIMER(npc)     (*(u32 *)((u8 *)(npc) + 0x0C))
+#define NPC_AFFECTION_RAW(npc)      (*(u16 *)((u8 *)(npc) + 0x14))
+#define NPC_HEART_LEVEL(npc)        ((*(u8 *)((u8 *)(npc) + 0x17) >> 4) & 0x07)
+
 // =============================================================================
 // Function Prototypes
 // =============================================================================
 void NPC_InitAll(void);
-void NPC_UpdateSchedule(u8 hour, Season season, Weather weather);
-void NPC_AddAffection(VillagerId id, s16 delta);
-void NPC_AddFriendship(VillagerId id, s16 delta);
-u16  NPC_GetAffection(VillagerId id);
-u16  NPC_GetFriendship(VillagerId id);
+u32  NPC_UpdateSchedule(int npc);
+void NPC_ReduceMood(int npc, int amount);
+void NPC_ResetScheduleWaypoint(int npc);
+void NPC_ClearWaypoints(undefined1 *npc);
+u32  NPC_EvaluateGiftReaction(undefined4 npc, undefined4 amount, undefined4 *extra_arg);
+
+// NPC Social & Friendship
+void NPC_AddFriendship(int npc, int amount);
+void NPC_ReduceFriendship(undefined4 npc, int amount);
+void NPC_SetTalkedToday(int npc);
+void NPC_ProcessGiftGiven(int npc, uint amount);
+
+// Bachelorette Affection & Romance
+void Bachelorette_ResetAffection(int npc);
+void Bachelorette_AddAffection(int npc, int amount);
+void Bachelorette_ReduceAffection(undefined4 npc, int amount);
+void Bachelorette_IncrementTalkCount(int npc);
+void Bachelorette_IncrementGiftCount(int npc);
+void Bachelorette_IncrementHeartLevel(int npc);
+void Bachelorette_ProcessDailyAffection(int npc, char amount, uint extra_arg);
+u32  Bachelorette_ResetAffectionData(int npc);
+u32  Bachelorette_GetStatsByte(int npc, uint amount);
+u32  Bachelorette_GetHeartStatsByte(int npc, uint amount);
+
+// Harvest Sprites & Minigames
+void HarvestSprite_Minigame_UpdateCountdownTimer(int npc, int amount);
+void HarvestSprite_Minigame_HideUI(int npc);
+void HarvestSprite_Minigame_ShowUI(int npc);
+void HarvestSprite_Minigame_SetupDifficultyAndTargets(int npc);
+void HarvestSprite_Minigame_InitState(int npc);
+void HarvestSprite_Minigame_UpdateFrame(int npc);
 
 u32  Bachelorette_GetHeartColor(u32 npc_id);
-void Bachelorette_AddHeartPoints(u32 npc_id, s32 points);
 bool Bachelorette_CheckHeartEvent(VillagerId id, u8 eventLevel);
 void HarvestSprite_PerformChores(VillagerId id, u8 choreType);
 const void *Map_GetMapData(u32 map_id);

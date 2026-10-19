@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: VTable_Routine_080D3778 @ 0x080D3778
 // =============================================================================
-undefined4 VTable_Routine_080D3778(undefined1 *instance,undefined1 *arg1,int arg2)
+void VTable_Routine_080D3778(undefined1 *instance,undefined1 *arg1,int arg2)
 
 {
   int i_val1;
@@ -29,7 +29,7 @@ undefined4 VTable_Routine_080D3778(undefined1 *instance,undefined1 *arg1,int arg
 // =============================================================================
 // Function: VTable_Routine_080D379C @ 0x080D379C
 // =============================================================================
-undefined4 VTable_Routine_080D379C(undefined4 instance,undefined4 arg1,undefined4 arg2)
+void VTable_Routine_080D379C(undefined4 instance,undefined4 arg1,undefined4 arg2)
 
 {
   uint u_val1;
@@ -53,7 +53,7 @@ undefined4 VTable_Routine_080D379C(undefined4 instance,undefined4 arg1,undefined
 // =============================================================================
 // Function: VTable_Routine_080D3800 @ 0x080D3800
 // =============================================================================
-undefined4 VTable_Routine_080D3800(undefined1 *instance,undefined1 *arg1,int arg2)
+void VTable_Routine_080D3800(undefined1 *instance,undefined1 *arg1,int arg2)
 
 {
   
@@ -69,7 +69,7 @@ undefined4 VTable_Routine_080D3800(undefined1 *instance,undefined1 *arg1,int arg
 // =============================================================================
 // Function: VTable_Routine_080D3840 @ 0x080D3840
 // =============================================================================
-undefined8 VTable_Routine_080D3840(char *instance,char *arg1,int arg2)
+u32 VTable_Routine_080D3840(char *instance,char *arg1,int arg2)
 
 {
   char c_char1;
@@ -117,7 +117,7 @@ void VTable_Routine_080D3870(undefined4 instance,undefined4 arg1,undefined4 arg2
 // =============================================================================
 // Function: VTable_Routine_080D38D4 @ 0x080D38D4
 // =============================================================================
-undefined8 VTable_Routine_080D38D4(undefined4 instance,undefined4 arg1,undefined4 arg2,int arg3)
+u32 VTable_Routine_080D38D4(undefined4 instance,undefined4 arg1,undefined4 arg2,int arg3)
 
 {
   byte b_flag1;
@@ -133,7 +133,7 @@ undefined8 VTable_Routine_080D38D4(undefined4 instance,undefined4 arg1,undefined
 // =============================================================================
 // Function: gba_memcmp @ 0x080D3948
 // =============================================================================
-undefined8 gba_memcmp(byte *arg_1,byte *arg_2,uint arg_3)
+u32 gba_memcmp(byte *arg_1,byte *arg_2,uint arg_3)
 
 {
   int i_val1;
@@ -165,7 +165,7 @@ LAB_080d398e:
 // =============================================================================
 // Function: gba_memcpy @ 0x080D3994
 // =============================================================================
-undefined8 gba_memcpy(undefined4 *arg_1,undefined4 *arg_2,uint arg_3)
+u32 gba_memcpy(undefined4 *arg_1,undefined4 *arg_2,uint arg_3)
 
 {
   undefined4 u_val1;
@@ -202,7 +202,7 @@ undefined8 gba_memcpy(undefined4 *arg_1,undefined4 *arg_2,uint arg_3)
 // =============================================================================
 // Function: gba_memmove @ 0x080D39F8
 // =============================================================================
-undefined8 gba_memmove(undefined4 *arg_1,undefined4 *arg_2,uint arg_3)
+u32 gba_memmove(undefined4 *arg_1,undefined4 *arg_2,uint arg_3)
 
 {
   undefined4 *p_uint1;
@@ -250,7 +250,7 @@ undefined8 gba_memmove(undefined4 *arg_1,undefined4 *arg_2,uint arg_3)
 // =============================================================================
 // Function: gba_memset @ 0x080D3A84
 // =============================================================================
-undefined8 gba_memset(uint *arg_1,uint arg_2,uint arg_3)
+u32 gba_memset(uint *arg_1,uint arg_2,uint arg_3)
 
 {
   uint u_val1;
@@ -284,7 +284,7 @@ undefined8 gba_memset(uint *arg_1,uint arg_2,uint arg_3)
 // =============================================================================
 // Function: gba_strcat @ 0x080D3ADC
 // =============================================================================
-undefined8 gba_strcat(uint *arg_1,undefined4 arg_2)
+u32 gba_strcat(uint *arg_1,undefined4 arg_2)
 
 {
   uint u_val1;
@@ -307,7 +307,7 @@ undefined8 gba_strcat(uint *arg_1,undefined4 arg_2)
 // =============================================================================
 // Function: gba_strcpy @ 0x080D3B28
 // =============================================================================
-undefined8 gba_strcpy(uint *arg_1,uint *arg_2)
+u32 gba_strcpy(uint *arg_1,uint *arg_2)
 
 {
   uint u_val1;
@@ -340,7 +340,7 @@ undefined8 gba_strcpy(uint *arg_1,uint *arg_2)
 // =============================================================================
 // Function: gba_strlen @ 0x080D3B78
 // =============================================================================
-undefined8 gba_strlen(uint *arg_1)
+u32 gba_strlen(uint *arg_1)
 
 {
   uint u_val1;
@@ -383,7 +383,7 @@ void VTable_Routine_080D3BC0(undefined4 instance)
 // =============================================================================
 // Function: VTable_Routine_080D3BE8 @ 0x080D3BE8
 // =============================================================================
-undefined8 VTable_Routine_080D3BE8(undefined4 *instance)
+u32 VTable_Routine_080D3BE8(undefined4 *instance)
 
 {
   undefined4 u_val1;
@@ -397,7 +397,7 @@ undefined8 VTable_Routine_080D3BE8(undefined4 *instance)
 // =============================================================================
 // Function: VTable_Routine_080D3C24 @ 0x080D3C24
 // =============================================================================
-undefined8 VTable_Routine_080D3C24(undefined4 *instance)
+u32 VTable_Routine_080D3C24(undefined4 *instance)
 
 {
   undefined4 u_val1;
@@ -411,7 +411,7 @@ undefined8 VTable_Routine_080D3C24(undefined4 *instance)
 // =============================================================================
 // Function: VTable_Routine_080D3C60 @ 0x080D3C60
 // =============================================================================
-undefined4 VTable_Routine_080D3C60(void)
+void VTable_Routine_080D3C60(void)
 
 {
   
@@ -422,7 +422,7 @@ undefined4 VTable_Routine_080D3C60(void)
 // =============================================================================
 // Function: VTable_Routine_080D3C6C @ 0x080D3C6C
 // =============================================================================
-undefined4 VTable_Routine_080D3C6C(void)
+void VTable_Routine_080D3C6C(void)
 
 {
   
@@ -517,7 +517,7 @@ void VTable_Routine_080D3C78(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080D3ED4 @ 0x080D3ED4
 // =============================================================================
-undefined4 VTable_Routine_080D3ED4(undefined4 *instance,uint arg1)
+void VTable_Routine_080D3ED4(undefined4 *instance,uint arg1)
 
 {
   
@@ -531,7 +531,7 @@ undefined4 VTable_Routine_080D3ED4(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080D3EF4 @ 0x080D3EF4
 // =============================================================================
-undefined8 VTable_Routine_080D3EF4(undefined4 *instance,int arg1)
+u32 VTable_Routine_080D3EF4(undefined4 *instance,int arg1)
 
 {
   undefined4 *p_uint1;
@@ -577,7 +577,7 @@ undefined8 VTable_Routine_080D3EF4(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080D4004 @ 0x080D4004
 // =============================================================================
-undefined8 VTable_Routine_080D4004(undefined4 *instance)
+u32 VTable_Routine_080D4004(undefined4 *instance)
 
 {
   undefined4 u_val1;
@@ -591,7 +591,7 @@ undefined8 VTable_Routine_080D4004(undefined4 *instance)
 // =============================================================================
 // Function: VTable_Routine_080D4040 @ 0x080D4040
 // =============================================================================
-undefined4 VTable_Routine_080D4040(void)
+void VTable_Routine_080D4040(void)
 
 {
   
@@ -602,7 +602,7 @@ undefined4 VTable_Routine_080D4040(void)
 // =============================================================================
 // Function: VTable_Routine_080D404C @ 0x080D404C
 // =============================================================================
-undefined4 VTable_Routine_080D404C(int instance,undefined4 arg1)
+void VTable_Routine_080D404C(int instance,undefined4 arg1)
 
 {
   
@@ -616,7 +616,7 @@ undefined4 VTable_Routine_080D404C(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080D406C @ 0x080D406C
 // =============================================================================
-undefined4 VTable_Routine_080D406C(int instance,undefined4 arg1)
+void VTable_Routine_080D406C(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -638,7 +638,7 @@ undefined4 VTable_Routine_080D406C(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080D40CC @ 0x080D40CC
 // =============================================================================
-undefined8 VTable_Routine_080D40CC(int instance)
+u32 VTable_Routine_080D40CC(int instance)
 
 {
   ushort u_val1;
@@ -678,7 +678,7 @@ void VTable_Routine_080D4130(byte *instance)
 // =============================================================================
 // Function: VTable_Routine_080D4178 @ 0x080D4178
 // =============================================================================
-undefined8 VTable_Routine_080D4178(uint *instance,uint *arg1)
+u32 VTable_Routine_080D4178(uint *instance,uint *arg1)
 
 {
   byte b_flag1;
@@ -866,7 +866,7 @@ undefined8 VTable_Routine_080D4178(uint *instance,uint *arg1)
 // =============================================================================
 // Function: VTable_Routine_080D4480 @ 0x080D4480
 // =============================================================================
-undefined4 VTable_Routine_080D4480(int instance,uint arg1)
+void VTable_Routine_080D4480(int instance,uint arg1)
 
 {
   undefined *p_uint1;
@@ -887,7 +887,7 @@ undefined4 VTable_Routine_080D4480(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080D44D4 @ 0x080D44D4
 // =============================================================================
-undefined8 VTable_Routine_080D44D4(int *instance,int *arg1)
+u32 VTable_Routine_080D44D4(int *instance,int *arg1)
 
 {
   byte b_flag1;
@@ -1228,7 +1228,7 @@ undefined8 VTable_Routine_080D44D4(int *instance,int *arg1)
 // =============================================================================
 // Function: VTable_Routine_080D60B0 @ 0x080D60B0
 // =============================================================================
-undefined8 VTable_Routine_080D60B0(uint *instance,uint *arg1)
+u32 VTable_Routine_080D60B0(uint *instance,uint *arg1)
 
 {
   byte *pbVar1;
@@ -1693,7 +1693,7 @@ undefined8 VTable_Routine_080D60B0(uint *instance,uint *arg1)
 // =============================================================================
 // Function: VTable_Routine_080D64C8 @ 0x080D64C8
 // =============================================================================
-undefined8 VTable_Routine_080D64C8(int instance,int arg1)
+u32 VTable_Routine_080D64C8(int instance,int arg1)
 
 {
   byte b_flag1;
@@ -1729,7 +1729,7 @@ undefined8 VTable_Routine_080D64C8(int instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080D657C @ 0x080D657C
 // =============================================================================
-undefined8 VTable_Routine_080D657C(uint *instance,uint *arg1)
+u32 VTable_Routine_080D657C(uint *instance,uint *arg1)
 
 {
   byte *pbVar1;
@@ -1777,7 +1777,7 @@ undefined8 VTable_Routine_080D657C(uint *instance,uint *arg1)
 // =============================================================================
 // Function: VTable_Routine_080D66A4 @ 0x080D66A4
 // =============================================================================
-undefined8 VTable_Routine_080D66A4(uint *instance,uint *arg1)
+u32 VTable_Routine_080D66A4(uint *instance,uint *arg1)
 
 {
   uint *p_uint1;
@@ -1854,7 +1854,7 @@ undefined8 VTable_Routine_080D66A4(uint *instance,uint *arg1)
 // =============================================================================
 // Function: VTable_Routine_080D67C8 @ 0x080D67C8
 // =============================================================================
-undefined8 VTable_Routine_080D67C8(int instance,int arg1)
+u32 VTable_Routine_080D67C8(int instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -1879,7 +1879,7 @@ undefined8 VTable_Routine_080D67C8(int instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080D684C @ 0x080D684C
 // =============================================================================
-undefined8 VTable_Routine_080D684C(undefined4 *instance,undefined4 *arg1)
+u32 VTable_Routine_080D684C(undefined4 *instance,undefined4 *arg1)
 
 {
   byte b_flag1;
@@ -1901,7 +1901,7 @@ undefined8 VTable_Routine_080D684C(undefined4 *instance,undefined4 *arg1)
 // =============================================================================
 // Function: VTable_Routine_080D68C0 @ 0x080D68C0
 // =============================================================================
-undefined8 VTable_Routine_080D68C0(int instance,int arg1)
+u32 VTable_Routine_080D68C0(int instance,int arg1)
 
 {
   byte b_flag1;
@@ -1967,7 +1967,7 @@ undefined8 VTable_Routine_080D68C0(int instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080D6A80 @ 0x080D6A80
 // =============================================================================
-undefined8 VTable_Routine_080D6A80(int *instance,int *arg1)
+u32 VTable_Routine_080D6A80(int *instance,int *arg1)
 
 {
   int *p_int1;
@@ -2005,7 +2005,7 @@ undefined8 VTable_Routine_080D6A80(int *instance,int *arg1)
 // =============================================================================
 // Function: VTable_Routine_080D6B00 @ 0x080D6B00
 // =============================================================================
-undefined4 VTable_Routine_080D6B00(int *instance,uint arg1)
+void VTable_Routine_080D6B00(int *instance,uint arg1)
 
 {
   int *p_int1;
@@ -2026,7 +2026,7 @@ undefined4 VTable_Routine_080D6B00(int *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080D6B40 @ 0x080D6B40
 // =============================================================================
-undefined8 VTable_Routine_080D6B40(undefined4 *instance,undefined4 *arg1)
+u32 VTable_Routine_080D6B40(undefined4 *instance,undefined4 *arg1)
 
 {
   undefined4 *p_uint1;
@@ -2078,7 +2078,7 @@ undefined8 VTable_Routine_080D6B40(undefined4 *instance,undefined4 *arg1)
 // =============================================================================
 // Function: VTable_Routine_080D6C08 @ 0x080D6C08
 // =============================================================================
-undefined4 VTable_Routine_080D6C08(int instance,uint arg1)
+void VTable_Routine_080D6C08(int instance,uint arg1)
 
 {
   int *p_int1;
@@ -2156,7 +2156,7 @@ void VTable_Routine_080D6C58(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080D6D8C @ 0x080D6D8C
 // =============================================================================
-undefined4 VTable_Routine_080D6D8C(void)
+void VTable_Routine_080D6D8C(void)
 
 {
   
@@ -2167,7 +2167,7 @@ undefined4 VTable_Routine_080D6D8C(void)
 // =============================================================================
 // Function: VTable_Routine_080D6D98 @ 0x080D6D98
 // =============================================================================
-undefined8 VTable_Routine_080D6D98(int instance,int arg1,int arg2)
+u32 VTable_Routine_080D6D98(int instance,int arg1,int arg2)
 
 {
   int *p_int1;
@@ -2184,7 +2184,7 @@ undefined8 VTable_Routine_080D6D98(int instance,int arg1,int arg2)
 // =============================================================================
 // Function: VTable_Routine_080D6DB8 @ 0x080D6DB8
 // =============================================================================
-undefined4 VTable_Routine_080D6DB8(int *instance,uint arg1)
+void VTable_Routine_080D6DB8(int *instance,uint arg1)
 
 {
   int i_val1;
@@ -2254,7 +2254,7 @@ undefined4 VTable_Routine_080D6DB8(int *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080D6ECC @ 0x080D6ECC
 // =============================================================================
-undefined4 VTable_Routine_080D6ECC(undefined1 *instance)
+void VTable_Routine_080D6ECC(undefined1 *instance)
 
 {
   
@@ -2268,7 +2268,7 @@ undefined4 VTable_Routine_080D6ECC(undefined1 *instance)
 // =============================================================================
 // Function: VTable_Routine_080D6EEC @ 0x080D6EEC
 // =============================================================================
-undefined4 VTable_Routine_080D6EEC(undefined1 *instance)
+void VTable_Routine_080D6EEC(undefined1 *instance)
 
 {
   
@@ -2282,7 +2282,7 @@ undefined4 VTable_Routine_080D6EEC(undefined1 *instance)
 // =============================================================================
 // Function: VTable_Routine_080D6F3C @ 0x080D6F3C
 // =============================================================================
-undefined4 VTable_Routine_080D6F3C(undefined1 *instance)
+void VTable_Routine_080D6F3C(undefined1 *instance)
 
 {
   
@@ -2296,7 +2296,7 @@ undefined4 VTable_Routine_080D6F3C(undefined1 *instance)
 // =============================================================================
 // Function: VTable_Routine_080D6F5C @ 0x080D6F5C
 // =============================================================================
-undefined4 VTable_Routine_080D6F5C(undefined1 *instance)
+void VTable_Routine_080D6F5C(undefined1 *instance)
 
 {
   
@@ -2310,7 +2310,7 @@ undefined4 VTable_Routine_080D6F5C(undefined1 *instance)
 // =============================================================================
 // Function: VTable_Routine_080D6F7C @ 0x080D6F7C
 // =============================================================================
-undefined4 VTable_Routine_080D6F7C(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D6F7C(undefined1 *instance,uint arg1,uint arg2)
 
 {
   undefined1 u_val1;
@@ -2357,7 +2357,7 @@ undefined4 VTable_Routine_080D6F7C(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7014 @ 0x080D7014
 // =============================================================================
-undefined4 VTable_Routine_080D7014(byte *instance,uint arg1,uint arg2)
+void VTable_Routine_080D7014(byte *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2401,7 +2401,7 @@ undefined4 VTable_Routine_080D7014(byte *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7094 @ 0x080D7094
 // =============================================================================
-undefined4 VTable_Routine_080D7094(byte *instance,uint arg1,uint arg2)
+void VTable_Routine_080D7094(byte *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2445,7 +2445,7 @@ undefined4 VTable_Routine_080D7094(byte *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7118 @ 0x080D7118
 // =============================================================================
-undefined4 VTable_Routine_080D7118(byte *instance,uint arg1,uint arg2)
+void VTable_Routine_080D7118(byte *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2489,7 +2489,7 @@ undefined4 VTable_Routine_080D7118(byte *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D71AC @ 0x080D71AC
 // =============================================================================
-undefined4 VTable_Routine_080D71AC(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D71AC(undefined1 *instance,uint arg1,uint arg2)
 
 {
   undefined1 u_val1;
@@ -2536,7 +2536,7 @@ undefined4 VTable_Routine_080D71AC(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7240 @ 0x080D7240
 // =============================================================================
-undefined4 VTable_Routine_080D7240(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D7240(undefined1 *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2580,7 +2580,7 @@ undefined4 VTable_Routine_080D7240(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D72C4 @ 0x080D72C4
 // =============================================================================
-undefined4 VTable_Routine_080D72C4(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D72C4(undefined1 *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2624,7 +2624,7 @@ undefined4 VTable_Routine_080D72C4(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D734C @ 0x080D734C
 // =============================================================================
-undefined4 VTable_Routine_080D734C(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D734C(undefined1 *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2668,7 +2668,7 @@ undefined4 VTable_Routine_080D734C(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D73E4 @ 0x080D73E4
 // =============================================================================
-undefined8 VTable_Routine_080D73E4(int *instance,uint arg1)
+u32 VTable_Routine_080D73E4(int *instance,uint arg1)
 
 {
   uint u_val1;
@@ -2707,7 +2707,7 @@ LAB_080d7474:
 // =============================================================================
 // Function: VTable_Routine_080D7480 @ 0x080D7480
 // =============================================================================
-undefined8 VTable_Routine_080D7480(byte *instance,uint arg1)
+u32 VTable_Routine_080D7480(byte *instance,uint arg1)
 
 {
   uint u_val1;
@@ -2746,7 +2746,7 @@ LAB_080d74e8:
 // =============================================================================
 // Function: VTable_Routine_080D74F0 @ 0x080D74F0
 // =============================================================================
-undefined8 VTable_Routine_080D74F0(byte *instance,uint arg1)
+u32 VTable_Routine_080D74F0(byte *instance,uint arg1)
 
 {
   uint u_val1;
@@ -2785,7 +2785,7 @@ LAB_080d755e:
 // =============================================================================
 // Function: VTable_Routine_080D7568 @ 0x080D7568
 // =============================================================================
-undefined8 VTable_Routine_080D7568(byte *instance,uint arg1)
+u32 VTable_Routine_080D7568(byte *instance,uint arg1)
 
 {
   uint u_val1;
@@ -2824,7 +2824,7 @@ LAB_080d75d6:
 // =============================================================================
 // Function: VTable_Routine_080D75E0 @ 0x080D75E0
 // =============================================================================
-undefined4 VTable_Routine_080D75E0(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D75E0(undefined1 *instance,uint arg1,uint arg2)
 
 {
   undefined1 u_val1;
@@ -2852,7 +2852,7 @@ undefined4 VTable_Routine_080D75E0(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7634 @ 0x080D7634
 // =============================================================================
-undefined4 VTable_Routine_080D7634(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D7634(undefined1 *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2880,7 +2880,7 @@ undefined4 VTable_Routine_080D7634(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7678 @ 0x080D7678
 // =============================================================================
-undefined4 VTable_Routine_080D7678(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D7678(undefined1 *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2908,7 +2908,7 @@ undefined4 VTable_Routine_080D7678(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D76C0 @ 0x080D76C0
 // =============================================================================
-undefined4 VTable_Routine_080D76C0(undefined1 *instance,uint arg1,uint arg2)
+void VTable_Routine_080D76C0(undefined1 *instance,uint arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -2936,7 +2936,7 @@ undefined4 VTable_Routine_080D76C0(undefined1 *instance,uint arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080D770C @ 0x080D770C
 // =============================================================================
-undefined8 VTable_Routine_080D770C(int instance,int arg1,int arg2)
+u32 VTable_Routine_080D770C(int instance,int arg1,int arg2)
 
 {
   int *p_int1;
@@ -2953,7 +2953,7 @@ undefined8 VTable_Routine_080D770C(int instance,int arg1,int arg2)
 // =============================================================================
 // Function: VTable_Routine_080D772C @ 0x080D772C
 // =============================================================================
-undefined4 VTable_Routine_080D772C(int *instance,uint arg1)
+void VTable_Routine_080D772C(int *instance,uint arg1)
 
 {
   int i_val1;
@@ -3065,7 +3065,7 @@ longlong VTable_Routine_080D782C(int instance)
 // =============================================================================
 // Function: VTable_Routine_080D7868 @ 0x080D7868
 // =============================================================================
-undefined4 VTable_Routine_080D7868(void)
+void VTable_Routine_080D7868(void)
 
 {
   
@@ -3076,7 +3076,7 @@ undefined4 VTable_Routine_080D7868(void)
 // =============================================================================
 // Function: VTable_Routine_080D7874 @ 0x080D7874
 // =============================================================================
-undefined4 VTable_Routine_080D7874(void)
+void VTable_Routine_080D7874(void)
 
 {
   
@@ -3087,7 +3087,7 @@ undefined4 VTable_Routine_080D7874(void)
 // =============================================================================
 // Function: VTable_Routine_080D7880 @ 0x080D7880
 // =============================================================================
-undefined4 VTable_Routine_080D7880(void)
+void VTable_Routine_080D7880(void)
 
 {
   
@@ -3098,7 +3098,7 @@ undefined4 VTable_Routine_080D7880(void)
 // =============================================================================
 // Function: VTable_Routine_080D788C @ 0x080D788C
 // =============================================================================
-undefined4 VTable_Routine_080D788C(undefined4 instance)
+void VTable_Routine_080D788C(undefined4 instance)
 
 {
   ushort u_val1;
@@ -3114,7 +3114,7 @@ undefined4 VTable_Routine_080D788C(undefined4 instance)
 // =============================================================================
 // Function: VTable_Routine_080D78BC @ 0x080D78BC
 // =============================================================================
-undefined4 VTable_Routine_080D78BC(int instance,undefined4 arg1)
+void VTable_Routine_080D78BC(int instance,undefined4 arg1)
 
 {
   
@@ -3127,7 +3127,7 @@ undefined4 VTable_Routine_080D78BC(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080D78E0 @ 0x080D78E0
 // =============================================================================
-undefined4 VTable_Routine_080D78E0(void)
+void VTable_Routine_080D78E0(void)
 
 {
   
@@ -3139,7 +3139,7 @@ undefined4 VTable_Routine_080D78E0(void)
 // =============================================================================
 // Function: VTable_Routine_080D7990 @ 0x080D7990
 // =============================================================================
-undefined4 VTable_Routine_080D7990(undefined4 instance,undefined4 arg1)
+void VTable_Routine_080D7990(undefined4 instance,undefined4 arg1)
 
 {
   ushort u_val1;
@@ -3155,7 +3155,7 @@ undefined4 VTable_Routine_080D7990(undefined4 instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080D79F8 @ 0x080D79F8
 // =============================================================================
-undefined4 VTable_Routine_080D79F8(undefined4 instance,undefined4 arg1)
+void VTable_Routine_080D79F8(undefined4 instance,undefined4 arg1)
 
 {
   ushort u_val1;
@@ -3171,7 +3171,7 @@ undefined4 VTable_Routine_080D79F8(undefined4 instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7A34 @ 0x080D7A34
 // =============================================================================
-undefined4 VTable_Routine_080D7A34(undefined4 instance,undefined4 arg1)
+void VTable_Routine_080D7A34(undefined4 instance,undefined4 arg1)
 
 {
   ushort u_val1;
@@ -3187,7 +3187,7 @@ undefined4 VTable_Routine_080D7A34(undefined4 instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7A70 @ 0x080D7A70
 // =============================================================================
-undefined4 VTable_Routine_080D7A70(undefined4 instance,undefined4 arg1)
+void VTable_Routine_080D7A70(undefined4 instance,undefined4 arg1)
 
 {
   ushort u_val1;
@@ -3203,7 +3203,7 @@ undefined4 VTable_Routine_080D7A70(undefined4 instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7AAC @ 0x080D7AAC
 // =============================================================================
-undefined4 VTable_Routine_080D7AAC(undefined4 *instance,uint arg1)
+void VTable_Routine_080D7AAC(undefined4 *instance,uint arg1)
 
 {
   
@@ -3218,7 +3218,7 @@ undefined4 VTable_Routine_080D7AAC(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7B04 @ 0x080D7B04
 // =============================================================================
-undefined4 VTable_Routine_080D7B04(undefined4 *instance,uint arg1)
+void VTable_Routine_080D7B04(undefined4 *instance,uint arg1)
 
 {
   
@@ -3233,7 +3233,7 @@ undefined4 VTable_Routine_080D7B04(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7B2C @ 0x080D7B2C
 // =============================================================================
-undefined4 VTable_Routine_080D7B2C(void)
+void VTable_Routine_080D7B2C(void)
 
 {
   
@@ -3244,7 +3244,7 @@ undefined4 VTable_Routine_080D7B2C(void)
 // =============================================================================
 // Function: VTable_Routine_080D7B38 @ 0x080D7B38
 // =============================================================================
-undefined4 VTable_Routine_080D7B38(void)
+void VTable_Routine_080D7B38(void)
 
 {
   
@@ -3255,7 +3255,7 @@ undefined4 VTable_Routine_080D7B38(void)
 // =============================================================================
 // Function: VTable_Routine_080D7B44 @ 0x080D7B44
 // =============================================================================
-undefined4 VTable_Routine_080D7B44(void)
+void VTable_Routine_080D7B44(void)
 
 {
   
@@ -3266,7 +3266,7 @@ undefined4 VTable_Routine_080D7B44(void)
 // =============================================================================
 // Function: VTable_Routine_080D7B50 @ 0x080D7B50
 // =============================================================================
-undefined8 VTable_Routine_080D7B50(int instance,int arg1)
+u32 VTable_Routine_080D7B50(int instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -3288,7 +3288,7 @@ undefined8 VTable_Routine_080D7B50(int instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7BC4 @ 0x080D7BC4
 // =============================================================================
-undefined8 VTable_Routine_080D7BC4(int instance,int arg1)
+u32 VTable_Routine_080D7BC4(int instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -3310,7 +3310,7 @@ undefined8 VTable_Routine_080D7BC4(int instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7C40 @ 0x080D7C40
 // =============================================================================
-undefined8 VTable_Routine_080D7C40(int instance,int arg1)
+u32 VTable_Routine_080D7C40(int instance,int arg1)
 
 {
   ushort u_val1;
@@ -3333,7 +3333,7 @@ undefined8 VTable_Routine_080D7C40(int instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7CFC @ 0x080D7CFC
 // =============================================================================
-undefined8 VTable_Routine_080D7CFC(int *instance,int *arg1,int arg2)
+u32 VTable_Routine_080D7CFC(int *instance,int *arg1,int arg2)
 
 {
   int i_val1;
@@ -3360,7 +3360,7 @@ undefined8 VTable_Routine_080D7CFC(int *instance,int *arg1,int arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7D40 @ 0x080D7D40
 // =============================================================================
-undefined8 VTable_Routine_080D7D40(int *instance,int *arg1,int arg2)
+u32 VTable_Routine_080D7D40(int *instance,int *arg1,int arg2)
 
 {
   int i_val1;
@@ -3384,7 +3384,7 @@ undefined8 VTable_Routine_080D7D40(int *instance,int *arg1,int arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7D88 @ 0x080D7D88
 // =============================================================================
-undefined8 VTable_Routine_080D7D88(undefined4 instance,int *arg1,undefined4 arg2)
+u32 VTable_Routine_080D7D88(undefined4 instance,int *arg1,undefined4 arg2)
 
 {
   int i_val1;
@@ -3408,7 +3408,7 @@ undefined8 VTable_Routine_080D7D88(undefined4 instance,int *arg1,undefined4 arg2
 // =============================================================================
 // Function: VTable_Routine_080D7DF4 @ 0x080D7DF4
 // =============================================================================
-undefined8 VTable_Routine_080D7DF4(undefined4 instance,int *arg1,undefined4 arg2)
+u32 VTable_Routine_080D7DF4(undefined4 instance,int *arg1,undefined4 arg2)
 
 {
   int i_val1;
@@ -3432,7 +3432,7 @@ undefined8 VTable_Routine_080D7DF4(undefined4 instance,int *arg1,undefined4 arg2
 // =============================================================================
 // Function: VTable_Routine_080D7E64 @ 0x080D7E64
 // =============================================================================
-undefined4 VTable_Routine_080D7E64(int *instance,uint arg1)
+void VTable_Routine_080D7E64(int *instance,uint arg1)
 
 {
   int *p_int1;
@@ -3455,7 +3455,7 @@ undefined4 VTable_Routine_080D7E64(int *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080D7ECC @ 0x080D7ECC
 // =============================================================================
-undefined8 VTable_Routine_080D7ECC(ushort *instance,int arg1,uint *arg2)
+u32 VTable_Routine_080D7ECC(ushort *instance,int arg1,uint *arg2)
 
 {
   int i_val1;
@@ -3478,7 +3478,7 @@ undefined8 VTable_Routine_080D7ECC(ushort *instance,int arg1,uint *arg2)
 // =============================================================================
 // Function: VTable_Routine_080D7F08 @ 0x080D7F08
 // =============================================================================
-undefined4 VTable_Routine_080D7F08(int instance)
+void VTable_Routine_080D7F08(int instance)
 
 {
   int i_val1;
@@ -3499,7 +3499,7 @@ undefined4 VTable_Routine_080D7F08(int instance)
 // =============================================================================
 // Function: VTable_Routine_080D7F3C @ 0x080D7F3C
 // =============================================================================
-undefined4 VTable_Routine_080D7F3C(int instance)
+void VTable_Routine_080D7F3C(int instance)
 
 {
   
@@ -3511,7 +3511,7 @@ undefined4 VTable_Routine_080D7F3C(int instance)
 // =============================================================================
 // Function: VTable_Routine_080D7F60 @ 0x080D7F60
 // =============================================================================
-undefined4 VTable_Routine_080D7F60(int instance)
+void VTable_Routine_080D7F60(int instance)
 
 {
   
@@ -3524,7 +3524,7 @@ undefined4 VTable_Routine_080D7F60(int instance)
 // =============================================================================
 // Function: VTable_Routine_080D7F74 @ 0x080D7F74
 // =============================================================================
-undefined4 VTable_Routine_080D7F74(int instance)
+void VTable_Routine_080D7F74(int instance)
 
 {
   
@@ -3537,7 +3537,7 @@ undefined4 VTable_Routine_080D7F74(int instance)
 // =============================================================================
 // Function: VTable_Routine_080D7F88 @ 0x080D7F88
 // =============================================================================
-undefined4 VTable_Routine_080D7F88(int instance)
+void VTable_Routine_080D7F88(int instance)
 
 {
   
@@ -3631,7 +3631,7 @@ VTable_Routine_080D7F9C(int instance,int arg1,int arg2,uint arg3,uint arg_5,unde
 // =============================================================================
 // Function: VTable_Routine_080DB0EC @ 0x080DB0EC
 // =============================================================================
-undefined4 VTable_Routine_080DB0EC(int *instance,uint arg1)
+void VTable_Routine_080DB0EC(int *instance,uint arg1)
 
 {
   int i_val1;
@@ -3684,7 +3684,7 @@ undefined4 VTable_Routine_080DB0EC(int *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB1E4 @ 0x080DB1E4
 // =============================================================================
-undefined8 VTable_Routine_080DB1E4(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB1E4(undefined4 *instance,int arg1)
 
 {
   int pos_y;
@@ -3703,7 +3703,7 @@ undefined8 VTable_Routine_080DB1E4(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB238 @ 0x080DB238
 // =============================================================================
-undefined8 VTable_Routine_080DB238(undefined4 *instance,undefined4 *arg1)
+u32 VTable_Routine_080DB238(undefined4 *instance,undefined4 *arg1)
 
 {
   int i_val1;
@@ -3754,7 +3754,7 @@ LAB_080db2ae:
 // =============================================================================
 // Function: VTable_Routine_080DB2EC @ 0x080DB2EC
 // =============================================================================
-undefined4 VTable_Routine_080DB2EC(int instance,undefined4 arg1)
+void VTable_Routine_080DB2EC(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -3770,7 +3770,7 @@ undefined4 VTable_Routine_080DB2EC(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB314 @ 0x080DB314
 // =============================================================================
-undefined4 VTable_Routine_080DB314(void)
+void VTable_Routine_080DB314(void)
 
 {
   
@@ -3781,7 +3781,7 @@ undefined4 VTable_Routine_080DB314(void)
 // =============================================================================
 // Function: VTable_Routine_080DB320 @ 0x080DB320
 // =============================================================================
-undefined8 VTable_Routine_080DB320(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB320(undefined4 *instance,int arg1)
 
 {
   undefined4 *p_uint1;
@@ -3802,7 +3802,7 @@ undefined8 VTable_Routine_080DB320(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB36C @ 0x080DB36C
 // =============================================================================
-undefined4 VTable_Routine_080DB36C(int instance,undefined4 arg1)
+void VTable_Routine_080DB36C(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -3818,7 +3818,7 @@ undefined4 VTable_Routine_080DB36C(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB394 @ 0x080DB394
 // =============================================================================
-undefined8 VTable_Routine_080DB394(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB394(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -3835,7 +3835,7 @@ undefined8 VTable_Routine_080DB394(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB3DC @ 0x080DB3DC
 // =============================================================================
-undefined4 VTable_Routine_080DB3DC(int instance,undefined4 arg1)
+void VTable_Routine_080DB3DC(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -3851,7 +3851,7 @@ undefined4 VTable_Routine_080DB3DC(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB404 @ 0x080DB404
 // =============================================================================
-undefined8 VTable_Routine_080DB404(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB404(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -3869,7 +3869,7 @@ undefined8 VTable_Routine_080DB404(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB44C @ 0x080DB44C
 // =============================================================================
-undefined4 VTable_Routine_080DB44C(int instance,undefined4 arg1)
+void VTable_Routine_080DB44C(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -3885,7 +3885,7 @@ undefined4 VTable_Routine_080DB44C(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB474 @ 0x080DB474
 // =============================================================================
-undefined8 VTable_Routine_080DB474(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB474(undefined4 *instance,int arg1)
 
 {
   undefined1 u_val1;
@@ -3912,7 +3912,7 @@ undefined8 VTable_Routine_080DB474(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB4C8 @ 0x080DB4C8
 // =============================================================================
-undefined4 VTable_Routine_080DB4C8(int instance,undefined4 arg1)
+void VTable_Routine_080DB4C8(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -3928,7 +3928,7 @@ undefined4 VTable_Routine_080DB4C8(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB4F0 @ 0x080DB4F0
 // =============================================================================
-undefined8 VTable_Routine_080DB4F0(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB4F0(undefined4 *instance,int arg1)
 
 {
   undefined4 *p_uint1;
@@ -3952,7 +3952,7 @@ undefined8 VTable_Routine_080DB4F0(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB540 @ 0x080DB540
 // =============================================================================
-undefined4 VTable_Routine_080DB540(int instance,undefined4 arg1)
+void VTable_Routine_080DB540(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -3968,7 +3968,7 @@ undefined4 VTable_Routine_080DB540(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB568 @ 0x080DB568
 // =============================================================================
-undefined8 VTable_Routine_080DB568(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB568(undefined4 *instance,int arg1)
 
 {
   undefined4 *p_uint1;
@@ -3992,7 +3992,7 @@ undefined8 VTable_Routine_080DB568(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB5B8 @ 0x080DB5B8
 // =============================================================================
-undefined4 VTable_Routine_080DB5B8(int instance,undefined4 arg1)
+void VTable_Routine_080DB5B8(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4008,7 +4008,7 @@ undefined4 VTable_Routine_080DB5B8(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB5E0 @ 0x080DB5E0
 // =============================================================================
-undefined8 VTable_Routine_080DB5E0(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB5E0(undefined4 *instance,int arg1)
 
 {
   undefined4 *p_uint1;
@@ -4032,7 +4032,7 @@ undefined8 VTable_Routine_080DB5E0(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB630 @ 0x080DB630
 // =============================================================================
-undefined4 VTable_Routine_080DB630(int instance,undefined4 arg1)
+void VTable_Routine_080DB630(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4048,7 +4048,7 @@ undefined4 VTable_Routine_080DB630(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB658 @ 0x080DB658
 // =============================================================================
-undefined8 VTable_Routine_080DB658(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB658(undefined4 *instance,int arg1)
 
 {
   undefined4 *p_uint1;
@@ -4069,7 +4069,7 @@ undefined8 VTable_Routine_080DB658(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB6A4 @ 0x080DB6A4
 // =============================================================================
-undefined4 VTable_Routine_080DB6A4(int instance,undefined4 arg1)
+void VTable_Routine_080DB6A4(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4085,7 +4085,7 @@ undefined4 VTable_Routine_080DB6A4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB6CC @ 0x080DB6CC
 // =============================================================================
-undefined8 VTable_Routine_080DB6CC(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB6CC(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4102,7 +4102,7 @@ undefined8 VTable_Routine_080DB6CC(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB714 @ 0x080DB714
 // =============================================================================
-undefined4 VTable_Routine_080DB714(int instance,undefined4 arg1)
+void VTable_Routine_080DB714(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4118,7 +4118,7 @@ undefined4 VTable_Routine_080DB714(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB73C @ 0x080DB73C
 // =============================================================================
-undefined8 VTable_Routine_080DB73C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB73C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4135,7 +4135,7 @@ undefined8 VTable_Routine_080DB73C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB784 @ 0x080DB784
 // =============================================================================
-undefined4 VTable_Routine_080DB784(int instance,undefined4 arg1)
+void VTable_Routine_080DB784(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4151,7 +4151,7 @@ undefined4 VTable_Routine_080DB784(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB7AC @ 0x080DB7AC
 // =============================================================================
-undefined8 VTable_Routine_080DB7AC(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB7AC(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4168,7 +4168,7 @@ undefined8 VTable_Routine_080DB7AC(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB7F4 @ 0x080DB7F4
 // =============================================================================
-undefined4 VTable_Routine_080DB7F4(int instance,undefined4 arg1)
+void VTable_Routine_080DB7F4(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4184,7 +4184,7 @@ undefined4 VTable_Routine_080DB7F4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB81C @ 0x080DB81C
 // =============================================================================
-undefined8 VTable_Routine_080DB81C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB81C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4201,7 +4201,7 @@ undefined8 VTable_Routine_080DB81C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB864 @ 0x080DB864
 // =============================================================================
-undefined4 VTable_Routine_080DB864(int instance,undefined4 arg1)
+void VTable_Routine_080DB864(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4217,7 +4217,7 @@ undefined4 VTable_Routine_080DB864(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB88C @ 0x080DB88C
 // =============================================================================
-undefined8 VTable_Routine_080DB88C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB88C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4234,7 +4234,7 @@ undefined8 VTable_Routine_080DB88C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB8D4 @ 0x080DB8D4
 // =============================================================================
-undefined4 VTable_Routine_080DB8D4(int instance,undefined4 arg1)
+void VTable_Routine_080DB8D4(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4250,7 +4250,7 @@ undefined4 VTable_Routine_080DB8D4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB8FC @ 0x080DB8FC
 // =============================================================================
-undefined8 VTable_Routine_080DB8FC(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB8FC(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4267,7 +4267,7 @@ undefined8 VTable_Routine_080DB8FC(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB944 @ 0x080DB944
 // =============================================================================
-undefined4 VTable_Routine_080DB944(int instance,undefined4 arg1)
+void VTable_Routine_080DB944(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4283,7 +4283,7 @@ undefined4 VTable_Routine_080DB944(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB96C @ 0x080DB96C
 // =============================================================================
-undefined8 VTable_Routine_080DB96C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB96C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4301,7 +4301,7 @@ undefined8 VTable_Routine_080DB96C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB9B4 @ 0x080DB9B4
 // =============================================================================
-undefined4 VTable_Routine_080DB9B4(int instance,undefined4 arg1)
+void VTable_Routine_080DB9B4(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4317,7 +4317,7 @@ undefined4 VTable_Routine_080DB9B4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DB9DC @ 0x080DB9DC
 // =============================================================================
-undefined8 VTable_Routine_080DB9DC(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DB9DC(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4334,7 +4334,7 @@ undefined8 VTable_Routine_080DB9DC(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBA24 @ 0x080DBA24
 // =============================================================================
-undefined4 VTable_Routine_080DBA24(int instance,undefined4 arg1)
+void VTable_Routine_080DBA24(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4350,7 +4350,7 @@ undefined4 VTable_Routine_080DBA24(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBA4C @ 0x080DBA4C
 // =============================================================================
-undefined8 VTable_Routine_080DBA4C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBA4C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4368,7 +4368,7 @@ undefined8 VTable_Routine_080DBA4C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBA94 @ 0x080DBA94
 // =============================================================================
-undefined4 VTable_Routine_080DBA94(int instance,undefined4 arg1)
+void VTable_Routine_080DBA94(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4384,7 +4384,7 @@ undefined4 VTable_Routine_080DBA94(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBABC @ 0x080DBABC
 // =============================================================================
-undefined8 VTable_Routine_080DBABC(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBABC(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4402,7 +4402,7 @@ undefined8 VTable_Routine_080DBABC(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBB04 @ 0x080DBB04
 // =============================================================================
-undefined4 VTable_Routine_080DBB04(int instance,undefined4 arg1)
+void VTable_Routine_080DBB04(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4418,7 +4418,7 @@ undefined4 VTable_Routine_080DBB04(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBB2C @ 0x080DBB2C
 // =============================================================================
-undefined8 VTable_Routine_080DBB2C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBB2C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4436,7 +4436,7 @@ undefined8 VTable_Routine_080DBB2C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBB74 @ 0x080DBB74
 // =============================================================================
-undefined4 VTable_Routine_080DBB74(int instance,undefined4 arg1)
+void VTable_Routine_080DBB74(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4452,7 +4452,7 @@ undefined4 VTable_Routine_080DBB74(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBB9C @ 0x080DBB9C
 // =============================================================================
-undefined8 VTable_Routine_080DBB9C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBB9C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4469,7 +4469,7 @@ undefined8 VTable_Routine_080DBB9C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBBE4 @ 0x080DBBE4
 // =============================================================================
-undefined4 VTable_Routine_080DBBE4(int instance,undefined4 arg1)
+void VTable_Routine_080DBBE4(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4485,7 +4485,7 @@ undefined4 VTable_Routine_080DBBE4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBC0C @ 0x080DBC0C
 // =============================================================================
-undefined8 VTable_Routine_080DBC0C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBC0C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4502,7 +4502,7 @@ undefined8 VTable_Routine_080DBC0C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBC50 @ 0x080DBC50
 // =============================================================================
-undefined4 VTable_Routine_080DBC50(int instance,undefined4 arg1)
+void VTable_Routine_080DBC50(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4518,7 +4518,7 @@ undefined4 VTable_Routine_080DBC50(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBC78 @ 0x080DBC78
 // =============================================================================
-undefined8 VTable_Routine_080DBC78(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBC78(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4535,7 +4535,7 @@ undefined8 VTable_Routine_080DBC78(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBCC0 @ 0x080DBCC0
 // =============================================================================
-undefined4 VTable_Routine_080DBCC0(int instance,undefined4 arg1)
+void VTable_Routine_080DBCC0(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4551,7 +4551,7 @@ undefined4 VTable_Routine_080DBCC0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBCE8 @ 0x080DBCE8
 // =============================================================================
-undefined8 VTable_Routine_080DBCE8(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBCE8(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4569,7 +4569,7 @@ undefined8 VTable_Routine_080DBCE8(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBD30 @ 0x080DBD30
 // =============================================================================
-undefined4 VTable_Routine_080DBD30(int instance,undefined4 arg1)
+void VTable_Routine_080DBD30(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4585,7 +4585,7 @@ undefined4 VTable_Routine_080DBD30(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBD58 @ 0x080DBD58
 // =============================================================================
-undefined8 VTable_Routine_080DBD58(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBD58(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4603,7 +4603,7 @@ undefined8 VTable_Routine_080DBD58(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBDA0 @ 0x080DBDA0
 // =============================================================================
-undefined4 VTable_Routine_080DBDA0(int instance,undefined4 arg1)
+void VTable_Routine_080DBDA0(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4619,7 +4619,7 @@ undefined4 VTable_Routine_080DBDA0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBDC8 @ 0x080DBDC8
 // =============================================================================
-undefined8 VTable_Routine_080DBDC8(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBDC8(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4636,7 +4636,7 @@ undefined8 VTable_Routine_080DBDC8(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBE10 @ 0x080DBE10
 // =============================================================================
-undefined4 VTable_Routine_080DBE10(int instance,undefined4 arg1)
+void VTable_Routine_080DBE10(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4652,7 +4652,7 @@ undefined4 VTable_Routine_080DBE10(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBE38 @ 0x080DBE38
 // =============================================================================
-undefined8 VTable_Routine_080DBE38(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBE38(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4669,7 +4669,7 @@ undefined8 VTable_Routine_080DBE38(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBE80 @ 0x080DBE80
 // =============================================================================
-undefined4 VTable_Routine_080DBE80(int instance,undefined4 arg1)
+void VTable_Routine_080DBE80(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4685,7 +4685,7 @@ undefined4 VTable_Routine_080DBE80(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBEA8 @ 0x080DBEA8
 // =============================================================================
-undefined8 VTable_Routine_080DBEA8(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBEA8(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4702,7 +4702,7 @@ undefined8 VTable_Routine_080DBEA8(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBEF0 @ 0x080DBEF0
 // =============================================================================
-undefined4 VTable_Routine_080DBEF0(int instance,undefined4 arg1)
+void VTable_Routine_080DBEF0(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4718,7 +4718,7 @@ undefined4 VTable_Routine_080DBEF0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBF18 @ 0x080DBF18
 // =============================================================================
-undefined8 VTable_Routine_080DBF18(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBF18(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4735,7 +4735,7 @@ undefined8 VTable_Routine_080DBF18(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBF60 @ 0x080DBF60
 // =============================================================================
-undefined4 VTable_Routine_080DBF60(int instance,undefined4 arg1)
+void VTable_Routine_080DBF60(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4751,7 +4751,7 @@ undefined4 VTable_Routine_080DBF60(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBF88 @ 0x080DBF88
 // =============================================================================
-undefined8 VTable_Routine_080DBF88(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBF88(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4768,7 +4768,7 @@ undefined8 VTable_Routine_080DBF88(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBFD0 @ 0x080DBFD0
 // =============================================================================
-undefined4 VTable_Routine_080DBFD0(int instance,undefined4 arg1)
+void VTable_Routine_080DBFD0(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4784,7 +4784,7 @@ undefined4 VTable_Routine_080DBFD0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DBFF8 @ 0x080DBFF8
 // =============================================================================
-undefined8 VTable_Routine_080DBFF8(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DBFF8(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4801,7 +4801,7 @@ undefined8 VTable_Routine_080DBFF8(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC040 @ 0x080DC040
 // =============================================================================
-undefined4 VTable_Routine_080DC040(int instance,undefined4 arg1)
+void VTable_Routine_080DC040(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4817,7 +4817,7 @@ undefined4 VTable_Routine_080DC040(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC068 @ 0x080DC068
 // =============================================================================
-undefined8 VTable_Routine_080DC068(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC068(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4837,7 +4837,7 @@ undefined8 VTable_Routine_080DC068(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC0C0 @ 0x080DC0C0
 // =============================================================================
-undefined4 VTable_Routine_080DC0C0(int instance,undefined4 arg1)
+void VTable_Routine_080DC0C0(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4853,7 +4853,7 @@ undefined4 VTable_Routine_080DC0C0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC0E8 @ 0x080DC0E8
 // =============================================================================
-undefined8 VTable_Routine_080DC0E8(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC0E8(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4871,7 +4871,7 @@ undefined8 VTable_Routine_080DC0E8(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC130 @ 0x080DC130
 // =============================================================================
-undefined4 VTable_Routine_080DC130(int instance,undefined4 arg1)
+void VTable_Routine_080DC130(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4887,7 +4887,7 @@ undefined4 VTable_Routine_080DC130(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC158 @ 0x080DC158
 // =============================================================================
-undefined8 VTable_Routine_080DC158(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC158(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4904,7 +4904,7 @@ undefined8 VTable_Routine_080DC158(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC1A0 @ 0x080DC1A0
 // =============================================================================
-undefined4 VTable_Routine_080DC1A0(int instance,undefined4 arg1)
+void VTable_Routine_080DC1A0(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4920,7 +4920,7 @@ undefined4 VTable_Routine_080DC1A0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC1C8 @ 0x080DC1C8
 // =============================================================================
-undefined4 VTable_Routine_080DC1C8(void)
+void VTable_Routine_080DC1C8(void)
 
 {
   
@@ -4931,7 +4931,7 @@ undefined4 VTable_Routine_080DC1C8(void)
 // =============================================================================
 // Function: VTable_Routine_080DC1D4 @ 0x080DC1D4
 // =============================================================================
-undefined8 VTable_Routine_080DC1D4(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC1D4(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4948,7 +4948,7 @@ undefined8 VTable_Routine_080DC1D4(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC21C @ 0x080DC21C
 // =============================================================================
-undefined4 VTable_Routine_080DC21C(int instance,undefined4 arg1)
+void VTable_Routine_080DC21C(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -4964,7 +4964,7 @@ undefined4 VTable_Routine_080DC21C(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC244 @ 0x080DC244
 // =============================================================================
-undefined8 VTable_Routine_080DC244(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC244(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -4978,7 +4978,7 @@ undefined8 VTable_Routine_080DC244(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC288 @ 0x080DC288
 // =============================================================================
-undefined4 VTable_Routine_080DC288(void)
+void VTable_Routine_080DC288(void)
 
 {
   
@@ -4989,7 +4989,7 @@ undefined4 VTable_Routine_080DC288(void)
 // =============================================================================
 // Function: VTable_Routine_080DC294 @ 0x080DC294
 // =============================================================================
-undefined4 VTable_Routine_080DC294(undefined4 instance)
+void VTable_Routine_080DC294(undefined4 instance)
 
 {
   
@@ -5001,7 +5001,7 @@ undefined4 VTable_Routine_080DC294(undefined4 instance)
 // =============================================================================
 // Function: VTable_Routine_080DC2B4 @ 0x080DC2B4
 // =============================================================================
-undefined4 VTable_Routine_080DC2B4(int instance,ushort arg1,uint arg2,uint arg3)
+void VTable_Routine_080DC2B4(int instance,ushort arg1,uint arg2,uint arg3)
 
 {
   ushort u_val1;
@@ -5047,7 +5047,7 @@ VTable_Routine_080DC360(int instance,undefined4 arg1,undefined4 arg2,undefined4 
 // =============================================================================
 // Function: VTable_Routine_080DC3A0 @ 0x080DC3A0
 // =============================================================================
-undefined8 VTable_Routine_080DC3A0(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC3A0(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -5078,7 +5078,7 @@ undefined8 VTable_Routine_080DC3A0(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC404 @ 0x080DC404
 // =============================================================================
-undefined4 VTable_Routine_080DC404(int instance,undefined4 arg1)
+void VTable_Routine_080DC404(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -5094,7 +5094,7 @@ undefined4 VTable_Routine_080DC404(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC42C @ 0x080DC42C
 // =============================================================================
-undefined8 VTable_Routine_080DC42C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC42C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -5111,7 +5111,7 @@ undefined8 VTable_Routine_080DC42C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC474 @ 0x080DC474
 // =============================================================================
-undefined4 VTable_Routine_080DC474(int instance,undefined4 arg1)
+void VTable_Routine_080DC474(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -5127,7 +5127,7 @@ undefined4 VTable_Routine_080DC474(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC49C @ 0x080DC49C
 // =============================================================================
-undefined8 VTable_Routine_080DC49C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC49C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -5144,7 +5144,7 @@ undefined8 VTable_Routine_080DC49C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC4E4 @ 0x080DC4E4
 // =============================================================================
-undefined4 VTable_Routine_080DC4E4(int instance,undefined4 arg1)
+void VTable_Routine_080DC4E4(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -5160,7 +5160,7 @@ undefined4 VTable_Routine_080DC4E4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC50C @ 0x080DC50C
 // =============================================================================
-undefined8 VTable_Routine_080DC50C(undefined4 *instance,int arg1)
+u32 VTable_Routine_080DC50C(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -5178,7 +5178,7 @@ undefined8 VTable_Routine_080DC50C(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC554 @ 0x080DC554
 // =============================================================================
-undefined4 VTable_Routine_080DC554(int instance,undefined4 arg1)
+void VTable_Routine_080DC554(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -5194,7 +5194,7 @@ undefined4 VTable_Routine_080DC554(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC57C @ 0x080DC57C
 // =============================================================================
-undefined4 VTable_Routine_080DC57C(undefined4 instance,int arg1)
+void VTable_Routine_080DC57C(undefined4 instance,int arg1)
 
 {
   int i_val1;
@@ -5212,7 +5212,7 @@ undefined4 VTable_Routine_080DC57C(undefined4 instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC5A8 @ 0x080DC5A8
 // =============================================================================
-undefined4 VTable_Routine_080DC5A8(void)
+void VTable_Routine_080DC5A8(void)
 
 {
   
@@ -5223,7 +5223,7 @@ undefined4 VTable_Routine_080DC5A8(void)
 // =============================================================================
 // Function: VTable_Routine_080DC5B4 @ 0x080DC5B4
 // =============================================================================
-undefined4 VTable_Routine_080DC5B4(undefined4 *instance,uint arg1)
+void VTable_Routine_080DC5B4(undefined4 *instance,uint arg1)
 
 {
   
@@ -5237,7 +5237,7 @@ undefined4 VTable_Routine_080DC5B4(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC5D4 @ 0x080DC5D4
 // =============================================================================
-undefined4 VTable_Routine_080DC5D4(undefined4 *instance,uint arg1)
+void VTable_Routine_080DC5D4(undefined4 *instance,uint arg1)
 
 {
   
@@ -5251,7 +5251,7 @@ undefined4 VTable_Routine_080DC5D4(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC5F4 @ 0x080DC5F4
 // =============================================================================
-undefined4 VTable_Routine_080DC5F4(int instance,uint arg1)
+void VTable_Routine_080DC5F4(int instance,uint arg1)
 
 {
   
@@ -5267,7 +5267,7 @@ undefined4 VTable_Routine_080DC5F4(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC628 @ 0x080DC628
 // =============================================================================
-undefined4 VTable_Routine_080DC628(int instance,uint arg1)
+void VTable_Routine_080DC628(int instance,uint arg1)
 
 {
   int i_val1;
@@ -5286,7 +5286,7 @@ undefined4 VTable_Routine_080DC628(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC65C @ 0x080DC65C
 // =============================================================================
-undefined4 VTable_Routine_080DC65C(int instance,uint arg1)
+void VTable_Routine_080DC65C(int instance,uint arg1)
 
 {
   
@@ -5300,7 +5300,7 @@ undefined4 VTable_Routine_080DC65C(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC67C @ 0x080DC67C
 // =============================================================================
-undefined8 VTable_Routine_080DC67C(char *instance,char *arg1,char *arg2)
+u32 VTable_Routine_080DC67C(char *instance,char *arg1,char *arg2)
 
 {
   char c_char1;
@@ -5353,7 +5353,7 @@ LAB_080dc6e8:
 // =============================================================================
 // Function: VTable_Routine_080DC6F0 @ 0x080DC6F0
 // =============================================================================
-undefined4 VTable_Routine_080DC6F0(int instance,uint arg1)
+void VTable_Routine_080DC6F0(int instance,uint arg1)
 
 {
   int i_val1;
@@ -5372,7 +5372,7 @@ undefined4 VTable_Routine_080DC6F0(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC724 @ 0x080DC724
 // =============================================================================
-undefined4 VTable_Routine_080DC724(int instance,uint arg1)
+void VTable_Routine_080DC724(int instance,uint arg1)
 
 {
   
@@ -5389,7 +5389,7 @@ undefined4 VTable_Routine_080DC724(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC764 @ 0x080DC764
 // =============================================================================
-undefined4 VTable_Routine_080DC764(int instance,uint arg1)
+void VTable_Routine_080DC764(int instance,uint arg1)
 
 {
   int i_val1;
@@ -5413,7 +5413,7 @@ undefined4 VTable_Routine_080DC764(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC7CC @ 0x080DC7CC
 // =============================================================================
-undefined4 VTable_Routine_080DC7CC(int instance,uint arg1)
+void VTable_Routine_080DC7CC(int instance,uint arg1)
 
 {
   int i_val1;
@@ -5432,7 +5432,7 @@ undefined4 VTable_Routine_080DC7CC(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC800 @ 0x080DC800
 // =============================================================================
-undefined4 VTable_Routine_080DC800(int instance,uint arg1)
+void VTable_Routine_080DC800(int instance,uint arg1)
 
 {
   int i_val1;
@@ -5451,7 +5451,7 @@ undefined4 VTable_Routine_080DC800(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC834 @ 0x080DC834
 // =============================================================================
-undefined4 VTable_Routine_080DC834(void)
+void VTable_Routine_080DC834(void)
 
 {
   
@@ -5462,7 +5462,7 @@ undefined4 VTable_Routine_080DC834(void)
 // =============================================================================
 // Function: VTable_Routine_080DC840 @ 0x080DC840
 // =============================================================================
-undefined8 VTable_Routine_080DC840(undefined4 *instance,undefined4 *arg1)
+u32 VTable_Routine_080DC840(undefined4 *instance,undefined4 *arg1)
 
 {
   undefined4 u_val1;
@@ -5489,7 +5489,7 @@ undefined8 VTable_Routine_080DC840(undefined4 *instance,undefined4 *arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC890 @ 0x080DC890
 // =============================================================================
-undefined4 VTable_Routine_080DC890(int instance,uint arg1)
+void VTable_Routine_080DC890(int instance,uint arg1)
 
 {
   
@@ -5505,7 +5505,7 @@ undefined4 VTable_Routine_080DC890(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC8C4 @ 0x080DC8C4
 // =============================================================================
-undefined4 VTable_Routine_080DC8C4(int instance,uint arg1)
+void VTable_Routine_080DC8C4(int instance,uint arg1)
 
 {
   int i_val1;
@@ -5524,7 +5524,7 @@ undefined4 VTable_Routine_080DC8C4(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC8F8 @ 0x080DC8F8
 // =============================================================================
-undefined4 VTable_Routine_080DC8F8(int instance,uint arg1)
+void VTable_Routine_080DC8F8(int instance,uint arg1)
 
 {
   
@@ -5540,7 +5540,7 @@ undefined4 VTable_Routine_080DC8F8(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC92C @ 0x080DC92C
 // =============================================================================
-undefined4 VTable_Routine_080DC92C(int instance,uint arg1)
+void VTable_Routine_080DC92C(int instance,uint arg1)
 
 {
   
@@ -5557,7 +5557,7 @@ undefined4 VTable_Routine_080DC92C(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DC96C @ 0x080DC96C
 // =============================================================================
-undefined8 VTable_Routine_080DC96C(ushort *instance,int arg1,uint *arg2)
+u32 VTable_Routine_080DC96C(ushort *instance,int arg1,uint *arg2)
 
 {
   int i_val1;
@@ -5580,7 +5580,7 @@ undefined8 VTable_Routine_080DC96C(ushort *instance,int arg1,uint *arg2)
 // =============================================================================
 // Function: VTable_Routine_080DC9A8 @ 0x080DC9A8
 // =============================================================================
-undefined4 VTable_Routine_080DC9A8(void)
+void VTable_Routine_080DC9A8(void)
 
 {
   
@@ -5591,7 +5591,7 @@ undefined4 VTable_Routine_080DC9A8(void)
 // =============================================================================
 // Function: VTable_Routine_080DC9B4 @ 0x080DC9B4
 // =============================================================================
-undefined4 VTable_Routine_080DC9B4(void)
+void VTable_Routine_080DC9B4(void)
 
 {
   
@@ -5602,7 +5602,7 @@ undefined4 VTable_Routine_080DC9B4(void)
 // =============================================================================
 // Function: VTable_Routine_080DC9C0 @ 0x080DC9C0
 // =============================================================================
-undefined4 VTable_Routine_080DC9C0(void)
+void VTable_Routine_080DC9C0(void)
 
 {
   
@@ -5613,7 +5613,7 @@ undefined4 VTable_Routine_080DC9C0(void)
 // =============================================================================
 // Function: VTable_Routine_080DC9CC @ 0x080DC9CC
 // =============================================================================
-undefined4 VTable_Routine_080DC9CC(void)
+void VTable_Routine_080DC9CC(void)
 
 {
   
@@ -5624,7 +5624,7 @@ undefined4 VTable_Routine_080DC9CC(void)
 // =============================================================================
 // Function: VTable_Routine_080DC9D8 @ 0x080DC9D8
 // =============================================================================
-undefined4 VTable_Routine_080DC9D8(void)
+void VTable_Routine_080DC9D8(void)
 
 {
   
@@ -5635,7 +5635,7 @@ undefined4 VTable_Routine_080DC9D8(void)
 // =============================================================================
 // Function: VTable_Routine_080DC9E4 @ 0x080DC9E4
 // =============================================================================
-undefined4 VTable_Routine_080DC9E4(void)
+void VTable_Routine_080DC9E4(void)
 
 {
   
@@ -5646,7 +5646,7 @@ undefined4 VTable_Routine_080DC9E4(void)
 // =============================================================================
 // Function: VTable_Routine_080DC9F0 @ 0x080DC9F0
 // =============================================================================
-undefined4 VTable_Routine_080DC9F0(void)
+void VTable_Routine_080DC9F0(void)
 
 {
   
@@ -5657,7 +5657,7 @@ undefined4 VTable_Routine_080DC9F0(void)
 // =============================================================================
 // Function: VTable_Routine_080DC9FC @ 0x080DC9FC
 // =============================================================================
-undefined4 VTable_Routine_080DC9FC(void)
+void VTable_Routine_080DC9FC(void)
 
 {
   
@@ -5668,7 +5668,7 @@ undefined4 VTable_Routine_080DC9FC(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA08 @ 0x080DCA08
 // =============================================================================
-undefined4 VTable_Routine_080DCA08(void)
+void VTable_Routine_080DCA08(void)
 
 {
   
@@ -5679,7 +5679,7 @@ undefined4 VTable_Routine_080DCA08(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA14 @ 0x080DCA14
 // =============================================================================
-undefined4 VTable_Routine_080DCA14(void)
+void VTable_Routine_080DCA14(void)
 
 {
   
@@ -5690,7 +5690,7 @@ undefined4 VTable_Routine_080DCA14(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA20 @ 0x080DCA20
 // =============================================================================
-undefined4 VTable_Routine_080DCA20(void)
+void VTable_Routine_080DCA20(void)
 
 {
   
@@ -5701,7 +5701,7 @@ undefined4 VTable_Routine_080DCA20(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA2C @ 0x080DCA2C
 // =============================================================================
-undefined4 VTable_Routine_080DCA2C(void)
+void VTable_Routine_080DCA2C(void)
 
 {
   
@@ -5712,7 +5712,7 @@ undefined4 VTable_Routine_080DCA2C(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA38 @ 0x080DCA38
 // =============================================================================
-undefined4 VTable_Routine_080DCA38(void)
+void VTable_Routine_080DCA38(void)
 
 {
   
@@ -5723,7 +5723,7 @@ undefined4 VTable_Routine_080DCA38(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA44 @ 0x080DCA44
 // =============================================================================
-undefined4 VTable_Routine_080DCA44(void)
+void VTable_Routine_080DCA44(void)
 
 {
   
@@ -5734,7 +5734,7 @@ undefined4 VTable_Routine_080DCA44(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA50 @ 0x080DCA50
 // =============================================================================
-undefined4 VTable_Routine_080DCA50(void)
+void VTable_Routine_080DCA50(void)
 
 {
   
@@ -5745,7 +5745,7 @@ undefined4 VTable_Routine_080DCA50(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA5C @ 0x080DCA5C
 // =============================================================================
-undefined4 VTable_Routine_080DCA5C(void)
+void VTable_Routine_080DCA5C(void)
 
 {
   
@@ -5756,7 +5756,7 @@ undefined4 VTable_Routine_080DCA5C(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA68 @ 0x080DCA68
 // =============================================================================
-undefined4 VTable_Routine_080DCA68(void)
+void VTable_Routine_080DCA68(void)
 
 {
   
@@ -5767,7 +5767,7 @@ undefined4 VTable_Routine_080DCA68(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA74 @ 0x080DCA74
 // =============================================================================
-undefined4 VTable_Routine_080DCA74(void)
+void VTable_Routine_080DCA74(void)
 
 {
   
@@ -5778,7 +5778,7 @@ undefined4 VTable_Routine_080DCA74(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA80 @ 0x080DCA80
 // =============================================================================
-undefined4 VTable_Routine_080DCA80(void)
+void VTable_Routine_080DCA80(void)
 
 {
   
@@ -5789,7 +5789,7 @@ undefined4 VTable_Routine_080DCA80(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA8C @ 0x080DCA8C
 // =============================================================================
-undefined4 VTable_Routine_080DCA8C(void)
+void VTable_Routine_080DCA8C(void)
 
 {
   
@@ -5800,7 +5800,7 @@ undefined4 VTable_Routine_080DCA8C(void)
 // =============================================================================
 // Function: VTable_Routine_080DCA98 @ 0x080DCA98
 // =============================================================================
-undefined4 VTable_Routine_080DCA98(void)
+void VTable_Routine_080DCA98(void)
 
 {
   
@@ -5811,7 +5811,7 @@ undefined4 VTable_Routine_080DCA98(void)
 // =============================================================================
 // Function: VTable_Routine_080DCAA4 @ 0x080DCAA4
 // =============================================================================
-undefined4 VTable_Routine_080DCAA4(void)
+void VTable_Routine_080DCAA4(void)
 
 {
   
@@ -5822,7 +5822,7 @@ undefined4 VTable_Routine_080DCAA4(void)
 // =============================================================================
 // Function: VTable_Routine_080DCAB0 @ 0x080DCAB0
 // =============================================================================
-undefined4 VTable_Routine_080DCAB0(void)
+void VTable_Routine_080DCAB0(void)
 
 {
   
@@ -5833,7 +5833,7 @@ undefined4 VTable_Routine_080DCAB0(void)
 // =============================================================================
 // Function: VTable_Routine_080DCABC @ 0x080DCABC
 // =============================================================================
-undefined4 VTable_Routine_080DCABC(void)
+void VTable_Routine_080DCABC(void)
 
 {
   
@@ -5844,7 +5844,7 @@ undefined4 VTable_Routine_080DCABC(void)
 // =============================================================================
 // Function: VTable_Routine_080DCAC8 @ 0x080DCAC8
 // =============================================================================
-undefined4 VTable_Routine_080DCAC8(void)
+void VTable_Routine_080DCAC8(void)
 
 {
   
@@ -5855,7 +5855,7 @@ undefined4 VTable_Routine_080DCAC8(void)
 // =============================================================================
 // Function: VTable_Routine_080DCAD4 @ 0x080DCAD4
 // =============================================================================
-undefined4 VTable_Routine_080DCAD4(void)
+void VTable_Routine_080DCAD4(void)
 
 {
   
@@ -5866,7 +5866,7 @@ undefined4 VTable_Routine_080DCAD4(void)
 // =============================================================================
 // Function: VTable_Routine_080DCAE0 @ 0x080DCAE0
 // =============================================================================
-undefined4 VTable_Routine_080DCAE0(void)
+void VTable_Routine_080DCAE0(void)
 
 {
   
@@ -5877,7 +5877,7 @@ undefined4 VTable_Routine_080DCAE0(void)
 // =============================================================================
 // Function: VTable_Routine_080DCAEC @ 0x080DCAEC
 // =============================================================================
-undefined4 VTable_Routine_080DCAEC(void)
+void VTable_Routine_080DCAEC(void)
 
 {
   
@@ -5888,7 +5888,7 @@ undefined4 VTable_Routine_080DCAEC(void)
 // =============================================================================
 // Function: VTable_Routine_080DCAF8 @ 0x080DCAF8
 // =============================================================================
-undefined4 VTable_Routine_080DCAF8(void)
+void VTable_Routine_080DCAF8(void)
 
 {
   
@@ -5899,7 +5899,7 @@ undefined4 VTable_Routine_080DCAF8(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB04 @ 0x080DCB04
 // =============================================================================
-undefined4 VTable_Routine_080DCB04(void)
+void VTable_Routine_080DCB04(void)
 
 {
   
@@ -5910,7 +5910,7 @@ undefined4 VTable_Routine_080DCB04(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB10 @ 0x080DCB10
 // =============================================================================
-undefined4 VTable_Routine_080DCB10(void)
+void VTable_Routine_080DCB10(void)
 
 {
   
@@ -5921,7 +5921,7 @@ undefined4 VTable_Routine_080DCB10(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB1C @ 0x080DCB1C
 // =============================================================================
-undefined4 VTable_Routine_080DCB1C(void)
+void VTable_Routine_080DCB1C(void)
 
 {
   
@@ -5932,7 +5932,7 @@ undefined4 VTable_Routine_080DCB1C(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB28 @ 0x080DCB28
 // =============================================================================
-undefined4 VTable_Routine_080DCB28(void)
+void VTable_Routine_080DCB28(void)
 
 {
   
@@ -5943,7 +5943,7 @@ undefined4 VTable_Routine_080DCB28(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB34 @ 0x080DCB34
 // =============================================================================
-undefined4 VTable_Routine_080DCB34(void)
+void VTable_Routine_080DCB34(void)
 
 {
   
@@ -5954,7 +5954,7 @@ undefined4 VTable_Routine_080DCB34(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB40 @ 0x080DCB40
 // =============================================================================
-undefined4 VTable_Routine_080DCB40(void)
+void VTable_Routine_080DCB40(void)
 
 {
   
@@ -5965,7 +5965,7 @@ undefined4 VTable_Routine_080DCB40(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB4C @ 0x080DCB4C
 // =============================================================================
-undefined4 VTable_Routine_080DCB4C(void)
+void VTable_Routine_080DCB4C(void)
 
 {
   
@@ -5976,7 +5976,7 @@ undefined4 VTable_Routine_080DCB4C(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB58 @ 0x080DCB58
 // =============================================================================
-undefined4 VTable_Routine_080DCB58(void)
+void VTable_Routine_080DCB58(void)
 
 {
   
@@ -5987,7 +5987,7 @@ undefined4 VTable_Routine_080DCB58(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB64 @ 0x080DCB64
 // =============================================================================
-undefined4 VTable_Routine_080DCB64(void)
+void VTable_Routine_080DCB64(void)
 
 {
   
@@ -5998,7 +5998,7 @@ undefined4 VTable_Routine_080DCB64(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB70 @ 0x080DCB70
 // =============================================================================
-undefined4 VTable_Routine_080DCB70(void)
+void VTable_Routine_080DCB70(void)
 
 {
   
@@ -6009,7 +6009,7 @@ undefined4 VTable_Routine_080DCB70(void)
 // =============================================================================
 // Function: VTable_Routine_080DCB7C @ 0x080DCB7C
 // =============================================================================
-undefined8 VTable_Routine_080DCB7C(uint *instance,int *arg1,uint arg2)
+u32 VTable_Routine_080DCB7C(uint *instance,int *arg1,uint arg2)
 
 {
   byte b_flag1;
@@ -6099,7 +6099,7 @@ undefined8 VTable_Routine_080DCB7C(uint *instance,int *arg1,uint arg2)
 // =============================================================================
 // Function: VTable_Routine_080DCD2C @ 0x080DCD2C
 // =============================================================================
-undefined8 VTable_Routine_080DCD2C(int instance,int arg1)
+u32 VTable_Routine_080DCD2C(int instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -6130,7 +6130,7 @@ undefined8 VTable_Routine_080DCD2C(int instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080DCDB0 @ 0x080DCDB0
 // =============================================================================
-undefined4 VTable_Routine_080DCDB0(int instance,uint arg1)
+void VTable_Routine_080DCDB0(int instance,uint arg1)
 
 {
   int *p_int1;
@@ -6173,7 +6173,7 @@ undefined4 VTable_Routine_080DCDB0(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DCE60 @ 0x080DCE60
 // =============================================================================
-undefined4 VTable_Routine_080DCE60(int instance,uint arg1)
+void VTable_Routine_080DCE60(int instance,uint arg1)
 
 {
   int i_val1;
@@ -6192,7 +6192,7 @@ undefined4 VTable_Routine_080DCE60(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DCE94 @ 0x080DCE94
 // =============================================================================
-undefined4 VTable_Routine_080DCE94(int instance,uint arg1)
+void VTable_Routine_080DCE94(int instance,uint arg1)
 
 {
   
@@ -6207,7 +6207,7 @@ undefined4 VTable_Routine_080DCE94(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DCEC0 @ 0x080DCEC0
 // =============================================================================
-undefined4 VTable_Routine_080DCEC0(int instance,uint arg1)
+void VTable_Routine_080DCEC0(int instance,uint arg1)
 
 {
   
@@ -6222,7 +6222,7 @@ undefined4 VTable_Routine_080DCEC0(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DCEEC @ 0x080DCEEC
 // =============================================================================
-undefined4 VTable_Routine_080DCEEC(int instance,uint arg1)
+void VTable_Routine_080DCEEC(int instance,uint arg1)
 
 {
   int i_val1;
@@ -6241,7 +6241,7 @@ undefined4 VTable_Routine_080DCEEC(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DCF20 @ 0x080DCF20
 // =============================================================================
-undefined4 VTable_Routine_080DCF20(int instance,uint arg1)
+void VTable_Routine_080DCF20(int instance,uint arg1)
 
 {
   
@@ -6256,7 +6256,7 @@ undefined4 VTable_Routine_080DCF20(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DCFCC @ 0x080DCFCC
 // =============================================================================
-undefined4 VTable_Routine_080DCFCC(int instance)
+void VTable_Routine_080DCFCC(int instance)
 
 {
   
@@ -6268,7 +6268,7 @@ undefined4 VTable_Routine_080DCFCC(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DD3A8 @ 0x080DD3A8
 // =============================================================================
-undefined4 VTable_Routine_080DD3A8(void)
+void VTable_Routine_080DD3A8(void)
 
 {
   
@@ -6279,7 +6279,7 @@ undefined4 VTable_Routine_080DD3A8(void)
 // =============================================================================
 // Function: VTable_Routine_080DD3D4 @ 0x080DD3D4
 // =============================================================================
-undefined4 VTable_Routine_080DD3D4(int instance)
+void VTable_Routine_080DD3D4(int instance)
 
 {
   char c_char1;
@@ -6305,7 +6305,7 @@ undefined4 VTable_Routine_080DD3D4(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DD404 @ 0x080DD404
 // =============================================================================
-undefined4 VTable_Routine_080DD404(void)
+void VTable_Routine_080DD404(void)
 
 {
   
@@ -6316,7 +6316,7 @@ undefined4 VTable_Routine_080DD404(void)
 // =============================================================================
 // Function: VTable_Routine_080DD434 @ 0x080DD434
 // =============================================================================
-undefined4 VTable_Routine_080DD434(void)
+void VTable_Routine_080DD434(void)
 
 {
   
@@ -6327,7 +6327,7 @@ undefined4 VTable_Routine_080DD434(void)
 // =============================================================================
 // Function: VTable_Routine_080DD460 @ 0x080DD460
 // =============================================================================
-undefined4 VTable_Routine_080DD460(int instance)
+void VTable_Routine_080DD460(int instance)
 
 {
   char c_char1;
@@ -6372,7 +6372,7 @@ LAB_080dd4b8:
 // =============================================================================
 // Function: VTable_Routine_080DD4E4 @ 0x080DD4E4
 // =============================================================================
-undefined4 VTable_Routine_080DD4E4(void)
+void VTable_Routine_080DD4E4(void)
 
 {
   
@@ -6383,7 +6383,7 @@ undefined4 VTable_Routine_080DD4E4(void)
 // =============================================================================
 // Function: VTable_Routine_080DD514 @ 0x080DD514
 // =============================================================================
-undefined4 VTable_Routine_080DD514(void)
+void VTable_Routine_080DD514(void)
 
 {
   
@@ -6394,7 +6394,7 @@ undefined4 VTable_Routine_080DD514(void)
 // =============================================================================
 // Function: VTable_Routine_080DD540 @ 0x080DD540
 // =============================================================================
-undefined4 VTable_Routine_080DD540(int instance)
+void VTable_Routine_080DD540(int instance)
 
 {
   int i_val1;
@@ -6415,7 +6415,7 @@ undefined4 VTable_Routine_080DD540(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DD588 @ 0x080DD588
 // =============================================================================
-undefined4 VTable_Routine_080DD588(void)
+void VTable_Routine_080DD588(void)
 
 {
   
@@ -6426,7 +6426,7 @@ undefined4 VTable_Routine_080DD588(void)
 // =============================================================================
 // Function: VTable_Routine_080DD5B8 @ 0x080DD5B8
 // =============================================================================
-undefined4 VTable_Routine_080DD5B8(void)
+void VTable_Routine_080DD5B8(void)
 
 {
   
@@ -6437,7 +6437,7 @@ undefined4 VTable_Routine_080DD5B8(void)
 // =============================================================================
 // Function: VTable_Routine_080DD5E4 @ 0x080DD5E4
 // =============================================================================
-undefined4 VTable_Routine_080DD5E4(undefined4 *instance)
+void VTable_Routine_080DD5E4(undefined4 *instance)
 
 {
   short s_val1;
@@ -6543,7 +6543,7 @@ undefined4 VTable_Routine_080DD5E4(undefined4 *instance)
 // =============================================================================
 // Function: VTable_Routine_080DD788 @ 0x080DD788
 // =============================================================================
-undefined4 VTable_Routine_080DD788(void)
+void VTable_Routine_080DD788(void)
 
 {
   
@@ -6554,7 +6554,7 @@ undefined4 VTable_Routine_080DD788(void)
 // =============================================================================
 // Function: VTable_Routine_080DD7B8 @ 0x080DD7B8
 // =============================================================================
-undefined4 VTable_Routine_080DD7B8(void)
+void VTable_Routine_080DD7B8(void)
 
 {
   
@@ -6565,7 +6565,7 @@ undefined4 VTable_Routine_080DD7B8(void)
 // =============================================================================
 // Function: VTable_Routine_080DD7E4 @ 0x080DD7E4
 // =============================================================================
-undefined4 VTable_Routine_080DD7E4(int instance)
+void VTable_Routine_080DD7E4(int instance)
 
 {
   int i_val1;
@@ -6600,7 +6600,7 @@ undefined4 VTable_Routine_080DD7E4(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DD860 @ 0x080DD860
 // =============================================================================
-undefined4 VTable_Routine_080DD860(void)
+void VTable_Routine_080DD860(void)
 
 {
   
@@ -6611,7 +6611,7 @@ undefined4 VTable_Routine_080DD860(void)
 // =============================================================================
 // Function: VTable_Routine_080DD890 @ 0x080DD890
 // =============================================================================
-undefined4 VTable_Routine_080DD890(void)
+void VTable_Routine_080DD890(void)
 
 {
   
@@ -6622,7 +6622,7 @@ undefined4 VTable_Routine_080DD890(void)
 // =============================================================================
 // Function: VTable_Routine_080DD8BC @ 0x080DD8BC
 // =============================================================================
-undefined4 VTable_Routine_080DD8BC(int instance)
+void VTable_Routine_080DD8BC(int instance)
 
 {
   int i_val1;
@@ -6657,7 +6657,7 @@ undefined4 VTable_Routine_080DD8BC(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DD938 @ 0x080DD938
 // =============================================================================
-undefined4 VTable_Routine_080DD938(void)
+void VTable_Routine_080DD938(void)
 
 {
   
@@ -6668,7 +6668,7 @@ undefined4 VTable_Routine_080DD938(void)
 // =============================================================================
 // Function: VTable_Routine_080DD944 @ 0x080DD944
 // =============================================================================
-undefined4 VTable_Routine_080DD944(int instance,byte *arg1)
+void VTable_Routine_080DD944(int instance,byte *arg1)
 
 {
   
@@ -6683,7 +6683,7 @@ undefined4 VTable_Routine_080DD944(int instance,byte *arg1)
 // =============================================================================
 // Function: VTable_Routine_080DD994 @ 0x080DD994
 // =============================================================================
-undefined4 VTable_Routine_080DD994(undefined4 instance)
+void VTable_Routine_080DD994(undefined4 instance)
 
 {
   
@@ -6694,7 +6694,7 @@ undefined4 VTable_Routine_080DD994(undefined4 instance)
 // =============================================================================
 // Function: VTable_Routine_080DD9CC @ 0x080DD9CC
 // =============================================================================
-undefined4 VTable_Routine_080DD9CC(int instance)
+void VTable_Routine_080DD9CC(int instance)
 
 {
   ushort u_val1;
@@ -6838,7 +6838,7 @@ LAB_080ddbd6:
 // =============================================================================
 // Function: VTable_Routine_080DDC18 @ 0x080DDC18
 // =============================================================================
-undefined4 VTable_Routine_080DDC18(void)
+void VTable_Routine_080DDC18(void)
 
 {
   
@@ -6849,7 +6849,7 @@ undefined4 VTable_Routine_080DDC18(void)
 // =============================================================================
 // Function: VTable_Routine_080DDC48 @ 0x080DDC48
 // =============================================================================
-undefined4 VTable_Routine_080DDC48(void)
+void VTable_Routine_080DDC48(void)
 
 {
   
@@ -6860,7 +6860,7 @@ undefined4 VTable_Routine_080DDC48(void)
 // =============================================================================
 // Function: VTable_Routine_080DDC78 @ 0x080DDC78
 // =============================================================================
-undefined4 VTable_Routine_080DDC78(int instance)
+void VTable_Routine_080DDC78(int instance)
 
 {
   char c_char1;
@@ -6950,7 +6950,7 @@ LAB_080dde1e:
 // =============================================================================
 // Function: VTable_Routine_080DDE68 @ 0x080DDE68
 // =============================================================================
-undefined4 VTable_Routine_080DDE68(void)
+void VTable_Routine_080DDE68(void)
 
 {
   
@@ -6961,7 +6961,7 @@ undefined4 VTable_Routine_080DDE68(void)
 // =============================================================================
 // Function: VTable_Routine_080DDE98 @ 0x080DDE98
 // =============================================================================
-undefined4 VTable_Routine_080DDE98(void)
+void VTable_Routine_080DDE98(void)
 
 {
   
@@ -6972,7 +6972,7 @@ undefined4 VTable_Routine_080DDE98(void)
 // =============================================================================
 // Function: VTable_Routine_080DDEC4 @ 0x080DDEC4
 // =============================================================================
-undefined4 VTable_Routine_080DDEC4(int instance)
+void VTable_Routine_080DDEC4(int instance)
 
 {
   int i_val1;
@@ -6993,7 +6993,7 @@ undefined4 VTable_Routine_080DDEC4(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DDF0C @ 0x080DDF0C
 // =============================================================================
-undefined4 VTable_Routine_080DDF0C(void)
+void VTable_Routine_080DDF0C(void)
 
 {
   
@@ -7004,7 +7004,7 @@ undefined4 VTable_Routine_080DDF0C(void)
 // =============================================================================
 // Function: VTable_Routine_080DDF3C @ 0x080DDF3C
 // =============================================================================
-undefined4 VTable_Routine_080DDF3C(void)
+void VTable_Routine_080DDF3C(void)
 
 {
   
@@ -7015,7 +7015,7 @@ undefined4 VTable_Routine_080DDF3C(void)
 // =============================================================================
 // Function: VTable_Routine_080DDF68 @ 0x080DDF68
 // =============================================================================
-undefined4 VTable_Routine_080DDF68(int instance)
+void VTable_Routine_080DDF68(int instance)
 
 {
   int i_val1;
@@ -7036,7 +7036,7 @@ undefined4 VTable_Routine_080DDF68(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DDFB0 @ 0x080DDFB0
 // =============================================================================
-undefined4 VTable_Routine_080DDFB0(void)
+void VTable_Routine_080DDFB0(void)
 
 {
   
@@ -7047,7 +7047,7 @@ undefined4 VTable_Routine_080DDFB0(void)
 // =============================================================================
 // Function: VTable_Routine_080DDFE0 @ 0x080DDFE0
 // =============================================================================
-undefined4 VTable_Routine_080DDFE0(void)
+void VTable_Routine_080DDFE0(void)
 
 {
   
@@ -7058,7 +7058,7 @@ undefined4 VTable_Routine_080DDFE0(void)
 // =============================================================================
 // Function: VTable_Routine_080DE00C @ 0x080DE00C
 // =============================================================================
-undefined4 VTable_Routine_080DE00C(int instance)
+void VTable_Routine_080DE00C(int instance)
 
 {
   int i_val1;
@@ -7079,7 +7079,7 @@ undefined4 VTable_Routine_080DE00C(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DE050 @ 0x080DE050
 // =============================================================================
-undefined4 VTable_Routine_080DE050(void)
+void VTable_Routine_080DE050(void)
 
 {
   
@@ -7090,7 +7090,7 @@ undefined4 VTable_Routine_080DE050(void)
 // =============================================================================
 // Function: VTable_Routine_080DE080 @ 0x080DE080
 // =============================================================================
-undefined4 VTable_Routine_080DE080(void)
+void VTable_Routine_080DE080(void)
 
 {
   
@@ -7101,7 +7101,7 @@ undefined4 VTable_Routine_080DE080(void)
 // =============================================================================
 // Function: VTable_Routine_080DE0AC @ 0x080DE0AC
 // =============================================================================
-undefined4 VTable_Routine_080DE0AC(int instance)
+void VTable_Routine_080DE0AC(int instance)
 
 {
   int i_val1;
@@ -7136,7 +7136,7 @@ undefined4 VTable_Routine_080DE0AC(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DE128 @ 0x080DE128
 // =============================================================================
-undefined4 VTable_Routine_080DE128(void)
+void VTable_Routine_080DE128(void)
 
 {
   
@@ -7147,7 +7147,7 @@ undefined4 VTable_Routine_080DE128(void)
 // =============================================================================
 // Function: VTable_Routine_080DE134 @ 0x080DE134
 // =============================================================================
-undefined4 VTable_Routine_080DE134(undefined4 *instance,undefined4 *arg1)
+void VTable_Routine_080DE134(undefined4 *instance,undefined4 *arg1)
 
 {
   int i_val1;
@@ -7171,7 +7171,7 @@ undefined4 VTable_Routine_080DE134(undefined4 *instance,undefined4 *arg1)
 // =============================================================================
 // Function: VTable_Routine_080DE184 @ 0x080DE184
 // =============================================================================
-undefined4 VTable_Routine_080DE184(int instance)
+void VTable_Routine_080DE184(int instance)
 
 {
   int pos_x;
@@ -7192,7 +7192,7 @@ undefined4 VTable_Routine_080DE184(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DE1B4 @ 0x080DE1B4
 // =============================================================================
-undefined4 VTable_Routine_080DE1B4(int instance,uint arg1)
+void VTable_Routine_080DE1B4(int instance,uint arg1)
 
 {
   int i_val1;
@@ -7216,7 +7216,7 @@ undefined4 VTable_Routine_080DE1B4(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DE220 @ 0x080DE220
 // =============================================================================
-undefined4 VTable_Routine_080DE220(undefined4 *instance,uint arg1)
+void VTable_Routine_080DE220(undefined4 *instance,uint arg1)
 
 {
   
@@ -7230,7 +7230,7 @@ undefined4 VTable_Routine_080DE220(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DE240 @ 0x080DE240
 // =============================================================================
-undefined8 VTable_Routine_080DE240(undefined1 *instance)
+u32 VTable_Routine_080DE240(undefined1 *instance)
 
 {
   
@@ -7242,7 +7242,7 @@ undefined8 VTable_Routine_080DE240(undefined1 *instance)
 // =============================================================================
 // Function: VTable_Routine_080DE260 @ 0x080DE260
 // =============================================================================
-undefined4 VTable_Routine_080DE260(undefined4 *instance,uint arg1)
+void VTable_Routine_080DE260(undefined4 *instance,uint arg1)
 
 {
   
@@ -7256,7 +7256,7 @@ undefined4 VTable_Routine_080DE260(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080DE280 @ 0x080DE280
 // =============================================================================
-undefined4 VTable_Routine_080DE280(int instance)
+void VTable_Routine_080DE280(int instance)
 
 {
   
@@ -7267,7 +7267,7 @@ undefined4 VTable_Routine_080DE280(int instance)
 // =============================================================================
 // Function: VTable_Routine_080DE28C @ 0x080DE28C
 // =============================================================================
-undefined4 VTable_Routine_080DE28C(int instance)
+void VTable_Routine_080DE28C(int instance)
 
 {
   
@@ -7779,7 +7779,7 @@ LAB_080e04a2:
 // =============================================================================
 // Function: VTable_Routine_080E09B0 @ 0x080E09B0
 // =============================================================================
-undefined4 VTable_Routine_080E09B0(void)
+void VTable_Routine_080E09B0(void)
 
 {
   
@@ -7790,7 +7790,7 @@ undefined4 VTable_Routine_080E09B0(void)
 // =============================================================================
 // Function: VTable_Routine_080E09BC @ 0x080E09BC
 // =============================================================================
-undefined4 VTable_Routine_080E09BC(int instance,undefined4 arg1)
+void VTable_Routine_080E09BC(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -7806,7 +7806,7 @@ undefined4 VTable_Routine_080E09BC(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E09E4 @ 0x080E09E4
 // =============================================================================
-undefined4 VTable_Routine_080E09E4(int instance,undefined4 arg1)
+void VTable_Routine_080E09E4(int instance,undefined4 arg1)
 
 {
   uint u_val1;
@@ -7822,7 +7822,7 @@ undefined4 VTable_Routine_080E09E4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E0A08 @ 0x080E0A08
 // =============================================================================
-undefined8 VTable_Routine_080E0A08(int instance)
+u32 VTable_Routine_080E0A08(int instance)
 
 {
   uint u_val1;
@@ -7866,7 +7866,7 @@ undefined8 VTable_Routine_080E0A08(int instance)
 // =============================================================================
 // Function: VTable_Routine_080E0A7C @ 0x080E0A7C
 // =============================================================================
-undefined4 VTable_Routine_080E0A7C(void)
+void VTable_Routine_080E0A7C(void)
 
 {
   
@@ -7877,7 +7877,7 @@ undefined4 VTable_Routine_080E0A7C(void)
 // =============================================================================
 // Function: VTable_Routine_080E0A88 @ 0x080E0A88
 // =============================================================================
-undefined4 VTable_Routine_080E0A88(void)
+void VTable_Routine_080E0A88(void)
 
 {
   
@@ -7888,7 +7888,7 @@ undefined4 VTable_Routine_080E0A88(void)
 // =============================================================================
 // Function: VTable_Routine_080E0C38 @ 0x080E0C38
 // =============================================================================
-undefined4 VTable_Routine_080E0C38(undefined4 *instance,uint arg1)
+void VTable_Routine_080E0C38(undefined4 *instance,uint arg1)
 
 {
   undefined4 *p_uint1;
@@ -7958,7 +7958,7 @@ longlong VTable_Routine_080E0D50(int instance)
 // =============================================================================
 // Function: VTable_Routine_080E0D64 @ 0x080E0D64
 // =============================================================================
-undefined4 VTable_Routine_080E0D64(void)
+void VTable_Routine_080E0D64(void)
 
 {
   
@@ -7969,7 +7969,7 @@ undefined4 VTable_Routine_080E0D64(void)
 // =============================================================================
 // Function: VTable_Routine_080E0D70 @ 0x080E0D70
 // =============================================================================
-undefined4 VTable_Routine_080E0D70(undefined4 *instance,uint arg1)
+void VTable_Routine_080E0D70(undefined4 *instance,uint arg1)
 
 {
   undefined4 u_val1;
@@ -8007,7 +8007,7 @@ undefined4 VTable_Routine_080E0D70(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E0E80 @ 0x080E0E80
 // =============================================================================
-undefined8 VTable_Routine_080E0E80(byte *instance,int arg1,uint *arg2)
+u32 VTable_Routine_080E0E80(byte *instance,int arg1,uint *arg2)
 
 {
   int i_val1;
@@ -8027,7 +8027,7 @@ undefined8 VTable_Routine_080E0E80(byte *instance,int arg1,uint *arg2)
 // =============================================================================
 // Function: VTable_Routine_080E0EB4 @ 0x080E0EB4
 // =============================================================================
-undefined8 VTable_Routine_080E0EB4(int *instance,int arg1,int *arg2)
+u32 VTable_Routine_080E0EB4(int *instance,int arg1,int *arg2)
 
 {
   int i_val1;
@@ -8050,7 +8050,7 @@ undefined8 VTable_Routine_080E0EB4(int *instance,int arg1,int *arg2)
 // =============================================================================
 // Function: VTable_Routine_080E0EF0 @ 0x080E0EF0
 // =============================================================================
-undefined4 VTable_Routine_080E0EF0(void)
+void VTable_Routine_080E0EF0(void)
 
 {
   
@@ -8061,7 +8061,7 @@ undefined4 VTable_Routine_080E0EF0(void)
 // =============================================================================
 // Function: VTable_Routine_080E0EFC @ 0x080E0EFC
 // =============================================================================
-undefined4 VTable_Routine_080E0EFC(uint instance,int arg1)
+void VTable_Routine_080E0EFC(uint instance,int arg1)
 
 {
   uint u_val1;
@@ -8153,7 +8153,7 @@ longlong VTable_Routine_080E0F90(int instance)
 // =============================================================================
 // Function: VTable_Routine_080E1018 @ 0x080E1018
 // =============================================================================
-undefined4 VTable_Routine_080E1018(void)
+void VTable_Routine_080E1018(void)
 
 {
   
@@ -8164,7 +8164,7 @@ undefined4 VTable_Routine_080E1018(void)
 // =============================================================================
 // Function: VTable_Routine_080E1024 @ 0x080E1024
 // =============================================================================
-undefined4 VTable_Routine_080E1024(void)
+void VTable_Routine_080E1024(void)
 
 {
   
@@ -8175,7 +8175,7 @@ undefined4 VTable_Routine_080E1024(void)
 // =============================================================================
 // Function: VTable_Routine_080E1030 @ 0x080E1030
 // =============================================================================
-undefined4 VTable_Routine_080E1030(void)
+void VTable_Routine_080E1030(void)
 
 {
   
@@ -8186,7 +8186,7 @@ undefined4 VTable_Routine_080E1030(void)
 // =============================================================================
 // Function: VTable_Routine_080E103C @ 0x080E103C
 // =============================================================================
-undefined4 VTable_Routine_080E103C(undefined4 *instance,uint arg1)
+void VTable_Routine_080E103C(undefined4 *instance,uint arg1)
 
 {
   
@@ -8200,7 +8200,7 @@ undefined4 VTable_Routine_080E103C(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E105C @ 0x080E105C
 // =============================================================================
-undefined4 VTable_Routine_080E105C(undefined4 *instance,uint arg1)
+void VTable_Routine_080E105C(undefined4 *instance,uint arg1)
 
 {
   undefined4 *p_uint1;
@@ -8233,7 +8233,7 @@ undefined4 VTable_Routine_080E105C(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E10E0 @ 0x080E10E0
 // =============================================================================
-undefined4 VTable_Routine_080E10E0(void)
+void VTable_Routine_080E10E0(void)
 
 {
   
@@ -8244,7 +8244,7 @@ undefined4 VTable_Routine_080E10E0(void)
 // =============================================================================
 // Function: VTable_Routine_080E10F8 @ 0x080E10F8
 // =============================================================================
-undefined4 VTable_Routine_080E10F8(undefined4 *instance,uint arg1)
+void VTable_Routine_080E10F8(undefined4 *instance,uint arg1)
 
 {
   
@@ -8258,7 +8258,7 @@ undefined4 VTable_Routine_080E10F8(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1128 @ 0x080E1128
 // =============================================================================
-undefined4 VTable_Routine_080E1128(undefined4 *instance,uint arg1)
+void VTable_Routine_080E1128(undefined4 *instance,uint arg1)
 
 {
   
@@ -8272,7 +8272,7 @@ undefined4 VTable_Routine_080E1128(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1148 @ 0x080E1148
 // =============================================================================
-undefined4 VTable_Routine_080E1148(int instance,undefined4 arg1)
+void VTable_Routine_080E1148(int instance,undefined4 arg1)
 
 {
   
@@ -8288,7 +8288,7 @@ undefined4 VTable_Routine_080E1148(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E118C @ 0x080E118C
 // =============================================================================
-undefined8 VTable_Routine_080E118C(undefined1 *instance,int arg1,int arg2)
+u32 VTable_Routine_080E118C(undefined1 *instance,int arg1,int arg2)
 
 {
   undefined4 u_val1;
@@ -8319,7 +8319,7 @@ undefined8 VTable_Routine_080E118C(undefined1 *instance,int arg1,int arg2)
 // =============================================================================
 // Function: VTable_Routine_080E11EC @ 0x080E11EC
 // =============================================================================
-undefined4 VTable_Routine_080E11EC(int instance,undefined4 arg1)
+void VTable_Routine_080E11EC(int instance,undefined4 arg1)
 
 {
   undefined4 u_val1;
@@ -8407,7 +8407,7 @@ undefined4 VTable_Routine_080E11EC(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1498 @ 0x080E1498
 // =============================================================================
-undefined4 VTable_Routine_080E1498(undefined4 *instance,uint arg1)
+void VTable_Routine_080E1498(undefined4 *instance,uint arg1)
 
 {
   
@@ -8421,7 +8421,7 @@ undefined4 VTable_Routine_080E1498(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E14B8 @ 0x080E14B8
 // =============================================================================
-undefined8 VTable_Routine_080E14B8(undefined1 *instance,int arg1,int arg2)
+u32 VTable_Routine_080E14B8(undefined1 *instance,int arg1,int arg2)
 
 {
   undefined1 *p_uint1;
@@ -8496,7 +8496,7 @@ LAB_080e15b6:
 // =============================================================================
 // Function: VTable_Routine_080E1824 @ 0x080E1824
 // =============================================================================
-undefined4 VTable_Routine_080E1824(undefined4 *instance,uint arg1)
+void VTable_Routine_080E1824(undefined4 *instance,uint arg1)
 
 {
   
@@ -8510,7 +8510,7 @@ undefined4 VTable_Routine_080E1824(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1844 @ 0x080E1844
 // =============================================================================
-undefined8 VTable_Routine_080E1844(undefined1 *instance,int arg1,int arg2)
+u32 VTable_Routine_080E1844(undefined1 *instance,int arg1,int arg2)
 
 {
   uint u_val1;
@@ -8539,7 +8539,7 @@ undefined8 VTable_Routine_080E1844(undefined1 *instance,int arg1,int arg2)
 // =============================================================================
 // Function: VTable_Routine_080E18A4 @ 0x080E18A4
 // =============================================================================
-undefined4 VTable_Routine_080E18A4(int instance,undefined4 arg1)
+void VTable_Routine_080E18A4(int instance,undefined4 arg1)
 
 {
   undefined4 u_val1;
@@ -8570,7 +8570,7 @@ undefined4 VTable_Routine_080E18A4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1964 @ 0x080E1964
 // =============================================================================
-undefined4 VTable_Routine_080E1964(undefined4 *instance,uint arg1)
+void VTable_Routine_080E1964(undefined4 *instance,uint arg1)
 
 {
   
@@ -8584,7 +8584,7 @@ undefined4 VTable_Routine_080E1964(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1984 @ 0x080E1984
 // =============================================================================
-undefined4 VTable_Routine_080E1984(undefined4 *instance,uint arg1)
+void VTable_Routine_080E1984(undefined4 *instance,uint arg1)
 
 {
   
@@ -8598,7 +8598,7 @@ undefined4 VTable_Routine_080E1984(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E19A4 @ 0x080E19A4
 // =============================================================================
-undefined8 VTable_Routine_080E19A4(undefined1 *instance,int arg1,int arg2)
+u32 VTable_Routine_080E19A4(undefined1 *instance,int arg1,int arg2)
 
 {
   uint u_val1;
@@ -8627,7 +8627,7 @@ undefined8 VTable_Routine_080E19A4(undefined1 *instance,int arg1,int arg2)
 // =============================================================================
 // Function: VTable_Routine_080E19F8 @ 0x080E19F8
 // =============================================================================
-undefined4 VTable_Routine_080E19F8(int instance,undefined4 arg1)
+void VTable_Routine_080E19F8(int instance,undefined4 arg1)
 
 {
   
@@ -8642,7 +8642,7 @@ undefined4 VTable_Routine_080E19F8(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1A48 @ 0x080E1A48
 // =============================================================================
-undefined8 VTable_Routine_080E1A48(void)
+u32 VTable_Routine_080E1A48(void)
 
 {
   
@@ -8653,7 +8653,7 @@ undefined8 VTable_Routine_080E1A48(void)
 // =============================================================================
 // Function: VTable_Routine_080E1A54 @ 0x080E1A54
 // =============================================================================
-undefined4 VTable_Routine_080E1A54(int instance)
+void VTable_Routine_080E1A54(int instance)
 
 {
   
@@ -8665,7 +8665,7 @@ undefined4 VTable_Routine_080E1A54(int instance)
 // =============================================================================
 // Function: VTable_Routine_080E1A70 @ 0x080E1A70
 // =============================================================================
-undefined8 VTable_Routine_080E1A70(undefined4 *instance)
+u32 VTable_Routine_080E1A70(undefined4 *instance)
 
 {
   byte b_flag1;
@@ -8741,7 +8741,7 @@ undefined8 VTable_Routine_080E1A70(undefined4 *instance)
 // =============================================================================
 // Function: VTable_Routine_080E1C18 @ 0x080E1C18
 // =============================================================================
-undefined4 VTable_Routine_080E1C18(int instance,undefined4 arg1)
+void VTable_Routine_080E1C18(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -8761,7 +8761,7 @@ undefined4 VTable_Routine_080E1C18(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1C70 @ 0x080E1C70
 // =============================================================================
-undefined8 VTable_Routine_080E1C70(undefined4 *instance)
+u32 VTable_Routine_080E1C70(undefined4 *instance)
 
 {
   byte b_flag1;
@@ -8806,7 +8806,7 @@ undefined8 VTable_Routine_080E1C70(undefined4 *instance)
 // =============================================================================
 // Function: VTable_Routine_080E1D54 @ 0x080E1D54
 // =============================================================================
-undefined4 VTable_Routine_080E1D54(int instance,undefined4 arg1)
+void VTable_Routine_080E1D54(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -8822,7 +8822,7 @@ undefined4 VTable_Routine_080E1D54(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1D8C @ 0x080E1D8C
 // =============================================================================
-undefined4 VTable_Routine_080E1D8C(void)
+void VTable_Routine_080E1D8C(void)
 
 {
   
@@ -8833,7 +8833,7 @@ undefined4 VTable_Routine_080E1D8C(void)
 // =============================================================================
 // Function: VTable_Routine_080E1D98 @ 0x080E1D98
 // =============================================================================
-undefined4 VTable_Routine_080E1D98(void)
+void VTable_Routine_080E1D98(void)
 
 {
   
@@ -8844,7 +8844,7 @@ undefined4 VTable_Routine_080E1D98(void)
 // =============================================================================
 // Function: VTable_Routine_080E1DA4 @ 0x080E1DA4
 // =============================================================================
-undefined4 VTable_Routine_080E1DA4(void)
+void VTable_Routine_080E1DA4(void)
 
 {
   
@@ -8855,7 +8855,7 @@ undefined4 VTable_Routine_080E1DA4(void)
 // =============================================================================
 // Function: VTable_Routine_080E1DB0 @ 0x080E1DB0
 // =============================================================================
-undefined4 VTable_Routine_080E1DB0(void)
+void VTable_Routine_080E1DB0(void)
 
 {
   
@@ -8866,7 +8866,7 @@ undefined4 VTable_Routine_080E1DB0(void)
 // =============================================================================
 // Function: VTable_Routine_080E1DBC @ 0x080E1DBC
 // =============================================================================
-undefined8 VTable_Routine_080E1DBC(void)
+u32 VTable_Routine_080E1DBC(void)
 
 {
   
@@ -8877,7 +8877,7 @@ undefined8 VTable_Routine_080E1DBC(void)
 // =============================================================================
 // Function: VTable_Routine_080E1DC8 @ 0x080E1DC8
 // =============================================================================
-undefined4 VTable_Routine_080E1DC8(void)
+void VTable_Routine_080E1DC8(void)
 
 {
   
@@ -8888,7 +8888,7 @@ undefined4 VTable_Routine_080E1DC8(void)
 // =============================================================================
 // Function: VTable_Routine_080E1DD4 @ 0x080E1DD4
 // =============================================================================
-undefined4 VTable_Routine_080E1DD4(int instance,undefined4 arg1)
+void VTable_Routine_080E1DD4(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -8909,7 +8909,7 @@ undefined4 VTable_Routine_080E1DD4(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1E28 @ 0x080E1E28
 // =============================================================================
-undefined4 VTable_Routine_080E1E28(int instance,undefined4 arg1)
+void VTable_Routine_080E1E28(int instance,undefined4 arg1)
 
 {
   undefined4 u_val1;
@@ -8984,7 +8984,7 @@ undefined4 VTable_Routine_080E1E28(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E1FAC @ 0x080E1FAC
 // =============================================================================
-undefined4 VTable_Routine_080E1FAC(int instance,undefined4 arg1)
+void VTable_Routine_080E1FAC(int instance,undefined4 arg1)
 
 {
   
@@ -9006,7 +9006,7 @@ undefined4 VTable_Routine_080E1FAC(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E2018 @ 0x080E2018
 // =============================================================================
-undefined4 VTable_Routine_080E2018(int instance,undefined4 arg1)
+void VTable_Routine_080E2018(int instance,undefined4 arg1)
 
 {
   undefined4 u_val1;
@@ -9040,7 +9040,7 @@ undefined4 VTable_Routine_080E2018(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E20C0 @ 0x080E20C0
 // =============================================================================
-undefined4 VTable_Routine_080E20C0(int *instance,uint arg1)
+void VTable_Routine_080E20C0(int *instance,uint arg1)
 
 {
   
@@ -9062,7 +9062,7 @@ undefined4 VTable_Routine_080E20C0(int *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E20F8 @ 0x080E20F8
 // =============================================================================
-undefined4 VTable_Routine_080E20F8(void)
+void VTable_Routine_080E20F8(void)
 
 {
   
@@ -9073,7 +9073,7 @@ undefined4 VTable_Routine_080E20F8(void)
 // =============================================================================
 // Function: VTable_Routine_080E2104 @ 0x080E2104
 // =============================================================================
-undefined4 VTable_Routine_080E2104(void)
+void VTable_Routine_080E2104(void)
 
 {
   
@@ -9084,7 +9084,7 @@ undefined4 VTable_Routine_080E2104(void)
 // =============================================================================
 // Function: VTable_Routine_080E2110 @ 0x080E2110
 // =============================================================================
-undefined4 VTable_Routine_080E2110(void)
+void VTable_Routine_080E2110(void)
 
 {
   
@@ -9095,7 +9095,7 @@ undefined4 VTable_Routine_080E2110(void)
 // =============================================================================
 // Function: VTable_Routine_080E211C @ 0x080E211C
 // =============================================================================
-undefined4 VTable_Routine_080E211C(int instance,undefined4 arg1)
+void VTable_Routine_080E211C(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -9116,7 +9116,7 @@ undefined4 VTable_Routine_080E211C(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E2170 @ 0x080E2170
 // =============================================================================
-undefined4 VTable_Routine_080E2170(int instance,int *arg1)
+void VTable_Routine_080E2170(int instance,int *arg1)
 
 {
   int i_val1;
@@ -9148,7 +9148,7 @@ undefined4 VTable_Routine_080E2170(int instance,int *arg1)
 // =============================================================================
 // Function: VTable_Routine_080E21A8 @ 0x080E21A8
 // =============================================================================
-undefined4 VTable_Routine_080E21A8(int instance,int *arg1)
+void VTable_Routine_080E21A8(int instance,int *arg1)
 
 {
   int i_val1;
@@ -9180,7 +9180,7 @@ undefined4 VTable_Routine_080E21A8(int instance,int *arg1)
 // =============================================================================
 // Function: VTable_Routine_080E21E0 @ 0x080E21E0
 // =============================================================================
-undefined4 VTable_Routine_080E21E0(undefined1 *instance,undefined4 *arg1)
+void VTable_Routine_080E21E0(undefined1 *instance,undefined4 *arg1)
 
 {
   char c_char1;
@@ -9237,7 +9237,7 @@ LAB_080e2242:
 // =============================================================================
 // Function: VTable_Routine_080E2294 @ 0x080E2294
 // =============================================================================
-undefined8 VTable_Routine_080E2294(int *instance,int arg1,int arg2,int arg3,uint *arg_5,int arg_6)
+u32 VTable_Routine_080E2294(int *instance,int arg1,int arg2,int arg3,uint *arg_5,int arg_6)
 
 {
   int i_val1;
@@ -9289,7 +9289,7 @@ undefined8 VTable_Routine_080E2294(int *instance,int arg1,int arg2,int arg3,uint
 // =============================================================================
 // Function: VTable_Routine_080E2354 @ 0x080E2354
 // =============================================================================
-undefined8 VTable_Routine_080E2354(char *instance)
+u32 VTable_Routine_080E2354(char *instance)
 
 {
   char *p_char1;
@@ -9318,7 +9318,7 @@ undefined8 VTable_Routine_080E2354(char *instance)
 // =============================================================================
 // Function: VTable_Routine_080E2390 @ 0x080E2390
 // =============================================================================
-undefined8 VTable_Routine_080E2390(int *instance,int arg1,uint *arg2)
+u32 VTable_Routine_080E2390(int *instance,int arg1,uint *arg2)
 
 {
   int i_val1;
@@ -9371,7 +9371,7 @@ LAB_080e2434:
 // =============================================================================
 // Function: VTable_Routine_080E2444 @ 0x080E2444
 // =============================================================================
-undefined8 VTable_Routine_080E2444(int *instance,int arg1,int *arg2,uint *arg3)
+u32 VTable_Routine_080E2444(int *instance,int arg1,int *arg2,uint *arg3)
 
 {
   int i_val1;
@@ -9466,7 +9466,7 @@ LAB_080e25ea:
 // =============================================================================
 // Function: VTable_Routine_080E25FC @ 0x080E25FC
 // =============================================================================
-undefined8 VTable_Routine_080E25FC(char *instance,undefined4 *arg1,undefined4 *arg2,undefined4 *arg3)
+u32 VTable_Routine_080E25FC(char *instance,undefined4 *arg1,undefined4 *arg2,undefined4 *arg3)
 
 {
   char c_char1;
@@ -9648,7 +9648,7 @@ LAB_080e27e8:
 // =============================================================================
 // Function: VTable_Routine_080E27FC @ 0x080E27FC
 // =============================================================================
-undefined8 VTable_Routine_080E27FC(int *instance,int arg1,int arg2,int arg3,uint *arg_5,int arg_6)
+u32 VTable_Routine_080E27FC(int *instance,int arg1,int arg2,int arg3,uint *arg_5,int arg_6)
 
 {
   int i_val1;
@@ -9700,7 +9700,7 @@ undefined8 VTable_Routine_080E27FC(int *instance,int arg1,int arg2,int arg3,uint
 // =============================================================================
 // Function: VTable_Routine_080E28BC @ 0x080E28BC
 // =============================================================================
-undefined8 VTable_Routine_080E28BC(int *instance,int arg1,uint *arg2)
+u32 VTable_Routine_080E28BC(int *instance,int arg1,uint *arg2)
 
 {
   int i_val1;
@@ -9753,7 +9753,7 @@ LAB_080e2960:
 // =============================================================================
 // Function: VTable_Routine_080E2970 @ 0x080E2970
 // =============================================================================
-undefined8 VTable_Routine_080E2970(int *instance,int arg1,int *arg2,uint *arg3)
+u32 VTable_Routine_080E2970(int *instance,int arg1,int *arg2,uint *arg3)
 
 {
   int i_val1;
@@ -9848,7 +9848,7 @@ LAB_080e2b16:
 // =============================================================================
 // Function: VTable_Routine_080E2B28 @ 0x080E2B28
 // =============================================================================
-undefined8 VTable_Routine_080E2B28(int instance)
+u32 VTable_Routine_080E2B28(int instance)
 
 {
   int pos_y;
@@ -9877,7 +9877,7 @@ undefined8 VTable_Routine_080E2B28(int instance)
 // =============================================================================
 // Function: VTable_Routine_080E2B5C @ 0x080E2B5C
 // =============================================================================
-undefined4 VTable_Routine_080E2B5C(undefined4 instance,int arg1)
+void VTable_Routine_080E2B5C(undefined4 instance,int arg1)
 
 {
   int i_val1;
@@ -9895,7 +9895,7 @@ undefined4 VTable_Routine_080E2B5C(undefined4 instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080E2B88 @ 0x080E2B88
 // =============================================================================
-undefined4 VTable_Routine_080E2B88(undefined4 instance,int arg1)
+void VTable_Routine_080E2B88(undefined4 instance,int arg1)
 
 {
   int i_val1;
@@ -9913,7 +9913,7 @@ undefined4 VTable_Routine_080E2B88(undefined4 instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080E2BB4 @ 0x080E2BB4
 // =============================================================================
-undefined4 VTable_Routine_080E2BB4(int instance,byte *arg1,undefined4 *arg2,int arg3,int arg_5)
+void VTable_Routine_080E2BB4(int instance,byte *arg1,undefined4 *arg2,int arg3,int arg_5)
 
 {
   byte b_flag1;
@@ -10020,7 +10020,7 @@ undefined4 VTable_Routine_080E2BB4(int instance,byte *arg1,undefined4 *arg2,int 
 // =============================================================================
 // Function: VTable_Routine_080E2DC8 @ 0x080E2DC8
 // =============================================================================
-undefined8 VTable_Routine_080E2DC8(int instance)
+u32 VTable_Routine_080E2DC8(int instance)
 
 {
   undefined1 *p_uint1;
@@ -10057,7 +10057,7 @@ undefined8 VTable_Routine_080E2DC8(int instance)
 // =============================================================================
 // Function: VTable_Routine_080E2E34 @ 0x080E2E34
 // =============================================================================
-undefined4 VTable_Routine_080E2E34(int instance,undefined4 arg1)
+void VTable_Routine_080E2E34(int instance,undefined4 arg1)
 
 {
   int pos_x;
@@ -10074,7 +10074,7 @@ undefined4 VTable_Routine_080E2E34(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E2E6C @ 0x080E2E6C
 // =============================================================================
-undefined4 VTable_Routine_080E2E6C(void)
+void VTable_Routine_080E2E6C(void)
 
 {
   
@@ -10085,7 +10085,7 @@ undefined4 VTable_Routine_080E2E6C(void)
 // =============================================================================
 // Function: VTable_Routine_080E2E78 @ 0x080E2E78
 // =============================================================================
-undefined4 VTable_Routine_080E2E78(undefined4 instance,int arg1)
+void VTable_Routine_080E2E78(undefined4 instance,int arg1)
 
 {
   int i_val1;
@@ -10103,7 +10103,7 @@ undefined4 VTable_Routine_080E2E78(undefined4 instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080E2EA4 @ 0x080E2EA4
 // =============================================================================
-undefined8 VTable_Routine_080E2EA4(int *instance,int arg1,int arg2,int arg3,byte *arg_5,int arg_6)
+u32 VTable_Routine_080E2EA4(int *instance,int arg1,int arg2,int arg3,byte *arg_5,int arg_6)
 
 {
   int i_val1;
@@ -10166,7 +10166,7 @@ LAB_080e2f50:
 // =============================================================================
 // Function: VTable_Routine_080E2F74 @ 0x080E2F74
 // =============================================================================
-undefined8 VTable_Routine_080E2F74(int *instance,int arg1,byte *arg2)
+u32 VTable_Routine_080E2F74(int *instance,int arg1,byte *arg2)
 
 {
   bool b_flag1;
@@ -10228,7 +10228,7 @@ LAB_080e3042:
 // =============================================================================
 // Function: VTable_Routine_080E3054 @ 0x080E3054
 // =============================================================================
-undefined8 VTable_Routine_080E3054(int *instance,int arg1,int *arg2,byte *arg3)
+u32 VTable_Routine_080E3054(int *instance,int arg1,int *arg2,byte *arg3)
 
 {
   byte b_flag1;
@@ -10384,7 +10384,7 @@ LAB_080e32d4:
 // =============================================================================
 // Function: VTable_Routine_080E32E8 @ 0x080E32E8
 // =============================================================================
-undefined4 VTable_Routine_080E32E8(int instance,undefined4 arg1)
+void VTable_Routine_080E32E8(int instance,undefined4 arg1)
 
 {
   undefined4 u_val1;
@@ -10424,7 +10424,7 @@ undefined4 VTable_Routine_080E32E8(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E3398 @ 0x080E3398
 // =============================================================================
-undefined8 VTable_Routine_080E3398(uint *instance,int arg1,uint *arg2)
+u32 VTable_Routine_080E3398(uint *instance,int arg1,uint *arg2)
 
 {
   int i_val1;
@@ -10444,7 +10444,7 @@ undefined8 VTable_Routine_080E3398(uint *instance,int arg1,uint *arg2)
 // =============================================================================
 // Function: VTable_Routine_080E33D0 @ 0x080E33D0
 // =============================================================================
-undefined4 VTable_Routine_080E33D0(int instance,undefined4 arg1)
+void VTable_Routine_080E33D0(int instance,undefined4 arg1)
 
 {
   undefined4 u_val1;
@@ -10479,7 +10479,7 @@ undefined4 VTable_Routine_080E33D0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E3494 @ 0x080E3494
 // =============================================================================
-undefined8 VTable_Routine_080E3494(undefined4 *instance,int arg1)
+u32 VTable_Routine_080E3494(undefined4 *instance,int arg1)
 
 {
   undefined4 u_val1;
@@ -10497,7 +10497,7 @@ undefined8 VTable_Routine_080E3494(undefined4 *instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080E34DC @ 0x080E34DC
 // =============================================================================
-undefined4 VTable_Routine_080E34DC(int instance,undefined4 arg1)
+void VTable_Routine_080E34DC(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -10513,7 +10513,7 @@ undefined4 VTable_Routine_080E34DC(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E3504 @ 0x080E3504
 // =============================================================================
-undefined4 VTable_Routine_080E3504(int instance,undefined4 arg1)
+void VTable_Routine_080E3504(int instance,undefined4 arg1)
 
 {
   int i_val1;
@@ -10556,7 +10556,7 @@ undefined4 VTable_Routine_080E3504(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E3A9C @ 0x080E3A9C
 // =============================================================================
-undefined4 VTable_Routine_080E3A9C(int instance,uint arg1)
+void VTable_Routine_080E3A9C(int instance,uint arg1)
 
 {
   int i_val1;
@@ -10601,7 +10601,7 @@ undefined4 VTable_Routine_080E3A9C(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E3B80 @ 0x080E3B80
 // =============================================================================
-undefined8 VTable_Routine_080E3B80(undefined1 *instance,int arg1,int arg2)
+u32 VTable_Routine_080E3B80(undefined1 *instance,int arg1,int arg2)
 
 {
   uint u_val1;
@@ -10650,7 +10650,7 @@ LAB_080e3bf6:
 // =============================================================================
 // Function: VTable_Routine_080E3C3C @ 0x080E3C3C
 // =============================================================================
-undefined4 VTable_Routine_080E3C3C(int instance,undefined4 arg1)
+void VTable_Routine_080E3C3C(int instance,undefined4 arg1)
 
 {
   undefined4 u_val1;
@@ -10699,7 +10699,7 @@ undefined4 VTable_Routine_080E3C3C(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E3D94 @ 0x080E3D94
 // =============================================================================
-undefined4 VTable_Routine_080E3D94(undefined4 *instance,uint arg1)
+void VTable_Routine_080E3D94(undefined4 *instance,uint arg1)
 
 {
   
@@ -10713,7 +10713,7 @@ undefined4 VTable_Routine_080E3D94(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E3DB4 @ 0x080E3DB4
 // =============================================================================
-undefined8 VTable_Routine_080E3DB4(short *instance,short *arg1,short *arg2)
+u32 VTable_Routine_080E3DB4(short *instance,short *arg1,short *arg2)
 
 {
   short s_val1;
@@ -10766,7 +10766,7 @@ LAB_080e3e22:
 // =============================================================================
 // Function: VTable_Routine_080E3E28 @ 0x080E3E28
 // =============================================================================
-undefined8 VTable_Routine_080E3E28(short *instance,short *arg1,short *arg2)
+u32 VTable_Routine_080E3E28(short *instance,short *arg1,short *arg2)
 
 {
   short s_val1;
@@ -10819,7 +10819,7 @@ LAB_080e3e96:
 // =============================================================================
 // Function: VTable_Routine_080E3E9C @ 0x080E3E9C
 // =============================================================================
-undefined8 VTable_Routine_080E3E9C(int instance,int arg1,undefined4 arg2)
+u32 VTable_Routine_080E3E9C(int instance,int arg1,undefined4 arg2)
 
 {
   char c_char1;
@@ -10867,7 +10867,7 @@ LAB_080e3f3a:
 // =============================================================================
 // Function: VTable_Routine_080E3F40 @ 0x080E3F40
 // =============================================================================
-undefined8 VTable_Routine_080E3F40(undefined1 *instance,int arg1,int arg2)
+u32 VTable_Routine_080E3F40(undefined1 *instance,int arg1,int arg2)
 
 {
   char c_char1;
@@ -10966,7 +10966,7 @@ LAB_080e4094:
 // =============================================================================
 // Function: VTable_Routine_080E4190 @ 0x080E4190
 // =============================================================================
-undefined4 VTable_Routine_080E4190(undefined4 *instance,uint arg1)
+void VTable_Routine_080E4190(undefined4 *instance,uint arg1)
 
 {
   
@@ -10980,7 +10980,7 @@ undefined4 VTable_Routine_080E4190(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E41B0 @ 0x080E41B0
 // =============================================================================
-undefined4 VTable_Routine_080E41B0(int instance,undefined4 arg1)
+void VTable_Routine_080E41B0(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -11001,7 +11001,7 @@ undefined4 VTable_Routine_080E41B0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E41E8 @ 0x080E41E8
 // =============================================================================
-undefined4 VTable_Routine_080E41E8(int instance,undefined4 arg1)
+void VTable_Routine_080E41E8(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -11017,7 +11017,7 @@ undefined4 VTable_Routine_080E41E8(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E4210 @ 0x080E4210
 // =============================================================================
-undefined4 VTable_Routine_080E4210(int instance,undefined4 arg1)
+void VTable_Routine_080E4210(int instance,undefined4 arg1)
 
 {
   int *p_int1;
@@ -11033,7 +11033,7 @@ undefined4 VTable_Routine_080E4210(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E4238 @ 0x080E4238
 // =============================================================================
-undefined4 VTable_Routine_080E4238(void)
+void VTable_Routine_080E4238(void)
 
 {
   
@@ -11044,7 +11044,7 @@ undefined4 VTable_Routine_080E4238(void)
 // =============================================================================
 // Function: VTable_Routine_080E4244 @ 0x080E4244
 // =============================================================================
-undefined8 VTable_Routine_080E4244(int *instance,int arg1,int arg2,int arg3,int *arg_5,int arg_6)
+u32 VTable_Routine_080E4244(int *instance,int arg1,int arg2,int arg3,int *arg_5,int arg_6)
 
 {
   int i_val1;
@@ -11096,7 +11096,7 @@ undefined8 VTable_Routine_080E4244(int *instance,int arg1,int arg2,int arg3,int 
 // =============================================================================
 // Function: VTable_Routine_080E4304 @ 0x080E4304
 // =============================================================================
-undefined8 VTable_Routine_080E4304(int *instance,int arg1,int *arg2)
+u32 VTable_Routine_080E4304(int *instance,int arg1,int *arg2)
 
 {
   bool b_flag1;
@@ -11149,7 +11149,7 @@ LAB_080e43a8:
 // =============================================================================
 // Function: VTable_Routine_080E43B8 @ 0x080E43B8
 // =============================================================================
-undefined4 VTable_Routine_080E43B8(int instance,undefined4 arg1)
+void VTable_Routine_080E43B8(int instance,undefined4 arg1)
 
 {
   
@@ -11170,7 +11170,7 @@ undefined4 VTable_Routine_080E43B8(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E43FC @ 0x080E43FC
 // =============================================================================
-undefined8 VTable_Routine_080E43FC(int instance)
+u32 VTable_Routine_080E43FC(int instance)
 
 {
   undefined1 *p_uint1;
@@ -11193,7 +11193,7 @@ undefined8 VTable_Routine_080E43FC(int instance)
 // =============================================================================
 // Function: VTable_Routine_080E4438 @ 0x080E4438
 // =============================================================================
-undefined8 VTable_Routine_080E4438(undefined1 *instance,undefined1 *arg1)
+u32 VTable_Routine_080E4438(undefined1 *instance,undefined1 *arg1)
 
 {
   undefined4 *p_uint1;
@@ -11245,7 +11245,7 @@ undefined8 VTable_Routine_080E4438(undefined1 *instance,undefined1 *arg1)
 // =============================================================================
 // Function: VTable_Routine_080E44B8 @ 0x080E44B8
 // =============================================================================
-undefined4 VTable_Routine_080E44B8(undefined4 *instance,uint arg1)
+void VTable_Routine_080E44B8(undefined4 *instance,uint arg1)
 
 {
   
@@ -11273,7 +11273,7 @@ void VTable_Routine_080E44E4(undefined4 instance)
 // =============================================================================
 // Function: VTable_Routine_080E4510 @ 0x080E4510
 // =============================================================================
-undefined4 VTable_Routine_080E4510(int instance,uint arg1)
+void VTable_Routine_080E4510(int instance,uint arg1)
 
 {
   int i_val1;
@@ -11292,7 +11292,7 @@ undefined4 VTable_Routine_080E4510(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E4544 @ 0x080E4544
 // =============================================================================
-undefined4 VTable_Routine_080E4544(undefined4 *instance,uint arg1)
+void VTable_Routine_080E4544(undefined4 *instance,uint arg1)
 
 {
   
@@ -11445,7 +11445,7 @@ void VTable_Routine_080E4564(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E4860 @ 0x080E4860
 // =============================================================================
-undefined4 VTable_Routine_080E4860(int instance,uint arg1)
+void VTable_Routine_080E4860(int instance,uint arg1)
 
 {
   
@@ -11480,7 +11480,7 @@ undefined4 VTable_Routine_080E4860(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E4940 @ 0x080E4940
 // =============================================================================
-undefined4 VTable_Routine_080E4940(int instance,undefined4 arg1)
+void VTable_Routine_080E4940(int instance,undefined4 arg1)
 
 {
   int i_val1;
@@ -11749,7 +11749,7 @@ void VTable_Routine_080E4D50(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E4F34 @ 0x080E4F34
 // =============================================================================
-undefined4 VTable_Routine_080E4F34(int instance,uint arg1)
+void VTable_Routine_080E4F34(int instance,uint arg1)
 
 {
   
@@ -11883,7 +11883,7 @@ void VTable_Routine_080E4FF0(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E52A0 @ 0x080E52A0
 // =============================================================================
-undefined8 VTable_Routine_080E52A0(int instance)
+u32 VTable_Routine_080E52A0(int instance)
 
 {
   
@@ -11917,7 +11917,7 @@ undefined8 VTable_Routine_080E52A0(int instance)
 // =============================================================================
 // Function: VTable_Routine_080E5324 @ 0x080E5324
 // =============================================================================
-undefined4 VTable_Routine_080E5324(int instance,uint arg1)
+void VTable_Routine_080E5324(int instance,uint arg1)
 
 {
   
@@ -11954,7 +11954,7 @@ undefined4 VTable_Routine_080E5324(int instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E5418 @ 0x080E5418
 // =============================================================================
-undefined4 VTable_Routine_080E5418(void)
+void VTable_Routine_080E5418(void)
 
 {
   
@@ -11965,7 +11965,7 @@ undefined4 VTable_Routine_080E5418(void)
 // =============================================================================
 // Function: VTable_Routine_080E542C @ 0x080E542C
 // =============================================================================
-undefined8 VTable_Routine_080E542C(undefined4 *instance,undefined4 *arg1)
+u32 VTable_Routine_080E542C(undefined4 *instance,undefined4 *arg1)
 
 {
   ushort u_val1;
@@ -11989,7 +11989,7 @@ undefined8 VTable_Routine_080E542C(undefined4 *instance,undefined4 *arg1)
 // =============================================================================
 // Function: VTable_Routine_080E54C4 @ 0x080E54C4
 // =============================================================================
-undefined4 VTable_Routine_080E54C4(undefined4 instance,int arg1)
+void VTable_Routine_080E54C4(undefined4 instance,int arg1)
 
 {
   int i_val1;
@@ -12007,7 +12007,7 @@ undefined4 VTable_Routine_080E54C4(undefined4 instance,int arg1)
 // =============================================================================
 // Function: VTable_Routine_080E54F0 @ 0x080E54F0
 // =============================================================================
-undefined8 VTable_Routine_080E54F0(int *instance,int arg1,int arg2,int arg3,uint *arg_5,int arg_6)
+u32 VTable_Routine_080E54F0(int *instance,int arg1,int arg2,int arg3,uint *arg_5,int arg_6)
 
 {
   int i_val1;
@@ -12059,7 +12059,7 @@ undefined8 VTable_Routine_080E54F0(int *instance,int arg1,int arg2,int arg3,uint
 // =============================================================================
 // Function: VTable_Routine_080E55B0 @ 0x080E55B0
 // =============================================================================
-undefined8 VTable_Routine_080E55B0(int *instance,int arg1,uint *arg2)
+u32 VTable_Routine_080E55B0(int *instance,int arg1,uint *arg2)
 
 {
   int i_val1;
@@ -12112,7 +12112,7 @@ LAB_080e5654:
 // =============================================================================
 // Function: VTable_Routine_080E5664 @ 0x080E5664
 // =============================================================================
-undefined8 VTable_Routine_080E5664(int *instance,int arg1,int *arg2,uint *arg3)
+u32 VTable_Routine_080E5664(int *instance,int arg1,int *arg2,uint *arg3)
 
 {
   int i_val1;
@@ -12207,7 +12207,7 @@ LAB_080e580a:
 // =============================================================================
 // Function: VTable_Routine_080E581C @ 0x080E581C
 // =============================================================================
-undefined4 VTable_Routine_080E581C(undefined4 *instance,uint arg1)
+void VTable_Routine_080E581C(undefined4 *instance,uint arg1)
 
 {
   
@@ -12222,7 +12222,7 @@ undefined4 VTable_Routine_080E581C(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E5844 @ 0x080E5844
 // =============================================================================
-undefined4 VTable_Routine_080E5844(undefined4 *instance,uint arg1)
+void VTable_Routine_080E5844(undefined4 *instance,uint arg1)
 
 {
   
@@ -12237,7 +12237,7 @@ undefined4 VTable_Routine_080E5844(undefined4 *instance,uint arg1)
 // =============================================================================
 // Function: VTable_Routine_080E586C @ 0x080E586C
 // =============================================================================
-undefined4 VTable_Routine_080E586C(int instance)
+void VTable_Routine_080E586C(int instance)
 
 {
   int i_val1;
@@ -12304,7 +12304,7 @@ void VTable_Routine_080E5898(int instance,undefined4 arg1)
 // =============================================================================
 // Function: VTable_Routine_080E59C0 @ 0x080E59C0
 // =============================================================================
-undefined4 VTable_Routine_080E59C0(void)
+void VTable_Routine_080E59C0(void)
 
 {
   

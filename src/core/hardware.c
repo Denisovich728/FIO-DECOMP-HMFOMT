@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: HW_Routine_080040A0 @ 0x080040A0
 // =============================================================================
-undefined8 HW_Routine_080040A0(int hw_reg)
+u32 HW_Routine_080040A0(int hw_reg)
 
 {
   undefined1 u_val1;
@@ -78,7 +78,7 @@ LAB_080041c6:
 // =============================================================================
 // Function: HW_Routine_080041DC @ 0x080041DC
 // =============================================================================
-undefined8 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
+u32 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
 
 {
   byte b_flag1;
@@ -254,7 +254,7 @@ undefined8 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
 // =============================================================================
 // Function: HW_Routine_08004570 @ 0x08004570
 // =============================================================================
-undefined8 HW_Routine_08004570(undefined4 *hw_reg,int val)
+u32 HW_Routine_08004570(undefined4 *hw_reg,int val)
 
 {
   byte b_flag1;
@@ -556,7 +556,7 @@ void HW_Routine_08004B94(undefined4 *hw_reg,undefined4 val,undefined4 *size)
 // =============================================================================
 // Function: HW_Routine_08004C0C @ 0x08004C0C
 // =============================================================================
-undefined8 HW_Routine_08004C0C(undefined4 *hw_reg,int val)
+u32 HW_Routine_08004C0C(undefined4 *hw_reg,int val)
 
 {
   undefined4 facing_buffer [3];
@@ -569,7 +569,7 @@ undefined8 HW_Routine_08004C0C(undefined4 *hw_reg,int val)
 // =============================================================================
 // Function: HW_Routine_08004C54 @ 0x08004C54
 // =============================================================================
-undefined4 HW_Routine_08004C54(undefined4 *hw_reg)
+void HW_Routine_08004C54(undefined4 *hw_reg)
 
 {
   
@@ -677,7 +677,7 @@ HW_Routine_08004EFC(int hw_reg,undefined4 val,uint size,undefined4 mode,undefine
 // =============================================================================
 // Function: HW_Routine_080050C8 @ 0x080050C8
 // =============================================================================
-undefined4 HW_Routine_080050C8(int hw_reg,undefined4 val)
+void HW_Routine_080050C8(int hw_reg,undefined4 val)
 
 {
   
@@ -692,7 +692,7 @@ undefined4 HW_Routine_080050C8(int hw_reg,undefined4 val)
 // =============================================================================
 // Function: HW_Routine_080050F8 @ 0x080050F8
 // =============================================================================
-undefined8 HW_Routine_080050F8(undefined4 *hw_reg,int val)
+u32 HW_Routine_080050F8(undefined4 *hw_reg,int val)
 
 {
   bool b_flag1;
@@ -758,7 +758,7 @@ undefined8 HW_Routine_080050F8(undefined4 *hw_reg,int val)
 // =============================================================================
 // Function: HW_Routine_08005254 @ 0x08005254
 // =============================================================================
-undefined4 HW_Routine_08005254(void)
+void HW_Routine_08005254(void)
 
 {
   
@@ -769,7 +769,7 @@ undefined4 HW_Routine_08005254(void)
 // =============================================================================
 // Function: HW_Routine_08005278 @ 0x08005278
 // =============================================================================
-undefined4 HW_Routine_08005278(int hw_reg)
+void HW_Routine_08005278(int hw_reg)
 
 {
   int i_val1;
@@ -1132,7 +1132,7 @@ undefined4 HW_Routine_08005278(int hw_reg)
 // =============================================================================
 // Function: HW_Routine_08005800 @ 0x08005800
 // =============================================================================
-undefined4 HW_Routine_08005800(int hw_reg)
+u32 HW_Routine_08005800(int hw_reg)
 
 {
   int i_val1;
@@ -1207,7 +1207,7 @@ HW_Routine_0800598C(undefined4 *hw_reg,undefined4 val,undefined4 size,undefined4
 // =============================================================================
 // Function: HW_Routine_080059D0 @ 0x080059D0
 // =============================================================================
-undefined4 HW_Routine_080059D0(undefined4 *hw_reg,undefined4 val)
+void HW_Routine_080059D0(undefined4 *hw_reg,undefined4 val)
 
 {
   int i_val1;
@@ -1224,7 +1224,7 @@ undefined4 HW_Routine_080059D0(undefined4 *hw_reg,undefined4 val)
 // =============================================================================
 // Function: HW_Routine_08005A00 @ 0x08005A00
 // =============================================================================
-undefined8 HW_Routine_08005A00(undefined4 *hw_reg,int val)
+u32 HW_Routine_08005A00(undefined4 *hw_reg,int val)
 
 {
   undefined4 facing_buffer [3];
@@ -1237,7 +1237,7 @@ undefined8 HW_Routine_08005A00(undefined4 *hw_reg,int val)
 // =============================================================================
 // Function: HW_Routine_08005A58 @ 0x08005A58
 // =============================================================================
-undefined8 HW_Routine_08005A58(int hw_reg,undefined4 val,char *size)
+u32 HW_Routine_08005A58(int hw_reg,undefined4 val,char *size)
 
 {
   char c_char1;
@@ -1290,7 +1290,7 @@ undefined8 HW_Routine_08005A58(int hw_reg,undefined4 val,char *size)
 // =============================================================================
 // Function: HW_Routine_08005B38 @ 0x08005B38
 // =============================================================================
-undefined4 HW_Routine_08005B38(int hw_reg,undefined4 val)
+void HW_Routine_08005B38(int hw_reg,undefined4 val)
 
 {
   
@@ -1305,7 +1305,7 @@ undefined4 HW_Routine_08005B38(int hw_reg,undefined4 val)
 // =============================================================================
 // Function: HW_Routine_08005B68 @ 0x08005B68
 // =============================================================================
-undefined8 HW_Routine_08005B68(undefined4 *hw_reg,int val)
+u32 HW_Routine_08005B68(undefined4 *hw_reg,int val)
 
 {
   undefined4 u_val1;
@@ -1377,7 +1377,7 @@ undefined8 HW_Routine_08005B68(undefined4 *hw_reg,int val)
 // =============================================================================
 // Function: HW_Routine_08005CDC @ 0x08005CDC
 // =============================================================================
-undefined4 HW_Routine_08005CDC(int hw_reg)
+void HW_Routine_08005CDC(int hw_reg)
 
 {
   undefined2 *p_uint1;
@@ -1687,7 +1687,7 @@ undefined4 HW_Routine_08005CDC(int hw_reg)
 // =============================================================================
 // Function: HW_Routine_080061A0 @ 0x080061A0
 // =============================================================================
-undefined4 HW_Routine_080061A0(int hw_reg,int val)
+void HW_Routine_080061A0(int hw_reg,int val)
 
 {
   ushort u_val1;
@@ -1744,7 +1744,7 @@ undefined4 HW_Routine_080061A0(int hw_reg,int val)
 // =============================================================================
 // Function: HW_Routine_0800637C @ 0x0800637C
 // =============================================================================
-undefined4 HW_Routine_0800637C(int hw_reg)
+void HW_Routine_0800637C(int hw_reg)
 
 {
   int *p_int1;
@@ -1849,7 +1849,7 @@ undefined4 HW_Routine_0800637C(int hw_reg)
 // =============================================================================
 // Function: HW_Routine_080064E8 @ 0x080064E8
 // =============================================================================
-undefined4 HW_Routine_080064E8(int hw_reg)
+void HW_Routine_080064E8(int hw_reg)
 
 {
   int *p_int1;
@@ -2088,7 +2088,7 @@ LAB_0800672a:
 // =============================================================================
 // Function: HW_Routine_08006858 @ 0x08006858
 // =============================================================================
-undefined4 HW_Routine_08006858(int hw_reg)
+void HW_Routine_08006858(int hw_reg)
 
 {
   byte b_flag1;
@@ -2118,7 +2118,7 @@ undefined4 HW_Routine_08006858(int hw_reg)
 // =============================================================================
 // Function: HW_Routine_080068CC @ 0x080068CC
 // =============================================================================
-undefined4 HW_Routine_080068CC(int hw_reg)
+void HW_Routine_080068CC(int hw_reg)
 
 {
   ushort u_val1;
@@ -2168,7 +2168,7 @@ undefined4 HW_Routine_080068CC(int hw_reg)
 // =============================================================================
 // Function: HW_Routine_080069F4 @ 0x080069F4
 // =============================================================================
-undefined4 HW_Routine_080069F4(int hw_reg)
+void HW_Routine_080069F4(int hw_reg)
 
 {
   char c_char1;
@@ -2272,7 +2272,7 @@ undefined4 HW_Routine_080069F4(int hw_reg)
 // =============================================================================
 // Function: HW_Routine_08006B90 @ 0x08006B90
 // =============================================================================
-undefined4 HW_Routine_08006B90(int hw_reg)
+void HW_Routine_08006B90(int hw_reg)
 
 {
   char c_char1;
@@ -2303,7 +2303,7 @@ undefined4 HW_Routine_08006B90(int hw_reg)
 // =============================================================================
 // Function: HW_Routine_08006C28 @ 0x08006C28
 // =============================================================================
-undefined4 HW_Routine_08006C28(int hw_reg,uint val)
+void HW_Routine_08006C28(int hw_reg,uint val)
 
 {
   int i_val1;
@@ -2323,7 +2323,7 @@ undefined4 HW_Routine_08006C28(int hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_08006C60 @ 0x08006C60
 // =============================================================================
-undefined8 HW_Routine_08006C60(int hw_reg)
+u32 HW_Routine_08006C60(int hw_reg)
 
 {
   char c_char1;
@@ -2374,7 +2374,7 @@ undefined8 HW_Routine_08006C60(int hw_reg)
 // =============================================================================
 // Function: HW_Routine_08006CDC @ 0x08006CDC
 // =============================================================================
-undefined4 HW_Routine_08006CDC(int hw_reg)
+void HW_Routine_08006CDC(int hw_reg)
 
 {
   char c_char1;
@@ -2488,7 +2488,7 @@ LAB_08006e92:
 // =============================================================================
 // Function: HW_Routine_08007078 @ 0x08007078
 // =============================================================================
-undefined8 HW_Routine_08007078(undefined4 *hw_reg,undefined4 val,undefined4 size)
+u32 HW_Routine_08007078(undefined4 *hw_reg,undefined4 val,undefined4 size)
 
 {
   undefined4 u_val1;
@@ -2503,7 +2503,7 @@ undefined8 HW_Routine_08007078(undefined4 *hw_reg,undefined4 val,undefined4 size
 // =============================================================================
 // Function: HW_Routine_080070A4 @ 0x080070A4
 // =============================================================================
-undefined4 HW_Routine_080070A4(undefined4 *hw_reg,undefined4 val)
+void HW_Routine_080070A4(undefined4 *hw_reg,undefined4 val)
 
 {
   int i_val1;
@@ -2520,7 +2520,7 @@ undefined4 HW_Routine_080070A4(undefined4 *hw_reg,undefined4 val)
 // =============================================================================
 // Function: HW_Routine_080070D4 @ 0x080070D4
 // =============================================================================
-undefined8 HW_Routine_080070D4(undefined4 *hw_reg,int val)
+u32 HW_Routine_080070D4(undefined4 *hw_reg,int val)
 
 {
   undefined4 facing_buffer [3];
@@ -2533,7 +2533,7 @@ undefined8 HW_Routine_080070D4(undefined4 *hw_reg,int val)
 // =============================================================================
 // Function: HW_Routine_08007184 @ 0x08007184
 // =============================================================================
-undefined4 HW_Routine_08007184(undefined4 hw_reg,uint val)
+void HW_Routine_08007184(undefined4 hw_reg,uint val)
 
 {
   int *p_int1;
@@ -2559,7 +2559,7 @@ undefined4 HW_Routine_08007184(undefined4 hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_080071BC @ 0x080071BC
 // =============================================================================
-undefined4 HW_Routine_080071BC(undefined4 hw_reg,uint val,uint size)
+void HW_Routine_080071BC(undefined4 hw_reg,uint val,uint size)
 
 {
   uint u_val1;
@@ -2697,7 +2697,7 @@ void HW_Routine_0800736C(void)
 // =============================================================================
 // Function: HW_Routine_0800745C @ 0x0800745C
 // =============================================================================
-undefined8 HW_Routine_0800745C(undefined4 hw_reg,uint val)
+u32 HW_Routine_0800745C(undefined4 hw_reg,uint val)
 
 {
   short s_val1;
@@ -2729,7 +2729,7 @@ LAB_080074b8:
 // =============================================================================
 // Function: HW_Routine_080074C0 @ 0x080074C0
 // =============================================================================
-undefined8 HW_Routine_080074C0(undefined4 hw_reg,uint val)
+u32 HW_Routine_080074C0(undefined4 hw_reg,uint val)
 
 {
   uint u_val1;
@@ -2901,7 +2901,7 @@ void HW_Routine_08007578(undefined4 *hw_reg,char *val)
 // =============================================================================
 // Function: HW_Routine_08007714 @ 0x08007714
 // =============================================================================
-undefined4 HW_Routine_08007714(undefined4 *hw_reg,uint val)
+void HW_Routine_08007714(undefined4 *hw_reg,uint val)
 
 {
   int *p_int1;
@@ -2929,7 +2929,7 @@ undefined4 HW_Routine_08007714(undefined4 *hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_08007770 @ 0x08007770
 // =============================================================================
-undefined8 HW_Routine_08007770(int hw_reg,undefined4 *val)
+u32 HW_Routine_08007770(int hw_reg,undefined4 *val)
 
 {
   int i_val1;
@@ -2973,7 +2973,7 @@ LAB_080077a8:
 // =============================================================================
 // Function: HW_Routine_080077DC @ 0x080077DC
 // =============================================================================
-undefined8 HW_Routine_080077DC(uint *hw_reg,uint val)
+u32 HW_Routine_080077DC(uint *hw_reg,uint val)
 
 {
   int i_val1;
@@ -3010,7 +3010,7 @@ LAB_0800783c:
 // =============================================================================
 // Function: HW_Routine_08007844 @ 0x08007844
 // =============================================================================
-undefined4 HW_Routine_08007844(uint *hw_reg,uint val,uint size)
+void HW_Routine_08007844(uint *hw_reg,uint val,uint size)
 
 {
   uint u_val1;
@@ -3031,7 +3031,7 @@ undefined4 HW_Routine_08007844(uint *hw_reg,uint val,uint size)
 // =============================================================================
 // Function: HW_Routine_08007874 @ 0x08007874
 // =============================================================================
-undefined8 HW_Routine_08007874(undefined4 hw_reg)
+u32 HW_Routine_08007874(undefined4 hw_reg)
 
 {
   undefined4 *p_uint1;
@@ -3135,7 +3135,7 @@ undefined8 HW_Routine_08007874(undefined4 hw_reg)
 // =============================================================================
 // Function: HW_Routine_080079E8 @ 0x080079E8
 // =============================================================================
-undefined4 HW_Routine_080079E8(undefined4 hw_reg,uint val)
+void HW_Routine_080079E8(undefined4 hw_reg,uint val)
 
 {
   int *p_int1;
@@ -3161,7 +3161,7 @@ undefined4 HW_Routine_080079E8(undefined4 hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_08007A28 @ 0x08007A28
 // =============================================================================
-undefined4 HW_Routine_08007A28(undefined4 hw_reg,uint val,int size)
+void HW_Routine_08007A28(undefined4 hw_reg,uint val,int size)
 
 {
   short *psVar1;
@@ -3227,7 +3227,7 @@ undefined4 HW_Routine_08007A28(undefined4 hw_reg,uint val,int size)
 // =============================================================================
 // Function: HW_Routine_08007B54 @ 0x08007B54
 // =============================================================================
-undefined8 HW_Routine_08007B54(undefined4 hw_reg,uint val)
+u32 HW_Routine_08007B54(undefined4 hw_reg,uint val)
 
 {
   uint u_val1;
@@ -3277,7 +3277,7 @@ LAB_08007c1e:
 // =============================================================================
 // Function: HW_Routine_08007C28 @ 0x08007C28
 // =============================================================================
-undefined4 HW_Routine_08007C28(undefined4 hw_reg,uint val)
+void HW_Routine_08007C28(undefined4 hw_reg,uint val)
 
 {
   ushort u_val1;
@@ -3317,7 +3317,7 @@ undefined4 HW_Routine_08007C28(undefined4 hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_08007CD8 @ 0x08007CD8
 // =============================================================================
-undefined8 HW_Routine_08007CD8(undefined4 hw_reg,uint val)
+u32 HW_Routine_08007CD8(undefined4 hw_reg,uint val)
 
 {
   short s_val1;
@@ -3347,7 +3347,7 @@ LAB_08007d44:
 // =============================================================================
 // Function: HW_Routine_08007D4C @ 0x08007D4C
 // =============================================================================
-undefined8 HW_Routine_08007D4C(undefined4 hw_reg,uint val)
+u32 HW_Routine_08007D4C(undefined4 hw_reg,uint val)
 
 {
   uint u_val1;
@@ -3374,7 +3374,7 @@ LAB_08007db0:
 // =============================================================================
 // Function: HW_Routine_08007DB8 @ 0x08007DB8
 // =============================================================================
-undefined8 HW_Routine_08007DB8(undefined4 hw_reg,uint val)
+u32 HW_Routine_08007DB8(undefined4 hw_reg,uint val)
 
 {
   uint u_val1;
@@ -3401,7 +3401,7 @@ LAB_08007e1a:
 // =============================================================================
 // Function: HW_Routine_08007E24 @ 0x08007E24
 // =============================================================================
-undefined8 HW_Routine_08007E24(undefined4 hw_reg,uint val)
+u32 HW_Routine_08007E24(undefined4 hw_reg,uint val)
 
 {
   uint u_val1;
@@ -3428,7 +3428,7 @@ LAB_08007e82:
 // =============================================================================
 // Function: HW_Routine_08007EA8 @ 0x08007EA8
 // =============================================================================
-undefined4 HW_Routine_08007EA8(undefined1 *hw_reg)
+void HW_Routine_08007EA8(undefined1 *hw_reg)
 
 {
   
@@ -3442,7 +3442,7 @@ undefined4 HW_Routine_08007EA8(undefined1 *hw_reg)
 // =============================================================================
 // Function: HW_Routine_08007EC8 @ 0x08007EC8
 // =============================================================================
-undefined4 HW_Routine_08007EC8(undefined1 *hw_reg)
+void HW_Routine_08007EC8(undefined1 *hw_reg)
 
 {
   
@@ -3456,7 +3456,7 @@ undefined4 HW_Routine_08007EC8(undefined1 *hw_reg)
 // =============================================================================
 // Function: HW_Routine_08007EE8 @ 0x08007EE8
 // =============================================================================
-undefined4 HW_Routine_08007EE8(byte *hw_reg,uint val,uint size)
+void HW_Routine_08007EE8(byte *hw_reg,uint val,uint size)
 
 {
   byte b_flag1;
@@ -3500,7 +3500,7 @@ undefined4 HW_Routine_08007EE8(byte *hw_reg,uint val,uint size)
 // =============================================================================
 // Function: HW_Routine_08007F84 @ 0x08007F84
 // =============================================================================
-undefined4 HW_Routine_08007F84(undefined1 *hw_reg,uint val,uint size)
+void HW_Routine_08007F84(undefined1 *hw_reg,uint val,uint size)
 
 {
   byte b_flag1;
@@ -3544,7 +3544,7 @@ undefined4 HW_Routine_08007F84(undefined1 *hw_reg,uint val,uint size)
 // =============================================================================
 // Function: HW_Routine_08008020 @ 0x08008020
 // =============================================================================
-undefined8 HW_Routine_08008020(byte *hw_reg,uint val)
+u32 HW_Routine_08008020(byte *hw_reg,uint val)
 
 {
   uint u_val1;
@@ -3583,7 +3583,7 @@ LAB_08008096:
 // =============================================================================
 // Function: HW_Routine_080080A0 @ 0x080080A0
 // =============================================================================
-undefined4 HW_Routine_080080A0(undefined1 *hw_reg,uint val,uint size)
+void HW_Routine_080080A0(undefined1 *hw_reg,uint val,uint size)
 
 {
   byte b_flag1;
@@ -3611,7 +3611,7 @@ undefined4 HW_Routine_080080A0(undefined1 *hw_reg,uint val,uint size)
 // =============================================================================
 // Function: HW_Routine_08008190 @ 0x08008190
 // =============================================================================
-undefined8 HW_Routine_08008190(undefined4 *hw_reg,int val)
+u32 HW_Routine_08008190(undefined4 *hw_reg,int val)
 
 {
   char c_char1;
@@ -3746,7 +3746,7 @@ undefined8 HW_Routine_08008190(undefined4 *hw_reg,int val)
 // =============================================================================
 // Function: HW_Routine_080083D0 @ 0x080083D0
 // =============================================================================
-undefined8 HW_Routine_080083D0(int hw_reg,int *val,int size)
+u32 HW_Routine_080083D0(int hw_reg,int *val,int size)
 
 {
   int i_val1;
@@ -3790,7 +3790,7 @@ LAB_08008410:
 // =============================================================================
 // Function: HW_Routine_08008444 @ 0x08008444
 // =============================================================================
-undefined8 HW_Routine_08008444(int *hw_reg)
+u32 HW_Routine_08008444(int *hw_reg)
 
 {
   int i_val1;
@@ -3830,7 +3830,7 @@ undefined8 HW_Routine_08008444(int *hw_reg)
 // =============================================================================
 // Function: HW_Routine_080084DC @ 0x080084DC
 // =============================================================================
-undefined8 HW_Routine_080084DC(int *hw_reg,undefined2 *val)
+u32 HW_Routine_080084DC(int *hw_reg,undefined2 *val)
 
 {
   int i_val1;
@@ -3870,7 +3870,7 @@ undefined8 HW_Routine_080084DC(int *hw_reg,undefined2 *val)
 // =============================================================================
 // Function: HW_Routine_08008574 @ 0x08008574
 // =============================================================================
-undefined8 HW_Routine_08008574(int *hw_reg,undefined1 *val)
+u32 HW_Routine_08008574(int *hw_reg,undefined1 *val)
 
 {
   int i_val1;
@@ -3910,7 +3910,7 @@ undefined8 HW_Routine_08008574(int *hw_reg,undefined1 *val)
 // =============================================================================
 // Function: HW_Routine_08008618 @ 0x08008618
 // =============================================================================
-undefined8 HW_Routine_08008618(int *hw_reg,undefined2 *val,undefined1 *size)
+u32 HW_Routine_08008618(int *hw_reg,undefined2 *val,undefined1 *size)
 
 {
   int i_val1;
@@ -3950,7 +3950,7 @@ undefined8 HW_Routine_08008618(int *hw_reg,undefined2 *val,undefined1 *size)
 // =============================================================================
 // Function: HW_Routine_080086BC @ 0x080086BC
 // =============================================================================
-undefined4 HW_Routine_080086BC(int *hw_reg,uint val)
+void HW_Routine_080086BC(int *hw_reg,uint val)
 
 {
   int i_val1;
@@ -3977,7 +3977,7 @@ undefined4 HW_Routine_080086BC(int *hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_08008724 @ 0x08008724
 // =============================================================================
-undefined4 HW_Routine_08008724(int *hw_reg)
+void HW_Routine_08008724(int *hw_reg)
 
 {
   int i_val1;
@@ -4003,7 +4003,7 @@ undefined4 HW_Routine_08008724(int *hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008774 @ 0x08008774
 // =============================================================================
-undefined4 HW_Routine_08008774(int *hw_reg)
+void HW_Routine_08008774(int *hw_reg)
 
 {
   int i_val1;
@@ -4029,7 +4029,7 @@ undefined4 HW_Routine_08008774(int *hw_reg)
 // =============================================================================
 // Function: HW_Routine_080088B8 @ 0x080088B8
 // =============================================================================
-undefined4 HW_Routine_080088B8(undefined4 *hw_reg)
+void HW_Routine_080088B8(undefined4 *hw_reg)
 
 {
   
@@ -4040,7 +4040,7 @@ undefined4 HW_Routine_080088B8(undefined4 *hw_reg)
 // =============================================================================
 // Function: HW_Routine_080088E0 @ 0x080088E0
 // =============================================================================
-undefined4 HW_Routine_080088E0(undefined4 *hw_reg,undefined2 val)
+void HW_Routine_080088E0(undefined4 *hw_reg,undefined2 val)
 
 {
   
@@ -4051,7 +4051,7 @@ undefined4 HW_Routine_080088E0(undefined4 *hw_reg,undefined2 val)
 // =============================================================================
 // Function: HW_Routine_080088F0 @ 0x080088F0
 // =============================================================================
-undefined4 HW_Routine_080088F0(undefined4 *hw_reg,undefined2 val)
+void HW_Routine_080088F0(undefined4 *hw_reg,undefined2 val)
 
 {
   
@@ -4082,7 +4082,7 @@ void HW_Routine_0800896C(int *hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008AF0 @ 0x08008AF0
 // =============================================================================
-undefined4 HW_Routine_08008AF0(void)
+void HW_Routine_08008AF0(void)
 
 {
   
@@ -4093,7 +4093,7 @@ undefined4 HW_Routine_08008AF0(void)
 // =============================================================================
 // Function: HW_Routine_08008AFC @ 0x08008AFC
 // =============================================================================
-undefined4 HW_Routine_08008AFC(void)
+void HW_Routine_08008AFC(void)
 
 {
   
@@ -4105,7 +4105,7 @@ undefined4 HW_Routine_08008AFC(void)
 // =============================================================================
 // Function: HW_Routine_08008B0C @ 0x08008B0C
 // =============================================================================
-undefined8 HW_Routine_08008B0C(void)
+u32 HW_Routine_08008B0C(void)
 
 {
   
@@ -4116,7 +4116,7 @@ undefined8 HW_Routine_08008B0C(void)
 // =============================================================================
 // Function: HW_Routine_08008B18 @ 0x08008B18
 // =============================================================================
-undefined8 HW_Routine_08008B18(void)
+u32 HW_Routine_08008B18(void)
 
 {
   
@@ -4127,7 +4127,7 @@ undefined8 HW_Routine_08008B18(void)
 // =============================================================================
 // Function: HW_Routine_08008B24 @ 0x08008B24
 // =============================================================================
-undefined8 HW_Routine_08008B24(uint hw_reg)
+u32 HW_Routine_08008B24(uint hw_reg)
 
 {
   
@@ -4140,7 +4140,7 @@ undefined8 HW_Routine_08008B24(uint hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008B54 @ 0x08008B54
 // =============================================================================
-undefined8 HW_Routine_08008B54(undefined4 *hw_reg,undefined1 val)
+u32 HW_Routine_08008B54(undefined4 *hw_reg,undefined1 val)
 
 {
   undefined4 u_val1;
@@ -4153,7 +4153,7 @@ undefined8 HW_Routine_08008B54(undefined4 *hw_reg,undefined1 val)
 // =============================================================================
 // Function: HW_Routine_08008B6C @ 0x08008B6C
 // =============================================================================
-undefined4 HW_Routine_08008B6C(undefined4 *hw_reg,uint val)
+void HW_Routine_08008B6C(undefined4 *hw_reg,uint val)
 
 {
   
@@ -4164,7 +4164,7 @@ undefined4 HW_Routine_08008B6C(undefined4 *hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_08008B88 @ 0x08008B88
 // =============================================================================
-undefined4 HW_Routine_08008B88(undefined4 *hw_reg,uint val)
+void HW_Routine_08008B88(undefined4 *hw_reg,uint val)
 
 {
   int *p_int1;
@@ -4179,7 +4179,7 @@ undefined4 HW_Routine_08008B88(undefined4 *hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_08008BB0 @ 0x08008BB0
 // =============================================================================
-undefined4 HW_Routine_08008BB0(undefined4 *hw_reg,uint val)
+void HW_Routine_08008BB0(undefined4 *hw_reg,uint val)
 
 {
   int *p_int1;
@@ -4199,7 +4199,7 @@ undefined4 HW_Routine_08008BB0(undefined4 *hw_reg,uint val)
 // =============================================================================
 // Function: HW_Routine_08008BE0 @ 0x08008BE0
 // =============================================================================
-undefined4 HW_Routine_08008BE0(undefined4 *hw_reg)
+void HW_Routine_08008BE0(undefined4 *hw_reg)
 
 {
   
@@ -4210,7 +4210,7 @@ undefined4 HW_Routine_08008BE0(undefined4 *hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008BEC @ 0x08008BEC
 // =============================================================================
-undefined4 HW_Routine_08008BEC(undefined4 *hw_reg)
+void HW_Routine_08008BEC(undefined4 *hw_reg)
 
 {
   
@@ -4221,7 +4221,7 @@ undefined4 HW_Routine_08008BEC(undefined4 *hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008BF8 @ 0x08008BF8
 // =============================================================================
-undefined4 HW_Routine_08008BF8(undefined4 *hw_reg,undefined2 val)
+void HW_Routine_08008BF8(undefined4 *hw_reg,undefined2 val)
 
 {
   
@@ -4232,7 +4232,7 @@ undefined4 HW_Routine_08008BF8(undefined4 *hw_reg,undefined2 val)
 // =============================================================================
 // Function: HW_Routine_08008C08 @ 0x08008C08
 // =============================================================================
-undefined4 HW_Routine_08008C08(undefined4 *hw_reg,undefined2 val)
+void HW_Routine_08008C08(undefined4 *hw_reg,undefined2 val)
 
 {
   
@@ -4243,7 +4243,7 @@ undefined4 HW_Routine_08008C08(undefined4 *hw_reg,undefined2 val)
 // =============================================================================
 // Function: HW_Routine_08008C18 @ 0x08008C18
 // =============================================================================
-undefined4 HW_Routine_08008C18(undefined4 *hw_reg,undefined2 val)
+void HW_Routine_08008C18(undefined4 *hw_reg,undefined2 val)
 
 {
   
@@ -4254,7 +4254,7 @@ undefined4 HW_Routine_08008C18(undefined4 *hw_reg,undefined2 val)
 // =============================================================================
 // Function: HW_Routine_08008C28 @ 0x08008C28
 // =============================================================================
-undefined4 HW_Routine_08008C28(undefined4 *hw_reg,undefined2 val)
+void HW_Routine_08008C28(undefined4 *hw_reg,undefined2 val)
 
 {
   
@@ -4265,7 +4265,7 @@ undefined4 HW_Routine_08008C28(undefined4 *hw_reg,undefined2 val)
 // =============================================================================
 // Function: HW_Routine_08008C38 @ 0x08008C38
 // =============================================================================
-undefined4 HW_Routine_08008C38(undefined4 *hw_reg,undefined2 val,undefined2 size)
+void HW_Routine_08008C38(undefined4 *hw_reg,undefined2 val,undefined2 size)
 
 {
   
@@ -4276,7 +4276,7 @@ undefined4 HW_Routine_08008C38(undefined4 *hw_reg,undefined2 val,undefined2 size
 // =============================================================================
 // Function: HW_Routine_08008C54 @ 0x08008C54
 // =============================================================================
-undefined4 HW_Routine_08008C54(undefined4 *hw_reg,short val,undefined2 size)
+void HW_Routine_08008C54(undefined4 *hw_reg,short val,undefined2 size)
 
 {
   
@@ -4287,7 +4287,7 @@ undefined4 HW_Routine_08008C54(undefined4 *hw_reg,short val,undefined2 size)
 // =============================================================================
 // Function: HW_Routine_08008C70 @ 0x08008C70
 // =============================================================================
-undefined4 HW_Routine_08008C70(undefined4 *hw_reg,char val,undefined2 size)
+void HW_Routine_08008C70(undefined4 *hw_reg,char val,undefined2 size)
 
 {
   
@@ -4298,7 +4298,7 @@ undefined4 HW_Routine_08008C70(undefined4 *hw_reg,char val,undefined2 size)
 // =============================================================================
 // Function: HW_Routine_08008C8C @ 0x08008C8C
 // =============================================================================
-undefined4 HW_Routine_08008C8C(undefined4 *hw_reg,undefined1 val,undefined2 size)
+void HW_Routine_08008C8C(undefined4 *hw_reg,undefined1 val,undefined2 size)
 
 {
   
@@ -4309,7 +4309,7 @@ undefined4 HW_Routine_08008C8C(undefined4 *hw_reg,undefined1 val,undefined2 size
 // =============================================================================
 // Function: HW_Routine_08008CA8 @ 0x08008CA8
 // =============================================================================
-undefined4 HW_Routine_08008CA8(undefined4 *hw_reg,undefined1 val,undefined2 size)
+void HW_Routine_08008CA8(undefined4 *hw_reg,undefined1 val,undefined2 size)
 
 {
   
@@ -4320,7 +4320,7 @@ undefined4 HW_Routine_08008CA8(undefined4 *hw_reg,undefined1 val,undefined2 size
 // =============================================================================
 // Function: HW_Routine_08008CC4 @ 0x08008CC4
 // =============================================================================
-undefined4 HW_Routine_08008CC4(undefined4 *hw_reg)
+void HW_Routine_08008CC4(undefined4 *hw_reg)
 
 {
   
@@ -4331,7 +4331,7 @@ undefined4 HW_Routine_08008CC4(undefined4 *hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008CFC @ 0x08008CFC
 // =============================================================================
-undefined8 HW_Routine_08008CFC(void)
+u32 HW_Routine_08008CFC(void)
 
 {
   undefined4 stack_val_8;
@@ -4343,7 +4343,7 @@ undefined8 HW_Routine_08008CFC(void)
 // =============================================================================
 // Function: HW_Routine_08008D10 @ 0x08008D10
 // =============================================================================
-undefined8 HW_Routine_08008D10(void)
+u32 HW_Routine_08008D10(void)
 
 {
   undefined4 stack_val_8;
@@ -4355,7 +4355,7 @@ undefined8 HW_Routine_08008D10(void)
 // =============================================================================
 // Function: HW_Routine_08008D3C @ 0x08008D3C
 // =============================================================================
-undefined8 HW_Routine_08008D3C(uint hw_reg)
+u32 HW_Routine_08008D3C(uint hw_reg)
 
 {
   undefined4 stack_val_8;
@@ -4367,7 +4367,7 @@ undefined8 HW_Routine_08008D3C(uint hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008D84 @ 0x08008D84
 // =============================================================================
-undefined4 HW_Routine_08008D84(void)
+void HW_Routine_08008D84(void)
 
 {
   
@@ -4378,7 +4378,7 @@ undefined4 HW_Routine_08008D84(void)
 // =============================================================================
 // Function: HW_Routine_08008D90 @ 0x08008D90
 // =============================================================================
-undefined4 HW_Routine_08008D90(void)
+void HW_Routine_08008D90(void)
 
 {
   
@@ -4389,7 +4389,7 @@ undefined4 HW_Routine_08008D90(void)
 // =============================================================================
 // Function: HW_Routine_08008DA8 @ 0x08008DA8
 // =============================================================================
-undefined4 HW_Routine_08008DA8(undefined2 hw_reg)
+void HW_Routine_08008DA8(undefined2 hw_reg)
 
 {
   
@@ -4400,7 +4400,7 @@ undefined4 HW_Routine_08008DA8(undefined2 hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008DB8 @ 0x08008DB8
 // =============================================================================
-undefined4 HW_Routine_08008DB8(undefined2 hw_reg)
+void HW_Routine_08008DB8(undefined2 hw_reg)
 
 {
   
@@ -4411,7 +4411,7 @@ undefined4 HW_Routine_08008DB8(undefined2 hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008DC8 @ 0x08008DC8
 // =============================================================================
-undefined4 HW_Routine_08008DC8(undefined2 hw_reg)
+void HW_Routine_08008DC8(undefined2 hw_reg)
 
 {
   
@@ -4422,7 +4422,7 @@ undefined4 HW_Routine_08008DC8(undefined2 hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008DD8 @ 0x08008DD8
 // =============================================================================
-undefined4 HW_Routine_08008DD8(undefined2 hw_reg)
+void HW_Routine_08008DD8(undefined2 hw_reg)
 
 {
   
@@ -4433,7 +4433,7 @@ undefined4 HW_Routine_08008DD8(undefined2 hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008DE8 @ 0x08008DE8
 // =============================================================================
-undefined4 HW_Routine_08008DE8(void)
+void HW_Routine_08008DE8(void)
 
 {
   
@@ -4444,7 +4444,7 @@ undefined4 HW_Routine_08008DE8(void)
 // =============================================================================
 // Function: HW_Routine_08008DF4 @ 0x08008DF4
 // =============================================================================
-undefined4 HW_Routine_08008DF4(undefined2 hw_reg)
+void HW_Routine_08008DF4(undefined2 hw_reg)
 
 {
   
@@ -4455,7 +4455,7 @@ undefined4 HW_Routine_08008DF4(undefined2 hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008E04 @ 0x08008E04
 // =============================================================================
-undefined4 HW_Routine_08008E04(void)
+void HW_Routine_08008E04(void)
 
 {
   
@@ -4466,7 +4466,7 @@ undefined4 HW_Routine_08008E04(void)
 // =============================================================================
 // Function: HW_Routine_08008E28 @ 0x08008E28
 // =============================================================================
-undefined8 HW_Routine_08008E28(uint hw_reg,uint val,uint size)
+u32 HW_Routine_08008E28(uint hw_reg,uint val,uint size)
 
 {
   uint u_val1;
@@ -4486,7 +4486,7 @@ undefined8 HW_Routine_08008E28(uint hw_reg,uint val,uint size)
 // =============================================================================
 // Function: HW_Routine_08008E64 @ 0x08008E64
 // =============================================================================
-undefined4 HW_Routine_08008E64(uint hw_reg,uint val,uint size)
+void HW_Routine_08008E64(uint hw_reg,uint val,uint size)
 
 {
   uint u_val1;
@@ -4509,7 +4509,7 @@ undefined4 HW_Routine_08008E64(uint hw_reg,uint val,uint size)
 // =============================================================================
 // Function: HW_Routine_08008EB8 @ 0x08008EB8
 // =============================================================================
-undefined4 HW_Routine_08008EB8(undefined4 hw_reg,uint val,uint size)
+u32 HW_Routine_08008EB8(undefined4 hw_reg,uint val,uint size)
 
 {
   uint u_val1;
@@ -4534,7 +4534,7 @@ undefined4 HW_Routine_08008EB8(undefined4 hw_reg,uint val,uint size)
 // =============================================================================
 // Function: HW_Routine_08008F0C @ 0x08008F0C
 // =============================================================================
-undefined8 HW_Routine_08008F0C(undefined4 *hw_reg,uint val,uint size,uint mode)
+u32 HW_Routine_08008F0C(undefined4 *hw_reg,uint val,uint size,uint mode)
 
 {
   uint u_val1;
@@ -4559,7 +4559,7 @@ undefined8 HW_Routine_08008F0C(undefined4 *hw_reg,uint val,uint size,uint mode)
 // =============================================================================
 // Function: HW_Routine_08008F60 @ 0x08008F60
 // =============================================================================
-undefined8 HW_Routine_08008F60(undefined4 *hw_reg,undefined4 val,uint size,uint mode)
+u32 HW_Routine_08008F60(undefined4 *hw_reg,undefined4 val,uint size,uint mode)
 
 {
   uint u_val1;
@@ -4589,7 +4589,7 @@ undefined8 HW_Routine_08008F60(undefined4 *hw_reg,undefined4 val,uint size,uint 
 // =============================================================================
 // Function: HW_Routine_08008FB8 @ 0x08008FB8
 // =============================================================================
-undefined4 HW_Routine_08008FB8(int *hw_reg)
+void HW_Routine_08008FB8(int *hw_reg)
 
 {
   undefined1 **ppuVar1;
@@ -4607,7 +4607,7 @@ undefined4 HW_Routine_08008FB8(int *hw_reg)
 // =============================================================================
 // Function: HW_Routine_08008FE4 @ 0x08008FE4
 // =============================================================================
-undefined4 HW_Routine_08008FE4(int *hw_reg,int *val)
+void HW_Routine_08008FE4(int *hw_reg,int *val)
 
 {
   undefined4 u_val1;

@@ -9,7 +9,7 @@
 // =============================================================================
 // Function: Entity_InitWorldActors @ 0x08020018
 // =============================================================================
-undefined8 Entity_InitWorldActors(int entity)
+u32 Entity_InitWorldActors(int entity)
 
 {
   int div_result;
@@ -34,7 +34,7 @@ void Entity_ResetMotionState(int entity)
 // =============================================================================
 // Function: Entity_SetVelocityFromDirection @ 0x08020080
 // =============================================================================
-undefined4 Entity_SetVelocityFromDirection(int entity,int speed)
+void Entity_SetVelocityFromDirection(int entity,int speed)
 
 {
   byte facing_dir;
@@ -76,7 +76,7 @@ undefined4 Entity_SetVelocityFromDirection(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_080200C4 @ 0x080200C4
 // =============================================================================
-undefined4 Entity_Routine_080200C4(undefined4 *entity,undefined2 speed)
+void Entity_Routine_080200C4(undefined4 *entity,undefined2 speed)
 
 {
   char c_char1;
@@ -106,7 +106,7 @@ LAB_0802011c:
 // =============================================================================
 // Function: Entity_CanMoveToPosition @ 0x08020130
 // =============================================================================
-undefined8 Entity_CanMoveToPosition(int entity)
+u32 Entity_CanMoveToPosition(int entity)
 
 {
   char c_char1;
@@ -134,7 +134,7 @@ undefined8 Entity_CanMoveToPosition(int entity)
 // =============================================================================
 // Function: Entity_MoveAndCollide @ 0x08020170
 // =============================================================================
-undefined4 Entity_MoveAndCollide(int entity,int *speed)
+void Entity_MoveAndCollide(int entity,int *speed)
 
 {
   int vel_x;
@@ -239,7 +239,7 @@ void Entity_Routine_080202A0(short *entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08020310 @ 0x08020310
 // =============================================================================
-undefined8 Entity_Routine_08020310(int entity,int *speed,int collision,undefined4 flags)
+u32 Entity_Routine_08020310(int entity,int *speed,int collision,undefined4 flags)
 
 {
   int i_val1;
@@ -270,7 +270,7 @@ undefined8 Entity_Routine_08020310(int entity,int *speed,int collision,undefined
 // =============================================================================
 // Function: Entity_Routine_08020410 @ 0x08020410
 // =============================================================================
-undefined4 Entity_Routine_08020410(int entity,uint speed)
+void Entity_Routine_08020410(int entity,uint speed)
 
 {
   uint stack_val_10;
@@ -287,7 +287,7 @@ undefined4 Entity_Routine_08020410(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_08020460 @ 0x08020460
 // =============================================================================
-undefined8 Entity_Routine_08020460(int entity)
+u32 Entity_Routine_08020460(int entity)
 
 {
   
@@ -297,7 +297,7 @@ undefined8 Entity_Routine_08020460(int entity)
 // =============================================================================
 // Function: Entity_Routine_08020474 @ 0x08020474
 // =============================================================================
-undefined4 Entity_Routine_08020474(int entity)
+void Entity_Routine_08020474(int entity)
 
 {
   short s_val1;
@@ -322,7 +322,7 @@ undefined4 Entity_Routine_08020474(int entity)
 // =============================================================================
 // Function: Entity_Routine_080204A8 @ 0x080204A8
 // =============================================================================
-undefined4 Entity_Routine_080204A8(undefined4 entity,undefined4 speed)
+void Entity_Routine_080204A8(undefined4 entity,undefined4 speed)
 
 {
   char c_char1;
@@ -338,7 +338,7 @@ undefined4 Entity_Routine_080204A8(undefined4 entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_080204CC @ 0x080204CC
 // =============================================================================
-undefined4 Entity_Routine_080204CC(undefined4 *entity)
+void Entity_Routine_080204CC(undefined4 *entity)
 
 {
   short s_val1;
@@ -1029,7 +1029,7 @@ Entity_Routine_080210A0:
 // =============================================================================
 // Function: Entity_Routine_0802110C @ 0x0802110C
 // =============================================================================
-undefined8 Entity_Routine_0802110C(int entity,int speed)
+u32 Entity_Routine_0802110C(int entity,int speed)
 
 {
   int i_val1;
@@ -1047,7 +1047,7 @@ undefined8 Entity_Routine_0802110C(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08021130 @ 0x08021130
 // =============================================================================
-undefined8 Entity_Routine_08021130(int entity,uint speed)
+u32 Entity_Routine_08021130(int entity,uint speed)
 
 {
   undefined4 u_val1;
@@ -1101,7 +1101,7 @@ LAB_080211cc:
 // =============================================================================
 // Function: Entity_Routine_080211E4 @ 0x080211E4
 // =============================================================================
-undefined4 Entity_Routine_080211E4(int entity,uint speed,uint collision)
+void Entity_Routine_080211E4(int entity,uint speed,uint collision)
 
 {
   uint u_val1;
@@ -1139,7 +1139,7 @@ undefined4 Entity_Routine_080211E4(int entity,uint speed,uint collision)
 // =============================================================================
 // Function: Entity_Routine_08021264 @ 0x08021264
 // =============================================================================
-undefined8 Entity_Routine_08021264(int entity)
+u32 Entity_Routine_08021264(int entity)
 
 {
   uint u_val1;
@@ -1170,7 +1170,7 @@ case_0802129C:
 // =============================================================================
 // Function: Entity_Routine_080212C0 @ 0x080212C0
 // =============================================================================
-undefined4 Entity_Routine_080212C0(undefined4 *entity)
+void Entity_Routine_080212C0(undefined4 *entity)
 
 {
   byte mood_byte;
@@ -1237,7 +1237,7 @@ LAB_08021382:
 // =============================================================================
 // Function: Entity_Routine_080213B0 @ 0x080213B0
 // =============================================================================
-undefined4 Entity_Routine_080213B0(int entity)
+void Entity_Routine_080213B0(int entity)
 
 {
   int i_val1;
@@ -1264,7 +1264,7 @@ undefined4 Entity_Routine_080213B0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08021444 @ 0x08021444
 // =============================================================================
-undefined4 Entity_Routine_08021444(int entity,ushort *speed)
+void Entity_Routine_08021444(int entity,ushort *speed)
 
 {
   int div_result;
@@ -1303,7 +1303,7 @@ undefined4 Entity_Routine_08021444(int entity,ushort *speed)
 // =============================================================================
 // Function: Entity_Routine_0802151C @ 0x0802151C
 // =============================================================================
-undefined4 Entity_Routine_0802151C(int entity,ushort *speed)
+void Entity_Routine_0802151C(int entity,ushort *speed)
 
 {
   int div_result;
@@ -1361,7 +1361,7 @@ void Entity_Routine_080215FC(short *entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08021620 @ 0x08021620
 // =============================================================================
-undefined8 Entity_Routine_08021620(int entity)
+u32 Entity_Routine_08021620(int entity)
 
 {
   undefined4 u_val1;
@@ -1378,7 +1378,7 @@ undefined8 Entity_Routine_08021620(int entity)
 // =============================================================================
 // Function: Entity_Routine_08021634 @ 0x08021634
 // =============================================================================
-undefined8 Entity_Routine_08021634(int entity)
+u32 Entity_Routine_08021634(int entity)
 
 {
   undefined4 u_val1;
@@ -1404,7 +1404,7 @@ undefined8 Entity_Routine_08021634(int entity)
 // =============================================================================
 // Function: Entity_Routine_080216BC @ 0x080216BC
 // =============================================================================
-undefined8 Entity_Routine_080216BC(int entity,int *speed,undefined4 collision)
+u32 Entity_Routine_080216BC(int entity,int *speed,undefined4 collision)
 
 {
   byte b_flag1;
@@ -1433,7 +1433,7 @@ undefined8 Entity_Routine_080216BC(int entity,int *speed,undefined4 collision)
 // =============================================================================
 // Function: Entity_Routine_080217A8 @ 0x080217A8
 // =============================================================================
-undefined4 Entity_Routine_080217A8(int entity,uint speed)
+void Entity_Routine_080217A8(int entity,uint speed)
 
 {
   undefined4 u_val1;
@@ -1449,7 +1449,7 @@ undefined4 Entity_Routine_080217A8(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_080217EC @ 0x080217EC
 // =============================================================================
-undefined4 Entity_Routine_080217EC(undefined4 *entity)
+void Entity_Routine_080217EC(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -1866,7 +1866,7 @@ LAB_08021e6a:
 // =============================================================================
 // Function: Entity_Routine_08021EA8 @ 0x08021EA8
 // =============================================================================
-undefined4 Entity_Routine_08021EA8(undefined4 *entity,undefined4 speed)
+void Entity_Routine_08021EA8(undefined4 *entity,undefined4 speed)
 
 {
   char c_char1;
@@ -1886,7 +1886,7 @@ undefined4 Entity_Routine_08021EA8(undefined4 *entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08021EE0 @ 0x08021EE0
 // =============================================================================
-undefined4 Entity_Routine_08021EE0(int entity)
+void Entity_Routine_08021EE0(int entity)
 
 {
   int i_val1;
@@ -1908,7 +1908,7 @@ undefined4 Entity_Routine_08021EE0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08021F3C @ 0x08021F3C
 // =============================================================================
-undefined4 Entity_Routine_08021F3C(int entity)
+void Entity_Routine_08021F3C(int entity)
 
 {
   undefined4 u_val1;
@@ -1925,7 +1925,7 @@ undefined4 Entity_Routine_08021F3C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08021F88 @ 0x08021F88
 // =============================================================================
-undefined8 Entity_Routine_08021F88(int entity,int speed)
+u32 Entity_Routine_08021F88(int entity,int speed)
 
 {
   int i_val1;
@@ -1939,7 +1939,7 @@ undefined8 Entity_Routine_08021F88(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08021FAC @ 0x08021FAC
 // =============================================================================
-undefined8 Entity_Routine_08021FAC(int entity,uint speed)
+u32 Entity_Routine_08021FAC(int entity,uint speed)
 
 {
   undefined4 u_val1;
@@ -1993,7 +1993,7 @@ LAB_08022030:
 // =============================================================================
 // Function: Entity_Routine_08022048 @ 0x08022048
 // =============================================================================
-undefined4 Entity_Routine_08022048(int entity,uint speed,uint collision)
+void Entity_Routine_08022048(int entity,uint speed,uint collision)
 
 {
   uint u_val1;
@@ -2031,7 +2031,7 @@ undefined4 Entity_Routine_08022048(int entity,uint speed,uint collision)
 // =============================================================================
 // Function: Entity_Routine_080220D4 @ 0x080220D4
 // =============================================================================
-undefined8 Entity_Routine_080220D4(int entity)
+u32 Entity_Routine_080220D4(int entity)
 
 {
   uint u_val1;
@@ -2061,7 +2061,7 @@ LAB_080220fc:
 // =============================================================================
 // Function: Entity_Routine_08022100 @ 0x08022100
 // =============================================================================
-undefined4 Entity_Routine_08022100(int entity)
+void Entity_Routine_08022100(int entity)
 
 {
   undefined4 u_val1;
@@ -2081,7 +2081,7 @@ undefined4 Entity_Routine_08022100(int entity)
 // =============================================================================
 // Function: Entity_Routine_08022154 @ 0x08022154
 // =============================================================================
-ulonglong Entity_Routine_08022154(int entity)
+u32 Entity_Routine_08022154(int entity)
 
 {
   undefined4 u_val1;
@@ -2093,7 +2093,7 @@ ulonglong Entity_Routine_08022154(int entity)
 // =============================================================================
 // Function: Entity_Routine_08022164 @ 0x08022164
 // =============================================================================
-undefined4 Entity_Routine_08022164(int entity)
+void Entity_Routine_08022164(int entity)
 
 {
   char c_char1;
@@ -2111,7 +2111,7 @@ undefined4 Entity_Routine_08022164(int entity)
 // =============================================================================
 // Function: Entity_Routine_0802219C @ 0x0802219C
 // =============================================================================
-undefined4 Entity_Routine_0802219C(int entity,uint speed,uint collision)
+void Entity_Routine_0802219C(int entity,uint speed,uint collision)
 
 {
   undefined4 u_val1;
@@ -2134,7 +2134,7 @@ undefined4 Entity_Routine_0802219C(int entity,uint speed,uint collision)
 // =============================================================================
 // Function: Entity_Routine_080221F0 @ 0x080221F0
 // =============================================================================
-undefined4 Entity_Routine_080221F0(int entity,ushort *speed)
+void Entity_Routine_080221F0(int entity,ushort *speed)
 
 {
   int i_val1;
@@ -2168,7 +2168,7 @@ undefined4 Entity_Routine_080221F0(int entity,ushort *speed)
 // =============================================================================
 // Function: Entity_Routine_080222A8 @ 0x080222A8
 // =============================================================================
-undefined8 Entity_Routine_080222A8(int entity,undefined4 speed,undefined4 collision)
+u32 Entity_Routine_080222A8(int entity,undefined4 speed,undefined4 collision)
 
 {
   undefined4 u_val1;
@@ -2184,7 +2184,7 @@ undefined8 Entity_Routine_080222A8(int entity,undefined4 speed,undefined4 collis
 // =============================================================================
 // Function: Entity_Routine_080222F4 @ 0x080222F4
 // =============================================================================
-undefined4 Entity_Routine_080222F4(int *entity,undefined4 speed)
+void Entity_Routine_080222F4(int *entity,undefined4 speed)
 
 {
   undefined1 u_val1;
@@ -2201,7 +2201,7 @@ undefined4 Entity_Routine_080222F4(int *entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08022320 @ 0x08022320
 // =============================================================================
-undefined8 Entity_Routine_08022320(int entity)
+u32 Entity_Routine_08022320(int entity)
 
 {
   undefined4 u_val1;
@@ -2218,7 +2218,7 @@ undefined8 Entity_Routine_08022320(int entity)
 // =============================================================================
 // Function: Entity_Routine_08022334 @ 0x08022334
 // =============================================================================
-undefined8 Entity_Routine_08022334(int entity)
+u32 Entity_Routine_08022334(int entity)
 
 {
   undefined4 u_val1;
@@ -2235,7 +2235,7 @@ undefined8 Entity_Routine_08022334(int entity)
 // =============================================================================
 // Function: Entity_Routine_08022348 @ 0x08022348
 // =============================================================================
-undefined8 Entity_Routine_08022348(int entity)
+u32 Entity_Routine_08022348(int entity)
 
 {
   undefined4 u_val1;
@@ -2258,7 +2258,7 @@ undefined8 Entity_Routine_08022348(int entity)
 // =============================================================================
 // Function: Entity_Routine_080223A8 @ 0x080223A8
 // =============================================================================
-undefined8 Entity_Routine_080223A8(int entity,undefined4 speed,undefined4 collision)
+u32 Entity_Routine_080223A8(int entity,undefined4 speed,undefined4 collision)
 
 {
   undefined4 u_val1;
@@ -2276,7 +2276,7 @@ undefined8 Entity_Routine_080223A8(int entity,undefined4 speed,undefined4 collis
 // =============================================================================
 // Function: Entity_Routine_08022444 @ 0x08022444
 // =============================================================================
-undefined4 Entity_Routine_08022444(int entity,uint speed)
+void Entity_Routine_08022444(int entity,uint speed)
 
 {
   undefined4 u_val1;
@@ -2292,7 +2292,7 @@ undefined4 Entity_Routine_08022444(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_08022488 @ 0x08022488
 // =============================================================================
-undefined4 Entity_Routine_08022488(int entity)
+void Entity_Routine_08022488(int entity)
 
 {
   short s_val1;
@@ -2317,7 +2317,7 @@ undefined4 Entity_Routine_08022488(int entity)
 // =============================================================================
 // Function: Entity_Routine_080224BC @ 0x080224BC
 // =============================================================================
-undefined4 Entity_Routine_080224BC(undefined4 entity,undefined4 speed)
+void Entity_Routine_080224BC(undefined4 entity,undefined4 speed)
 
 {
   char c_char1;
@@ -2333,7 +2333,7 @@ undefined4 Entity_Routine_080224BC(undefined4 entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_080224E4 @ 0x080224E4
 // =============================================================================
-undefined4 Entity_Routine_080224E4(undefined4 *entity,int speed)
+void Entity_Routine_080224E4(undefined4 *entity,int speed)
 
 {
   byte b_flag1;
@@ -2545,7 +2545,7 @@ LAB_08022894:
 // =============================================================================
 // Function: Entity_Routine_080228B4 @ 0x080228B4
 // =============================================================================
-undefined4 Entity_Routine_080228B4(undefined4 *entity,uint speed,uint collision)
+void Entity_Routine_080228B4(undefined4 *entity,uint speed,uint collision)
 
 {
   uint u_val1;
@@ -2588,7 +2588,7 @@ undefined4 Entity_Routine_080228B4(undefined4 *entity,uint speed,uint collision)
 // =============================================================================
 // Function: Entity_Routine_08022950 @ 0x08022950
 // =============================================================================
-undefined8 Entity_Routine_08022950(int entity)
+u32 Entity_Routine_08022950(int entity)
 
 {
   int i_val1;
@@ -2613,7 +2613,7 @@ undefined8 Entity_Routine_08022950(int entity)
 // =============================================================================
 // Function: Entity_Routine_08022980 @ 0x08022980
 // =============================================================================
-undefined8 Entity_Routine_08022980(int entity,int speed)
+u32 Entity_Routine_08022980(int entity,int speed)
 
 {
   int i_val1;
@@ -2627,7 +2627,7 @@ undefined8 Entity_Routine_08022980(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_080229A4 @ 0x080229A4
 // =============================================================================
-undefined8 Entity_Routine_080229A4(undefined4 entity,int speed)
+u32 Entity_Routine_080229A4(undefined4 entity,int speed)
 
 {
   undefined4 u_val1;
@@ -2654,7 +2654,7 @@ void Entity_Routine_080229BC(int entity)
 // =============================================================================
 // Function: Entity_Routine_080229C8 @ 0x080229C8
 // =============================================================================
-undefined8 Entity_Routine_080229C8(int entity)
+u32 Entity_Routine_080229C8(int entity)
 
 {
   char c_char1;
@@ -2672,7 +2672,7 @@ undefined8 Entity_Routine_080229C8(int entity)
 // =============================================================================
 // Function: Entity_Routine_080229F8 @ 0x080229F8
 // =============================================================================
-undefined4 Entity_Routine_080229F8(int entity)
+void Entity_Routine_080229F8(int entity)
 
 {
   int i_val1;
@@ -2700,7 +2700,7 @@ undefined4 Entity_Routine_080229F8(int entity)
 // =============================================================================
 // Function: Entity_Routine_08022A88 @ 0x08022A88
 // =============================================================================
-undefined4 Entity_Routine_08022A88(int entity)
+void Entity_Routine_08022A88(int entity)
 
 {
   char c_char1;
@@ -2716,7 +2716,7 @@ undefined4 Entity_Routine_08022A88(int entity)
 // =============================================================================
 // Function: Entity_Routine_08022AAC @ 0x08022AAC
 // =============================================================================
-undefined4 Entity_Routine_08022AAC(int entity)
+void Entity_Routine_08022AAC(int entity)
 
 {
   int i_val1;
@@ -2762,7 +2762,7 @@ void Entity_Routine_08022B38(short *entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08022B5C @ 0x08022B5C
 // =============================================================================
-undefined8 Entity_Routine_08022B5C(int entity)
+u32 Entity_Routine_08022B5C(int entity)
 
 {
   undefined4 u_val1;
@@ -2779,7 +2779,7 @@ undefined8 Entity_Routine_08022B5C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08022B70 @ 0x08022B70
 // =============================================================================
-undefined8 Entity_Routine_08022B70(undefined4 *entity)
+u32 Entity_Routine_08022B70(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -2814,7 +2814,7 @@ undefined8 Entity_Routine_08022B70(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08022C18 @ 0x08022C18
 // =============================================================================
-undefined8 Entity_Routine_08022C18(int entity,undefined4 speed,undefined4 collision)
+u32 Entity_Routine_08022C18(int entity,undefined4 speed,undefined4 collision)
 
 {
   undefined4 u_val1;
@@ -2832,7 +2832,7 @@ undefined8 Entity_Routine_08022C18(int entity,undefined4 speed,undefined4 collis
 // =============================================================================
 // Function: Entity_Routine_08022CB4 @ 0x08022CB4
 // =============================================================================
-undefined4 Entity_Routine_08022CB4(int entity,uint speed)
+void Entity_Routine_08022CB4(int entity,uint speed)
 
 {
   undefined4 u_val1;
@@ -2848,7 +2848,7 @@ undefined4 Entity_Routine_08022CB4(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_08022CF8 @ 0x08022CF8
 // =============================================================================
-undefined4 Entity_Routine_08022CF8(undefined4 *entity,int speed)
+void Entity_Routine_08022CF8(undefined4 *entity,int speed)
 
 {
   short s_val1;
@@ -3226,7 +3226,7 @@ LAB_080232b8:
 // =============================================================================
 // Function: Entity_Routine_08023308 @ 0x08023308
 // =============================================================================
-undefined4 Entity_Routine_08023308(int entity,uint speed,uint collision)
+void Entity_Routine_08023308(int entity,uint speed,uint collision)
 
 {
   uint u_val1;
@@ -3261,7 +3261,7 @@ undefined4 Entity_Routine_08023308(int entity,uint speed,uint collision)
 // =============================================================================
 // Function: Entity_Routine_08023378 @ 0x08023378
 // =============================================================================
-undefined8 Entity_Routine_08023378(int entity)
+u32 Entity_Routine_08023378(int entity)
 
 {
   int i_val1;
@@ -3296,7 +3296,7 @@ LAB_080233b0:
 // =============================================================================
 // Function: Entity_Routine_080233B4 @ 0x080233B4
 // =============================================================================
-undefined8 Entity_Routine_080233B4(int entity,int speed)
+u32 Entity_Routine_080233B4(int entity,int speed)
 
 {
   int i_val1;
@@ -3324,7 +3324,7 @@ undefined8 Entity_Routine_080233B4(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08023400 @ 0x08023400
 // =============================================================================
-undefined8 Entity_Routine_08023400(undefined4 entity,int speed)
+u32 Entity_Routine_08023400(undefined4 entity,int speed)
 
 {
   undefined4 u_val1;
@@ -3341,7 +3341,7 @@ undefined8 Entity_Routine_08023400(undefined4 entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08023414 @ 0x08023414
 // =============================================================================
-undefined4 Entity_Routine_08023414(int entity,ushort *speed)
+void Entity_Routine_08023414(int entity,ushort *speed)
 
 {
   char c_char1;
@@ -3390,7 +3390,7 @@ undefined4 Entity_Routine_08023414(int entity,ushort *speed)
 // =============================================================================
 // Function: Entity_Routine_080234F8 @ 0x080234F8
 // =============================================================================
-undefined4 Entity_Routine_080234F8(int entity)
+void Entity_Routine_080234F8(int entity)
 
 {
   undefined4 u_val1;
@@ -3408,7 +3408,7 @@ undefined4 Entity_Routine_080234F8(int entity)
 // =============================================================================
 // Function: Entity_Routine_08023570 @ 0x08023570
 // =============================================================================
-ulonglong Entity_Routine_08023570(int entity)
+u32 Entity_Routine_08023570(int entity)
 
 {
   undefined4 u_val1;
@@ -3440,7 +3440,7 @@ void Entity_Routine_0802358C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08023598 @ 0x08023598
 // =============================================================================
-undefined8 Entity_Routine_08023598(int entity)
+u32 Entity_Routine_08023598(int entity)
 
 {
   char c_char1;
@@ -3458,7 +3458,7 @@ undefined8 Entity_Routine_08023598(int entity)
 // =============================================================================
 // Function: Entity_Routine_080235C8 @ 0x080235C8
 // =============================================================================
-undefined4 Entity_Routine_080235C8(int entity)
+void Entity_Routine_080235C8(int entity)
 
 {
   char c_char1;
@@ -3485,7 +3485,7 @@ undefined4 Entity_Routine_080235C8(int entity)
 // =============================================================================
 // Function: Entity_Routine_08023658 @ 0x08023658
 // =============================================================================
-undefined4 Entity_Routine_08023658(int entity)
+void Entity_Routine_08023658(int entity)
 
 {
   
@@ -3496,7 +3496,7 @@ undefined4 Entity_Routine_08023658(int entity)
 // =============================================================================
 // Function: Entity_Routine_08023664 @ 0x08023664
 // =============================================================================
-undefined4 Entity_Routine_08023664(int entity)
+void Entity_Routine_08023664(int entity)
 
 {
   char c_char1;
@@ -3534,7 +3534,7 @@ void Entity_Routine_080236C4(int entity)
 // =============================================================================
 // Function: Entity_Routine_080236E4 @ 0x080236E4
 // =============================================================================
-undefined4 Entity_Routine_080236E4(int entity)
+void Entity_Routine_080236E4(int entity)
 
 {
   char c_char1;
@@ -3550,7 +3550,7 @@ undefined4 Entity_Routine_080236E4(int entity)
 // =============================================================================
 // Function: Entity_Routine_08023708 @ 0x08023708
 // =============================================================================
-undefined4 Entity_Routine_08023708(int entity)
+void Entity_Routine_08023708(int entity)
 
 {
   char c_char1;
@@ -3577,7 +3577,7 @@ undefined4 Entity_Routine_08023708(int entity)
 // =============================================================================
 // Function: Entity_Routine_08023794 @ 0x08023794
 // =============================================================================
-undefined4 Entity_Routine_08023794(int entity,uint speed,uint collision)
+void Entity_Routine_08023794(int entity,uint speed,uint collision)
 
 {
   char c_char1;
@@ -3600,7 +3600,7 @@ undefined4 Entity_Routine_08023794(int entity,uint speed,uint collision)
 // =============================================================================
 // Function: Entity_Routine_080237F0 @ 0x080237F0
 // =============================================================================
-undefined8 Entity_Routine_080237F0(uint entity)
+u32 Entity_Routine_080237F0(uint entity)
 
 {
   undefined4 u_val1;
@@ -3617,7 +3617,7 @@ undefined8 Entity_Routine_080237F0(uint entity)
 // =============================================================================
 // Function: Entity_Routine_08023804 @ 0x08023804
 // =============================================================================
-undefined8 Entity_Routine_08023804(int entity)
+u32 Entity_Routine_08023804(int entity)
 
 {
   undefined4 u_val1;
@@ -3637,7 +3637,7 @@ undefined8 Entity_Routine_08023804(int entity)
 // =============================================================================
 // Function: Entity_Routine_08023820 @ 0x08023820
 // =============================================================================
-undefined8 Entity_Routine_08023820(int entity)
+u32 Entity_Routine_08023820(int entity)
 
 {
   undefined4 u_val1;
@@ -3663,7 +3663,7 @@ undefined8 Entity_Routine_08023820(int entity)
 // =============================================================================
 // Function: Entity_Routine_080238A8 @ 0x080238A8
 // =============================================================================
-undefined8 Entity_Routine_080238A8(int entity,undefined4 speed,undefined4 collision)
+u32 Entity_Routine_080238A8(int entity,undefined4 speed,undefined4 collision)
 
 {
   undefined4 u_val1;
@@ -3681,7 +3681,7 @@ undefined8 Entity_Routine_080238A8(int entity,undefined4 speed,undefined4 collis
 // =============================================================================
 // Function: Entity_Routine_08023948 @ 0x08023948
 // =============================================================================
-undefined4 Entity_Routine_08023948(int entity,uint speed)
+void Entity_Routine_08023948(int entity,uint speed)
 
 {
   undefined4 u_val1;
@@ -3697,7 +3697,7 @@ undefined4 Entity_Routine_08023948(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_0802398C @ 0x0802398C
 // =============================================================================
-undefined4 Entity_Routine_0802398C(undefined4 *entity,int speed)
+void Entity_Routine_0802398C(undefined4 *entity,int speed)
 
 {
   short s_val1;
@@ -4081,7 +4081,7 @@ LAB_08023f60:
 // =============================================================================
 // Function: Entity_Routine_08023FB0 @ 0x08023FB0
 // =============================================================================
-undefined4 Entity_Routine_08023FB0(int entity,uint speed,uint collision)
+void Entity_Routine_08023FB0(int entity,uint speed,uint collision)
 
 {
   uint u_val1;
@@ -4116,7 +4116,7 @@ undefined4 Entity_Routine_08023FB0(int entity,uint speed,uint collision)
 // =============================================================================
 // Function: Entity_Routine_08024020 @ 0x08024020
 // =============================================================================
-undefined8 Entity_Routine_08024020(int entity)
+u32 Entity_Routine_08024020(int entity)
 
 {
   int i_val1;
@@ -4151,7 +4151,7 @@ LAB_08024058:
 // =============================================================================
 // Function: Entity_Routine_0802405C @ 0x0802405C
 // =============================================================================
-undefined8 Entity_Routine_0802405C(int entity,int speed)
+u32 Entity_Routine_0802405C(int entity,int speed)
 
 {
   int i_val1;
@@ -4186,7 +4186,7 @@ undefined8 Entity_Routine_0802405C(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_080240BC @ 0x080240BC
 // =============================================================================
-undefined8 Entity_Routine_080240BC(undefined4 entity,int speed)
+u32 Entity_Routine_080240BC(undefined4 entity,int speed)
 
 {
   undefined4 u_val1;
@@ -4203,7 +4203,7 @@ undefined8 Entity_Routine_080240BC(undefined4 entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_080240D0 @ 0x080240D0
 // =============================================================================
-undefined4 Entity_Routine_080240D0(int entity,ushort *speed)
+void Entity_Routine_080240D0(int entity,ushort *speed)
 
 {
   char c_char1;
@@ -4252,7 +4252,7 @@ undefined4 Entity_Routine_080240D0(int entity,ushort *speed)
 // =============================================================================
 // Function: Entity_Routine_080241AC @ 0x080241AC
 // =============================================================================
-undefined4 Entity_Routine_080241AC(int entity)
+void Entity_Routine_080241AC(int entity)
 
 {
   undefined4 u_val1;
@@ -4270,7 +4270,7 @@ undefined4 Entity_Routine_080241AC(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024224 @ 0x08024224
 // =============================================================================
-ulonglong Entity_Routine_08024224(int entity)
+u32 Entity_Routine_08024224(int entity)
 
 {
   undefined4 u_val1;
@@ -4302,7 +4302,7 @@ void Entity_Routine_08024240(int entity)
 // =============================================================================
 // Function: Entity_Routine_0802424C @ 0x0802424C
 // =============================================================================
-undefined8 Entity_Routine_0802424C(int entity)
+u32 Entity_Routine_0802424C(int entity)
 
 {
   char c_char1;
@@ -4320,7 +4320,7 @@ undefined8 Entity_Routine_0802424C(int entity)
 // =============================================================================
 // Function: Entity_Routine_0802427C @ 0x0802427C
 // =============================================================================
-undefined4 Entity_Routine_0802427C(int entity)
+void Entity_Routine_0802427C(int entity)
 
 {
   char c_char1;
@@ -4347,7 +4347,7 @@ undefined4 Entity_Routine_0802427C(int entity)
 // =============================================================================
 // Function: Entity_Routine_0802430C @ 0x0802430C
 // =============================================================================
-undefined4 Entity_Routine_0802430C(int entity)
+void Entity_Routine_0802430C(int entity)
 
 {
   
@@ -4358,7 +4358,7 @@ undefined4 Entity_Routine_0802430C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024318 @ 0x08024318
 // =============================================================================
-undefined4 Entity_Routine_08024318(int entity)
+void Entity_Routine_08024318(int entity)
 
 {
   char c_char1;
@@ -4384,7 +4384,7 @@ undefined4 Entity_Routine_08024318(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024378 @ 0x08024378
 // =============================================================================
-undefined8 Entity_Routine_08024378(int entity)
+u32 Entity_Routine_08024378(int entity)
 
 {
   undefined4 u_val1;
@@ -4403,7 +4403,7 @@ undefined8 Entity_Routine_08024378(int entity)
 // =============================================================================
 // Function: Entity_Routine_080243B8 @ 0x080243B8
 // =============================================================================
-undefined4 Entity_Routine_080243B8(int entity)
+void Entity_Routine_080243B8(int entity)
 
 {
   char c_char1;
@@ -4419,7 +4419,7 @@ undefined4 Entity_Routine_080243B8(int entity)
 // =============================================================================
 // Function: Entity_Routine_080243DC @ 0x080243DC
 // =============================================================================
-undefined4 Entity_Routine_080243DC(int entity)
+void Entity_Routine_080243DC(int entity)
 
 {
   char c_char1;
@@ -4446,7 +4446,7 @@ undefined4 Entity_Routine_080243DC(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024468 @ 0x08024468
 // =============================================================================
-undefined4 Entity_Routine_08024468(int entity,uint speed,uint collision)
+void Entity_Routine_08024468(int entity,uint speed,uint collision)
 
 {
   char c_char1;
@@ -4469,7 +4469,7 @@ undefined4 Entity_Routine_08024468(int entity,uint speed,uint collision)
 // =============================================================================
 // Function: Entity_Routine_080244C4 @ 0x080244C4
 // =============================================================================
-undefined8 Entity_Routine_080244C4(int entity)
+u32 Entity_Routine_080244C4(int entity)
 
 {
   undefined4 u_val1;
@@ -4486,7 +4486,7 @@ undefined8 Entity_Routine_080244C4(int entity)
 // =============================================================================
 // Function: Entity_Routine_080244D8 @ 0x080244D8
 // =============================================================================
-undefined8 Entity_Routine_080244D8(int entity)
+u32 Entity_Routine_080244D8(int entity)
 
 {
   undefined4 u_val1;
@@ -4503,7 +4503,7 @@ undefined8 Entity_Routine_080244D8(int entity)
 // =============================================================================
 // Function: Entity_Routine_080244EC @ 0x080244EC
 // =============================================================================
-undefined8 Entity_Routine_080244EC(int entity)
+u32 Entity_Routine_080244EC(int entity)
 
 {
   undefined4 u_val1;
@@ -4529,7 +4529,7 @@ undefined8 Entity_Routine_080244EC(int entity)
 // =============================================================================
 // Function: Entity_Routine_0802459C @ 0x0802459C
 // =============================================================================
-undefined4 Entity_Routine_0802459C(int entity)
+void Entity_Routine_0802459C(int entity)
 
 {
   short s_val1;
@@ -4553,7 +4553,7 @@ undefined4 Entity_Routine_0802459C(int entity)
 // =============================================================================
 // Function: Entity_Routine_080245E0 @ 0x080245E0
 // =============================================================================
-undefined8 Entity_Routine_080245E0(int entity)
+u32 Entity_Routine_080245E0(int entity)
 
 {
   byte b_flag1;
@@ -4640,7 +4640,7 @@ undefined8 Entity_Routine_080245E0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024724 @ 0x08024724
 // =============================================================================
-undefined8 Entity_Routine_08024724(short *entity,undefined4 speed,ushort *collision)
+u32 Entity_Routine_08024724(short *entity,undefined4 speed,ushort *collision)
 
 {
   short s_val1;
@@ -4802,7 +4802,7 @@ LAB_08024960:
 // =============================================================================
 // Function: Entity_Routine_08024974 @ 0x08024974
 // =============================================================================
-undefined8 Entity_Routine_08024974(int entity,undefined4 speed,int collision)
+u32 Entity_Routine_08024974(int entity,undefined4 speed,int collision)
 
 {
   short s_val1;
@@ -4889,7 +4889,7 @@ void Entity_Routine_08024B9C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024BE8 @ 0x08024BE8
 // =============================================================================
-undefined4 Entity_Routine_08024BE8(undefined4 entity)
+void Entity_Routine_08024BE8(undefined4 entity)
 
 {
   
@@ -4901,7 +4901,7 @@ undefined4 Entity_Routine_08024BE8(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08024BFC @ 0x08024BFC
 // =============================================================================
-undefined4 * Entity_Routine_08024BFC(undefined4 *entity,int speed)
+u32 * Entity_Routine_08024BFC(undefined4 *entity,int speed)
 
 {
   char c_char1;
@@ -4928,7 +4928,7 @@ undefined4 * Entity_Routine_08024BFC(undefined4 *entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08024C54 @ 0x08024C54
 // =============================================================================
-undefined4 Entity_Routine_08024C54(int entity)
+void Entity_Routine_08024C54(int entity)
 
 {
   
@@ -4940,7 +4940,7 @@ undefined4 Entity_Routine_08024C54(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024C64 @ 0x08024C64
 // =============================================================================
-undefined4 Entity_Routine_08024C64(int entity)
+void Entity_Routine_08024C64(int entity)
 
 {
   
@@ -4952,7 +4952,7 @@ undefined4 Entity_Routine_08024C64(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024CA0 @ 0x08024CA0
 // =============================================================================
-undefined8 Entity_Routine_08024CA0(int entity)
+u32 Entity_Routine_08024CA0(int entity)
 
 {
   char c_char1;
@@ -4972,7 +4972,7 @@ undefined8 Entity_Routine_08024CA0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08024CD0 @ 0x08024CD0
 // =============================================================================
-undefined4 Entity_Routine_08024CD0(undefined4 *entity,undefined4 *speed)
+void Entity_Routine_08024CD0(undefined4 *entity,undefined4 *speed)
 
 {
   byte mood_byte;
@@ -5141,7 +5141,7 @@ LAB_08024f7e:
 // =============================================================================
 // Function: Entity_Routine_08025018 @ 0x08025018
 // =============================================================================
-undefined4 Entity_Routine_08025018(int entity,undefined4 speed)
+void Entity_Routine_08025018(int entity,undefined4 speed)
 
 {
   short s_val1;
@@ -5163,7 +5163,7 @@ undefined4 Entity_Routine_08025018(int entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08025068 @ 0x08025068
 // =============================================================================
-undefined8 Entity_Routine_08025068(int entity,int speed,int collision,undefined4 flags)
+u32 Entity_Routine_08025068(int entity,int speed,int collision,undefined4 flags)
 
 {
   undefined1 *p_uint1;
@@ -5585,7 +5585,7 @@ Entity_Routine_08025248(undefined4 entity,undefined4 speed,undefined4 *collision
 // =============================================================================
 // Function: Entity_Routine_08025294 @ 0x08025294
 // =============================================================================
-undefined8 Entity_Routine_08025294(undefined4 entity,undefined4 speed,int collision,short *flags)
+u32 Entity_Routine_08025294(undefined4 entity,undefined4 speed,int collision,short *flags)
 
 {
   short s_val1;
@@ -5640,7 +5640,7 @@ LAB_08025362:
 // =============================================================================
 // Function: Entity_Routine_0802536C @ 0x0802536C
 // =============================================================================
-undefined4 Entity_Routine_0802536C(undefined4 *entity,int speed,uint collision)
+void Entity_Routine_0802536C(undefined4 *entity,int speed,uint collision)
 
 {
   undefined4 u_val1;
@@ -5922,7 +5922,7 @@ LAB_080257b2:
 // =============================================================================
 // Function: Entity_Routine_080257D0 @ 0x080257D0
 // =============================================================================
-undefined4 Entity_Routine_080257D0(undefined4 *entity,char speed)
+void Entity_Routine_080257D0(undefined4 *entity,char speed)
 
 {
   char c_char1;
@@ -5960,7 +5960,7 @@ LAB_0802582c:
 // =============================================================================
 // Function: Entity_Routine_08025838 @ 0x08025838
 // =============================================================================
-undefined4 Entity_Routine_08025838(undefined4 *entity,char speed)
+void Entity_Routine_08025838(undefined4 *entity,char speed)
 
 {
   char c_char1;
@@ -5998,7 +5998,7 @@ LAB_08025894:
 // =============================================================================
 // Function: Entity_Routine_080258A0 @ 0x080258A0
 // =============================================================================
-undefined4 Entity_Routine_080258A0(undefined4 *entity)
+void Entity_Routine_080258A0(undefined4 *entity)
 
 {
   char c_char1;
@@ -6050,7 +6050,7 @@ LAB_0802591e:
 // =============================================================================
 // Function: Entity_Routine_08025944 @ 0x08025944
 // =============================================================================
-undefined8 Entity_Routine_08025944(int entity)
+u32 Entity_Routine_08025944(int entity)
 
 {
   char c_char1;
@@ -6083,7 +6083,7 @@ LAB_08025a36:
 // =============================================================================
 // Function: Entity_Routine_08025A40 @ 0x08025A40
 // =============================================================================
-undefined4 Entity_Routine_08025A40(undefined4 *entity,char speed)
+void Entity_Routine_08025A40(undefined4 *entity,char speed)
 
 {
   char c_char1;
@@ -6140,7 +6140,7 @@ LAB_08025a82:
 // =============================================================================
 // Function: Entity_Routine_08025AFC @ 0x08025AFC
 // =============================================================================
-undefined8 Entity_Routine_08025AFC(int entity)
+u32 Entity_Routine_08025AFC(int entity)
 
 {
   
@@ -6150,7 +6150,7 @@ undefined8 Entity_Routine_08025AFC(int entity)
 // =============================================================================
 // Function: Entity_Routine_08025B10 @ 0x08025B10
 // =============================================================================
-undefined8 Entity_Routine_08025B10(int entity)
+u32 Entity_Routine_08025B10(int entity)
 
 {
   ushort u_val1;
@@ -6184,7 +6184,7 @@ undefined8 Entity_Routine_08025B10(int entity)
 // =============================================================================
 // Function: Entity_Routine_08025B64 @ 0x08025B64
 // =============================================================================
-undefined4 Entity_Routine_08025B64(undefined4 *entity,uint speed,undefined4 collision,int flags)
+void Entity_Routine_08025B64(undefined4 *entity,uint speed,undefined4 collision,int flags)
 
 {
   char c_char1;
@@ -6406,7 +6406,7 @@ LAB_08025dfe:
 // =============================================================================
 // Function: Entity_Routine_08025E38 @ 0x08025E38
 // =============================================================================
-undefined4 Entity_Routine_08025E38(undefined4 *entity)
+void Entity_Routine_08025E38(undefined4 *entity)
 
 {
   byte mood_byte;
@@ -6467,7 +6467,7 @@ LAB_08025ef0:
 // =============================================================================
 // Function: Entity_Routine_08025EFC @ 0x08025EFC
 // =============================================================================
-undefined4 Entity_Routine_08025EFC(undefined4 *entity,undefined1 speed)
+void Entity_Routine_08025EFC(undefined4 *entity,undefined1 speed)
 
 {
   byte mood_byte;
@@ -6528,7 +6528,7 @@ LAB_08025fb8:
 // =============================================================================
 // Function: Entity_Routine_08025FC4 @ 0x08025FC4
 // =============================================================================
-undefined4 Entity_Routine_08025FC4(undefined4 *entity)
+void Entity_Routine_08025FC4(undefined4 *entity)
 
 {
   byte mood_byte;
@@ -6589,7 +6589,7 @@ LAB_0802607c:
 // =============================================================================
 // Function: Entity_Routine_08026088 @ 0x08026088
 // =============================================================================
-undefined4 Entity_Routine_08026088(undefined4 *entity,undefined2 speed)
+void Entity_Routine_08026088(undefined4 *entity,undefined2 speed)
 
 {
   byte mood_byte;
@@ -6650,7 +6650,7 @@ LAB_08026144:
 // =============================================================================
 // Function: Entity_Routine_08026150 @ 0x08026150
 // =============================================================================
-undefined4 Entity_Routine_08026150(undefined4 *entity,undefined4 *speed,char collision)
+void Entity_Routine_08026150(undefined4 *entity,undefined4 *speed,char collision)
 
 {
   byte mood_byte;
@@ -6748,7 +6748,7 @@ LAB_080262b0:
 // =============================================================================
 // Function: Entity_Routine_080262C4 @ 0x080262C4
 // =============================================================================
-undefined8 Entity_Routine_080262C4(int entity)
+u32 Entity_Routine_080262C4(int entity)
 
 {
   char c_char1;
@@ -6785,7 +6785,7 @@ LAB_08026342:
 // =============================================================================
 // Function: Entity_Routine_0802634C @ 0x0802634C
 // =============================================================================
-undefined4 Entity_Routine_0802634C(undefined4 *entity)
+void Entity_Routine_0802634C(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -7084,7 +7084,7 @@ LAB_0802681e:
 // =============================================================================
 // Function: Entity_Routine_08026830 @ 0x08026830
 // =============================================================================
-undefined4 Entity_Routine_08026830(undefined4 *entity)
+void Entity_Routine_08026830(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -7383,7 +7383,7 @@ LAB_08026d02:
 // =============================================================================
 // Function: Entity_Routine_08026D14 @ 0x08026D14
 // =============================================================================
-undefined4 Entity_Routine_08026D14(undefined4 *entity,undefined2 speed)
+void Entity_Routine_08026D14(undefined4 *entity,undefined2 speed)
 
 {
   byte mood_byte;
@@ -7989,7 +7989,7 @@ LAB_08027702:
 // =============================================================================
 // Function: Entity_Routine_0802771C @ 0x0802771C
 // =============================================================================
-undefined4 Entity_Routine_0802771C(undefined4 *entity)
+void Entity_Routine_0802771C(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -8287,7 +8287,7 @@ LAB_08027bea:
 // =============================================================================
 // Function: Entity_Routine_08027BFC @ 0x08027BFC
 // =============================================================================
-undefined8 Entity_Routine_08027BFC(undefined4 *entity)
+u32 Entity_Routine_08027BFC(undefined4 *entity)
 
 {
   char c_char1;
@@ -8887,7 +8887,7 @@ LAB_08028634:
 // =============================================================================
 // Function: Entity_Routine_08028644 @ 0x08028644
 // =============================================================================
-undefined4 Entity_Routine_08028644(undefined4 *entity)
+void Entity_Routine_08028644(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -9202,7 +9202,7 @@ LAB_08028b40:
 // =============================================================================
 // Function: Entity_Routine_08028B50 @ 0x08028B50
 // =============================================================================
-undefined4 Entity_Routine_08028B50(undefined4 *entity)
+void Entity_Routine_08028B50(undefined4 *entity)
 
 {
   char c_char1;
@@ -9516,7 +9516,7 @@ LAB_0802906c:
 // =============================================================================
 // Function: Entity_Routine_0802907C @ 0x0802907C
 // =============================================================================
-undefined4 Entity_Routine_0802907C(int entity)
+void Entity_Routine_0802907C(int entity)
 
 {
   char c_char1;
@@ -9544,7 +9544,7 @@ undefined4 Entity_Routine_0802907C(int entity)
 // =============================================================================
 // Function: Entity_Routine_080290D4 @ 0x080290D4
 // =============================================================================
-undefined8 Entity_Routine_080290D4(undefined4 *entity,undefined4 speed,undefined1 collision)
+u32 Entity_Routine_080290D4(undefined4 *entity,undefined4 speed,undefined1 collision)
 
 {
   char c_char1;
@@ -9816,7 +9816,7 @@ LAB_08029550:
 // =============================================================================
 // Function: Entity_Routine_08029558 @ 0x08029558
 // =============================================================================
-undefined8 Entity_Routine_08029558(undefined4 *entity)
+u32 Entity_Routine_08029558(undefined4 *entity)
 
 {
   char c_char1;
@@ -10088,7 +10088,7 @@ LAB_080299c8:
 // =============================================================================
 // Function: Entity_Routine_080299D0 @ 0x080299D0
 // =============================================================================
-undefined4 Entity_Routine_080299D0(int entity)
+void Entity_Routine_080299D0(int entity)
 
 {
   
@@ -10101,7 +10101,7 @@ undefined4 Entity_Routine_080299D0(int entity)
 // =============================================================================
 // Function: Entity_Routine_080299EC @ 0x080299EC
 // =============================================================================
-undefined4 Entity_Routine_080299EC(undefined4 *entity)
+void Entity_Routine_080299EC(undefined4 *entity)
 
 {
   char c_char1;
@@ -10414,7 +10414,7 @@ LAB_08029f10:
 // =============================================================================
 // Function: Entity_Routine_08029F30 @ 0x08029F30
 // =============================================================================
-undefined4 Entity_Routine_08029F30(undefined4 *entity,undefined4 speed)
+void Entity_Routine_08029F30(undefined4 *entity,undefined4 speed)
 
 {
   byte b_flag1;
@@ -10700,7 +10700,7 @@ LAB_0802a3e0:
 // =============================================================================
 // Function: Entity_Routine_0802A400 @ 0x0802A400
 // =============================================================================
-undefined4 Entity_Routine_0802A400(int entity,undefined4 speed)
+void Entity_Routine_0802A400(int entity,undefined4 speed)
 
 {
   undefined1 u_val1;
@@ -10745,7 +10745,7 @@ undefined4 Entity_Routine_0802A400(int entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_0802A4C0 @ 0x0802A4C0
 // =============================================================================
-undefined4 Entity_Routine_0802A4C0(int entity,undefined4 speed,int collision)
+void Entity_Routine_0802A4C0(int entity,undefined4 speed,int collision)
 
 {
   undefined4 u_val1;
@@ -10769,7 +10769,7 @@ undefined4 Entity_Routine_0802A4C0(int entity,undefined4 speed,int collision)
 // =============================================================================
 // Function: Entity_Routine_0802A510 @ 0x0802A510
 // =============================================================================
-undefined4 Entity_Routine_0802A510(int entity)
+void Entity_Routine_0802A510(int entity)
 
 {
   undefined2 u_val1;
@@ -10801,7 +10801,7 @@ undefined4 Entity_Routine_0802A510(int entity)
 // =============================================================================
 // Function: Entity_Routine_0802AA84 @ 0x0802AA84
 // =============================================================================
-undefined8 Entity_Routine_0802AA84(int entity)
+u32 Entity_Routine_0802AA84(int entity)
 
 {
   char c_char1;
@@ -10911,7 +10911,7 @@ LAB_0802ac1a:
 // =============================================================================
 // Function: Entity_Routine_0802AC2C @ 0x0802AC2C
 // =============================================================================
-undefined4 Entity_Routine_0802AC2C(undefined4 *entity,int speed,undefined4 collision)
+void Entity_Routine_0802AC2C(undefined4 *entity,int speed,undefined4 collision)
 
 {
   char c_char1;
@@ -10984,7 +10984,7 @@ LAB_0802ad20:
 // =============================================================================
 // Function: Entity_Routine_0802AD80 @ 0x0802AD80
 // =============================================================================
-undefined4 Entity_Routine_0802AD80(undefined4 *entity)
+void Entity_Routine_0802AD80(undefined4 *entity)
 
 {
   int i_val1;
@@ -11069,7 +11069,7 @@ LAB_0802ae6e:
 // =============================================================================
 // Function: Entity_Routine_0802AEA4 @ 0x0802AEA4
 // =============================================================================
-undefined8 Entity_Routine_0802AEA4(undefined4 *entity)
+u32 Entity_Routine_0802AEA4(undefined4 *entity)
 
 {
   ushort u_val1;
@@ -11196,7 +11196,7 @@ LAB_0802b04a:
 // =============================================================================
 // Function: Entity_Routine_0802B054 @ 0x0802B054
 // =============================================================================
-undefined4 Entity_Routine_0802B054(undefined4 *entity)
+void Entity_Routine_0802B054(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -11290,7 +11290,7 @@ undefined4 Entity_Routine_0802B054(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_0802B3B4 @ 0x0802B3B4
 // =============================================================================
-undefined4 Entity_Routine_0802B3B4(int *entity)
+void Entity_Routine_0802B3B4(int *entity)
 
 {
   ushort u_val1;
@@ -11353,7 +11353,7 @@ LAB_0802b414:
 // =============================================================================
 // Function: Entity_Routine_0802B46C @ 0x0802B46C
 // =============================================================================
-undefined4 Entity_Routine_0802B46C(int *entity)
+void Entity_Routine_0802B46C(int *entity)
 
 {
   byte facing_dir;
@@ -11407,7 +11407,7 @@ LAB_0802b4e0:
 // =============================================================================
 // Function: Entity_Routine_0802B51C @ 0x0802B51C
 // =============================================================================
-undefined4 Entity_Routine_0802B51C(int *entity,undefined4 *speed)
+void Entity_Routine_0802B51C(int *entity,undefined4 *speed)
 
 {
   ushort u_val1;
@@ -11589,7 +11589,7 @@ void Entity_Routine_0802B8EC(undefined4 entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_0802B908 @ 0x0802B908
 // =============================================================================
-undefined8 Entity_Routine_0802B908(int entity,undefined4 speed,int collision)
+u32 Entity_Routine_0802B908(int entity,undefined4 speed,int collision)
 
 {
   undefined1 facing_buffer [8];
@@ -11603,7 +11603,7 @@ undefined8 Entity_Routine_0802B908(int entity,undefined4 speed,int collision)
 // =============================================================================
 // Function: Entity_Routine_0802B944 @ 0x0802B944
 // =============================================================================
-undefined8 Entity_Routine_0802B944(int entity,undefined4 speed)
+u32 Entity_Routine_0802B944(int entity,undefined4 speed)
 
 {
   ushort u_val1;
@@ -11627,7 +11627,7 @@ undefined8 Entity_Routine_0802B944(int entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_0802B9C0 @ 0x0802B9C0
 // =============================================================================
-undefined8 Entity_Routine_0802B9C0(int entity)
+u32 Entity_Routine_0802B9C0(int entity)
 
 {
   
@@ -11667,7 +11667,7 @@ void Entity_Routine_0802BA10(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_0802BA28 @ 0x0802BA28
 // =============================================================================
-undefined4 Entity_Routine_0802BA28(int entity,undefined4 speed)
+void Entity_Routine_0802BA28(int entity,undefined4 speed)
 
 {
   short s_val1;
@@ -11691,7 +11691,7 @@ undefined4 Entity_Routine_0802BA28(int entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_0802BAE4 @ 0x0802BAE4
 // =============================================================================
-undefined4 Entity_Routine_0802BAE4(undefined4 entity,undefined4 speed,undefined4 collision)
+u32 Entity_Routine_0802BAE4(undefined4 entity,undefined4 speed,undefined4 collision)
 
 {
   byte mood_byte;
@@ -11754,7 +11754,7 @@ undefined4 Entity_Routine_0802BAE4(undefined4 entity,undefined4 speed,undefined4
 // =============================================================================
 // Function: Entity_Routine_0802BC48 @ 0x0802BC48
 // =============================================================================
-undefined8 Entity_Routine_0802BC48(int entity)
+u32 Entity_Routine_0802BC48(int entity)
 
 {
   undefined4 u_val1;
@@ -11791,7 +11791,7 @@ undefined8 Entity_Routine_0802BC48(int entity)
 // =============================================================================
 // Function: Entity_Routine_0802BCA4 @ 0x0802BCA4
 // =============================================================================
-undefined4 Entity_Routine_0802BCA4(int entity,undefined4 speed)
+void Entity_Routine_0802BCA4(int entity,undefined4 speed)
 
 {
   undefined2 u_val1;
@@ -11827,7 +11827,7 @@ undefined4 Entity_Routine_0802BCA4(int entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_0802BD50 @ 0x0802BD50
 // =============================================================================
-undefined4 Entity_Routine_0802BD50(int entity,undefined2 speed,char collision)
+void Entity_Routine_0802BD50(int entity,undefined2 speed,char collision)
 
 {
   byte facing_dir;
@@ -11891,7 +11891,7 @@ LAB_0802be3a:
 // =============================================================================
 // Function: Entity_Routine_0802BE68 @ 0x0802BE68
 // =============================================================================
-undefined4 Entity_Routine_0802BE68(int entity)
+void Entity_Routine_0802BE68(int entity)
 
 {
   byte facing_dir;
@@ -11934,7 +11934,7 @@ LAB_0802becc:
 // =============================================================================
 // Function: Entity_Routine_0802BEFC @ 0x0802BEFC
 // =============================================================================
-undefined4 Entity_Routine_0802BEFC(int entity)
+void Entity_Routine_0802BEFC(int entity)
 
 {
   undefined2 u_val1;
@@ -11950,7 +11950,7 @@ undefined4 Entity_Routine_0802BEFC(int entity)
 // =============================================================================
 // Function: Entity_Routine_0802BFA0 @ 0x0802BFA0
 // =============================================================================
-undefined4 Entity_Routine_0802BFA0(int *entity)
+void Entity_Routine_0802BFA0(int *entity)
 
 {
   char c_char1;
@@ -11979,7 +11979,7 @@ undefined4 Entity_Routine_0802BFA0(int *entity)
 // =============================================================================
 // Function: Entity_Routine_0802BFE4 @ 0x0802BFE4
 // =============================================================================
-undefined4 Entity_Routine_0802BFE4(undefined4 *entity,undefined4 *speed)
+void Entity_Routine_0802BFE4(undefined4 *entity,undefined4 *speed)
 
 {
   short s_val1;
@@ -12094,7 +12094,7 @@ void Entity_Routine_0802C210(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_0802C228 @ 0x0802C228
 // =============================================================================
-undefined4 Entity_Routine_0802C228(undefined4 *entity,undefined4 speed)
+void Entity_Routine_0802C228(undefined4 *entity,undefined4 speed)
 
 {
   undefined4 u_val1;
@@ -12111,7 +12111,7 @@ undefined4 Entity_Routine_0802C228(undefined4 *entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_0802C264 @ 0x0802C264
 // =============================================================================
-undefined4 Entity_Routine_0802C264(undefined4 *entity,undefined4 speed)
+void Entity_Routine_0802C264(undefined4 *entity,undefined4 speed)
 
 {
   undefined4 u_val1;
@@ -12127,7 +12127,7 @@ undefined4 Entity_Routine_0802C264(undefined4 *entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_0802C29C @ 0x0802C29C
 // =============================================================================
-undefined4 Entity_Routine_0802C29C(undefined4 *entity,undefined4 speed)
+void Entity_Routine_0802C29C(undefined4 *entity,undefined4 speed)
 
 {
   undefined4 u_val1;
@@ -12484,7 +12484,7 @@ LAB_0802c840:
 // =============================================================================
 // Function: Entity_Routine_0802C860 @ 0x0802C860
 // =============================================================================
-undefined4 Entity_Routine_0802C860(undefined4 *entity)
+void Entity_Routine_0802C860(undefined4 *entity)
 
 {
   char c_char1;
@@ -12534,7 +12534,7 @@ LAB_0802c8a8:
 // =============================================================================
 // Function: Entity_Routine_0802C908 @ 0x0802C908
 // =============================================================================
-undefined4 Entity_Routine_0802C908(undefined4 *entity)
+void Entity_Routine_0802C908(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -12578,7 +12578,7 @@ LAB_0802c978:
 // =============================================================================
 // Function: Entity_Routine_0802C984 @ 0x0802C984
 // =============================================================================
-undefined4 Entity_Routine_0802C984(undefined4 *entity,undefined4 speed,undefined4 collision,int flags)
+void Entity_Routine_0802C984(undefined4 *entity,undefined4 speed,undefined4 collision,int flags)
 
 {
   byte mood_byte;
@@ -12808,7 +12808,7 @@ LAB_0802cdc2:
 // =============================================================================
 // Function: Entity_Routine_0802CDCC @ 0x0802CDCC
 // =============================================================================
-undefined4 Entity_Routine_0802CDCC(undefined4 *entity)
+void Entity_Routine_0802CDCC(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -13022,7 +13022,7 @@ LAB_0802d122:
 // =============================================================================
 // Function: Entity_Routine_0802D158 @ 0x0802D158
 // =============================================================================
-undefined8 Entity_Routine_0802D158(undefined4 *entity)
+u32 Entity_Routine_0802D158(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -13283,7 +13283,7 @@ LAB_0802d590:
 // =============================================================================
 // Function: Entity_Routine_0802D59C @ 0x0802D59C
 // =============================================================================
-undefined4 Entity_Routine_0802D59C(undefined4 *entity,ushort *speed)
+void Entity_Routine_0802D59C(undefined4 *entity,ushort *speed)
 
 {
   undefined1 *p_uint1;
@@ -13434,7 +13434,7 @@ LAB_0802d7f8:
 // =============================================================================
 // Function: Entity_Routine_0802D844 @ 0x0802D844
 // =============================================================================
-undefined4 Entity_Routine_0802D844(int entity,int speed)
+void Entity_Routine_0802D844(int entity,int speed)
 
 {
   uint u_val1;
@@ -13471,7 +13471,7 @@ undefined4 Entity_Routine_0802D844(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_0802D8E8 @ 0x0802D8E8
 // =============================================================================
-undefined4 Entity_Routine_0802D8E8(undefined4 *entity,ushort *speed)
+void Entity_Routine_0802D8E8(undefined4 *entity,ushort *speed)
 
 {
   byte b_flag1;
@@ -13524,7 +13524,7 @@ undefined4 Entity_Routine_0802D8E8(undefined4 *entity,ushort *speed)
 // =============================================================================
 // Function: Entity_Routine_0802D9AC @ 0x0802D9AC
 // =============================================================================
-undefined4 Entity_Routine_0802D9AC(undefined4 *entity,ushort *speed)
+void Entity_Routine_0802D9AC(undefined4 *entity,ushort *speed)
 
 {
   char c_char1;
@@ -13664,7 +13664,7 @@ LAB_0802dba4:
 // =============================================================================
 // Function: Entity_Routine_0802DBF0 @ 0x0802DBF0
 // =============================================================================
-undefined4 Entity_Routine_0802DBF0(undefined4 *entity,ushort *speed)
+void Entity_Routine_0802DBF0(undefined4 *entity,ushort *speed)
 
 {
   byte b_flag1;
@@ -13812,7 +13812,7 @@ LAB_0802de2e:
 // =============================================================================
 // Function: Entity_Routine_0802DE94 @ 0x0802DE94
 // =============================================================================
-undefined4 Entity_Routine_0802DE94(undefined4 *entity,ushort *speed)
+void Entity_Routine_0802DE94(undefined4 *entity,ushort *speed)
 
 {
   char c_char1;
@@ -13966,7 +13966,7 @@ LAB_0802e0ae:
 // =============================================================================
 // Function: Entity_Routine_0802E0FC @ 0x0802E0FC
 // =============================================================================
-undefined4 Entity_Routine_0802E0FC(undefined4 *entity,ushort *speed)
+void Entity_Routine_0802E0FC(undefined4 *entity,ushort *speed)
 
 {
   ushort u_val1;
@@ -14549,7 +14549,7 @@ LAB_0802ea82:
 // =============================================================================
 // Function: Entity_Routine_0802EC00 @ 0x0802EC00
 // =============================================================================
-undefined4 Entity_Routine_0802EC00(undefined4 *entity,ushort *speed)
+void Entity_Routine_0802EC00(undefined4 *entity,ushort *speed)
 
 {
   char c_char1;
@@ -14870,7 +14870,7 @@ LAB_0802ed8a:
 // =============================================================================
 // Function: Entity_Routine_08031F30 @ 0x08031F30
 // =============================================================================
-undefined4 Entity_Routine_08031F30(undefined4 *entity,undefined4 speed)
+void Entity_Routine_08031F30(undefined4 *entity,undefined4 speed)
 
 {
   undefined4 u_val1;
@@ -14886,7 +14886,7 @@ undefined4 Entity_Routine_08031F30(undefined4 *entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08031F68 @ 0x08031F68
 // =============================================================================
-undefined4 Entity_Routine_08031F68(undefined4 *entity,undefined4 speed)
+void Entity_Routine_08031F68(undefined4 *entity,undefined4 speed)
 
 {
   undefined4 u_val1;
@@ -14902,7 +14902,7 @@ undefined4 Entity_Routine_08031F68(undefined4 *entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08031FA0 @ 0x08031FA0
 // =============================================================================
-undefined8 Entity_Routine_08031FA0(undefined4 *entity)
+u32 Entity_Routine_08031FA0(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -14920,7 +14920,7 @@ undefined8 Entity_Routine_08031FA0(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08031FCC @ 0x08031FCC
 // =============================================================================
-undefined8 Entity_Routine_08031FCC(undefined4 entity,int speed)
+u32 Entity_Routine_08031FCC(undefined4 entity,int speed)
 
 {
   
@@ -14930,7 +14930,7 @@ undefined8 Entity_Routine_08031FCC(undefined4 entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08031FDC @ 0x08031FDC
 // =============================================================================
-undefined4 Entity_Routine_08031FDC(undefined4 entity,int *speed,int collision)
+void Entity_Routine_08031FDC(undefined4 entity,int *speed,int collision)
 
 {
   int i_val1;
@@ -14956,7 +14956,7 @@ undefined4 Entity_Routine_08031FDC(undefined4 entity,int *speed,int collision)
 // =============================================================================
 // Function: Entity_Routine_0803205C @ 0x0803205C
 // =============================================================================
-undefined8 Entity_Routine_0803205C(int entity)
+u32 Entity_Routine_0803205C(int entity)
 
 {
   undefined4 u_val1;
@@ -14971,7 +14971,7 @@ undefined8 Entity_Routine_0803205C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08032090 @ 0x08032090
 // =============================================================================
-undefined8 Entity_Routine_08032090(int *entity,undefined4 speed)
+u32 Entity_Routine_08032090(int *entity,undefined4 speed)
 
 {
   uint u_val1;
@@ -15019,7 +15019,7 @@ Entity_UpdatePositions(int entity,undefined4 speed,int collision,undefined1 flag
 // =============================================================================
 // Function: Entity_Routine_0803211C @ 0x0803211C
 // =============================================================================
-undefined4 Entity_Routine_0803211C(int entity,ushort *speed)
+void Entity_Routine_0803211C(int entity,ushort *speed)
 
 {
   
@@ -15038,7 +15038,7 @@ undefined4 Entity_Routine_0803211C(int entity,ushort *speed)
 // =============================================================================
 // Function: Entity_Routine_08032170 @ 0x08032170
 // =============================================================================
-undefined8 Entity_Routine_08032170(int entity,int speed)
+u32 Entity_Routine_08032170(int entity,int speed)
 
 {
   undefined1 u_val1;
@@ -15054,7 +15054,7 @@ undefined8 Entity_Routine_08032170(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08032198 @ 0x08032198
 // =============================================================================
-undefined4 Entity_Routine_08032198(int entity,byte speed)
+void Entity_Routine_08032198(int entity,byte speed)
 
 {
   
@@ -15066,7 +15066,7 @@ undefined4 Entity_Routine_08032198(int entity,byte speed)
 // =============================================================================
 // Function: Entity_Routine_080321B0 @ 0x080321B0
 // =============================================================================
-undefined4 Entity_Routine_080321B0(int entity,undefined2 speed)
+void Entity_Routine_080321B0(int entity,undefined2 speed)
 
 {
   
@@ -15078,7 +15078,7 @@ undefined4 Entity_Routine_080321B0(int entity,undefined2 speed)
 // =============================================================================
 // Function: Entity_Routine_080321C8 @ 0x080321C8
 // =============================================================================
-undefined4 Entity_Routine_080321C8(undefined4 *entity,undefined4 speed)
+void Entity_Routine_080321C8(undefined4 *entity,undefined4 speed)
 
 {
   undefined2 u_val1;
@@ -15102,7 +15102,7 @@ undefined4 Entity_Routine_080321C8(undefined4 *entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08032208 @ 0x08032208
 // =============================================================================
-undefined4 Entity_Routine_08032208(undefined4 *entity)
+void Entity_Routine_08032208(undefined4 *entity)
 
 {
   undefined2 u_val1;
@@ -15178,7 +15178,7 @@ LAB_08032252:
 // =============================================================================
 // Function: Entity_Routine_08032308 @ 0x08032308
 // =============================================================================
-undefined4 Entity_Routine_08032308(int entity,int speed,int collision)
+void Entity_Routine_08032308(int entity,int speed,int collision)
 
 {
   
@@ -15200,7 +15200,7 @@ undefined4 Entity_Routine_08032308(int entity,int speed,int collision)
 // =============================================================================
 // Function: Entity_Routine_0803233C @ 0x0803233C
 // =============================================================================
-undefined4 Entity_Routine_0803233C(int entity,int speed,int collision)
+void Entity_Routine_0803233C(int entity,int speed,int collision)
 
 {
   
@@ -15222,7 +15222,7 @@ undefined4 Entity_Routine_0803233C(int entity,int speed,int collision)
 // =============================================================================
 // Function: Entity_Routine_08032370 @ 0x08032370
 // =============================================================================
-undefined8 Entity_Routine_08032370(int entity)
+u32 Entity_Routine_08032370(int entity)
 
 {
   
@@ -15232,7 +15232,7 @@ undefined8 Entity_Routine_08032370(int entity)
 // =============================================================================
 // Function: Entity_Routine_08032384 @ 0x08032384
 // =============================================================================
-undefined4 Entity_Routine_08032384(int entity,undefined4 speed,char collision)
+void Entity_Routine_08032384(int entity,undefined4 speed,char collision)
 
 {
   byte b_flag1;
@@ -15256,7 +15256,7 @@ undefined4 Entity_Routine_08032384(int entity,undefined4 speed,char collision)
 // =============================================================================
 // Function: Entity_Routine_080323C8 @ 0x080323C8
 // =============================================================================
-undefined4 Entity_Routine_080323C8(int entity)
+void Entity_Routine_080323C8(int entity)
 
 {
   byte *pbVar1;
@@ -15271,7 +15271,7 @@ undefined4 Entity_Routine_080323C8(int entity)
 // =============================================================================
 // Function: Entity_Routine_080323E0 @ 0x080323E0
 // =============================================================================
-undefined4 Entity_Routine_080323E0(int entity,undefined1 speed)
+void Entity_Routine_080323E0(int entity,undefined1 speed)
 
 {
   
@@ -15284,7 +15284,7 @@ undefined4 Entity_Routine_080323E0(int entity,undefined1 speed)
 // =============================================================================
 // Function: Entity_Routine_080323F0 @ 0x080323F0
 // =============================================================================
-undefined4 Entity_Routine_080323F0(int entity,char speed)
+void Entity_Routine_080323F0(int entity,char speed)
 
 {
   byte *pbVar1;
@@ -15317,7 +15317,7 @@ void Entity_Routine_0803240C(short *entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_0803242C @ 0x0803242C
 // =============================================================================
-undefined4 Entity_Routine_0803242C(int entity,undefined4 speed)
+void Entity_Routine_0803242C(int entity,undefined4 speed)
 
 {
   short s_val1;
@@ -15476,7 +15476,7 @@ LAB_08032634:
 // =============================================================================
 // Function: Entity_Routine_08032900 @ 0x08032900
 // =============================================================================
-undefined8 Entity_Routine_08032900(int entity,int speed,int collision)
+u32 Entity_Routine_08032900(int entity,int speed,int collision)
 
 {
   undefined4 u_val1;
@@ -15555,7 +15555,7 @@ void Entity_Routine_08032A00(int entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08032A30 @ 0x08032A30
 // =============================================================================
-undefined4 Entity_Routine_08032A30(int entity)
+void Entity_Routine_08032A30(int entity)
 
 {
   short s_val1;
@@ -15588,7 +15588,7 @@ void Entity_Routine_08032A58(int entity)
 // =============================================================================
 // Function: Entity_Routine_08032A64 @ 0x08032A64
 // =============================================================================
-undefined8 Entity_Routine_08032A64(int entity)
+u32 Entity_Routine_08032A64(int entity)
 
 {
   uint u_val1;
@@ -15603,7 +15603,7 @@ undefined8 Entity_Routine_08032A64(int entity)
 // =============================================================================
 // Function: Entity_Routine_08032AB4 @ 0x08032AB4
 // =============================================================================
-undefined4 Entity_Routine_08032AB4(int entity,undefined4 speed,char collision)
+void Entity_Routine_08032AB4(int entity,undefined4 speed,char collision)
 
 {
   byte b_flag1;
@@ -15623,7 +15623,7 @@ undefined4 Entity_Routine_08032AB4(int entity,undefined4 speed,char collision)
 // =============================================================================
 // Function: Entity_Routine_08032B04 @ 0x08032B04
 // =============================================================================
-undefined4 Entity_Routine_08032B04(int entity)
+void Entity_Routine_08032B04(int entity)
 
 {
   
@@ -15637,7 +15637,7 @@ undefined4 Entity_Routine_08032B04(int entity)
 // =============================================================================
 // Function: Entity_Routine_08032B2C @ 0x08032B2C
 // =============================================================================
-undefined8 Entity_Routine_08032B2C(int entity)
+u32 Entity_Routine_08032B2C(int entity)
 
 {
   
@@ -15647,7 +15647,7 @@ undefined8 Entity_Routine_08032B2C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08032B44 @ 0x08032B44
 // =============================================================================
-undefined4 Entity_Routine_08032B44(int entity,uint speed)
+void Entity_Routine_08032B44(int entity,uint speed)
 
 {
   
@@ -15660,7 +15660,7 @@ undefined4 Entity_Routine_08032B44(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_08032B68 @ 0x08032B68
 // =============================================================================
-undefined4 Entity_Routine_08032B68(int entity,uint speed)
+void Entity_Routine_08032B68(int entity,uint speed)
 
 {
   
@@ -16193,7 +16193,7 @@ LAB_0803356a:
 // =============================================================================
 // Function: Entity_Routine_08033584 @ 0x08033584
 // =============================================================================
-undefined8 Entity_Routine_08033584(byte *entity,int speed,int *collision)
+u32 Entity_Routine_08033584(byte *entity,int speed,int *collision)
 
 {
   char c_char1;
@@ -16298,7 +16298,7 @@ LAB_0803377a:
 // =============================================================================
 // Function: Entity_Routine_08033784 @ 0x08033784
 // =============================================================================
-undefined8 Entity_Routine_08033784(byte *entity,undefined4 speed,int *collision)
+u32 Entity_Routine_08033784(byte *entity,undefined4 speed,int *collision)
 
 {
   uint u_val1;
@@ -16343,7 +16343,7 @@ LAB_080337fa:
 // =============================================================================
 // Function: Entity_Routine_08033800 @ 0x08033800
 // =============================================================================
-undefined8 Entity_Routine_08033800(undefined2 *entity,int *speed,undefined4 collision)
+u32 Entity_Routine_08033800(undefined2 *entity,int *speed,undefined4 collision)
 
 {
   int i_val1;
@@ -16365,7 +16365,7 @@ undefined8 Entity_Routine_08033800(undefined2 *entity,int *speed,undefined4 coll
 // =============================================================================
 // Function: Entity_Routine_08033830 @ 0x08033830
 // =============================================================================
-undefined8 Entity_Routine_08033830(short *entity,byte *speed,int collision,undefined4 flags)
+u32 Entity_Routine_08033830(short *entity,byte *speed,int collision,undefined4 flags)
 
 {
   byte b_flag1;
@@ -16410,7 +16410,7 @@ LAB_080338d2:
 // =============================================================================
 // Function: Entity_Routine_080338F0 @ 0x080338F0
 // =============================================================================
-undefined8 Entity_Routine_080338F0(int entity)
+u32 Entity_Routine_080338F0(int entity)
 
 {
   uint u_val1;
@@ -16422,7 +16422,7 @@ undefined8 Entity_Routine_080338F0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08033A80 @ 0x08033A80
 // =============================================================================
-undefined8 Entity_Routine_08033A80(int entity)
+u32 Entity_Routine_08033A80(int entity)
 
 {
   undefined4 u_val1;
@@ -16453,7 +16453,7 @@ LAB_08033ada:
 // =============================================================================
 // Function: Entity_Routine_08033AE4 @ 0x08033AE4
 // =============================================================================
-undefined4 Entity_Routine_08033AE4(int entity)
+void Entity_Routine_08033AE4(int entity)
 
 {
   
@@ -16466,7 +16466,7 @@ undefined4 Entity_Routine_08033AE4(int entity)
 // =============================================================================
 // Function: Entity_Routine_08033B10 @ 0x08033B10
 // =============================================================================
-undefined4 Entity_Routine_08033B10(int entity)
+void Entity_Routine_08033B10(int entity)
 
 {
   
@@ -16503,7 +16503,7 @@ void Entity_Routine_08033B24(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08033B84 @ 0x08033B84
 // =============================================================================
-undefined4 Entity_Routine_08033B84(int entity)
+void Entity_Routine_08033B84(int entity)
 
 {
   
@@ -16516,7 +16516,7 @@ undefined4 Entity_Routine_08033B84(int entity)
 // =============================================================================
 // Function: Entity_Routine_08033B94 @ 0x08033B94
 // =============================================================================
-undefined4 Entity_Routine_08033B94(undefined4 *entity,int speed,undefined4 collision,undefined4 flags)
+void Entity_Routine_08033B94(undefined4 *entity,int speed,undefined4 collision,undefined4 flags)
 
 {
   undefined1 u_val1;
@@ -16773,7 +16773,7 @@ LAB_08033e92:
     c_char3 = Entity_Routine_08033584(entity[0xe] + (uint)*(byte *)(entity + 0xc) * 8,entity[0xf],p_int11);
     if (c_char3 != '\0') {
       u_val12 = NPC_Routine_0809E65C(i_val5);
-      NPC_Routine_0809E66C(i_val5,u_val12);
+      Bachelorette_GetStatsByte(i_val5,u_val12);
       u_val12 = Entity_Routine_08033914();
       i_val6 = stack_val_74._2_2_ - stack_val_2c;
       i_val5 = (short)stack_val_74 - stack_val_30;
@@ -16868,7 +16868,7 @@ LAB_08034110:
 // =============================================================================
 // Function: Entity_Routine_08034180 @ 0x08034180
 // =============================================================================
-undefined4 Entity_Routine_08034180(int entity,uint speed,uint collision,int flags)
+void Entity_Routine_08034180(int entity,uint speed,uint collision,int flags)
 
 {
   uint u_val1;
@@ -16940,7 +16940,7 @@ LAB_0803423e:
 // =============================================================================
 // Function: Entity_Routine_08034260 @ 0x08034260
 // =============================================================================
-undefined8 Entity_Routine_08034260(undefined4 *entity)
+u32 Entity_Routine_08034260(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -16974,7 +16974,7 @@ undefined8 Entity_Routine_08034260(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_080342D8 @ 0x080342D8
 // =============================================================================
-undefined4 Entity_Routine_080342D8(int entity)
+void Entity_Routine_080342D8(int entity)
 
 {
   char c_char1;
@@ -16991,7 +16991,7 @@ undefined4 Entity_Routine_080342D8(int entity)
     stack_val_10 = (stack_val_10 & 0xFFFF0000 | u_val2 & 0xffff) & 0xFF00FFFF;
     u_val5 = *(undefined4 *)(entity + 0x34);
     u_val3 = NPC_Routine_0809E65C(u_val5);
-    i_val4 = NPC_Routine_0809E66C(u_val5,u_val3);
+    i_val4 = Bachelorette_GetStatsByte(u_val5,u_val3);
     u_val2 = NPC_Routine_080AB788(0x100 - i_val4);
     stack_val_10 = stack_val_10 & 0x00FFFFFF | ((u_val2 >> 6) + 2) * 0x1000000;
     NPC_Routine_0809E7D8(*(undefined4 *)(entity + 0x34),&stack_val_10);
@@ -17003,7 +17003,7 @@ undefined4 Entity_Routine_080342D8(int entity)
 // =============================================================================
 // Function: Entity_Routine_0803436C @ 0x0803436C
 // =============================================================================
-undefined8 Entity_Routine_0803436C(undefined4 *entity)
+u32 Entity_Routine_0803436C(undefined4 *entity)
 
 {
   ushort u_val1;
@@ -17262,7 +17262,7 @@ LAB_0803492a:
 // =============================================================================
 // Function: Entity_Routine_08034940 @ 0x08034940
 // =============================================================================
-undefined8 Entity_Routine_08034940(undefined4 *entity)
+u32 Entity_Routine_08034940(undefined4 *entity)
 
 {
   ushort u_val1;
@@ -17313,7 +17313,7 @@ LAB_08034a0a:
 // =============================================================================
 // Function: Entity_Routine_08034AA0 @ 0x08034AA0
 // =============================================================================
-undefined4 Entity_Routine_08034AA0(int entity)
+void Entity_Routine_08034AA0(int entity)
 
 {
   char c_char1;
@@ -17343,7 +17343,7 @@ LAB_08034ad6:
 // =============================================================================
 // Function: Entity_Routine_08034AE8 @ 0x08034AE8
 // =============================================================================
-undefined4 Entity_Routine_08034AE8(int entity,undefined4 *speed)
+void Entity_Routine_08034AE8(int entity,undefined4 *speed)
 
 {
   short s_val1;
@@ -17399,7 +17399,7 @@ undefined4 Entity_Routine_08034AE8(int entity,undefined4 *speed)
 // =============================================================================
 // Function: Entity_Routine_08034BFC @ 0x08034BFC
 // =============================================================================
-undefined4 Entity_Routine_08034BFC(int entity,int speed,undefined2 collision,undefined2 flags)
+void Entity_Routine_08034BFC(int entity,int speed,undefined2 collision,undefined2 flags)
 
 {
   
@@ -17416,7 +17416,7 @@ undefined4 Entity_Routine_08034BFC(int entity,int speed,undefined2 collision,und
 // =============================================================================
 // Function: Entity_Routine_08034C4C @ 0x08034C4C
 // =============================================================================
-undefined4 Entity_Routine_08034C4C(int entity,undefined4 speed,undefined4 collision)
+void Entity_Routine_08034C4C(int entity,undefined4 speed,undefined4 collision)
 
 {
   
@@ -17427,7 +17427,7 @@ undefined4 Entity_Routine_08034C4C(int entity,undefined4 speed,undefined4 collis
 // =============================================================================
 // Function: Entity_Routine_08034C64 @ 0x08034C64
 // =============================================================================
-undefined8 Entity_Routine_08034C64(undefined4 entity,ushort *speed)
+u32 Entity_Routine_08034C64(undefined4 entity,ushort *speed)
 
 {
   undefined4 *p_uint1;
@@ -17504,7 +17504,7 @@ Entity_ProcessCollisions(int entity,undefined4 speed,int collision,undefined4 fl
 // =============================================================================
 // Function: Entity_Routine_08034DB0 @ 0x08034DB0
 // =============================================================================
-undefined4 Entity_Routine_08034DB0(int entity,uint speed)
+void Entity_Routine_08034DB0(int entity,uint speed)
 
 {
   int i_val1;
@@ -17547,7 +17547,7 @@ undefined4 Entity_Routine_08034DB0(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_08034E8C @ 0x08034E8C
 // =============================================================================
-undefined4 Entity_Routine_08034E8C(int entity)
+void Entity_Routine_08034E8C(int entity)
 
 {
   
@@ -17559,7 +17559,7 @@ undefined4 Entity_Routine_08034E8C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08034EA0 @ 0x08034EA0
 // =============================================================================
-undefined4 Entity_Routine_08034EA0(int entity)
+void Entity_Routine_08034EA0(int entity)
 
 {
   
@@ -17571,7 +17571,7 @@ undefined4 Entity_Routine_08034EA0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08034EB4 @ 0x08034EB4
 // =============================================================================
-undefined4 Entity_Routine_08034EB4(int entity)
+void Entity_Routine_08034EB4(int entity)
 
 {
   short s_val1;
@@ -17595,7 +17595,7 @@ undefined4 Entity_Routine_08034EB4(int entity)
 // =============================================================================
 // Function: Entity_Routine_08034EE0 @ 0x08034EE0
 // =============================================================================
-undefined8 Entity_Routine_08034EE0(int entity)
+u32 Entity_Routine_08034EE0(int entity)
 
 {
   uint u_val1;
@@ -17610,7 +17610,7 @@ undefined8 Entity_Routine_08034EE0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08034F00 @ 0x08034F00
 // =============================================================================
-undefined4 Entity_Routine_08034F00(undefined4 *entity,int speed)
+void Entity_Routine_08034F00(undefined4 *entity,int speed)
 
 {
   byte b_flag1;
@@ -17900,7 +17900,7 @@ LAB_080352ca:
 // =============================================================================
 // Function: Entity_Routine_08035380 @ 0x08035380
 // =============================================================================
-undefined4 Entity_Routine_08035380(undefined4 *entity)
+void Entity_Routine_08035380(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -18268,7 +18268,7 @@ LAB_080358ec:
 // =============================================================================
 // Function: Entity_Routine_08035908 @ 0x08035908
 // =============================================================================
-undefined4 Entity_Routine_08035908(int entity,uint speed)
+void Entity_Routine_08035908(int entity,uint speed)
 
 {
   char c_char1;
@@ -18289,7 +18289,7 @@ undefined4 Entity_Routine_08035908(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_08035940 @ 0x08035940
 // =============================================================================
-undefined4 Entity_Routine_08035940(int entity,uint speed)
+void Entity_Routine_08035940(int entity,uint speed)
 
 {
   char c_char1;
@@ -18310,7 +18310,7 @@ undefined4 Entity_Routine_08035940(int entity,uint speed)
 // =============================================================================
 // Function: Entity_Routine_08035978 @ 0x08035978
 // =============================================================================
-undefined8 Entity_Routine_08035978(undefined4 *entity)
+u32 Entity_Routine_08035978(undefined4 *entity)
 
 {
   char c_char1;
@@ -18364,7 +18364,7 @@ LAB_08035a3c:
 // =============================================================================
 // Function: Entity_Routine_08035A48 @ 0x08035A48
 // =============================================================================
-undefined4 Entity_Routine_08035A48(int entity,ushort *speed)
+void Entity_Routine_08035A48(int entity,ushort *speed)
 
 {
   char c_char1;
@@ -18398,7 +18398,7 @@ undefined4 Entity_Routine_08035A48(int entity,ushort *speed)
 // =============================================================================
 // Function: Entity_Routine_08035AE0 @ 0x08035AE0
 // =============================================================================
-undefined8 Entity_Routine_08035AE0(int entity)
+u32 Entity_Routine_08035AE0(int entity)
 
 {
   undefined4 u_val1;
@@ -18413,7 +18413,7 @@ undefined8 Entity_Routine_08035AE0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08035AFC @ 0x08035AFC
 // =============================================================================
-undefined8 Entity_Routine_08035AFC(int entity)
+u32 Entity_Routine_08035AFC(int entity)
 
 {
   
@@ -18438,7 +18438,7 @@ void Entity_Routine_08035B38(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035B64 @ 0x08035B64
 // =============================================================================
-undefined8 Entity_Routine_08035B64(int entity)
+u32 Entity_Routine_08035B64(int entity)
 
 {
   
@@ -18463,7 +18463,7 @@ void Entity_Routine_08035B9C(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035BC8 @ 0x08035BC8
 // =============================================================================
-undefined8 Entity_Routine_08035BC8(int entity)
+u32 Entity_Routine_08035BC8(int entity)
 
 {
   
@@ -18475,7 +18475,7 @@ undefined8 Entity_Routine_08035BC8(int entity)
 // =============================================================================
 // Function: Entity_Routine_08035C04 @ 0x08035C04
 // =============================================================================
-undefined4 Entity_Routine_08035C04(undefined4 *entity)
+void Entity_Routine_08035C04(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -18513,7 +18513,7 @@ undefined4 Entity_Routine_08035C04(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08035CB8 @ 0x08035CB8
 // =============================================================================
-undefined4 Entity_Routine_08035CB8(undefined4 entity,int speed)
+void Entity_Routine_08035CB8(undefined4 entity,int speed)
 
 {
   
@@ -18541,7 +18541,7 @@ void Entity_Routine_08035CD4(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035D04 @ 0x08035D04
 // =============================================================================
-undefined8 Entity_Routine_08035D04(int entity)
+u32 Entity_Routine_08035D04(int entity)
 
 {
   
@@ -18566,7 +18566,7 @@ void Entity_Routine_08035D40(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035D70 @ 0x08035D70
 // =============================================================================
-undefined8 Entity_Routine_08035D70(int entity)
+u32 Entity_Routine_08035D70(int entity)
 
 {
   
@@ -18591,7 +18591,7 @@ void Entity_Routine_08035DAC(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035DD8 @ 0x08035DD8
 // =============================================================================
-undefined8 Entity_Routine_08035DD8(int entity)
+u32 Entity_Routine_08035DD8(int entity)
 
 {
   
@@ -18616,7 +18616,7 @@ void Entity_Routine_08035E14(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035E40 @ 0x08035E40
 // =============================================================================
-undefined8 Entity_Routine_08035E40(int entity)
+u32 Entity_Routine_08035E40(int entity)
 
 {
   
@@ -18654,7 +18654,7 @@ void Entity_Routine_08035EE4(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035F10 @ 0x08035F10
 // =============================================================================
-undefined8 Entity_Routine_08035F10(int entity)
+u32 Entity_Routine_08035F10(int entity)
 
 {
   
@@ -18679,7 +18679,7 @@ void Entity_Routine_08035F48(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035F74 @ 0x08035F74
 // =============================================================================
-undefined8 Entity_Routine_08035F74(int entity)
+u32 Entity_Routine_08035F74(int entity)
 
 {
   
@@ -18704,7 +18704,7 @@ void Entity_Routine_08035FB0(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08035FE0 @ 0x08035FE0
 // =============================================================================
-undefined8 Entity_Routine_08035FE0(int entity)
+u32 Entity_Routine_08035FE0(int entity)
 
 {
   
@@ -18729,7 +18729,7 @@ void Entity_Routine_0803601C(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036048 @ 0x08036048
 // =============================================================================
-undefined8 Entity_Routine_08036048(int entity)
+u32 Entity_Routine_08036048(int entity)
 
 {
   
@@ -18741,7 +18741,7 @@ undefined8 Entity_Routine_08036048(int entity)
 // =============================================================================
 // Function: Entity_Routine_08036084 @ 0x08036084
 // =============================================================================
-undefined4 Entity_Routine_08036084(undefined4 *entity)
+void Entity_Routine_08036084(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -18779,7 +18779,7 @@ undefined4 Entity_Routine_08036084(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08036138 @ 0x08036138
 // =============================================================================
-undefined4 Entity_Routine_08036138(undefined4 entity,int speed)
+void Entity_Routine_08036138(undefined4 entity,int speed)
 
 {
   
@@ -18807,7 +18807,7 @@ void Entity_Routine_08036154(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036184 @ 0x08036184
 // =============================================================================
-undefined8 Entity_Routine_08036184(int entity)
+u32 Entity_Routine_08036184(int entity)
 
 {
   
@@ -18832,7 +18832,7 @@ void Entity_Routine_080361C0(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_080361EC @ 0x080361EC
 // =============================================================================
-undefined8 Entity_Routine_080361EC(int entity)
+u32 Entity_Routine_080361EC(int entity)
 
 {
   
@@ -18857,7 +18857,7 @@ void Entity_Routine_08036228(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036258 @ 0x08036258
 // =============================================================================
-undefined8 Entity_Routine_08036258(int entity)
+u32 Entity_Routine_08036258(int entity)
 
 {
   
@@ -18882,7 +18882,7 @@ void Entity_Routine_08036290(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_080362C0 @ 0x080362C0
 // =============================================================================
-undefined8 Entity_Routine_080362C0(int entity)
+u32 Entity_Routine_080362C0(int entity)
 
 {
   
@@ -18907,7 +18907,7 @@ void Entity_Routine_080362FC(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036328 @ 0x08036328
 // =============================================================================
-undefined8 Entity_Routine_08036328(int entity)
+u32 Entity_Routine_08036328(int entity)
 
 {
   
@@ -18932,7 +18932,7 @@ void Entity_Routine_08036364(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036390 @ 0x08036390
 // =============================================================================
-undefined8 Entity_Routine_08036390(int entity)
+u32 Entity_Routine_08036390(int entity)
 
 {
   
@@ -18957,7 +18957,7 @@ void Entity_Routine_080363CC(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_080363F8 @ 0x080363F8
 // =============================================================================
-undefined8 Entity_Routine_080363F8(int entity)
+u32 Entity_Routine_080363F8(int entity)
 
 {
   
@@ -18969,7 +18969,7 @@ undefined8 Entity_Routine_080363F8(int entity)
 // =============================================================================
 // Function: Entity_Routine_08036430 @ 0x08036430
 // =============================================================================
-undefined4 Entity_Routine_08036430(undefined4 *entity)
+void Entity_Routine_08036430(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -19007,7 +19007,7 @@ undefined4 Entity_Routine_08036430(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_080364E4 @ 0x080364E4
 // =============================================================================
-undefined4 Entity_Routine_080364E4(undefined4 entity,int speed)
+void Entity_Routine_080364E4(undefined4 entity,int speed)
 
 {
   
@@ -19048,7 +19048,7 @@ void Entity_Routine_08036564(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036590 @ 0x08036590
 // =============================================================================
-undefined8 Entity_Routine_08036590(int entity)
+u32 Entity_Routine_08036590(int entity)
 
 {
   
@@ -19060,7 +19060,7 @@ undefined8 Entity_Routine_08036590(int entity)
 // =============================================================================
 // Function: Entity_Routine_080365CC @ 0x080365CC
 // =============================================================================
-undefined4 Entity_Routine_080365CC(undefined4 *entity)
+void Entity_Routine_080365CC(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -19098,7 +19098,7 @@ undefined4 Entity_Routine_080365CC(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08036680 @ 0x08036680
 // =============================================================================
-undefined4 Entity_Routine_08036680(undefined4 entity,int speed)
+void Entity_Routine_08036680(undefined4 entity,int speed)
 
 {
   
@@ -19126,7 +19126,7 @@ void Entity_Routine_0803669C(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_080366CC @ 0x080366CC
 // =============================================================================
-undefined8 Entity_Routine_080366CC(int entity)
+u32 Entity_Routine_080366CC(int entity)
 
 {
   
@@ -19151,7 +19151,7 @@ void Entity_Routine_08036704(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036730 @ 0x08036730
 // =============================================================================
-undefined8 Entity_Routine_08036730(int entity)
+u32 Entity_Routine_08036730(int entity)
 
 {
   
@@ -19163,7 +19163,7 @@ undefined8 Entity_Routine_08036730(int entity)
 // =============================================================================
 // Function: Entity_Routine_08036768 @ 0x08036768
 // =============================================================================
-undefined4 Entity_Routine_08036768(int entity)
+void Entity_Routine_08036768(int entity)
 
 {
   int i_val1;
@@ -19184,7 +19184,7 @@ undefined4 Entity_Routine_08036768(int entity)
 // =============================================================================
 // Function: Entity_Routine_080367AC @ 0x080367AC
 // =============================================================================
-undefined4 Entity_Routine_080367AC(undefined4 entity,int speed)
+void Entity_Routine_080367AC(undefined4 entity,int speed)
 
 {
   
@@ -19212,7 +19212,7 @@ void Entity_Routine_080367C8(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_080367F8 @ 0x080367F8
 // =============================================================================
-undefined8 Entity_Routine_080367F8(int entity)
+u32 Entity_Routine_080367F8(int entity)
 
 {
   
@@ -19262,7 +19262,7 @@ void Entity_Routine_08036898(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_080368C4 @ 0x080368C4
 // =============================================================================
-undefined8 Entity_Routine_080368C4(int entity)
+u32 Entity_Routine_080368C4(int entity)
 
 {
   
@@ -19274,7 +19274,7 @@ undefined8 Entity_Routine_080368C4(int entity)
 // =============================================================================
 // Function: Entity_Routine_08036900 @ 0x08036900
 // =============================================================================
-undefined4 Entity_Routine_08036900(undefined4 *entity)
+void Entity_Routine_08036900(undefined4 *entity)
 
 {
   undefined4 u_val1;
@@ -19312,7 +19312,7 @@ undefined4 Entity_Routine_08036900(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_080369C4 @ 0x080369C4
 // =============================================================================
-undefined4 Entity_Routine_080369C4(undefined4 entity,int speed)
+void Entity_Routine_080369C4(undefined4 entity,int speed)
 
 {
   
@@ -19340,7 +19340,7 @@ void Entity_Routine_080369E0(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036A10 @ 0x08036A10
 // =============================================================================
-undefined8 Entity_Routine_08036A10(int entity)
+u32 Entity_Routine_08036A10(int entity)
 
 {
   
@@ -19365,7 +19365,7 @@ void Entity_Routine_08036A4C(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036A78 @ 0x08036A78
 // =============================================================================
-undefined8 Entity_Routine_08036A78(int entity)
+u32 Entity_Routine_08036A78(int entity)
 
 {
   
@@ -19377,7 +19377,7 @@ undefined8 Entity_Routine_08036A78(int entity)
 // =============================================================================
 // Function: Entity_Routine_08036AB4 @ 0x08036AB4
 // =============================================================================
-undefined4 Entity_Routine_08036AB4(int entity)
+void Entity_Routine_08036AB4(int entity)
 
 {
   ushort u_val1;
@@ -19404,7 +19404,7 @@ LAB_08036ae4:
 // =============================================================================
 // Function: Entity_Routine_08036B00 @ 0x08036B00
 // =============================================================================
-undefined4 Entity_Routine_08036B00(undefined4 entity,int speed)
+void Entity_Routine_08036B00(undefined4 entity,int speed)
 
 {
   
@@ -19445,7 +19445,7 @@ void Entity_Routine_08036B80(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036BB0 @ 0x08036BB0
 // =============================================================================
-undefined4 Entity_Routine_08036BB0(undefined4 *entity)
+void Entity_Routine_08036BB0(undefined4 *entity)
 
 {
   short s_val1;
@@ -19465,7 +19465,7 @@ undefined4 Entity_Routine_08036BB0(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08036BF8 @ 0x08036BF8
 // =============================================================================
-undefined4 Entity_Routine_08036BF8(undefined4 *entity,int speed)
+void Entity_Routine_08036BF8(undefined4 *entity,int speed)
 
 {
   short s_val1;
@@ -19559,7 +19559,7 @@ void Entity_Routine_08036D3C(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036D68 @ 0x08036D68
 // =============================================================================
-undefined8 Entity_Routine_08036D68(int entity)
+u32 Entity_Routine_08036D68(int entity)
 
 {
   
@@ -19584,7 +19584,7 @@ void Entity_Routine_08036D98(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036DC4 @ 0x08036DC4
 // =============================================================================
-undefined8 Entity_Routine_08036DC4(int entity)
+u32 Entity_Routine_08036DC4(int entity)
 
 {
   
@@ -19609,7 +19609,7 @@ void Entity_Routine_08036E00(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08036E2C @ 0x08036E2C
 // =============================================================================
-undefined8 Entity_Routine_08036E2C(int entity)
+u32 Entity_Routine_08036E2C(int entity)
 
 {
   
@@ -19622,7 +19622,7 @@ undefined8 Entity_Routine_08036E2C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08036E70 @ 0x08036E70
 // =============================================================================
-undefined4 Entity_Routine_08036E70(int entity)
+void Entity_Routine_08036E70(int entity)
 
 {
   undefined4 u_val1;
@@ -19661,7 +19661,7 @@ undefined4 Entity_Routine_08036E70(int entity)
 // =============================================================================
 // Function: Entity_Routine_08036EF0 @ 0x08036EF0
 // =============================================================================
-undefined4 Entity_Routine_08036EF0(undefined4 entity,int speed)
+void Entity_Routine_08036EF0(undefined4 entity,int speed)
 
 {
   
@@ -19675,7 +19675,7 @@ undefined4 Entity_Routine_08036EF0(undefined4 entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08036F0C @ 0x08036F0C
 // =============================================================================
-undefined8 Entity_Routine_08036F0C(int entity)
+u32 Entity_Routine_08036F0C(int entity)
 
 {
   char c_char1;
@@ -19703,7 +19703,7 @@ undefined8 Entity_Routine_08036F0C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08036F68 @ 0x08036F68
 // =============================================================================
-undefined4 Entity_Routine_08036F68(int entity,undefined4 speed)
+void Entity_Routine_08036F68(int entity,undefined4 speed)
 
 {
   char c_char1;
@@ -19755,7 +19755,7 @@ undefined4 Entity_Routine_08036F68(int entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08037098 @ 0x08037098
 // =============================================================================
-undefined4 Entity_Routine_08037098(int entity,int speed)
+void Entity_Routine_08037098(int entity,int speed)
 
 {
   byte facing_dir;
@@ -19794,7 +19794,7 @@ undefined4 Entity_Routine_08037098(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_080370D8 @ 0x080370D8
 // =============================================================================
-undefined8 Entity_Routine_080370D8(int entity)
+u32 Entity_Routine_080370D8(int entity)
 
 {
   char c_char1;
@@ -19822,7 +19822,7 @@ undefined8 Entity_Routine_080370D8(int entity)
 // =============================================================================
 // Function: Entity_Routine_08037118 @ 0x08037118
 // =============================================================================
-undefined4 Entity_Routine_08037118(int entity,int *speed)
+void Entity_Routine_08037118(int entity,int *speed)
 
 {
   int vel_x;
@@ -19907,7 +19907,7 @@ undefined4 Entity_Routine_08037118(int entity,int *speed)
 // =============================================================================
 // Function: Entity_Routine_0803726C @ 0x0803726C
 // =============================================================================
-undefined4 Entity_Routine_0803726C(undefined4 *entity)
+void Entity_Routine_0803726C(undefined4 *entity)
 
 {
   short s_val1;
@@ -20030,7 +20030,7 @@ LAB_08037402:
 // =============================================================================
 // Function: Entity_Routine_08037434 @ 0x08037434
 // =============================================================================
-undefined4 Entity_Routine_08037434(int entity)
+void Entity_Routine_08037434(int entity)
 
 {
   
@@ -20045,7 +20045,7 @@ undefined4 Entity_Routine_08037434(int entity)
 // =============================================================================
 // Function: Entity_Routine_0803745C @ 0x0803745C
 // =============================================================================
-undefined4 Entity_Routine_0803745C(int entity)
+void Entity_Routine_0803745C(int entity)
 
 {
   
@@ -20075,7 +20075,7 @@ void Entity_Routine_08037470(short *entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08037494 @ 0x08037494
 // =============================================================================
-undefined8 Entity_Routine_08037494(undefined4 *entity)
+u32 Entity_Routine_08037494(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -20121,7 +20121,7 @@ void Entity_Routine_0803753C(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08037568 @ 0x08037568
 // =============================================================================
-undefined4 Entity_Routine_08037568(undefined4 *entity)
+void Entity_Routine_08037568(undefined4 *entity)
 
 {
   int *p_int1;
@@ -20153,7 +20153,7 @@ undefined4 Entity_Routine_08037568(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08037628 @ 0x08037628
 // =============================================================================
-undefined8 Entity_Routine_08037628(undefined4 entity,int speed)
+u32 Entity_Routine_08037628(undefined4 entity,int speed)
 
 {
   undefined4 u_val1;
@@ -20170,7 +20170,7 @@ undefined8 Entity_Routine_08037628(undefined4 entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_0803763C @ 0x0803763C
 // =============================================================================
-undefined8 Entity_Routine_0803763C(undefined4 *entity)
+u32 Entity_Routine_0803763C(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -20216,7 +20216,7 @@ void Entity_Routine_080376E4(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08037714 @ 0x08037714
 // =============================================================================
-undefined4 Entity_Routine_08037714(undefined4 *entity)
+void Entity_Routine_08037714(undefined4 *entity)
 
 {
   int *p_int1;
@@ -20248,7 +20248,7 @@ undefined4 Entity_Routine_08037714(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_080377D4 @ 0x080377D4
 // =============================================================================
-undefined8 Entity_Routine_080377D4(undefined4 entity,int speed)
+u32 Entity_Routine_080377D4(undefined4 entity,int speed)
 
 {
   undefined4 u_val1;
@@ -20265,7 +20265,7 @@ undefined8 Entity_Routine_080377D4(undefined4 entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_080377E8 @ 0x080377E8
 // =============================================================================
-undefined8 Entity_Routine_080377E8(undefined4 *entity)
+u32 Entity_Routine_080377E8(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -20311,7 +20311,7 @@ void Entity_Routine_0803788C(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_080378B8 @ 0x080378B8
 // =============================================================================
-undefined4 Entity_Routine_080378B8(int entity)
+void Entity_Routine_080378B8(int entity)
 
 {
   uint u_val1;
@@ -20329,7 +20329,7 @@ undefined4 Entity_Routine_080378B8(int entity)
 // =============================================================================
 // Function: Entity_Routine_080378FC @ 0x080378FC
 // =============================================================================
-undefined8 Entity_Routine_080378FC(undefined4 entity,uint speed)
+u32 Entity_Routine_080378FC(undefined4 entity,uint speed)
 
 {
   undefined4 u_val1;
@@ -20353,7 +20353,7 @@ case_08037944:
 // =============================================================================
 // Function: Entity_Routine_08037958 @ 0x08037958
 // =============================================================================
-undefined8 Entity_Routine_08037958(int entity)
+u32 Entity_Routine_08037958(int entity)
 
 {
   byte b_flag1;
@@ -20398,7 +20398,7 @@ void Entity_Routine_080379D8(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08037A04 @ 0x08037A04
 // =============================================================================
-undefined4 Entity_Routine_08037A04(int entity)
+void Entity_Routine_08037A04(int entity)
 
 {
   uint u_val1;
@@ -20416,7 +20416,7 @@ undefined4 Entity_Routine_08037A04(int entity)
 // =============================================================================
 // Function: Entity_Routine_08037A48 @ 0x08037A48
 // =============================================================================
-undefined8 Entity_Routine_08037A48(undefined4 entity,int speed)
+u32 Entity_Routine_08037A48(undefined4 entity,int speed)
 
 {
   undefined4 u_val1;
@@ -20433,7 +20433,7 @@ undefined8 Entity_Routine_08037A48(undefined4 entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08037A5C @ 0x08037A5C
 // =============================================================================
-undefined8 Entity_Routine_08037A5C(undefined4 entity,undefined4 speed,byte collision)
+u32 Entity_Routine_08037A5C(undefined4 entity,undefined4 speed,byte collision)
 
 {
   int i_val1;
@@ -20457,7 +20457,7 @@ undefined8 Entity_Routine_08037A5C(undefined4 entity,undefined4 speed,byte colli
 // =============================================================================
 // Function: Entity_Routine_08037AD0 @ 0x08037AD0
 // =============================================================================
-undefined8 Entity_Routine_08037AD0(undefined4 entity,undefined4 speed,byte collision)
+u32 Entity_Routine_08037AD0(undefined4 entity,undefined4 speed,byte collision)
 
 {
   int i_val1;
@@ -20481,7 +20481,7 @@ undefined8 Entity_Routine_08037AD0(undefined4 entity,undefined4 speed,byte colli
 // =============================================================================
 // Function: Entity_Routine_08037B48 @ 0x08037B48
 // =============================================================================
-undefined8 Entity_Routine_08037B48(undefined4 entity,undefined4 speed)
+u32 Entity_Routine_08037B48(undefined4 entity,undefined4 speed)
 
 {
   int i_val1;
@@ -20495,7 +20495,7 @@ undefined8 Entity_Routine_08037B48(undefined4 entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08037B80 @ 0x08037B80
 // =============================================================================
-undefined8 Entity_Routine_08037B80(undefined4 entity,undefined4 speed)
+u32 Entity_Routine_08037B80(undefined4 entity,undefined4 speed)
 
 {
   int i_val1;
@@ -20509,7 +20509,7 @@ undefined8 Entity_Routine_08037B80(undefined4 entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_08037BB8 @ 0x08037BB8
 // =============================================================================
-undefined8 Entity_Routine_08037BB8(int entity,undefined4 speed,undefined4 collision)
+u32 Entity_Routine_08037BB8(int entity,undefined4 speed,undefined4 collision)
 
 {
   
@@ -20533,7 +20533,7 @@ void Entity_Routine_08037BE0(int entity,undefined4 speed,undefined4 collision)
 // =============================================================================
 // Function: Entity_Routine_08037C08 @ 0x08037C08
 // =============================================================================
-undefined8 Entity_Routine_08037C08(int entity,undefined4 speed,undefined4 collision,byte flags)
+u32 Entity_Routine_08037C08(int entity,undefined4 speed,undefined4 collision,byte flags)
 
 {
   undefined2 stack_val_14;
@@ -20555,7 +20555,7 @@ undefined8 Entity_Routine_08037C08(int entity,undefined4 speed,undefined4 collis
 // =============================================================================
 // Function: Entity_Routine_08037C68 @ 0x08037C68
 // =============================================================================
-undefined8 Entity_Routine_08037C68(int entity,undefined4 speed,undefined4 collision,byte flags)
+u32 Entity_Routine_08037C68(int entity,undefined4 speed,undefined4 collision,byte flags)
 
 {
   undefined2 stack_val_14;
@@ -20602,7 +20602,7 @@ void Entity_Routine_08037CF0(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08037D74 @ 0x08037D74
 // =============================================================================
-undefined4 Entity_Routine_08037D74(int *entity,undefined4 *speed)
+void Entity_Routine_08037D74(int *entity,undefined4 *speed)
 
 {
   undefined4 u_val1;
@@ -20630,7 +20630,7 @@ undefined4 Entity_Routine_08037D74(int *entity,undefined4 *speed)
 // =============================================================================
 // Function: Entity_Routine_08037E18 @ 0x08037E18
 // =============================================================================
-undefined8 Entity_Routine_08037E18(int entity,undefined4 speed,undefined4 collision)
+u32 Entity_Routine_08037E18(int entity,undefined4 speed,undefined4 collision)
 
 {
   undefined1 temp_buf_18 [8];
@@ -20658,7 +20658,7 @@ void Entity_Routine_08037E9C(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08037EB4 @ 0x08037EB4
 // =============================================================================
-undefined4 Entity_Routine_08037EB4(int entity,undefined1 *speed)
+void Entity_Routine_08037EB4(int entity,undefined1 *speed)
 
 {
   
@@ -20690,7 +20690,7 @@ void Entity_Routine_08037ED0(short *entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08037F60 @ 0x08037F60
 // =============================================================================
-undefined4 Entity_Routine_08037F60(int entity)
+void Entity_Routine_08037F60(int entity)
 
 {
   char c_char1;
@@ -20705,7 +20705,7 @@ undefined4 Entity_Routine_08037F60(int entity)
 // =============================================================================
 // Function: Entity_Routine_08037F7C @ 0x08037F7C
 // =============================================================================
-undefined4 Entity_Routine_08037F7C(int *entity,undefined4 *speed)
+void Entity_Routine_08037F7C(int *entity,undefined4 *speed)
 
 {
   undefined4 u_val1;
@@ -20737,7 +20737,7 @@ undefined4 Entity_Routine_08037F7C(int *entity,undefined4 *speed)
 // =============================================================================
 // Function: Entity_Routine_08038028 @ 0x08038028
 // =============================================================================
-undefined8 Entity_Routine_08038028(int entity,int *speed,undefined4 collision)
+u32 Entity_Routine_08038028(int entity,int *speed,undefined4 collision)
 
 {
   char c_char1;
@@ -20762,7 +20762,7 @@ undefined8 Entity_Routine_08038028(int entity,int *speed,undefined4 collision)
 // =============================================================================
 // Function: Entity_Routine_08038110 @ 0x08038110
 // =============================================================================
-undefined4 Entity_Routine_08038110(undefined4 *entity)
+void Entity_Routine_08038110(undefined4 *entity)
 
 {
   byte b_flag1;
@@ -20892,7 +20892,7 @@ LAB_08038250:
 // =============================================================================
 // Function: Entity_Routine_08038300 @ 0x08038300
 // =============================================================================
-undefined4 Entity_Routine_08038300(int entity)
+void Entity_Routine_08038300(int entity)
 
 {
   int i_val1;
@@ -20908,7 +20908,7 @@ undefined4 Entity_Routine_08038300(int entity)
 // =============================================================================
 // Function: Entity_Routine_08038320 @ 0x08038320
 // =============================================================================
-undefined4 Entity_Routine_08038320(undefined4 entity)
+void Entity_Routine_08038320(undefined4 entity)
 
 {
   
@@ -20967,7 +20967,7 @@ Entity_Routine_08038374(int entity,undefined4 speed,undefined4 collision,undefin
 // =============================================================================
 // Function: Entity_Routine_08038398 @ 0x08038398
 // =============================================================================
-undefined4 Entity_Routine_08038398(int entity,int speed,int collision)
+void Entity_Routine_08038398(int entity,int speed,int collision)
 
 {
   int i_val1;
@@ -21011,7 +21011,7 @@ undefined4 Entity_Routine_08038398(int entity,int speed,int collision)
 // =============================================================================
 // Function: Entity_Routine_080384FC @ 0x080384FC
 // =============================================================================
-undefined4 Entity_Routine_080384FC(int entity)
+void Entity_Routine_080384FC(int entity)
 
 {
   int i_val1;
@@ -21033,7 +21033,7 @@ undefined4 Entity_Routine_080384FC(int entity)
 // =============================================================================
 // Function: Entity_Routine_0803853C @ 0x0803853C
 // =============================================================================
-undefined8 Entity_Routine_0803853C(undefined4 *entity,undefined4 *speed)
+u32 Entity_Routine_0803853C(undefined4 *entity,undefined4 *speed)
 
 {
   undefined4 u_val1;
@@ -21048,7 +21048,7 @@ undefined8 Entity_Routine_0803853C(undefined4 *entity,undefined4 *speed)
 // =============================================================================
 // Function: Entity_Routine_08038580 @ 0x08038580
 // =============================================================================
-undefined4 Entity_Routine_08038580(int entity)
+void Entity_Routine_08038580(int entity)
 
 {
   char c_char1;
@@ -21074,7 +21074,7 @@ undefined4 Entity_Routine_08038580(int entity)
 // =============================================================================
 // Function: Entity_Routine_080385B0 @ 0x080385B0
 // =============================================================================
-undefined4 Entity_Routine_080385B0(int *entity,undefined4 *speed)
+void Entity_Routine_080385B0(int *entity,undefined4 *speed)
 
 {
   short s_val1;
@@ -21156,7 +21156,7 @@ undefined4 Entity_Routine_080385B0(int *entity,undefined4 *speed)
 // =============================================================================
 // Function: Entity_Routine_08038740 @ 0x08038740
 // =============================================================================
-undefined8 Entity_Routine_08038740(int entity,undefined4 speed,undefined4 collision)
+u32 Entity_Routine_08038740(int entity,undefined4 speed,undefined4 collision)
 
 {
   
@@ -21182,7 +21182,7 @@ void Entity_Routine_080387A0(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_080387B8 @ 0x080387B8
 // =============================================================================
-undefined4 Entity_Routine_080387B8(int entity)
+void Entity_Routine_080387B8(int entity)
 
 {
   
@@ -21195,7 +21195,7 @@ undefined4 Entity_Routine_080387B8(int entity)
 // =============================================================================
 // Function: Entity_Routine_080387C8 @ 0x080387C8
 // =============================================================================
-undefined4 Entity_Routine_080387C8(int entity)
+void Entity_Routine_080387C8(int entity)
 
 {
   
@@ -21208,7 +21208,7 @@ undefined4 Entity_Routine_080387C8(int entity)
 // =============================================================================
 // Function: Entity_Routine_080387D8 @ 0x080387D8
 // =============================================================================
-undefined8 Entity_Routine_080387D8(int entity)
+u32 Entity_Routine_080387D8(int entity)
 
 {
   undefined4 u_val1;
@@ -21225,7 +21225,7 @@ undefined8 Entity_Routine_080387D8(int entity)
 // =============================================================================
 // Function: Entity_Routine_080387EC @ 0x080387EC
 // =============================================================================
-undefined4 Entity_Routine_080387EC(int entity)
+void Entity_Routine_080387EC(int entity)
 
 {
   
@@ -21238,7 +21238,7 @@ undefined4 Entity_Routine_080387EC(int entity)
 // =============================================================================
 // Function: Entity_Routine_080387FC @ 0x080387FC
 // =============================================================================
-undefined4 Entity_Routine_080387FC(int entity)
+void Entity_Routine_080387FC(int entity)
 
 {
   
@@ -21251,7 +21251,7 @@ undefined4 Entity_Routine_080387FC(int entity)
 // =============================================================================
 // Function: Entity_Routine_0803880C @ 0x0803880C
 // =============================================================================
-undefined8 Entity_Routine_0803880C(int entity)
+u32 Entity_Routine_0803880C(int entity)
 
 {
   undefined4 u_val1;
@@ -21268,7 +21268,7 @@ undefined8 Entity_Routine_0803880C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08038820 @ 0x08038820
 // =============================================================================
-undefined8 Entity_Routine_08038820(undefined4 *entity,undefined4 *speed)
+u32 Entity_Routine_08038820(undefined4 *entity,undefined4 *speed)
 
 {
   int i_val1;
@@ -21317,7 +21317,7 @@ undefined8 Entity_Routine_08038820(undefined4 *entity,undefined4 *speed)
 // =============================================================================
 // Function: Entity_Routine_08038928 @ 0x08038928
 // =============================================================================
-undefined4 Entity_Routine_08038928(int entity)
+void Entity_Routine_08038928(int entity)
 
 {
   uint *p_uint1;
@@ -21414,7 +21414,7 @@ undefined4 Entity_Routine_08038928(int entity)
 // =============================================================================
 // Function: Entity_Routine_08038A70 @ 0x08038A70
 // =============================================================================
-undefined4 Entity_Routine_08038A70(int entity,undefined4 *speed)
+void Entity_Routine_08038A70(int entity,undefined4 *speed)
 
 {
   undefined4 u_val1;
@@ -21588,7 +21588,7 @@ undefined4 Entity_Routine_08038A70(int entity,undefined4 *speed)
 // =============================================================================
 // Function: Entity_Routine_08038DF0 @ 0x08038DF0
 // =============================================================================
-undefined4 Entity_Routine_08038DF0(undefined4 *entity)
+void Entity_Routine_08038DF0(undefined4 *entity)
 
 {
   int i_val1;
@@ -21621,7 +21621,7 @@ undefined4 Entity_Routine_08038DF0(undefined4 *entity)
 // =============================================================================
 // Function: Entity_Routine_08038EA0 @ 0x08038EA0
 // =============================================================================
-undefined8 Entity_Routine_08038EA0(int entity)
+u32 Entity_Routine_08038EA0(int entity)
 
 {
   
@@ -21631,7 +21631,7 @@ undefined8 Entity_Routine_08038EA0(int entity)
 // =============================================================================
 // Function: Entity_Routine_08038EB8 @ 0x08038EB8
 // =============================================================================
-undefined4 Entity_Routine_08038EB8(int entity)
+void Entity_Routine_08038EB8(int entity)
 
 {
   int pos_y;
@@ -21648,7 +21648,7 @@ undefined4 Entity_Routine_08038EB8(int entity)
 // =============================================================================
 // Function: Entity_Routine_08038EE0 @ 0x08038EE0
 // =============================================================================
-undefined4 Entity_Routine_08038EE0(undefined4 *entity)
+void Entity_Routine_08038EE0(undefined4 *entity)
 
 {
   uint *p_uint1;
@@ -21758,7 +21758,7 @@ LAB_08039064:
 // =============================================================================
 // Function: Entity_Routine_080390DC @ 0x080390DC
 // =============================================================================
-undefined4 Entity_Routine_080390DC(int entity)
+void Entity_Routine_080390DC(int entity)
 
 {
   
@@ -21772,7 +21772,7 @@ undefined4 Entity_Routine_080390DC(int entity)
 // =============================================================================
 // Function: Entity_Routine_0803911C @ 0x0803911C
 // =============================================================================
-undefined8 Entity_Routine_0803911C(int entity)
+u32 Entity_Routine_0803911C(int entity)
 
 {
   int i_val1;
@@ -21784,7 +21784,7 @@ undefined8 Entity_Routine_0803911C(int entity)
 // =============================================================================
 // Function: Entity_Routine_08039134 @ 0x08039134
 // =============================================================================
-undefined8 Entity_Routine_08039134(int *entity,uint speed,int collision,int flags)
+u32 Entity_Routine_08039134(int *entity,uint speed,int collision,int flags)
 
 {
   char c_char1;
@@ -21815,7 +21815,7 @@ undefined8 Entity_Routine_08039134(int *entity,uint speed,int collision,int flag
 // =============================================================================
 // Function: Entity_Routine_080391C0 @ 0x080391C0
 // =============================================================================
-undefined8 Entity_Routine_080391C0(int entity,int speed)
+u32 Entity_Routine_080391C0(int entity,int speed)
 
 {
   undefined4 u_val1;
@@ -21833,7 +21833,7 @@ undefined8 Entity_Routine_080391C0(int entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08039204 @ 0x08039204
 // =============================================================================
-undefined4 Entity_Routine_08039204(undefined4 entity,int speed,undefined4 collision)
+void Entity_Routine_08039204(undefined4 entity,int speed,undefined4 collision)
 
 {
   char c_char1;
@@ -21906,7 +21906,7 @@ LAB_080392ea:
 // =============================================================================
 // Function: Entity_Routine_0803955C @ 0x0803955C
 // =============================================================================
-undefined4 Entity_Routine_0803955C(undefined4 entity,undefined4 *speed)
+void Entity_Routine_0803955C(undefined4 entity,undefined4 *speed)
 
 {
   short s_val1;
@@ -21996,7 +21996,7 @@ undefined4 Entity_Routine_0803955C(undefined4 entity,undefined4 *speed)
 // =============================================================================
 // Function: Entity_Routine_080396F4 @ 0x080396F4
 // =============================================================================
-undefined8 Entity_Routine_080396F4(undefined4 entity,int speed)
+u32 Entity_Routine_080396F4(undefined4 entity,int speed)
 
 {
   undefined4 u_val1;
@@ -22011,7 +22011,7 @@ undefined8 Entity_Routine_080396F4(undefined4 entity,int speed)
 // =============================================================================
 // Function: Entity_Routine_08039708 @ 0x08039708
 // =============================================================================
-undefined4 Entity_Routine_08039708(undefined4 entity,undefined4 *speed,undefined4 collision)
+void Entity_Routine_08039708(undefined4 entity,undefined4 *speed,undefined4 collision)
 
 {
   int i_val1;
@@ -22112,7 +22112,7 @@ void Entity_Routine_08039A30(undefined4 entity)
 // =============================================================================
 // Function: Entity_Routine_08039D5C @ 0x08039D5C
 // =============================================================================
-undefined8 Entity_Routine_08039D5C(undefined4 entity,uint speed)
+u32 Entity_Routine_08039D5C(undefined4 entity,uint speed)
 
 {
   undefined4 u_val1;
@@ -22140,7 +22140,7 @@ case_08039D90:
 // =============================================================================
 // Function: Entity_Routine_08039DA8 @ 0x08039DA8
 // =============================================================================
-undefined4 Entity_Routine_08039DA8(int entity)
+void Entity_Routine_08039DA8(int entity)
 
 {
   int i_val1;
@@ -22161,7 +22161,7 @@ undefined4 Entity_Routine_08039DA8(int entity)
 // =============================================================================
 // Function: Entity_Routine_08039E18 @ 0x08039E18
 // =============================================================================
-undefined4 Entity_Routine_08039E18(int entity)
+void Entity_Routine_08039E18(int entity)
 
 {
   int i_val1;
@@ -22182,7 +22182,7 @@ undefined4 Entity_Routine_08039E18(int entity)
 // =============================================================================
 // Function: Entity_Routine_08039E98 @ 0x08039E98
 // =============================================================================
-undefined8 Entity_Routine_08039E98(undefined4 *entity,int *speed,undefined4 collision,int flags)
+u32 Entity_Routine_08039E98(undefined4 *entity,int *speed,undefined4 collision,int flags)
 
 {
   undefined4 u_val1;
@@ -22216,7 +22216,7 @@ undefined8 Entity_Routine_08039E98(undefined4 *entity,int *speed,undefined4 coll
 // =============================================================================
 // Function: Entity_Routine_08039F50 @ 0x08039F50
 // =============================================================================
-undefined4 Entity_Routine_08039F50(int entity,uint speed)
+void Entity_Routine_08039F50(int entity,uint speed)
 
 {
   int i_val1;
@@ -22444,7 +22444,7 @@ LAB_0803a2d6:
 // =============================================================================
 // Function: Entity_Routine_0803A350 @ 0x0803A350
 // =============================================================================
-undefined4 Entity_Routine_0803A350(undefined4 *entity,undefined2 speed)
+void Entity_Routine_0803A350(undefined4 *entity,undefined2 speed)
 
 {
   char c_char1;
@@ -22475,7 +22475,7 @@ LAB_0803a386:
 // =============================================================================
 // Function: Entity_Routine_0803A394 @ 0x0803A394
 // =============================================================================
-undefined4 Entity_Routine_0803A394(int entity,undefined4 speed,int collision,char flags)
+void Entity_Routine_0803A394(int entity,undefined4 speed,int collision,char flags)
 
 {
   undefined1 u_val1;
@@ -22678,7 +22678,7 @@ LAB_0803a776:
 // =============================================================================
 // Function: Entity_Routine_0803A798 @ 0x0803A798
 // =============================================================================
-undefined8 Entity_Routine_0803A798(undefined4 entity,undefined4 speed)
+u32 Entity_Routine_0803A798(undefined4 entity,undefined4 speed)
 
 {
   ushort u_val1;
@@ -22702,7 +22702,7 @@ undefined8 Entity_Routine_0803A798(undefined4 entity,undefined4 speed)
 // =============================================================================
 // Function: Entity_Routine_0803A840 @ 0x0803A840
 // =============================================================================
-undefined4 Entity_Routine_0803A840(int entity)
+void Entity_Routine_0803A840(int entity)
 
 {
   char c_char1;

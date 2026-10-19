@@ -9,1731 +9,1647 @@
 // =============================================================================
 // Function: Tool_Construct @ 0x0800D024
 // =============================================================================
-undefined8 Tool_Construct(int param_1)
+undefined8 Tool_Construct(int arg_1)
 
 {
-  char cVar1;
-  uint uVar2;
-  uint uVar3;
-  int iVar4;
-  undefined4 in_lr;
+  char c_char1;
+  uint u_val2;
+  uint loop_i;
+  int i_val4;
   
-  uVar2 = Building_Routine_0800CE74();
-  iVar4 = 0;
-  uVar3 = 0;
-  if (uVar2 != 0) {
-    param_1 = param_1 + 0x2c;
+  u_val2 = Building_Routine_0800CE74();
+  i_val4 = 0;
+  loop_i = 0;
+  if (u_val2 != 0) {
+    arg_1 = arg_1 + 0x2c;
     do {
-      cVar1 = Item_IsValid(param_1);
-      if (cVar1 == '\0') {
-        iVar4 = iVar4 + 1;
+      c_char1 = Item_IsValid(arg_1);
+      if (c_char1 == '\0') {
+        i_val4 = i_val4 + 1;
       }
-      param_1 = param_1 + 0x3c;
-      uVar3 = uVar3 + 1;
-    } while (uVar3 < uVar2);
+      arg_1 = arg_1 + 0x3c;
+      loop_i = loop_i + 1;
+    } while (loop_i < u_val2);
   }
-  return CONCAT44(in_lr,iVar4);
+  return i_val4;
 }
 
 // =============================================================================
 // Function: Tool_GetId @ 0x0800D058
 // =============================================================================
-undefined8 Tool_GetId(int param_1)
+undefined8 Tool_GetId(int arg_1)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  if (*(char *)(param_1 + 3) < '\0') {
-    uVar1 = *(byte *)(param_1 + 4) & 0xf;
+  if (*(char *)(arg_1 + 3) < '\0') {
+    u_val1 = *(byte *)(arg_1 + 4) & 0xf;
   }
   else {
-    uVar1 = 0xffffffff;
+    u_val1 = 0xffffffff;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Tool_GetName @ 0x0800D074
 // =============================================================================
-void Tool_GetName(short *param_1,undefined4 param_2,uint param_3)
+void Tool_GetName(short *arg_1,undefined4 arg_2,uint arg_3)
 
 {
-  uint uVar1;
-  short sVar2;
-  short sVar3;
+  uint u_val1;
+  short s_val2;
+  short s_val3;
   
-  uVar1 = Building_Routine_0800CE74(param_2);
-  if (uVar1 <= param_3) {
-    param_3 = math_modsi3(param_3);
+  u_val1 = Building_Routine_0800CE74(arg_2);
+  if (u_val1 <= arg_3) {
+    arg_3 = math_modsi3(arg_3);
   }
-  sVar2 = ((ushort)param_3 & 3) * 0x28;
-  if (param_3 < 8) {
-    sVar2 = sVar2 + 0xd8;
+  s_val2 = ((ushort)arg_3 & 3) * 0x28;
+  if (arg_3 < 8) {
+    s_val2 = s_val2 + 0xd8;
   }
   else {
-    sVar2 = sVar2 + 0x1c8;
+    s_val2 = s_val2 + 0x1c8;
   }
-  sVar3 = 0x90;
-  if ((param_3 & 7) < 4) {
-    sVar3 = 0x68;
+  s_val3 = 0x90;
+  if ((arg_3 & 7) < 4) {
+    s_val3 = 0x68;
   }
-  *param_1 = sVar2;
-  param_1[1] = sVar3;
-  return param_1;
+  *arg_1 = s_val2;
+  arg_1[1] = s_val3;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Tool_GetIconId @ 0x0800D158
 // =============================================================================
-undefined8 Tool_GetIconId(int param_1,uint param_2)
+undefined8 Tool_GetIconId(int arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  uint uVar2;
-  int iVar3;
-  undefined4 uVar4;
-  undefined4 in_lr;
+  uint u_val1;
+  uint u_val2;
+  int i_val3;
+  undefined4 u_val4;
   
-  uVar1 = Item_HasStarQuality();
-  if ((((param_2 < uVar1) && (uVar1 = (uint)*(char *)(param_1 + 7 + param_2), -1 < (int)uVar1)) &&
-      (uVar2 = Building_Routine_0800CE74(param_1), uVar1 < uVar2)) &&
-     (iVar3 = FoodStack_AddAmount(param_1 + uVar1 * 0x3c + 0x2c), iVar3 != 0)) {
-    uVar4 = 0;
-    uVar1 = Animal_Routine_0809B8D4();
-    if ((0x14 < uVar1) || (uVar1 = Animal_Routine_0809B8BC(iVar3), 0x1d < uVar1)) {
-      uVar4 = 1;
+  u_val1 = Item_HasStarQuality();
+  if ((((arg_2 < u_val1) && (u_val1 = (uint)*(char *)(arg_1 + 7 + arg_2), -1 < (int)u_val1)) &&
+      (u_val2 = Building_Routine_0800CE74(arg_1), u_val1 < u_val2)) &&
+     (i_val3 = FoodStack_AddAmount(arg_1 + u_val1 * 0x3c + 0x2c), i_val3 != 0)) {
+    u_val4 = 0;
+    u_val1 = Animal_Routine_0809B8D4();
+    if ((0x14 < u_val1) || (u_val1 = Animal_Routine_0809B8BC(i_val3), 0x1d < u_val1)) {
+      u_val4 = 1;
     }
   }
   else {
-    uVar4 = 0;
+    u_val4 = 0;
   }
-  return CONCAT44(in_lr,uVar4);
+  return u_val4;
 }
 
 // =============================================================================
 // Function: Tool_GetDesc @ 0x0800D1B4
 // =============================================================================
-undefined8 Tool_GetDesc(int param_1,uint param_2)
+undefined8 Tool_GetDesc(int arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  int iVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  int i_val2;
   
-  uVar1 = Item_HasStarQuality();
-  if (param_2 < uVar1) {
-    iVar2 = (int)*(char *)(param_1 + 7 + param_2);
+  u_val1 = Item_HasStarQuality();
+  if (arg_2 < u_val1) {
+    i_val2 = (int)*(char *)(arg_1 + 7 + arg_2);
   }
   else {
-    iVar2 = -1;
+    i_val2 = -1;
   }
-  return CONCAT44(in_lr,iVar2);
+  return i_val2;
 }
 
 // =============================================================================
 // Function: ToolStack_Construct @ 0x0800D1D8
 // =============================================================================
-undefined8 ToolStack_Construct(undefined4 *param_1)
+undefined8 ToolStack_Construct(undefined4 *arg_1)
 
 {
-  undefined4 in_lr;
-  undefined4 uStack_c;
+  undefined4 stack_val_c;
   
-  Tool_CalculateStaminaCost(&uStack_c);
-  uStack_c = CONCAT22(uStack_c._2_2_,(short)uStack_c + 0x20);
-  *param_1 = uStack_c;
-  return CONCAT44(in_lr,param_1);
+  Tool_CalculateStaminaCost(&stack_val_c);
+  stack_val_c = CONCAT22(stack_val_c._2_2_,(short)stack_val_c + 0x20);
+  *arg_1 = stack_val_c;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: ToolStack_GetTool @ 0x0800D214
 // =============================================================================
-undefined4 ToolStack_GetTool(byte *param_1)
+undefined4 ToolStack_GetTool(byte *arg_1)
 
 {
-  byte bVar1;
-  undefined4 in_lr;
+  byte b_flag1;
   
-  bVar1 = *param_1;
-  if ((bVar1 & 1) == 0) {
-    *param_1 = bVar1 & 0xfe | 1U - (char)((int)((uint)bVar1 << 0x1f) >> 0x1f) & 1;
+  b_flag1 = *arg_1;
+  if ((b_flag1 & 1) == 0) {
+    *arg_1 = b_flag1 & 0xfe | 1U - (char)((int)((uint)b_flag1 << 0x1f) >> 0x1f) & 1;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: ToolStack_IsEmpty @ 0x0800D23C
 // =============================================================================
-undefined4 ToolStack_IsEmpty(ushort *param_1,int param_2)
+undefined4 ToolStack_IsEmpty(ushort *arg_1,int arg_2)
 
 {
-  uint *puVar1;
-  undefined4 in_lr;
-  uint uStack_14;
-  uint uStack_10;
+  uint *p_uint1;
+  uint stack_val_14;
+  uint stack_val_10;
   
-  uStack_14 = 0x3E7;
-  uStack_10 = ((*param_1 & 0x7ff) >> 1) + param_2;
-  puVar1 = &uStack_14;
-  if (uStack_10 < 0x3E7) {
-    puVar1 = &uStack_10;
+  stack_val_14 = 0x3E7;
+  stack_val_10 = ((*arg_1 & 0x7ff) >> 1) + arg_2;
+  p_uint1 = &stack_val_14;
+  if (stack_val_10 < 0x3E7) {
+    p_uint1 = &stack_val_10;
   }
-  *param_1 = (ushort)0xFFFFF801 & *param_1 | (ushort)((*puVar1 & 0x3FF) << 1);
-  return in_lr;
+  *arg_1 = (ushort)0xFFFFF801 & *arg_1 | (ushort)((*p_uint1 & 0x3FF) << 1);
+  return;
 }
 
 // =============================================================================
 // Function: ToolStack_GetAmount @ 0x0800D280
 // =============================================================================
-undefined4 ToolStack_GetAmount(ushort *param_1,uint param_2)
+undefined4 ToolStack_GetAmount(ushort *arg_1,uint arg_2)
 
 {
-  ushort uVar1;
-  uint uVar2;
-  undefined4 in_lr;
+  ushort u_val1;
+  uint u_val2;
   
-  uVar1 = *param_1;
-  uVar2 = (uVar1 & 0x7ff) >> 1;
-  if (param_2 < uVar2) {
-    *param_1 = (ushort)0xFFFFF801 & uVar1 | (ushort)((uVar2 - param_2 & 0x3FF) << 1);
+  u_val1 = *arg_1;
+  u_val2 = (u_val1 & 0x7ff) >> 1;
+  if (arg_2 < u_val2) {
+    *arg_1 = (ushort)0xFFFFF801 & u_val1 | (ushort)((u_val2 - arg_2 & 0x3FF) << 1);
   }
   else {
-    *param_1 = (ushort)0xFFFFF801 & uVar1;
+    *arg_1 = (ushort)0xFFFFF801 & u_val1;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: ToolStack_AddAmount @ 0x0800D2BC
 // =============================================================================
-undefined4 ToolStack_AddAmount(uint *param_1,uint param_2)
+undefined4 ToolStack_AddAmount(uint *arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  uint uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  uint u_val2;
   
-  uVar1 = Building_Routine_0800CE74();
-  if (param_2 < uVar1) {
-    uVar1 = (*param_1 & 0x1fffffff) >> 0xd;
-    uVar2 = 1 << (param_2 & 0xff);
-    if ((uVar1 & uVar2) == 0) {
-      *param_1 = 0xE0001FFF & *param_1 | ((uVar1 | uVar2) & 0xFFFF) << 0xd;
+  u_val1 = Building_Routine_0800CE74();
+  if (arg_2 < u_val1) {
+    u_val1 = (*arg_1 & 0x1fffffff) >> 0xd;
+    u_val2 = 1 << (arg_2 & 0xff);
+    if ((u_val1 & u_val2) == 0) {
+      *arg_1 = 0xE0001FFF & *arg_1 | ((u_val1 | u_val2) & 0xFFFF) << 0xd;
     }
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: ToolStack_SubtractAmount @ 0x0800D2FC
 // =============================================================================
-undefined4 ToolStack_SubtractAmount(uint *param_1,uint param_2)
+undefined4 ToolStack_SubtractAmount(uint *arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  uint uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  uint u_val2;
   
-  uVar1 = Building_Routine_0800CE74();
-  if (param_2 < uVar1) {
-    uVar1 = (*param_1 & 0x1fffffff) >> 0xd;
-    uVar2 = 1 << (param_2 & 0xff);
-    if ((uVar1 & uVar2) != 0) {
-      *param_1 = 0xE0001FFF & *param_1 | (uVar1 & ~uVar2) << 0xd;
+  u_val1 = Building_Routine_0800CE74();
+  if (arg_2 < u_val1) {
+    u_val1 = (*arg_1 & 0x1fffffff) >> 0xd;
+    u_val2 = 1 << (arg_2 & 0xff);
+    if ((u_val1 & u_val2) != 0) {
+      *arg_1 = 0xE0001FFF & *arg_1 | (u_val1 & ~u_val2) << 0xd;
     }
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Food_Construct @ 0x0800D334
 // =============================================================================
-undefined4 Food_Construct(int param_1,uint param_2)
+undefined4 Food_Construct(int arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  uint uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  uint u_val2;
   
-  uVar1 = Item_HasStarQuality();
-  if (param_2 < uVar1) {
-    uVar1 = (*(byte *)(param_1 + 3) & 0x7f) >> 5;
-    uVar2 = 1 << (param_2 & 0xff);
-    if ((uVar1 & uVar2) == 0) {
-      *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) & 0x9f | (byte)((uVar1 | uVar2 & 3) << 5);
+  u_val1 = Item_HasStarQuality();
+  if (arg_2 < u_val1) {
+    u_val1 = (*(byte *)(arg_1 + 3) & 0x7f) >> 5;
+    u_val2 = 1 << (arg_2 & 0xff);
+    if ((u_val1 & u_val2) == 0) {
+      *(byte *)(arg_1 + 3) = *(byte *)(arg_1 + 3) & 0x9f | (byte)((u_val1 | u_val2 & 3) << 5);
     }
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Food_GetId @ 0x0800D36C
 // =============================================================================
-undefined4 Food_GetId(int param_1,uint param_2)
+undefined4 Food_GetId(int arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  uint uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  uint u_val2;
   
-  uVar1 = Item_HasStarQuality();
-  if (param_2 < uVar1) {
-    uVar1 = (*(byte *)(param_1 + 3) & 0x7f) >> 5;
-    uVar2 = 1 << (param_2 & 0xff);
-    if ((uVar1 & uVar2) != 0) {
-      *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) & 0x9f | (byte)((uVar1 & ~uVar2) << 5);
+  u_val1 = Item_HasStarQuality();
+  if (arg_2 < u_val1) {
+    u_val1 = (*(byte *)(arg_1 + 3) & 0x7f) >> 5;
+    u_val2 = 1 << (arg_2 & 0xff);
+    if ((u_val1 & u_val2) != 0) {
+      *(byte *)(arg_1 + 3) = *(byte *)(arg_1 + 3) & 0x9f | (byte)((u_val1 & ~u_val2) << 5);
     }
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Food_GetName @ 0x0800D3A0
 // =============================================================================
-undefined4 Food_GetName(int param_1)
+undefined4 Food_GetName(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  if (-1 < (int)((uint)*(byte *)(param_1 + 1) * 0x10000000)) {
-    *(byte *)(param_1 + 1) = *(byte *)(param_1 + 1) | 8;
+  if (-1 < (int)((uint)*(byte *)(arg_1 + 1) * 0x10000000)) {
+    *(byte *)(arg_1 + 1) = *(byte *)(arg_1 + 1) | 8;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Food_GetIconId @ 0x0800D3B8
 // =============================================================================
-undefined4 Food_GetIconId(int param_1)
+undefined4 Food_GetIconId(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  if (-1 < (int)((uint)*(byte *)(param_1 + 1) * 0x8000000)) {
-    *(byte *)(param_1 + 1) = *(byte *)(param_1 + 1) | 0x10;
+  if (-1 < (int)((uint)*(byte *)(arg_1 + 1) * 0x8000000)) {
+    *(byte *)(arg_1 + 1) = *(byte *)(arg_1 + 1) | 0x10;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Food_GetStaminaGain @ 0x0800D3D0
 // =============================================================================
-undefined8 Food_GetStaminaGain(int param_1,uint param_2)
+undefined8 Food_GetStaminaGain(int arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
   
-  uVar1 = Building_Routine_0800CE74();
-  if (param_2 < uVar1) {
-    uVar2 = Article_GetName(param_1 + param_2 * 0x3c + 0x2c);
+  u_val1 = Building_Routine_0800CE74();
+  if (arg_2 < u_val1) {
+    u_val2 = Article_GetName(arg_1 + arg_2 * 0x3c + 0x2c);
   }
   else {
-    uVar2 = 0;
+    u_val2 = 0;
   }
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: Food_GetFatigueGain @ 0x0800D3F8
 // =============================================================================
-undefined8 Food_GetFatigueGain(int param_1,uint param_2)
+undefined8 Food_GetFatigueGain(int arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
   
-  uVar1 = Building_Routine_0800CE74();
-  if (param_2 < uVar1) {
-    uVar2 = Article_GetIconId(param_1 + param_2 * 0x3c + 0x2c);
+  u_val1 = Building_Routine_0800CE74();
+  if (arg_2 < u_val1) {
+    u_val2 = Article_GetIconId(arg_1 + arg_2 * 0x3c + 0x2c);
   }
   else {
-    uVar2 = 0;
+    u_val2 = 0;
   }
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: Food_GetStaminaBonus @ 0x0800D420
 // =============================================================================
-undefined8 Food_GetStaminaBonus(int param_1,uint param_2)
+undefined8 Food_GetStaminaBonus(int arg_1,uint arg_2)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
   
-  uVar1 = Building_Routine_0800CE74();
-  if (param_2 < uVar1) {
-    uVar2 = Article_GetId(param_1 + param_2 * 0x3c + 0x2c);
+  u_val1 = Building_Routine_0800CE74();
+  if (arg_2 < u_val1) {
+    u_val2 = Article_GetId(arg_1 + arg_2 * 0x3c + 0x2c);
   }
   else {
-    uVar2 = 0;
+    u_val2 = 0;
   }
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: Food_GetFatigueBonus @ 0x0800D448
 // =============================================================================
-undefined8 Food_GetFatigueBonus(int param_1,undefined4 param_2)
+undefined8 Food_GetFatigueBonus(int arg_1,undefined4 arg_2)
 
 {
-  char cVar1;
-  int iVar2;
-  undefined4 in_lr;
+  char c_char1;
+  int i_val2;
   
-  iVar2 = 0;
-  while (iVar2 = Building_Routine_0800CF88(param_1,iVar2), -1 < iVar2) {
-    cVar1 = Article_CanBeDiscarded(param_1 + iVar2 * 0x3c + 0x2c,param_2);
-    if (cVar1 != '\0') goto LAB_0800d47e;
-    iVar2 = iVar2 + 1;
+  i_val2 = 0;
+  while (i_val2 = Building_Routine_0800CF88(arg_1,i_val2), -1 < i_val2) {
+    c_char1 = Article_CanBeDiscarded(arg_1 + i_val2 * 0x3c + 0x2c,arg_2);
+    if (c_char1 != '\0') goto LAB_0800d47e;
+    i_val2 = i_val2 + 1;
   }
-  iVar2 = -1;
+  i_val2 = -1;
 LAB_0800d47e:
-  return CONCAT44(in_lr,iVar2);
+  return i_val2;
 }
 
 // =============================================================================
 // Function: Food_IsDrink @ 0x0800D484
 // =============================================================================
-undefined8 Food_IsDrink(int param_1,undefined4 param_2)
+undefined8 Food_IsDrink(int arg_1,undefined4 arg_2)
 
 {
-  char cVar1;
-  int iVar2;
-  undefined4 in_lr;
+  char c_char1;
+  int i_val2;
   
-  iVar2 = 0;
-  while (iVar2 = Building_Routine_0800CF88(param_1,iVar2), -1 < iVar2) {
-    cVar1 = Article_GetDesc(param_1 + iVar2 * 0x3c + 0x2c,param_2);
-    if (cVar1 != '\0') goto LAB_0800d4ba;
-    iVar2 = iVar2 + 1;
+  i_val2 = 0;
+  while (i_val2 = Building_Routine_0800CF88(arg_1,i_val2), -1 < i_val2) {
+    c_char1 = Article_GetDesc(arg_1 + i_val2 * 0x3c + 0x2c,arg_2);
+    if (c_char1 != '\0') goto LAB_0800d4ba;
+    i_val2 = i_val2 + 1;
   }
-  iVar2 = -1;
+  i_val2 = -1;
 LAB_0800d4ba:
-  return CONCAT44(in_lr,iVar2);
+  return i_val2;
 }
 
 // =============================================================================
 // Function: Food_GetDesc @ 0x0800D4C0
 // =============================================================================
-undefined4 Food_GetDesc(int param_1,int param_2)
+undefined4 Food_GetDesc(int arg_1,int arg_2)
 
 {
-  undefined4 in_lr;
   
-  ArticleStack_Construct(param_1 + param_2 * 0x3c + 0x2c);
-  return in_lr;
+  ArticleStack_Construct(arg_1 + arg_2 * 0x3c + 0x2c);
+  return;
 }
 
 // =============================================================================
 // Function: Food_AddBonuses @ 0x0800D4D4
 // =============================================================================
-undefined4 Food_AddBonuses(int param_1,undefined4 param_2)
+undefined4 Food_AddBonuses(int arg_1,undefined4 arg_2)
 
 {
-  int iVar1;
-  uint uVar2;
-  int iVar3;
-  undefined4 uVar4;
-  undefined4 in_lr;
+  int i_val1;
+  uint u_val2;
+  int i_val3;
+  undefined4 u_val4;
   
-  iVar1 = Food_GetStaminaBonus();
-  if (iVar1 != 0) {
-    uVar2 = Animal_Routine_0809B220();
-    iVar3 = Food_GetStaminaGain(param_1,param_2);
-    if (iVar3 == 0) {
-      if ((*(uint *)(param_1 + 4) & 0xffffff) >> 0xe < uVar2) {
-        *(uint *)(param_1 + 4) =
-             0xFF003FFF & *(uint *)(param_1 + 4) | (uVar2 & 0x3FF) << 0xe;
-        uVar4 = Animal_Routine_0809B1F4(iVar1);
-        uVar2 = gba_strlen();
-        if (0xc < uVar2) {
-          uVar2 = 0xc;
+  i_val1 = Food_GetStaminaBonus();
+  if (i_val1 != 0) {
+    u_val2 = Animal_Routine_0809B220();
+    i_val3 = Food_GetStaminaGain(arg_1,arg_2);
+    if (i_val3 == 0) {
+      if ((*(uint *)(arg_1 + 4) & 0xffffff) >> 0xe < u_val2) {
+        *(uint *)(arg_1 + 4) =
+             0xFF003FFF & *(uint *)(arg_1 + 4) | (u_val2 & 0x3FF) << 0xe;
+        u_val4 = Animal_Routine_0809B1F4(i_val1);
+        u_val2 = gba_strlen();
+        if (0xc < u_val2) {
+          u_val2 = 0xc;
         }
-        gba_memcpy(param_1 + 0x1c,uVar4,uVar2);
-        *(undefined1 *)(param_1 + 0x1c + uVar2) = 0;
+        gba_memcpy(arg_1 + 0x1c,u_val4,u_val2);
+        *(undefined1 *)(arg_1 + 0x1c + u_val2) = 0;
       }
     }
-    else if ((*(ushort *)(param_1 + 4) & 0x3fff) >> 4 < uVar2) {
-      *(ushort *)(param_1 + 4) =
-           (ushort)0xFFFFC00F & *(ushort *)(param_1 + 4) | (ushort)((uVar2 & 0x3FF) << 4)
+    else if ((*(ushort *)(arg_1 + 4) & 0x3fff) >> 4 < u_val2) {
+      *(ushort *)(arg_1 + 4) =
+           (ushort)0xFFFFC00F & *(ushort *)(arg_1 + 4) | (ushort)((u_val2 & 0x3FF) << 4)
       ;
-      uVar4 = Animal_Routine_0809B1F4(iVar1);
-      uVar2 = gba_strlen();
-      if (0xc < uVar2) {
-        uVar2 = 0xc;
+      u_val4 = Animal_Routine_0809B1F4(i_val1);
+      u_val2 = gba_strlen();
+      if (0xc < u_val2) {
+        u_val2 = 0xc;
       }
-      gba_memcpy(param_1 + 0xc,uVar4,uVar2);
-      *(undefined1 *)(param_1 + 0xc + uVar2) = 0;
+      gba_memcpy(arg_1 + 0xc,u_val4,u_val2);
+      *(undefined1 *)(arg_1 + 0xc + u_val2) = 0;
     }
-    Food_GetDesc(param_1,param_2);
+    Food_GetDesc(arg_1,arg_2);
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FoodStack_Construct @ 0x0800D5B0
 // =============================================================================
-undefined4 FoodStack_Construct(uint *param_1)
+undefined4 FoodStack_Construct(uint *arg_1)
 
 {
-  ushort uVar1;
-  ushort uVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  char cVar7;
-  uint uVar8;
-  int iVar9;
-  int iVar10;
-  uint uVar11;
-  uint uVar12;
-  int iVar13;
-  uint uVar14;
-  uint *puVar15;
-  int iVar16;
-  undefined4 in_lr;
-  ushort auStack_40 [3];
-  undefined1 uStack_3a;
-  undefined2 uStack_38;
-  undefined2 uStack_36;
-  ushort uStack_34;
-  uint uStack_30;
-  undefined4 uStack_2c;
-  uint uStack_28;
-  uint uStack_24;
+  ushort u_val1;
+  ushort u_val2;
+  uint u_val3;
+  uint u_val4;
+  uint u_val5;
+  uint u_val6;
+  char c_char7;
+  uint u_val8;
+  int i_val9;
+  int i_val10;
+  uint u_val11;
+  uint u_val12;
+  int i_val13;
+  uint loop_i;
+  uint *p_uint15;
+  int i_val16;
+  ushort temp_buf_40 [3];
+  undefined1 stack_val_3a;
+  undefined2 stack_val_38;
+  undefined2 stack_val_36;
+  ushort stack_val_34;
+  uint stack_val_30;
+  undefined4 stack_val_2c;
+  uint stack_val_28;
+  uint stack_val_24;
   
-  uVar6 = 0xFFFF;
-  uVar5 = 0x00FF00FF;
-  uVar4 = 0x0F0F0F0F;
-  uVar3 = 0x33333333;
-  uVar14 = 0x55555555;
-  uVar12 = *param_1;
-  uVar8 = ((uVar12 & 0x1fffffff) >> 0xd & 0x55555555) +
-          ((uVar12 & 0x1fffffff) >> 0xe & 0x55555555);
-  uVar8 = (uVar8 & 0x33333333) + (uVar8 >> 2 & 0x33333333);
-  uVar8 = (uVar8 & 0x0F0F0F0F) + (uVar8 >> 4 & 0x0F0F0F0F);
-  uVar8 = (uVar8 & 0x00FF00FF) + (uVar8 >> 8 & 0x00FF00FF);
-  uVar11 = uVar8 & 0xFFFF;
-  uVar8 = uVar8 >> 0x10 & 0xFFFF;
-  *param_1 = uVar12 & 0xE0001FFF;
-  iVar16 = uVar11 + uVar8 +
-           (((*(byte *)((int)param_1 + 3) & 0x7f) >> 5 & uVar14) +
-            ((*(byte *)((int)param_1 + 3) & 0x7f) >> 6 & uVar14) & uVar3 & uVar4 & uVar5 & uVar6);
-  uStack_28 = Item_HasStarQuality(param_1);
-  uVar14 = 0;
-  if (uStack_28 != 0) {
+  u_val6 = 0xFFFF;
+  u_val5 = 0x00FF00FF;
+  u_val4 = 0x0F0F0F0F;
+  u_val3 = 0x33333333;
+  loop_i = 0x55555555;
+  u_val12 = *arg_1;
+  u_val8 = ((u_val12 & 0x1fffffff) >> 0xd & 0x55555555) +
+          ((u_val12 & 0x1fffffff) >> 0xe & 0x55555555);
+  u_val8 = (u_val8 & 0x33333333) + (u_val8 >> 2 & 0x33333333);
+  u_val8 = (u_val8 & 0x0F0F0F0F) + (u_val8 >> 4 & 0x0F0F0F0F);
+  u_val8 = (u_val8 & 0x00FF00FF) + (u_val8 >> 8 & 0x00FF00FF);
+  u_val11 = u_val8 & 0xFFFF;
+  u_val8 = u_val8 >> 0x10 & 0xFFFF;
+  *arg_1 = u_val12 & 0xE0001FFF;
+  i_val16 = u_val11 + u_val8 +
+           (((*(byte *)((int)arg_1 + 3) & 0x7f) >> 5 & loop_i) +
+            ((*(byte *)((int)arg_1 + 3) & 0x7f) >> 6 & loop_i) & u_val3 & u_val4 & u_val5 & u_val6);
+  stack_val_28 = Item_HasStarQuality(arg_1);
+  loop_i = 0;
+  if (stack_val_28 != 0) {
     do {
-      iVar9 = (int)*(char *)((int)param_1 + uVar14 + 7);
-      if (((-1 < iVar9) && (iVar9 = Article_GetId(param_1 + iVar9 * 0xf + 0xb), iVar9 != 0)) &&
-         (cVar7 = Animal_Routine_0809B8B0(), cVar7 != '\0')) {
-        if (((*(byte *)((int)param_1 + 3) & 0x7f) >> 5 & 1 << (uVar14 & 0xff)) != 0) {
-          iVar16 = iVar16 + -1;
-          Animal_Routine_0809B8F0(iVar9);
+      i_val9 = (int)*(char *)((int)arg_1 + loop_i + 7);
+      if (((-1 < i_val9) && (i_val9 = Article_GetId(arg_1 + i_val9 * 0xf + 0xb), i_val9 != 0)) &&
+         (c_char7 = Animal_Routine_0809B8B0(), c_char7 != '\0')) {
+        if (((*(byte *)((int)arg_1 + 3) & 0x7f) >> 5 & 1 << (loop_i & 0xff)) != 0) {
+          i_val16 = i_val16 + -1;
+          Animal_Routine_0809B8F0(i_val9);
         }
-        Tool_CalculateStaminaCost(&uStack_30,param_1,uVar14);
-        uStack_2c = uStack_30;
-        uVar3 = uStack_2c;
-        uStack_2c._0_2_ = (ushort)uStack_30;
-        uStack_2c._2_2_ = (ushort)(uStack_30 >> 0x10);
-        uVar2 = (ushort)0xFFFFFC00;
-        uVar1 = uVar2 & uStack_38;
-        uStack_38._1_1_ = (byte)(uVar1 >> 8);
-        uStack_38 = CONCAT11(uStack_38._1_1_ & 3 | (byte)((uStack_30 & 0x3f) << 2),(char)uVar1) |
+        Tool_CalculateStaminaCost(&stack_val_30,arg_1,loop_i);
+        stack_val_2c = stack_val_30;
+        u_val3 = stack_val_2c;
+        stack_val_2c._0_2_ = (ushort)stack_val_30;
+        stack_val_2c._2_2_ = (ushort)(stack_val_30 >> 0x10);
+        u_val2 = (ushort)0xFFFFFC00;
+        u_val1 = u_val2 & stack_val_38;
+        stack_val_38._1_1_ = (byte)(u_val1 >> 8);
+        stack_val_38 = CONCAT11(stack_val_38._1_1_ & 3 | (byte)((stack_val_30 & 0x3f) << 2),(char)u_val1) |
                     0x25;
-        uVar1 = uVar2 & uStack_36 | (ushort)uStack_2c >> 6 & (ushort)0x3FF;
-        uStack_36._1_1_ = (byte)(uVar1 >> 8);
-        uStack_36 = CONCAT11(uStack_36._1_1_ & 3 | (byte)((uStack_2c._2_2_ & 0x3f) << 2),(char)uVar1
+        u_val1 = u_val2 & stack_val_36 | (ushort)stack_val_2c >> 6 & (ushort)0x3FF;
+        stack_val_36._1_1_ = (byte)(u_val1 >> 8);
+        stack_val_36 = CONCAT11(stack_val_36._1_1_ & 3 | (byte)((stack_val_2c._2_2_ & 0x3f) << 2),(char)u_val1
                             );
-        uStack_34 = uVar2 & uStack_34 | uStack_2c._2_2_ >> 6 & (ushort)0x3FF;
-        uStack_2c = uVar3;
-        gba_memcpy(auStack_40,&uStack_38,6);
-        uStack_3a = 3;
-        Animal_Routine_0809B124(iVar9,auStack_40);
+        stack_val_34 = u_val2 & stack_val_34 | stack_val_2c._2_2_ >> 6 & (ushort)0x3FF;
+        stack_val_2c = u_val3;
+        gba_memcpy(temp_buf_40,&stack_val_38,6);
+        stack_val_3a = 3;
+        Animal_Routine_0809B124(i_val9,temp_buf_40);
       }
-      uVar14 = uVar14 + 1;
-    } while (uVar14 < uStack_28);
+      loop_i = loop_i + 1;
+    } while (loop_i < stack_val_28);
   }
-  *(byte *)((int)param_1 + 3) = *(byte *)((int)param_1 + 3) & 0x9f;
-  uStack_24 = Building_Routine_0800CE74(param_1);
-  uVar14 = 0;
-  if (uStack_24 != 0) {
-    puVar15 = param_1 + 0xb;
+  *(byte *)((int)arg_1 + 3) = *(byte *)((int)arg_1 + 3) & 0x9f;
+  stack_val_24 = Building_Routine_0800CE74(arg_1);
+  loop_i = 0;
+  if (stack_val_24 != 0) {
+    p_uint15 = arg_1 + 0xb;
     do {
-      cVar7 = Item_IsValid(puVar15);
-      if (cVar7 == '\0') {
-        iVar9 = Article_GetName(puVar15);
-        iVar10 = Article_GetIconId(puVar15);
-        if ((iVar9 != 0) || (iVar10 != 0)) {
-          iVar13 = iVar9;
-          if (iVar9 == 0) {
-            iVar13 = iVar10;
+      c_char7 = Item_IsValid(p_uint15);
+      if (c_char7 == '\0') {
+        i_val9 = Article_GetName(p_uint15);
+        i_val10 = Article_GetIconId(p_uint15);
+        if ((i_val9 != 0) || (i_val10 != 0)) {
+          i_val13 = i_val9;
+          if (i_val9 == 0) {
+            i_val13 = i_val10;
           }
-          if ((*(char *)((int)param_1 + 3) < '\0') && (uVar14 == ((byte)param_1[1] & 0xf))) {
-            Animal_Routine_0809B8F0(iVar13);
+          if ((*(char *)((int)arg_1 + 3) < '\0') && (loop_i == ((byte)arg_1[1] & 0xf))) {
+            Animal_Routine_0809B8F0(i_val13);
           }
           else {
-            cVar7 = Animal_Routine_0809B4FC(iVar13);
-            if ((cVar7 == '\0') &&
-               (((cVar7 = Animal_Routine_0809B8B0(iVar13), cVar7 == '\0' && (iVar16 != 0)) &&
-                (Actor_CopyLocation2(auStack_40,iVar13), (auStack_40[0] & 0x3ff) == 0x25)))) {
-              iVar16 = iVar16 + -1;
-              Animal_Routine_0809B8F0(iVar13);
+            c_char7 = Animal_Routine_0809B4FC(i_val13);
+            if ((c_char7 == '\0') &&
+               (((c_char7 = Animal_Routine_0809B8B0(i_val13), c_char7 == '\0' && (i_val16 != 0)) &&
+                (Actor_CopyLocation2(temp_buf_40,i_val13), (temp_buf_40[0] & 0x3ff) == 0x25)))) {
+              i_val16 = i_val16 + -1;
+              Animal_Routine_0809B8F0(i_val13);
             }
           }
-          if (iVar9 == 0) {
-            Animal_Routine_0809BFB4(iVar10);
+          if (i_val9 == 0) {
+            Animal_Routine_0809BFB4(i_val10);
           }
           else {
-            Animal_Routine_0809BE74(iVar9);
+            Animal_Routine_0809BE74(i_val9);
           }
         }
       }
-      puVar15 = puVar15 + 0xf;
-      uVar14 = uVar14 + 1;
-    } while (uVar14 < uStack_24);
+      p_uint15 = p_uint15 + 0xf;
+      loop_i = loop_i + 1;
+    } while (loop_i < stack_val_24);
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FoodStack_GetFood @ 0x0800D80C
 // =============================================================================
-undefined4 FoodStack_GetFood(int param_1,uint param_2)
+undefined4 FoodStack_GetFood(int arg_1,uint arg_2)
 
 {
-  char cVar1;
-  uint uVar2;
-  undefined4 in_lr;
+  char c_char1;
+  uint u_val2;
   
-  uVar2 = Building_Routine_0800CE74();
-  if (uVar2 <= param_2) {
-    param_2 = math_modsi3(param_2);
+  u_val2 = Building_Routine_0800CE74();
+  if (u_val2 <= arg_2) {
+    arg_2 = math_modsi3(arg_2);
   }
-  cVar1 = Item_IsValid(param_1 + param_2 * 0x3c + 0x2c);
-  if (cVar1 == '\0') {
-    *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) | 0x80;
-    *(byte *)(param_1 + 4) = *(byte *)(param_1 + 4) & 0xf0 | (byte)param_2 & 0xf;
+  c_char1 = Item_IsValid(arg_1 + arg_2 * 0x3c + 0x2c);
+  if (c_char1 == '\0') {
+    *(byte *)(arg_1 + 3) = *(byte *)(arg_1 + 3) | 0x80;
+    *(byte *)(arg_1 + 4) = *(byte *)(arg_1 + 4) & 0xf0 | (byte)arg_2 & 0xf;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FoodStack_IsEmpty @ 0x0800D864
 // =============================================================================
-undefined4 FoodStack_IsEmpty(int param_1,uint param_2,uint param_3)
+undefined4 FoodStack_IsEmpty(int arg_1,uint arg_2,uint arg_3)
 
 {
-  char cVar1;
-  uint uVar2;
-  int iVar3;
-  undefined4 in_lr;
+  char c_char1;
+  uint u_val2;
+  int i_val3;
   
-  uVar2 = Item_HasStarQuality();
-  if ((((param_2 < uVar2) && (uVar2 = Building_Routine_0800CE74(param_1), param_3 < uVar2)) &&
-      (iVar3 = Article_GetId(param_1 + param_3 * 0x3c + 0x2c), iVar3 != 0)) &&
-     (cVar1 = Animal_Routine_0809B8B0(), cVar1 != '\0')) {
-    *(char *)(param_1 + 7 + param_2) = (char)param_3;
+  u_val2 = Item_HasStarQuality();
+  if ((((arg_2 < u_val2) && (u_val2 = Building_Routine_0800CE74(arg_1), arg_3 < u_val2)) &&
+      (i_val3 = Article_GetId(arg_1 + arg_3 * 0x3c + 0x2c), i_val3 != 0)) &&
+     (c_char1 = Animal_Routine_0809B8B0(), c_char1 != '\0')) {
+    *(char *)(arg_1 + 7 + arg_2) = (char)arg_3;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FoodStack_GetAmount @ 0x0800D8A8
 // =============================================================================
-void FoodStack_GetAmount(int param_1,int param_2)
+void FoodStack_GetAmount(int arg_1,int arg_2)
 
 {
-  ushort uVar1;
-  ushort uVar2;
-  char cVar3;
-  char *pcVar4;
-  int iVar5;
-  uint uVar6;
-  undefined4 uVar7;
-  int iVar8;
-  undefined1 auStack_70 [6];
-  undefined1 uStack_6a;
-  undefined2 uStack_68;
-  undefined2 uStack_66;
-  ushort uStack_64;
-  undefined1 auStack_60 [56];
-  uint uStack_28;
-  undefined4 uStack_24;
+  ushort u_val1;
+  ushort u_val2;
+  char c_char3;
+  char *p_char4;
+  int i_val5;
+  uint u_val6;
+  undefined4 u_val7;
+  int i_val8;
+  undefined1 stack_buf_70 [6];
+  undefined1 stack_val_6a;
+  undefined2 stack_val_68;
+  undefined2 stack_val_66;
+  ushort stack_val_64;
+  undefined1 stack_buf_60 [56];
+  uint stack_val_28;
+  undefined4 stack_val_24;
   
-  cVar3 = Tool_GetIconId();
-  if (cVar3 != '\0') {
-    pcVar4 = (char *)(param_1 + 7 + param_2);
-    cVar3 = *pcVar4;
-    *pcVar4 = -1;
-    ToolStack_Construct(&uStack_28,param_1,param_2);
-    uStack_24 = uStack_28;
-    uVar6 = uStack_24;
-    uStack_24._0_2_ = (ushort)uStack_28;
-    uStack_24._2_2_ = (ushort)(uStack_28 >> 0x10);
-    uVar2 = (ushort)0xFFFFFC00;
-    uVar1 = uVar2 & uStack_68;
-    uStack_68._1_1_ = (byte)(uVar1 >> 8);
-    uStack_68 = CONCAT11(uStack_68._1_1_ & 3 | (byte)((uStack_28 & 0x3f) << 2),(char)uVar1) | 0x25;
-    uVar1 = uVar2 & uStack_66 | (ushort)uStack_24 >> 6;
-    uStack_66._1_1_ = (byte)(uVar1 >> 8);
-    uStack_66 = CONCAT11(uStack_66._1_1_ & 3 | (byte)((uStack_24._2_2_ & 0x3f) << 2),(char)uVar1);
-    uStack_64 = uVar2 & uStack_64 | uStack_24._2_2_ >> 6;
-    uStack_24 = uVar6;
-    gba_memcpy(auStack_70,&uStack_68,6);
-    uStack_6a = 2;
-    iVar8 = param_1 + cVar3 * 0x3c + 0x2c;
-    iVar5 = Article_GetName(iVar8);
-    if (iVar5 != 0) {
+  c_char3 = Tool_GetIconId();
+  if (c_char3 != '\0') {
+    p_char4 = (char *)(arg_1 + 7 + arg_2);
+    c_char3 = *p_char4;
+    *p_char4 = -1;
+    ToolStack_Construct(&stack_val_28,arg_1,arg_2);
+    stack_val_24 = stack_val_28;
+    u_val6 = stack_val_24;
+    stack_val_24._0_2_ = (ushort)stack_val_28;
+    stack_val_24._2_2_ = (ushort)(stack_val_28 >> 0x10);
+    u_val2 = (ushort)0xFFFFFC00;
+    u_val1 = u_val2 & stack_val_68;
+    stack_val_68._1_1_ = (byte)(u_val1 >> 8);
+    stack_val_68 = CONCAT11(stack_val_68._1_1_ & 3 | (byte)((stack_val_28 & 0x3f) << 2),(char)u_val1) | 0x25;
+    u_val1 = u_val2 & stack_val_66 | (ushort)stack_val_24 >> 6;
+    stack_val_66._1_1_ = (byte)(u_val1 >> 8);
+    stack_val_66 = CONCAT11(stack_val_66._1_1_ & 3 | (byte)((stack_val_24._2_2_ & 0x3f) << 2),(char)u_val1);
+    stack_val_64 = u_val2 & stack_val_64 | stack_val_24._2_2_ >> 6;
+    stack_val_24 = u_val6;
+    gba_memcpy(stack_buf_70,&stack_val_68,6);
+    stack_val_6a = 2;
+    i_val8 = arg_1 + c_char3 * 0x3c + 0x2c;
+    i_val5 = Article_GetName(i_val8);
+    if (i_val5 != 0) {
       Animal_Routine_0809B91C();
-      Animal_Routine_0809BD70(auStack_60,auStack_70,0,0);
-      uVar6 = Animal_Routine_0809B228(iVar5);
-      if (1 < uVar6 >> 1) {
-        uVar7 = math_rand();
-        uVar7 = math_modsi3(uVar7,uVar6 >> 1);
-        NPC_AddFriendship(auStack_60,uVar7);
+      Animal_Routine_0809BD70(stack_buf_60,stack_buf_70,0,0);
+      u_val6 = Animal_Routine_0809B228(i_val5);
+      if (1 < u_val6 >> 1) {
+        u_val7 = math_rand();
+        u_val7 = math_modsi3(u_val7,u_val6 >> 1);
+        NPC_AddFriendship(stack_buf_60,u_val7);
       }
-      uVar7 = Food_GetFatigueBonus(param_1,auStack_60);
+      u_val7 = Food_GetFatigueBonus(arg_1,stack_buf_60);
       goto LAB_0800d9ec;
     }
-    iVar5 = Article_GetIconId(iVar8);
-    if (iVar5 != 0) {
+    i_val5 = Article_GetIconId(i_val8);
+    if (i_val5 != 0) {
       Animal_Routine_0809B91C();
-      Animal_Routine_0809BEBC(&uStack_68,auStack_70,0,0);
-      uVar6 = Animal_Routine_0809B228(iVar5);
-      if (1 < uVar6 >> 1) {
-        uVar7 = math_rand();
-        uVar7 = math_modsi3(uVar7,uVar6 >> 1);
-        NPC_AddFriendship(&uStack_68,uVar7);
+      Animal_Routine_0809BEBC(&stack_val_68,stack_buf_70,0,0);
+      u_val6 = Animal_Routine_0809B228(i_val5);
+      if (1 < u_val6 >> 1) {
+        u_val7 = math_rand();
+        u_val7 = math_modsi3(u_val7,u_val6 >> 1);
+        NPC_AddFriendship(&stack_val_68,u_val7);
       }
-      uVar7 = Food_IsDrink(param_1,&uStack_68);
+      u_val7 = Food_IsDrink(arg_1,&stack_val_68);
       goto LAB_0800d9ec;
     }
   }
-  uVar7 = 0xffffffff;
+  u_val7 = 0xffffffff;
 LAB_0800d9ec:
-  return uVar7;
+  return u_val7;
 }
 
 // =============================================================================
 // Function: FoodStack_AddAmount @ 0x0800DA14
 // =============================================================================
-undefined8 FoodStack_AddAmount(byte *param_1)
+undefined8 FoodStack_AddAmount(byte *arg_1)
 
 {
   byte *pbVar1;
-  undefined4 in_lr;
   
   pbVar1 = (byte *)0x0;
-  if ((*param_1 & 1) != 0) {
-    pbVar1 = param_1 + 4;
+  if ((*arg_1 & 1) != 0) {
+    pbVar1 = arg_1 + 4;
   }
-  return CONCAT44(in_lr,pbVar1);
+  return pbVar1;
 }
 
 // =============================================================================
 // Function: FoodStack_SubtractAmount @ 0x0800DA2C
 // =============================================================================
-undefined8 FoodStack_SubtractAmount(byte *param_1)
+undefined8 FoodStack_SubtractAmount(byte *arg_1)
 
 {
   byte *pbVar1;
-  undefined4 in_lr;
   
   pbVar1 = (byte *)0x0;
-  if (((*param_1 & 1) != 0) && ((int)((uint)*param_1 * 0x40000000) < 0)) {
-    pbVar1 = param_1 + 4;
+  if (((*arg_1 & 1) != 0) && ((int)((uint)*arg_1 * 0x40000000) < 0)) {
+    pbVar1 = arg_1 + 4;
   }
-  return CONCAT44(in_lr,pbVar1);
+  return pbVar1;
 }
 
 // =============================================================================
 // Function: Article_Construct @ 0x0800DA48
 // =============================================================================
-undefined8 Article_Construct(byte *param_1)
+undefined8 Article_Construct(byte *arg_1)
 
 {
   byte *pbVar1;
-  undefined4 in_lr;
   
   pbVar1 = (byte *)0x0;
-  if (((*param_1 & 1) != 0) && (-1 < (int)((uint)*param_1 * 0x40000000))) {
-    pbVar1 = param_1 + 4;
+  if (((*arg_1 & 1) != 0) && (-1 < (int)((uint)*arg_1 * 0x40000000))) {
+    pbVar1 = arg_1 + 4;
   }
-  return CONCAT44(in_lr,pbVar1);
+  return pbVar1;
 }
 
 // =============================================================================
 // Function: Article_GetId @ 0x0800DA64
 // =============================================================================
-undefined8 Article_GetId(byte *param_1)
+undefined8 Article_GetId(byte *arg_1)
 
 {
   byte *pbVar1;
-  undefined4 in_lr;
   
   pbVar1 = (byte *)0x0;
-  if ((*param_1 & 1) != 0) {
-    pbVar1 = param_1 + 4;
+  if ((*arg_1 & 1) != 0) {
+    pbVar1 = arg_1 + 4;
   }
-  return CONCAT44(in_lr,pbVar1);
+  return pbVar1;
 }
 
 // =============================================================================
 // Function: Article_GetName @ 0x0800DA7C
 // =============================================================================
-undefined8 Article_GetName(byte *param_1)
+undefined8 Article_GetName(byte *arg_1)
 
 {
   byte *pbVar1;
-  undefined4 in_lr;
   
   pbVar1 = (byte *)0x0;
-  if (((*param_1 & 1) != 0) && ((int)((uint)*param_1 * 0x40000000) < 0)) {
-    pbVar1 = param_1 + 4;
+  if (((*arg_1 & 1) != 0) && ((int)((uint)*arg_1 * 0x40000000) < 0)) {
+    pbVar1 = arg_1 + 4;
   }
-  return CONCAT44(in_lr,pbVar1);
+  return pbVar1;
 }
 
 // =============================================================================
 // Function: Article_GetIconId @ 0x0800DA98
 // =============================================================================
-undefined8 Article_GetIconId(byte *param_1)
+undefined8 Article_GetIconId(byte *arg_1)
 
 {
   byte *pbVar1;
-  undefined4 in_lr;
   
   pbVar1 = (byte *)0x0;
-  if (((*param_1 & 1) != 0) && (-1 < (int)((uint)*param_1 * 0x40000000))) {
-    pbVar1 = param_1 + 4;
+  if (((*arg_1 & 1) != 0) && (-1 < (int)((uint)*arg_1 * 0x40000000))) {
+    pbVar1 = arg_1 + 4;
   }
-  return CONCAT44(in_lr,pbVar1);
+  return pbVar1;
 }
 
 // =============================================================================
 // Function: Article_CanBeDiscarded @ 0x0800DAB4
 // =============================================================================
-undefined8 Article_CanBeDiscarded(byte *param_1)
+undefined8 Article_CanBeDiscarded(byte *arg_1)
 
 {
-  undefined4 uVar1;
-  undefined4 in_lr;
+  undefined4 u_val1;
   
-  if ((*param_1 & 1) == 0) {
-    if (param_1 != (byte *)0xfffffffc) {
+  if ((*arg_1 & 1) == 0) {
+    if (arg_1 != (byte *)0xfffffffc) {
       VTable_Routine_080D7BC4();
     }
-    *param_1 = *param_1 | 3;
-    uVar1 = 1;
+    *arg_1 = *arg_1 | 3;
+    u_val1 = 1;
   }
   else {
-    uVar1 = 0;
+    u_val1 = 0;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Article_GetDesc @ 0x0800DAE4
 // =============================================================================
-undefined8 Article_GetDesc(byte *param_1)
+undefined8 Article_GetDesc(byte *arg_1)
 
 {
-  undefined4 uVar1;
-  undefined4 in_lr;
+  undefined4 u_val1;
   
-  if ((*param_1 & 1) == 0) {
-    if (param_1 != (byte *)0xfffffffc) {
+  if ((*arg_1 & 1) == 0) {
+    if (arg_1 != (byte *)0xfffffffc) {
       VTable_Routine_080D7B50();
     }
-    uVar1 = 1;
-    *param_1 = *param_1 & 0xfd | 1;
+    u_val1 = 1;
+    *arg_1 = *arg_1 & 0xfd | 1;
   }
   else {
-    uVar1 = 0;
+    u_val1 = 0;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: ArticleStack_Construct @ 0x0800DB14
 // =============================================================================
-undefined4 ArticleStack_Construct(byte *param_1)
+undefined4 ArticleStack_Construct(byte *arg_1)
 
 {
-  undefined4 in_lr;
   
-  if ((*param_1 & 1) != 0) {
-    *param_1 = *param_1 & 0xfe;
+  if ((*arg_1 & 1) != 0) {
+    *arg_1 = *arg_1 & 0xfe;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: ArticleStack_GetArticle @ 0x0800DB34
 // =============================================================================
-undefined8 ArticleStack_GetArticle(byte *param_1)
+undefined8 ArticleStack_GetArticle(byte *arg_1)
 
 {
-  undefined4 uVar1;
-  undefined4 in_lr;
+  undefined4 u_val1;
   
-  uVar1 = gRomData_080E9620;
-  if (*param_1 < 0x51) {
-    uVar1 = *(undefined4 *)((uint)*param_1 * 0xc + gToolDefinitions);
+  u_val1 = gRomData_080E9620;
+  if (*arg_1 < 0x51) {
+    u_val1 = *(undefined4 *)((uint)*arg_1 * 0xc + gToolDefinitions);
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: ArticleStack_IsEmpty @ 0x0800DB60
 // =============================================================================
-undefined8 ArticleStack_IsEmpty(byte *param_1)
+undefined8 ArticleStack_IsEmpty(byte *arg_1)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  uVar1 = 0x1C9;
-  if (*param_1 < 0x51) {
-    uVar1 = (uint)*(ushort *)((uint)*param_1 * 0xc + gToolDefinitions + 4);
+  u_val1 = 0x1C9;
+  if (*arg_1 < 0x51) {
+    u_val1 = (uint)*(ushort *)((uint)*arg_1 * 0xc + gToolDefinitions + 4);
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: ArticleStack_GetAmount @ 0x0800DB8C
 // =============================================================================
-undefined8 ArticleStack_GetAmount(byte *param_1)
+undefined8 ArticleStack_GetAmount(byte *arg_1)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int i_val1;
   
-  iVar1 = gRomData_080E962C;
-  if ((*param_1 < 0x51) && (iVar1 = *(int *)((uint)*param_1 * 0xc + gToolDefinitions + 8), iVar1 == 0))
+  i_val1 = gRomData_080E962C;
+  if ((*arg_1 < 0x51) && (i_val1 = *(int *)((uint)*arg_1 * 0xc + gToolDefinitions + 8), i_val1 == 0))
   {
-    iVar1 = gRomData_080E962C;
+    i_val1 = gRomData_080E962C;
   }
-  return CONCAT44(in_lr,iVar1);
+  return i_val1;
 }
 
 // =============================================================================
 // Function: ArticleStack_AddAmount @ 0x0800DBC8
 // =============================================================================
-undefined8 ArticleStack_AddAmount(int param_1)
+undefined8 ArticleStack_AddAmount(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  Item_SetId(param_1,0x51);
-  *(undefined1 *)(param_1 + 1) = 0;
-  return CONCAT44(in_lr,param_1);
+  Item_SetId(arg_1,0x51);
+  *(undefined1 *)(arg_1 + 1) = 0;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: ArticleStack_SubtractAmount @ 0x0800DBE0
 // =============================================================================
-undefined8 ArticleStack_SubtractAmount(undefined1 *param_1,undefined1 param_2,uint param_3)
+undefined8 ArticleStack_SubtractAmount(undefined1 *arg_1,undefined1 arg_2,uint arg_3)
 
 {
-  undefined1 uVar1;
-  uint *puVar2;
-  undefined4 in_lr;
-  uint uStack_10;
-  uint uStack_c;
+  undefined1 u_val1;
+  uint *p_uint2;
+  uint stack_val_10;
+  uint stack_val_c;
   
-  uStack_c = param_3;
-  *param_1 = param_2;
-  if (param_3 == 0) {
-    uVar1 = 1;
+  stack_val_c = arg_3;
+  *arg_1 = arg_2;
+  if (arg_3 == 0) {
+    u_val1 = 1;
   }
   else {
-    uStack_10 = 99;
-    puVar2 = &uStack_10;
-    if (param_3 < 99) {
-      puVar2 = &uStack_c;
+    stack_val_10 = 99;
+    p_uint2 = &stack_val_10;
+    if (arg_3 < 99) {
+      p_uint2 = &stack_val_c;
     }
-    uVar1 = (undefined1)*puVar2;
+    u_val1 = (undefined1)*p_uint2;
   }
-  param_1[1] = uVar1;
-  return CONCAT44(in_lr,param_1);
+  arg_1[1] = u_val1;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Product_Construct @ 0x0800DC10
 // =============================================================================
-undefined8 Product_Construct(byte *param_1)
+undefined8 Product_Construct(byte *arg_1)
 
 {
-  undefined4 in_lr;
-  byte abStack_8 [4];
-  undefined4 uStack_4;
-  
-  uStack_4 = in_lr;
-  if (param_1[1] == 0) {
-    Item_SetId(abStack_8,0x51);
+  byte stack_bytes_8 [4];
+  undefined4 stack_val_4;
+  if (arg_1[1] == 0) {
+    Item_SetId(stack_bytes_8,0x51);
   }
   else {
-    abStack_8[0] = *param_1;
+    stack_bytes_8[0] = *arg_1;
   }
-  return CONCAT44(uStack_4,(uint)abStack_8[0]);
+  return CONCAT44(stack_val_4,(uint)stack_bytes_8[0]);
 }
 
 // =============================================================================
 // Function: Product_GetId @ 0x0800DC34
 // =============================================================================
-undefined8 Product_GetId(int param_1)
+undefined8 Product_GetId(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  return CONCAT44(in_lr,(uint)(*(char *)(param_1 + 1) == '\0'));
+  return (uint)(*(char *)(arg_1 + 1) == '\0');
 }
 
 // =============================================================================
 // Function: Product_GetPrice @ 0x0800DC48
 // =============================================================================
-undefined8 Product_GetPrice(int param_1)
+undefined8 Product_GetPrice(int arg_1)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  if (*(char *)(param_1 + 1) == '\0') {
-    uVar1 = 0;
+  if (*(char *)(arg_1 + 1) == '\0') {
+    u_val1 = 0;
   }
   else {
-    uVar1 = (uint)*(byte *)(param_1 + 1);
+    u_val1 = (uint)*(byte *)(arg_1 + 1);
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Product_GetName @ 0x0800DC5C
 // =============================================================================
-undefined4 Product_GetName(int param_1,int param_2)
+undefined4 Product_GetName(int arg_1,int arg_2)
 
 {
-  uint *puVar1;
-  undefined4 in_lr;
-  uint uStack_10;
-  uint uStack_c;
+  uint *p_uint1;
+  uint stack_val_10;
+  uint stack_val_c;
   
-  if (*(char *)(param_1 + 1) != '\0') {
-    uStack_10 = 99;
-    uStack_c = (uint)*(byte *)(param_1 + 1) + param_2;
-    puVar1 = &uStack_10;
-    if (uStack_c < 99) {
-      puVar1 = &uStack_c;
+  if (*(char *)(arg_1 + 1) != '\0') {
+    stack_val_10 = 99;
+    stack_val_c = (uint)*(byte *)(arg_1 + 1) + arg_2;
+    p_uint1 = &stack_val_10;
+    if (stack_val_c < 99) {
+      p_uint1 = &stack_val_c;
     }
-    *(char *)(param_1 + 1) = (char)*puVar1;
+    *(char *)(arg_1 + 1) = (char)*p_uint1;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Product_GetIconId @ 0x0800DC8C
 // =============================================================================
-undefined4 Product_GetIconId(int param_1,uint param_2)
+undefined4 Product_GetIconId(int arg_1,uint arg_2)
 
 {
-  byte bVar1;
-  char cVar2;
-  undefined4 in_lr;
+  byte b_flag1;
+  char c_char2;
   
-  bVar1 = *(byte *)(param_1 + 1);
-  if (bVar1 != 0) {
-    if (param_2 < bVar1) {
-      cVar2 = bVar1 - (char)param_2;
+  b_flag1 = *(byte *)(arg_1 + 1);
+  if (b_flag1 != 0) {
+    if (arg_2 < b_flag1) {
+      c_char2 = b_flag1 - (char)arg_2;
     }
     else {
-      cVar2 = '\0';
+      c_char2 = '\0';
     }
-    *(char *)(param_1 + 1) = cVar2;
+    *(char *)(arg_1 + 1) = c_char2;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DCB8 @ 0x0800DCB8
 // =============================================================================
-undefined8 Item_Routine_0800DCB8(byte *param_1)
+undefined8 Item_Routine_0800DCB8(byte *item)
 
 {
-  undefined4 uVar1;
-  undefined4 in_lr;
+  undefined4 u_val1;
   
-  uVar1 = gRomData_080E963C;
-  if (*param_1 < 0xab) {
-    uVar1 = *(undefined4 *)((uint)*param_1 * 0x10 + gCropFoodDefinitions);
+  u_val1 = gRomData_080E963C;
+  if (*item < 0xab) {
+    u_val1 = *(undefined4 *)((uint)*item * 0x10 + gCropFoodDefinitions);
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DCE0 @ 0x0800DCE0
 // =============================================================================
-undefined8 Item_Routine_0800DCE0(byte *param_1)
+undefined8 Item_Routine_0800DCE0(byte *item)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  if (*param_1 < 0xab) {
-    uVar1 = (uint)*(ushort *)((uint)*param_1 * 0x10 + gCropFoodDefinitions + 8);
+  if (*item < 0xab) {
+    u_val1 = (uint)*(ushort *)((uint)*item * 0x10 + gCropFoodDefinitions + 8);
   }
   else {
-    uVar1 = 0x1ac;
+    u_val1 = 0x1ac;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_GetFoodStaminaEffect @ 0x0800DD08
 // Description: Computes net stamina effect from Food/Crop entry +5 (signed byte)
 // =============================================================================
-undefined8 Item_GetFoodStaminaEffect(byte *param_1)
+undefined8 Item_GetFoodStaminaEffect(byte *food_item)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int net_effect;
   
-  if (*param_1 < 0xab) {
+  if (*food_item < 0xab) {
     // Reads signed byte at FoodCropDef offset +0x05 (Stamina effect)
-    iVar1 = (int)*(char *)((uint)*param_1 * 0x10 + gCropFoodDefinitions + 5) + (int)(char)param_1[1];
+    net_effect = (int)*(char *)((uint)*food_item * 0x10 + gCropFoodDefinitions + 5) + (int)(char)food_item[1];
   }
   else {
-    iVar1 = -100;
+    net_effect = -100;
   }
-  return CONCAT44(in_lr,iVar1);
+  return net_effect;
 }
 
 // =============================================================================
 // Function: Item_GetFoodFatigueEffect @ 0x0800DD3C
 // Description: Computes net fatigue effect from Food/Crop entry +6 (signed byte)
 // =============================================================================
-undefined8 Item_GetFoodFatigueEffect(byte *param_1)
+undefined8 Item_GetFoodFatigueEffect(byte *food_item)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int net_effect;
   
-  if (*param_1 < 0xab) {
+  if (*food_item < 0xab) {
     // Reads signed byte at FoodCropDef offset +0x06 (Fatigue effect)
-    iVar1 = (int)*(char *)((uint)*param_1 * 0x10 + gCropFoodDefinitions + 6) + (int)(char)param_1[2];
+    net_effect = (int)*(char *)((uint)*food_item * 0x10 + gCropFoodDefinitions + 6) + (int)(char)food_item[2];
   }
   else {
-    iVar1 = 100;
+    net_effect = 100;
   }
-  return CONCAT44(in_lr,iVar1);
+  return net_effect;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DD6C @ 0x0800DD6C
 // =============================================================================
-undefined8 Item_Routine_0800DD6C(byte *param_1)
+undefined8 Item_Routine_0800DD6C(byte *item)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int i_val1;
   
-  if (*param_1 < 0xab) {
-    iVar1 = (int)(char)param_1[1];
+  if (*item < 0xab) {
+    i_val1 = (int)(char)item[1];
   }
   else {
-    iVar1 = -100;
+    i_val1 = -100;
   }
-  return CONCAT44(in_lr,iVar1);
+  return i_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DD8C @ 0x0800DD8C
 // =============================================================================
-undefined8 Item_Routine_0800DD8C(byte *param_1)
+undefined8 Item_Routine_0800DD8C(byte *item)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int i_val1;
   
-  if (*param_1 < 0xab) {
-    iVar1 = (int)(char)param_1[2];
+  if (*item < 0xab) {
+    i_val1 = (int)(char)item[2];
   }
   else {
-    iVar1 = 100;
+    i_val1 = 100;
   }
-  return CONCAT44(in_lr,iVar1);
+  return i_val1;
 }
 
 // =============================================================================
 // Function: Item_GetFoodIsDrinkOrLiquid @ 0x0800DDAC
 // =============================================================================
-undefined8 Item_GetFoodIsDrinkOrLiquid(byte *param_1)
+undefined8 Item_GetFoodIsDrinkOrLiquid(byte *item)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  if (*param_1 < 0xab) {
-    uVar1 = *(byte *)((uint)*param_1 * 0x10 + gCropFoodDefinitions + 4) & 1;
+  if (*item < 0xab) {
+    u_val1 = *(byte *)((uint)*item * 0x10 + gCropFoodDefinitions + 4) & 1;
   }
   else {
-    uVar1 = 0;
+    u_val1 = 0;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DDD4 @ 0x0800DDD4
 // =============================================================================
-undefined8 Item_Routine_0800DDD4(byte *param_1)
+undefined8 Item_Routine_0800DDD4(byte *item)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int i_val1;
   
-  iVar1 = gRomData_080E962C;
-  if ((*param_1 < 0xab) &&
-     (iVar1 = *(int *)((uint)*param_1 * 0x10 + gCropFoodDefinitions + 0xc), iVar1 == 0)) {
-    iVar1 = gRomData_080E962C;
+  i_val1 = gRomData_080E962C;
+  if ((*item < 0xab) &&
+     (i_val1 = *(int *)((uint)*item * 0x10 + gCropFoodDefinitions + 0xc), i_val1 == 0)) {
+    i_val1 = gRomData_080E962C;
   }
-  return CONCAT44(in_lr,iVar1);
+  return i_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DE0C @ 0x0800DE0C
 // =============================================================================
-undefined4 Item_Routine_0800DE0C(byte *param_1,char param_2,char param_3)
+undefined4 Item_Routine_0800DE0C(byte *item,char slot,char quantity)
 
 {
-  int iVar1;
-  int iVar2;
-  undefined4 in_lr;
+  int i_val1;
+  int i_val2;
   
-  if (*param_1 < 0xab) {
-    iVar1 = (int)(char)param_1[1] + (int)param_2;
-    iVar2 = -0x80;
-    if ((-0x81 < iVar1) && (iVar2 = iVar1, 0x7f < iVar1)) {
-      iVar2 = 0x7f;
+  if (*item < 0xab) {
+    i_val1 = (int)(char)item[1] + (int)slot;
+    i_val2 = -0x80;
+    if ((-0x81 < i_val1) && (i_val2 = i_val1, 0x7f < i_val1)) {
+      i_val2 = 0x7f;
     }
-    param_1[1] = (byte)iVar2;
-    iVar1 = (int)(char)param_1[2] + (int)param_3;
-    iVar2 = -0x80;
-    if ((-0x81 < iVar1) && (iVar2 = iVar1, 0x7f < iVar1)) {
-      iVar2 = 0x7f;
+    item[1] = (byte)i_val2;
+    i_val1 = (int)(char)item[2] + (int)quantity;
+    i_val2 = -0x80;
+    if ((-0x81 < i_val1) && (i_val2 = i_val1, 0x7f < i_val1)) {
+      i_val2 = 0x7f;
     }
-    param_1[2] = (byte)iVar2;
+    item[2] = (byte)i_val2;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DE68 @ 0x0800DE68
 // =============================================================================
-undefined8 Item_Routine_0800DE68(int param_1)
+undefined8 Item_Routine_0800DE68(int item)
 
 {
-  undefined4 in_lr;
   
-  Item_SetIdAndClearQuality(param_1,0xab);
-  *(undefined1 *)(param_1 + 3) = 0;
-  return CONCAT44(in_lr,param_1);
+  Item_SetIdAndClearQuality(item,0xab);
+  *(undefined1 *)(item + 3) = 0;
+  return item;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DE80 @ 0x0800DE80
 // =============================================================================
-undefined8 Item_Routine_0800DE80(int param_1,undefined4 param_2,uint param_3)
+undefined8 Item_Routine_0800DE80(int item,undefined4 slot,uint quantity)
 
 {
-  undefined1 uVar1;
-  uint *puVar2;
-  undefined4 in_lr;
-  undefined4 uStack_14;
-  uint uStack_10;
-  uint uStack_c;
+  undefined1 u_val1;
+  uint *p_uint2;
+  undefined4 stack_val_14;
+  uint stack_val_10;
+  uint stack_val_c;
   
-  uStack_14 = param_2;
-  uStack_c = param_3;
-  gba_memcpy(param_1,&uStack_14,3);
-  if (uStack_c == 0) {
-    uVar1 = 1;
+  stack_val_14 = slot;
+  stack_val_c = quantity;
+  gba_memcpy(item,&stack_val_14,3);
+  if (stack_val_c == 0) {
+    u_val1 = 1;
   }
   else {
-    uStack_10 = 99;
-    puVar2 = &uStack_10;
-    if (uStack_c < 99) {
-      puVar2 = &uStack_c;
+    stack_val_10 = 99;
+    p_uint2 = &stack_val_10;
+    if (stack_val_c < 99) {
+      p_uint2 = &stack_val_c;
     }
-    uVar1 = (undefined1)*puVar2;
+    u_val1 = (undefined1)*p_uint2;
   }
-  *(undefined1 *)(param_1 + 3) = uVar1;
-  return CONCAT44(in_lr,param_1);
+  *(undefined1 *)(item + 3) = u_val1;
+  return item;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DEB8 @ 0x0800DEB8
 // =============================================================================
-undefined8 Item_Routine_0800DEB8(undefined4 param_1,int param_2)
+undefined8 Item_Routine_0800DEB8(undefined4 item,int slot)
 
 {
-  undefined4 in_lr;
   
-  if (*(char *)(param_2 + 3) == '\0') {
-    Item_SetIdAndClearQuality(param_1,0xab);
+  if (*(char *)(slot + 3) == '\0') {
+    Item_SetIdAndClearQuality(item,0xab);
   }
   else {
-    gba_memcpy(param_1,param_2,3);
+    gba_memcpy(item,slot,3);
   }
-  return CONCAT44(in_lr,param_1);
+  return item;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DEDC @ 0x0800DEDC
 // =============================================================================
-undefined8 Item_Routine_0800DEDC(int param_1)
+undefined8 Item_Routine_0800DEDC(int item)
 
 {
-  undefined4 in_lr;
   
-  return CONCAT44(in_lr,(uint)(*(char *)(param_1 + 3) == '\0'));
+  return (uint)(*(char *)(item + 3) == '\0');
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DEF0 @ 0x0800DEF0
 // =============================================================================
-undefined8 Item_Routine_0800DEF0(int param_1)
+undefined8 Item_Routine_0800DEF0(int item)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  if (*(char *)(param_1 + 3) == '\0') {
-    uVar1 = 0;
+  if (*(char *)(item + 3) == '\0') {
+    u_val1 = 0;
   }
   else {
-    uVar1 = (uint)*(byte *)(param_1 + 3);
+    u_val1 = (uint)*(byte *)(item + 3);
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DF04 @ 0x0800DF04
 // =============================================================================
-undefined4 Item_Routine_0800DF04(int param_1,int param_2)
+undefined4 Item_Routine_0800DF04(int item,int slot)
 
 {
-  uint *puVar1;
-  undefined4 in_lr;
-  uint uStack_10;
-  uint uStack_c;
+  uint *p_uint1;
+  uint stack_val_10;
+  uint stack_val_c;
   
-  if (*(char *)(param_1 + 3) != '\0') {
-    uStack_10 = 99;
-    uStack_c = (uint)*(byte *)(param_1 + 3) + param_2;
-    puVar1 = &uStack_10;
-    if (uStack_c < 99) {
-      puVar1 = &uStack_c;
+  if (*(char *)(item + 3) != '\0') {
+    stack_val_10 = 99;
+    stack_val_c = (uint)*(byte *)(item + 3) + slot;
+    p_uint1 = &stack_val_10;
+    if (stack_val_c < 99) {
+      p_uint1 = &stack_val_c;
     }
-    *(char *)(param_1 + 3) = (char)*puVar1;
+    *(char *)(item + 3) = (char)*p_uint1;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DF34 @ 0x0800DF34
 // =============================================================================
-undefined4 Item_Routine_0800DF34(int param_1,uint param_2)
+undefined4 Item_Routine_0800DF34(int item,uint slot)
 
 {
-  byte bVar1;
-  char cVar2;
-  undefined4 in_lr;
+  byte b_flag1;
+  char c_char2;
   
-  bVar1 = *(byte *)(param_1 + 3);
-  if (bVar1 != 0) {
-    if (param_2 < bVar1) {
-      cVar2 = bVar1 - (char)param_2;
+  b_flag1 = *(byte *)(item + 3);
+  if (b_flag1 != 0) {
+    if (slot < b_flag1) {
+      c_char2 = b_flag1 - (char)slot;
     }
     else {
-      cVar2 = '\0';
+      c_char2 = '\0';
     }
-    *(char *)(param_1 + 3) = cVar2;
+    *(char *)(item + 3) = c_char2;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DF58 @ 0x0800DF58
 // =============================================================================
-undefined8 Item_Routine_0800DF58(byte *param_1)
+undefined8 Item_Routine_0800DF58(byte *item)
 
 {
-  undefined4 uVar1;
-  undefined4 in_lr;
+  undefined4 u_val1;
   
-  uVar1 = gRomData_080E9648;
-  if (*param_1 < 0x5f) {
-    uVar1 = *(undefined4 *)((uint)*param_1 * 0xc + gMineralMiscDefinitions);
+  u_val1 = gRomData_080E9648;
+  if (*item < 0x5f) {
+    u_val1 = *(undefined4 *)((uint)*item * 0xc + gMineralMiscDefinitions);
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DF84 @ 0x0800DF84
 // =============================================================================
-undefined8 Item_Routine_0800DF84(byte *param_1)
+undefined8 Item_Routine_0800DF84(byte *item)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  uVar1 = 0x1C9;
-  if (*param_1 < 0x5f) {
-    uVar1 = (uint)*(ushort *)((uint)*param_1 * 0xc + gMineralMiscDefinitions + 4);
+  u_val1 = 0x1C9;
+  if (*item < 0x5f) {
+    u_val1 = (uint)*(ushort *)((uint)*item * 0xc + gMineralMiscDefinitions + 4);
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DFB0 @ 0x0800DFB0
 // =============================================================================
-undefined8 Item_Routine_0800DFB0(byte *param_1)
+undefined8 Item_Routine_0800DFB0(byte *item)
 
 {
-  byte bVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  byte b_flag1;
+  undefined4 u_val2;
   
-  bVar1 = *param_1;
-  if (bVar1 < 0x40) {
-    if ((bVar1 < 0x3b) && ((0x27 < bVar1 || (bVar1 < 0x25)))) {
+  b_flag1 = *item;
+  if (b_flag1 < 0x40) {
+    if ((b_flag1 < 0x3b) && ((0x27 < b_flag1 || (b_flag1 < 0x25)))) {
 LAB_0800dfca:
-      uVar2 = 1;
+      u_val2 = 1;
       goto LAB_0800dfd0;
     }
   }
-  else if (bVar1 != 0x5e) goto LAB_0800dfca;
-  uVar2 = 0;
+  else if (b_flag1 != 0x5e) goto LAB_0800dfca;
+  u_val2 = 0;
 LAB_0800dfd0:
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800DFD4 @ 0x0800DFD4
 // =============================================================================
-undefined8 Item_Routine_0800DFD4(byte *param_1)
+undefined8 Item_Routine_0800DFD4(byte *item)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int i_val1;
   
-  iVar1 = gRomData_080E962C;
-  if ((*param_1 < 0x5f) && (iVar1 = *(int *)((uint)*param_1 * 0xc + gMineralMiscDefinitions + 8), iVar1 == 0))
+  i_val1 = gRomData_080E962C;
+  if ((*item < 0x5f) && (i_val1 = *(int *)((uint)*item * 0xc + gMineralMiscDefinitions + 8), i_val1 == 0))
   {
-    iVar1 = gRomData_080E962C;
+    i_val1 = gRomData_080E962C;
   }
-  return CONCAT44(in_lr,iVar1);
+  return i_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E010 @ 0x0800E010
 // =============================================================================
-undefined8 Item_Routine_0800E010(int param_1)
+undefined8 Item_Routine_0800E010(int item)
 
 {
-  undefined4 in_lr;
   
-  Item_SetQuality(param_1,0x5f);
-  *(undefined1 *)(param_1 + 1) = 0;
-  return CONCAT44(in_lr,param_1);
+  Item_SetQuality(item,0x5f);
+  *(undefined1 *)(item + 1) = 0;
+  return item;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E028 @ 0x0800E028
 // =============================================================================
-undefined8 Item_Routine_0800E028(undefined1 *param_1,undefined1 param_2,uint param_3)
+undefined8 Item_Routine_0800E028(undefined1 *item,undefined1 slot,uint quantity)
 
 {
-  undefined1 uVar1;
-  uint *puVar2;
-  undefined4 in_lr;
-  uint uStack_10;
-  uint uStack_c;
+  undefined1 u_val1;
+  uint *p_uint2;
+  uint stack_val_10;
+  uint stack_val_c;
   
-  uStack_c = param_3;
-  *param_1 = param_2;
-  if (param_3 == 0) {
-    uVar1 = 1;
+  stack_val_c = quantity;
+  *item = slot;
+  if (quantity == 0) {
+    u_val1 = 1;
   }
   else {
-    uStack_10 = 99;
-    puVar2 = &uStack_10;
-    if (param_3 < 99) {
-      puVar2 = &uStack_c;
+    stack_val_10 = 99;
+    p_uint2 = &stack_val_10;
+    if (quantity < 99) {
+      p_uint2 = &stack_val_c;
     }
-    uVar1 = (undefined1)*puVar2;
+    u_val1 = (undefined1)*p_uint2;
   }
-  param_1[1] = uVar1;
-  return CONCAT44(in_lr,param_1);
+  item[1] = u_val1;
+  return item;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E058 @ 0x0800E058
 // =============================================================================
-undefined8 Item_Routine_0800E058(byte *param_1)
+undefined8 Item_Routine_0800E058(byte *item)
 
 {
-  undefined4 in_lr;
-  byte abStack_8 [4];
-  undefined4 uStack_4;
-  
-  uStack_4 = in_lr;
-  if (param_1[1] == 0) {
-    Item_SetQuality(abStack_8,0x5f);
+  byte stack_bytes_8 [4];
+  undefined4 stack_val_4;
+  if (item[1] == 0) {
+    Item_SetQuality(stack_bytes_8,0x5f);
   }
   else {
-    abStack_8[0] = *param_1;
+    stack_bytes_8[0] = *item;
   }
-  return CONCAT44(uStack_4,(uint)abStack_8[0]);
+  return CONCAT44(stack_val_4,(uint)stack_bytes_8[0]);
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E07C @ 0x0800E07C
 // =============================================================================
-undefined8 Item_Routine_0800E07C(int param_1)
+undefined8 Item_Routine_0800E07C(int item)
 
 {
-  undefined4 in_lr;
   
-  return CONCAT44(in_lr,(uint)(*(char *)(param_1 + 1) == '\0'));
+  return (uint)(*(char *)(item + 1) == '\0');
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E090 @ 0x0800E090
 // =============================================================================
-undefined8 Item_Routine_0800E090(int param_1)
+undefined8 Item_Routine_0800E090(int item)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  if (*(char *)(param_1 + 1) == '\0') {
-    uVar1 = 0;
+  if (*(char *)(item + 1) == '\0') {
+    u_val1 = 0;
   }
   else {
-    uVar1 = (uint)*(byte *)(param_1 + 1);
+    u_val1 = (uint)*(byte *)(item + 1);
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E0A4 @ 0x0800E0A4
 // =============================================================================
-undefined4 Item_Routine_0800E0A4(int param_1,int param_2)
+undefined4 Item_Routine_0800E0A4(int item,int slot)
 
 {
-  uint *puVar1;
-  undefined4 in_lr;
-  uint uStack_10;
-  uint uStack_c;
+  uint *p_uint1;
+  uint stack_val_10;
+  uint stack_val_c;
   
-  if (*(char *)(param_1 + 1) != '\0') {
-    uStack_10 = 99;
-    uStack_c = (uint)*(byte *)(param_1 + 1) + param_2;
-    puVar1 = &uStack_10;
-    if (uStack_c < 99) {
-      puVar1 = &uStack_c;
+  if (*(char *)(item + 1) != '\0') {
+    stack_val_10 = 99;
+    stack_val_c = (uint)*(byte *)(item + 1) + slot;
+    p_uint1 = &stack_val_10;
+    if (stack_val_c < 99) {
+      p_uint1 = &stack_val_c;
     }
-    *(char *)(param_1 + 1) = (char)*puVar1;
+    *(char *)(item + 1) = (char)*p_uint1;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E0D4 @ 0x0800E0D4
 // =============================================================================
-undefined4 Item_Routine_0800E0D4(int param_1,uint param_2)
+undefined4 Item_Routine_0800E0D4(int item,uint slot)
 
 {
-  byte bVar1;
-  char cVar2;
-  undefined4 in_lr;
+  byte b_flag1;
+  char c_char2;
   
-  bVar1 = *(byte *)(param_1 + 1);
-  if (bVar1 != 0) {
-    if (param_2 < bVar1) {
-      cVar2 = bVar1 - (char)param_2;
+  b_flag1 = *(byte *)(item + 1);
+  if (b_flag1 != 0) {
+    if (slot < b_flag1) {
+      c_char2 = b_flag1 - (char)slot;
     }
     else {
-      cVar2 = '\0';
+      c_char2 = '\0';
     }
-    *(char *)(param_1 + 1) = cVar2;
+    *(char *)(item + 1) = c_char2;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E148 @ 0x0800E148
 // =============================================================================
-undefined8 Item_Routine_0800E148(undefined1 *param_1,undefined1 param_2)
+undefined8 Item_Routine_0800E148(undefined1 *item,undefined1 slot)
 
 {
-  uint uVar1;
-  int *piVar2;
-  int iVar3;
-  undefined4 in_lr;
-  undefined1 auStack_c [4];
+  uint u_val1;
+  int *p_int2;
+  int i_val3;
+  undefined1 stack_buf_c [4];
   
-  *param_1 = 0x67;
-  auStack_c[0] = param_2;
-  uVar1 = Item_GetQuality(auStack_c);
-  iVar3 = 0;
-  piVar2 = gRomData_080F0348;
-  while ((-1 < *piVar2 * 0x10000 || (*(byte *)((int)piVar2 + 2) != uVar1))) {
-    iVar3 = iVar3 + 1;
-    if (0x66 < iVar3) goto LAB_0800e184;
-    piVar2 = (int *)(iVar3 * 4 + gRomData_080F0348);
+  *item = 0x67;
+  stack_buf_c[0] = slot;
+  u_val1 = Item_GetQuality(stack_buf_c);
+  i_val3 = 0;
+  p_int2 = gRomData_080F0348;
+  while ((-1 < *p_int2 * 0x10000 || (*(byte *)((int)p_int2 + 2) != u_val1))) {
+    i_val3 = i_val3 + 1;
+    if (0x66 < i_val3) goto LAB_0800e184;
+    p_int2 = (int *)(i_val3 * 4 + gRomData_080F0348);
   }
-  *param_1 = (char)iVar3;
+  *item = (char)i_val3;
 LAB_0800e184:
-  return CONCAT44(in_lr,param_1);
+  return item;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E198 @ 0x0800E198
 // =============================================================================
-void Item_Routine_0800E198(byte *param_1)
+void Item_Routine_0800E198(byte *item)
 
 {
-  ushort uVar1;
+  ushort u_val1;
   
-  if (*param_1 < 0x67) {
-    uVar1 = *(ushort *)((uint)*param_1 * 4 + gRomData_080F0348) & 0x7fff;
+  if (*item < 0x67) {
+    u_val1 = *(ushort *)((uint)*item * 4 + gRomData_080F0348) & 0x7fff;
   }
   else {
-    uVar1 = 0;
+    u_val1 = 0;
   }
-  return uVar1;
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E1C0 @ 0x0800E1C0
 // =============================================================================
-undefined8 Item_Routine_0800E1C0(byte *param_1)
+undefined8 Item_Routine_0800E1C0(byte *item)
 
 {
-  undefined4 uVar1;
-  int *piVar2;
-  undefined4 in_lr;
-  undefined1 auStack_10 [4];
-  undefined1 auStack_c [4];
+  undefined4 u_val1;
+  int *p_int2;
+  undefined1 temp_coords [4];
+  undefined1 stack_buf_c [4];
   
-  uVar1 = gRomData_080E9658;
-  if (*param_1 < 0x67) {
-    piVar2 = (int *)((uint)*param_1 * 4 + gRomData_080F0348);
-    if (*piVar2 * 0x10000 < 0) {
-      Item_SetQuality(auStack_c,*(undefined1 *)((int)piVar2 + 2));
-      uVar1 = Item_Routine_0800DF58(auStack_c);
+  u_val1 = gRomData_080E9658;
+  if (*item < 0x67) {
+    p_int2 = (int *)((uint)*item * 4 + gRomData_080F0348);
+    if (*p_int2 * 0x10000 < 0) {
+      Item_SetQuality(stack_buf_c,*(undefined1 *)((int)p_int2 + 2));
+      u_val1 = Item_Routine_0800DF58(stack_buf_c);
     }
     else {
-      Item_SetIdAndClearQuality(auStack_10,*(undefined1 *)((int)piVar2 + 2));
-      uVar1 = Item_Routine_0800DCB8(auStack_10);
+      Item_SetIdAndClearQuality(temp_coords,*(undefined1 *)((int)p_int2 + 2));
+      u_val1 = Item_Routine_0800DCB8(temp_coords);
     }
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E214 @ 0x0800E214
 // =============================================================================
-undefined8 Item_Routine_0800E214(byte *param_1)
+undefined8 Item_Routine_0800E214(byte *item)
 
 {
-  uint uVar1;
-  int *piVar2;
-  undefined4 in_lr;
-  undefined1 auStack_10 [4];
-  undefined1 auStack_c [4];
+  uint u_val1;
+  int *p_int2;
+  undefined1 temp_coords [4];
+  undefined1 stack_buf_c [4];
   
-  if (*param_1 < 0x67) {
-    piVar2 = (int *)((uint)*param_1 * 4 + gRomData_080F0348);
-    if (*piVar2 * 0x10000 < 0) {
-      Item_SetQuality(auStack_c,*(undefined1 *)((int)piVar2 + 2));
-      uVar1 = Item_Routine_0800DF84(auStack_c);
+  if (*item < 0x67) {
+    p_int2 = (int *)((uint)*item * 4 + gRomData_080F0348);
+    if (*p_int2 * 0x10000 < 0) {
+      Item_SetQuality(stack_buf_c,*(undefined1 *)((int)p_int2 + 2));
+      u_val1 = Item_Routine_0800DF84(stack_buf_c);
     }
     else {
-      Item_SetIdAndClearQuality(auStack_10,*(undefined1 *)((int)piVar2 + 2));
-      uVar1 = Item_Routine_0800DCE0(auStack_10);
+      Item_SetIdAndClearQuality(temp_coords,*(undefined1 *)((int)p_int2 + 2));
+      u_val1 = Item_Routine_0800DCE0(temp_coords);
     }
-    uVar1 = uVar1 & 0xffff;
+    u_val1 = u_val1 & 0xffff;
   }
   else {
-    uVar1 = 0;
+    u_val1 = 0;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E268 @ 0x0800E268
 // =============================================================================
-undefined8 Item_Routine_0800E268(ushort *param_1)
+undefined8 Item_Routine_0800E268(ushort *item)
 
 {
-  undefined4 in_lr;
-  byte abStack_8 [4];
-  undefined4 uStack_4;
-  
-  uStack_4 = in_lr;
-  if ((*param_1 & 3) == 0) {
-    Item_SetId(abStack_8,*param_1 >> 2);
+  byte stack_bytes_8 [4];
+  undefined4 stack_val_4;
+  if ((*item & 3) == 0) {
+    Item_SetId(stack_bytes_8,*item >> 2);
   }
   else {
-    Item_SetId(abStack_8,0x51);
+    Item_SetId(stack_bytes_8,0x51);
   }
-  return CONCAT44(uStack_4,(uint)abStack_8[0]);
+  return CONCAT44(stack_val_4,(uint)stack_bytes_8[0]);
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E290 @ 0x0800E290
 // =============================================================================
-undefined8 Item_Routine_0800E290(undefined4 param_1,ushort *param_2)
+undefined8 Item_Routine_0800E290(undefined4 item,ushort *slot)
 
 {
-  undefined4 in_lr;
   
-  if ((*param_2 & 3) == 1) {
-    Item_SetIdAndClearQuality(param_1,*param_2 >> 2);
+  if ((*slot & 3) == 1) {
+    Item_SetIdAndClearQuality(item,*slot >> 2);
   }
   else {
-    Item_SetIdAndClearQuality(param_1,0xab);
+    Item_SetIdAndClearQuality(item,0xab);
   }
-  return CONCAT44(in_lr,param_1);
+  return item;
 }
 
 // =============================================================================
 // Function: Item_Routine_0800E2B8 @ 0x0800E2B8
 // =============================================================================
-undefined8 Item_Routine_0800E2B8(ushort *param_1)
+undefined8 Item_Routine_0800E2B8(ushort *item)
 
 {
-  undefined4 in_lr;
-  byte abStack_8 [4];
-  undefined4 uStack_4;
-  
-  uStack_4 = in_lr;
-  if ((*param_1 & 3) == 2) {
-    Item_SetQuality(abStack_8,*param_1 >> 2);
+  byte stack_bytes_8 [4];
+  undefined4 stack_val_4;
+  if ((*item & 3) == 2) {
+    Item_SetQuality(stack_bytes_8,*item >> 2);
   }
   else {
-    Item_SetQuality(abStack_8,0x5f);
+    Item_SetQuality(stack_bytes_8,0x5f);
   }
-  return CONCAT44(uStack_4,(uint)abStack_8[0]);
+  return CONCAT44(stack_val_4,(uint)stack_bytes_8[0]);
 }
 

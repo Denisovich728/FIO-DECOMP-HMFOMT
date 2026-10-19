@@ -9,1083 +9,1035 @@
 // =============================================================================
 // Function: Farm_Routine_0800901C @ 0x0800901C
 // =============================================================================
-undefined4 Farm_Routine_0800901C(int *param_1)
+undefined4 Farm_Routine_0800901C(int *arg_1)
 
 {
-  uint uVar1;
+  uint u_val1;
   undefined1 **ppuVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
-  undefined4 in_lr;
+  int i_val3;
+  uint u_val4;
+  int i_val5;
   undefined1 *puStack_1c;
-  uint uStack_18;
+  uint stack_val_18;
   
-  ppuVar2 = (undefined1 **)param_1[1];
-  if (*param_1 == 1) {
+  ppuVar2 = (undefined1 **)arg_1[1];
+  if (*arg_1 == 1) {
     ppuVar2 = &puStack_1c;
-    puStack_1c = (undefined1 *)param_1[1];
+    puStack_1c = (undefined1 *)arg_1[1];
   }
-  uVar4 = param_1[3];
-  iVar5 = param_1[2];
-  if ((uVar4 & 0x4000000) == 0) {
-    CpuSet(ppuVar2,iVar5,uVar4);
+  u_val4 = arg_1[3];
+  i_val5 = arg_1[2];
+  if ((u_val4 & 0x4000000) == 0) {
+    CpuSet(ppuVar2,i_val5,u_val4);
   }
   else {
-    uVar1 = 0xFFFF & uVar4 & 7;
-    iVar3 = (0xFFFF & uVar4) - uVar1;
-    if ((iVar3 != 0) || (uVar1 == 0)) {
-      uStack_18 = uVar1;
-      CpuFastSet(ppuVar2,iVar5,uVar4 - uVar1);
-      iVar5 = iVar5 + iVar3 * 4;
-      if ((uVar4 & 0x1000000) == 0) {
-        ppuVar2 = (undefined1 **)((int)ppuVar2 + iVar3 * 4);
+    u_val1 = 0xFFFF & u_val4 & 7;
+    i_val3 = (0xFFFF & u_val4) - u_val1;
+    if ((i_val3 != 0) || (u_val1 == 0)) {
+      stack_val_18 = u_val1;
+      CpuFastSet(ppuVar2,i_val5,u_val4 - u_val1);
+      i_val5 = i_val5 + i_val3 * 4;
+      if ((u_val4 & 0x1000000) == 0) {
+        ppuVar2 = (undefined1 **)((int)ppuVar2 + i_val3 * 4);
       }
-      if (uStack_18 == 0) {
-        return in_lr;
+      if (stack_val_18 == 0) {
+        return;
       }
     }
-    CpuSet(ppuVar2,iVar5,uVar4 - iVar3);
+    CpuSet(ppuVar2,i_val5,u_val4 - i_val3);
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009094 @ 0x08009094
 // =============================================================================
-undefined4 Farm_Routine_08009094(int *param_1,int *param_2)
+undefined4 Farm_Routine_08009094(int *arg_1,int *arg_2)
 
 {
-  uint uVar1;
-  int iVar2;
+  uint u_val1;
+  int i_val2;
   undefined1 **ppuVar3;
-  int iVar4;
-  uint uVar5;
-  undefined4 in_lr;
+  int i_val4;
+  uint u_val5;
   undefined1 *puStack_24;
-  int iStack_20;
+  int stack_val_20;
   
   do {
-    if (param_1 == param_2) {
-      return in_lr;
+    if (arg_1 == arg_2) {
+      return;
     }
-    ppuVar3 = (undefined1 **)param_1[1];
-    if (*param_1 == 1) {
+    ppuVar3 = (undefined1 **)arg_1[1];
+    if (*arg_1 == 1) {
       ppuVar3 = &puStack_24;
-      puStack_24 = (undefined1 *)param_1[1];
+      puStack_24 = (undefined1 *)arg_1[1];
     }
-    uVar5 = param_1[3];
-    iVar2 = param_1[2];
-    if ((uVar5 & 0x4000000) == 0) {
-      CpuSet(ppuVar3,iVar2,uVar5);
+    u_val5 = arg_1[3];
+    i_val2 = arg_1[2];
+    if ((u_val5 & 0x4000000) == 0) {
+      CpuSet(ppuVar3,i_val2,u_val5);
     }
     else {
-      uVar1 = 0xFFFF & uVar5 & 7;
-      iVar4 = (0xFFFF & uVar5) - uVar1;
-      if ((iVar4 != 0) || (uVar1 == 0)) {
-        iStack_20 = iVar2;
-        CpuFastSet(ppuVar3,iVar2,uVar5 - uVar1);
-        iVar2 = iStack_20 + iVar4 * 4;
-        if ((uVar5 & 0x1000000) == 0) {
-          ppuVar3 = (undefined1 **)((int)ppuVar3 + iVar4 * 4);
+      u_val1 = 0xFFFF & u_val5 & 7;
+      i_val4 = (0xFFFF & u_val5) - u_val1;
+      if ((i_val4 != 0) || (u_val1 == 0)) {
+        stack_val_20 = i_val2;
+        CpuFastSet(ppuVar3,i_val2,u_val5 - u_val1);
+        i_val2 = stack_val_20 + i_val4 * 4;
+        if ((u_val5 & 0x1000000) == 0) {
+          ppuVar3 = (undefined1 **)((int)ppuVar3 + i_val4 * 4);
         }
-        if (uVar1 == 0) goto LAB_08009116;
+        if (u_val1 == 0) goto LAB_08009116;
       }
-      CpuSet(ppuVar3,iVar2,uVar5 - iVar4);
+      CpuSet(ppuVar3,i_val2,u_val5 - i_val4);
     }
 LAB_08009116:
-    param_1 = param_1 + 4;
+    arg_1 = arg_1 + 4;
   } while( true );
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009140 @ 0x08009140
 // =============================================================================
-undefined8 Farm_Routine_08009140(undefined2 *param_1)
+undefined8 Farm_Routine_08009140(undefined2 *arg_1)
 
 {
-  undefined2 uVar1;
-  undefined4 in_lr;
+  undefined2 u_val1;
   
-  uVar1 = Farm_Routine_0800912C();
-  *param_1 = uVar1;
-  return CONCAT44(in_lr,param_1);
+  u_val1 = Farm_Routine_0800912C();
+  *arg_1 = u_val1;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009158 @ 0x08009158
 // =============================================================================
-void Farm_Routine_08009158(undefined2 *param_1)
+void Farm_Routine_08009158(undefined2 *arg_1)
 
 {
-  undefined2 uVar1;
+  undefined2 u_val1;
   
-  uVar1 = Farm_Routine_0800912C();
-  *param_1 = uVar1;
+  u_val1 = Farm_Routine_0800912C();
+  *arg_1 = u_val1;
   return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009168 @ 0x08009168
 // =============================================================================
-undefined8 Farm_Routine_08009168(undefined2 *param_1)
+undefined8 Farm_Routine_08009168(undefined2 *arg_1)
 
 {
-  undefined4 in_lr;
   
   Farm_Routine_08009140();
-  param_1[2] = *param_1;
-  return CONCAT44(in_lr,param_1);
+  arg_1[2] = *arg_1;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800917C @ 0x0800917C
 // =============================================================================
-undefined8 Farm_Routine_0800917C(undefined2 *param_1)
+undefined8 Farm_Routine_0800917C(undefined2 *arg_1)
 
 {
-  undefined4 in_lr;
   
   Farm_Routine_08009154();
-  param_1[2] = *param_1;
-  return CONCAT44(in_lr,param_1);
+  arg_1[2] = *arg_1;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009190 @ 0x08009190
 // =============================================================================
-void Farm_Routine_08009190(ushort *param_1)
+void Farm_Routine_08009190(ushort *arg_1)
 
 {
-  ushort uVar1;
-  ushort uVar2;
+  ushort u_val1;
+  ushort u_val2;
   
-  uVar1 = *param_1;
-  uVar2 = Farm_Routine_08009158();
-  param_1[2] = uVar2 & ~uVar1;
+  u_val1 = *arg_1;
+  u_val2 = Farm_Routine_08009158();
+  arg_1[2] = u_val2 & ~u_val1;
   return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080091A4 @ 0x080091A4
 // =============================================================================
-undefined8 Farm_Routine_080091A4(int param_1,undefined2 param_2,undefined2 param_3)
+undefined8 Farm_Routine_080091A4(int arg_1,undefined2 arg_2,undefined2 arg_3)
 
 {
-  undefined2 *puVar1;
-  undefined4 in_lr;
+  undefined2 *p_uint1;
   
   Farm_Routine_08009168();
-  *(undefined2 *)(param_1 + 8) = *(undefined2 *)(param_1 + 4);
-  *(undefined2 *)(param_1 + 10) = param_2;
-  *(undefined2 *)(param_1 + 0xc) = param_3;
-  for (puVar1 = (undefined2 *)(param_1 + 0xe); puVar1 != (undefined2 *)(param_1 + 0x22);
-      puVar1 = puVar1 + 1) {
-    *puVar1 = 0;
+  *(undefined2 *)(arg_1 + 8) = *(undefined2 *)(arg_1 + 4);
+  *(undefined2 *)(arg_1 + 10) = arg_2;
+  *(undefined2 *)(arg_1 + 0xc) = arg_3;
+  for (p_uint1 = (undefined2 *)(arg_1 + 0xe); p_uint1 != (undefined2 *)(arg_1 + 0x22);
+      p_uint1 = p_uint1 + 1) {
+    *p_uint1 = 0;
   }
-  return CONCAT44(in_lr,param_1);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080091E8 @ 0x080091E8
 // =============================================================================
-undefined8 Farm_Routine_080091E8(int param_1)
+undefined8 Farm_Routine_080091E8(int arg_1)
 
 {
-  undefined2 *puVar1;
-  undefined4 in_lr;
+  undefined2 *p_uint1;
   
   Farm_Routine_0800917C();
-  *(undefined2 *)(param_1 + 8) = *(undefined2 *)(param_1 + 4);
-  *(undefined2 *)(param_1 + 10) = 0x1e;
-  *(undefined2 *)(param_1 + 0xc) = 4;
-  for (puVar1 = (undefined2 *)(param_1 + 0xe); puVar1 != (undefined2 *)(param_1 + 0x22);
-      puVar1 = puVar1 + 1) {
-    *puVar1 = 0;
+  *(undefined2 *)(arg_1 + 8) = *(undefined2 *)(arg_1 + 4);
+  *(undefined2 *)(arg_1 + 10) = 0x1e;
+  *(undefined2 *)(arg_1 + 0xc) = 4;
+  for (p_uint1 = (undefined2 *)(arg_1 + 0xe); p_uint1 != (undefined2 *)(arg_1 + 0x22);
+      p_uint1 = p_uint1 + 1) {
+    *p_uint1 = 0;
   }
-  return CONCAT44(in_lr,param_1);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009224 @ 0x08009224
 // =============================================================================
-undefined8 Farm_Routine_08009224(int param_1,undefined2 param_2,undefined2 param_3,undefined4 param_4)
+undefined8 Farm_Routine_08009224(int arg_1,undefined2 arg_2,undefined2 arg_3,undefined4 arg_4)
 
 {
-  undefined2 *puVar1;
-  undefined4 in_lr;
+  undefined2 *p_uint1;
   
-  Farm_Routine_0800917C(param_1,param_4);
-  *(undefined2 *)(param_1 + 8) = *(undefined2 *)(param_1 + 4);
-  *(undefined2 *)(param_1 + 10) = param_2;
-  *(undefined2 *)(param_1 + 0xc) = param_3;
-  for (puVar1 = (undefined2 *)(param_1 + 0xe); puVar1 != (undefined2 *)(param_1 + 0x22);
-      puVar1 = puVar1 + 1) {
-    *puVar1 = 0;
+  Farm_Routine_0800917C(arg_1,arg_4);
+  *(undefined2 *)(arg_1 + 8) = *(undefined2 *)(arg_1 + 4);
+  *(undefined2 *)(arg_1 + 10) = arg_2;
+  *(undefined2 *)(arg_1 + 0xc) = arg_3;
+  for (p_uint1 = (undefined2 *)(arg_1 + 0xe); p_uint1 != (undefined2 *)(arg_1 + 0x22);
+      p_uint1 = p_uint1 + 1) {
+    *p_uint1 = 0;
   }
-  return CONCAT44(in_lr,param_1);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009268 @ 0x08009268
 // =============================================================================
-undefined8 Farm_Routine_08009268(ushort *param_1)
+undefined8 Farm_Routine_08009268(ushort *arg_1)
 
 {
-  ushort uVar1;
-  ushort uVar2;
-  ushort uVar3;
-  ushort uVar4;
-  uint uVar5;
-  ushort *puVar6;
-  uint uVar7;
-  uint uVar8;
-  undefined4 in_lr;
+  ushort u_val1;
+  ushort u_val2;
+  ushort u_val3;
+  ushort u_val4;
+  uint u_val5;
+  ushort *p_uint6;
+  uint u_val7;
+  uint u_val8;
   
-  uVar5 = Farm_Routine_08009190();
-  uVar1 = *param_1;
-  uVar2 = param_1[6];
-  uVar3 = param_1[5];
-  uVar8 = 0;
-  uVar7 = 0x200;
-  puVar6 = param_1 + 0x10;
+  u_val5 = Farm_Routine_08009190();
+  u_val1 = *arg_1;
+  u_val2 = arg_1[6];
+  u_val3 = arg_1[5];
+  u_val8 = 0;
+  u_val7 = 0x200;
+  p_uint6 = arg_1 + 0x10;
   do {
-    if ((uVar1 & uVar7) != 0) {
-      if ((uVar5 & uVar7) == 0) {
-        uVar4 = *puVar6;
-        if ((int)(short)uVar4 == (uint)uVar3) {
-          uVar8 = uVar8 | uVar7;
-          uVar4 = uVar4 - uVar2;
+    if ((u_val1 & u_val7) != 0) {
+      if ((u_val5 & u_val7) == 0) {
+        u_val4 = *p_uint6;
+        if ((int)(short)u_val4 == (uint)u_val3) {
+          u_val8 = u_val8 | u_val7;
+          u_val4 = u_val4 - u_val2;
         }
         else {
-          uVar4 = uVar4 + 1;
+          u_val4 = u_val4 + 1;
         }
       }
       else {
-        uVar8 = uVar8 | uVar7;
-        uVar4 = 0;
+        u_val8 = u_val8 | u_val7;
+        u_val4 = 0;
       }
-      *puVar6 = uVar4;
+      *p_uint6 = u_val4;
     }
-    puVar6 = puVar6 + -1;
-    uVar7 = uVar7 >> 1;
-  } while (uVar7 != 0);
-  param_1[4] = (ushort)uVar8;
-  return CONCAT44(in_lr,uVar8);
+    p_uint6 = p_uint6 + -1;
+    u_val7 = u_val7 >> 1;
+  } while (u_val7 != 0);
+  arg_1[4] = (ushort)u_val8;
+  return u_val8;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080092C8 @ 0x080092C8
 // =============================================================================
-undefined4 Farm_Routine_080092C8(ushort *param_1,ushort param_2)
+undefined4 Farm_Routine_080092C8(ushort *arg_1,ushort arg_2)
 
 {
-  ushort uVar1;
-  ushort uVar2;
-  ushort *puVar3;
-  uint uVar4;
-  undefined4 in_lr;
+  ushort u_val1;
+  ushort u_val2;
+  ushort *p_uint3;
+  uint u_val4;
   
-  uVar1 = *param_1;
-  uVar4 = 0x200;
-  puVar3 = param_1 + 0x10;
-  uVar2 = param_1[5];
+  u_val1 = *arg_1;
+  u_val4 = 0x200;
+  p_uint3 = arg_1 + 0x10;
+  u_val2 = arg_1[5];
   do {
-    if ((uVar1 & uVar4) != 0) {
-      *puVar3 = *puVar3 + (param_2 - uVar2);
+    if ((u_val1 & u_val4) != 0) {
+      *p_uint3 = *p_uint3 + (arg_2 - u_val2);
     }
-    puVar3 = puVar3 + -1;
-    uVar4 = uVar4 >> 1;
-  } while (uVar4 != 0);
-  param_1[5] = param_2;
-  return in_lr;
+    p_uint3 = p_uint3 + -1;
+    u_val4 = u_val4 >> 1;
+  } while (u_val4 != 0);
+  arg_1[5] = arg_2;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009300 @ 0x08009300
 // =============================================================================
-undefined8 Farm_Routine_08009300(int *param_1,undefined4 param_2)
+undefined8 Farm_Routine_08009300(int *arg_1,undefined4 arg_2)
 
 {
-  undefined4 *puVar1;
-  undefined4 in_lr;
+  undefined4 *p_uint1;
   
-  puVar1 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
-  *puVar1 = param_2;
-  *(undefined2 *)(puVar1 + 1) = 0;
-  puVar1[2] = 0;
-  *(undefined1 *)(puVar1 + 3) = 0;
-  *(undefined2 *)((int)puVar1 + 0xe) = 0;
-  *param_1 = (int)puVar1;
-  return CONCAT44(in_lr,param_1);
+  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  *p_uint1 = arg_2;
+  *(undefined2 *)(p_uint1 + 1) = 0;
+  p_uint1[2] = 0;
+  *(undefined1 *)(p_uint1 + 3) = 0;
+  *(undefined2 *)((int)p_uint1 + 0xe) = 0;
+  *arg_1 = (int)p_uint1;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009324 @ 0x08009324
 // =============================================================================
-undefined4 Farm_Routine_08009324(undefined4 *param_1,uint param_2)
+undefined4 Farm_Routine_08009324(undefined4 *arg_1,uint arg_2)
 
 {
-  undefined4 in_lr;
   
-  Dispatcher_Routine_08000608(*param_1);
-  if ((param_2 & 1) != 0) {
-    Dispatcher_Routine_08000608(param_1);
+  Dispatcher_Routine_08000608(*arg_1);
+  if ((arg_2 & 1) != 0) {
+    Dispatcher_Routine_08000608(arg_1);
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800934C @ 0x0800934C
 // =============================================================================
-undefined4 Farm_Routine_0800934C(int *param_1,short param_2,undefined4 param_3,int param_4)
+undefined4 Farm_Routine_0800934C(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int i_val1;
   
-  iVar1 = *param_1;
-  if (param_2 < 0) {
-    param_2 = -param_2;
+  i_val1 = *arg_1;
+  if (arg_2 < 0) {
+    arg_2 = -arg_2;
   }
-  *(short *)(iVar1 + 4) = -param_2;
-  *(undefined4 *)(iVar1 + 8) = param_3;
-  *(byte *)(iVar1 + 0xc) =
-       (byte)((byte)((uint)-param_4 >> 0x18) | (byte)((uint)param_4 >> 0x18)) >> 7;
-  *(short *)(iVar1 + 0xe) = (short)0xFFFF;
-  return in_lr;
+  *(short *)(i_val1 + 4) = -arg_2;
+  *(undefined4 *)(i_val1 + 8) = arg_3;
+  *(byte *)(i_val1 + 0xc) =
+       (byte)((byte)((uint)-arg_4 >> 0x18) | (byte)((uint)arg_4 >> 0x18)) >> 7;
+  *(short *)(i_val1 + 0xe) = (short)0xFFFF;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009378 @ 0x08009378
 // =============================================================================
-undefined4 Farm_Routine_08009378(int *param_1,short param_2,undefined4 param_3,int param_4)
+undefined4 Farm_Routine_08009378(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int i_val1;
   
-  iVar1 = *param_1;
-  if (param_2 < 0) {
-    param_2 = -param_2;
+  i_val1 = *arg_1;
+  if (arg_2 < 0) {
+    arg_2 = -arg_2;
   }
-  *(short *)(iVar1 + 4) = param_2;
-  *(undefined4 *)(iVar1 + 8) = param_3;
-  *(byte *)(iVar1 + 0xc) =
-       (byte)((byte)((uint)-param_4 >> 0x18) | (byte)((uint)param_4 >> 0x18)) >> 7;
-  *(undefined2 *)(iVar1 + 0xe) = 0;
-  return in_lr;
+  *(short *)(i_val1 + 4) = arg_2;
+  *(undefined4 *)(i_val1 + 8) = arg_3;
+  *(byte *)(i_val1 + 0xc) =
+       (byte)((byte)((uint)-arg_4 >> 0x18) | (byte)((uint)arg_4 >> 0x18)) >> 7;
+  *(undefined2 *)(i_val1 + 0xe) = 0;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080093AC @ 0x080093AC
 // =============================================================================
-undefined8 Farm_Routine_080093AC(undefined4 *param_1)
+undefined8 Farm_Routine_080093AC(undefined4 *arg_1)
 
 {
-  short sVar1;
-  int iVar2;
-  ushort *puVar3;
-  undefined4 uVar4;
+  short s_val1;
+  int i_val2;
+  ushort *p_uint3;
+  undefined4 u_val4;
   short *psVar5;
-  uint uVar6;
-  uint uVar7;
-  int *piVar8;
-  ushort uVar9;
-  int iVar10;
-  undefined4 in_lr;
+  uint u_val6;
+  uint u_val7;
+  int *p_int8;
+  ushort u_val9;
+  int i_val10;
   
-  piVar8 = (int *)*param_1;
-  iVar10 = (int)(short)piVar8[1];
-  if (iVar10 == 0) {
-    uVar4 = 0;
+  p_int8 = (int *)*arg_1;
+  i_val10 = (int)(short)p_int8[1];
+  if (i_val10 == 0) {
+    u_val4 = 0;
     goto LAB_0800949e;
   }
-  uVar7 = (uint)*(ushort *)((int)piVar8 + 0xe);
-  iVar2 = piVar8[2];
-  if (iVar2 != 0) {
-    uVar9 = 0;
-    if (iVar2 == 1) {
-      uVar9 = 0x80;
+  u_val7 = (uint)*(ushort *)((int)p_int8 + 0xe);
+  i_val2 = p_int8[2];
+  if (i_val2 != 0) {
+    u_val9 = 0;
+    if (i_val2 == 1) {
+      u_val9 = 0x80;
     }
-    else if (iVar2 == 2) {
-      uVar9 = 0xc0;
+    else if (i_val2 == 2) {
+      u_val9 = 0xc0;
     }
-    iVar2 = *piVar8;
-    puVar3 = ((void *)0x04000050);
-    if (iVar2 != 0) {
-      puVar3 = (ushort *)(iVar2 + 0x50);
+    i_val2 = *p_int8;
+    p_uint3 = ((void *)0x04000050);
+    if (i_val2 != 0) {
+      p_uint3 = (ushort *)(i_val2 + 0x50);
     }
-    *puVar3 = (ushort)0xFF3F & *puVar3 | uVar9;
+    *p_uint3 = (ushort)0xFF3F & *p_uint3 | u_val9;
     psVar5 = ((void *)0x04000054);
-    if (iVar2 != 0) {
-      psVar5 = (short *)(iVar2 + 0x54);
+    if (i_val2 != 0) {
+      psVar5 = (short *)(i_val2 + 0x54);
     }
-    if (0xFFFE < uVar7) {
-      sVar1 = 0x10;
+    if (0xFFFE < u_val7) {
+      s_val1 = 0x10;
     }
-    else if (uVar7 == 0) {
-      sVar1 = 0;
-    }
-    else {
-      sVar1 = (short)(uVar7 * 0xf >> 0x10) + 1;
-    }
-    *psVar5 = sVar1;
-  }
-  if ((char)piVar8[3] != '\0') {
-    if (0xFFFE < uVar7) {
-      uVar6 = 0xf;
-    }
-    else if (uVar7 == 0) {
-      uVar6 = 0;
+    else if (u_val7 == 0) {
+      s_val1 = 0;
     }
     else {
-      uVar6 = (uVar7 * 0xe >> 0x10) + 1;
+      s_val1 = (short)(u_val7 * 0xf >> 0x10) + 1;
     }
-    uVar6 = uVar6 | uVar6 << 4;
-    puVar3 = ((void *)0x0400004C);
-    if (*piVar8 != 0) {
-      puVar3 = (ushort *)(*piVar8 + 0x4c);
+    *psVar5 = s_val1;
+  }
+  if ((char)p_int8[3] != '\0') {
+    if (0xFFFE < u_val7) {
+      u_val6 = 0xf;
     }
-    *puVar3 = (ushort)uVar6 | (ushort)(uVar6 << 8);
+    else if (u_val7 == 0) {
+      u_val6 = 0;
+    }
+    else {
+      u_val6 = (u_val7 * 0xe >> 0x10) + 1;
+    }
+    u_val6 = u_val6 | u_val6 << 4;
+    p_uint3 = ((void *)0x0400004C);
+    if (*p_int8 != 0) {
+      p_uint3 = (ushort *)(*p_int8 + 0x4c);
+    }
+    *p_uint3 = (ushort)u_val6 | (ushort)(u_val6 << 8);
   }
-  if (iVar10 < 0) {
-    if (uVar7 == 0) goto LAB_08009478;
+  if (i_val10 < 0) {
+    if (u_val7 == 0) goto LAB_08009478;
   }
-  else if (uVar7 == 0xFFFF) {
+  else if (u_val7 == 0xFFFF) {
 LAB_08009478:
-    uVar4 = 0;
-    *(undefined2 *)(piVar8 + 1) = 0;
+    u_val4 = 0;
+    *(undefined2 *)(p_int8 + 1) = 0;
     goto LAB_0800949e;
   }
-  iVar10 = uVar7 + iVar10;
-  if (iVar10 < 0) {
-    iVar10 = 0;
+  i_val10 = u_val7 + i_val10;
+  if (i_val10 < 0) {
+    i_val10 = 0;
   }
-  else if (0xFFFF < iVar10) {
-    iVar10 = 0xFFFF;
+  else if (0xFFFF < i_val10) {
+    i_val10 = 0xFFFF;
   }
-  *(short *)((int)piVar8 + 0xe) = (short)iVar10;
-  uVar4 = 1;
+  *(short *)((int)p_int8 + 0xe) = (short)i_val10;
+  u_val4 = 1;
 LAB_0800949e:
-  return CONCAT44(in_lr,uVar4);
+  return u_val4;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080094AC @ 0x080094AC
 // =============================================================================
-void Farm_Routine_080094AC(int param_1)
+void Farm_Routine_080094AC(int arg_1)
 
 {
-  Farm_Routine_080093AC(param_1 + 0xc);
+  Farm_Routine_080093AC(arg_1 + 0xc);
   return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080094B8 @ 0x080094B8
 // =============================================================================
-undefined4 Farm_Routine_080094B8(int param_1,undefined4 param_2)
+undefined4 Farm_Routine_080094B8(int arg_1,undefined4 arg_2)
 
 {
-  undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 8) = gRomData_080E5B80;
-  Farm_Routine_08009324(param_1 + 0xc,2);
-  Farm_Routine_080098AC(param_1,param_2);
-  return in_lr;
+  *(undefined4 *)(arg_1 + 8) = gRomData_080E5B80;
+  Farm_Routine_08009324(arg_1 + 0xc,2);
+  Farm_Routine_080098AC(arg_1,arg_2);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080094E0 @ 0x080094E0
 // =============================================================================
-undefined8 Farm_Routine_080094E0(int param_1)
+undefined8 Farm_Routine_080094E0(int arg_1)
 
 {
-  short sVar1;
-  undefined4 in_lr;
+  short s_val1;
   
-  sVar1 = Farm_Routine_080094A4(param_1 + 0xc);
-  return CONCAT44(in_lr,(uint)(-(int)sVar1 | (int)sVar1) >> 0x1f);
+  s_val1 = Farm_Routine_080094A4(arg_1 + 0xc);
+  return (uint)(-(int)s_val1 | (int)s_val1) >> 0x1f;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080094F8 @ 0x080094F8
 // =============================================================================
-undefined8 Farm_Routine_080094F8(int param_1)
+undefined8 Farm_Routine_080094F8(int arg_1)
 
 {
-  short sVar1;
-  undefined4 in_lr;
+  short s_val1;
   
-  sVar1 = Farm_Routine_080094A4(param_1 + 0xc);
-  return CONCAT44(in_lr,(int)sVar1);
+  s_val1 = Farm_Routine_080094A4(arg_1 + 0xc);
+  return (int)s_val1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009508 @ 0x08009508
 // =============================================================================
-undefined8 Farm_Routine_08009508(int param_1,short param_2)
+undefined8 Farm_Routine_08009508(int arg_1,short arg_2)
 
 {
-  short sVar1;
-  undefined4 in_lr;
+  short s_val1;
   
-  sVar1 = Farm_Routine_080093A0(param_1 + 0xc,(int)param_2);
-  return CONCAT44(in_lr,(int)sVar1);
+  s_val1 = Farm_Routine_080093A0(arg_1 + 0xc,(int)arg_2);
+  return (int)s_val1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800951C @ 0x0800951C
 // =============================================================================
-undefined4 Farm_Routine_0800951C(int param_1,short param_2)
+undefined4 Farm_Routine_0800951C(int arg_1,short arg_2)
 
 {
-  undefined4 in_lr;
   
-  Farm_Routine_08009378(param_1 + 0xc,(int)param_2);
-  return in_lr;
+  Farm_Routine_08009378(arg_1 + 0xc,(int)arg_2);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800952C @ 0x0800952C
 // =============================================================================
-undefined4 Farm_Routine_0800952C(int param_1,short param_2)
+undefined4 Farm_Routine_0800952C(int arg_1,short arg_2)
 
 {
-  undefined4 in_lr;
   
-  Farm_Routine_0800934C(param_1 + 0xc,(int)param_2);
-  return in_lr;
+  Farm_Routine_0800934C(arg_1 + 0xc,(int)arg_2);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800953C @ 0x0800953C
 // =============================================================================
-void Farm_Routine_0800953C(int param_1)
+void Farm_Routine_0800953C(int arg_1)
 
 {
-  Farm_Routine_08009344(param_1 + 0xc);
+  Farm_Routine_08009344(arg_1 + 0xc);
   return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009548 @ 0x08009548
 // =============================================================================
-undefined8 Farm_Routine_08009548(undefined4 *param_1)
+undefined8 Farm_Routine_08009548(undefined4 *arg_1)
 
 {
-  undefined4 in_lr;
   
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(param_1 + 3);
-  return CONCAT44(in_lr,param_1);
+  *arg_1 = 0;
+  arg_1[1] = 0;
+  arg_1[2] = gRomData_080E5B80;
+  Farm_Routine_08009300(arg_1 + 3);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800956C @ 0x0800956C
 // =============================================================================
-undefined4 Farm_Routine_0800956C(undefined4 param_1)
+undefined4 Farm_Routine_0800956C(undefined4 arg_1)
 
 {
-  ushort uVar1;
-  undefined4 in_lr;
+  ushort u_val1;
   
-  uVar1 = Interrupt_WaitForVBlank(1);
-  Farm_Routine_08009984(param_1);
-  if ((uVar1 & 1) != 0) {
+  u_val1 = Interrupt_WaitForVBlank(1);
+  Farm_Routine_08009984(arg_1);
+  if ((u_val1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800959C @ 0x0800959C
 // =============================================================================
-undefined4 Farm_Routine_0800959C(int param_1,undefined4 param_2)
+undefined4 Farm_Routine_0800959C(int arg_1,undefined4 arg_2)
 
 {
-  undefined4 in_lr;
   
-  *(undefined4 *)(param_1 + 8) = gRomData_080E5B90;
-  Farm_Routine_0800956C(param_1);
-  Farm_Routine_080098DC(param_1,param_2);
-  return in_lr;
+  *(undefined4 *)(arg_1 + 8) = gRomData_080E5B90;
+  Farm_Routine_0800956C(arg_1);
+  Farm_Routine_080098DC(arg_1,arg_2);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080095C0 @ 0x080095C0
 // =============================================================================
-undefined4 Farm_Routine_080095C0(undefined4 param_1,undefined4 param_2)
+undefined4 Farm_Routine_080095C0(undefined4 arg_1,undefined4 arg_2)
 
 {
-  ushort uVar1;
-  undefined4 in_lr;
+  ushort u_val1;
   
-  uVar1 = Interrupt_WaitForVBlank(1);
-  Farm_Routine_08009940(param_1,param_2);
-  if ((uVar1 & 1) != 0) {
+  u_val1 = Interrupt_WaitForVBlank(1);
+  Farm_Routine_08009940(arg_1,arg_2);
+  if ((u_val1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080095FC @ 0x080095FC
 // =============================================================================
-undefined4 Farm_Routine_080095FC(undefined4 param_1,undefined4 param_2)
+undefined4 Farm_Routine_080095FC(undefined4 arg_1,undefined4 arg_2)
 
 {
-  ushort uVar1;
-  undefined4 in_lr;
+  ushort u_val1;
   
-  uVar1 = Interrupt_WaitForVBlank(1);
-  Farm_Routine_08009968(param_1,param_2);
-  if ((uVar1 & 1) != 0) {
+  u_val1 = Interrupt_WaitForVBlank(1);
+  Farm_Routine_08009968(arg_1,arg_2);
+  if ((u_val1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009638 @ 0x08009638
 // =============================================================================
-undefined4 Farm_Routine_08009638(undefined4 param_1,undefined4 param_2)
+undefined4 Farm_Routine_08009638(undefined4 arg_1,undefined4 arg_2)
 
 {
-  ushort uVar1;
-  undefined4 in_lr;
+  ushort u_val1;
   
-  uVar1 = Interrupt_WaitForVBlank(1);
-  Farm_Routine_080099B0(param_1,param_2);
-  if ((uVar1 & 1) != 0) {
+  u_val1 = Interrupt_WaitForVBlank(1);
+  Farm_Routine_080099B0(arg_1,arg_2);
+  if ((u_val1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009674 @ 0x08009674
 // =============================================================================
-undefined4 Farm_Routine_08009674(undefined4 param_1,undefined4 param_2)
+undefined4 Farm_Routine_08009674(undefined4 arg_1,undefined4 arg_2)
 
 {
-  ushort uVar1;
-  undefined4 in_lr;
+  ushort u_val1;
   
-  uVar1 = Interrupt_WaitForVBlank(1);
-  Farm_Routine_080099D4(param_1,param_2);
-  if ((uVar1 & 1) != 0) {
+  u_val1 = Interrupt_WaitForVBlank(1);
+  Farm_Routine_080099D4(arg_1,arg_2);
+  if ((u_val1 & 1) != 0) {
     Interrupt_EnableHBlank();
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080096B0 @ 0x080096B0
 // =============================================================================
-undefined8 Farm_Routine_080096B0(undefined4 *param_1)
+undefined8 Farm_Routine_080096B0(undefined4 *arg_1)
 
 {
-  undefined4 in_lr;
-  undefined2 auStack_c [2];
+  undefined2 stack_buf_c [2];
   
-  auStack_c[0] = 0;
-  CpuSet(auStack_c,param_1,0x0100002B);
-  *param_1 = 0x80;
-  *(undefined2 *)(param_1 + 8) = 0x100;
-  *(undefined2 *)((int)param_1 + 0x22) = 0;
-  *(undefined2 *)(param_1 + 9) = 0;
-  *(undefined2 *)((int)param_1 + 0x26) = 0x100;
-  *(undefined2 *)(param_1 + 0xc) = 0x100;
-  *(undefined2 *)((int)param_1 + 0x32) = 0;
-  *(undefined2 *)(param_1 + 0xd) = 0;
-  *(undefined2 *)((int)param_1 + 0x36) = 0x100;
-  return CONCAT44(in_lr,param_1);
+  stack_buf_c[0] = 0;
+  CpuSet(stack_buf_c,arg_1,0x0100002B);
+  *arg_1 = 0x80;
+  *(undefined2 *)(arg_1 + 8) = 0x100;
+  *(undefined2 *)((int)arg_1 + 0x22) = 0;
+  *(undefined2 *)(arg_1 + 9) = 0;
+  *(undefined2 *)((int)arg_1 + 0x26) = 0x100;
+  *(undefined2 *)(arg_1 + 0xc) = 0x100;
+  *(undefined2 *)((int)arg_1 + 0x32) = 0;
+  *(undefined2 *)(arg_1 + 0xd) = 0;
+  *(undefined2 *)((int)arg_1 + 0x36) = 0x100;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080096F0 @ 0x080096F0
 // =============================================================================
-undefined4 Farm_Routine_080096F0(int param_1)
+undefined4 Farm_Routine_080096F0(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  HW_Routine_08008E64(param_1,0x4000000,0x54);
-  *((void *)0x04000054) = *(undefined2 *)(param_1 + 0x54);
-  return in_lr;
+  HW_Routine_08008E64(arg_1,0x4000000,0x54);
+  *((void *)0x04000054) = *(undefined2 *)(arg_1 + 0x54);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009710 @ 0x08009710
 // =============================================================================
-undefined4 Farm_Routine_08009710(int param_1)
+undefined4 Farm_Routine_08009710(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  CpuFastSet(param_1,0x4000000,0x10);
-  CpuSet(param_1 + 0x40,REG_BLDCNT,((void *)0x04000005));
-  *REG_BG1HOFS = *(undefined2 *)(param_1 + 0x14);
-  return in_lr;
+  CpuFastSet(arg_1,0x4000000,0x10);
+  CpuSet(arg_1 + 0x40,REG_BLDCNT,((void *)0x04000005));
+  *REG_BG1HOFS = *(undefined2 *)(arg_1 + 0x14);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009744 @ 0x08009744
 // =============================================================================
-undefined8 Farm_Routine_08009744(byte *param_1,byte param_2,byte param_3)
+undefined8 Farm_Routine_08009744(byte *arg_1,byte arg_2,byte arg_3)
 
 {
   byte *pbVar1;
   byte *pbVar2;
-  undefined4 in_lr;
   
-  param_1[1] = param_2 & 0x7f;
-  *param_1 = param_2 & 0x7f;
-  param_1[3] = param_3 & 0x1f;
-  param_1[2] = param_3 & 0x1f;
-  pbVar1 = param_1 + 4;
-  pbVar2 = param_1 + 0x404;
+  arg_1[1] = arg_2 & 0x7f;
+  *arg_1 = arg_2 & 0x7f;
+  arg_1[3] = arg_3 & 0x1f;
+  arg_1[2] = arg_3 & 0x1f;
+  pbVar1 = arg_1 + 4;
+  pbVar2 = arg_1 + 0x404;
   do {
     pbVar1[1] = 2;
     pbVar1 = pbVar1 + 8;
   } while (pbVar1 != pbVar2);
-  return CONCAT44(in_lr,param_1);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800977C @ 0x0800977C
 // =============================================================================
-undefined4 Farm_Routine_0800977C(int param_1)
+undefined4 Farm_Routine_0800977C(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  HW_Routine_08008E64(param_1 + 4,0x7000000,0x400);
-  return in_lr;
+  HW_Routine_08008E64(arg_1 + 4,0x7000000,0x400);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009790 @ 0x08009790
 // =============================================================================
-undefined4 Farm_Routine_08009790(int param_1)
+undefined4 Farm_Routine_08009790(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  CpuFastSet(param_1 + 4,0x7000000,0x100);
-  return in_lr;
+  CpuFastSet(arg_1 + 4,0x7000000,0x100);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080097A4 @ 0x080097A4
 // =============================================================================
-undefined4 Farm_Routine_080097A4(byte *param_1)
+undefined4 Farm_Routine_080097A4(byte *arg_1)
 
 {
-  byte bVar1;
-  ushort uVar2;
-  undefined4 *puVar3;
-  uint uVar4;
+  byte b_flag1;
+  ushort u_val2;
+  undefined4 *p_uint3;
+  uint u_val4;
   byte *pbVar5;
   byte *pbVar6;
-  undefined4 *puVar7;
-  uint uVar8;
-  undefined4 in_lr;
+  undefined4 *p_uint7;
+  uint u_val8;
   
-  uVar4 = 0xFFF;
-  pbVar6 = param_1 + 4;
-  puVar7 = (undefined4 *)0x7000000;
-  bVar1 = *param_1;
-  uVar8 = 0;
+  u_val4 = 0xFFF;
+  pbVar6 = arg_1 + 4;
+  p_uint7 = (undefined4 *)0x7000000;
+  b_flag1 = *arg_1;
+  u_val8 = 0;
   do {
-    puVar3 = 0x07000400;
-    for (pbVar5 = param_1 + 4; 0x07000400 = puVar3, pbVar5 != param_1 + (uint)bVar1 * 8 + 4;
+    p_uint3 = 0x07000400;
+    for (pbVar5 = arg_1 + 4; 0x07000400 = p_uint3, pbVar5 != arg_1 + (uint)b_flag1 * 8 + 4;
         pbVar5 = pbVar5 + 8) {
-      uVar2 = *(ushort *)(pbVar5 + 4);
-      if ((uVar2 & 0xc00) == uVar8) {
-        *puVar7 = *(undefined4 *)pbVar5;
-        *(ushort *)(puVar7 + 1) = uVar2;
-        *(undefined2 *)((int)puVar7 + 6) = *(undefined2 *)(pbVar6 + 6);
+      u_val2 = *(ushort *)(pbVar5 + 4);
+      if ((u_val2 & 0xc00) == u_val8) {
+        *p_uint7 = *(undefined4 *)pbVar5;
+        *(ushort *)(p_uint7 + 1) = u_val2;
+        *(undefined2 *)((int)p_uint7 + 6) = *(undefined2 *)(pbVar6 + 6);
         pbVar6 = pbVar6 + 8;
-        puVar7 = puVar7 + 2;
+        p_uint7 = p_uint7 + 2;
       }
-      puVar3 = 0x07000400;
+      p_uint3 = 0x07000400;
     }
-    uVar8 = uVar8 + 0x400;
-  } while (uVar8 <= uVar4);
-  for (; puVar7 != puVar3; puVar7 = puVar7 + 2) {
-    *puVar7 = 0x200;
-    *(undefined2 *)((int)puVar7 + 6) = *(undefined2 *)(pbVar6 + 6);
+    u_val8 = u_val8 + 0x400;
+  } while (u_val8 <= u_val4);
+  for (; p_uint7 != p_uint3; p_uint7 = p_uint7 + 2) {
+    *p_uint7 = 0x200;
+    *(undefined2 *)((int)p_uint7 + 6) = *(undefined2 *)(pbVar6 + 6);
     pbVar6 = pbVar6 + 8;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009834 @ 0x08009834
 // =============================================================================
-undefined4 Farm_Routine_08009834(byte *param_1)
+undefined4 Farm_Routine_08009834(byte *arg_1)
 
 {
-  byte bVar1;
-  byte bVar2;
+  byte b_flag1;
+  byte b_flag2;
   byte *pbVar3;
-  undefined4 in_lr;
   
-  bVar1 = *param_1;
-  bVar2 = param_1[1];
-  if ((uint)bVar2 < (uint)bVar1) {
-    pbVar3 = param_1 + (uint)bVar2 * 8 + 4;
+  b_flag1 = *arg_1;
+  b_flag2 = arg_1[1];
+  if ((uint)b_flag2 < (uint)b_flag1) {
+    pbVar3 = arg_1 + (uint)b_flag2 * 8 + 4;
     do {
       pbVar3[1] = 2;
       pbVar3 = pbVar3 + 8;
-    } while (pbVar3 != param_1 + (uint)bVar1 * 8 + 4);
+    } while (pbVar3 != arg_1 + (uint)b_flag1 * 8 + 4);
   }
-  *param_1 = bVar2;
-  param_1[2] = param_1[3];
-  return in_lr;
+  *arg_1 = b_flag2;
+  arg_1[2] = arg_1[3];
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009864 @ 0x08009864
 // =============================================================================
-undefined4 Farm_Routine_08009864(undefined4 param_1)
+undefined4 Farm_Routine_08009864(undefined4 arg_1)
 
 {
-  undefined4 in_lr;
   
   Farm_Routine_0800977C();
-  Farm_Routine_08009834(param_1);
-  return in_lr;
+  Farm_Routine_08009834(arg_1);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009878 @ 0x08009878
 // =============================================================================
-undefined4 Farm_Routine_08009878(int param_1)
+undefined4 Farm_Routine_08009878(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  CpuFastSet(param_1 + 4,0x7000000,0x100);
-  Farm_Routine_08009834(param_1);
-  return in_lr;
+  CpuFastSet(arg_1 + 4,0x7000000,0x100);
+  Farm_Routine_08009834(arg_1);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009898 @ 0x08009898
 // =============================================================================
-undefined4 Farm_Routine_08009898(undefined4 param_1)
+undefined4 Farm_Routine_08009898(undefined4 arg_1)
 
 {
-  undefined4 in_lr;
   
   Farm_Routine_080097A4();
-  Farm_Routine_08009834(param_1);
-  return in_lr;
+  Farm_Routine_08009834(arg_1);
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080098AC @ 0x080098AC
 // =============================================================================
-undefined4 Farm_Routine_080098AC(undefined4 *param_1,uint param_2)
+undefined4 Farm_Routine_080098AC(undefined4 *arg_1,uint arg_2)
 
 {
-  undefined4 *puVar1;
-  undefined4 in_lr;
+  undefined4 *p_uint1;
   
-  param_1[2] = gRomData_080E5BE8;
-  puVar1 = (undefined4 *)*param_1;
-  if (puVar1 != (undefined4 *)0x0) {
-    *puVar1 = param_1[1];
-    *(undefined4 **)param_1[1] = puVar1;
+  arg_1[2] = gRomData_080E5BE8;
+  p_uint1 = (undefined4 *)*arg_1;
+  if (p_uint1 != (undefined4 *)0x0) {
+    *p_uint1 = arg_1[1];
+    *(undefined4 **)arg_1[1] = p_uint1;
   }
-  if ((param_2 & 1) != 0) {
-    Dispatcher_Routine_08000608(param_1);
+  if ((arg_2 & 1) != 0) {
+    Dispatcher_Routine_08000608(arg_1);
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009908 @ 0x08009908
 // =============================================================================
-undefined8 Farm_Routine_08009908(int param_1)
+undefined8 Farm_Routine_08009908(int arg_1)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  undefined4 in_lr;
+  char c_char1;
+  int i_val2;
+  int pos_y;
   
-  iVar3 = *(int *)(param_1 + 0xc);
-  while (iVar2 = iVar3, iVar2 != param_1 + 0x10) {
-    iVar3 = *(int *)(iVar2 + 4);
-    cVar1 = _call_via_r1(iVar2,*(undefined4 *)(*(int *)(iVar2 + 8) + 8));
-    if (cVar1 == '\0') {
-      _call_via_r2(param_1,iVar2,*(undefined4 *)(*(int *)(param_1 + 8) + 0x14));
+  pos_y = *(int *)(arg_1 + 0xc);
+  while (i_val2 = pos_y, i_val2 != arg_1 + 0x10) {
+    pos_y = *(int *)(i_val2 + 4);
+    c_char1 = _call_via_r1(i_val2,*(undefined4 *)(*(int *)(i_val2 + 8) + 8));
+    if (c_char1 == '\0') {
+      _call_via_r2(arg_1,i_val2,*(undefined4 *)(*(int *)(arg_1 + 8) + 0x14));
     }
   }
-  return CONCAT44(in_lr,1);
+  return 1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009940 @ 0x08009940
 // =============================================================================
-undefined4 Farm_Routine_08009940(int param_1,undefined4 *param_2)
+undefined4 Farm_Routine_08009940(int arg_1,undefined4 *arg_2)
 
 {
-  undefined4 *puVar1;
-  undefined4 in_lr;
+  undefined4 *p_uint1;
   
-  puVar1 = (undefined4 *)*param_2;
-  if (puVar1 != (undefined4 *)0x0) {
-    *puVar1 = param_2[1];
-    *(undefined4 **)param_2[1] = puVar1;
+  p_uint1 = (undefined4 *)*arg_2;
+  if (p_uint1 != (undefined4 *)0x0) {
+    *p_uint1 = arg_2[1];
+    *(undefined4 **)arg_2[1] = p_uint1;
   }
-  puVar1 = *(undefined4 **)(param_1 + 0x10);
-  *puVar1 = param_2;
-  *param_2 = puVar1;
-  param_2[1] = param_1 + 0x10;
-  *(undefined4 **)(param_1 + 0x10) = param_2 + 1;
-  return in_lr;
+  p_uint1 = *(undefined4 **)(arg_1 + 0x10);
+  *p_uint1 = arg_2;
+  *arg_2 = p_uint1;
+  arg_2[1] = arg_1 + 0x10;
+  *(undefined4 **)(arg_1 + 0x10) = arg_2 + 1;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009968 @ 0x08009968
 // =============================================================================
-undefined4 Farm_Routine_08009968(undefined4 param_1,undefined4 *param_2)
+undefined4 Farm_Routine_08009968(undefined4 arg_1,undefined4 *arg_2)
 
 {
-  undefined4 *puVar1;
-  undefined4 in_lr;
+  undefined4 *p_uint1;
   
-  puVar1 = (undefined4 *)*param_2;
-  if (puVar1 != (undefined4 *)0x0) {
-    *puVar1 = param_2[1];
-    *(undefined4 **)param_2[1] = puVar1;
-    *param_2 = 0;
-    param_2[1] = 0;
+  p_uint1 = (undefined4 *)*arg_2;
+  if (p_uint1 != (undefined4 *)0x0) {
+    *p_uint1 = arg_2[1];
+    *(undefined4 **)arg_2[1] = p_uint1;
+    *arg_2 = 0;
+    arg_2[1] = 0;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009984 @ 0x08009984
 // =============================================================================
-undefined4 Farm_Routine_08009984(int param_1)
+undefined4 Farm_Routine_08009984(int arg_1)
 
 {
-  undefined4 *puVar1;
-  undefined4 *puVar2;
-  undefined4 in_lr;
+  undefined4 *p_uint1;
+  undefined4 *p_uint2;
   
-  puVar1 = *(undefined4 **)(param_1 + 0xc);
-  while (puVar1 != (undefined4 *)(param_1 + 0x10)) {
-    puVar2 = (undefined4 *)puVar1[1];
-    *puVar1 = 0;
-    puVar1[1] = 0;
-    puVar1 = puVar2;
+  p_uint1 = *(undefined4 **)(arg_1 + 0xc);
+  while (p_uint1 != (undefined4 *)(arg_1 + 0x10)) {
+    p_uint2 = (undefined4 *)p_uint1[1];
+    *p_uint1 = 0;
+    p_uint1[1] = 0;
+    p_uint1 = p_uint2;
   }
-  *(int *)(param_1 + 0xc) = param_1 + 0x10;
-  *(int *)(param_1 + 0x10) = param_1 + 0xc;
-  return in_lr;
+  *(int *)(arg_1 + 0xc) = arg_1 + 0x10;
+  *(int *)(arg_1 + 0x10) = arg_1 + 0xc;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_080099EC @ 0x080099EC
 // =============================================================================
-undefined8 Farm_Routine_080099EC(int param_1)
+undefined8 Farm_Routine_080099EC(int arg_1)
 
 {
-  undefined4 in_lr;
   
-  return CONCAT44(in_lr,(uint)(*(int *)(param_1 + 0xc) == param_1 + 0x10));
+  return (uint)(*(int *)(arg_1 + 0xc) == arg_1 + 0x10);
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009A48 @ 0x08009A48
 // =============================================================================
-undefined8 Farm_Routine_08009A48(int param_1,undefined4 param_2)
+undefined8 Farm_Routine_08009A48(int arg_1,undefined4 arg_2)
 
 {
-  uint uVar1;
-  int iVar2;
-  int iVar3;
-  undefined4 in_lr;
+  uint u_val1;
+  int i_val2;
+  int i_val3;
   
-  uVar1 = gba_strlen(param_2);
-  if (0xc < uVar1) {
-    uVar1 = 0xc;
+  u_val1 = gba_strlen(arg_2);
+  if (0xc < u_val1) {
+    u_val1 = 0xc;
   }
-  gba_memcpy(param_1,param_2,uVar1);
-  *(undefined1 *)(param_1 + uVar1) = 0;
-  *(ushort *)(param_1 + 0x10) = (ushort)0xFFFFFC00 & *(ushort *)(param_1 + 0x10);
-  *(byte *)(param_1 + 0x11) = *(byte *)(param_1 + 0x11) & 0xeb | 8;
-  ShippingBin_Init(param_1 + 0x40);
-  Coop_Init(param_1 + 0x1e0);
-  Barn_Init(param_1 + 0x3fc);
-  Stable_Init(param_1 + 0x5DC);
-  iVar2 = param_1 + 0x9C8;
-  iVar3 = 0x432;
+  gba_memcpy(arg_1,arg_2,u_val1);
+  *(undefined1 *)(arg_1 + u_val1) = 0;
+  *(ushort *)(arg_1 + 0x10) = (ushort)0xFFFFFC00 & *(ushort *)(arg_1 + 0x10);
+  *(byte *)(arg_1 + 0x11) = *(byte *)(arg_1 + 0x11) & 0xeb | 8;
+  ShippingBin_Init(arg_1 + 0x40);
+  Coop_Init(arg_1 + 0x1e0);
+  Barn_Init(arg_1 + 0x3fc);
+  Stable_Init(arg_1 + 0x5DC);
+  i_val2 = arg_1 + 0x9C8;
+  i_val3 = 0x432;
   do {
-    Farm_Routine_08009F8C(iVar2);
-    iVar2 = iVar2 + 4;
-    iVar3 = iVar3 + -1;
-  } while (iVar3 != -1);
-  return CONCAT44(in_lr,param_1);
+    Farm_Routine_08009F8C(i_val2);
+    i_val2 = i_val2 + 4;
+    i_val3 = i_val3 + -1;
+  } while (i_val3 != -1);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: Farm_GetFieldState @ 0x08009B00
 // =============================================================================
-undefined8 Farm_GetFieldState(int param_1)
+undefined8 Farm_GetFieldState(int arg_1)
 
 {
-  int iVar1;
-  undefined4 in_lr;
+  int i_val1;
   
-  iVar1 = 0;
-  if ((int)((uint)*(byte *)(param_1 + 0x11) * 0x20000000) < 0) {
-    iVar1 = param_1 + 0x14;
+  i_val1 = 0;
+  if ((int)((uint)*(byte *)(arg_1 + 0x11) * 0x20000000) < 0) {
+    i_val1 = arg_1 + 0x14;
   }
-  return CONCAT44(in_lr,iVar1);
+  return i_val1;
 }
 
 // =============================================================================
 // Function: Farm_HasPlantedCrop @ 0x08009B20
 // =============================================================================
-undefined8 Farm_HasPlantedCrop(int param_1)
+undefined8 Farm_HasPlantedCrop(int arg_1)
 
 {
-  undefined4 uVar1;
-  uint *puVar2;
-  uint uVar3;
-  int iVar4;
-  uint uVar5;
-  undefined4 in_lr;
+  undefined4 u_val1;
+  uint *p_uint2;
+  uint loop_i;
+  int i_val4;
+  uint u_val5;
   
-  uVar5 = 0;
-  iVar4 = 0;
+  u_val5 = 0;
+  i_val4 = 0;
   do {
-    uVar3 = 0;
-    puVar2 = (uint *)(iVar4 + param_1 + 0x9C8);
+    loop_i = 0;
+    p_uint2 = (uint *)(i_val4 + arg_1 + 0x9C8);
     do {
-      if (((*puVar2 & 0xfff) >> 8 != 0) && ((*puVar2 & 0xff) >> 2 == 0x1a)) {
-        uVar1 = 1;
+      if (((*p_uint2 & 0xfff) >> 8 != 0) && ((*p_uint2 & 0xff) >> 2 == 0x1a)) {
+        u_val1 = 1;
         goto LAB_08009b5a;
       }
-      puVar2 = puVar2 + 1;
-      uVar3 = uVar3 + 1;
-    } while (uVar3 < 0x2b);
-    iVar4 = iVar4 + 0xac;
-    uVar5 = uVar5 + 1;
-    if (0x18 < uVar5) {
-      uVar1 = 0;
+      p_uint2 = p_uint2 + 1;
+      loop_i = loop_i + 1;
+    } while (loop_i < 0x2b);
+    i_val4 = i_val4 + 0xac;
+    u_val5 = u_val5 + 1;
+    if (0x18 < u_val5) {
+      u_val1 = 0;
 LAB_08009b5a:
-      return CONCAT44(in_lr,uVar1);
+      return u_val1;
     }
   } while( true );
 }
@@ -1093,492 +1045,477 @@ LAB_08009b5a:
 // =============================================================================
 // Function: Farm_AddLumber @ 0x08009B68
 // =============================================================================
-undefined4 Farm_AddLumber(int param_1,int param_2)
+undefined4 Farm_AddLumber(int arg_1,int arg_2)
 
 {
-  uint *puVar1;
-  undefined4 in_lr;
-  uint uStack_14;
-  uint uStack_10;
+  uint *p_uint1;
+  uint stack_val_14;
+  uint stack_val_10;
   
-  uStack_14 = 0x3E7;
-  uStack_10 = (*(ushort *)(param_1 + 0x10) & 0x3ff) + param_2;
-  puVar1 = &uStack_14;
-  if (uStack_10 < 0x3E7) {
-    puVar1 = &uStack_10;
+  stack_val_14 = 0x3E7;
+  stack_val_10 = (*(ushort *)(arg_1 + 0x10) & 0x3ff) + arg_2;
+  p_uint1 = &stack_val_14;
+  if (stack_val_10 < 0x3E7) {
+    p_uint1 = &stack_val_10;
   }
-  *(ushort *)(param_1 + 0x10) =
-       (ushort)0xFFFFFC00 & *(ushort *)(param_1 + 0x10) | (ushort)*puVar1 & (ushort)0x3FF
+  *(ushort *)(arg_1 + 0x10) =
+       (ushort)0xFFFFFC00 & *(ushort *)(arg_1 + 0x10) | (ushort)*p_uint1 & (ushort)0x3FF
   ;
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_TakeLumber @ 0x08009BAC
 // =============================================================================
-undefined4 Farm_TakeLumber(int param_1,uint param_2)
+undefined4 Farm_TakeLumber(int arg_1,uint arg_2)
 
 {
-  ushort uVar1;
-  undefined4 in_lr;
+  ushort u_val1;
   
-  uVar1 = *(ushort *)(param_1 + 0x10);
-  if (param_2 < (uVar1 & 0x3ff)) {
-    uVar1 = (ushort)0xFFFFFC00 & uVar1 |
-            (short)(uVar1 & 0x3ff) - (short)param_2 & (ushort)0x3FF;
+  u_val1 = *(ushort *)(arg_1 + 0x10);
+  if (arg_2 < (u_val1 & 0x3ff)) {
+    u_val1 = (ushort)0xFFFFFC00 & u_val1 |
+            (short)(u_val1 & 0x3ff) - (short)arg_2 & (ushort)0x3FF;
   }
   else {
-    uVar1 = (ushort)0xFFFFFC00 & uVar1;
+    u_val1 = (ushort)0xFFFFFC00 & u_val1;
   }
-  *(ushort *)(param_1 + 0x10) = uVar1;
-  return in_lr;
+  *(ushort *)(arg_1 + 0x10) = u_val1;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009BE4 @ 0x08009BE4
 // =============================================================================
-undefined4 Farm_Routine_08009BE4(int param_1,int param_2)
+undefined4 Farm_Routine_08009BE4(int arg_1,int arg_2)
 
 {
-  undefined4 uVar1;
-  undefined4 in_lr;
+  undefined4 u_val1;
   
-  if (-1 < (int)((uint)*(byte *)(param_1 + 0x11) * 0x20000000)) {
-    if (param_1 + 0x14 != 0) {
-      VTable_Routine_080D684C(param_1 + 0x14);
-      *(undefined1 *)(param_1 + 0x30) = *(undefined1 *)(param_2 + 0x1c);
-      *(byte *)(param_1 + 0x31) =
-           *(byte *)(param_1 + 0x31) & 0xfc | *(byte *)(param_2 + 0x1d) & 1 |
-           *(byte *)(param_2 + 0x1d) & 2;
-      *(undefined4 *)(param_1 + 0x34) = *(undefined4 *)(param_2 + 0x20);
-      uVar1 = *(undefined4 *)(param_2 + 0x28);
-      *(undefined4 *)(param_1 + 0x38) = *(undefined4 *)(param_2 + 0x24);
-      *(undefined4 *)(param_1 + 0x3c) = uVar1;
+  if (-1 < (int)((uint)*(byte *)(arg_1 + 0x11) * 0x20000000)) {
+    if (arg_1 + 0x14 != 0) {
+      VTable_Routine_080D684C(arg_1 + 0x14);
+      *(undefined1 *)(arg_1 + 0x30) = *(undefined1 *)(arg_2 + 0x1c);
+      *(byte *)(arg_1 + 0x31) =
+           *(byte *)(arg_1 + 0x31) & 0xfc | *(byte *)(arg_2 + 0x1d) & 1 |
+           *(byte *)(arg_2 + 0x1d) & 2;
+      *(undefined4 *)(arg_1 + 0x34) = *(undefined4 *)(arg_2 + 0x20);
+      u_val1 = *(undefined4 *)(arg_2 + 0x28);
+      *(undefined4 *)(arg_1 + 0x38) = *(undefined4 *)(arg_2 + 0x24);
+      *(undefined4 *)(arg_1 + 0x3c) = u_val1;
     }
-    *(byte *)(param_1 + 0x11) = *(byte *)(param_1 + 0x11) | 4;
+    *(byte *)(arg_1 + 0x11) = *(byte *)(arg_1 + 0x11) | 4;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009C3C @ 0x08009C3C
 // =============================================================================
-void Farm_Routine_08009C3C(int param_1)
+void Farm_Routine_08009C3C(int arg_1)
 
 {
-  int iVar1;
+  int i_val1;
   
-  iVar1 = 0;
-  if ((int)((uint)*(byte *)(param_1 + 0x11) * 0x20000000) < 0) {
-    iVar1 = param_1 + 0x14;
+  i_val1 = 0;
+  if ((int)((uint)*(byte *)(arg_1 + 0x11) * 0x20000000) < 0) {
+    i_val1 = arg_1 + 0x14;
   }
-  return iVar1;
+  return i_val1;
 }
 
 // =============================================================================
 // Function: Farm_Routine_08009FC8 @ 0x08009FC8
 // =============================================================================
-undefined8 Farm_Routine_08009FC8(uint *param_1,byte param_2,char param_3,byte param_4)
+undefined8 Farm_Routine_08009FC8(uint *arg_1,byte arg_2,char arg_3,byte arg_4)
 
 {
-  byte bVar1;
-  undefined4 in_lr;
+  byte b_flag1;
   
-  *(byte *)param_1 = param_3 << 2 | param_2 & 3;
-  *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | param_4 & 0xf;
-  *param_1 = *param_1 & 0xFFFE0FFF;
-  bVar1 = FieldPlot_GetState(param_1);
-  *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1 | (bVar1 & 7) << 1;
-  return CONCAT44(in_lr,param_1);
+  *(byte *)arg_1 = arg_3 << 2 | arg_2 & 3;
+  *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0 | arg_4 & 0xf;
+  *arg_1 = *arg_1 & 0xFFFE0FFF;
+  b_flag1 = FieldPlot_GetState(arg_1);
+  *(byte *)((int)arg_1 + 2) = *(byte *)((int)arg_1 + 2) & 0xf1 | (b_flag1 & 7) << 1;
+  return arg_1;
 }
 
 // =============================================================================
 // Function: FieldPlot_GetState @ 0x0800A014
 // =============================================================================
-undefined8 FieldPlot_GetState(uint *param_1)
+undefined8 FieldPlot_GetState(uint *arg_1)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
   
-  uVar2 = 1;
-  if (((*param_1 & 0xfff) >> 8 != 0) && (uVar1 = ((*param_1 & 0xff) >> 2) - 0x1a, uVar1 < 0xd)) {
-    switch(*(uint *)(PTR_case_0800A03C_0800a038 + uVar1 * 4) & 0xfffffffe) {
+  u_val2 = 1;
+  if (((*arg_1 & 0xfff) >> 8 != 0) && (u_val1 = ((*arg_1 & 0xff) >> 2) - 0x1a, u_val1 < 0xd)) {
+    switch(*(uint *)(PTR_case_0800A03C_0800a038 + u_val1 * 4) & 0xfffffffe) {
     case 0x800a03c:
     case 0x800a070:
-      uVar2 = 6;
+      u_val2 = 6;
       break;
     case 0x800a074:
-      uVar2 = 3;
+      u_val2 = 3;
     }
   }
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: FieldPlot_IsTilled @ 0x0800A07C
 // =============================================================================
-undefined8 FieldPlot_IsTilled(uint *param_1)
+undefined8 FieldPlot_IsTilled(uint *arg_1)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
   
-  uVar1 = (*param_1 & 0xfff) >> 8;
-  if (((uVar1 < 2) || (8 < uVar1)) || ((*param_1 & 0xff) >> 2 == 0x14)) {
-    uVar2 = 0;
+  u_val1 = (*arg_1 & 0xfff) >> 8;
+  if (((u_val1 < 2) || (8 < u_val1)) || ((*arg_1 & 0xff) >> 2 == 0x14)) {
+    u_val2 = 0;
   }
   else {
-    uVar2 = 1;
+    u_val2 = 1;
   }
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: FieldPlot_GetCropType @ 0x0800A0A4
 // =============================================================================
-undefined8 FieldPlot_GetCropType(uint *param_1)
+undefined8 FieldPlot_GetCropType(uint *arg_1)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
   
-  uVar1 = (*param_1 & 0xfff) >> 8;
-  if (((uVar1 < 8) || (uVar1 != 8)) || (uVar1 = ((*param_1 & 0xff) >> 2) - 0x1b, 0xb < uVar1)) {
-    uVar2 = 0;
+  u_val1 = (*arg_1 & 0xfff) >> 8;
+  if (((u_val1 < 8) || (u_val1 != 8)) || (u_val1 = ((*arg_1 & 0xff) >> 2) - 0x1b, 0xb < u_val1)) {
+    u_val2 = 0;
   }
   else {
-    switch(*(uint *)(PTR_case_0800A0D0_0800a0cc + uVar1 * 4) & 0xfffffffe) {
+    switch(*(uint *)(PTR_case_0800A0D0_0800a0cc + u_val1 * 4) & 0xfffffffe) {
     case 0x800a0d0:
     case 0x800a100:
-      uVar2 = 0x3cc;
+      u_val2 = 0x3cc;
       break;
     case 0x800a106:
-      uVar2 = 0x3CB;
+      u_val2 = 0x3CB;
       break;
     case 0x800a110:
-      uVar2 = 0x3CA;
+      u_val2 = 0x3CA;
     }
   }
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: FieldPlot_SetCropAndStage @ 0x0800A134
 // =============================================================================
-undefined4 FieldPlot_SetCropAndStage(uint *param_1,char param_2,int param_3)
+undefined4 FieldPlot_SetCropAndStage(uint *arg_1,char arg_2,int arg_3)
 
 {
-  byte bVar1;
-  undefined4 in_lr;
+  byte b_flag1;
   
-  *(byte *)param_1 = (byte)*param_1 & 3 | param_2 << 2;
-  *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | (byte)param_3 & 0xf;
-  bVar1 = FieldPlot_GetState(param_1);
-  *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1 | (bVar1 & 7) << 1;
-  if ((param_3 == 8) && ((*param_1 & 3) != 3)) {
-    *(byte *)param_1 = (byte)*param_1 & 0xfc;
+  *(byte *)arg_1 = (byte)*arg_1 & 3 | arg_2 << 2;
+  *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0 | (byte)arg_3 & 0xf;
+  b_flag1 = FieldPlot_GetState(arg_1);
+  *(byte *)((int)arg_1 + 2) = *(byte *)((int)arg_1 + 2) & 0xf1 | (b_flag1 & 7) << 1;
+  if ((arg_3 == 8) && ((*arg_1 & 3) != 3)) {
+    *(byte *)arg_1 = (byte)*arg_1 & 0xfc;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FieldPlot_TillSoil @ 0x0800A190
 // =============================================================================
-undefined8 FieldPlot_TillSoil(uint *param_1,char param_2)
+undefined8 FieldPlot_TillSoil(uint *arg_1,char arg_2)
 
 {
-  byte bVar1;
-  uint uVar2;
-  int iVar3;
-  undefined4 in_lr;
+  byte b_flag1;
+  uint u_val2;
+  int i_val3;
   
-  iVar3 = 0;
-  uVar2 = *param_1;
-  if ((uVar2 & 3) == 0) {
-    if ((uVar2 & 0xfff) >> 8 == 0) {
-      bVar1 = 2;
-      if (param_2 != '\0') {
-        bVar1 = 1;
+  i_val3 = 0;
+  u_val2 = *arg_1;
+  if ((u_val2 & 3) == 0) {
+    if ((u_val2 & 0xfff) >> 8 == 0) {
+      b_flag1 = 2;
+      if (arg_2 != '\0') {
+        b_flag1 = 1;
       }
-      *(byte *)param_1 = (byte)*param_1 & 0xfc | bVar1;
-      *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
-      iVar3 = 1;
+      *(byte *)arg_1 = (byte)*arg_1 & 0xfc | b_flag1;
+      *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
+      i_val3 = 1;
     }
-    if (iVar3 == 1) {
-      uVar2 = math_rand();
-      uVar2 = uVar2 & 0xff;
-      if (uVar2 < 10) {
-        iVar3 = 2;
+    if (i_val3 == 1) {
+      u_val2 = math_rand();
+      u_val2 = u_val2 & 0xff;
+      if (u_val2 < 10) {
+        i_val3 = 2;
       }
-      else if (uVar2 - 10 < 3) {
-        iVar3 = 4;
+      else if (u_val2 - 10 < 3) {
+        i_val3 = 4;
       }
-      else if (uVar2 - 0xd < 5) {
-        iVar3 = 3;
+      else if (u_val2 - 0xd < 5) {
+        i_val3 = 3;
       }
     }
   }
-  else if ((uVar2 & 3) - 1 < 2) {
-    uVar2 = (uVar2 & 0xfff) >> 8;
-    if (uVar2 == 7) {
-      bVar1 = 2;
-      if (param_2 != '\0') {
-        bVar1 = 1;
+  else if ((u_val2 & 3) - 1 < 2) {
+    u_val2 = (u_val2 & 0xfff) >> 8;
+    if (u_val2 == 7) {
+      b_flag1 = 2;
+      if (arg_2 != '\0') {
+        b_flag1 = 1;
       }
-      *(byte *)param_1 = (byte)*param_1 & 0xfc | bVar1;
+      *(byte *)arg_1 = (byte)*arg_1 & 0xfc | b_flag1;
     }
-    else if ((7 < uVar2) || (uVar2 != 1)) goto LAB_0800a230;
-    *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
-    iVar3 = 1;
+    else if ((7 < u_val2) || (u_val2 != 1)) goto LAB_0800a230;
+    *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
+    i_val3 = 1;
   }
 LAB_0800a230:
-  return CONCAT44(in_lr,iVar3);
+  return i_val3;
 }
 
 // =============================================================================
 // Function: FieldPlot_PlantSeeds @ 0x0800A238
 // =============================================================================
-undefined8 FieldPlot_PlantSeeds(uint *param_1,int param_2)
+undefined8 FieldPlot_PlantSeeds(uint *arg_1,int arg_2)
 
 {
-  undefined4 uVar1;
-  uint uVar2;
-  int iVar3;
-  undefined4 in_lr;
+  undefined4 u_val1;
+  uint u_val2;
+  int i_val3;
   
-  uVar2 = *param_1;
-  if ((uVar2 & 0xfff) >> 8 == 0) {
-    if ((uVar2 & 3) - 1 < 2) {
-      *(byte *)param_1 = (byte)*param_1 & 0xfc;
+  u_val2 = *arg_1;
+  if ((u_val2 & 0xfff) >> 8 == 0) {
+    if ((u_val2 & 3) - 1 < 2) {
+      *(byte *)arg_1 = (byte)*arg_1 & 0xfc;
     }
-    uVar1 = 1;
+    u_val1 = 1;
     goto LAB_0800a336;
   }
-  uVar2 = ((uVar2 & 0xff) >> 2) - 0x16;
-  if (0x10 < uVar2) goto case_0800A2BC;
-  switch(*(uint *)(PTR_case_0800A278_0800a274 + uVar2 * 4) & 0xfffffffe) {
+  u_val2 = ((u_val2 & 0xff) >> 2) - 0x16;
+  if (0x10 < u_val2) goto case_0800A2BC;
+  switch(*(uint *)(PTR_case_0800A278_0800a274 + u_val2 * 4) & 0xfffffffe) {
   case 0x800a278:
   case 0x800a2bc:
 case_0800A2BC:
-    uVar1 = 0;
+    u_val1 = 0;
     goto LAB_0800a336;
   case 0x800a2c0:
-    iVar3 = 0;
-    uVar1 = 3;
+    i_val3 = 0;
+    u_val1 = 3;
     break;
   case 0x800a2c6:
-    iVar3 = 0;
-    uVar1 = 5;
+    i_val3 = 0;
+    u_val1 = 5;
     break;
   case 0x800a2cc:
-    iVar3 = 0;
-    uVar1 = 6;
+    i_val3 = 0;
+    u_val1 = 6;
     break;
   case 0x800a2d2:
-    iVar3 = 3;
-    uVar1 = 4;
+    i_val3 = 3;
+    u_val1 = 4;
     break;
   case 0x800a2d8:
-    iVar3 = 1;
-    uVar1 = 7;
+    i_val3 = 1;
+    u_val1 = 7;
     break;
   case 0x800a2de:
-    iVar3 = 2;
-    uVar1 = 8;
+    i_val3 = 2;
+    u_val1 = 8;
   }
-  uVar2 = param_2 - iVar3;
-  if (0 < (int)uVar2) {
-    if ((*param_1 & 0xfffff) >> 0x11 <= uVar2) {
-      *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1;
-      *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
-      if ((*param_1 & 3) != 3) {
-        *(byte *)param_1 = (byte)*param_1 & 0xfc;
+  u_val2 = arg_2 - i_val3;
+  if (0 < (int)u_val2) {
+    if ((*arg_1 & 0xfffff) >> 0x11 <= u_val2) {
+      *(byte *)((int)arg_1 + 2) = *(byte *)((int)arg_1 + 2) & 0xf1;
+      *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
+      if ((*arg_1 & 3) != 3) {
+        *(byte *)arg_1 = (byte)*arg_1 & 0xfc;
       }
       goto LAB_0800a336;
     }
-    *(byte *)((int)param_1 + 2) =
-         *(byte *)((int)param_1 + 2) & 0xf1 |
-         (byte)((((*param_1 & 0xfffff) >> 0x11) - uVar2 & 7) << 1);
+    *(byte *)((int)arg_1 + 2) =
+         *(byte *)((int)arg_1 + 2) & 0xf1 |
+         (byte)((((*arg_1 & 0xfffff) >> 0x11) - u_val2 & 7) << 1);
   }
-  uVar1 = 2;
+  u_val1 = 2;
 LAB_0800a336:
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: FieldPlot_StrikeWithHammer @ 0x0800A33C
 // =============================================================================
-undefined8 FieldPlot_StrikeWithHammer(uint *param_1,int param_2)
+undefined8 FieldPlot_StrikeWithHammer(uint *arg_1,int arg_2)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  int iVar3;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
+  int i_val3;
   
-  if ((*param_1 & 0xfff) >> 8 == 0) {
+  if ((*arg_1 & 0xfff) >> 8 == 0) {
 LAB_0800a360:
-    uVar2 = 0;
+    u_val2 = 0;
   }
   else {
-    uVar1 = (*param_1 & 0xff) >> 2;
-    if (uVar1 == 0x17) {
-      iVar3 = 0;
-      uVar2 = 1;
+    u_val1 = (*arg_1 & 0xff) >> 2;
+    if (u_val1 == 0x17) {
+      i_val3 = 0;
+      u_val2 = 1;
     }
     else {
-      if (((uVar1 < 0x17) || (0x1e < uVar1)) || (uVar1 < 0x1b)) goto LAB_0800a360;
-      iVar3 = 1;
-      uVar2 = 2;
+      if (((u_val1 < 0x17) || (0x1e < u_val1)) || (u_val1 < 0x1b)) goto LAB_0800a360;
+      i_val3 = 1;
+      u_val2 = 2;
     }
-    uVar1 = param_2 - iVar3;
-    if (0 < (int)uVar1) {
-      if ((*param_1 & 0xfffff) >> 0x11 <= uVar1) {
-        *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1;
-        *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
-        if ((*param_1 & 3) != 3) {
-          *(byte *)param_1 = (byte)*param_1 & 0xfc;
+    u_val1 = arg_2 - i_val3;
+    if (0 < (int)u_val1) {
+      if ((*arg_1 & 0xfffff) >> 0x11 <= u_val1) {
+        *(byte *)((int)arg_1 + 2) = *(byte *)((int)arg_1 + 2) & 0xf1;
+        *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
+        if ((*arg_1 & 3) != 3) {
+          *(byte *)arg_1 = (byte)*arg_1 & 0xfc;
         }
         goto LAB_0800a3c2;
       }
-      *(byte *)((int)param_1 + 2) =
-           *(byte *)((int)param_1 + 2) & 0xf1 |
-           (byte)((((*param_1 & 0xfffff) >> 0x11) - uVar1 & 7) << 1);
+      *(byte *)((int)arg_1 + 2) =
+           *(byte *)((int)arg_1 + 2) & 0xf1 |
+           (byte)((((*arg_1 & 0xfffff) >> 0x11) - u_val1 & 7) << 1);
     }
-    uVar2 = 3;
+    u_val2 = 3;
   }
 LAB_0800a3c2:
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: FieldPlot_ChopBranch @ 0x0800A3C8
 // =============================================================================
-undefined8 FieldPlot_ChopBranch(uint *param_1)
+undefined8 FieldPlot_ChopBranch(uint *arg_1)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  uint uVar3;
-  uint uVar4;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
+  uint u_val3;
+  uint u_val4;
   
-  uVar4 = *param_1;
-  uVar3 = (uVar4 & 0xfff) >> 8;
-  if (uVar3 != 0) {
-    uVar1 = (uVar4 & 0xff) >> 2;
-    if (uVar1 == 0x14) {
-      if (uVar3 == 5) {
-        *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 7;
-        *param_1 = *param_1 & 0xFFFE0FFF;
-        uVar2 = 1;
+  u_val4 = *arg_1;
+  u_val3 = (u_val4 & 0xfff) >> 8;
+  if (u_val3 != 0) {
+    u_val1 = (u_val4 & 0xff) >> 2;
+    if (u_val1 == 0x14) {
+      if (u_val3 == 5) {
+        *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0 | 7;
+        *arg_1 = *arg_1 & 0xFFFE0FFF;
+        u_val2 = 1;
         goto LAB_0800a432;
       }
     }
-    else if ((uVar1 == 0x15) ||
-            (((uVar4 & 3) - 1 < 2 &&
-             ((((uVar3 == 6 || (uVar3 == 2)) || (uVar3 == 3)) || ((uVar3 == 4 || (uVar3 == 5))))))))
+    else if ((u_val1 == 0x15) ||
+            (((u_val4 & 3) - 1 < 2 &&
+             ((((u_val3 == 6 || (u_val3 == 2)) || (u_val3 == 3)) || ((u_val3 == 4 || (u_val3 == 5))))))))
     {
-      *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
-      uVar2 = 2;
+      *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
+      u_val2 = 2;
       goto LAB_0800a432;
     }
   }
-  uVar2 = 0;
+  u_val2 = 0;
 LAB_0800a432:
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: FieldPlot_ClearWeeds @ 0x0800A438
 // =============================================================================
-undefined8 FieldPlot_ClearWeeds(uint *param_1)
+undefined8 FieldPlot_ClearWeeds(uint *arg_1)
 
 {
-  undefined4 in_lr;
-  bool bVar1;
+  bool b_flag1;
   
-  bVar1 = (*param_1 & 3) == 1;
-  if (bVar1) {
-    *(byte *)param_1 = (byte)*param_1 & 0xfc | 2;
+  b_flag1 = (*arg_1 & 3) == 1;
+  if (b_flag1) {
+    *(byte *)arg_1 = (byte)*arg_1 & 0xfc | 2;
   }
-  return CONCAT44(in_lr,(uint)bVar1);
+  return (uint)b_flag1;
 }
 
 // =============================================================================
 // Function: FieldPlot_SetDebris @ 0x0800A460
 // =============================================================================
-undefined4 FieldPlot_SetDebris(uint *param_1,char param_2)
+undefined4 FieldPlot_SetDebris(uint *arg_1,char arg_2)
 
 {
-  undefined4 in_lr;
   
-  if (((*param_1 & 3) - 1 < 2) && ((*param_1 & 0xfff) >> 8 == 0)) {
-    *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 1;
-    *(byte *)param_1 = (byte)*param_1 & 3 | param_2 << 2;
-    *param_1 = *param_1 & 0xFFFE0FFF;
+  if (((*arg_1 & 3) - 1 < 2) && ((*arg_1 & 0xfff) >> 8 == 0)) {
+    *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0 | 1;
+    *(byte *)arg_1 = (byte)*arg_1 & 3 | arg_2 << 2;
+    *arg_1 = *arg_1 & 0xFFFE0FFF;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FieldPlot_HarvestCrop @ 0x0800A4A4
 // =============================================================================
-undefined8 FieldPlot_HarvestCrop(undefined **param_1,uint *param_2)
+undefined8 FieldPlot_HarvestCrop(undefined **arg_1,uint *arg_2)
 
 {
-  short sVar1;
-  uint uVar2;
-  uint uVar3;
-  int iVar4;
-  undefined4 in_lr;
-  uint3 uStack_14;
-  undefined1 auStack_10 [4];
+  short s_val1;
+  uint u_val2;
+  uint u_val3;
+  int i_val4;
+  uint3 stack_val_14;
+  undefined1 temp_coords [4];
   
-  iVar4 = gRomData_080E93F8;
-  uVar3 = *param_2;
-  uVar2 = (uVar3 & 0xfff) >> 8;
-  if (uVar2 == 5) {
-    uVar2 = ((uVar3 & 0xff) >> 2) - 2;
-    if (uVar2 < 0x13) {
-      switch(*(uint *)(PTR_case_0800A4D8_0800a4d4 + uVar2 * 4) & 0xfffffffe) {
+  i_val4 = gRomData_080E93F8;
+  u_val3 = *arg_2;
+  u_val2 = (u_val3 & 0xfff) >> 8;
+  if (u_val2 == 5) {
+    u_val2 = ((u_val3 & 0xff) >> 2) - 2;
+    if (u_val2 < 0x13) {
+      switch(*(uint *)(PTR_case_0800A4D8_0800a4d4 + u_val2 * 4) & 0xfffffffe) {
       case 0x800a4d8:
-        param_1 = &PTR_case_0800A918_0800a894;
+        arg_1 = &PTR_case_0800A918_0800a894;
       case 0x800a524:
-        *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 2;
-        uVar2 = *param_2 & 0xFFFE0FFF | 0x4000;
+        *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0 | 2;
+        u_val2 = *arg_2 & 0xFFFE0FFF | 0x4000;
         break;
       case 0x800a544:
-        *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 3;
-        uVar2 = *param_2 & 0xFFFE0FFF | 0x6000;
+        *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0 | 3;
+        u_val2 = *arg_2 & 0xFFFE0FFF | 0x6000;
         break;
       case 0x800a564:
-        *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 4;
-        uVar2 = *param_2 & 0xFFFE0FFF | 0x6000;
+        *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0 | 4;
+        u_val2 = *arg_2 & 0xFFFE0FFF | 0x6000;
         break;
       case 0x800a584:
-        *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 4;
-        uVar2 = *param_2 & 0xFFFE0FFF | 0xb000;
+        *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0 | 4;
+        u_val2 = *arg_2 & 0xFFFE0FFF | 0xb000;
         break;
       case 0x800a5a4:
-        *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 4;
-        uVar2 = *param_2 & 0xFFFE0FFF | 0xf000;
+        *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0 | 4;
+        u_val2 = *arg_2 & 0xFFFE0FFF | 0xf000;
         break;
       case 0x800a5c4:
-        *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 3;
-        uVar2 = *param_2 & 0xFFFE0FFF | 0x6000;
+        *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0 | 3;
+        u_val2 = *arg_2 & 0xFFFE0FFF | 0x6000;
         break;
       case 0x800a5e4:
-        *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 2;
-        uVar2 = *param_2 & 0xFFFE0FFF | 0x3000;
+        *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0 | 2;
+        u_val2 = *arg_2 & 0xFFFE0FFF | 0x3000;
         break;
       case 0x800a604:
-        *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0 | 4;
-        uVar2 = *param_2 & 0xFFFE0FFF | 0x5000;
+        *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0 | 4;
+        u_val2 = *arg_2 & 0xFFFE0FFF | 0x5000;
         break;
       case 0x800a624:
         goto case_0800A624;
@@ -1588,365 +1525,360 @@ undefined8 FieldPlot_HarvestCrop(undefined **param_1,uint *param_2)
     }
     else {
 case_0800A624:
-      *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0;
-      uVar2 = *param_2 & 0xFFFE0FFF;
+      *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0;
+      u_val2 = *arg_2 & 0xFFFE0FFF;
     }
-    *param_2 = uVar2;
-    iVar4 = gRomData_080E93F8;
+    *arg_2 = u_val2;
+    i_val4 = gRomData_080E93F8;
 LAB_0800a662:
-    uVar2 = (*param_2 & 0xff) >> 2;
-    sVar1 = *(short *)(uVar2 * 0xc + iVar4 + 10);
-    if (sVar1 != 0xff) {
-      if (uVar2 < 0xf) {
-        Item_SetIdAndClearQuality(&uStack_14);
-        Farmer_Routine_0800F004(param_1,(uint)uStack_14);
+    u_val2 = (*arg_2 & 0xff) >> 2;
+    s_val1 = *(short *)(u_val2 * 0xc + i_val4 + 10);
+    if (s_val1 != 0xff) {
+      if (u_val2 < 0xf) {
+        Item_SetIdAndClearQuality(&stack_val_14);
+        Farmer_Routine_0800F004(arg_1,(uint)stack_val_14);
       }
       else {
-        Item_SetQuality(auStack_10,sVar1);
-        Farmer_Routine_0800F040(param_1,auStack_10[0]);
+        Item_SetQuality(temp_coords,s_val1);
+        Farmer_Routine_0800F040(arg_1,temp_coords[0]);
       }
       goto LAB_0800a6be;
     }
   }
-  else if (uVar2 == 8) {
-    if (*(short *)(((uVar3 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 10) != 0xff) {
-      *(byte *)((int)param_2 + 1) = *(byte *)((int)param_2 + 1) & 0xf0;
+  else if (u_val2 == 8) {
+    if (*(short *)(((u_val3 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 10) != 0xff) {
+      *(byte *)((int)arg_2 + 1) = *(byte *)((int)arg_2 + 1) & 0xf0;
     }
     goto LAB_0800a662;
   }
 case_0800A678:
-  Farmer_Routine_0800EFEC(param_1);
+  Farmer_Routine_0800EFEC(arg_1);
 LAB_0800a6be:
-  return CONCAT44(in_lr,param_1);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: FieldPlot_CanPlaceItem @ 0x0800A6C8
 // =============================================================================
-undefined8 FieldPlot_CanPlaceItem(uint *param_1,undefined4 param_2)
+undefined8 FieldPlot_CanPlaceItem(uint *arg_1,undefined4 arg_2)
 
 {
-  int iVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  int i_val1;
+  undefined4 u_val2;
   
-  if ((((*param_1 & 0xfff) >> 8 == 0) && (iVar1 = Item_GetQuality(param_2), 0x30 < iVar1)) &&
-     ((iVar1 < 0x33 || ((iVar1 < 0x5b && (0x58 < iVar1)))))) {
-    uVar2 = 1;
+  if ((((*arg_1 & 0xfff) >> 8 == 0) && (i_val1 = Item_GetQuality(arg_2), 0x30 < i_val1)) &&
+     ((i_val1 < 0x33 || ((i_val1 < 0x5b && (0x58 < i_val1)))))) {
+    u_val2 = 1;
   }
   else {
-    uVar2 = 0;
+    u_val2 = 0;
   }
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: FieldPlot_PlaceItem @ 0x0800A6F4
 // =============================================================================
-undefined4 FieldPlot_PlaceItem(uint *param_1,undefined4 param_2)
+undefined4 FieldPlot_PlaceItem(uint *arg_1,undefined4 arg_2)
 
 {
-  char cVar1;
-  byte bVar2;
-  int iVar3;
-  byte bVar4;
-  undefined4 in_lr;
+  char c_char1;
+  byte b_flag2;
+  int i_val3;
+  byte b_flag4;
   
-  cVar1 = FieldPlot_CanPlaceItem();
-  if (cVar1 != '\0') {
-    iVar3 = Item_GetQuality(param_2);
-    if (iVar3 == 0x32) {
-      bVar4 = (byte)*param_1 & 3;
-      bVar2 = 0x5c;
+  c_char1 = FieldPlot_CanPlaceItem();
+  if (c_char1 != '\0') {
+    i_val3 = Item_GetQuality(arg_2);
+    if (i_val3 == 0x32) {
+      b_flag4 = (byte)*arg_1 & 3;
+      b_flag2 = 0x5c;
     }
-    else if (iVar3 < 0x33) {
-      if (iVar3 != 0x31) {
-        return in_lr;
+    else if (i_val3 < 0x33) {
+      if (i_val3 != 0x31) {
+        return;
       }
-      bVar4 = (byte)*param_1 & 3;
-      bVar2 = 0x58;
+      b_flag4 = (byte)*arg_1 & 3;
+      b_flag2 = 0x58;
     }
-    else if (iVar3 == 0x59) {
-      bVar4 = (byte)*param_1 & 3;
-      bVar2 = 0x60;
+    else if (i_val3 == 0x59) {
+      b_flag4 = (byte)*arg_1 & 3;
+      b_flag2 = 0x60;
     }
     else {
-      if (iVar3 != 0x5a) {
-        return in_lr;
+      if (i_val3 != 0x5a) {
+        return;
       }
-      bVar4 = (byte)*param_1 & 3;
-      bVar2 = 0x68;
+      b_flag4 = (byte)*arg_1 & 3;
+      b_flag2 = 0x68;
     }
-    *(byte *)param_1 = bVar4 | bVar2;
-    *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 8;
-    if ((*param_1 & 3) != 3) {
-      *(byte *)param_1 = (byte)*param_1 & 0xfc;
+    *(byte *)arg_1 = b_flag4 | b_flag2;
+    *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0 | 8;
+    if ((*arg_1 & 3) != 3) {
+      *(byte *)arg_1 = (byte)*arg_1 & 0xfc;
     }
-    bVar2 = FieldPlot_GetState(param_1);
-    *(byte *)((int)param_1 + 2) = *(byte *)((int)param_1 + 2) & 0xf1 | (bVar2 & 7) << 1;
+    b_flag2 = FieldPlot_GetState(arg_1);
+    *(byte *)((int)arg_1 + 2) = *(byte *)((int)arg_1 + 2) & 0xf1 | (b_flag2 & 7) << 1;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FieldPlot_IsPassable @ 0x0800A78C
 // =============================================================================
-undefined8 FieldPlot_IsPassable(uint *param_1)
+undefined8 FieldPlot_IsPassable(uint *arg_1)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
   
-  if ((((*param_1 & 0xfff) >> 8 == 0) || (uVar1 = (*param_1 & 0xff) >> 2, 0x26 < uVar1)) ||
-     (uVar1 < 0x1b)) {
-    uVar2 = 0;
+  if ((((*arg_1 & 0xfff) >> 8 == 0) || (u_val1 = (*arg_1 & 0xff) >> 2, 0x26 < u_val1)) ||
+     (u_val1 < 0x1b)) {
+    u_val2 = 0;
   }
   else {
-    uVar2 = 1;
+    u_val2 = 1;
   }
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: Farm_Routine_0800A7B0 @ 0x0800A7B0
 // =============================================================================
-undefined4 Farm_Routine_0800A7B0(uint *param_1,int param_2,byte *param_3)
+undefined4 Farm_Routine_0800A7B0(uint *arg_1,int arg_2,byte *arg_3)
 
 {
-  uint uVar1;
+  uint u_val1;
   byte *pbVar2;
-  int iVar3;
-  uint uVar4;
-  uint uVar5;
-  undefined4 uVar6;
-  undefined4 in_lr;
+  int i_val3;
+  uint u_val4;
+  uint u_val5;
+  undefined4 u_val6;
   
-  if (((*param_1 & 0xfff) >> 8 == 1) && (uVar1 = (*param_1 & 0xff) >> 2, uVar1 < 0x14)) {
-    switch(*(uint *)(PTR_case_0800A7DC_0800a7d8 + uVar1 * 4) & 0xfffffffe) {
+  if (((*arg_1 & 0xfff) >> 8 == 1) && (u_val1 = (*arg_1 & 0xff) >> 2, u_val1 < 0x14)) {
+    switch(*(uint *)(PTR_case_0800A7DC_0800a7d8 + u_val1 * 4) & 0xfffffffe) {
     case 0x800a7dc:
       break;
     case 0x800a836:
-      if ((*param_3 & 3) == 1) goto LAB_0800a856;
+      if ((*arg_3 & 3) == 1) goto LAB_0800a856;
       goto LAB_0800a84c;
     case 0x800a842:
-      if ((*param_3 & 3) != 2) goto LAB_0800a84c;
+      if ((*arg_3 & 3) != 2) goto LAB_0800a84c;
       goto LAB_0800a856;
     }
-    if ((*param_3 & 3) != 0) {
+    if ((*arg_3 & 3) != 0) {
 LAB_0800a84c:
-      *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
+      *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
     }
   }
 LAB_0800a856:
-  if (((*param_1 & 0xfff) >> 8 == 0) || (uVar1 = (*param_1 & 0xff) >> 2, 0x26 < uVar1)) {
+  if (((*arg_1 & 0xfff) >> 8 == 0) || (u_val1 = (*arg_1 & 0xff) >> 2, 0x26 < u_val1)) {
 case_0800A9B2:
-    if ((*param_1 & 3) == 2) {
-      *(byte *)param_1 = (byte)*param_1 & 0xfc | 1;
+    if ((*arg_1 & 3) == 2) {
+      *(byte *)arg_1 = (byte)*arg_1 & 0xfc | 1;
     }
   }
   else {
-    switch(*(uint *)(PTR_case_0800A87C_0800a878 + uVar1 * 4) & 0xfffffffe) {
+    switch(*(uint *)(PTR_case_0800A87C_0800a878 + u_val1 * 4) & 0xfffffffe) {
     case 0x800a87c:
       break;
     case 0x800a94c:
-      if (((*param_3 & 3) == 3) || (uVar1 = *param_1, (uVar1 & 0xfff) >> 8 == 5))
+      if (((*arg_3 & 3) == 3) || (u_val1 = *arg_1, (u_val1 & 0xfff) >> 8 == 5))
       goto case_0800A9B2;
-      uVar5 = 0xFFFE0FFF & uVar1;
-      uVar1 = uVar5 | (((uVar1 & 0x1ffff) >> 0xc) + 1 & 0x1f) << 0xc;
-      *param_1 = uVar1;
-      uVar5 = (uVar5 & 0xfff) >> 8;
-      if (uVar5 == 7) {
-        uVar5 = 1;
+      u_val5 = 0xFFFE0FFF & u_val1;
+      u_val1 = u_val5 | (((u_val1 & 0x1ffff) >> 0xc) + 1 & 0x1f) << 0xc;
+      *arg_1 = u_val1;
+      u_val5 = (u_val5 & 0xfff) >> 8;
+      if (u_val5 == 7) {
+        u_val5 = 1;
       }
       goto LAB_0800a97e;
     case 0x800a9b2:
       goto case_0800A9B2;
     }
-    uVar5 = *param_1;
-    uVar1 = (uVar5 & 0xfff) >> 8;
-    if ((uVar1 == 0) || (4 < uVar1)) goto case_0800A9B2;
-    if ((uVar5 & 3) == 2) {
-      uVar4 = 0xFFFE0FFF & uVar5;
-      uVar1 = uVar4 | (((uVar5 & 0x1ffff) >> 0xc) + 1 & 0x1f) << 0xc;
-      *param_1 = uVar1;
-      uVar5 = (uVar4 & 0xfff) >> 8;
+    u_val5 = *arg_1;
+    u_val1 = (u_val5 & 0xfff) >> 8;
+    if ((u_val1 == 0) || (4 < u_val1)) goto case_0800A9B2;
+    if ((u_val5 & 3) == 2) {
+      u_val4 = 0xFFFE0FFF & u_val5;
+      u_val1 = u_val4 | (((u_val5 & 0x1ffff) >> 0xc) + 1 & 0x1f) << 0xc;
+      *arg_1 = u_val1;
+      u_val5 = (u_val4 & 0xfff) >> 8;
 LAB_0800a97e:
-      iVar3 = ((uVar1 & 0xff) >> 2) * 0x54;
-      if (uVar5 != *(uint *)(((uVar1 & 0x1ffff) >> 0xc) * 4 + iVar3 + gRomData_080E8D14)) {
-        *(byte *)((int)param_1 + 1) =
-             *(byte *)((int)param_1 + 1) & 0xf0 |
-             (byte)*(undefined4 *)(((uVar1 & 0x1ffff) >> 0xc) * 4 + iVar3 + gRomData_080E8D14) & 0xf;
+      i_val3 = ((u_val1 & 0xff) >> 2) * 0x54;
+      if (u_val5 != *(uint *)(((u_val1 & 0x1ffff) >> 0xc) * 4 + i_val3 + gRomData_080E8D14)) {
+        *(byte *)((int)arg_1 + 1) =
+             *(byte *)((int)arg_1 + 1) & 0xf0 |
+             (byte)*(undefined4 *)(((u_val1 & 0x1ffff) >> 0xc) * 4 + i_val3 + gRomData_080E8D14) & 0xf;
       }
       goto case_0800A9B2;
     }
   }
   pbVar2 = gRomData_080E8D04;
-  if ((param_2 != 3) &&
-     (((param_2 < 4 || (pbVar2 = gRomData_080E8D0C, param_2 != 4)) &&
-      (pbVar2 = (byte *)((*param_3 & 3) * 0x10 + gRomData_080E8CC4), param_2 == 0)))) {
+  if ((arg_2 != 3) &&
+     (((arg_2 < 4 || (pbVar2 = gRomData_080E8D0C, arg_2 != 4)) &&
+      (pbVar2 = (byte *)((*arg_3 & 3) * 0x10 + gRomData_080E8CC4), arg_2 == 0)))) {
     pbVar2 = pbVar2 + 8;
   }
-  uVar5 = *param_1;
-  uVar1 = (uVar5 & 0xfff) >> 8;
-  if (uVar1 == 0) {
-    uVar5 = uVar5 & 3;
-    if ((uVar5 == 0) || (uVar5 == 3)) {
-      iVar3 = math_rand();
-      uVar1 = iVar3 >> 3 & 0xff;
-      uVar5 = (uint)pbVar2[4];
-      if (uVar5 <= uVar1) {
-        if (uVar1 < pbVar2[5] + uVar5) {
-          uVar6 = 0x16;
+  u_val5 = *arg_1;
+  u_val1 = (u_val5 & 0xfff) >> 8;
+  if (u_val1 == 0) {
+    u_val5 = u_val5 & 3;
+    if ((u_val5 == 0) || (u_val5 == 3)) {
+      i_val3 = math_rand();
+      u_val1 = i_val3 >> 3 & 0xff;
+      u_val5 = (uint)pbVar2[4];
+      if (u_val5 <= u_val1) {
+        if (u_val1 < pbVar2[5] + u_val5) {
+          u_val6 = 0x16;
         }
         else {
-          if ((uint)pbVar2[6] + (uint)pbVar2[5] + uVar5 <= uVar1) goto LAB_0800aad2;
-          uVar6 = 0x17;
+          if ((uint)pbVar2[6] + (uint)pbVar2[5] + u_val5 <= u_val1) goto LAB_0800aad2;
+          u_val6 = 0x17;
         }
         goto LAB_0800aab6;
       }
     }
     else {
-      if (uVar5 != 1) goto LAB_0800aad2;
-      iVar3 = math_rand();
-      uVar1 = iVar3 >> 3 & 0xff;
-      uVar5 = (uint)pbVar2[1];
-      if (uVar1 < uVar5) {
-        FieldPlot_WaterPlot(param_1,0);
+      if (u_val5 != 1) goto LAB_0800aad2;
+      i_val3 = math_rand();
+      u_val1 = i_val3 >> 3 & 0xff;
+      u_val5 = (uint)pbVar2[1];
+      if (u_val1 < u_val5) {
+        FieldPlot_WaterPlot(arg_1,0);
         goto LAB_0800aad2;
       }
-      if (pbVar2[2] + uVar5 <= uVar1) {
-        if (uVar1 < (uint)pbVar2[3] + (uint)pbVar2[2] + uVar5) {
-          FieldPlot_SetCropAndStage(param_1,0x16,8);
+      if (pbVar2[2] + u_val5 <= u_val1) {
+        if (u_val1 < (uint)pbVar2[3] + (uint)pbVar2[2] + u_val5) {
+          FieldPlot_SetCropAndStage(arg_1,0x16,8);
         }
         goto LAB_0800aad2;
       }
     }
-    uVar6 = 0x15;
+    u_val6 = 0x15;
   }
   else {
-    if (uVar1 == 1) {
-      iVar3 = math_rand();
-      if ((iVar3 >> 3 & 0xffU) < (uint)pbVar2[7]) {
-        *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
+    if (u_val1 == 1) {
+      i_val3 = math_rand();
+      if ((i_val3 >> 3 & 0xffU) < (uint)pbVar2[7]) {
+        *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
       }
       goto LAB_0800aad2;
     }
-    if (((uVar5 & 0xff) >> 2 != 0x18) ||
-       (iVar3 = math_rand(), (uint)*pbVar2 <= (iVar3 >> 3 & 0xffU))) goto LAB_0800aad2;
-    uVar6 = 0x19;
+    if (((u_val5 & 0xff) >> 2 != 0x18) ||
+       (i_val3 = math_rand(), (uint)*pbVar2 <= (i_val3 >> 3 & 0xffU))) goto LAB_0800aad2;
+    u_val6 = 0x19;
   }
 LAB_0800aab6:
-  FieldPlot_SetCropAndStage(param_1,uVar6,8);
+  FieldPlot_SetCropAndStage(arg_1,u_val6,8);
 LAB_0800aad2:
-  if (param_2 == 0) {
-    if ((*param_1 & 3) == 2) {
-      FieldPlot_WaterPlot(param_1,1);
+  if (arg_2 == 0) {
+    if ((*arg_1 & 3) == 2) {
+      FieldPlot_WaterPlot(arg_1,1);
     }
   }
-  else if ((*param_1 & 3) == 1) {
-    FieldPlot_WaterPlot(param_1,2);
+  else if ((*arg_1 & 3) == 1) {
+    FieldPlot_WaterPlot(arg_1,2);
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FieldPlot_SeasonChangeClear @ 0x0800AB08
 // =============================================================================
-undefined4 FieldPlot_SeasonChangeClear(uint *param_1,int param_2)
+undefined4 FieldPlot_SeasonChangeClear(uint *arg_1,int arg_2)
 
 {
-  int iVar1;
-  uint uVar2;
-  uint uVar3;
-  undefined4 in_lr;
+  int i_val1;
+  uint u_val2;
+  uint u_val3;
   
-  if (param_2 == 1) {
-    uVar3 = *param_1;
-    if ((uVar3 & 0xfff) >> 8 == 0) {
-      return in_lr;
+  if (arg_2 == 1) {
+    u_val3 = *arg_1;
+    if ((u_val3 & 0xfff) >> 8 == 0) {
+      return;
     }
-    uVar2 = (uVar3 & 0xff) >> 2;
-    if (0x26 < uVar2) {
-      return in_lr;
+    u_val2 = (u_val3 & 0xff) >> 2;
+    if (0x26 < u_val2) {
+      return;
     }
-    switch(*(uint *)(PTR_case_0800AC7C_0800ac78 + uVar2 * 4) & 0xfffffffe) {
+    switch(*(uint *)(PTR_case_0800AC7C_0800ac78 + u_val2 * 4) & 0xfffffffe) {
     case 0x800ac7c:
       break;
     case 0x800ae16:
 case_0800AE16:
-      *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
-      *(byte *)param_1 = (byte)*param_1 & 0xfc | 1;
+      *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
+      *(byte *)arg_1 = (byte)*arg_1 & 0xfc | 1;
     case 0x800af1a:
       goto case_0800AF1A;
     }
-    if ((uVar3 & 0xfff) >> 8 != 1) goto LAB_0800adf8;
+    if ((u_val3 & 0xfff) >> 8 != 1) goto LAB_0800adf8;
 LAB_0800adec:
-    *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
+    *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
   }
   else {
-    if (param_2 < 2) {
-      if (param_2 != 0) {
-        return in_lr;
+    if (arg_2 < 2) {
+      if (arg_2 != 0) {
+        return;
       }
-      FieldPlot_WaterPlot(param_1,0);
-      if (((*param_1 & 0xfff) >> 8 != 0) && (uVar3 = (*param_1 & 0xff) >> 2, uVar3 < 0x27)) {
-        switch(*(uint *)(PTR_case_0800AB54_0800ab50 + uVar3 * 4) & 0xfffffffe) {
+      FieldPlot_WaterPlot(arg_1,0);
+      if (((*arg_1 & 0xfff) >> 8 != 0) && (u_val3 = (*arg_1 & 0xff) >> 2, u_val3 < 0x27)) {
+        switch(*(uint *)(PTR_case_0800AB54_0800ab50 + u_val3 * 4) & 0xfffffffe) {
         case 0x800ab54:
-          param_1 = (uint *)&stack0x00000090;
+          arg_1 = (uint *)&stack0x00000090;
         case 0x800abf0:
-          *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 7;
-          *(byte *)param_1 = (byte)*param_1 & 0xfc | 1;
-          *param_1 = *param_1 & 0xFFFE0FFF;
+          *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0 | 7;
+          *(byte *)arg_1 = (byte)*arg_1 & 0xfc | 1;
+          *arg_1 = *arg_1 & 0xFFFE0FFF;
           break;
         case 0x800ac1c:
-          *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
+          *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
         }
       }
-      if ((0xF03 & (ushort)*param_1) != 0) {
-        return in_lr;
+      if ((0xF03 & (ushort)*arg_1) != 0) {
+        return;
       }
-      iVar1 = math_rand();
-      if (9 < (iVar1 >> 3 & 0xffU)) {
-        return in_lr;
+      i_val1 = math_rand();
+      if (9 < (i_val1 >> 3 & 0xffU)) {
+        return;
       }
-      FieldPlot_SetCropAndStage(param_1,0x15,8);
-      return in_lr;
+      FieldPlot_SetCropAndStage(arg_1,0x15,8);
+      return;
     }
-    if (param_2 != 2) {
-      if (param_2 != 3) {
-        return in_lr;
+    if (arg_2 != 2) {
+      if (arg_2 != 3) {
+        return;
       }
-      *(byte *)param_1 = (byte)*param_1 | 3;
-      if ((*param_1 & 0xfff) >> 8 == 0) {
-        return in_lr;
+      *(byte *)arg_1 = (byte)*arg_1 | 3;
+      if ((*arg_1 & 0xfff) >> 8 == 0) {
+        return;
       }
-      uVar3 = (*param_1 & 0xff) >> 2;
-      if (0x26 < uVar3) {
-        return in_lr;
+      u_val3 = (*arg_1 & 0xff) >> 2;
+      if (0x26 < u_val3) {
+        return;
       }
-      switch(*(uint *)(PTR_case_0800AE58_0800ae54 + uVar3 * 4) & 0xfffffffe) {
+      switch(*(uint *)(PTR_case_0800AE58_0800ae54 + u_val3 * 4) & 0xfffffffe) {
       case 0x800ae58:
         break;
       case 0x800af10:
-        *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0;
-        return in_lr;
+        *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0;
+        return;
       case 0x800af1a:
-        return in_lr;
+        return;
       }
-      *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 7;
-      *param_1 = *param_1 & 0xFFFE0FFF;
-      return in_lr;
+      *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0 | 7;
+      *arg_1 = *arg_1 & 0xFFFE0FFF;
+      return;
     }
-    uVar3 = *param_1;
-    if ((uVar3 & 0xfff) >> 8 == 0) {
-      return in_lr;
+    u_val3 = *arg_1;
+    if ((u_val3 & 0xfff) >> 8 == 0) {
+      return;
     }
-    uVar2 = (uVar3 & 0xff) >> 2;
-    if (0x26 < uVar2) {
-      return in_lr;
+    u_val2 = (u_val3 & 0xff) >> 2;
+    if (0x26 < u_val2) {
+      return;
     }
-    switch(*(uint *)(PTR_case_0800AD48_0800ad44 + uVar2 * 4) & 0xfffffffe) {
+    switch(*(uint *)(PTR_case_0800AD48_0800ad44 + u_val2 * 4) & 0xfffffffe) {
     case 0x800ad48:
       break;
     case 0x800ae16:
@@ -1954,124 +1886,123 @@ LAB_0800adec:
     case 0x800af1a:
       goto case_0800AF1A;
     }
-    if ((uVar3 & 0xfff) >> 8 == 1) goto LAB_0800adec;
+    if ((u_val3 & 0xfff) >> 8 == 1) goto LAB_0800adec;
 LAB_0800adf8:
-    *(byte *)((int)param_1 + 1) = *(byte *)((int)param_1 + 1) & 0xf0 | 6;
+    *(byte *)((int)arg_1 + 1) = *(byte *)((int)arg_1 + 1) & 0xf0 | 6;
   }
-  *(byte *)param_1 = (byte)*param_1 & 0xfc | 1;
+  *(byte *)arg_1 = (byte)*arg_1 & 0xfc | 1;
 case_0800AF1A:
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: FieldPlot_GetTileGraphic @ 0x0800AF20
 // =============================================================================
-undefined8 FieldPlot_GetTileGraphic(uint *param_1)
+undefined8 FieldPlot_GetTileGraphic(uint *arg_1)
 
 {
-  uint uVar1;
-  undefined4 uVar2;
-  undefined4 in_lr;
+  uint u_val1;
+  undefined4 u_val2;
   
-  uVar1 = *param_1 & 3;
-  uVar2 = gRomGfx_086D6520;
-  if (uVar1 != 1) {
-    if (uVar1 < 2) {
-      uVar2 = gRomGfx_086D6518;
-      if (uVar1 == 0) goto LAB_0800af56;
+  u_val1 = *arg_1 & 3;
+  u_val2 = gRomGfx_086D6520;
+  if (u_val1 != 1) {
+    if (u_val1 < 2) {
+      u_val2 = gRomGfx_086D6518;
+      if (u_val1 == 0) goto LAB_0800af56;
     }
     else {
-      uVar2 = gRomGfx_086D6528;
-      if (uVar1 == 2) goto LAB_0800af56;
+      u_val2 = gRomGfx_086D6528;
+      if (u_val1 == 2) goto LAB_0800af56;
     }
-    uVar2 = 0;
+    u_val2 = 0;
   }
 LAB_0800af56:
-  return CONCAT44(in_lr,uVar2);
+  return u_val2;
 }
 
 // =============================================================================
 // Function: FieldPlot_ResolveBorderTile @ 0x0800AF5C
 // =============================================================================
-undefined8 FieldPlot_ResolveBorderTile(uint *param_1,uint *param_2,uint *param_3)
+undefined8 FieldPlot_ResolveBorderTile(uint *arg_1,uint *arg_2,uint *arg_3)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  undefined1 *puVar6;
+  uint u_val1;
+  int i_val2;
+  uint u_val3;
+  uint u_val4;
+  uint u_val5;
+  undefined1 *p_uint6;
   
-  puVar6 = &stack0xffffffec;
-  uVar3 = (*param_1 & 0xff) >> 2;
-  uVar5 = 0xff;
-  uVar1 = (*param_1 & 0xfff) >> 8;
-  iVar2 = gRomGfx_086D6458;
-  if ((uVar1 == 0) || (iVar2 = gRomGfx_086D6608, uVar1 == 1)) goto LAB_0800b0d4;
-  if (uVar3 == 0x14) {
-    if (uVar1 == 7) {
-      uVar5 = 0xc;
+  p_uint6 = &stack0xffffffec;
+  u_val3 = (*arg_1 & 0xff) >> 2;
+  u_val5 = 0xff;
+  u_val1 = (*arg_1 & 0xfff) >> 8;
+  i_val2 = gRomGfx_086D6458;
+  if ((u_val1 == 0) || (i_val2 = gRomGfx_086D6608, u_val1 == 1)) goto LAB_0800b0d4;
+  if (u_val3 == 0x14) {
+    if (u_val1 == 7) {
+      u_val5 = 0xc;
     }
     else {
-      if (uVar1 == 4) {
-        uVar5 = 4;
+      if (u_val1 == 4) {
+        u_val5 = 4;
       }
-      else if (uVar1 < 5) {
-        if (uVar1 == 3) {
-          uVar5 = 0;
+      else if (u_val1 < 5) {
+        if (u_val1 == 3) {
+          u_val5 = 0;
         }
       }
-      else if (uVar1 == 5) {
-        uVar5 = 8;
+      else if (u_val1 == 5) {
+        u_val5 = 8;
       }
-      if ((((param_2 == (uint *)0x0) || ((*param_2 & 0xff) >> 2 != 0x14)) ||
-          (uVar1 = (*param_2 & 0xfff) >> 8, uVar1 == 7)) ||
-         (uVar4 = (*param_1 & 0xfff) >> 8, uVar1 < uVar4)) {
-        if (((param_3 == (uint *)0x0) || ((*param_3 & 0xff) >> 2 != 0x14)) ||
-           ((uVar1 = (*param_3 & 0xfff) >> 8, uVar1 == 7 || (uVar1 < (*param_1 & 0xfff) >> 8))))
+      if ((((arg_2 == (uint *)0x0) || ((*arg_2 & 0xff) >> 2 != 0x14)) ||
+          (u_val1 = (*arg_2 & 0xfff) >> 8, u_val1 == 7)) ||
+         (u_val4 = (*arg_1 & 0xfff) >> 8, u_val1 < u_val4)) {
+        if (((arg_3 == (uint *)0x0) || ((*arg_3 & 0xff) >> 2 != 0x14)) ||
+           ((u_val1 = (*arg_3 & 0xfff) >> 8, u_val1 == 7 || (u_val1 < (*arg_1 & 0xfff) >> 8))))
         goto case_0800B0CC;
-        uVar5 = uVar5 + 1;
+        u_val5 = u_val5 + 1;
       }
-      else if (((param_3 == (uint *)0x0) || ((*param_3 & 0xff) >> 2 != 0x14)) ||
-              ((uVar1 = (*param_3 & 0xfff) >> 8, uVar1 == 7 || (uVar1 < uVar4)))) {
-        uVar5 = uVar5 + 2;
+      else if (((arg_3 == (uint *)0x0) || ((*arg_3 & 0xff) >> 2 != 0x14)) ||
+              ((u_val1 = (*arg_3 & 0xfff) >> 8, u_val1 == 7 || (u_val1 < u_val4)))) {
+        u_val5 = u_val5 + 2;
       }
       else {
-        uVar5 = uVar5 + 3;
+        u_val5 = u_val5 + 3;
       }
-      uVar5 = uVar5 & 0xff;
+      u_val5 = u_val5 & 0xff;
     }
   }
-  else if (uVar1 - 2 < 7) {
-    switch(*(uint *)(PTR_case_0800AFB8_0800afb4 + (uVar1 - 2) * 4) & 0xfffffffe) {
+  else if (u_val1 - 2 < 7) {
+    switch(*(uint *)(PTR_case_0800AFB8_0800afb4 + (u_val1 - 2) * 4) & 0xfffffffe) {
     case 0x800afb8:
-      puVar6 = &stack0x0000000c;
+      p_uint6 = &stack0x0000000c;
     case 0x800afd4:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 4);
+      u_val5 = (uint)*(byte *)(((*arg_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 4);
       break;
     case 0x800afe6:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 5);
+      u_val5 = (uint)*(byte *)(((*arg_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 5);
       break;
     case 0x800aff8:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 6);
+      u_val5 = (uint)*(byte *)(((*arg_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 6);
       break;
     case 0x800b00a:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 7);
+      u_val5 = (uint)*(byte *)(((*arg_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 7);
       break;
     case 0x800b01c:
-      uVar5 = (uint)*(byte *)(((*param_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 8);
+      u_val5 = (uint)*(byte *)(((*arg_1 & 0xff) >> 2) * 0xc + gRomData_080E93F8 + 8);
       break;
     case 0x800b02e:
-      uVar5 = 1;
-      if ((*param_1 & 3) != 3) {
-        uVar5 = 0;
+      u_val5 = 1;
+      if ((*arg_1 & 3) != 3) {
+        u_val5 = 0;
       }
     }
   }
 case_0800B0CC:
-  iVar2 = uVar5 * 0xc + *(int *)(uVar3 * 0xc + gRomData_080E93F8);
+  i_val2 = u_val5 * 0xc + *(int *)(u_val3 * 0xc + gRomData_080E93F8);
 LAB_0800b0d4:
-  return CONCAT44(*(undefined4 *)(puVar6 + 0x10),iVar2);
+  return CONCAT44(*(undefined4 *)(p_uint6 + 0x10),i_val2);
 }
 

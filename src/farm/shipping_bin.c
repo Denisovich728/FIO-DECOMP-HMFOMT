@@ -9,637 +9,613 @@
 // =============================================================================
 // Function: ShippingBin_Init @ 0x0800B0DC
 // =============================================================================
-undefined8 ShippingBin_Init(undefined4 *param_1)
+undefined8 ShippingBin_Init(undefined4 *arg_1)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
-  uint uVar3;
-  int iVar4;
-  undefined4 in_lr;
+  int i_val1;
+  undefined4 *p_uint2;
+  uint loop_i;
+  int i_val4;
   
-  *param_1 = 0;
-  iVar4 = 0x66;
-  puVar2 = param_1;
+  *arg_1 = 0;
+  i_val4 = 0x66;
+  p_uint2 = arg_1;
   do {
-    puVar2 = puVar2 + 1;
-    ShippingBin_Routine_0800B26C(puVar2);
-    iVar1 = gRomData_080E95CC;
-    iVar4 = iVar4 + -1;
-  } while (iVar4 != -1);
-  uVar3 = 0;
+    p_uint2 = p_uint2 + 1;
+    ShippingBin_Routine_0800B26C(p_uint2);
+    i_val1 = gRomData_080E95CC;
+    i_val4 = i_val4 + -1;
+  } while (i_val4 != -1);
+  loop_i = 0;
   do {
-    ShippingBin_StatEnt_IsDisplayEnabled(param_1 + *(byte *)(uVar3 + iVar1) + 1);
-    uVar3 = uVar3 + 1;
-  } while (uVar3 < 0x16);
-  return CONCAT44(in_lr,param_1);
+    ShippingBin_StatEnt_IsDisplayEnabled(arg_1 + *(byte *)(loop_i + i_val1) + 1);
+    loop_i = loop_i + 1;
+  } while (loop_i < 0x16);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: ShippingBin_GetValueShipped @ 0x0800B124
 // =============================================================================
-undefined8 ShippingBin_GetValueShipped(int param_1,int param_2)
+undefined8 ShippingBin_GetValueShipped(int arg_1,int arg_2)
 
 {
-  undefined4 uVar1;
-  undefined4 in_lr;
+  undefined4 u_val1;
   
-  if (param_2 < 0x67) {
-    uVar1 = ShippingBin_Routine_0800B280(param_1 + param_2 * 4 + 4);
+  if (arg_2 < 0x67) {
+    u_val1 = ShippingBin_Routine_0800B280(arg_1 + arg_2 * 4 + 4);
   }
   else {
-    uVar1 = 0;
+    u_val1 = 0;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: ShippingBin_IsDisplayEnabled @ 0x0800B140
 // =============================================================================
-undefined8 ShippingBin_IsDisplayEnabled(int param_1,int param_2)
+undefined8 ShippingBin_IsDisplayEnabled(int arg_1,int arg_2)
 
 {
-  undefined4 uVar1;
-  undefined4 in_lr;
+  undefined4 u_val1;
   
-  if (param_2 < 0x67) {
-    uVar1 = ShippingBin_ForceEnableDisplay(param_1 + param_2 * 4 + 4);
+  if (arg_2 < 0x67) {
+    u_val1 = ShippingBin_ForceEnableDisplay(arg_1 + arg_2 * 4 + 4);
   }
   else {
-    uVar1 = 0;
+    u_val1 = 0;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: ShippingBin_GetAmountShipped @ 0x0800B15C
 // =============================================================================
-undefined8 ShippingBin_GetAmountShipped(int param_1)
+undefined8 ShippingBin_GetAmountShipped(int arg_1)
 
 {
-  char cVar1;
-  int iVar2;
-  undefined4 uVar3;
-  uint uVar4;
-  undefined4 in_lr;
+  char c_char1;
+  int i_val2;
+  undefined4 u_val3;
+  uint u_val4;
   
-  uVar4 = 0;
+  u_val4 = 0;
   while( true ) {
-    param_1 = param_1 + 4;
-    cVar1 = ShippingBin_Routine_0800B280(param_1);
-    if ((cVar1 == '\0') || (iVar2 = ShippingBin_ForceEnableDisplay(param_1), iVar2 == 0)) break;
-    uVar4 = uVar4 + 1;
-    if (0x66 < uVar4) {
-      uVar3 = 1;
+    arg_1 = arg_1 + 4;
+    c_char1 = ShippingBin_Routine_0800B280(arg_1);
+    if ((c_char1 == '\0') || (i_val2 = ShippingBin_ForceEnableDisplay(arg_1), i_val2 == 0)) break;
+    u_val4 = u_val4 + 1;
+    if (0x66 < u_val4) {
+      u_val3 = 1;
 LAB_0800b186:
-      return CONCAT44(in_lr,uVar3);
+      return u_val3;
     }
   }
-  uVar3 = 0;
+  u_val3 = 0;
   goto LAB_0800b186;
 }
 
 // =============================================================================
 // Function: ShippingBin_HasShippedOneOfEachProduct @ 0x0800B18C
 // =============================================================================
-undefined8 ShippingBin_HasShippedOneOfEachProduct(int param_1)
+undefined8 ShippingBin_HasShippedOneOfEachProduct(int arg_1)
 
 {
-  char cVar1;
-  undefined4 uVar2;
-  int iVar3;
-  uint uVar4;
-  undefined4 in_lr;
+  char c_char1;
+  undefined4 u_val2;
+  int i_val3;
+  uint u_val4;
   
-  uVar4 = 0;
+  u_val4 = 0;
   while( true ) {
-    iVar3 = param_1 + (uint)*(byte *)(uVar4 + gRomData_080E95E2) * 4 + 4;
-    cVar1 = ShippingBin_Routine_0800B280(iVar3);
-    if ((cVar1 == '\0') || (iVar3 = ShippingBin_ForceEnableDisplay(iVar3), iVar3 == 0)) break;
-    uVar4 = uVar4 + 1;
-    if (0xe < uVar4) {
-      uVar2 = 1;
+    i_val3 = arg_1 + (uint)*(byte *)(u_val4 + gRomData_080E95E2) * 4 + 4;
+    c_char1 = ShippingBin_Routine_0800B280(i_val3);
+    if ((c_char1 == '\0') || (i_val3 = ShippingBin_ForceEnableDisplay(i_val3), i_val3 == 0)) break;
+    u_val4 = u_val4 + 1;
+    if (0xe < u_val4) {
+      u_val2 = 1;
 LAB_0800b1c4:
-      return CONCAT44(in_lr,uVar2);
+      return u_val2;
     }
   }
-  uVar2 = 0;
+  u_val2 = 0;
   goto LAB_0800b1c4;
 }
 
 // =============================================================================
 // Function: ShippingBin_HasShippedOneOfEachCrop @ 0x0800B1CC
 // =============================================================================
-undefined8 ShippingBin_HasShippedOneOfEachCrop(int param_1)
+undefined8 ShippingBin_HasShippedOneOfEachCrop(int arg_1)
 
 {
-  char cVar1;
-  undefined4 uVar2;
-  int iVar3;
-  uint uVar4;
-  undefined4 in_lr;
+  char c_char1;
+  undefined4 u_val2;
+  int i_val3;
+  uint u_val4;
   
-  uVar4 = 0;
+  u_val4 = 0;
   while( true ) {
-    iVar3 = param_1 + (uint)*(byte *)(uVar4 + gRomData_080E95F1) * 4 + 4;
-    cVar1 = ShippingBin_Routine_0800B280(iVar3);
-    if ((cVar1 == '\0') || (iVar3 = ShippingBin_ForceEnableDisplay(iVar3), iVar3 == 0)) break;
-    uVar4 = uVar4 + 1;
-    if (0x13 < uVar4) {
-      uVar2 = 1;
+    i_val3 = arg_1 + (uint)*(byte *)(u_val4 + gRomData_080E95F1) * 4 + 4;
+    c_char1 = ShippingBin_Routine_0800B280(i_val3);
+    if ((c_char1 == '\0') || (i_val3 = ShippingBin_ForceEnableDisplay(i_val3), i_val3 == 0)) break;
+    u_val4 = u_val4 + 1;
+    if (0x13 < u_val4) {
+      u_val2 = 1;
 LAB_0800b204:
-      return CONCAT44(in_lr,uVar2);
+      return u_val2;
     }
   }
-  uVar2 = 0;
+  u_val2 = 0;
   goto LAB_0800b204;
 }
 
 // =============================================================================
 // Function: ShippingBin_ShipItem @ 0x0800B20C
 // =============================================================================
-undefined4 ShippingBin_ShipItem(int *param_1,undefined4 param_2)
+undefined4 ShippingBin_ShipItem(int *arg_1,undefined4 arg_2)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint uVar3;
-  undefined4 in_lr;
+  uint u_val1;
+  int i_val2;
+  uint u_val3;
   
-  uVar1 = Item_Routine_0800E198(param_2);
-  if (uVar1 != 0) {
-    iVar2 = Item_Routine_0800E194(param_2);
-    ShippingBin_StatEnt_Init(param_1 + iVar2 + 1);
-    uVar3 = 0x3B9ACA00 - *param_1;
-    if (uVar1 < uVar3) {
-      uVar3 = uVar1;
+  u_val1 = Item_Routine_0800E198(arg_2);
+  if (u_val1 != 0) {
+    i_val2 = Item_Routine_0800E194(arg_2);
+    ShippingBin_StatEnt_Init(arg_1 + i_val2 + 1);
+    u_val3 = 0x3B9ACA00 - *arg_1;
+    if (u_val1 < u_val3) {
+      u_val3 = u_val1;
     }
-    *param_1 = *param_1 + uVar3;
+    *arg_1 = *arg_1 + u_val3;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: ShippingBin_ResetValueShipped @ 0x0800B254
 // =============================================================================
-undefined4 ShippingBin_ResetValueShipped(int param_1,int param_2)
+undefined4 ShippingBin_ResetValueShipped(int arg_1,int arg_2)
 
 {
-  undefined4 in_lr;
   
-  if (param_2 < 0x67) {
-    ShippingBin_StatEnt_IsDisplayEnabled(param_1 + param_2 * 4 + 4);
+  if (arg_2 < 0x67) {
+    ShippingBin_StatEnt_IsDisplayEnabled(arg_1 + arg_2 * 4 + 4);
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: ShippingBin_ForceEnableDisplay @ 0x0800B288
 // =============================================================================
-undefined8 ShippingBin_ForceEnableDisplay(uint *param_1)
+undefined8 ShippingBin_ForceEnableDisplay(uint *arg_1)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  if ((int)*param_1 < 0) {
-    uVar1 = *param_1 & 0x7fffffff;
+  if ((int)*arg_1 < 0) {
+    u_val1 = *arg_1 & 0x7fffffff;
   }
   else {
-    uVar1 = 0;
+    u_val1 = 0;
   }
-  return CONCAT44(in_lr,uVar1);
+  return u_val1;
 }
 
 // =============================================================================
 // Function: ShippingBin_StatEnt_Init @ 0x0800B29C
 // =============================================================================
-undefined4 ShippingBin_StatEnt_Init(uint *param_1)
+undefined4 ShippingBin_StatEnt_Init(uint *arg_1)
 
 {
-  uint uVar1;
-  undefined4 in_lr;
+  uint u_val1;
   
-  if (-1 < (int)*param_1) {
-    *(byte *)((int)param_1 + 3) = *(byte *)((int)param_1 + 3) | 0x80;
+  if (-1 < (int)*arg_1) {
+    *(byte *)((int)arg_1 + 3) = *(byte *)((int)arg_1 + 3) | 0x80;
   }
-  uVar1 = *param_1 & 0x7fffffff;
-  if (uVar1 <= 0x3B9AC9FF) {
-    *param_1 = 0x7FFFFFFF + 1 & *param_1 | uVar1 + 1 & 0x7FFFFFFF;
+  u_val1 = *arg_1 & 0x7fffffff;
+  if (u_val1 <= 0x3B9AC9FF) {
+    *arg_1 = 0x7FFFFFFF + 1 & *arg_1 | u_val1 + 1 & 0x7FFFFFFF;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: ShippingBin_StatEnt_IsDisplayEnabled @ 0x0800B2D4
 // =============================================================================
-undefined4 ShippingBin_StatEnt_IsDisplayEnabled(int *param_1)
+undefined4 ShippingBin_StatEnt_IsDisplayEnabled(int *arg_1)
 
 {
-  undefined4 in_lr;
   
-  if (-1 < *param_1) {
-    *(byte *)((int)param_1 + 3) = *(byte *)((int)param_1 + 3) | 0x80;
+  if (-1 < *arg_1) {
+    *(byte *)((int)arg_1 + 3) = *(byte *)((int)arg_1 + 3) | 0x80;
   }
-  return in_lr;
+  return;
 }
 
 // =============================================================================
 // Function: ShippingBin_StatEnt_GetAmountShipped @ 0x0800B2EC
 // =============================================================================
-undefined8 ShippingBin_StatEnt_GetAmountShipped(int param_1)
+undefined8 ShippingBin_StatEnt_GetAmountShipped(int arg_1)
 
 {
-  int iVar1;
-  int iVar2;
-  undefined4 in_lr;
-  undefined1 auStack_38 [4];
-  undefined1 uStack_34;
-  undefined1 uStack_33;
-  undefined1 uStack_32;
-  undefined1 uStack_31;
-  undefined1 uStack_30;
-  undefined1 auStack_2f [3];
+  int i_val1;
+  int i_val2;
+  undefined1 stack_buf_38 [4];
+  undefined1 stack_val_34;
+  undefined1 stack_val_33;
+  undefined1 stack_val_32;
+  undefined1 stack_val_31;
+  undefined1 stack_val_30;
+  undefined1 stack_buf_2f [3];
   undefined1 *puStack_2c;
   undefined1 *puStack_28;
   undefined1 *puStack_24;
   
-  iVar2 = 0x3f;
-  puStack_2c = &uStack_31;
-  puStack_28 = &uStack_30;
-  puStack_24 = auStack_2f;
-  iVar1 = param_1;
+  i_val2 = 0x3f;
+  puStack_2c = &stack_val_31;
+  puStack_28 = &stack_val_30;
+  puStack_24 = stack_buf_2f;
+  i_val1 = arg_1;
   do {
-    ArticleStack_AddAmount(iVar1);
-    iVar1 = iVar1 + 2;
-    iVar2 = iVar2 + -1;
-  } while (iVar2 != -1);
-  Item_SetId(&uStack_34,0);
-  ArticleStack_SubtractAmount(auStack_38,uStack_34,1);
-  gba_memcpy(param_1,auStack_38,2);
-  Item_SetId(&uStack_33,0x10);
-  ArticleStack_SubtractAmount(auStack_38,uStack_33,1);
-  gba_memcpy(param_1 + 2,auStack_38,2);
-  Item_SetId(&uStack_32,8);
-  ArticleStack_SubtractAmount(auStack_38,uStack_32,1);
-  gba_memcpy(param_1 + 4,auStack_38,2);
+    ArticleStack_AddAmount(i_val1);
+    i_val1 = i_val1 + 2;
+    i_val2 = i_val2 + -1;
+  } while (i_val2 != -1);
+  Item_SetId(&stack_val_34,0);
+  ArticleStack_SubtractAmount(stack_buf_38,stack_val_34,1);
+  gba_memcpy(arg_1,stack_buf_38,2);
+  Item_SetId(&stack_val_33,0x10);
+  ArticleStack_SubtractAmount(stack_buf_38,stack_val_33,1);
+  gba_memcpy(arg_1 + 2,stack_buf_38,2);
+  Item_SetId(&stack_val_32,8);
+  ArticleStack_SubtractAmount(stack_buf_38,stack_val_32,1);
+  gba_memcpy(arg_1 + 4,stack_buf_38,2);
   Item_SetId(puStack_2c,0x18);
-  ArticleStack_SubtractAmount(auStack_38,uStack_31,1);
-  gba_memcpy(param_1 + 6,auStack_38,2);
+  ArticleStack_SubtractAmount(stack_buf_38,stack_val_31,1);
+  gba_memcpy(arg_1 + 6,stack_buf_38,2);
   Item_SetId(puStack_28,0x20);
-  ArticleStack_SubtractAmount(auStack_38,uStack_30,1);
-  gba_memcpy(param_1 + 8,auStack_38,2);
+  ArticleStack_SubtractAmount(stack_buf_38,stack_val_30,1);
+  gba_memcpy(arg_1 + 8,stack_buf_38,2);
   Item_SetId(puStack_24,0x4c);
-  ArticleStack_SubtractAmount(auStack_38,auStack_2f[0],1);
-  gba_memcpy(param_1 + 10,auStack_38,2);
-  return CONCAT44(in_lr,param_1);
+  ArticleStack_SubtractAmount(stack_buf_38,stack_buf_2f[0],1);
+  gba_memcpy(arg_1 + 10,stack_buf_38,2);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: ShippingBin_StatEnt_ShipOne @ 0x0800B410
 // =============================================================================
-undefined8 ShippingBin_StatEnt_ShipOne(int param_1,int param_2)
+undefined8 ShippingBin_StatEnt_ShipOne(int arg_1,int arg_2)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  undefined4 in_lr;
-  undefined1 auStack_1c [4];
+  char c_char1;
+  int item_id;
+  int i_val3;
+  int i_val4;
+  undefined1 stack_buf_1c [4];
   
-  iVar3 = 0;
-  iVar4 = param_1 + 0x80;
-  for (; param_1 != iVar4; param_1 = param_1 + 2) {
-    cVar1 = Product_GetId(param_1);
-    if (cVar1 == '\0') {
-      auStack_1c[0] = Product_Construct(param_1);
-      iVar2 = Item_GetId(auStack_1c);
-      if (iVar2 == param_2) {
-        iVar2 = Product_GetPrice(param_1);
-        iVar3 = (iVar3 + 99) - iVar2;
+  i_val3 = 0;
+  i_val4 = arg_1 + 0x80;
+  for (; arg_1 != i_val4; arg_1 = arg_1 + 2) {
+    c_char1 = Product_GetId(arg_1);
+    if (c_char1 == '\0') {
+      stack_buf_1c[0] = Product_Construct(arg_1);
+      item_id = Item_GetId(stack_buf_1c);
+      if (item_id == arg_2) {
+        item_id = Product_GetPrice(arg_1);
+        i_val3 = (i_val3 + 99) - item_id;
       }
     }
     else {
-      iVar3 = iVar3 + 99;
+      i_val3 = i_val3 + 99;
     }
   }
-  return CONCAT44(in_lr,iVar3);
+  return i_val3;
 }
 
 // =============================================================================
 // Function: ShippingBin_StatEnt_ForceEnableDisplay @ 0x0800B474
 // =============================================================================
-undefined8 ShippingBin_StatEnt_ForceEnableDisplay(int param_1,int param_2)
+undefined8 ShippingBin_StatEnt_ForceEnableDisplay(int arg_1,int arg_2)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  undefined4 in_lr;
-  undefined1 auStack_1c [4];
+  char c_char1;
+  int item_id;
+  int i_val3;
+  int i_val4;
+  undefined1 stack_buf_1c [4];
   
-  iVar4 = 0;
-  iVar3 = param_1 + 0x80;
-  for (; param_1 != iVar3; param_1 = param_1 + 2) {
-    cVar1 = Product_GetId(param_1);
-    if (cVar1 == '\0') {
-      auStack_1c[0] = Product_Construct(param_1);
-      iVar2 = Item_GetId(auStack_1c);
-      if (iVar2 == param_2) {
-        iVar2 = Product_GetPrice(param_1);
-        iVar4 = iVar4 + iVar2;
+  i_val4 = 0;
+  i_val3 = arg_1 + 0x80;
+  for (; arg_1 != i_val3; arg_1 = arg_1 + 2) {
+    c_char1 = Product_GetId(arg_1);
+    if (c_char1 == '\0') {
+      stack_buf_1c[0] = Product_Construct(arg_1);
+      item_id = Item_GetId(stack_buf_1c);
+      if (item_id == arg_2) {
+        item_id = Product_GetPrice(arg_1);
+        i_val4 = i_val4 + item_id;
       }
     }
   }
-  return CONCAT44(in_lr,iVar4);
+  return i_val4;
 }
 
 // =============================================================================
 // Function: ShippingBin_HasShippedOneOfEachMineral @ 0x0800B4D0
 // =============================================================================
-undefined8 ShippingBin_HasShippedOneOfEachMineral(int param_1)
+undefined8 ShippingBin_HasShippedOneOfEachMineral(int arg_1)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  undefined4 in_lr;
+  char c_char1;
+  int i_val2;
+  int i_val3;
   
-  iVar3 = 0;
-  iVar2 = param_1 + 0x80;
-  for (; param_1 != iVar2; param_1 = param_1 + 2) {
-    cVar1 = Product_GetId(param_1);
-    if (cVar1 != '\0') goto LAB_0800b4fa;
-    iVar3 = iVar3 + 1;
+  i_val3 = 0;
+  i_val2 = arg_1 + 0x80;
+  for (; arg_1 != i_val2; arg_1 = arg_1 + 2) {
+    c_char1 = Product_GetId(arg_1);
+    if (c_char1 != '\0') goto LAB_0800b4fa;
+    i_val3 = i_val3 + 1;
   }
-  iVar3 = -1;
+  i_val3 = -1;
 LAB_0800b4fa:
-  return CONCAT44(in_lr,iVar3);
+  return i_val3;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B500 @ 0x0800B500
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B500(int param_1)
+undefined8 ShippingBin_Routine_0800B500(int arg_1)
 
 {
-  char cVar1;
-  int iVar2;
-  undefined4 in_lr;
-  int iStack_c;
+  char c_char1;
+  int i_val2;
+  int stack_val_c;
   
-  iVar2 = 0x3f;
-  for (iStack_c = param_1 + 0x80; iStack_c != param_1; iStack_c = iStack_c + -2) {
-    cVar1 = Product_GetId(iStack_c + -2);
-    if (cVar1 != '\0') goto LAB_0800b53a;
-    iVar2 = iVar2 + -1;
+  i_val2 = 0x3f;
+  for (stack_val_c = arg_1 + 0x80; stack_val_c != arg_1; stack_val_c = stack_val_c + -2) {
+    c_char1 = Product_GetId(stack_val_c + -2);
+    if (c_char1 != '\0') goto LAB_0800b53a;
+    i_val2 = i_val2 + -1;
   }
-  iVar2 = -1;
+  i_val2 = -1;
 LAB_0800b53a:
-  return CONCAT44(in_lr,iVar2);
+  return i_val2;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B544 @ 0x0800B544
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B544(int param_1,int param_2)
+undefined8 ShippingBin_Routine_0800B544(int arg_1,int arg_2)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  undefined4 in_lr;
-  undefined1 auStack_1c [4];
+  char c_char1;
+  int item_id;
+  int i_val3;
+  int i_val4;
+  undefined1 stack_buf_1c [4];
   
-  iVar4 = 0;
-  iVar3 = param_1 + 0x80;
-  for (; param_1 != iVar3; param_1 = param_1 + 2) {
-    cVar1 = Product_GetId(param_1);
-    if (cVar1 == '\0') {
-      auStack_1c[0] = Product_Construct(param_1);
-      iVar2 = Item_GetId(auStack_1c);
-      if (iVar2 == param_2) goto LAB_0800b592;
+  i_val4 = 0;
+  i_val3 = arg_1 + 0x80;
+  for (; arg_1 != i_val3; arg_1 = arg_1 + 2) {
+    c_char1 = Product_GetId(arg_1);
+    if (c_char1 == '\0') {
+      stack_buf_1c[0] = Product_Construct(arg_1);
+      item_id = Item_GetId(stack_buf_1c);
+      if (item_id == arg_2) goto LAB_0800b592;
     }
-    iVar4 = iVar4 + 1;
+    i_val4 = i_val4 + 1;
   }
-  iVar4 = -1;
+  i_val4 = -1;
 LAB_0800b592:
-  return CONCAT44(in_lr,iVar4);
+  return i_val4;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B5A8 @ 0x0800B5A8
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B5A8(int param_1,int param_2,uint param_3)
+undefined8 ShippingBin_Routine_0800B5A8(int arg_1,int arg_2,uint arg_3)
 
 {
-  char cVar1;
-  int iVar2;
-  uint uVar3;
-  uint *puVar4;
-  int iVar5;
-  undefined4 in_lr;
-  undefined1 auStack_28 [4];
-  uint uStack_24;
-  uint uStack_20;
-  undefined1 uStack_1c;
-  undefined1 auStack_1b [3];
-  uint uStack_18;
+  char c_char1;
+  int item_id;
+  uint u_val3;
+  uint *p_uint4;
+  int i_val5;
+  undefined1 temp_buf_28 [4];
+  uint stack_val_24;
+  uint stack_val_20;
+  undefined1 stack_val_1c;
+  undefined1 stack_buf_1b [3];
+  uint stack_val_18;
   
-  if (param_2 < 0x51) {
-    iVar5 = param_1 + 0x80;
-    for (; (param_3 != 0 && (param_1 != iVar5)); param_1 = param_1 + 2) {
-      uStack_24 = param_3;
-      cVar1 = Product_GetId(param_1);
-      if (cVar1 == '\0') {
-        auStack_1b[0] = Product_Construct(param_1);
-        iVar2 = Item_GetId(auStack_1b);
-        if (iVar2 == param_2) {
-          iVar2 = Product_GetPrice(param_1);
-          uStack_18 = 99U - iVar2;
-          puVar4 = &uStack_24;
-          if (99U - iVar2 < uStack_24) {
-            puVar4 = &uStack_18;
+  if (arg_2 < 0x51) {
+    i_val5 = arg_1 + 0x80;
+    for (; (arg_3 != 0 && (arg_1 != i_val5)); arg_1 = arg_1 + 2) {
+      stack_val_24 = arg_3;
+      c_char1 = Product_GetId(arg_1);
+      if (c_char1 == '\0') {
+        stack_buf_1b[0] = Product_Construct(arg_1);
+        item_id = Item_GetId(stack_buf_1b);
+        if (item_id == arg_2) {
+          item_id = Product_GetPrice(arg_1);
+          stack_val_18 = 99U - item_id;
+          p_uint4 = &stack_val_24;
+          if (99U - item_id < stack_val_24) {
+            p_uint4 = &stack_val_18;
           }
-          uVar3 = *puVar4;
-          Product_GetName(param_1,uVar3);
+          u_val3 = *p_uint4;
+          Product_GetName(arg_1,u_val3);
           goto LAB_0800b646;
         }
       }
       else {
-        uStack_20 = 99;
-        puVar4 = &uStack_24;
-        if (99 < uStack_24) {
-          puVar4 = &uStack_20;
+        stack_val_20 = 99;
+        p_uint4 = &stack_val_24;
+        if (99 < stack_val_24) {
+          p_uint4 = &stack_val_20;
         }
-        uVar3 = *puVar4;
-        Item_SetId(&uStack_1c,param_2);
-        ArticleStack_SubtractAmount(auStack_28,uStack_1c,uVar3);
-        gba_memcpy(param_1,auStack_28,2);
+        u_val3 = *p_uint4;
+        Item_SetId(&stack_val_1c,arg_2);
+        ArticleStack_SubtractAmount(temp_buf_28,stack_val_1c,u_val3);
+        gba_memcpy(arg_1,temp_buf_28,2);
 LAB_0800b646:
-        uStack_24 = uStack_24 - uVar3;
+        stack_val_24 = stack_val_24 - u_val3;
       }
-      param_3 = uStack_24;
+      arg_3 = stack_val_24;
     }
   }
-  return CONCAT44(in_lr,param_3);
+  return arg_3;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B660 @ 0x0800B660
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B660(int param_1)
+undefined8 ShippingBin_Routine_0800B660(int arg_1)
 
 {
-  int iVar1;
-  int iVar2;
-  undefined4 in_lr;
+  int i_val1;
+  int i_val2;
   
-  iVar2 = 0x3f;
-  iVar1 = param_1;
+  i_val2 = 0x3f;
+  i_val1 = arg_1;
   do {
-    Item_Routine_0800DE68(iVar1);
-    iVar1 = iVar1 + 4;
-    iVar2 = iVar2 + -1;
-  } while (iVar2 != -1);
-  return CONCAT44(in_lr,param_1);
+    Item_Routine_0800DE68(i_val1);
+    i_val1 = i_val1 + 4;
+    i_val2 = i_val2 + -1;
+  } while (i_val2 != -1);
+  return arg_1;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B68C @ 0x0800B68C
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B68C(int param_1,int param_2)
+undefined8 ShippingBin_Routine_0800B68C(int arg_1,int arg_2)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  undefined4 in_lr;
-  undefined1 auStack_18 [4];
+  char c_char1;
+  int i_val2;
+  int i_val3;
+  int i_val4;
+  undefined1 temp_buf_18 [4];
   
-  iVar3 = 0;
-  iVar4 = param_1 + 0x100;
-  for (; param_1 != iVar4; param_1 = param_1 + 4) {
-    cVar1 = Item_Routine_0800DEDC(param_1);
-    if (cVar1 == '\0') {
-      Item_Routine_0800DEB8(auStack_18,param_1);
-      iVar2 = Item_Routine_0800DCB4(auStack_18);
-      if (iVar2 == param_2) {
-        iVar2 = Item_Routine_0800DEF0(param_1);
-        iVar3 = (iVar3 + 99) - iVar2;
+  i_val3 = 0;
+  i_val4 = arg_1 + 0x100;
+  for (; arg_1 != i_val4; arg_1 = arg_1 + 4) {
+    c_char1 = Item_Routine_0800DEDC(arg_1);
+    if (c_char1 == '\0') {
+      Item_Routine_0800DEB8(temp_buf_18,arg_1);
+      i_val2 = Item_Routine_0800DCB4(temp_buf_18);
+      if (i_val2 == arg_2) {
+        i_val2 = Item_Routine_0800DEF0(arg_1);
+        i_val3 = (i_val3 + 99) - i_val2;
       }
     }
     else {
-      iVar3 = iVar3 + 99;
+      i_val3 = i_val3 + 99;
     }
   }
-  return CONCAT44(in_lr,iVar3);
+  return i_val3;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B6E8 @ 0x0800B6E8
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B6E8(int param_1,int param_2)
+undefined8 ShippingBin_Routine_0800B6E8(int arg_1,int arg_2)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  undefined4 in_lr;
-  undefined1 auStack_18 [4];
+  char c_char1;
+  int i_val2;
+  int i_val3;
+  int i_val4;
+  undefined1 temp_buf_18 [4];
   
-  iVar4 = 0;
-  iVar3 = param_1 + 0x100;
-  for (; param_1 != iVar3; param_1 = param_1 + 4) {
-    cVar1 = Item_Routine_0800DEDC(param_1);
-    if (cVar1 == '\0') {
-      Item_Routine_0800DEB8(auStack_18,param_1);
-      iVar2 = Item_Routine_0800DCB4(auStack_18);
-      if (iVar2 == param_2) {
-        iVar2 = Item_Routine_0800DEF0(param_1);
-        iVar4 = iVar4 + iVar2;
+  i_val4 = 0;
+  i_val3 = arg_1 + 0x100;
+  for (; arg_1 != i_val3; arg_1 = arg_1 + 4) {
+    c_char1 = Item_Routine_0800DEDC(arg_1);
+    if (c_char1 == '\0') {
+      Item_Routine_0800DEB8(temp_buf_18,arg_1);
+      i_val2 = Item_Routine_0800DCB4(temp_buf_18);
+      if (i_val2 == arg_2) {
+        i_val2 = Item_Routine_0800DEF0(arg_1);
+        i_val4 = i_val4 + i_val2;
       }
     }
   }
-  return CONCAT44(in_lr,iVar4);
+  return i_val4;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B73C @ 0x0800B73C
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B73C(int param_1)
+undefined8 ShippingBin_Routine_0800B73C(int arg_1)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  undefined4 in_lr;
+  char c_char1;
+  int i_val2;
+  int i_val3;
   
-  iVar3 = 0;
-  iVar2 = param_1 + 0x100;
-  for (; param_1 != iVar2; param_1 = param_1 + 4) {
-    cVar1 = Item_Routine_0800DEDC(param_1);
-    if (cVar1 != '\0') goto LAB_0800b768;
-    iVar3 = iVar3 + 1;
+  i_val3 = 0;
+  i_val2 = arg_1 + 0x100;
+  for (; arg_1 != i_val2; arg_1 = arg_1 + 4) {
+    c_char1 = Item_Routine_0800DEDC(arg_1);
+    if (c_char1 != '\0') goto LAB_0800b768;
+    i_val3 = i_val3 + 1;
   }
-  iVar3 = -1;
+  i_val3 = -1;
 LAB_0800b768:
-  return CONCAT44(in_lr,iVar3);
+  return i_val3;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B770 @ 0x0800B770
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B770(int param_1)
+undefined8 ShippingBin_Routine_0800B770(int arg_1)
 
 {
-  char cVar1;
-  int iVar2;
-  undefined4 in_lr;
-  int iStack_c;
+  char c_char1;
+  int i_val2;
+  int stack_val_c;
   
-  iVar2 = 0x3f;
-  for (iStack_c = param_1 + 0x100; iStack_c != param_1; iStack_c = iStack_c + -4) {
-    cVar1 = Item_Routine_0800DEDC(iStack_c + -4);
-    if (cVar1 != '\0') goto LAB_0800b7ae;
-    iVar2 = iVar2 + -1;
+  i_val2 = 0x3f;
+  for (stack_val_c = arg_1 + 0x100; stack_val_c != arg_1; stack_val_c = stack_val_c + -4) {
+    c_char1 = Item_Routine_0800DEDC(stack_val_c + -4);
+    if (c_char1 != '\0') goto LAB_0800b7ae;
+    i_val2 = i_val2 + -1;
   }
-  iVar2 = -1;
+  i_val2 = -1;
 LAB_0800b7ae:
-  return CONCAT44(in_lr,iVar2);
+  return i_val2;
 }
 
 // =============================================================================
 // Function: ShippingBin_Routine_0800B7B8 @ 0x0800B7B8
 // =============================================================================
-undefined8 ShippingBin_Routine_0800B7B8(int param_1,int param_2)
+undefined8 ShippingBin_Routine_0800B7B8(int arg_1,int arg_2)
 
 {
-  char cVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  undefined4 in_lr;
-  undefined1 auStack_18 [4];
+  char c_char1;
+  int i_val2;
+  int i_val3;
+  int i_val4;
+  undefined1 temp_buf_18 [4];
   
-  iVar4 = 0;
-  iVar3 = param_1 + 0x100;
-  for (; param_1 != iVar3; param_1 = param_1 + 4) {
-    cVar1 = Item_Routine_0800DEDC(param_1);
-    if (cVar1 == '\0') {
-      Item_Routine_0800DEB8(auStack_18,param_1);
-      iVar2 = Item_Routine_0800DCB4(auStack_18);
-      if (iVar2 == param_2) goto LAB_0800b802;
+  i_val4 = 0;
+  i_val3 = arg_1 + 0x100;
+  for (; arg_1 != i_val3; arg_1 = arg_1 + 4) {
+    c_char1 = Item_Routine_0800DEDC(arg_1);
+    if (c_char1 == '\0') {
+      Item_Routine_0800DEB8(temp_buf_18,arg_1);
+      i_val2 = Item_Routine_0800DCB4(temp_buf_18);
+      if (i_val2 == arg_2) goto LAB_0800b802;
     }
-    iVar4 = iVar4 + 1;
+    i_val4 = i_val4 + 1;
   }
-  iVar4 = -1;
+  i_val4 = -1;
 LAB_0800b802:
-  return CONCAT44(in_lr,iVar4);
+  return i_val4;
 }
 

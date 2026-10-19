@@ -14,29 +14,29 @@
 void GBA_Header_Boot(void)
 
 {
-  uint uVar1;
-  int *piVar2;
+  uint u_val1;
+  int *p_int2;
   code *init_func;
-  bool bVar3;
+  bool b_flag3;
   
   software_interrupt(0x10000);
   REG_DMA3DAD = uRam0800015c;
-  uVar1 = (iRam08000160 - uRam0800015c) + 3 >> 2;
-  if (uVar1 != 0) {
+  u_val1 = (iRam08000160 - uRam0800015c) + 3 >> 2;
+  if (u_val1 != 0) {
     REG_DMA3SAD = uRam08000164;
-    Ram040000dc = uVar1 | 0x84000000;
+    Ram040000dc = u_val1 | 0x84000000;
   }
   (*pcRam08000170)(_ASSET_BLOCK_08000168,iRam0800016c - _ASSET_BLOCK_08000168);
-  piVar2 = piRam08000174 + 1;
-  bVar3 = *piRam08000174 == 0;
+  p_int2 = piRam08000174 + 1;
+  b_flag3 = *piRam08000174 == 0;
   while( true ) {
-    if (!bVar3) {
-      init_func = (code *)*piVar2;
-      bVar3 = init_func == (code *)0x0;
-      piVar2 = piVar2 + 1;
+    if (!b_flag3) {
+      init_func = (code *)*p_int2;
+      b_flag3 = init_func == (code *)0x0;
+      p_int2 = p_int2 + 1;
     }
-    if (!bVar3) break;
-    if (bVar3) {
+    if (!b_flag3) break;
+    if (b_flag3) {
       (*pcRam08000178)();
       return;
     }
@@ -53,29 +53,29 @@ void GBA_Header_Boot(void)
 void crt0_entry(void)
 
 {
-  uint uVar1;
-  int *piVar2;
+  uint u_val1;
+  int *p_int2;
   code *init_func;
-  bool bVar3;
+  bool b_flag3;
   
   software_interrupt(0x10000);
   REG_DMA3DAD = uRam0800015c;
-  uVar1 = (iRam08000160 - uRam0800015c) + 3 >> 2;
-  if (uVar1 != 0) {
+  u_val1 = (iRam08000160 - uRam0800015c) + 3 >> 2;
+  if (u_val1 != 0) {
     REG_DMA3SAD = uRam08000164;
-    Ram040000dc = uVar1 | 0x84000000;
+    Ram040000dc = u_val1 | 0x84000000;
   }
   (*pcRam08000170)(_ASSET_BLOCK_08000168,iRam0800016c - _ASSET_BLOCK_08000168);
-  piVar2 = piRam08000174 + 1;
-  bVar3 = *piRam08000174 == 0;
+  p_int2 = piRam08000174 + 1;
+  b_flag3 = *piRam08000174 == 0;
   while( true ) {
-    if (!bVar3) {
-      init_func = (code *)*piVar2;
-      bVar3 = init_func == (code *)0x0;
-      piVar2 = piVar2 + 1;
+    if (!b_flag3) {
+      init_func = (code *)*p_int2;
+      b_flag3 = init_func == (code *)0x0;
+      p_int2 = p_int2 + 1;
     }
-    if (!bVar3) break;
-    if (bVar3) {
+    if (!b_flag3) break;
+    if (b_flag3) {
       (*pcRam08000178)();
       return;
     }
@@ -90,29 +90,29 @@ void crt0_entry(void)
 void MainLoop_Callback(void)
 
 {
-  ushort uVar1;
-  ushort uVar2;
-  int iVar3;
+  ushort u_val1;
+  ushort u_val2;
+  int i_val3;
   
   Interrupt_WaitForVBlank(0xFFFF);
-  iVar3 = REG_DMA0SAD;
+  i_val3 = REG_DMA0SAD;
   REG_DISPCNT = 0x80;
   REG_SOUNDCNT_X._0_1_ = 0;
-  uVar1 = *REG_KEYINPUT;
-  while ((~uVar1 & 0xf) != 0) {
-    uVar1 = *REG_KEYINPUT;
+  u_val1 = *REG_KEYINPUT;
+  while ((~u_val1 & 0xf) != 0) {
+    u_val1 = *REG_KEYINPUT;
   }
-  uVar1 = (ushort)0xC5FF;
-  *(ushort *)(REG_DMA0SAD + 10) = uVar1 & *(ushort *)(REG_DMA0SAD + 10);
-  uVar2 = (ushort)0x7FFF;
-  *(ushort *)(iVar3 + 10) = uVar2 & *(ushort *)(iVar3 + 10);
-  *(ushort *)(iVar3 + 0x16) = uVar1 & *(ushort *)(iVar3 + 0x16);
-  *(ushort *)(iVar3 + 0x16) = uVar2 & *(ushort *)(iVar3 + 0x16);
-  *(ushort *)(iVar3 + 0x22) = uVar1 & *(ushort *)(iVar3 + 0x22);
-  *(ushort *)(iVar3 + 0x22) = uVar2 & *(ushort *)(iVar3 + 0x22);
-  iVar3 = REG_DMA3SAD;
-  *(ushort *)(REG_DMA3SAD + 10) = uVar1 & *(ushort *)(REG_DMA3SAD + 10);
-  *(ushort *)(iVar3 + 10) = uVar2 & *(ushort *)(iVar3 + 10);
+  u_val1 = (ushort)0xC5FF;
+  *(ushort *)(REG_DMA0SAD + 10) = u_val1 & *(ushort *)(REG_DMA0SAD + 10);
+  u_val2 = (ushort)0x7FFF;
+  *(ushort *)(i_val3 + 10) = u_val2 & *(ushort *)(i_val3 + 10);
+  *(ushort *)(i_val3 + 0x16) = u_val1 & *(ushort *)(i_val3 + 0x16);
+  *(ushort *)(i_val3 + 0x16) = u_val2 & *(ushort *)(i_val3 + 0x16);
+  *(ushort *)(i_val3 + 0x22) = u_val1 & *(ushort *)(i_val3 + 0x22);
+  *(ushort *)(i_val3 + 0x22) = u_val2 & *(ushort *)(i_val3 + 0x22);
+  i_val3 = REG_DMA3SAD;
+  *(ushort *)(REG_DMA3SAD + 10) = u_val1 & *(ushort *)(REG_DMA3SAD + 10);
+  *(ushort *)(i_val3 + 10) = u_val2 & *(ushort *)(i_val3 + 10);
   Interrupt_DisableMaster(0xff);
   do {
   } while( true );

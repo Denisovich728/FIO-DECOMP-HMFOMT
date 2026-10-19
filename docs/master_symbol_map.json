@@ -35,12 +35,6 @@
     "address_hex": "0x080003A0",
     "file": "core/dispatcher.c"
   },
-  "0x080003DC": {
-    "canonical_name": "SramProxy_GetSaveSlotOffset",
-    "original_name": "func_0x080003dc",
-    "address_hex": "0x080003DC",
-    "file": "external_subsystem"
-  },
   "0x080003E8": {
     "canonical_name": "SramProxy_ReadSaveSlot",
     "original_name": "SramProxy_ReadSaveSlot",
@@ -359,12 +353,6 @@
     "address_hex": "0x08004C0C",
     "file": "core/hardware.c"
   },
-  "0x08004C48": {
-    "canonical_name": "HW_Routine_08004C48",
-    "original_name": "func_0x08004c48",
-    "address_hex": "0x08004C48",
-    "file": "external_subsystem"
-  },
   "0x08004C54": {
     "canonical_name": "HW_Routine_08004C54",
     "original_name": "HW_Routine_08004C54",
@@ -394,12 +382,6 @@
     "original_name": "HW_Routine_08005254",
     "address_hex": "0x08005254",
     "file": "core/hardware.c"
-  },
-  "0x08005260": {
-    "canonical_name": "HW_Routine_08005260",
-    "original_name": "func_0x08005260",
-    "address_hex": "0x08005260",
-    "file": "external_subsystem"
   },
   "0x08005278": {
     "canonical_name": "HW_Routine_08005278",
@@ -461,12 +443,6 @@
     "address_hex": "0x080061A0",
     "file": "core/hardware.c"
   },
-  "0x08006334": {
-    "canonical_name": "HW_Routine_08006334",
-    "original_name": "func_0x08006334",
-    "address_hex": "0x08006334",
-    "file": "external_subsystem"
-  },
   "0x0800637C": {
     "canonical_name": "HW_Routine_0800637C",
     "original_name": "HW_Routine_0800637C",
@@ -521,12 +497,6 @@
     "address_hex": "0x08006CDC",
     "file": "core/hardware.c"
   },
-  "0x08006ED8": {
-    "canonical_name": "HW_Routine_08006ED8",
-    "original_name": "func_0x08006ed8",
-    "address_hex": "0x08006ED8",
-    "file": "external_subsystem"
-  },
   "0x08007078": {
     "canonical_name": "HW_Routine_08007078",
     "original_name": "HW_Routine_08007078",
@@ -545,12 +515,6 @@
     "address_hex": "0x080070D4",
     "file": "core/hardware.c"
   },
-  "0x08007128": {
-    "canonical_name": "HW_Routine_08007128",
-    "original_name": "func_0x08007128",
-    "address_hex": "0x08007128",
-    "file": "external_subsystem"
-  },
   "0x08007184": {
     "canonical_name": "HW_Routine_08007184",
     "original_name": "HW_Routine_08007184",
@@ -568,12 +532,6 @@
     "original_name": "HW_Routine_0800736C",
     "address_hex": "0x0800736C",
     "file": "core/hardware.c"
-  },
-  "0x080073E0": {
-    "canonical_name": "HW_Routine_080073E0",
-    "original_name": "func_0x080073e0",
-    "address_hex": "0x080073E0",
-    "file": "external_subsystem"
   },
   "0x0800745C": {
     "canonical_name": "HW_Routine_0800745C",
@@ -598,12 +556,6 @@
     "original_name": "HW_Routine_08007578",
     "address_hex": "0x08007578",
     "file": "core/hardware.c"
-  },
-  "0x0800770C": {
-    "canonical_name": "HW_Routine_0800770C",
-    "original_name": "func_0x0800770c",
-    "address_hex": "0x0800770C",
-    "file": "external_subsystem"
   },
   "0x08007714": {
     "canonical_name": "HW_Routine_08007714",
@@ -725,18 +677,6 @@
     "address_hex": "0x08008190",
     "file": "core/hardware.c"
   },
-  "0x0800835C": {
-    "canonical_name": "HW_Routine_0800835C",
-    "original_name": "func_0x0800835c",
-    "address_hex": "0x0800835C",
-    "file": "external_subsystem"
-  },
-  "0x08008364": {
-    "canonical_name": "HW_Routine_08008364",
-    "original_name": "func_0x08008364",
-    "address_hex": "0x08008364",
-    "file": "external_subsystem"
-  },
   "0x080083D0": {
     "canonical_name": "HW_Routine_080083D0",
     "original_name": "HW_Routine_080083D0",
@@ -791,30 +731,6 @@
     "address_hex": "0x080088B8",
     "file": "core/hardware.c"
   },
-  "0x080088C4": {
-    "canonical_name": "HW_Routine_080088C4",
-    "original_name": "func_0x080088c4",
-    "address_hex": "0x080088C4",
-    "file": "external_subsystem"
-  },
-  "0x080088CC": {
-    "canonical_name": "HW_Routine_080088CC",
-    "original_name": "func_0x080088cc",
-    "address_hex": "0x080088CC",
-    "file": "external_subsystem"
-  },
-  "0x080088D4": {
-    "canonical_name": "HW_Routine_080088D4",
-    "original_name": "func_0x080088d4",
-    "address_hex": "0x080088D4",
-    "file": "external_subsystem"
-  },
-  "0x080088DC": {
-    "canonical_name": "HW_Routine_080088DC",
-    "original_name": "func_0x080088dc",
-    "address_hex": "0x080088DC",
-    "file": "external_subsystem"
-  },
   "0x080088E0": {
     "canonical_name": "HW_Routine_080088E0",
     "original_name": "HW_Routine_080088E0",
@@ -827,30 +743,6 @@
     "address_hex": "0x080088F0",
     "file": "core/hardware.c"
   },
-  "0x08008910": {
-    "canonical_name": "HW_GetSpriteAttr0Offset",
-    "original_name": "func_0x08008910",
-    "address_hex": "0x08008910",
-    "file": "external_subsystem"
-  },
-  "0x08008918": {
-    "canonical_name": "HW_GetSpriteAttr1Offset",
-    "original_name": "func_0x08008918",
-    "address_hex": "0x08008918",
-    "file": "external_subsystem"
-  },
-  "0x08008920": {
-    "canonical_name": "HW_GetSpriteAttr2Offset",
-    "original_name": "func_0x08008920",
-    "address_hex": "0x08008920",
-    "file": "external_subsystem"
-  },
-  "0x08008940": {
-    "canonical_name": "HW_GetPaletteBankOffset",
-    "original_name": "func_0x08008940",
-    "address_hex": "0x08008940",
-    "file": "external_subsystem"
-  },
   "0x0800894C": {
     "canonical_name": "HW_Routine_0800894C",
     "original_name": "HW_Routine_0800894C",
@@ -862,12 +754,6 @@
     "original_name": "HW_Routine_0800896C",
     "address_hex": "0x0800896C",
     "file": "core/hardware.c"
-  },
-  "0x08008AE0": {
-    "canonical_name": "HW_Routine_08008AE0",
-    "original_name": "func_0x08008ae0",
-    "address_hex": "0x08008AE0",
-    "file": "external_subsystem"
   },
   "0x08008AF0": {
     "canonical_name": "HW_Routine_08008AF0",
@@ -995,12 +881,6 @@
     "address_hex": "0x08008CC4",
     "file": "core/hardware.c"
   },
-  "0x08008CD0": {
-    "canonical_name": "HW_Routine_08008CD0",
-    "original_name": "func_0x08008cd0",
-    "address_hex": "0x08008CD0",
-    "file": "external_subsystem"
-  },
   "0x08008CFC": {
     "canonical_name": "HW_Routine_08008CFC",
     "original_name": "HW_Routine_08008CFC",
@@ -1127,23 +1007,11 @@
     "address_hex": "0x08009094",
     "file": "farm/farm.c"
   },
-  "0x0800912C": {
-    "canonical_name": "Farm_Routine_0800912C",
-    "original_name": "func_0x0800912c",
-    "address_hex": "0x0800912C",
-    "file": "external_subsystem"
-  },
   "0x08009140": {
     "canonical_name": "Farm_Routine_08009140",
     "original_name": "Farm_Routine_08009140",
     "address_hex": "0x08009140",
     "file": "farm/farm.c"
-  },
-  "0x08009154": {
-    "canonical_name": "Farm_Routine_08009154",
-    "original_name": "func_0x08009154",
-    "address_hex": "0x08009154",
-    "file": "external_subsystem"
   },
   "0x08009158": {
     "canonical_name": "Farm_Routine_08009158",
@@ -1199,12 +1067,6 @@
     "address_hex": "0x080092C8",
     "file": "farm/farm.c"
   },
-  "0x080092FC": {
-    "canonical_name": "Farm_Routine_080092FC",
-    "original_name": "func_0x080092fc",
-    "address_hex": "0x080092FC",
-    "file": "external_subsystem"
-  },
   "0x08009300": {
     "canonical_name": "Farm_Routine_08009300",
     "original_name": "Farm_Routine_08009300",
@@ -1216,12 +1078,6 @@
     "original_name": "Farm_Routine_08009324",
     "address_hex": "0x08009324",
     "file": "farm/farm.c"
-  },
-  "0x08009344": {
-    "canonical_name": "Farm_Routine_08009344",
-    "original_name": "func_0x08009344",
-    "address_hex": "0x08009344",
-    "file": "external_subsystem"
   },
   "0x0800934C": {
     "canonical_name": "Farm_Routine_0800934C",
@@ -1235,23 +1091,11 @@
     "address_hex": "0x08009378",
     "file": "farm/farm.c"
   },
-  "0x080093A0": {
-    "canonical_name": "Farm_Routine_080093A0",
-    "original_name": "func_0x080093a0",
-    "address_hex": "0x080093A0",
-    "file": "external_subsystem"
-  },
   "0x080093AC": {
     "canonical_name": "Farm_Routine_080093AC",
     "original_name": "Farm_Routine_080093AC",
     "address_hex": "0x080093AC",
     "file": "farm/farm.c"
-  },
-  "0x080094A4": {
-    "canonical_name": "Farm_Routine_080094A4",
-    "original_name": "func_0x080094a4",
-    "address_hex": "0x080094A4",
-    "file": "external_subsystem"
   },
   "0x080094AC": {
     "canonical_name": "Farm_Routine_080094AC",
@@ -1415,12 +1259,6 @@
     "address_hex": "0x080098AC",
     "file": "farm/farm.c"
   },
-  "0x080098DC": {
-    "canonical_name": "Farm_Routine_080098DC",
-    "original_name": "func_0x080098dc",
-    "address_hex": "0x080098DC",
-    "file": "external_subsystem"
-  },
   "0x08009908": {
     "canonical_name": "Farm_Routine_08009908",
     "original_name": "Farm_Routine_08009908",
@@ -1445,18 +1283,6 @@
     "address_hex": "0x08009984",
     "file": "farm/farm.c"
   },
-  "0x080099B0": {
-    "canonical_name": "Farm_Routine_080099B0",
-    "original_name": "func_0x080099b0",
-    "address_hex": "0x080099B0",
-    "file": "external_subsystem"
-  },
-  "0x080099D4": {
-    "canonical_name": "Farm_Routine_080099D4",
-    "original_name": "func_0x080099d4",
-    "address_hex": "0x080099D4",
-    "file": "external_subsystem"
-  },
   "0x080099EC": {
     "canonical_name": "Farm_Routine_080099EC",
     "original_name": "Farm_Routine_080099EC",
@@ -1469,41 +1295,11 @@
     "address_hex": "0x08009A48",
     "file": "farm/farm.c"
   },
-  "0x08009ADC": {
-    "canonical_name": "Farm_GetSpawnCoordinates",
-    "original_name": "func_0x08009adc",
-    "address_hex": "0x08009ADC",
-    "file": "external_subsystem"
-  },
-  "0x08009AE8": {
-    "canonical_name": "Farm_GetHouseCoordinates",
-    "original_name": "func_0x08009ae8",
-    "address_hex": "0x08009AE8",
-    "file": "external_subsystem"
-  },
-  "0x08009AF4": {
-    "canonical_name": "Farm_NoOp",
-    "original_name": "func_0x08009af4",
-    "address_hex": "0x08009AF4",
-    "file": "external_subsystem"
-  },
-  "0x08009AF8": {
-    "canonical_name": "Farm_Routine_08009AF8",
-    "original_name": "func_0x08009af8",
-    "address_hex": "0x08009AF8",
-    "file": "external_subsystem"
-  },
   "0x08009B00": {
     "canonical_name": "Farm_GetFieldState",
     "original_name": "Farm_GetFieldState",
     "address_hex": "0x08009B00",
     "file": "farm/farm.c"
-  },
-  "0x08009B18": {
-    "canonical_name": "Farm_Routine_08009B18",
-    "original_name": "func_0x08009b18",
-    "address_hex": "0x08009B18",
-    "file": "external_subsystem"
   },
   "0x08009B20": {
     "canonical_name": "Farm_HasPlantedCrop",
@@ -1535,24 +1331,6 @@
     "address_hex": "0x08009C3C",
     "file": "farm/farm.c"
   },
-  "0x08009C54": {
-    "canonical_name": "Farm_Routine_08009C54",
-    "original_name": "func_0x08009c54",
-    "address_hex": "0x08009C54",
-    "file": "external_subsystem"
-  },
-  "0x08009C60": {
-    "canonical_name": "Farm_ClearDailyFlag",
-    "original_name": "func_0x08009c60",
-    "address_hex": "0x08009C60",
-    "file": "external_subsystem"
-  },
-  "0x08009F8C": {
-    "canonical_name": "Farm_Routine_08009F8C",
-    "original_name": "func_0x08009f8c",
-    "address_hex": "0x08009F8C",
-    "file": "external_subsystem"
-  },
   "0x08009FC8": {
     "canonical_name": "Farm_Routine_08009FC8",
     "original_name": "Farm_Routine_08009FC8",
@@ -1576,12 +1354,6 @@
     "original_name": "FieldPlot_GetCropType",
     "address_hex": "0x0800A0A4",
     "file": "farm/farm.c"
-  },
-  "0x0800A120": {
-    "canonical_name": "FieldPlot_WaterPlot",
-    "original_name": "func_0x0800a120",
-    "address_hex": "0x0800A120",
-    "file": "external_subsystem"
   },
   "0x0800A134": {
     "canonical_name": "FieldPlot_SetCropAndStage",
@@ -1679,12 +1451,6 @@
     "address_hex": "0x0800B0DC",
     "file": "farm/shipping_bin.c"
   },
-  "0x0800B120": {
-    "canonical_name": "ShippingBin_Routine_0800B120",
-    "original_name": "func_0x0800b120",
-    "address_hex": "0x0800B120",
-    "file": "external_subsystem"
-  },
   "0x0800B124": {
     "canonical_name": "ShippingBin_GetValueShipped",
     "original_name": "ShippingBin_GetValueShipped",
@@ -1721,29 +1487,11 @@
     "address_hex": "0x0800B20C",
     "file": "farm/shipping_bin.c"
   },
-  "0x0800B24C": {
-    "canonical_name": "ShippingBin_Routine_0800B24C",
-    "original_name": "func_0x0800b24c",
-    "address_hex": "0x0800B24C",
-    "file": "external_subsystem"
-  },
   "0x0800B254": {
     "canonical_name": "ShippingBin_ResetValueShipped",
     "original_name": "ShippingBin_ResetValueShipped",
     "address_hex": "0x0800B254",
     "file": "farm/shipping_bin.c"
-  },
-  "0x0800B26C": {
-    "canonical_name": "ShippingBin_Routine_0800B26C",
-    "original_name": "func_0x0800b26c",
-    "address_hex": "0x0800B26C",
-    "file": "external_subsystem"
-  },
-  "0x0800B280": {
-    "canonical_name": "ShippingBin_Routine_0800B280",
-    "original_name": "func_0x0800b280",
-    "address_hex": "0x0800B280",
-    "file": "external_subsystem"
   },
   "0x0800B288": {
     "canonical_name": "ShippingBin_ForceEnableDisplay",
@@ -1768,12 +1516,6 @@
     "original_name": "ShippingBin_StatEnt_GetAmountShipped",
     "address_hex": "0x0800B2EC",
     "file": "farm/shipping_bin.c"
-  },
-  "0x0800B408": {
-    "canonical_name": "ShippingBin_Routine_0800B408",
-    "original_name": "func_0x0800b408",
-    "address_hex": "0x0800B408",
-    "file": "external_subsystem"
   },
   "0x0800B410": {
     "canonical_name": "ShippingBin_StatEnt_ShipOne",
@@ -1804,12 +1546,6 @@
     "original_name": "ShippingBin_Routine_0800B544",
     "address_hex": "0x0800B544",
     "file": "farm/shipping_bin.c"
-  },
-  "0x0800B5A0": {
-    "canonical_name": "ShippingBin_Routine_0800B5A0",
-    "original_name": "func_0x0800b5a0",
-    "address_hex": "0x0800B5A0",
-    "file": "external_subsystem"
   },
   "0x0800B5A8": {
     "canonical_name": "ShippingBin_Routine_0800B5A8",
@@ -1853,12 +1589,6 @@
     "address_hex": "0x0800B7B8",
     "file": "farm/shipping_bin.c"
   },
-  "0x0800B80C": {
-    "canonical_name": "Building_Routine_0800B80C",
-    "original_name": "func_0x0800b80c",
-    "address_hex": "0x0800B80C",
-    "file": "external_subsystem"
-  },
   "0x0800B814": {
     "canonical_name": "ToolChest_GetItem",
     "original_name": "ToolChest_GetItem",
@@ -1901,29 +1631,11 @@
     "address_hex": "0x0800BA44",
     "file": "farm/buildings.c"
   },
-  "0x0800BAA0": {
-    "canonical_name": "Building_Routine_0800BAA0",
-    "original_name": "func_0x0800baa0",
-    "address_hex": "0x0800BAA0",
-    "file": "external_subsystem"
-  },
   "0x0800BAA8": {
     "canonical_name": "Building_Routine_0800BAA8",
     "original_name": "Building_Routine_0800BAA8",
     "address_hex": "0x0800BAA8",
     "file": "farm/buildings.c"
-  },
-  "0x0800BB60": {
-    "canonical_name": "Building_Routine_0800BB60",
-    "original_name": "func_0x0800bb60",
-    "address_hex": "0x0800BB60",
-    "file": "external_subsystem"
-  },
-  "0x0800BB74": {
-    "canonical_name": "Building_Routine_0800BB74",
-    "original_name": "func_0x0800bb74",
-    "address_hex": "0x0800BB74",
-    "file": "external_subsystem"
   },
   "0x0800BB7C": {
     "canonical_name": "RecordPlayer_PlayTrack",
@@ -1985,12 +1697,6 @@
     "address_hex": "0x0800BE70",
     "file": "farm/buildings.c"
   },
-  "0x0800BF14": {
-    "canonical_name": "Building_Routine_0800BF14",
-    "original_name": "func_0x0800bf14",
-    "address_hex": "0x0800BF14",
-    "file": "external_subsystem"
-  },
   "0x0800BF1C": {
     "canonical_name": "Coop_GetChickenCount",
     "original_name": "Coop_GetChickenCount",
@@ -2008,138 +1714,6 @@
     "original_name": "Building_Routine_0800BF50",
     "address_hex": "0x0800BF50",
     "file": "farm/buildings.c"
-  },
-  "0x0800BF6C": {
-    "canonical_name": "Building_Routine_0800BF6C",
-    "original_name": "func_0x0800bf6c",
-    "address_hex": "0x0800BF6C",
-    "file": "external_subsystem"
-  },
-  "0x0800BF74": {
-    "canonical_name": "Building_Routine_0800BF74",
-    "original_name": "func_0x0800bf74",
-    "address_hex": "0x0800BF74",
-    "file": "external_subsystem"
-  },
-  "0x0800BF7C": {
-    "canonical_name": "Building_Routine_0800BF7C",
-    "original_name": "func_0x0800bf7c",
-    "address_hex": "0x0800BF7C",
-    "file": "external_subsystem"
-  },
-  "0x0800BF84": {
-    "canonical_name": "Building_Routine_0800BF84",
-    "original_name": "func_0x0800bf84",
-    "address_hex": "0x0800BF84",
-    "file": "external_subsystem"
-  },
-  "0x0800BF8C": {
-    "canonical_name": "Building_Routine_0800BF8C",
-    "original_name": "func_0x0800bf8c",
-    "address_hex": "0x0800BF8C",
-    "file": "external_subsystem"
-  },
-  "0x0800BF94": {
-    "canonical_name": "Building_Routine_0800BF94",
-    "original_name": "func_0x0800bf94",
-    "address_hex": "0x0800BF94",
-    "file": "external_subsystem"
-  },
-  "0x0800BF9C": {
-    "canonical_name": "Building_Routine_0800BF9C",
-    "original_name": "func_0x0800bf9c",
-    "address_hex": "0x0800BF9C",
-    "file": "external_subsystem"
-  },
-  "0x0800BFA4": {
-    "canonical_name": "Building_Routine_0800BFA4",
-    "original_name": "func_0x0800bfa4",
-    "address_hex": "0x0800BFA4",
-    "file": "external_subsystem"
-  },
-  "0x0800BFAC": {
-    "canonical_name": "Building_Routine_0800BFAC",
-    "original_name": "func_0x0800bfac",
-    "address_hex": "0x0800BFAC",
-    "file": "external_subsystem"
-  },
-  "0x0800BFB4": {
-    "canonical_name": "Building_Routine_0800BFB4",
-    "original_name": "func_0x0800bfb4",
-    "address_hex": "0x0800BFB4",
-    "file": "external_subsystem"
-  },
-  "0x0800BFBC": {
-    "canonical_name": "Building_Routine_0800BFBC",
-    "original_name": "func_0x0800bfbc",
-    "address_hex": "0x0800BFBC",
-    "file": "external_subsystem"
-  },
-  "0x0800BFC4": {
-    "canonical_name": "Building_Routine_0800BFC4",
-    "original_name": "func_0x0800bfc4",
-    "address_hex": "0x0800BFC4",
-    "file": "external_subsystem"
-  },
-  "0x0800BFCC": {
-    "canonical_name": "Building_Routine_0800BFCC",
-    "original_name": "func_0x0800bfcc",
-    "address_hex": "0x0800BFCC",
-    "file": "external_subsystem"
-  },
-  "0x0800BFD4": {
-    "canonical_name": "Building_Routine_0800BFD4",
-    "original_name": "func_0x0800bfd4",
-    "address_hex": "0x0800BFD4",
-    "file": "external_subsystem"
-  },
-  "0x0800BFDC": {
-    "canonical_name": "Building_Routine_0800BFDC",
-    "original_name": "func_0x0800bfdc",
-    "address_hex": "0x0800BFDC",
-    "file": "external_subsystem"
-  },
-  "0x0800BFE4": {
-    "canonical_name": "Building_Routine_0800BFE4",
-    "original_name": "func_0x0800bfe4",
-    "address_hex": "0x0800BFE4",
-    "file": "external_subsystem"
-  },
-  "0x0800BFEC": {
-    "canonical_name": "Building_Routine_0800BFEC",
-    "original_name": "func_0x0800bfec",
-    "address_hex": "0x0800BFEC",
-    "file": "external_subsystem"
-  },
-  "0x0800BFF4": {
-    "canonical_name": "Building_Routine_0800BFF4",
-    "original_name": "func_0x0800bff4",
-    "address_hex": "0x0800BFF4",
-    "file": "external_subsystem"
-  },
-  "0x0800BFFC": {
-    "canonical_name": "Building_Routine_0800BFFC",
-    "original_name": "func_0x0800bffc",
-    "address_hex": "0x0800BFFC",
-    "file": "external_subsystem"
-  },
-  "0x0800C004": {
-    "canonical_name": "Building_Routine_0800C004",
-    "original_name": "func_0x0800c004",
-    "address_hex": "0x0800C004",
-    "file": "external_subsystem"
-  },
-  "0x0800C00C": {
-    "canonical_name": "Building_Routine_0800C00C",
-    "original_name": "func_0x0800c00c",
-    "address_hex": "0x0800C00C",
-    "file": "external_subsystem"
-  },
-  "0x0800C014": {
-    "canonical_name": "Building_Routine_0800C014",
-    "original_name": "func_0x0800c014",
-    "address_hex": "0x0800C014",
-    "file": "external_subsystem"
   },
   "0x0800C024": {
     "canonical_name": "Building_Routine_0800C024",
@@ -2201,12 +1775,6 @@
     "address_hex": "0x0800C134",
     "file": "farm/buildings.c"
   },
-  "0x0800C150": {
-    "canonical_name": "Building_Routine_0800C150",
-    "original_name": "func_0x0800c150",
-    "address_hex": "0x0800C150",
-    "file": "external_subsystem"
-  },
   "0x0800C15C": {
     "canonical_name": "Building_Routine_0800C15C",
     "original_name": "Building_Routine_0800C15C",
@@ -2219,23 +1787,11 @@
     "address_hex": "0x0800C178",
     "file": "farm/buildings.c"
   },
-  "0x0800C194": {
-    "canonical_name": "Building_Routine_0800C194",
-    "original_name": "func_0x0800c194",
-    "address_hex": "0x0800C194",
-    "file": "external_subsystem"
-  },
   "0x0800C1A0": {
     "canonical_name": "Building_Routine_0800C1A0",
     "original_name": "Building_Routine_0800C1A0",
     "address_hex": "0x0800C1A0",
     "file": "farm/buildings.c"
-  },
-  "0x0800C244": {
-    "canonical_name": "Building_Routine_0800C244",
-    "original_name": "func_0x0800c244",
-    "address_hex": "0x0800C244",
-    "file": "external_subsystem"
   },
   "0x0800C25C": {
     "canonical_name": "Building_Routine_0800C25C",
@@ -2315,24 +1871,6 @@
     "address_hex": "0x0800C450",
     "file": "farm/buildings.c"
   },
-  "0x0800C554": {
-    "canonical_name": "Building_Routine_0800C554",
-    "original_name": "func_0x0800c554",
-    "address_hex": "0x0800C554",
-    "file": "external_subsystem"
-  },
-  "0x0800C560": {
-    "canonical_name": "Building_Routine_0800C560",
-    "original_name": "func_0x0800c560",
-    "address_hex": "0x0800C560",
-    "file": "external_subsystem"
-  },
-  "0x0800C568": {
-    "canonical_name": "Building_Routine_0800C568",
-    "original_name": "func_0x0800c568",
-    "address_hex": "0x0800C568",
-    "file": "external_subsystem"
-  },
   "0x0800C570": {
     "canonical_name": "Barn_GetCowCount",
     "original_name": "Barn_GetCowCount",
@@ -2398,24 +1936,6 @@
     "original_name": "Building_Routine_0800C720",
     "address_hex": "0x0800C720",
     "file": "farm/buildings.c"
-  },
-  "0x0800C748": {
-    "canonical_name": "Building_Routine_0800C748",
-    "original_name": "func_0x0800c748",
-    "address_hex": "0x0800C748",
-    "file": "external_subsystem"
-  },
-  "0x0800C758": {
-    "canonical_name": "Building_Routine_0800C758",
-    "original_name": "func_0x0800c758",
-    "address_hex": "0x0800C758",
-    "file": "external_subsystem"
-  },
-  "0x0800C768": {
-    "canonical_name": "Building_Routine_0800C768",
-    "original_name": "func_0x0800c768",
-    "address_hex": "0x0800C768",
-    "file": "external_subsystem"
   },
   "0x0800C76C": {
     "canonical_name": "Building_Routine_0800C76C",
@@ -2495,23 +2015,11 @@
     "address_hex": "0x0800CB7C",
     "file": "farm/buildings.c"
   },
-  "0x0800CBC0": {
-    "canonical_name": "Building_Routine_0800CBC0",
-    "original_name": "func_0x0800cbc0",
-    "address_hex": "0x0800CBC0",
-    "file": "external_subsystem"
-  },
   "0x0800CBCC": {
     "canonical_name": "Building_Routine_0800CBCC",
     "original_name": "Building_Routine_0800CBCC",
     "address_hex": "0x0800CBCC",
     "file": "farm/buildings.c"
-  },
-  "0x0800CCAC": {
-    "canonical_name": "Building_Routine_0800CCAC",
-    "original_name": "func_0x0800ccac",
-    "address_hex": "0x0800CCAC",
-    "file": "external_subsystem"
   },
   "0x0800CCB8": {
     "canonical_name": "Building_Routine_0800CCB8",
@@ -2537,12 +2045,6 @@
     "address_hex": "0x0800CD20",
     "file": "farm/buildings.c"
   },
-  "0x0800CD38": {
-    "canonical_name": "Building_Routine_0800CD38",
-    "original_name": "func_0x0800cd38",
-    "address_hex": "0x0800CD38",
-    "file": "external_subsystem"
-  },
   "0x0800CD40": {
     "canonical_name": "Building_Routine_0800CD40",
     "original_name": "Building_Routine_0800CD40",
@@ -2555,59 +2057,17 @@
     "address_hex": "0x0800CD58",
     "file": "farm/buildings.c"
   },
-  "0x0800CD78": {
-    "canonical_name": "Building_Routine_0800CD78",
-    "original_name": "func_0x0800cd78",
-    "address_hex": "0x0800CD78",
-    "file": "external_subsystem"
-  },
   "0x0800CD88": {
     "canonical_name": "Building_Routine_0800CD88",
     "original_name": "Building_Routine_0800CD88",
     "address_hex": "0x0800CD88",
     "file": "farm/buildings.c"
   },
-  "0x0800CDB0": {
-    "canonical_name": "Building_Routine_0800CDB0",
-    "original_name": "func_0x0800cdb0",
-    "address_hex": "0x0800CDB0",
-    "file": "external_subsystem"
-  },
-  "0x0800CDBC": {
-    "canonical_name": "Stable_Init",
-    "original_name": "func_0x0800cdbc",
-    "address_hex": "0x0800CDBC",
-    "file": "external_subsystem"
-  },
-  "0x0800CE58": {
-    "canonical_name": "Building_Routine_0800CE58",
-    "original_name": "func_0x0800ce58",
-    "address_hex": "0x0800CE58",
-    "file": "external_subsystem"
-  },
-  "0x0800CE64": {
-    "canonical_name": "Building_Routine_0800CE64",
-    "original_name": "func_0x0800ce64",
-    "address_hex": "0x0800CE64",
-    "file": "external_subsystem"
-  },
-  "0x0800CE6C": {
-    "canonical_name": "Building_Routine_0800CE6C",
-    "original_name": "func_0x0800ce6c",
-    "address_hex": "0x0800CE6C",
-    "file": "external_subsystem"
-  },
   "0x0800CE74": {
     "canonical_name": "Building_Routine_0800CE74",
     "original_name": "Building_Routine_0800CE74",
     "address_hex": "0x0800CE74",
     "file": "farm/buildings.c"
-  },
-  "0x0800CE9C": {
-    "canonical_name": "Item_HasStarQuality",
-    "original_name": "func_0x0800ce9c",
-    "address_hex": "0x0800CE9C",
-    "file": "external_subsystem"
   },
   "0x0800CEA8": {
     "canonical_name": "Building_Routine_0800CEA8",
@@ -2675,12 +2135,6 @@
     "address_hex": "0x0800D074",
     "file": "player/item.c"
   },
-  "0x0800D0C0": {
-    "canonical_name": "Tool_CalculateStaminaCost",
-    "original_name": "func_0x0800d0c0",
-    "address_hex": "0x0800D0C0",
-    "file": "external_subsystem"
-  },
   "0x0800D158": {
     "canonical_name": "Tool_GetIconId",
     "original_name": "Tool_GetIconId",
@@ -2698,30 +2152,6 @@
     "original_name": "ToolStack_Construct",
     "address_hex": "0x0800D1D8",
     "file": "player/item.c"
-  },
-  "0x0800D1FC": {
-    "canonical_name": "Item_Routine_0800D1FC",
-    "original_name": "func_0x0800d1fc",
-    "address_hex": "0x0800D1FC",
-    "file": "external_subsystem"
-  },
-  "0x0800D204": {
-    "canonical_name": "Item_Routine_0800D204",
-    "original_name": "func_0x0800d204",
-    "address_hex": "0x0800D204",
-    "file": "external_subsystem"
-  },
-  "0x0800D208": {
-    "canonical_name": "Item_Routine_0800D208",
-    "original_name": "func_0x0800d208",
-    "address_hex": "0x0800D208",
-    "file": "external_subsystem"
-  },
-  "0x0800D210": {
-    "canonical_name": "Item_Routine_0800D210",
-    "original_name": "func_0x0800d210",
-    "address_hex": "0x0800D210",
-    "file": "external_subsystem"
   },
   "0x0800D214": {
     "canonical_name": "ToolStack_GetTool",
@@ -2831,12 +2261,6 @@
     "address_hex": "0x0800D80C",
     "file": "player/item.c"
   },
-  "0x0800D858": {
-    "canonical_name": "Item_Routine_0800D858",
-    "original_name": "func_0x0800d858",
-    "address_hex": "0x0800D858",
-    "file": "external_subsystem"
-  },
   "0x0800D864": {
     "canonical_name": "FoodStack_IsEmpty",
     "original_name": "FoodStack_IsEmpty",
@@ -2848,12 +2272,6 @@
     "original_name": "FoodStack_GetAmount",
     "address_hex": "0x0800D8A8",
     "file": "player/item.c"
-  },
-  "0x0800DA08": {
-    "canonical_name": "Item_IsValid",
-    "original_name": "func_0x0800da08",
-    "address_hex": "0x0800DA08",
-    "file": "external_subsystem"
   },
   "0x0800DA14": {
     "canonical_name": "FoodStack_AddAmount",
@@ -2908,18 +2326,6 @@
     "original_name": "ArticleStack_Construct",
     "address_hex": "0x0800DB14",
     "file": "player/item.c"
-  },
-  "0x0800DB2C": {
-    "canonical_name": "Item_SetId",
-    "original_name": "func_0x0800db2c",
-    "address_hex": "0x0800DB2C",
-    "file": "external_subsystem"
-  },
-  "0x0800DB30": {
-    "canonical_name": "Item_GetId",
-    "original_name": "func_0x0800db30",
-    "address_hex": "0x0800DB30",
-    "file": "external_subsystem"
   },
   "0x0800DB34": {
     "canonical_name": "ArticleStack_GetArticle",
@@ -2980,18 +2386,6 @@
     "original_name": "Product_GetIconId",
     "address_hex": "0x0800DC8C",
     "file": "player/item.c"
-  },
-  "0x0800DCA8": {
-    "canonical_name": "Item_SetIdAndClearQuality",
-    "original_name": "func_0x0800dca8",
-    "address_hex": "0x0800DCA8",
-    "file": "external_subsystem"
-  },
-  "0x0800DCB4": {
-    "canonical_name": "Item_Routine_0800DCB4",
-    "original_name": "func_0x0800dcb4",
-    "address_hex": "0x0800DCB4",
-    "file": "external_subsystem"
   },
   "0x0800DCB8": {
     "canonical_name": "Item_Routine_0800DCB8",
@@ -3089,18 +2483,6 @@
     "address_hex": "0x0800DF34",
     "file": "player/item.c"
   },
-  "0x0800DF50": {
-    "canonical_name": "Item_SetQuality",
-    "original_name": "func_0x0800df50",
-    "address_hex": "0x0800DF50",
-    "file": "external_subsystem"
-  },
-  "0x0800DF54": {
-    "canonical_name": "Item_GetQuality",
-    "original_name": "func_0x0800df54",
-    "address_hex": "0x0800DF54",
-    "file": "external_subsystem"
-  },
   "0x0800DF58": {
     "canonical_name": "Item_Routine_0800DF58",
     "original_name": "Item_Routine_0800DF58",
@@ -3167,35 +2549,11 @@
     "address_hex": "0x0800E0D4",
     "file": "player/item.c"
   },
-  "0x0800E0F0": {
-    "canonical_name": "Item_Routine_0800E0F0",
-    "original_name": "func_0x0800e0f0",
-    "address_hex": "0x0800E0F0",
-    "file": "external_subsystem"
-  },
-  "0x0800E0F8": {
-    "canonical_name": "Item_Routine_0800E0F8",
-    "original_name": "func_0x0800e0f8",
-    "address_hex": "0x0800E0F8",
-    "file": "external_subsystem"
-  },
-  "0x0800E0FC": {
-    "canonical_name": "Item_Routine_0800E0FC",
-    "original_name": "func_0x0800e0fc",
-    "address_hex": "0x0800E0FC",
-    "file": "external_subsystem"
-  },
   "0x0800E148": {
     "canonical_name": "Item_Routine_0800E148",
     "original_name": "Item_Routine_0800E148",
     "address_hex": "0x0800E148",
     "file": "player/item.c"
-  },
-  "0x0800E194": {
-    "canonical_name": "Item_Routine_0800E194",
-    "original_name": "func_0x0800e194",
-    "address_hex": "0x0800E194",
-    "file": "external_subsystem"
   },
   "0x0800E198": {
     "canonical_name": "Item_Routine_0800E198",
@@ -3257,65 +2615,11 @@
     "address_hex": "0x0800E354",
     "file": "player/farmer.c"
   },
-  "0x0800E4E0": {
-    "canonical_name": "Farmer_GetName",
-    "original_name": "func_0x0800e4e0",
-    "address_hex": "0x0800E4E0",
-    "file": "external_subsystem"
-  },
-  "0x0800E4E4": {
-    "canonical_name": "Farmer_GetFarmName",
-    "original_name": "func_0x0800e4e4",
-    "address_hex": "0x0800E4E4",
-    "file": "external_subsystem"
-  },
-  "0x0800E4E8": {
-    "canonical_name": "Farmer_GetBirthday",
-    "original_name": "func_0x0800e4e8",
-    "address_hex": "0x0800E4E8",
-    "file": "external_subsystem"
-  },
-  "0x0800E4F0": {
-    "canonical_name": "Farmer_GetStamina",
-    "original_name": "func_0x0800e4f0",
-    "address_hex": "0x0800E4F0",
-    "file": "external_subsystem"
-  },
-  "0x0800E4FC": {
-    "canonical_name": "Farmer_GetFatigue",
-    "original_name": "func_0x0800e4fc",
-    "address_hex": "0x0800E4FC",
-    "file": "external_subsystem"
-  },
   "0x0800E504": {
     "canonical_name": "Farmer_IsOverworked",
     "original_name": "Farmer_IsOverworked",
     "address_hex": "0x0800E504",
     "file": "player/farmer.c"
-  },
-  "0x0800E51C": {
-    "canonical_name": "Farmer_GetMaxStamina",
-    "original_name": "func_0x0800e51c",
-    "address_hex": "0x0800E51C",
-    "file": "external_subsystem"
-  },
-  "0x0800E530": {
-    "canonical_name": "Farmer_GetPowerBerries",
-    "original_name": "func_0x0800e530",
-    "address_hex": "0x0800E530",
-    "file": "external_subsystem"
-  },
-  "0x0800E53C": {
-    "canonical_name": "Farmer_AteMysteryBerry",
-    "original_name": "func_0x0800e53c",
-    "address_hex": "0x0800E53C",
-    "file": "external_subsystem"
-  },
-  "0x0800E548": {
-    "canonical_name": "Farmer_GetToolLevel",
-    "original_name": "func_0x0800e548",
-    "address_hex": "0x0800E548",
-    "file": "external_subsystem"
   },
   "0x0800E550": {
     "canonical_name": "Farmer_GetUpgradedTool",
@@ -3328,42 +2632,6 @@
     "original_name": "Farmer_GetLocation",
     "address_hex": "0x0800E924",
     "file": "player/farmer.c"
-  },
-  "0x0800E934": {
-    "canonical_name": "Farmer_Routine_0800E934",
-    "original_name": "func_0x0800e934",
-    "address_hex": "0x0800E934",
-    "file": "external_subsystem"
-  },
-  "0x0800E940": {
-    "canonical_name": "Farmer_Routine_0800E940",
-    "original_name": "func_0x0800e940",
-    "address_hex": "0x0800E940",
-    "file": "external_subsystem"
-  },
-  "0x0800E94C": {
-    "canonical_name": "Farmer_Routine_0800E94C",
-    "original_name": "func_0x0800e94c",
-    "address_hex": "0x0800E94C",
-    "file": "external_subsystem"
-  },
-  "0x0800E958": {
-    "canonical_name": "Farmer_GetStepCount",
-    "original_name": "func_0x0800e958",
-    "address_hex": "0x0800E958",
-    "file": "external_subsystem"
-  },
-  "0x0800E97C": {
-    "canonical_name": "Farmer_Routine_0800E97C",
-    "original_name": "func_0x0800e97c",
-    "address_hex": "0x0800E97C",
-    "file": "external_subsystem"
-  },
-  "0x0800E988": {
-    "canonical_name": "Farmer_Routine_0800E988",
-    "original_name": "func_0x0800e988",
-    "address_hex": "0x0800E988",
-    "file": "external_subsystem"
   },
   "0x0800E9E4": {
     "canonical_name": "Farmer_AddStamina",
@@ -3395,23 +2663,11 @@
     "address_hex": "0x0800EAD4",
     "file": "player/farmer.c"
   },
-  "0x0800EAF0": {
-    "canonical_name": "Farmer_SetFatiguedFlag",
-    "original_name": "func_0x0800eaf0",
-    "address_hex": "0x0800EAF0",
-    "file": "external_subsystem"
-  },
   "0x0800EAFC": {
     "canonical_name": "Farmer_EatPowerBerry",
     "original_name": "Farmer_EatPowerBerry",
     "address_hex": "0x0800EAFC",
     "file": "player/farmer.c"
-  },
-  "0x0800EB2C": {
-    "canonical_name": "Farmer_GetToolLevelRef",
-    "original_name": "func_0x0800eb2c",
-    "address_hex": "0x0800EB2C",
-    "file": "external_subsystem"
   },
   "0x0800EB3C": {
     "canonical_name": "Farmer_CycleHeldItemBack",
@@ -3436,12 +2692,6 @@
     "original_name": "Farmer_CycleToolFront",
     "address_hex": "0x0800ECB0",
     "file": "player/farmer.c"
-  },
-  "0x0800ED2C": {
-    "canonical_name": "Farmer_Routine_0800ED2C",
-    "original_name": "func_0x0800ed2c",
-    "address_hex": "0x0800ED2C",
-    "file": "external_subsystem"
   },
   "0x0800ED54": {
     "canonical_name": "Farmer_Routine_0800ED54",
@@ -3479,30 +2729,6 @@
     "address_hex": "0x0800EEF8",
     "file": "player/farmer.c"
   },
-  "0x0800EF44": {
-    "canonical_name": "Farmer_Routine_0800EF44",
-    "original_name": "func_0x0800ef44",
-    "address_hex": "0x0800EF44",
-    "file": "external_subsystem"
-  },
-  "0x0800EF68": {
-    "canonical_name": "ToolLevel_GetExperience",
-    "original_name": "func_0x0800ef68",
-    "address_hex": "0x0800EF68",
-    "file": "external_subsystem"
-  },
-  "0x0800EF6C": {
-    "canonical_name": "ToolLevel_GetTierLevel",
-    "original_name": "func_0x0800ef6c",
-    "address_hex": "0x0800EF6C",
-    "file": "external_subsystem"
-  },
-  "0x0800EF74": {
-    "canonical_name": "ToolLevel_CanUpgrade",
-    "original_name": "func_0x0800ef74",
-    "address_hex": "0x0800EF74",
-    "file": "external_subsystem"
-  },
   "0x0800EF88": {
     "canonical_name": "ToolLevel_AddExperience",
     "original_name": "ToolLevel_AddExperience",
@@ -3514,12 +2740,6 @@
     "original_name": "ToolLevel_SetTierLevel",
     "address_hex": "0x0800EFB4",
     "file": "player/farmer.c"
-  },
-  "0x0800EFEC": {
-    "canonical_name": "Farmer_Routine_0800EFEC",
-    "original_name": "func_0x0800efec",
-    "address_hex": "0x0800EFEC",
-    "file": "external_subsystem"
   },
   "0x0800F004": {
     "canonical_name": "Farmer_Routine_0800F004",
@@ -3539,12 +2759,6 @@
     "address_hex": "0x0800F06C",
     "file": "player/farmer.c"
   },
-  "0x0800F09C": {
-    "canonical_name": "Farmer_Routine_0800F09C",
-    "original_name": "func_0x0800f09c",
-    "address_hex": "0x0800F09C",
-    "file": "external_subsystem"
-  },
   "0x0800F0A4": {
     "canonical_name": "Farmer_Routine_0800F0A4",
     "original_name": "Farmer_Routine_0800F0A4",
@@ -3557,35 +2771,17 @@
     "address_hex": "0x0800F0E8",
     "file": "player/farmer.c"
   },
-  "0x0800F11C": {
-    "canonical_name": "Farmer_Routine_0800F11C",
-    "original_name": "func_0x0800f11c",
-    "address_hex": "0x0800F11C",
-    "file": "external_subsystem"
-  },
   "0x0800F124": {
     "canonical_name": "Farmer_Routine_0800F124",
     "original_name": "Farmer_Routine_0800F124",
     "address_hex": "0x0800F124",
     "file": "player/farmer.c"
   },
-  "0x0800F170": {
-    "canonical_name": "Farmer_Routine_0800F170",
-    "original_name": "func_0x0800f170",
-    "address_hex": "0x0800F170",
-    "file": "external_subsystem"
-  },
   "0x0800F190": {
     "canonical_name": "HeldItem_IsEmpty",
     "original_name": "HeldItem_IsEmpty",
     "address_hex": "0x0800F190",
     "file": "player/farmer.c"
-  },
-  "0x0800F204": {
-    "canonical_name": "HeldItem_GetKind",
-    "original_name": "func_0x0800f204",
-    "address_hex": "0x0800F204",
-    "file": "external_subsystem"
   },
   "0x0800F20C": {
     "canonical_name": "HeldItem_GetFood",
@@ -3617,18 +2813,6 @@
     "address_hex": "0x0800F360",
     "file": "player/farmer.c"
   },
-  "0x0800F388": {
-    "canonical_name": "HeldItem_IsValid",
-    "original_name": "func_0x0800f388",
-    "address_hex": "0x0800F388",
-    "file": "external_subsystem"
-  },
-  "0x0800F390": {
-    "canonical_name": "HeldItem_Clear",
-    "original_name": "func_0x0800f390",
-    "address_hex": "0x0800F390",
-    "file": "external_subsystem"
-  },
   "0x0800F3B0": {
     "canonical_name": "HeldItem_SetFood",
     "original_name": "HeldItem_SetFood",
@@ -3647,30 +2831,6 @@
     "address_hex": "0x0800F418",
     "file": "player/farmer.c"
   },
-  "0x0800F4C0": {
-    "canonical_name": "Farmer_Routine_0800F4C0",
-    "original_name": "func_0x0800f4c0",
-    "address_hex": "0x0800F4C0",
-    "file": "external_subsystem"
-  },
-  "0x0800F4D8": {
-    "canonical_name": "Farmer_Routine_0800F4D8",
-    "original_name": "func_0x0800f4d8",
-    "address_hex": "0x0800F4D8",
-    "file": "external_subsystem"
-  },
-  "0x0800F4F0": {
-    "canonical_name": "Farmer_Routine_0800F4F0",
-    "original_name": "func_0x0800f4f0",
-    "address_hex": "0x0800F4F0",
-    "file": "external_subsystem"
-  },
-  "0x0800F510": {
-    "canonical_name": "Farmer_Routine_0800F510",
-    "original_name": "func_0x0800f510",
-    "address_hex": "0x0800F510",
-    "file": "external_subsystem"
-  },
   "0x0800F528": {
     "canonical_name": "HeldItem_CanThrow",
     "original_name": "HeldItem_CanThrow",
@@ -3688,12 +2848,6 @@
     "original_name": "Farmer_Routine_0800F5D8",
     "address_hex": "0x0800F5D8",
     "file": "player/farmer.c"
-  },
-  "0x0800F5F8": {
-    "canonical_name": "Farmer_Routine_0800F5F8",
-    "original_name": "func_0x0800f5f8",
-    "address_hex": "0x0800F5F8",
-    "file": "external_subsystem"
   },
   "0x0800F604": {
     "canonical_name": "Farmer_Routine_0800F604",
@@ -3743,12 +2897,6 @@
     "address_hex": "0x0800F804",
     "file": "player/farmer.c"
   },
-  "0x0800F868": {
-    "canonical_name": "Farmer_Routine_0800F868",
-    "original_name": "func_0x0800f868",
-    "address_hex": "0x0800F868",
-    "file": "external_subsystem"
-  },
   "0x0800F874": {
     "canonical_name": "Farmer_Routine_0800F874",
     "original_name": "Farmer_Routine_0800F874",
@@ -3791,12 +2939,6 @@
     "address_hex": "0x0800FA60",
     "file": "player/farmer.c"
   },
-  "0x0800FCDC": {
-    "canonical_name": "Farmer_Routine_0800FCDC",
-    "original_name": "func_0x0800fcdc",
-    "address_hex": "0x0800FCDC",
-    "file": "external_subsystem"
-  },
   "0x0800FCE4": {
     "canonical_name": "Farmer_Routine_0800FCE4",
     "original_name": "Farmer_Routine_0800FCE4",
@@ -3827,12 +2969,6 @@
     "address_hex": "0x0800FDC4",
     "file": "player/farmer.c"
   },
-  "0x0800FE18": {
-    "canonical_name": "Farmer_Routine_0800FE18",
-    "original_name": "func_0x0800fe18",
-    "address_hex": "0x0800FE18",
-    "file": "external_subsystem"
-  },
   "0x0800FE24": {
     "canonical_name": "Farmer_Routine_0800FE24",
     "original_name": "Farmer_Routine_0800FE24",
@@ -3862,24 +2998,6 @@
     "original_name": "Farmer_Routine_0800FF8C",
     "address_hex": "0x0800FF8C",
     "file": "player/farmer.c"
-  },
-  "0x0800FFD0": {
-    "canonical_name": "Farmer_Routine_0800FFD0",
-    "original_name": "func_0x0800ffd0",
-    "address_hex": "0x0800FFD0",
-    "file": "external_subsystem"
-  },
-  "0x0800FFD4": {
-    "canonical_name": "Farmer_Routine_0800FFD4",
-    "original_name": "func_0x0800ffd4",
-    "address_hex": "0x0800FFD4",
-    "file": "external_subsystem"
-  },
-  "0x0800FFD8": {
-    "canonical_name": "Farmer_Routine_0800FFD8",
-    "original_name": "func_0x0800ffd8",
-    "address_hex": "0x0800FFD8",
-    "file": "external_subsystem"
   },
   "0x0800FFE0": {
     "canonical_name": "Farmer_Routine_0800FFE0",
@@ -3941,65 +3059,17 @@
     "address_hex": "0x08010358",
     "file": "player/farmer.c"
   },
-  "0x08010E48": {
-    "canonical_name": "Farmer_Routine_08010E48",
-    "original_name": "func_0x08010e48",
-    "address_hex": "0x08010E48",
-    "file": "external_subsystem"
-  },
-  "0x08010E50": {
-    "canonical_name": "Farmer_Routine_08010E50",
-    "original_name": "func_0x08010e50",
-    "address_hex": "0x08010E50",
-    "file": "external_subsystem"
-  },
-  "0x08010E58": {
-    "canonical_name": "Farmer_Routine_08010E58",
-    "original_name": "func_0x08010e58",
-    "address_hex": "0x08010E58",
-    "file": "external_subsystem"
-  },
   "0x08010E68": {
     "canonical_name": "Farmer_Routine_08010E68",
     "original_name": "Farmer_Routine_08010E68",
     "address_hex": "0x08010E68",
     "file": "player/farmer.c"
   },
-  "0x08010F04": {
-    "canonical_name": "Farmer_Routine_08010F04",
-    "original_name": "func_0x08010f04",
-    "address_hex": "0x08010F04",
-    "file": "external_subsystem"
-  },
-  "0x08010F0C": {
-    "canonical_name": "Farmer_Routine_08010F0C",
-    "original_name": "func_0x08010f0c",
-    "address_hex": "0x08010F0C",
-    "file": "external_subsystem"
-  },
-  "0x08010F1C": {
-    "canonical_name": "Farmer_Routine_08010F1C",
-    "original_name": "func_0x08010f1c",
-    "address_hex": "0x08010F1C",
-    "file": "external_subsystem"
-  },
-  "0x08010F54": {
-    "canonical_name": "Farmer_Routine_08010F54",
-    "original_name": "func_0x08010f54",
-    "address_hex": "0x08010F54",
-    "file": "external_subsystem"
-  },
   "0x0801140C": {
     "canonical_name": "Farmer_Routine_0801140C",
     "original_name": "Farmer_Routine_0801140C",
     "address_hex": "0x0801140C",
     "file": "player/farmer.c"
-  },
-  "0x08011458": {
-    "canonical_name": "Farmer_Routine_08011458",
-    "original_name": "func_0x08011458",
-    "address_hex": "0x08011458",
-    "file": "external_subsystem"
   },
   "0x08011464": {
     "canonical_name": "Farmer_Routine_08011464",
@@ -4018,18 +3088,6 @@
     "original_name": "Farmer_Routine_080114C8",
     "address_hex": "0x080114C8",
     "file": "player/farmer.c"
-  },
-  "0x080114F8": {
-    "canonical_name": "Farmer_Routine_080114F8",
-    "original_name": "func_0x080114f8",
-    "address_hex": "0x080114F8",
-    "file": "external_subsystem"
-  },
-  "0x08011510": {
-    "canonical_name": "Farmer_Routine_08011510",
-    "original_name": "func_0x08011510",
-    "address_hex": "0x08011510",
-    "file": "external_subsystem"
   },
   "0x08011524": {
     "canonical_name": "Farmer_Routine_08011524",
@@ -4487,12 +3545,6 @@
     "address_hex": "0x08014318",
     "file": "player/farmer.c"
   },
-  "0x0801468C": {
-    "canonical_name": "Farmer_Routine_0801468C",
-    "original_name": "func_0x0801468c",
-    "address_hex": "0x0801468C",
-    "file": "external_subsystem"
-  },
   "0x08014694": {
     "canonical_name": "Farmer_Routine_08014694",
     "original_name": "Farmer_Routine_08014694",
@@ -4876,12 +3928,6 @@
     "original_name": "Farmer_Routine_080182C8",
     "address_hex": "0x080182C8",
     "file": "player/farmer.c"
-  },
-  "0x08019870": {
-    "canonical_name": "Farmer_Routine_08019870",
-    "original_name": "SUB_08019870",
-    "address_hex": "0x08019870",
-    "file": "external_subsystem"
   },
   "0x08019B90": {
     "canonical_name": "Farmer_Routine_08019B90",
@@ -5369,12 +4415,6 @@
     "address_hex": "0x0801FD3C",
     "file": "player/farmer.c"
   },
-  "0x0801FD78": {
-    "canonical_name": "Farmer_Routine_0801FD78",
-    "original_name": "func_0x0801fd78",
-    "address_hex": "0x0801FD78",
-    "file": "external_subsystem"
-  },
   "0x0801FDC0": {
     "canonical_name": "Farmer_Routine_0801FDC0",
     "original_name": "Farmer_Routine_0801FDC0",
@@ -5411,12 +4451,6 @@
     "address_hex": "0x0801FE94",
     "file": "player/farmer.c"
   },
-  "0x0801FF38": {
-    "canonical_name": "Farmer_Routine_0801FF38",
-    "original_name": "func_0x0801ff38",
-    "address_hex": "0x0801FF38",
-    "file": "external_subsystem"
-  },
   "0x0801FF54": {
     "canonical_name": "Farmer_Routine_0801FF54",
     "original_name": "Farmer_Routine_0801FF54",
@@ -5442,20 +4476,14 @@
     "file": "entities/entity_manager.c"
   },
   "0x08020038": {
-    "canonical_name": "Entity_Routine_08020038",
-    "original_name": "Entity_Routine_08020038",
+    "canonical_name": "Entity_ResetMotionState",
+    "original_name": "Entity_ResetMotionState",
     "address_hex": "0x08020038",
     "file": "entities/entity_manager.c"
   },
-  "0x08020060": {
-    "canonical_name": "Entity_Routine_08020060",
-    "original_name": "func_0x08020060",
-    "address_hex": "0x08020060",
-    "file": "external_subsystem"
-  },
   "0x08020080": {
-    "canonical_name": "Entity_Routine_08020080",
-    "original_name": "Entity_Routine_08020080",
+    "canonical_name": "Entity_SetVelocityFromDirection",
+    "original_name": "Entity_SetVelocityFromDirection",
     "address_hex": "0x08020080",
     "file": "entities/entity_manager.c"
   },
@@ -5466,14 +4494,14 @@
     "file": "entities/entity_manager.c"
   },
   "0x08020130": {
-    "canonical_name": "Entity_Routine_08020130",
-    "original_name": "Entity_Routine_08020130",
+    "canonical_name": "Entity_CanMoveToPosition",
+    "original_name": "Entity_CanMoveToPosition",
     "address_hex": "0x08020130",
     "file": "entities/entity_manager.c"
   },
   "0x08020170": {
-    "canonical_name": "Entity_Routine_08020170",
-    "original_name": "Entity_Routine_08020170",
+    "canonical_name": "Entity_MoveAndCollide",
+    "original_name": "Entity_MoveAndCollide",
     "address_hex": "0x08020170",
     "file": "entities/entity_manager.c"
   },
@@ -5518,12 +4546,6 @@
     "original_name": "Entity_Routine_080204CC",
     "address_hex": "0x080204CC",
     "file": "entities/entity_manager.c"
-  },
-  "0x080210A0": {
-    "canonical_name": "Entity_Routine_080210A0",
-    "original_name": "SUB_080210a0",
-    "address_hex": "0x080210A0",
-    "file": "external_subsystem"
   },
   "0x0802110C": {
     "canonical_name": "Entity_Routine_0802110C",
@@ -5578,12 +4600,6 @@
     "original_name": "Entity_Routine_080215FC",
     "address_hex": "0x080215FC",
     "file": "entities/entity_manager.c"
-  },
-  "0x0802161C": {
-    "canonical_name": "Entity_Routine_0802161C",
-    "original_name": "func_0x0802161c",
-    "address_hex": "0x0802161C",
-    "file": "external_subsystem"
   },
   "0x08021620": {
     "canonical_name": "Entity_Routine_08021620",
@@ -5806,12 +4822,6 @@
     "original_name": "Entity_Routine_08022B38",
     "address_hex": "0x08022B38",
     "file": "entities/entity_manager.c"
-  },
-  "0x08022B58": {
-    "canonical_name": "Entity_Routine_08022B58",
-    "original_name": "func_0x08022b58",
-    "address_hex": "0x08022B58",
-    "file": "external_subsystem"
   },
   "0x08022B5C": {
     "canonical_name": "Entity_Routine_08022B5C",
@@ -6389,18 +5399,6 @@
     "address_hex": "0x0802A510",
     "file": "entities/entity_manager.c"
   },
-  "0x0802A7D8": {
-    "canonical_name": "Entity_Routine_0802A7D8",
-    "original_name": "func_0x0802a7d8",
-    "address_hex": "0x0802A7D8",
-    "file": "external_subsystem"
-  },
-  "0x0802A7E0": {
-    "canonical_name": "Entity_Routine_0802A7E0",
-    "original_name": "func_0x0802a7e0",
-    "address_hex": "0x0802A7E0",
-    "file": "external_subsystem"
-  },
   "0x0802AA84": {
     "canonical_name": "Entity_Routine_0802AA84",
     "original_name": "Entity_Routine_0802AA84",
@@ -6563,12 +5561,6 @@
     "address_hex": "0x0802C29C",
     "file": "entities/entity_manager.c"
   },
-  "0x0802C2DC": {
-    "canonical_name": "Entity_Routine_0802C2DC",
-    "original_name": "func_0x0802c2dc",
-    "address_hex": "0x0802C2DC",
-    "file": "external_subsystem"
-  },
   "0x0802C2E0": {
     "canonical_name": "Entity_Routine_0802C2E0",
     "original_name": "Entity_Routine_0802C2E0",
@@ -6646,12 +5638,6 @@
     "original_name": "Entity_Routine_0802E0FC",
     "address_hex": "0x0802E0FC",
     "file": "entities/entity_manager.c"
-  },
-  "0x0802EBE6": {
-    "canonical_name": "Entity_Routine_0802EBE6",
-    "original_name": "func_0x0802ebe6",
-    "address_hex": "0x0802EBE6",
-    "file": "external_subsystem"
   },
   "0x0802EC00": {
     "canonical_name": "Entity_Routine_0802EC00",
@@ -6743,12 +5729,6 @@
     "address_hex": "0x08032208",
     "file": "entities/entity_manager.c"
   },
-  "0x08032300": {
-    "canonical_name": "Entity_Routine_08032300",
-    "original_name": "func_0x08032300",
-    "address_hex": "0x08032300",
-    "file": "external_subsystem"
-  },
   "0x08032308": {
     "canonical_name": "Entity_Routine_08032308",
     "original_name": "Entity_Routine_08032308",
@@ -6820,12 +5800,6 @@
     "original_name": "Entity_Routine_0803260C",
     "address_hex": "0x0803260C",
     "file": "entities/entity_manager.c"
-  },
-  "0x08032690": {
-    "canonical_name": "Entity_Routine_08032690",
-    "original_name": "func_0x08032690",
-    "address_hex": "0x08032690",
-    "file": "external_subsystem"
   },
   "0x08032900": {
     "canonical_name": "Entity_Routine_08032900",
@@ -6947,12 +5921,6 @@
     "address_hex": "0x080338F0",
     "file": "entities/entity_manager.c"
   },
-  "0x08033914": {
-    "canonical_name": "Entity_Routine_08033914",
-    "original_name": "func_0x08033914",
-    "address_hex": "0x08033914",
-    "file": "external_subsystem"
-  },
   "0x08033A80": {
     "canonical_name": "Entity_Routine_08033A80",
     "original_name": "Entity_Routine_08033A80",
@@ -6977,12 +5945,6 @@
     "address_hex": "0x08033B24",
     "file": "entities/entity_manager.c"
   },
-  "0x08033B7C": {
-    "canonical_name": "Entity_Routine_08033B7C",
-    "original_name": "func_0x08033b7c",
-    "address_hex": "0x08033B7C",
-    "file": "external_subsystem"
-  },
   "0x08033B84": {
     "canonical_name": "Entity_Routine_08033B84",
     "original_name": "Entity_Routine_08033B84",
@@ -7000,12 +5962,6 @@
     "original_name": "Entity_Routine_08034180",
     "address_hex": "0x08034180",
     "file": "entities/entity_manager.c"
-  },
-  "0x08034248": {
-    "canonical_name": "Entity_Routine_08034248",
-    "original_name": "func_0x08034248",
-    "address_hex": "0x08034248",
-    "file": "external_subsystem"
   },
   "0x08034260": {
     "canonical_name": "Entity_Routine_08034260",
@@ -7655,12 +6611,6 @@
     "address_hex": "0x08036F68",
     "file": "entities/entity_manager.c"
   },
-  "0x08037008": {
-    "canonical_name": "Entity_Routine_08037008",
-    "original_name": "func_0x08037008",
-    "address_hex": "0x08037008",
-    "file": "external_subsystem"
-  },
   "0x08037098": {
     "canonical_name": "Entity_Routine_08037098",
     "original_name": "Entity_Routine_08037098",
@@ -7678,12 +6628,6 @@
     "original_name": "Entity_Routine_08037118",
     "address_hex": "0x08037118",
     "file": "entities/entity_manager.c"
-  },
-  "0x08037244": {
-    "canonical_name": "Entity_Routine_08037244",
-    "original_name": "func_0x08037244",
-    "address_hex": "0x08037244",
-    "file": "external_subsystem"
   },
   "0x0803726C": {
     "canonical_name": "Entity_Routine_0803726C",
@@ -7727,12 +6671,6 @@
     "address_hex": "0x08037568",
     "file": "entities/entity_manager.c"
   },
-  "0x08037618": {
-    "canonical_name": "Entity_Routine_08037618",
-    "original_name": "func_0x08037618",
-    "address_hex": "0x08037618",
-    "file": "external_subsystem"
-  },
   "0x08037628": {
     "canonical_name": "Entity_Routine_08037628",
     "original_name": "Entity_Routine_08037628",
@@ -7756,12 +6694,6 @@
     "original_name": "Entity_Routine_08037714",
     "address_hex": "0x08037714",
     "file": "entities/entity_manager.c"
-  },
-  "0x080377C4": {
-    "canonical_name": "Entity_Routine_080377C4",
-    "original_name": "func_0x080377c4",
-    "address_hex": "0x080377C4",
-    "file": "external_subsystem"
   },
   "0x080377D4": {
     "canonical_name": "Entity_Routine_080377D4",
@@ -7787,12 +6719,6 @@
     "address_hex": "0x080378B8",
     "file": "entities/entity_manager.c"
   },
-  "0x080378EC": {
-    "canonical_name": "Entity_Routine_080378EC",
-    "original_name": "func_0x080378ec",
-    "address_hex": "0x080378EC",
-    "file": "external_subsystem"
-  },
   "0x080378FC": {
     "canonical_name": "Entity_Routine_080378FC",
     "original_name": "Entity_Routine_080378FC",
@@ -7816,12 +6742,6 @@
     "original_name": "Entity_Routine_08037A04",
     "address_hex": "0x08037A04",
     "file": "entities/entity_manager.c"
-  },
-  "0x08037A38": {
-    "canonical_name": "Entity_Routine_08037A38",
-    "original_name": "func_0x08037a38",
-    "address_hex": "0x08037A38",
-    "file": "external_subsystem"
   },
   "0x08037A48": {
     "canonical_name": "Entity_Routine_08037A48",
@@ -7925,12 +6845,6 @@
     "address_hex": "0x08037F60",
     "file": "entities/entity_manager.c"
   },
-  "0x08037F74": {
-    "canonical_name": "Entity_Routine_08037F74",
-    "original_name": "func_0x08037f74",
-    "address_hex": "0x08037F74",
-    "file": "external_subsystem"
-  },
   "0x08037F7C": {
     "canonical_name": "Entity_Routine_08037F7C",
     "original_name": "Entity_Routine_08037F7C",
@@ -7942,18 +6856,6 @@
     "original_name": "Entity_Routine_08038028",
     "address_hex": "0x08038028",
     "file": "entities/entity_manager.c"
-  },
-  "0x080380EC": {
-    "canonical_name": "Entity_Routine_080380EC",
-    "original_name": "func_0x080380ec",
-    "address_hex": "0x080380EC",
-    "file": "external_subsystem"
-  },
-  "0x08038108": {
-    "canonical_name": "Entity_Routine_08038108",
-    "original_name": "func_0x08038108",
-    "address_hex": "0x08038108",
-    "file": "external_subsystem"
   },
   "0x08038110": {
     "canonical_name": "Entity_Routine_08038110",
@@ -7984,12 +6886,6 @@
     "original_name": "Entity_Routine_0803834C",
     "address_hex": "0x0803834C",
     "file": "entities/entity_manager.c"
-  },
-  "0x0803836C": {
-    "canonical_name": "Entity_Routine_0803836C",
-    "original_name": "func_0x0803836c",
-    "address_hex": "0x0803836C",
-    "file": "external_subsystem"
   },
   "0x08038374": {
     "canonical_name": "Entity_Routine_08038374",
@@ -8099,12 +6995,6 @@
     "address_hex": "0x08038DF0",
     "file": "entities/entity_manager.c"
   },
-  "0x08038E90": {
-    "canonical_name": "Entity_Routine_08038E90",
-    "original_name": "func_0x08038e90",
-    "address_hex": "0x08038E90",
-    "file": "external_subsystem"
-  },
   "0x08038EA0": {
     "canonical_name": "Entity_Routine_08038EA0",
     "original_name": "Entity_Routine_08038EA0",
@@ -8122,12 +7012,6 @@
     "original_name": "Entity_Routine_08038EE0",
     "address_hex": "0x08038EE0",
     "file": "entities/entity_manager.c"
-  },
-  "0x080390D0": {
-    "canonical_name": "Entity_Routine_080390D0",
-    "original_name": "func_0x080390d0",
-    "address_hex": "0x080390D0",
-    "file": "external_subsystem"
   },
   "0x080390DC": {
     "canonical_name": "Entity_Routine_080390DC",
@@ -8231,18 +7115,6 @@
     "address_hex": "0x0803A180",
     "file": "entities/entity_manager.c"
   },
-  "0x0803A320": {
-    "canonical_name": "Entity_Routine_0803A320",
-    "original_name": "func_0x0803a320",
-    "address_hex": "0x0803A320",
-    "file": "external_subsystem"
-  },
-  "0x0803A334": {
-    "canonical_name": "Entity_Routine_0803A334",
-    "original_name": "func_0x0803a334",
-    "address_hex": "0x0803A334",
-    "file": "external_subsystem"
-  },
   "0x0803A350": {
     "canonical_name": "Entity_Routine_0803A350",
     "original_name": "Entity_Routine_0803A350",
@@ -8266,12 +7138,6 @@
     "original_name": "Entity_Routine_0803A840",
     "address_hex": "0x0803A840",
     "file": "entities/entity_manager.c"
-  },
-  "0x0803A8A4": {
-    "canonical_name": "ScriptEngine_CalculateSpriteHash",
-    "original_name": "func_0x0803a8a4",
-    "address_hex": "0x0803A8A4",
-    "file": "external_subsystem"
   },
   "0x0803AB30": {
     "canonical_name": "ScriptEngine_Construct",
@@ -8302,12 +7168,6 @@
     "original_name": "ScriptEngine_GetVariable",
     "address_hex": "0x0803AEA0",
     "file": "events/script_engine.c"
-  },
-  "0x0803B0A8": {
-    "canonical_name": "ScriptEngine_Routine_0803B0A8",
-    "original_name": "func_0x0803b0a8",
-    "address_hex": "0x0803B0A8",
-    "file": "external_subsystem"
   },
   "0x0803B128": {
     "canonical_name": "ScriptEngine_ParseHeaderChunks",
@@ -8404,18 +7264,6 @@
     "original_name": "ScriptEngine_Routine_0803BDB8",
     "address_hex": "0x0803BDB8",
     "file": "events/script_engine.c"
-  },
-  "0x0803BDE4": {
-    "canonical_name": "ScriptEngine_Routine_0803BDE4",
-    "original_name": "func_0x0803bde4",
-    "address_hex": "0x0803BDE4",
-    "file": "external_subsystem"
-  },
-  "0x0803BDEC": {
-    "canonical_name": "ScriptEngine_Routine_0803BDEC",
-    "original_name": "func_0x0803bdec",
-    "address_hex": "0x0803BDEC",
-    "file": "external_subsystem"
   },
   "0x0803BDFC": {
     "canonical_name": "ScriptEngine_Routine_0803BDFC",
@@ -8879,12 +7727,6 @@
     "address_hex": "0x0803EFD8",
     "file": "events/script_engine.c"
   },
-  "0x0803F03C": {
-    "canonical_name": "ScriptEngine_Routine_0803F03C",
-    "original_name": "func_0x0803f03c",
-    "address_hex": "0x0803F03C",
-    "file": "external_subsystem"
-  },
   "0x0803F084": {
     "canonical_name": "ScriptEngine_Routine_0803F084",
     "original_name": "ScriptEngine_Routine_0803F084",
@@ -8896,12 +7738,6 @@
     "original_name": "ScriptEngine_Routine_0803F0B4",
     "address_hex": "0x0803F0B4",
     "file": "events/script_engine.c"
-  },
-  "0x0803F0E0": {
-    "canonical_name": "ScriptEngine_Routine_0803F0E0",
-    "original_name": "func_0x0803f0e0",
-    "address_hex": "0x0803F0E0",
-    "file": "external_subsystem"
   },
   "0x0803F7E0": {
     "canonical_name": "ScriptEngine_GetStringById",
@@ -8926,12 +7762,6 @@
     "original_name": "ScriptEngine_Routine_0803F878",
     "address_hex": "0x0803F878",
     "file": "events/script_engine.c"
-  },
-  "0x0803F8AC": {
-    "canonical_name": "ScriptEngine_Routine_0803F8AC",
-    "original_name": "func_0x0803f8ac",
-    "address_hex": "0x0803F8AC",
-    "file": "external_subsystem"
   },
   "0x0803F8B8": {
     "canonical_name": "ScriptEngine_PushStack32",
@@ -8963,142 +7793,58 @@
     "address_hex": "0x0804590C",
     "file": "events/script_engine.c"
   },
-  "0x08047766": {
-    "canonical_name": "ScriptEngine_Routine_08047766",
-    "original_name": "SUB_08047766",
-    "address_hex": "0x08047766",
-    "file": "external_subsystem"
-  },
-  "0x0804811A": {
-    "canonical_name": "ScriptEngine_Routine_0804811A",
-    "original_name": "SUB_0804811a",
-    "address_hex": "0x0804811A",
-    "file": "external_subsystem"
-  },
-  "0x080483AE": {
-    "canonical_name": "ScriptEngine_Routine_080483AE",
-    "original_name": "SUB_080483ae",
-    "address_hex": "0x080483AE",
-    "file": "external_subsystem"
-  },
   "0x08048626": {
     "canonical_name": "ScriptEngine_Routine_08048626",
-    "original_name": "func_0x08048626",
+    "original_name": "SUB_08048626",
     "address_hex": "0x08048626",
     "file": "external_subsystem"
   },
   "0x08048662": {
     "canonical_name": "ScriptEngine_Routine_08048662",
-    "original_name": "func_0x08048662",
+    "original_name": "SUB_08048662",
     "address_hex": "0x08048662",
-    "file": "external_subsystem"
-  },
-  "0x080486B2": {
-    "canonical_name": "ScriptEngine_Routine_080486B2",
-    "original_name": "SUB_080486b2",
-    "address_hex": "0x080486B2",
     "file": "external_subsystem"
   },
   "0x08048966": {
     "canonical_name": "ScriptEngine_Routine_08048966",
-    "original_name": "func_0x08048966",
+    "original_name": "SUB_08048966",
     "address_hex": "0x08048966",
-    "file": "external_subsystem"
-  },
-  "0x08048A7C": {
-    "canonical_name": "ScriptEngine_Routine_08048A7C",
-    "original_name": "SUB_08048a7c",
-    "address_hex": "0x08048A7C",
-    "file": "external_subsystem"
-  },
-  "0x08048C0E": {
-    "canonical_name": "ScriptEngine_Routine_08048C0E",
-    "original_name": "SUB_08048c0e",
-    "address_hex": "0x08048C0E",
-    "file": "external_subsystem"
-  },
-  "0x08048E36": {
-    "canonical_name": "ScriptEngine_Routine_08048E36",
-    "original_name": "SUB_08048e36",
-    "address_hex": "0x08048E36",
-    "file": "external_subsystem"
-  },
-  "0x08048E5E": {
-    "canonical_name": "ScriptEngine_Routine_08048E5E",
-    "original_name": "SUB_08048e5e",
-    "address_hex": "0x08048E5E",
-    "file": "external_subsystem"
-  },
-  "0x08048E76": {
-    "canonical_name": "ScriptEngine_Routine_08048E76",
-    "original_name": "SUB_08048e76",
-    "address_hex": "0x08048E76",
-    "file": "external_subsystem"
-  },
-  "0x08048EC6": {
-    "canonical_name": "ScriptEngine_Routine_08048EC6",
-    "original_name": "SUB_08048ec6",
-    "address_hex": "0x08048EC6",
-    "file": "external_subsystem"
-  },
-  "0x08048F16": {
-    "canonical_name": "ScriptEngine_Routine_08048F16",
-    "original_name": "SUB_08048f16",
-    "address_hex": "0x08048F16",
     "file": "external_subsystem"
   },
   "0x08048F2E": {
     "canonical_name": "ScriptEngine_Routine_08048F2E",
-    "original_name": "func_0x08048f2e",
+    "original_name": "SUB_08048f2e",
     "address_hex": "0x08048F2E",
     "file": "external_subsystem"
   },
   "0x08048F32": {
     "canonical_name": "ScriptEngine_Routine_08048F32",
-    "original_name": "func_0x08048f32",
+    "original_name": "SUB_08048f32",
     "address_hex": "0x08048F32",
-    "file": "external_subsystem"
-  },
-  "0x08048F46": {
-    "canonical_name": "ScriptEngine_Routine_08048F46",
-    "original_name": "SUB_08048f46",
-    "address_hex": "0x08048F46",
     "file": "external_subsystem"
   },
   "0x08048F5E": {
     "canonical_name": "ScriptEngine_Routine_08048F5E",
-    "original_name": "func_0x08048f5e",
+    "original_name": "SUB_08048f5e",
     "address_hex": "0x08048F5E",
     "file": "external_subsystem"
   },
   "0x08048F76": {
     "canonical_name": "ScriptEngine_Routine_08048F76",
-    "original_name": "func_0x08048f76",
+    "original_name": "SUB_08048f76",
     "address_hex": "0x08048F76",
     "file": "external_subsystem"
   },
   "0x08048FC6": {
     "canonical_name": "ScriptEngine_Routine_08048FC6",
-    "original_name": "func_0x08048fc6",
+    "original_name": "SUB_08048fc6",
     "address_hex": "0x08048FC6",
     "file": "external_subsystem"
   },
   "0x08048FDE": {
     "canonical_name": "ScriptEngine_Routine_08048FDE",
-    "original_name": "func_0x08048fde",
+    "original_name": "SUB_08048fde",
     "address_hex": "0x08048FDE",
-    "file": "external_subsystem"
-  },
-  "0x08048FEC": {
-    "canonical_name": "ScriptEngine_Routine_08048FEC",
-    "original_name": "func_0x08048fec",
-    "address_hex": "0x08048FEC",
-    "file": "external_subsystem"
-  },
-  "0x08048FEE": {
-    "canonical_name": "ScriptEngine_Routine_08048FEE",
-    "original_name": "func_0x08048fee",
-    "address_hex": "0x08048FEE",
     "file": "external_subsystem"
   },
   "0x08048FFC": {
@@ -9109,50 +7855,20 @@
   },
   "0x0804CE8E": {
     "canonical_name": "ScriptEngine_Routine_0804CE8E",
-    "original_name": "func_0x0804ce8e",
+    "original_name": "SUB_0804ce8e",
     "address_hex": "0x0804CE8E",
-    "file": "external_subsystem"
-  },
-  "0x0804D0FE": {
-    "canonical_name": "ScriptEngine_Routine_0804D0FE",
-    "original_name": "SUB_0804d0fe",
-    "address_hex": "0x0804D0FE",
-    "file": "external_subsystem"
-  },
-  "0x0804D106": {
-    "canonical_name": "ScriptEngine_Routine_0804D106",
-    "original_name": "SUB_0804d106",
-    "address_hex": "0x0804D106",
-    "file": "external_subsystem"
-  },
-  "0x0804D2D6": {
-    "canonical_name": "ScriptEngine_Routine_0804D2D6",
-    "original_name": "SUB_0804d2d6",
-    "address_hex": "0x0804D2D6",
     "file": "external_subsystem"
   },
   "0x0804DA1A": {
     "canonical_name": "ScriptEngine_Routine_0804DA1A",
-    "original_name": "func_0x0804da1a",
+    "original_name": "SUB_0804da1a",
     "address_hex": "0x0804DA1A",
-    "file": "external_subsystem"
-  },
-  "0x0804DA28": {
-    "canonical_name": "ScriptEngine_SetFlagBit",
-    "original_name": "func_0x0804da28",
-    "address_hex": "0x0804DA28",
     "file": "external_subsystem"
   },
   "0x0804DA2C": {
     "canonical_name": "ScriptEngine_Routine_0804DA2C",
-    "original_name": "func_0x0804da2c",
+    "original_name": "SUB_0804da2c",
     "address_hex": "0x0804DA2C",
-    "file": "external_subsystem"
-  },
-  "0x0804DA2E": {
-    "canonical_name": "ScriptEngine_Routine_0804DA2E",
-    "original_name": "func_0x0804da2e",
-    "address_hex": "0x0804DA2E",
     "file": "external_subsystem"
   },
   "0x0804E0F8": {
@@ -9203,12 +7919,6 @@
     "address_hex": "0x0804E4AC",
     "file": "events/script_engine.c"
   },
-  "0x0804E5AC": {
-    "canonical_name": "ScriptEngine_Routine_0804E5AC",
-    "original_name": "func_0x0804e5ac",
-    "address_hex": "0x0804E5AC",
-    "file": "external_subsystem"
-  },
   "0x0804E7A0": {
     "canonical_name": "ScriptEngine_Routine_0804E7A0",
     "original_name": "ScriptEngine_Routine_0804E7A0",
@@ -9232,12 +7942,6 @@
     "original_name": "ScriptEngine_Routine_0804E958",
     "address_hex": "0x0804E958",
     "file": "events/script_engine.c"
-  },
-  "0x0804E9C8": {
-    "canonical_name": "ScriptEngine_Routine_0804E9C8",
-    "original_name": "func_0x0804e9c8",
-    "address_hex": "0x0804E9C8",
-    "file": "external_subsystem"
   },
   "0x0804E9D0": {
     "canonical_name": "ScriptEngine_Routine_0804E9D0",
@@ -9473,35 +8177,11 @@
     "address_hex": "0x08050AD8",
     "file": "entities/animals.c"
   },
-  "0x08050B3C": {
-    "canonical_name": "Animal_Routine_08050B3C",
-    "original_name": "func_0x08050b3c",
-    "address_hex": "0x08050B3C",
-    "file": "external_subsystem"
-  },
-  "0x08050B50": {
-    "canonical_name": "Animal_Routine_08050B50",
-    "original_name": "func_0x08050b50",
-    "address_hex": "0x08050B50",
-    "file": "external_subsystem"
-  },
-  "0x08050C18": {
-    "canonical_name": "Animal_Routine_08050C18",
-    "original_name": "func_0x08050c18",
-    "address_hex": "0x08050C18",
-    "file": "external_subsystem"
-  },
   "0x08050C2C": {
     "canonical_name": "Animal_Routine_08050C2C",
     "original_name": "Animal_Routine_08050C2C",
     "address_hex": "0x08050C2C",
     "file": "entities/animals.c"
-  },
-  "0x08050C64": {
-    "canonical_name": "Animal_Routine_08050C64",
-    "original_name": "func_0x08050c64",
-    "address_hex": "0x08050C64",
-    "file": "external_subsystem"
   },
   "0x08050C70": {
     "canonical_name": "Animal_Routine_08050C70",
@@ -9520,12 +8200,6 @@
     "original_name": "Animal_Routine_08050D0C",
     "address_hex": "0x08050D0C",
     "file": "entities/animals.c"
-  },
-  "0x08050D34": {
-    "canonical_name": "Animal_Routine_08050D34",
-    "original_name": "func_0x08050d34",
-    "address_hex": "0x08050D34",
-    "file": "external_subsystem"
   },
   "0x08050D3C": {
     "canonical_name": "Animal_Routine_08050D3C",
@@ -9580,18 +8254,6 @@
     "original_name": "Animal_Routine_08050DC8",
     "address_hex": "0x08050DC8",
     "file": "entities/animals.c"
-  },
-  "0x08050DD8": {
-    "canonical_name": "Animal_Routine_08050DD8",
-    "original_name": "func_0x08050dd8",
-    "address_hex": "0x08050DD8",
-    "file": "external_subsystem"
-  },
-  "0x08050DE4": {
-    "canonical_name": "Animal_Routine_08050DE4",
-    "original_name": "func_0x08050de4",
-    "address_hex": "0x08050DE4",
-    "file": "external_subsystem"
   },
   "0x08050DF0": {
     "canonical_name": "Animal_Routine_08050DF0",
@@ -9749,18 +8411,6 @@
     "address_hex": "0x08052230",
     "file": "entities/animals.c"
   },
-  "0x080522D8": {
-    "canonical_name": "Animal_Routine_080522D8",
-    "original_name": "func_0x080522d8",
-    "address_hex": "0x080522D8",
-    "file": "external_subsystem"
-  },
-  "0x080522E8": {
-    "canonical_name": "Animal_Routine_080522E8",
-    "original_name": "func_0x080522e8",
-    "address_hex": "0x080522E8",
-    "file": "external_subsystem"
-  },
   "0x080522F8": {
     "canonical_name": "Animal_Routine_080522F8",
     "original_name": "Animal_Routine_080522F8",
@@ -9773,12 +8423,6 @@
     "address_hex": "0x08052984",
     "file": "entities/animals.c"
   },
-  "0x08053462": {
-    "canonical_name": "Animal_Routine_08053462",
-    "original_name": "func_0x08053462",
-    "address_hex": "0x08053462",
-    "file": "external_subsystem"
-  },
   "0x08053634": {
     "canonical_name": "Animal_Routine_08053634",
     "original_name": "Animal_Routine_08053634",
@@ -9790,18 +8434,6 @@
     "original_name": "Animal_Routine_08053960",
     "address_hex": "0x08053960",
     "file": "entities/animals.c"
-  },
-  "0x08054C4A": {
-    "canonical_name": "Animal_Routine_08054C4A",
-    "original_name": "func_0x08054c4a",
-    "address_hex": "0x08054C4A",
-    "file": "external_subsystem"
-  },
-  "0x08054D0A": {
-    "canonical_name": "Animal_Routine_08054D0A",
-    "original_name": "SUB_08054d0a",
-    "address_hex": "0x08054D0A",
-    "file": "external_subsystem"
   },
   "0x08054D34": {
     "canonical_name": "Animal_Routine_08054D34",
@@ -9832,12 +8464,6 @@
     "original_name": "Animal_Routine_080558C4",
     "address_hex": "0x080558C4",
     "file": "entities/animals.c"
-  },
-  "0x08056442": {
-    "canonical_name": "Animal_Routine_08056442",
-    "original_name": "SUB_08056442",
-    "address_hex": "0x08056442",
-    "file": "external_subsystem"
   },
   "0x080579B4": {
     "canonical_name": "Animal_Routine_080579B4",
@@ -9916,12 +8542,6 @@
     "original_name": "Animal_Routine_080588AC",
     "address_hex": "0x080588AC",
     "file": "entities/animals.c"
-  },
-  "0x08059764": {
-    "canonical_name": "Animal_Routine_08059764",
-    "original_name": "SUB_08059764",
-    "address_hex": "0x08059764",
-    "file": "external_subsystem"
   },
   "0x08059780": {
     "canonical_name": "Animal_Routine_08059780",
@@ -10253,12 +8873,6 @@
     "address_hex": "0x0805FF14",
     "file": "entities/animals.c"
   },
-  "0x08061E00": {
-    "canonical_name": "Animal_Routine_08061E00",
-    "original_name": "SUB_08061e00",
-    "address_hex": "0x08061E00",
-    "file": "external_subsystem"
-  },
   "0x08062E9C": {
     "canonical_name": "Animal_Routine_08062E9C",
     "original_name": "Animal_Routine_08062E9C",
@@ -10294,12 +8908,6 @@
     "original_name": "Animal_Routine_08063EB8",
     "address_hex": "0x08063EB8",
     "file": "entities/animals.c"
-  },
-  "0x080645F0": {
-    "canonical_name": "Animal_Routine_080645F0",
-    "original_name": "func_0x080645f0",
-    "address_hex": "0x080645F0",
-    "file": "external_subsystem"
   },
   "0x0806644C": {
     "canonical_name": "Animal_Routine_0806644C",
@@ -10361,12 +8969,6 @@
     "address_hex": "0x08069EF4",
     "file": "entities/animals.c"
   },
-  "0x08069F14": {
-    "canonical_name": "Animal_Routine_08069F14",
-    "original_name": "func_0x08069f14",
-    "address_hex": "0x08069F14",
-    "file": "external_subsystem"
-  },
   "0x0806D8C8": {
     "canonical_name": "Animal_Routine_0806D8C8",
     "original_name": "Animal_Routine_0806D8C8",
@@ -10390,12 +8992,6 @@
     "original_name": "Animal_Routine_0806D990",
     "address_hex": "0x0806D990",
     "file": "entities/animals.c"
-  },
-  "0x0806DB38": {
-    "canonical_name": "Animal_Routine_0806DB38",
-    "original_name": "func_0x0806db38",
-    "address_hex": "0x0806DB38",
-    "file": "external_subsystem"
   },
   "0x0806DEC0": {
     "canonical_name": "Animal_Routine_0806DEC0",
@@ -10468,12 +9064,6 @@
     "original_name": "Animal_Routine_0806EA30",
     "address_hex": "0x0806EA30",
     "file": "entities/animals.c"
-  },
-  "0x0806EA78": {
-    "canonical_name": "Animal_Routine_0806EA78",
-    "original_name": "func_0x0806ea78",
-    "address_hex": "0x0806EA78",
-    "file": "external_subsystem"
   },
   "0x0806EAF4": {
     "canonical_name": "Animal_Routine_0806EAF4",
@@ -10745,12 +9335,6 @@
     "address_hex": "0x08075E50",
     "file": "entities/animals.c"
   },
-  "0x08075E7C": {
-    "canonical_name": "Animal_Routine_08075E7C",
-    "original_name": "func_0x08075e7c",
-    "address_hex": "0x08075E7C",
-    "file": "external_subsystem"
-  },
   "0x0807628C": {
     "canonical_name": "Animal_Routine_0807628C",
     "original_name": "Animal_Routine_0807628C",
@@ -10775,24 +9359,6 @@
     "address_hex": "0x08076B94",
     "file": "entities/animals.c"
   },
-  "0x08076BE0": {
-    "canonical_name": "Animal_Routine_08076BE0",
-    "original_name": "func_0x08076be0",
-    "address_hex": "0x08076BE0",
-    "file": "external_subsystem"
-  },
-  "0x08076BEC": {
-    "canonical_name": "Animal_Routine_08076BEC",
-    "original_name": "func_0x08076bec",
-    "address_hex": "0x08076BEC",
-    "file": "external_subsystem"
-  },
-  "0x08076BFC": {
-    "canonical_name": "Animal_Routine_08076BFC",
-    "original_name": "func_0x08076bfc",
-    "address_hex": "0x08076BFC",
-    "file": "external_subsystem"
-  },
   "0x08076E0C": {
     "canonical_name": "Animal_Routine_08076E0C",
     "original_name": "Animal_Routine_08076E0C",
@@ -10804,12 +9370,6 @@
     "original_name": "Animal_Routine_08076EA8",
     "address_hex": "0x08076EA8",
     "file": "entities/animals.c"
-  },
-  "0x080773E8": {
-    "canonical_name": "Animal_Routine_080773E8",
-    "original_name": "func_0x080773e8",
-    "address_hex": "0x080773E8",
-    "file": "external_subsystem"
   },
   "0x08077490": {
     "canonical_name": "Animal_Routine_08077490",
@@ -10937,12 +9497,6 @@
     "address_hex": "0x080790E4",
     "file": "entities/animals.c"
   },
-  "0x08079860": {
-    "canonical_name": "Animal_Routine_08079860",
-    "original_name": "func_0x08079860",
-    "address_hex": "0x08079860",
-    "file": "external_subsystem"
-  },
   "0x08079A64": {
     "canonical_name": "Animal_Routine_08079A64",
     "original_name": "Animal_Routine_08079A64",
@@ -11062,24 +9616,6 @@
     "original_name": "Animal_Routine_0807BEC8",
     "address_hex": "0x0807BEC8",
     "file": "entities/animals.c"
-  },
-  "0x0807CF36": {
-    "canonical_name": "Animal_Routine_0807CF36",
-    "original_name": "SUB_0807cf36",
-    "address_hex": "0x0807CF36",
-    "file": "external_subsystem"
-  },
-  "0x0807D054": {
-    "canonical_name": "Animal_Routine_0807D054",
-    "original_name": "SUB_0807d054",
-    "address_hex": "0x0807D054",
-    "file": "external_subsystem"
-  },
-  "0x0807D05E": {
-    "canonical_name": "Animal_Routine_0807D05E",
-    "original_name": "SUB_0807d05e",
-    "address_hex": "0x0807D05E",
-    "file": "external_subsystem"
   },
   "0x0807D070": {
     "canonical_name": "Animal_Routine_0807D070",
@@ -11225,12 +9761,6 @@
     "address_hex": "0x0807EED4",
     "file": "entities/animals.c"
   },
-  "0x0807EF00": {
-    "canonical_name": "Animal_Routine_0807EF00",
-    "original_name": "func_0x0807ef00",
-    "address_hex": "0x0807EF00",
-    "file": "external_subsystem"
-  },
   "0x0807EF14": {
     "canonical_name": "Animal_Routine_0807EF14",
     "original_name": "Animal_Routine_0807EF14",
@@ -11290,12 +9820,6 @@
     "original_name": "Animal_Routine_0807F6E8",
     "address_hex": "0x0807F6E8",
     "file": "entities/animals.c"
-  },
-  "0x0807F8C8": {
-    "canonical_name": "Animal_Routine_0807F8C8",
-    "original_name": "func_0x0807f8c8",
-    "address_hex": "0x0807F8C8",
-    "file": "external_subsystem"
   },
   "0x0808045C": {
     "canonical_name": "Animal_Routine_0808045C",
@@ -11404,12 +9928,6 @@
     "original_name": "Animal_Routine_08081B00",
     "address_hex": "0x08081B00",
     "file": "entities/animals.c"
-  },
-  "0x08081B2C": {
-    "canonical_name": "Animal_Routine_08081B2C",
-    "original_name": "func_0x08081b2c",
-    "address_hex": "0x08081B2C",
-    "file": "external_subsystem"
   },
   "0x08081B40": {
     "canonical_name": "Animal_Routine_08081B40",
@@ -11549,12 +10067,6 @@
     "address_hex": "0x08084228",
     "file": "entities/animals.c"
   },
-  "0x080854D8": {
-    "canonical_name": "Animal_Routine_080854D8",
-    "original_name": "func_0x080854d8",
-    "address_hex": "0x080854D8",
-    "file": "external_subsystem"
-  },
   "0x080854F4": {
     "canonical_name": "Animal_Routine_080854F4",
     "original_name": "Animal_Routine_080854F4",
@@ -11615,12 +10127,6 @@
     "address_hex": "0x08085F08",
     "file": "entities/animals.c"
   },
-  "0x080868A8": {
-    "canonical_name": "Animal_Routine_080868A8",
-    "original_name": "SUB_080868a8",
-    "address_hex": "0x080868A8",
-    "file": "external_subsystem"
-  },
   "0x080868E4": {
     "canonical_name": "Animal_Routine_080868E4",
     "original_name": "Animal_Routine_080868E4",
@@ -11639,34 +10145,10 @@
     "address_hex": "0x08086A08",
     "file": "entities/animals.c"
   },
-  "0x08087F4C": {
-    "canonical_name": "Animal_Routine_08087F4C",
-    "original_name": "SUB_08087f4c",
-    "address_hex": "0x08087F4C",
-    "file": "external_subsystem"
-  },
-  "0x08087F4E": {
-    "canonical_name": "Animal_Routine_08087F4E",
-    "original_name": "SUB_08087f4e",
-    "address_hex": "0x08087F4E",
-    "file": "external_subsystem"
-  },
-  "0x080880D6": {
-    "canonical_name": "Animal_Routine_080880D6",
-    "original_name": "SUB_080880d6",
-    "address_hex": "0x080880D6",
-    "file": "external_subsystem"
-  },
   "0x0808814C": {
     "canonical_name": "Animal_Routine_0808814C",
-    "original_name": "func_0x0808814c",
+    "original_name": "SUB_0808814c",
     "address_hex": "0x0808814C",
-    "file": "external_subsystem"
-  },
-  "0x08088156": {
-    "canonical_name": "Animal_Routine_08088156",
-    "original_name": "SUB_08088156",
-    "address_hex": "0x08088156",
     "file": "external_subsystem"
   },
   "0x08088168": {
@@ -11735,33 +10217,9 @@
     "address_hex": "0x08088BA0",
     "file": "entities/animals.c"
   },
-  "0x080895C2": {
-    "canonical_name": "Animal_Routine_080895C2",
-    "original_name": "SUB_080895c2",
-    "address_hex": "0x080895C2",
-    "file": "external_subsystem"
-  },
-  "0x080895E0": {
-    "canonical_name": "Animal_Routine_080895E0",
-    "original_name": "SUB_080895e0",
-    "address_hex": "0x080895E0",
-    "file": "external_subsystem"
-  },
-  "0x08089620": {
-    "canonical_name": "Animal_Routine_08089620",
-    "original_name": "SUB_08089620",
-    "address_hex": "0x08089620",
-    "file": "external_subsystem"
-  },
-  "0x08089A0C": {
-    "canonical_name": "Animal_Routine_08089A0C",
-    "original_name": "SUB_08089a0c",
-    "address_hex": "0x08089A0C",
-    "file": "external_subsystem"
-  },
   "0x08089AC0": {
     "canonical_name": "Animal_Routine_08089AC0",
-    "original_name": "func_0x08089ac0",
+    "original_name": "SUB_08089ac0",
     "address_hex": "0x08089AC0",
     "file": "external_subsystem"
   },
@@ -11812,12 +10270,6 @@
     "original_name": "Animal_Routine_0808B16C",
     "address_hex": "0x0808B16C",
     "file": "entities/animals.c"
-  },
-  "0x0808BA4A": {
-    "canonical_name": "Animal_Routine_0808BA4A",
-    "original_name": "SUB_0808ba4a",
-    "address_hex": "0x0808BA4A",
-    "file": "external_subsystem"
   },
   "0x0808BC14": {
     "canonical_name": "Animal_Routine_0808BC14",
@@ -11909,36 +10361,6 @@
     "address_hex": "0x0808CEC4",
     "file": "entities/animals.c"
   },
-  "0x0808D83C": {
-    "canonical_name": "Animal_Routine_0808D83C",
-    "original_name": "SUB_0808d83c",
-    "address_hex": "0x0808D83C",
-    "file": "external_subsystem"
-  },
-  "0x0808D8A2": {
-    "canonical_name": "Animal_Routine_0808D8A2",
-    "original_name": "SUB_0808d8a2",
-    "address_hex": "0x0808D8A2",
-    "file": "external_subsystem"
-  },
-  "0x0808D8EC": {
-    "canonical_name": "Animal_Routine_0808D8EC",
-    "original_name": "SUB_0808d8ec",
-    "address_hex": "0x0808D8EC",
-    "file": "external_subsystem"
-  },
-  "0x0808DC7A": {
-    "canonical_name": "Animal_Routine_0808DC7A",
-    "original_name": "SUB_0808dc7a",
-    "address_hex": "0x0808DC7A",
-    "file": "external_subsystem"
-  },
-  "0x0808DD3A": {
-    "canonical_name": "Animal_Routine_0808DD3A",
-    "original_name": "SUB_0808dd3a",
-    "address_hex": "0x0808DD3A",
-    "file": "external_subsystem"
-  },
   "0x0808DD54": {
     "canonical_name": "Animal_Routine_0808DD54",
     "original_name": "Animal_Routine_0808DD54",
@@ -12023,24 +10445,6 @@
     "address_hex": "0x0808F784",
     "file": "entities/animals.c"
   },
-  "0x080907D6": {
-    "canonical_name": "Animal_Routine_080907D6",
-    "original_name": "SUB_080907d6",
-    "address_hex": "0x080907D6",
-    "file": "external_subsystem"
-  },
-  "0x080908B0": {
-    "canonical_name": "Animal_Routine_080908B0",
-    "original_name": "SUB_080908b0",
-    "address_hex": "0x080908B0",
-    "file": "external_subsystem"
-  },
-  "0x080908CC": {
-    "canonical_name": "Animal_Routine_080908CC",
-    "original_name": "func_0x080908cc",
-    "address_hex": "0x080908CC",
-    "file": "external_subsystem"
-  },
   "0x08090960": {
     "canonical_name": "Animal_Routine_08090960",
     "original_name": "Animal_Routine_08090960",
@@ -12112,18 +10516,6 @@
     "original_name": "Animal_Routine_0809152C",
     "address_hex": "0x0809152C",
     "file": "entities/animals.c"
-  },
-  "0x0809178A": {
-    "canonical_name": "Animal_Routine_0809178A",
-    "original_name": "SUB_0809178a",
-    "address_hex": "0x0809178A",
-    "file": "external_subsystem"
-  },
-  "0x080924F4": {
-    "canonical_name": "Animal_Routine_080924F4",
-    "original_name": "SUB_080924f4",
-    "address_hex": "0x080924F4",
-    "file": "external_subsystem"
   },
   "0x08092570": {
     "canonical_name": "Animal_Routine_08092570",
@@ -12214,18 +10606,6 @@
     "original_name": "Animal_Routine_08093A88",
     "address_hex": "0x08093A88",
     "file": "entities/animals.c"
-  },
-  "0x08093AC8": {
-    "canonical_name": "Animal_Routine_08093AC8",
-    "original_name": "func_0x08093ac8",
-    "address_hex": "0x08093AC8",
-    "file": "external_subsystem"
-  },
-  "0x08093AD4": {
-    "canonical_name": "Animal_Routine_08093AD4",
-    "original_name": "func_0x08093ad4",
-    "address_hex": "0x08093AD4",
-    "file": "external_subsystem"
   },
   "0x08093B18": {
     "canonical_name": "Animal_Routine_08093B18",
@@ -12419,54 +10799,6 @@
     "address_hex": "0x08094844",
     "file": "entities/animals.c"
   },
-  "0x080948E0": {
-    "canonical_name": "Animal_Routine_080948E0",
-    "original_name": "func_0x080948e0",
-    "address_hex": "0x080948E0",
-    "file": "external_subsystem"
-  },
-  "0x080948EC": {
-    "canonical_name": "Animal_Routine_080948EC",
-    "original_name": "func_0x080948ec",
-    "address_hex": "0x080948EC",
-    "file": "external_subsystem"
-  },
-  "0x080948FC": {
-    "canonical_name": "Animal_Routine_080948FC",
-    "original_name": "func_0x080948fc",
-    "address_hex": "0x080948FC",
-    "file": "external_subsystem"
-  },
-  "0x08094900": {
-    "canonical_name": "Animal_Routine_08094900",
-    "original_name": "func_0x08094900",
-    "address_hex": "0x08094900",
-    "file": "external_subsystem"
-  },
-  "0x08094904": {
-    "canonical_name": "Animal_Routine_08094904",
-    "original_name": "func_0x08094904",
-    "address_hex": "0x08094904",
-    "file": "external_subsystem"
-  },
-  "0x08094908": {
-    "canonical_name": "Animal_Routine_08094908",
-    "original_name": "func_0x08094908",
-    "address_hex": "0x08094908",
-    "file": "external_subsystem"
-  },
-  "0x0809490C": {
-    "canonical_name": "Animal_Routine_0809490C",
-    "original_name": "func_0x0809490c",
-    "address_hex": "0x0809490C",
-    "file": "external_subsystem"
-  },
-  "0x08094910": {
-    "canonical_name": "Animal_Routine_08094910",
-    "original_name": "func_0x08094910",
-    "address_hex": "0x08094910",
-    "file": "external_subsystem"
-  },
   "0x08094914": {
     "canonical_name": "Animal_Routine_08094914",
     "original_name": "Animal_Routine_08094914",
@@ -12502,12 +10834,6 @@
     "original_name": "Animal_Routine_0809495C",
     "address_hex": "0x0809495C",
     "file": "entities/animals.c"
-  },
-  "0x0809496C": {
-    "canonical_name": "Animal_Routine_0809496C",
-    "original_name": "func_0x0809496c",
-    "address_hex": "0x0809496C",
-    "file": "external_subsystem"
   },
   "0x08094974": {
     "canonical_name": "Animal_Routine_08094974",
@@ -12563,18 +10889,6 @@
     "address_hex": "0x080958C0",
     "file": "entities/animals.c"
   },
-  "0x08095D80": {
-    "canonical_name": "Animal_Routine_08095D80",
-    "original_name": "func_0x08095d80",
-    "address_hex": "0x08095D80",
-    "file": "external_subsystem"
-  },
-  "0x080962F0": {
-    "canonical_name": "Animal_Routine_080962F0",
-    "original_name": "func_0x080962f0",
-    "address_hex": "0x080962F0",
-    "file": "external_subsystem"
-  },
   "0x08096B88": {
     "canonical_name": "Animal_Routine_08096B88",
     "original_name": "Animal_Routine_08096B88",
@@ -12604,12 +10918,6 @@
     "original_name": "Animal_Routine_080972AC",
     "address_hex": "0x080972AC",
     "file": "entities/animals.c"
-  },
-  "0x080975F4": {
-    "canonical_name": "Animal_Routine_080975F4",
-    "original_name": "func_0x080975f4",
-    "address_hex": "0x080975F4",
-    "file": "external_subsystem"
   },
   "0x080977A0": {
     "canonical_name": "Animal_Routine_080977A0",
@@ -12810,22 +11118,16 @@
     "file": "entities/animals.c"
   },
   "0x0809B104": {
-    "canonical_name": "Animal_Routine_0809B104",
-    "original_name": "Animal_Routine_0809B104",
+    "canonical_name": "Actor_CopyLocation",
+    "original_name": "Actor_CopyLocation",
     "address_hex": "0x0809B104",
     "file": "entities/animals.c"
   },
   "0x0809B114": {
-    "canonical_name": "Animal_Routine_0809B114",
-    "original_name": "Animal_Routine_0809B114",
+    "canonical_name": "Actor_CopyLocation2",
+    "original_name": "Actor_CopyLocation2",
     "address_hex": "0x0809B114",
     "file": "entities/animals.c"
-  },
-  "0x0809B124": {
-    "canonical_name": "Animal_Routine_0809B124",
-    "original_name": "func_0x0809b124",
-    "address_hex": "0x0809B124",
-    "file": "external_subsystem"
   },
   "0x0809B12C": {
     "canonical_name": "Animal_Routine_0809B12C",
@@ -12834,8 +11136,8 @@
     "file": "entities/animals.c"
   },
   "0x0809B1A4": {
-    "canonical_name": "Animal_Routine_0809B1A4",
-    "original_name": "Animal_Routine_0809B1A4",
+    "canonical_name": "Actor_ClearLocation",
+    "original_name": "Actor_ClearLocation",
     "address_hex": "0x0809B1A4",
     "file": "entities/animals.c"
   },
@@ -12845,123 +11147,69 @@
     "address_hex": "0x0809B1F4",
     "file": "entities/animals.c"
   },
-  "0x0809B218": {
-    "canonical_name": "Animal_Routine_0809B218",
-    "original_name": "func_0x0809b218",
-    "address_hex": "0x0809B218",
-    "file": "external_subsystem"
-  },
-  "0x0809B220": {
-    "canonical_name": "Animal_Routine_0809B220",
-    "original_name": "func_0x0809b220",
-    "address_hex": "0x0809B220",
-    "file": "external_subsystem"
-  },
-  "0x0809B228": {
-    "canonical_name": "Animal_Routine_0809B228",
-    "original_name": "func_0x0809b228",
-    "address_hex": "0x0809B228",
-    "file": "external_subsystem"
-  },
-  "0x0809B230": {
-    "canonical_name": "Animal_Routine_0809B230",
-    "original_name": "func_0x0809b230",
-    "address_hex": "0x0809B230",
-    "file": "external_subsystem"
-  },
-  "0x0809B238": {
-    "canonical_name": "Animal_Routine_0809B238",
-    "original_name": "func_0x0809b238",
-    "address_hex": "0x0809B238",
-    "file": "external_subsystem"
-  },
   "0x0809B240": {
-    "canonical_name": "Animal_Routine_0809B240",
-    "original_name": "Animal_Routine_0809B240",
+    "canonical_name": "NPC_SetName",
+    "original_name": "NPC_SetName",
     "address_hex": "0x0809B240",
     "file": "entities/animals.c"
   },
-  "0x0809B26C": {
-    "canonical_name": "Animal_Routine_0809B26C",
-    "original_name": "func_0x0809b26c",
-    "address_hex": "0x0809B26C",
-    "file": "external_subsystem"
-  },
   "0x0809B278": {
-    "canonical_name": "Animal_Routine_0809B278",
-    "original_name": "Animal_Routine_0809B278",
+    "canonical_name": "NPC_SetTalkedToday",
+    "original_name": "NPC_SetTalkedToday",
     "address_hex": "0x0809B278",
     "file": "entities/animals.c"
   },
   "0x0809B290": {
-    "canonical_name": "Animal_Routine_0809B290",
-    "original_name": "Animal_Routine_0809B290",
+    "canonical_name": "NPC_SetGiftGivenToday",
+    "original_name": "NPC_SetGiftGivenToday",
     "address_hex": "0x0809B290",
     "file": "entities/animals.c"
   },
   "0x0809B2A8": {
-    "canonical_name": "Animal_Routine_0809B2A8",
-    "original_name": "Animal_Routine_0809B2A8",
+    "canonical_name": "NPC_AddFriendship",
+    "original_name": "NPC_AddFriendship",
     "address_hex": "0x0809B2A8",
     "file": "entities/animals.c"
   },
   "0x0809B2DC": {
-    "canonical_name": "Animal_Routine_0809B2DC",
-    "original_name": "Animal_Routine_0809B2DC",
+    "canonical_name": "NPC_ReduceFriendship",
+    "original_name": "NPC_ReduceFriendship",
     "address_hex": "0x0809B2DC",
     "file": "entities/animals.c"
   },
   "0x0809B2E8": {
-    "canonical_name": "Animal_Routine_0809B2E8",
-    "original_name": "Animal_Routine_0809B2E8",
+    "canonical_name": "NPC_DailyUpdate",
+    "original_name": "NPC_DailyUpdate",
     "address_hex": "0x0809B2E8",
     "file": "entities/animals.c"
   },
   "0x0809B32C": {
-    "canonical_name": "Animal_Routine_0809B32C",
-    "original_name": "Animal_Routine_0809B32C",
+    "canonical_name": "NPC_ResetLocation",
+    "original_name": "NPC_ResetLocation",
     "address_hex": "0x0809B32C",
     "file": "entities/animals.c"
   },
   "0x0809B350": {
-    "canonical_name": "Animal_Routine_0809B350",
-    "original_name": "Animal_Routine_0809B350",
+    "canonical_name": "NPC_ResetLocation2",
+    "original_name": "NPC_ResetLocation2",
     "address_hex": "0x0809B350",
     "file": "entities/animals.c"
   },
-  "0x0809B374": {
-    "canonical_name": "Animal_Routine_0809B374",
-    "original_name": "func_0x0809b374",
-    "address_hex": "0x0809B374",
-    "file": "external_subsystem"
-  },
   "0x0809B388": {
-    "canonical_name": "Animal_Routine_0809B388",
-    "original_name": "Animal_Routine_0809B388",
+    "canonical_name": "NPC_AddAffection",
+    "original_name": "NPC_AddAffection",
     "address_hex": "0x0809B388",
     "file": "entities/animals.c"
   },
   "0x0809B3A4": {
-    "canonical_name": "Animal_Routine_0809B3A4",
-    "original_name": "Animal_Routine_0809B3A4",
+    "canonical_name": "NPC_ReduceAffection",
+    "original_name": "NPC_ReduceAffection",
     "address_hex": "0x0809B3A4",
     "file": "entities/animals.c"
   },
-  "0x0809B3B0": {
-    "canonical_name": "Animal_Routine_0809B3B0",
-    "original_name": "func_0x0809b3b0",
-    "address_hex": "0x0809B3B0",
-    "file": "external_subsystem"
-  },
-  "0x0809B3BC": {
-    "canonical_name": "Animal_Routine_0809B3BC",
-    "original_name": "func_0x0809b3bc",
-    "address_hex": "0x0809B3BC",
-    "file": "external_subsystem"
-  },
   "0x0809B3C8": {
-    "canonical_name": "Animal_Routine_0809B3C8",
-    "original_name": "Animal_Routine_0809B3C8",
+    "canonical_name": "NPC_DailyAffectionDecay",
+    "original_name": "NPC_DailyAffectionDecay",
     "address_hex": "0x0809B3C8",
     "file": "entities/animals.c"
   },
@@ -12977,48 +11225,6 @@
     "address_hex": "0x0809B4A4",
     "file": "entities/animals.c"
   },
-  "0x0809B4F4": {
-    "canonical_name": "Animal_Routine_0809B4F4",
-    "original_name": "func_0x0809b4f4",
-    "address_hex": "0x0809B4F4",
-    "file": "external_subsystem"
-  },
-  "0x0809B4FC": {
-    "canonical_name": "Animal_Routine_0809B4FC",
-    "original_name": "func_0x0809b4fc",
-    "address_hex": "0x0809B4FC",
-    "file": "external_subsystem"
-  },
-  "0x0809B504": {
-    "canonical_name": "Animal_Routine_0809B504",
-    "original_name": "func_0x0809b504",
-    "address_hex": "0x0809B504",
-    "file": "external_subsystem"
-  },
-  "0x0809B50C": {
-    "canonical_name": "Animal_Routine_0809B50C",
-    "original_name": "func_0x0809b50c",
-    "address_hex": "0x0809B50C",
-    "file": "external_subsystem"
-  },
-  "0x0809B514": {
-    "canonical_name": "Animal_Routine_0809B514",
-    "original_name": "func_0x0809b514",
-    "address_hex": "0x0809B514",
-    "file": "external_subsystem"
-  },
-  "0x0809B51C": {
-    "canonical_name": "Animal_Routine_0809B51C",
-    "original_name": "func_0x0809b51c",
-    "address_hex": "0x0809B51C",
-    "file": "external_subsystem"
-  },
-  "0x0809B524": {
-    "canonical_name": "Animal_Routine_0809B524",
-    "original_name": "func_0x0809b524",
-    "address_hex": "0x0809B524",
-    "file": "external_subsystem"
-  },
   "0x0809B538": {
     "canonical_name": "Animal_Routine_0809B538",
     "original_name": "Animal_Routine_0809B538",
@@ -13031,33 +11237,9 @@
     "address_hex": "0x0809B57C",
     "file": "entities/animals.c"
   },
-  "0x0809B608": {
-    "canonical_name": "Animal_Routine_0809B608",
-    "original_name": "func_0x0809b608",
-    "address_hex": "0x0809B608",
-    "file": "external_subsystem"
-  },
-  "0x0809B624": {
-    "canonical_name": "Animal_Routine_0809B624",
-    "original_name": "func_0x0809b624",
-    "address_hex": "0x0809B624",
-    "file": "external_subsystem"
-  },
-  "0x0809B638": {
-    "canonical_name": "Animal_Routine_0809B638",
-    "original_name": "func_0x0809b638",
-    "address_hex": "0x0809B638",
-    "file": "external_subsystem"
-  },
-  "0x0809B644": {
-    "canonical_name": "Animal_Routine_0809B644",
-    "original_name": "func_0x0809b644",
-    "address_hex": "0x0809B644",
-    "file": "external_subsystem"
-  },
   "0x0809B65C": {
-    "canonical_name": "Animal_Routine_0809B65C",
-    "original_name": "Animal_Routine_0809B65C",
+    "canonical_name": "NPC_SetHeartEventFlag",
+    "original_name": "NPC_SetHeartEventFlag",
     "address_hex": "0x0809B65C",
     "file": "entities/animals.c"
   },
@@ -13068,22 +11250,16 @@
     "file": "entities/animals.c"
   },
   "0x0809B828": {
-    "canonical_name": "Animal_Routine_0809B828",
-    "original_name": "Animal_Routine_0809B828",
+    "canonical_name": "NPC_ClearDailyFlags",
+    "original_name": "NPC_ClearDailyFlags",
     "address_hex": "0x0809B828",
     "file": "entities/animals.c"
   },
   "0x0809B870": {
-    "canonical_name": "Animal_Routine_0809B870",
-    "original_name": "Animal_Routine_0809B870",
+    "canonical_name": "NPC_ClearDailyFlags2",
+    "original_name": "NPC_ClearDailyFlags2",
     "address_hex": "0x0809B870",
     "file": "entities/animals.c"
-  },
-  "0x0809B8B0": {
-    "canonical_name": "Animal_Routine_0809B8B0",
-    "original_name": "func_0x0809b8b0",
-    "address_hex": "0x0809B8B0",
-    "file": "external_subsystem"
   },
   "0x0809B8BC": {
     "canonical_name": "Animal_Routine_0809B8BC",
@@ -13103,57 +11279,21 @@
     "address_hex": "0x0809B8F0",
     "file": "entities/animals.c"
   },
-  "0x0809B8FC": {
-    "canonical_name": "Animal_Routine_0809B8FC",
-    "original_name": "func_0x0809b8fc",
-    "address_hex": "0x0809B8FC",
-    "file": "external_subsystem"
-  },
-  "0x0809B91C": {
-    "canonical_name": "Animal_Routine_0809B91C",
-    "original_name": "func_0x0809b91c",
-    "address_hex": "0x0809B91C",
-    "file": "external_subsystem"
-  },
-  "0x0809B940": {
-    "canonical_name": "BarnAnimal_GetAffection",
-    "original_name": "func_0x0809b940",
-    "address_hex": "0x0809B940",
-    "file": "external_subsystem"
-  },
-  "0x0809B94C": {
-    "canonical_name": "BarnAnimal_SetAffection",
-    "original_name": "func_0x0809b94c",
-    "address_hex": "0x0809B94C",
-    "file": "external_subsystem"
-  },
-  "0x0809B958": {
-    "canonical_name": "BarnAnimal_IsSick",
-    "original_name": "func_0x0809b958",
-    "address_hex": "0x0809B958",
-    "file": "external_subsystem"
-  },
-  "0x0809B968": {
-    "canonical_name": "BarnAnimal_SetSick",
-    "original_name": "func_0x0809b968",
-    "address_hex": "0x0809B968",
-    "file": "external_subsystem"
-  },
   "0x0809B970": {
-    "canonical_name": "Animal_Routine_0809B970",
-    "original_name": "Animal_Routine_0809B970",
+    "canonical_name": "NPC_SetScheduleFlags",
+    "original_name": "NPC_SetScheduleFlags",
     "address_hex": "0x0809B970",
     "file": "entities/animals.c"
   },
   "0x0809B9D4": {
-    "canonical_name": "Animal_Routine_0809B9D4",
-    "original_name": "Animal_Routine_0809B9D4",
+    "canonical_name": "NPC_InitScheduleWaypoint",
+    "original_name": "NPC_InitScheduleWaypoint",
     "address_hex": "0x0809B9D4",
     "file": "entities/animals.c"
   },
   "0x0809BA8C": {
-    "canonical_name": "Animal_Routine_0809BA8C",
-    "original_name": "Animal_Routine_0809BA8C",
+    "canonical_name": "NPC_UpdateScheduleWaypoint",
+    "original_name": "NPC_UpdateScheduleWaypoint",
     "address_hex": "0x0809BA8C",
     "file": "entities/animals.c"
   },
@@ -13162,48 +11302,6 @@
     "original_name": "Animal_Routine_0809BB34",
     "address_hex": "0x0809BB34",
     "file": "entities/animals.c"
-  },
-  "0x0809BB48": {
-    "canonical_name": "Animal_Routine_0809BB48",
-    "original_name": "func_0x0809bb48",
-    "address_hex": "0x0809BB48",
-    "file": "external_subsystem"
-  },
-  "0x0809BB54": {
-    "canonical_name": "Animal_Routine_0809BB54",
-    "original_name": "func_0x0809bb54",
-    "address_hex": "0x0809BB54",
-    "file": "external_subsystem"
-  },
-  "0x0809BB64": {
-    "canonical_name": "Animal_Routine_0809BB64",
-    "original_name": "func_0x0809bb64",
-    "address_hex": "0x0809BB64",
-    "file": "external_subsystem"
-  },
-  "0x0809BB70": {
-    "canonical_name": "Animal_Routine_0809BB70",
-    "original_name": "func_0x0809bb70",
-    "address_hex": "0x0809BB70",
-    "file": "external_subsystem"
-  },
-  "0x0809BB80": {
-    "canonical_name": "Animal_Routine_0809BB80",
-    "original_name": "func_0x0809bb80",
-    "address_hex": "0x0809BB80",
-    "file": "external_subsystem"
-  },
-  "0x0809BB8C": {
-    "canonical_name": "Animal_Routine_0809BB8C",
-    "original_name": "func_0x0809bb8c",
-    "address_hex": "0x0809BB8C",
-    "file": "external_subsystem"
-  },
-  "0x0809BB9C": {
-    "canonical_name": "Animal_Routine_0809BB9C",
-    "original_name": "func_0x0809bb9c",
-    "address_hex": "0x0809BB9C",
-    "file": "external_subsystem"
   },
   "0x0809BBA8": {
     "canonical_name": "Animal_Routine_0809BBA8",
@@ -13228,24 +11326,6 @@
     "original_name": "Animal_Routine_0809BC10",
     "address_hex": "0x0809BC10",
     "file": "entities/animals.c"
-  },
-  "0x0809BC24": {
-    "canonical_name": "Animal_Routine_0809BC24",
-    "original_name": "func_0x0809bc24",
-    "address_hex": "0x0809BC24",
-    "file": "external_subsystem"
-  },
-  "0x0809BC30": {
-    "canonical_name": "Animal_Routine_0809BC30",
-    "original_name": "func_0x0809bc30",
-    "address_hex": "0x0809BC30",
-    "file": "external_subsystem"
-  },
-  "0x0809BC40": {
-    "canonical_name": "Animal_Routine_0809BC40",
-    "original_name": "func_0x0809bc40",
-    "address_hex": "0x0809BC40",
-    "file": "external_subsystem"
   },
   "0x0809BC48": {
     "canonical_name": "Animal_Routine_0809BC48",
@@ -13288,18 +11368,6 @@
     "original_name": "Animal_Routine_0809BCFC",
     "address_hex": "0x0809BCFC",
     "file": "entities/animals.c"
-  },
-  "0x0809BD20": {
-    "canonical_name": "Chicken_IsFedToday",
-    "original_name": "func_0x0809bd20",
-    "address_hex": "0x0809BD20",
-    "file": "external_subsystem"
-  },
-  "0x0809BD2C": {
-    "canonical_name": "Chicken_SetFedToday",
-    "original_name": "func_0x0809bd2c",
-    "address_hex": "0x0809BD2C",
-    "file": "external_subsystem"
   },
   "0x0809BD38": {
     "canonical_name": "Animal_Routine_0809BD38",
@@ -13403,63 +11471,27 @@
     "address_hex": "0x0809BFE8",
     "file": "entities/npc.c"
   },
-  "0x0809C060": {
-    "canonical_name": "NPC_Routine_0809C060",
-    "original_name": "func_0x0809c060",
-    "address_hex": "0x0809C060",
-    "file": "external_subsystem"
-  },
   "0x0809C068": {
-    "canonical_name": "NPC_Routine_0809C068",
-    "original_name": "NPC_Routine_0809C068",
+    "canonical_name": "NPC_ReduceMood",
+    "original_name": "NPC_ReduceMood",
     "address_hex": "0x0809C068",
     "file": "entities/npc.c"
   },
-  "0x0809C098": {
-    "canonical_name": "NPC_Routine_0809C098",
-    "original_name": "func_0x0809c098",
-    "address_hex": "0x0809C098",
-    "file": "external_subsystem"
-  },
-  "0x0809C0A0": {
-    "canonical_name": "NPC_Routine_0809C0A0",
-    "original_name": "func_0x0809c0a0",
-    "address_hex": "0x0809C0A0",
-    "file": "external_subsystem"
-  },
-  "0x0809C0AC": {
-    "canonical_name": "NPC_Routine_0809C0AC",
-    "original_name": "func_0x0809c0ac",
-    "address_hex": "0x0809C0AC",
-    "file": "external_subsystem"
-  },
-  "0x0809C0BC": {
-    "canonical_name": "NPC_Routine_0809C0BC",
-    "original_name": "func_0x0809c0bc",
-    "address_hex": "0x0809C0BC",
-    "file": "external_subsystem"
-  },
-  "0x0809C0C8": {
-    "canonical_name": "NPC_Routine_0809C0C8",
-    "original_name": "func_0x0809c0c8",
-    "address_hex": "0x0809C0C8",
-    "file": "external_subsystem"
-  },
   "0x0809C0D4": {
-    "canonical_name": "NPC_Routine_0809C0D4",
-    "original_name": "NPC_Routine_0809C0D4",
+    "canonical_name": "NPC_ResetScheduleWaypoint",
+    "original_name": "NPC_ResetScheduleWaypoint",
     "address_hex": "0x0809C0D4",
     "file": "entities/npc.c"
   },
   "0x0809C144": {
-    "canonical_name": "NPC_Routine_0809C144",
-    "original_name": "NPC_Routine_0809C144",
+    "canonical_name": "NPC_ClearWaypoints",
+    "original_name": "NPC_ClearWaypoints",
     "address_hex": "0x0809C144",
     "file": "entities/npc.c"
   },
   "0x0809C160": {
-    "canonical_name": "NPC_Routine_0809C160",
-    "original_name": "NPC_Routine_0809C160",
+    "canonical_name": "NPC_EvaluateGiftReaction",
+    "original_name": "NPC_EvaluateGiftReaction",
     "address_hex": "0x0809C160",
     "file": "entities/npc.c"
   },
@@ -13470,110 +11502,98 @@
     "file": "entities/npc.c"
   },
   "0x0809C304": {
-    "canonical_name": "NPC_Routine_0809C304",
-    "original_name": "NPC_Routine_0809C304",
+    "canonical_name": "NPC_IsCurrentTaskActive",
+    "original_name": "NPC_IsCurrentTaskActive",
     "address_hex": "0x0809C304",
     "file": "entities/npc.c"
   },
   "0x0809C318": {
-    "canonical_name": "NPC_Routine_0809C318",
-    "original_name": "NPC_Routine_0809C318",
+    "canonical_name": "NPC_IsCurrentTaskCompleted",
+    "original_name": "NPC_IsCurrentTaskCompleted",
     "address_hex": "0x0809C318",
     "file": "entities/npc.c"
   },
   "0x0809C32C": {
-    "canonical_name": "NPC_Routine_0809C32C",
-    "original_name": "NPC_Routine_0809C32C",
+    "canonical_name": "NPC_AreAllTasksCompleted",
+    "original_name": "NPC_AreAllTasksCompleted",
     "address_hex": "0x0809C32C",
     "file": "entities/npc.c"
   },
   "0x0809C38C": {
-    "canonical_name": "NPC_Routine_0809C38C",
-    "original_name": "NPC_Routine_0809C38C",
+    "canonical_name": "NPC_AreAllTasksActive",
+    "original_name": "NPC_AreAllTasksActive",
     "address_hex": "0x0809C38C",
     "file": "entities/npc.c"
   },
   "0x0809C3BC": {
-    "canonical_name": "NPC_Routine_0809C3BC",
-    "original_name": "NPC_Routine_0809C3BC",
+    "canonical_name": "NPC_StartCurrentTask",
+    "original_name": "NPC_StartCurrentTask",
     "address_hex": "0x0809C3BC",
     "file": "entities/npc.c"
   },
   "0x0809C3E0": {
-    "canonical_name": "NPC_Routine_0809C3E0",
-    "original_name": "NPC_Routine_0809C3E0",
+    "canonical_name": "NPC_UpdateTaskTimer",
+    "original_name": "NPC_UpdateTaskTimer",
     "address_hex": "0x0809C3E0",
     "file": "entities/npc.c"
   },
   "0x0809C420": {
-    "canonical_name": "NPC_Routine_0809C420",
-    "original_name": "NPC_Routine_0809C420",
+    "canonical_name": "NPC_ResetTaskTimer",
+    "original_name": "NPC_ResetTaskTimer",
     "address_hex": "0x0809C420",
     "file": "entities/npc.c"
   },
   "0x0809C444": {
-    "canonical_name": "NPC_Routine_0809C444",
-    "original_name": "NPC_Routine_0809C444",
+    "canonical_name": "NPC_CheckTaskStatus",
+    "original_name": "NPC_CheckTaskStatus",
     "address_hex": "0x0809C444",
     "file": "entities/npc.c"
   },
   "0x0809C474": {
-    "canonical_name": "NPC_Routine_0809C474",
-    "original_name": "NPC_Routine_0809C474",
+    "canonical_name": "NPC_StepTaskState",
+    "original_name": "NPC_StepTaskState",
     "address_hex": "0x0809C474",
     "file": "entities/npc.c"
   },
   "0x0809C4B4": {
-    "canonical_name": "NPC_Routine_0809C4B4",
-    "original_name": "NPC_Routine_0809C4B4",
+    "canonical_name": "NPC_CompleteTaskState",
+    "original_name": "NPC_CompleteTaskState",
     "address_hex": "0x0809C4B4",
     "file": "entities/npc.c"
   },
-  "0x0809C4E4": {
-    "canonical_name": "NPC_Routine_0809C4E4",
-    "original_name": "func_0x0809c4e4",
-    "address_hex": "0x0809C4E4",
-    "file": "external_subsystem"
-  },
   "0x0809C4EC": {
-    "canonical_name": "NPC_Routine_0809C4EC",
-    "original_name": "NPC_Routine_0809C4EC",
+    "canonical_name": "NPC_CheckEventFlag",
+    "original_name": "NPC_CheckEventFlag",
     "address_hex": "0x0809C4EC",
     "file": "entities/npc.c"
   },
   "0x0809C510": {
-    "canonical_name": "NPC_Routine_0809C510",
-    "original_name": "NPC_Routine_0809C510",
+    "canonical_name": "NPC_GetEventWaypoint",
+    "original_name": "NPC_GetEventWaypoint",
     "address_hex": "0x0809C510",
     "file": "entities/npc.c"
   },
   "0x0809C5B4": {
-    "canonical_name": "NPC_Routine_0809C5B4",
-    "original_name": "NPC_Routine_0809C5B4",
+    "canonical_name": "NPC_SetEventFlag",
+    "original_name": "NPC_SetEventFlag",
     "address_hex": "0x0809C5B4",
     "file": "entities/npc.c"
   },
   "0x0809C5D0": {
-    "canonical_name": "NPC_Routine_0809C5D0",
-    "original_name": "NPC_Routine_0809C5D0",
+    "canonical_name": "NPC_ClearEventFlag",
+    "original_name": "NPC_ClearEventFlag",
     "address_hex": "0x0809C5D0",
     "file": "entities/npc.c"
   },
-  "0x0809C5F4": {
-    "canonical_name": "NPC_Routine_0809C5F4",
-    "original_name": "func_0x0809c5f4",
-    "address_hex": "0x0809C5F4",
-    "file": "external_subsystem"
-  },
   "0x0809C600": {
-    "canonical_name": "NPC_Routine_0809C600",
-    "original_name": "NPC_Routine_0809C600",
+    "canonical_name": "NPC_EventQueue_Push",
+    "original_name": "NPC_EventQueue_Push",
     "address_hex": "0x0809C600",
     "file": "entities/npc.c"
   },
   "0x0809C644": {
-    "canonical_name": "NPC_Routine_0809C644",
-    "original_name": "NPC_Routine_0809C644",
+    "canonical_name": "NPC_EventQueue_Remove",
+    "original_name": "NPC_EventQueue_Remove",
     "address_hex": "0x0809C644",
     "file": "entities/npc.c"
   },
@@ -13583,21 +11603,9 @@
     "address_hex": "0x0809C694",
     "file": "entities/npc.c"
   },
-  "0x0809C6AC": {
-    "canonical_name": "NPC_Routine_0809C6AC",
-    "original_name": "func_0x0809c6ac",
-    "address_hex": "0x0809C6AC",
-    "file": "external_subsystem"
-  },
-  "0x0809C6B0": {
-    "canonical_name": "NPC_Routine_0809C6B0",
-    "original_name": "func_0x0809c6b0",
-    "address_hex": "0x0809C6B0",
-    "file": "external_subsystem"
-  },
   "0x0809C6BC": {
-    "canonical_name": "NPC_Routine_0809C6BC",
-    "original_name": "NPC_Routine_0809C6BC",
+    "canonical_name": "NPC_ResetData",
+    "original_name": "NPC_ResetData",
     "address_hex": "0x0809C6BC",
     "file": "entities/npc.c"
   },
@@ -13608,50 +11616,32 @@
     "file": "entities/npc.c"
   },
   "0x0809CD98": {
-    "canonical_name": "NPC_Routine_0809CD98",
-    "original_name": "NPC_Routine_0809CD98",
+    "canonical_name": "Shipping_RecordShippedItemCount",
+    "original_name": "Shipping_RecordShippedItemCount",
     "address_hex": "0x0809CD98",
     "file": "entities/npc.c"
   },
   "0x0809CDCC": {
-    "canonical_name": "NPC_Routine_0809CDCC",
-    "original_name": "NPC_Routine_0809CDCC",
+    "canonical_name": "Shipping_AreAllCropsShipped",
+    "original_name": "Shipping_AreAllCropsShipped",
     "address_hex": "0x0809CDCC",
     "file": "entities/npc.c"
   },
   "0x0809CDEC": {
-    "canonical_name": "NPC_Routine_0809CDEC",
-    "original_name": "NPC_Routine_0809CDEC",
+    "canonical_name": "Shipping_CalculateTotalFarmShippedValue",
+    "original_name": "Shipping_CalculateTotalFarmShippedValue",
     "address_hex": "0x0809CDEC",
     "file": "entities/npc.c"
   },
-  "0x0809CE1C": {
-    "canonical_name": "NPC_Routine_0809CE1C",
-    "original_name": "func_0x0809ce1c",
-    "address_hex": "0x0809CE1C",
-    "file": "external_subsystem"
-  },
-  "0x0809CE24": {
-    "canonical_name": "NPC_Routine_0809CE24",
-    "original_name": "func_0x0809ce24",
-    "address_hex": "0x0809CE24",
-    "file": "external_subsystem"
-  },
   "0x0809CE30": {
-    "canonical_name": "NPC_Routine_0809CE30",
-    "original_name": "NPC_Routine_0809CE30",
+    "canonical_name": "Shipping_GetItemCategoryFlag",
+    "original_name": "Shipping_GetItemCategoryFlag",
     "address_hex": "0x0809CE30",
     "file": "entities/npc.c"
   },
-  "0x0809CE7C": {
-    "canonical_name": "NPC_Routine_0809CE7C",
-    "original_name": "func_0x0809ce7c",
-    "address_hex": "0x0809CE7C",
-    "file": "external_subsystem"
-  },
   "0x0809CE8C": {
-    "canonical_name": "NPC_Routine_0809CE8C",
-    "original_name": "NPC_Routine_0809CE8C",
+    "canonical_name": "Field_ClearPlotGrid",
+    "original_name": "Field_ClearPlotGrid",
     "address_hex": "0x0809CE8C",
     "file": "entities/npc.c"
   },
@@ -13697,12 +11687,6 @@
     "address_hex": "0x0809D7D8",
     "file": "entities/npc.c"
   },
-  "0x0809D8A0": {
-    "canonical_name": "NPC_Routine_0809D8A0",
-    "original_name": "func_0x0809d8a0",
-    "address_hex": "0x0809D8A0",
-    "file": "external_subsystem"
-  },
   "0x0809D8A4": {
     "canonical_name": "NPC_Routine_0809D8A4",
     "original_name": "NPC_Routine_0809D8A4",
@@ -13714,12 +11698,6 @@
     "original_name": "NPC_Routine_0809D8B8",
     "address_hex": "0x0809D8B8",
     "file": "entities/npc.c"
-  },
-  "0x0809D8D4": {
-    "canonical_name": "NPC_Routine_0809D8D4",
-    "original_name": "func_0x0809d8d4",
-    "address_hex": "0x0809D8D4",
-    "file": "external_subsystem"
   },
   "0x0809D8E8": {
     "canonical_name": "NPC_Routine_0809D8E8",
@@ -13769,30 +11747,6 @@
     "address_hex": "0x0809E118",
     "file": "entities/npc.c"
   },
-  "0x0809E174": {
-    "canonical_name": "NPC_Routine_0809E174",
-    "original_name": "func_0x0809e174",
-    "address_hex": "0x0809E174",
-    "file": "external_subsystem"
-  },
-  "0x0809E184": {
-    "canonical_name": "NPC_Routine_0809E184",
-    "original_name": "func_0x0809e184",
-    "address_hex": "0x0809E184",
-    "file": "external_subsystem"
-  },
-  "0x0809E194": {
-    "canonical_name": "NPC_Routine_0809E194",
-    "original_name": "func_0x0809e194",
-    "address_hex": "0x0809E194",
-    "file": "external_subsystem"
-  },
-  "0x0809E1A4": {
-    "canonical_name": "NPC_Routine_0809E1A4",
-    "original_name": "func_0x0809e1a4",
-    "address_hex": "0x0809E1A4",
-    "file": "external_subsystem"
-  },
   "0x0809E2D4": {
     "canonical_name": "NPC_Routine_0809E2D4",
     "original_name": "NPC_Routine_0809E2D4",
@@ -13804,30 +11758,6 @@
     "original_name": "NPC_Routine_0809E32C",
     "address_hex": "0x0809E32C",
     "file": "entities/npc.c"
-  },
-  "0x0809E33C": {
-    "canonical_name": "NPC_Routine_0809E33C",
-    "original_name": "func_0x0809e33c",
-    "address_hex": "0x0809E33C",
-    "file": "external_subsystem"
-  },
-  "0x0809E340": {
-    "canonical_name": "NPC_Routine_0809E340",
-    "original_name": "func_0x0809e340",
-    "address_hex": "0x0809E340",
-    "file": "external_subsystem"
-  },
-  "0x0809E350": {
-    "canonical_name": "NPC_Routine_0809E350",
-    "original_name": "func_0x0809e350",
-    "address_hex": "0x0809E350",
-    "file": "external_subsystem"
-  },
-  "0x0809E368": {
-    "canonical_name": "NPC_Routine_0809E368",
-    "original_name": "func_0x0809e368",
-    "address_hex": "0x0809E368",
-    "file": "external_subsystem"
   },
   "0x0809E370": {
     "canonical_name": "NPC_Routine_0809E370",
@@ -13847,12 +11777,6 @@
     "address_hex": "0x0809E39C",
     "file": "entities/npc.c"
   },
-  "0x0809E3DC": {
-    "canonical_name": "NPC_Routine_0809E3DC",
-    "original_name": "func_0x0809e3dc",
-    "address_hex": "0x0809E3DC",
-    "file": "external_subsystem"
-  },
   "0x0809E3E8": {
     "canonical_name": "NPC_Routine_0809E3E8",
     "original_name": "NPC_Routine_0809E3E8",
@@ -13864,36 +11788,6 @@
     "original_name": "NPC_Routine_0809E458",
     "address_hex": "0x0809E458",
     "file": "entities/npc.c"
-  },
-  "0x0809E498": {
-    "canonical_name": "NPC_Routine_0809E498",
-    "original_name": "func_0x0809e498",
-    "address_hex": "0x0809E498",
-    "file": "external_subsystem"
-  },
-  "0x0809E49C": {
-    "canonical_name": "NPC_Routine_0809E49C",
-    "original_name": "func_0x0809e49c",
-    "address_hex": "0x0809E49C",
-    "file": "external_subsystem"
-  },
-  "0x0809E4A4": {
-    "canonical_name": "NPC_Routine_0809E4A4",
-    "original_name": "func_0x0809e4a4",
-    "address_hex": "0x0809E4A4",
-    "file": "external_subsystem"
-  },
-  "0x0809E4AC": {
-    "canonical_name": "NPC_Routine_0809E4AC",
-    "original_name": "func_0x0809e4ac",
-    "address_hex": "0x0809E4AC",
-    "file": "external_subsystem"
-  },
-  "0x0809E4B4": {
-    "canonical_name": "NPC_Routine_0809E4B4",
-    "original_name": "func_0x0809e4b4",
-    "address_hex": "0x0809E4B4",
-    "file": "external_subsystem"
   },
   "0x0809E4C4": {
     "canonical_name": "NPC_Routine_0809E4C4",
@@ -13937,18 +11831,6 @@
     "address_hex": "0x0809E628",
     "file": "entities/npc.c"
   },
-  "0x0809E65C": {
-    "canonical_name": "NPC_Routine_0809E65C",
-    "original_name": "func_0x0809e65c",
-    "address_hex": "0x0809E65C",
-    "file": "external_subsystem"
-  },
-  "0x0809E664": {
-    "canonical_name": "NPC_Routine_0809E664",
-    "original_name": "func_0x0809e664",
-    "address_hex": "0x0809E664",
-    "file": "external_subsystem"
-  },
   "0x0809E66C": {
     "canonical_name": "NPC_Routine_0809E66C",
     "original_name": "NPC_Routine_0809E66C",
@@ -13973,12 +11855,6 @@
     "address_hex": "0x0809E6C4",
     "file": "entities/npc.c"
   },
-  "0x0809E6FC": {
-    "canonical_name": "NPC_Routine_0809E6FC",
-    "original_name": "func_0x0809e6fc",
-    "address_hex": "0x0809E6FC",
-    "file": "external_subsystem"
-  },
   "0x0809E75C": {
     "canonical_name": "NPC_Routine_0809E75C",
     "original_name": "NPC_Routine_0809E75C",
@@ -13990,42 +11866,6 @@
     "original_name": "NPC_Routine_0809E7A0",
     "address_hex": "0x0809E7A0",
     "file": "entities/npc.c"
-  },
-  "0x0809E7C8": {
-    "canonical_name": "NPC_Routine_0809E7C8",
-    "original_name": "func_0x0809e7c8",
-    "address_hex": "0x0809E7C8",
-    "file": "external_subsystem"
-  },
-  "0x0809E7D0": {
-    "canonical_name": "NPC_Routine_0809E7D0",
-    "original_name": "func_0x0809e7d0",
-    "address_hex": "0x0809E7D0",
-    "file": "external_subsystem"
-  },
-  "0x0809E7D8": {
-    "canonical_name": "NPC_Routine_0809E7D8",
-    "original_name": "func_0x0809e7d8",
-    "address_hex": "0x0809E7D8",
-    "file": "external_subsystem"
-  },
-  "0x0809E7E4": {
-    "canonical_name": "NPC_Routine_0809E7E4",
-    "original_name": "func_0x0809e7e4",
-    "address_hex": "0x0809E7E4",
-    "file": "external_subsystem"
-  },
-  "0x0809E7F0": {
-    "canonical_name": "NPC_Routine_0809E7F0",
-    "original_name": "func_0x0809e7f0",
-    "address_hex": "0x0809E7F0",
-    "file": "external_subsystem"
-  },
-  "0x0809E7FC": {
-    "canonical_name": "NPC_Routine_0809E7FC",
-    "original_name": "func_0x0809e7fc",
-    "address_hex": "0x0809E7FC",
-    "file": "external_subsystem"
   },
   "0x0809E804": {
     "canonical_name": "NPC_Routine_0809E804",
@@ -14045,12 +11885,6 @@
     "address_hex": "0x0809E968",
     "file": "entities/npc.c"
   },
-  "0x0809E988": {
-    "canonical_name": "NPC_Routine_0809E988",
-    "original_name": "func_0x0809e988",
-    "address_hex": "0x0809E988",
-    "file": "external_subsystem"
-  },
   "0x0809E994": {
     "canonical_name": "NPC_Routine_0809E994",
     "original_name": "NPC_Routine_0809E994",
@@ -14068,36 +11902,6 @@
     "original_name": "NPC_Routine_0809EA6C",
     "address_hex": "0x0809EA6C",
     "file": "entities/npc.c"
-  },
-  "0x0809EACC": {
-    "canonical_name": "NPC_Routine_0809EACC",
-    "original_name": "func_0x0809eacc",
-    "address_hex": "0x0809EACC",
-    "file": "external_subsystem"
-  },
-  "0x0809EAD0": {
-    "canonical_name": "NPC_Routine_0809EAD0",
-    "original_name": "func_0x0809ead0",
-    "address_hex": "0x0809EAD0",
-    "file": "external_subsystem"
-  },
-  "0x0809EAD8": {
-    "canonical_name": "NPC_Routine_0809EAD8",
-    "original_name": "func_0x0809ead8",
-    "address_hex": "0x0809EAD8",
-    "file": "external_subsystem"
-  },
-  "0x0809EAE0": {
-    "canonical_name": "NPC_Routine_0809EAE0",
-    "original_name": "func_0x0809eae0",
-    "address_hex": "0x0809EAE0",
-    "file": "external_subsystem"
-  },
-  "0x0809EAEC": {
-    "canonical_name": "NPC_Routine_0809EAEC",
-    "original_name": "func_0x0809eaec",
-    "address_hex": "0x0809EAEC",
-    "file": "external_subsystem"
   },
   "0x0809EAF8": {
     "canonical_name": "NPC_Routine_0809EAF8",
@@ -14117,12 +11921,6 @@
     "address_hex": "0x0809EB4C",
     "file": "entities/npc.c"
   },
-  "0x0809EB68": {
-    "canonical_name": "NPC_Routine_0809EB68",
-    "original_name": "func_0x0809eb68",
-    "address_hex": "0x0809EB68",
-    "file": "external_subsystem"
-  },
   "0x0809EB70": {
     "canonical_name": "NPC_Routine_0809EB70",
     "original_name": "NPC_Routine_0809EB70",
@@ -14134,12 +11932,6 @@
     "original_name": "NPC_Routine_0809EB8C",
     "address_hex": "0x0809EB8C",
     "file": "entities/npc.c"
-  },
-  "0x0809EBA8": {
-    "canonical_name": "NPC_Routine_0809EBA8",
-    "original_name": "func_0x0809eba8",
-    "address_hex": "0x0809EBA8",
-    "file": "external_subsystem"
   },
   "0x0809EBEC": {
     "canonical_name": "NPC_Routine_0809EBEC",
@@ -14158,12 +11950,6 @@
     "original_name": "NPC_Routine_0809EC90",
     "address_hex": "0x0809EC90",
     "file": "entities/npc.c"
-  },
-  "0x0809ECD8": {
-    "canonical_name": "NPC_Routine_0809ECD8",
-    "original_name": "func_0x0809ecd8",
-    "address_hex": "0x0809ECD8",
-    "file": "external_subsystem"
   },
   "0x0809ECE0": {
     "canonical_name": "NPC_Routine_0809ECE0",
@@ -14219,12 +12005,6 @@
     "address_hex": "0x0809EEE8",
     "file": "entities/npc.c"
   },
-  "0x0809FE74": {
-    "canonical_name": "NPC_Routine_0809FE74",
-    "original_name": "func_0x0809fe74",
-    "address_hex": "0x0809FE74",
-    "file": "external_subsystem"
-  },
   "0x080A0030": {
     "canonical_name": "NPC_Routine_080A0030",
     "original_name": "NPC_Routine_080A0030",
@@ -14254,18 +12034,6 @@
     "original_name": "NPC_Routine_080A0384",
     "address_hex": "0x080A0384",
     "file": "entities/npc.c"
-  },
-  "0x080A039C": {
-    "canonical_name": "NPC_Routine_080A039C",
-    "original_name": "func_0x080a039c",
-    "address_hex": "0x080A039C",
-    "file": "external_subsystem"
-  },
-  "0x080A03A4": {
-    "canonical_name": "NPC_Routine_080A03A4",
-    "original_name": "func_0x080a03a4",
-    "address_hex": "0x080A03A4",
-    "file": "external_subsystem"
   },
   "0x080A041C": {
     "canonical_name": "NPC_Routine_080A041C",
@@ -14302,12 +12070,6 @@
     "original_name": "NPC_Routine_080A05C4",
     "address_hex": "0x080A05C4",
     "file": "entities/npc.c"
-  },
-  "0x080A05E8": {
-    "canonical_name": "NPC_Routine_080A05E8",
-    "original_name": "func_0x080a05e8",
-    "address_hex": "0x080A05E8",
-    "file": "external_subsystem"
   },
   "0x080A06B0": {
     "canonical_name": "NPC_Routine_080A06B0",
@@ -14363,24 +12125,6 @@
     "address_hex": "0x080A0AD8",
     "file": "entities/npc.c"
   },
-  "0x080A1478": {
-    "canonical_name": "NPC_Routine_080A1478",
-    "original_name": "func_0x080a1478",
-    "address_hex": "0x080A1478",
-    "file": "external_subsystem"
-  },
-  "0x080A1480": {
-    "canonical_name": "NPC_Routine_080A1480",
-    "original_name": "func_0x080a1480",
-    "address_hex": "0x080A1480",
-    "file": "external_subsystem"
-  },
-  "0x080A1484": {
-    "canonical_name": "NPC_Routine_080A1484",
-    "original_name": "func_0x080a1484",
-    "address_hex": "0x080A1484",
-    "file": "external_subsystem"
-  },
   "0x080A17A0": {
     "canonical_name": "NPC_Routine_080A17A0",
     "original_name": "NPC_Routine_080A17A0",
@@ -14404,12 +12148,6 @@
     "original_name": "NPC_Routine_080A19EC",
     "address_hex": "0x080A19EC",
     "file": "entities/npc.c"
-  },
-  "0x080A1A48": {
-    "canonical_name": "NPC_Routine_080A1A48",
-    "original_name": "func_0x080a1a48",
-    "address_hex": "0x080A1A48",
-    "file": "external_subsystem"
   },
   "0x080A1A4C": {
     "canonical_name": "NPC_Routine_080A1A4C",
@@ -14621,18 +12359,6 @@
     "address_hex": "0x080A4650",
     "file": "entities/npc.c"
   },
-  "0x080A4698": {
-    "canonical_name": "Map_GetMapData",
-    "original_name": "func_0x080a4698",
-    "address_hex": "0x080A4698",
-    "file": "external_subsystem"
-  },
-  "0x080A46AC": {
-    "canonical_name": "NPC_Routine_080A46AC",
-    "original_name": "func_0x080a46ac",
-    "address_hex": "0x080A46AC",
-    "file": "external_subsystem"
-  },
   "0x080A4740": {
     "canonical_name": "NPC_Routine_080A4740",
     "original_name": "NPC_Routine_080A4740",
@@ -14783,12 +12509,6 @@
     "address_hex": "0x080A5F78",
     "file": "entities/npc.c"
   },
-  "0x080A601C": {
-    "canonical_name": "NPC_Routine_080A601C",
-    "original_name": "func_0x080a601c",
-    "address_hex": "0x080A601C",
-    "file": "external_subsystem"
-  },
   "0x080A6138": {
     "canonical_name": "NPC_Routine_080A6138",
     "original_name": "NPC_Routine_080A6138",
@@ -14885,15 +12605,9 @@
     "address_hex": "0x080A748C",
     "file": "entities/npc.c"
   },
-  "0x080A9122": {
-    "canonical_name": "NPC_Routine_080A9122",
-    "original_name": "SUB_080a9122",
-    "address_hex": "0x080A9122",
-    "file": "external_subsystem"
-  },
   "0x080A91FA": {
     "canonical_name": "NPC_Routine_080A91FA",
-    "original_name": "func_0x080a91fa",
+    "original_name": "SUB_080a91fa",
     "address_hex": "0x080A91FA",
     "file": "external_subsystem"
   },
@@ -14945,12 +12659,6 @@
     "address_hex": "0x080AA8F0",
     "file": "entities/npc.c"
   },
-  "0x080AA9C8": {
-    "canonical_name": "NPC_Routine_080AA9C8",
-    "original_name": "func_0x080aa9c8",
-    "address_hex": "0x080AA9C8",
-    "file": "external_subsystem"
-  },
   "0x080AACB8": {
     "canonical_name": "NPC_Routine_080AACB8",
     "original_name": "NPC_Routine_080AACB8",
@@ -14968,24 +12676,6 @@
     "original_name": "NPC_Routine_080AAE44",
     "address_hex": "0x080AAE44",
     "file": "entities/npc.c"
-  },
-  "0x080AAF10": {
-    "canonical_name": "NPC_Routine_080AAF10",
-    "original_name": "func_0x080aaf10",
-    "address_hex": "0x080AAF10",
-    "file": "external_subsystem"
-  },
-  "0x080AAF1C": {
-    "canonical_name": "NPC_Routine_080AAF1C",
-    "original_name": "func_0x080aaf1c",
-    "address_hex": "0x080AAF1C",
-    "file": "external_subsystem"
-  },
-  "0x080AAF28": {
-    "canonical_name": "NPC_Routine_080AAF28",
-    "original_name": "func_0x080aaf28",
-    "address_hex": "0x080AAF28",
-    "file": "external_subsystem"
   },
   "0x080AAF9C": {
     "canonical_name": "NPC_Routine_080AAF9C",
@@ -15317,12 +13007,6 @@
     "address_hex": "0x080ADB78",
     "file": "entities/npc.c"
   },
-  "0x080ADBB4": {
-    "canonical_name": "NPC_Routine_080ADBB4",
-    "original_name": "func_0x080adbb4",
-    "address_hex": "0x080ADBB4",
-    "file": "external_subsystem"
-  },
   "0x080ADC00": {
     "canonical_name": "NPC_Routine_080ADC00",
     "original_name": "NPC_Routine_080ADC00",
@@ -15341,30 +13025,6 @@
     "address_hex": "0x080ADD08",
     "file": "entities/npc.c"
   },
-  "0x080ADD44": {
-    "canonical_name": "NPC_Routine_080ADD44",
-    "original_name": "func_0x080add44",
-    "address_hex": "0x080ADD44",
-    "file": "external_subsystem"
-  },
-  "0x080ADD5C": {
-    "canonical_name": "NPC_Routine_080ADD5C",
-    "original_name": "func_0x080add5c",
-    "address_hex": "0x080ADD5C",
-    "file": "external_subsystem"
-  },
-  "0x080ADD74": {
-    "canonical_name": "NPC_Routine_080ADD74",
-    "original_name": "func_0x080add74",
-    "address_hex": "0x080ADD74",
-    "file": "external_subsystem"
-  },
-  "0x080ADD78": {
-    "canonical_name": "NPC_Routine_080ADD78",
-    "original_name": "func_0x080add78",
-    "address_hex": "0x080ADD78",
-    "file": "external_subsystem"
-  },
   "0x080ADF40": {
     "canonical_name": "NPC_Routine_080ADF40",
     "original_name": "NPC_Routine_080ADF40",
@@ -15376,18 +13036,6 @@
     "original_name": "NPC_Routine_080ADF6C",
     "address_hex": "0x080ADF6C",
     "file": "entities/npc.c"
-  },
-  "0x080AE4D8": {
-    "canonical_name": "NPC_Routine_080AE4D8",
-    "original_name": "func_0x080ae4d8",
-    "address_hex": "0x080AE4D8",
-    "file": "external_subsystem"
-  },
-  "0x080AE4E4": {
-    "canonical_name": "NPC_Routine_080AE4E4",
-    "original_name": "func_0x080ae4e4",
-    "address_hex": "0x080AE4E4",
-    "file": "external_subsystem"
   },
   "0x080AE6C0": {
     "canonical_name": "NPC_Routine_080AE6C0",
@@ -15455,12 +13103,6 @@
     "address_hex": "0x080B0BB8",
     "file": "entities/npc.c"
   },
-  "0x080B1B0C": {
-    "canonical_name": "NPC_Routine_080B1B0C",
-    "original_name": "SUB_080b1b0c",
-    "address_hex": "0x080B1B0C",
-    "file": "external_subsystem"
-  },
   "0x080B1B40": {
     "canonical_name": "NPC_Routine_080B1B40",
     "original_name": "NPC_Routine_080B1B40",
@@ -15509,36 +13151,6 @@
     "address_hex": "0x080B3948",
     "file": "entities/npc.c"
   },
-  "0x080B3990": {
-    "canonical_name": "NPC_Routine_080B3990",
-    "original_name": "func_0x080b3990",
-    "address_hex": "0x080B3990",
-    "file": "external_subsystem"
-  },
-  "0x080B39BC": {
-    "canonical_name": "NPC_Routine_080B39BC",
-    "original_name": "func_0x080b39bc",
-    "address_hex": "0x080B39BC",
-    "file": "external_subsystem"
-  },
-  "0x080B39D8": {
-    "canonical_name": "NPC_Routine_080B39D8",
-    "original_name": "func_0x080b39d8",
-    "address_hex": "0x080B39D8",
-    "file": "external_subsystem"
-  },
-  "0x080B39F4": {
-    "canonical_name": "NPC_Routine_080B39F4",
-    "original_name": "func_0x080b39f4",
-    "address_hex": "0x080B39F4",
-    "file": "external_subsystem"
-  },
-  "0x080B3A10": {
-    "canonical_name": "NPC_Routine_080B3A10",
-    "original_name": "func_0x080b3a10",
-    "address_hex": "0x080B3A10",
-    "file": "external_subsystem"
-  },
   "0x080B3A28": {
     "canonical_name": "NPC_Routine_080B3A28",
     "original_name": "NPC_Routine_080B3A28",
@@ -15575,35 +13187,11 @@
     "address_hex": "0x080B3C78",
     "file": "entities/npc.c"
   },
-  "0x080B3C84": {
-    "canonical_name": "NPC_Routine_080B3C84",
-    "original_name": "func_0x080b3c84",
-    "address_hex": "0x080B3C84",
-    "file": "external_subsystem"
-  },
-  "0x080B3C90": {
-    "canonical_name": "NPC_Routine_080B3C90",
-    "original_name": "func_0x080b3c90",
-    "address_hex": "0x080B3C90",
-    "file": "external_subsystem"
-  },
   "0x080B3CC8": {
     "canonical_name": "NPC_Routine_080B3CC8",
     "original_name": "NPC_Routine_080B3CC8",
     "address_hex": "0x080B3CC8",
     "file": "entities/npc.c"
-  },
-  "0x080B44E0": {
-    "canonical_name": "NPC_Routine_080B44E0",
-    "original_name": "func_0x080b44e0",
-    "address_hex": "0x080B44E0",
-    "file": "external_subsystem"
-  },
-  "0x080B44EC": {
-    "canonical_name": "NPC_Routine_080B44EC",
-    "original_name": "func_0x080b44ec",
-    "address_hex": "0x080B44EC",
-    "file": "external_subsystem"
   },
   "0x080B45E4": {
     "canonical_name": "NPC_Routine_080B45E4",
@@ -15803,30 +13391,6 @@
     "address_hex": "0x080BA1A4",
     "file": "entities/npc.c"
   },
-  "0x080BA1F4": {
-    "canonical_name": "NPC_Routine_080BA1F4",
-    "original_name": "func_0x080ba1f4",
-    "address_hex": "0x080BA1F4",
-    "file": "external_subsystem"
-  },
-  "0x080BA1F8": {
-    "canonical_name": "NPC_Routine_080BA1F8",
-    "original_name": "func_0x080ba1f8",
-    "address_hex": "0x080BA1F8",
-    "file": "external_subsystem"
-  },
-  "0x080BA1FC": {
-    "canonical_name": "NPC_Routine_080BA1FC",
-    "original_name": "func_0x080ba1fc",
-    "address_hex": "0x080BA1FC",
-    "file": "external_subsystem"
-  },
-  "0x080BA200": {
-    "canonical_name": "NPC_Routine_080BA200",
-    "original_name": "func_0x080ba200",
-    "address_hex": "0x080BA200",
-    "file": "external_subsystem"
-  },
   "0x080BA204": {
     "canonical_name": "NPC_Routine_080BA204",
     "original_name": "NPC_Routine_080BA204",
@@ -15929,18 +13493,6 @@
     "address_hex": "0x080BC8FC",
     "file": "entities/npc.c"
   },
-  "0x080BCCD4": {
-    "canonical_name": "NPC_Routine_080BCCD4",
-    "original_name": "func_0x080bccd4",
-    "address_hex": "0x080BCCD4",
-    "file": "external_subsystem"
-  },
-  "0x080BCCE0": {
-    "canonical_name": "NPC_Routine_080BCCE0",
-    "original_name": "func_0x080bcce0",
-    "address_hex": "0x080BCCE0",
-    "file": "external_subsystem"
-  },
   "0x080BCEBC": {
     "canonical_name": "NPC_Routine_080BCEBC",
     "original_name": "NPC_Routine_080BCEBC",
@@ -16031,12 +13583,6 @@
     "address_hex": "0x080C09D8",
     "file": "audio/m4a.c"
   },
-  "0x080C0B58": {
-    "canonical_name": "M4A_Routine_080C0B58",
-    "original_name": "func_0x080c0b58",
-    "address_hex": "0x080C0B58",
-    "file": "external_subsystem"
-  },
   "0x080C0B70": {
     "canonical_name": "M4A_Routine_080C0B70",
     "original_name": "M4A_Routine_080C0B70",
@@ -16073,12 +13619,6 @@
     "address_hex": "0x080C0D74",
     "file": "audio/m4a.c"
   },
-  "0x080C0D80": {
-    "canonical_name": "M4A_Routine_080C0D80",
-    "original_name": "func_0x080c0d80",
-    "address_hex": "0x080C0D80",
-    "file": "external_subsystem"
-  },
   "0x080C0D90": {
     "canonical_name": "M4A_Routine_080C0D90",
     "original_name": "M4A_Routine_080C0D90",
@@ -16090,18 +13630,6 @@
     "original_name": "M4A_Routine_080C0DCC",
     "address_hex": "0x080C0DCC",
     "file": "audio/m4a.c"
-  },
-  "0x080C12B8": {
-    "canonical_name": "M4A_Routine_080C12B8",
-    "original_name": "func_0x080c12b8",
-    "address_hex": "0x080C12B8",
-    "file": "external_subsystem"
-  },
-  "0x080C12C4": {
-    "canonical_name": "M4A_Routine_080C12C4",
-    "original_name": "func_0x080c12c4",
-    "address_hex": "0x080C12C4",
-    "file": "external_subsystem"
   },
   "0x080C14BC": {
     "canonical_name": "M4A_Routine_080C14BC",
@@ -16157,69 +13685,15 @@
     "address_hex": "0x080C3D04",
     "file": "audio/m4a.c"
   },
-  "0x080C4AE0": {
-    "canonical_name": "M4A_Routine_080C4AE0",
-    "original_name": "func_0x080c4ae0",
-    "address_hex": "0x080C4AE0",
-    "file": "external_subsystem"
-  },
-  "0x080C4B28": {
-    "canonical_name": "M4A_Routine_080C4B28",
-    "original_name": "func_0x080c4b28",
-    "address_hex": "0x080C4B28",
-    "file": "external_subsystem"
-  },
-  "0x080C4B4A": {
-    "canonical_name": "M4A_Routine_080C4B4A",
-    "original_name": "SUB_080c4b4a",
-    "address_hex": "0x080C4B4A",
-    "file": "external_subsystem"
-  },
-  "0x080C4BBC": {
-    "canonical_name": "M4A_Routine_080C4BBC",
-    "original_name": "func_0x080c4bbc",
-    "address_hex": "0x080C4BBC",
-    "file": "external_subsystem"
-  },
   "0x080C5024": {
     "canonical_name": "M4A_Routine_080C5024",
-    "original_name": "func_0x080c5024",
+    "original_name": "SUB_080c5024",
     "address_hex": "0x080C5024",
-    "file": "external_subsystem"
-  },
-  "0x080C5026": {
-    "canonical_name": "M4A_Routine_080C5026",
-    "original_name": "SUB_080c5026",
-    "address_hex": "0x080C5026",
-    "file": "external_subsystem"
-  },
-  "0x080C5028": {
-    "canonical_name": "M4A_Routine_080C5028",
-    "original_name": "SUB_080c5028",
-    "address_hex": "0x080C5028",
-    "file": "external_subsystem"
-  },
-  "0x080C5042": {
-    "canonical_name": "M4A_Routine_080C5042",
-    "original_name": "SUB_080c5042",
-    "address_hex": "0x080C5042",
-    "file": "external_subsystem"
-  },
-  "0x080C5044": {
-    "canonical_name": "M4A_Routine_080C5044",
-    "original_name": "SUB_080c5044",
-    "address_hex": "0x080C5044",
-    "file": "external_subsystem"
-  },
-  "0x080C5138": {
-    "canonical_name": "M4A_Routine_080C5138",
-    "original_name": "func_0x080c5138",
-    "address_hex": "0x080C5138",
     "file": "external_subsystem"
   },
   "0x080C513A": {
     "canonical_name": "M4A_Routine_080C513A",
-    "original_name": "func_0x080c513a",
+    "original_name": "SUB_080c513a",
     "address_hex": "0x080C513A",
     "file": "external_subsystem"
   },
@@ -16265,18 +13739,6 @@
     "address_hex": "0x080C76D4",
     "file": "audio/m4a.c"
   },
-  "0x080C7B38": {
-    "canonical_name": "M4A_Routine_080C7B38",
-    "original_name": "func_0x080c7b38",
-    "address_hex": "0x080C7B38",
-    "file": "external_subsystem"
-  },
-  "0x080C7B64": {
-    "canonical_name": "M4A_Routine_080C7B64",
-    "original_name": "func_0x080c7b64",
-    "address_hex": "0x080C7B64",
-    "file": "external_subsystem"
-  },
   "0x080C7B7C": {
     "canonical_name": "M4A_Routine_080C7B7C",
     "original_name": "M4A_Routine_080C7B7C",
@@ -16318,12 +13780,6 @@
     "original_name": "M4A_Routine_080C7F00",
     "address_hex": "0x080C7F00",
     "file": "audio/m4a.c"
-  },
-  "0x080C7F0C": {
-    "canonical_name": "M4A_Routine_080C7F0C",
-    "original_name": "func_0x080c7f0c",
-    "address_hex": "0x080C7F0C",
-    "file": "external_subsystem"
   },
   "0x080C7F1C": {
     "canonical_name": "M4A_Routine_080C7F1C",
@@ -16409,47 +13865,11 @@
     "address_hex": "0x080CABEC",
     "file": "audio/m4a.c"
   },
-  "0x080CAC70": {
-    "canonical_name": "M4A_Routine_080CAC70",
-    "original_name": "func_0x080cac70",
-    "address_hex": "0x080CAC70",
-    "file": "external_subsystem"
-  },
   "0x080CAC7C": {
     "canonical_name": "M4A_Routine_080CAC7C",
     "original_name": "M4A_Routine_080CAC7C",
     "address_hex": "0x080CAC7C",
     "file": "audio/m4a.c"
-  },
-  "0x080CAD10": {
-    "canonical_name": "M4A_Routine_080CAD10",
-    "original_name": "func_0x080cad10",
-    "address_hex": "0x080CAD10",
-    "file": "external_subsystem"
-  },
-  "0x080CAD14": {
-    "canonical_name": "M4A_Routine_080CAD14",
-    "original_name": "func_0x080cad14",
-    "address_hex": "0x080CAD14",
-    "file": "external_subsystem"
-  },
-  "0x080CAD18": {
-    "canonical_name": "M4A_Routine_080CAD18",
-    "original_name": "func_0x080cad18",
-    "address_hex": "0x080CAD18",
-    "file": "external_subsystem"
-  },
-  "0x080CADA0": {
-    "canonical_name": "M4A_Routine_080CADA0",
-    "original_name": "func_0x080cada0",
-    "address_hex": "0x080CADA0",
-    "file": "external_subsystem"
-  },
-  "0x080CADA8": {
-    "canonical_name": "M4A_Routine_080CADA8",
-    "original_name": "func_0x080cada8",
-    "address_hex": "0x080CADA8",
-    "file": "external_subsystem"
   },
   "0x080CADB4": {
     "canonical_name": "M4A_Routine_080CADB4",
@@ -16493,18 +13913,6 @@
     "address_hex": "0x080CB090",
     "file": "audio/m4a.c"
   },
-  "0x080CB2E8": {
-    "canonical_name": "M4A_Routine_080CB2E8",
-    "original_name": "func_0x080cb2e8",
-    "address_hex": "0x080CB2E8",
-    "file": "external_subsystem"
-  },
-  "0x080CB2FC": {
-    "canonical_name": "M4A_Routine_080CB2FC",
-    "original_name": "func_0x080cb2fc",
-    "address_hex": "0x080CB2FC",
-    "file": "external_subsystem"
-  },
   "0x080CB304": {
     "canonical_name": "M4A_Routine_080CB304",
     "original_name": "M4A_Routine_080CB304",
@@ -16516,24 +13924,6 @@
     "original_name": "M4A_Routine_080CB63C",
     "address_hex": "0x080CB63C",
     "file": "audio/m4a.c"
-  },
-  "0x080CB948": {
-    "canonical_name": "M4A_Routine_080CB948",
-    "original_name": "func_0x080cb948",
-    "address_hex": "0x080CB948",
-    "file": "external_subsystem"
-  },
-  "0x080CB9DC": {
-    "canonical_name": "M4A_Routine_080CB9DC",
-    "original_name": "func_0x080cb9dc",
-    "address_hex": "0x080CB9DC",
-    "file": "external_subsystem"
-  },
-  "0x080CBA60": {
-    "canonical_name": "M4A_Routine_080CBA60",
-    "original_name": "func_0x080cba60",
-    "address_hex": "0x080CBA60",
-    "file": "external_subsystem"
   },
   "0x080CBAF0": {
     "canonical_name": "M4A_Routine_080CBAF0",
@@ -16552,18 +13942,6 @@
     "original_name": "M4A_Routine_080CC0B4",
     "address_hex": "0x080CC0B4",
     "file": "audio/m4a.c"
-  },
-  "0x080CC134": {
-    "canonical_name": "M4A_Routine_080CC134",
-    "original_name": "func_0x080cc134",
-    "address_hex": "0x080CC134",
-    "file": "external_subsystem"
-  },
-  "0x080CC144": {
-    "canonical_name": "M4A_Routine_080CC144",
-    "original_name": "func_0x080cc144",
-    "address_hex": "0x080CC144",
-    "file": "external_subsystem"
   },
   "0x080CC150": {
     "canonical_name": "M4A_Routine_080CC150",
@@ -16588,30 +13966,6 @@
     "original_name": "M4A_Routine_080CC58C",
     "address_hex": "0x080CC58C",
     "file": "audio/m4a.c"
-  },
-  "0x080CC70C": {
-    "canonical_name": "M4A_Routine_080CC70C",
-    "original_name": "func_0x080cc70c",
-    "address_hex": "0x080CC70C",
-    "file": "external_subsystem"
-  },
-  "0x080CC720": {
-    "canonical_name": "M4A_Routine_080CC720",
-    "original_name": "func_0x080cc720",
-    "address_hex": "0x080CC720",
-    "file": "external_subsystem"
-  },
-  "0x080CC728": {
-    "canonical_name": "M4A_Routine_080CC728",
-    "original_name": "func_0x080cc728",
-    "address_hex": "0x080CC728",
-    "file": "external_subsystem"
-  },
-  "0x080CCA40": {
-    "canonical_name": "M4A_Routine_080CCA40",
-    "original_name": "func_0x080cca40",
-    "address_hex": "0x080CCA40",
-    "file": "external_subsystem"
   },
   "0x080CCD48": {
     "canonical_name": "M4A_Routine_080CCD48",
@@ -16648,18 +14002,6 @@
     "original_name": "M4A_Routine_080CD4D4",
     "address_hex": "0x080CD4D4",
     "file": "audio/m4a.c"
-  },
-  "0x080CD534": {
-    "canonical_name": "M4A_Routine_080CD534",
-    "original_name": "func_0x080cd534",
-    "address_hex": "0x080CD534",
-    "file": "external_subsystem"
-  },
-  "0x080CD558": {
-    "canonical_name": "M4A_Routine_080CD558",
-    "original_name": "func_0x080cd558",
-    "address_hex": "0x080CD558",
-    "file": "external_subsystem"
   },
   "0x080CD620": {
     "canonical_name": "M4A_Routine_080CD620",
@@ -16763,12 +14105,6 @@
     "address_hex": "0x080CE2FC",
     "file": "audio/m4a.c"
   },
-  "0x080CE3DC": {
-    "canonical_name": "M4A_Routine_080CE3DC",
-    "original_name": "func_0x080ce3dc",
-    "address_hex": "0x080CE3DC",
-    "file": "external_subsystem"
-  },
   "0x080CE480": {
     "canonical_name": "M4A_Routine_080CE480",
     "original_name": "M4A_Routine_080CE480",
@@ -16823,36 +14159,6 @@
     "address_hex": "0x080CEC84",
     "file": "audio/m4a.c"
   },
-  "0x080CECD0": {
-    "canonical_name": "M4A_Routine_080CECD0",
-    "original_name": "func_0x080cecd0",
-    "address_hex": "0x080CECD0",
-    "file": "external_subsystem"
-  },
-  "0x080CECE8": {
-    "canonical_name": "M4A_Routine_080CECE8",
-    "original_name": "func_0x080cece8",
-    "address_hex": "0x080CECE8",
-    "file": "external_subsystem"
-  },
-  "0x080CF050": {
-    "canonical_name": "M4A_Routine_080CF050",
-    "original_name": "func_0x080cf050",
-    "address_hex": "0x080CF050",
-    "file": "external_subsystem"
-  },
-  "0x080CF054": {
-    "canonical_name": "M4A_Routine_080CF054",
-    "original_name": "func_0x080cf054",
-    "address_hex": "0x080CF054",
-    "file": "external_subsystem"
-  },
-  "0x080CF05C": {
-    "canonical_name": "M4A_Routine_080CF05C",
-    "original_name": "func_0x080cf05c",
-    "address_hex": "0x080CF05C",
-    "file": "external_subsystem"
-  },
   "0x080CFA38": {
     "canonical_name": "M4A_Routine_080CFA38",
     "original_name": "M4A_Routine_080CFA38",
@@ -16885,7 +14191,7 @@
   },
   "0x080D01F8": {
     "canonical_name": "runtime_malloc_aligned",
-    "original_name": "malloc_gba",
+    "original_name": "runtime_malloc_aligned",
     "address_hex": "0x080D01F8",
     "file": "audio/m4a.c"
   },
@@ -16906,12 +14212,6 @@
     "original_name": "M4A_Routine_080D02CC",
     "address_hex": "0x080D02CC",
     "file": "audio/m4a.c"
-  },
-  "0x080D02EC": {
-    "canonical_name": "M4A_Routine_080D02EC",
-    "original_name": "func_0x080d02ec",
-    "address_hex": "0x080D02EC",
-    "file": "external_subsystem"
   },
   "0x080D02F0": {
     "canonical_name": "M4A_Routine_080D02F0",
@@ -17009,18 +14309,6 @@
     "address_hex": "0x080D0A14",
     "file": "audio/m4a.c"
   },
-  "0x080D0A54": {
-    "canonical_name": "M4A_Routine_080D0A54",
-    "original_name": "func_0x080d0a54",
-    "address_hex": "0x080D0A54",
-    "file": "external_subsystem"
-  },
-  "0x080D0A74": {
-    "canonical_name": "M4A_Routine_080D0A74",
-    "original_name": "func_0x080d0a74",
-    "address_hex": "0x080D0A74",
-    "file": "external_subsystem"
-  },
   "0x080D0A94": {
     "canonical_name": "M4A_Routine_080D0A94",
     "original_name": "M4A_Routine_080D0A94",
@@ -17044,12 +14332,6 @@
     "original_name": "M4A_Routine_080D0B14",
     "address_hex": "0x080D0B14",
     "file": "audio/m4a.c"
-  },
-  "0x080D0B88": {
-    "canonical_name": "M4A_Routine_080D0B88",
-    "original_name": "func_0x080d0b88",
-    "address_hex": "0x080D0B88",
-    "file": "external_subsystem"
   },
   "0x080D0BA8": {
     "canonical_name": "M4A_Routine_080D0BA8",
@@ -17093,65 +14375,17 @@
     "address_hex": "0x080D0D28",
     "file": "audio/m4a.c"
   },
-  "0x080D0EBC": {
-    "canonical_name": "M4A_Routine_080D0EBC",
-    "original_name": "func_0x080d0ebc",
-    "address_hex": "0x080D0EBC",
-    "file": "external_subsystem"
-  },
   "0x080D0EC0": {
     "canonical_name": "M4A_Routine_080D0EC0",
     "original_name": "M4A_Routine_080D0EC0",
     "address_hex": "0x080D0EC0",
     "file": "audio/m4a.c"
   },
-  "0x080D0EC8": {
-    "canonical_name": "math_udivsi3",
-    "original_name": "func_0x080d0ec8",
-    "address_hex": "0x080D0EC8",
-    "file": "external_subsystem"
-  },
-  "0x080D0ED0": {
-    "canonical_name": "math_umodsi3",
-    "original_name": "func_0x080d0ed0",
-    "address_hex": "0x080D0ED0",
-    "file": "external_subsystem"
-  },
-  "0x080D0EDA": {
-    "canonical_name": "math_divsi3",
-    "original_name": "func_0x080d0eda",
-    "address_hex": "0x080D0EDA",
-    "file": "external_subsystem"
-  },
-  "0x080D0F4E": {
-    "canonical_name": "math_modsi3",
-    "original_name": "func_0x080d0f4e",
-    "address_hex": "0x080D0F4E",
-    "file": "external_subsystem"
-  },
   "0x080D0F60": {
     "canonical_name": "M4A_Routine_080D0F60",
     "original_name": "M4A_Routine_080D0F60",
     "address_hex": "0x080D0F60",
     "file": "audio/m4a.c"
-  },
-  "0x080D100C": {
-    "canonical_name": "M4A_Routine_080D100C",
-    "original_name": "func_0x080d100c",
-    "address_hex": "0x080D100C",
-    "file": "external_subsystem"
-  },
-  "0x080D101C": {
-    "canonical_name": "M4A_Routine_080D101C",
-    "original_name": "func_0x080d101c",
-    "address_hex": "0x080D101C",
-    "file": "external_subsystem"
-  },
-  "0x080D102C": {
-    "canonical_name": "Unpack_ArcanoMarvelous_0x70",
-    "original_name": "func_0x080d102c",
-    "address_hex": "0x080D102C",
-    "file": "external_subsystem"
   },
   "0x080D10F0": {
     "canonical_name": "Unpack_BuildHuffmanTree",
@@ -17171,23 +14405,11 @@
     "address_hex": "0x080D117E",
     "file": "audio/m4a.c"
   },
-  "0x080D1186": {
-    "canonical_name": "M4A_Routine_080D1186",
-    "original_name": "func_0x080d1186",
-    "address_hex": "0x080D1186",
-    "file": "external_subsystem"
-  },
   "0x080D11A4": {
     "canonical_name": "Unpack_ReadBits",
     "original_name": "Unpack_ReadBits",
     "address_hex": "0x080D11A4",
     "file": "audio/m4a.c"
-  },
-  "0x080D11E4": {
-    "canonical_name": "math_rand",
-    "original_name": "func_0x080d11e4",
-    "address_hex": "0x080D11E4",
-    "file": "external_subsystem"
   },
   "0x080D1204": {
     "canonical_name": "Unpack_CompType4_Raw",
@@ -17231,71 +14453,11 @@
     "address_hex": "0x080D14EC",
     "file": "audio/m4a.c"
   },
-  "0x080D15A4": {
-    "canonical_name": "M4A_Routine_080D15A4",
-    "original_name": "func_0x080d15a4",
-    "address_hex": "0x080D15A4",
-    "file": "external_subsystem"
-  },
-  "0x080D1A34": {
-    "canonical_name": "M4A_Routine_080D1A34",
-    "original_name": "func_0x080d1a34",
-    "address_hex": "0x080D1A34",
-    "file": "external_subsystem"
-  },
-  "0x080D1BF8": {
-    "canonical_name": "M4A_Routine_080D1BF8",
-    "original_name": "func_0x080d1bf8",
-    "address_hex": "0x080D1BF8",
-    "file": "external_subsystem"
-  },
-  "0x080D1E9C": {
-    "canonical_name": "M4A_Routine_080D1E9C",
-    "original_name": "func_0x080d1e9c",
-    "address_hex": "0x080D1E9C",
-    "file": "external_subsystem"
-  },
-  "0x080D1EAC": {
-    "canonical_name": "M4A_Routine_080D1EAC",
-    "original_name": "func_0x080d1eac",
-    "address_hex": "0x080D1EAC",
-    "file": "external_subsystem"
-  },
-  "0x080D1EF0": {
-    "canonical_name": "M4A_Routine_080D1EF0",
-    "original_name": "func_0x080d1ef0",
-    "address_hex": "0x080D1EF0",
-    "file": "external_subsystem"
-  },
   "0x080D1F20": {
     "canonical_name": "M4A_Routine_080D1F20",
     "original_name": "M4A_Routine_080D1F20",
     "address_hex": "0x080D1F20",
     "file": "audio/m4a.c"
-  },
-  "0x080D2160": {
-    "canonical_name": "M4A_Routine_080D2160",
-    "original_name": "func_0x080d2160",
-    "address_hex": "0x080D2160",
-    "file": "external_subsystem"
-  },
-  "0x080D2218": {
-    "canonical_name": "M4A_Routine_080D2218",
-    "original_name": "func_0x080d2218",
-    "address_hex": "0x080D2218",
-    "file": "external_subsystem"
-  },
-  "0x080D2234": {
-    "canonical_name": "M4A_Routine_080D2234",
-    "original_name": "func_0x080d2234",
-    "address_hex": "0x080D2234",
-    "file": "external_subsystem"
-  },
-  "0x080D2254": {
-    "canonical_name": "M4A_Routine_080D2254",
-    "original_name": "func_0x080d2254",
-    "address_hex": "0x080D2254",
-    "file": "external_subsystem"
   },
   "0x080D22CC": {
     "canonical_name": "M4A_Routine_080D22CC",
@@ -17339,18 +14501,6 @@
     "address_hex": "0x080D2470",
     "file": "audio/m4a.c"
   },
-  "0x080D2480": {
-    "canonical_name": "M4A_Routine_080D2480",
-    "original_name": "func_0x080d2480",
-    "address_hex": "0x080D2480",
-    "file": "external_subsystem"
-  },
-  "0x080D24A0": {
-    "canonical_name": "M4A_Routine_080D24A0",
-    "original_name": "func_0x080d24a0",
-    "address_hex": "0x080D24A0",
-    "file": "external_subsystem"
-  },
   "0x080D24C8": {
     "canonical_name": "M4A_Routine_080D24C8",
     "original_name": "M4A_Routine_080D24C8",
@@ -17380,12 +14530,6 @@
     "original_name": "M4A_Routine_080D2654",
     "address_hex": "0x080D2654",
     "file": "audio/m4a.c"
-  },
-  "0x080D274C": {
-    "canonical_name": "M4A_Routine_080D274C",
-    "original_name": "func_0x080d274c",
-    "address_hex": "0x080D274C",
-    "file": "external_subsystem"
   },
   "0x080D27F0": {
     "canonical_name": "M4A_Routine_080D27F0",
@@ -17417,24 +14561,6 @@
     "address_hex": "0x080D2A0C",
     "file": "audio/m4a.c"
   },
-  "0x080D2AF0": {
-    "canonical_name": "M4A_Routine_080D2AF0",
-    "original_name": "func_0x080d2af0",
-    "address_hex": "0x080D2AF0",
-    "file": "external_subsystem"
-  },
-  "0x080D2BF8": {
-    "canonical_name": "M4A_Routine_080D2BF8",
-    "original_name": "func_0x080d2bf8",
-    "address_hex": "0x080D2BF8",
-    "file": "external_subsystem"
-  },
-  "0x080D2D54": {
-    "canonical_name": "M4A_Routine_080D2D54",
-    "original_name": "func_0x080d2d54",
-    "address_hex": "0x080D2D54",
-    "file": "external_subsystem"
-  },
   "0x080D2DA4": {
     "canonical_name": "M4A_Routine_080D2DA4",
     "original_name": "M4A_Routine_080D2DA4",
@@ -17446,72 +14572,6 @@
     "original_name": "M4A_Routine_080D2E0C",
     "address_hex": "0x080D2E0C",
     "file": "audio/m4a.c"
-  },
-  "0x080D3280": {
-    "canonical_name": "VTable_Routine_080D3280",
-    "original_name": "func_0x080d3280",
-    "address_hex": "0x080D3280",
-    "file": "external_subsystem"
-  },
-  "0x080D32E8": {
-    "canonical_name": "VTable_Routine_080D32E8",
-    "original_name": "func_0x080d32e8",
-    "address_hex": "0x080D32E8",
-    "file": "external_subsystem"
-  },
-  "0x080D335C": {
-    "canonical_name": "VTable_Routine_080D335C",
-    "original_name": "func_0x080d335c",
-    "address_hex": "0x080D335C",
-    "file": "external_subsystem"
-  },
-  "0x080D33E4": {
-    "canonical_name": "VTable_Routine_080D33E4",
-    "original_name": "func_0x080d33e4",
-    "address_hex": "0x080D33E4",
-    "file": "external_subsystem"
-  },
-  "0x080D3458": {
-    "canonical_name": "VTable_Routine_080D3458",
-    "original_name": "func_0x080d3458",
-    "address_hex": "0x080D3458",
-    "file": "external_subsystem"
-  },
-  "0x080D3748": {
-    "canonical_name": "ArcTan2",
-    "original_name": "func_0x080d3748",
-    "address_hex": "0x080D3748",
-    "file": "external_subsystem"
-  },
-  "0x080D374C": {
-    "canonical_name": "CpuFastSet",
-    "original_name": "func_0x080d374c",
-    "address_hex": "0x080D374C",
-    "file": "external_subsystem"
-  },
-  "0x080D3750": {
-    "canonical_name": "CpuSet",
-    "original_name": "func_0x080d3750",
-    "address_hex": "0x080D3750",
-    "file": "external_subsystem"
-  },
-  "0x080D3754": {
-    "canonical_name": "IntrWait",
-    "original_name": "func_0x080d3754",
-    "address_hex": "0x080D3754",
-    "file": "external_subsystem"
-  },
-  "0x080D375C": {
-    "canonical_name": "Interrupt_DisableMaster",
-    "original_name": "func_0x080d375c",
-    "address_hex": "0x080D375C",
-    "file": "external_subsystem"
-  },
-  "0x080D3774": {
-    "canonical_name": "Sqrt",
-    "original_name": "func_0x080d3774",
-    "address_hex": "0x080D3774",
-    "file": "external_subsystem"
   },
   "0x080D3778": {
     "canonical_name": "VTable_Routine_080D3778",
@@ -17548,54 +14608,6 @@
     "original_name": "VTable_Routine_080D38D4",
     "address_hex": "0x080D38D4",
     "file": "core/vtables.c"
-  },
-  "0x080D390C": {
-    "canonical_name": "VTable_Routine_080D390C",
-    "original_name": "func_0x080d390c",
-    "address_hex": "0x080D390C",
-    "file": "external_subsystem"
-  },
-  "0x080D3910": {
-    "canonical_name": "_call_via_r1",
-    "original_name": "func_0x080d3910",
-    "address_hex": "0x080D3910",
-    "file": "external_subsystem"
-  },
-  "0x080D3914": {
-    "canonical_name": "_call_via_r2",
-    "original_name": "func_0x080d3914",
-    "address_hex": "0x080D3914",
-    "file": "external_subsystem"
-  },
-  "0x080D3918": {
-    "canonical_name": "_call_via_r3",
-    "original_name": "func_0x080d3918",
-    "address_hex": "0x080D3918",
-    "file": "external_subsystem"
-  },
-  "0x080D391C": {
-    "canonical_name": "_call_via_r4",
-    "original_name": "func_0x080d391c",
-    "address_hex": "0x080D391C",
-    "file": "external_subsystem"
-  },
-  "0x080D3924": {
-    "canonical_name": "_call_via_r6",
-    "original_name": "func_0x080d3924",
-    "address_hex": "0x080D3924",
-    "file": "external_subsystem"
-  },
-  "0x080D3928": {
-    "canonical_name": "_call_via_r7",
-    "original_name": "func_0x080d3928",
-    "address_hex": "0x080D3928",
-    "file": "external_subsystem"
-  },
-  "0x080D393C": {
-    "canonical_name": "_call_via_ip",
-    "original_name": "func_0x080d393c",
-    "address_hex": "0x080D393C",
-    "file": "external_subsystem"
   },
   "0x080D3948": {
     "canonical_name": "gba_memcmp",
@@ -17831,18 +14843,6 @@
     "address_hex": "0x080D6DB8",
     "file": "core/vtables.c"
   },
-  "0x080D6E98": {
-    "canonical_name": "VTable_Routine_080D6E98",
-    "original_name": "func_0x080d6e98",
-    "address_hex": "0x080D6E98",
-    "file": "external_subsystem"
-  },
-  "0x080D6EAC": {
-    "canonical_name": "VTable_Routine_080D6EAC",
-    "original_name": "func_0x080d6eac",
-    "address_hex": "0x080D6EAC",
-    "file": "external_subsystem"
-  },
   "0x080D6ECC": {
     "canonical_name": "VTable_Routine_080D6ECC",
     "original_name": "VTable_Routine_080D6ECC",
@@ -17854,18 +14854,6 @@
     "original_name": "VTable_Routine_080D6EEC",
     "address_hex": "0x080D6EEC",
     "file": "core/vtables.c"
-  },
-  "0x080D6F0C": {
-    "canonical_name": "VTable_Routine_080D6F0C",
-    "original_name": "func_0x080d6f0c",
-    "address_hex": "0x080D6F0C",
-    "file": "external_subsystem"
-  },
-  "0x080D6F1C": {
-    "canonical_name": "VTable_Routine_080D6F1C",
-    "original_name": "func_0x080d6f1c",
-    "address_hex": "0x080D6F1C",
-    "file": "external_subsystem"
   },
   "0x080D6F3C": {
     "canonical_name": "VTable_Routine_080D6F3C",
@@ -19702,12 +16690,6 @@
     "original_name": "VTable_Routine_080E2018",
     "address_hex": "0x080E2018",
     "file": "core/vtables.c"
-  },
-  "0x080E2094": {
-    "canonical_name": "VTable_Routine_080E2094",
-    "original_name": "func_0x080e2094",
-    "address_hex": "0x080E2094",
-    "file": "external_subsystem"
   },
   "0x080E20C0": {
     "canonical_name": "VTable_Routine_080E20C0",

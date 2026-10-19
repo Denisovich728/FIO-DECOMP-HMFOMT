@@ -22,9 +22,9 @@ u32 Farmer_Init(uint farmer)
 }
 
 // =============================================================================
-// Function: Farmer_Routine_0800E304 @ 0x0800E304
+// Function: Tool_GetReachArea @ 0x0800E304
 // =============================================================================
-u32 Farmer_Routine_0800E304(uint farmer)
+u32 Tool_GetReachArea(uint farmer)
 
 {
   int i_val1;
@@ -37,9 +37,9 @@ u32 Farmer_Routine_0800E304(uint farmer)
 }
 
 // =============================================================================
-// Function: Farmer_Routine_0800E324 @ 0x0800E324
+// Function: Farmer_GetFacingDirection @ 0x0800E324
 // =============================================================================
-u32 Farmer_Routine_0800E324(int farmer)
+u32 Farmer_GetFacingDirection(int farmer)
 
 {
   uint u_val1;
@@ -54,9 +54,9 @@ u32 Farmer_Routine_0800E324(int farmer)
 }
 
 // =============================================================================
-// Function: Farmer_Routine_0800E354 @ 0x0800E354
+// Function: Farmer_CalculateTargetTileGrid @ 0x0800E354
 // =============================================================================
-u32 Farmer_Routine_0800E354(int farmer,undefined4 amount,undefined1 *slot_id)
+u32 Farmer_CalculateTargetTileGrid(int farmer,undefined4 amount,undefined1 *slot_id)
 
 {
   ushort u_val1;
@@ -840,9 +840,9 @@ u32 Farmer_Routine_0800F004(byte *farmer,undefined4 amount)
   stack_val_c = amount;
   b_flag1 = Item_Routine_0800DCB4(&stack_val_c);
   farmer[1] = b_flag1;
-  b_flag1 = Item_Routine_0800DD6C(&stack_val_c);
+  b_flag1 = Item_GetFoodStaminaModifier(&stack_val_c);
   farmer[2] = b_flag1;
-  b_flag1 = Item_Routine_0800DD8C(&stack_val_c);
+  b_flag1 = Item_GetFoodFatigueModifier(&stack_val_c);
   farmer[3] = b_flag1;
   return farmer;
 }
@@ -898,7 +898,7 @@ u32 Farmer_Routine_0800F0A4(undefined4 farmer,byte *amount)
   
   if ((*amount & 1) == 0) {
     Item_SetIdAndClearQuality(temp_coords,amount[1]);
-    Item_Routine_0800DE0C(temp_coords,(int)(char)amount[2],(int)(char)amount[3]);
+    Item_GetFoodIconGraphic(temp_coords,(int)(char)amount[2],(int)(char)amount[3]);
     gba_memcpy(farmer,temp_coords,3);
   }
   else {
@@ -998,7 +998,7 @@ u32 HeldItem_GetFood(undefined4 arg_1,byte *arg_2)
   
   if (((*arg_2 & 7) == 0) && (arg_2[2] < 0xab)) {
     Item_SetIdAndClearQuality(temp_coords,arg_2[2]);
-    Item_Routine_0800DE0C(temp_coords,(int)(char)arg_2[3],(int)(char)arg_2[4]);
+    Item_GetFoodIconGraphic(temp_coords,(int)(char)arg_2[3],(int)(char)arg_2[4]);
     gba_memcpy(arg_1,temp_coords,3);
   }
   else {
@@ -1039,7 +1039,7 @@ u32 HeldItem_ToRucksackItem(undefined4 *arg_1,byte *arg_2)
   
   if (((*arg_2 & 7) == 0) && (arg_2[2] < 0xab)) {
     Item_SetIdAndClearQuality(&stack_val_24,arg_2[2]);
-    Item_Routine_0800DE0C(&stack_val_24,(int)(char)arg_2[3],(int)(char)arg_2[4]);
+    Item_GetFoodIconGraphic(&stack_val_24,(int)(char)arg_2[3],(int)(char)arg_2[4]);
     gba_memcpy(&stack_val_1c,&stack_val_24,3);
     Farmer_Routine_0800F004(&stack_val_20,(uint)stack_val_1c);
     if ((int)((uint)*arg_2 * 0x10000000) < 0) {
@@ -1102,9 +1102,9 @@ void HeldItem_SetFood(byte *arg_1,undefined4 arg_2)
   stack_val_c = arg_2;
   b_flag1 = Item_Routine_0800DCB4(&stack_val_c);
   arg_1[2] = b_flag1;
-  b_flag1 = Item_Routine_0800DD6C(&stack_val_c);
+  b_flag1 = Item_GetFoodStaminaModifier(&stack_val_c);
   arg_1[3] = b_flag1;
-  b_flag1 = Item_Routine_0800DD8C(&stack_val_c);
+  b_flag1 = Item_GetFoodFatigueModifier(&stack_val_c);
   arg_1[4] = b_flag1;
   return;
 }
@@ -1146,9 +1146,9 @@ void HeldItem_FromRucksackItem(byte *arg_1,undefined4 arg_2)
     Farmer_Routine_0800F0A4(facing_buffer,&stack_val_18);
     b_flag1 = Item_Routine_0800DCB4(facing_buffer);
     arg_1[2] = b_flag1;
-    b_flag1 = Item_Routine_0800DD6C(facing_buffer);
+    b_flag1 = Item_GetFoodStaminaModifier(facing_buffer);
     arg_1[3] = b_flag1;
-    b_flag1 = Item_Routine_0800DD8C(facing_buffer);
+    b_flag1 = Item_GetFoodFatigueModifier(facing_buffer);
     arg_1[4] = b_flag1;
   }
   else if (i_val2 == 1) {
@@ -2034,7 +2034,7 @@ void Farmer_Routine_0801004C(undefined4 *farmer,int amount)
   HW_Routine_08008980(temp_buf_30);
   piStack_2c = (int *)0x0;
   apiStack_28[0] = (int *)(uint)(*(char *)(amount + 0x364) == '\0');
-  u_val1 = Dispatcher_Routine_080005D4(8);
+  u_val1 = CppRuntime_OperatorNewArray(8);
   p_int2 = (int *)Farmer_Routine_08011DC4(u_val1,*(undefined4 *)(amount + 4),apiStack_28);
   if ((p_int2 != piStack_2c) && (piStack_2c != (int *)0x0)) {
     _call_via_r2(piStack_2c,3,*(undefined4 *)(*piStack_2c + 8));
@@ -2130,7 +2130,7 @@ Farmer_Routine_08010268(undefined4 *farmer,undefined4 amount,undefined4 slot_id,
   int i_val4;
   
   *farmer = gRomData_080E5BF8;
-  u_val1 = Dispatcher_Routine_080005D4(0x34F4);
+  u_val1 = CppRuntime_OperatorNewArray(0x34F4);
   u_val1 = Farmer_Routine_08010358(u_val1,amount,slot_id,flags,arg_5);
   farmer[1] = u_val1;
   ScriptEngine_StartEventScript(farmer + 2);
@@ -2255,7 +2255,7 @@ Farmer_Routine_08010358(uint *farmer,undefined4 amount,undefined4 slot_id,undefi
   puStack_80 = farmer;
   Farm_Routine_08009A48(farmer + 5);
   Animal_Routine_0809AB8C((byte *)((int)puStack_80 + 0x1AA8));
-  Farmer_Routine_0800E354((byte *)((int)puStack_80 + 0x1BD8),slot_id,stack_buf_bc,puStack_80,u_val17,
+  Farmer_CalculateTargetTileGrid((byte *)((int)puStack_80 + 0x1BD8),slot_id,stack_buf_bc,puStack_80,u_val17,
                 u_val18);
   NPC_InitScheduleWaypoint((byte *)((int)puStack_80 + 0x1C70),arg_5);
   p_uint3 = puStack_80;
@@ -2834,7 +2834,7 @@ u32 Farmer_Routine_08011650(int farmer,undefined4 amount,int slot_id,uint *flags
   Farm_Routine_08009A48(farmer + 0x14,gRomData_080F058C);
   Animal_Routine_0809AB8C(farmer + 0x1AA8);
   stack_bytes_38[0] = stack_bytes_38[0] & 0x80;
-  Farmer_Routine_0800E354(farmer + 0x1BD8,u_val2,stack_bytes_38);
+  Farmer_CalculateTargetTileGrid(farmer + 0x1BD8,u_val2,stack_bytes_38);
   NPC_InitScheduleWaypoint(farmer + 0x1C70,u_val2);
   Farmer_Routine_0800FF8C(0x1ca0 + farmer);
   p_uint7 = (ushort *)(farmer + 0x1CCC);
@@ -3641,29 +3641,29 @@ void Farmer_Routine_080124D0(int farmer)
   p_int1 = (int *)(i_val5 + 0xac);
   if (*p_int1 == 0) {
     if (*(char *)(i_val5 + 0xe8) == '\0') {
-      u_val2 = Dispatcher_Routine_080005D4(4);
-      HW_Routine_0800835C(stack_buf_1c);
-      HW_Routine_0800770C(temp_buf_18);
+      u_val2 = CppRuntime_OperatorNewArray(4);
+      GBA_TextLayer_Init(stack_buf_1c);
+      GBA_BgLayer_Init(temp_buf_18);
       i_val4 = Animal_Routine_08050CC0(u_val2,0,0x1f,0,1,stack_buf_1c,temp_buf_18);
       i_val3 = *p_int1;
       if ((i_val4 != i_val3) && (i_val3 != 0)) {
         Animal_Routine_08050D0C(i_val3,3);
       }
       *p_int1 = i_val4;
-      HW_Routine_08007714(temp_buf_18,2);
+      GBA_BgLayer_SetPriority(temp_buf_18,2);
       HW_Routine_08008364(stack_buf_1c,2);
     }
     else {
-      u_val2 = Dispatcher_Routine_080005D4(4);
-      HW_Routine_0800835C(stack_buf_1c);
-      HW_Routine_0800770C(temp_buf_18);
+      u_val2 = CppRuntime_OperatorNewArray(4);
+      GBA_TextLayer_Init(stack_buf_1c);
+      GBA_BgLayer_Init(temp_buf_18);
       i_val4 = Animal_Routine_08050CC0(u_val2,0,0x1f,0,0,stack_buf_1c,temp_buf_18);
       i_val3 = *p_int1;
       if ((i_val4 != i_val3) && (i_val3 != 0)) {
         Animal_Routine_08050D0C(i_val3,3);
       }
       *p_int1 = i_val4;
-      HW_Routine_08007714(temp_buf_18,2);
+      GBA_BgLayer_SetPriority(temp_buf_18,2);
       HW_Routine_08008364(stack_buf_1c,2);
     }
   }
@@ -4030,7 +4030,7 @@ LAB_080129d0:
     if (arg_5 != '\0') {
       _call_via_r1(*(int **)(i_val3 + 0xa8),*(undefined4 *)(**(int **)(i_val3 + 0xa8) + 0xb8));
     }
-    Farm_Routine_0800934C(*(undefined4 *)(i_val3 + 0xa0),u_val4,i_val5,u_val6);
+    Fade_StartFadeOut(*(undefined4 *)(i_val3 + 0xa0),u_val4,i_val5,u_val6);
     *(undefined4 *)(i_val3 + 0x9c) = 0x13;
     *(undefined1 *)(i_val3 + 0xe8) = 0;
     *(bool *)(i_val3 + 0xe9) = i_val5 == 2;
@@ -4047,7 +4047,7 @@ LAB_080129d0:
     *(short *)(i_val3 + 0x60) = (short)register0x00000054;
   }
   else {
-    Farm_Routine_08009378(*(undefined4 *)(i_val3 + 0xa0),u_val4,i_val5,u_val6);
+    Fade_StartFadeIn(*(undefined4 *)(i_val3 + 0xa0),u_val4,i_val5,u_val6);
     *(undefined4 *)(i_val3 + 0x9c) = 0x12;
     *(undefined1 *)(i_val3 + 0xe8) = 0;
     register0x00000054 = (BADSPACEBASE *)(uint)(i_val5 == 2);
@@ -4128,14 +4128,14 @@ void Farmer_Routine_080134A4(int farmer)
   undefined4 stack_val_28;
   
   i_val6 = *(int *)(farmer + 4);
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x14);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0x14);
   i_val3 = *(int *)(i_val6 + 0x8c);
   *p_uint1 = gRomData_080E5E74;
   p_uint1[1] = i_val3;
   p_uint1[2] = 0x18;
   p_uint1[3] = stack_val_2c;
   p_uint1[4] = stack_val_28;
-  p_int2 = (int *)Dispatcher_Routine_080005D4(0x10,&stack0xffffffec,p_uint1 + 5);
+  p_int2 = (int *)CppRuntime_OperatorNewArray(0x10,&stack0xffffffec,p_uint1 + 5);
   i_val3 = 0x1001;
   i_val5 = *(int *)(i_val6 + 0x8c);
   *p_int2 = gRomData_080E5D54;
@@ -4166,14 +4166,14 @@ void Farmer_Routine_08013EF8(int farmer,undefined4 amount)
   undefined4 *apuStack_24 [3];
   
   i_val4 = *(int *)(farmer + 4);
-  apuStack_24[0] = (undefined4 *)Dispatcher_Routine_080005D4(0x14);
+  apuStack_24[0] = (undefined4 *)CppRuntime_OperatorNewArray(0x14);
   u_val3 = *(undefined4 *)(i_val4 + 0x8c);
   *apuStack_24[0] = gRomData_080E5E74;
   apuStack_24[0][1] = u_val3;
   apuStack_24[0][2] = 0x2f;
   apuStack_24[0][3] = stack_val_30;
   apuStack_24[0][4] = stack_val_2c;
-  u_val3 = Dispatcher_Routine_080005D4(0xc,0,apuStack_24[0] + 5);
+  u_val3 = CppRuntime_OperatorNewArray(0xc,0,apuStack_24[0] + 5);
   p_int1 = (int *)ScriptEngine_ResolveStringPointer(u_val3,apuStack_24,amount);
   p_int2 = *(int **)(i_val4 + 0xa4);
   if ((p_int1 != p_int2) && (p_int2 != (int *)0x0)) {
@@ -5123,7 +5123,7 @@ u32 Farmer_Routine_08014D9C(int farmer)
   p_uint27 = &stack0xffffffe0 + 0xFFFFFC70;
   i_val2 = *(int *)(farmer + 4);
   if (*(int *)(i_val2 + 0xf0) != 0) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(i_val2 + 0xf0) = 0;
   *p_uint7 = 0;
@@ -5329,10 +5329,10 @@ u32 Farmer_Routine_08014D9C(int farmer)
     gba_memcpy(&stack0xffffffe0 + i_val3 + i_val1,u_val5,u_val4);
     (&stack0xffffffe0 + i_val3 + i_val1)[u_val4] = 0;
   }
-  i_val3 = Dispatcher_Routine_080005D4(900);
+  i_val3 = CppRuntime_OperatorNewArray(900);
   gba_strcpy(i_val3,p_uint27);
   if (i_val3 != *(int *)(i_val2 + 0xf0)) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(i_val2 + 0xf0) = i_val3;
   if (*(int *)(i_val2 + 0xac) != 0) {
@@ -5457,7 +5457,7 @@ u32 Farmer_Routine_0801531C(int farmer)
   p_uint27 = &stack0xffffffe0 + 0xFFFFFC70;
   i_val2 = *(int *)(farmer + 4);
   if (*(int *)(i_val2 + 0xf0) != 0) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(i_val2 + 0xf0) = 0;
   *p_uint7 = 0;
@@ -5663,10 +5663,10 @@ u32 Farmer_Routine_0801531C(int farmer)
     gba_memcpy(&stack0xffffffe0 + i_val3 + i_val1,u_val5,u_val4);
     (&stack0xffffffe0 + i_val3 + i_val1)[u_val4] = 0;
   }
-  i_val3 = Dispatcher_Routine_080005D4(900);
+  i_val3 = CppRuntime_OperatorNewArray(900);
   gba_strcpy(i_val3,p_uint27);
   if (i_val3 != *(int *)(i_val2 + 0xf0)) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(i_val2 + 0xf0) = i_val3;
   if (*(int *)(i_val2 + 0xac) != 0) {
@@ -7223,7 +7223,7 @@ void Farmer_Routine_08016DB0(int farmer)
     }
     else {
       Item_SetIdAndClearQuality(stack_buf_1c,stack_val_30 - 1);
-      Item_Routine_0800DE0C(stack_buf_1c,(int)cStack_2e,(int)cStack_2c);
+      Item_GetFoodIconGraphic(stack_buf_1c,(int)cStack_2e,(int)cStack_2c);
       gba_memcpy(stack_buf_34,stack_buf_1c,3);
     }
   }
@@ -7682,11 +7682,11 @@ Farmer_Routine_080175B4(undefined4 *farmer,int amount,undefined4 slot_id,int *fl
   u_val5 = Farmer_Routine_0801A8C0(farmer,(*(uint *)(i_val7 + 0x10) & 0x1fffff) >> 0x10);
   *p_uint8 = u_val5;
   loop_i = *(uint *)farmer[0x410];
-  u_val5 = Farmer_Routine_0800E324(*p_int4 + 0x10);
+  u_val5 = Farmer_GetFacingDirection(*p_int4 + 0x10);
   u_val2 = NPC_Routine_080A4650((loop_i & 0x1fffff) >> 0x10,(loop_i & 0x7ffffff) >> 0x15,u_val5,*p_uint8);
   *(undefined1 *)((int)farmer + 0x104C) = u_val2;
   p_uint8 = (undefined4 *)((int)farmer + 0x1050);
-  u_val5 = Dispatcher_Routine_080005E4(0xb000);
+  u_val5 = CppRuntime_OperatorNewArray_Stub(0xb000);
   *p_uint8 = u_val5;
   *(undefined4 *)((int)farmer + 0x1054) = slot_id;
   i_val7 = 0x1058;
@@ -7735,7 +7735,7 @@ Farmer_Routine_080175B4(undefined4 *farmer,int amount,undefined4 slot_id,int *fl
   if (*(int *)farmer[1] != 2) {
     u_val5 = *(undefined4 *)((int)farmer + 0x1050);
     i_val7 = *p_int10;
-    i_val6 = Farmer_Routine_0800E324(i_val7 + 0x10);
+    i_val6 = Farmer_GetFacingDirection(i_val7 + 0x10);
     Farmer_Routine_080171F8(u_val5,i_val7 + 0x14,i_val6 == 3);
   }
   if ((stack_val_30 != 0) &&
@@ -7744,7 +7744,7 @@ Farmer_Routine_080175B4(undefined4 *farmer,int amount,undefined4 slot_id,int *fl
       (c_char3 = Farmer_Routine_080167CC(*(undefined4 *)((int)farmer + 0x1054)), c_char3 == '\0')))) {
     Farmer_Routine_0801DB58(farmer);
   }
-  u_val5 = Dispatcher_Routine_080005D4(0xa0);
+  u_val5 = CppRuntime_OperatorNewArray(0xa0);
   i_val7 = ScriptEngine_Construct(u_val5,farmer);
   p_int10 = (int *)((int)farmer + 0x1024);
   i_val6 = *p_int10;
@@ -7758,7 +7758,7 @@ Farmer_Routine_080175B4(undefined4 *farmer,int amount,undefined4 slot_id,int *fl
     NPC_Routine_080AB2E4(i_val7,3);
   }
   *p_int10 = 0;
-  u_val5 = Dispatcher_Routine_080005D4(4);
+  u_val5 = CppRuntime_OperatorNewArray(4);
   i_val7 = NPC_Routine_080AAFC8(u_val5,farmer,*(undefined4 *)(farmer[1] + 4));
   p_int10 = (int *)((int)farmer + 0x1028);
   i_val6 = *p_int10;
@@ -7811,7 +7811,7 @@ LAB_080178ae:
   do {
     if (((*pbVar11 & 3) == 1) && ((*(ushort *)(pbVar11 + 2) & 0x3ff) == *(uint *)farmer[1])) {
       p_int4 = (int *)((int)farmer + stack_val_2c * 4 + 0x10B0);
-      i_val7 = Dispatcher_Routine_080005D4(0x4c);
+      i_val7 = CppRuntime_OperatorNewArray(0x4c);
       u_val1 = *(undefined2 *)(pbVar11 + 8);
       NPC_Routine_080A4740(i_val7,farmer,2,0x1b);
       *(undefined4 *)(i_val7 + 0x24) = gRomData_080E602C;
@@ -7888,7 +7888,7 @@ LAB_08017a28:
     }
   }
   if (*(int *)((int)farmer + 0x1050) != 0) {
-    Dispatcher_Routine_08000614();
+    CppRuntime_OperatorDeleteArray();
   }
   p_int4 = (int *)((int)farmer + 0x10B0);
   if (p_int4 != (int *)0x0) {
@@ -7957,7 +7957,7 @@ LAB_08017a28:
   NPC_Routine_080AC85C(farmer + 1,2);
   *farmer = gRomData_080E61A0;
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(farmer);
+    CppRuntime_FreeMemory(farmer);
   }
   return;
 }
@@ -8061,7 +8061,7 @@ LAB_08017cbe:
         }
         *p_int14 = 0;
         *(undefined1 *)(p_int14 + 2) = 0;
-        u_val7 = Dispatcher_Routine_080005D4(0x40);
+        u_val7 = CppRuntime_OperatorNewArray(0x40);
         i_val8 = NPC_Routine_080A4A00(u_val7,u_val6,0x1A9,farmer,2,3,0);
         i_val9 = *p_int14;
         if ((i_val8 != i_val9) && (i_val9 != 0)) {
@@ -9438,7 +9438,7 @@ void Farmer_Routine_08019BEC(int *farmer,ushort *amount,uint slot_id)
   } while (loop_i < 6);
   if ((((*amount & 0x3ff) != 2) && (*(int *)farmer[1] == 2)) &&
      (*(int *)((int)farmer + 0x1050) != 0)) {
-    HW_Routine_08008E64(((int *)farmer[1])[0xb],*(int *)((int)farmer + 0x1050),0xb000);
+    GBA_DMA3_FastCopy(((int *)farmer[1])[0xb],*(int *)((int)farmer + 0x1050),0xb000);
   }
   NPC_Routine_080A56DC(farmer[1],amount,*(undefined4 *)((int)farmer + 0x1048),
                 (uint)*(byte *)((int)farmer + 0x104C),
@@ -9469,7 +9469,7 @@ void Farmer_Routine_08019BEC(int *farmer,ushort *amount,uint slot_id)
        loop_i = _call_via_r1(farmer,*(undefined4 *)(*farmer + 0x14)), (u_val1 & 0x3ff) == loop_i
        )) {
       end_ptr = (int *)((int)farmer + stack_val_34 * 4 + 0x10B0);
-      i_val7 = Dispatcher_Routine_080005D4(0x4c);
+      i_val7 = CppRuntime_OperatorNewArray(0x4c);
       curr_ptr = (int *)_call_via_r1(farmer,*(undefined4 *)(*farmer + 100));
       u_val2 = *(undefined2 *)(pbStack_24 + 8);
       NPC_Routine_080A4740(i_val7,farmer,2,0x1b);
@@ -9487,7 +9487,7 @@ void Farmer_Routine_08019BEC(int *farmer,ushort *amount,uint slot_id)
     pbStack_24 = pbStack_24 + 0xc;
     stack_val_34 = stack_val_34 + 1;
   } while (stack_val_34 < 6);
-  u_val5 = Dispatcher_Routine_080005D4(0xa0);
+  u_val5 = CppRuntime_OperatorNewArray(0xa0);
   i_val7 = ScriptEngine_Construct(u_val5,farmer);
   curr_ptr = (int *)((int)farmer + 0x1024);
   i_val9 = *curr_ptr;
@@ -9519,7 +9519,7 @@ LAB_08019e34:
     Farmer_Routine_0801FAC8(farmer,0);
   }
 LAB_08019e52:
-  u_val5 = Dispatcher_Routine_080005D4(4);
+  u_val5 = CppRuntime_OperatorNewArray(4);
   i_val7 = NPC_Routine_080AAFC8(u_val5,farmer,*(undefined4 *)(farmer[1] + 4));
   curr_ptr = (int *)((int)farmer + 0x1028);
   i_val9 = *curr_ptr;
@@ -9566,7 +9566,7 @@ u32 Farmer_Routine_08019F38(int farmer,undefined4 amount)
   
   i_val2 = Map_GetMapData(*(undefined4 *)(*(int *)(farmer + 4) + 4));
   if ((*(char *)(i_val2 + 0x24) == '\0') &&
-     ((i_val2 = Farmer_Routine_0800E324(*(int *)(farmer + 0x1038) + 0x10), i_val2 == 3 ||
+     ((i_val2 = Farmer_GetFacingDirection(*(int *)(farmer + 0x1038) + 0x10), i_val2 == 3 ||
       (c_char1 = NPC_Routine_080A5EB8(*(undefined4 *)(farmer + 4),amount), c_char1 != '\0')))) {
     u_val3 = 1;
   }
@@ -9590,7 +9590,7 @@ u32 Farmer_Routine_08019F7C(int farmer,undefined4 amount)
   int *p_int6;
   
   p_int6 = (int *)(farmer + 0x1038);
-  u_val1 = Farmer_Routine_0800E324(*p_int6 + 0x10);
+  u_val1 = Farmer_GetFacingDirection(*p_int6 + 0x10);
   u_val2 = Building_Routine_0800BF14(*p_int6 + 500);
   u_val3 = Building_Routine_0800C560(*p_int6 + 0x410);
   u_val4 = Building_Routine_0800CE64(*p_int6 + 0x5f0);
@@ -9613,7 +9613,7 @@ u32 Farmer_Routine_08019FE8(int farmer,undefined4 amount)
   int *p_int6;
   
   p_int6 = (int *)(farmer + 0x1038);
-  u_val1 = Farmer_Routine_0800E324(*p_int6 + 0x10);
+  u_val1 = Farmer_GetFacingDirection(*p_int6 + 0x10);
   u_val2 = Building_Routine_0800BF14(*p_int6 + 500);
   u_val3 = Building_Routine_0800C560(*p_int6 + 0x410);
   u_val4 = Building_Routine_0800CE64(*p_int6 + 0x5f0);
@@ -9659,7 +9659,7 @@ u32 Farmer_Routine_0801A054(undefined4 *farmer,int amount,uint slot_id)
       }
       else {
         p_int10 = (int *)(0x1038 + amount);
-        u_val7 = Farmer_Routine_0800E324(*p_int10 + 0x10);
+        u_val7 = Farmer_GetFacingDirection(*p_int10 + 0x10);
         u_val9 = Building_Routine_0800BF14(*p_int10 + 500);
         u_val4 = Building_Routine_0800C560(*p_int10 + 0x410);
         u_val5 = Building_Routine_0800CE64(*p_int10 + 0x5f0);
@@ -10009,7 +10009,7 @@ LAB_0801a79e:
 LAB_0801a7b0:
   loop_i = stack_val_3c >> 0x18;
   u_val10 = stack_val_38 >> 0x18;
-  u_val4 = Farmer_Routine_0800E324(*(int *)(stack_val_54 + 0x1038) + 0x10);
+  u_val4 = Farmer_GetFacingDirection(*(int *)(stack_val_54 + 0x1038) + 0x10);
   b_flag2 = NPC_Routine_080A4650(loop_i,u_val10,u_val4,*(undefined4 *)(stack_val_54 + 0x1048));
   pbVar11 = (byte *)(stack_val_54 + 0x104C);
   if ((*pbVar11 != b_flag2) || (b_flag1)) {
@@ -10695,7 +10695,7 @@ void Farmer_Routine_0801C3E0(int *farmer)
   do {
     if ((*pbVar7 & 3) == 2) {
       *pbVar7 = *pbVar7 & 0xf0 | 1;
-      u_val3 = Dispatcher_Routine_080005D4(0x40);
+      u_val3 = CppRuntime_OperatorNewArray(0x40);
       u_val4 = _call_via_r1(farmer,*(undefined4 *)(*farmer + 0x68));
       i_val5 = NPC_Routine_080A4A00(u_val3,u_val4,0x86F,farmer,3,0x1a,0);
       i_val6 = *p_int2;
@@ -10789,7 +10789,7 @@ Farmer_Routine_0801C550(int *farmer,int amount,uint slot_id,uint flags,byte arg_
   *pbVar6 = *pbVar6 & 0xf3 | (arg_5 & 3) << 2;
   *(undefined2 *)(pbVar6 + 8) = (undefined2)stack_val_24;
   p_int8 = (int *)((int)farmer + amount * 4 + 0x10B0);
-  i_val4 = Dispatcher_Routine_080005D4(0x4c);
+  i_val4 = CppRuntime_OperatorNewArray(0x4c);
   p_int5 = (int *)_call_via_r1(farmer,*(undefined4 *)(*farmer + 100));
   NPC_Routine_080A4740(i_val4,farmer,2,0x1b);
   *(undefined4 *)(i_val4 + 0x24) = gRomData_080E602C;
@@ -11119,7 +11119,7 @@ u32 Farmer_Routine_0801CBB0(int *farmer,int amount,int slot_id)
   }
   else {
     p_int6 = (int *)(0x1038 + (int)farmer);
-    u_val4 = Farmer_Routine_0800E324(*p_int6 + 0x10);
+    u_val4 = Farmer_GetFacingDirection(*p_int6 + 0x10);
     i_val5 = *p_int6 + 0x34C8;
     loop_i = 0x60;
     p_uint2 = (undefined1 *)(slot_id + gRomData_080F0800);
@@ -11345,7 +11345,7 @@ u32 Farmer_Routine_0801CFB8(int *farmer,int amount,int slot_id)
   }
   else {
     farmer = (int *)((int)farmer + 0x1038);
-    u_val3 = Farmer_Routine_0800E324(*farmer + 0x10);
+    u_val3 = Farmer_GetFacingDirection(*farmer + 0x10);
     i_val2 = *farmer + 0x34C8;
     loop_i = 0x60;
     p_uint8 = (undefined1 *)(slot_id + gRomData_080F0807);
@@ -11398,7 +11398,7 @@ u32 Farmer_Routine_0801D104(int farmer,ushort *amount,undefined4 slot_id,uint fl
   i_val1 = *p_int5;
   i_val4 = i_val1 + 0x34C8;
   stack_val_28 = slot_id;
-  u_val2 = Farmer_Routine_0800E324(i_val1 + 0x10);
+  u_val2 = Farmer_GetFacingDirection(i_val1 + 0x10);
   stack_val_34 = (ushort)((amount[1] & 0x3FF) << 6) |
               (ushort)(*(byte *)((int)amount + 1) >> 2);
   stack_val_32 = (ushort)((amount[2] & 0x3FF) << 6) |
@@ -11794,7 +11794,7 @@ u32 Farmer_Routine_0801D6AC(undefined4 *farmer,int amount,ushort *slot_id)
   undefined2 stack_val_22;
   
   i_val4 = *(int *)(amount + 0x1038) + 0x34C8;
-  u_val2 = Farmer_Routine_0800E324(*(int *)(amount + 0x1038) + 0x10);
+  u_val2 = Farmer_GetFacingDirection(*(int *)(amount + 0x1038) + 0x10);
   stack_val_2c = (ushort)((slot_id[1] & 0x3FF) << 6) |
               (ushort)(*(byte *)((int)slot_id + 1) >> 2);
   stack_val_2a = (ushort)((slot_id[2] & 0x3FF) << 6) |
@@ -12020,7 +12020,7 @@ u32 Farmer_Routine_0801D9BC(int *farmer)
     case 0x801dad0:
       if ((*(byte *)(i_val5 + 0x12) & 0x1f) * 0x1000000 + 0xfa000000 >> 0x18 < 0xe) {
         if ((i_val3 == 0) || (c_char1 = Building_Routine_0800BB74(i_val3), c_char1 == '\0')) {
-          i_val5 = Farmer_Routine_0800E324(i_val5 + 0x10);
+          i_val5 = Farmer_GetFacingDirection(i_val5 + 0x10);
           if (i_val5 == 1) {
             u_val2 = 2;
           }
@@ -12137,7 +12137,7 @@ void Farmer_Routine_0801DC24(int *farmer,undefined4 amount)
   p_int5 = (int *)((int)farmer + 0x1058);
   i_val4 = *p_int5;
   if (i_val4 == 0) {
-    u_val1 = Dispatcher_Routine_080005D4(0x40);
+    u_val1 = CppRuntime_OperatorNewArray(0x40);
     u_val2 = _call_via_r1(farmer,*(undefined4 *)(*farmer + 0x5c));
     i_val4 = NPC_Routine_080A4A00(u_val1,u_val2,amount,farmer,3,0x1b,1);
     i_val3 = *p_int5;
@@ -13078,7 +13078,7 @@ void Farmer_Routine_0801E90C(int *farmer)
     else {
       u_val9 = *(undefined4 *)(0x1050 + (int)farmer);
       loop_i = *(int *)(0x1038 + (int)farmer);
-      i_val1 = Farmer_Routine_0800E324(loop_i + 0x10);
+      i_val1 = Farmer_GetFacingDirection(loop_i + 0x10);
       Farmer_Routine_080171F8(u_val9,loop_i + 0x14,i_val1 == 3);
     }
   }
@@ -13383,7 +13383,7 @@ LAB_0801efa8:
     i_val6 = Farmer_Routine_0800F09C(slot_id);
     if ((i_val6 == 0) || (i_val6 != 1)) {
       Farmer_Routine_0800F0A4(temp_buf_50,slot_id);
-      u_val4 = Item_Routine_0800DCE0(temp_buf_50);
+      u_val4 = Item_GetFoodBasePrice(temp_buf_50);
     }
     else {
       stack_buf_38[0] = Farmer_Routine_0800F0E8(slot_id);
@@ -13417,7 +13417,7 @@ LAB_0801efa8:
   *p_int11 = 0;
   *(undefined1 *)(p_int11 + 2) = (undefined1)stack_val_30;
   if (stack_val_30 == 0) {
-    u_val8 = Dispatcher_Routine_080005D4(0x40);
+    u_val8 = CppRuntime_OperatorNewArray(0x40);
     *puStack_28 = 0;
     i_val6 = NPC_Routine_080A4A00(u_val8,u_val7,0x1A9,farmer,2,3);
     i_val9 = *p_int11;
@@ -13428,7 +13428,7 @@ LAB_0801efa8:
     u_val7 = 0;
   }
   else {
-    u_val8 = Dispatcher_Routine_080005D4(0x40);
+    u_val8 = CppRuntime_OperatorNewArray(0x40);
     *puStack_28 = 0;
     i_val6 = NPC_Routine_080A4A00(u_val8,u_val7,u_val4,farmer,2,3);
     i_val9 = *p_int11;
@@ -13482,7 +13482,7 @@ void Farmer_Routine_0801F14C(int *farmer)
       u_val6 = *(byte *)(*(int *)((int)farmer + 0x1038) + 4) & 1;
       break;
     case 0x801f26c:
-      i_val3 = Farmer_Routine_0800E324(*(int *)((int)farmer + 0x1038) + 0x10);
+      i_val3 = Farmer_GetFacingDirection(*(int *)((int)farmer + 0x1038) + 0x10);
       u_val6 = 0;
       if (i_val3 == 3) {
         u_val6 = 1;
@@ -13491,7 +13491,7 @@ void Farmer_Routine_0801F14C(int *farmer)
     case 0x801f2ca:
       goto case_0801F2CA;
     }
-    u_val1 = Dispatcher_Routine_080005D4(0x40);
+    u_val1 = CppRuntime_OperatorNewArray(0x40);
     u_val2 = _call_via_r1(farmer,*(undefined4 *)(*farmer + 0x60));
     i_val3 = NPC_Routine_080A4A00(u_val1,u_val2,u_val6,farmer,2,0x1b,0);
     farmer = (int *)((int)farmer + 0x105C);
@@ -13530,25 +13530,25 @@ void Farmer_Routine_0801F2DC(int *farmer)
   b_flag1 = *(byte *)(*(int *)((int)farmer + 0x1038) + 0x12) & 0x1f;
   if (3 < b_flag1) {
     if (b_flag1 < 9) {
-      u_val3 = Dispatcher_Routine_080005D4(0x40);
+      u_val3 = CppRuntime_OperatorNewArray(0x40);
       i_val2 = (int)farmer + 0xFF4;
       u_val5 = 0;
       goto LAB_0801f38a;
     }
     if (b_flag1 < 0x10) {
-      u_val3 = Dispatcher_Routine_080005D4(0x40);
+      u_val3 = CppRuntime_OperatorNewArray(0x40);
       i_val2 = (int)farmer + 0xFF4;
       u_val5 = 1;
       goto LAB_0801f38a;
     }
     if (b_flag1 < 0x13) {
-      u_val3 = Dispatcher_Routine_080005D4(0x40);
+      u_val3 = CppRuntime_OperatorNewArray(0x40);
       i_val2 = (int)farmer + 0xFF4;
       u_val5 = 2;
       goto LAB_0801f38a;
     }
   }
-  u_val3 = Dispatcher_Routine_080005D4(0x40);
+  u_val3 = CppRuntime_OperatorNewArray(0x40);
   i_val2 = (int)farmer + 0xFF4;
   u_val5 = 3;
 LAB_0801f38a:
@@ -13615,7 +13615,7 @@ void Farmer_Routine_0801F3E4(int *farmer)
       *(undefined1 *)(i_val2 + 0x48) = 1;
       return;
     }
-    i_val2 = Dispatcher_Routine_080005D4(0x4c);
+    i_val2 = CppRuntime_OperatorNewArray(0x4c);
     p_int4 = (int *)_call_via_r1(farmer,*(undefined4 *)(*farmer + 100));
     NPC_Routine_080A4740(i_val2,farmer,2,0x1b);
     *(undefined4 *)(i_val2 + 0x24) = gRomData_080E602C;
@@ -13673,7 +13673,7 @@ void Farmer_Routine_0801F518(int *farmer,int amount)
   i_val2 = _call_via_r1(farmer,*(undefined4 *)(*farmer + 0x14));
   if (i_val2 == amount) {
     *(undefined1 *)(farmer + 0x418) = 1;
-    u_val3 = Dispatcher_Routine_080005D4(0x40);
+    u_val3 = CppRuntime_OperatorNewArray(0x40);
     u_val4 = _call_via_r1(farmer,*(undefined4 *)(*farmer + 0x60));
     i_val2 = NPC_Routine_080A4A00(u_val3,u_val4,2,farmer,2,0x1b,0);
     farmer = (int *)((int)farmer + 0x105C);
@@ -13725,9 +13725,9 @@ void Farmer_Routine_0801F614(int *farmer)
   *p_int5 = 0;
   i_val2 = _call_via_r1(farmer,*(undefined4 *)(*farmer + 0x14));
   if (i_val2 == 0) {
-    i_val2 = Farmer_Routine_0800E324(*(int *)((int)farmer + 0x1038) + 0x10);
+    i_val2 = Farmer_GetFacingDirection(*(int *)((int)farmer + 0x1038) + 0x10);
     if (i_val2 == 3) {
-      u_val1 = Dispatcher_Routine_080005D4(0x40);
+      u_val1 = CppRuntime_OperatorNewArray(0x40);
       i_val6 = (int)farmer + 0xF04;
       i_val2 = NPC_Routine_080A4A00(u_val1,i_val6,1,farmer,3,0x1e,0);
       p_int5 = (int *)(0x106C + (int)farmer);
@@ -13736,11 +13736,11 @@ void Farmer_Routine_0801F614(int *farmer)
         _call_via_r2(i_val3,3,*(undefined4 *)(*(int *)(i_val3 + 0x24) + 8));
       }
       *p_int5 = i_val2;
-      u_val1 = Dispatcher_Routine_080005D4(0x40);
+      u_val1 = CppRuntime_OperatorNewArray(0x40);
       u_val4 = 1;
     }
     else {
-      u_val1 = Dispatcher_Routine_080005D4(0x40);
+      u_val1 = CppRuntime_OperatorNewArray(0x40);
       i_val6 = (int)farmer + 0xF04;
       i_val2 = NPC_Routine_080A4A00(u_val1,i_val6,0,farmer,3,0x1e,0);
       p_int5 = (int *)(0x106C + (int)farmer);
@@ -13749,7 +13749,7 @@ void Farmer_Routine_0801F614(int *farmer)
         _call_via_r2(i_val3,3,*(undefined4 *)(*(int *)(i_val3 + 0x24) + 8));
       }
       *p_int5 = i_val2;
-      u_val1 = Dispatcher_Routine_080005D4(0x40);
+      u_val1 = CppRuntime_OperatorNewArray(0x40);
       u_val4 = 0;
     }
     i_val2 = NPC_Routine_080A4A00(u_val1,i_val6,u_val4,farmer,3,0x1e,0);
@@ -13793,7 +13793,7 @@ void Farmer_Routine_0801F77C(int *farmer)
     if (c_char1 == '\0') {
       return;
     }
-    u_val2 = Dispatcher_Routine_080005D4(0x40);
+    u_val2 = CppRuntime_OperatorNewArray(0x40);
     i_val3 = (int)farmer + 0xF04;
   }
   else if (i_val3 < 3) {
@@ -13803,15 +13803,15 @@ void Farmer_Routine_0801F77C(int *farmer)
     if (-1 < *(char *)(*(int *)((int)farmer + 0x1038) + 3)) {
       return;
     }
-    u_val2 = Dispatcher_Routine_080005D4(0x40);
+    u_val2 = CppRuntime_OperatorNewArray(0x40);
     i_val3 = (int)farmer + 0xF04;
   }
   else if (i_val3 == 3) {
-    i_val3 = Farmer_Routine_0800E324(*(int *)((int)farmer + 0x1038) + 0x10);
+    i_val3 = Farmer_GetFacingDirection(*(int *)((int)farmer + 0x1038) + 0x10);
     if (i_val3 != 3) {
       return;
     }
-    u_val2 = Dispatcher_Routine_080005D4(0x40);
+    u_val2 = CppRuntime_OperatorNewArray(0x40);
     i_val3 = (int)farmer + 0xF04;
   }
   else {
@@ -13819,7 +13819,7 @@ void Farmer_Routine_0801F77C(int *farmer)
       return;
     }
     if ((*(byte *)(*(int *)((int)farmer + 0x1038) + 4) & 1) != 0) {
-      u_val2 = Dispatcher_Routine_080005D4(0x40);
+      u_val2 = CppRuntime_OperatorNewArray(0x40);
       i_val3 = NPC_Routine_080A4A00(u_val2,(int)farmer + 0xF04,2,farmer,2,0x1f,0);
       p_int5 = (int *)((int)farmer + 0x1078);
       i_val4 = *p_int5;
@@ -13828,11 +13828,11 @@ void Farmer_Routine_0801F77C(int *farmer)
       }
       *p_int5 = i_val3;
     }
-    i_val3 = Farmer_Routine_0800E324(*(int *)((int)farmer + 0x1038) + 0x10);
+    i_val3 = Farmer_GetFacingDirection(*(int *)((int)farmer + 0x1038) + 0x10);
     if (i_val3 != 3) {
       return;
     }
-    u_val2 = Dispatcher_Routine_080005D4(0x40);
+    u_val2 = CppRuntime_OperatorNewArray(0x40);
     i_val3 = (int)farmer + 0xF04;
   }
   i_val3 = NPC_Routine_080A4A00(u_val2,i_val3,2,farmer,2,0x1f,0);
@@ -13994,7 +13994,7 @@ void Farmer_Routine_0801FAC8(int farmer,int amount)
         }
       }
     }
-    u_val1 = Dispatcher_Routine_080005D4(0x46C);
+    u_val1 = CppRuntime_OperatorNewArray(0x46C);
     i_val5 = ScriptEngine_GetVariable(u_val1,farmer,i_val5,amount,i_val4);
     p_int2 = (int *)(farmer + 0x107C);
     i_val4 = *p_int2;
@@ -14016,9 +14016,9 @@ Farmer_Routine_0801FB7C(undefined4 *farmer,undefined4 amount,undefined4 slot_id,
   undefined4 u_val1;
   undefined4 temp_buf_20 [3];
   
-  u_val1 = Dispatcher_Routine_080005D4(0xbc);
+  u_val1 = CppRuntime_OperatorNewArray(0xbc);
   temp_buf_20[0] = NPC_Routine_080A6474(u_val1,amount);
-  u_val1 = Dispatcher_Routine_080005D4(0x10CC);
+  u_val1 = CppRuntime_OperatorNewArray(0x10CC);
   u_val1 = Farmer_Routine_080175B4(u_val1,amount,slot_id,temp_buf_20,flags);
   *farmer = u_val1;
   return farmer;

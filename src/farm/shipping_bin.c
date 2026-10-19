@@ -365,9 +365,9 @@ LAB_0800b4fa:
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B500 @ 0x0800B500
+// Function: ShippingBin_FindLastEmptySlot @ 0x0800B500
 // =============================================================================
-u32 ShippingBin_Routine_0800B500(int arg_1)
+u32 ShippingBin_FindLastEmptySlot(int arg_1)
 
 {
   char c_char1;
@@ -386,9 +386,9 @@ LAB_0800b53a:
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B544 @ 0x0800B544
+// Function: ShippingBin_FindSlotByItemId @ 0x0800B544
 // =============================================================================
-u32 ShippingBin_Routine_0800B544(int arg_1,int arg_2)
+u32 ShippingBin_FindSlotByItemId(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -414,9 +414,9 @@ LAB_0800b592:
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B5A8 @ 0x0800B5A8
+// Function: ShippingBin_AddItemQuantity @ 0x0800B5A8
 // =============================================================================
-u32 ShippingBin_Routine_0800B5A8(int arg_1,int arg_2,uint arg_3)
+u32 ShippingBin_AddItemQuantity(int arg_1,int arg_2,uint arg_3)
 
 {
   char c_char1;
@@ -471,9 +471,9 @@ LAB_0800b646:
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B660 @ 0x0800B660
+// Function: ShippingBin_ClearAllSlots @ 0x0800B660
 // =============================================================================
-u32 ShippingBin_Routine_0800B660(int arg_1)
+u32 ShippingBin_ClearAllSlots(int arg_1)
 
 {
   int i_val1;
@@ -482,7 +482,7 @@ u32 ShippingBin_Routine_0800B660(int arg_1)
   i_val2 = 0x3f;
   i_val1 = arg_1;
   do {
-    Item_Routine_0800DE68(i_val1);
+    Item_ResetSlotData(i_val1);
     i_val1 = i_val1 + 4;
     i_val2 = i_val2 + -1;
   } while (i_val2 != -1);
@@ -490,9 +490,9 @@ u32 ShippingBin_Routine_0800B660(int arg_1)
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B68C @ 0x0800B68C
+// Function: ShippingBin_GetSlotQuantity @ 0x0800B68C
 // =============================================================================
-u32 ShippingBin_Routine_0800B68C(int arg_1,int arg_2)
+u32 ShippingBin_GetSlotQuantity(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -506,7 +506,7 @@ u32 ShippingBin_Routine_0800B68C(int arg_1,int arg_2)
   for (; arg_1 != i_val4; arg_1 = arg_1 + 4) {
     c_char1 = Item_Routine_0800DEDC(arg_1);
     if (c_char1 == '\0') {
-      Item_Routine_0800DEB8(temp_buf_18,arg_1);
+      Item_GetToolExperienceRequired(temp_buf_18,arg_1);
       i_val2 = Item_Routine_0800DCB4(temp_buf_18);
       if (i_val2 == arg_2) {
         i_val2 = Item_Routine_0800DEF0(arg_1);
@@ -521,9 +521,9 @@ u32 ShippingBin_Routine_0800B68C(int arg_1,int arg_2)
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B6E8 @ 0x0800B6E8
+// Function: ShippingBin_SetSlotQuantity @ 0x0800B6E8
 // =============================================================================
-u32 ShippingBin_Routine_0800B6E8(int arg_1,int arg_2)
+u32 ShippingBin_SetSlotQuantity(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -537,7 +537,7 @@ u32 ShippingBin_Routine_0800B6E8(int arg_1,int arg_2)
   for (; arg_1 != i_val3; arg_1 = arg_1 + 4) {
     c_char1 = Item_Routine_0800DEDC(arg_1);
     if (c_char1 == '\0') {
-      Item_Routine_0800DEB8(temp_buf_18,arg_1);
+      Item_GetToolExperienceRequired(temp_buf_18,arg_1);
       i_val2 = Item_Routine_0800DCB4(temp_buf_18);
       if (i_val2 == arg_2) {
         i_val2 = Item_Routine_0800DEF0(arg_1);
@@ -549,9 +549,9 @@ u32 ShippingBin_Routine_0800B6E8(int arg_1,int arg_2)
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B73C @ 0x0800B73C
+// Function: ShippingBin_CalculateDailyTotalEarnings @ 0x0800B73C
 // =============================================================================
-u32 ShippingBin_Routine_0800B73C(int arg_1)
+u32 ShippingBin_CalculateDailyTotalEarnings(int arg_1)
 
 {
   char c_char1;
@@ -571,9 +571,9 @@ LAB_0800b768:
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B770 @ 0x0800B770
+// Function: ShippingBin_CollectDailyEarnings @ 0x0800B770
 // =============================================================================
-u32 ShippingBin_Routine_0800B770(int arg_1)
+u32 ShippingBin_CollectDailyEarnings(int arg_1)
 
 {
   char c_char1;
@@ -592,9 +592,9 @@ LAB_0800b7ae:
 }
 
 // =============================================================================
-// Function: ShippingBin_Routine_0800B7B8 @ 0x0800B7B8
+// Function: ShippingBin_ResetDailyShipments @ 0x0800B7B8
 // =============================================================================
-u32 ShippingBin_Routine_0800B7B8(int arg_1,int arg_2)
+u32 ShippingBin_ResetDailyShipments(int arg_1,int arg_2)
 
 {
   char c_char1;
@@ -608,7 +608,7 @@ u32 ShippingBin_Routine_0800B7B8(int arg_1,int arg_2)
   for (; arg_1 != i_val3; arg_1 = arg_1 + 4) {
     c_char1 = Item_Routine_0800DEDC(arg_1);
     if (c_char1 == '\0') {
-      Item_Routine_0800DEB8(temp_buf_18,arg_1);
+      Item_GetToolExperienceRequired(temp_buf_18,arg_1);
       i_val2 = Item_Routine_0800DCB4(temp_buf_18);
       if (i_val2 == arg_2) goto LAB_0800b802;
     }

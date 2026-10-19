@@ -102,67 +102,67 @@
     "file": "core/dispatcher.c"
   },
   "0x08000584": {
-    "canonical_name": "Dispatcher_Routine_08000584",
+    "canonical_name": "CppRuntime_OperatorNew",
     "original_name": "Dispatcher_Routine_08000584",
     "address_hex": "0x08000584",
     "file": "core/dispatcher.c"
   },
   "0x08000590": {
-    "canonical_name": "Dispatcher_Routine_08000590",
+    "canonical_name": "CppRuntime_OperatorDelete",
     "original_name": "Dispatcher_Routine_08000590",
     "address_hex": "0x08000590",
     "file": "core/dispatcher.c"
   },
   "0x0800059C": {
-    "canonical_name": "Dispatcher_Routine_0800059C",
+    "canonical_name": "CppRuntime_AllocateMemory",
     "original_name": "Dispatcher_Routine_0800059C",
     "address_hex": "0x0800059C",
     "file": "core/dispatcher.c"
   },
   "0x080005D4": {
-    "canonical_name": "Dispatcher_Routine_080005D4",
+    "canonical_name": "CppRuntime_OperatorNewArray",
     "original_name": "Dispatcher_Routine_080005D4",
     "address_hex": "0x080005D4",
     "file": "core/dispatcher.c"
   },
   "0x080005E4": {
-    "canonical_name": "Dispatcher_Routine_080005E4",
+    "canonical_name": "CppRuntime_OperatorNewArray_Stub",
     "original_name": "Dispatcher_Routine_080005E4",
     "address_hex": "0x080005E4",
     "file": "core/dispatcher.c"
   },
   "0x080005F0": {
-    "canonical_name": "Dispatcher_Routine_080005F0",
+    "canonical_name": "CppRuntime_AllocateMemory_NoThrow",
     "original_name": "Dispatcher_Routine_080005F0",
     "address_hex": "0x080005F0",
     "file": "core/dispatcher.c"
   },
   "0x080005FC": {
-    "canonical_name": "Dispatcher_Routine_080005FC",
+    "canonical_name": "CppRuntime_OperatorNewArray_NoThrow",
     "original_name": "Dispatcher_Routine_080005FC",
     "address_hex": "0x080005FC",
     "file": "core/dispatcher.c"
   },
   "0x08000608": {
-    "canonical_name": "Dispatcher_Routine_08000608",
+    "canonical_name": "CppRuntime_FreeMemory",
     "original_name": "Dispatcher_Routine_08000608",
     "address_hex": "0x08000608",
     "file": "core/dispatcher.c"
   },
   "0x08000614": {
-    "canonical_name": "Dispatcher_Routine_08000614",
+    "canonical_name": "CppRuntime_OperatorDeleteArray",
     "original_name": "Dispatcher_Routine_08000614",
     "address_hex": "0x08000614",
     "file": "core/dispatcher.c"
   },
   "0x08000620": {
-    "canonical_name": "Dispatcher_Routine_08000620",
+    "canonical_name": "CppRuntime_FreeMemory_NoThrow",
     "original_name": "Dispatcher_Routine_08000620",
     "address_hex": "0x08000620",
     "file": "core/dispatcher.c"
   },
   "0x0800062C": {
-    "canonical_name": "Dispatcher_Routine_0800062C",
+    "canonical_name": "CppRuntime_OperatorDeleteArray_NoThrow",
     "original_name": "Dispatcher_Routine_0800062C",
     "address_hex": "0x0800062C",
     "file": "core/dispatcher.c"
@@ -324,25 +324,25 @@
     "file": "core/scene_manager.c"
   },
   "0x080040A0": {
-    "canonical_name": "HW_Routine_080040A0",
+    "canonical_name": "SaveManager_LoadGameSlot",
     "original_name": "HW_Routine_080040A0",
     "address_hex": "0x080040A0",
     "file": "core/hardware.c"
   },
   "0x080041DC": {
-    "canonical_name": "HW_Routine_080041DC",
+    "canonical_name": "SaveLoadScreen_Init",
     "original_name": "HW_Routine_080041DC",
     "address_hex": "0x080041DC",
     "file": "core/hardware.c"
   },
   "0x08004570": {
-    "canonical_name": "HW_Routine_08004570",
+    "canonical_name": "SaveLoadScreen_RunLoop",
     "original_name": "HW_Routine_08004570",
     "address_hex": "0x08004570",
     "file": "core/hardware.c"
   },
   "0x08004B94": {
-    "canonical_name": "HW_Routine_08004B94",
+    "canonical_name": "SaveLoadScreen_Deinit",
     "original_name": "HW_Routine_08004B94",
     "address_hex": "0x08004B94",
     "file": "core/hardware.c"
@@ -528,7 +528,7 @@
     "file": "core/hardware.c"
   },
   "0x0800736C": {
-    "canonical_name": "HW_Routine_0800736C",
+    "canonical_name": "GBA_PaletteManager_Allocate",
     "original_name": "HW_Routine_0800736C",
     "address_hex": "0x0800736C",
     "file": "core/hardware.c"
@@ -558,7 +558,7 @@
     "file": "core/hardware.c"
   },
   "0x08007714": {
-    "canonical_name": "HW_Routine_08007714",
+    "canonical_name": "GBA_BgLayer_SetPriority",
     "original_name": "HW_Routine_08007714",
     "address_hex": "0x08007714",
     "file": "core/hardware.c"
@@ -582,7 +582,7 @@
     "file": "core/hardware.c"
   },
   "0x08007874": {
-    "canonical_name": "HW_Routine_08007874",
+    "canonical_name": "GBA_ObjAttr_Init",
     "original_name": "HW_Routine_08007874",
     "address_hex": "0x08007874",
     "file": "core/hardware.c"
@@ -600,7 +600,7 @@
     "file": "core/hardware.c"
   },
   "0x08007B54": {
-    "canonical_name": "HW_Routine_08007B54",
+    "canonical_name": "GBA_ObjAttr_AllocateSprite",
     "original_name": "HW_Routine_08007B54",
     "address_hex": "0x08007B54",
     "file": "core/hardware.c"
@@ -618,7 +618,7 @@
     "file": "core/hardware.c"
   },
   "0x08007D4C": {
-    "canonical_name": "HW_Routine_08007D4C",
+    "canonical_name": "GBA_Vram_AllocateTileBlock",
     "original_name": "HW_Routine_08007D4C",
     "address_hex": "0x08007D4C",
     "file": "core/hardware.c"
@@ -696,7 +696,7 @@
     "file": "core/hardware.c"
   },
   "0x08008574": {
-    "canonical_name": "HW_Routine_08008574",
+    "canonical_name": "GBA_DisplayController_Reset",
     "original_name": "HW_Routine_08008574",
     "address_hex": "0x08008574",
     "file": "core/hardware.c"
@@ -960,7 +960,7 @@
     "file": "core/hardware.c"
   },
   "0x08008E64": {
-    "canonical_name": "HW_Routine_08008E64",
+    "canonical_name": "GBA_DMA3_FastCopy",
     "original_name": "HW_Routine_08008E64",
     "address_hex": "0x08008E64",
     "file": "core/hardware.c"
@@ -996,13 +996,13 @@
     "file": "core/hardware.c"
   },
   "0x0800901C": {
-    "canonical_name": "Farm_Routine_0800901C",
+    "canonical_name": "GBA_Bios_CpuCopyBlock",
     "original_name": "Farm_Routine_0800901C",
     "address_hex": "0x0800901C",
     "file": "farm/farm.c"
   },
   "0x08009094": {
-    "canonical_name": "Farm_Routine_08009094",
+    "canonical_name": "GBA_Bios_CpuCopyDescriptorList",
     "original_name": "Farm_Routine_08009094",
     "address_hex": "0x08009094",
     "file": "farm/farm.c"
@@ -1032,19 +1032,19 @@
     "file": "farm/farm.c"
   },
   "0x08009190": {
-    "canonical_name": "Farm_Routine_08009190",
+    "canonical_name": "Input_PollTriggers",
     "original_name": "Farm_Routine_08009190",
     "address_hex": "0x08009190",
     "file": "farm/farm.c"
   },
   "0x080091A4": {
-    "canonical_name": "Farm_Routine_080091A4",
+    "canonical_name": "Input_InitKeypadState",
     "original_name": "Farm_Routine_080091A4",
     "address_hex": "0x080091A4",
     "file": "farm/farm.c"
   },
   "0x080091E8": {
-    "canonical_name": "Farm_Routine_080091E8",
+    "canonical_name": "Input_InitDefault",
     "original_name": "Farm_Routine_080091E8",
     "address_hex": "0x080091E8",
     "file": "farm/farm.c"
@@ -1056,7 +1056,7 @@
     "file": "farm/farm.c"
   },
   "0x08009268": {
-    "canonical_name": "Farm_Routine_08009268",
+    "canonical_name": "Input_ProcessAutoRepeat",
     "original_name": "Farm_Routine_08009268",
     "address_hex": "0x08009268",
     "file": "farm/farm.c"
@@ -1068,37 +1068,37 @@
     "file": "farm/farm.c"
   },
   "0x08009300": {
-    "canonical_name": "Farm_Routine_08009300",
+    "canonical_name": "Fade_Init",
     "original_name": "Farm_Routine_08009300",
     "address_hex": "0x08009300",
     "file": "farm/farm.c"
   },
   "0x08009324": {
-    "canonical_name": "Farm_Routine_08009324",
+    "canonical_name": "Fade_Deinit",
     "original_name": "Farm_Routine_08009324",
     "address_hex": "0x08009324",
     "file": "farm/farm.c"
   },
   "0x0800934C": {
-    "canonical_name": "Farm_Routine_0800934C",
+    "canonical_name": "Fade_StartFadeOut",
     "original_name": "Farm_Routine_0800934C",
     "address_hex": "0x0800934C",
     "file": "farm/farm.c"
   },
   "0x08009378": {
-    "canonical_name": "Farm_Routine_08009378",
+    "canonical_name": "Fade_StartFadeIn",
     "original_name": "Farm_Routine_08009378",
     "address_hex": "0x08009378",
     "file": "farm/farm.c"
   },
   "0x080093AC": {
-    "canonical_name": "Farm_Routine_080093AC",
+    "canonical_name": "Fade_UpdateFrame",
     "original_name": "Farm_Routine_080093AC",
     "address_hex": "0x080093AC",
     "file": "farm/farm.c"
   },
   "0x080094AC": {
-    "canonical_name": "Farm_Routine_080094AC",
+    "canonical_name": "Fade_Update",
     "original_name": "Farm_Routine_080094AC",
     "address_hex": "0x080094AC",
     "file": "farm/farm.c"
@@ -1110,7 +1110,7 @@
     "file": "farm/farm.c"
   },
   "0x080094E0": {
-    "canonical_name": "Farm_Routine_080094E0",
+    "canonical_name": "Fade_IsActive",
     "original_name": "Farm_Routine_080094E0",
     "address_hex": "0x080094E0",
     "file": "farm/farm.c"
@@ -1188,37 +1188,37 @@
     "file": "farm/farm.c"
   },
   "0x080096B0": {
-    "canonical_name": "Farm_Routine_080096B0",
+    "canonical_name": "GBA_Display_InitRegsBuffer",
     "original_name": "Farm_Routine_080096B0",
     "address_hex": "0x080096B0",
     "file": "farm/farm.c"
   },
   "0x080096F0": {
-    "canonical_name": "Farm_Routine_080096F0",
+    "canonical_name": "GBA_Display_FlushRegs",
     "original_name": "Farm_Routine_080096F0",
     "address_hex": "0x080096F0",
     "file": "farm/farm.c"
   },
   "0x08009710": {
-    "canonical_name": "Farm_Routine_08009710",
+    "canonical_name": "GBA_Display_ApplyScrollAndBlend",
     "original_name": "Farm_Routine_08009710",
     "address_hex": "0x08009710",
     "file": "farm/farm.c"
   },
   "0x08009744": {
-    "canonical_name": "Farm_Routine_08009744",
+    "canonical_name": "OAM_InitSpriteBuffer",
     "original_name": "Farm_Routine_08009744",
     "address_hex": "0x08009744",
     "file": "farm/farm.c"
   },
   "0x0800977C": {
-    "canonical_name": "Farm_Routine_0800977C",
+    "canonical_name": "OAM_DMA_FlushBuffer",
     "original_name": "Farm_Routine_0800977C",
     "address_hex": "0x0800977C",
     "file": "farm/farm.c"
   },
   "0x08009790": {
-    "canonical_name": "Farm_Routine_08009790",
+    "canonical_name": "OAM_CpuFastSet_FlushBuffer",
     "original_name": "Farm_Routine_08009790",
     "address_hex": "0x08009790",
     "file": "farm/farm.c"
@@ -1536,55 +1536,55 @@
     "file": "farm/shipping_bin.c"
   },
   "0x0800B500": {
-    "canonical_name": "ShippingBin_Routine_0800B500",
+    "canonical_name": "ShippingBin_FindLastEmptySlot",
     "original_name": "ShippingBin_Routine_0800B500",
     "address_hex": "0x0800B500",
     "file": "farm/shipping_bin.c"
   },
   "0x0800B544": {
-    "canonical_name": "ShippingBin_Routine_0800B544",
+    "canonical_name": "ShippingBin_FindSlotByItemId",
     "original_name": "ShippingBin_Routine_0800B544",
     "address_hex": "0x0800B544",
     "file": "farm/shipping_bin.c"
   },
   "0x0800B5A8": {
-    "canonical_name": "ShippingBin_Routine_0800B5A8",
+    "canonical_name": "ShippingBin_AddItemQuantity",
     "original_name": "ShippingBin_Routine_0800B5A8",
     "address_hex": "0x0800B5A8",
     "file": "farm/shipping_bin.c"
   },
   "0x0800B660": {
-    "canonical_name": "ShippingBin_Routine_0800B660",
+    "canonical_name": "ShippingBin_ClearAllSlots",
     "original_name": "ShippingBin_Routine_0800B660",
     "address_hex": "0x0800B660",
     "file": "farm/shipping_bin.c"
   },
   "0x0800B68C": {
-    "canonical_name": "ShippingBin_Routine_0800B68C",
+    "canonical_name": "ShippingBin_GetSlotQuantity",
     "original_name": "ShippingBin_Routine_0800B68C",
     "address_hex": "0x0800B68C",
     "file": "farm/shipping_bin.c"
   },
   "0x0800B6E8": {
-    "canonical_name": "ShippingBin_Routine_0800B6E8",
+    "canonical_name": "ShippingBin_SetSlotQuantity",
     "original_name": "ShippingBin_Routine_0800B6E8",
     "address_hex": "0x0800B6E8",
     "file": "farm/shipping_bin.c"
   },
   "0x0800B73C": {
-    "canonical_name": "ShippingBin_Routine_0800B73C",
+    "canonical_name": "ShippingBin_CalculateDailyTotalEarnings",
     "original_name": "ShippingBin_Routine_0800B73C",
     "address_hex": "0x0800B73C",
     "file": "farm/shipping_bin.c"
   },
   "0x0800B770": {
-    "canonical_name": "ShippingBin_Routine_0800B770",
+    "canonical_name": "ShippingBin_CollectDailyEarnings",
     "original_name": "ShippingBin_Routine_0800B770",
     "address_hex": "0x0800B770",
     "file": "farm/shipping_bin.c"
   },
   "0x0800B7B8": {
-    "canonical_name": "ShippingBin_Routine_0800B7B8",
+    "canonical_name": "ShippingBin_ResetDailyShipments",
     "original_name": "ShippingBin_Routine_0800B7B8",
     "address_hex": "0x0800B7B8",
     "file": "farm/shipping_bin.c"
@@ -2388,13 +2388,13 @@
     "file": "player/item.c"
   },
   "0x0800DCB8": {
-    "canonical_name": "Item_Routine_0800DCB8",
+    "canonical_name": "Item_GetFoodName",
     "original_name": "Item_Routine_0800DCB8",
     "address_hex": "0x0800DCB8",
     "file": "player/item.c"
   },
   "0x0800DCE0": {
-    "canonical_name": "Item_Routine_0800DCE0",
+    "canonical_name": "Item_GetFoodBasePrice",
     "original_name": "Item_Routine_0800DCE0",
     "address_hex": "0x0800DCE0",
     "file": "player/item.c"
@@ -2412,13 +2412,13 @@
     "file": "player/item.c"
   },
   "0x0800DD6C": {
-    "canonical_name": "Item_Routine_0800DD6C",
+    "canonical_name": "Item_GetFoodStaminaModifier",
     "original_name": "Item_Routine_0800DD6C",
     "address_hex": "0x0800DD6C",
     "file": "player/item.c"
   },
   "0x0800DD8C": {
-    "canonical_name": "Item_Routine_0800DD8C",
+    "canonical_name": "Item_GetFoodFatigueModifier",
     "original_name": "Item_Routine_0800DD8C",
     "address_hex": "0x0800DD8C",
     "file": "player/item.c"
@@ -2430,31 +2430,31 @@
     "file": "player/item.c"
   },
   "0x0800DDD4": {
-    "canonical_name": "Item_Routine_0800DDD4",
+    "canonical_name": "Item_GetFoodDescription",
     "original_name": "Item_Routine_0800DDD4",
     "address_hex": "0x0800DDD4",
     "file": "player/item.c"
   },
   "0x0800DE0C": {
-    "canonical_name": "Item_Routine_0800DE0C",
+    "canonical_name": "Item_GetFoodIconGraphic",
     "original_name": "Item_Routine_0800DE0C",
     "address_hex": "0x0800DE0C",
     "file": "player/item.c"
   },
   "0x0800DE68": {
-    "canonical_name": "Item_Routine_0800DE68",
+    "canonical_name": "Item_ResetSlotData",
     "original_name": "Item_Routine_0800DE68",
     "address_hex": "0x0800DE68",
     "file": "player/item.c"
   },
   "0x0800DE80": {
-    "canonical_name": "Item_Routine_0800DE80",
+    "canonical_name": "Item_GetToolTier",
     "original_name": "Item_Routine_0800DE80",
     "address_hex": "0x0800DE80",
     "file": "player/item.c"
   },
   "0x0800DEB8": {
-    "canonical_name": "Item_Routine_0800DEB8",
+    "canonical_name": "Item_GetToolExperienceRequired",
     "original_name": "Item_Routine_0800DEB8",
     "address_hex": "0x0800DEB8",
     "file": "player/item.c"
@@ -2598,19 +2598,19 @@
     "file": "player/farmer.c"
   },
   "0x0800E304": {
-    "canonical_name": "Farmer_Routine_0800E304",
+    "canonical_name": "Tool_GetReachArea",
     "original_name": "Farmer_Routine_0800E304",
     "address_hex": "0x0800E304",
     "file": "player/farmer.c"
   },
   "0x0800E324": {
-    "canonical_name": "Farmer_Routine_0800E324",
+    "canonical_name": "Farmer_GetFacingDirection",
     "original_name": "Farmer_Routine_0800E324",
     "address_hex": "0x0800E324",
     "file": "player/farmer.c"
   },
   "0x0800E354": {
-    "canonical_name": "Farmer_Routine_0800E354",
+    "canonical_name": "Farmer_CalculateTargetTileGrid",
     "original_name": "Farmer_Routine_0800E354",
     "address_hex": "0x0800E354",
     "file": "player/farmer.c"

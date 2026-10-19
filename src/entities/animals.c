@@ -471,7 +471,7 @@ Animal_Routine_08050CC0(undefined4 *animal,undefined4 amount,undefined4 food_typ
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x554);
+  u_val1 = CppRuntime_OperatorNewArray(0x554);
   u_val1 = ScriptEngine_Routine_0804F288(u_val1,amount,food_type,out_stat,arg_5,arg_6,arg_7);
   *animal = u_val1;
   return animal;
@@ -488,7 +488,7 @@ void Animal_Routine_08050D0C(int *animal,uint amount)
     ScriptEngine_Routine_0804F69C(*animal,3);
   }
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(animal);
+    CppRuntime_FreeMemory(animal);
   }
   return;
 }
@@ -787,7 +787,7 @@ void Animal_Routine_08050FA0(int animal,byte *amount)
         stack_val_44 = 0;
         stack_val_48 = (0xFFFF3FFF & 0x1000 | 0x4000) & 0x3FFFFFFF | 0x80000000;
         if ((int)(-*(uint *)(pos_x + 8) | *(uint *)(pos_x + 8)) < 0) {
-          stack_val_44 = HW_Routine_08007D4C(i_val6);
+          stack_val_44 = GBA_Vram_AllocateTileBlock(i_val6);
           stack_val_44 = stack_val_44 & 0x3ff;
         }
         else {
@@ -838,7 +838,7 @@ void Animal_Routine_080510E8(int animal)
       if ((char)p_int5[3] != '\0') {
         if ((-p_int5[2] | p_int5[2]) < 0) {
           i_val4 = *p_int5;
-          i_val2 = HW_Routine_08007D4C(p_int5 + 1);
+          i_val2 = GBA_Vram_AllocateTileBlock(p_int5 + 1);
           CpuFastSet(i_val4 + 4,i_val2 * 0x20 + 0x06010000,0x40);
         }
         *(undefined1 *)(p_int5 + 3) = 0;
@@ -895,14 +895,14 @@ u32 Animal_Routine_0805116C(undefined4 *animal,undefined4 amount,undefined4 food
   i_val3 = 0;
   stack_val_28 = food_type;
   do {
-    p_uint4 = (undefined4 *)Dispatcher_Routine_080005D4(0x70);
+    p_uint4 = (undefined4 *)CppRuntime_OperatorNewArray(0x70);
     loop_i = 6;
     stack_val_24 = i_val3 + 1;
     p_uint10 = p_uint4;
     do {
-      u_val5 = Dispatcher_Routine_080005D4(0x104);
+      u_val5 = CppRuntime_OperatorNewArray(0x104);
       *p_uint10 = u_val5;
-      HW_Routine_08007874(p_uint10 + 1);
+      GBA_ObjAttr_Init(p_uint10 + 1);
       p_uint10[2] = 0;
       *(undefined1 *)(p_uint10 + 3) = 0;
       p_uint10 = p_uint10 + 4;
@@ -914,10 +914,10 @@ u32 Animal_Routine_0805116C(undefined4 *animal,undefined4 amount,undefined4 food
       while (p_uint10 != p_uint1) {
         HW_Routine_08007C28(p_uint1 + -3,p_uint1[-2]);
         HW_Routine_080079E8(p_uint1 + -3,2);
-        Dispatcher_Routine_08000608(p_uint1[-4]);
+        CppRuntime_FreeMemory(p_uint1[-4]);
         p_uint1 = p_uint1 + -4;
       }
-      Dispatcher_Routine_08000608(p_uint10);
+      CppRuntime_FreeMemory(p_uint10);
     }
     animal[i_val3 + 2] = p_uint4;
     loop_i = 0;
@@ -1042,14 +1042,14 @@ u32 Animal_Routine_08051504(undefined4 *animal,int amount)
   HW_Routine_08008724(amount);
   i_val5 = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(i_val5 + 0x50) = 0x3f;
-  p_uint6 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint6 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val7 = HW_GetSpriteAttr1Offset(amount);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint6 + 3,u_val7);
+  Fade_Init(p_uint6 + 3,u_val7);
   Animal_Routine_080516F0(amount);
-  Farm_Routine_0800934C(p_uint6 + 3,0x889,1,1);
+  Fade_StartFadeOut(p_uint6 + 3,0x889,1,1);
   i_val5 = HW_GetPaletteBankOffset(amount);
   _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
   i_val5 = 0x8BC;
@@ -1099,7 +1099,7 @@ u32 Animal_Routine_08051504(undefined4 *animal,int amount)
       }
     }
     else if (i_val5 == 2) {
-      Farm_Routine_08009378(p_uint6 + 3,0x889,1,1);
+      Fade_StartFadeIn(p_uint6 + 3,0x889,1,1);
       i_val5 = HW_GetPaletteBankOffset(amount);
       _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
       *p_int11 = 3;
@@ -1203,13 +1203,13 @@ u32 Animal_Routine_080516F0(int animal)
   loop_j = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(&stack0xffffffec + i_val3) = 8000;
   *(undefined2 *)(loop_j + 8) = 8000;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0x00030003,u_val8,0x800);
   *p_uint20 = 3;
   *(undefined4 *)(&stack0xffffffe4 + i_val3) = 0;
   *(undefined4 *)(&stack0xffffffe8 + i_val3) = 0;
   Animal_Routine_08051320(u_val10,0,0,0x20);
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   p_uint7 = 0x05000040;
   *0x05000040 = 0x3e0;
   *0x05000042 = 0;
@@ -1236,7 +1236,7 @@ u32 Animal_Routine_080516F0(int animal)
     *(undefined4 *)(&stack0xffffffe4 + i_val3) = 0;
     *(undefined4 *)(&stack0xffffffe8 + i_val3) = 1;
     ScriptEngine_Routine_0804E5AC(u_val8,&stack0xfffffff4 + i_val3,0,0);
-    HW_Routine_08008E64(*(undefined4 *)(&stack0xffffffe0 + 0xA4C + i_val3),loop_j,0x40);
+    GBA_DMA3_FastCopy(*(undefined4 *)(&stack0xffffffe0 + 0xA4C + i_val3),loop_j,0x40);
     loop_j = loop_j + 0x40;
     p_uint14 = p_uint14 + 1;
     loop_i = loop_i + 1;
@@ -1281,7 +1281,7 @@ u32 Animal_Routine_080516F0(int animal)
       ScriptEngine_Routine_0804E958(u_val8,&stack0x00000038 + i_val3,0,0);
     }
     i_val16 = loop_j * 2;
-    HW_Routine_08008E64(*(undefined4 *)(&stack0xffffffe0 + 0xA5C + i_val3),
+    GBA_DMA3_FastCopy(*(undefined4 *)(&stack0xffffffe0 + 0xA5C + i_val3),
                   loop_j * 0x300 + 0x06002800,0x300);
     u_val15 = loop_j * 0x180000 + 0x21400000;
     loop_i = 0;
@@ -1326,7 +1326,7 @@ u32 Animal_Routine_080516F0(int animal)
     Animal_Routine_08051D30(animal,0x1b,i_val16,0xb);
     loop_j = *(int *)(&stack0xffffffe0 + 0xA58 + i_val3);
   } while (loop_j < 10);
-  HW_Routine_08008E64(*(undefined4 *)(&stack0xffffffe0 + 0xA44 + i_val3),0x0600F000,0x800);
+  GBA_DMA3_FastCopy(*(undefined4 *)(&stack0xffffffe0 + 0xA44 + i_val3),0x0600F000,0x800);
   HW_Routine_08008EB8(0x03FF03FF,*(undefined4 *)(&stack0xffffffe0 + 0xA44 + i_val3),0x800);
   *(undefined2 *)(&stack0x00000a10 + i_val3) = 0x1b;
   *(undefined2 *)(*(int *)(&stack0xffffffe0 + 0xA6C + i_val3) + 2) = 2;
@@ -1340,7 +1340,7 @@ u32 Animal_Routine_080516F0(int animal)
   *(undefined4 *)(&stack0xffffffe4 + i_val3) = 0;
   *(undefined4 *)(&stack0xffffffe8 + i_val3) = 1;
   ScriptEngine_Routine_0804E958(u_val10,&stack0x0000033c + i_val3,0,0);
-  HW_Routine_08008E64(*(undefined4 *)(&stack0xffffffe0 + 0xA54 + i_val3),0x06002000,0x6c0);
+  GBA_DMA3_FastCopy(*(undefined4 *)(&stack0xffffffe0 + 0xA54 + i_val3),0x06002000,0x6c0);
   loop_j = 0;
   s_val5 = 0x211b;
   psVar13 = (short *)(animal + 0x13c);
@@ -1353,7 +1353,7 @@ u32 Animal_Routine_080516F0(int animal)
     psVar12 = psVar12 + 1;
     loop_j = loop_j + 1;
   } while (loop_j < 0x1b);
-  HW_Routine_08008E64(*(undefined4 *)(&stack0xffffffe0 + 0xA44 + i_val3),0x0600F800,0x800);
+  GBA_DMA3_FastCopy(*(undefined4 *)(&stack0xffffffe0 + 0xA44 + i_val3),0x0600F800,0x800);
   _call_via_r3(&stack0xffffffec + i_val3,*(int **)(animal + 0x40),
                   *(undefined2 *)
                    (*(int *)(animal + 0x44) +
@@ -1366,7 +1366,7 @@ u32 Animal_Routine_080516F0(int animal)
   if (*(int *)((int)&stack_val_4 + i_val3) != 0) {
     u_val11 = *(undefined2 *)(*(int *)(&stack0x00000a30 + i_val3) + 4);
   }
-  HW_Routine_08008E64(u_val8,loop_j * 0x20 + 0x05000200,u_val11);
+  GBA_DMA3_FastCopy(u_val8,loop_j * 0x20 + 0x05000200,u_val11);
   return *(undefined4 *)((int)&stack_val_4 + 0xA74 + i_val3);
 }
 
@@ -1479,7 +1479,7 @@ void Animal_Routine_08051D70(int animal)
     stack_val_80 = *(undefined4 *)(animal + 0x68);
     stack_val_7c = *(undefined4 *)(animal + 0x6c);
     stack_val_94 = 0x1a00e8;
-    u_val2 = HW_Routine_08007D4C(animal + 0xa8,*(undefined4 *)(animal + 0xac));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0xa8,*(undefined4 *)(animal + 0xac));
     stack_val_90._2_2_ = u_val2;
     u_val2 = HW_Routine_080074C0(animal + 0xb0,*(undefined4 *)(animal + 0xb4));
     stack_val_90 = CONCAT22(stack_val_90._2_2_,u_val2);
@@ -1487,7 +1487,7 @@ void Animal_Routine_08051D70(int animal)
     stack_val_7c = CONCAT31(stack_val_7c._1_3_,1);
     p_int3 = (int *)HW_GetSpriteAttr0Offset(animal);
     i_val8 = stack_val_70;
-    i_val4 = HW_Routine_08007D4C(animal + 0xa8,*(undefined4 *)(animal + 0xac));
+    i_val4 = GBA_Vram_AllocateTileBlock(animal + 0xa8,*(undefined4 *)(animal + 0xac));
     u_val7 = 0;
     if (stack_val_70 != 0) {
       u_val7 = stack_val_6c & 0xffff;
@@ -1594,7 +1594,7 @@ void Animal_Routine_08051D70(int animal)
     stack_val_80 = *(undefined4 *)(animal + 0x9c);
     stack_val_7c = *(undefined4 *)(animal + 0xa0);
     stack_val_94 = 0x9800e8;
-    s_val1 = HW_Routine_08007D4C(animal + 0xa8,*(undefined4 *)(animal + 0xac));
+    s_val1 = GBA_Vram_AllocateTileBlock(animal + 0xa8,*(undefined4 *)(animal + 0xac));
     stack_val_90._2_2_ = s_val1 + 4;
     u_val2 = HW_Routine_080074C0(animal + 0xb0,*(undefined4 *)(animal + 0xb4));
     stack_val_90 = CONCAT22(stack_val_90._2_2_,u_val2);
@@ -1602,7 +1602,7 @@ void Animal_Routine_08051D70(int animal)
     stack_val_7c = CONCAT31(stack_val_7c._1_3_,1);
     p_int3 = (int *)HW_GetSpriteAttr0Offset(animal);
     i_val8 = stack_val_70;
-    i_val4 = HW_Routine_08007D4C(animal + 0xa8,*(undefined4 *)(animal + 0xac));
+    i_val4 = GBA_Vram_AllocateTileBlock(animal + 0xa8,*(undefined4 *)(animal + 0xac));
     u_val7 = 0;
     if (stack_val_70 != 0) {
       u_val7 = stack_val_6c & 0xffff;
@@ -1699,7 +1699,7 @@ void Animal_Routine_0805218C(undefined4 *animal,undefined4 *amount,undefined4 fo
   undefined4 u_val1;
   
   *animal = gRomData_080E7934;
-  u_val1 = Dispatcher_Routine_080005D4(0x8c0);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c0);
   u_val1 = Animal_Routine_0805143C(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -1828,12 +1828,12 @@ void Animal_Routine_080522F8(int animal,undefined4 amount,uint food_type)
   *(undefined4 *)(animal + 4) = gRomData_080E7944;
   *(undefined4 *)(animal + 8) = amount;
   *(undefined4 *)(animal + 0xc) = 0;
-  u_val2 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(stack_buf_38);
-  HW_Routine_0800770C(stack_buf_34);
+  u_val2 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(stack_buf_38);
+  GBA_BgLayer_Init(stack_buf_34);
   u_val2 = Animal_Routine_08050CC0(u_val2,0,0x1f,0,*(undefined4 *)(animal + 0xc),stack_buf_38,stack_buf_34);
   *(undefined4 *)(animal + 0x10) = u_val2;
-  HW_Routine_08007714(stack_buf_34,2);
+  GBA_BgLayer_SetPriority(stack_buf_34,2);
   HW_Routine_08008364(stack_buf_38,2);
   HW_Routine_08008B54(animal + 0x14,1);
   HW_Routine_08008B54(animal + 0x18,0);
@@ -1990,80 +1990,80 @@ void Animal_Routine_080522F8(int animal,undefined4 amount,uint food_type)
   *(undefined1 *)(p_uint3 + 0xc) = 0;
   *(undefined1 *)(animal + 0x464) = 0;
   i_val5 = animal + i_val5 + 0x24;
-  HW_Routine_08007874(i_val5);
-  u_val2 = HW_Routine_08007B54(i_val5,4);
+  GBA_ObjAttr_Init(i_val5);
+  u_val2 = GBA_ObjAttr_AllocateSprite(i_val5,4);
   *(undefined4 *)(i_val5 + 4) = u_val2;
-  HW_Routine_08007128(animal + 0x470);
-  u_val2 = HW_Routine_0800736C(animal + 0x470);
+  GBA_PaletteManager_Init(animal + 0x470);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 0x470);
   *(undefined4 *)(animal + 0x474) = u_val2;
-  HW_Routine_08007874(animal + 0x478);
-  u_val2 = HW_Routine_08007B54(animal + 0x478,7);
+  GBA_ObjAttr_Init(animal + 0x478);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x478,7);
   *(undefined4 *)(animal + 0x47c) = u_val2;
-  HW_Routine_08007128(animal + 0x480);
-  u_val2 = HW_Routine_0800736C(animal + 0x480);
+  GBA_PaletteManager_Init(animal + 0x480);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 0x480);
   *(undefined4 *)(animal + 0x484) = u_val2;
-  HW_Routine_08007874(animal + 0x488);
-  u_val2 = HW_Routine_08007B54(animal + 0x488,3);
+  GBA_ObjAttr_Init(animal + 0x488);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x488,3);
   *(undefined4 *)(animal + 0x48c) = u_val2;
-  HW_Routine_08007128(animal + 0x490);
-  u_val2 = HW_Routine_0800736C(animal + 0x490);
+  GBA_PaletteManager_Init(animal + 0x490);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 0x490);
   *(undefined4 *)(animal + 0x494) = u_val2;
-  HW_Routine_08007874(animal + 0x498);
-  u_val2 = HW_Routine_08007B54(animal + 0x498,6);
+  GBA_ObjAttr_Init(animal + 0x498);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x498,6);
   *(undefined4 *)(animal + 0x49c) = u_val2;
-  HW_Routine_08007128(animal + 0x4a0);
-  u_val2 = HW_Routine_0800736C(animal + 0x4a0);
+  GBA_PaletteManager_Init(animal + 0x4a0);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 0x4a0);
   *(undefined4 *)(animal + 0x4a4) = u_val2;
-  HW_Routine_08007874(animal + 0x4a8);
-  u_val2 = HW_Routine_08007B54(animal + 0x4a8,2);
+  GBA_ObjAttr_Init(animal + 0x4a8);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x4a8,2);
   *(undefined4 *)(animal + 0x4ac) = u_val2;
-  HW_Routine_08007128(animal + 0x4b0);
-  u_val2 = HW_Routine_0800736C(animal + 0x4b0);
+  GBA_PaletteManager_Init(animal + 0x4b0);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 0x4b0);
   *(undefined4 *)(animal + 0x4b4) = u_val2;
-  HW_Routine_08007874(animal + 0x4b8);
-  u_val2 = HW_Routine_08007B54(animal + 0x4b8,2);
+  GBA_ObjAttr_Init(animal + 0x4b8);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x4b8,2);
   *(undefined4 *)(animal + 0x4bc) = u_val2;
-  HW_Routine_08007128(animal + 0x4c0);
-  u_val2 = HW_Routine_0800736C(animal + 0x4c0);
+  GBA_PaletteManager_Init(animal + 0x4c0);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 0x4c0);
   *(undefined4 *)(animal + 0x4c4) = u_val2;
-  HW_Routine_08007874(animal + 0x4c8);
-  u_val2 = HW_Routine_08007B54(animal + 0x4c8,3);
+  GBA_ObjAttr_Init(animal + 0x4c8);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x4c8,3);
   *(undefined4 *)(animal + 0x4cc) = u_val2;
-  HW_Routine_08007874(animal + 0x4d0);
-  u_val2 = HW_Routine_08007B54(animal + 0x4d0,3);
+  GBA_ObjAttr_Init(animal + 0x4d0);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x4d0,3);
   *(undefined4 *)(animal + 0x4d4) = u_val2;
-  HW_Routine_08007128(animal + 0x4d8);
-  u_val2 = HW_Routine_0800736C(animal + 0x4d8);
+  GBA_PaletteManager_Init(animal + 0x4d8);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 0x4d8);
   *(undefined4 *)(animal + 0x4dc) = u_val2;
-  HW_Routine_08007874(animal + 0x4e0);
-  u_val2 = HW_Routine_08007B54(animal + 0x4e0,3);
+  GBA_ObjAttr_Init(animal + 0x4e0);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x4e0,3);
   *(undefined4 *)(animal + 0x4e4) = u_val2;
-  HW_Routine_08007128(animal + 0x4e8);
+  GBA_PaletteManager_Init(animal + 0x4e8);
   *(undefined4 *)(animal + 0x4ec) = 0;
-  HW_Routine_08007874(animal + 0x4f0);
-  u_val2 = HW_Routine_08007B54(animal + 0x4f0,3);
+  GBA_ObjAttr_Init(animal + 0x4f0);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x4f0,3);
   *(undefined4 *)(animal + 0x4f4) = u_val2;
-  HW_Routine_08007128(animal + 0x4f8);
+  GBA_PaletteManager_Init(animal + 0x4f8);
   *(undefined4 *)(animal + 0x4fc) = 0;
   i_val5 = animal + 0x500;
   i_val4 = 3;
   do {
-    HW_Routine_08007874(i_val5);
-    u_val2 = HW_Routine_08007B54(i_val5,4);
+    GBA_ObjAttr_Init(i_val5);
+    u_val2 = GBA_ObjAttr_AllocateSprite(i_val5,4);
     *(undefined4 *)(i_val5 + 4) = u_val2;
-    HW_Routine_08007128(i_val5 + 8);
+    GBA_PaletteManager_Init(i_val5 + 8);
     *(undefined4 *)(i_val5 + 0xc) = 0;
     i_val5 = i_val5 + 0x10;
     i_val4 = i_val4 + -1;
   } while (i_val4 != -1);
   i_val5 = animal + 0x540;
-  HW_Routine_08007874(i_val5);
-  u_val2 = HW_Routine_08007B54(i_val5,4);
+  GBA_ObjAttr_Init(i_val5);
+  u_val2 = GBA_ObjAttr_AllocateSprite(i_val5,4);
   *(undefined4 *)(animal + 0x544) = u_val2;
   i_val4 = animal + 0x548;
   i_val7 = 1;
   do {
-    HW_Routine_08007128(i_val4);
+    GBA_PaletteManager_Init(i_val4);
     *(undefined4 *)(i_val4 + 4) = 0;
     i_val4 = i_val4 + 8;
     i_val7 = i_val7 + -1;
@@ -2073,7 +2073,7 @@ void Animal_Routine_080522F8(int animal,undefined4 amount,uint food_type)
   do {
     i_val4 = loop_i * 8 + i_val5 + 8;
     HW_Routine_080073E0(i_val4,*p_uint6);
-    u_val2 = HW_Routine_0800736C(i_val4);
+    u_val2 = GBA_PaletteManager_Allocate(i_val4);
     *p_uint6 = u_val2;
     p_uint6 = p_uint6 + 2;
     loop_i = loop_i + 1;
@@ -2162,12 +2162,12 @@ u32 Animal_Routine_08052984(undefined4 *animal,int amount)
   *(undefined2 *)(i_val4 + 0x50) = 0xbf;
   i_val4 = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(i_val4 + 0x54) = 0x10;
-  p_uint5 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint5 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val6 = HW_GetSpriteAttr1Offset(amount);
   *p_uint5 = stack_val_38;
   p_uint5[1] = stack_val_38;
   p_uint5[2] = (uint)&case_080E5B80;
-  Farm_Routine_08009300(p_uint5 + 3,u_val6);
+  Fade_Init(p_uint5 + 3,u_val6);
   Animal_Routine_08054F40(amount);
   Animal_Routine_08055264(amount);
   *(undefined2 *)(0x228a + amount) = 0x33b;
@@ -2219,7 +2219,7 @@ LAB_08052a84:
         *(undefined2 *)(amount + _LAB_08052bf8) = 0;
         *(undefined2 *)(0x22c0 + amount) = 0;
         *(undefined2 *)(amount + _LAB_08052bfc) = 0;
-        Farm_Routine_0800934C(p_uint5 + 3,_LAB_08052c00,1,1);
+        Fade_StartFadeOut(p_uint5 + 3,_LAB_08052c00,1,1);
         i_val4 = HW_GetPaletteBankOffset(amount);
         _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
         break;
@@ -2457,7 +2457,7 @@ LAB_080531d2:
         }
         break;
       case 0x80532b8:
-        Farm_Routine_08009378(p_uint5 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint5 + 3,0x889,1,1);
         i_val4 = HW_GetPaletteBankOffset(amount);
         _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
         psVar23 = (short *)(amount + 0x2328);
@@ -3422,7 +3422,7 @@ LAB_080547a4:
           }
           p_int14 = (int *)HW_GetSpriteAttr0Offset(animal);
           i_val6 = stack_ints_70[0];
-          i_val10 = HW_Routine_08007D4C(animal + 0x4f0,*(undefined4 *)(animal + 0x4f4));
+          i_val10 = GBA_Vram_AllocateTileBlock(animal + 0x4f0,*(undefined4 *)(animal + 0x4f4));
           u_val4 = 0;
           if (stack_ints_70[0] != 0) {
             u_val4 = (undefined2)piStack_30[1];
@@ -3699,12 +3699,12 @@ void Animal_Routine_08054F40(int animal)
   HW_Routine_08008EB8(0xffffffff,0x0600F000,0x800);
   i_val4 = animal + 0x1D5A;
   Unpack_ArcanoMarvelous_0x70(gRomGfx_08738AD8,i_val4);
-  HW_Routine_08008E64(i_val4,u_val1,0x500);
-  HW_Routine_08008E64(i_val4,u_val2,0xc0);
+  GBA_DMA3_FastCopy(i_val4,u_val1,0x500);
+  GBA_DMA3_FastCopy(i_val4,u_val2,0xc0);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_08738CC8,i_val4);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_08738CF0,i_val4);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_08738D1C,0x6000000);
-  HW_Routine_08008E64(gRomGfx_087399C4,0x5000000,0x200);
+  GBA_DMA3_FastCopy(gRomGfx_087399C4,0x5000000,0x200);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_08739A64,animal + 0x558);
   p_uint3 = (undefined2 *)HW_GetSpriteAttr1Offset(animal);
   *p_uint3 = 0x1e40;
@@ -3941,7 +3941,7 @@ void Animal_Routine_08055264(int animal)
   if (stack_val_74 != 0) {
     u_val8 = stack_val_70 & 0xffff;
   }
-  HW_Routine_08008E64(i_val12,loop_j * 0x20 + 0x05000200,u_val8);
+  GBA_DMA3_FastCopy(i_val12,loop_j * 0x20 + 0x05000200,u_val8);
   _call_via_r3(&stack_val_64,*(int **)(animal + 0x270),
                   *(undefined2 *)
                    (*(int *)(animal + 0x274) + (uint)*(ushort *)(animal + 0x27c) * 4),
@@ -3961,7 +3961,7 @@ void Animal_Routine_08055264(int animal)
     u_val8 = stack_val_70 & 0xffff;
   }
   piStack_24 = (int *)(animal + 0x274);
-  HW_Routine_08008E64(i_val12,loop_j * 0x20 + loop_i,u_val8);
+  GBA_DMA3_FastCopy(i_val12,loop_j * 0x20 + loop_i,u_val8);
   i_val12 = 0;
   loop_i = 0;
   piStack_3c = (int *)(animal + 0x2ac);
@@ -3984,13 +3984,13 @@ void Animal_Routine_08055264(int animal)
     stack_val_6c = stack_val_4c;
     stack_val_68 = stack_val_48;
     *(int *)(animal + 0x2334 + loop_i * 4) = i_val12;
-    i_val3 = HW_Routine_08007D4C(animal + 0x478,*(undefined4 *)(animal + 0x47c),stack_val_4c,stack_val_48,
+    i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x478,*(undefined4 *)(animal + 0x47c),stack_val_4c,stack_val_48,
                           stack_val_64,stack_val_60);
     u_val8 = 0;
     if (stack_val_7c != 0) {
       u_val8 = stack_val_78 & 0xffff;
     }
-    HW_Routine_08008E64(loop_j,(i_val3 + i_val12) * 0x20 + 0x06010000,u_val8);
+    GBA_DMA3_FastCopy(loop_j,(i_val3 + i_val12) * 0x20 + 0x06010000,u_val8);
     u_val8 = 0;
     if (stack_val_7c != 0) {
       u_val8 = stack_val_78 & 0xffff;
@@ -4015,7 +4015,7 @@ void Animal_Routine_08055264(int animal)
   if (stack_val_74 != 0) {
     u_val8 = stack_val_70 & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val12 * 0x20 + 0x05000200,u_val8);
+  GBA_DMA3_FastCopy(loop_i,i_val12 * 0x20 + 0x05000200,u_val8);
   i_val12 = 0;
   loop_i = 0;
   piStack_44 = &stack_val_7c;
@@ -4028,13 +4028,13 @@ void Animal_Routine_08055264(int animal)
     stack_val_70 = stack_val_50;
     stack_val_6c = stack_val_4c;
     stack_val_68 = stack_val_48;
-    i_val3 = HW_Routine_08007D4C(animal + 0x488,*(undefined4 *)(animal + 0x48c),stack_val_58,stack_val_4c,
+    i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x488,*(undefined4 *)(animal + 0x48c),stack_val_58,stack_val_4c,
                           stack_val_64,stack_val_60);
     u_val8 = 0;
     if (stack_val_7c != 0) {
       u_val8 = stack_val_78 & 0xffff;
     }
-    HW_Routine_08008E64(loop_j,(i_val3 + i_val12) * 0x20 + 0x06010000,u_val8);
+    GBA_DMA3_FastCopy(loop_j,(i_val3 + i_val12) * 0x20 + 0x06010000,u_val8);
     u_val8 = 0;
     if (stack_val_7c != 0) {
       u_val8 = (uint)*(ushort *)(piStack_44 + 1);
@@ -4062,14 +4062,14 @@ void Animal_Routine_08055264(int animal)
   if (stack_val_74 != 0) {
     u_val7 = (undefined2)piStack_40[1];
   }
-  HW_Routine_08008E64(loop_i,i_val12 * 0x20 + 0x05000200,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val12 * 0x20 + 0x05000200,u_val7);
   loop_i = stack_val_7c;
-  i_val12 = HW_Routine_08007D4C(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
+  i_val12 = GBA_Vram_AllocateTileBlock(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
   u_val8 = 0;
   if (stack_val_7c != 0) {
     u_val8 = stack_val_78 & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val12 * 0x20 + 0x06010000,u_val8);
+  GBA_DMA3_FastCopy(loop_i,i_val12 * 0x20 + 0x06010000,u_val8);
   Animal_Routine_0805E860(p_uint13,0x91B);
   _call_via_r3(&stack_val_64,(int *)*p_uint13,
                   *(undefined2 *)(*piStack_38 + (uint)*(ushort *)(animal + 0x2ec) * 4),
@@ -4082,13 +4082,13 @@ void Animal_Routine_08055264(int animal)
   stack_val_70 = stack_val_50;
   stack_val_6c = stack_val_4c;
   stack_val_68 = stack_val_48;
-  i_val12 = HW_Routine_08007D4C(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac),stack_val_4c,stack_val_48,
+  i_val12 = GBA_Vram_AllocateTileBlock(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac),stack_val_4c,stack_val_48,
                          stack_val_64,stack_val_60);
   u_val8 = 0;
   if (stack_val_7c != 0) {
     u_val8 = stack_val_78 & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val12 * 0x20 + 0x06010040,u_val8);
+  GBA_DMA3_FastCopy(loop_i,i_val12 * 0x20 + 0x06010040,u_val8);
   _call_via_r3(&stack_val_64,*(int **)(animal + 0x318),
                   *(undefined2 *)(*piStack_34 + (uint)*(ushort *)(animal + 0x324) * 4),
                   *(undefined4 *)(**(int **)(animal + 0x318) + 0x10));
@@ -4106,7 +4106,7 @@ void Animal_Routine_08055264(int animal)
   if (stack_val_74 != 0) {
     u_val7 = (undefined2)piStack_40[1];
   }
-  HW_Routine_08008E64(loop_i,i_val12 * 0x20 + 0x05000200,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val12 * 0x20 + 0x05000200,u_val7);
   *(undefined1 *)(animal + 0x34c) = 0;
   _call_via_r3(&stack_val_64,*(int **)(animal + 0x350),
                   *(undefined2 *)(*piStack_2c + (uint)*(ushort *)(animal + 0x35c) * 4),
@@ -4125,7 +4125,7 @@ void Animal_Routine_08055264(int animal)
   if (stack_val_74 != 0) {
     u_val7 = (undefined2)piStack_40[1];
   }
-  HW_Routine_08008E64(loop_i,i_val12 * 0x20 + 0x05000200,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val12 * 0x20 + 0x05000200,u_val7);
   if (*(char *)(animal + 0x2324) == '\x01') {
     loop_j = 0;
     piStack_28 = (int *)(animal + 0x3c4);
@@ -4133,7 +4133,7 @@ void Animal_Routine_08055264(int animal)
     i_val12 = animal + 0x508;
     do {
       HW_Routine_080073E0(i_val12,*(undefined4 *)(loop_i + 0xc));
-      u_val5 = HW_Routine_0800736C(i_val12);
+      u_val5 = GBA_PaletteManager_Allocate(i_val12);
       *(undefined4 *)(loop_i + 0xc) = u_val5;
       Animal_Routine_0805E860((undefined4 *)(animal + 0x3c0),*(undefined2 *)(loop_j * 2 + gRomData_080FA36C));
       p_int6 = *(int **)(animal + 0x3c0);
@@ -4154,14 +4154,14 @@ void Animal_Routine_08055264(int animal)
       if (stack_val_74 != 0) {
         u_val8 = stack_val_70 & 0xffff;
       }
-      HW_Routine_08008E64(i_val3,i_val4 * 0x20 + 0x05000200,u_val8);
+      GBA_DMA3_FastCopy(i_val3,i_val4 * 0x20 + 0x05000200,u_val8);
       i_val3 = stack_val_7c;
-      i_val4 = HW_Routine_08007D4C(loop_i,*(undefined4 *)(loop_i + 4));
+      i_val4 = GBA_Vram_AllocateTileBlock(loop_i,*(undefined4 *)(loop_i + 4));
       u_val8 = 0;
       if (stack_val_7c != 0) {
         u_val8 = stack_val_78 & 0xffff;
       }
-      HW_Routine_08008E64(i_val3,i_val4 * 0x20 + 0x06010000,u_val8);
+      GBA_DMA3_FastCopy(i_val3,i_val4 * 0x20 + 0x06010000,u_val8);
       loop_i = loop_i + 0x10;
       i_val12 = i_val12 + 0x10;
       loop_j = loop_j + 1;
@@ -4189,7 +4189,7 @@ void Animal_Routine_08055264(int animal)
   else {
     loop_i = animal + 0x4e8;
     HW_Routine_080073E0(loop_i,*(undefined4 *)(animal + 0x4ec));
-    u_val5 = HW_Routine_0800736C(loop_i);
+    u_val5 = GBA_PaletteManager_Allocate(loop_i);
     *(undefined4 *)(animal + 0x4ec) = u_val5;
     _call_via_r3(&stack_val_64,*(int **)(animal + 0x3f8),
                     *(undefined2 *)
@@ -4208,17 +4208,17 @@ void Animal_Routine_08055264(int animal)
     if (stack_val_74 != 0) {
       u_val8 = stack_val_70 & 0xffff;
     }
-    HW_Routine_08008E64(stack_val_54,loop_i * 0x20 + 0x05000200,u_val8);
+    GBA_DMA3_FastCopy(stack_val_54,loop_i * 0x20 + 0x05000200,u_val8);
     loop_i = stack_val_7c;
-    i_val12 = HW_Routine_08007D4C(animal + 0x4e0,*(undefined4 *)(animal + 0x4e4));
+    i_val12 = GBA_Vram_AllocateTileBlock(animal + 0x4e0,*(undefined4 *)(animal + 0x4e4));
     u_val8 = 0;
     if (stack_val_7c != 0) {
       u_val8 = stack_val_78 & 0xffff;
     }
-    HW_Routine_08008E64(loop_i,i_val12 * 0x20 + 0x06010000,u_val8);
+    GBA_DMA3_FastCopy(loop_i,i_val12 * 0x20 + 0x06010000,u_val8);
     *(undefined1 *)(animal + 0x42C) = 0;
     HW_Routine_080073E0(animal + 0x4f8,*(undefined4 *)(animal + 0x4fc));
-    u_val5 = HW_Routine_0800736C(animal + 0x4f8);
+    u_val5 = GBA_PaletteManager_Allocate(animal + 0x4f8);
     *(undefined4 *)(animal + 0x4fc) = u_val5;
     *(undefined1 *)(animal + 0x464) = 0;
   }
@@ -4350,7 +4350,7 @@ void Animal_Routine_080558C4(int animal)
     stack_val_10c = stack_val_ec;
     p_int7 = (int *)HW_GetSpriteAttr0Offset(animal,&stack_val_108);
     i_val12 = stack_val_120;
-    i_val5 = HW_Routine_08007D4C(animal + 0x498,*(undefined4 *)(animal + 0x49c));
+    i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x498,*(undefined4 *)(animal + 0x49c));
     u_val9 = 0;
     if (stack_val_120 != 0) {
       u_val9 = stack_val_11c & 0xffff;
@@ -4515,7 +4515,7 @@ void Animal_Routine_080558C4(int animal)
     stack_val_144 = 0x400040;
     u_val2 = HW_Routine_080074C0(animal + 0x4a0,*(undefined4 *)(animal + 0x4a4));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
-    u_val2 = HW_Routine_08007D4C(animal + 0x498,*(undefined4 *)(animal + 0x49c));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x498,*(undefined4 *)(animal + 0x49c));
     stack_val_140 = CONCAT22(u_val2,(undefined2)stack_val_140);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
     stack_val_12c = CONCAT31(stack_val_12c._1_3_,1);
@@ -4544,7 +4544,7 @@ void Animal_Routine_080558C4(int animal)
     if (*(int *)(animal + 0x2260) != 2) {
       p_int7 = (int *)HW_GetSpriteAttr0Offset(animal,&stack_val_108);
       i_val12 = stack_val_120;
-      i_val5 = HW_Routine_08007D4C(animal + 0x498,*(undefined4 *)(animal + 0x49c));
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x498,*(undefined4 *)(animal + 0x49c));
       u_val9 = 0;
       if (stack_val_120 != 0) {
         u_val9 = stack_val_11c & 0xffff;
@@ -4730,7 +4730,7 @@ LAB_080563f2:
       if (*(int *)(animal + 0x2260) != 1) {
         p_int7 = (int *)HW_GetSpriteAttr0Offset(animal,&stack_val_108);
         i_val5 = stack_val_120;
-        i_val17 = HW_Routine_08007D4C(animal + 0x498,*(undefined4 *)(animal + 0x49c));
+        i_val17 = GBA_Vram_AllocateTileBlock(animal + 0x498,*(undefined4 *)(animal + 0x49c));
         u_val9 = 0;
         if (stack_val_120 != 0) {
           u_val9 = stack_val_11c & 0xffff;
@@ -4915,7 +4915,7 @@ LAB_080563f2:
     if (*(int *)(animal + 0x2260) != 3) {
       p_int7 = (int *)HW_GetSpriteAttr0Offset(animal,&stack_val_108);
       i_val12 = stack_val_120;
-      i_val5 = HW_Routine_08007D4C(animal + 0x498,*(undefined4 *)(animal + 0x49c));
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x498,*(undefined4 *)(animal + 0x49c));
       u_val9 = 0;
       if (stack_val_120 != 0) {
         u_val9 = stack_val_11c & 0xffff;
@@ -5089,7 +5089,7 @@ LAB_080563f2:
   stack_val_144 = 0x400040;
   u_val2 = HW_Routine_080074C0(animal + 0x4a0,*(undefined4 *)(animal + 0x4a4));
   stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
-  u_val2 = HW_Routine_08007D4C(animal + 0x498,*(undefined4 *)(animal + 0x49c));
+  u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x498,*(undefined4 *)(animal + 0x49c));
   stack_val_140 = CONCAT22(u_val2,(undefined2)stack_val_140);
   stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
   stack_val_12c = CONCAT31(stack_val_12c._1_3_,1);
@@ -5126,7 +5126,7 @@ Animal_Routine_08056442:
   stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
   u_val2 = HW_Routine_080074C0(animal + 0x490,*(undefined4 *)(animal + 0x494));
   stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
-  s_val3 = HW_Routine_08007D4C(animal + 0x488,*(undefined4 *)(animal + 0x48c));
+  s_val3 = GBA_Vram_AllocateTileBlock(animal + 0x488,*(undefined4 *)(animal + 0x48c));
   stack_val_140 = CONCAT22(s_val3 + *(short *)(*piStack_34 + (uint)*(ushort *)(animal + 0x2b4) * 4) * 2
                         ,(undefined2)stack_val_140);
   stack_val_12c = CONCAT31(stack_val_12c._1_3_,1);
@@ -5169,7 +5169,7 @@ Animal_Routine_08056442:
         stack_val_13c._2_2_ = (undefined2)(stack_val_13c >> 0x10);
         stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
         i_val12 = (uint)(ushort)psVar18[1] * 0x10 + animal;
-        u_val2 = HW_Routine_08007D4C(i_val12 + 0x500,*(undefined4 *)(i_val12 + 0x504));
+        u_val2 = GBA_Vram_AllocateTileBlock(i_val12 + 0x500,*(undefined4 *)(i_val12 + 0x504));
         i_val12 = (uint)(ushort)psVar18[1] * 0x10 + animal;
         stack_val_140._2_2_ = u_val2;
         u_val2 = HW_Routine_080074C0(i_val12 + 0x508,*(undefined4 *)(i_val12 + 0x50c));
@@ -5203,7 +5203,7 @@ Animal_Routine_08056442:
         stack_val_144 = CONCAT22(0x90,*psVar18 - *psStack_48);
         stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(animal + 0x2fc) >> 0x10);
         stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-        s_val3 = HW_Routine_08007D4C(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
+        s_val3 = GBA_Vram_AllocateTileBlock(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
         stack_val_140._2_2_ = s_val3 + 2;
         u_val2 = HW_Routine_080074C0(animal + 0x4b0,*(undefined4 *)(animal + 0x4b4));
         stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -5242,7 +5242,7 @@ Animal_Routine_08056442:
     stack_val_144 = CONCAT22(0x50,0x40 - *p_uint13);
     stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(animal + 0x21c) >> 0x10);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-    u_val2 = HW_Routine_08007D4C(animal + 0x540,*(undefined4 *)(animal + 0x544));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x540,*(undefined4 *)(animal + 0x544));
     stack_val_140._2_2_ = u_val2;
     u_val2 = HW_Routine_080074C0(animal + 0x548,*(undefined4 *)(animal + 0x54c));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -5250,7 +5250,7 @@ Animal_Routine_08056442:
     if ((int)((uint)*(byte *)(animal + 0x230) * 0x40000000) < 0) {
       p_int7 = (int *)HW_GetSpriteAttr0Offset(animal);
       i_val12 = stack_val_120;
-      i_val5 = HW_Routine_08007D4C(animal + 0x540,*(undefined4 *)(animal + 0x544));
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x540,*(undefined4 *)(animal + 0x544));
       u_val9 = 0;
       if (stack_val_120 != 0) {
         u_val9 = stack_val_11c & 0xffff;
@@ -5534,7 +5534,7 @@ Animal_Routine_08056442:
                           *(short *)(animal + 0x2330));
     stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(animal + 0x36c) >> 0x10);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-    u_val2 = HW_Routine_08007D4C(animal + 0x4c8,*(undefined4 *)(animal + 0x4cc));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x4c8,*(undefined4 *)(animal + 0x4cc));
     stack_val_140._2_2_ = u_val2;
     u_val2 = HW_Routine_080074C0(animal + 0x4d8,*(undefined4 *)(animal + 0x4dc));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -5542,7 +5542,7 @@ Animal_Routine_08056442:
     if ((int)((uint)*(byte *)(animal + 0x380) * 0x40000000) < 0) {
       p_int7 = (int *)HW_GetSpriteAttr0Offset(animal);
       i_val12 = stack_val_120;
-      i_val5 = HW_Routine_08007D4C(animal + 0x4c8,*(undefined4 *)(animal + 0x4cc));
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x4c8,*(undefined4 *)(animal + 0x4cc));
       u_val9 = 0;
       if (stack_val_120 != 0) {
         u_val9 = stack_val_11c & 0xffff;
@@ -5650,7 +5650,7 @@ Animal_Routine_08056442:
                         *(short *)(animal + 0x2330));
   stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(animal + 0x254) >> 0x10);
   stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-  u_val2 = HW_Routine_08007D4C(animal + 0x468,*(undefined4 *)(animal + 0x46c));
+  u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x468,*(undefined4 *)(animal + 0x46c));
   stack_val_140._2_2_ = u_val2;
   u_val2 = HW_Routine_080074C0(animal + 0x470,*(undefined4 *)(animal + 0x474));
   stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -5658,7 +5658,7 @@ Animal_Routine_08056442:
   if ((int)((uint)*(byte *)(animal + 0x268) * 0x40000000) < 0) {
     p_int7 = (int *)HW_GetSpriteAttr0Offset(animal);
     i_val12 = stack_val_120;
-    i_val5 = HW_Routine_08007D4C(animal + 0x468,*(undefined4 *)(animal + 0x46c));
+    i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x468,*(undefined4 *)(animal + 0x46c));
     u_val9 = 0;
     if (stack_val_120 != 0) {
       u_val9 = stack_val_11c & 0xffff;
@@ -5769,7 +5769,7 @@ Animal_Routine_08056442:
                           *(short *)(animal + 0x2330)) + -8);
     stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(i_val12 + 8) >> 0x10);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-    u_val2 = HW_Routine_08007D4C(animal + 0x4e0,*(undefined4 *)(animal + 0x4e4));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x4e0,*(undefined4 *)(animal + 0x4e4));
     stack_val_140._2_2_ = u_val2;
     u_val2 = HW_Routine_080074C0(animal + 0x4e8,*(undefined4 *)(animal + 0x4ec));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -5777,7 +5777,7 @@ Animal_Routine_08056442:
     if ((int)((uint)*(byte *)(animal + 0x428) * 0x40000000) < 0) {
       p_int7 = (int *)HW_GetSpriteAttr0Offset(animal);
       i_val12 = stack_val_120;
-      i_val5 = HW_Routine_08007D4C(animal + 0x4e0,*(undefined4 *)(animal + 0x4e4));
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x4e0,*(undefined4 *)(animal + 0x4e4));
       u_val9 = 0;
       if (stack_val_120 != 0) {
         u_val9 = stack_val_11c & 0xffff;
@@ -5890,7 +5890,7 @@ Animal_Routine_08056442:
                           *(short *)(animal + 0x2330));
     stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(i_val12 + 8) >> 0x10);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-    u_val2 = HW_Routine_08007D4C(animal + 0x4f0,*(undefined4 *)(animal + 0x4f4));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x4f0,*(undefined4 *)(animal + 0x4f4));
     stack_val_140._2_2_ = u_val2;
     u_val2 = HW_Routine_080074C0(animal + 0x4f8,*(undefined4 *)(animal + 0x4fc));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -5898,7 +5898,7 @@ Animal_Routine_08056442:
     if ((int)((uint)*(byte *)(animal + 0x460) * 0x40000000) < 0) {
       p_int7 = (int *)HW_GetSpriteAttr0Offset(animal);
       i_val12 = stack_val_120;
-      i_val5 = HW_Routine_08007D4C(animal + 0x4f0,*(undefined4 *)(animal + 0x4f4));
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x4f0,*(undefined4 *)(animal + 0x4f4));
       u_val9 = 0;
       if (stack_val_120 != 0) {
         u_val9 = stack_val_11c & 0xffff;
@@ -6009,7 +6009,7 @@ Animal_Routine_08056442:
                           *(short *)(animal + 0x2330));
     stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(animal + 0x3a4) >> 0x10);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-    u_val2 = HW_Routine_08007D4C(animal + 0x4d0,*(undefined4 *)(animal + 0x4d4));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x4d0,*(undefined4 *)(animal + 0x4d4));
     stack_val_140._2_2_ = u_val2;
     u_val2 = HW_Routine_080074C0(animal + 0x4d8,*(undefined4 *)(animal + 0x4dc));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -6017,7 +6017,7 @@ Animal_Routine_08056442:
     if ((int)((uint)*(byte *)(animal + 0x3b8) * 0x40000000) < 0) {
       p_int7 = (int *)HW_GetSpriteAttr0Offset(animal);
       i_val12 = stack_val_120;
-      i_val5 = HW_Routine_08007D4C(animal + 0x4d0,*(undefined4 *)(animal + 0x4d4));
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x4d0,*(undefined4 *)(animal + 0x4d4));
       u_val9 = 0;
       if (stack_val_120 != 0) {
         u_val9 = stack_val_11c & 0xffff;
@@ -6128,7 +6128,7 @@ Animal_Routine_08056442:
                           *(short *)(animal + 0x2330));
     stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(animal + 0x334) >> 0x10);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-    u_val2 = HW_Routine_08007D4C(animal + 0x4b8,*(undefined4 *)(animal + 0x4bc));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x4b8,*(undefined4 *)(animal + 0x4bc));
     stack_val_140._2_2_ = u_val2;
     u_val2 = HW_Routine_080074C0(animal + 0x4c0,*(undefined4 *)(animal + 0x4c4));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -6136,7 +6136,7 @@ Animal_Routine_08056442:
     if ((int)((uint)*(byte *)(animal + 0x348) * 0x40000000) < 0) {
       p_int7 = (int *)HW_GetSpriteAttr0Offset(animal);
       i_val12 = stack_val_120;
-      i_val5 = HW_Routine_08007D4C(animal + 0x4b8,*(undefined4 *)(animal + 0x4bc));
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x4b8,*(undefined4 *)(animal + 0x4bc));
       u_val9 = 0;
       if (stack_val_120 != 0) {
         u_val9 = stack_val_11c & 0xffff;
@@ -6246,7 +6246,7 @@ Animal_Routine_08056442:
     stack_val_144 = CONCAT22(0x50,0x40 - *p_uint13);
     stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(animal + 0x2fc) >> 0x10);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-    s_val3 = HW_Routine_08007D4C(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
+    s_val3 = GBA_Vram_AllocateTileBlock(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
     stack_val_140._2_2_ = s_val3 + 2;
     u_val2 = HW_Routine_080074C0(animal + 0x4b0,*(undefined4 *)(animal + 0x4b4));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -6282,7 +6282,7 @@ Animal_Routine_08056442:
   stack_val_144 = CONCAT22(0x50,*(short *)(animal + 0x2268 + 2) - *psVar18);
   stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(animal + 0x2fc) >> 0x10);
   stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-  u_val2 = HW_Routine_08007D4C(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
+  u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
   stack_val_140._2_2_ = u_val2;
   u_val2 = HW_Routine_080074C0(animal + 0x4b0,*(undefined4 *)(animal + 0x4b4));
   stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -6315,7 +6315,7 @@ Animal_Routine_08056442:
     stack_val_144 = CONCAT22(0x50,*(short *)(animal + 0x2294 + 2) - *psVar18);
     stack_val_13c._2_2_ = (undefined2)((uint)*(undefined4 *)(stack_val_3c + 8) >> 0x10);
     stack_val_13c = CONCAT22(stack_val_13c._2_2_,2);
-    u_val2 = HW_Routine_08007D4C(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
+    u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x4a8,*(undefined4 *)(animal + 0x4ac));
     stack_val_140._2_2_ = u_val2;
     u_val2 = HW_Routine_080074C0(animal + 0x4b0,*(undefined4 *)(animal + 0x4b4));
     stack_val_140 = CONCAT22(stack_val_140._2_2_,u_val2);
@@ -6520,7 +6520,7 @@ void Animal_Routine_08057D34(int animal,undefined2 amount,undefined2 food_type,i
   stack_val_54 = amount;
   stack_val_52 = food_type;
   stack_val_50 = HW_Routine_080074C0(animal + 0x480,*(undefined4 *)(animal + 0x484));
-  stack_val_4e = HW_Routine_08007D4C(animal + 0x478,*(undefined4 *)(animal + 0x47c));
+  stack_val_4e = GBA_Vram_AllocateTileBlock(animal + 0x478,*(undefined4 *)(animal + 0x47c));
   stack_val_4e = (short)*(undefined4 *)(animal + 0x2334 + out_stat * 4) + stack_val_4e;
   stack_val_4c = 1;
   stack_val_3c = 1;
@@ -6543,7 +6543,7 @@ void Animal_Routine_08057DD8(undefined4 *animal,undefined4 *amount,undefined4 fo
   undefined4 saved_r8;
   
   *animal = gRomData_080E7960;
-  u_val1 = Dispatcher_Routine_080005D4(0x23A8);
+  u_val1 = CppRuntime_OperatorNewArray(0x23A8);
   u_val1 = Animal_Routine_080522F8(u_val1,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -6759,12 +6759,12 @@ u32 Animal_Routine_0805806C(int animal,undefined4 amount,uint food_type)
   *(undefined4 *)(animal + 4) = gRomData_080E7970;
   *(undefined4 *)(animal + 8) = amount;
   *(undefined4 *)(animal + 0xc) = 0;
-  u_val4 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(temp_buf_3c);
-  HW_Routine_0800770C(stack_buf_38);
+  u_val4 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(temp_buf_3c);
+  GBA_BgLayer_Init(stack_buf_38);
   u_val4 = Animal_Routine_08050CC0(u_val4,0,0x1f,0,*(undefined4 *)(animal + 0xc),temp_buf_3c,stack_buf_38);
   *(undefined4 *)(animal + 0x10) = u_val4;
-  HW_Routine_08007714(stack_buf_38,2);
+  GBA_BgLayer_SetPriority(stack_buf_38,2);
   HW_Routine_08008364(temp_buf_3c,2);
   HW_Routine_08008B54(animal + 0x14,1);
   HW_Routine_08008B54(animal + 0x18,0);
@@ -7008,69 +7008,69 @@ u32 Animal_Routine_0805806C(int animal,undefined4 amount,uint food_type)
   *(undefined4 *)(p_uint5 + 10) = 0;
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   *(undefined1 *)(0x5BC + animal) = 0;
-  HW_Routine_08007874(animal + 0x5c0);
-  u_val4 = HW_Routine_08007B54(animal + 0x5c0,4);
+  GBA_ObjAttr_Init(animal + 0x5c0);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x5c0,4);
   *(undefined4 *)(animal + 0x5c4) = u_val4;
-  HW_Routine_08007128(animal + 0x5c8);
+  GBA_PaletteManager_Init(animal + 0x5c8);
   *(undefined4 *)(animal + 0x5cc) = 0;
-  HW_Routine_08007874(animal + 0x5d0);
-  u_val4 = HW_Routine_08007B54(animal + 0x5d0,4);
+  GBA_ObjAttr_Init(animal + 0x5d0);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x5d0,4);
   *(undefined4 *)(animal + 0x5d4) = u_val4;
-  HW_Routine_08007128(animal + 0x5d8);
+  GBA_PaletteManager_Init(animal + 0x5d8);
   *(undefined4 *)(animal + 0x5dc) = 0;
-  HW_Routine_08007874(animal + 0x5e0);
-  u_val4 = HW_Routine_08007B54(animal + 0x5e0,5);
+  GBA_ObjAttr_Init(animal + 0x5e0);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x5e0,5);
   *(undefined4 *)(animal + 0x5e4) = u_val4;
-  HW_Routine_08007128(animal + 0x5e8);
+  GBA_PaletteManager_Init(animal + 0x5e8);
   *(undefined4 *)(animal + 0x5ec) = 0;
-  HW_Routine_08007874(animal + 0x5f0);
-  u_val4 = HW_Routine_08007B54(animal + 0x5f0,6);
+  GBA_ObjAttr_Init(animal + 0x5f0);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x5f0,6);
   *(undefined4 *)(animal + 0x5f4) = u_val4;
-  HW_Routine_08007128(animal + 0x5f8);
+  GBA_PaletteManager_Init(animal + 0x5f8);
   *(undefined4 *)(animal + 0x5fc) = 0;
-  HW_Routine_08007874(animal + 0x600);
-  u_val4 = HW_Routine_08007B54(animal + 0x600,4);
+  GBA_ObjAttr_Init(animal + 0x600);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x600,4);
   *(undefined4 *)(animal + 0x604) = u_val4;
-  HW_Routine_08007128(animal + 0x608);
-  u_val4 = HW_Routine_0800736C(animal + 0x608);
+  GBA_PaletteManager_Init(animal + 0x608);
+  u_val4 = GBA_PaletteManager_Allocate(animal + 0x608);
   *(undefined4 *)(animal + 0x60c) = u_val4;
-  HW_Routine_08007874(animal + 0x610);
-  u_val4 = HW_Routine_08007B54(animal + 0x610,7);
+  GBA_ObjAttr_Init(animal + 0x610);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x610,7);
   *(undefined4 *)(animal + 0x614) = u_val4;
-  HW_Routine_08007128(animal + 0x618);
-  u_val4 = HW_Routine_0800736C(animal + 0x618);
+  GBA_PaletteManager_Init(animal + 0x618);
+  u_val4 = GBA_PaletteManager_Allocate(animal + 0x618);
   *(undefined4 *)(animal + 0x61c) = u_val4;
-  HW_Routine_08007128(animal + 0x620);
-  u_val4 = HW_Routine_0800736C(animal + 0x620);
+  GBA_PaletteManager_Init(animal + 0x620);
+  u_val4 = GBA_PaletteManager_Allocate(animal + 0x620);
   *(undefined4 *)(animal + 0x624) = u_val4;
-  HW_Routine_08007874(animal + 0x628);
-  u_val4 = HW_Routine_08007B54(animal + 0x628,4);
+  GBA_ObjAttr_Init(animal + 0x628);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x628,4);
   *(undefined4 *)(animal + 0x62c) = u_val4;
-  HW_Routine_08007874(animal + 0x630);
-  u_val4 = HW_Routine_08007B54(animal + 0x630,4);
+  GBA_ObjAttr_Init(animal + 0x630);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x630,4);
   *(undefined4 *)(animal + 0x634) = u_val4;
-  HW_Routine_08007128(animal + 0x638);
+  GBA_PaletteManager_Init(animal + 0x638);
   *(undefined4 *)(animal + 0x63c) = 0;
-  HW_Routine_08007874(animal + 0x640);
-  u_val4 = HW_Routine_08007B54(animal + 0x640,2);
+  GBA_ObjAttr_Init(animal + 0x640);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x640,2);
   *(undefined4 *)(animal + 0x644) = u_val4;
-  HW_Routine_08007128(animal + 0x648);
-  u_val4 = HW_Routine_0800736C(animal + 0x648);
+  GBA_PaletteManager_Init(animal + 0x648);
+  u_val4 = GBA_PaletteManager_Allocate(animal + 0x648);
   *(undefined4 *)(animal + 0x64c) = u_val4;
-  HW_Routine_08007874(animal + 0x650);
-  u_val4 = HW_Routine_08007B54(animal + 0x650,3);
+  GBA_ObjAttr_Init(animal + 0x650);
+  u_val4 = GBA_ObjAttr_AllocateSprite(animal + 0x650,3);
   *(undefined4 *)(animal + 0x654) = u_val4;
   pos_x = 3;
   i_val6 = animal + 0x658;
   do {
-    HW_Routine_08007874();
-    u_val4 = HW_Routine_08007B54(i_val6,5);
+    GBA_ObjAttr_Init();
+    u_val4 = GBA_ObjAttr_AllocateSprite(i_val6,5);
     *(undefined4 *)(i_val6 + 4) = u_val4;
     i_val8 = 1;
     pos_x = pos_x + -1;
     i_val11 = i_val6;
     do {
-      HW_Routine_08007128(i_val11 + 8);
+      GBA_PaletteManager_Init(i_val11 + 8);
       *(undefined4 *)(i_val11 + 0xc) = 0;
       i_val8 = i_val8 + -1;
       i_val11 = i_val11 + 8;
@@ -7080,7 +7080,7 @@ u32 Animal_Routine_0805806C(int animal,undefined4 amount,uint food_type)
     do {
       i_val11 = loop_i * 8 + i_val6 + 8;
       HW_Routine_080073E0(i_val11,*p_uint9);
-      u_val4 = HW_Routine_0800736C(i_val11);
+      u_val4 = GBA_PaletteManager_Allocate(i_val11);
       *p_uint9 = u_val4;
       p_uint9 = p_uint9 + 2;
       loop_i = loop_i + 1;
@@ -7169,12 +7169,12 @@ u32 Animal_Routine_080588AC(undefined4 *animal,int amount)
   HW_Routine_08008724(amount);
   loop_i = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(loop_i + 0x50) = 0x3f;
-  p_uint4 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint4 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val5 = HW_GetSpriteAttr1Offset(amount);
   *p_uint4 = 0;
   p_uint4[1] = 0;
   p_uint4[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint4 + 3,u_val5);
+  Fade_Init(p_uint4 + 3,u_val5);
   Animal_Routine_08050E50(*(undefined4 *)(amount + 0x10),0x75);
   loop_i = 0;
   do {
@@ -7202,7 +7202,7 @@ u32 Animal_Routine_080588AC(undefined4 *animal,int amount)
     Animal_Routine_08059C94(amount);
     Animal_Routine_08059FE0(amount,0);
     Animal_Routine_0805A3F0(amount);
-    Farm_Routine_0800934C(p_uint4 + 3,0x889,1,1);
+    Fade_StartFadeOut(p_uint4 + 3,0x889,1,1);
     loop_i = HW_GetPaletteBankOffset(amount);
     _call_via_r2(loop_i,p_uint4,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
   }
@@ -7362,7 +7362,7 @@ LAB_08058d44:
         }
         break;
       case 0x8058d54:
-        Farm_Routine_08009378(p_uint4 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint4 + 3,0x889,1,1);
         loop_i = HW_GetPaletteBankOffset(amount);
         _call_via_r2(loop_i,p_uint4,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
         loop_i = 0x1424;
@@ -7407,25 +7407,25 @@ LAB_08058d76:
   HW_Routine_080073E0(amount + 0x648,*(undefined4 *)(amount + 0x64c));
   *(undefined4 *)(amount + 0x64c) = 0;
   HW_Routine_080073E0(amount + 0x5c8,*(undefined4 *)(amount + 0x5cc));
-  u_val5 = HW_Routine_0800736C(amount + 0x5c8);
+  u_val5 = GBA_PaletteManager_Allocate(amount + 0x5c8);
   *(undefined4 *)(amount + 0x5cc) = u_val5;
   HW_Routine_080073E0(amount + 0x5d8,*(undefined4 *)(amount + 0x5dc));
-  u_val5 = HW_Routine_0800736C(amount + 0x5d8);
+  u_val5 = GBA_PaletteManager_Allocate(amount + 0x5d8);
   *(undefined4 *)(amount + 0x5dc) = u_val5;
   HW_Routine_080073E0(amount + 0x5e8,*(undefined4 *)(amount + 0x5ec));
-  u_val5 = HW_Routine_0800736C(amount + 0x5e8);
+  u_val5 = GBA_PaletteManager_Allocate(amount + 0x5e8);
   *(undefined4 *)(amount + 0x5ec) = u_val5;
   HW_Routine_080073E0(amount + 0x5f8,*(undefined4 *)(amount + 0x5fc));
-  u_val5 = HW_Routine_0800736C(amount + 0x5f8);
+  u_val5 = GBA_PaletteManager_Allocate(amount + 0x5f8);
   *(undefined4 *)(amount + 0x5fc) = u_val5;
   HW_Routine_080073E0(amount + 0x638,*(undefined4 *)(amount + 0x63c));
-  u_val5 = HW_Routine_0800736C(amount + 0x638);
+  u_val5 = GBA_PaletteManager_Allocate(amount + 0x638);
   *(undefined4 *)(amount + 0x63c) = u_val5;
   Animal_Routine_0805AB08(amount);
   Animal_Routine_0805AD14(amount);
   Animal_Routine_0805B38C(amount);
   HW_Routine_08008B6C(amount + 0x18,0x21);
-  Farm_Routine_0800934C(p_uint4 + 3,0x889,1,1);
+  Fade_StartFadeOut(p_uint4 + 3,0x889,1,1);
   loop_i = HW_GetPaletteBankOffset(amount);
   _call_via_r2(loop_i,p_uint4,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
   ppiStack_24 = apiStack_30;
@@ -7561,7 +7561,7 @@ LAB_08059334:
           }
           break;
         case 0x80592fc:
-          Farm_Routine_08009378(p_uint4 + 3,0x889,1,1);
+          Fade_StartFadeIn(p_uint4 + 3,0x889,1,1);
           loop_i = HW_GetPaletteBankOffset(amount);
           _call_via_r2(loop_i,p_uint4,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
           psVar10 = (short *)(amount + 0x1424);
@@ -7594,13 +7594,13 @@ LAB_0805933c:
     i_val11 = i_val11 + -1;
   } while (-1 < i_val11);
   HW_Routine_080073E0(amount + 0x608,*(undefined4 *)(amount + 0x60c));
-  u_val5 = HW_Routine_0800736C(amount + 0x608);
+  u_val5 = GBA_PaletteManager_Allocate(amount + 0x608);
   *(undefined4 *)(amount + 0x60c) = u_val5;
   HW_Routine_080073E0(amount + 0x618,*(undefined4 *)(amount + 0x61c));
-  u_val5 = HW_Routine_0800736C(amount + 0x618);
+  u_val5 = GBA_PaletteManager_Allocate(amount + 0x618);
   *(undefined4 *)(amount + 0x61c) = u_val5;
   HW_Routine_080073E0(amount + 0x620,*(undefined4 *)(amount + 0x624));
-  u_val5 = HW_Routine_0800736C(amount + 0x620);
+  u_val5 = GBA_PaletteManager_Allocate(amount + 0x620);
   *(undefined4 *)(amount + 0x624) = u_val5;
   *(short *)(amount + 0x140A) = (short)0xFFFF;
   Animal_Routine_08059C94(amount);
@@ -7609,7 +7609,7 @@ LAB_0805933c:
   i_val19 = amount + *(short *)(amount + 0x13FE) * 0x2c;
   *(short *)(amount + 0x141E) =
        *(short *)(i_val19 + 0x1454) * *(short *)(i_val19 + 0x1456);
-  Farm_Routine_0800934C(p_uint4 + 3,0x889,1,1);
+  Fade_StartFadeOut(p_uint4 + 3,0x889,1,1);
   i_val19 = HW_GetPaletteBankOffset(amount);
   _call_via_r2(i_val19,p_uint4,*(undefined4 *)(*(int *)(i_val19 + 8) + 0x10));
   loop_i = loop_i + -0x32;
@@ -7719,7 +7719,7 @@ Animal_Routine_08059764:
         }
         break;
       case 0x80596bc:
-        Farm_Routine_08009378(p_uint4 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint4 + 3,0x889,1,1);
         loop_i = HW_GetPaletteBankOffset(amount);
         _call_via_r2(loop_i,p_uint4,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
         psVar10 = (short *)(amount + 0x1424);
@@ -7954,7 +7954,7 @@ void Animal_Routine_08059C94(int animal)
   if (stack_val_84 != 0) {
     u_val8 = stack_val_80 & 0xffff;
   }
-  HW_Routine_08008E64(stack_val_84,loop_i * 0x20 + 0x05000200,u_val8);
+  GBA_DMA3_FastCopy(stack_val_84,loop_i * 0x20 + 0x05000200,u_val8);
   i_val12 = 0;
   loop_i = 0;
   puStack_2c = &stack_val_30;
@@ -7969,12 +7969,12 @@ void Animal_Routine_08059C94(int animal)
     gba_memcpy(&stack_val_94,&stack_val_94,0x20);
     u_val8 = stack_val_88;
     loop_j = stack_val_8c;
-    i_val5 = HW_Routine_08007D4C(animal + 0x600,*(undefined4 *)(animal + 0x604));
+    i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x600,*(undefined4 *)(animal + 0x604));
     u_val9 = 0;
     if (loop_j != 0) {
       u_val9 = u_val8 & 0xffff;
     }
-    HW_Routine_08008E64(loop_j,(i_val5 + i_val12) * 0x20 + 0x06010000,u_val9);
+    GBA_DMA3_FastCopy(loop_j,(i_val5 + i_val12) * 0x20 + 0x06010000,u_val9);
     u_val9 = 0;
     if (loop_j != 0) {
       u_val9 = u_val8 & 0xffff;
@@ -8001,7 +8001,7 @@ void Animal_Routine_08059C94(int animal)
   loop_i = HW_GetSpriteAttr1Offset(animal);
   stack_val_94._0_2_ = (undefined2)0x5E42;
   *(undefined2 *)(loop_i + 10) = (undefined2)stack_val_94;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0x00030003,u_val2,0x800);
   loop_i = HW_GetSpriteAttr1Offset(animal);
   stack_val_94._0_2_ = 0;
@@ -8022,7 +8022,7 @@ void Animal_Routine_08059C94(int animal)
   loop_i = HW_GetSpriteAttr1Offset(animal);
   stack_val_94 = (uint)stack_val_94._2_2_ << 0x10;
   *(undefined2 *)(loop_i + 0x16) = 0;
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   p_uint6 = 0x05000040;
   *0x05000040 = 0x3e0;
   p_uint6[1] = 0;
@@ -8040,8 +8040,8 @@ void Animal_Routine_08059C94(int animal)
     stack_val_30 = CONCAT22(stack_val_30._2_2_,1);
     *(undefined2 *)((int)puStack_2c + 2) = 2;
     ScriptEngine_Routine_0804E5AC(stack_val_30,stack_buf_70,0,0,u_val1,0,1);
-    loop_i = HW_Routine_08007D4C(animal + 0x610,*(undefined4 *)(animal + 0x614));
-    HW_Routine_08008E64(puStack_24,(loop_i + loop_j * 2) * 0x20 + 0x06010000,0x40);
+    loop_i = GBA_Vram_AllocateTileBlock(animal + 0x610,*(undefined4 *)(animal + 0x614));
+    GBA_DMA3_FastCopy(puStack_24,(loop_i + loop_j * 2) * 0x20 + 0x06010000,0x40);
     loop_j = loop_j + 1;
   } while (loop_j < 0x18);
   return;
@@ -8092,27 +8092,27 @@ u32 Animal_Routine_08059FE0(int animal,int amount)
     if (*(int *)((int)&stack_val_4 + i_val2) != 0) {
       u_val6 = *(undefined2 *)(&stack0x00000000 + i_val2);
     }
-    HW_Routine_08008E64(u_val9,i_val3 * 0x20 + 0x05000200,u_val6);
+    GBA_DMA3_FastCopy(u_val9,i_val3 * 0x20 + 0x05000200,u_val6);
     u_val9 = *(undefined4 *)(&stack0xfffffff4 + i_val2);
-    i_val3 = HW_Routine_08007D4C(animal + 0x640,*(undefined4 *)(animal + 0x644));
+    i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x640,*(undefined4 *)(animal + 0x644));
     u_val6 = 0;
     if (*(int *)(&stack0xfffffff4 + i_val2) != 0) {
       u_val6 = *(undefined2 *)(&stack0xfffffff8 + i_val2);
     }
-    HW_Routine_08008E64(u_val9,i_val3 * 0x20 + 0x06010000,u_val6);
+    GBA_DMA3_FastCopy(u_val9,i_val3 * 0x20 + 0x06010000,u_val6);
     u_val9 = gRomGfx_08752F8C;
-    i_val3 = HW_Routine_08007D4C(animal + 0x610,*(undefined4 *)(animal + 0x614));
-    HW_Routine_08008E64(u_val9,i_val3 * 0x20 + 0x06010600,0x80);
+    i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x610,*(undefined4 *)(animal + 0x614));
+    GBA_DMA3_FastCopy(u_val9,i_val3 * 0x20 + 0x06010600,0x80);
     u_val9 = gRomGfx_0875300C;
     i_val3 = HW_Routine_080074C0(animal + 0x620,*(undefined4 *)(animal + 0x624));
-    HW_Routine_08008E64(u_val9,i_val3 * 0x20 + loop_i,0x20);
+    GBA_DMA3_FastCopy(u_val9,i_val3 * 0x20 + loop_i,0x20);
   }
   else {
-    loop_i = HW_Routine_08007D4C(animal + 0x610,*(undefined4 *)(animal + 0x614));
-    HW_Routine_08008E64(u_val9,loop_i * 0x20 + 0x06010600,0x80);
+    loop_i = GBA_Vram_AllocateTileBlock(animal + 0x610,*(undefined4 *)(animal + 0x614));
+    GBA_DMA3_FastCopy(u_val9,loop_i * 0x20 + 0x06010600,0x80);
     u_val9 = gRomGfx_087519EC;
     loop_i = HW_Routine_080074C0(animal + 0x620,*(undefined4 *)(animal + 0x624));
-    HW_Routine_08008E64(u_val9,loop_i * 0x20 + 0x05000200,0x20);
+    GBA_DMA3_FastCopy(u_val9,loop_i * 0x20 + 0x05000200,0x20);
   }
   i_val3 = 0x142C + animal;
   *(undefined1 **)(&stack0xffffffe0 + 0xB6C + i_val2) =
@@ -8152,7 +8152,7 @@ u32 Animal_Routine_08059FE0(int animal,int amount)
       *(undefined4 *)(&stack0xffffffe8 + i_val2) = 1;
       ScriptEngine_Routine_0804E958(u_val4,&stack0x00000010 + i_val2,0,0);
     }
-    HW_Routine_08008E64(*(undefined4 *)(&stack0xffffffe0 + 0xB68 + i_val2),loop_i,0x300);
+    GBA_DMA3_FastCopy(*(undefined4 *)(&stack0xffffffe0 + 0xB68 + i_val2),loop_i,0x300);
     loop_i = loop_i + 0x300;
     i_val14 = i_val14 + -1;
     i_val3 = i_val3 + 0x2c;
@@ -8169,7 +8169,7 @@ u32 Animal_Routine_08059FE0(int animal,int amount)
   *(undefined4 *)(&stack0xffffffe4 + i_val2) = 0;
   *(undefined4 *)(&stack0xffffffe8 + i_val2) = 1;
   ScriptEngine_Routine_0804E958(u_val4,&stack0x00000314 + i_val2,0,0);
-  HW_Routine_08008E64(*(undefined4 *)(&stack0xffffffe0 + 0xB58 + i_val2),0x06004000,0x800);
+  GBA_DMA3_FastCopy(*(undefined4 *)(&stack0xffffffe0 + 0xB58 + i_val2),0x06004000,0x800);
   loop_i = 0xB48 + i_val2;
   *(undefined2 *)(&stack0xffffffe0 + loop_i) = 0x20;
   *(undefined2 *)(*(int *)(&stack0xffffffe0 + 0xB64 + i_val2) + 2) = 2;
@@ -8193,7 +8193,7 @@ u32 Animal_Routine_08059FE0(int animal,int amount)
     *(undefined4 *)(&stack0xffffffe8 + i_val2) = 1;
     ScriptEngine_Routine_0804E958(u_val9,*(undefined4 *)(&stack0xffffffe0 + 0xB58 + i_val2),0,0);
   }
-  HW_Routine_08008E64(*(undefined4 *)(&stack0xffffffe0 + 0xB58 + i_val2),0x06004800,0x800);
+  GBA_DMA3_FastCopy(*(undefined4 *)(&stack0xffffffe0 + 0xB58 + i_val2),0x06004800,0x800);
   HW_Routine_08008EB8(0xffffffff,0xBEA + animal,0x800);
   loop_i = 0;
   i_val3 = 0xBF2 + animal;
@@ -8228,7 +8228,7 @@ u32 Animal_Routine_08059FE0(int animal,int amount)
     *(short *)(i_val3 + i_val10 + (i_val14 + 0xf) * 0x40) = (short)loop_i + 0x2240;
     loop_i = loop_i + 1;
   } while (loop_i < 0x40);
-  HW_Routine_08008E64(0xBEA + animal,0x0600F000,0x800);
+  GBA_DMA3_FastCopy(0xBEA + animal,0x0600F000,0x800);
   return *(undefined4 *)(&stack0x00000b6c + i_val2);
 }
 
@@ -8291,7 +8291,7 @@ u32 Animal_Routine_0805A3F0(void)
       *(undefined4 *)(&stack0xffffffe4 + i_val2) = 0;
       *(undefined4 *)(&stack0xffffffe8 + i_val2) = 1;
       ScriptEngine_Routine_0804E958(u_val5,p_uint1,0,0);
-      HW_Routine_08008E64(p_uint1,i_val11,0x800);
+      GBA_DMA3_FastCopy(p_uint1,i_val11,0x800);
       i_val11 = i_val11 + 0x800;
       p_int12 = p_int4;
     } while (*p_int4 != 0);
@@ -8492,7 +8492,7 @@ void Animal_Routine_0805A744(int animal)
       s_val2 = 0x80;
     }
     stack_val_88 = CONCAT22(s_val2,u_val3);
-    u_val3 = HW_Routine_08007D4C(animal + 0x640,*(undefined4 *)(animal + 0x644));
+    u_val3 = GBA_Vram_AllocateTileBlock(animal + 0x640,*(undefined4 *)(animal + 0x644));
     stack_val_84._2_2_ = u_val3;
     u_val3 = HW_Routine_080074C0(animal + 0x648,*(undefined4 *)(animal + 0x64c));
     stack_val_84 = CONCAT22(stack_val_84._2_2_,u_val3);
@@ -8526,7 +8526,7 @@ void Animal_Routine_0805A744(int animal)
     stack_val_88 = CONCAT22((short)loop_i * 0x10 + 0x30,0x10);
     u_val3 = HW_Routine_080074C0(animal + 0x608,*(undefined4 *)(animal + 0x60c));
     stack_val_84 = CONCAT22(stack_val_84._2_2_,u_val3);
-    s_val2 = HW_Routine_08007D4C(animal + 0x600,*(undefined4 *)(animal + 0x604));
+    s_val2 = GBA_Vram_AllocateTileBlock(animal + 0x600,*(undefined4 *)(animal + 0x604));
     stack_val_84 = CONCAT22(s_val2 + (short)loop_i * 4,(undefined2)stack_val_84);
     stack_val_80 = CONCAT22(stack_val_80._2_2_,2);
     stack_val_70 = CONCAT31(stack_val_70._1_3_,1);
@@ -8554,7 +8554,7 @@ void Animal_Routine_0805A744(int animal)
       stack_val_2c = (stack_val_2c & 0xFE00FFFF |
                   ((int)*(short *)(animal + 0x738 + *psVar11 * 8) & 0x1FF) << 0x10) &
                   0xFFFFFF00 | (uint)*(byte *)(animal + 0x73A + *psVar11 * 8);
-      loop_i = HW_Routine_08007D4C(animal + 0x610,*(undefined4 *)(animal + 0x614));
+      loop_i = GBA_Vram_AllocateTileBlock(animal + 0x610,*(undefined4 *)(animal + 0x614));
       stack_val_28 = stack_val_28 & 0xFFFFFC00 | loop_i + *(short *)(i_val6 + *psVar11 * 8) * 2 & 0x3ffU;
       if (*(short *)(i_val6 + *psVar11 * 8) == 0x18) {
         u_val10 = HW_Routine_080074C0(animal + 0x620,*(undefined4 *)(animal + 0x624));
@@ -8609,7 +8609,7 @@ void Animal_Routine_0805AB08(int animal)
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872F1EC,animal + 0xDEA);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872FBFC,animal + 0xEEA);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872F21C,0x6000000);
-  HW_Routine_08008E64(gRomGfx_0872FA9C,0x5000000,0x200);
+  GBA_DMA3_FastCopy(gRomGfx_0872FA9C,0x5000000,0x200);
   p_uint2 = (undefined2 *)HW_GetSpriteAttr1Offset(animal);
   *p_uint2 = 0x1e40;
   i_val3 = HW_GetSpriteAttr1Offset(animal);
@@ -8632,14 +8632,14 @@ void Animal_Routine_0805AB08(int animal)
     i_val8 = i_val3 + 0xBEA;
     i_val3 = 0xCEA + i_val3;
     do {
-      HW_Routine_08008E64(animal + i_val8,i_val9,0xc);
+      GBA_DMA3_FastCopy(animal + i_val8,i_val9,0xc);
       if (i_val12 == 0x12) {
-        HW_Routine_08008E64(animal + i_val4,0x0600D824 + i_val5,0xc);
+        GBA_DMA3_FastCopy(animal + i_val4,0x0600D824 + i_val5,0xc);
       }
       else {
-        HW_Routine_08008E64(animal + i_val3,i_val10,0xc);
+        GBA_DMA3_FastCopy(animal + i_val3,i_val10,0xc);
       }
-      HW_Routine_08008E64(animal + i_val6,i_val11,0xc);
+      GBA_DMA3_FastCopy(animal + i_val6,i_val11,0xc);
       i_val1 = 0x13EA;
       i_val11 = i_val11 + 0xc;
       i_val10 = i_val10 + 0xc;
@@ -9195,7 +9195,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val2 * 0x20 + 0x05000200,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val2 * 0x20 + 0x05000200,u_val7);
   i_val2 = 0;
   loop_i = 0;
   piStack_54 = (int *)(animal + 0x20c);
@@ -9225,13 +9225,13 @@ void Animal_Routine_0805B38C(int animal)
     stack_val_9c = stack_val_7c;
     stack_val_98 = stack_val_78;
     stack_val_94 = stack_val_74;
-    i_val3 = HW_Routine_08007D4C(animal + 0x5c0,*(undefined4 *)(animal + 0x5c4),stack_val_78,stack_val_74,
+    i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x5c0,*(undefined4 *)(animal + 0x5c4),stack_val_78,stack_val_74,
                           stack_val_90,stack_val_8c);
     u_val7 = 0;
     if (stack_val_a8 != 0) {
       u_val7 = stack_val_a4 & 0xffff;
     }
-    HW_Routine_08008E64(i_val4,(i_val3 + i_val2) * 0x20 + 0x06010000,u_val7);
+    GBA_DMA3_FastCopy(i_val4,(i_val3 + i_val2) * 0x20 + 0x06010000,u_val7);
     u_val7 = 0;
     if (stack_val_a8 != 0) {
       u_val7 = stack_val_a4 & 0xffff;
@@ -9257,7 +9257,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(i_val2,i_val4 * 0x20 + 0x05000200,u_val7 >> 1);
+  GBA_DMA3_FastCopy(i_val2,i_val4 * 0x20 + 0x05000200,u_val7 >> 1);
   u_val7 = 0;
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
@@ -9268,7 +9268,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
+  GBA_DMA3_FastCopy(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
   _call_via_r3(&stack_val_90,*(int **)(animal + 0x240),
                   *(undefined2 *)(*piStack_40 + (uint)*(ushort *)(animal + 0x24c) * 4),
                   *(undefined4 *)(**(int **)(animal + 0x240) + 0x10));
@@ -9286,7 +9286,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(i_val2,i_val4 * 0x20 + loop_i,u_val7 >> 1);
+  GBA_DMA3_FastCopy(i_val2,i_val4 * 0x20 + loop_i,u_val7 >> 1);
   u_val7 = 0;
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
@@ -9297,7 +9297,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
+  GBA_DMA3_FastCopy(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
   if (*(char *)(0x140E + animal) == '\0') {
     _call_via_r3(&stack_val_90,*(int **)(animal + 0x278),
                     *(undefined2 *)
@@ -9317,7 +9317,7 @@ void Animal_Routine_0805B38C(int animal)
     if (stack_val_a0 != 0) {
       u_val7 = stack_val_9c & 0xffff;
     }
-    HW_Routine_08008E64(i_val2,i_val4 * 0x20 + loop_i,u_val7 >> 1);
+    GBA_DMA3_FastCopy(i_val2,i_val4 * 0x20 + loop_i,u_val7 >> 1);
     u_val7 = 0;
     if (stack_val_a0 != 0) {
       u_val7 = stack_val_9c & 0xffff;
@@ -9328,7 +9328,7 @@ void Animal_Routine_0805B38C(int animal)
     if (stack_val_a0 != 0) {
       u_val7 = stack_val_9c & 0xffff;
     }
-    HW_Routine_08008E64(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
+    GBA_DMA3_FastCopy(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
   }
   else {
     _call_via_r3(&stack_val_90,*(int **)(animal + 0x2e8),
@@ -9349,7 +9349,7 @@ void Animal_Routine_0805B38C(int animal)
     if (stack_val_a0 != 0) {
       u_val7 = stack_val_9c & 0xffff;
     }
-    HW_Routine_08008E64(i_val2,i_val4 * 0x20 + loop_i,u_val7 >> 1);
+    GBA_DMA3_FastCopy(i_val2,i_val4 * 0x20 + loop_i,u_val7 >> 1);
     u_val7 = 0;
     if (stack_val_a0 != 0) {
       u_val7 = stack_val_9c & 0xffff;
@@ -9360,7 +9360,7 @@ void Animal_Routine_0805B38C(int animal)
     if (stack_val_a0 != 0) {
       u_val7 = stack_val_9c & 0xffff;
     }
-    HW_Routine_08008E64(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
+    GBA_DMA3_FastCopy(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
   }
   _call_via_r3(&stack_val_90,*(int **)(animal + 0x2b0),
                   *(undefined2 *)(*piStack_30 + (uint)*(ushort *)(animal + 700) * 4),
@@ -9380,7 +9380,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(i_val2,i_val4 * 0x20 + 0x05000200,u_val7 >> 1);
+  GBA_DMA3_FastCopy(i_val2,i_val4 * 0x20 + 0x05000200,u_val7 >> 1);
   u_val7 = 0;
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
@@ -9391,7 +9391,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
+  GBA_DMA3_FastCopy(i_val4,i_val2 * 0x20 + loop_i,u_val7 >> 1);
   Animal_Routine_0805E790(&stack_val_90,stack_val_44,0);
   i_val2 = stack_val_80;
   stack_val_a8 = stack_val_88;
@@ -9406,14 +9406,14 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(i_val2,i_val4 * 0x20 + loop_i,u_val7);
+  GBA_DMA3_FastCopy(i_val2,i_val4 * 0x20 + loop_i,u_val7);
   loop_i = stack_val_a8;
-  i_val2 = HW_Routine_08007D4C(animal + 0x5d0,*(undefined4 *)(animal + 0x5d4));
+  i_val2 = GBA_Vram_AllocateTileBlock(animal + 0x5d0,*(undefined4 *)(animal + 0x5d4));
   u_val7 = 0;
   if (stack_val_a8 != 0) {
     u_val7 = stack_val_a4 & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val2 * 0x20 + 0x06010000,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val2 * 0x20 + 0x06010000,u_val7);
   Animal_Routine_0805E790(&stack_val_90,stack_val_44,1);
   loop_i = stack_val_88;
   stack_val_a8 = stack_val_88;
@@ -9422,13 +9422,13 @@ void Animal_Routine_0805B38C(int animal)
   stack_val_9c = stack_val_7c;
   stack_val_98 = stack_val_78;
   stack_val_94 = stack_val_74;
-  i_val2 = HW_Routine_08007D4C(animal + 0x5d0,*(undefined4 *)(animal + 0x5d4),stack_val_78,stack_val_74,
+  i_val2 = GBA_Vram_AllocateTileBlock(animal + 0x5d0,*(undefined4 *)(animal + 0x5d4),stack_val_78,stack_val_74,
                         stack_val_90,stack_val_8c);
   u_val7 = 0;
   if (stack_val_a8 != 0) {
     u_val7 = stack_val_a4 & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val2 * 0x20 + 0x06010100,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val2 * 0x20 + 0x06010100,u_val7);
   u_val1 = 0xFFFF;
   loop_i = 0;
   p_uint8 = (ushort *)(animal + 0x6b8);
@@ -9455,7 +9455,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val2 * 0x20 + 0x05000200,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val2 * 0x20 + 0x05000200,u_val7);
   p_int6 = piStack_38;
   i_val2 = 0;
   piStack_58 = &stack_val_a8;
@@ -9476,13 +9476,13 @@ void Animal_Routine_0805B38C(int animal)
       stack_val_9c = stack_val_7c;
       stack_val_98 = stack_val_78;
       stack_val_94 = stack_val_74;
-      i_val5 = HW_Routine_08007D4C(animal + 0x5e0,*(undefined4 *)(animal + 0x5e4),stack_val_78,stack_val_74,
+      i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x5e0,*(undefined4 *)(animal + 0x5e4),stack_val_78,stack_val_74,
                             stack_val_90,stack_val_8c);
       u_val7 = 0;
       if (stack_val_a8 != 0) {
         u_val7 = stack_val_a4 & 0xffff;
       }
-      HW_Routine_08008E64(i_val3,(i_val5 + i_val2) * 0x20 + 0x06010000,u_val7);
+      GBA_DMA3_FastCopy(i_val3,(i_val5 + i_val2) * 0x20 + 0x06010000,u_val7);
       u_val7 = 0;
       if (stack_val_a8 != 0) {
         u_val7 = (uint)*(ushort *)(piStack_58 + 1);
@@ -9506,14 +9506,14 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val2 * 0x20 + 0x05000200,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val2 * 0x20 + 0x05000200,u_val7);
   loop_i = stack_val_a8;
-  i_val2 = HW_Routine_08007D4C(animal + 0x5f0,*(undefined4 *)(animal + 0x5f4));
+  i_val2 = GBA_Vram_AllocateTileBlock(animal + 0x5f0,*(undefined4 *)(animal + 0x5f4));
   u_val7 = 0;
   if (stack_val_a8 != 0) {
     u_val7 = stack_val_a4 & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val2 * 0x20 + 0x06010000,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val2 * 0x20 + 0x06010000,u_val7);
   i_val2 = 0;
   loop_i = 0;
   p_int6 = (int *)(animal + 0x110);
@@ -9531,13 +9531,13 @@ void Animal_Routine_0805B38C(int animal)
     stack_val_9c = stack_val_7c;
     stack_val_98 = stack_val_78;
     stack_val_94 = stack_val_74;
-    i_val3 = HW_Routine_08007D4C(animal + 0x628,*(undefined4 *)(animal + 0x62c),stack_val_78,stack_val_74,
+    i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x628,*(undefined4 *)(animal + 0x62c),stack_val_78,stack_val_74,
                           stack_val_90,stack_val_8c);
     u_val7 = 0;
     if (stack_val_a8 != 0) {
       u_val7 = stack_val_a4 & 0xffff;
     }
-    HW_Routine_08008E64(i_val4,(i_val3 + i_val2) * 0x20 + 0x06010000,u_val7);
+    GBA_DMA3_FastCopy(i_val4,(i_val3 + i_val2) * 0x20 + 0x06010000,u_val7);
     u_val7 = 0;
     if (stack_val_a8 != 0) {
       u_val7 = stack_val_a4 & 0xffff;
@@ -9562,7 +9562,7 @@ void Animal_Routine_0805B38C(int animal)
   if (stack_val_a0 != 0) {
     u_val7 = stack_val_9c & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val2 * 0x20 + 0x05000200,u_val7);
+  GBA_DMA3_FastCopy(loop_i,i_val2 * 0x20 + 0x05000200,u_val7);
   i_val2 = 0;
   loop_i = 0;
   p_int6 = (int *)(animal + 0x140);
@@ -9580,13 +9580,13 @@ void Animal_Routine_0805B38C(int animal)
     stack_val_9c = stack_val_7c;
     stack_val_98 = stack_val_78;
     stack_val_94 = stack_val_74;
-    i_val3 = HW_Routine_08007D4C(animal + 0x630,*(undefined4 *)(animal + 0x634),stack_val_84,stack_val_78,
+    i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x630,*(undefined4 *)(animal + 0x634),stack_val_84,stack_val_78,
                           stack_val_90,stack_val_8c);
     u_val7 = 0;
     if (stack_val_a8 != 0) {
       u_val7 = stack_val_a4 & 0xffff;
     }
-    HW_Routine_08008E64(i_val4,(i_val3 + i_val2) * 0x20 + 0x06010000,u_val7);
+    GBA_DMA3_FastCopy(i_val4,(i_val3 + i_val2) * 0x20 + 0x06010000,u_val7);
     u_val7 = 0;
     if (stack_val_a8 != 0) {
       u_val7 = stack_val_a4 & 0xffff;
@@ -9604,13 +9604,13 @@ void Animal_Routine_0805B38C(int animal)
   stack_val_9c = stack_val_7c;
   stack_val_98 = stack_val_78;
   stack_val_94 = stack_val_74;
-  loop_i = HW_Routine_08007D4C(animal + 0x650,*(undefined4 *)(animal + 0x654),stack_val_78,stack_val_74,
+  loop_i = GBA_Vram_AllocateTileBlock(animal + 0x650,*(undefined4 *)(animal + 0x654),stack_val_78,stack_val_74,
                         stack_val_90,stack_val_8c);
   u_val7 = 0;
   if (stack_val_a8 != 0) {
     u_val7 = stack_val_a4 & 0xffff;
   }
-  HW_Routine_08008E64(stack_val_88,loop_i * 0x20 + 0x06010000,u_val7);
+  GBA_DMA3_FastCopy(stack_val_88,loop_i * 0x20 + 0x06010000,u_val7);
   return;
 }
 
@@ -9704,7 +9704,7 @@ void Animal_Routine_0805BC34(int animal)
     stack_val_c0 = 0x400040;
     u_val1 = HW_Routine_080074C0(animal + 0x5f8,*(undefined4 *)(animal + 0x5fc));
     stack_val_bc = CONCAT22(stack_val_bc._2_2_,u_val1);
-    s_val2 = HW_Routine_08007D4C(animal + 0x5f0,*(undefined4 *)(animal + 0x5f4));
+    s_val2 = GBA_Vram_AllocateTileBlock(animal + 0x5f0,*(undefined4 *)(animal + 0x5f4));
     stack_val_b8._0_2_ = 2;
     stack_val_a8 = CONCAT31(stack_val_a8._1_3_,1);
     stack_val_bc._2_2_ = s_val2;
@@ -9741,7 +9741,7 @@ void Animal_Routine_0805BC34(int animal)
       stack_val_c0 = CONCAT22(s_val2,0x6d8 - *(short *)(animal + 0x13EC));
       u_val1 = HW_Routine_080074C0(animal + 0x5c8,*(undefined4 *)(animal + 0x5cc));
       stack_val_bc = CONCAT22(stack_val_bc._2_2_,u_val1);
-      s_val3 = HW_Routine_08007D4C(animal + 0x5c0,*(undefined4 *)(animal + 0x5c4));
+      s_val3 = GBA_Vram_AllocateTileBlock(animal + 0x5c0,*(undefined4 *)(animal + 0x5c4));
       stack_val_b8._0_2_ = 2;
       stack_val_a8 = CONCAT31(stack_val_a8._1_3_,1);
       stack_val_bc._2_2_ = s_val3 + (short)loop_i * 4;
@@ -9862,7 +9862,7 @@ LAB_0805bfea:
       stack_val_b8._0_2_ = 2;
       u_val1 = HW_Routine_080074C0(animal + 0x638,*(undefined4 *)(animal + 0x63c));
       stack_val_bc = CONCAT22(stack_val_bc._2_2_,u_val1);
-      s_val2 = HW_Routine_08007D4C(animal + 0x628,*(undefined4 *)(animal + 0x62c));
+      s_val2 = GBA_Vram_AllocateTileBlock(animal + 0x628,*(undefined4 *)(animal + 0x62c));
       stack_val_a8 = CONCAT31(stack_val_a8._1_3_,1);
       stack_val_bc._2_2_ =
            *(short *)(animal + 0xBDA +
@@ -9899,7 +9899,7 @@ LAB_0805bfea:
         stack_val_b8._0_2_ = 2;
         u_val1 = HW_Routine_080074C0(animal + 0x638,*(undefined4 *)(animal + 0x63c));
         stack_val_bc = CONCAT22(stack_val_bc._2_2_,u_val1);
-        s_val2 = HW_Routine_08007D4C(animal + 0x630,*(undefined4 *)(animal + 0x634));
+        s_val2 = GBA_Vram_AllocateTileBlock(animal + 0x630,*(undefined4 *)(animal + 0x634));
         stack_val_a8 = CONCAT31(stack_val_a8._1_3_,1);
         stack_val_bc._2_2_ =
              *(short *)(animal + 0xBE2 +
@@ -9953,14 +9953,14 @@ LAB_0805bfea:
                          *(short *)(animal + 0x13EC));
     stack_val_b8._2_2_ = (undefined2)((uint)puStack_5c[7] >> 0x10);
     stack_val_b8 = CONCAT22(stack_val_b8._2_2_,2);
-    u_val1 = HW_Routine_08007D4C(i_val11 + animal + 0x658,*(undefined4 *)(i_val11 + animal + 0x65c));
+    u_val1 = GBA_Vram_AllocateTileBlock(i_val11 + animal + 0x658,*(undefined4 *)(i_val11 + animal + 0x65c));
     stack_val_bc = CONCAT22(u_val1,(undefined2)stack_val_bc);
     stack_val_a8 = CONCAT31(stack_val_a8._1_3_,1);
     stack_val_3c = loop_i + -1;
     if ((int)((uint)*(byte *)(puStack_5c + 0xc) * 0x40000000) < 0) {
       p_int5 = (int *)HW_GetSpriteAttr0Offset(animal);
       i_val12 = stack_val_9c;
-      i_val11 = HW_Routine_08007D4C(i_val11 + animal + 0x658,*(undefined4 *)(i_val11 + animal + 0x65c));
+      i_val11 = GBA_Vram_AllocateTileBlock(i_val11 + animal + 0x658,*(undefined4 *)(i_val11 + animal + 0x65c));
       u_val8 = 0;
       if (stack_val_9c != 0) {
         u_val8 = stack_val_98 & 0xffff;
@@ -10072,7 +10072,7 @@ LAB_0805bfea:
       stack_val_bc = CONCAT22(stack_val_bc._2_2_,u_val1);
       stack_val_b8 = CONCAT22(stack_val_b8._2_2_,2);
       stack_val_a8 = CONCAT31(stack_val_a8._1_3_,1);
-      s_val2 = HW_Routine_08007D4C(animal + 0x5e0,*(undefined4 *)(animal + 0x5e4));
+      s_val2 = GBA_Vram_AllocateTileBlock(animal + 0x5e0,*(undefined4 *)(animal + 0x5e4));
       stack_val_bc = CONCAT22(s_val2 + *(short *)(*piStack_48 + (uint)*(ushort *)(puStack_4c + 3) * 4) *
                                    4,(undefined2)stack_val_bc);
       u_val4 = HW_GetSpriteAttr2Offset(animal);
@@ -10107,7 +10107,7 @@ LAB_0805bfea:
     stack_val_b8._0_2_ = 2;
     u_val1 = HW_Routine_080074C0(animal + 0x5d8,*(undefined4 *)(animal + 0x5dc));
     stack_val_bc = CONCAT22(stack_val_bc._2_2_,u_val1);
-    s_val2 = HW_Routine_08007D4C(animal + 0x650,*(undefined4 *)(animal + 0x654));
+    s_val2 = GBA_Vram_AllocateTileBlock(animal + 0x650,*(undefined4 *)(animal + 0x654));
     stack_val_a8 = CONCAT31(stack_val_a8._1_3_,1);
     stack_val_bc._2_2_ = s_val2;
     u_val4 = HW_GetSpriteAttr2Offset(animal);
@@ -10137,7 +10137,7 @@ LAB_0805bfea:
                                *psStack_24 - *(short *)(animal + 0x13EC));
           u_val1 = HW_Routine_080074C0(animal + 0x5d8,*(undefined4 *)(animal + 0x5dc));
           stack_val_bc = CONCAT22(stack_val_bc._2_2_,u_val1);
-          s_val2 = HW_Routine_08007D4C(animal + 0x5d0,*(undefined4 *)(animal + 0x5d4));
+          s_val2 = GBA_Vram_AllocateTileBlock(animal + 0x5d0,*(undefined4 *)(animal + 0x5d4));
           stack_val_b8._0_2_ = 2;
           stack_val_a8 = CONCAT31(stack_val_a8._1_3_,1);
           stack_val_bc._2_2_ = s_val2 + (short)(u_val8 & 1) * 8;
@@ -10611,7 +10611,7 @@ Animal_Routine_0805CEB8(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   undefined4 u_val1;
   
   *animal = gRomData_080E798C;
-  u_val1 = Dispatcher_Routine_080005D4(0x14FC);
+  u_val1 = CppRuntime_OperatorNewArray(0x14FC);
   u_val1 = Animal_Routine_0805806C(u_val1,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -10691,12 +10691,12 @@ u32 Animal_Routine_0805D170(undefined4 *animal,int amount)
   HW_Routine_08008724(amount);
   pos_x = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(pos_x + 0x50) = 0x3f;
-  p_uint5 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint5 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val6 = HW_GetSpriteAttr1Offset(amount);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint5 + 3,u_val6);
+  Fade_Init(p_uint5 + 3,u_val6);
   Animal_Routine_08050E50(*(undefined4 *)(amount + 0x10),0x75);
   pos_x = 9;
   p_uint7 = (undefined1 *)(amount + 0xAE9);
@@ -10719,7 +10719,7 @@ u32 Animal_Routine_0805D170(undefined4 *animal,int amount)
   *(undefined2 *)(amount + 0xAD8) = 0;
   *(undefined2 *)(amount + 0xADC) = 2;
   *(undefined2 *)(amount + 0xADA) = 0;
-  Farm_Routine_0800934C(p_uint5 + 3,0x889,1,1);
+  Fade_StartFadeOut(p_uint5 + 3,0x889,1,1);
   pos_x = HW_GetPaletteBankOffset(amount);
   _call_via_r2(pos_x,p_uint5,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
   b_flag1 = false;
@@ -10881,7 +10881,7 @@ LAB_0805d624:
         }
         break;
       case 0x805d6a8:
-        Farm_Routine_08009378(p_uint5 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint5 + 3,0x889,1,1);
         pos_x = HW_GetPaletteBankOffset(amount);
         _call_via_r2(pos_x,p_uint5,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
         pos_x = 0xADA;
@@ -11075,7 +11075,7 @@ void Animal_Routine_0805D9C0(int animal)
   *(short *)(i_val4 + 0xc) = (short)0x1D41;
   i_val4 = HW_GetSpriteAttr1Offset(animal);
   *(short *)(i_val4 + 10) = (short)0x5E42;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0x00030003,u_val2,0x800);
   i_val4 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val4 + 0x1c) = 0;
@@ -11090,7 +11090,7 @@ void Animal_Routine_0805D9C0(int animal)
   *(undefined2 *)(i_val4 + 0x14) = 0;
   i_val4 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val4 + 0x16) = 0;
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   p_uint5 = 0x05000040;
   *0x05000040 = 0x3e0;
   p_uint5[1] = 0;
@@ -11106,8 +11106,8 @@ void Animal_Routine_0805D9C0(int animal)
   do {
     stack_val_24 = 0x20001;
     ScriptEngine_Routine_0804E5AC(0x20001,stack_buf_64,0,0,*(undefined2 *)(loop_i * 2 + gRomData_080FB1A6),0,1);
-    i_val4 = HW_Routine_08007D4C(animal + 0x11c,*(undefined4 *)(animal + 0x120));
-    HW_Routine_08008E64(stack_buf_64,(i_val4 + loop_i * 2) * 0x20 + 0x06010000,0x40);
+    i_val4 = GBA_Vram_AllocateTileBlock(animal + 0x11c,*(undefined4 *)(animal + 0x120));
+    GBA_DMA3_FastCopy(stack_buf_64,(i_val4 + loop_i * 2) * 0x20 + 0x06010000,0x40);
     loop_i = loop_i + 1;
   } while (loop_i < 0x18);
   return;
@@ -11163,7 +11163,7 @@ u32 Animal_Routine_0805DC24(int animal)
   if (*(int *)((int)&stack_val_4 + i_val2) != 0) {
     u_val7 = *(undefined2 *)(&stack0x00000000 + i_val2);
   }
-  HW_Routine_08008E64(u_val11,loop_i * 0x20 + 0x05000200,u_val7);
+  GBA_DMA3_FastCopy(u_val11,loop_i * 0x20 + 0x05000200,u_val7);
   Animal_Routine_0805E790(p_uint1,animal + 0x50,0);
   *(undefined4 *)(&stack0xffffffec + i_val2) = *p_uint1;
   *(undefined4 *)(&stack0xfffffff0 + i_val2) = *(undefined4 *)(&stack0x00000010 + i_val2);
@@ -11179,14 +11179,14 @@ u32 Animal_Routine_0805DC24(int animal)
   if (*(int *)((int)&stack_val_4 + i_val2) != 0) {
     u_val7 = *(undefined2 *)(&stack0x00000000 + i_val2);
   }
-  HW_Routine_08008E64(u_val11,loop_i * 0x20 + loop_j,u_val7);
+  GBA_DMA3_FastCopy(u_val11,loop_i * 0x20 + loop_j,u_val7);
   u_val11 = *(undefined4 *)(&stack0xfffffff4 + i_val2);
-  loop_j = HW_Routine_08007D4C(animal + 0x13c,*(undefined4 *)(animal + 0x140));
+  loop_j = GBA_Vram_AllocateTileBlock(animal + 0x13c,*(undefined4 *)(animal + 0x140));
   u_val7 = 0;
   if (*(int *)(&stack0xfffffff4 + i_val2) != 0) {
     u_val7 = *(undefined2 *)(&stack0xfffffff8 + i_val2);
   }
-  HW_Routine_08008E64(u_val11,loop_j * 0x20 + 0x06010000,u_val7);
+  GBA_DMA3_FastCopy(u_val11,loop_j * 0x20 + 0x06010000,u_val7);
   loop_i = 0;
   *(undefined1 **)(&stack0x000003b8 + i_val2) = &stack0x000003b4 + i_val2;
   *(undefined1 **)(&stack0x000003bc + i_val2) = &stack0x00000030 + i_val2;
@@ -11203,7 +11203,7 @@ u32 Animal_Routine_0805DC24(int animal)
     *(undefined4 *)(&stack0xffffffe4 + i_val2) = 0;
     *(undefined4 *)(&stack0xffffffe8 + i_val2) = 1;
     ScriptEngine_Routine_0804E958(u_val11,&stack0x00000030 + i_val2,0);
-    HW_Routine_08008E64(*(undefined4 *)(&stack0x000003bc + i_val2),loop_j,0x380);
+    GBA_DMA3_FastCopy(*(undefined4 *)(&stack0x000003bc + i_val2),loop_j,0x380);
     loop_j = loop_j + 0x380;
     loop_i = loop_i + 1;
   } while (loop_i < 10);
@@ -11227,7 +11227,7 @@ u32 Animal_Routine_0805DC24(int animal)
     } while (i_val5 < 0xe);
     s_val10 = s_val10 + 0x1c;
   } while (loop_j < 10);
-  HW_Routine_08008E64(animal + 0x2d0,0x0600F000,0x800);
+  GBA_DMA3_FastCopy(animal + 0x2d0,0x0600F000,0x800);
   return *(undefined4 *)(&stack0x000003dc + i_val2);
 }
 
@@ -11410,7 +11410,7 @@ void Animal_Routine_0805DFC4(int animal)
     stack_val_88 = *(undefined4 *)(animal + 0x114);
     stack_val_a0 = CONCAT22(*(short *)(animal + 0xAD4) * 0x10 -
                          (*(short *)(animal + 0xAD6) * 0x10 + -0x28),0xc);
-    u_val3 = HW_Routine_08007D4C(animal + 0x13c,*(undefined4 *)(animal + 0x140));
+    u_val3 = GBA_Vram_AllocateTileBlock(animal + 0x13c,*(undefined4 *)(animal + 0x140));
     stack_val_9c._2_2_ = u_val3;
     u_val3 = HW_Routine_080074C0(animal + 0x144,*(undefined4 *)(animal + 0x148));
     stack_val_9c = CONCAT22(stack_val_9c._2_2_,u_val3);
@@ -11447,7 +11447,7 @@ void Animal_Routine_0805DFC4(int animal)
     stack_val_8c = *(undefined4 *)(animal + 0xa8);
     stack_val_88 = *(undefined4 *)(animal + 0xac);
     stack_val_a0 = 0x1a00e8;
-    s_val4 = HW_Routine_08007D4C(animal + 300,*(undefined4 *)(animal + 0x130));
+    s_val4 = GBA_Vram_AllocateTileBlock(animal + 300,*(undefined4 *)(animal + 0x130));
     stack_val_9c._2_2_ = s_val4 + 4;
     u_val3 = HW_Routine_080074C0(animal + 0x134,*(undefined4 *)(animal + 0x138));
     stack_val_9c = CONCAT22(stack_val_9c._2_2_,u_val3);
@@ -11455,7 +11455,7 @@ void Animal_Routine_0805DFC4(int animal)
     stack_val_88 = CONCAT31(stack_val_88._1_3_,1);
     p_int9 = (int *)HW_GetSpriteAttr0Offset(animal);
     i_val7 = stack_val_7c;
-    i_val6 = HW_Routine_08007D4C(animal + 300,*(undefined4 *)(animal + 0x130));
+    i_val6 = GBA_Vram_AllocateTileBlock(animal + 300,*(undefined4 *)(animal + 0x130));
     u_val12 = 0;
     if (stack_val_7c != 0) {
       u_val12 = stack_val_78 & 0xffff;
@@ -11564,7 +11564,7 @@ void Animal_Routine_0805DFC4(int animal)
     stack_val_8c = *(undefined4 *)(animal + 0xdc);
     stack_val_88 = *(undefined4 *)(animal + 0xe0);
     stack_val_a0 = 0x9800e8;
-    s_val4 = HW_Routine_08007D4C(animal + 300,*(undefined4 *)(animal + 0x130));
+    s_val4 = GBA_Vram_AllocateTileBlock(animal + 300,*(undefined4 *)(animal + 0x130));
     stack_val_9c._2_2_ = s_val4 + 8;
     u_val3 = HW_Routine_080074C0(animal + 0x134,*(undefined4 *)(animal + 0x138));
     stack_val_9c = CONCAT22(stack_val_9c._2_2_,u_val3);
@@ -11572,7 +11572,7 @@ void Animal_Routine_0805DFC4(int animal)
     stack_val_88 = CONCAT31(stack_val_88._1_3_,1);
     p_int9 = (int *)HW_GetSpriteAttr0Offset(animal);
     i_val7 = stack_val_7c;
-    i_val6 = HW_Routine_08007D4C(animal + 300,*(undefined4 *)(animal + 0x130));
+    i_val6 = GBA_Vram_AllocateTileBlock(animal + 300,*(undefined4 *)(animal + 0x130));
     u_val12 = 0;
     if (stack_val_7c != 0) {
       u_val12 = stack_val_78 & 0xffff;
@@ -11674,7 +11674,7 @@ void Animal_Routine_0805DFC4(int animal)
          (stack_buf_34[0] & 0xFE00FFFF |
          ((int)*(short *)(animal + 0x14e + (short)*p_uint11 * 8) & 0x1FF) << 0x10) &
          0xFFFFFF00 | (uint)*(byte *)(animal + 0x150 + (short)*p_uint11 * 8);
-    i_val7 = HW_Routine_08007D4C(animal + 0x11c,*(undefined4 *)(animal + 0x120));
+    i_val7 = GBA_Vram_AllocateTileBlock(animal + 0x11c,*(undefined4 *)(animal + 0x120));
     p_uint2[1] = p_uint2[1] & 0xFFFFFC00 |
                 i_val7 + *(short *)(animal + 0x152 + (short)*p_uint11 * 8) * 2 & 0x3ffU;
     pbVar8 = (byte *)HW_GetSpriteAttr2Offset(animal);
@@ -11699,7 +11699,7 @@ u32 Animal_Routine_0805E624(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E79B8;
-  u_val1 = Dispatcher_Routine_080005D4(0xAF4);
+  u_val1 = CppRuntime_OperatorNewArray(0xAF4);
   u_val1 = Animal_Routine_0805CF70(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -12239,12 +12239,12 @@ u32 Animal_Routine_0805ED4C(int animal,undefined4 amount)
   *(undefined4 *)(animal + 4) = gRomData_080E79DC;
   *(undefined4 *)(animal + 8) = amount;
   *(undefined4 *)(animal + 0xc) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(temp_buf_20);
-  HW_Routine_0800770C(stack_buf_1c);
+  u_val1 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(temp_buf_20);
+  GBA_BgLayer_Init(stack_buf_1c);
   u_val1 = Animal_Routine_08050CC0(u_val1,0,0x1f,0xf,*(undefined4 *)(animal + 0xc),temp_buf_20,stack_buf_1c);
   *(undefined4 *)(animal + 0x10) = u_val1;
-  HW_Routine_08007714(stack_buf_1c,2);
+  GBA_BgLayer_SetPriority(stack_buf_1c,2);
   HW_Routine_08008364(temp_buf_20,2);
   HW_Routine_08008B54(animal + 0x14,1);
   HW_Routine_08008B54(animal + 0x18,0);
@@ -12290,15 +12290,15 @@ u32 Animal_Routine_0805EE44(undefined4 *animal,int amount)
   HW_Routine_08008724(amount);
   i_val4 = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(i_val4 + 0x50) = 0x3f;
-  p_uint5 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint5 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val6 = HW_GetSpriteAttr1Offset(amount);
   *p_uint5 = stack_val_38;
   p_uint5[1] = stack_val_38;
   p_uint5[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint5 + 3,u_val6);
+  Fade_Init(p_uint5 + 3,u_val6);
   Animal_Routine_0805FBB8(amount);
   HW_Routine_08008B6C(amount + 0x18,0x25);
-  Farm_Routine_0800934C(p_uint5 + 3,0x889,1,0);
+  Fade_StartFadeOut(p_uint5 + 3,0x889,1,0);
   i_val4 = HW_GetPaletteBankOffset(amount);
   _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
   *(undefined2 *)(amount + 0x6422) = 4;
@@ -12311,7 +12311,7 @@ u32 Animal_Routine_0805EE44(undefined4 *animal,int amount)
     if (9 < u_val7) goto LAB_0805f59e;
     switch(*(uint *)(u_val7 * 4 + gInlineTable_0805EF10) & 0xfffffffe) {
     case 0x805ef38:
-      Farm_Routine_0800934C(p_uint5 + 3,0x889,2,0);
+      Fade_StartFadeOut(p_uint5 + 3,0x889,2,0);
       i_val4 = HW_GetPaletteBankOffset(amount);
       _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
       i_val4 = 0x6422;
@@ -12324,7 +12324,7 @@ u32 Animal_Routine_0805EE44(undefined4 *animal,int amount)
       }
       break;
     case 0x805ef88:
-      Farm_Routine_0800934C(p_uint5 + 3,0x889,1,0);
+      Fade_StartFadeOut(p_uint5 + 3,0x889,1,0);
       i_val4 = HW_GetPaletteBankOffset(amount);
       _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
       i_val4 = 0x6422;
@@ -12377,12 +12377,12 @@ LAB_0805f14e:
       *(ushort *)(amount + 0x6420) = (ushort)i_val4;
       if (i_val4 * 0x10000 >> 0x10 < 0xe) {
         if ((u_val7 - 8 & 0xffff) < 3) {
-          Farm_Routine_08009378(p_uint5 + 3,0x889,1,0);
+          Fade_StartFadeIn(p_uint5 + 3,0x889,1,0);
           i_val4 = HW_GetPaletteBankOffset(amount);
           _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
         }
         else {
-          Farm_Routine_08009378(p_uint5 + 3,0x889,2,0);
+          Fade_StartFadeIn(p_uint5 + 3,0x889,2,0);
           i_val4 = HW_GetPaletteBankOffset(amount);
           _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
         }
@@ -12390,7 +12390,7 @@ LAB_0805f14e:
         i_val4 = 0x6422;
       }
       else {
-        Farm_Routine_08009378(p_uint5 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint5 + 3,0x889,1,1);
         i_val4 = HW_GetPaletteBankOffset(amount);
         _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
         u_val3 = 10;
@@ -12653,7 +12653,7 @@ void Animal_Routine_0805FBB8(int animal)
   HW_Routine_08008EB8(u_val3,0x0600E800,0x800);
   HW_Routine_08008EB8(u_val3,0x0600F000,0x800);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_08743058,0x6000000);
-  HW_Routine_08008E64(gRomGfx_08747A14,0x5000000,0x40);
+  GBA_DMA3_FastCopy(gRomGfx_08747A14,0x5000000,0x40);
   uRam05000000 = (undefined2)0x7FFF;
   p_uint1 = (undefined2 *)HW_GetSpriteAttr1Offset(animal);
   *p_uint1 = 0x1c40;
@@ -12693,7 +12693,7 @@ u32 Animal_Routine_0805FCD0(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E79F8;
-  u_val1 = Dispatcher_Routine_080005D4(_ASSET_BLOCK_0805FD00);
+  u_val1 = CppRuntime_OperatorNewArray(_ASSET_BLOCK_0805FD00);
   u_val1 = Animal_Routine_0805ED4C(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -21232,31 +21232,31 @@ void Animal_Routine_08069C34(int animal,uint amount)
     case 0x8069c54:
       animal = in_stack_000003d8;
     case 0x8069c70:
-      u_val1 = Dispatcher_Routine_080005D4(0x1B6C);
+      u_val1 = CppRuntime_OperatorNewArray(0x1B6C);
       stack_val_18 = Animal_Routine_0805FF14(u_val1,animal,*(undefined4 *)(animal + 0x120));
       break;
     case 0x8069c8c:
-      u_val1 = Dispatcher_Routine_080005D4(0x431C);
+      u_val1 = CppRuntime_OperatorNewArray(0x431C);
       stack_val_18 = Animal_Routine_08064320(u_val1,animal,*(undefined4 *)(animal + 0x120));
       break;
     case 0x8069ca8:
-      u_val1 = Dispatcher_Routine_080005D4(0x431C);
+      u_val1 = CppRuntime_OperatorNewArray(0x431C);
       stack_val_18 = Animal_Routine_080643DC(u_val1,animal,*(undefined4 *)(animal + 0x120));
       break;
     case 0x8069cc4:
-      u_val1 = Dispatcher_Routine_080005D4(0x431C);
+      u_val1 = CppRuntime_OperatorNewArray(0x431C);
       stack_val_18 = Animal_Routine_080644F0(u_val1,animal,*(undefined4 *)(animal + 0x120));
       break;
     case 0x8069ce0:
-      u_val1 = Dispatcher_Routine_080005D4(0x22B8);
+      u_val1 = CppRuntime_OperatorNewArray(0x22B8);
       stack_val_18 = Animal_Routine_080645F0(u_val1,animal,*(undefined4 *)(animal + 0x120));
       break;
     case 0x8069cfc:
-      u_val1 = Dispatcher_Routine_080005D4(0x19FC);
+      u_val1 = CppRuntime_OperatorNewArray(0x19FC);
       stack_val_18 = Animal_Routine_0806644C(u_val1,animal,*(undefined4 *)(animal + 0x120));
       break;
     case 0x8069d18:
-      u_val1 = Dispatcher_Routine_080005D4(0x9F4);
+      u_val1 = CppRuntime_OperatorNewArray(0x9F4);
       stack_val_18 = Animal_Routine_08068344(u_val1,animal,*(undefined4 *)(animal + 0x120));
     }
   }
@@ -21311,7 +21311,7 @@ Animal_Routine_08069E14(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   undefined4 u_val1;
   
   *animal = gRomData_080E7A98;
-  u_val1 = Dispatcher_Routine_080005D4(0x164);
+  u_val1 = CppRuntime_OperatorNewArray(0x164);
   u_val1 = Animal_Routine_0805FD78(u_val1,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -21407,7 +21407,7 @@ Animal_Routine_0806D8C8(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   *animal = gRomData_080E7AB4;
   stack_val_18 = *amount;
   *amount = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0x4178);
+  u_val1 = CppRuntime_OperatorNewArray(0x4178);
   u_val1 = Animal_Routine_08069F14(u_val1,&stack_val_18,food_type,out_stat);
   animal[1] = u_val1;
   p_int2 = (int *)*amount;
@@ -21470,26 +21470,26 @@ void Animal_Routine_0806D990(int animal,uint amount)
   HW_Routine_080084DC(animal);
   *(undefined4 *)(animal + 4) = gRomData_080E7AC4;
   *(undefined4 *)(animal + 8) = 0;
-  u_val3 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(waypoint_coords);
-  HW_Routine_0800770C(temp_buf_20);
+  u_val3 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(waypoint_coords);
+  GBA_BgLayer_Init(temp_buf_20);
   u_val3 = Animal_Routine_08050CC0(u_val3,0,0x1f,0xf,*(undefined4 *)(animal + 8),waypoint_coords,temp_buf_20);
   *(undefined4 *)(animal + 0xc) = u_val3;
-  HW_Routine_08007714(temp_buf_20,2);
+  GBA_BgLayer_SetPriority(temp_buf_20,2);
   HW_Routine_08008364(waypoint_coords,2);
   HW_Routine_08008B54(animal + 0x10,1);
   HW_Routine_08008B54(animal + 0x14,2);
-  HW_Routine_08007874(animal + 0x18);
-  u_val3 = HW_Routine_08007B54(animal + 0x18,7);
+  GBA_ObjAttr_Init(animal + 0x18);
+  u_val3 = GBA_ObjAttr_AllocateSprite(animal + 0x18,7);
   *(undefined4 *)(animal + 0x1c) = u_val3;
-  HW_Routine_08007128(animal + 0x20);
-  u_val3 = HW_Routine_0800736C(animal + 0x20);
+  GBA_PaletteManager_Init(animal + 0x20);
+  u_val3 = GBA_PaletteManager_Allocate(animal + 0x20);
   *(undefined4 *)(animal + 0x24) = u_val3;
-  HW_Routine_08007874(animal + 0x28);
-  u_val3 = HW_Routine_08007B54(animal + 0x28,3);
+  GBA_ObjAttr_Init(animal + 0x28);
+  u_val3 = GBA_ObjAttr_AllocateSprite(animal + 0x28,3);
   *(undefined4 *)(animal + 0x2c) = u_val3;
-  HW_Routine_08007128(animal + 0x30);
-  u_val3 = HW_Routine_0800736C(animal + 0x30);
+  GBA_PaletteManager_Init(animal + 0x30);
+  u_val3 = GBA_PaletteManager_Allocate(animal + 0x30);
   *(undefined4 *)(animal + 0x34) = u_val3;
   pbVar6 = (byte *)(animal + 0x448);
   *pbVar6 = *pbVar6 & 0xfc | (byte)amount & 3;
@@ -21819,7 +21819,7 @@ void Animal_Routine_0806E234(int animal)
   *p_uint5 = 0x1840;
   i_val4 = HW_GetSpriteAttr1Offset(animal);
   *(short *)(i_val4 + 0xe) = (short)0x1C03;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0x00030003,u_val2,0x800);
   i_val4 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val4 + 0x1c) = 0;
@@ -21834,7 +21834,7 @@ void Animal_Routine_0806E234(int animal)
   *(undefined2 *)(i_val4 + 0x14) = 0;
   i_val4 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val4 + 0x16) = 0;
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   p_uint5 = 0x05000040;
   *0x05000040 = 0x3e0;
   p_uint5[1] = 0;
@@ -21850,8 +21850,8 @@ void Animal_Routine_0806E234(int animal)
   do {
     stack_val_24 = 0x20001;
     ScriptEngine_Routine_0804E5AC(0x20001,stack_buf_64,0,0,*(undefined2 *)(loop_i * 2 + gRomData_080FBD30),0,1);
-    i_val4 = HW_Routine_08007D4C(animal + 0x18,*(undefined4 *)(animal + 0x1c));
-    HW_Routine_08008E64(stack_buf_64,(i_val4 + loop_i * 2) * 0x20 + 0x06010000,0x40);
+    i_val4 = GBA_Vram_AllocateTileBlock(animal + 0x18,*(undefined4 *)(animal + 0x1c));
+    GBA_DMA3_FastCopy(stack_buf_64,(i_val4 + loop_i * 2) * 0x20 + 0x06010000,0x40);
     loop_i = loop_i + 1;
   } while (loop_i < 0x2b);
   return;
@@ -21874,13 +21874,13 @@ void Animal_Routine_0806E43C(int animal)
   u_val5 = *gRomData_080F9F78;
   loop_i = animal + 0x30;
   i_val3 = HW_Routine_080074C0(loop_i,*(undefined4 *)(animal + 0x34));
-  HW_Routine_08008E64(u_val5,i_val3 * 0x20 + 0x05000200,0x20);
+  GBA_DMA3_FastCopy(u_val5,i_val3 * 0x20 + 0x05000200,0x20);
   i_val3 = HW_Routine_080074C0(loop_i,*(undefined4 *)(animal + 0x34));
   *(short *)(i_val3 * 0x20 + 0x0500020E) = (short)0x27F;
   HW_Routine_08008EB8(0,(undefined1 *)(animal + 0x3c),8);
   *(byte *)(animal + 0x3f) = *(byte *)(animal + 0x3f) & 0x3f | 0x40;
   *(byte *)(animal + 0x3d) = *(byte *)(animal + 0x3d) & 0x33 | 4;
-  u_val2 = HW_Routine_08007D4C(animal + 0x28,*(undefined4 *)(animal + 0x2c));
+  u_val2 = GBA_Vram_AllocateTileBlock(animal + 0x28,*(undefined4 *)(animal + 0x2c));
   *(ushort *)(animal + 0x40) =
        (ushort)0xFFFFFC00 & *(ushort *)(animal + 0x40) | u_val2 & (ushort)0x3FF;
   c_char1 = HW_Routine_080074C0(loop_i,*(undefined4 *)(animal + 0x34));
@@ -21890,7 +21890,7 @@ void Animal_Routine_0806E43C(int animal)
     loop_i = 0;
     i_val7 = i_val3 + 1;
     do {
-      i_val4 = HW_Routine_08007D4C(animal + 0x28,*(undefined4 *)(animal + 0x2c));
+      i_val4 = GBA_Vram_AllocateTileBlock(animal + 0x28,*(undefined4 *)(animal + 0x2c));
       *(undefined4 *)((i_val4 + i_val3) * 0x20 + loop_i * 4 + 0x06010000) = 0x77777777;
       loop_i = loop_i + 1;
     } while (loop_i < 8);
@@ -22094,7 +22094,7 @@ void Animal_Routine_0806E7E0(int animal)
     u_val4 = (u_val4 & 0xFE00FFFF |
             ((int)*(short *)(animal + 0x46 + i_val9) & 0x1FF) << 0x10) & 0xFFFFFF00 |
             (uint)*(byte *)(animal + 0x48 + i_val9);
-    i_val7 = HW_Routine_08007D4C(animal + 0x18,*(undefined4 *)(animal + 0x1c));
+    i_val7 = GBA_Vram_AllocateTileBlock(animal + 0x18,*(undefined4 *)(animal + 0x1c));
     u_val5 = (u_val5 | (u_val2 & 3) << 10) & 0xFFFFFC00 |
             i_val7 + *(short *)(animal + 0x4a + i_val9) * 2 & 0x3ffU;
     pbVar8 = (byte *)HW_GetSpriteAttr2Offset(animal);
@@ -22149,7 +22149,7 @@ u32 Animal_Routine_0806E9D8(undefined4 *animal,undefined4 amount)
   undefined4 u_val1;
   
   *animal = gRomData_080E7AD0;
-  u_val1 = Dispatcher_Routine_080005D4(0x454);
+  u_val1 = CppRuntime_OperatorNewArray(0x454);
   u_val1 = Animal_Routine_0806D990(u_val1,amount);
   animal[1] = u_val1;
   return animal;
@@ -22202,8 +22202,8 @@ void Animal_Routine_0806EAF4(undefined4 animal)
   stack_buf_1c[0] = 0;
   stack_buf_1c[1] = 0;
   stack_buf_1c[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(temp_coords,u_val2);
-  Farm_Routine_08009378(temp_coords,0x889,1,1);
+  Fade_Init(temp_coords,u_val2);
+  Fade_StartFadeIn(temp_coords,0x889,1,1);
   i_val1 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val1,stack_buf_1c,*(undefined4 *)(*(int *)(i_val1 + 8) + 0x10));
   while ((int)(-stack_buf_1c[0] | stack_buf_1c[0]) < 0) {
@@ -22310,7 +22310,7 @@ void Animal_Routine_0806EC94(int animal)
   uint u_val12;
   uint loop_i;
   
-  i_val1 = Farmer_Routine_0800E324(*(int *)(animal + 8) + 0x10);
+  i_val1 = Farmer_GetFacingDirection(*(int *)(animal + 8) + 0x10);
   u_val4 = (uint)(i_val1 == 3);
   u_val2 = gRomGfx_085275D0;
   if (u_val4 != 0) {
@@ -22321,7 +22321,7 @@ void Animal_Routine_0806EC94(int animal)
   if (u_val4 != 0) {
     u_val2 = gRomGfx_0852CA40;
   }
-  HW_Routine_08008E64(u_val2,0x5000000,0x200);
+  GBA_DMA3_FastCopy(u_val2,0x5000000,0x200);
   u_val2 = gRomGfx_08527238;
   if (u_val4 != 0) {
     u_val2 = gRomGfx_0852A6D8;
@@ -22388,21 +22388,21 @@ void Animal_Routine_0806EC94(int animal)
   if (u_val4 != 0) {
     p_uint5 = gRomGfx_0852CC40;
   }
-  HW_Routine_08008E64(p_uint5 + i_val1 * (uint)*p_uint5 * 0x10 + 2,0x060002C0,(uint)*p_uint5 << 5);
+  GBA_DMA3_FastCopy(p_uint5 + i_val1 * (uint)*p_uint5 * 0x10 + 2,0x060002C0,(uint)*p_uint5 << 5);
   Animal_Routine_080700B8(animal,0x14,0x18,3,2,2,*(undefined1 *)(i_val1 + gRomData_080FBE64));
   i_val1 = Building_Routine_0800BF74(*(int *)(animal + 8) + 500);
   p_uint5 = gRomGfx_08529BA8;
   if (u_val4 != 0) {
     p_uint5 = gRomGfx_0852CE54;
   }
-  HW_Routine_08008E64(p_uint5 + i_val1 * (uint)*p_uint5 * 0x10 + 2,0x06000340,(uint)*p_uint5 << 5);
+  GBA_DMA3_FastCopy(p_uint5 + i_val1 * (uint)*p_uint5 * 0x10 + 2,0x06000340,(uint)*p_uint5 << 5);
   Animal_Routine_080700B8(animal,0x14,0x11,3,1,2,*(undefined1 *)(i_val1 + u_val4 * 3 + gRomData_080FBE67));
   p_uint5 = gRomGfx_08529DA4;
   if (u_val4 != 0) {
     p_uint5 = gRomGfx_0852D050;
   }
   i_val1 = Building_Routine_0800BF6C(*(int *)(animal + 8) + 500);
-  HW_Routine_08008E64(p_uint5 + (uint)*p_uint5 * i_val1 * 0x10 + 2,0x6000000,(uint)*p_uint5 << 5);
+  GBA_DMA3_FastCopy(p_uint5 + (uint)*p_uint5 * i_val1 * 0x10 + 2,0x6000000,(uint)*p_uint5 << 5);
   return;
 }
 
@@ -23058,7 +23058,7 @@ u32 Animal_Routine_080701BC(undefined4 *animal,undefined4 amount,undefined4 *foo
   *animal = gRomData_080E7AEC;
   puStack_38 = animal;
   puStack_34 = food_type;
-  i_val3 = Dispatcher_Routine_080005D4(0x1a0);
+  i_val3 = CppRuntime_OperatorNewArray(0x1a0);
   u_val5 = *puStack_34;
   *puStack_34 = 0;
   HW_Routine_08008444();
@@ -23263,7 +23263,7 @@ LAB_080707b4:
                 (int)(short)((ushort)((stack_val_5a & 0x3FF) << 6) | stack_val_5c >> 10),
                 (int)(short)((ushort)((stack_val_58 & 0xffff & 0x3FF) << 6) | stack_val_5a >> 10),
                 0x13);
-  pos_x = Farmer_Routine_0800E324(*(int *)(i_val3 + 8) + 0x10);
+  pos_x = Farmer_GetFacingDirection(*(int *)(i_val3 + 8) + 0x10);
   if (pos_x == 2) {
     pos_x = 0x34C8 + *(int *)(i_val3 + 8);
     loop_i = 0x5b;
@@ -28469,17 +28469,17 @@ void Animal_Routine_0807549C(int animal,int amount)
   
   stack_val_18 = 0;
   if (amount == 1) {
-    u_val1 = Dispatcher_Routine_080005D4(0x4B94);
+    u_val1 = CppRuntime_OperatorNewArray(0x4B94);
     stack_val_18 = Animal_Routine_080713B8(u_val1,animal,*(undefined4 *)(animal + 0x120));
   }
   else if (amount < 2) {
     if (amount == 0) {
-      u_val1 = Dispatcher_Routine_080005D4(0x42FC);
+      u_val1 = CppRuntime_OperatorNewArray(0x42FC);
       stack_val_18 = Animal_Routine_08070DE4(u_val1,animal,*(undefined4 *)(animal + 0x120));
     }
   }
   else if (amount == 2) {
-    u_val1 = Dispatcher_Routine_080005D4(0x8E6C);
+    u_val1 = CppRuntime_OperatorNewArray(0x8E6C);
     stack_val_18 = Animal_Routine_080722DC(u_val1,animal,*(undefined4 *)(animal + 0x120));
   }
   stack_val_14 = stack_val_18;
@@ -28532,7 +28532,7 @@ void Animal_Routine_080755EC(undefined4 *animal,undefined4 *amount,undefined4 fo
   undefined4 u_val1;
   
   *animal = gRomData_080E7B4C;
-  u_val1 = Dispatcher_Routine_080005D4(0x17c);
+  u_val1 = CppRuntime_OperatorNewArray(0x17c);
   u_val1 = Animal_Routine_08070B70(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -28598,7 +28598,7 @@ u32 Animal_Routine_080756B0(undefined4 *animal)
   undefined4 u_val1;
   
   animal[1] = gRomData_080E7B5C;
-  Dispatcher_Routine_080005D4(0x28);
+  CppRuntime_OperatorNewArray(0x28);
   u_val1 = VTable_Routine_080E2DC8();
   *animal = u_val1;
   return animal;
@@ -28659,10 +28659,10 @@ void Animal_Routine_080756D0(int *animal,uint amount)
       cpp_operator_delete();
     }
     HW_Routine_080079E8(i_val1,2);
-    Dispatcher_Routine_08000608(i_val1);
+    CppRuntime_FreeMemory(i_val1);
   }
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(animal);
+    CppRuntime_FreeMemory(animal);
   }
   return;
 }
@@ -28730,7 +28730,7 @@ void Animal_Routine_080757E8(int *animal,int *amount)
         b_flag7 = true;
       }
       if (b_flag7) {
-        i_val4 = HW_Routine_08007B54(i_val1,u_val2);
+        i_val4 = GBA_ObjAttr_AllocateSprite(i_val1,u_val2);
         if (i_val4 != 0) {
           stack_val_48 = stack_val_3c;
           stack_val_4c = pos_x;
@@ -28738,20 +28738,20 @@ void Animal_Routine_080757E8(int *animal,int *amount)
           stack_val_40 = pos_x;
           VTable_Routine_080E2444(&stack_val_50,i_val1 + 4,&stack_val_40,&stack_val_48,pos_x,pos_y);
           u_val6 = stack_val_3c;
-          pos_x = HW_Routine_08007D4C(i_val1,i_val4);
+          pos_x = GBA_Vram_AllocateTileBlock(i_val1,i_val4);
           pos_x = pos_x * 0x20 + 0x06010000;
 LAB_0807591e:
-          HW_Routine_08008E64(u_val6,pos_x,0x20 << u_val2);
+          GBA_DMA3_FastCopy(u_val6,pos_x,0x20 << u_val2);
         }
       }
       else {
         u_val6 = HW_Routine_08007DB8(i_val1,*(undefined4 *)(pos_x + 0x14));
         if (u_val6 < u_val2) {
           HW_Routine_08007C28(i_val1,*(undefined4 *)(pos_x + 0x14));
-          pos_y = HW_Routine_08007B54(i_val1,u_val2);
+          pos_y = GBA_ObjAttr_AllocateSprite(i_val1,u_val2);
           u_val6 = stack_val_3c;
           if (pos_y != 0) {
-            pos_x = HW_Routine_08007D4C(i_val1);
+            pos_x = GBA_Vram_AllocateTileBlock(i_val1);
             pos_x = pos_x * 0x20 + 0x06010000;
             goto LAB_0807591e;
           }
@@ -28786,7 +28786,7 @@ LAB_0807591e:
         b_flag7 = true;
       }
       if (b_flag7) {
-        pos_y = HW_Routine_0800736C(i_val1 + 0x14);
+        pos_y = GBA_PaletteManager_Allocate(i_val1 + 0x14);
         if (pos_y != 0) {
           stack_val_48 = stack_val_38;
           stack_val_4c = vel_y;
@@ -28795,7 +28795,7 @@ LAB_0807591e:
           VTable_Routine_080E2970(&stack_val_50,i_val1 + 0x18,&stack_val_40,&stack_val_48,vel_y,pos_x);
           u_val2 = stack_val_38;
           vel_y = HW_Routine_080074C0(i_val1 + 0x14,pos_y);
-          HW_Routine_08008E64(u_val2,vel_y * 0x20 + 0x05000200,0x20);
+          GBA_DMA3_FastCopy(u_val2,vel_y * 0x20 + 0x05000200,0x20);
         }
       }
       vel_y = stack_val_24;
@@ -28833,7 +28833,7 @@ u32 Animal_Routine_08075A14(int *animal,uint amount)
   }
   u_val2 = *(uint *)(i_val5 + 8) ^ u_val4;
   if ((int)(-u_val2 | u_val2) < 0) {
-    u_val1 = HW_Routine_08007D4C(i_val5,*(undefined4 *)(u_val4 + 0x14));
+    u_val1 = GBA_Vram_AllocateTileBlock(i_val5,*(undefined4 *)(u_val4 + 0x14));
   }
   else {
     u_val1 = 0xffffffff;
@@ -29128,10 +29128,10 @@ longlong Animal_Routine_08075E00(int animal)
 
 {
   
-  HW_Routine_08008E64(*(undefined4 *)(animal + 0xc),*(undefined4 *)(animal + 0x10),
+  GBA_DMA3_FastCopy(*(undefined4 *)(animal + 0xc),*(undefined4 *)(animal + 0x10),
                 *(undefined4 *)(animal + 0x14));
   if (*(int *)(animal + 0x1c) != 0) {
-    HW_Routine_08008E64(*(undefined4 *)(animal + 0x18),*(int *)(animal + 0x1c),
+    GBA_DMA3_FastCopy(*(undefined4 *)(animal + 0x18),*(int *)(animal + 0x1c),
                   *(undefined4 *)(animal + 0x20));
   }
   return 0;
@@ -29671,8 +29671,8 @@ void Animal_Routine_080769A0(int animal)
   temp_buf_30[0] = 0;
   temp_buf_30[1] = 0;
   temp_buf_30[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(waypoint_coords,u_val3);
-  Farm_Routine_0800934C(waypoint_coords,0x889,1,1);
+  Fade_Init(waypoint_coords,u_val3);
+  Fade_StartFadeOut(waypoint_coords,0x889,1,1);
   i_val2 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val2,temp_buf_30,*(undefined4 *)(*(int *)(i_val2 + 8) + 0x10));
   b_flag1 = false;
@@ -29692,14 +29692,14 @@ void Animal_Routine_080769A0(int animal)
       if ((u_val4 & 2) == 0) {
         if ((*(char *)(animal + 0x11c) != '\0') && ((u_val4 & 4) != 0)) {
           b_flag1 = true;
-          Farm_Routine_08009378(waypoint_coords,0x889,1,1);
+          Fade_StartFadeIn(waypoint_coords,0x889,1,1);
           i_val6 = HW_GetPaletteBankOffset(animal);
           _call_via_r2(i_val6,temp_buf_30,*(undefined4 *)(*(int *)(i_val6 + 8) + 0x10));
         }
       }
       else {
         b_flag1 = true;
-        Farm_Routine_08009378(waypoint_coords,0x889,1,1);
+        Fade_StartFadeIn(waypoint_coords,0x889,1,1);
         i_val6 = HW_GetPaletteBankOffset(animal);
         _call_via_r2(i_val6,temp_buf_30,*(undefined4 *)(*(int *)(i_val6 + 8) + 0x10));
       }
@@ -29826,10 +29826,10 @@ void Animal_Routine_08076E0C(int animal,uint amount)
     if (*(int *)(i_val2 + 0x18) != 0) {
       cpp_operator_delete();
     }
-    Dispatcher_Routine_08000608(i_val2);
+    CppRuntime_FreeMemory(i_val2);
   }
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(animal);
+    CppRuntime_FreeMemory(animal);
   }
   return;
 }
@@ -30211,16 +30211,16 @@ u32 Animal_Routine_08077490(undefined4 *animal,int amount)
   HW_Routine_08008724(amount);
   i_val4 = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(i_val4 + 0x50) = 0x3f;
-  p_uint5 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint5 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val6 = HW_GetSpriteAttr1Offset(amount);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint5 + 3,u_val6);
+  Fade_Init(p_uint5 + 3,u_val6);
   Animal_Routine_08077810(amount);
   Animal_Routine_080779B4(amount);
   HW_Routine_08008B6C(amount + 8,0x24);
-  Farm_Routine_0800934C(p_uint5 + 3,0x889,1,0);
+  Fade_StartFadeOut(p_uint5 + 3,0x889,1,0);
   i_val4 = HW_GetPaletteBankOffset(amount);
   _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
   b_flag1 = false;
@@ -30255,7 +30255,7 @@ u32 Animal_Routine_08077490(undefined4 *animal,int amount)
         }
         if (0x8a < *(int *)(amount + 0x71C)) {
           *(uint *)(amount + 0x724) = (uint)*(ushort *)(amount + 0x714) << 0x10;
-          Farm_Routine_08009378(p_uint5 + 3,0x889,1,0);
+          Fade_StartFadeIn(p_uint5 + 3,0x889,1,0);
           i_val4 = HW_GetPaletteBankOffset(amount);
           _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
           *(undefined2 *)(amount + 0x72A) = 7;
@@ -30267,7 +30267,7 @@ u32 Animal_Routine_08077490(undefined4 *animal,int amount)
           Animal_Routine_08077A1C(amount);
           p_uint7 = (undefined2 *)HW_GetSpriteAttr1Offset(amount);
           *p_uint7 = 0x640;
-          Farm_Routine_0800934C(p_uint5 + 3,0x889,1,0);
+          Fade_StartFadeOut(p_uint5 + 3,0x889,1,0);
           i_val4 = HW_GetPaletteBankOffset(amount);
           _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
         }
@@ -30303,7 +30303,7 @@ u32 Animal_Routine_08077490(undefined4 *animal,int amount)
         }
         break;
       case 0x8077758:
-        Farm_Routine_08009378(p_uint5 + 3,0x889,1,0);
+        Fade_StartFadeIn(p_uint5 + 3,0x889,1,0);
         i_val4 = HW_GetPaletteBankOffset(amount);
         _call_via_r2(i_val4,p_uint5,*(undefined4 *)(*(int *)(i_val4 + 8) + 0x10));
         *(undefined2 *)(amount + 0x72A) = 6;
@@ -30399,7 +30399,7 @@ u32 Animal_Routine_08077810(undefined4 animal)
   *p_uint19 = (short)0x1E42;
   *(short *)(loop_i + 10) = (short)0x1E42;
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0874E648,0x06008000);
-  HW_Routine_08008E64(gRomGfx_0874EB40,0x5000000,0x20);
+  GBA_DMA3_FastCopy(gRomGfx_0874EB40,0x5000000,0x20);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0874ECCC,u_val2);
   p_uint4 = 0x05000042;
   uRam05000000 = 0;
@@ -30426,7 +30426,7 @@ u32 Animal_Routine_08077810(undefined4 animal)
     } while (i_val9 < 0x1c);
     u_val10 = u_val10 + 0x38 & 0xffff;
   } while (loop_i < 0x10);
-  HW_Routine_08008E64(&stack0xffffffe4 + i_val1,0x0600F000,0x800);
+  GBA_DMA3_FastCopy(&stack0xffffffe4 + i_val1,0x0600F000,0x800);
   return *(undefined4 *)((int)&stack_val_4 + 0x804 + i_val1);
 }
 
@@ -30444,7 +30444,7 @@ void Animal_Routine_080779B4(int animal)
   i_val2 = 0x06001A00;
   do {
     ScriptEngine_Routine_0804E7A0(0x2001c,animal + 0x14,0);
-    HW_Routine_08008E64(animal + 0x14,i_val2,0x700);
+    GBA_DMA3_FastCopy(animal + 0x14,i_val2,0x700);
     i_val2 = i_val2 + 0x700;
     i_val1 = i_val1 + -1;
   } while (-1 < i_val1);
@@ -30609,7 +30609,7 @@ u32 Animal_Routine_08077C40(undefined4 *animal,undefined4 *amount)
   undefined4 u_val1;
   
   *animal = gRomData_080E7BA4;
-  Dispatcher_Routine_080005D4(0x730);
+  CppRuntime_OperatorNewArray(0x730);
   u_val1 = Animal_Routine_080773E8();
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -30676,8 +30676,8 @@ void Animal_Routine_08077CE0(undefined4 animal)
   stack_buf_1c[0] = 0;
   stack_buf_1c[1] = 0;
   stack_buf_1c[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(temp_coords,u_val2);
-  Farm_Routine_0800934C(temp_coords,0x889,1,1);
+  Fade_Init(temp_coords,u_val2);
+  Fade_StartFadeOut(temp_coords,0x889,1,1);
   i_val1 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val1,stack_buf_1c,*(undefined4 *)(*(int *)(i_val1 + 8) + 0x10));
   while ((int)(-stack_buf_1c[0] | stack_buf_1c[0]) < 0) {
@@ -30705,8 +30705,8 @@ void Animal_Routine_08077D5C(undefined4 animal)
   stack_buf_1c[0] = 0;
   stack_buf_1c[1] = 0;
   stack_buf_1c[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(temp_coords,u_val2);
-  Farm_Routine_08009378(temp_coords,0x889,1,1);
+  Fade_Init(temp_coords,u_val2);
+  Fade_StartFadeIn(temp_coords,0x889,1,1);
   i_val1 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val1,stack_buf_1c,*(undefined4 *)(*(int *)(i_val1 + 8) + 0x10));
   while ((int)(-stack_buf_1c[0] | stack_buf_1c[0]) < 0) {
@@ -30729,7 +30729,7 @@ void Animal_Routine_08077DD8(int animal)
   undefined4 u_val4;
   undefined1 temp_buf_3c [36];
   
-  Farm_Routine_080091E8(temp_buf_3c,0);
+  Input_InitDefault(temp_buf_3c,0);
   u_val1 = HW_GetSpriteAttr2Offset(animal);
   u_val2 = HW_GetSpriteAttr1Offset(animal);
   u_val3 = HW_GetPaletteBankOffset(animal);
@@ -30808,7 +30808,7 @@ void Animal_Routine_08077EC0(int animal)
   undefined4 u_val3;
   bool b_flag4;
   
-  i_val2 = Farmer_Routine_0800E324(*(int *)(animal + 8) + 0x10);
+  i_val2 = Farmer_GetFacingDirection(*(int *)(animal + 8) + 0x10);
   b_flag4 = i_val2 == 3;
   u_val3 = gRomGfx_08755848;
   if (b_flag4) {
@@ -30819,7 +30819,7 @@ void Animal_Routine_08077EC0(int animal)
   if (b_flag4) {
     u_val3 = gRomGfx_0875A358;
   }
-  HW_Routine_08008E64(u_val3,0x05000020,0xc0);
+  GBA_DMA3_FastCopy(u_val3,0x05000020,0xc0);
   u_val3 = gRomGfx_08755230;
   if (b_flag4) {
     u_val3 = gRomGfx_08757C14;
@@ -31179,7 +31179,7 @@ Animal_Routine_0807865C(undefined4 *animal,undefined4 amount,undefined4 *food_ty
   *animal = gRomData_080E7BC0;
   puStack_38 = animal;
   puStack_34 = food_type;
-  i_val3 = Dispatcher_Routine_080005D4(0x1ec);
+  i_val3 = CppRuntime_OperatorNewArray(0x1ec);
   u_val4 = *puStack_34;
   *puStack_34 = 0;
   HW_Routine_08008444(i_val3);
@@ -31188,10 +31188,10 @@ Animal_Routine_0807865C(undefined4 *animal,undefined4 amount,undefined4 *food_ty
   *(undefined4 *)(i_val3 + 0xc) = u_val4;
   *(undefined4 *)(i_val3 + 0x10) = out_stat;
   *(undefined1 *)(i_val3 + 0x14) = 0;
-  HW_Routine_0800835C(stack_buf_a0);
-  HW_Routine_0800770C(stack_buf_9c);
+  GBA_TextLayer_Init(stack_buf_a0);
+  GBA_BgLayer_Init(stack_buf_9c);
   Animal_Routine_08050CC0(i_val3 + 0x18,0,0x1f,0xf,0,stack_buf_a0,stack_buf_9c);
-  HW_Routine_08007714(stack_buf_9c,2);
+  GBA_BgLayer_SetPriority(stack_buf_9c,2);
   HW_Routine_08008364(stack_buf_a0,2);
   ScriptEngine_Routine_0803C5B0(i_val3 + 0x1c);
   Animal_Routine_080756B0(i_val3 + 0x20);
@@ -31421,7 +31421,7 @@ u32 Animal_Routine_08078B18(undefined4 *animal,int amount)
   p_uint4[6] = 0x1d40;
   Animal_Routine_08077EC0(i_val10);
   p_uint4[5] = (short)0x1C48;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x06008000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x06008000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0,0x0600FFE0,0x20);
   HW_Routine_08008EB8(0xffffffff,0x0600E000,0x800);
   Animal_Routine_08051320(0x0600E000,0x13,10,0xb);
@@ -31575,26 +31575,26 @@ u32 Animal_Routine_08078E40(int animal,undefined4 amount,int food_type)
   *(undefined4 *)(animal + 0x804) = 0;
   *(undefined1 *)(animal + 0x808) = 0;
   *(undefined1 *)(animal + 0x80c) = 0;
-  HW_Routine_08007874(animal + 0x810);
-  u_val3 = HW_Routine_08007B54(animal + 0x810,4);
+  GBA_ObjAttr_Init(animal + 0x810);
+  u_val3 = GBA_ObjAttr_AllocateSprite(animal + 0x810,4);
   *(undefined4 *)(animal + 0x814) = u_val3;
   i_val4 = animal + 0x818;
-  HW_Routine_08007128(i_val4);
-  u_val3 = HW_Routine_0800736C(i_val4);
+  GBA_PaletteManager_Init(i_val4);
+  u_val3 = GBA_PaletteManager_Allocate(i_val4);
   *(undefined4 *)(i_val4 + 4) = u_val3;
-  HW_Routine_08007874(animal + 0x820);
-  u_val3 = HW_Routine_08007B54(animal + 0x820,6);
+  GBA_ObjAttr_Init(animal + 0x820);
+  u_val3 = GBA_ObjAttr_AllocateSprite(animal + 0x820,6);
   *(undefined4 *)(animal + 0x824) = u_val3;
   i_val4 = animal + 0x828;
-  HW_Routine_08007128(i_val4);
-  u_val3 = HW_Routine_0800736C(i_val4);
+  GBA_PaletteManager_Init(i_val4);
+  u_val3 = GBA_PaletteManager_Allocate(i_val4);
   *(undefined4 *)(i_val4 + 4) = u_val3;
-  HW_Routine_08007874(animal + 0x830);
-  u_val3 = HW_Routine_08007B54(animal + 0x830,2);
+  GBA_ObjAttr_Init(animal + 0x830);
+  u_val3 = GBA_ObjAttr_AllocateSprite(animal + 0x830,2);
   *(undefined4 *)(animal + 0x834) = u_val3;
   i_val4 = animal + 0x838;
-  HW_Routine_08007128(i_val4);
-  u_val3 = HW_Routine_0800736C(i_val4);
+  GBA_PaletteManager_Init(i_val4);
+  u_val3 = GBA_PaletteManager_Allocate(i_val4);
   *(undefined4 *)(i_val4 + 4) = u_val3;
   *(undefined4 *)(animal + 0xa60) = 0;
   *(undefined4 *)(animal + 0xa64) = 0;
@@ -31668,12 +31668,12 @@ void Animal_Routine_080790E4(undefined4 *animal,int amount)
   HW_Routine_08008724(amount);
   i_val5 = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(i_val5 + 0x50) = 0x3f;
-  p_uint6 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint6 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val7 = HW_GetSpriteAttr1Offset(amount);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint6 + 3,u_val7);
+  Fade_Init(p_uint6 + 3,u_val7);
   Animal_Routine_08079860(amount);
   Animal_Routine_0807A878(amount);
   b_flag12 = false;
@@ -31687,7 +31687,7 @@ void Animal_Routine_080790E4(undefined4 *animal,int amount)
       *(ushort *)(amount + 0x842) = u_val1;
       *(uint *)(amount + i_val5 + -0x12) = (uint)*(ushort *)(amount + 0x840) << 0x10;
       Animal_Routine_08079A64(amount);
-      Farm_Routine_0800934C(p_uint6 + 3,0x889,1,1);
+      Fade_StartFadeOut(p_uint6 + 3,0x889,1,1);
       i_val5 = HW_GetPaletteBankOffset(amount);
       _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
       b_flag2 = false;
@@ -31805,7 +31805,7 @@ LAB_08079448:
             }
             break;
           case 0x807945c:
-            Farm_Routine_08009378(p_uint6 + 3,0x889,1,1);
+            Fade_StartFadeIn(p_uint6 + 3,0x889,1,1);
             i_val5 = HW_GetPaletteBankOffset(amount);
             _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
             *(undefined4 *)(amount + 0xA58) = 6;
@@ -31841,7 +31841,7 @@ case_080791F4:
 LAB_08079504:
       HW_Routine_08008724(amount);
       Animal_Routine_08079F8C(amount);
-      Farm_Routine_0800934C(p_uint6 + 3,0x889,1,1);
+      Fade_StartFadeOut(p_uint6 + 3,0x889,1,1);
       i_val5 = HW_GetPaletteBankOffset(amount);
       _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
       b_flag2 = false;
@@ -31942,7 +31942,7 @@ LAB_0807974c:
           if (((stack_val_30 & 0xc0) == 0) || ((stack_val_30 & 0x200) == 0)) goto LAB_08079782;
           break;
         case 0x8079790:
-          Farm_Routine_08009378(p_uint6 + 3,0x889,1,1);
+          Fade_StartFadeIn(p_uint6 + 3,0x889,1,1);
           i_val5 = HW_GetPaletteBankOffset(amount);
           _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
           *(undefined4 *)(amount + 0xA58) = 0xe;
@@ -32093,11 +32093,11 @@ void Animal_Routine_08079A64(int animal)
         ScriptEngine_Routine_0804E958(0x2001c,loop_k,0,0,stack_buf_9c,0,1);
       }
     }
-    HW_Routine_08008E64(loop_k,((uint)(*(ushort *)(animal + 0x840) >> 4) + loop_j & 0xf) * 0x700 +
+    GBA_DMA3_FastCopy(loop_k,((uint)(*(ushort *)(animal + 0x840) >> 4) + loop_j & 0xf) * 0x700 +
                          0x06000C00,0x700);
     loop_j = loop_j + 1;
   } while (loop_j < 0xb);
-  loop_k = HW_Routine_08007D4C(animal + 0x820,*(undefined4 *)(animal + 0x824));
+  loop_k = GBA_Vram_AllocateTileBlock(animal + 0x820,*(undefined4 *)(animal + 0x824));
   HW_Routine_08008EB8(0,loop_k * 0x20 + 0x06010000,0x700);
   loop_k = 0;
   puStack_28 = stack_buf_78;
@@ -32108,8 +32108,8 @@ void Animal_Routine_08079A64(int animal)
     ScriptEngine_Routine_0804E7A0(0x20001,stack_buf_78,0);
     stack_val_2c = 0x20001;
     ScriptEngine_Routine_0804E5AC(0x20001,stack_buf_78,0,0,c_char1,0,1);
-    loop_j = HW_Routine_08007D4C(animal + 0x820,*(undefined4 *)(animal + 0x824));
-    HW_Routine_08008E64(puStack_28,(loop_j + loop_k * 2) * 0x20 + 0x06010000,0x40);
+    loop_j = GBA_Vram_AllocateTileBlock(animal + 0x820,*(undefined4 *)(animal + 0x824));
+    GBA_DMA3_FastCopy(puStack_28,(loop_j + loop_k * 2) * 0x20 + 0x06010000,0x40);
     loop_k = loop_k + 1;
   } while (loop_k < 0xc);
   p_uint4 = (undefined2 *)HW_GetSpriteAttr1Offset(animal);
@@ -32390,11 +32390,11 @@ void Animal_Routine_08079F8C(int animal)
       stack_val_40 = 0x2001c;
       ScriptEngine_Routine_0804E958(0x2001c,loop_i,0,0,stack_buf_b4,0,1);
     }
-    HW_Routine_08008E64(stack_val_30,i_val4,0x700);
+    GBA_DMA3_FastCopy(stack_val_30,i_val4,0x700);
     i_val4 = i_val4 + 0x700;
     i_val13 = i_val13 + 1;
   } while (i_val13 < 9);
-  loop_i = HW_Routine_08007D4C(animal + 0x820,*(undefined4 *)(animal + 0x824));
+  loop_i = GBA_Vram_AllocateTileBlock(animal + 0x820,*(undefined4 *)(animal + 0x824));
   HW_Routine_08008EB8(0,loop_i * 0x20 + 0x06010000,0x700);
   if (**(int **)(0xA5C + animal) != 0) {
     Animal_Routine_0807A708(animal,**(int **)(0xA5C + animal),&stack_val_b8);
@@ -32407,8 +32407,8 @@ void Animal_Routine_08079F8C(int animal)
       ScriptEngine_Routine_0804E7A0(0x20001,stack_buf_90,0);
       stack_val_38 = 0x20001;
       ScriptEngine_Routine_0804E5AC(0x20001,stack_buf_90,0,0,c_char1,0,1);
-      i_val4 = HW_Routine_08007D4C(animal + 0x820,*(undefined4 *)(animal + 0x824));
-      HW_Routine_08008E64(puStack_34,(i_val4 + loop_i * 2) * 0x20 + 0x06010000,0x40);
+      i_val4 = GBA_Vram_AllocateTileBlock(animal + 0x820,*(undefined4 *)(animal + 0x824));
+      GBA_DMA3_FastCopy(puStack_34,(i_val4 + loop_i * 2) * 0x20 + 0x06010000,0x40);
       loop_i = loop_i + 1;
     } while (loop_i < 0x1c);
   }
@@ -32863,7 +32863,7 @@ void Animal_Routine_0807A878(int animal)
   if (i_val2 != 0) {
     u_val4 = u_val5 & 0xffff;
   }
-  HW_Routine_08008E64(i_val6,i_val1 * 0x20 + 0x05000200,u_val4);
+  GBA_DMA3_FastCopy(i_val6,i_val1 * 0x20 + 0x05000200,u_val4);
   Animal_Routine_0805E790(&stack_val_3c,animal + 0x744,0);
   i_val6 = stack_val_2c;
   i_val2 = HW_Routine_080074C0(animal + 0x838,*(undefined4 *)(animal + 0x838 + 4),
@@ -32873,14 +32873,14 @@ void Animal_Routine_0807A878(int animal)
     u_val5 = stack_val_28 & 0xffff;
   }
   i_val6 = stack_val_34;
-  HW_Routine_08008E64(stack_val_2c,i_val2 * 0x20 + i_val7,u_val5);
+  GBA_DMA3_FastCopy(stack_val_2c,i_val2 * 0x20 + i_val7,u_val5);
   i_val7 = i_val6;
-  i_val2 = HW_Routine_08007D4C(animal + 0x830,*(undefined4 *)(animal + 0x834));
+  i_val2 = GBA_Vram_AllocateTileBlock(animal + 0x830,*(undefined4 *)(animal + 0x834));
   u_val5 = 0;
   if (i_val7 != 0) {
     u_val5 = stack_val_30 & 0xffff;
   }
-  HW_Routine_08008E64(i_val6,i_val2 * 0x20 + 0x06010000,u_val5);
+  GBA_DMA3_FastCopy(i_val6,i_val2 * 0x20 + 0x06010000,u_val5);
   return;
 }
 
@@ -32962,7 +32962,7 @@ void Animal_Routine_0807A98C(int animal)
   u_val13 = 8;
   do {
     stack_val_44 = stack_val_44 & 0xFE00FFFF | (0x1FF & u_val13) << 0x10;
-    i_val5 = HW_Routine_08007D4C(animal + 0x820,*(undefined4 *)(animal + 0x824));
+    i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x820,*(undefined4 *)(animal + 0x824));
     stack_val_40 = stack_val_40 & 0xFFFFFC00 | i_val5 + loop_i * 2 & 0x3ffU;
     pbVar6 = (byte *)HW_GetSpriteAttr2Offset(animal);
     b_flag1 = *pbVar6;
@@ -32996,7 +32996,7 @@ void Animal_Routine_0807A98C(int animal)
     stack_val_8c = *(undefined4 *)(animal + 0x79c);
     stack_val_88 = *(undefined4 *)(animal + 0x7a0);
     stack_val_a0 = 0x1a00e8;
-    u_val3 = HW_Routine_08007D4C(animal + 0x810,*(undefined4 *)(animal + 0x814));
+    u_val3 = GBA_Vram_AllocateTileBlock(animal + 0x810,*(undefined4 *)(animal + 0x814));
     stack_val_9c._2_2_ = u_val3;
     u_val3 = HW_Routine_080074C0(0x818 + animal,*(undefined4 *)(0x818 + animal + 4));
     stack_val_9c = CONCAT22(stack_val_9c._2_2_,u_val3);
@@ -33004,7 +33004,7 @@ void Animal_Routine_0807A98C(int animal)
     stack_val_88 = CONCAT31(stack_val_88._1_3_,1);
     p_int8 = (int *)HW_GetSpriteAttr0Offset(animal);
     loop_i = stack_val_7c;
-    i_val5 = HW_Routine_08007D4C(animal + 0x810,*(undefined4 *)(animal + 0x814));
+    i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x810,*(undefined4 *)(animal + 0x814));
     u_val13 = 0;
     if (stack_val_7c != 0) {
       u_val13 = stack_val_78 & 0xffff;
@@ -33112,7 +33112,7 @@ void Animal_Routine_0807A98C(int animal)
     stack_val_8c = *(undefined4 *)(loop_i + 0x14);
     stack_val_88 = *(undefined4 *)(loop_i + 0x18);
     stack_val_a0 = 0x9800e8;
-    s_val2 = HW_Routine_08007D4C(animal + 0x810,*(undefined4 *)(animal + 0x814));
+    s_val2 = GBA_Vram_AllocateTileBlock(animal + 0x810,*(undefined4 *)(animal + 0x814));
     stack_val_9c._2_2_ = s_val2 + 4;
     u_val3 = HW_Routine_080074C0(0x818 + animal,*(undefined4 *)(0x818 + animal + 4));
     stack_val_9c = CONCAT22(stack_val_9c._2_2_,u_val3);
@@ -33120,7 +33120,7 @@ void Animal_Routine_0807A98C(int animal)
     stack_val_88 = CONCAT31(stack_val_88._1_3_,1);
     p_int8 = (int *)HW_GetSpriteAttr0Offset(animal);
     loop_i = stack_val_7c;
-    i_val5 = HW_Routine_08007D4C(animal + 0x810,*(undefined4 *)(animal + 0x814));
+    i_val5 = GBA_Vram_AllocateTileBlock(animal + 0x810,*(undefined4 *)(animal + 0x814));
     u_val13 = 0;
     if (stack_val_7c != 0) {
       u_val13 = stack_val_78 & 0xffff;
@@ -33227,7 +33227,7 @@ void Animal_Routine_0807A98C(int animal)
     stack_val_88 = *(undefined4 *)(animal + 0x808);
     stack_val_a0 = CONCAT22(*(undefined2 *)(0x854 + animal),
                          *(undefined2 *)(0x852 + animal));
-    u_val3 = HW_Routine_08007D4C(animal + 0x830,*(undefined4 *)(animal + 0x834));
+    u_val3 = GBA_Vram_AllocateTileBlock(animal + 0x830,*(undefined4 *)(animal + 0x834));
     stack_val_9c._2_2_ = u_val3;
     u_val3 = HW_Routine_080074C0(0x838 + animal,*(undefined4 *)(0x838 + animal + 4));
     stack_val_9c = CONCAT22(stack_val_9c._2_2_,u_val3);
@@ -33305,7 +33305,7 @@ Animal_Routine_0807B038(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   undefined4 u_val1;
   
   *animal = gRomData_080E7BDC;
-  u_val1 = Dispatcher_Routine_080005D4(0xA74);
+  u_val1 = CppRuntime_OperatorNewArray(0xA74);
   u_val1 = Animal_Routine_08078E40(u_val1,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -34411,13 +34411,13 @@ u32 Animal_Routine_0807BEC8(int animal)
   Animal_Routine_0807B920(animal,*(undefined4 *)(*(int *)(animal + 0x10) * 4 + animal + 0x2a8));
   pos_x = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(pos_x + 0x50) = 0x3f;
-  p_uint6 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint6 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val14 = HW_GetSpriteAttr1Offset(animal);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = &case_080E5B80;
-  Farm_Routine_08009300(p_uint6 + 3,u_val14);
-  Farm_Routine_0800934C(p_uint6 + 3,0x889,1,1);
+  Fade_Init(p_uint6 + 3,u_val14);
+  Fade_StartFadeOut(p_uint6 + 3,0x889,1,1);
   pos_x = HW_GetPaletteBankOffset(animal);
   _call_via_r2(pos_x,p_uint6,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
   stack_val_34 = 0;
@@ -34855,7 +34855,7 @@ LAB_0807cce4:
               b_flag1 = true;
             }
             if (u_val9 == 0) goto LAB_0807cce4;
-            ShippingBin_Routine_0800B5A8(*(int *)(animal + 8) + 0x380,0x4a);
+            ShippingBin_AddItemQuantity(*(int *)(animal + 8) + 0x380,0x4a);
             u_val14 = gRomData_080FDCBC;
             if (b_flag1) {
               u_val14 = gRomData_080FDC58;
@@ -34896,7 +34896,7 @@ LAB_0807cce4:
         stack_val_9a = 0;
         Animal_Routine_0809BC64(stack_buf_84,gRomData_080FD964,stack_buf_a0,7,7);
         u_val14 = Building_Routine_0800C8BC(*(int *)(animal + 8) + 0x410,stack_buf_84);
-        Farm_Routine_08009378(p_uint6 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint6 + 3,0x889,1,1);
         pos_x = HW_GetPaletteBankOffset(animal);
         _call_via_r2(pos_x,p_uint6,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
         p_int4 = (int *)(animal + 0x6A4);
@@ -34974,7 +34974,7 @@ LAB_0807cce4:
       if ((*(int *)(animal + 0x350) == 3) &&
          (p_int4 = (int *)*p_uint6, -1 < (int)(-(int)p_int4 | (uint)p_int4))) {
         stack_val_34 = 1;
-        Farm_Routine_08009378(p_uint6 + 3,0x889,1);
+        Fade_StartFadeIn(p_uint6 + 3,0x889,1);
         pos_x = HW_GetPaletteBankOffset(animal);
         _call_via_r2(pos_x,p_uint6,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
         p_int4 = sub_ret_val;
@@ -35007,7 +35007,7 @@ Animal_Routine_0807D070(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   undefined4 u_val1;
   
   *animal = gRomData_080E7BF8;
-  u_val1 = Dispatcher_Routine_080005D4(0x231C);
+  u_val1 = CppRuntime_OperatorNewArray(0x231C);
   u_val1 = Animal_Routine_0807B0F0(u_val1,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -35059,7 +35059,7 @@ u32 Animal_Routine_0807D0F4(undefined4 *animal,int amount)
     *animal = u_val4;
   }
   else {
-    p_uint2 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+    p_uint2 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
     u_val5 = *(undefined4 *)(amount + 8);
     *(undefined4 *)(amount + 8) = 0;
     u_val4 = *(undefined4 *)(amount + 0x10);
@@ -35067,7 +35067,7 @@ u32 Animal_Routine_0807D0F4(undefined4 *animal,int amount)
     p_uint2[1] = u_val5;
     p_uint2[2] = u_val4;
     p_uint2[3] = 1;
-    p_uint3 = (undefined4 *)Dispatcher_Routine_080005D4(0x14);
+    p_uint3 = (undefined4 *)CppRuntime_OperatorNewArray(0x14);
     u_val4 = *(undefined4 *)(amount + 0x10);
     *p_uint3 = gRomData_080E5C64;
     p_uint3[1] = p_uint2;
@@ -35131,7 +35131,7 @@ u32 Animal_Routine_0807DD38(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7C30;
-  u_val1 = Dispatcher_Routine_080005D4(0x710);
+  u_val1 = CppRuntime_OperatorNewArray(0x710);
   u_val1 = Animal_Routine_0807D194(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -35214,7 +35214,7 @@ void Animal_Routine_0807DE0C(undefined4 animal,int amount)
   undefined1 stack_buf_c [4];
   
   Item_SetIdAndClearQuality(stack_buf_c,*(undefined4 *)(amount * 8 + gRomData_080FDFA4));
-  u_val1 = Item_Routine_0800DDD4(stack_buf_c);
+  u_val1 = Item_GetFoodDescription(stack_buf_c);
   M4A_Routine_080CABEC(animal,u_val1);
   return;
 }
@@ -35311,7 +35311,7 @@ void Animal_Routine_0807DE3C(int animal)
   stack_val_30 = p_uint3[1];
   stack_val_34 = *p_uint3;
   Item_SetIdAndClearQuality(&puStack_58,stack_val_34);
-  u_val2 = Item_Routine_0800DCE0(&puStack_58);
+  u_val2 = Item_GetFoodBasePrice(&puStack_58);
   Animal_Routine_0805E860(&piStack_ac,u_val2);
   _call_via_r3(&stack_val_54,piStack_ac,*(undefined2 *)(stack_val_a8 + (uint)stack_val_a0 * 4),
                   *(undefined4 *)(*piStack_ac + 0x10));
@@ -35339,14 +35339,14 @@ void Animal_Routine_0807DE3C(int animal)
   pos_x = HW_GetSpriteAttr1Offset(animal);
   puStack_58 = (undefined4 *)CONCAT22(puStack_58._2_2_,0x3f);
   *(undefined2 *)(pos_x + 0x50) = 0x3f;
-  p_uint3 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint3 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val5 = HW_GetSpriteAttr1Offset(animal);
   *p_uint3 = 0;
   p_uint3[1] = 0;
   p_uint3[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint3 + 3,u_val5);
+  Fade_Init(p_uint3 + 3,u_val5);
   puStack_58 = p_uint3;
-  Farm_Routine_0800934C(p_uint3 + 3,0x889,1,1);
+  Fade_StartFadeOut(p_uint3 + 3,0x889,1,1);
   pos_x = HW_GetPaletteBankOffset(animal);
   _call_via_r2(pos_x,puStack_58,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
   stack_val_2c = 0;
@@ -35360,7 +35360,7 @@ void Animal_Routine_0807DE3C(int animal)
   i_val7 = Building_Routine_0800C048(*(int *)(animal + 8) + 500);
   if (i_val7 != 0) {
     u_val5 = Building_Routine_0800C048(*(int *)(animal + 8) + 500);
-    i_val13 = ShippingBin_Routine_0800B68C(u_val5,stack_val_34);
+    i_val13 = ShippingBin_GetSlotQuantity(u_val5,stack_val_34);
   }
   i_val7 = 0x1C2C;
   c_char1 = HeldItem_IsEmpty(*(int *)(animal + 8) + 0x1C2C);
@@ -35374,7 +35374,7 @@ void Animal_Routine_0807DE3C(int animal)
   i_val13 = Building_Routine_0800C048(*(int *)(animal + 8) + 500);
   if (i_val13 != 0) {
     u_val5 = Building_Routine_0800C048(*(int *)(animal + 8) + 500);
-    i_val9 = ShippingBin_Routine_0800B6E8(u_val5,stack_val_34);
+    i_val9 = ShippingBin_SetSlotQuantity(u_val5,stack_val_34);
   }
   c_char1 = HeldItem_IsEmpty(*(int *)(animal + 8) + i_val7);
   if ((c_char1 == '\0') && (i_val13 = HeldItem_GetKind(*(int *)(animal + 8) + i_val7), i_val13 == 0)) {
@@ -35388,7 +35388,7 @@ void Animal_Routine_0807DE3C(int animal)
   Item_SetIdAndClearQuality(&stack_val_44,stack_val_34);
   p_uint11 = (undefined1 *)(animal + 0x6a8);
   *p_uint11 = 0;
-  u_val5 = Item_Routine_0800DCB8(&stack_val_44);
+  u_val5 = Item_GetFoodName(&stack_val_44);
   pos_x = gba_strlen(p_uint11);
   u_val12 = 99 - pos_x;
   if (u_val12 != 0) {
@@ -35459,7 +35459,7 @@ void Animal_Routine_0807DE3C(int animal)
         if (*(int *)(animal + 0x350) == 3) {
           *p_int6 = 2;
           stack_val_2c = 1;
-          Farm_Routine_08009378(p_uint10 + 3,0x889,1,1);
+          Fade_StartFadeIn(p_uint10 + 3,0x889,1,1);
           pos_x = HW_GetPaletteBankOffset(animal);
           _call_via_r2(pos_x,*ppuStack_24,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
         }
@@ -35528,7 +35528,7 @@ Animal_Routine_0807E438(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   undefined4 u_val1;
   
   *animal = gRomData_080E7C20;
-  u_val1 = Dispatcher_Routine_080005D4(0x710);
+  u_val1 = CppRuntime_OperatorNewArray(0x710);
   u_val1 = Animal_Routine_0807DDC4(u_val1,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -35612,7 +35612,7 @@ void Animal_Routine_0807E51C(int animal,int amount)
   
   Item_SetIdAndClearQuality(stack_buf_c,
                   *(undefined4 *)(*(int *)(amount * 4 + animal + 0x2a8) * 8 + gRomData_080FE050));
-  u_val1 = Item_Routine_0800DDD4(stack_buf_c);
+  u_val1 = Item_GetFoodDescription(stack_buf_c);
   M4A_Routine_080CABEC(animal,u_val1);
   return;
 }
@@ -35626,7 +35626,7 @@ void Animal_Routine_0807EE14(undefined4 *animal,undefined4 *amount,undefined4 fo
   undefined4 u_val1;
   
   *animal = gRomData_080E7C4C;
-  u_val1 = Dispatcher_Routine_080005D4(0x710);
+  u_val1 = CppRuntime_OperatorNewArray(0x710);
   u_val1 = Animal_Routine_0807E4D4(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -35695,7 +35695,7 @@ void Animal_Routine_0807EED4(int animal,undefined4 amount)
 {
   
   *(undefined4 *)(animal + 4) = gRomData_080E7C5C;
-  Dispatcher_Routine_08000608(*(undefined4 *)(animal + 0x6AC));
+  CppRuntime_FreeMemory(*(undefined4 *)(animal + 0x6AC));
   M4A_Routine_080C8360(animal,amount);
   return;
 }
@@ -35715,7 +35715,7 @@ void Animal_Routine_0807EF14(int animal,int amount)
      ) {
     Item_SetIdAndClearQuality(temp_coords,
                     *(undefined4 *)(*(int *)(i_val2 + amount * 4 + 4) * 0x1c + gRomData_080FE2D8));
-    u_val1 = Item_Routine_0800DDD4(temp_coords);
+    u_val1 = Item_GetFoodDescription(temp_coords);
     M4A_Routine_080CABEC(animal,u_val1);
   }
   else {
@@ -35891,7 +35891,7 @@ LAB_0807f0ce:
       u_val8 = p_uint5[1];
       if (p_uint5[3] == 0) {
         Item_SetIdAndClearQuality(&puStack_58,u_val7);
-        u_val7 = Item_Routine_0800DCE0(&puStack_58);
+        u_val7 = Item_GetFoodBasePrice(&puStack_58);
         u_val7 = u_val7 & 0xffff;
       }
       Animal_Routine_0805E860(ppiStack_2c,u_val7);
@@ -35931,14 +35931,14 @@ LAB_0807f0ce:
   i_val3 = HW_GetSpriteAttr1Offset(animal);
   puStack_58 = (uint *)CONCAT22(puStack_58._2_2_,0x3f);
   *(undefined2 *)(i_val3 + 0x50) = 0x3f;
-  p_uint5 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint5 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val4 = HW_GetSpriteAttr1Offset(animal);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint5 + 3,u_val4);
+  Fade_Init(p_uint5 + 3,u_val4);
   puStack_58 = p_uint5;
-  Farm_Routine_0800934C(p_uint5 + 3,0x889,1,1);
+  Fade_StartFadeOut(p_uint5 + 3,0x889,1,1);
   i_val3 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val3,puStack_58,*(undefined4 *)(*(int *)(i_val3 + 8) + 0x10));
   stack_val_28 = 0;
@@ -35993,15 +35993,15 @@ LAB_0807f0ce:
             }
             else {
               *p_int9 = 2;
-              p_uint5 = (uint *)Dispatcher_Routine_080005D4(0x10);
+              p_uint5 = (uint *)CppRuntime_OperatorNewArray(0x10);
               p_int9 = (int *)(animal + 0x6AC);
               if (p_uint5 != (uint *)*p_int9) {
-                Dispatcher_Routine_08000608();
+                CppRuntime_FreeMemory();
               }
               *p_int9 = (int)p_uint5;
               if (u_val8 == 0) {
                 Item_SetIdAndClearQuality(&stack_val_54,u_val7);
-                u_val7 = Item_Routine_0800DCE0(&stack_val_54);
+                u_val7 = Item_GetFoodBasePrice(&stack_val_54);
                 u_val7 = u_val7 & 0xffff;
               }
               *p_uint5 = u_val7;
@@ -36035,7 +36035,7 @@ LAB_0807f0ce:
       }
       else if ((i_val3 == 3) && (*(int *)(animal + 0x350) == 3)) {
         stack_val_28 = 1;
-        Farm_Routine_08009378(puStack_58 + 3,0x889,1,1);
+        Fade_StartFadeIn(puStack_58 + 3,0x889,1,1);
         i_val3 = HW_GetPaletteBankOffset(animal);
         _call_via_r2(i_val3,puStack_58,*(undefined4 *)(*(int *)(i_val3 + 8) + 0x10));
       }
@@ -36053,7 +36053,7 @@ void Animal_Routine_0807F580(undefined4 *animal,undefined4 *amount,undefined4 fo
   undefined4 u_val1;
   
   *animal = gRomData_080E7C68;
-  u_val1 = Dispatcher_Routine_080005D4(0x6b0);
+  u_val1 = CppRuntime_OperatorNewArray(0x6b0);
   u_val1 = Animal_Routine_0807EEA0(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -36116,7 +36116,7 @@ u32 Animal_Routine_0807F60C(undefined4 *animal,int amount)
   stack_val_14 = 0;
   *animal = u_val1;
   puStack_10 = (undefined1 *)&stack_val_14;
-  Dispatcher_Routine_08000608(0);
+  CppRuntime_FreeMemory(0);
   return animal;
 }
 
@@ -36314,7 +36314,7 @@ u32 Animal_Routine_0808045C(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7C84;
-  u_val1 = Dispatcher_Routine_080005D4(0x710);
+  u_val1 = CppRuntime_OperatorNewArray(0x710);
   u_val1 = Animal_Routine_0807F63C(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -36406,7 +36406,7 @@ u32 Animal_Routine_08080D94(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7CA0;
-  u_val1 = Dispatcher_Routine_080005D4(0x710);
+  u_val1 = CppRuntime_OperatorNewArray(0x710);
   u_val1 = Animal_Routine_080804F8(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -36588,13 +36588,13 @@ void Animal_Routine_0808114C(int animal)
   Animal_Routine_08081108(animal,*(undefined4 *)(*(int *)(animal + 0x10) * 4 + animal + 0x2a8));
   pos_x = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(pos_x + 0x50) = 0x3f;
-  p_uint6 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint6 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val3 = HW_GetSpriteAttr1Offset(animal);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint6 + 3,u_val3);
-  Farm_Routine_0800934C(p_uint6 + 3,0x889,1,1);
+  Fade_Init(p_uint6 + 3,u_val3);
+  Fade_StartFadeOut(p_uint6 + 3,0x889,1,1);
   pos_x = HW_GetPaletteBankOffset(animal);
   _call_via_r2(pos_x,p_uint6,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
   stack_val_28 = 0;
@@ -36881,7 +36881,7 @@ LAB_080817f0:
         case 0x80819dc:
           if ((*(int *)(animal + 0x350) == 3) && (-1 < (int)(-*p_uint6 | *p_uint6))) {
             stack_val_28 = 1;
-            Farm_Routine_08009378(p_uint6 + 3,0x889,1,1);
+            Fade_StartFadeIn(p_uint6 + 3,0x889,1,1);
             pos_x = HW_GetPaletteBankOffset(animal);
             _call_via_r2(pos_x,p_uint6,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
           }
@@ -36901,7 +36901,7 @@ u32 Animal_Routine_08081A40(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7CBC;
-  u_val1 = Dispatcher_Routine_080005D4(0x710);
+  u_val1 = CppRuntime_OperatorNewArray(0x710);
   u_val1 = Animal_Routine_08080E20(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -36970,7 +36970,7 @@ void Animal_Routine_08081B00(int animal,undefined4 amount)
 {
   
   *(undefined4 *)(animal + 4) = gRomData_080E7CCC;
-  Dispatcher_Routine_08000608(*(undefined4 *)(animal + 0x6AC));
+  CppRuntime_FreeMemory(*(undefined4 *)(animal + 0x6AC));
   M4A_Routine_080C8360(animal,amount);
   return;
 }
@@ -36990,7 +36990,7 @@ void Animal_Routine_08081B40(int animal,int amount)
      ) {
     Item_SetIdAndClearQuality(temp_coords,
                     *(undefined4 *)(*(int *)(i_val2 + amount * 4 + 4) * 0x1c + gRomData_080FEB60));
-    u_val1 = Item_Routine_0800DDD4(temp_coords);
+    u_val1 = Item_GetFoodDescription(temp_coords);
     M4A_Routine_080CABEC(animal,u_val1);
   }
   else {
@@ -37132,7 +37132,7 @@ void Animal_Routine_08081BBC(int animal)
       u_val7 = p_uint4[1];
       if (p_uint4[3] == 0) {
         Item_SetIdAndClearQuality(&puStack_5c,u_val6);
-        u_val6 = Item_Routine_0800DCE0(&puStack_5c);
+        u_val6 = Item_GetFoodBasePrice(&puStack_5c);
         u_val6 = u_val6 & 0xffff;
       }
       Animal_Routine_0805E860(ppiStack_30,u_val6);
@@ -37172,14 +37172,14 @@ void Animal_Routine_08081BBC(int animal)
   i_val1 = HW_GetSpriteAttr1Offset(animal);
   puStack_5c = (undefined4 *)CONCAT22(puStack_5c._2_2_,0x3f);
   *(undefined2 *)(i_val1 + 0x50) = 0x3f;
-  p_uint2 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint2 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val3 = HW_GetSpriteAttr1Offset(animal);
   *p_uint2 = 0;
   p_uint2[1] = 0;
   p_uint2[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint2 + 3,u_val3);
+  Fade_Init(p_uint2 + 3,u_val3);
   puStack_5c = p_uint2;
-  Farm_Routine_0800934C(p_uint2 + 3,0x889,1,1);
+  Fade_StartFadeOut(p_uint2 + 3,0x889,1,1);
   i_val1 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val1,puStack_5c,*(undefined4 *)(*(int *)(i_val1 + 8) + 0x10));
   stack_val_2c = 0;
@@ -37236,15 +37236,15 @@ void Animal_Routine_08081BBC(int animal)
             }
             else {
               *p_int8 = 2;
-              p_uint4 = (uint *)Dispatcher_Routine_080005D4(0x10);
+              p_uint4 = (uint *)CppRuntime_OperatorNewArray(0x10);
               p_int8 = (int *)(animal + 0x6AC);
               if (p_uint4 != (uint *)*p_int8) {
-                Dispatcher_Routine_08000608();
+                CppRuntime_FreeMemory();
               }
               *p_int8 = (int)p_uint4;
               if (u_val7 == 0) {
                 Item_SetIdAndClearQuality(&stack_val_58,u_val6);
-                u_val6 = Item_Routine_0800DCE0(&stack_val_58);
+                u_val6 = Item_GetFoodBasePrice(&stack_val_58);
                 u_val6 = u_val6 & 0xffff;
               }
               *p_uint4 = u_val6;
@@ -37275,7 +37275,7 @@ void Animal_Routine_08081BBC(int animal)
       }
       else if ((i_val1 == 3) && (*(int *)(animal + 0x350) == 3)) {
         stack_val_2c = 1;
-        Farm_Routine_08009378(p_uint4 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint4 + 3,0x889,1,1);
         i_val1 = HW_GetPaletteBankOffset(animal);
         _call_via_r2(i_val1,*ppuStack_28,*(undefined4 *)(*(int *)(i_val1 + 8) + 0x10));
       }
@@ -37293,7 +37293,7 @@ u32 Animal_Routine_08082114(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7CD8;
-  u_val1 = Dispatcher_Routine_080005D4(0x6b0);
+  u_val1 = CppRuntime_OperatorNewArray(0x6b0);
   u_val1 = Animal_Routine_08081ACC(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -37356,7 +37356,7 @@ u32 Animal_Routine_080821A0(undefined4 *animal,int amount)
   stack_val_14 = 0;
   *animal = u_val1;
   puStack_10 = (undefined1 *)&stack_val_14;
-  Dispatcher_Routine_08000608(0);
+  CppRuntime_FreeMemory(0);
   return animal;
 }
 
@@ -38073,7 +38073,7 @@ u32 Animal_Routine_08082C74(int animal,int amount)
   undefined1 temp_buf_18 [4];
   
   u_val3 = 1;
-  item_id = ShippingBin_Routine_0800B544(*(int *)(animal + 8) + 0x380,amount);
+  item_id = ShippingBin_FindSlotByItemId(*(int *)(animal + 8) + 0x380,amount);
   if ((item_id != -1) ||
      (item_id = Farmer_Routine_0800F92C(*(int *)(animal + 8) + 0x1C38,amount), item_id != -1)) {
     u_val3 = 0;
@@ -38100,7 +38100,7 @@ Animal_Routine_08083A7C(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   undefined4 u_val1;
   
   *animal = gRomData_080E7D04;
-  u_val1 = Dispatcher_Routine_080005D4(0x48E8);
+  u_val1 = CppRuntime_OperatorNewArray(0x48E8);
   u_val1 = Animal_Routine_080821D0(u_val1,food_type,out_stat,arg_5,arg_6,arg_7,arg_8);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -38154,7 +38154,7 @@ u32 Animal_Routine_08083B2C(undefined4 *animal,int amount)
     *animal = u_val2;
   }
   else if (i_val1 == 1) {
-    p_uint3 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+    p_uint3 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
     u_val4 = *(undefined4 *)(amount + 8);
     *(undefined4 *)(amount + 8) = 0;
     u_val2 = *(undefined4 *)(amount + 0x1c);
@@ -38165,7 +38165,7 @@ u32 Animal_Routine_08083B2C(undefined4 *animal,int amount)
     *animal = p_uint3;
   }
   else {
-    p_uint3 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+    p_uint3 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
     u_val4 = *(undefined4 *)(amount + 8);
     *(undefined4 *)(amount + 8) = 0;
     u_val2 = *(undefined4 *)(amount + 0x1c);
@@ -38736,13 +38736,13 @@ void Animal_Routine_08084228(int animal)
   Animal_Routine_080840F4(animal,*(undefined4 *)(*(int *)(animal + 0x10) * 4 + animal + 0x2a8));
   pos_x = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(pos_x + 0x50) = 0x3f;
-  p_uint3 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint3 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val9 = HW_GetSpriteAttr1Offset(animal);
   *p_uint3 = 0;
   p_uint3[1] = 0;
   p_uint3[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint3 + 3,u_val9);
-  Farm_Routine_0800934C(p_uint3 + 3,0x889,1,1);
+  Fade_Init(p_uint3 + 3,u_val9);
+  Fade_StartFadeOut(p_uint3 + 3,0x889,1,1);
   pos_x = HW_GetPaletteBankOffset(animal);
   _call_via_r2(pos_x,p_uint3,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
   stack_val_34 = 0;
@@ -39096,7 +39096,7 @@ LAB_0808518c:
              (p_char8 = (char *)-((int)(-*p_uint3 | *p_uint3) >> 0x1f), p_char8 == (char *)0x0)) {
             *(undefined4 *)(animal + 0x708) = 0;
             stack_val_34 = 1;
-            Farm_Routine_08009378(p_uint3 + 3,_LAB_080854d4,1,1);
+            Fade_StartFadeIn(p_uint3 + 3,_LAB_080854d4,1,1);
             pos_x = HW_GetPaletteBankOffset(animal);
             _call_via_r2(pos_x,p_uint3,*(undefined4 *)(*(int *)(pos_x + 8) + 0x10));
             p_char8 = sub_ret_val;
@@ -39117,7 +39117,7 @@ u32 Animal_Routine_080854F4(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7D20;
-  u_val1 = Dispatcher_Routine_080005D4(0x61F4);
+  u_val1 = CppRuntime_OperatorNewArray(0x61F4);
   u_val1 = Animal_Routine_08083BD4(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -40675,7 +40675,7 @@ u32 Animal_Routine_08086A08(int animal)
       loop_i = 1;
     }
   }
-  item_id = ShippingBin_Routine_0800B544(*(int *)(animal + 8) + 0x380,0x49);
+  item_id = ShippingBin_FindSlotByItemId(*(int *)(animal + 8) + 0x380,0x49);
   if (item_id != -1) {
     loop_i = 1;
   }
@@ -40812,13 +40812,13 @@ u32 Animal_Routine_08086A08(int animal)
   Animal_Routine_08085F08(animal,*(undefined4 *)(*(int *)(animal + 0x10) * 4 + animal + 0x2a8));
   item_id = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(item_id + 0x50) = 0x3f;
-  p_uint9 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint9 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val18 = HW_GetSpriteAttr1Offset(animal);
   *p_uint9 = 0;
   p_uint9[1] = 0;
   p_uint9[2] = &case_080E5B80;
-  Farm_Routine_08009300(p_uint9 + 3,u_val18);
-  Farm_Routine_0800934C(p_uint9 + 3,0x889,1,1);
+  Fade_Init(p_uint9 + 3,u_val18);
+  Fade_StartFadeOut(p_uint9 + 3,0x889,1,1);
   item_id = HW_GetPaletteBankOffset(animal);
   _call_via_r2(item_id,p_uint9,*(undefined4 *)(*(int *)(item_id + 8) + 0x10));
   stack_val_34 = 0;
@@ -41313,7 +41313,7 @@ LAB_08087a3e:
               b_flag1 = true;
             }
             if (u_val13 != 0) {
-              ShippingBin_Routine_0800B5A8(*(int *)(animal + 8) + 0x380,i_val20);
+              ShippingBin_AddItemQuantity(*(int *)(animal + 8) + 0x380,i_val20);
               u_val18 = gRomData_080FFF38;
               if (b_flag1) {
                 u_val18 = gRomData_080FFEEC;
@@ -41347,7 +41347,7 @@ LAB_08087a3e:
           p_int6 = (int *)(animal + 0x6A4);
           goto Animal_Routine_08087F4E;
         }
-        ShippingBin_Routine_0800B5A8(*(int *)(animal + 8) + 0x380,0x49,1);
+        ShippingBin_AddItemQuantity(*(int *)(animal + 8) + 0x380,0x49,1);
         M4A_Routine_080CABA0(animal,gRomData_080FFF38);
       }
       else {
@@ -41417,7 +41417,7 @@ LAB_08087e82:
           if (item_id != -1) {
             *(undefined4 *)(animal + 0x43D8) = 0;
 LAB_08087e20:
-            Farm_Routine_08009378(p_uint9 + 3,0x889,1,1);
+            Fade_StartFadeIn(p_uint9 + 3,0x889,1,1);
             i_val20 = HW_GetPaletteBankOffset(animal);
             _call_via_r2(i_val20,p_uint9,*(undefined4 *)(*(int *)(i_val20 + 8) + 0x10));
             p_int6 = (int *)(animal + 0x6A4);
@@ -41565,7 +41565,7 @@ Animal_Routine_08087F4C:
       if ((*(int *)(animal + 0x350) == 3) &&
          (p_int6 = (int *)*p_uint9, -1 < (int)(-(int)p_int6 | (uint)p_int6))) {
         stack_val_34 = 1;
-        Farm_Routine_08009378(p_uint9 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint9 + 3,0x889,1,1);
         item_id = HW_GetPaletteBankOffset(animal);
         _call_via_r2(item_id,p_uint9,*(undefined4 *)(*(int *)(item_id + 8) + 0x10));
         p_int6 = sub_ret_val;
@@ -41598,7 +41598,7 @@ Animal_Routine_08088168(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   undefined4 u_val1;
   
   *animal = gRomData_080E7D3C;
-  u_val1 = Dispatcher_Routine_080005D4(0x43E0);
+  u_val1 = CppRuntime_OperatorNewArray(0x43E0);
   u_val1 = Animal_Routine_08085584(u_val1,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -41658,7 +41658,7 @@ u32 Animal_Routine_080881EC(undefined4 *animal,int amount)
     if (i_val2 != 0) {
       u_val8 = 2;
     }
-    p_uint3 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+    p_uint3 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
     u_val6 = *(undefined4 *)(amount + 8);
     *(undefined4 *)(amount + 8) = 0;
     u_val7 = 1;
@@ -41670,7 +41670,7 @@ u32 Animal_Routine_080881EC(undefined4 *animal,int amount)
     p_uint3[1] = u_val6;
     p_uint3[2] = u_val5;
     p_uint3[3] = u_val7;
-    p_uint4 = (undefined4 *)Dispatcher_Routine_080005D4(0x14);
+    p_uint4 = (undefined4 *)CppRuntime_OperatorNewArray(0x14);
     u_val6 = *(undefined4 *)(amount + 0x10);
     *p_uint4 = gRomData_080E5C64;
     p_uint4[1] = p_uint3;
@@ -41737,8 +41737,8 @@ void Animal_Routine_080884F4(int animal,int amount)
     stack_val_20 = *p_uint3;
     c_char1 = Item_Routine_0800DEDC(&stack_val_20);
     if (c_char1 == '\0') {
-      Item_Routine_0800DEB8(stack_buf_1c,&stack_val_20);
-      u_val2 = Item_Routine_0800DCE0(stack_buf_1c);
+      Item_GetToolExperienceRequired(stack_buf_1c,&stack_val_20);
+      u_val2 = Item_GetFoodBasePrice(stack_buf_1c);
       u_val4 = Item_Routine_0800DEF0(&stack_val_20);
       M4A_Routine_080CC728(*(undefined4 *)(animal + 0x7c),loop_i,gRomGfx_086678A0,u_val2,u_val4);
     }
@@ -41821,8 +41821,8 @@ void Animal_Routine_080885AC(int animal,int amount)
     c_char1 = Item_Routine_0800DEDC();
     if (c_char1 == '\0') {
       u_val2 = Building_Routine_0800B80C(*(undefined4 *)(animal + 0x104),i_val4);
-      Item_Routine_0800DEB8(&stack_val_1c,u_val2);
-      i_val8 = Item_Routine_0800DDD4(&stack_val_1c);
+      Item_GetToolExperienceRequired(&stack_val_1c,u_val2);
+      i_val8 = Item_GetFoodDescription(&stack_val_1c);
     }
   }
   if (i_val8 == 0) {
@@ -41963,14 +41963,14 @@ case_08088AC6:
       c_char1 = Item_Routine_0800DEDC(&stack_val_50);
       if (c_char1 == '\0') {
         u_val10 = *p_uint3;
-        Item_Routine_0800DEB8(&stack_val_4c,&stack_val_50);
+        Item_GetToolExperienceRequired(&stack_val_4c,&stack_val_50);
         HeldItem_SetFood(u_val10,stack_val_4c & 0xffffff);
         u_val10 = Building_Routine_0800B80C(*p_uint9,stack_val_24);
         Item_Routine_0800DF34(u_val10,1);
         u_val10 = gRomGfx_086678A0;
         u_val11 = *(undefined4 *)(animal + 0x78);
-        Item_Routine_0800DEB8(&stack_val_4c,&stack_val_50);
-        u_val2 = Item_Routine_0800DCE0(&stack_val_4c);
+        Item_GetToolExperienceRequired(&stack_val_4c,&stack_val_50);
+        u_val2 = Item_GetFoodBasePrice(&stack_val_4c);
         M4A_Routine_080CBAF0(u_val11,u_val10,u_val2,1);
         if (*(int *)(*(int *)(animal + 0x94) + 0xbc) == stack_val_2c) {
           Building_Routine_0800B80C(*p_uint9,stack_val_24);
@@ -42007,27 +42007,27 @@ case_08088AC6:
         if (c_char1 == '\0') {
           HeldItem_Clear(*p_uint3);
           u_val10 = *p_uint3;
-          Item_Routine_0800DEB8(&stack_val_48,&stack_val_50);
+          Item_GetToolExperienceRequired(&stack_val_48,&stack_val_50);
           HeldItem_SetFood(u_val10,stack_val_48 & 0xffffff);
           p_uint7 = (uint *)Building_Routine_0800B80C(*p_uint9,stack_val_24);
           gba_memcpy(&stack_val_44,&stack_val_4c,3);
-          Item_Routine_0800DE80(&stack_val_48,stack_val_44 & 0xffffff,1);
+          Item_GetToolTier(&stack_val_48,stack_val_44 & 0xffffff,1);
           *p_uint7 = stack_val_48;
           u_val10 = gRomGfx_086678A0;
           u_val11 = *(undefined4 *)(animal + 0x78);
-          Item_Routine_0800DEB8(&stack_val_48,&stack_val_50);
-          u_val2 = Item_Routine_0800DCE0(&stack_val_48);
+          Item_GetToolExperienceRequired(&stack_val_48,&stack_val_50);
+          u_val2 = Item_GetFoodBasePrice(&stack_val_48);
           M4A_Routine_080CBAF0(u_val11,u_val10,u_val2,1);
           if (*(int *)(*(int *)(animal + 0x94) + 0xbc) == stack_val_2c) {
             u_val12 = *(undefined4 *)(animal + 0x7c);
             u_val11 = M4A_Routine_080CE184(animal,amount,0);
-            u_val2 = Item_Routine_0800DCE0(&stack_val_4c);
+            u_val2 = Item_GetFoodBasePrice(&stack_val_4c);
             M4A_Routine_080CC728(u_val12,u_val11,u_val10,u_val2,stack_val_28);
           }
           goto case_08088B8C;
         }
         u_val5 = Item_Routine_0800DCB4(&stack_val_4c);
-        Item_Routine_0800DEB8(&stack_val_48,&stack_val_50);
+        Item_GetToolExperienceRequired(&stack_val_48,&stack_val_50);
         u_val6 = Item_Routine_0800DCB4(&stack_val_48);
         if ((int)(-(u_val6 ^ u_val5) | u_val6 ^ u_val5) < 0) {
           Animal_Routine_08050DC8(animal + 0x80,gRomData_08100034,0,0);
@@ -42042,13 +42042,13 @@ case_08088AC6:
         HeldItem_Clear(*p_uint3);
         p_uint7 = (uint *)Building_Routine_0800B80C(*p_uint9,stack_val_24);
         gba_memcpy(&stack_val_44,&stack_val_4c,3);
-        Item_Routine_0800DE80(&stack_val_48,stack_val_44 & 0xffffff,1);
+        Item_GetToolTier(&stack_val_48,stack_val_44 & 0xffffff,1);
         *p_uint7 = stack_val_48;
         M4A_Routine_080CC0B4(*(undefined4 *)(animal + 0x78));
         if (*(int *)(*(int *)(animal + 0x94) + 0xbc) == stack_val_2c) {
           u_val11 = *(undefined4 *)(animal + 0x7c);
           u_val10 = M4A_Routine_080CE184(animal,amount,0);
-          u_val2 = Item_Routine_0800DCE0(&stack_val_4c);
+          u_val2 = Item_GetFoodBasePrice(&stack_val_4c);
           M4A_Routine_080CC728(u_val11,u_val10,gRomGfx_086678A0,u_val2,stack_val_28);
         }
         goto case_08088B8C;
@@ -42147,14 +42147,14 @@ LAB_08088d30:
           HeldItem_Clear(*p_uint8);
           p_uint10 = (uint *)Building_Routine_0800B80C(*p_uint14,stack_val_48);
           Farmer_Routine_0800F0A4(&stack_val_6c,&stack_val_7c);
-          Item_Routine_0800DE80(&stack_val_70,stack_val_6c & 0xffffff,1);
+          Item_GetToolTier(&stack_val_70,stack_val_6c & 0xffffff,1);
           *p_uint10 = stack_val_70;
           M4A_Routine_080CC0B4(*(undefined4 *)(animal + 0x78));
           u_val6 = *(undefined4 *)(animal + 0x7c);
           u_val3 = M4A_Routine_080CE184(animal,food_type,0);
           p_uint8 = puStack_4c;
 Animal_Routine_080895C2:
-          u_val2 = Item_Routine_0800DCE0(p_uint8);
+          u_val2 = Item_GetFoodBasePrice(p_uint8);
           u_val7 = gRomGfx_086678A0;
 LAB_080895d2:
           M4A_Routine_080CC728(u_val6,u_val3,u_val7,u_val2,stack_val_50);
@@ -42165,7 +42165,7 @@ LAB_080895d2:
         goto Animal_Routine_08089620;
       }
       u_val9 = Item_Routine_0800DCB4(puStack_4c);
-      Item_Routine_0800DEB8(&stack_val_70,saved_r9);
+      Item_GetToolExperienceRequired(&stack_val_70,saved_r9);
       u_val4 = Item_Routine_0800DCB4(&stack_val_70);
       if ((int)(-(u_val4 ^ u_val9) | u_val4 ^ u_val9) < 0) {
         i_val5 = Item_Routine_0800DEF0(saved_r9);
@@ -42308,7 +42308,7 @@ Animal_Routine_08089A0C:
             Farmer_Routine_0800F0A4(&stack_val_74,&stack_val_7c);
             p_uint10 = (uint *)Building_Routine_0800B80C(*puStack_3c,u_val3);
             gba_memcpy(&stack_val_6c,&stack_val_74,3);
-            Item_Routine_0800DE80(&stack_val_70,stack_val_6c & 0xffffff,1);
+            Item_GetToolTier(&stack_val_70,stack_val_6c & 0xffffff,1);
             *p_uint10 = stack_val_70;
             u_val6 = *puStack_40;
             u_val3 = M4A_Routine_080CE184(animal,stack_val_54,0);
@@ -42320,7 +42320,7 @@ Animal_Routine_08089A0C:
             M4A_Routine_080CBA60(u_val6,u_val3);
             u_val6 = *(undefined4 *)(animal + 0x7c);
             u_val3 = M4A_Routine_080CE184(animal,food_type,0);
-            u_val2 = Item_Routine_0800DCE0(&stack_val_74);
+            u_val2 = Item_GetFoodBasePrice(&stack_val_74);
             u_val7 = gRomGfx_086678A0;
             goto LAB_080895d2;
           }
@@ -42334,7 +42334,7 @@ Animal_Routine_08089620:
       i_val5 = Farmer_Routine_0800F09C(&stack_val_7c);
       if (i_val5 == 0) {
         Farmer_Routine_0800F0A4(&stack_val_74,&stack_val_7c);
-        Item_Routine_0800DEB8(&stack_val_70,&stack_val_78);
+        Item_GetToolExperienceRequired(&stack_val_70,&stack_val_78);
         i_val5 = Item_Routine_0800DCB4(&stack_val_74);
         i_val11 = Item_Routine_0800DCB4(&stack_val_70);
         if ((i_val5 != i_val11) && (i_val5 = Item_Routine_0800DEF0(&stack_val_78), i_val5 != 1)) goto Animal_Routine_08089620;
@@ -42345,7 +42345,7 @@ Animal_Routine_08089620:
           if (c_char1 == '\0') {
             p_uint10 = (uint *)Building_Routine_0800B80C(*(undefined4 *)(animal + 0x104),u_val3);
             gba_memcpy(&stack_val_68,&stack_val_74,3);
-            Item_Routine_0800DE80(&stack_val_6c,stack_val_68 & 0xffffff,1);
+            Item_GetToolTier(&stack_val_6c,stack_val_68 & 0xffffff,1);
             *p_uint10 = stack_val_6c;
             u_val6 = *(undefined4 *)(animal + 0x100);
             u_val3 = M4A_Routine_080CE184(animal,stack_val_54,0);
@@ -42355,12 +42355,12 @@ Animal_Routine_08089620:
             *p_uint10 = stack_val_6c;
             u_val7 = *(undefined4 *)(animal + 0x78);
             u_val6 = M4A_Routine_080CE184(animal,stack_val_54,0);
-            u_val2 = Item_Routine_0800DCE0(&stack_val_70);
+            u_val2 = Item_GetFoodBasePrice(&stack_val_70);
             u_val3 = gRomGfx_086678A0;
             M4A_Routine_080CB304(u_val7,u_val6,gRomGfx_086678A0,u_val2,stack_val_38);
             u_val7 = *(undefined4 *)(animal + 0x7c);
             u_val6 = M4A_Routine_080CE184(animal,food_type,0);
-            u_val2 = Item_Routine_0800DCE0(&stack_val_74);
+            u_val2 = Item_GetFoodBasePrice(&stack_val_74);
             u_val9 = stack_val_38;
 LAB_0808975c:
             M4A_Routine_080CC728(u_val7,u_val6,u_val3,u_val2,u_val9);
@@ -42399,7 +42399,7 @@ LAB_0808966c:
     }
     c_char1 = Item_Routine_0800DEDC(&stack_val_78);
     if (c_char1 != '\0') goto Animal_Routine_08089AC0;
-    Item_Routine_0800DEB8(&stack_val_74,&stack_val_78);
+    Item_GetToolExperienceRequired(&stack_val_74,&stack_val_78);
     u_val7 = *puStack_40;
     u_val6 = M4A_Routine_080CE184(animal,stack_val_54,0);
     p_uint10 = (uint *)Farmer_Routine_0800FCDC(u_val7,u_val6);
@@ -42410,7 +42410,7 @@ LAB_0808966c:
     Item_Routine_0800DF34(u_val6,1);
     u_val7 = *(undefined4 *)(animal + 0x78);
     u_val6 = M4A_Routine_080CE184(animal,stack_val_54,0);
-    u_val2 = Item_Routine_0800DCE0(&stack_val_74);
+    u_val2 = Item_GetFoodBasePrice(&stack_val_74);
     M4A_Routine_080CB304(u_val7,u_val6,&case_086678A0,u_val2,stack_val_50);
     Building_Routine_0800B80C(*puStack_3c,u_val3);
     c_char1 = Item_Routine_0800DEDC();
@@ -42445,7 +42445,7 @@ LAB_0808966c:
           i_val5 = Farmer_Routine_0800F09C(&stack_val_78);
           if (i_val5 != 0) goto LAB_0808966c;
           Farmer_Routine_0800F0A4(&stack_val_74,&stack_val_78);
-          Item_Routine_0800DEB8(&stack_val_70,&stack_val_7c);
+          Item_GetToolExperienceRequired(&stack_val_70,&stack_val_7c);
           i_val5 = Item_Routine_0800DCB4(&stack_val_70);
           i_val11 = Item_Routine_0800DCB4(&stack_val_74);
           if ((i_val5 != i_val11) && (i_val5 = Item_Routine_0800DEF0(&stack_val_7c), i_val5 != 1))
@@ -42458,7 +42458,7 @@ LAB_0808966c:
           if (c_char1 == '\0') {
             p_uint10 = (uint *)Building_Routine_0800B80C(*(undefined4 *)(animal + 0x104),stack_val_34);
             gba_memcpy(&stack_val_68,&stack_val_74,3);
-            Item_Routine_0800DE80(&stack_val_6c,stack_val_68 & 0xffffff,1);
+            Item_GetToolTier(&stack_val_6c,stack_val_68 & 0xffffff,1);
             *p_uint10 = stack_val_6c;
             u_val6 = *(undefined4 *)(animal + 0x100);
             u_val3 = M4A_Routine_080CE184(animal,food_type,0);
@@ -42468,14 +42468,14 @@ LAB_0808966c:
             *p_uint10 = stack_val_6c;
             u_val7 = *(undefined4 *)(animal + 0x78);
             u_val6 = M4A_Routine_080CE184(animal,food_type,0);
-            u_val2 = Item_Routine_0800DCE0(&stack_val_70);
+            u_val2 = Item_GetFoodBasePrice(&stack_val_70);
             u_val3 = gRomGfx_086678A0;
             M4A_Routine_080CB304(u_val7,u_val6,gRomGfx_086678A0,u_val2,stack_val_2c);
             i_val5 = M4A_Routine_080CF054(*puStack_24);
             if (i_val5 != *(int *)(*(int *)(animal + 0x94) + 0xbc)) goto Animal_Routine_08089AC0;
             u_val7 = *(undefined4 *)(animal + 0x7c);
             u_val6 = M4A_Routine_080CE184(animal,stack_val_54,0);
-            u_val2 = Item_Routine_0800DCE0(&stack_val_74);
+            u_val2 = Item_GetFoodBasePrice(&stack_val_74);
             u_val9 = stack_val_2c;
             goto LAB_0808975c;
           }
@@ -42494,7 +42494,7 @@ LAB_0808966c:
             *p_uint14 = stack_val_74;
             p_uint8 = (undefined4 *)Building_Routine_0800B80C(*p_uint8,stack_val_34);
             Farmer_Routine_0800F0A4(&stack_val_70,&stack_val_78);
-            Item_Routine_0800DE80(&stack_val_74,stack_val_70 & 0xffffff,1);
+            Item_GetToolTier(&stack_val_74,stack_val_70 & 0xffffff,1);
             *p_uint8 = stack_val_74;
             u_val6 = *(undefined4 *)(animal + 0x78);
             u_val3 = M4A_Routine_080CE184(animal,food_type,0);
@@ -42516,15 +42516,15 @@ LAB_0808966a:
       u_val6 = *p_uint13;
       u_val3 = M4A_Routine_080CE184(animal,food_type,0);
       p_uint14 = (undefined4 *)Farmer_Routine_0800FCDC(u_val6,u_val3);
-      Item_Routine_0800DEB8(&stack_val_70,&stack_val_7c);
+      Item_GetToolExperienceRequired(&stack_val_70,&stack_val_7c);
       Farmer_Routine_0800F004(&stack_val_74,stack_val_70 & 0xffffff);
       *p_uint14 = stack_val_74;
       u_val3 = Building_Routine_0800B80C(*p_uint8,stack_val_34);
       Item_Routine_0800DF34(u_val3,1);
       u_val6 = *(undefined4 *)(animal + 0x78);
       u_val3 = M4A_Routine_080CE184(animal,food_type,0);
-      Item_Routine_0800DEB8(&stack_val_74,&stack_val_7c);
-      u_val2 = Item_Routine_0800DCE0(&stack_val_74);
+      Item_GetToolExperienceRequired(&stack_val_74,&stack_val_7c);
+      u_val2 = Item_GetFoodBasePrice(&stack_val_74);
       M4A_Routine_080CB304(u_val6,u_val3,gRomGfx_086678A0,u_val2,stack_val_50);
       i_val5 = M4A_Routine_080CF054(*puStack_30);
       if (i_val5 != *(int *)(*(int *)(animal + 0x94) + 0xbc)) goto Animal_Routine_08089AC0;
@@ -42553,7 +42553,7 @@ LAB_0808966a:
         p_uint8 = (undefined4 *)Building_Routine_0800B80C(*p_uint14,stack_val_34);
         *p_uint8 = stack_val_78;
         p_uint8 = (undefined4 *)Building_Routine_0800B80C(*p_uint14,u_val3);
-        Item_Routine_0800DE68(&stack_val_74);
+        Item_ResetSlotData(&stack_val_74);
         *p_uint8 = stack_val_74;
         u_val6 = *(undefined4 *)(animal + 0x7c);
         u_val3 = M4A_Routine_080CE184(animal,food_type,0);
@@ -42562,8 +42562,8 @@ LAB_0808966a:
         if (i_val5 == *(int *)(*piStack_28 + 0xbc)) {
           u_val7 = *(undefined4 *)(animal + 0x7c);
           u_val3 = M4A_Routine_080CE184(animal,stack_val_54,0);
-          Item_Routine_0800DEB8(&stack_val_74,&stack_val_78);
-          u_val2 = Item_Routine_0800DCE0(&stack_val_74);
+          Item_GetToolExperienceRequired(&stack_val_74,&stack_val_78);
+          u_val2 = Item_GetFoodBasePrice(&stack_val_74);
           u_val6 = Item_Routine_0800DEF0(&stack_val_78);
           M4A_Routine_080CC728(u_val7,u_val3,gRomGfx_086678A0,u_val2,u_val6);
         }
@@ -42571,9 +42571,9 @@ LAB_0808966a:
       }
       c_char1 = Item_Routine_0800DEDC(&stack_val_78);
       if (c_char1 == '\0') {
-        Item_Routine_0800DEB8(&stack_val_74,&stack_val_7c);
+        Item_GetToolExperienceRequired(&stack_val_74,&stack_val_7c);
         i_val5 = Item_Routine_0800DCB4(&stack_val_74);
-        Item_Routine_0800DEB8(&stack_val_70,&stack_val_78);
+        Item_GetToolExperienceRequired(&stack_val_70,&stack_val_78);
         i_val11 = Item_Routine_0800DCB4(&stack_val_70);
         if (i_val5 != i_val11) {
           p_uint8 = (undefined4 *)Building_Routine_0800B80C(*p_uint14,stack_val_34);
@@ -42582,8 +42582,8 @@ LAB_0808966a:
           *p_uint8 = stack_val_7c;
           u_val12 = *(undefined4 *)(animal + 0x7c);
           u_val6 = M4A_Routine_080CE184(animal,food_type,0);
-          Item_Routine_0800DEB8(&stack_val_6c,&stack_val_7c);
-          u_val2 = Item_Routine_0800DCE0(&stack_val_6c);
+          Item_GetToolExperienceRequired(&stack_val_6c,&stack_val_7c);
+          u_val2 = Item_GetFoodBasePrice(&stack_val_6c);
           u_val7 = Item_Routine_0800DEF0(&stack_val_7c);
           u_val3 = gRomGfx_086678A0;
           M4A_Routine_080CC728(u_val12,u_val6,gRomGfx_086678A0,u_val2,u_val7);
@@ -42591,8 +42591,8 @@ LAB_0808966a:
           if (i_val5 == *(int *)(*piStack_28 + 0xbc)) {
             u_val12 = *(undefined4 *)(animal + 0x7c);
             u_val6 = M4A_Routine_080CE184(animal,stack_val_54,0);
-            Item_Routine_0800DEB8(&stack_val_6c,&stack_val_78);
-            u_val2 = Item_Routine_0800DCE0(&stack_val_6c);
+            Item_GetToolExperienceRequired(&stack_val_6c,&stack_val_78);
+            u_val2 = Item_GetFoodBasePrice(&stack_val_6c);
             u_val7 = Item_Routine_0800DEF0(&stack_val_78);
             M4A_Routine_080CC728(u_val12,u_val6,u_val3,u_val2,u_val7);
           }
@@ -42621,7 +42621,7 @@ LAB_0808966a:
           goto Animal_Routine_08089A0C;
         }
         p_uint10 = (uint *)Building_Routine_0800B80C(*p_uint14,stack_val_34);
-        Item_Routine_0800DE68(&stack_val_6c);
+        Item_ResetSlotData(&stack_val_6c);
         *p_uint10 = stack_val_6c;
         u_val6 = Building_Routine_0800B80C(*p_uint14,u_val3);
         u_val7 = Item_Routine_0800DEF0(&stack_val_7c);
@@ -42636,14 +42636,14 @@ LAB_0808966a:
       }
       else {
         p_uint8 = (undefined4 *)Building_Routine_0800B80C(*p_uint14,stack_val_34);
-        Item_Routine_0800DE68(&stack_val_74);
+        Item_ResetSlotData(&stack_val_74);
         *p_uint8 = stack_val_74;
         p_uint8 = (undefined4 *)Building_Routine_0800B80C(*p_uint14,u_val3);
         *p_uint8 = stack_val_7c;
         u_val7 = *(undefined4 *)(animal + 0x7c);
         u_val3 = M4A_Routine_080CE184(animal,food_type,0);
-        Item_Routine_0800DEB8(&stack_val_74,&stack_val_7c);
-        u_val2 = Item_Routine_0800DCE0(&stack_val_74);
+        Item_GetToolExperienceRequired(&stack_val_74,&stack_val_7c);
+        u_val2 = Item_GetFoodBasePrice(&stack_val_74);
         u_val6 = Item_Routine_0800DEF0(&stack_val_7c);
         M4A_Routine_080CC728(u_val7,u_val3,gRomGfx_086678A0,u_val2,u_val6);
         i_val5 = M4A_Routine_080CF054(*puStack_30);
@@ -42702,7 +42702,7 @@ void Animal_Routine_08089AD8(int animal,int amount,int food_type)
     stack_val_50 = *p_uint7;
     c_char1 = Item_Routine_0800DEDC(&stack_val_50);
     if (c_char1 == '\0') {
-      Item_Routine_0800DEB8(&stack_val_4c,&stack_val_50);
+      Item_GetToolExperienceRequired(&stack_val_4c,&stack_val_50);
       i_val6 = Item_Routine_0800DCB4(&stack_val_54);
       i_val10 = Item_Routine_0800DCB4(&stack_val_4c);
       if (i_val6 == i_val10) {
@@ -42719,7 +42719,7 @@ void Animal_Routine_08089AD8(int animal,int amount,int food_type)
       }
       p_uint5 = (uint *)Building_Routine_0800B80C(*p_uint8,u_val3);
       gba_memcpy(&stack_val_44,&stack_val_54,3);
-      Item_Routine_0800DE80(&stack_val_48,(uint)stack_val_44,1);
+      Item_GetToolTier(&stack_val_48,(uint)stack_val_44,1);
       *p_uint5 = stack_val_48;
       HeldItem_Clear(*p_uint4);
       u_val3 = *p_uint4;
@@ -42727,23 +42727,23 @@ void Animal_Routine_08089AD8(int animal,int amount,int food_type)
       HeldItem_SetFood(u_val3,stack_val_48 & 0xffffff);
       u_val3 = gRomGfx_086678A0;
       u_val9 = *(undefined4 *)(animal + 0x78);
-      u_val2 = Item_Routine_0800DCE0(&stack_val_4c);
+      u_val2 = Item_GetFoodBasePrice(&stack_val_4c);
       M4A_Routine_080CBAF0(u_val9,u_val3,u_val2,1);
       u_val11 = *(undefined4 *)(animal + 0x7c);
       u_val9 = M4A_Routine_080CE184(animal,stack_val_38,0);
-      u_val2 = Item_Routine_0800DCE0(&stack_val_54);
+      u_val2 = Item_GetFoodBasePrice(&stack_val_54);
     }
     else {
       p_uint7 = (undefined4 *)Building_Routine_0800B80C(*p_uint8,u_val3);
       gba_memcpy(&stack_val_48,&stack_val_54,3);
-      Item_Routine_0800DE80(&stack_val_4c,stack_val_48 & 0xffffff,1);
+      Item_GetToolTier(&stack_val_4c,stack_val_48 & 0xffffff,1);
       *p_uint7 = stack_val_4c;
       HeldItem_Clear(*p_uint4);
       M4A_Routine_080CC0B4(*(undefined4 *)(animal + 0x78));
 LAB_08089ebc:
       u_val11 = *(undefined4 *)(animal + 0x7c);
       u_val9 = M4A_Routine_080CE184(animal,stack_val_38,0);
-      u_val2 = Item_Routine_0800DCE0(&stack_val_54);
+      u_val2 = Item_GetFoodBasePrice(&stack_val_54);
       u_val3 = gRomGfx_086678A0;
     }
 LAB_08089ee0:
@@ -42768,7 +42768,7 @@ LAB_08089ee0:
         c_char1 = Item_Routine_0800DEDC(&stack_val_54);
         if (c_char1 == '\0') {
           u_val3 = Building_Routine_0800B80C(*p_uint7,stack_val_34);
-          Item_Routine_0800DEB8(&stack_val_4c,u_val3);
+          Item_GetToolExperienceRequired(&stack_val_4c,u_val3);
           i_val6 = Item_Routine_0800DCB4(&stack_val_4c);
           i_val10 = Item_Routine_0800DCB4(puStack_30);
           if (i_val6 != i_val10) {
@@ -42778,18 +42778,18 @@ LAB_08089ee0:
             HeldItem_SetFood(u_val3,stack_val_48 & 0xffffff);
             p_uint5 = (uint *)Building_Routine_0800B80C(*p_uint7,stack_val_34);
             gba_memcpy(&stack_val_44,puStack_30,3);
-            Item_Routine_0800DE80(&stack_val_48,(uint)stack_val_44,1);
+            Item_GetToolTier(&stack_val_48,(uint)stack_val_44,1);
             *p_uint5 = stack_val_48;
             u_val3 = gRomGfx_086678A0;
             u_val9 = *(undefined4 *)(animal + 0x78);
-            u_val2 = Item_Routine_0800DCE0(&stack_val_4c);
+            u_val2 = Item_GetFoodBasePrice(&stack_val_4c);
             M4A_Routine_080CBAF0(u_val9,u_val3,u_val2,1);
             i_val10 = *(int *)(*(int *)(animal + 0x94) + 0xbc);
             i_val6 = M4A_Routine_080CF054(*puStack_24);
             if (i_val10 == i_val6) {
               u_val11 = *(undefined4 *)(animal + 0x7c);
               u_val9 = M4A_Routine_080CE184(animal,stack_val_3c,0);
-              u_val2 = Item_Routine_0800DCE0(puStack_30);
+              u_val2 = Item_GetFoodBasePrice(puStack_30);
               M4A_Routine_080CC728(u_val11,u_val9,u_val3,u_val2,1);
             }
           }
@@ -42797,7 +42797,7 @@ LAB_08089ee0:
         else {
           p_uint7 = (undefined4 *)Building_Routine_0800B80C(*p_uint7,stack_val_34);
           gba_memcpy(&stack_val_48,puStack_30,3);
-          Item_Routine_0800DE80(&stack_val_4c,stack_val_48 & 0xffffff,1);
+          Item_GetToolTier(&stack_val_4c,stack_val_48 & 0xffffff,1);
           *p_uint7 = stack_val_4c;
           HeldItem_Clear(*p_uint4);
           M4A_Routine_080CC0B4(*(undefined4 *)(animal + 0x78));
@@ -42806,7 +42806,7 @@ LAB_08089ee0:
           if (i_val10 == i_val6) {
             u_val9 = *(undefined4 *)(animal + 0x7c);
             u_val3 = M4A_Routine_080CE184(animal,stack_val_3c,0);
-            u_val2 = Item_Routine_0800DCE0(puStack_30);
+            u_val2 = Item_GetFoodBasePrice(puStack_30);
             M4A_Routine_080CC728(u_val9,u_val3,gRomGfx_086678A0,u_val2,1);
           }
         }
@@ -42822,7 +42822,7 @@ LAB_08089ee0:
         if (c_char1 == '\0') {
           puStack_28 = &stack_val_4c;
           u_val3 = Building_Routine_0800B80C(*p_uint7,stack_val_34);
-          Item_Routine_0800DEB8(puStack_28,u_val3);
+          Item_GetToolExperienceRequired(puStack_28,u_val3);
           i_val6 = Item_Routine_0800DCB4(puStack_28);
           i_val10 = Item_Routine_0800DCB4(puStack_2c);
           if (i_val6 != i_val10) {
@@ -42834,11 +42834,11 @@ LAB_08089ee0:
             *p_uint5 = stack_val_48;
             p_uint5 = (uint *)Building_Routine_0800B80C(*p_uint7,stack_val_34);
             gba_memcpy(&stack_val_44,puStack_2c,3);
-            Item_Routine_0800DE80(&stack_val_48,(uint)stack_val_44,1);
+            Item_GetToolTier(&stack_val_48,(uint)stack_val_44,1);
             *p_uint5 = stack_val_48;
             u_val11 = *(undefined4 *)(animal + 0x78);
             u_val9 = M4A_Routine_080CE184(animal,stack_val_38,0);
-            u_val2 = Item_Routine_0800DCE0(puStack_28);
+            u_val2 = Item_GetFoodBasePrice(puStack_28);
             u_val3 = gRomGfx_086678A0;
             M4A_Routine_080CB304(u_val11,u_val9,gRomGfx_086678A0,u_val2,1);
             i_val10 = *(int *)(*(int *)(animal + 0x94) + 0xbc);
@@ -42846,7 +42846,7 @@ LAB_08089ee0:
             if (i_val10 == i_val6) {
               u_val11 = *(undefined4 *)(animal + 0x7c);
               u_val9 = M4A_Routine_080CE184(animal,stack_val_3c,0);
-              u_val2 = Item_Routine_0800DCE0(puStack_2c);
+              u_val2 = Item_GetFoodBasePrice(puStack_2c);
               M4A_Routine_080CC728(u_val11,u_val9,u_val3,u_val2,1);
             }
           }
@@ -42854,7 +42854,7 @@ LAB_08089ee0:
         else {
           p_uint7 = (undefined4 *)Building_Routine_0800B80C(*p_uint7,stack_val_34);
           gba_memcpy(&stack_val_48,puStack_2c,3);
-          Item_Routine_0800DE80(&stack_val_4c,stack_val_48 & 0xffffff,1);
+          Item_GetToolTier(&stack_val_4c,stack_val_48 & 0xffffff,1);
           *p_uint7 = stack_val_4c;
           u_val9 = *p_uint4;
           u_val3 = M4A_Routine_080CE184(animal,stack_val_38,0);
@@ -42869,7 +42869,7 @@ LAB_08089ee0:
           if (i_val10 == i_val6) {
             u_val9 = *(undefined4 *)(animal + 0x7c);
             u_val3 = M4A_Routine_080CE184(animal,stack_val_3c,0);
-            u_val2 = Item_Routine_0800DCE0(puStack_2c);
+            u_val2 = Item_GetFoodBasePrice(puStack_2c);
             M4A_Routine_080CC728(u_val9,u_val3,gRomGfx_086678A0,u_val2,1);
           }
         }
@@ -42889,7 +42889,7 @@ LAB_08089ee0:
     if (c_char1 != '\0') {
       p_uint4 = (undefined4 *)Building_Routine_0800B80C(*p_uint8,u_val3);
       gba_memcpy(&stack_val_48,&stack_val_54,3);
-      Item_Routine_0800DE80(&stack_val_4c,stack_val_48 & 0xffffff,1);
+      Item_GetToolTier(&stack_val_4c,stack_val_48 & 0xffffff,1);
       *p_uint4 = stack_val_4c;
       u_val9 = *p_uint7;
       u_val3 = M4A_Routine_080CE184(animal,stack_val_3c,0);
@@ -42901,13 +42901,13 @@ LAB_08089ee0:
       M4A_Routine_080CBA60(u_val9,u_val3);
       goto LAB_08089ebc;
     }
-    Item_Routine_0800DEB8(&stack_val_4c,&stack_val_50);
+    Item_GetToolExperienceRequired(&stack_val_4c,&stack_val_50);
     i_val6 = Item_Routine_0800DCB4(&stack_val_54);
     i_val10 = Item_Routine_0800DCB4(&stack_val_4c);
     if (i_val6 != i_val10) {
       p_uint5 = (uint *)Building_Routine_0800B80C(*p_uint8,u_val3);
       gba_memcpy(&stack_val_40,&stack_val_54,3);
-      Item_Routine_0800DE80(&stack_val_48,(uint)stack_val_40,1);
+      Item_GetToolTier(&stack_val_48,(uint)stack_val_40,1);
       *p_uint5 = stack_val_48;
       u_val9 = *p_uint7;
       u_val3 = M4A_Routine_080CE184(animal,stack_val_3c,0);
@@ -42917,12 +42917,12 @@ LAB_08089ee0:
       *p_uint5 = stack_val_48;
       u_val11 = *(undefined4 *)(animal + 0x78);
       u_val9 = M4A_Routine_080CE184(animal,stack_val_3c,0);
-      u_val2 = Item_Routine_0800DCE0(&stack_val_4c);
+      u_val2 = Item_GetFoodBasePrice(&stack_val_4c);
       u_val3 = gRomGfx_086678A0;
       M4A_Routine_080CB304(u_val11,u_val9,gRomGfx_086678A0,u_val2,1);
       u_val11 = *(undefined4 *)(animal + 0x7c);
       u_val9 = M4A_Routine_080CE184(animal,stack_val_38,0);
-      u_val2 = Item_Routine_0800DCE0(&stack_val_54);
+      u_val2 = Item_GetFoodBasePrice(&stack_val_54);
       goto LAB_08089ee0;
     }
     u_val9 = Building_Routine_0800B80C(*p_uint8,u_val3);
@@ -42974,7 +42974,7 @@ void Animal_Routine_0808A4C0(int animal,int amount)
   else {
     u_val1 = M4A_Routine_080CE184(animal,amount,*(undefined4 *)(*(int *)(animal + 0x94) + 0xbc));
     p_uint2 = (undefined4 *)Building_Routine_0800B80C(*(undefined4 *)(animal + 0x104),u_val1);
-    Item_Routine_0800DE68(&stack_val_14);
+    Item_ResetSlotData(&stack_val_14);
     *p_uint2 = stack_val_14;
     u_val3 = *(undefined4 *)(animal + 0x7c);
     u_val1 = M4A_Routine_080CE184(animal,amount,0);
@@ -42992,7 +42992,7 @@ void Animal_Routine_0808AB38(undefined4 *animal,undefined4 *amount,undefined4 fo
   undefined4 u_val1;
   
   *animal = gRomData_080E7D58;
-  u_val1 = Dispatcher_Routine_080005D4(0x10c);
+  u_val1 = CppRuntime_OperatorNewArray(0x10c);
   u_val1 = Animal_Routine_080882AC(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -43983,7 +43983,7 @@ void Animal_Routine_0808C0BC(int animal)
   HW_Routine_08008724();
   M4A_Routine_080CE294(animal);
   u_val3 = Farmer_Routine_0800F5F8(*(undefined4 *)(animal + 0x104));
-  u_val4 = Dispatcher_Routine_080005D4(0x29c);
+  u_val4 = CppRuntime_OperatorNewArray(0x29c);
   u_val5 = HW_GetSpriteAttr0Offset(animal);
   u_val6 = HW_GetPaletteBankOffset(animal);
   i_val7 = M4A_Routine_080CAFC4(u_val4,u_val5,u_val6,u_val3,gRomData_081000B4,1);
@@ -43994,7 +43994,7 @@ void Animal_Routine_0808C0BC(int animal)
   *(int *)(animal + 0x78) = i_val7;
   M4A_Routine_080CB090(*(undefined4 *)(animal + 0x78));
   Animal_Routine_0808BCD0(animal,u_val3);
-  u_val4 = Dispatcher_Routine_080005D4(0x32c);
+  u_val4 = CppRuntime_OperatorNewArray(0x32c);
   u_val5 = HW_GetSpriteAttr0Offset(animal);
   u_val6 = HW_GetPaletteBankOffset(animal);
   i_val7 = M4A_Routine_080CC15C(u_val4,u_val5,u_val6,u_val3,gRomData_081000BC,1);
@@ -44005,7 +44005,7 @@ void Animal_Routine_0808C0BC(int animal)
   *(int *)(animal + 0x7c) = i_val7;
   M4A_Routine_080CC310(*(undefined4 *)(animal + 0x7c));
   Animal_Routine_0808BDA0(animal,u_val3);
-  u_val3 = Dispatcher_Routine_080005D4(0x8c);
+  u_val3 = CppRuntime_OperatorNewArray(0x8c);
   i_val7 = M4A_Routine_080CD9B0(u_val3,animal,1);
   p_int13 = (int *)(animal + 0x8c);
   i_val10 = *p_int13;
@@ -44015,10 +44015,10 @@ void Animal_Routine_0808C0BC(int animal)
     HW_Routine_08007184(i_val10 + 0x1c,2);
     HW_Routine_08007C28(i_val10 + 0x14,*(undefined4 *)(i_val10 + 0x18));
     HW_Routine_080079E8(i_val10 + 0x14,2);
-    Dispatcher_Routine_08000608(i_val10);
+    CppRuntime_FreeMemory(i_val10);
   }
   *p_int13 = i_val7;
-  u_val3 = Dispatcher_Routine_080005D4(0x88);
+  u_val3 = CppRuntime_OperatorNewArray(0x88);
   i_val7 = M4A_Routine_080CEC00(u_val3,animal);
   p_int14 = (int *)(animal + 0x90);
   i_val10 = *p_int14;
@@ -44028,19 +44028,19 @@ void Animal_Routine_0808C0BC(int animal)
     HW_Routine_08007C28(i_val10 + 0x6c,*(undefined4 *)(i_val10 + 0x70));
     HW_Routine_080079E8(i_val10 + 0x6c,2);
     *(undefined4 *)(i_val10 + 4) = gRomData_080E5A28;
-    Dispatcher_Routine_08000608(i_val10);
+    CppRuntime_FreeMemory(i_val10);
   }
   *p_int14 = i_val7;
   Animal_Routine_0808BF8C(animal,*(undefined4 *)(*p_int13 + 4));
   i_val7 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val7 + 0x50) = 0x3f;
-  p_uint8 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint8 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val3 = HW_GetSpriteAttr1Offset(animal);
   *p_uint8 = 0;
   p_uint8[1] = 0;
   p_uint8[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint8 + 3,u_val3);
-  Farm_Routine_0800934C(p_uint8 + 3,0x889,1,1);
+  Fade_Init(p_uint8 + 3,u_val3);
+  Fade_StartFadeOut(p_uint8 + 3,0x889,1,1);
   i_val7 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val7,p_uint8,*(undefined4 *)(*(int *)(i_val7 + 8) + 0x10));
   b_flag15 = false;
@@ -44115,7 +44115,7 @@ void Animal_Routine_0808C0BC(int animal)
         else if (*(char *)(*p_int14 + 0x84) == '\0') {
           if (-1 < (int)(-*p_uint8 | *p_uint8)) {
             b_flag15 = true;
-            Farm_Routine_08009378(p_uint8 + 3,0x889,1,1);
+            Fade_StartFadeIn(p_uint8 + 3,0x889,1,1);
             i_val7 = HW_GetPaletteBankOffset(animal);
             _call_via_r2(i_val7,p_uint8,*(undefined4 *)(*(int *)(i_val7 + 8) + 0x10));
           }
@@ -44184,7 +44184,7 @@ void Animal_Routine_0808C56C(undefined4 *animal,undefined4 *amount,undefined4 fo
   undefined4 u_val1;
   
   *animal = gRomData_080E7D74;
-  u_val1 = Dispatcher_Routine_080005D4(0x10c);
+  u_val1 = CppRuntime_OperatorNewArray(0x10c);
   u_val1 = Animal_Routine_0808ABC4(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -45514,7 +45514,7 @@ u32 Animal_Routine_0808ECD8(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7D90;
-  u_val1 = Dispatcher_Routine_080005D4(0x10c);
+  u_val1 = CppRuntime_OperatorNewArray(0x10c);
   u_val1 = Animal_Routine_0808C5F8(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -46816,7 +46816,7 @@ void Animal_Routine_08090960(int animal)
   HW_Routine_08008724();
   M4A_Routine_080CE294(animal);
   u_val3 = Farmer_Routine_0800F5F8(*(undefined4 *)(animal + 0x100));
-  u_val4 = Dispatcher_Routine_080005D4(0x29c);
+  u_val4 = CppRuntime_OperatorNewArray(0x29c);
   u_val5 = HW_GetSpriteAttr0Offset(animal);
   u_val6 = HW_GetPaletteBankOffset(animal);
   i_val7 = M4A_Routine_080CAFC4(u_val4,u_val5,u_val6,u_val3,gRomData_08100148,1);
@@ -46827,7 +46827,7 @@ void Animal_Routine_08090960(int animal)
   *(int *)(animal + 0x78) = i_val7;
   M4A_Routine_080CB090(*(undefined4 *)(animal + 0x78));
   Animal_Routine_0808EDCC(animal,u_val3);
-  u_val3 = Dispatcher_Routine_080005D4(0x32c);
+  u_val3 = CppRuntime_OperatorNewArray(0x32c);
   u_val4 = HW_GetSpriteAttr0Offset(animal);
   u_val5 = HW_GetPaletteBankOffset(animal);
   i_val7 = M4A_Routine_080CC15C(u_val3,u_val4,u_val5,8,gRomData_08100150,0);
@@ -46837,7 +46837,7 @@ void Animal_Routine_08090960(int animal)
   }
   *(int *)(animal + 0x7c) = i_val7;
   M4A_Routine_080CC310(*(undefined4 *)(animal + 0x7c));
-  u_val3 = Dispatcher_Routine_080005D4(200);
+  u_val3 = CppRuntime_OperatorNewArray(200);
   i_val7 = M4A_Routine_080CE2FC(u_val3,animal);
   p_int14 = (int *)(animal + 0x94);
   i_val10 = *p_int14;
@@ -46847,7 +46847,7 @@ void Animal_Routine_08090960(int animal)
   *p_int14 = i_val7;
   Animal_Routine_0808EE9C(animal,*(undefined4 *)(*p_int14 + 0xbc));
   M4A_Routine_080CE598(*p_int14);
-  u_val3 = Dispatcher_Routine_080005D4(0x8c);
+  u_val3 = CppRuntime_OperatorNewArray(0x8c);
   i_val7 = M4A_Routine_080CD9B0(u_val3,animal,1);
   p_int11 = (int *)(animal + 0x8c);
   i_val10 = *p_int11;
@@ -46857,10 +46857,10 @@ void Animal_Routine_08090960(int animal)
     HW_Routine_08007184(i_val10 + 0x1c,2);
     HW_Routine_08007C28(i_val10 + 0x14,*(undefined4 *)(i_val10 + 0x18));
     HW_Routine_080079E8(i_val10 + 0x14,2);
-    Dispatcher_Routine_08000608(i_val10);
+    CppRuntime_FreeMemory(i_val10);
   }
   *p_int11 = i_val7;
-  u_val3 = Dispatcher_Routine_080005D4(0x88);
+  u_val3 = CppRuntime_OperatorNewArray(0x88);
   i_val7 = M4A_Routine_080CEC00(u_val3,animal);
   p_int12 = (int *)(animal + 0x90);
   i_val10 = *p_int12;
@@ -46870,19 +46870,19 @@ void Animal_Routine_08090960(int animal)
     HW_Routine_08007C28(i_val10 + 0x6c,*(undefined4 *)(i_val10 + 0x70));
     HW_Routine_080079E8(i_val10 + 0x6c,2);
     *(undefined4 *)(i_val10 + 4) = gRomData_080E5A28;
-    Dispatcher_Routine_08000608(i_val10);
+    CppRuntime_FreeMemory(i_val10);
   }
   *p_int12 = i_val7;
   Animal_Routine_0808EF68(animal,*(undefined4 *)(*p_int11 + 4));
   i_val7 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val7 + 0x50) = 0x3f;
-  p_uint8 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint8 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val3 = HW_GetSpriteAttr1Offset(animal);
   *p_uint8 = 0;
   p_uint8[1] = 0;
   p_uint8[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint8 + 3,u_val3);
-  Farm_Routine_0800934C(p_uint8 + 3,0x889,1,1);
+  Fade_Init(p_uint8 + 3,u_val3);
+  Fade_StartFadeOut(p_uint8 + 3,0x889,1,1);
   i_val7 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val7,p_uint8,*(undefined4 *)(*(int *)(i_val7 + 8) + 0x10));
   b_flag15 = false;
@@ -46946,7 +46946,7 @@ void Animal_Routine_08090960(int animal)
         else if (*(char *)(*p_int12 + 0x84) == '\0') {
           if (-1 < (int)(-*p_uint8 | *p_uint8)) {
             b_flag15 = true;
-            Farm_Routine_08009378(p_uint8 + 3,0x889,1,1);
+            Fade_StartFadeIn(p_uint8 + 3,0x889,1,1);
             i_val7 = HW_GetPaletteBankOffset(animal);
             _call_via_r2(i_val7,p_uint8,*(undefined4 *)(*(int *)(i_val7 + 8) + 0x10));
           }
@@ -47027,7 +47027,7 @@ u32 Animal_Routine_08090E54(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7DAC;
-  u_val1 = Dispatcher_Routine_080005D4(0x10c);
+  u_val1 = CppRuntime_OperatorNewArray(0x10c);
   u_val1 = Animal_Routine_0808ED64(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -47402,7 +47402,7 @@ u32 Animal_Routine_0809152C(undefined4 *animal,int amount)
   HW_Routine_08008724(amount);
   M4A_Routine_080CE294(amount);
   u_val3 = Farmer_Routine_0800F5F8(*(undefined4 *)(amount + 0x104));
-  u_val4 = Dispatcher_Routine_080005D4(0x29c);
+  u_val4 = CppRuntime_OperatorNewArray(0x29c);
   u_val5 = HW_GetSpriteAttr0Offset(amount);
   u_val6 = HW_GetPaletteBankOffset(amount);
   i_val7 = M4A_Routine_080CAFC4(u_val4,u_val5,u_val6,u_val3,0x810016c,1);
@@ -47413,7 +47413,7 @@ u32 Animal_Routine_0809152C(undefined4 *animal,int amount)
   *(int *)(amount + 0x78) = i_val7;
   M4A_Routine_080CB090(*(undefined4 *)(amount + 0x78));
   Animal_Routine_08090FCC(amount,u_val3);
-  u_val4 = Dispatcher_Routine_080005D4(0x32c);
+  u_val4 = CppRuntime_OperatorNewArray(0x32c);
   u_val5 = HW_GetSpriteAttr0Offset(amount);
   u_val6 = HW_GetPaletteBankOffset(amount);
   i_val7 = M4A_Routine_080CC15C(u_val4,u_val5,u_val6,u_val3,0x8100174,1);
@@ -47424,7 +47424,7 @@ u32 Animal_Routine_0809152C(undefined4 *animal,int amount)
   *(int *)(amount + 0x7c) = i_val7;
   M4A_Routine_080CC310(*(undefined4 *)(amount + 0x7c));
   Animal_Routine_08091094(amount,u_val3);
-  u_val3 = Dispatcher_Routine_080005D4(0x8c);
+  u_val3 = CppRuntime_OperatorNewArray(0x8c);
   i_val7 = M4A_Routine_080CD9B0(u_val3,amount,1);
   p_int20 = (int *)(amount + 0x8c);
   pos_x = *p_int20;
@@ -47435,10 +47435,10 @@ u32 Animal_Routine_0809152C(undefined4 *animal,int amount)
     HW_Routine_08007184(pos_x + 0x1c,2);
     HW_Routine_08007C28(pos_x + 0x14,*(undefined4 *)(pos_x + 0x18));
     HW_Routine_080079E8(pos_x + 0x14,2);
-    Dispatcher_Routine_08000608(pos_x);
+    CppRuntime_FreeMemory(pos_x);
   }
   *p_int20 = i_val7;
-  u_val3 = Dispatcher_Routine_080005D4(0x88);
+  u_val3 = CppRuntime_OperatorNewArray(0x88);
   i_val7 = M4A_Routine_080CEC00(u_val3,amount);
   p_int20 = (int *)(amount + 0x90);
   pos_x = *p_int20;
@@ -47449,10 +47449,10 @@ u32 Animal_Routine_0809152C(undefined4 *animal,int amount)
     HW_Routine_08007C28(pos_x + 0x6c,*(undefined4 *)(pos_x + 0x70));
     HW_Routine_080079E8(pos_x + 0x6c,2);
     *(undefined1 **)(pos_x + 4) = &case_080E5A28;
-    Dispatcher_Routine_08000608(pos_x);
+    CppRuntime_FreeMemory(pos_x);
   }
   *p_int20 = i_val7;
-  u_val3 = Dispatcher_Routine_080005D4(0x88);
+  u_val3 = CppRuntime_OperatorNewArray(0x88);
   i_val7 = M4A_Routine_080CEC00(u_val3,amount);
   pos_x = *(int *)(amount + 0x10c);
   if ((i_val7 != pos_x) && (pos_x != 0)) {
@@ -47461,19 +47461,19 @@ u32 Animal_Routine_0809152C(undefined4 *animal,int amount)
     HW_Routine_08007C28(pos_x + 0x6c,*(undefined4 *)(pos_x + 0x70));
     HW_Routine_080079E8(pos_x + 0x6c,2);
     *(undefined1 **)(pos_x + 4) = &case_080E5A28;
-    Dispatcher_Routine_08000608(pos_x);
+    CppRuntime_FreeMemory(pos_x);
   }
   *(int *)(amount + 0x10c) = i_val7;
   Animal_Routine_08091280(amount,*(undefined4 *)(*piStack_28 + 4));
   i_val7 = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(i_val7 + 0x50) = 0x3f;
-  p_uint8 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint8 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val3 = HW_GetSpriteAttr1Offset(amount);
   *p_uint8 = 0;
   p_uint8[1] = 0;
   p_uint8[2] = (uint)&case_080E5B80;
-  Farm_Routine_08009300(p_uint8 + 3,u_val3);
-  Farm_Routine_0800934C(p_uint8 + 3,0x889,1,1);
+  Fade_Init(p_uint8 + 3,u_val3);
+  Fade_StartFadeOut(p_uint8 + 3,0x889,1,1);
   i_val7 = HW_GetPaletteBankOffset(amount);
   _call_via_r2(i_val7,p_uint8,*(undefined4 *)(*(int *)(i_val7 + 8) + 0x10));
   stack_val_44 = 0;
@@ -47490,7 +47490,7 @@ Animal_Routine_0809178A:
     M4A_Routine_080CE2C4(amount);
   } while ((int)(-*p_uint8 | *p_uint8) < 0);
   if (stack_val_2c != 0) {
-    p_uint9 = (undefined4 *)Dispatcher_Routine_080005D4(0x20);
+    p_uint9 = (undefined4 *)CppRuntime_OperatorNewArray(0x20);
     u_val4 = *(undefined4 *)(amount + 0x110);
     *(undefined4 *)(amount + 0x110) = 0;
     u_val14 = *(undefined1 *)(amount + 0x114);
@@ -48031,7 +48031,7 @@ LAB_080923cc:
       if (stack_val_30 != 0) {
         stack_val_3c = stack_val_3c & 0xfffffff8;
       }
-      Farm_Routine_08009378(p_uint8 + 3,_LAB_08092450,1,1);
+      Fade_StartFadeIn(p_uint8 + 3,_LAB_08092450,1,1);
       i_val7 = HW_GetPaletteBankOffset(amount);
       _call_via_r2(i_val7,p_uint8,*(undefined4 *)(*(int *)(i_val7 + 8) + 0x10));
       *(undefined4 *)(amount + 0x108) = 6;
@@ -48053,7 +48053,7 @@ LAB_08092456:
     goto Animal_Routine_0809178A;
   case 6:
     if ((int)(-*p_uint8 | *p_uint8) < 0) goto case_08092514;
-    p_uint9 = (undefined4 *)Dispatcher_Routine_080005D4(0x20);
+    p_uint9 = (undefined4 *)CppRuntime_OperatorNewArray(0x20);
     u_val4 = *(undefined4 *)(amount + 0x110);
     *(undefined4 *)(amount + 0x110) = 0;
     u_val14 = *(undefined1 *)(amount + 0x114);
@@ -48080,7 +48080,7 @@ case_08092514:
         Animal_Routine_0809178A();
       }
       stack_val_2c = 1;
-      Farm_Routine_08009378(p_uint13 + 3,_LAB_08092558,1,1);
+      Fade_StartFadeIn(p_uint13 + 3,_LAB_08092558,1,1);
       i_val7 = HW_GetPaletteBankOffset(amount);
       _call_via_r2(i_val7,p_uint8,*(undefined4 *)(*(int *)(i_val7 + 8) + 0x10));
     }
@@ -48104,7 +48104,7 @@ Animal_Routine_08092570(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   *animal = gRomData_080E7DC8;
   stack_val_1c = *amount;
   *amount = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0x1b8);
+  u_val1 = CppRuntime_OperatorNewArray(0x1b8);
   u_val1 = Animal_Routine_08090EE0(u_val1,&stack_val_1c,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -48342,7 +48342,7 @@ void Animal_Routine_08092D64(int animal)
   HW_Routine_08008724();
   M4A_Routine_080CE294(animal);
   u_val4 = Farmer_Routine_0800F5F8(*(undefined4 *)(animal + 0x104));
-  u_val5 = Dispatcher_Routine_080005D4(0x29c);
+  u_val5 = CppRuntime_OperatorNewArray(0x29c);
   u_val6 = HW_GetSpriteAttr0Offset(animal);
   u_val7 = HW_GetPaletteBankOffset(animal);
   i_val8 = M4A_Routine_080CAFC4(u_val5,u_val6,u_val7,u_val4,gRomData_08100450,1);
@@ -48353,7 +48353,7 @@ void Animal_Routine_08092D64(int animal)
   *(int *)(animal + 0x78) = i_val8;
   M4A_Routine_080CB090(*(undefined4 *)(animal + 0x78));
   Animal_Routine_080926A4(animal,u_val4);
-  u_val5 = Dispatcher_Routine_080005D4(0x32c);
+  u_val5 = CppRuntime_OperatorNewArray(0x32c);
   u_val6 = HW_GetSpriteAttr0Offset(animal);
   u_val7 = HW_GetPaletteBankOffset(animal);
   i_val8 = M4A_Routine_080CC15C(u_val5,u_val6,u_val7,u_val4,gRomData_08100458,1);
@@ -48364,7 +48364,7 @@ void Animal_Routine_08092D64(int animal)
   *(int *)(animal + 0x7c) = i_val8;
   M4A_Routine_080CC310(*(undefined4 *)(animal + 0x7c));
   Animal_Routine_08092754(animal,u_val4);
-  u_val4 = Dispatcher_Routine_080005D4(0x8c);
+  u_val4 = CppRuntime_OperatorNewArray(0x8c);
   i_val8 = M4A_Routine_080CD9B0(u_val4,animal,1);
   p_int13 = (int *)(animal + 0x8c);
   i_val11 = *p_int13;
@@ -48374,10 +48374,10 @@ void Animal_Routine_08092D64(int animal)
     HW_Routine_08007184(i_val11 + 0x1c,2);
     HW_Routine_08007C28(i_val11 + 0x14,*(undefined4 *)(i_val11 + 0x18));
     HW_Routine_080079E8(i_val11 + 0x14,2);
-    Dispatcher_Routine_08000608(i_val11);
+    CppRuntime_FreeMemory(i_val11);
   }
   *p_int13 = i_val8;
-  u_val4 = Dispatcher_Routine_080005D4(0x88);
+  u_val4 = CppRuntime_OperatorNewArray(0x88);
   i_val8 = M4A_Routine_080CEC00(u_val4,animal);
   i_val11 = *(int *)(animal + 0x90);
   if ((i_val8 != i_val11) && (i_val11 != 0)) {
@@ -48386,19 +48386,19 @@ void Animal_Routine_08092D64(int animal)
     HW_Routine_08007C28(i_val11 + 0x6c,*(undefined4 *)(i_val11 + 0x70));
     HW_Routine_080079E8(i_val11 + 0x6c,2);
     *(undefined4 *)(i_val11 + 4) = gRomData_080E5A28;
-    Dispatcher_Routine_08000608(i_val11);
+    CppRuntime_FreeMemory(i_val11);
   }
   *(int *)(animal + 0x90) = i_val8;
   Animal_Routine_08092940(animal,*(undefined4 *)(*p_int13 + 4));
   i_val8 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val8 + 0x50) = 0x3f;
-  p_uint9 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint9 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val4 = HW_GetSpriteAttr1Offset(animal);
   *p_uint9 = 0;
   p_uint9[1] = 0;
   p_uint9[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint9 + 3,u_val4);
-  Farm_Routine_0800934C(p_uint9 + 3,0x889,1,1);
+  Fade_Init(p_uint9 + 3,u_val4);
+  Fade_StartFadeOut(p_uint9 + 3,0x889,1,1);
   i_val8 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val8,p_uint9,*(undefined4 *)(*(int *)(i_val8 + 8) + 0x10));
   b_flag3 = false;
@@ -48443,7 +48443,7 @@ void Animal_Routine_08092D64(int animal)
           if (b_flag2) {
             if (-1 < (int)(-*p_uint9 | *p_uint9)) {
               b_flag3 = true;
-              Farm_Routine_08009378(p_uint9 + 3,0x889,1,1);
+              Fade_StartFadeIn(p_uint9 + 3,0x889,1,1);
               i_val8 = HW_GetPaletteBankOffset(animal);
               _call_via_r2(i_val8,p_uint9,*(undefined4 *)(*(int *)(i_val8 + 8) + 0x10));
             }
@@ -48516,7 +48516,7 @@ u32 Animal_Routine_080931B0(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E7DE4;
-  u_val1 = Dispatcher_Routine_080005D4(0x10c);
+  u_val1 = CppRuntime_OperatorNewArray(0x10c);
   u_val1 = Animal_Routine_08092640(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -48610,9 +48610,9 @@ u32 Animal_Routine_08093364(int animal)
   HW_Routine_08008EB8(0,0x06007FE0,0x8000);
   p_uint4 = (undefined2 *)HW_GetSpriteAttr1Offset(animal);
   *p_uint4 = 0x1640;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0x00030003,u_val9,0x800);
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   HW_Routine_08008EB8(0x03FF03FF,u_val5,0x800);
   i_val3 = animal + 0x1d0;
   Animal_Routine_08050D5C(i_val3);
@@ -48624,13 +48624,13 @@ u32 Animal_Routine_08093364(int animal)
   Interrupt_SetCallback(0,0x80);
   i_val3 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val3 + 0x50) = 0x3f;
-  p_uint6 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint6 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val5 = HW_GetSpriteAttr1Offset(animal);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint6 + 3,u_val5);
-  Farm_Routine_0800934C(p_uint6 + 3,0x889,1,1);
+  Fade_Init(p_uint6 + 3,u_val5);
+  Fade_StartFadeOut(p_uint6 + 3,0x889,1,1);
   i_val3 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val3,p_uint6,*(undefined4 *)(*(int *)(i_val3 + 8) + 0x10));
   stack_val_2c = 0;
@@ -48814,7 +48814,7 @@ LAB_080939b8:
       if (*(int *)(animal + 0x1dc) != 3) break;
       M4A_Routine_080D02EC();
       stack_val_2c = 1;
-      Farm_Routine_08009378(p_uint6 + 3,0x889,1,1);
+      Fade_StartFadeIn(p_uint6 + 3,0x889,1,1);
       i_val3 = HW_GetPaletteBankOffset(animal);
       _call_via_r2(i_val3,p_uint6,*(undefined4 *)(*(int *)(i_val3 + 8) + 0x10));
       *(undefined4 *)(animal + 1000) = 8;
@@ -48874,7 +48874,7 @@ u32 Animal_Routine_08093A58(undefined4 *animal,undefined4 *amount,undefined4 foo
   undefined4 u_val1;
   
   *animal = gRomData_080E8018;
-  u_val1 = Dispatcher_Routine_080005D4(0x3f0);
+  u_val1 = CppRuntime_OperatorNewArray(0x3f0);
   u_val1 = Animal_Routine_0809323C(u_val1,food_type);
   animal[1] = u_val1;
   u_val1 = *amount;
@@ -49109,7 +49109,7 @@ void Animal_Routine_08093DCC(undefined4 *animal,uint amount)
   
   *animal = gRomData_080E812C;
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(animal);
+    CppRuntime_FreeMemory(animal);
   }
   return;
 }
@@ -49528,10 +49528,10 @@ u32 Animal_Routine_080947BC(int *animal,int amount)
   
   *animal = amount;
   Animal_Routine_08094904();
-  loop_i = Dispatcher_Routine_080005E4();
+  loop_i = CppRuntime_OperatorNewArray_Stub();
   animal[1] = loop_i;
   Animal_Routine_0809490C(animal);
-  loop_i = Dispatcher_Routine_080005E4();
+  loop_i = CppRuntime_OperatorNewArray_Stub();
   animal[2] = loop_i;
   loop_i = 0;
   do {
@@ -49555,13 +49555,13 @@ void Animal_Routine_08094814(int animal,uint amount)
 {
   
   if (*(int *)(animal + 4) != 0) {
-    Dispatcher_Routine_08000614();
+    CppRuntime_OperatorDeleteArray();
   }
   if (*(int *)(animal + 8) != 0) {
-    Dispatcher_Routine_08000614();
+    CppRuntime_OperatorDeleteArray();
   }
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(animal);
+    CppRuntime_FreeMemory(animal);
   }
   return;
 }
@@ -49902,32 +49902,32 @@ u32 Animal_Routine_08094AC0(int animal,undefined4 amount,uint food_type)
   *(undefined4 *)(animal + 0x2d0) = 0;
   *(undefined1 *)(animal + 0x2d4) = 0;
   *(undefined1 *)(animal + 0x2dc) = 0;
-  HW_Routine_08007874(animal + 0x2e0);
-  u_val2 = HW_Routine_08007B54(animal + 0x2e0,2);
+  GBA_ObjAttr_Init(animal + 0x2e0);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x2e0,2);
   *(undefined4 *)(animal + 0x2e4) = u_val2;
-  HW_Routine_08007128(animal + 0x2e8);
+  GBA_PaletteManager_Init(animal + 0x2e8);
   *(undefined4 *)(animal + 0x2ec) = 0;
-  HW_Routine_08007874(animal + 0x2f0);
-  u_val2 = HW_Routine_08007B54(animal + 0x2f0,2);
+  GBA_ObjAttr_Init(animal + 0x2f0);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x2f0,2);
   *(undefined4 *)(animal + 0x2f4) = u_val2;
-  HW_Routine_08007128(animal + 0x2f8);
-  u_val2 = HW_Routine_0800736C(animal + 0x2f8);
+  GBA_PaletteManager_Init(animal + 0x2f8);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 0x2f8);
   *(undefined4 *)(animal + 0x2fc) = u_val2;
-  HW_Routine_08007874(animal + 0x300);
-  u_val2 = HW_Routine_08007B54(animal + 0x300,6);
+  GBA_ObjAttr_Init(animal + 0x300);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x300,6);
   *(undefined4 *)(animal + 0x304) = u_val2;
-  HW_Routine_08007128(animal + 0x308);
+  GBA_PaletteManager_Init(animal + 0x308);
   *(undefined4 *)(animal + 0x30c) = 0;
-  HW_Routine_08007874(animal + 0x310);
-  u_val2 = HW_Routine_08007B54(animal + 0x310,4);
+  GBA_ObjAttr_Init(animal + 0x310);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x310,4);
   *(undefined4 *)(animal + 0x314) = u_val2;
-  HW_Routine_08007874(animal + 0x318);
-  u_val2 = HW_Routine_08007B54(animal + 0x318,4);
+  GBA_ObjAttr_Init(animal + 0x318);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x318,4);
   *(undefined4 *)(animal + 0x31c) = u_val2;
-  HW_Routine_08007128(animal + 800);
+  GBA_PaletteManager_Init(animal + 800);
   *(undefined4 *)(animal + 0x324) = 0;
-  HW_Routine_08007874(animal + 0x328);
-  u_val2 = HW_Routine_08007B54(animal + 0x328,7);
+  GBA_ObjAttr_Init(animal + 0x328);
+  u_val2 = GBA_ObjAttr_AllocateSprite(animal + 0x328,7);
   *(undefined4 *)(animal + 0x32c) = u_val2;
   *(undefined2 *)(animal + 0x334) = 0;
   *(ushort *)(animal + 0x346) = (ushort)0xFFFFF000 & *(ushort *)(animal + 0x346);
@@ -50175,21 +50175,21 @@ u32 Animal_Routine_080951B4(int animal)
   u_val12 = 0;
   HW_Routine_08008724(animal);
   HW_Routine_080073E0(animal + 0x2e8,*(undefined4 *)(animal + 0x2ec));
-  u_val7 = HW_Routine_0800736C(animal + 0x2e8);
+  u_val7 = GBA_PaletteManager_Allocate(animal + 0x2e8);
   *(undefined4 *)(animal + 0x2ec) = u_val7;
   HW_Routine_080073E0(animal + 0x308,*(undefined4 *)(animal + 0x30c));
-  u_val7 = HW_Routine_0800736C(animal + 0x308);
+  u_val7 = GBA_PaletteManager_Allocate(animal + 0x308);
   *(undefined4 *)(animal + 0x30c) = u_val7;
   Animal_Routine_0809800C(animal);
   i_val8 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val8 + 0x50) = 0x3f;
-  p_uint9 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint9 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val7 = HW_GetSpriteAttr1Offset(animal);
   *p_uint9 = 0;
   p_uint9[1] = 0;
   p_uint9[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint9 + 3,u_val7);
-  Farm_Routine_0800934C(p_uint9 + 3,0x889,1,1);
+  Fade_Init(p_uint9 + 3,u_val7);
+  Fade_StartFadeOut(p_uint9 + 3,0x889,1,1);
   i_val8 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val8,p_uint9,*(undefined4 *)(*(int *)(i_val8 + 8) + 0x10));
   Animal_Routine_08095580(animal);
@@ -50328,7 +50328,7 @@ LAB_080953b4:
         u_val12 = 1;
         break;
       case 0x80954d2:
-        Farm_Routine_08009378(p_uint9 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint9 + 3,0x889,1,1);
         i_val8 = HW_GetPaletteBankOffset(animal);
         _call_via_r2(i_val8,p_uint9,*(undefined4 *)(*(int *)(i_val8 + 8) + 0x10));
         u_val12 = 4;
@@ -50418,7 +50418,7 @@ void Animal_Routine_08095580(int animal)
       Animal_Routine_0809A970(*(int *)(animal + 0x8c) + 0x2214,stack_buf_84);
       if (stack_buf_84[0] < 0xac) {
         Item_SetIdAndClearQuality(puStack_34,stack_buf_84[0] - 1);
-        p_char6 = (char *)Item_Routine_0800DCB8(puStack_34);
+        p_char6 = (char *)Item_GetFoodName(puStack_34);
       }
       else {
         Item_SetQuality(stack_buf_4c,stack_buf_84[0] - 0xac);
@@ -50581,7 +50581,7 @@ void Animal_Routine_080958C0(int animal)
   u_val15 = 0;
   HW_Routine_08008724(animal);
   HW_Routine_080073E0(animal + 800,*(undefined4 *)(animal + 0x324));
-  u_val2 = HW_Routine_0800736C(animal + 800);
+  u_val2 = GBA_PaletteManager_Allocate(animal + 800);
   *(undefined4 *)(animal + 0x324) = u_val2;
   p_uint10 = (undefined4 *)(animal + 0x2BB0);
   loop_i = 7;
@@ -50602,14 +50602,14 @@ void Animal_Routine_080958C0(int animal)
   loop_i = HW_GetSpriteAttr1Offset(animal);
   puStack_30 = (uint *)CONCAT22(puStack_30._2_2_,0x3f);
   *(undefined2 *)(loop_i + 0x50) = 0x3f;
-  p_uint4 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint4 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val2 = HW_GetSpriteAttr1Offset(animal);
   *p_uint4 = 0;
   p_uint4[1] = 0;
   p_uint4[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint4 + 3,u_val2);
+  Fade_Init(p_uint4 + 3,u_val2);
   puStack_30 = p_uint4;
-  Farm_Routine_0800934C(p_uint4 + 3,0x889,1,1);
+  Fade_StartFadeOut(p_uint4 + 3,0x889,1,1);
   loop_i = HW_GetPaletteBankOffset(animal);
   _call_via_r2(loop_i,puStack_30,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
   *(undefined1 *)(animal + 0x33D2) = 2;
@@ -50650,7 +50650,7 @@ LAB_08095c00:
         }
         break;
       case 0x8095a90:
-        Farm_Routine_08009378(puStack_30 + 3,0x889,2,1);
+        Fade_StartFadeIn(puStack_30 + 3,0x889,2,1);
         loop_i = HW_GetPaletteBankOffset(animal);
         _call_via_r2(loop_i,puStack_30,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
         u_val12 = 3;
@@ -50681,7 +50681,7 @@ LAB_08095c00:
           *(undefined4 *)(animal + 0x78) = 0;
           uRam05000000 = 0;
           stack_val_24 = 0;
-          Farm_Routine_0800934C(puStack_30 + 3,0x889,2,1);
+          Fade_StartFadeOut(puStack_30 + 3,0x889,2,1);
           loop_i = HW_GetPaletteBankOffset(animal);
           _call_via_r2(loop_i,puStack_30,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
           u_val12 = 5;
@@ -50762,7 +50762,7 @@ LAB_08095c04:
         break;
       case 0x8095ccc:
         Animal_Routine_08050D8C(animal + 0x80,gRomData_08100AC0);
-        Farm_Routine_08009378(puStack_30 + 3,0x889,1,1);
+        Fade_StartFadeIn(puStack_30 + 3,0x889,1,1);
         loop_i = HW_GetPaletteBankOffset(animal);
         _call_via_r2(loop_i,puStack_30,*(undefined4 *)(*(int *)(loop_i + 8) + 0x10));
         u_val12 = 10;
@@ -50848,7 +50848,7 @@ void Animal_Routine_08096B88(int animal)
           i_val10 = Farmer_Routine_0800F09C(stack_buf_4c);
           if (i_val10 == 0) {
             Farmer_Routine_0800F0A4(temp_buf_48,stack_buf_4c);
-            u_val3 = Item_Routine_0800DCE0(temp_buf_48);
+            u_val3 = Item_GetFoodBasePrice(temp_buf_48);
           }
           else {
             stack_val_34 = Farmer_Routine_0800F0E8(stack_buf_4c);
@@ -51062,7 +51062,7 @@ u32 Animal_Routine_08096EE8(int animal,undefined4 *amount,int food_type,int out_
     stack_val_24 = *p_uint2;
     c_char1 = Item_Routine_0800DEDC(&stack_val_24);
     if (c_char1 == '\0') {
-      Item_Routine_0800DEB8(&stack_val_1c,&stack_val_24);
+      Item_GetToolExperienceRequired(&stack_val_1c,&stack_val_24);
       Farmer_Routine_0800F004(&stack_val_20,(uint)stack_val_1c);
       *amount = stack_val_20;
       u_val4 = Item_Routine_0800DEF0(&stack_val_24);
@@ -51287,18 +51287,18 @@ void Animal_Routine_080972AC(int animal)
   u_val11 = 0;
   HW_Routine_08008724(animal);
   HW_Routine_080073E0(animal + 800,*(undefined4 *)(animal + 0x324));
-  u_val4 = HW_Routine_0800736C(animal + 800);
+  u_val4 = GBA_PaletteManager_Allocate(animal + 800);
   *(undefined4 *)(animal + 0x324) = u_val4;
   Animal_Routine_080989DC(animal,animal + 0x348);
   i_val5 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val5 + 0x50) = 0x3f;
-  p_uint6 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint6 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val4 = HW_GetSpriteAttr1Offset(animal);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint6 + 3,u_val4);
-  Farm_Routine_0800934C(p_uint6 + 3,0x889,1,1);
+  Fade_Init(p_uint6 + 3,u_val4);
+  Fade_StartFadeOut(p_uint6 + 3,0x889,1,1);
   i_val5 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
   *(undefined1 *)(animal + 0x33D2) = 2;
@@ -51329,7 +51329,7 @@ void Animal_Routine_080972AC(int animal)
         }
         break;
       case 0x8097414:
-        Farm_Routine_08009378(p_uint6 + 3,0x889,2,1);
+        Fade_StartFadeIn(p_uint6 + 3,0x889,2,1);
         i_val5 = HW_GetPaletteBankOffset(animal);
         _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
         u_val9 = 3;
@@ -51359,7 +51359,7 @@ void Animal_Routine_080972AC(int animal)
           *(undefined4 *)(animal + 0x78) = 0;
           uRam05000000 = 0;
           b_flag2 = false;
-          Farm_Routine_0800934C(p_uint6 + 3,0x889,2,1);
+          Fade_StartFadeOut(p_uint6 + 3,0x889,2,1);
           i_val5 = HW_GetPaletteBankOffset(animal);
           _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
           u_val9 = 5;
@@ -51382,7 +51382,7 @@ void Animal_Routine_080972AC(int animal)
         }
         break;
       case 0x809754c:
-        Farm_Routine_08009378(p_uint6 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint6 + 3,0x889,1,1);
         i_val5 = HW_GetPaletteBankOffset(animal);
         _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
         u_val9 = 8;
@@ -51670,7 +51670,7 @@ u32 Animal_Routine_08097AE4(int animal,int amount)
   u_val7 = 0;
   HW_Routine_08008724(animal);
   HW_Routine_080073E0(animal + 800,*(undefined4 *)(animal + 0x324));
-  u_val4 = HW_Routine_0800736C(animal + 800);
+  u_val4 = GBA_PaletteManager_Allocate(animal + 800);
   *(undefined4 *)(animal + 0x324) = u_val4;
   if (amount == 0) {
     Animal_Routine_080989DC(animal,animal + 0x348);
@@ -51680,13 +51680,13 @@ u32 Animal_Routine_08097AE4(int animal,int amount)
   }
   i_val5 = HW_GetSpriteAttr1Offset(animal);
   *(undefined2 *)(i_val5 + 0x50) = 0x3f;
-  p_uint6 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint6 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val4 = HW_GetSpriteAttr1Offset(animal);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint6 + 3,u_val4);
-  Farm_Routine_0800934C(p_uint6 + 3,0x889,1,1);
+  Fade_Init(p_uint6 + 3,u_val4);
+  Fade_StartFadeOut(p_uint6 + 3,0x889,1,1);
   i_val5 = HW_GetPaletteBankOffset(animal);
   _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
   *(undefined1 *)(animal + 0x33D2) = 2;
@@ -51731,7 +51731,7 @@ u32 Animal_Routine_08097AE4(int animal,int amount)
     }
     else if (u_val7 == 2) {
       Animal_Routine_08050D8C(animal + 0x80,gRomData_08100AC0);
-      Farm_Routine_08009378(p_uint6 + 3,0x889,1,1);
+      Fade_StartFadeIn(p_uint6 + 3,0x889,1,1);
       i_val5 = HW_GetPaletteBankOffset(animal);
       _call_via_r2(i_val5,p_uint6,*(undefined4 *)(*(int *)(i_val5 + 8) + 0x10));
       u_val7 = 3;
@@ -51911,10 +51911,10 @@ void Animal_Routine_0809800C(int animal)
   *(short *)(loop_i + 0xc) = (short)0x1F41;
   loop_i = HW_GetSpriteAttr1Offset(animal);
   *(short *)(loop_i + 10) = (short)0x1E42;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0x00030003,u_val2,0x800);
   Animal_Routine_08051320(u_val3,0,0,0x20,3,0,0);
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   p_uint7 = 0x05000040;
   *0x05000040 = 0x3e0;
   *0x05000042 = 0;
@@ -51946,11 +51946,11 @@ void Animal_Routine_0809800C(int animal)
     } while (i_val13 < 0x14);
     s_val14 = s_val14 + 0x28;
   } while (loop_i < 8);
-  HW_Routine_08008E64(0x2BD0 + animal,0x0600F000,0x800);
+  GBA_DMA3_FastCopy(0x2BD0 + animal,0x0600F000,0x800);
   u_val2 = gRomGfx_08750C8C;
-  i_val15 = HW_Routine_08007D4C(animal + 0x310,*(undefined4 *)(animal + 0x314));
+  i_val15 = GBA_Vram_AllocateTileBlock(animal + 0x310,*(undefined4 *)(animal + 0x314));
   loop_i = 0x06010000;
-  HW_Routine_08008E64(u_val2,i_val15 * 0x20 + 0x06010000,0x1c0);
+  GBA_DMA3_FastCopy(u_val2,i_val15 * 0x20 + 0x06010000,0x1c0);
   p_uint4 = puStack_34;
   stack_buf_c8[0] = 0;
   *(undefined2 *)(puStack_34 + 1) = 0;
@@ -51985,7 +51985,7 @@ void Animal_Routine_0809800C(int animal)
   if (stack_ints_b8[0] != 0) {
     u_val10 = (undefined2)p_int5[1];
   }
-  HW_Routine_08008E64(i_val8,i_val13 * 0x20 + 0x05000200,u_val10);
+  GBA_DMA3_FastCopy(i_val8,i_val13 * 0x20 + 0x05000200,u_val10);
   Animal_Routine_0805E790(&stack_val_a8,stack_val_2c,0);
   p_uint4 = puStack_34;
   *puStack_34 = stack_val_a8;
@@ -52002,15 +52002,15 @@ void Animal_Routine_0809800C(int animal)
   if (stack_ints_b8[0] != 0) {
     u_val10 = (undefined2)piStack_28[1];
   }
-  HW_Routine_08008E64(i_val8,i_val13 * 0x20 + i_val15,u_val10);
+  GBA_DMA3_FastCopy(i_val8,i_val13 * 0x20 + i_val15,u_val10);
   i_val15 = stack_ints_c0[0];
-  i_val8 = HW_Routine_08007D4C(animal + 0x2f0,*(undefined4 *)(animal + 0x2f4));
+  i_val8 = GBA_Vram_AllocateTileBlock(animal + 0x2f0,*(undefined4 *)(animal + 0x2f4));
   u_val10 = 0;
   if (stack_ints_c0[0] != 0) {
     u_val10 = (undefined2)piStack_30[1];
   }
-  HW_Routine_08008E64(i_val15,i_val8 * 0x20 + loop_i,u_val10);
-  i_val15 = HW_Routine_08007D4C(animal + 0x300,*(undefined4 *)(animal + 0x304));
+  GBA_DMA3_FastCopy(i_val15,i_val8 * 0x20 + loop_i,u_val10);
+  i_val15 = GBA_Vram_AllocateTileBlock(animal + 0x300,*(undefined4 *)(animal + 0x304));
   HW_Routine_08008EB8(0,i_val15 * 0x20 + loop_i,0x700);
   loop_i = 0;
   puStack_3c = stack_buf_84;
@@ -52021,8 +52021,8 @@ void Animal_Routine_0809800C(int animal)
       ScriptEngine_Routine_0804E7A0(0x20001,stack_buf_84,0);
       stack_val_40 = 0x20001;
       ScriptEngine_Routine_0804E5AC(0x20001,stack_buf_84,0,0,c_char1,0,1);
-      i_val15 = HW_Routine_08007D4C(animal + 0x300,*(undefined4 *)(animal + 0x304));
-      HW_Routine_08008E64(puStack_3c,(i_val15 + loop_i * 2) * 0x20 + 0x06010000,0x40);
+      i_val15 = GBA_Vram_AllocateTileBlock(animal + 0x300,*(undefined4 *)(animal + 0x304));
+      GBA_DMA3_FastCopy(puStack_3c,(i_val15 + loop_i * 2) * 0x20 + 0x06010000,0x40);
     }
     loop_i = loop_i + 1;
   } while (loop_i < 0x16);
@@ -52114,7 +52114,7 @@ void Animal_Routine_080983E8(int animal)
   u_val14 = 8;
   do {
     stack_val_54 = stack_val_54 & 0xFE00FFFF | (0x1FF & u_val14) << 0x10;
-    i_val6 = HW_Routine_08007D4C(animal + 0x300,*(undefined4 *)(animal + 0x304));
+    i_val6 = GBA_Vram_AllocateTileBlock(animal + 0x300,*(undefined4 *)(animal + 0x304));
     stack_val_50 = stack_val_50 & 0xFFFFFC00 | i_val6 + loop_i * 2 & 0x3ffU;
     pbVar7 = (byte *)HW_GetSpriteAttr2Offset(animal);
     b_flag1 = *pbVar7;
@@ -52138,7 +52138,7 @@ void Animal_Routine_080983E8(int animal)
   u_val14 = 0xc0;
   do {
     stack_val_4c = stack_val_4c & 0xFE00FFFF | (0x1FF & u_val14) << 0x10;
-    i_val6 = HW_Routine_08007D4C(stack_val_2c,*(undefined4 *)(stack_val_2c + 4));
+    i_val6 = GBA_Vram_AllocateTileBlock(stack_val_2c,*(undefined4 *)(stack_val_2c + 4));
     stack_val_48 = stack_val_48 & 0xFFFFFC00 |
                 (uint)*(byte *)(0x369 + animal + loop_i) + i_val6 & 0x3ff;
     pbVar7 = (byte *)HW_GetSpriteAttr2Offset(animal);
@@ -52174,7 +52174,7 @@ void Animal_Routine_080983E8(int animal)
   stack_val_9c = *(undefined4 *)(animal + 0x180);
   stack_val_98 = *(undefined4 *)(animal + 0x184);
   stack_val_b0 = 0x80000;
-  u_val3 = HW_Routine_08007D4C(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
+  u_val3 = GBA_Vram_AllocateTileBlock(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
   stack_val_ac._2_2_ = u_val3;
   u_val3 = HW_Routine_080074C0(animal + 0x2e8,*(undefined4 *)(animal + 0x2ec));
   stack_val_ac = CONCAT22(stack_val_ac._2_2_,u_val3);
@@ -52183,7 +52183,7 @@ void Animal_Routine_080983E8(int animal)
   if ((int)((uint)*(byte *)(animal + 0x188) * 0x40000000) < 0) {
     p_int9 = (int *)HW_GetSpriteAttr0Offset(animal);
     loop_i = stack_val_8c;
-    i_val6 = HW_Routine_08007D4C(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
+    i_val6 = GBA_Vram_AllocateTileBlock(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
     u_val14 = 0;
     if (stack_val_8c != 0) {
       u_val14 = stack_val_88 & 0xffff;
@@ -52297,7 +52297,7 @@ void Animal_Routine_080983E8(int animal)
   stack_val_9c = *(undefined4 *)(animal + 0x1b8);
   stack_val_98 = *(undefined4 *)(animal + 0x1bc);
   stack_val_b0 = 0x800e8;
-  s_val4 = HW_Routine_08007D4C(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
+  s_val4 = GBA_Vram_AllocateTileBlock(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
   stack_val_ac._2_2_ = s_val4 + 2;
   u_val3 = HW_Routine_080074C0(animal + 0x2e8,*(undefined4 *)(animal + 0x2ec));
   stack_val_ac = CONCAT22(stack_val_ac._2_2_,u_val3);
@@ -52306,7 +52306,7 @@ void Animal_Routine_080983E8(int animal)
   if ((int)((uint)*(byte *)(animal + 0x1c0) * 0x40000000) < 0) {
     p_int9 = (int *)HW_GetSpriteAttr0Offset(animal);
     loop_i = stack_val_8c;
-    i_val6 = HW_Routine_08007D4C(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
+    i_val6 = GBA_Vram_AllocateTileBlock(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
     u_val14 = 0;
     if (stack_val_8c != 0) {
       u_val14 = stack_val_88 & 0xffff;
@@ -52450,7 +52450,7 @@ void Animal_Routine_080989DC(int animal,int amount)
     _call_via_r2(i_val8,3,*(undefined4 *)(*(int *)(i_val8 + 0x210) + 8));
   }
   *(undefined4 *)(animal + 0x78) = 0;
-  u_val4 = Dispatcher_Routine_080005D4(0x29c);
+  u_val4 = CppRuntime_OperatorNewArray(0x29c);
   u_val5 = HW_GetSpriteAttr0Offset(animal);
   u_val6 = HW_GetPaletteBankOffset(animal);
   stack_buf_a0[0] = 0;
@@ -52484,7 +52484,7 @@ void Animal_Routine_080989DC(int animal,int amount)
     _call_via_r2(i_val8,3,*(undefined4 *)(*(int *)(i_val8 + 0x210) + 8));
   }
   *(int *)(animal + 0x7c) = 0;
-  u_val4 = Dispatcher_Routine_080005D4(0x32c);
+  u_val4 = CppRuntime_OperatorNewArray(0x32c);
   u_val5 = HW_GetSpriteAttr0Offset(animal);
   u_val6 = HW_GetPaletteBankOffset(animal);
   *puStack_3c = 0;
@@ -52513,7 +52513,7 @@ void Animal_Routine_080989DC(int animal,int amount)
         Farmer_Routine_0800F004(&stack_val_98,(uint)stack_val_94);
         stack_val_9c = stack_val_98;
         Item_SetIdAndClearQuality(&stack_val_98,*p_uint12 - 1);
-        u_val2 = Item_Routine_0800DCE0(&stack_val_98);
+        u_val2 = Item_GetFoodBasePrice(&stack_val_98);
       }
       else {
         Item_SetQuality(&stack_val_50,*p_uint12 - 0xac);
@@ -52570,7 +52570,7 @@ void Animal_Routine_080989DC(int animal,int amount)
   if (stack_ints_80[0] != 0) {
     u_val2 = (undefined2)piStack_2c[1];
   }
-  HW_Routine_08008E64(i_val8,i_val9 * 0x20 + 0x05000200,u_val2);
+  GBA_DMA3_FastCopy(i_val8,i_val9 * 0x20 + 0x05000200,u_val2);
   return;
 }
 
@@ -52607,7 +52607,7 @@ void Animal_Routine_08099000(int animal,char amount)
       do {
         stack_val_28 = (stack_val_28 & 0xFE00FFFF | (0x1FF & u_val8) << 0x10) & 0xFFFFFF00 |
                     i_val5 * 0x10 + 0x10U & 0xff;
-        i_val3 = HW_Routine_08007D4C(animal + 0x300,*(undefined4 *)(animal + 0x304));
+        i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x300,*(undefined4 *)(animal + 0x304));
         stack_val_24 = stack_val_24 & 0xFFFFFC00 | i_val3 + loop_i * 2 + i_val5 * 0x14 & 0x3ffU;
         pbVar4 = (byte *)HW_GetSpriteAttr2Offset(animal);
         b_flag1 = *pbVar4;
@@ -52717,7 +52717,7 @@ void Animal_Routine_08099144(int animal,uint amount,uint food_type,uint out_stat
   stack_val_90 = *(undefined4 *)(animal + 0x294);
   stack_val_8c = *(undefined4 *)(animal + 0x298);
   stack_val_88 = *(undefined4 *)(animal + 0x29c);
-  u_val1 = HW_Routine_08007D4C(animal + 0x318,*(undefined4 *)(animal + 0x31c));
+  u_val1 = GBA_Vram_AllocateTileBlock(animal + 0x318,*(undefined4 *)(animal + 0x31c));
   stack_val_9c._2_2_ = u_val1;
   u_val1 = HW_Routine_080074C0(animal + 800,*(undefined4 *)(animal + 0x324));
   stack_val_9c = CONCAT22(stack_val_9c._2_2_,u_val1);
@@ -52731,7 +52731,7 @@ void Animal_Routine_08099144(int animal,uint amount,uint food_type,uint out_stat
     if (u_val8 != 0) {
       p_int4 = (int *)HW_GetSpriteAttr0Offset(animal);
       loop_i = stack_val_7c;
-      i_val3 = HW_Routine_08007D4C(animal + 0x318,*(undefined4 *)(animal + 0x31c));
+      i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x318,*(undefined4 *)(animal + 0x31c));
       u_val8 = 0;
       if (stack_val_7c != 0) {
         u_val8 = stack_val_78 & 0xffff;
@@ -52880,7 +52880,7 @@ void Animal_Routine_08099144(int animal,uint amount,uint food_type,uint out_stat
   stack_val_90 = *(undefined4 *)(animal + 0x2cc);
   stack_val_8c = *(undefined4 *)(animal + 0x2d0);
   stack_val_88 = *(undefined4 *)(animal + 0x2d4);
-  u_val1 = HW_Routine_08007D4C(animal + 0x328,*(undefined4 *)(animal + 0x32c));
+  u_val1 = GBA_Vram_AllocateTileBlock(animal + 0x328,*(undefined4 *)(animal + 0x32c));
   stack_val_9c._2_2_ = u_val1;
   u_val1 = HW_Routine_080074C0(animal + 800,*(undefined4 *)(animal + 0x324));
   stack_val_9c = CONCAT22(stack_val_9c._2_2_,u_val1);
@@ -52894,7 +52894,7 @@ void Animal_Routine_08099144(int animal,uint amount,uint food_type,uint out_stat
     if (u_val8 != 0) {
       p_int4 = (int *)HW_GetSpriteAttr0Offset(animal);
       loop_i = stack_val_7c;
-      i_val3 = HW_Routine_08007D4C(animal + 0x328,*(undefined4 *)(animal + 0x32c));
+      i_val3 = GBA_Vram_AllocateTileBlock(animal + 0x328,*(undefined4 *)(animal + 0x32c));
       u_val8 = 0;
       if (stack_val_7c != 0) {
         u_val8 = stack_val_78 & 0xffff;
@@ -53088,7 +53088,7 @@ void Animal_Routine_08099ACC(int animal)
     do {
       stack_val_5c = CONCAT22(stack_val_5c._2_2_ & (ushort)0xFFFFFE00 | u_val17 & (ushort)0x1FF,
                            (undefined2)stack_val_5c);
-      s_val3 = HW_Routine_08007D4C(piStack_28,piStack_28[1]);
+      s_val3 = GBA_Vram_AllocateTileBlock(piStack_28,piStack_28[1]);
       stack_val_58 = CONCAT22(stack_val_58._2_2_,
                            (ushort)stack_val_58 & (ushort)0xFFFFFC00 |
                            s_val3 + (short)loop_i * 2 + (short)stack_val_3c & (ushort)0x3FF);
@@ -53112,7 +53112,7 @@ void Animal_Routine_08099ACC(int animal)
     u_val15 = 0xb8;
     do {
       stack_val_5c = stack_val_5c & 0xFE00FFFF | (0x1FF & u_val15) << 0x10;
-      i_val6 = HW_Routine_08007D4C(stack_val_2c,*(undefined4 *)(stack_val_2c + 4));
+      i_val6 = GBA_Vram_AllocateTileBlock(stack_val_2c,*(undefined4 *)(stack_val_2c + 4));
       stack_val_58 = stack_val_58 & 0xFFFFFC00 | i_val6 + loop_i * 2 + stack_val_3c & 0x3ffU;
       pbVar7 = (byte *)HW_GetSpriteAttr2Offset(animal);
       b_flag1 = *pbVar7;
@@ -53134,7 +53134,7 @@ void Animal_Routine_08099ACC(int animal)
     do {
       stack_val_5c = CONCAT22(stack_val_5c._2_2_ & (ushort)0xFFFFFE00 | u_val17 & (ushort)0x1FF,
                            (undefined2)stack_val_5c);
-      s_val3 = HW_Routine_08007D4C(piStack_28,piStack_28[1]);
+      s_val3 = GBA_Vram_AllocateTileBlock(piStack_28,piStack_28[1]);
       stack_val_58 = CONCAT22(stack_val_58._2_2_,
                            (ushort)stack_val_58 & (ushort)0xFFFFFC00 |
                            (ushort)*(byte *)(animal + 0x369 + loop_i) + s_val3 &
@@ -53172,7 +53172,7 @@ void Animal_Routine_08099ACC(int animal)
   stack_val_a8 = *(undefined4 *)(animal + 0x294);
   stack_val_a4 = *(undefined4 *)(animal + 0x298);
   stack_val_a0 = *(undefined4 *)(animal + 0x29c);
-  u_val4 = HW_Routine_08007D4C(animal + 0x318,*(undefined4 *)(animal + 0x31c));
+  u_val4 = GBA_Vram_AllocateTileBlock(animal + 0x318,*(undefined4 *)(animal + 0x31c));
   stack_val_b4._2_2_ = u_val4;
   u_val4 = HW_Routine_080074C0(animal + 800,*(undefined4 *)(animal + 0x324));
   stack_val_b4 = CONCAT22(stack_val_b4._2_2_,u_val4);
@@ -53186,7 +53186,7 @@ void Animal_Routine_08099ACC(int animal)
     if (u_val15 != 0) {
       p_int9 = (int *)HW_GetSpriteAttr0Offset(animal);
       loop_i = stack_val_94;
-      i_val6 = HW_Routine_08007D4C(animal + 0x318,*(undefined4 *)(animal + 0x31c));
+      i_val6 = GBA_Vram_AllocateTileBlock(animal + 0x318,*(undefined4 *)(animal + 0x31c));
       u_val15 = 0;
       if (stack_val_94 != 0) {
         u_val15 = stack_val_90 & 0xffff;
@@ -53315,7 +53315,7 @@ void Animal_Routine_08099ACC(int animal)
   stack_val_a4 = *(undefined4 *)(animal + 0x1f0);
   stack_val_a0 = *(undefined4 *)(animal + 500);
   stack_val_b8 = 0x2800e8;
-  u_val4 = HW_Routine_08007D4C(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
+  u_val4 = GBA_Vram_AllocateTileBlock(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
   stack_val_b4._2_2_ = u_val4;
   u_val4 = HW_Routine_080074C0(animal + 0x2e8,*(undefined4 *)(animal + 0x2ec));
   stack_val_b4 = CONCAT22(stack_val_b4._2_2_,u_val4);
@@ -53324,7 +53324,7 @@ void Animal_Routine_08099ACC(int animal)
   if ((int)((uint)*(byte *)(animal + 0x1f8) * 0x40000000) < 0) {
     p_int9 = (int *)HW_GetSpriteAttr0Offset(animal);
     loop_i = stack_val_94;
-    i_val6 = HW_Routine_08007D4C(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
+    i_val6 = GBA_Vram_AllocateTileBlock(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
     u_val15 = 0;
     if (stack_val_94 != 0) {
       u_val15 = stack_val_90 & 0xffff;
@@ -53431,7 +53431,7 @@ void Animal_Routine_08099ACC(int animal)
   stack_val_a4 = *(undefined4 *)(animal + 0x228);
   stack_val_a0 = *(undefined4 *)(animal + 0x22c);
   stack_val_b8 = 0x5000e8;
-  s_val3 = HW_Routine_08007D4C(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
+  s_val3 = GBA_Vram_AllocateTileBlock(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
   stack_val_b4._2_2_ = s_val3 + 2;
   u_val4 = HW_Routine_080074C0(animal + 0x2e8,*(undefined4 *)(animal + 0x2ec));
   stack_val_b4 = CONCAT22(stack_val_b4._2_2_,u_val4);
@@ -53440,7 +53440,7 @@ void Animal_Routine_08099ACC(int animal)
   if ((int)((uint)*(byte *)(animal + 0x230) * 0x40000000) < 0) {
     p_int9 = (int *)HW_GetSpriteAttr0Offset(animal);
     loop_i = stack_val_94;
-    i_val6 = HW_Routine_08007D4C(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
+    i_val6 = GBA_Vram_AllocateTileBlock(animal + 0x2e0,*(undefined4 *)(animal + 0x2e4));
     u_val15 = 0;
     if (stack_val_94 != 0) {
       u_val15 = stack_val_90 & 0xffff;
@@ -53599,7 +53599,7 @@ void Animal_Routine_0809A3E0(int animal)
   stack_val_58 = *(undefined4 *)(animal + 0x260);
   stack_val_54 = *(undefined4 *)(animal + 0x264);
   stack_val_6c = CONCAT22(*(undefined2 *)(animal + 0x362),*(undefined2 *)(animal + 0x360));
-  u_val1 = HW_Routine_08007D4C(animal + 0x2f0,*(undefined4 *)(animal + 0x2f4));
+  u_val1 = GBA_Vram_AllocateTileBlock(animal + 0x2f0,*(undefined4 *)(animal + 0x2f4));
   stack_val_68._2_2_ = u_val1;
   u_val1 = HW_Routine_080074C0(animal + 0x2f8,*(undefined4 *)(animal + 0x2fc));
   stack_val_68 = CONCAT22(stack_val_68._2_2_,u_val1);
@@ -53624,7 +53624,7 @@ Animal_Routine_0809A4D4(undefined4 *animal,undefined4 *amount,undefined4 food_ty
   undefined4 u_val1;
   
   *animal = gRomData_080E824C;
-  u_val1 = Dispatcher_Routine_080005D4(0x33E0);
+  u_val1 = CppRuntime_OperatorNewArray(0x33E0);
   u_val1 = Animal_Routine_08094AC0(u_val1,food_type,out_stat);
   animal[1] = u_val1;
   u_val1 = *amount;

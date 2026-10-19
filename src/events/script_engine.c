@@ -45,7 +45,7 @@ u32 ScriptEngine_Construct(undefined4 *ctx,int *opcode)
     *(undefined2 *)(p_uint4 + 5) = 0;
     p_uint4[6] = 0;
     *(undefined2 *)(p_uint4 + 7) = 0;
-    HW_Routine_08007874(p_uint5 + 8);
+    GBA_ObjAttr_Init(p_uint5 + 8);
     p_uint4[9] = 0;
     p_uint4 = p_uint4 + 0xb;
     p_uint5 = p_uint5 + 0xb;
@@ -81,9 +81,9 @@ u32 ScriptEngine_Construct(undefined4 *ctx,int *opcode)
     ctx[loop_i * 0xb + 8] = stack_val_34;
     p_uint5 = ctx + loop_i * 0xb + 9;
     HW_Routine_08007C28(p_uint5,ctx[loop_i * 0xb + 10]);
-    u_val3 = HW_Routine_08007B54(p_uint5,2);
+    u_val3 = GBA_ObjAttr_AllocateSprite(p_uint5,2);
     ctx[loop_i * 0xb + 10] = u_val3;
-    u_val1 = HW_Routine_08007D4C(p_uint5);
+    u_val1 = GBA_Vram_AllocateTileBlock(p_uint5);
     *(undefined2 *)(ctx + loop_i * 0xb + 0xb) = u_val1;
     loop_i = loop_i + 1;
   } while (loop_i < 3);
@@ -108,7 +108,7 @@ void ScriptEngine_Destruct(undefined4 *ctx,uint opcode)
     }
   }
   if ((opcode & 1) != 0) {
-    Dispatcher_Routine_08000608(ctx);
+    CppRuntime_FreeMemory(ctx);
   }
   return;
 }
@@ -144,7 +144,7 @@ void ScriptEngine_ClearVM(undefined4 *ctx,int *opcode)
   loop_i = 0;
   do {
     u_val9 = ctx[loop_i * 0xb + 3];
-    i_val1 = HW_Routine_08007D4C(ctx + loop_i * 0xb + 9,ctx[loop_i * 0xb + 10]);
+    i_val1 = GBA_Vram_AllocateTileBlock(ctx + loop_i * 0xb + 9,ctx[loop_i * 0xb + 10]);
     u_val7 = 0;
     if (ctx[loop_i * 0xb + 3] != 0) {
       u_val7 = *(undefined2 *)(ctx + loop_i * 0xb + 4);
@@ -327,8 +327,8 @@ void ScriptEngine_GetVariable(undefined4 *ctx,int *opcode,int *arg1,int arg2,uin
       stack_val_74 = stack_val_4c;
       stack_val_70 = stack_val_48;
       stack_val_6c = stack_val_44;
-      HW_Routine_08007874(&stack_val_68,&stack_val_68);
-      stack_val_64 = HW_Routine_08007B54(&stack_val_68,0);
+      GBA_ObjAttr_Init(&stack_val_68,&stack_val_68);
+      stack_val_64 = GBA_ObjAttr_AllocateSprite(&stack_val_68,0);
       if ((uint)ctx[1] < 5) {
         p_uint9 = puStack_30 + ctx[1] * 10 + 1;
         if (p_uint9 != (uint *)0x0) {
@@ -340,7 +340,7 @@ void ScriptEngine_GetVariable(undefined4 *ctx,int *opcode,int *arg1,int arg2,uin
           p_uint9[5] = stack_val_74;
           p_uint9[6] = stack_val_70;
           p_uint9[7] = stack_val_6c;
-          HW_Routine_08007874(p_uint9 + 8,p_uint9 + 8);
+          GBA_ObjAttr_Init(p_uint9 + 8,p_uint9 + 8);
           loop_i = HW_Routine_08007CD8(p_uint9 + 8,stack_val_64);
           p_uint9[9] = loop_i;
         }
@@ -453,7 +453,7 @@ void ScriptEngine_ParseHeaderChunks(undefined4 *ctx,int *opcode)
       }
       puStack_28 = p_uint6 + 10;
       if (s_val9 != 0) {
-        i_val1 = HW_Routine_08007D4C(p_uint6 + 8,p_uint6[9]);
+        i_val1 = GBA_Vram_AllocateTileBlock(p_uint6 + 8,p_uint6[9]);
         HW_Routine_08008F0C(&stack_val_48,i_val7,i_val1 * 0x20 + 0x06010000,s_val9);
         p_uint3 = (undefined4 *)opcode[1];
         if (p_uint3 == (undefined4 *)opcode[3]) {
@@ -633,7 +633,7 @@ void ScriptEngine_FreeStack(undefined4 *ctx,undefined4 opcode)
       s_val1 = *(short *)((int)p_int9 + 0x12);
       s_val2 = *(short *)((int)p_int9 + 0x16);
       p_uint8 = ctx + (uint)*(ushort *)(*p_int9 + (uint)*(ushort *)(p_int9 + 2) * 4) * 10 + 2;
-      u_val7 = HW_Routine_08007D4C(p_uint8 + 8,p_uint8[9]);
+      u_val7 = GBA_Vram_AllocateTileBlock(p_uint8 + 8,p_uint8[9]);
       _call_via_r4(opcode,((s_val1 - i_val5) + 8U & 0xff) - 8,((s_val2 - i_val6) + 8U & 0xff) - 8,
                       0x55,0,p_uint8,*ctx,u_val7,ctx + 0x34);
       p_int9 = p_int9 + 7;
@@ -1109,7 +1109,7 @@ void ScriptEngine_Routine_0803BDFC(undefined4 *ctx,undefined4 opcode,undefined4 
   undefined4 u_val1;
   
   ctx[1] = gRomData_080E7778;
-  u_val1 = Dispatcher_Routine_080005D4(100);
+  u_val1 = CppRuntime_OperatorNewArray(100);
   u_val1 = ScriptEngine_LookupJumpTable(u_val1,opcode,arg1,arg2,arg_5,arg_6,arg_7,arg_8,arg_9);
   *ctx = u_val1;
   return ctx;
@@ -1129,10 +1129,10 @@ void ScriptEngine_Routine_0803BE50(int *ctx,uint opcode)
     Farm_Routine_080098AC(i_val1 + 0x44,2);
     Farm_Routine_080098AC(i_val1 + 0x2c,2);
     Farm_Routine_080098DC(i_val1 + 0x10,2);
-    Dispatcher_Routine_08000608(i_val1);
+    CppRuntime_FreeMemory(i_val1);
   }
   if ((opcode & 1) != 0) {
-    Dispatcher_Routine_08000608(ctx);
+    CppRuntime_FreeMemory(ctx);
   }
   return;
 }
@@ -1247,7 +1247,7 @@ ScriptEngine_Routine_0803BF78(int ctx,undefined4 opcode,undefined4 arg1,undefine
   
   ScriptEngine_Routine_0803BDFC(ctx,0,0x88,0xf0,0x18,opcode,arg1,arg2,arg_5);
   *(undefined4 *)(ctx + 4) = gRomData_080E77A4;
-  Dispatcher_Routine_080005D4(0x41C);
+  CppRuntime_OperatorNewArray(0x41C);
   u_val1 = VTable_Routine_080E0A94();
   *(undefined4 *)(ctx + 8) = u_val1;
   *(undefined1 *)(ctx + 0xc) = arg_6;
@@ -1411,7 +1411,7 @@ LAB_0803c0a4:
                     *(undefined4 *)(**(int **)(i_val6 + 0x20) + 0x10));
     i_val5 = stack_val_88;
     if ((u_val7 & 3) >> 1 != 0) {
-      pos_x = HW_Routine_08007D4C(i_val6,*(undefined4 *)(i_val6 + 4));
+      pos_x = GBA_Vram_AllocateTileBlock(i_val6,*(undefined4 *)(i_val6 + 4));
       u_val7 = 0;
       if (stack_val_88 != 0) {
         u_val7 = (uint)stack_val_84;
@@ -1427,7 +1427,7 @@ LAB_0803c0a4:
                 (u_val7 | (((*apuStack_90[0] & 0x1ffffff) >> 0x10) + (uint)b_flag1 * 0x10 + 0x10 &
                          0x1FF) << 0x10) | (u_val7 & 0xff) + 0x96 & 0xff;
     stack_val_6c = apuStack_90[0][1] & 0xFFFF0FFF | (loop_i & 0xf) << 0xc;
-    loop_i = HW_Routine_08007D4C(i_val6,*(undefined4 *)(i_val6 + 4));
+    loop_i = GBA_Vram_AllocateTileBlock(i_val6,*(undefined4 *)(i_val6 + 4));
     stack_val_6c = stack_val_6c & 0xFFFFFC00 | loop_i & 0x3ff;
     stack_val_70 = stack_val_70 | 0x1000;
     b_flag1 = *pbStack_50;
@@ -1452,7 +1452,7 @@ LAB_0803c0a4:
                     *(undefined4 *)(**(int **)(pos_x + 0x20) + 0x10));
     i_val6 = stack_val_88;
     if ((u_val8 & 3) >> 1 != 0) {
-      i_val9 = HW_Routine_08007D4C(pos_x,*(undefined4 *)(pos_x + 4));
+      i_val9 = GBA_Vram_AllocateTileBlock(pos_x,*(undefined4 *)(pos_x + 4));
       u_val8 = 0;
       if (stack_val_88 != 0) {
         u_val8 = (uint)stack_val_84;
@@ -1468,7 +1468,7 @@ LAB_0803c0a4:
                 (((*apuStack_90[0] & 0x1ffffff) >> 0x10) + stack_val_28 & 0x1FF) << 0x10) |
                 (byte)*puStack_34 + 0x96 & 0xff;
     stack_val_64 = apuStack_90[0][1] & 0xFFFF0FFF | (u_val7 & 0xf) << 0xc;
-    u_val7 = HW_Routine_08007D4C(pos_x,*(undefined4 *)(pos_x + 4));
+    u_val7 = GBA_Vram_AllocateTileBlock(pos_x,*(undefined4 *)(pos_x + 4));
     stack_val_64 = stack_val_64 & 0xFFFFFC00 | u_val7 & 0x3ff;
     stack_val_68 = stack_val_68 | 0x1000;
     b_flag1 = *pbStack_50;
@@ -1497,7 +1497,7 @@ LAB_0803c0a4:
   loop_i = 0;
   do {
     i_val5 = loop_i * 8 + stack_val_44;
-    u_val7 = HW_Routine_08007D4C(i_val5 + 0x304,*(undefined4 *)(i_val5 + 0x308));
+    u_val7 = GBA_Vram_AllocateTileBlock(i_val5 + 0x304,*(undefined4 *)(i_val5 + 0x308));
     stack_val_38 = loop_i + 1;
     if (stack_val_40 != 0) {
       u_val8 = 0;
@@ -1598,7 +1598,7 @@ void ScriptEngine_Routine_0803C7A0(int *ctx,uint opcode)
     VTable_Routine_080E0D70(*ctx,3);
   }
   if ((opcode & 1) != 0) {
-    Dispatcher_Routine_08000608(ctx);
+    CppRuntime_FreeMemory(ctx);
   }
   return;
 }
@@ -1655,7 +1655,7 @@ void ScriptEngine_Routine_0803C7C8(undefined4 *ctx,int opcode,int arg1,byte *arg
     stack_val_30 = opcode + 4;
     stack_val_2c = arg1 + 4;
     if ((-p_int8[0x62] | p_int8[0x62]) < 0) {
-      u_val3 = HW_Routine_08007D4C(p_int8 + 0x61);
+      u_val3 = GBA_Vram_AllocateTileBlock(p_int8 + 0x61);
       if (*(byte *)(p_int8 + 99) != 0) {
         u_val5 = p_int8[100];
         u_val5 = -u_val5 | u_val5;
@@ -1680,7 +1680,7 @@ void ScriptEngine_Routine_0803C7C8(undefined4 *ctx,int opcode,int arg1,byte *arg
     }
     u_val3 = stack_val_30 + 0x20;
     if ((-p_int8[0xab] | p_int8[0xab]) < 0) {
-      u_val5 = HW_Routine_08007D4C(p_int8 + 0xaa);
+      u_val5 = GBA_Vram_AllocateTileBlock(p_int8 + 0xaa);
       if (*(byte *)(p_int8 + 0xac) != 0) {
         u_val6 = p_int8[0xad];
         u_val6 = -u_val6 | u_val6;
@@ -1706,7 +1706,7 @@ void ScriptEngine_Routine_0803C7C8(undefined4 *ctx,int opcode,int arg1,byte *arg
     stack_val_24 = 0;
     stack_val_28 = 0x40001000;
     if ((-p_int8[0xb5] | p_int8[0xb5]) < 0) {
-      u_val3 = HW_Routine_08007D4C(p_int8 + 0xb4);
+      u_val3 = GBA_Vram_AllocateTileBlock(p_int8 + 0xb4);
       if (*(byte *)(p_int8 + 0xbc) != 0) {
         u_val5 = p_int8[0xb6];
         u_val5 = -u_val5 | u_val5;
@@ -1738,7 +1738,7 @@ void ScriptEngine_Routine_0803C7C8(undefined4 *ctx,int opcode,int arg1,byte *arg
       stack_val_44 = (stack_val_28 & 0xFFFFFF00 | stack_val_2c & 0xff) & 0xFE00FFFF |
                   (stack_val_30 + 0x58 & 0x1FF) << 0x10;
       if (*(char *)((int)p_int8 + 0x2F1) != '\0') {
-        u_val3 = HW_Routine_08007D4C(p_int8 + 0xc5,p_int8[0xc6]);
+        u_val3 = GBA_Vram_AllocateTileBlock(p_int8 + 0xc5,p_int8[0xc6]);
         u_val5 = HW_Routine_080074C0(p_int8 + 0xbd,p_int8[0xbe]);
         if ((char)p_int8[0xcd] != '\0') {
           i_val4 = p_int8[0xc];
@@ -1773,7 +1773,7 @@ void ScriptEngine_Routine_0803C7C8(undefined4 *ctx,int opcode,int arg1,byte *arg
         }
       }
       if ((-p_int8[0xcf] | p_int8[0xcf]) < 0) {
-        i_val4 = HW_Routine_08007D4C(p_int8 + 0xce);
+        i_val4 = GBA_Vram_AllocateTileBlock(p_int8 + 0xce);
         if (*(byte *)(p_int8 + 0xd6) != 0) {
           u_val3 = p_int8[0xd0];
           u_val3 = -u_val3 | u_val3;
@@ -4053,7 +4053,7 @@ void ScriptEngine_Routine_0803EEC8(int ctx,uint opcode)
   
   *(undefined4 *)(ctx + 0x34c) = gRomData_080E7810;
   if ((opcode & 1) != 0) {
-    Dispatcher_Routine_08000608(ctx);
+    CppRuntime_FreeMemory(ctx);
   }
   return;
 }
@@ -9905,7 +9905,7 @@ u32 ScriptEngine_Routine_0804E17C(int ctx,undefined4 opcode)
   c_char1 = HeldItem_IsEmpty(*p_int4 + 0x1C2C);
   if (((c_char1 == '\0') && (i_val2 = Farmer_Routine_0800F77C(*p_int4 + 0x1C38), i_val2 == 0)) &&
      ((i_val2 = Building_Routine_0800C048(*p_int4 + 500), i_val2 == 0 ||
-      (i_val2 = ShippingBin_Routine_0800B68C(i_val2,opcode), i_val2 == 0)))) {
+      (i_val2 = ShippingBin_GetSlotQuantity(i_val2,opcode), i_val2 == 0)))) {
     u_val3 = 0;
   }
   else {
@@ -9996,7 +9996,7 @@ LAB_0804e304:
     i_val4 = Farmer_Routine_0800F6B4(*(int *)(ctx + 0x350) + 0x1C38,opcode);
     if ((i_val4 == -1) &&
        ((i_val4 = Building_Routine_0800C048(*(int *)(ctx + 0x350) + 500), i_val4 == 0 ||
-        (i_val4 = ShippingBin_Routine_0800B7B8(i_val4,opcode), i_val4 == -1)))) {
+        (i_val4 = ShippingBin_ResetDailyShipments(i_val4,opcode), i_val4 == -1)))) {
       u_val3 = 0;
       goto LAB_0804e34a;
     }
@@ -10028,7 +10028,7 @@ u32 ScriptEngine_Routine_0804E354(int ctx,int opcode)
 LAB_0804e390:
     item_id = Farmer_Routine_0800F92C(*(int *)(ctx + 0x350) + 0x1C38,opcode);
     if ((item_id == -1) &&
-       (item_id = ShippingBin_Routine_0800B544(*(int *)(ctx + 0x350) + 0x380,opcode), item_id == -1)) {
+       (item_id = ShippingBin_FindSlotByItemId(*(int *)(ctx + 0x350) + 0x380,opcode), item_id == -1)) {
       u_val2 = 0;
       goto LAB_0804e3ce;
     }
@@ -11017,15 +11017,15 @@ ScriptEngine_Routine_0804F288(uint *ctx,byte opcode,uint arg1,byte arg2,uint arg
   puStack_2c = ctx + 0x3b;
   i_val5 = 0;
   do {
-    p_uint6 = (undefined4 *)Dispatcher_Routine_080005D4(0x70);
+    p_uint6 = (undefined4 *)CppRuntime_OperatorNewArray(0x70);
     loop_i = 6;
     stack_val_34 = i_val5 << 2;
     stack_val_24 = i_val5 + 1;
     p_uint16 = p_uint6;
     do {
-      u_val7 = Dispatcher_Routine_080005D4(0x104);
+      u_val7 = CppRuntime_OperatorNewArray(0x104);
       *p_uint16 = u_val7;
-      HW_Routine_08007874(p_uint16 + 1);
+      GBA_ObjAttr_Init(p_uint16 + 1);
       p_uint16[2] = 0;
       *(undefined1 *)(p_uint16 + 3) = 0;
       p_uint16 = p_uint16 + 4;
@@ -11038,10 +11038,10 @@ ScriptEngine_Routine_0804F288(uint *ctx,byte opcode,uint arg1,byte arg2,uint arg
       while (p_uint16 != p_uint2) {
         HW_Routine_08007C28(p_uint2 + -3,p_uint2[-2]);
         HW_Routine_080079E8(p_uint2 + -3,2);
-        Dispatcher_Routine_08000608(p_uint2[-4]);
+        CppRuntime_FreeMemory(p_uint2[-4]);
         p_uint2 = p_uint2 + -4;
       }
-      Dispatcher_Routine_08000608(p_uint16);
+      CppRuntime_FreeMemory(p_uint16);
     }
     *(undefined4 **)pbVar17 = p_uint6;
     loop_i = 0;
@@ -11154,7 +11154,7 @@ void ScriptEngine_Routine_0804F69C(int ctx,uint opcode)
   HW_Routine_080073E0(ctx + 0x10,*(undefined4 *)(ctx + 0x14));
   HW_Routine_08007184(ctx + 0x10,2);
   if ((opcode & 1) != 0) {
-    Dispatcher_Routine_08000608(ctx);
+    CppRuntime_FreeMemory(ctx);
   }
   return;
 }

@@ -249,7 +249,7 @@ u32 M4A_Routine_080C0D1C(undefined4 *handle,undefined4 channel)
   undefined4 u_val1;
   
   *handle = gRomData_080E8544;
-  u_val1 = Dispatcher_Routine_080005D4(0x620);
+  u_val1 = CppRuntime_OperatorNewArray(0x620);
   u_val1 = NPC_Routine_080BC938(u_val1,channel);
   handle[1] = u_val1;
   return handle;
@@ -332,46 +332,46 @@ u32 M4A_Routine_080C0DCC(int handle,undefined4 *channel)
   do {
     i_val1 = i_val1 + -1;
   } while (i_val1 != -1);
-  u_val2 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(stack_buf_64);
-  HW_Routine_0800770C(stack_buf_60);
+  u_val2 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(stack_buf_64);
+  GBA_BgLayer_Init(stack_buf_60);
   u_val2 = Animal_Routine_08050CC0(u_val2,0,0x18,0,0,stack_buf_64,stack_buf_60);
   *(undefined4 *)(handle + 0x51C) = u_val2;
-  HW_Routine_08007714(stack_buf_60,2);
+  GBA_BgLayer_SetPriority(stack_buf_60,2);
   HW_Routine_08008364(stack_buf_64,2);
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_0873E5B0);
   *(undefined4 *)(handle + 0x520) = u_val2;
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_0873DE44);
   *(undefined4 *)(handle + 0x524) = u_val2;
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_087405A0);
   *(undefined4 *)(handle + 0x528) = u_val2;
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_0858BA28);
   *(undefined4 *)(handle + 0x52C) = u_val2;
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_0873D5FC);
   *(undefined4 *)(handle + 0x530) = u_val2;
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_08740908);
   *(undefined4 *)(handle + 0x534) = u_val2;
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_0871D51C);
   *(undefined4 *)(handle + 0x538) = u_val2;
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_0872BE64);
   *(undefined4 *)(handle + 0x53C) = u_val2;
-  u_val2 = Dispatcher_Routine_080005D4(0x30);
+  u_val2 = CppRuntime_OperatorNewArray(0x30);
   u_val2 = Animal_Routine_0805E6CC(u_val2,gRomGfx_0873D6D8);
   *(undefined4 *)(handle + 0x540) = u_val2;
-  p_uint3 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint3 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val2 = HW_GetSpriteAttr1Offset(handle);
   *p_uint3 = 0;
   p_uint3[1] = 0;
   p_uint3[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint3 + 3,u_val2);
+  Fade_Init(p_uint3 + 3,u_val2);
   i_val1 = 0x544;
   *(undefined4 **)(handle + 0x544) = p_uint3;
   *(undefined4 *)(handle + 0x550) = 0;
@@ -574,51 +574,51 @@ void M4A_Routine_080C14C8(int handle)
   
   i_val2 = handle + 0x83C;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,3);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,3);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x844;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,6);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,6);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x84C;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,3);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,3);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x854;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,2);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,2);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x85C;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,2);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,2);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x864;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,5);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,5);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x86C;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,2);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,2);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x87C;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,3);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,3);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x884;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,2);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,2);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x874;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,6);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,6);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   i_val2 = handle + 0x88C;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,5);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,5);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   handle = handle + 0x894;
   HW_Routine_08007C28(handle,*(undefined4 *)(handle + 4));
-  u_val1 = HW_Routine_08007B54(handle,3);
+  u_val1 = GBA_ObjAttr_AllocateSprite(handle,3);
   *(undefined4 *)(handle + 4) = u_val1;
   return;
 }
@@ -642,7 +642,7 @@ void M4A_Routine_080C160C(undefined4 handle)
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0873F3C8,u_val2);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0873F5D4,u_val1);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0873F6AC,0x6000000);
-  HW_Routine_08008E64(gRomGfx_087400E4,0x05000020,0x200);
+  GBA_DMA3_FastCopy(gRomGfx_087400E4,0x05000020,0x200);
   p_uint3 = (undefined2 *)HW_GetSpriteAttr1Offset(handle);
   *p_uint3 = 0x1640;
   i_val4 = HW_GetSpriteAttr1Offset(handle);
@@ -721,7 +721,7 @@ void M4A_Routine_080C16D4(int handle)
   undefined4 *puStack_28;
   undefined4 *puStack_24;
   
-  HW_Routine_08008E64(*gRomData_080F9F78,0x05000360,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x05000360,0x20);
   M4A_Routine_080C14C8(handle);
   p_uint6 = 0x0500024A;
   *0x0500024A = *0x05000362;
@@ -742,7 +742,7 @@ void M4A_Routine_080C16D4(int handle)
   stack_val_ac = 0x20004;
   ScriptEngine_Routine_0804E958(0x20004,i_val12,0,0,stack_buf_e4,0,1);
   p_int3 = (int *)HW_GetSpriteAttr0Offset(handle);
-  i_val4 = HW_Routine_08007D4C(0x83C + handle,*(undefined4 *)(0x83C + handle + 4));
+  i_val4 = GBA_Vram_AllocateTileBlock(0x83C + handle,*(undefined4 *)(0x83C + handle + 4));
   HW_Routine_08008F0C(&stack_val_e0,i_val12,i_val4 * 0x20 + 0x06010000,0x100);
   p_uint9 = (undefined4 *)p_int3[1];
   if (p_uint9 == (undefined4 *)p_int3[3]) {
@@ -819,18 +819,18 @@ void M4A_Routine_080C16D4(int handle)
     puStack_34 = &stack_val_a0;
     puStack_2c = &stack_val_d0;
   }
-  u_val5 = HW_Routine_08007D4C(0x83C + handle,*(undefined4 *)(0x83C + handle + 4));
+  u_val5 = GBA_Vram_AllocateTileBlock(0x83C + handle,*(undefined4 *)(0x83C + handle + 4));
   ScriptEngine_Routine_0804EA94(puStack_34,0xd0,8,u_val5,2,0,2,1);
   *(undefined4 *)(handle + 0x548) = stack_val_a0;
   *(undefined4 *)(handle + 0x54c) = stack_val_9c;
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(handle + 0x520),0,0x100);
   p_int3 = (int *)(handle + 0x550);
   if (i_val4 != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = i_val4;
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -843,7 +843,7 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int15 = (int *)(0x554 + handle);
   if (p_uint6 != (undefined2 *)*p_int15) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int15 = (int)p_uint6;
   Animal_Routine_0805E860(*p_int3,0);
@@ -851,7 +851,7 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined2 *)(*p_int15 + 2) = 0x40;
   i_val4 = *p_int15;
   i_val12 = 0x844 + handle;
-  u_val1 = HW_Routine_08007D4C(i_val12,*(undefined4 *)(i_val12 + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(i_val12,*(undefined4 *)(i_val12 + 4));
   *(undefined2 *)(i_val4 + 6) = u_val1;
   *(undefined2 *)(*p_int15 + 4) = 3;
   *(undefined1 *)(*p_int15 + 0x18) = 1;
@@ -875,7 +875,7 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined4 *)(handle + 0x574) = u_val5;
   p_int3 = (int *)HW_GetSpriteAttr0Offset(handle);
   loop_i = *(int *)(handle + 0x560);
-  i_val4 = HW_Routine_08007D4C(i_val12,*(undefined4 *)(i_val12 + 4));
+  i_val4 = GBA_Vram_AllocateTileBlock(i_val12,*(undefined4 *)(i_val12 + 4));
   u_val1 = 0;
   if (*(int *)(handle + 0x560) != 0) {
     u_val1 = *(undefined2 *)(handle + 0x564);
@@ -1031,14 +1031,14 @@ void M4A_Routine_080C16D4(int handle)
     }
     p_int3[1] = p_int3[1] + 0x10;
   }
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(handle + 0x528),0,0x100);
   p_int3 = (int *)(handle + 0x578);
   if (i_val4 != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = i_val4;
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -1051,7 +1051,7 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int15 = (int *)(0x57C + handle);
   if (p_uint6 != (undefined2 *)*p_int15) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int15 = (int)p_uint6;
   Animal_Routine_0805E860(*p_int3,0);
@@ -1059,7 +1059,7 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined2 *)(*p_int15 + 2) = 0;
   i_val4 = *p_int15;
   i_val12 = 0x864 + handle;
-  u_val1 = HW_Routine_08007D4C(i_val12,*(undefined4 *)(i_val12 + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(i_val12,*(undefined4 *)(i_val12 + 4));
   *(undefined2 *)(i_val4 + 6) = u_val1;
   *(undefined2 *)(*p_int15 + 4) = 7;
   *(undefined2 *)(*p_int15 + 8) = 1;
@@ -1079,7 +1079,7 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined4 *)(handle + 0x59c) = stack_val_c4;
   p_int3 = (int *)HW_GetSpriteAttr0Offset(handle);
   loop_i = *(int *)(handle + 0x588);
-  i_val4 = HW_Routine_08007D4C(i_val12,*(undefined4 *)(i_val12 + 4));
+  i_val4 = GBA_Vram_AllocateTileBlock(i_val12,*(undefined4 *)(i_val12 + 4));
   u_val1 = 0;
   if (*(int *)(handle + 0x588) != 0) {
     u_val1 = *(undefined2 *)(handle + 0x58c);
@@ -1235,14 +1235,14 @@ void M4A_Routine_080C16D4(int handle)
     }
     p_int3[1] = p_int3[1] + 0x10;
   }
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(handle + 0x538),0,0x100);
   p_int3 = (int *)(handle + 0x728);
   if (i_val4 != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = i_val4;
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -1255,13 +1255,13 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int15 = (int *)(0x72C + handle);
   if (p_uint6 != (undefined2 *)*p_int15) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int15 = (int)p_uint6;
   Animal_Routine_0805E860(*p_int3,6);
   i_val4 = *p_int15;
   i_val12 = 0x86C + handle;
-  u_val1 = HW_Routine_08007D4C(i_val12,*(undefined4 *)(i_val12 + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(i_val12,*(undefined4 *)(i_val12 + 4));
   *(undefined2 *)(i_val4 + 6) = u_val1;
   *(undefined2 *)(*p_int15 + 4) = 8;
   *(undefined1 *)(*p_int15 + 0x18) = 1;
@@ -1280,7 +1280,7 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined4 *)(handle + 0x74c) = stack_val_c4;
   p_int3 = (int *)HW_GetSpriteAttr0Offset(handle);
   loop_i = *(int *)(handle + 0x738);
-  i_val4 = HW_Routine_08007D4C(i_val12,*(undefined4 *)(i_val12 + 4));
+  i_val4 = GBA_Vram_AllocateTileBlock(i_val12,*(undefined4 *)(i_val12 + 4));
   u_val1 = 0;
   if (*(int *)(handle + 0x738) != 0) {
     u_val1 = *(undefined2 *)(handle + 0x73c);
@@ -1436,14 +1436,14 @@ void M4A_Routine_080C16D4(int handle)
     }
     p_int3[1] = p_int3[1] + 0x10;
   }
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   p_uint9 = (undefined4 *)(0x52C + handle);
   i_val4 = Animal_Routine_0805E824(u_val5,*p_uint9,0,0x100);
   if (i_val4 != *(int *)(handle + 0x5a0)) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(handle + 0x5a0) = i_val4;
-  p_uint7 = (ushort *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint7 = (ushort *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint7 = 0;
   p_uint7[1] = 0;
   p_uint7[2] = 0;
@@ -1458,24 +1458,24 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined1 *)(p_uint7 + 0xc) = 0;
   p_int3 = (int *)(0x5A4 + handle);
   if (p_uint7 != (ushort *)*p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = (int)p_uint7;
   *p_uint7 = (ushort)*(byte *)(0x8B4 + handle);
   p_uint7[1] = (ushort)*(byte *)(0x8B5 + handle);
-  u_val2 = HW_Routine_08007D4C(0x87C + handle,*(undefined4 *)(0x87C + handle + 4));
+  u_val2 = GBA_Vram_AllocateTileBlock(0x87C + handle,*(undefined4 *)(0x87C + handle + 4));
   p_uint7[3] = u_val2;
   *(undefined2 *)(*p_int3 + 4) = 0xc;
   *(undefined2 *)(*p_int3 + 8) = 1;
   *(undefined1 *)(*p_int3 + 0x18) = 1;
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val5,*p_uint9,0,0x100);
   p_int3 = (int *)(handle + 0x5c8);
   if (i_val4 != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = i_val4;
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -1488,13 +1488,13 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int15 = (int *)(0x5CC + handle);
   if (p_uint6 != (undefined2 *)*p_int15) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int15 = (int)p_uint6;
   Animal_Routine_0805E860(*p_int3,0x91A);
   i_val4 = *p_int15;
   i_val12 = 0x884 + handle;
-  u_val1 = HW_Routine_08007D4C(i_val12,*(undefined4 *)(i_val12 + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(i_val12,*(undefined4 *)(i_val12 + 4));
   *(undefined2 *)(i_val4 + 6) = u_val1;
   *(undefined2 *)(*p_int15 + 4) = 10;
   *(undefined2 *)(*p_int15 + 8) = 1;
@@ -1514,7 +1514,7 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined4 *)(handle + 0x5ec) = stack_val_c4;
   p_int3 = (int *)HW_GetSpriteAttr0Offset(handle);
   loop_i = *(int *)(handle + 0x5d8);
-  i_val4 = HW_Routine_08007D4C(i_val12,*(undefined4 *)(i_val12 + 4));
+  i_val4 = GBA_Vram_AllocateTileBlock(i_val12,*(undefined4 *)(i_val12 + 4));
   u_val1 = 0;
   if (*(int *)(handle + 0x5d8) != 0) {
     u_val1 = *(undefined2 *)(handle + 0x5dc);
@@ -1670,14 +1670,14 @@ void M4A_Routine_080C16D4(int handle)
     }
     p_int3[1] = p_int3[1] + 0x10;
   }
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(0x52C + handle),0,0x100);
   p_int3 = (int *)(handle + 0x5f0);
   if (i_val4 != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = i_val4;
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -1690,22 +1690,22 @@ void M4A_Routine_080C16D4(int handle)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int15 = (int *)(0x5F4 + handle);
   if (p_uint6 != (undefined2 *)*p_int15) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int15 = (int)p_uint6;
   Animal_Routine_0805E860(*p_int3,*(int *)(handle + 0x980) * 0x54 + 0x42C);
   *(ushort *)*p_int15 = (ushort)*(byte *)(0x8B4 + handle);
   *(ushort *)(*p_int15 + 2) = (ushort)*(byte *)(0x8B5 + handle);
   i_val4 = *p_int15;
-  u_val1 = HW_Routine_08007D4C(0x84C + handle,*(undefined4 *)(0x84C + handle + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(0x84C + handle,*(undefined4 *)(0x84C + handle + 4));
   *(undefined2 *)(i_val4 + 6) = u_val1;
   *(undefined2 *)(*p_int15 + 4) = 4;
   *(undefined2 *)(*p_int15 + 8) = 1;
   *(undefined1 *)(*p_int15 + 0x18) = 1;
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(0x534 + handle),0,0x100);
   if (i_val4 != *(int *)(handle + 0x6a0)) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(handle + 0x6a0) = i_val4;
   Animal_Routine_0805E860(i_val4,0);
@@ -1716,7 +1716,7 @@ void M4A_Routine_080C16D4(int handle)
     i_val12 = stack_val_38 << 4;
     do {
       i_val8 = stack_val_38 + i_val4;
-      p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+      p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
       *p_uint6 = 0;
       p_uint6[1] = 0;
       p_uint6[2] = 0;
@@ -1730,7 +1730,7 @@ void M4A_Routine_080C16D4(int handle)
       i_val8 = (i_val8 + loop_i) * 4;
       p_uint9 = (undefined4 *)(i_val8 + handle + 0x6A4);
       if (p_uint6 != (undefined2 *)*p_uint9) {
-        Dispatcher_Routine_08000608();
+        CppRuntime_FreeMemory();
       }
       *p_uint9 = p_uint6;
       i_val13 = 0x6A4;
@@ -1738,7 +1738,7 @@ void M4A_Routine_080C16D4(int handle)
       *(short *)(*(int *)(i_val8 + handle + i_val13) + 2) = (short)i_val12 + 0x28;
       i_val13 = *(int *)(i_val8 + handle + i_val13);
       i_val14 = 0x854 + handle;
-      u_val1 = HW_Routine_08007D4C(i_val14,*(undefined4 *)(i_val14 + 4));
+      u_val1 = GBA_Vram_AllocateTileBlock(i_val14,*(undefined4 *)(i_val14 + 4));
       *(undefined2 *)(i_val13 + 6) = u_val1;
       i_val13 = 0x6A4;
       *(undefined2 *)(*(int *)(i_val8 + handle + 0x6A4) + 4) = 5;
@@ -1761,7 +1761,7 @@ void M4A_Routine_080C16D4(int handle)
     *(undefined4 *)(handle + 0x724) = stack_val_c4;
     p_int3 = (int *)HW_GetSpriteAttr0Offset(handle,handle + 0x728);
     i_val12 = *(int *)(handle + 0x710);
-    i_val4 = HW_Routine_08007D4C(i_val14,*(undefined4 *)(i_val14 + 4));
+    i_val4 = GBA_Vram_AllocateTileBlock(i_val14,*(undefined4 *)(i_val14 + 4));
     u_val1 = 0;
     if (*(int *)(handle + 0x710) != 0) {
       u_val1 = *(undefined2 *)(handle + 0x714);
@@ -1919,10 +1919,10 @@ void M4A_Routine_080C16D4(int handle)
     }
     stack_val_38 = stack_val_38 + 1;
   } while (stack_val_38 < 5);
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(handle + 0x530),0,0x100);
   if (i_val4 != *(int *)(handle + 0x618)) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(handle + 0x618) = i_val4;
   Animal_Routine_0805E860(i_val4,0);
@@ -1934,7 +1934,7 @@ void M4A_Routine_080C16D4(int handle)
     stack_val_30 = stack_val_38 + 1;
     do {
       i_val8 = stack_val_38 + i_val4;
-      p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+      p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
       *p_uint6 = 0;
       p_uint6[1] = 0;
       p_uint6[2] = 0;
@@ -1948,7 +1948,7 @@ void M4A_Routine_080C16D4(int handle)
       i_val8 = (i_val8 + loop_i) * 4;
       p_uint9 = (undefined4 *)(i_val8 + handle + 0x61C);
       if (p_uint6 != (undefined2 *)*p_uint9) {
-        Dispatcher_Routine_08000608();
+        CppRuntime_FreeMemory();
       }
       *p_uint9 = p_uint6;
       i_val13 = 0x61C;
@@ -1956,7 +1956,7 @@ void M4A_Routine_080C16D4(int handle)
       *(short *)(*(int *)(i_val8 + handle + i_val13) + 2) = (short)i_val12 + 0x28;
       i_val13 = *(int *)(i_val8 + handle + i_val13);
       i_val14 = 0x85C + handle;
-      u_val1 = HW_Routine_08007D4C(i_val14,*(undefined4 *)(i_val14 + 4));
+      u_val1 = GBA_Vram_AllocateTileBlock(i_val14,*(undefined4 *)(i_val14 + 4));
       *(undefined2 *)(i_val13 + 6) = u_val1;
       i_val13 = 0x61C;
       *(undefined2 *)(*(int *)(i_val8 + handle + 0x61C) + 4) = 6;
@@ -1979,7 +1979,7 @@ void M4A_Routine_080C16D4(int handle)
     *(undefined4 *)(handle + 0x69c) = stack_val_c4;
     p_int3 = (int *)HW_GetSpriteAttr0Offset(handle,handle + 0x6a0);
     i_val12 = *(int *)(handle + 0x688);
-    i_val4 = HW_Routine_08007D4C(i_val14,*(undefined4 *)(i_val14 + 4));
+    i_val4 = GBA_Vram_AllocateTileBlock(i_val14,*(undefined4 *)(i_val14 + 4));
     u_val1 = 0;
     if (*(int *)(handle + 0x688) != 0) {
       u_val1 = *(undefined2 *)(handle + 0x68c);
@@ -2271,7 +2271,7 @@ void M4A_Routine_080C2D54(int handle)
       *(undefined4 *)(handle + 0x74c) = stack_val_5c;
       p_int7 = (int *)HW_GetSpriteAttr0Offset(handle);
       i_val13 = *(int *)(handle + 0x738);
-      i_val11 = HW_Routine_08007D4C(0x86C + handle,*(undefined4 *)(0x86C + handle + 4));
+      i_val11 = GBA_Vram_AllocateTileBlock(0x86C + handle,*(undefined4 *)(0x86C + handle + 4));
       u_val3 = 0;
       if (*(int *)(handle + 0x738) != 0) {
         u_val3 = *(undefined2 *)(handle + 0x73c);
@@ -2466,7 +2466,7 @@ void M4A_Routine_080C2D54(int handle)
       *(undefined4 *)(handle + 0x614) = stack_val_5c;
       p_int7 = (int *)HW_GetSpriteAttr0Offset(handle);
       i_val13 = *(int *)(handle + 0x600);
-      i_val11 = HW_Routine_08007D4C(0x84C + handle,*(undefined4 *)(0x84C + handle + 4));
+      i_val11 = GBA_Vram_AllocateTileBlock(0x84C + handle,*(undefined4 *)(0x84C + handle + 4));
       u_val3 = 0;
       if (*(int *)(handle + 0x600) != 0) {
         u_val3 = *(undefined2 *)(handle + 0x604);
@@ -2657,7 +2657,7 @@ void M4A_Routine_080C2D54(int handle)
     *(undefined4 *)(handle + 0x5c4) = stack_val_5c;
     p_int7 = (int *)HW_GetSpriteAttr0Offset(handle);
     i_val13 = *(int *)(handle + 0x5b0);
-    i_val11 = HW_Routine_08007D4C(0x87C + handle,*(undefined4 *)(0x87C + handle + 4));
+    i_val11 = GBA_Vram_AllocateTileBlock(0x87C + handle,*(undefined4 *)(0x87C + handle + 4));
     u_val3 = 0;
     if (*(int *)(handle + 0x5b0) != 0) {
       u_val3 = *(undefined2 *)(handle + 0x5b4);
@@ -2922,7 +2922,7 @@ void M4A_Routine_080C38E4(int handle,int channel)
       ScriptEngine_Routine_0804E958(0x20004,i_val6,0,0,&stack_val_54,0,1);
     }
     p_int2 = (int *)HW_GetSpriteAttr0Offset(handle);
-    i_val3 = HW_Routine_08007D4C(0x83C + handle,*(undefined4 *)(0x83C + handle + 4));
+    i_val3 = GBA_Vram_AllocateTileBlock(0x83C + handle,*(undefined4 *)(0x83C + handle + 4));
     HW_Routine_08008F0C(&stack_val_4c,i_val6,i_val3 * 0x20 + 0x06010000,0x100);
     p_uint5 = (undefined4 *)p_int2[1];
     if (p_uint5 == (undefined4 *)p_int2[3]) {
@@ -3221,7 +3221,7 @@ u32 M4A_Routine_080C3D04(int handle)
             p_uint16 = (undefined4 *)(handle + 0x544);
             u_val12 = *(uint *)*p_uint16;
             if (-1 < (int)(-u_val12 | u_val12)) {
-              Farm_Routine_08009378((uint *)*p_uint16 + 3,0x889,1,1);
+              Fade_StartFadeIn((uint *)*p_uint16 + 3,0x889,1,1);
               i_val14 = HW_GetPaletteBankOffset(handle);
               _call_via_r2(i_val14,*p_uint16,*(undefined4 *)(*(int *)(i_val14 + 8) + 0x10));
             }
@@ -3232,7 +3232,7 @@ u32 M4A_Routine_080C3D04(int handle)
               } while ((int)(-*(uint *)*p_uint16 | *(uint *)*p_uint16) < 0);
             }
             p_int11 = (int *)(handle + 0x544);
-            Farm_Routine_0800934C(*p_int11 + 0xc,0x889,1,1);
+            Fade_StartFadeOut(*p_int11 + 0xc,0x889,1,1);
             i_val14 = HW_GetPaletteBankOffset(handle);
             _call_via_r2(i_val14,*p_int11,*(undefined4 *)(*(int *)(i_val14 + 8) + 0x10));
           }
@@ -3340,7 +3340,7 @@ LAB_080c3fb6:
         p_uint16 = (undefined4 *)(handle + 0x544);
         u_val12 = *(uint *)*p_uint16;
         if (-1 < (int)(-u_val12 | u_val12)) {
-          Farm_Routine_08009378((uint *)*p_uint16 + 3,0x889,1,1);
+          Fade_StartFadeIn((uint *)*p_uint16 + 3,0x889,1,1);
           i_val14 = HW_GetPaletteBankOffset(handle);
           _call_via_r2(i_val14,*p_uint16,*(undefined4 *)(*(int *)(i_val14 + 8) + 0x10));
         }
@@ -3352,7 +3352,7 @@ LAB_080c3fb6:
           u_val12 = -**(uint **)(handle + 0x544) | **(uint **)(handle + 0x544);
         }
         p_int11 = (int *)(handle + 0x544);
-        Farm_Routine_0800934C(*p_int11 + 0xc,0x889,1,1);
+        Fade_StartFadeOut(*p_int11 + 0xc,0x889,1,1);
         i_val13 = HW_GetPaletteBankOffset(handle);
         _call_via_r2(i_val13,*p_int11,*(undefined4 *)(*(int *)(i_val13 + 8) + 0x10));
         *(undefined1 *)(handle + 0x8b4) = 0x78;
@@ -3551,7 +3551,7 @@ LAB_080c41f8:
       p_uint16 = (undefined4 *)(handle + 0x544);
       u_val12 = *(uint *)*p_uint16;
       if (-1 < (int)(-u_val12 | u_val12)) {
-        Farm_Routine_08009378((uint *)*p_uint16 + 3,0x889,1,1);
+        Fade_StartFadeIn((uint *)*p_uint16 + 3,0x889,1,1);
         i_val14 = HW_GetPaletteBankOffset(handle);
         _call_via_r2(i_val14,*p_uint16,*(undefined4 *)(*(int *)(i_val14 + 8) + 0x10));
       }
@@ -3563,7 +3563,7 @@ LAB_080c41f8:
         u_val12 = -**(uint **)(handle + 0x544) | **(uint **)(handle + 0x544);
       }
       p_int11 = (int *)(handle + 0x544);
-      Farm_Routine_0800934C(*p_int11 + 0xc,0x889,1,1);
+      Fade_StartFadeOut(*p_int11 + 0xc,0x889,1,1);
       i_val13 = HW_GetPaletteBankOffset(handle);
       _call_via_r2(i_val13,*p_int11,*(undefined4 *)(*(int *)(i_val13 + 8) + 0x10));
       *(undefined1 *)(handle + 0x8b4) = 0x78;
@@ -3927,7 +3927,7 @@ void M4A_Routine_080C5378(int handle)
           p_uint7 = (uint *)*p_uint9;
           u_val6 = *p_uint7;
           if (-1 < (int)(-u_val6 | u_val6)) {
-            Farm_Routine_08009378(p_uint7 + 3,0x889,1,1);
+            Fade_StartFadeIn(p_uint7 + 3,0x889,1,1);
             loop_j = HW_GetPaletteBankOffset(handle);
             _call_via_r2(loop_j,*p_uint9,*(undefined4 *)(*(int *)(loop_j + 8) + 0x10));
           }
@@ -4004,7 +4004,7 @@ void M4A_Routine_080C5648(int handle)
   *(undefined1 *)(handle + 0x8B9) = 0;
   *(undefined1 *)(handle + i_val1 + 4) = 0;
   p_int4 = (int *)(handle + 0x544);
-  Farm_Routine_0800934C(*p_int4 + 0xc,i_val3 + -0x30,1,1);
+  Fade_StartFadeOut(*p_int4 + 0xc,i_val3 + -0x30,1,1);
   i_val3 = HW_GetPaletteBankOffset(handle);
   _call_via_r2(i_val3,*p_int4,*(undefined4 *)(*(int *)(i_val3 + 8) + 0x10));
   M4A_Routine_080C2D54(handle);
@@ -4055,11 +4055,11 @@ void M4A_Routine_080C5710(int handle)
   undefined4 *puStack_24;
   
   stack_val_2c = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0x14);
+  u_val1 = CppRuntime_OperatorNewArray(0x14);
   i_val2 = Animal_Routine_0805E824(u_val1,*(undefined4 *)(handle + 0x524),0,0x100);
   p_int7 = (int *)(handle + 0x550);
   if (i_val2 != *p_int7) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int7 = i_val2;
   Animal_Routine_0805E860(i_val2,0);
@@ -4078,7 +4078,7 @@ void M4A_Routine_080C5710(int handle)
   *(undefined4 *)(handle + 0x574) = stack_val_40;
   p_int7 = (int *)HW_GetSpriteAttr0Offset(handle);
   i_val8 = *(int *)(handle + 0x560);
-  i_val2 = HW_Routine_08007D4C(handle + 0x844,*(undefined4 *)(handle + 0x844 + 4));
+  i_val2 = GBA_Vram_AllocateTileBlock(handle + 0x844,*(undefined4 *)(handle + 0x844 + 4));
   u_val6 = 0;
   if (*(int *)(handle + 0x560) != 0) {
     u_val6 = *(undefined2 *)(handle + 0x564);
@@ -4322,11 +4322,11 @@ void M4A_Routine_080C5A6C(int handle)
         *(int *)(handle + 0x8AC) = i_val1 + 1;
         *(undefined4 *)(handle + 0x89C) = 2;
         *(undefined1 *)(handle + 0x969) = 0;
-        u_val2 = Dispatcher_Routine_080005D4(0x14);
+        u_val2 = CppRuntime_OperatorNewArray(0x14);
         i_val1 = Animal_Routine_0805E824(u_val2,*(undefined4 *)(handle + 0x520),0,0x100);
         p_int13 = (int *)(handle + 0x550);
         if (i_val1 != *p_int13) {
-          Dispatcher_Routine_08000608();
+          CppRuntime_FreeMemory();
         }
         *p_int13 = i_val1;
         Animal_Routine_0805E860(i_val1,0);
@@ -4345,7 +4345,7 @@ void M4A_Routine_080C5A6C(int handle)
         *(undefined4 *)(handle + 0x574) = stack_val_5c;
         p_int13 = (int *)HW_GetSpriteAttr0Offset(handle,handle + 0x578);
         i_val6 = *(int *)(handle + 0x560);
-        i_val1 = HW_Routine_08007D4C(handle + 0x844,*(undefined4 *)(handle + 0x844 + 4));
+        i_val1 = GBA_Vram_AllocateTileBlock(handle + 0x844,*(undefined4 *)(handle + 0x844 + 4));
         u_val11 = 0;
         if (*(int *)(handle + 0x560) != 0) {
           u_val11 = *(undefined2 *)(handle + 0x564);
@@ -4536,7 +4536,7 @@ void M4A_Routine_080C5A6C(int handle)
     p_uint3 = (undefined4 *)(handle + 0x544);
     u_val8 = *(uint *)*p_uint3;
     if (-1 < (int)(-u_val8 | u_val8)) {
-      Farm_Routine_08009378((uint *)*p_uint3 + 3,0x889,1,1);
+      Fade_StartFadeIn((uint *)*p_uint3 + 3,0x889,1,1);
       i_val1 = HW_GetPaletteBankOffset(handle);
       _call_via_r2(i_val1,*p_uint3,*(undefined4 *)(*(int *)(i_val1 + 8) + 0x10));
     }
@@ -4550,7 +4550,7 @@ void M4A_Routine_080C5A6C(int handle)
       u_val8 = -**(uint **)(handle + 0x544) | **(uint **)(handle + 0x544);
     }
     p_int13 = (int *)(handle + 0x544);
-    Farm_Routine_0800934C(*p_int13 + 0xc,0x889,1,1);
+    Fade_StartFadeOut(*p_int13 + 0xc,0x889,1,1);
     i_val6 = HW_GetPaletteBankOffset(handle);
     _call_via_r2(i_val6,*p_int13,*(undefined4 *)(*(int *)(i_val6 + 8) + 0x10));
     *(undefined2 *)(*(int *)(handle + 0x5f0) + 0x10) = 0x100;
@@ -4564,7 +4564,7 @@ void M4A_Routine_080C5A6C(int handle)
     *(undefined2 *)((int)puStack_2c + 2) = 2;
     ScriptEngine_Routine_0804E958(stack_val_44,i_val1,0,0,stack_buf_7c,0,1);
     p_int13 = (int *)HW_GetSpriteAttr0Offset(handle);
-    i_val6 = HW_Routine_08007D4C(handle + 0x83C,*(undefined4 *)(handle + 0x83C + 4));
+    i_val6 = GBA_Vram_AllocateTileBlock(handle + 0x83C,*(undefined4 *)(handle + 0x83C + 4));
     HW_Routine_08008F0C(&stack_val_78,i_val1,i_val6 * 0x20 + 0x06010000,0x100);
     p_uint3 = puStack_34;
     puStack_24 = (undefined4 *)p_int13[1];
@@ -4767,9 +4767,9 @@ void M4A_Routine_080C608C(int handle)
     Animal_Routine_08050D0C(i_val3,3);
   }
   *p_int19 = 0;
-  u_val4 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(&stack_val_12c);
-  HW_Routine_0800770C(&stack_val_128);
+  u_val4 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(&stack_val_12c);
+  GBA_BgLayer_Init(&stack_val_128);
   i_val3 = Animal_Routine_08050CC0(u_val4,0,0x18,0,0,&stack_val_12c,&stack_val_128);
   p_int19 = (int *)(0x51C + handle);
   i_val5 = *p_int19;
@@ -4777,7 +4777,7 @@ void M4A_Routine_080C608C(int handle)
     Animal_Routine_08050D0C(i_val5,3);
   }
   *p_int19 = i_val3;
-  HW_Routine_08007714(&stack_val_128,2);
+  GBA_BgLayer_SetPriority(&stack_val_128,2);
   HW_Routine_08008364(&stack_val_12c,2);
   u_val4 = *(undefined4 *)(0x51C + handle);
   u_val6 = HW_Routine_080088DC(handle);
@@ -4787,19 +4787,19 @@ void M4A_Routine_080C608C(int handle)
   u_val10 = HW_Routine_0800894C(handle);
   Animal_Routine_08050D3C(u_val4,u_val6,u_val7,u_val8,u_val9,u_val10,0x814 + handle);
   if (*(char *)(0x96A + handle) == '\0') {
-    u_val4 = Dispatcher_Routine_080005D4(0x14);
+    u_val4 = CppRuntime_OperatorNewArray(0x14);
     i_val3 = 0x540;
   }
   else {
-    u_val4 = Dispatcher_Routine_080005D4(0x14);
+    u_val4 = CppRuntime_OperatorNewArray(0x14);
     i_val3 = 0x53C;
   }
   i_val3 = Animal_Routine_0805E824(u_val4,*(undefined4 *)(i_val3 + handle),0,0x100);
   if (i_val3 != *(int *)(handle + 0x750)) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(handle + 0x750) = i_val3;
-  p_uint2 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint2 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint2 = 0;
   p_uint2[1] = 0;
   p_uint2[2] = 0;
@@ -4812,7 +4812,7 @@ void M4A_Routine_080C608C(int handle)
   *(undefined1 *)(p_uint2 + 0xc) = 0;
   p_int19 = (int *)(0x754 + handle);
   if (p_uint2 != (undefined2 *)*p_int19) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int19 = (int)p_uint2;
   Animal_Routine_0805E860(*(int *)(handle + 0x750),0);
@@ -4820,7 +4820,7 @@ void M4A_Routine_080C608C(int handle)
   *(undefined2 *)(*p_int19 + 2) = 0x40;
   i_val3 = *p_int19;
   i_val5 = 0x874 + handle;
-  u_val1 = HW_Routine_08007D4C(i_val5,*(undefined4 *)(i_val5 + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(i_val5,*(undefined4 *)(i_val5 + 4));
   *(undefined2 *)(i_val3 + 6) = u_val1;
   *(undefined2 *)(*p_int19 + 4) = 9;
   *(undefined1 *)(*p_int19 + 0x18) = 1;
@@ -4839,7 +4839,7 @@ void M4A_Routine_080C608C(int handle)
   *(undefined4 *)(handle + 0x774) = stack_val_100;
   p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
   i_val21 = *(int *)(handle + 0x760);
-  i_val3 = HW_Routine_08007D4C(i_val5,*(undefined4 *)(i_val5 + 4));
+  i_val3 = GBA_Vram_AllocateTileBlock(i_val5,*(undefined4 *)(i_val5 + 4));
   u_val1 = 0;
   if (*(int *)(handle + 0x760) != 0) {
     u_val1 = *(undefined2 *)(handle + 0x764);
@@ -5024,7 +5024,7 @@ void M4A_Routine_080C608C(int handle)
     }
     p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
     i_val3 = i_val3 + stack_val_68;
-    i_val5 = HW_Routine_08007D4C(stack_val_64,*(undefined4 *)(stack_val_64 + 4));
+    i_val5 = GBA_Vram_AllocateTileBlock(stack_val_64,*(undefined4 *)(stack_val_64 + 4));
     HW_Routine_08008F0C(&stack_val_124,i_val3 * 4 + handle + 0x110,(stack_val_38 + i_val5) * 0x20 + 0x06010000
                   ,0x100);
     p_uint14 = puStack_48;
@@ -5110,14 +5110,14 @@ void M4A_Routine_080C608C(int handle)
     }
     if (stack_val_68 == 3) {
       p_uint11 = (undefined4 *)(handle + 0x790);
-      i_val3 = HW_Routine_08007D4C(stack_val_64,*(undefined4 *)(stack_val_64 + 4));
+      i_val3 = GBA_Vram_AllocateTileBlock(stack_val_64,*(undefined4 *)(stack_val_64 + 4));
       ScriptEngine_Routine_0804EA94(&stack_val_d0,200,0x8d,i_val3 + 0x18,2,0,2,1);
       u_val4 = stack_val_d0;
       u_val6 = stack_val_cc;
     }
     else {
       p_uint11 = (undefined4 *)(stack_val_38 + handle + 0x778);
-      i_val3 = HW_Routine_08007D4C(stack_val_64,*(undefined4 *)(stack_val_64 + 4));
+      i_val3 = GBA_Vram_AllocateTileBlock(stack_val_64,*(undefined4 *)(stack_val_64 + 4));
       ScriptEngine_Routine_0804EA94(&stack_val_d8,0x78,stack_val_68 * 0x10 + 0x6d,i_val3 + stack_val_38,2,0,2,1);
       u_val4 = stack_val_d8;
       u_val6 = stack_val_d4;
@@ -5126,14 +5126,14 @@ void M4A_Routine_080C608C(int handle)
     p_uint11[1] = u_val6;
     stack_val_68 = stack_val_3c;
   } while (stack_val_3c < 4);
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   i_val3 = Animal_Routine_0805E824(u_val4,*(undefined4 *)(0x52C + handle),0,0x100);
   p_int19 = (int *)(handle + 0x798);
   if (i_val3 != *p_int19) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int19 = i_val3;
-  p_uint2 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint2 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint2 = 0;
   p_uint2[1] = 0;
   p_uint2[2] = 0;
@@ -5146,7 +5146,7 @@ void M4A_Routine_080C608C(int handle)
   *(undefined1 *)(p_uint2 + 0xc) = 0;
   p_int20 = (int *)(0x79C + handle);
   if (p_uint2 != (undefined2 *)*p_int20) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int20 = (int)p_uint2;
   Animal_Routine_0805E860(*p_int19,*(int *)(handle + 0x980) * 0x54 + 0x42C);
@@ -5154,7 +5154,7 @@ void M4A_Routine_080C608C(int handle)
   *(undefined2 *)(*p_int20 + 2) = 0x85;
   i_val3 = *p_int20;
   i_val5 = 0x894 + handle;
-  u_val1 = HW_Routine_08007D4C(i_val5,*(undefined4 *)(i_val5 + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(i_val5,*(undefined4 *)(i_val5 + 4));
   *(undefined2 *)(i_val3 + 6) = u_val1;
   *(undefined2 *)(*p_int20 + 4) = 4;
   *(undefined1 *)(*p_int20 + 0x18) = 1;
@@ -5178,7 +5178,7 @@ void M4A_Routine_080C608C(int handle)
   *(uint *)(handle + 0x7bc) = u_val12;
   p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
   i_val21 = *(int *)(handle + 0x7a8);
-  i_val3 = HW_Routine_08007D4C(i_val5,*(undefined4 *)(i_val5 + 4));
+  i_val3 = GBA_Vram_AllocateTileBlock(i_val5,*(undefined4 *)(i_val5 + 4));
   u_val1 = 0;
   if (*(int *)(handle + 0x7a8) != 0) {
     u_val1 = *(undefined2 *)(handle + 0x7ac);
@@ -5348,14 +5348,14 @@ void M4A_Routine_080C608C(int handle)
     }
     p_int19[1] = p_int19[1] + 0x10;
   }
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   i_val3 = Animal_Routine_0805E824(u_val4,*(undefined4 *)(0x534 + handle),0,0x100);
   p_int19 = (int *)(handle + 0x7c0);
   if (i_val3 != *p_int19) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int19 = i_val3;
-  p_uint2 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint2 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint2 = 0;
   p_uint2[1] = 0;
   p_uint2[2] = 0;
@@ -5368,13 +5368,13 @@ void M4A_Routine_080C608C(int handle)
   *(undefined1 *)(p_uint2 + 0xc) = 0;
   p_int20 = (int *)(0x7C4 + handle);
   if (p_uint2 != (undefined2 *)*p_int20) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int20 = (int)p_uint2;
   *p_uint2 = 0x68;
   p_uint2[1] = 0x7d;
   i_val3 = 0x854 + handle;
-  u_val1 = HW_Routine_08007D4C(i_val3,*(undefined4 *)(i_val3 + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(i_val3,*(undefined4 *)(i_val3 + 4));
   p_uint2[3] = u_val1;
   *(undefined2 *)(*p_int20 + 4) = 5;
   *(undefined1 *)(*p_int20 + 0x18) = 1;
@@ -5398,7 +5398,7 @@ void M4A_Routine_080C608C(int handle)
   *(uint *)(handle + 0x7e4) = u_val12;
   p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
   i_val5 = *(int *)(handle + 2000);
-  i_val3 = HW_Routine_08007D4C(i_val3,*(undefined4 *)(i_val3 + 4));
+  i_val3 = GBA_Vram_AllocateTileBlock(i_val3,*(undefined4 *)(i_val3 + 4));
   u_val1 = 0;
   if (*(int *)(handle + 2000) != 0) {
     u_val1 = *(undefined2 *)(handle + 0x7d4);
@@ -5568,7 +5568,7 @@ void M4A_Routine_080C608C(int handle)
     }
     p_int19[1] = p_int19[1] + 0x10;
   }
-  p_uint2 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint2 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint2 = 0;
   p_uint2[1] = 0;
   p_uint2[2] = 0;
@@ -5581,13 +5581,13 @@ void M4A_Routine_080C608C(int handle)
   *(undefined1 *)(p_uint2 + 0xc) = 0;
   p_int19 = (int *)(0x7EC + handle);
   if (p_uint2 != (undefined2 *)*p_int19) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int19 = (int)p_uint2;
   *p_uint2 = 0x68;
   p_uint2[1] = 0x8d;
   i_val3 = 0x86C + handle;
-  u_val1 = HW_Routine_08007D4C(i_val3,*(undefined4 *)(i_val3 + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(i_val3,*(undefined4 *)(i_val3 + 4));
   p_uint2[3] = u_val1;
   *(undefined2 *)(*p_int19 + 4) = 8;
   *(undefined1 *)(*p_int19 + 0x18) = 1;
@@ -5612,7 +5612,7 @@ void M4A_Routine_080C608C(int handle)
   *(uint *)(handle + 0x80c) = u_val12;
   p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
   i_val5 = *(int *)(handle + 0x7f8);
-  i_val3 = HW_Routine_08007D4C(i_val3,*(undefined4 *)(i_val3 + 4));
+  i_val3 = GBA_Vram_AllocateTileBlock(i_val3,*(undefined4 *)(i_val3 + 4));
   u_val1 = 0;
   if (*(int *)(handle + 0x7f8) != 0) {
     u_val1 = *(undefined2 *)(handle + 0x7fc);
@@ -5884,7 +5884,7 @@ LAB_080c76aa:
             p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
             i_val5 = stack_val_58;
             i_val3 = i_val3 + stack_val_58;
-            i_val21 = HW_Routine_08007D4C(0x88C + handle,
+            i_val21 = GBA_Vram_AllocateTileBlock(0x88C + handle,
                                    *(undefined4 *)(0x88C + handle + 4));
             HW_Routine_08008F0C(&stack_val_114,i_val3 * 4 + handle + 0x110,
                           (i_val5 * 8 + i_val21) * 0x20 + 0x06010000,0x100);
@@ -5993,7 +5993,7 @@ LAB_080c76aa:
               }
               p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
               i_val3 = i_val3 + stack_val_68;
-              i_val5 = HW_Routine_08007D4C(0x88C + handle,
+              i_val5 = GBA_Vram_AllocateTileBlock(0x88C + handle,
                                     *(undefined4 *)(0x88C + handle + 4));
               HW_Routine_08008F0C(&stack_val_114,i_val3 * 4 + handle + 0x110,
                             (stack_val_68 * 8 + i_val5) * 0x20 + 0x06010000,0x100);
@@ -6498,7 +6498,7 @@ u32 M4A_Routine_080C7EA8(undefined4 *handle,undefined4 channel)
   undefined4 u_val1;
   
   *handle = gRomData_080E8560;
-  u_val1 = Dispatcher_Routine_080005D4(0x98C);
+  u_val1 = CppRuntime_OperatorNewArray(0x98C);
   u_val1 = M4A_Routine_080C0DCC(u_val1,channel);
   handle[1] = u_val1;
   return handle;
@@ -6589,46 +6589,46 @@ u32 M4A_Routine_080C7F58(int handle,undefined4 channel)
   *(undefined4 *)(handle + 0x1c) = 0;
   *(undefined4 *)(handle + 0x20) = 0;
   *(undefined4 *)(handle + 0x2a4) = 0;
-  HW_Routine_0800835C(stack_buf_6c);
-  HW_Routine_0800770C(stack_buf_68);
+  GBA_TextLayer_Init(stack_buf_6c);
+  GBA_BgLayer_Init(stack_buf_68);
   Animal_Routine_08050CC0(handle + 0x348,0,0x1c,0,0,stack_buf_6c,stack_buf_68);
-  HW_Routine_08007714(stack_buf_68,2);
+  GBA_BgLayer_SetPriority(stack_buf_68,2);
   HW_Routine_08008364(stack_buf_6c,2);
-  HW_Routine_08007874(handle + 0x354);
-  u_val2 = HW_Routine_08007B54(handle + 0x354,2);
+  GBA_ObjAttr_Init(handle + 0x354);
+  u_val2 = GBA_ObjAttr_AllocateSprite(handle + 0x354,2);
   *(undefined4 *)(handle + 0x358) = u_val2;
-  HW_Routine_08007128(handle + 0x35c);
-  u_val2 = HW_Routine_0800736C(handle + 0x35c);
+  GBA_PaletteManager_Init(handle + 0x35c);
+  u_val2 = GBA_PaletteManager_Allocate(handle + 0x35c);
   *(undefined4 *)(handle + 0x360) = u_val2;
-  HW_Routine_08007874(handle + 0x364);
-  u_val2 = HW_Routine_08007B54(handle + 0x364,2);
+  GBA_ObjAttr_Init(handle + 0x364);
+  u_val2 = GBA_ObjAttr_AllocateSprite(handle + 0x364,2);
   *(undefined4 *)(handle + 0x368) = u_val2;
-  HW_Routine_08007128(handle + 0x36c);
-  u_val2 = HW_Routine_0800736C(handle + 0x36c);
+  GBA_PaletteManager_Init(handle + 0x36c);
+  u_val2 = GBA_PaletteManager_Allocate(handle + 0x36c);
   *(undefined4 *)(handle + 0x370) = u_val2;
-  HW_Routine_08007874(handle + 0x374);
-  u_val2 = HW_Routine_08007B54(handle + 0x374,1);
+  GBA_ObjAttr_Init(handle + 0x374);
+  u_val2 = GBA_ObjAttr_AllocateSprite(handle + 0x374,1);
   *(undefined4 *)(handle + 0x378) = u_val2;
-  HW_Routine_08007874(handle + 0x37c);
-  u_val2 = HW_Routine_08007B54(handle + 0x37c,1);
+  GBA_ObjAttr_Init(handle + 0x37c);
+  u_val2 = GBA_ObjAttr_AllocateSprite(handle + 0x37c,1);
   *(undefined4 *)(handle + 0x380) = u_val2;
-  HW_Routine_08007128(handle + 900);
-  u_val2 = HW_Routine_0800736C(handle + 900);
+  GBA_PaletteManager_Init(handle + 900);
+  u_val2 = GBA_PaletteManager_Allocate(handle + 900);
   *(undefined4 *)(handle + 0x388) = u_val2;
-  HW_Routine_08007874(handle + 0x38c);
-  u_val2 = HW_Routine_08007B54(handle + 0x38c,1);
+  GBA_ObjAttr_Init(handle + 0x38c);
+  u_val2 = GBA_ObjAttr_AllocateSprite(handle + 0x38c,1);
   *(undefined4 *)(handle + 0x390) = u_val2;
-  HW_Routine_08007874(handle + 0x394);
-  u_val2 = HW_Routine_08007B54(handle + 0x394,1);
+  GBA_ObjAttr_Init(handle + 0x394);
+  u_val2 = GBA_ObjAttr_AllocateSprite(handle + 0x394,1);
   *(undefined4 *)(handle + 0x398) = u_val2;
-  HW_Routine_08007128(handle + 0x39c);
-  u_val2 = HW_Routine_0800736C(handle + 0x39c);
+  GBA_PaletteManager_Init(handle + 0x39c);
+  u_val2 = GBA_PaletteManager_Allocate(handle + 0x39c);
   *(undefined4 *)(handle + 0x3a0) = u_val2;
   loop_i = handle + 0x3a4;
   i_val7 = 8;
   piStack_28 = &stack_val_64;
   do {
-    HW_Routine_08007874(loop_i);
+    GBA_ObjAttr_Init(loop_i);
     *(undefined4 *)(loop_i + 4) = 0;
     loop_i = loop_i + 8;
     i_val7 = i_val7 + -1;
@@ -6652,7 +6652,7 @@ u32 M4A_Routine_080C7F58(int handle,undefined4 channel)
   puStack_4c = (undefined2 *)(handle + 0x660);
   puStack_48 = (undefined1 *)(handle + 0x67C);
   do {
-    HW_Routine_08007128(loop_i);
+    GBA_PaletteManager_Init(loop_i);
     *(undefined4 *)(loop_i + 4) = 0;
     i_val1 = 0x434;
     loop_i = loop_i + 8;
@@ -6753,11 +6753,11 @@ u32 M4A_Routine_080C7F58(int handle,undefined4 channel)
   do {
     i_val7 = loop_i * 8 + handle + 0x3a4;
     HW_Routine_08007C28(i_val7,*p_uint8);
-    u_val2 = HW_Routine_08007B54(i_val7,2);
+    u_val2 = GBA_ObjAttr_AllocateSprite(i_val7,2);
     *p_uint8 = u_val2;
     i_val7 = loop_i * 8 + handle + 0x3ec;
     HW_Routine_080073E0(i_val7,p_uint8[0x12]);
-    u_val2 = HW_Routine_0800736C(i_val7);
+    u_val2 = GBA_PaletteManager_Allocate(i_val7);
     p_uint8[0x12] = u_val2;
     p_uint8 = p_uint8 + 2;
     loop_i = loop_i + 1;
@@ -6836,7 +6836,7 @@ void M4A_Routine_080C8360(int handle,undefined4 channel)
     if (*(int *)(vel_y + 0x18) != 0) {
       cpp_operator_delete();
     }
-    Dispatcher_Routine_08000608(vel_y);
+    CppRuntime_FreeMemory(vel_y);
   }
   HW_Routine_080086BC(handle,channel);
   return;
@@ -6935,10 +6935,10 @@ void M4A_Routine_080C85A0(int handle)
   HW_Routine_08008EB8(0,0x6000000,0x8000);
   p_uint4 = (undefined2 *)HW_GetSpriteAttr1Offset(handle);
   *p_uint4 = 0x1e40;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0x00030003,u_val14,0x800);
   Animal_Routine_08051320(u_val14,0,0,0x1e,3,0,0);
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   HW_Routine_08008EB8(0x03FF03FF,u_val12,0x800);
   i_val3 = HW_GetSpriteAttr1Offset(handle);
   *(short *)(i_val3 + 0x1e) = (short)0x1EB;
@@ -6958,7 +6958,7 @@ void M4A_Routine_080C85A0(int handle)
   do {
     stack_val_a0 = 0x20001;
     ScriptEngine_Routine_0804E5AC(0x20001,stack_buf_150,0,0,*p_uint4,0,1);
-    HW_Routine_08008E64(puStack_34,i_val3,0x40);
+    GBA_DMA3_FastCopy(puStack_34,i_val3,0x40);
     i_val3 = i_val3 + 0x40;
     p_uint4 = p_uint4 + 1;
     loop_i = loop_i + 1;
@@ -7061,7 +7061,7 @@ void M4A_Routine_080C85A0(int handle)
   ScriptEngine_Routine_0804E9F4(0x0600FFB4,0x20,2,2,0,0x20);
   M4A_Routine_080C8550(handle);
   p_int5 = (int *)HW_GetSpriteAttr0Offset(handle);
-  i_val3 = HW_Routine_08007D4C(handle + 0x354,*(undefined4 *)(handle + 0x358));
+  i_val3 = GBA_Vram_AllocateTileBlock(handle + 0x354,*(undefined4 *)(handle + 0x358));
   piStack_2c = p_int5;
   HW_Routine_08008F0C(stack_buf_110,gRomGfx_08752F8C,i_val3 * 0x20 + 0x06010000,0x80);
   p_uint1 = puStack_64;
@@ -7224,7 +7224,7 @@ void M4A_Routine_080C85A0(int handle)
     }
     piStack_2c[1] = piStack_2c[1] + 0x10;
   }
-  u_val12 = Dispatcher_Routine_080005D4(0x4c);
+  u_val12 = CppRuntime_OperatorNewArray(0x4c);
   u_val14 = HW_Routine_0800894C(handle);
   u_val6 = HW_GetSpriteAttr1Offset(handle);
   i_val3 = Animal_Routine_08075B00(u_val12,100,u_val14,u_val6,0x0600E800);
@@ -7237,7 +7237,7 @@ void M4A_Routine_080C85A0(int handle)
     if (*(int *)(loop_i + 0x18) != 0) {
       cpp_operator_delete();
     }
-    Dispatcher_Routine_08000608(loop_i);
+    CppRuntime_FreeMemory(loop_i);
   }
   *p_int5 = i_val3;
   i_val3 = HW_GetSpriteAttr1Offset(handle);
@@ -8090,7 +8090,7 @@ void M4A_Routine_080C96C4(int handle)
   
   stack_val_60 = 1;
   pbVar3 = (byte *)HW_GetSpriteAttr2Offset(handle);
-  u_val4 = HW_Routine_08007D4C(handle + 0x354,*(undefined4 *)(handle + 0x358));
+  u_val4 = GBA_Vram_AllocateTileBlock(handle + 0x354,*(undefined4 *)(handle + 0x358));
   u_val5 = HW_Routine_080074C0(handle + 0x35c,*(undefined4 *)(handle + 0x360));
   ScriptEngine_Routine_0804EA94(&stack_val_b0,0x10,4,u_val4,u_val5,0,stack_val_60,0);
   b_flag1 = *pbVar3;
@@ -8195,7 +8195,7 @@ void M4A_Routine_080C96C4(int handle)
             puStack_c8 = puStack_dc;
             VTable_Routine_080E5664(&puStack_e0,&stack_val_108,&puStack_c8,&puStack_d8);
             i_val9 = u_val10 * 8 + handle;
-            stack_val_50 = HW_Routine_08007D4C(i_val9 + 0x3a4,*(undefined4 *)(i_val9 + 0x3a8));
+            stack_val_50 = GBA_Vram_AllocateTileBlock(i_val9 + 0x3a4,*(undefined4 *)(i_val9 + 0x3a8));
             p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
             HW_Routine_08008F0C(&puStack_e0,puStack_a8,stack_val_50 * 0x20 + 0x06010000,0x80);
             p_uint14 = (uint *)p_int19[1];
@@ -8277,7 +8277,7 @@ void M4A_Routine_080C96C4(int handle)
           }
           else {
             i_val9 = *(int *)(puStack_f8 + 0x14) * 8 + handle;
-            stack_val_50 = HW_Routine_08007D4C(i_val9 + 0x3a4,*(undefined4 *)(i_val9 + 0x3a8));
+            stack_val_50 = GBA_Vram_AllocateTileBlock(i_val9 + 0x3a4,*(undefined4 *)(i_val9 + 0x3a8));
           }
           p_uint11 = puStack_ec;
           stack_val_9c = *(uint *)(stack_val_54 + 0xc);
@@ -8486,7 +8486,7 @@ void M4A_Routine_080C96C4(int handle)
     stack_val_100 = CONCAT22(stack_val_100._2_2_,1);
     u_val2 = HW_Routine_080074C0(handle + 0x36c,*(undefined4 *)(handle + 0x370));
     stack_val_104 = (undefined1 *)CONCAT22(stack_val_104._2_2_,u_val2);
-    u_val2 = HW_Routine_08007D4C(handle + 0x364,*(undefined4 *)(handle + 0x368));
+    u_val2 = GBA_Vram_AllocateTileBlock(handle + 0x364,*(undefined4 *)(handle + 0x368));
     stack_val_104 = (undefined1 *)CONCAT22(u_val2,(undefined2)stack_val_104);
     stack_val_f0 = CONCAT31(stack_val_f0._1_3_,1);
     u_val4 = HW_GetSpriteAttr2Offset(handle);
@@ -8497,7 +8497,7 @@ void M4A_Routine_080C96C4(int handle)
     Animal_Routine_0805E99C(u_val4,puStack_ec,u_val10,&stack_val_108);
     p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
     p_uint11 = puStack_e4;
-    i_val9 = HW_Routine_08007D4C(handle + 0x364,*(undefined4 *)(handle + 0x368));
+    i_val9 = GBA_Vram_AllocateTileBlock(handle + 0x364,*(undefined4 *)(handle + 0x368));
     u_val10 = 0;
     if (puStack_e4 != (undefined1 *)0x0) {
       u_val10 = (uint)puStack_e0 & 0xffff;
@@ -8596,7 +8596,7 @@ void M4A_Routine_080C96C4(int handle)
     stack_val_100 = CONCAT22(stack_val_100._2_2_,1);
     u_val2 = HW_Routine_080074C0(handle + 900,*(undefined4 *)(handle + 0x388));
     stack_val_104 = (undefined1 *)CONCAT22(stack_val_104._2_2_,u_val2);
-    u_val2 = HW_Routine_08007D4C(handle + 0x374,*(undefined4 *)(handle + 0x378));
+    u_val2 = GBA_Vram_AllocateTileBlock(handle + 0x374,*(undefined4 *)(handle + 0x378));
     stack_val_104 = (undefined1 *)CONCAT22(u_val2,(undefined2)stack_val_104);
     stack_val_f0 = CONCAT31(stack_val_f0._1_3_,1);
     u_val4 = HW_GetSpriteAttr2Offset(handle);
@@ -8607,7 +8607,7 @@ void M4A_Routine_080C96C4(int handle)
     Animal_Routine_0805E99C(u_val4,puStack_ec,u_val10,&stack_val_108);
     p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
     p_uint11 = puStack_e4;
-    i_val9 = HW_Routine_08007D4C(handle + 0x374,*(undefined4 *)(handle + 0x378));
+    i_val9 = GBA_Vram_AllocateTileBlock(handle + 0x374,*(undefined4 *)(handle + 0x378));
     u_val10 = 0;
     if (puStack_e4 != (undefined1 *)0x0) {
       u_val10 = (uint)puStack_e0 & 0xffff;
@@ -8706,7 +8706,7 @@ void M4A_Routine_080C96C4(int handle)
     stack_val_100 = CONCAT22(stack_val_100._2_2_,1);
     u_val2 = HW_Routine_080074C0(handle + 900,*(undefined4 *)(handle + 0x388));
     stack_val_104 = (undefined1 *)CONCAT22(stack_val_104._2_2_,u_val2);
-    u_val2 = HW_Routine_08007D4C(handle + 0x37c,*(undefined4 *)(handle + 0x380));
+    u_val2 = GBA_Vram_AllocateTileBlock(handle + 0x37c,*(undefined4 *)(handle + 0x380));
     stack_val_104 = (undefined1 *)CONCAT22(u_val2,(undefined2)stack_val_104);
     stack_val_f0 = CONCAT31(stack_val_f0._1_3_,1);
     u_val4 = HW_GetSpriteAttr2Offset(handle);
@@ -8717,7 +8717,7 @@ void M4A_Routine_080C96C4(int handle)
     Animal_Routine_0805E99C(u_val4,puStack_ec,u_val10,&stack_val_108);
     p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
     p_uint11 = puStack_e4;
-    i_val9 = HW_Routine_08007D4C(handle + 0x37c,*(undefined4 *)(handle + 0x380));
+    i_val9 = GBA_Vram_AllocateTileBlock(handle + 0x37c,*(undefined4 *)(handle + 0x380));
     u_val10 = 0;
     if (puStack_e4 != (undefined1 *)0x0) {
       u_val10 = (uint)puStack_e0 & 0xffff;
@@ -8814,7 +8814,7 @@ void M4A_Routine_080C96C4(int handle)
     stack_val_100 = *(uint *)(i_val9 + 8) & 0xffff0000;
     u_val2 = HW_Routine_080074C0(handle + 0x39c,*(undefined4 *)(handle + 0x3a0));
     stack_val_104 = (undefined1 *)CONCAT22(stack_val_104._2_2_,u_val2);
-    u_val2 = HW_Routine_08007D4C(handle + 0x394,*(undefined4 *)(handle + 0x398));
+    u_val2 = GBA_Vram_AllocateTileBlock(handle + 0x394,*(undefined4 *)(handle + 0x398));
     stack_val_104 = (undefined1 *)CONCAT22(u_val2,(undefined2)stack_val_104);
     stack_val_f0 = CONCAT31(stack_val_f0._1_3_,1);
     u_val4 = HW_GetSpriteAttr2Offset(handle);
@@ -8825,7 +8825,7 @@ void M4A_Routine_080C96C4(int handle)
     Animal_Routine_0805E99C(u_val4,puStack_ec,u_val10,&stack_val_108);
     p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
     p_uint11 = puStack_e4;
-    i_val9 = HW_Routine_08007D4C(handle + 0x394,*(undefined4 *)(handle + 0x398));
+    i_val9 = GBA_Vram_AllocateTileBlock(handle + 0x394,*(undefined4 *)(handle + 0x398));
     u_val10 = 0;
     if (puStack_e4 != (undefined1 *)0x0) {
       u_val10 = (uint)puStack_e0 & 0xffff;
@@ -8922,7 +8922,7 @@ void M4A_Routine_080C96C4(int handle)
     stack_val_100 = *(uint *)(i_val9 + 8) & 0xffff0000;
     u_val2 = HW_Routine_080074C0(handle + 0x39c,*(undefined4 *)(handle + 0x3a0));
     stack_val_104 = (undefined1 *)CONCAT22(stack_val_104._2_2_,u_val2);
-    u_val2 = HW_Routine_08007D4C(handle + 0x38c,*(undefined4 *)(handle + 0x390));
+    u_val2 = GBA_Vram_AllocateTileBlock(handle + 0x38c,*(undefined4 *)(handle + 0x390));
     stack_val_104 = (undefined1 *)CONCAT22(u_val2,(undefined2)stack_val_104);
     stack_val_f0 = CONCAT31(stack_val_f0._1_3_,1);
     u_val4 = HW_GetSpriteAttr2Offset(handle);
@@ -8933,7 +8933,7 @@ void M4A_Routine_080C96C4(int handle)
     Animal_Routine_0805E99C(u_val4,puStack_ec,u_val10,&stack_val_108);
     p_int19 = (int *)HW_GetSpriteAttr0Offset(handle);
     p_uint11 = puStack_e4;
-    i_val9 = HW_Routine_08007D4C(handle + 0x38c,*(undefined4 *)(handle + 0x390));
+    i_val9 = GBA_Vram_AllocateTileBlock(handle + 0x38c,*(undefined4 *)(handle + 0x390));
     u_val10 = 0;
     if (puStack_e4 != (undefined1 *)0x0) {
       u_val10 = (uint)puStack_e0 & 0xffff;
@@ -9470,7 +9470,7 @@ void M4A_Routine_080CADF0(int handle,uint channel)
     cpp_operator_delete();
   }
   if ((channel & 1) != 0) {
-    Dispatcher_Routine_08000608(handle);
+    CppRuntime_FreeMemory(handle);
   }
   return;
 }
@@ -9489,7 +9489,7 @@ M4A_Routine_080CAE60(int *handle,undefined4 channel,undefined2 param,undefined4 
   int *p_int4;
   undefined4 *p_uint5;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x20);
+  u_val1 = CppRuntime_OperatorNewArray(0x20);
   i_val2 = ScriptEngine_Routine_0804EA58(u_val1,channel,param,val,arg_5,arg_6,arg_7);
   i_val3 = handle[2];
   p_int4 = (int *)runtime_malloc_aligned(0xc);
@@ -9522,7 +9522,7 @@ M4A_Routine_080CAEEC(int *handle,undefined4 channel,undefined4 param,undefined2 
   int *p_int4;
   undefined4 *p_uint5;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x1c);
+  u_val1 = CppRuntime_OperatorNewArray(0x1c);
   i_val2 = ScriptEngine_Routine_0804EE64(u_val1,channel,param,val,arg_5,arg_6);
   i_val3 = handle[2];
   p_int4 = (int *)runtime_malloc_aligned(0xc);
@@ -10670,14 +10670,14 @@ M4A_Routine_080CC15C(int handle,undefined4 channel,undefined4 param,uint val,und
   gba_memcpy(handle + 0x28c,arg_5,loop_i);
   *(undefined1 *)(handle + 0x28c + loop_i) = 0;
   *(uint *)(handle + 0x298) = stack_val_28;
-  HW_Routine_08007874(handle + 0x29c);
+  GBA_ObjAttr_Init(handle + 0x29c);
   *(undefined4 *)(handle + 0x2a0) = 0;
-  HW_Routine_08007128(handle + 0x2a4);
+  GBA_PaletteManager_Init(handle + 0x2a4);
   *(undefined4 *)(handle + 0x2a8) = 0;
   i_val4 = handle + 0x2ac;
   i_val5 = 7;
   do {
-    HW_Routine_08007874(i_val4);
+    GBA_ObjAttr_Init(i_val4);
     *(undefined4 *)(i_val4 + 4) = 0;
     i_val4 = i_val4 + 8;
     i_val5 = i_val5 + -1;
@@ -10685,7 +10685,7 @@ M4A_Routine_080CC15C(int handle,undefined4 channel,undefined4 param,uint val,und
   i_val4 = handle + 0x2ec;
   i_val5 = 7;
   do {
-    HW_Routine_08007128(i_val4);
+    GBA_PaletteManager_Init(i_val4);
     *(undefined4 *)(i_val4 + 4) = 0;
     i_val4 = i_val4 + 8;
     i_val5 = i_val5 + -1;
@@ -10695,21 +10695,21 @@ M4A_Routine_080CC15C(int handle,undefined4 channel,undefined4 param,uint val,und
   do {
     i_val4 = loop_i * 8 + handle + 0x2ac;
     HW_Routine_08007C28(i_val4,*p_uint2);
-    u_val1 = HW_Routine_08007B54(i_val4,2);
+    u_val1 = GBA_ObjAttr_AllocateSprite(i_val4,2);
     *p_uint2 = u_val1;
     i_val4 = loop_i * 8 + handle + 0x2ec;
     HW_Routine_080073E0(i_val4,p_uint2[0x10]);
-    u_val1 = HW_Routine_0800736C(i_val4);
+    u_val1 = GBA_PaletteManager_Allocate(i_val4);
     p_uint2[0x10] = u_val1;
     p_uint2 = p_uint2 + 2;
     loop_i = loop_i + 1;
   } while (loop_i < 8);
   if (arg_6 != '\0') {
     HW_Routine_08007C28(handle + 0x29c,*(undefined4 *)(handle + 0x2a0));
-    u_val1 = HW_Routine_08007B54(handle + 0x29c,2);
+    u_val1 = GBA_ObjAttr_AllocateSprite(handle + 0x29c,2);
     *(undefined4 *)(handle + 0x2a0) = u_val1;
     HW_Routine_080073E0(handle + 0x2a4,*(undefined4 *)(handle + 0x2a8));
-    u_val1 = HW_Routine_0800736C(handle + 0x2a4);
+    u_val1 = GBA_PaletteManager_Allocate(handle + 0x2a4);
     *(undefined4 *)(handle + 0x2a8) = u_val1;
   }
   return handle;
@@ -10905,7 +10905,7 @@ void M4A_Routine_080CC58C(int handle,byte *channel)
         u_val7 = *(uint *)(stack_val_2c * 4 + gRomData_08117860);
         u_val8 = u_val7 & 0xFFFFFF00;
         i_val6 = stack_val_2c * 8;
-        u_val3 = HW_Routine_08007D4C(i_val6 + handle + 0x2ac,*p_uint2);
+        u_val3 = GBA_Vram_AllocateTileBlock(i_val6 + handle + 0x2ac,*p_uint2);
         u_val4 = HW_Routine_080074C0(i_val6 + handle + 0x2ec,p_uint2[0x10]);
         ScriptEngine_Routine_0804EA94(&stack_val_40,(u_val7 + 0xf & 0xff) * 8,(u_val8 & 0xffff) >> 5,u_val3,u_val4,1,1,
                       stack_val_24);
@@ -10927,7 +10927,7 @@ void M4A_Routine_080CC58C(int handle,byte *channel)
   }
   if (!b_flag5) {
     u_val7 = *gRomData_0811785C;
-    u_val3 = HW_Routine_08007D4C(handle + 0x29c,*(undefined4 *)(handle + 0x2a0));
+    u_val3 = GBA_Vram_AllocateTileBlock(handle + 0x29c,*(undefined4 *)(handle + 0x2a0));
     u_val4 = HW_Routine_080074C0(handle + 0x2a4,*(undefined4 *)(handle + 0x2a8));
     ScriptEngine_Routine_0804EA94(&stack_val_38,(u_val7 + 0xf & 0xff) * 8,(u_val7 >> 8 & 0xff) * 8,u_val3,u_val4,1,1,0);
     b_flag1 = *pbStack_30;
@@ -11015,7 +11015,7 @@ void M4A_Routine_080CCE58(int handle,undefined4 channel,undefined2 param,uint va
   
   stack_val_38 = val;
   M4A_Routine_080CAD18(handle + 0x280,channel,param);
-  i_val1 = HW_Routine_08007D4C(handle + 0x29c,*(undefined4 *)(handle + 0x2a0));
+  i_val1 = GBA_Vram_AllocateTileBlock(handle + 0x29c,*(undefined4 *)(handle + 0x2a0));
   stack_val_34 = HW_Routine_080074C0(handle + 0x2a4,*(undefined4 *)(handle + 0x2a8));
   p_int10 = *(int **)(handle + 0x278);
   HW_Routine_08008F0C(&stack_val_5c,*(undefined4 *)(handle + 0x284),i_val1 * 0x20 + 0x06010000,0x80);
@@ -11222,7 +11222,7 @@ void M4A_Routine_080CD14C(int handle,undefined4 channel,undefined4 param,uint va
   
   stack_val_38 = val;
   M4A_Routine_080CADA0(handle + 0x280);
-  i_val1 = HW_Routine_08007D4C(handle + 0x29c,*(undefined4 *)(handle + 0x2a0));
+  i_val1 = GBA_Vram_AllocateTileBlock(handle + 0x29c,*(undefined4 *)(handle + 0x2a0));
   stack_val_34 = HW_Routine_080074C0(handle + 0x2a4,*(undefined4 *)(handle + 0x2a8));
   p_int10 = *(int **)(handle + 0x278);
   HW_Routine_08008F0C(&stack_val_5c,*(undefined4 *)(handle + 0x284),i_val1 * 0x20 + 0x06010000,0x80);
@@ -11478,8 +11478,8 @@ void M4A_Routine_080CD620(int handle)
   HW_Routine_08008EB8(0,0x6000000,0x8000);
   p_uint2 = (undefined2 *)HW_GetSpriteAttr1Offset(handle);
   *p_uint2 = 0x1640;
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
-  HW_Routine_08008E64(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x6000000,*gRomData_080F9F74);
   HW_Routine_08008EB8(0x00030003,u_val10,0x800);
   puStack_2c = stack_buf_64;
   piStack_3c = stack_ints_5c;
@@ -11580,12 +11580,12 @@ void M4A_Routine_080CD620(int handle)
   if (stack_ints_5c[0] != 0) {
     u_val9 = (undefined2)piStack_3c[1];
   }
-  HW_Routine_08008E64(stack_ints_5c[0],0x06000380,u_val9);
+  GBA_DMA3_FastCopy(stack_ints_5c[0],0x06000380,u_val9);
   u_val9 = 0;
   if (stack_ints_54[0] != 0) {
     u_val9 = (undefined2)piStack_38[1];
   }
-  HW_Routine_08008E64(stack_ints_54[0],0x05000020,u_val9);
+  GBA_DMA3_FastCopy(stack_ints_54[0],0x05000020,u_val9);
   Animal_Routine_08050D5C(stack_val_30);
   return;
 }
@@ -11635,11 +11635,11 @@ u32 M4A_Routine_080CD9B0(int *handle,int channel,int param)
   *handle = channel;
   handle[1] = param;
   handle[2] = param;
-  HW_Routine_08007874(handle + 5);
-  i_val1 = HW_Routine_08007B54(handle + 5,2);
+  GBA_ObjAttr_Init(handle + 5);
+  i_val1 = GBA_ObjAttr_AllocateSprite(handle + 5,2);
   handle[6] = i_val1;
-  HW_Routine_08007128(handle + 7);
-  i_val1 = HW_Routine_0800736C(handle + 7);
+  GBA_PaletteManager_Init(handle + 7);
+  i_val1 = GBA_PaletteManager_Allocate(handle + 7);
   handle[8] = i_val1;
   Animal_Routine_0805E6CC(handle + 9,gRomGfx_08728208);
   *(undefined2 *)(handle + 0x15) = 0;
@@ -12016,7 +12016,7 @@ void M4A_Routine_080CDDD4(int *handle)
     stack_val_88 = CONCAT22(stack_val_88._2_2_,1);
     u_val1 = HW_Routine_080074C0(handle + 7,handle[8]);
     stack_val_8c = CONCAT22(stack_val_8c._2_2_,u_val1);
-    u_val1 = HW_Routine_08007D4C(handle + 5,handle[6]);
+    u_val1 = GBA_Vram_AllocateTileBlock(handle + 5,handle[6]);
     stack_val_8c = CONCAT22(u_val1,(undefined2)stack_val_8c);
     stack_val_78 = CONCAT31(stack_val_78._1_3_,1);
     u_val2 = HW_GetSpriteAttr2Offset(*handle);
@@ -12028,7 +12028,7 @@ void M4A_Routine_080CDDD4(int *handle)
     Animal_Routine_0805E99C(u_val2,stack_val_74,u_val1,&stack_val_90);
     p_int3 = (int *)HW_GetSpriteAttr0Offset(*handle);
     i_val9 = stack_val_6c;
-    i_val4 = HW_Routine_08007D4C(handle + 5,handle[6]);
+    i_val4 = GBA_Vram_AllocateTileBlock(handle + 5,handle[6]);
     u_val1 = 0;
     if (stack_val_6c != 0) {
       u_val1 = stack_val_68;
@@ -12356,14 +12356,14 @@ u32 M4A_Routine_080CE2FC(undefined4 *handle,undefined4 channel)
   undefined4 *p_uint3;
   
   *handle = channel;
-  HW_Routine_08007874(handle + 1);
-  u_val1 = HW_Routine_08007B54(handle + 1,2);
+  GBA_ObjAttr_Init(handle + 1);
+  u_val1 = GBA_ObjAttr_AllocateSprite(handle + 1,2);
   handle[2] = u_val1;
-  HW_Routine_08007874(handle + 3);
-  u_val1 = HW_Routine_08007B54(handle + 3,2);
+  GBA_ObjAttr_Init(handle + 3);
+  u_val1 = GBA_ObjAttr_AllocateSprite(handle + 3,2);
   handle[4] = u_val1;
-  HW_Routine_08007128(handle + 5);
-  u_val1 = HW_Routine_0800736C(handle + 5);
+  GBA_PaletteManager_Init(handle + 5);
+  u_val1 = GBA_PaletteManager_Allocate(handle + 5);
   handle[6] = u_val1;
   p_uint3 = handle + 7;
   Animal_Routine_0805E6CC(p_uint3,gRomGfx_08527094);
@@ -12421,7 +12421,7 @@ M4A_Routine_080CE480(undefined4 *handle,undefined4 channel,undefined2 param,unde
   int *p_int4;
   undefined4 *p_uint5;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x20);
+  u_val1 = CppRuntime_OperatorNewArray(0x20);
   i_val2 = ScriptEngine_Routine_0804EA58(u_val1,channel,param,val,arg_5,arg_6,arg_7);
   i_val3 = handle[0x31];
   p_int4 = (int *)runtime_malloc_aligned(0xc);
@@ -12455,7 +12455,7 @@ M4A_Routine_080CE510(undefined4 *handle,undefined4 channel,undefined4 param,unde
   int *p_int4;
   undefined4 *p_uint5;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x1c);
+  u_val1 = CppRuntime_OperatorNewArray(0x1c);
   i_val2 = ScriptEngine_Routine_0804EE64(u_val1,channel,param,val,arg_5,arg_6);
   i_val3 = handle[0x31];
   p_int4 = (int *)runtime_malloc_aligned(0xc);
@@ -12674,7 +12674,7 @@ void M4A_Routine_080CE790(int *handle)
     stack_val_7c = CONCAT22(stack_val_7c._2_2_,1);
     u_val1 = HW_Routine_080074C0(handle + 5,handle[6]);
     stack_val_80 = CONCAT22(stack_val_80._2_2_,u_val1);
-    u_val1 = HW_Routine_08007D4C(handle + 1,handle[2]);
+    u_val1 = GBA_Vram_AllocateTileBlock(handle + 1,handle[2]);
     stack_val_80 = CONCAT22(u_val1,(undefined2)stack_val_80);
     stack_val_6c = CONCAT31(stack_val_6c._1_3_,1);
     u_val2 = HW_GetSpriteAttr2Offset(*handle);
@@ -12685,7 +12685,7 @@ void M4A_Routine_080CE790(int *handle)
     Animal_Routine_0805E99C(u_val2,stack_val_68,u_val1,&stack_val_84);
     p_int6 = (int *)HW_GetSpriteAttr0Offset(*handle);
     i_val9 = stack_val_60;
-    i_val3 = HW_Routine_08007D4C(handle + 1,handle[2]);
+    i_val3 = GBA_Vram_AllocateTileBlock(handle + 1,handle[2]);
     u_val1 = 0;
     if (stack_val_60 != 0) {
       u_val1 = stack_val_5c;
@@ -12782,7 +12782,7 @@ void M4A_Routine_080CE790(int *handle)
     stack_val_7c = CONCAT22(stack_val_7c._2_2_,1);
     u_val1 = HW_Routine_080074C0(handle + 5,handle[6]);
     stack_val_80 = CONCAT22(stack_val_80._2_2_,u_val1);
-    u_val1 = HW_Routine_08007D4C(handle + 3,handle[4]);
+    u_val1 = GBA_Vram_AllocateTileBlock(handle + 3,handle[4]);
     stack_val_80 = CONCAT22(u_val1,(undefined2)stack_val_80);
     stack_val_6c = CONCAT31(stack_val_6c._1_3_,1);
     u_val2 = HW_GetSpriteAttr2Offset(*handle);
@@ -12793,7 +12793,7 @@ void M4A_Routine_080CE790(int *handle)
     Animal_Routine_0805E99C(u_val2,stack_val_68,u_val1,&stack_val_84);
     p_int6 = (int *)HW_GetSpriteAttr0Offset(*handle);
     i_val9 = stack_val_60;
-    i_val3 = HW_Routine_08007D4C(handle + 3,handle[4]);
+    i_val3 = GBA_Vram_AllocateTileBlock(handle + 3,handle[4]);
     u_val1 = 0;
     if (stack_val_60 != 0) {
       u_val1 = stack_val_5c;
@@ -12950,11 +12950,11 @@ u32 M4A_Routine_080CEC00(undefined4 *handle,undefined4 channel)
   handle[0x18] = 0;
   *(undefined1 *)(handle + 0x19) = 0;
   *(undefined1 *)(handle + 0x1a) = 0;
-  HW_Routine_08007874(handle + 0x1b);
-  u_val1 = HW_Routine_08007B54(handle + 0x1b,4);
+  GBA_ObjAttr_Init(handle + 0x1b);
+  u_val1 = GBA_ObjAttr_AllocateSprite(handle + 0x1b,4);
   handle[0x1c] = u_val1;
-  HW_Routine_08007128(handle + 0x1d);
-  u_val1 = HW_Routine_0800736C(handle + 0x1d);
+  GBA_PaletteManager_Init(handle + 0x1d);
+  u_val1 = GBA_PaletteManager_Allocate(handle + 0x1d);
   handle[0x1e] = u_val1;
   handle[0x1f] = 0x12;
   handle[0x20] = 0;
@@ -13009,11 +13009,11 @@ u32 M4A_Routine_080CFA38(undefined4 handle,undefined1 *channel,undefined4 param)
     c_char1 = Farmer_Routine_0800F11C(&stack_val_28);
     if (c_char1 == '\0') {
       Farmer_Routine_0800F0A4(waypoint_coords,&stack_val_28);
-      p_uint6 = (undefined1 *)Item_Routine_0800DDD4(waypoint_coords);
+      p_uint6 = (undefined1 *)Item_GetFoodDescription(waypoint_coords);
       goto LAB_080cfb18;
     }
     Farmer_Routine_0800F0A4(waypoint_coords,&stack_val_28);
-    u_val3 = Item_Routine_0800DCB8(waypoint_coords);
+    u_val3 = Item_GetFoodName(waypoint_coords);
   }
   else {
     p_uint6 = (undefined1 *)0x0;

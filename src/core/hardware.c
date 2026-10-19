@@ -7,9 +7,9 @@
 #include "../../include/gba/gbaio.h"
 
 // =============================================================================
-// Function: HW_Routine_080040A0 @ 0x080040A0
+// Function: SaveManager_LoadGameSlot @ 0x080040A0
 // =============================================================================
-u32 HW_Routine_080040A0(int hw_reg)
+u32 SaveManager_LoadGameSlot(int hw_reg)
 
 {
   undefined1 u_val1;
@@ -30,11 +30,11 @@ u32 HW_Routine_080040A0(int hw_reg)
   stack_val_24 = hw_reg + 0x90;
   do {
     u_val2 = Interrupt_WaitForVBlank(0x1000);
-    u_val4 = Dispatcher_Routine_080005D4(0x34F4);
+    u_val4 = CppRuntime_OperatorNewArray(0x34F4);
     stack_val_2c = Farmer_Routine_08011650(u_val4,hw_reg + 0x90,u_val3,&stack_val_28);
     if (stack_val_28 == 0) {
       if (*(int *)(hw_reg + 8) == 0) {
-        p_int5 = (int *)Dispatcher_Routine_080005D4(8);
+        p_int5 = (int *)CppRuntime_OperatorNewArray(8);
         *p_int5 = gRomData_080E5A4C;
         p_int5[1] = stack_val_2c;
         p_int6 = *(int **)(hw_reg + 0xc);
@@ -61,7 +61,7 @@ u32 HW_Routine_080040A0(int hw_reg)
       u_val3 = 1;
       goto LAB_080041c6;
     }
-    Dispatcher_Routine_08000608(stack_val_2c);
+    CppRuntime_FreeMemory(stack_val_2c);
     if ((u_val2 & 0x1000) != 0) {
       Interrupt_EnableHBlank();
     }
@@ -76,9 +76,9 @@ LAB_080041c6:
 }
 
 // =============================================================================
-// Function: HW_Routine_080041DC @ 0x080041DC
+// Function: SaveLoadScreen_Init @ 0x080041DC
 // =============================================================================
-u32 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
+u32 SaveLoadScreen_Init(int hw_reg,undefined4 val,undefined4 *size)
 
 {
   byte b_flag1;
@@ -118,25 +118,25 @@ u32 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
   stack_val_58 = 7;
   stack_val_57 = 0;
   puStack_50 = size;
-  HW_Routine_08008574(hw_reg);
+  GBA_DisplayController_Reset(hw_reg);
   *(undefined4 *)(hw_reg + 4) = gRomData_080E5A5C;
   *(undefined4 *)(hw_reg + 8) = val;
   u_val4 = *puStack_50;
   *puStack_50 = 0;
   *(undefined4 *)(hw_reg + 0xc) = u_val4;
-  HW_Routine_0800835C(stack_buf_84);
-  HW_Routine_0800770C(stack_buf_80);
+  GBA_TextLayer_Init(stack_buf_84);
+  GBA_BgLayer_Init(stack_buf_80);
   Animal_Routine_08050CC0(hw_reg + 0x10,0,0x1f,0xf,0,stack_buf_84,stack_buf_80);
-  HW_Routine_08007714(stack_buf_80,2);
+  GBA_BgLayer_SetPriority(stack_buf_80,2);
   HW_Routine_08008364(stack_buf_84,2);
   HW_Routine_08008B54(hw_reg + 0x14,1);
   HW_Routine_08008B54(hw_reg + 0x18,2);
   Animal_Routine_0805E6CC(hw_reg + 0x1c,gRomGfx_08728208);
-  HW_Routine_08007874(hw_reg + 0x4c);
-  u_val4 = HW_Routine_08007B54(hw_reg + 0x4c,2);
+  GBA_ObjAttr_Init(hw_reg + 0x4c);
+  u_val4 = GBA_ObjAttr_AllocateSprite(hw_reg + 0x4c,2);
   *(undefined4 *)(hw_reg + 0x50) = u_val4;
-  HW_Routine_08007128(hw_reg + 0x54);
-  u_val4 = HW_Routine_0800736C(hw_reg + 0x54);
+  GBA_PaletteManager_Init(hw_reg + 0x54);
+  u_val4 = GBA_PaletteManager_Allocate(hw_reg + 0x54);
   *(undefined4 *)(hw_reg + 0x58) = u_val4;
   *(undefined4 *)(hw_reg + 0x5c) = 0;
   *(undefined4 *)(hw_reg + 0x60) = 0;
@@ -174,7 +174,7 @@ u32 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
   u_val4 = apuStack_7c[0][1];
   *(undefined4 *)(hw_reg + 0x5c) = *apuStack_7c[0];
   *(undefined4 *)(hw_reg + 0x60) = u_val4;
-  u_val3 = HW_Routine_08007D4C(hw_reg + 0x4c,*(undefined4 *)(hw_reg + 0x50));
+  u_val3 = GBA_Vram_AllocateTileBlock(hw_reg + 0x4c,*(undefined4 *)(hw_reg + 0x50));
   *puStack_44 = (ushort)0xFFFFFC00 & *puStack_44 | u_val3 & (ushort)0x3FF;
   c_char2 = HW_Routine_080074C0(stack_val_4c,*(undefined4 *)(stack_val_4c + 4));
   *pbStack_40 = *pbStack_40 & 0xf | c_char2 << 4;
@@ -191,7 +191,7 @@ u32 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
       stack_val_54 = 0;
       i_val11 = 3;
       do {
-        u_val7 = Dispatcher_Routine_080005D4(0x34F4);
+        u_val7 = CppRuntime_OperatorNewArray(0x34F4);
         i_val13 = Farmer_Routine_08011650(u_val7,i_val8,u_val4,&stack_val_54);
         if (stack_val_54 == 0) {
           stack_val_5c = i_val13;
@@ -204,7 +204,7 @@ u32 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
           break;
         }
         stack_val_5c = 0;
-        Dispatcher_Routine_08000608(i_val13);
+        CppRuntime_FreeMemory(i_val13);
         if (stack_val_5c != 0) {
           VTable_Routine_080D4480(stack_val_5c,3);
         }
@@ -252,9 +252,9 @@ u32 HW_Routine_080041DC(int hw_reg,undefined4 val,undefined4 *size)
 }
 
 // =============================================================================
-// Function: HW_Routine_08004570 @ 0x08004570
+// Function: SaveLoadScreen_RunLoop @ 0x08004570
 // =============================================================================
-u32 HW_Routine_08004570(undefined4 *hw_reg,int val)
+u32 SaveLoadScreen_RunLoop(undefined4 *hw_reg,int val)
 
 {
   byte b_flag1;
@@ -286,9 +286,9 @@ u32 HW_Routine_08004570(undefined4 *hw_reg,int val)
   HW_Routine_08008724(val);
   p_uint3 = (undefined2 *)HW_GetSpriteAttr1Offset(val);
   *p_uint3 = 0x1c40;
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,*gRomData_080F9F7C);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,*gRomData_080F9F7C);
   p_uint3[7] = (short)0x1E4C;
-  HW_Routine_08008E64(*gRomData_080F9F70,0x0600C000,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x0600C000,*gRomData_080F9F74);
   Animal_Routine_08051320(0x0600F000,0,0,0x1e,0x14,0,0);
   p_uint3[6] = 0x1d40;
   Scene_Routine_08003C80(val);
@@ -298,10 +298,10 @@ u32 HW_Routine_08004570(undefined4 *hw_reg,int val)
   p_uint3[4] = p_uint3[4] | 0x40;
   Scene_Routine_08003EEC(val);
   Animal_Routine_0805E790(stack_buf_6c,val + 0x1c,0);
-  i_val4 = HW_Routine_08007D4C(val + 0x4c,*(undefined4 *)(val + 0x50));
-  HW_Routine_08008E64(stack_val_64,i_val4 * 0x20 + 0x06010000,0x80);
+  i_val4 = GBA_Vram_AllocateTileBlock(val + 0x4c,*(undefined4 *)(val + 0x50));
+  GBA_DMA3_FastCopy(stack_val_64,i_val4 * 0x20 + 0x06010000,0x80);
   i_val4 = HW_Routine_080074C0(val + 0x54,*(undefined4 *)(val + 0x58));
-  HW_Routine_08008E64(stack_val_5c,i_val4 * 0x20 + 0x05000200,0x20);
+  GBA_DMA3_FastCopy(stack_val_5c,i_val4 * 0x20 + 0x05000200,0x20);
   loop_i = 0;
   do {
     Scene_Routine_08003DF0(val,loop_i,*(undefined4 *)(val + 0x5c),*(undefined4 *)(val + 0x60));
@@ -506,7 +506,7 @@ LAB_08004a92:
       if ((i_val4 == 3) || (i_val4 != 6)) {
         i_val4 = Animal_Routine_08050DF0(val + 0x10);
         if (i_val4 != 1) goto LAB_08004b04;
-        c_char2 = HW_Routine_080040A0(val);
+        c_char2 = SaveManager_LoadGameSlot(val);
         if (c_char2 != '\0') {
           p_uint17 = temp_buf_28;
 LAB_08004af2:
@@ -531,9 +531,9 @@ LAB_08004b30:
 }
 
 // =============================================================================
-// Function: HW_Routine_08004B94 @ 0x08004B94
+// Function: SaveLoadScreen_Deinit @ 0x08004B94
 // =============================================================================
-void HW_Routine_08004B94(undefined4 *hw_reg,undefined4 val,undefined4 *size)
+void SaveLoadScreen_Deinit(undefined4 *hw_reg,undefined4 val,undefined4 *size)
 
 {
   undefined4 u_val1;
@@ -543,8 +543,8 @@ void HW_Routine_08004B94(undefined4 *hw_reg,undefined4 val,undefined4 *size)
   *hw_reg = gRomData_080E5A68;
   stack_val_14 = *size;
   *size = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0x1a0);
-  u_val1 = HW_Routine_080041DC(u_val1,val,&stack_val_14);
+  u_val1 = CppRuntime_OperatorNewArray(0x1a0);
+  u_val1 = SaveLoadScreen_Init(u_val1,val,&stack_val_14);
   hw_reg[1] = u_val1;
   p_int2 = (int *)*size;
   if (p_int2 != (int *)0x0) {
@@ -561,7 +561,7 @@ u32 HW_Routine_08004C0C(undefined4 *hw_reg,int val)
 {
   undefined4 facing_buffer [3];
   
-  HW_Routine_08004570(facing_buffer,*(undefined4 *)(val + 4));
+  SaveLoadScreen_RunLoop(facing_buffer,*(undefined4 *)(val + 4));
   *hw_reg = facing_buffer[0];
   return hw_reg;
 }
@@ -609,12 +609,12 @@ HW_Routine_08004EFC(int hw_reg,undefined4 val,uint size,undefined4 mode,undefine
     i_val1 = i_val1 + -1;
   } while (i_val1 != -1);
   *(undefined4 *)(hw_reg + 0x1A28) = 2;
-  u_val2 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(temp_buf_3c);
-  HW_Routine_0800770C(stack_buf_38);
+  u_val2 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(temp_buf_3c);
+  GBA_BgLayer_Init(stack_buf_38);
   u_val2 = Animal_Routine_08050CC0(u_val2,0,0x1c,4,0,temp_buf_3c,stack_buf_38);
   *(undefined4 *)(hw_reg + 0x1A2C) = u_val2;
-  HW_Routine_08007714(stack_buf_38,2);
+  GBA_BgLayer_SetPriority(stack_buf_38,2);
   HW_Routine_08008364(temp_buf_3c,2);
   p_uint6 = (undefined4 *)(hw_reg + 0x1A30);
   u_val2 = HW_Routine_08008D3C(200);
@@ -709,13 +709,13 @@ u32 HW_Routine_080050F8(undefined4 *hw_reg,int val)
   HW_Routine_08005278(val);
   i_val2 = HW_GetSpriteAttr1Offset(val);
   *(undefined2 *)(i_val2 + 0x50) = 0x3f;
-  p_uint3 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint3 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val4 = HW_GetSpriteAttr1Offset(val);
   *p_uint3 = 0;
   p_uint3[1] = 0;
   p_uint3[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint3 + 3,u_val4);
-  Farm_Routine_0800934C(p_uint3 + 3,0x889,1,1);
+  Fade_Init(p_uint3 + 3,u_val4);
+  Fade_StartFadeOut(p_uint3 + 3,0x889,1,1);
   i_val2 = HW_GetPaletteBankOffset(val);
   _call_via_r2(i_val2,p_uint3,*(undefined4 *)(*(int *)(i_val2 + 8) + 0x10));
   u_val5 = 0;
@@ -736,7 +736,7 @@ u32 HW_Routine_080050F8(undefined4 *hw_reg,int val)
       }
     }
     else if (u_val5 == 2) {
-      Farm_Routine_08009378(p_uint3 + 3,0x889,1,1);
+      Fade_StartFadeIn(p_uint3 + 3,0x889,1,1);
       i_val2 = HW_GetPaletteBankOffset(val);
       _call_via_r2(i_val2,p_uint3,*(undefined4 *)(*(int *)(i_val2 + 8) + 0x10));
       u_val5 = 3;
@@ -827,8 +827,8 @@ void HW_Routine_08005278(int hw_reg)
   undefined4 *puStack_28;
   undefined4 *puStack_24;
   
-  HW_Routine_08008E64(*gRomData_080F9F70,0x06004B00,*gRomData_080F9F74);
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x06004B00,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   p_uint3 = (undefined2 *)HW_GetSpriteAttr1Offset(hw_reg);
   stack_val_a8._0_2_ = 0x1740;
   *p_uint3 = 0x1740;
@@ -1198,7 +1198,7 @@ HW_Routine_0800598C(undefined4 *hw_reg,undefined4 val,undefined4 size,undefined4
   undefined4 u_val1;
   
   *hw_reg = gRomData_080E5AA4;
-  u_val1 = Dispatcher_Routine_080005D4(0x1A78);
+  u_val1 = CppRuntime_OperatorNewArray(0x1A78);
   u_val1 = HW_Routine_08004EFC(u_val1,val,size,mode,arg_5);
   hw_reg[1] = u_val1;
   return hw_reg;
@@ -1257,12 +1257,12 @@ u32 HW_Routine_08005A58(int hw_reg,undefined4 val,char *size)
   } while (i_val2 != -1);
   HW_Routine_08008B54(hw_reg + 0x45F0,1);
   HW_Routine_08008B54(hw_reg + 0x45F4,2);
-  u_val3 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(temp_buf_20);
-  HW_Routine_0800770C(stack_buf_1c);
+  u_val3 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(temp_buf_20);
+  GBA_BgLayer_Init(stack_buf_1c);
   u_val3 = Animal_Routine_08050CC0(u_val3,0,0xf,4,0,temp_buf_20,stack_buf_1c);
   *(undefined4 *)(hw_reg + 0x45F8) = u_val3;
-  HW_Routine_08007714(stack_buf_1c,2);
+  GBA_BgLayer_SetPriority(stack_buf_1c,2);
   HW_Routine_08008364(temp_buf_20,2);
   *(undefined4 *)(hw_reg + 0x45FC) = val;
   p_uint4 = (undefined4 *)(hw_reg + 0x461C);
@@ -1323,11 +1323,11 @@ u32 HW_Routine_08005B68(undefined4 *hw_reg,int val)
   undefined4 stack_val_1c;
   
   HW_Routine_08008724(val);
-  HW_Routine_08007874(temp_buf_40);
+  GBA_ObjAttr_Init(temp_buf_40);
   stack_val_3c = 0;
   HW_Routine_08007C28(temp_buf_40,0);
-  stack_val_3c = HW_Routine_08007B54(temp_buf_40,3);
-  u_val1 = HW_Routine_08007D4C(temp_buf_40);
+  stack_val_3c = GBA_ObjAttr_AllocateSprite(temp_buf_40,3);
+  u_val1 = GBA_Vram_AllocateTileBlock(temp_buf_40);
   HW_Routine_08005CDC(val);
   HW_Routine_080061A0(val,u_val1);
   HW_Routine_08006334(val);
@@ -1339,8 +1339,8 @@ u32 HW_Routine_08005B68(undefined4 *hw_reg,int val)
   stack_val_34 = 0;
   stack_val_30 = 0;
   stack_val_2c = gRomData_080E5B80;
-  Farm_Routine_08009300(temp_buf_28,u_val1);
-  Farm_Routine_0800934C(temp_buf_28,0x889,1,1);
+  Fade_Init(temp_buf_28,u_val1);
+  Fade_StartFadeOut(temp_buf_28,0x889,1,1);
   i_val2 = HW_GetPaletteBankOffset(val);
   _call_via_r2(i_val2,&stack_val_34,*(undefined4 *)(*(int *)(i_val2 + 8) + 0x10));
   u_val3 = -stack_val_34 | stack_val_34;
@@ -1358,7 +1358,7 @@ u32 HW_Routine_08005B68(undefined4 *hw_reg,int val)
     HW_Routine_08006ED8(val);
     HW_Routine_080087C8(val);
   }
-  Farm_Routine_08009378(temp_buf_28,0x889,1,1);
+  Fade_StartFadeIn(temp_buf_28,0x889,1,1);
   i_val2 = HW_GetPaletteBankOffset(val);
   _call_via_r2(i_val2,&stack_val_34,*(undefined4 *)(*(int *)(i_val2 + 8) + 0x10));
   while ((int)(-stack_val_34 | stack_val_34) < 0) {
@@ -1418,8 +1418,8 @@ void HW_Routine_08005CDC(int hw_reg)
   undefined4 *puStack_28;
   undefined4 *puStack_24;
   
-  HW_Routine_08008E64(*gRomData_080F9F70,0x06004B00,*gRomData_080F9F74);
-  HW_Routine_08008E64(*gRomData_080F9F78,0x5000000,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F70,0x06004B00,*gRomData_080F9F74);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x5000000,0x20);
   p_uint1 = (undefined2 *)HW_GetSpriteAttr1Offset(hw_reg);
   stack_val_68._0_2_ = 0x1740;
   *p_uint1 = 0x1740;
@@ -2494,7 +2494,7 @@ u32 HW_Routine_08007078(undefined4 *hw_reg,undefined4 val,undefined4 size)
   undefined4 u_val1;
   
   *hw_reg = gRomData_080E5AC0;
-  u_val1 = Dispatcher_Routine_080005D4(0x4640);
+  u_val1 = CppRuntime_OperatorNewArray(0x4640);
   u_val1 = HW_Routine_08005A58(u_val1,val,size);
   hw_reg[1] = u_val1;
   return hw_reg;
@@ -2546,12 +2546,12 @@ void HW_Routine_08007184(undefined4 hw_reg,uint val)
   *(int *)(i_val2 + 0x4c) = i_val3;
   if (i_val3 == 0) {
     if (i_val2 != 0) {
-      Dispatcher_Routine_08000608(i_val2);
+      CppRuntime_FreeMemory(i_val2);
     }
     *p_int1 = 0;
   }
   if ((val & 1) != 0) {
-    Dispatcher_Routine_08000608(hw_reg);
+    CppRuntime_FreeMemory(hw_reg);
   }
   return;
 }
@@ -2659,9 +2659,9 @@ void HW_Routine_080071BC(undefined4 hw_reg,uint val,uint size)
 }
 
 // =============================================================================
-// Function: HW_Routine_0800736C @ 0x0800736C
+// Function: GBA_PaletteManager_Allocate @ 0x0800736C
 // =============================================================================
-void HW_Routine_0800736C(void)
+void GBA_PaletteManager_Allocate(void)
 
 {
   uint u_val1;
@@ -2805,7 +2805,7 @@ void HW_Routine_08007578(undefined4 *hw_reg,char *val)
   uint stack_val_24;
   
   puStack_2c = hw_reg;
-  p_int2 = (int *)Dispatcher_Routine_080005D4(0x14);
+  p_int2 = (int *)CppRuntime_OperatorNewArray(0x14);
   *p_int2 = 0;
   p_int2[1] = 0;
   p_int2[3] = 0;
@@ -2814,8 +2814,8 @@ void HW_Routine_08007578(undefined4 *hw_reg,char *val)
   u_val9 = (uint)(byte)(c_char1 - 1);
   if (u_val9 != 0xff) {
     do {
-      HW_Routine_08007128(temp_buf_3c);
-      stack_val_38 = HW_Routine_0800736C(temp_buf_3c);
+      GBA_PaletteManager_Init(temp_buf_3c);
+      stack_val_38 = GBA_PaletteManager_Allocate(temp_buf_3c);
       i_val7 = p_int2[1];
       if (i_val7 == p_int2[3]) {
         stack_val_30 = 1;
@@ -2842,7 +2842,7 @@ void HW_Routine_08007578(undefined4 *hw_reg,char *val)
         i_val8 = i_val5;
         for (; i_val6 != i_val7; i_val6 = i_val6 + 8) {
           if (i_val8 != 0) {
-            HW_Routine_08007128(i_val8);
+            GBA_PaletteManager_Init(i_val8);
             u_val3 = HW_Routine_0800745C(i_val8,*(undefined4 *)(i_val6 + 4));
             *(undefined4 *)(i_val8 + 4) = u_val3;
           }
@@ -2851,7 +2851,7 @@ void HW_Routine_08007578(undefined4 *hw_reg,char *val)
         i_val7 = stack_val_30;
         if (stack_val_30 == 1) {
           if (i_val8 != 0) {
-            HW_Routine_08007128(i_val8);
+            GBA_PaletteManager_Init(i_val8);
             u_val3 = HW_Routine_0800745C(i_val8,stack_val_38);
             *(undefined4 *)(i_val8 + 4) = u_val3;
           }
@@ -2860,7 +2860,7 @@ void HW_Routine_08007578(undefined4 *hw_reg,char *val)
         else {
           for (; i_val7 != 0; i_val7 = i_val7 + -1) {
             if (i_val8 != 0) {
-              HW_Routine_08007128(i_val8);
+              GBA_PaletteManager_Init(i_val8);
               u_val3 = HW_Routine_0800745C(i_val8,stack_val_38);
               *(undefined4 *)(i_val8 + 4) = u_val3;
             }
@@ -2881,7 +2881,7 @@ void HW_Routine_08007578(undefined4 *hw_reg,char *val)
       }
       else {
         if (i_val7 != 0) {
-          HW_Routine_08007128(i_val7);
+          GBA_PaletteManager_Init(i_val7);
           u_val3 = HW_Routine_0800745C(i_val7,stack_val_38);
           *(undefined4 *)(i_val7 + 4) = u_val3;
         }
@@ -2899,9 +2899,9 @@ void HW_Routine_08007578(undefined4 *hw_reg,char *val)
 }
 
 // =============================================================================
-// Function: HW_Routine_08007714 @ 0x08007714
+// Function: GBA_BgLayer_SetPriority @ 0x08007714
 // =============================================================================
-void HW_Routine_08007714(undefined4 *hw_reg,uint val)
+void GBA_BgLayer_SetPriority(undefined4 *hw_reg,uint val)
 
 {
   int *p_int1;
@@ -2918,10 +2918,10 @@ void HW_Routine_08007714(undefined4 *hw_reg,uint val)
     if (*p_int1 != 0) {
       cpp_operator_delete();
     }
-    Dispatcher_Routine_08000608(p_int1);
+    CppRuntime_FreeMemory(p_int1);
   }
   if ((val & 1) != 0) {
-    Dispatcher_Routine_08000608(hw_reg);
+    CppRuntime_FreeMemory(hw_reg);
   }
   return;
 }
@@ -2943,8 +2943,8 @@ u32 HW_Routine_08007770(int hw_reg,undefined4 *val)
   
   p_int6 = (int *)*val;
   if (p_int6 == (int *)0x0) {
-    HW_Routine_08007128(hw_reg);
-    u_val5 = HW_Routine_0800736C(hw_reg);
+    GBA_PaletteManager_Init(hw_reg);
+    u_val5 = GBA_PaletteManager_Allocate(hw_reg);
   }
   else {
     i_val3 = p_int6[1];
@@ -2963,7 +2963,7 @@ u32 HW_Routine_08007770(int hw_reg,undefined4 *val)
     } while (i_val4 != 1);
     p_int6[4] = i_val8;
 LAB_080077a8:
-    HW_Routine_08007128(hw_reg);
+    GBA_PaletteManager_Init(hw_reg);
     u_val5 = HW_Routine_0800745C(hw_reg,*(undefined4 *)(i_val1 + 4));
   }
   *(undefined4 *)(hw_reg + 4) = u_val5;
@@ -3029,9 +3029,9 @@ void HW_Routine_08007844(uint *hw_reg,uint val,uint size)
 }
 
 // =============================================================================
-// Function: HW_Routine_08007874 @ 0x08007874
+// Function: GBA_ObjAttr_Init @ 0x08007874
 // =============================================================================
-u32 HW_Routine_08007874(undefined4 hw_reg)
+u32 GBA_ObjAttr_Init(undefined4 hw_reg)
 
 {
   undefined4 *p_uint1;
@@ -3058,7 +3058,7 @@ u32 HW_Routine_08007874(undefined4 hw_reg)
   
   stack_val_48 = hw_reg;
   if (*gIWRAM_030408 == 0) {
-    p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x92C);
+    p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0x92C);
     puStack_24 = &stack_val_4c;
     for (p_uint4 = p_uint1; p_uint4 != p_uint1 + 8; p_uint4 = p_uint4 + 1) {
       *p_uint4 = 0;
@@ -3148,12 +3148,12 @@ void HW_Routine_080079E8(undefined4 hw_reg,uint val)
   *(int *)(i_val2 + 0x924) = i_val3;
   if (i_val3 == 0) {
     if (i_val2 != 0) {
-      Dispatcher_Routine_08000608(i_val2);
+      CppRuntime_FreeMemory(i_val2);
     }
     *p_int1 = 0;
   }
   if ((val & 1) != 0) {
-    Dispatcher_Routine_08000608(hw_reg);
+    CppRuntime_FreeMemory(hw_reg);
   }
   return;
 }
@@ -3225,9 +3225,9 @@ void HW_Routine_08007A28(undefined4 hw_reg,uint val,int size)
 }
 
 // =============================================================================
-// Function: HW_Routine_08007B54 @ 0x08007B54
+// Function: GBA_ObjAttr_AllocateSprite @ 0x08007B54
 // =============================================================================
-u32 HW_Routine_08007B54(undefined4 hw_reg,uint val)
+u32 GBA_ObjAttr_AllocateSprite(undefined4 hw_reg,uint val)
 
 {
   uint u_val1;
@@ -3345,9 +3345,9 @@ LAB_08007d44:
 }
 
 // =============================================================================
-// Function: HW_Routine_08007D4C @ 0x08007D4C
+// Function: GBA_Vram_AllocateTileBlock @ 0x08007D4C
 // =============================================================================
-u32 HW_Routine_08007D4C(undefined4 hw_reg,uint val)
+u32 GBA_Vram_AllocateTileBlock(undefined4 hw_reg,uint val)
 
 {
   uint u_val1;
@@ -3638,7 +3638,7 @@ u32 HW_Routine_08008190(undefined4 *hw_reg,int val)
   
   puStack_3c = hw_reg;
   stack_val_38 = val;
-  puStack_34 = (undefined4 *)Dispatcher_Routine_080005D4(0xa0);
+  puStack_34 = (undefined4 *)CppRuntime_OperatorNewArray(0xa0);
   i_val7 = 7;
   p_uint5 = puStack_34;
   do {
@@ -3657,8 +3657,8 @@ u32 HW_Routine_08008190(undefined4 *hw_reg,int val)
     stack_val_2c = stack_val_30 + 1;
     if (u_val9 != 0xff) {
       do {
-        HW_Routine_08007874(stack_buf_4c);
-        stack_val_48 = HW_Routine_08007B54(stack_buf_4c,stack_val_30);
+        GBA_ObjAttr_Init(stack_buf_4c);
+        stack_val_48 = GBA_ObjAttr_AllocateSprite(stack_buf_4c,stack_val_30);
         i_val7 = p_int10[1];
         if (i_val7 == p_int10[3]) {
           stack_val_40 = 1;
@@ -3685,7 +3685,7 @@ u32 HW_Routine_08008190(undefined4 *hw_reg,int val)
           i_val8 = i_val4;
           for (; i_val6 != i_val7; i_val6 = i_val6 + 8) {
             if (i_val8 != 0) {
-              HW_Routine_08007874(i_val8);
+              GBA_ObjAttr_Init(i_val8);
               u_val2 = HW_Routine_08007CD8(i_val8,*(undefined4 *)(i_val6 + 4));
               *(undefined4 *)(i_val8 + 4) = u_val2;
             }
@@ -3694,7 +3694,7 @@ u32 HW_Routine_08008190(undefined4 *hw_reg,int val)
           i_val7 = stack_val_40;
           if (stack_val_40 == 1) {
             if (i_val8 != 0) {
-              HW_Routine_08007874(i_val8);
+              GBA_ObjAttr_Init(i_val8);
               u_val2 = HW_Routine_08007CD8(i_val8,stack_val_48);
               *(undefined4 *)(i_val8 + 4) = u_val2;
             }
@@ -3703,7 +3703,7 @@ u32 HW_Routine_08008190(undefined4 *hw_reg,int val)
           else {
             for (; i_val7 != 0; i_val7 = i_val7 + -1) {
               if (i_val8 != 0) {
-                HW_Routine_08007874(i_val8);
+                GBA_ObjAttr_Init(i_val8);
                 u_val2 = HW_Routine_08007CD8(i_val8,stack_val_48);
                 *(undefined4 *)(i_val8 + 4) = u_val2;
               }
@@ -3724,7 +3724,7 @@ u32 HW_Routine_08008190(undefined4 *hw_reg,int val)
         }
         else {
           if (i_val7 != 0) {
-            HW_Routine_08007874(i_val7);
+            GBA_ObjAttr_Init(i_val7);
             u_val2 = HW_Routine_08007CD8(i_val7,stack_val_48);
             *(undefined4 *)(i_val7 + 4) = u_val2;
           }
@@ -3759,8 +3759,8 @@ u32 HW_Routine_080083D0(int hw_reg,int *val,int size)
   int *p_int8;
   
   if (*val == 0) {
-    HW_Routine_08007874(hw_reg);
-    u_val5 = HW_Routine_08007B54(hw_reg,size);
+    GBA_ObjAttr_Init(hw_reg);
+    u_val5 = GBA_ObjAttr_AllocateSprite(hw_reg,size);
   }
   else {
     p_int8 = (int *)(size * 0x14 + *val);
@@ -3780,7 +3780,7 @@ u32 HW_Routine_080083D0(int hw_reg,int *val,int size)
     } while (i_val4 != 1);
     p_int8[4] = i_val7;
 LAB_08008410:
-    HW_Routine_08007874(hw_reg);
+    GBA_ObjAttr_Init(hw_reg);
     u_val5 = HW_Routine_08007CD8(hw_reg,*(undefined4 *)(i_val1 + 4));
   }
   *(undefined4 *)(hw_reg + 4) = u_val5;
@@ -3800,13 +3800,13 @@ u32 HW_Routine_08008444(int *hw_reg)
   undefined4 *p_uint5;
   
   hw_reg[1] = gRomData_080E5B00;
-  i_val3 = Dispatcher_Routine_080005D4(0x4b0);
-  Farm_Routine_080091A4(i_val3,0x1e,4);
+  i_val3 = CppRuntime_OperatorNewArray(0x4b0);
+  Input_InitKeypadState(i_val3,0x1e,4);
   *(undefined4 *)(i_val3 + 0x24) = 0;
   *(undefined4 *)(i_val3 + 0x28) = 0;
   *(undefined4 *)(i_val3 + 0x30) = 0;
-  Farm_Routine_080096B0(i_val3 + 0x34);
-  Farm_Routine_08009744(i_val3 + 0x8c,0,0x20);
+  GBA_Display_InitRegsBuffer(i_val3 + 0x34);
+  OAM_InitSpriteBuffer(i_val3 + 0x8c,0,0x20);
   HW_Routine_08008980(i_val3 + 0x490);
   i_val1 = 0x494;
   p_uint5 = (undefined4 *)(i_val3 + 0x494);
@@ -3840,13 +3840,13 @@ u32 HW_Routine_080084DC(int *hw_reg,undefined2 *val)
   undefined4 *p_uint5;
   
   hw_reg[1] = gRomData_080E5B00;
-  i_val3 = Dispatcher_Routine_080005D4(0x4b0);
-  Farm_Routine_080091A4(i_val3,*val,val[1]);
+  i_val3 = CppRuntime_OperatorNewArray(0x4b0);
+  Input_InitKeypadState(i_val3,*val,val[1]);
   *(undefined4 *)(i_val3 + 0x24) = 0;
   *(undefined4 *)(i_val3 + 0x28) = 0;
   *(undefined4 *)(i_val3 + 0x30) = 0;
-  Farm_Routine_080096B0(i_val3 + 0x34);
-  Farm_Routine_08009744(i_val3 + 0x8c,0,0x20);
+  GBA_Display_InitRegsBuffer(i_val3 + 0x34);
+  OAM_InitSpriteBuffer(i_val3 + 0x8c,0,0x20);
   HW_Routine_08008980(i_val3 + 0x490);
   i_val1 = 0x494;
   p_uint5 = (undefined4 *)(i_val3 + 0x494);
@@ -3868,9 +3868,9 @@ u32 HW_Routine_080084DC(int *hw_reg,undefined2 *val)
 }
 
 // =============================================================================
-// Function: HW_Routine_08008574 @ 0x08008574
+// Function: GBA_DisplayController_Reset @ 0x08008574
 // =============================================================================
-u32 HW_Routine_08008574(int *hw_reg,undefined1 *val)
+u32 GBA_DisplayController_Reset(int *hw_reg,undefined1 *val)
 
 {
   int i_val1;
@@ -3880,13 +3880,13 @@ u32 HW_Routine_08008574(int *hw_reg,undefined1 *val)
   undefined4 *p_uint5;
   
   hw_reg[1] = gRomData_080E5B00;
-  i_val3 = Dispatcher_Routine_080005D4(0x4b0);
-  Farm_Routine_080091A4(i_val3,0x1e,4);
+  i_val3 = CppRuntime_OperatorNewArray(0x4b0);
+  Input_InitKeypadState(i_val3,0x1e,4);
   *(undefined4 *)(i_val3 + 0x24) = 0;
   *(undefined4 *)(i_val3 + 0x28) = 0;
   *(undefined4 *)(i_val3 + 0x30) = 0;
-  Farm_Routine_080096B0(i_val3 + 0x34);
-  Farm_Routine_08009744(i_val3 + 0x8c,*val,val[1]);
+  GBA_Display_InitRegsBuffer(i_val3 + 0x34);
+  OAM_InitSpriteBuffer(i_val3 + 0x8c,*val,val[1]);
   HW_Routine_08008980(i_val3 + 0x490);
   p_uint5 = (undefined4 *)(i_val3 + 0x494);
   *p_uint5 = 0;
@@ -3920,13 +3920,13 @@ u32 HW_Routine_08008618(int *hw_reg,undefined2 *val,undefined1 *size)
   undefined4 *p_uint5;
   
   hw_reg[1] = gRomData_080E5B00;
-  i_val3 = Dispatcher_Routine_080005D4(0x4b0);
-  Farm_Routine_080091A4(i_val3,*val,val[1]);
+  i_val3 = CppRuntime_OperatorNewArray(0x4b0);
+  Input_InitKeypadState(i_val3,*val,val[1]);
   *(undefined4 *)(i_val3 + 0x24) = 0;
   *(undefined4 *)(i_val3 + 0x28) = 0;
   *(undefined4 *)(i_val3 + 0x30) = 0;
-  Farm_Routine_080096B0(i_val3 + 0x34);
-  Farm_Routine_08009744(i_val3 + 0x8c,*size,size[1]);
+  GBA_Display_InitRegsBuffer(i_val3 + 0x34);
+  OAM_InitSpriteBuffer(i_val3 + 0x8c,*size,size[1]);
   HW_Routine_08008980(i_val3 + 0x490);
   p_uint5 = (undefined4 *)(i_val3 + 0x494);
   *p_uint5 = 0;
@@ -3966,10 +3966,10 @@ void HW_Routine_080086BC(int *hw_reg,uint val)
     if (*(int *)(i_val1 + 0x24) != 0) {
       cpp_operator_delete();
     }
-    Dispatcher_Routine_08000608(i_val1);
+    CppRuntime_FreeMemory(i_val1);
   }
   if ((val & 1) != 0) {
-    Dispatcher_Routine_08000608(hw_reg);
+    CppRuntime_FreeMemory(hw_reg);
   }
   return;
 }
@@ -4033,7 +4033,7 @@ void HW_Routine_080088B8(undefined4 *hw_reg)
 
 {
   
-  Farm_Routine_08009268(*hw_reg);
+  Input_ProcessAutoRepeat(*hw_reg);
   return;
 }
 
@@ -4484,9 +4484,9 @@ u32 HW_Routine_08008E28(uint hw_reg,uint val,uint size)
 }
 
 // =============================================================================
-// Function: HW_Routine_08008E64 @ 0x08008E64
+// Function: GBA_DMA3_FastCopy @ 0x08008E64
 // =============================================================================
-void HW_Routine_08008E64(uint hw_reg,uint val,uint size)
+void GBA_DMA3_FastCopy(uint hw_reg,uint val,uint size)
 
 {
   uint u_val1;

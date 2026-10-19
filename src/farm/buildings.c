@@ -29,7 +29,7 @@ u32 ToolChest_GetItem(undefined4 *arg_1,int arg_2,uint arg_3)
       stack_val_24 = arg_3;
       c_char1 = Item_Routine_0800DEDC(arg_1);
       if (c_char1 == '\0') {
-        Item_Routine_0800DEB8(&stack_val_2c,arg_1);
+        Item_GetToolExperienceRequired(&stack_val_2c,arg_1);
         i_val2 = Item_Routine_0800DCB4(&stack_val_2c);
         if (i_val2 == arg_2) {
           i_val2 = Item_Routine_0800DEF0(arg_1);
@@ -51,7 +51,7 @@ u32 ToolChest_GetItem(undefined4 *arg_1,int arg_2,uint arg_3)
         }
         u_val5 = *p_uint4;
         Item_SetIdAndClearQuality(&stack_val_28,arg_2);
-        Item_Routine_0800DE80(&stack_val_2c,(uint)stack_val_28,u_val5);
+        Item_GetToolTier(&stack_val_2c,(uint)stack_val_28,u_val5);
         *arg_1 = stack_val_2c;
         stack_val_24 = stack_val_24 - u_val5;
       }
@@ -460,7 +460,7 @@ u32 Coop_Init(uint *arg_1)
   *(byte *)((int)arg_1 + 3) = *(byte *)((int)arg_1 + 3) & 199 | 0xc0;
   *(undefined1 *)(arg_1 + 1) = 0x17;
   *(undefined1 *)((int)arg_1 + 5) = 0;
-  ShippingBin_Routine_0800B660(arg_1 + 2);
+  ShippingBin_ClearAllSlots(arg_1 + 2);
   Building_Routine_0800B8E4(arg_1 + 0x42);
   Building_Routine_0800BB60(arg_1 + 0x62);
   ShippingBin_StatEnt_GetAmountShipped(arg_1 + 99);

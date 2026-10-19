@@ -2062,7 +2062,7 @@ u32 NPC_Routine_0809DF2C(undefined4 npc,int amount,int extra_arg)
   if (u_val2 < 0x51) {
     i_val1 = Farmer_Routine_0800F92C(extra_arg + 0x1C38,u_val2);
     u_val3 = (uint)(i_val1 != -1);
-    i_val1 = ShippingBin_Routine_0800B544(extra_arg + 0x380,u_val2);
+    i_val1 = ShippingBin_FindSlotByItemId(extra_arg + 0x380,u_val2);
     if (i_val1 != -1) {
       u_val3 = 1;
     }
@@ -5052,12 +5052,12 @@ u32 NPC_Routine_080A220C(int npc,undefined4 amount)
   *(undefined4 *)(npc + 4) = gRomData_080E825C;
   *(undefined4 *)(npc + 8) = amount;
   *(undefined4 *)(npc + 0xc) = 0;
-  u_val4 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(stack_buf_34);
-  HW_Routine_0800770C(temp_buf_30);
+  u_val4 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(stack_buf_34);
+  GBA_BgLayer_Init(temp_buf_30);
   u_val4 = Animal_Routine_08050CC0(u_val4,0,0x1f,0xf,*(undefined4 *)(npc + 0xc),stack_buf_34,temp_buf_30);
   *(undefined4 *)(npc + 0x10) = u_val4;
-  HW_Routine_08007714(temp_buf_30,2);
+  GBA_BgLayer_SetPriority(temp_buf_30,2);
   HW_Routine_08008364(stack_buf_34,2);
   HW_Routine_08008B54(npc + 0x14,1);
   HW_Routine_08008B54(npc + 0x18,0);
@@ -5098,29 +5098,29 @@ u32 NPC_Routine_080A220C(int npc,undefined4 amount)
   *(undefined1 *)(npc + 0x135) = 0;
   *(undefined4 *)(npc + 0x138) = 0;
   *(undefined1 *)(npc + 0x13c) = 0;
-  HW_Routine_08007874(npc + 0x174);
-  u_val4 = HW_Routine_08007B54(npc + 0x174,7);
+  GBA_ObjAttr_Init(npc + 0x174);
+  u_val4 = GBA_ObjAttr_AllocateSprite(npc + 0x174,7);
   *(undefined4 *)(npc + 0x178) = u_val4;
-  HW_Routine_08007128(npc + 0x17c);
-  u_val4 = HW_Routine_0800736C(npc + 0x17c);
+  GBA_PaletteManager_Init(npc + 0x17c);
+  u_val4 = GBA_PaletteManager_Allocate(npc + 0x17c);
   *(undefined4 *)(npc + 0x180) = u_val4;
-  HW_Routine_08007128(npc + 0x184);
-  u_val4 = HW_Routine_0800736C(npc + 0x184);
+  GBA_PaletteManager_Init(npc + 0x184);
+  u_val4 = GBA_PaletteManager_Allocate(npc + 0x184);
   *(undefined4 *)(npc + 0x188) = u_val4;
-  HW_Routine_08007128(npc + 0x18c);
-  u_val4 = HW_Routine_0800736C(npc + 0x18c);
+  GBA_PaletteManager_Init(npc + 0x18c);
+  u_val4 = GBA_PaletteManager_Allocate(npc + 0x18c);
   *(undefined4 *)(npc + 400) = u_val4;
-  HW_Routine_08007874(npc + 0x194);
-  u_val4 = HW_Routine_08007B54(npc + 0x194,6);
+  GBA_ObjAttr_Init(npc + 0x194);
+  u_val4 = GBA_ObjAttr_AllocateSprite(npc + 0x194,6);
   *(undefined4 *)(npc + 0x198) = u_val4;
-  HW_Routine_08007128(npc + 0x19c);
-  u_val4 = HW_Routine_0800736C(npc + 0x19c);
+  GBA_PaletteManager_Init(npc + 0x19c);
+  u_val4 = GBA_PaletteManager_Allocate(npc + 0x19c);
   *(undefined4 *)(npc + 0x1a0) = u_val4;
-  HW_Routine_08007874(npc + 0x1a4);
-  u_val4 = HW_Routine_08007B54(npc + 0x1a4,4);
+  GBA_ObjAttr_Init(npc + 0x1a4);
+  u_val4 = GBA_ObjAttr_AllocateSprite(npc + 0x1a4,4);
   *(undefined4 *)(npc + 0x1a8) = u_val4;
-  HW_Routine_08007128(npc + 0x1ac);
-  u_val4 = HW_Routine_0800736C(npc + 0x1ac);
+  GBA_PaletteManager_Init(npc + 0x1ac);
+  u_val4 = GBA_PaletteManager_Allocate(npc + 0x1ac);
   *(undefined4 *)(npc + 0x1b0) = u_val4;
   pbVar8 = (byte *)(npc + 0x1de);
   *pbVar8 = *pbVar8 & 0x80;
@@ -5214,13 +5214,13 @@ u32 NPC_Routine_080A25B0(undefined4 *npc,int amount)
   NPC_Routine_080A303C(amount);
   i_val3 = HW_GetSpriteAttr1Offset(amount);
   *(undefined2 *)(i_val3 + 0x50) = 0x3f;
-  p_uint4 = (uint *)Dispatcher_Routine_080005D4(0x10);
+  p_uint4 = (uint *)CppRuntime_OperatorNewArray(0x10);
   u_val5 = HW_GetSpriteAttr1Offset(amount);
   *p_uint4 = 0;
   p_uint4[1] = 0;
   p_uint4[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint4 + 3,u_val5);
-  Farm_Routine_0800934C(p_uint4 + 3,0x889,1,1);
+  Fade_Init(p_uint4 + 3,u_val5);
+  Fade_StartFadeOut(p_uint4 + 3,0x889,1,1);
   i_val3 = HW_GetPaletteBankOffset(amount);
   _call_via_r2(i_val3,p_uint4,*(undefined4 *)(*(int *)(i_val3 + 8) + 0x10));
   *(undefined1 *)(amount + 0x216) = 2;
@@ -5341,7 +5341,7 @@ LAB_080a275a:
         if (*(char *)(amount + 0x216) == '\x02') goto LAB_080a2898;
         break;
       case 0x80a28a4:
-        Farm_Routine_08009378(p_uint4 + 3,0x889,1,1);
+        Fade_StartFadeIn(p_uint4 + 3,0x889,1,1);
         i_val3 = HW_GetPaletteBankOffset(amount);
         _call_via_r2(i_val3,p_uint4,*(undefined4 *)(*(int *)(i_val3 + 8) + 0x10));
         *(undefined2 *)(amount + 0x214) = 4;
@@ -5558,7 +5558,7 @@ void NPC_Routine_080A2BA4(int npc)
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0874EF3C,u_val2);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0874EFEC,u_val3);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0874F050,0x6000000);
-  HW_Routine_08008E64(gRomGfx_0874F2EC,0x5000000,0x200);
+  GBA_DMA3_FastCopy(gRomGfx_0874F2EC,0x5000000,0x200);
   p_uint6 = (undefined2 *)HW_GetSpriteAttr1Offset(npc);
   *p_uint6 = 0x1e40;
   loop_i = HW_GetSpriteAttr1Offset(npc);
@@ -5586,14 +5586,14 @@ void NPC_Routine_080A2BA4(int npc)
   if (stack_val_60 != 0) {
     u_val10 = stack_val_5c & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
+  GBA_DMA3_FastCopy(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
   loop_i = stack_val_68;
-  i_val7 = HW_Routine_08007D4C(npc + 0x1a4,*(undefined4 *)(npc + 0x1a8));
+  i_val7 = GBA_Vram_AllocateTileBlock(npc + 0x1a4,*(undefined4 *)(npc + 0x1a8));
   u_val10 = 0;
   if (stack_val_68 != 0) {
     u_val10 = stack_val_64 & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val7 * 0x20 + 0x06010000,u_val10);
+  GBA_DMA3_FastCopy(loop_i,i_val7 * 0x20 + 0x06010000,u_val10);
   p_uint9 = (undefined4 *)(npc + 0xb0);
   Animal_Routine_0805E860(p_uint9,0);
   _call_via_r3(temp_buf_50,(int *)*p_uint9,
@@ -5613,7 +5613,7 @@ void NPC_Routine_080A2BA4(int npc)
     u_val10 = stack_val_5c & 0xffff;
   }
   piStack_2c = (int *)(npc + 0xb4);
-  HW_Routine_08008E64(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
+  GBA_DMA3_FastCopy(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
   Animal_Routine_0805E860(p_uint9,0xf);
   _call_via_r3(temp_buf_50,(int *)*p_uint9,
                   *(undefined2 *)(*piStack_2c + (uint)*(ushort *)(npc + 0xbc) * 4),
@@ -5631,7 +5631,7 @@ void NPC_Routine_080A2BA4(int npc)
   if (stack_val_60 != 0) {
     u_val10 = stack_val_5c & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
+  GBA_DMA3_FastCopy(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
   Animal_Routine_0805E860(p_uint9,0x15);
   _call_via_r3(temp_buf_50,(int *)*p_uint9,
                   *(undefined2 *)(*piStack_2c + (uint)*(ushort *)(npc + 0xbc) * 4),
@@ -5649,7 +5649,7 @@ void NPC_Routine_080A2BA4(int npc)
   if (stack_val_60 != 0) {
     u_val10 = stack_val_5c & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
+  GBA_DMA3_FastCopy(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
   loop_i = 0;
   i_val7 = 0;
   puStack_28 = (undefined4 *)(npc + 0xe0);
@@ -5668,12 +5668,12 @@ void NPC_Routine_080A2BA4(int npc)
     stack_val_58 = stack_val_38;
     stack_val_54 = stack_val_34;
     *(short *)(npc + 0x140 + i_val7 * 2) = (short)loop_i;
-    i_val8 = HW_Routine_08007D4C(npc + 0x174,*(undefined4 *)(npc + 0x178));
+    i_val8 = GBA_Vram_AllocateTileBlock(npc + 0x174,*(undefined4 *)(npc + 0x178));
     u_val10 = 0;
     if (stack_val_68 != 0) {
       u_val10 = stack_val_64 & 0xffff;
     }
-    HW_Routine_08008E64(i_val4,(i_val8 + loop_i) * 0x20 + 0x06010000,u_val10);
+    GBA_DMA3_FastCopy(i_val4,(i_val8 + loop_i) * 0x20 + 0x06010000,u_val10);
     u_val10 = 0;
     if (stack_val_68 != 0) {
       u_val10 = stack_val_64 & 0xffff;
@@ -5698,7 +5698,7 @@ void NPC_Routine_080A2BA4(int npc)
   if (stack_val_60 != 0) {
     u_val10 = stack_val_5c & 0xffff;
   }
-  HW_Routine_08008E64(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
+  GBA_DMA3_FastCopy(loop_i,i_val7 * 0x20 + 0x05000200,u_val10);
   p_uint9 = puStack_28;
   i_val7 = 0;
   loop_i = 0;
@@ -5717,12 +5717,12 @@ void NPC_Routine_080A2BA4(int npc)
     stack_val_58 = stack_val_38;
     stack_val_54 = stack_val_34;
     *(short *)(npc + 0x16c + loop_i * 2) = (short)i_val7;
-    i_val8 = HW_Routine_08007D4C(npc + 0x194,*(undefined4 *)(npc + 0x198));
+    i_val8 = GBA_Vram_AllocateTileBlock(npc + 0x194,*(undefined4 *)(npc + 0x198));
     u_val10 = 0;
     if (stack_val_68 != 0) {
       u_val10 = stack_val_64 & 0xffff;
     }
-    HW_Routine_08008E64(i_val4,(i_val8 + i_val7) * 0x20 + 0x06010000,u_val10);
+    GBA_DMA3_FastCopy(i_val4,(i_val8 + i_val7) * 0x20 + 0x06010000,u_val10);
     u_val10 = 0;
     if (stack_val_68 != 0) {
       u_val10 = (uint)*(ushort *)(piStack_30 + 1);
@@ -5920,7 +5920,7 @@ void NPC_Routine_080A32A4(int npc)
   stack_val_68 = *(undefined4 *)(npc + 0x13c);
   stack_val_80 = CONCAT22((ushort)*(byte *)(npc + 0x1E5) * 0x14 + 0x30,
                        (ushort)*(byte *)(npc + 0x1e4) * 0x22 + 0x10);
-  u_val1 = HW_Routine_08007D4C(npc + 0x1a4,*(undefined4 *)(npc + 0x1a8));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x1a4,*(undefined4 *)(npc + 0x1a8));
   stack_val_7c._2_2_ = u_val1;
   u_val1 = HW_Routine_080074C0(npc + 0x1ac,*(undefined4 *)(npc + 0x1b0));
   stack_val_7c = CONCAT22(stack_val_7c._2_2_,u_val1);
@@ -5959,7 +5959,7 @@ void NPC_Routine_080A32A4(int npc)
       stack_val_68 = *(undefined4 *)(npc + 0x10c);
       stack_val_80 = CONCAT22(((byte)p_char6[3] & 0xf) * 0x14 + 0x2a,
                            (ushort)((byte)p_char6[2] >> 4) * 0x22 + 10);
-      s_val2 = HW_Routine_08007D4C(npc + 0x194,*(undefined4 *)(npc + 0x198));
+      s_val2 = GBA_Vram_AllocateTileBlock(npc + 0x194,*(undefined4 *)(npc + 0x198));
       stack_val_7c._2_2_ = *(short *)(npc + 0x16c + ((byte)p_char6[2] & 0xf) * 2) + s_val2;
       u_val1 = HW_Routine_080074C0(npc + 0x19c,*(undefined4 *)(npc + 0x1a0));
       stack_val_7c = CONCAT22(stack_val_7c._2_2_,u_val1);
@@ -6131,7 +6131,7 @@ void NPC_Routine_080A3618(int npc,undefined2 amount,undefined2 extra_arg,int out
   stack_val_64 = *(undefined4 *)(npc + 0xd8);
   stack_val_60 = *(undefined4 *)(npc + 0xdc);
   stack_val_78 = CONCAT22(extra_arg,amount);
-  s_val1 = HW_Routine_08007D4C(npc + 0x174,*(undefined4 *)(npc + 0x178));
+  s_val1 = GBA_Vram_AllocateTileBlock(npc + 0x174,*(undefined4 *)(npc + 0x178));
   s_val1 = *(short *)(npc + 0x140 + out_data * 2) + s_val1;
   stack_val_74._2_2_ = s_val1;
   if (arg_5 == 1) {
@@ -6167,7 +6167,7 @@ u32 NPC_Routine_080A3744(undefined4 *npc,undefined4 *amount,undefined4 extra_arg
   undefined4 u_val1;
   
   *npc = gRomData_080E8278;
-  u_val1 = Dispatcher_Routine_080005D4(0x228);
+  u_val1 = CppRuntime_OperatorNewArray(0x228);
   u_val1 = NPC_Routine_080A220C(u_val1,extra_arg);
   npc[1] = u_val1;
   u_val1 = *amount;
@@ -7140,10 +7140,10 @@ u32 NPC_Routine_080A4740(undefined4 *npc,int *amount,undefined4 extra_arg,undefi
   npc[9] = gRomData_080E82D8;
   *npc = amount;
   p_uint4 = npc + 1;
-  HW_Routine_08007874(p_uint4);
-  u_val3 = HW_Routine_08007B54(p_uint4,extra_arg);
+  GBA_ObjAttr_Init(p_uint4);
+  u_val3 = GBA_ObjAttr_AllocateSprite(p_uint4,extra_arg);
   npc[2] = u_val3;
-  u_val2 = HW_Routine_08007D4C(p_uint4);
+  u_val2 = GBA_Vram_AllocateTileBlock(p_uint4);
   *(undefined2 *)(npc + 3) = u_val2;
   npc[4] = 0;
   gba_memset(npc + 5,0,1);
@@ -7176,7 +7176,7 @@ void NPC_Routine_080A47B4(undefined4 *npc,uint amount)
   HW_Routine_08007C28(npc + 1,npc[2]);
   HW_Routine_080079E8(npc + 1,2);
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(npc);
+    CppRuntime_FreeMemory(npc);
   }
   return;
 }
@@ -7211,7 +7211,7 @@ void NPC_Routine_080A480C(int npc,int *amount,int *extra_arg)
     s_val7 = (short)extra_arg[1];
   }
   if (s_val7 != 0) {
-    i_val1 = HW_Routine_08007D4C(npc + 4,*(undefined4 *)(npc + 8));
+    i_val1 = GBA_Vram_AllocateTileBlock(npc + 4,*(undefined4 *)(npc + 8));
     HW_Routine_08008F0C(&stack_val_3c,i_val8,i_val1 * 0x20 + 0x06010000,s_val7);
     p_uint4 = (undefined4 *)amount[1];
     if (p_uint4 == (undefined4 *)amount[3]) {
@@ -7391,14 +7391,14 @@ void NPC_Routine_080A4B6C(int npc,uint amount)
   
   *(undefined4 *)(npc + 0x90) = gRomData_080E82E4;
   if (*(int *)(npc + 0x2c) != 0) {
-    Dispatcher_Routine_08000614();
+    CppRuntime_OperatorDeleteArray();
   }
   loop_i = 0;
   p_int3 = (int *)(npc + 0x1c);
   p_int1 = (int *)(npc + 0x10);
   do {
     if (*p_int1 != 0) {
-      Dispatcher_Routine_08000614();
+      CppRuntime_OperatorDeleteArray();
     }
     p_int1 = p_int1 + 1;
     loop_i = loop_i + 1;
@@ -7406,14 +7406,14 @@ void NPC_Routine_080A4B6C(int npc,uint amount)
   loop_i = 0;
   do {
     if (*p_int3 != 0) {
-      Dispatcher_Routine_08000614();
+      CppRuntime_OperatorDeleteArray();
     }
     p_int3 = p_int3 + 1;
     loop_i = loop_i + 1;
   } while (loop_i < 3);
   Farm_Routine_080098AC(npc + 0x5c,2);
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(npc);
+    CppRuntime_FreeMemory(npc);
   }
   return;
 }
@@ -8988,7 +8988,7 @@ void NPC_Routine_080A748C(int *npc,int *amount)
   piStack_54 = npc;
   NPC_Routine_080A5EA0();
   stack_val_50 = piStack_54[0x25] + 0x214C;
-  p_uint3 = (uint *)Farmer_Routine_0800E324(piStack_54[0x25] + 0x10);
+  p_uint3 = (uint *)Farmer_GetFacingDirection(piStack_54[0x25] + 0x10);
   Animal_Routine_0805E6CC(stack_ints_1e4,gRomGfx_086678A0);
   i_val9 = stack_ints_1e4[0];
   i_val4 = *piStack_54;
@@ -11131,7 +11131,7 @@ void NPC_Routine_080AA270(int *npc,int amount,int extra_arg)
   p_uint5 = stack_buf_6c;
   p_uint9 = stack_buf_6c;
   p_uint10 = stack_buf_6c;
-  i_val3 = Farmer_Routine_0800E324(npc[0x25] + 0x10);
+  i_val3 = Farmer_GetFacingDirection(npc[0x25] + 0x10);
   pos_x = *npc;
   if (pos_x == 0x2e) {
     pos_x = 1;
@@ -11384,7 +11384,7 @@ void NPC_Routine_080AA850(int npc,undefined4 amount)
   undefined4 stack_val_18;
   undefined4 stack_val_14;
   
-  i_val1 = Farmer_Routine_0800E324(*(int *)(npc + 0x94) + 0x10);
+  i_val1 = Farmer_GetFacingDirection(*(int *)(npc + 0x94) + 0x10);
   NPC_GetEventWaypoint(&stack_val_1c,*(int *)(npc + 0x94) + 0x34D8,amount,i_val1 == 3);
   NPC_Routine_080A5BD8(npc,stack_val_1c,stack_val_18,stack_val_14);
   *(undefined1 *)(npc + 0x29) = 1;
@@ -11466,7 +11466,7 @@ LAB_080aa964:
   else {
 LAB_080aa93c:
     item_id = Farmer_Routine_0800F92C(*p_int6 + 0x1C38,0x4b);
-    if ((item_id != -1) || (item_id = ShippingBin_Routine_0800B544(*p_int6 + 0x380,0x4b), item_id != -1))
+    if ((item_id != -1) || (item_id = ShippingBin_FindSlotByItemId(*p_int6 + 0x380,0x4b), item_id != -1))
     goto LAB_080aa964;
   }
   if (!b_flag1) {
@@ -11509,7 +11509,7 @@ void NPC_Routine_080AACB8(undefined1 *npc)
   int i_val7;
   undefined1 temp_buf_28 [16];
   
-  i_val3 = Farmer_Routine_0800E324(*(int *)(npc + 0x94) + 0x10);
+  i_val3 = Farmer_GetFacingDirection(*(int *)(npc + 0x94) + 0x10);
   if (0xf < *(uint *)(npc + 4)) {
 case_080AAD82:
     NPC_Routine_080AAE14(npc + 0x9c,0,0);
@@ -11652,7 +11652,7 @@ void NPC_Routine_080AAF9C(int *npc,int amount)
 {
   
   if ((amount != 0) && (*npc == 2)) {
-    HW_Routine_08008E64(npc[0xb],amount,0xb000);
+    GBA_DMA3_FastCopy(npc[0xb],amount,0xb000);
   }
   return;
 }
@@ -11715,7 +11715,7 @@ u32 NPC_Routine_080AAFC8(int *npc,int *amount,int extra_arg)
   
   piStack_4c = npc;
   piStack_48 = amount;
-  p_uint2 = (undefined4 *)Dispatcher_Routine_080005D4(1000);
+  p_uint2 = (undefined4 *)CppRuntime_OperatorNewArray(1000);
   *p_uint2 = piStack_48;
   if (extra_arg == 0xd) {
 LAB_080aaffe:
@@ -11761,7 +11761,7 @@ LAB_080aaffe:
     i_val10 = 1;
     stack_val_28 = 0;
     do {
-      HW_Routine_08007874(p_uint8);
+      GBA_ObjAttr_Init(p_uint8);
       p_uint8[1] = stack_val_28;
       p_uint8 = p_uint8 + 2;
       i_val10 = i_val10 + -1;
@@ -11919,7 +11919,7 @@ LAB_080ab1bc:
     u_val9 = 0;
     do {
       stack_val_28 = u_val9;
-      HW_Routine_08007874(p_uint4);
+      GBA_ObjAttr_Init(p_uint4);
       u_val9 = stack_val_28;
       p_uint4[1] = stack_val_28;
       p_uint4 = p_uint4 + 2;
@@ -12021,10 +12021,10 @@ void NPC_Routine_080AB2E4(int *npc,uint amount)
         p_uint4 = p_uint5;
       } while (p_uint1 + 2 != p_uint5);
     }
-    Dispatcher_Routine_08000608(p_uint1);
+    CppRuntime_FreeMemory(p_uint1);
   }
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(npc);
+    CppRuntime_FreeMemory(npc);
   }
   return;
 }
@@ -12137,7 +12137,7 @@ void NPC_Routine_080AB410(int *npc,undefined4 amount,int *extra_arg)
         do {
           i_val11 = loop_i * 0x20;
           u_val4 = *(undefined4 *)(p_char9 + i_val11 + 0xc);
-          i_val3 = HW_Routine_08007D4C(p_char9 + loop_i * 8 + 0x44,
+          i_val3 = GBA_Vram_AllocateTileBlock(p_char9 + loop_i * 8 + 0x44,
                                 *(undefined4 *)(p_char9 + loop_i * 8 + 0x48));
           u_val10 = 0;
           if (*(int *)(p_char9 + i_val11 + 0xc) != 0) {
@@ -12248,7 +12248,7 @@ void NPC_Routine_080AB410(int *npc,undefined4 amount,int *extra_arg)
       s_val1 = psVar13[1];
       stack_val_2c = *psVar13 - stack_val_34;
       p_uint6 = puStack_40 + (uint)*(byte *)(psVar13 + 3) * 0x15 + u_val8 * 8 + 3;
-      u_val4 = HW_Routine_08007D4C(puStack_40 + (uint)*(byte *)(psVar13 + 3) * 0x15 + u_val8 * 2 + 0x13,
+      u_val4 = GBA_Vram_AllocateTileBlock(puStack_40 + (uint)*(byte *)(psVar13 + 3) * 0x15 + u_val8 * 2 + 0x13,
                             (puStack_40 + (uint)*(byte *)(psVar13 + 3) * 0x15 + u_val8 * 2 + 0x13)[1]
                            );
       _call_via_r4(stack_val_44,stack_val_2c,s_val1 - i_val3,0xaa,0x8000 - s_val1,p_uint6,piStack_3c,u_val4,
@@ -13460,8 +13460,8 @@ u32 NPC_Routine_080AC674(int *npc,int *amount)
   i_val1 = 0xC15 + 0x198;
   p_uint6 = (undefined2 *)((int)npc + 0x102C);
   do {
-    HW_Routine_08007128(i_val8);
-    u_val4 = HW_Routine_0800736C(i_val8);
+    GBA_PaletteManager_Init(i_val8);
+    u_val4 = GBA_PaletteManager_Allocate(i_val8);
     *(undefined4 *)(i_val8 + 4) = u_val4;
     u_val2 = HW_Routine_080074C0(i_val8);
     *(undefined1 *)(i_val8 + 8) = u_val2;
@@ -13562,7 +13562,7 @@ void NPC_Routine_080AC85C(int *npc,uint amount)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 0x90) + 8));
   }
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(npc);
+    CppRuntime_FreeMemory(npc);
   }
   return;
 }
@@ -14078,7 +14078,7 @@ void NPC_Routine_080AD3B0(int npc,undefined4 amount)
   }
   *p_int4 = 0;
   NPC_Routine_080A56DC(*(undefined4 *)(npc + 4),amount,0,0,0x1e);
-  u_val1 = Dispatcher_Routine_080005D4(0xa0);
+  u_val1 = CppRuntime_OperatorNewArray(0xa0);
   i_val3 = ScriptEngine_Construct(u_val1,npc);
   p_int4 = (int *)(npc + 0x1024);
   i_val2 = *p_int4;
@@ -14086,7 +14086,7 @@ void NPC_Routine_080AD3B0(int npc,undefined4 amount)
     ScriptEngine_Destruct(i_val2,3);
   }
   *p_int4 = i_val3;
-  u_val1 = Dispatcher_Routine_080005D4(4);
+  u_val1 = CppRuntime_OperatorNewArray(4);
   i_val3 = NPC_Routine_080AAFC8(u_val1,npc,*(undefined4 *)(*(int *)(npc + 4) + 4));
   p_int4 = (int *)(npc + 0x1028);
   i_val2 = *p_int4;
@@ -14139,7 +14139,7 @@ code_r0x080ad4ac:
     pos_x = Entity_Routine_0802C210(npc);
     break;
   case 0x80ad504:
-    pos_x = Dispatcher_Routine_080005D4(0x30);
+    pos_x = CppRuntime_OperatorNewArray(0x30);
     u_val1 = (ushort)0xFFFFFC00;
     stack_val_24 = u_val1 & stack_val_24 & 0x3ff | 0x234;
     stack_val_22 = u_val1 & stack_val_22 & 0x3ff;
@@ -14150,7 +14150,7 @@ code_r0x080ad4ac:
     *(undefined4 *)(pos_x + 0x14) = gRomData_080E8404;
     break;
   case 0x80ad56c:
-    u_val3 = Dispatcher_Routine_080005D4(0x18);
+    u_val3 = CppRuntime_OperatorNewArray(0x18);
     u_val1 = (ushort)_LAB_080ad5d4;
     stack_val_2c = u_val1 & stack_val_2c & 0x3ff | 0x234;
     stack_val_2a = u_val1 & stack_val_2a & 0x3ff;
@@ -14327,9 +14327,9 @@ u32 NPC_Routine_080AD724(undefined4 *npc)
   undefined4 u_val1;
   undefined4 facing_buffer [3];
   
-  Dispatcher_Routine_080005D4(0x1e4);
+  CppRuntime_OperatorNewArray(0x1e4);
   facing_buffer[0] = M4A_Routine_080CFB28();
-  u_val1 = Dispatcher_Routine_080005D4(0x1038);
+  u_val1 = CppRuntime_OperatorNewArray(0x1038);
   u_val1 = NPC_Routine_080AC9EC(u_val1,facing_buffer);
   *npc = u_val1;
   return npc;
@@ -14632,7 +14632,7 @@ u32 NPC_Routine_080ADC00(undefined4 *npc)
 {
   undefined4 *p_uint1;
   
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x20);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0x20);
   *p_uint1 = 0;
   *(undefined2 *)(p_uint1 + 1) = 0;
   p_uint1[2] = 0;
@@ -14652,9 +14652,9 @@ void NPC_Routine_080ADC84(undefined4 *npc,uint amount)
 
 {
   
-  Dispatcher_Routine_08000608(*npc);
+  CppRuntime_FreeMemory(*npc);
   if ((amount & 1) != 0) {
-    Dispatcher_Routine_08000608(npc);
+    CppRuntime_FreeMemory(npc);
   }
   return;
 }
@@ -14744,43 +14744,43 @@ void NPC_Routine_080ADF6C(int npc,undefined4 *amount)
   do {
     i_val2 = i_val2 + -1;
   } while (i_val2 != -1);
-  u_val3 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(stack_buf_54);
-  HW_Routine_0800770C(temp_buf_50);
+  u_val3 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(stack_buf_54);
+  GBA_BgLayer_Init(temp_buf_50);
   u_val3 = Animal_Routine_08050CC0(u_val3,0,0x18,0,0,stack_buf_54,temp_buf_50);
   *(undefined4 *)(npc + 0x418) = u_val3;
-  HW_Routine_08007714(temp_buf_50,2);
+  GBA_BgLayer_SetPriority(temp_buf_50,2);
   HW_Routine_08008364(stack_buf_54,2);
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0873E5B0);
   *(undefined4 *)(npc + 0x41C) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0873DE44);
   *(undefined4 *)(npc + 0x420) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_087405A0);
   *(undefined4 *)(npc + 0x424) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0858BA28);
   *(undefined4 *)(npc + 0x428) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0873AE54);
   *(undefined4 *)(npc + 0x42C) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0871D51C);
   *(undefined4 *)(npc + 0x430) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0872BE64);
   *(undefined4 *)(npc + 0x434) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0873D6D8);
   *(undefined4 *)(npc + 0x438) = u_val3;
-  p_uint4 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint4 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val3 = HW_GetSpriteAttr1Offset(npc);
   *p_uint4 = 0;
   p_uint4[1] = 0;
   p_uint4[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint4 + 3,u_val3);
+  Fade_Init(p_uint4 + 3,u_val3);
   i_val2 = 0x43C;
   *(undefined4 **)(npc + 0x43C) = p_uint4;
   *(undefined4 *)(npc + 0x460) = 0;
@@ -14998,27 +14998,27 @@ void NPC_Routine_080ADF6C(int npc,undefined4 *amount)
   p_uint4[1] = 0;
   p_uint4[2] = gRomData_080E5B60;
   i_val2 = npc + 0x888;
-  HW_Routine_08007874(i_val2);
+  GBA_ObjAttr_Init(i_val2);
   *(undefined4 *)(i_val2 + 4) = 0;
-  HW_Routine_08007874(stack_val_48);
+  GBA_ObjAttr_Init(stack_val_48);
   *(undefined4 *)(stack_val_48 + 4) = 0;
-  HW_Routine_08007874(stack_val_44);
+  GBA_ObjAttr_Init(stack_val_44);
   *(undefined4 *)(stack_val_44 + 4) = 0;
-  HW_Routine_08007874(stack_val_40);
+  GBA_ObjAttr_Init(stack_val_40);
   *(undefined4 *)(stack_val_40 + 4) = 0;
-  HW_Routine_08007874(stack_val_3c);
+  GBA_ObjAttr_Init(stack_val_3c);
   *(undefined4 *)(stack_val_3c + 4) = 0;
-  HW_Routine_08007874(stack_val_38);
+  GBA_ObjAttr_Init(stack_val_38);
   *(undefined4 *)(stack_val_38 + 4) = 0;
-  HW_Routine_08007874(stack_val_34);
+  GBA_ObjAttr_Init(stack_val_34);
   *(undefined4 *)(stack_val_34 + 4) = 0;
-  HW_Routine_08007874(stack_val_30);
+  GBA_ObjAttr_Init(stack_val_30);
   *(undefined4 *)(stack_val_30 + 4) = 0;
-  HW_Routine_08007874(stack_val_2c);
+  GBA_ObjAttr_Init(stack_val_2c);
   *(undefined4 *)(stack_val_2c + 4) = 0;
-  HW_Routine_08007874(stack_val_28);
+  GBA_ObjAttr_Init(stack_val_28);
   *(undefined4 *)(stack_val_28 + 4) = 0;
-  HW_Routine_08007874(stack_val_24);
+  GBA_ObjAttr_Init(stack_val_24);
   *(undefined4 *)(stack_val_24 + 4) = 0;
   *(undefined4 *)(npc + 0x910) = 0;
   *(undefined4 *)(npc + 0x930) = *puStack_4c;
@@ -15048,38 +15048,38 @@ void NPC_Routine_080AE6CC(int npc)
   
   i_val2 = npc + 0x888;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,3);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,3);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   HW_Routine_08007C28(npc + 0x890,*(undefined4 *)(npc + 0x894));
-  u_val1 = HW_Routine_08007B54(npc + 0x890,6);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x890,6);
   *(undefined4 *)(npc + 0x894) = u_val1;
   HW_Routine_08007C28(npc + 0x8a0,*(undefined4 *)(npc + 0x8a4));
-  u_val1 = HW_Routine_08007B54(npc + 0x8a0,5);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x8a0,5);
   *(undefined4 *)(npc + 0x8a4) = u_val1;
   i_val2 = npc + 0x8A8;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,2);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,2);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   HW_Routine_08007C28(npc + 0x8b0,*(undefined4 *)(npc + 0x8b4));
-  u_val1 = HW_Routine_08007B54(npc + 0x8b0,4);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x8b0,4);
   *(undefined4 *)(npc + 0x8b4) = u_val1;
   i_val2 = npc + 0x8B8;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,5);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,5);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   HW_Routine_08007C28(npc + 0x8c0,*(undefined4 *)(npc + 0x8c4));
-  u_val1 = HW_Routine_08007B54(npc + 0x8c0,5);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x8c0,5);
   *(undefined4 *)(npc + 0x8c4) = u_val1;
   i_val2 = npc + 0x8C8;
   HW_Routine_08007C28(i_val2,*(undefined4 *)(i_val2 + 4));
-  u_val1 = HW_Routine_08007B54(i_val2,5);
+  u_val1 = GBA_ObjAttr_AllocateSprite(i_val2,5);
   *(undefined4 *)(i_val2 + 4) = u_val1;
   HW_Routine_08007C28(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
-  u_val1 = HW_Routine_08007B54(npc + 0x8d0,6);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x8d0,6);
   *(undefined4 *)(npc + 0x8d4) = u_val1;
   npc = npc + 0x8D8;
   HW_Routine_08007C28(npc,*(undefined4 *)(npc + 4));
-  u_val1 = HW_Routine_08007B54(npc,6);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc,6);
   *(undefined4 *)(npc + 4) = u_val1;
   return;
 }
@@ -15103,7 +15103,7 @@ void NPC_Routine_080AE7D0(undefined4 npc)
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872FC34,u_val2);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872FE6C,u_val1);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872FEF8,0x6000000);
-  HW_Routine_08008E64(gRomGfx_08731940,0x5000000,0x200);
+  GBA_DMA3_FastCopy(gRomGfx_08731940,0x5000000,0x200);
   p_uint3 = (undefined2 *)HW_GetSpriteAttr1Offset(npc);
   *p_uint3 = 0x1640;
   i_val4 = HW_GetSpriteAttr1Offset(npc);
@@ -15169,7 +15169,7 @@ void NPC_Routine_080AE894(int npc)
   undefined4 *puStack_28;
   undefined4 *puStack_24;
   
-  HW_Routine_08008E64(*gRomData_080F9F78,0x050003C0,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x050003C0,0x20);
   NPC_Routine_080AE6CC(npc);
   p_uint6 = 0x0500024A;
   *0x0500024A = *0x050003C2;
@@ -15190,7 +15190,7 @@ void NPC_Routine_080AE894(int npc)
   stack_val_8c = 0x20004;
   ScriptEngine_Routine_0804E958(0x20004,i_val11,0,0,stack_buf_ec,0,1);
   p_int3 = (int *)HW_GetSpriteAttr0Offset(npc);
-  loop_i = HW_Routine_08007D4C(0x888 + npc,*(undefined4 *)(0x888 + npc + 4));
+  loop_i = GBA_Vram_AllocateTileBlock(0x888 + npc,*(undefined4 *)(0x888 + npc + 4));
   HW_Routine_08008F0C(stack_buf_e8,i_val11,loop_i * 0x20 + 0x06010000,0x100);
   p_uint7 = (undefined4 *)p_int3[1];
   if (p_uint7 == (undefined4 *)p_int3[3]) {
@@ -15271,18 +15271,18 @@ void NPC_Routine_080AE894(int npc)
     puStack_44 = &stack_val_b8;
     puStack_40 = stack_buf_b4;
   }
-  u_val5 = HW_Routine_08007D4C(0x888 + npc,*(undefined4 *)(0x888 + npc + 4));
+  u_val5 = GBA_Vram_AllocateTileBlock(0x888 + npc,*(undefined4 *)(0x888 + npc + 4));
   ScriptEngine_Routine_0804EA94(puStack_3c,0xd0,8,u_val5,2,0,2,1);
   *(undefined4 *)(npc + 0x440) = stack_val_80;
   *(undefined4 *)(npc + 0x444) = stack_val_7c;
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   loop_i = Animal_Routine_0805E824(u_val5,*(undefined4 *)(0x41C + npc),0,0x100);
   p_int3 = (int *)(npc + 0x4b0);
   if (loop_i != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = loop_i;
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -15295,14 +15295,14 @@ void NPC_Routine_080AE894(int npc)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int13 = (int *)(0x4B4 + npc);
   if (p_uint6 != (undefined2 *)*p_int13) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int13 = (int)p_uint6;
   Animal_Routine_0805E860(*p_int3,0);
   *(undefined2 *)*p_int13 = 0x40;
   *(undefined2 *)(*p_int13 + 2) = 0x40;
   loop_i = *p_int13;
-  u_val1 = HW_Routine_08007D4C(npc + 0x890,*(undefined4 *)(npc + 0x894));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x890,*(undefined4 *)(npc + 0x894));
   *(undefined2 *)(loop_i + 6) = u_val1;
   *(undefined2 *)(*p_int13 + 4) = 3;
   p_uint7 = (undefined4 *)*p_int3;
@@ -15325,7 +15325,7 @@ void NPC_Routine_080AE894(int npc)
   *(undefined4 *)(npc + 0x4d4) = u_val5;
   p_int3 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val11 = *(int *)(npc + 0x4c0);
-  loop_i = HW_Routine_08007D4C(npc + 0x890,*(undefined4 *)(npc + 0x894));
+  loop_i = GBA_Vram_AllocateTileBlock(npc + 0x890,*(undefined4 *)(npc + 0x894));
   u_val1 = 0;
   if (*(int *)(npc + 0x4c0) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x4c4);
@@ -15481,14 +15481,14 @@ void NPC_Routine_080AE894(int npc)
     }
     p_int3[1] = p_int3[1] + 0x10;
   }
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   loop_i = Animal_Routine_0805E824(u_val5,*(undefined4 *)(0x424 + npc),0,0x100);
   p_int3 = (int *)(npc + 0x4d8);
   if (loop_i != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = loop_i;
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -15501,14 +15501,14 @@ void NPC_Routine_080AE894(int npc)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int13 = (int *)(0x4DC + npc);
   if (p_uint6 != (undefined2 *)*p_int13) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int13 = (int)p_uint6;
   Animal_Routine_0805E860(*p_int3,0);
   *(undefined2 *)*p_int13 = 0xc0;
   *(undefined2 *)(*p_int13 + 2) = 0;
   loop_i = *p_int13;
-  u_val1 = HW_Routine_08007D4C(npc + 0x8a0,*(undefined4 *)(npc + 0x8a4));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x8a0,*(undefined4 *)(npc + 0x8a4));
   *(undefined2 *)(loop_i + 6) = u_val1;
   *(undefined2 *)(*p_int13 + 4) = 4;
   *(undefined2 *)(*p_int13 + 8) = 1;
@@ -15528,7 +15528,7 @@ void NPC_Routine_080AE894(int npc)
   *(undefined4 *)(npc + 0x4fc) = stack_val_cc;
   p_int3 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val11 = *(int *)(npc + 0x4e8);
-  loop_i = HW_Routine_08007D4C(npc + 0x8a0,*(undefined4 *)(npc + 0x8a4));
+  loop_i = GBA_Vram_AllocateTileBlock(npc + 0x8a0,*(undefined4 *)(npc + 0x8a4));
   u_val1 = 0;
   if (*(int *)(npc + 0x4e8) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x4ec);
@@ -15684,14 +15684,14 @@ void NPC_Routine_080AE894(int npc)
     }
     p_int3[1] = p_int3[1] + 0x10;
   }
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   loop_i = Animal_Routine_0805E824(u_val5,*(undefined4 *)(npc + 0x428),0,0x100);
   p_int3 = (int *)(npc + 0x500);
   if (loop_i != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = loop_i;
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -15704,23 +15704,23 @@ void NPC_Routine_080AE894(int npc)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int13 = (int *)(0x504 + npc);
   if (p_uint6 != (undefined2 *)*p_int13) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int13 = (int)p_uint6;
   *(undefined2 *)(*p_int3 + 0x10) = 0x100;
   *(ushort *)*p_int13 = (ushort)*(byte *)(npc + 0x8e0);
   *(undefined2 *)(*p_int13 + 2) = 0x40;
   loop_i = *p_int13;
-  u_val1 = HW_Routine_08007D4C(npc + 0x8b0,*(undefined4 *)(npc + 0x8b4));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x8b0,*(undefined4 *)(npc + 0x8b4));
   *(undefined2 *)(loop_i + 6) = u_val1;
   *(undefined2 *)(*p_int13 + 4) = 5;
   *(undefined2 *)(*p_int13 + 8) = 1;
   *(undefined1 *)(*p_int13 + 0x18) = 1;
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   loop_i = Animal_Routine_0805E824(u_val5,*(undefined4 *)(npc + 0x428),0,0x100);
   p_int3 = (int *)(npc + 0x528);
   if (loop_i != *p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = loop_i;
   Animal_Routine_0805E860(loop_i,0x91A);
@@ -15739,7 +15739,7 @@ void NPC_Routine_080AE894(int npc)
   *(undefined4 *)(npc + 0x54c) = stack_val_cc;
   p_int3 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val11 = *(int *)(npc + 0x538);
-  loop_i = HW_Routine_08007D4C(0x8A8 + npc,*(undefined4 *)(0x8A8 + npc + 4));
+  loop_i = GBA_Vram_AllocateTileBlock(0x8A8 + npc,*(undefined4 *)(0x8A8 + npc + 4));
   u_val1 = 0;
   if (*(int *)(npc + 0x538) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x53c);
@@ -15895,7 +15895,7 @@ void NPC_Routine_080AE894(int npc)
     }
     p_int3[1] = p_int3[1] + 0x10;
   }
-  p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint6 = 0;
   p_uint6[1] = 0;
   p_uint6[2] = 0;
@@ -15908,10 +15908,10 @@ void NPC_Routine_080AE894(int npc)
   *(undefined1 *)(p_uint6 + 0xc) = 0;
   p_int3 = (int *)(0x52C + npc);
   if (p_uint6 != (undefined2 *)*p_int3) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int3 = (int)p_uint6;
-  u_val1 = HW_Routine_08007D4C(0x8A8 + npc,*(undefined4 *)(0x8A8 + npc + 4));
+  u_val1 = GBA_Vram_AllocateTileBlock(0x8A8 + npc,*(undefined4 *)(0x8A8 + npc + 4));
   p_uint6[3] = u_val1;
   *(undefined2 *)(*p_int3 + 4) = 0xd;
   *(undefined2 *)(*p_int3 + 8) = 1;
@@ -15927,7 +15927,7 @@ void NPC_Routine_080AE894(int npc)
   loop_i = 0x8A8 + npc;
   puStack_2c = stack_buf_e8;
   do {
-    p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+    p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
     *p_uint6 = 0;
     p_uint6[1] = 0;
     p_uint6[2] = 0;
@@ -15939,10 +15939,10 @@ void NPC_Routine_080AE894(int npc)
     *(undefined4 *)(p_uint6 + 10) = 0;
     *(undefined1 *)(p_uint6 + 0xc) = 0;
     if (p_uint6 != (undefined2 *)*p_int3) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int3 = (int)p_uint6;
-    u_val1 = HW_Routine_08007D4C(loop_i,*(undefined4 *)(loop_i + 4));
+    u_val1 = GBA_Vram_AllocateTileBlock(loop_i,*(undefined4 *)(loop_i + 4));
     p_uint7 = puStack_44;
     p_uint6[3] = u_val1;
     *(undefined2 *)(*p_int3 + 4) = 0xd;
@@ -15975,14 +15975,14 @@ void NPC_Routine_080AE894(int npc)
   p_int3 = (int *)(npc + 0x550);
   stack_val_30 = npc;
   do {
-    u_val5 = Dispatcher_Routine_080005D4(0x14);
+    u_val5 = CppRuntime_OperatorNewArray(0x14);
     i_val11 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(0x42C + npc),0,0x100);
     i_val14 = loop_i * 4;
     if (i_val11 != *p_int3) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int3 = i_val11;
-    p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+    p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
     *p_uint6 = 0;
     p_uint6[1] = 0;
     p_uint6[2] = 0;
@@ -15996,14 +15996,14 @@ void NPC_Routine_080AE894(int npc)
     i_val11 = 0x564;
     p_uint7 = (undefined4 *)(i_val14 + npc + 0x564);
     if (p_uint6 != (undefined2 *)*p_uint7) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_uint7 = p_uint6;
     **(undefined2 **)(stack_val_30 + i_val11) = (short)puStack_44[loop_i * 2];
     *(short *)(*(int *)(i_val14 + npc + i_val11) + 2) =
          (short)*(undefined4 *)(puStack_40 + loop_i * 8);
     i_val12 = *(int *)(i_val14 + npc + i_val11);
-    s_val2 = HW_Routine_08007D4C(0x8B8 + npc,*(undefined4 *)(0x8B8 + npc + 4));
+    s_val2 = GBA_Vram_AllocateTileBlock(0x8B8 + npc,*(undefined4 *)(0x8B8 + npc + 4));
     *(short *)(i_val12 + 6) = s_val2 + (short)i_val14;
     *(undefined2 *)(*(int *)(i_val14 + npc + i_val11) + 4) = 9;
     *(undefined2 *)(*(int *)(i_val14 + npc + i_val11) + 8) = 1;
@@ -16016,14 +16016,14 @@ void NPC_Routine_080AE894(int npc)
   p_int3 = (int *)(npc + 0x618);
   stack_val_34 = npc;
   do {
-    u_val5 = Dispatcher_Routine_080005D4(0x14);
+    u_val5 = CppRuntime_OperatorNewArray(0x14);
     i_val11 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(npc + 0x428),0,0x100);
     i_val14 = loop_i * 4;
     if (i_val11 != *p_int3) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int3 = i_val11;
-    p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+    p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
     *p_uint6 = 0;
     p_uint6[1] = 0;
     p_uint6[2] = 0;
@@ -16037,7 +16037,7 @@ void NPC_Routine_080AE894(int npc)
     i_val11 = 0x62C;
     p_uint7 = (undefined4 *)(i_val14 + npc + 0x62C);
     if (p_uint6 != (undefined2 *)*p_uint7) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_uint7 = p_uint6;
     *(undefined2 *)(*(int *)(stack_val_34 + 0x618) + 0x10) = 0x100;
@@ -16045,7 +16045,7 @@ void NPC_Routine_080AE894(int npc)
     *(ushort *)(*(int *)(i_val14 + npc + i_val11) + 2) =
          (ushort)*(byte *)(0x8E1 + npc + loop_i);
     i_val12 = *(int *)(i_val14 + npc + i_val11);
-    s_val2 = HW_Routine_08007D4C(npc + 0x8c0,*(undefined4 *)(npc + 0x8c4));
+    s_val2 = GBA_Vram_AllocateTileBlock(npc + 0x8c0,*(undefined4 *)(npc + 0x8c4));
     *(short *)(i_val12 + 6) = s_val2 + (short)i_val14;
     *(undefined2 *)(*(int *)(i_val14 + npc + i_val11) + 4) = 10;
     *(undefined2 *)(*(int *)(i_val14 + npc + i_val11) + 8) = 1;
@@ -16058,14 +16058,14 @@ void NPC_Routine_080AE894(int npc)
   p_int3 = (int *)(0x6F4 + npc);
   stack_val_38 = npc;
   do {
-    u_val5 = Dispatcher_Routine_080005D4(0x14);
+    u_val5 = CppRuntime_OperatorNewArray(0x14);
     i_val11 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(npc + 0x430),0,0x100);
     i_val14 = loop_i * 4;
     if (i_val11 != *p_int3) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int3 = i_val11;
-    p_uint6 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+    p_uint6 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
     *p_uint6 = 0;
     p_uint6[1] = 0;
     p_uint6[2] = 0;
@@ -16078,14 +16078,14 @@ void NPC_Routine_080AE894(int npc)
     *(undefined1 *)(p_uint6 + 0xc) = 0;
     p_uint7 = (undefined4 *)(i_val14 + npc + 0x708);
     if (p_uint6 != (undefined2 *)*p_uint7) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_uint7 = p_uint6;
     **(short **)(stack_val_38 + 0x708) = (short)stack_buf_e8[loop_i] + -0x11;
     *(ushort *)(*(int *)(i_val14 + npc + 0x708) + 2) =
          *(byte *)(0x8E1 + npc + loop_i) - 0x18;
     i_val11 = *(int *)(i_val14 + npc + 0x708);
-    s_val2 = HW_Routine_08007D4C(0x8C8 + npc,*(undefined4 *)(0x8C8 + npc + 4));
+    s_val2 = GBA_Vram_AllocateTileBlock(0x8C8 + npc,*(undefined4 *)(0x8C8 + npc + 4));
     *(short *)(i_val11 + 6) = s_val2 + (short)i_val14;
     *(undefined2 *)(*(int *)(i_val14 + npc + 0x708) + 4) = 0xb;
     *(undefined2 *)(*(int *)(i_val14 + npc + 0x708) + 8) = 1;
@@ -16230,7 +16230,7 @@ void NPC_Routine_080AF814(int npc)
     *(undefined4 *)(npc + 0x524) = stack_val_9c;
     p_int10 = (int *)HW_GetSpriteAttr0Offset(npc);
     i_val6 = *(int *)(npc + 0x510);
-    i_val5 = HW_Routine_08007D4C(npc + 0x8b0,*(undefined4 *)(npc + 0x8b4));
+    i_val5 = GBA_Vram_AllocateTileBlock(npc + 0x8b0,*(undefined4 *)(npc + 0x8b4));
     u_val2 = 0;
     if (*(int *)(npc + 0x510) != 0) {
       u_val2 = *(undefined2 *)(npc + 0x514);
@@ -16426,7 +16426,7 @@ void NPC_Routine_080AF814(int npc)
         puStack_2c[7] = stack_val_9c;
         p_int10 = (int *)HW_GetSpriteAttr0Offset(npc,puStack_2c + 8);
         u_val4 = puStack_2c[2];
-        i_val5 = HW_Routine_08007D4C(npc + 0x8C8,*(undefined4 *)(npc + 0x8C8 + 4));
+        i_val5 = GBA_Vram_AllocateTileBlock(npc + 0x8C8,*(undefined4 *)(npc + 0x8C8 + 4));
         u_val2 = 0;
         if (puStack_2c[2] != 0) {
           u_val2 = *(undefined2 *)(puStack_2c + 3);
@@ -16632,7 +16632,7 @@ void NPC_Routine_080AF814(int npc)
         p_int10 = (int *)HW_GetSpriteAttr0Offset(npc,puStack_3c + 8);
         p_uint11 = puStack_3c;
         u_val4 = puStack_3c[2];
-        i_val5 = HW_Routine_08007D4C(npc + 0x8c0,*(undefined4 *)(npc + 0x8c4));
+        i_val5 = GBA_Vram_AllocateTileBlock(npc + 0x8c0,*(undefined4 *)(npc + 0x8c4));
         u_val2 = 0;
         if (p_uint11[2] != 0) {
           u_val2 = *(undefined2 *)(p_uint11 + 3);
@@ -16853,7 +16853,7 @@ void NPC_Routine_080AF814(int npc)
         *(undefined4 *)(i_val6 + 0x594) = stack_val_9c;
         p_int10 = (int *)HW_GetSpriteAttr0Offset(npc);
         i_val15 = *(int *)(i_val6 + 0x580);
-        i_val5 = HW_Routine_08007D4C(npc + 0x8B8,*(undefined4 *)(npc + 0x8B8 + 4));
+        i_val5 = GBA_Vram_AllocateTileBlock(npc + 0x8B8,*(undefined4 *)(npc + 0x8B8 + 4));
         u_val2 = 0;
         if (*(int *)(i_val6 + 0x580) != 0) {
           u_val2 = *(undefined2 *)(i_val6 + 0x584);
@@ -17087,7 +17087,7 @@ void HarvestSprite_Minigame_UpdateCountdownTimer(int npc,int amount)
       ScriptEngine_Routine_0804E958(0x20004,i_val6,0,0,&stack_val_54,0,1);
     }
     p_int2 = (int *)HW_GetSpriteAttr0Offset(npc);
-    i_val3 = HW_Routine_08007D4C(0x888 + npc,*(undefined4 *)(0x888 + npc + 4));
+    i_val3 = GBA_Vram_AllocateTileBlock(0x888 + npc,*(undefined4 *)(0x888 + npc + 4));
     HW_Routine_08008F0C(&stack_val_4c,i_val6,i_val3 * 0x20 + 0x06010000,0x100);
     p_uint5 = (undefined4 *)p_int2[1];
     if (p_uint5 == (undefined4 *)p_int2[3]) {
@@ -17469,7 +17469,7 @@ u32 HarvestSprite_Minigame_UpdateFrame(int npc)
           p_uint13 = (undefined4 *)(npc + 0x43c);
           u_val15 = *(uint *)*p_uint13;
           if (-1 < (int)(-u_val15 | u_val15)) {
-            Farm_Routine_08009378((uint *)*p_uint13 + 3,0x889,1,1);
+            Fade_StartFadeIn((uint *)*p_uint13 + 3,0x889,1,1);
             loop_j = HW_GetPaletteBankOffset(npc);
             _call_via_r2(loop_j,*p_uint13,*(undefined4 *)(*(int *)(loop_j + 8) + 0x10));
           }
@@ -17479,7 +17479,7 @@ u32 HarvestSprite_Minigame_UpdateFrame(int npc)
             NPC_Routine_080AF814(npc);
             p_uint10 = *(uint **)(npc + 0x43c);
           }
-          Farm_Routine_0800934C(*(int *)(npc + 0x43c) + 0xc,0x889,1,1);
+          Fade_StartFadeOut(*(int *)(npc + 0x43c) + 0xc,0x889,1,1);
           loop_j = HW_GetPaletteBankOffset(npc);
           _call_via_r2(loop_j,*(int *)(npc + 0x43c),
                           *(undefined4 *)(*(int *)(loop_j + 8) + 0x10));
@@ -18133,11 +18133,11 @@ void NPC_Routine_080B1D94(int npc)
     *(undefined1 *)(i_val8 + loop_i) = 1;
     loop_i = loop_i + 1;
   } while (loop_i < 5);
-  u_val1 = Dispatcher_Routine_080005D4(0x14);
+  u_val1 = CppRuntime_OperatorNewArray(0x14);
   loop_i = Animal_Routine_0805E824(u_val1,*(undefined4 *)(npc + 0x420),0,0x100);
   p_int9 = (int *)(npc + 0x4b0);
   if (loop_i != *p_int9) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int9 = loop_i;
   Animal_Routine_0805E860(loop_i,0);
@@ -18156,7 +18156,7 @@ void NPC_Routine_080B1D94(int npc)
   *(undefined4 *)(npc + 0x4d4) = stack_val_40;
   p_int9 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val8 = *(int *)(npc + 0x4c0);
-  loop_i = HW_Routine_08007D4C(npc + 0x890,*(undefined4 *)(npc + 0x894));
+  loop_i = GBA_Vram_AllocateTileBlock(npc + 0x890,*(undefined4 *)(npc + 0x894));
   u_val6 = 0;
   if (*(int *)(npc + 0x4c0) != 0) {
     u_val6 = *(undefined2 *)(npc + 0x4c4);
@@ -18484,16 +18484,16 @@ void NPC_Routine_080B2114(int npc)
     Animal_Routine_08050D0C(i_val19,3);
   }
   *(int *)(npc + 0x418) = 0;
-  u_val6 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(puStack_4c);
-  HW_Routine_0800770C(&stack_val_130);
+  u_val6 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(puStack_4c);
+  GBA_BgLayer_Init(&stack_val_130);
   i_val19 = Animal_Routine_08050CC0(u_val6,0,0x18,0,0,puStack_4c,&stack_val_130);
   i_val22 = *(int *)(npc + 0x418);
   if ((i_val19 != i_val22) && (i_val22 != 0)) {
     Animal_Routine_08050D0C(i_val22,3);
   }
   *(int *)(npc + 0x418) = i_val19;
-  HW_Routine_08007714(&stack_val_130,2);
+  GBA_BgLayer_SetPriority(&stack_val_130,2);
   HW_Routine_08008364(puStack_4c,2);
   u_val6 = *(undefined4 *)(npc + 0x418);
   u_val7 = HW_Routine_080088DC(npc);
@@ -18521,7 +18521,7 @@ void NPC_Routine_080B2114(int npc)
       ScriptEngine_Routine_0804E958(0x20004,i_val19 * 0x104 + npc + 0x110,i_val22 * -8 + 0x20,0,puStack_78,0,5);
     }
     p_int13 = (int *)HW_GetSpriteAttr0Offset(npc);
-    i_val22 = HW_Routine_08007D4C(stack_val_74,*(undefined4 *)(stack_val_74 + 4));
+    i_val22 = GBA_Vram_AllocateTileBlock(stack_val_74,*(undefined4 *)(stack_val_74 + 4));
     HW_Routine_08008F0C(stack_ints_128,i_val19 * 0x104 + npc + 0x110,
                   (i_val19 * 8 + i_val22) * 0x20 + 0x06010000,0x100);
     piStack_70 = piStack_40;
@@ -18609,14 +18609,14 @@ void NPC_Routine_080B2114(int npc)
     HW_Routine_08008EB8(0,stack_val_48 + 0x448 + npc,8);
     if (i_val19 == 2) {
       p_uint21 = (undefined4 *)(npc + 0x458);
-      i_val19 = HW_Routine_08007D4C(stack_val_74,*(undefined4 *)(stack_val_74 + 4));
+      i_val19 = GBA_Vram_AllocateTileBlock(stack_val_74,*(undefined4 *)(stack_val_74 + 4));
       ScriptEngine_Routine_0804EA94(&stack_val_dc,0xb8,0x8d,i_val19 + 0x10,2,0,2,1);
       u_val6 = stack_val_dc;
       u_val7 = stack_val_d8;
     }
     else {
       p_uint21 = (undefined4 *)(stack_val_48 + npc + 0x448);
-      i_val22 = HW_Routine_08007D4C(stack_val_74,*(undefined4 *)(stack_val_74 + 4));
+      i_val22 = GBA_Vram_AllocateTileBlock(stack_val_74,*(undefined4 *)(stack_val_74 + 4));
       ScriptEngine_Routine_0804EA94(&stack_val_e4,0x78,i_val19 * 0x10 + 0x6d,i_val22 + stack_val_48,2,0,2,1);
       u_val6 = stack_val_e4;
       u_val7 = stack_val_e0;
@@ -18625,14 +18625,14 @@ void NPC_Routine_080B2114(int npc)
     p_uint21[1] = u_val7;
     i_val19 = stack_val_50;
   } while (stack_val_50 < 3);
-  u_val6 = Dispatcher_Routine_080005D4(0x14);
+  u_val6 = CppRuntime_OperatorNewArray(0x14);
   i_val19 = Animal_Routine_0805E824(u_val6,*(undefined4 *)(0x42C + npc),0,0x100);
   p_int13 = (int *)(npc + 0x460);
   if (i_val19 != *p_int13) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int13 = i_val19;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -18645,14 +18645,14 @@ void NPC_Routine_080B2114(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int14 = (int *)(0x464 + npc);
   if (p_uint5 != (undefined2 *)*p_int14) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int14 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int13,1);
   *(undefined2 *)*p_int14 = 0x70;
   *(undefined2 *)(*p_int14 + 2) = 0x75;
   i_val19 = *p_int14;
-  s_val3 = HW_Routine_08007D4C(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
+  s_val3 = GBA_Vram_AllocateTileBlock(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
   *(short *)(i_val19 + 6) = s_val3 + 0x24;
   *(undefined2 *)(*p_int14 + 4) = 9;
   *(undefined1 *)(*p_int14 + 0x18) = 1;
@@ -18676,7 +18676,7 @@ void NPC_Routine_080B2114(int npc)
   *(int *)(npc + 0x484) = i_val19;
   p_int13 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val22 = *(int *)(npc + 0x470);
-  i_val19 = HW_Routine_08007D4C(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
+  i_val19 = GBA_Vram_AllocateTileBlock(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
   u_val4 = 0;
   if (*(int *)(npc + 0x470) != 0) {
     u_val4 = *(undefined2 *)(npc + 0x474);
@@ -18845,14 +18845,14 @@ void NPC_Routine_080B2114(int npc)
     }
     p_int13[1] = p_int13[1] + 0x10;
   }
-  u_val6 = Dispatcher_Routine_080005D4(0x14);
+  u_val6 = CppRuntime_OperatorNewArray(0x14);
   i_val19 = Animal_Routine_0805E824(u_val6,*(undefined4 *)(npc + 0x430),0,0x100);
   p_int13 = (int *)(npc + 0x488);
   if (i_val19 != *p_int13) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int13 = i_val19;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -18865,14 +18865,14 @@ void NPC_Routine_080B2114(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int14 = (int *)(0x48C + npc);
   if (p_uint5 != (undefined2 *)*p_int14) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int14 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int13,0);
   *(undefined2 *)*p_int14 = 0x68;
   *(undefined2 *)(*p_int14 + 2) = 0x7d;
   i_val19 = *p_int14;
-  s_val3 = HW_Routine_08007D4C(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
+  s_val3 = GBA_Vram_AllocateTileBlock(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
   *(short *)(i_val19 + 6) = s_val3 + 0x28;
   *(undefined2 *)(*p_int14 + 4) = 0xb;
   *(undefined1 *)(*p_int14 + 0x18) = 1;
@@ -18896,7 +18896,7 @@ void NPC_Routine_080B2114(int npc)
   *(int *)(npc + 0x4ac) = i_val19;
   p_int13 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val22 = *(int *)(npc + 0x498);
-  i_val19 = HW_Routine_08007D4C(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
+  i_val19 = GBA_Vram_AllocateTileBlock(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
   u_val4 = 0;
   if (*(int *)(npc + 0x498) != 0) {
     u_val4 = *(undefined2 *)(npc + 0x49c);
@@ -19067,25 +19067,25 @@ void NPC_Routine_080B2114(int npc)
     p_int13[1] = p_int13[1] + 0x10;
   }
   if (*(int *)(npc + 0x910) < (int)(uint)*(byte *)(0x90E + npc)) {
-    u_val6 = Dispatcher_Routine_080005D4(0x14);
+    u_val6 = CppRuntime_OperatorNewArray(0x14);
     i_val19 = Animal_Routine_0805E824(u_val6,*(undefined4 *)(npc + 0x438),0,0x100);
     p_int13 = (int *)(0x7E4 + npc);
     if (i_val19 != *p_int13) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int13 = i_val19;
   }
   else {
-    u_val6 = Dispatcher_Routine_080005D4(0x14);
+    u_val6 = CppRuntime_OperatorNewArray(0x14);
     i_val19 = Animal_Routine_0805E824(u_val6,*(undefined4 *)(0x434 + npc),0,0x100);
     p_int13 = (int *)(0x7E4 + npc);
     if (i_val19 != *p_int13) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int13 = i_val19;
     *(undefined1 *)(0x92C + npc) = 1;
   }
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -19098,7 +19098,7 @@ void NPC_Routine_080B2114(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int13 = (int *)(npc + 0x7e8);
   if (p_uint5 != (undefined2 *)*p_int13) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int13 = (int)p_uint5;
   p_int14 = (int *)(0x7E4 + npc);
@@ -19107,7 +19107,7 @@ void NPC_Routine_080B2114(int npc)
   *(undefined2 *)(*p_int13 + 2) = 0x40;
   i_val19 = *p_int13;
   loop_i = 0x8D8 + npc;
-  u_val4 = HW_Routine_08007D4C(loop_i,*(undefined4 *)(loop_i + 4));
+  u_val4 = GBA_Vram_AllocateTileBlock(loop_i,*(undefined4 *)(loop_i + 4));
   *(undefined2 *)(i_val19 + 6) = u_val4;
   *(undefined2 *)(*p_int13 + 4) = 0xc;
   *(undefined1 *)(*p_int13 + 0x18) = 1;
@@ -19133,7 +19133,7 @@ void NPC_Routine_080B2114(int npc)
   p_int13 = (int *)HW_GetSpriteAttr0Offset(npc);
   p_int14 = (int *)(0x7F4 + npc);
   i_val22 = *p_int14;
-  i_val19 = HW_Routine_08007D4C(loop_i,*(undefined4 *)(loop_i + 4));
+  i_val19 = GBA_Vram_AllocateTileBlock(loop_i,*(undefined4 *)(loop_i + 4));
   u_val4 = 0;
   if (*p_int14 != 0) {
     u_val4 = (undefined2)p_int14[1];
@@ -19402,7 +19402,7 @@ LAB_080b34b2:
             p_int13 = (int *)HW_GetSpriteAttr0Offset(npc);
             i_val22 = stack_val_64;
             i_val19 = i_val19 + stack_val_64;
-            loop_i = HW_Routine_08007D4C(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
+            loop_i = GBA_Vram_AllocateTileBlock(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
             HW_Routine_08008F0C(&stack_val_120,i_val19 * 4 + npc + 0x110,
                           (i_val22 * 8 + loop_i) * 0x20 + 0x06010000,0x100);
             p_int14 = (int *)p_int13[1];
@@ -19507,7 +19507,7 @@ LAB_080b34b2:
                               puStack_4c,0,5);
               }
               p_int13 = (int *)HW_GetSpriteAttr0Offset(npc);
-              i_val22 = HW_Routine_08007D4C(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
+              i_val22 = GBA_Vram_AllocateTileBlock(npc + 0x8d0,*(undefined4 *)(npc + 0x8d4));
               HW_Routine_08008F0C(&stack_val_120,i_val19 * 0x104 + npc + 0x110,
                             (i_val19 * 8 + i_val22) * 0x20 + 0x06010000,0x100);
               piStack_58 = piStack_3c;
@@ -19963,7 +19963,7 @@ u32 NPC_Routine_080B3BE4(undefined4 *npc,undefined4 amount)
   undefined4 u_val1;
   
   *npc = gRomData_080E850C;
-  u_val1 = Dispatcher_Routine_080005D4(0x93C);
+  u_val1 = CppRuntime_OperatorNewArray(0x93C);
   u_val1 = NPC_Routine_080ADF6C(u_val1,amount);
   npc[1] = u_val1;
   return npc;
@@ -20061,18 +20061,18 @@ void NPC_Routine_080B3CC8(int npc,int amount)
   HW_Routine_08008B54(npc + 0x70C,2);
   HW_Routine_08008B54(npc + 0x710,3);
   HW_Routine_08008B54(npc + 0x714,4);
-  u_val3 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(stack_buf_84);
-  HW_Routine_0800770C(stack_buf_80);
+  u_val3 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(stack_buf_84);
+  GBA_BgLayer_Init(stack_buf_80);
   u_val3 = Animal_Routine_08050CC0(u_val3,0,0xf,0,0,stack_buf_84,stack_buf_80);
   *(undefined4 *)(npc + 0x718) = u_val3;
-  HW_Routine_08007714(stack_buf_80,2);
+  GBA_BgLayer_SetPriority(stack_buf_80,2);
   HW_Routine_08008364(stack_buf_84,2);
   loop_i = npc + 0x71C;
-  HW_Routine_08007128(loop_i);
+  GBA_PaletteManager_Init(loop_i);
   *(undefined4 *)(loop_i + 4) = 0;
   loop_i = npc + 0x724;
-  HW_Routine_08007128(loop_i);
+  GBA_PaletteManager_Init(loop_i);
   *(undefined4 *)(loop_i + 4) = 0;
   loop_i = npc + 0x72C;
   i_val7 = 1;
@@ -20101,7 +20101,7 @@ void NPC_Routine_080B3CC8(int npc,int amount)
   puStack_4c = (undefined4 *)(npc + 0xADC);
   puStack_48 = (undefined4 *)(npc + 0xAE4);
   do {
-    HW_Routine_08007128(loop_i);
+    GBA_PaletteManager_Init(loop_i);
     *(undefined4 *)(loop_i + 4) = 0;
     loop_i = loop_i + 8;
     i_val7 = i_val7 + -1;
@@ -20109,45 +20109,45 @@ void NPC_Routine_080B3CC8(int npc,int amount)
   loop_i = npc + 0x73C;
   i_val7 = 7;
   do {
-    HW_Routine_08007128(loop_i);
+    GBA_PaletteManager_Init(loop_i);
     *(undefined4 *)(loop_i + 4) = 0;
     loop_i = loop_i + 8;
     i_val7 = i_val7 + -1;
   } while (i_val7 != -1);
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0858BA28);
   loop_i = 0x77C;
   *(undefined4 *)(npc + 0x77C) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0873DE44);
   *(undefined4 *)(npc + 0x780) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0871D51C);
   *(undefined4 *)(npc + 0x784) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_08738144);
   *(undefined4 *)(npc + loop_i + 0xc) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0873AFC8);
   *(undefined4 *)(npc + 0x78C) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_08731B40);
   *(undefined4 *)(npc + 0x790) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_0873CEAC);
   *(undefined4 *)(npc + loop_i + 0x18) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_08729460);
   *(undefined4 *)(npc + 0x798) = u_val3;
-  u_val3 = Dispatcher_Routine_080005D4(0x30);
+  u_val3 = CppRuntime_OperatorNewArray(0x30);
   u_val3 = Animal_Routine_0805E6CC(u_val3,gRomGfx_087409E4);
   *(undefined4 *)(npc + 0x79C) = u_val3;
-  p_uint4 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint4 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val3 = HW_GetSpriteAttr1Offset(npc);
   *p_uint4 = 0;
   p_uint4[1] = 0;
   p_uint4[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(p_uint4 + 3,u_val3);
+  Fade_Init(p_uint4 + 3,u_val3);
   *(undefined4 **)(npc + 0x7a0) = p_uint4;
   p_uint4 = (undefined4 *)(npc + 0x7A4);
   loop_i = 1;
@@ -20430,18 +20430,18 @@ void NPC_Routine_080B3CC8(int npc,int amount)
   *p_uint6 = u_val1;
   loop_i = npc + 0x71C;
   HW_Routine_080073E0(loop_i,*(undefined4 *)(loop_i + 4));
-  u_val3 = HW_Routine_0800736C(loop_i);
+  u_val3 = GBA_PaletteManager_Allocate(loop_i);
   *(undefined4 *)(loop_i + 4) = u_val3;
   loop_i = npc + 0x724;
   HW_Routine_080073E0(loop_i,*(undefined4 *)(loop_i + 4));
-  u_val3 = HW_Routine_0800736C(loop_i);
+  u_val3 = GBA_PaletteManager_Allocate(loop_i);
   *(undefined4 *)(loop_i + 4) = u_val3;
   loop_i = 0;
   p_uint5 = (undefined4 *)(npc + 0x730);
   do {
     i_val7 = loop_i * 8 + npc + 0x72C;
     HW_Routine_080073E0(i_val7,*p_uint5);
-    u_val3 = HW_Routine_0800736C(i_val7);
+    u_val3 = GBA_PaletteManager_Allocate(i_val7);
     *p_uint5 = u_val3;
     p_uint5 = p_uint5 + 2;
     loop_i = loop_i + 1;
@@ -20451,7 +20451,7 @@ void NPC_Routine_080B3CC8(int npc,int amount)
   do {
     i_val7 = loop_i * 8 + npc + 0x73C;
     HW_Routine_080073E0(i_val7,*p_uint5);
-    u_val3 = HW_Routine_0800736C(i_val7);
+    u_val3 = GBA_PaletteManager_Allocate(i_val7);
     *p_uint5 = u_val3;
     p_uint5 = p_uint5 + 2;
     loop_i = loop_i + 1;
@@ -20578,60 +20578,60 @@ void NPC_Routine_080B469C(int npc)
     Animal_Routine_08050D0C(i_val2,3);
   }
   *(int *)(npc + 0x718) = 0;
-  u_val3 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(stack_buf_cc);
-  HW_Routine_0800770C(&stack_val_c8);
+  u_val3 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(stack_buf_cc);
+  GBA_BgLayer_Init(&stack_val_c8);
   i_val2 = Animal_Routine_08050CC0(u_val3,0,0xf,0,0,stack_buf_cc,&stack_val_c8);
   loop_i = *(int *)(npc + 0x718);
   if ((i_val2 != loop_i) && (loop_i != 0)) {
     Animal_Routine_08050D0C(loop_i,3);
   }
   *(int *)(npc + 0x718) = i_val2;
-  HW_Routine_08007714(&stack_val_c8,2);
+  GBA_BgLayer_SetPriority(&stack_val_c8,2);
   HW_Routine_08008364(stack_buf_cc,2);
   Animal_Routine_08050E50(*(undefined4 *)(npc + 0x718),0);
-  HW_Routine_08007874(stack_buf_cc);
+  GBA_ObjAttr_Init(stack_buf_cc);
   stack_val_c8 = 0;
-  HW_Routine_08007874(stack_buf_c4);
+  GBA_ObjAttr_Init(stack_buf_c4);
   stack_val_c0 = 0;
-  HW_Routine_08007874(stack_buf_bc);
+  GBA_ObjAttr_Init(stack_buf_bc);
   stack_val_b8 = 0;
-  HW_Routine_08007874(stack_buf_b4);
+  GBA_ObjAttr_Init(stack_buf_b4);
   stack_val_b0 = 0;
-  HW_Routine_08007874(stack_buf_ac);
+  GBA_ObjAttr_Init(stack_buf_ac);
   stack_val_a8 = 0;
   HW_Routine_08007C28(stack_buf_cc,stack_val_c8);
-  stack_val_c8 = HW_Routine_08007B54(stack_buf_cc,3);
-  stack_val_54 = HW_Routine_08007D4C(stack_buf_cc);
+  stack_val_c8 = GBA_ObjAttr_AllocateSprite(stack_buf_cc,3);
+  stack_val_54 = GBA_Vram_AllocateTileBlock(stack_buf_cc);
   HW_Routine_08007C28(stack_buf_c4,stack_val_c0);
-  stack_val_c0 = HW_Routine_08007B54(stack_buf_c4,7);
-  stack_val_50 = HW_Routine_08007D4C(stack_buf_c4);
+  stack_val_c0 = GBA_ObjAttr_AllocateSprite(stack_buf_c4,7);
+  stack_val_50 = GBA_Vram_AllocateTileBlock(stack_buf_c4);
   HW_Routine_08007C28(stack_buf_bc,stack_val_b8);
-  stack_val_b8 = HW_Routine_08007B54(stack_buf_bc,3);
-  stack_val_4c = HW_Routine_08007D4C(stack_buf_bc);
-  HW_Routine_08007128(stack_buf_a4);
-  stack_val_a0 = HW_Routine_0800736C(stack_buf_a4);
+  stack_val_b8 = GBA_ObjAttr_AllocateSprite(stack_buf_bc,3);
+  stack_val_4c = GBA_Vram_AllocateTileBlock(stack_buf_bc);
+  GBA_PaletteManager_Init(stack_buf_a4);
+  stack_val_a0 = GBA_PaletteManager_Allocate(stack_buf_a4);
   stack_val_48 = 0x79;
   *(undefined1 *)(npc + 0xB33) = 0;
   *(undefined1 *)(npc + 0xB34) = 0;
   *(undefined1 *)(npc + 0xB3C) = 1;
   *(undefined1 *)(npc + 0xB3B) = 0;
   NPC_Routine_080B55D0(npc);
-  HW_Routine_08007128(&stack_val_9c);
+  GBA_PaletteManager_Init(&stack_val_9c);
   stack_val_98 = HW_Routine_0800745C(&stack_val_9c,stack_val_a0);
   NPC_Routine_080BC288(npc,&stack_val_9c);
   stack_val_44 = 0;
   puStack_3c = &stack_val_94;
   do {
-    u_val3 = Dispatcher_Routine_080005D4(0x14);
+    u_val3 = CppRuntime_OperatorNewArray(0x14);
     i_val2 = Animal_Routine_0805E824(u_val3,*(undefined4 *)(npc + 0x784),0,0x100);
     loop_i = stack_val_44 * 4;
     p_int14 = (int *)(loop_i + npc + 0x91C);
     if (i_val2 != *p_int14) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int14 = i_val2;
-    p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+    p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
     *p_uint5 = 0;
     p_uint5[1] = 0;
     p_uint5[2] = 0;
@@ -20645,7 +20645,7 @@ void NPC_Routine_080B469C(int npc)
     i_val2 = 0x924;
     p_uint17 = (undefined4 *)(loop_i + npc + 0x924);
     if (p_uint5 != (undefined2 *)*p_uint17) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_uint17 = p_uint5;
     p_int12 = (int *)(0x91C + loop_i + npc);
@@ -21209,7 +21209,7 @@ LAB_080b4cdc:
     } while (loop_i < 10);
     i_val2 = 0xB14;
     if (stack_val_40 == 0) {
-      Farm_Routine_0800934C(*(int *)(npc + 0x7a0) + 0xc,0x889,1,1);
+      Fade_StartFadeOut(*(int *)(npc + 0x7a0) + 0xc,0x889,1,1);
       i_val2 = HW_GetPaletteBankOffset(npc);
       _call_via_r2(i_val2,*(int *)(npc + 0x7a0),*(undefined4 *)(*(int *)(i_val2 + 8) + 0x10));
       stack_val_40 = 1;
@@ -21396,7 +21396,7 @@ u32 NPC_Routine_080B55D0(int npc)
   i_val12 = 0x1f;
   i_val13 = 0x0600F000;
   do {
-    HW_Routine_08008E64(p_uint10,i_val13,0x40);
+    GBA_DMA3_FastCopy(p_uint10,i_val13,0x40);
     i_val13 = i_val13 + 0x40;
     p_uint10 = p_uint10 + 0x78;
     i_val12 = i_val12 + -1;
@@ -21406,7 +21406,7 @@ u32 NPC_Routine_080B55D0(int npc)
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872C5D0,0x0600E800);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872C73C,0x0600F800);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872C84C,0x06004000);
-  HW_Routine_08008E64(gRomGfx_0872D5AC,0x050000E0,0x200);
+  GBA_DMA3_FastCopy(gRomGfx_0872D5AC,0x050000E0,0x200);
   p_uint3 = (undefined2 *)HW_GetSpriteAttr1Offset(npc);
   p_uint11 = (undefined2 *)(&stack0xffffffe4 + 0x200C + i_val1);
   *p_uint11 = 8000;
@@ -21594,36 +21594,36 @@ void NPC_Routine_080B5824(int npc)
   p_uint12 = &stack_val_1c4;
   p_uint13 = &stack_val_1c4;
   stack_val_8c = npc;
-  HW_Routine_08007874(stack_buf_194);
+  GBA_ObjAttr_Init(stack_buf_194);
   stack_val_190 = 0;
-  HW_Routine_08007874(stack_buf_18c);
+  GBA_ObjAttr_Init(stack_buf_18c);
   stack_val_188 = 0;
-  HW_Routine_08007874();
+  GBA_ObjAttr_Init();
   stack_val_180 = 0;
-  HW_Routine_08007874(stack_buf_17c);
+  GBA_ObjAttr_Init(stack_buf_17c);
   stack_val_178 = 0;
-  HW_Routine_08007874(stack_buf_174);
+  GBA_ObjAttr_Init(stack_buf_174);
   stack_val_170 = 0;
-  HW_Routine_08007874(stack_buf_16c);
+  GBA_ObjAttr_Init(stack_buf_16c);
   stack_val_168 = 0;
   HW_Routine_08007C28(stack_buf_194,stack_val_190);
-  stack_val_190 = HW_Routine_08007B54(stack_buf_194,6);
-  stack_val_88 = HW_Routine_08007D4C(stack_buf_194);
+  stack_val_190 = GBA_ObjAttr_AllocateSprite(stack_buf_194,6);
+  stack_val_88 = GBA_Vram_AllocateTileBlock(stack_buf_194);
   HW_Routine_08007C28(stack_buf_18c,stack_val_188);
-  stack_val_188 = HW_Routine_08007B54(stack_buf_18c,5);
-  stack_val_84 = HW_Routine_08007D4C(stack_buf_18c);
+  stack_val_188 = GBA_ObjAttr_AllocateSprite(stack_buf_18c,5);
+  stack_val_84 = GBA_Vram_AllocateTileBlock(stack_buf_18c);
   HW_Routine_08007C28(stack_buf_184,stack_val_180);
-  stack_val_180 = HW_Routine_08007B54(stack_buf_184,8);
-  stack_val_80 = HW_Routine_08007D4C(stack_buf_184);
+  stack_val_180 = GBA_ObjAttr_AllocateSprite(stack_buf_184,8);
+  stack_val_80 = GBA_Vram_AllocateTileBlock(stack_buf_184);
   HW_Routine_08007C28(stack_buf_17c,stack_val_178);
-  stack_val_178 = HW_Routine_08007B54(stack_buf_17c,3);
-  stack_val_7c = HW_Routine_08007D4C(stack_buf_17c);
+  stack_val_178 = GBA_ObjAttr_AllocateSprite(stack_buf_17c,3);
+  stack_val_7c = GBA_Vram_AllocateTileBlock(stack_buf_17c);
   HW_Routine_08007C28(stack_buf_174,stack_val_170);
-  stack_val_170 = HW_Routine_08007B54(stack_buf_174,7);
-  stack_val_78 = HW_Routine_08007D4C(stack_buf_174);
+  stack_val_170 = GBA_ObjAttr_AllocateSprite(stack_buf_174,7);
+  stack_val_78 = GBA_Vram_AllocateTileBlock(stack_buf_174);
   HW_Routine_08007C28(stack_buf_16c,stack_val_168);
-  stack_val_168 = HW_Routine_08007B54(stack_buf_16c,6);
-  stack_val_74 = HW_Routine_08007D4C(stack_buf_16c);
+  stack_val_168 = GBA_ObjAttr_AllocateSprite(stack_buf_16c,6);
+  stack_val_74 = GBA_Vram_AllocateTileBlock(stack_buf_16c);
   NPC_Routine_080B757C(stack_val_8c);
   NPC_Routine_080B7164(stack_val_8c,stack_val_88);
   puStack_44 = stack_buf_164;
@@ -21671,14 +21671,14 @@ void NPC_Routine_080B5824(int npc)
     s_val19 = s_val19 + 0x20;
     loop_i = loop_i + 1;
   } while (loop_i < 6);
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   loop_i = Animal_Routine_0805E824(u_val4,*(undefined4 *)(stack_val_8c + 0x788),0,0x100);
   p_int18 = (int *)(stack_val_8c + 0x96C);
   if (loop_i != *p_int18) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int18 = loop_i;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -21691,7 +21691,7 @@ void NPC_Routine_080B5824(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int14 = (int *)(stack_val_8c + 0x970);
   if (p_uint5 != (undefined2 *)*p_int14) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int14 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int18,*(undefined4 *)(stack_val_8c + 0xB18));
@@ -21890,14 +21890,14 @@ void NPC_Routine_080B5824(int npc)
     }
     p_int18[1] = p_int18[1] + 0x10;
   }
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   loop_j = Animal_Routine_0805E824(u_val4,*(undefined4 *)(stack_val_8c + 0x78C),0,0x100);
   p_int18 = (int *)(stack_val_8c + 0x994);
   if (loop_j != *p_int18) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int18 = loop_j;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -21910,7 +21910,7 @@ void NPC_Routine_080B5824(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int14 = (int *)(stack_val_8c + 0x998);
   if (p_uint5 != (undefined2 *)*p_int14) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int14 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int18,0);
@@ -22208,14 +22208,14 @@ void NPC_Routine_080B5824(int npc)
     }
     p_int18[1] = p_int18[1] + 0x10;
   }
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   loop_j = Animal_Routine_0805E824(u_val4,*(undefined4 *)(stack_val_8c + 0x790),0,0x100);
   p_int18 = (int *)(stack_val_8c + 0x9BC);
   if (loop_j != *p_int18) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int18 = loop_j;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -22228,7 +22228,7 @@ void NPC_Routine_080B5824(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int14 = (int *)(stack_val_8c + 0x9c0);
   if (p_uint5 != (undefined2 *)*p_int14) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int14 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int18,*(undefined1 *)
@@ -22428,11 +22428,11 @@ void NPC_Routine_080B5824(int npc)
     }
     p_int18[1] = p_int18[1] + 0x10;
   }
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   loop_j = Animal_Routine_0805E824(u_val4,*(undefined4 *)(stack_val_8c + 0x794),0,0x100);
   p_int18 = (int *)(stack_val_8c + 0x9E4);
   if (loop_j != *p_int18) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int18 = loop_j;
   Animal_Routine_0805E860(loop_j,0);
@@ -22442,7 +22442,7 @@ void NPC_Routine_080B5824(int npc)
   puStack_30 = (undefined4 *)(stack_val_8c + 0x9E8);
   stack_val_2c = stack_val_7c;
   do {
-    psVar6 = (short *)Dispatcher_Routine_080005D4(0x1c);
+    psVar6 = (short *)CppRuntime_OperatorNewArray(0x1c);
     *psVar6 = 0;
     psVar6[1] = 0;
     psVar6[2] = 0;
@@ -22456,7 +22456,7 @@ void NPC_Routine_080B5824(int npc)
     psVar6[0xb] = 0;
     *(undefined1 *)(psVar6 + 0xc) = 0;
     if (psVar6 != (short *)*puStack_30) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *puStack_30 = psVar6;
     *psVar6 = (short)loop_j * 0x9e + 0x28;
@@ -22661,11 +22661,11 @@ void NPC_Routine_080B5824(int npc)
     stack_val_2c = stack_val_2c + 4;
     loop_j = loop_j + 1;
   } while (loop_j < 2);
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   loop_j = Animal_Routine_0805E824(u_val4,*(undefined4 *)(stack_val_8c + 0x798),0,0x100);
   p_int18 = (int *)(stack_val_8c + 0xa30);
   if (loop_j != *p_int18) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int18 = loop_j;
   Animal_Routine_0805E860(loop_j,0);
@@ -22674,7 +22674,7 @@ void NPC_Routine_080B5824(int npc)
   p_uint12 = (undefined4 *)(stack_val_8c + 0xA34);
   s_val19 = 0;
   do {
-    psVar6 = (short *)Dispatcher_Routine_080005D4(0x1c);
+    psVar6 = (short *)CppRuntime_OperatorNewArray(0x1c);
     *psVar6 = 0;
     psVar6[1] = 0;
     psVar6[2] = 0;
@@ -22688,7 +22688,7 @@ void NPC_Routine_080B5824(int npc)
     psVar6[0xb] = 0;
     *(undefined1 *)(psVar6 + 0xc) = 0;
     if (psVar6 != (short *)*p_uint12) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_uint12 = psVar6;
     p_uint12 = p_uint12 + 1;
@@ -22700,15 +22700,15 @@ void NPC_Routine_080B5824(int npc)
     s_val19 = s_val19 + 0x24;
     loop_j = loop_j + 1;
   } while (loop_j < 2);
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   loop_j = Animal_Routine_0805E824(u_val4,*(undefined4 *)(stack_val_8c + 0x79C),0,0x100);
   p_int18 = (int *)(stack_val_8c + 0xA7C);
   if (loop_j != *p_int18) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int18 = loop_j;
   Animal_Routine_0805E860(loop_j,0);
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -22721,7 +22721,7 @@ void NPC_Routine_080B5824(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_uint12 = (undefined4 *)(stack_val_8c + 0xa80);
   if (p_uint5 != (undefined2 *)*p_uint12) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_uint12 = p_uint5;
   *p_uint5 = 0x60;
@@ -22739,7 +22739,7 @@ void NPC_Routine_080B5824(int npc)
       u_val3 = HW_Routine_080088D4(stack_val_8c);
       p_int18 = piStack_68;
       if (stack_val_70 != 0) {
-        Farm_Routine_0800934C(*piStack_68 + 0xc,0x889,1,1);
+        Fade_StartFadeOut(*piStack_68 + 0xc,0x889,1,1);
         loop_j = HW_GetPaletteBankOffset(stack_val_8c);
         _call_via_r2(loop_j,*p_int18,*(undefined4 *)(*(int *)(loop_j + 8) + 0x10));
         stack_val_70 = 0;
@@ -22751,7 +22751,7 @@ void NPC_Routine_080B5824(int npc)
           u_val3 = *p_uint9;
           if (-1 < (int)(-u_val3 | u_val3)) {
             stack_val_6c = 1;
-            Farm_Routine_08009378(p_uint9 + 3,0x889,1);
+            Fade_StartFadeIn(p_uint9 + 3,0x889,1);
             loop_j = HW_GetPaletteBankOffset(stack_val_8c);
             _call_via_r2(loop_j,*p_uint12,*(undefined4 *)(*(int *)(loop_j + 8) + 0x10));
           }
@@ -23295,7 +23295,7 @@ void NPC_Routine_080B7164(int npc,int amount)
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872D630,0x0600F800);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0872D6D8,0x6000000);
   HW_Routine_08008EB8(0,0x0600BFE0,0x20);
-  HW_Routine_08008E64(gRomGfx_0872DDE4,0x5000000,0x200);
+  GBA_DMA3_FastCopy(gRomGfx_0872DDE4,0x5000000,0x200);
   p_uint1 = (undefined2 *)HW_GetSpriteAttr1Offset(npc);
   stack_val_90._0_2_ = 0x1640;
   *p_uint1 = 0x1640;
@@ -23616,44 +23616,44 @@ void NPC_Routine_080B7648(int npc)
   int *piStack_28;
   undefined4 *puStack_24;
   
-  HW_Routine_08007874(stack_buf_e0);
+  GBA_ObjAttr_Init(stack_buf_e0);
   stack_val_dc = 0;
-  HW_Routine_08007874(stack_buf_d8);
+  GBA_ObjAttr_Init(stack_buf_d8);
   stack_val_d4 = 0;
-  HW_Routine_08007874(stack_buf_d0);
+  GBA_ObjAttr_Init(stack_buf_d0);
   stack_val_cc = 0;
-  HW_Routine_08007874(stack_buf_c8);
+  GBA_ObjAttr_Init(stack_buf_c8);
   stack_val_c4 = 0;
-  HW_Routine_08007874();
+  GBA_ObjAttr_Init();
   stack_val_bc = 0;
-  HW_Routine_08007874(stack_buf_b8);
+  GBA_ObjAttr_Init(stack_buf_b8);
   stack_val_b4 = 0;
   HW_Routine_08007C28(stack_buf_e0,stack_val_dc);
-  stack_val_dc = HW_Routine_08007B54(stack_buf_e0,6);
-  stack_val_50 = HW_Routine_08007D4C(stack_buf_e0);
+  stack_val_dc = GBA_ObjAttr_AllocateSprite(stack_buf_e0,6);
+  stack_val_50 = GBA_Vram_AllocateTileBlock(stack_buf_e0);
   HW_Routine_08007C28(stack_buf_d8,stack_val_d4);
-  stack_val_d4 = HW_Routine_08007B54(stack_buf_d8,3);
-  stack_val_4c = HW_Routine_08007D4C(stack_buf_d8);
+  stack_val_d4 = GBA_ObjAttr_AllocateSprite(stack_buf_d8,3);
+  stack_val_4c = GBA_Vram_AllocateTileBlock(stack_buf_d8);
   HW_Routine_08007C28(stack_buf_d0,stack_val_cc);
-  stack_val_cc = HW_Routine_08007B54(stack_buf_d0,7);
-  stack_val_48 = HW_Routine_08007D4C(stack_buf_d0);
+  stack_val_cc = GBA_ObjAttr_AllocateSprite(stack_buf_d0,7);
+  stack_val_48 = GBA_Vram_AllocateTileBlock(stack_buf_d0);
   HW_Routine_08007C28(stack_buf_c8,stack_val_c4);
-  stack_val_c4 = HW_Routine_08007B54(stack_buf_c8,3);
-  stack_val_44 = HW_Routine_08007D4C(stack_buf_c8);
+  stack_val_c4 = GBA_ObjAttr_AllocateSprite(stack_buf_c8,3);
+  stack_val_44 = GBA_Vram_AllocateTileBlock(stack_buf_c8);
   HW_Routine_08007C28(stack_buf_c0,stack_val_bc);
-  stack_val_bc = HW_Routine_08007B54(stack_buf_c0,2);
+  stack_val_bc = GBA_ObjAttr_AllocateSprite(stack_buf_c0,2);
   HW_Routine_08007C28(stack_buf_b8,stack_val_b4);
-  stack_val_b4 = HW_Routine_08007B54(stack_buf_b8,3);
-  HW_Routine_08007128(stack_buf_b0);
-  stack_val_ac = HW_Routine_0800736C(stack_buf_b0);
-  u_val2 = Dispatcher_Routine_080005D4(0x14);
+  stack_val_b4 = GBA_ObjAttr_AllocateSprite(stack_buf_b8,3);
+  GBA_PaletteManager_Init(stack_buf_b0);
+  stack_val_ac = GBA_PaletteManager_Allocate(stack_buf_b0);
+  u_val2 = CppRuntime_OperatorNewArray(0x14);
   loop_i = Animal_Routine_0805E824(u_val2,*(undefined4 *)(npc + 0x780),0,0x100);
   p_int15 = (int *)(npc + 0x8F4);
   if (loop_i != *p_int15) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int15 = loop_i;
-  p_uint4 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint4 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint4 = 0;
   p_uint4[1] = 0;
   p_uint4[2] = 0;
@@ -23666,7 +23666,7 @@ void NPC_Routine_080B7648(int npc)
   *(undefined1 *)(p_uint4 + 0xc) = 0;
   p_int10 = (int *)(npc + 0x8F8);
   if (p_uint4 != (undefined2 *)*p_int10) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int10 = (int)p_uint4;
   Animal_Routine_0805E860(*p_int15,0);
@@ -23851,7 +23851,7 @@ void NPC_Routine_080B7648(int npc)
   NPC_Routine_080B8578(npc);
   p_int15 = (int *)HW_GetSpriteAttr0Offset(npc);
   loop_j = *(int *)(npc + 0xab0);
-  loop_i = HW_Routine_08007D4C(stack_buf_c0,stack_val_bc);
+  loop_i = GBA_Vram_AllocateTileBlock(stack_buf_c0,stack_val_bc);
   u_val1 = 0;
   if (*(int *)(npc + 0xab0) != 0) {
     u_val1 = *(undefined2 *)(npc + 0xab4);
@@ -23932,7 +23932,7 @@ void NPC_Routine_080B7648(int npc)
   p_int15 = (int *)HW_GetSpriteAttr0Offset(npc);
   p_int10 = (int *)(npc + 0xAD4);
   loop_j = *p_int10;
-  loop_i = HW_Routine_08007D4C(stack_buf_b8,stack_val_b4);
+  loop_i = GBA_Vram_AllocateTileBlock(stack_buf_b8,stack_val_b4);
   u_val1 = 0;
   if (*p_int10 != 0) {
     u_val1 = (undefined2)p_int10[1];
@@ -24023,7 +24023,7 @@ void NPC_Routine_080B7648(int npc)
       p_uint6 = stack_buf_c0;
       u_val2 = stack_val_bc;
     }
-    u_val1 = HW_Routine_08007D4C(p_uint6,u_val2);
+    u_val1 = GBA_Vram_AllocateTileBlock(p_uint6,u_val2);
     *(undefined2 *)(loop_j + 6) = u_val1;
     loop_j = *p_int15;
     p_int15 = p_int15 + 1;
@@ -24676,38 +24676,38 @@ void NPC_Routine_080B888C(int npc)
     Animal_Routine_08050D0C(i_val1,3);
   }
   *(int *)(npc + 0x718) = 0;
-  u_val2 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(stack_buf_7c);
-  HW_Routine_0800770C(&stack_val_78);
+  u_val2 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(stack_buf_7c);
+  GBA_BgLayer_Init(&stack_val_78);
   i_val1 = Animal_Routine_08050CC0(u_val2,0,0xf,0,0,stack_buf_7c,&stack_val_78);
   loop_i = *(int *)(npc + 0x718);
   if ((i_val1 != loop_i) && (loop_i != 0)) {
     Animal_Routine_08050D0C(loop_i,3);
   }
   *(int *)(npc + 0x718) = i_val1;
-  HW_Routine_08007714(&stack_val_78,2);
+  GBA_BgLayer_SetPriority(&stack_val_78,2);
   HW_Routine_08008364(stack_buf_7c,2);
   Animal_Routine_08050E50(*(undefined4 *)(npc + 0x718),0);
-  HW_Routine_08007874(stack_buf_7c);
+  GBA_ObjAttr_Init(stack_buf_7c);
   stack_val_78 = 0;
-  HW_Routine_08007874(stack_buf_74);
+  GBA_ObjAttr_Init(stack_buf_74);
   stack_val_70 = 0;
-  HW_Routine_08007874(stack_buf_6c);
+  GBA_ObjAttr_Init(stack_buf_6c);
   stack_val_68 = 0;
-  HW_Routine_08007874(stack_buf_64);
+  GBA_ObjAttr_Init(stack_buf_64);
   stack_val_60 = 0;
-  HW_Routine_08007874(temp_buf_5c);
+  GBA_ObjAttr_Init(temp_buf_5c);
   stack_val_58 = 0;
   HW_Routine_08007C28(stack_buf_7c,stack_val_78);
-  stack_val_78 = HW_Routine_08007B54(stack_buf_7c,3);
-  stack_val_44 = HW_Routine_08007D4C(stack_buf_7c);
+  stack_val_78 = GBA_ObjAttr_AllocateSprite(stack_buf_7c,3);
+  stack_val_44 = GBA_Vram_AllocateTileBlock(stack_buf_7c);
   HW_Routine_08007C28(stack_buf_74,stack_val_70);
-  stack_val_70 = HW_Routine_08007B54(stack_buf_74,7);
-  stack_val_40 = HW_Routine_08007D4C(stack_buf_74);
+  stack_val_70 = GBA_ObjAttr_AllocateSprite(stack_buf_74,7);
+  stack_val_40 = GBA_Vram_AllocateTileBlock(stack_buf_74);
   HW_Routine_08007C28(stack_buf_6c,stack_val_68);
-  stack_val_68 = HW_Routine_08007B54(stack_buf_6c,5);
-  HW_Routine_08007128(stack_buf_54);
-  stack_val_50 = HW_Routine_0800736C(stack_buf_54);
+  stack_val_68 = GBA_ObjAttr_AllocateSprite(stack_buf_6c,5);
+  GBA_PaletteManager_Init(stack_buf_54);
+  stack_val_50 = GBA_PaletteManager_Allocate(stack_buf_54);
   *(undefined1 *)(npc + 8) = 0;
   piStack_28 = (int *)(npc + 0xc4);
   stack_val_24 = npc + 8;
@@ -24731,7 +24731,7 @@ void NPC_Routine_080B888C(int npc)
   stack_val_3c = 0xb5;
   stack_val_38 = 0;
   NPC_Routine_080B87C4(npc);
-  HW_Routine_08007128(stack_buf_4c);
+  GBA_PaletteManager_Init(stack_buf_4c);
   stack_val_48 = HW_Routine_0800745C(stack_buf_4c,stack_val_50);
   NPC_Routine_080BC288(npc,stack_buf_4c);
   NPC_Routine_080B8EBC(npc,0,stack_val_44);
@@ -24760,7 +24760,7 @@ void NPC_Routine_080B888C(int npc)
           }
           else {
             stack_val_34 = 1;
-            Farm_Routine_08009378(*piStack_2c + 0xc,0x889,1,1);
+            Fade_StartFadeIn(*piStack_2c + 0xc,0x889,1,1);
             i_val1 = HW_GetPaletteBankOffset(npc);
             _call_via_r2(i_val1,*piStack_2c,*(undefined4 *)(*(int *)(i_val1 + 8) + 0x10));
             if (*piStack_28 < 0) {
@@ -24911,16 +24911,16 @@ void NPC_Routine_080B8DF4(int npc,uint amount)
   int i_val8;
   
   amount = amount & 0xff;
-  u_val2 = Dispatcher_Routine_080005D4(0x14);
+  u_val2 = CppRuntime_OperatorNewArray(0x14);
   i_val3 = Animal_Routine_0805E824(u_val2,*(undefined4 *)(npc + 0x77C),0,0x100);
   i_val7 = 0x7A4;
   i_val8 = amount * 4;
   p_int6 = (int *)(i_val8 + npc + 0x7A4);
   if (i_val3 != *p_int6) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int6 = i_val3;
-  p_uint4 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint4 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint4 = 0;
   p_uint4[1] = 0;
   p_uint4[2] = 0;
@@ -24933,7 +24933,7 @@ void NPC_Routine_080B8DF4(int npc,uint amount)
   *(undefined1 *)(p_uint4 + 0xc) = 0;
   p_uint5 = (undefined4 *)(i_val8 + npc + 0x7AC);
   if (p_uint4 != (undefined2 *)*p_uint5) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_uint5 = p_uint4;
   p_int6 = (int *)(i_val8 + npc + i_val7);
@@ -26951,14 +26951,14 @@ void NPC_Routine_080BAC9C(int npc,int amount)
   p_int9 = (int *)(0x7B4 + npc);
   i_val16 = npc;
   do {
-    u_val2 = Dispatcher_Routine_080005D4(0x14);
+    u_val2 = CppRuntime_OperatorNewArray(0x14);
     i_val3 = Animal_Routine_0805E824(u_val2,*(undefined4 *)(0x77C + npc),0,0x100);
     i_val13 = stack_val_7c * 4;
     if (i_val3 != *p_int9) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int9 = i_val3;
-    p_uint4 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+    p_uint4 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
     *p_uint4 = 0;
     p_uint4[1] = 0;
     p_uint4[2] = 0;
@@ -26971,7 +26971,7 @@ void NPC_Routine_080BAC9C(int npc,int amount)
     *(undefined1 *)(p_uint4 + 0xc) = 0;
     p_uint11 = (undefined4 *)(i_val13 + npc + 0x7c8);
     if (p_uint4 != (undefined2 *)*p_uint11) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_uint11 = p_uint4;
     u_val2 = *(undefined4 *)(0x7B4 + i_val16);
@@ -27003,14 +27003,14 @@ void NPC_Routine_080BAC9C(int npc,int amount)
   p_int9 = (int *)(0x87C + npc);
   stack_val_30 = npc;
   do {
-    u_val2 = Dispatcher_Routine_080005D4(0x14);
+    u_val2 = CppRuntime_OperatorNewArray(0x14);
     i_val16 = Animal_Routine_0805E824(u_val2,*(undefined4 *)(0x77C + npc),0,0x100);
     i_val3 = stack_val_7c * 4;
     if (i_val16 != *p_int9) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int9 = i_val16;
-    p_uint4 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+    p_uint4 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
     *p_uint4 = 0;
     p_uint4[1] = 0;
     p_uint4[2] = 0;
@@ -27024,7 +27024,7 @@ void NPC_Routine_080BAC9C(int npc,int amount)
     i_val16 = 0x884;
     p_uint11 = (undefined4 *)(i_val3 + npc + 0x884);
     if (p_uint4 != (undefined2 *)*p_uint11) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_uint11 = p_uint4;
     u_val2 = *(undefined4 *)(stack_val_30 + 0x87C);
@@ -27046,14 +27046,14 @@ void NPC_Routine_080BAC9C(int npc,int amount)
     p_int9 = p_int9 + 1;
     stack_val_7c = stack_val_7c + 1;
   } while (stack_val_7c < 2);
-  u_val2 = Dispatcher_Routine_080005D4(0x14);
+  u_val2 = CppRuntime_OperatorNewArray(0x14);
   i_val16 = Animal_Routine_0805E824(u_val2,*(undefined4 *)(0x77C + npc),0,0x100);
   p_int9 = (int *)(0x8CC + npc);
   if (i_val16 != *p_int9) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int9 = i_val16;
-  p_uint4 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint4 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint4 = 0;
   p_uint4[1] = 0;
   p_uint4[2] = 0;
@@ -27066,7 +27066,7 @@ void NPC_Routine_080BAC9C(int npc,int amount)
   *(undefined1 *)(p_uint4 + 0xc) = 0;
   p_int14 = (int *)(npc + 0x8d0);
   if (p_uint4 != (undefined2 *)*p_int14) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int14 = (int)p_uint4;
   i_val16 = *p_int9;
@@ -28465,28 +28465,28 @@ void NPC_Routine_080BC288(int npc,int amount)
   undefined4 *puStack_24;
   
   stack_val_30 = amount;
-  HW_Routine_08007874(stack_buf_b8);
+  GBA_ObjAttr_Init(stack_buf_b8);
   stack_val_b4 = 0;
-  HW_Routine_08007874(stack_buf_b0);
+  GBA_ObjAttr_Init(stack_buf_b0);
   stack_val_ac = 0;
   HW_Routine_08007C28(stack_buf_b8,stack_val_b4);
-  stack_val_b4 = HW_Routine_08007B54(stack_buf_b8,2);
+  stack_val_b4 = GBA_ObjAttr_AllocateSprite(stack_buf_b8,2);
   HW_Routine_08007C28(stack_buf_b0,stack_val_ac);
-  stack_val_ac = HW_Routine_08007B54(stack_buf_b0,3);
+  stack_val_ac = GBA_ObjAttr_AllocateSprite(stack_buf_b0,3);
   gba_memcpy(stack_buf_a8,gRomData_08107D6C,0x40);
-  u_val3 = Dispatcher_Routine_080005D4(0x14);
+  u_val3 = CppRuntime_OperatorNewArray(0x14);
   p_uint11 = (undefined4 *)(0x77C + npc);
   i_val4 = Animal_Routine_0805E824(u_val3,*p_uint11,0,0x100);
   p_int9 = (int *)(0xAA4 + npc);
   if (i_val4 != *p_int9) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int9 = i_val4;
-  u_val3 = Dispatcher_Routine_080005D4(0x14);
+  u_val3 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val3,*p_uint11,0,0x100);
   p_int7 = (int *)(0xAC8 + npc);
   if (i_val4 != *p_int7) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int7 = i_val4;
   Animal_Routine_0805E860(*p_int9,0x91A);
@@ -28507,7 +28507,7 @@ void NPC_Routine_080BC288(int npc,int amount)
   p_uint8[7] = stack_val_4c;
   p_int9 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val12 = *(int *)(npc + 0xab0);
-  i_val4 = HW_Routine_08007D4C(stack_buf_b8,stack_val_b4);
+  i_val4 = GBA_Vram_AllocateTileBlock(stack_buf_b8,stack_val_b4);
   u_val2 = 0;
   if (*(int *)(npc + 0xab0) != 0) {
     u_val2 = *(undefined2 *)(npc + 0xab4);
@@ -28682,7 +28682,7 @@ void NPC_Routine_080BC288(int npc,int amount)
   p_int9 = (int *)HW_GetSpriteAttr0Offset(npc);
   p_int7 = (int *)(0xAD4 + npc);
   i_val12 = *p_int7;
-  i_val4 = HW_Routine_08007D4C(stack_buf_b0,stack_val_ac);
+  i_val4 = GBA_Vram_AllocateTileBlock(stack_buf_b0,stack_val_ac);
   u_val2 = 0;
   if (*p_int7 != 0) {
     u_val2 = (undefined2)p_int7[1];
@@ -28764,7 +28764,7 @@ void NPC_Routine_080BC288(int npc,int amount)
   p_uint10 = (ushort *)(0xFFFFFE8A + npc);
   i_val4 = 0;
   do {
-    p_uint5 = (ushort *)Dispatcher_Routine_080005D4(0x1c);
+    p_uint5 = (ushort *)CppRuntime_OperatorNewArray(0x1c);
     *p_uint5 = 0;
     p_uint5[1] = 0;
     p_uint5[2] = 0;
@@ -28778,13 +28778,13 @@ void NPC_Routine_080BC288(int npc,int amount)
     p_uint5[0xb] = 0;
     *(undefined1 *)(p_uint5 + 0xc) = 0;
     if (p_uint5 != (ushort *)*p_int9) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *p_int9 = (int)p_uint5;
     if (loop_i < 8) {
       *p_uint5 = (ushort)stack_buf_a8[loop_i * 2];
       p_uint5[1] = (ushort)stack_buf_a8[loop_i * 2 + 1];
-      u_val1 = HW_Routine_08007D4C(stack_buf_b0,stack_val_ac);
+      u_val1 = GBA_Vram_AllocateTileBlock(stack_buf_b0,stack_val_ac);
       p_uint5[3] = u_val1;
       i_val12 = *p_int9;
       u_val2 = HW_Routine_080074C0(stack_val_30,*(undefined4 *)(stack_val_30 + 4));
@@ -28801,7 +28801,7 @@ void NPC_Routine_080BC288(int npc,int amount)
     else {
       *p_uint5 = *p_uint10 >> 8;
       p_uint5[1] = p_uint10[1] >> 8;
-      u_val1 = HW_Routine_08007D4C(stack_buf_b8,stack_val_b4);
+      u_val1 = GBA_Vram_AllocateTileBlock(stack_buf_b8,stack_val_b4);
       p_uint5[3] = u_val1;
       i_val12 = *p_int9;
       u_val2 = HW_Routine_080074C0(stack_val_30,*(undefined4 *)(stack_val_30 + 4));
@@ -28842,7 +28842,7 @@ u32 NPC_Routine_080BC898(undefined4 *npc,undefined4 amount)
   undefined4 u_val1;
   
   *npc = gRomData_080E8528;
-  u_val1 = Dispatcher_Routine_080005D4(0xB78);
+  u_val1 = CppRuntime_OperatorNewArray(0xB78);
   u_val1 = NPC_Routine_080B3CC8(u_val1,amount);
   npc[1] = u_val1;
   return npc;
@@ -28908,31 +28908,31 @@ void NPC_Routine_080BCEC8(int npc)
   undefined4 u_val1;
   
   HW_Routine_08007C28(npc + 0x5b0,*(undefined4 *)(npc + 0x5b4));
-  u_val1 = HW_Routine_08007B54(npc + 0x5b0,3);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5b0,3);
   *(undefined4 *)(npc + 0x5b4) = u_val1;
   HW_Routine_08007C28(npc + 0x5b8,*(undefined4 *)(npc + 0x5bc));
-  u_val1 = HW_Routine_08007B54(npc + 0x5b8,6);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5b8,6);
   *(undefined4 *)(npc + 0x5bc) = u_val1;
   HW_Routine_08007C28(npc + 0x5c0,*(undefined4 *)(npc + 0x5c4));
-  u_val1 = HW_Routine_08007B54(npc + 0x5c0,2);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5c0,2);
   *(undefined4 *)(npc + 0x5c4) = u_val1;
   HW_Routine_08007C28(npc + 0x5c8,*(undefined4 *)(npc + 0x5cc));
-  u_val1 = HW_Routine_08007B54(npc + 0x5c8,5);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5c8,5);
   *(undefined4 *)(npc + 0x5cc) = u_val1;
   HW_Routine_08007C28(npc + 0x5d0,*(undefined4 *)(npc + 0x5d4));
-  u_val1 = HW_Routine_08007B54(npc + 0x5d0,5);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5d0,5);
   *(undefined4 *)(npc + 0x5d4) = u_val1;
   HW_Routine_08007C28(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
-  u_val1 = HW_Routine_08007B54(npc + 0x5d8,2);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5d8,2);
   *(undefined4 *)(npc + 0x5dc) = u_val1;
   HW_Routine_08007C28(npc + 0x5f0,*(undefined4 *)(npc + 0x5f4));
-  u_val1 = HW_Routine_08007B54(npc + 0x5f0,4);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5f0,4);
   *(undefined4 *)(npc + 0x5f4) = u_val1;
   HW_Routine_08007C28(npc + 0x5e8,*(undefined4 *)(npc + 0x5ec));
-  u_val1 = HW_Routine_08007B54(npc + 0x5e8,2);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5e8,2);
   *(undefined4 *)(npc + 0x5ec) = u_val1;
   HW_Routine_08007C28(npc + 0x5e0,*(undefined4 *)(npc + 0x5e4));
-  u_val1 = HW_Routine_08007B54(npc + 0x5e0,6);
+  u_val1 = GBA_ObjAttr_AllocateSprite(npc + 0x5e0,6);
   *(undefined4 *)(npc + 0x5e4) = u_val1;
   return;
 }
@@ -28955,7 +28955,7 @@ void NPC_Routine_080BCFAC(undefined4 npc)
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0873BE24,u_val2);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0873BF48,u_val1);
   Unpack_ArcanoMarvelous_0x70(gRomGfx_0873BFF0,0x6000000);
-  HW_Routine_08008E64(gRomGfx_0873CBF4,0x5000000,0x200);
+  GBA_DMA3_FastCopy(gRomGfx_0873CBF4,0x5000000,0x200);
   p_uint3 = (undefined2 *)HW_GetSpriteAttr1Offset(npc);
   *p_uint3 = 0x1640;
   i_val4 = HW_GetSpriteAttr1Offset(npc);
@@ -29018,7 +29018,7 @@ void NPC_Routine_080BD064(int npc)
   undefined4 *puStack_28;
   undefined4 *puStack_24;
   
-  HW_Routine_08008E64(*gRomData_080F9F78,0x05000320,0x20);
+  GBA_DMA3_FastCopy(*gRomData_080F9F78,0x05000320,0x20);
   NPC_Routine_080BCEC8(npc);
   p_uint5 = 0x0500024A;
   *0x0500024A = *0x05000322;
@@ -29039,7 +29039,7 @@ void NPC_Routine_080BD064(int npc)
   stack_val_84 = 0x20004;
   ScriptEngine_Routine_0804E958(0x20004,i_val10,0,0,stack_buf_bc,0,1);
   p_int2 = (int *)HW_GetSpriteAttr0Offset(npc);
-  i_val3 = HW_Routine_08007D4C(npc + 0x5b0,*(undefined4 *)(npc + 0x5b4));
+  i_val3 = GBA_Vram_AllocateTileBlock(npc + 0x5b0,*(undefined4 *)(npc + 0x5b4));
   HW_Routine_08008F0C(&stack_val_b8,i_val10,i_val3 * 0x20 + 0x06010000,0x100);
   p_uint6 = (undefined4 *)p_int2[1];
   if (p_uint6 == (undefined4 *)p_int2[3]) {
@@ -29116,18 +29116,18 @@ void NPC_Routine_080BD064(int npc)
     puStack_2c = &stack_val_78;
     puStack_30 = &stack_val_a8;
   }
-  u_val4 = HW_Routine_08007D4C(npc + 0x5b0,*(undefined4 *)(npc + 0x5b4));
+  u_val4 = GBA_Vram_AllocateTileBlock(npc + 0x5b0,*(undefined4 *)(npc + 0x5b4));
   ScriptEngine_Routine_0804EA94(puStack_2c,0xd0,8,u_val4,2,0,2,1);
   *(undefined4 *)(npc + 0x440) = stack_val_78;
   *(undefined4 *)(npc + 0x444) = stack_val_74;
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   i_val3 = Animal_Routine_0805E824(u_val4,*(undefined4 *)(0x41C + npc),0,0x100);
   p_int2 = (int *)(npc + 0x460);
   if (i_val3 != *p_int2) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int2 = i_val3;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -29140,14 +29140,14 @@ void NPC_Routine_080BD064(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int11 = (int *)(0x464 + npc);
   if (p_uint5 != (undefined2 *)*p_int11) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int11 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int2,0);
   *(undefined2 *)*p_int11 = 0x40;
   *(undefined2 *)(*p_int11 + 2) = 0x40;
   i_val3 = *p_int11;
-  u_val1 = HW_Routine_08007D4C(npc + 0x5b8,*(undefined4 *)(npc + 0x5bc));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x5b8,*(undefined4 *)(npc + 0x5bc));
   *(undefined2 *)(i_val3 + 6) = u_val1;
   *(undefined2 *)(*p_int11 + 4) = 3;
   p_uint6 = (undefined4 *)*p_int2;
@@ -29170,7 +29170,7 @@ void NPC_Routine_080BD064(int npc)
   *(undefined4 *)(npc + 0x484) = u_val4;
   p_int2 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val10 = *(int *)(npc + 0x470);
-  i_val3 = HW_Routine_08007D4C(npc + 0x5b8,*(undefined4 *)(npc + 0x5bc));
+  i_val3 = GBA_Vram_AllocateTileBlock(npc + 0x5b8,*(undefined4 *)(npc + 0x5bc));
   u_val1 = 0;
   if (*(int *)(npc + 0x470) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x474);
@@ -29326,14 +29326,14 @@ void NPC_Routine_080BD064(int npc)
     }
     p_int2[1] = p_int2[1] + 0x10;
   }
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   i_val3 = Animal_Routine_0805E824(u_val4,*(undefined4 *)(npc + 0x428),0,0x100);
   p_int2 = (int *)(npc + 0x4b0);
   if (i_val3 != *p_int2) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int2 = i_val3;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -29346,14 +29346,14 @@ void NPC_Routine_080BD064(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int11 = (int *)(0x4B4 + npc);
   if (p_uint5 != (undefined2 *)*p_int11) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int11 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int2,0);
   *(undefined2 *)*p_int11 = 0xc0;
   *(undefined2 *)(*p_int11 + 2) = 0;
   i_val3 = *p_int11;
-  u_val1 = HW_Routine_08007D4C(npc + 0x5d0,*(undefined4 *)(npc + 0x5d4));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x5d0,*(undefined4 *)(npc + 0x5d4));
   *(undefined2 *)(i_val3 + 6) = u_val1;
   *(undefined2 *)(*p_int11 + 4) = 5;
   *(undefined2 *)(*p_int11 + 8) = 1;
@@ -29373,7 +29373,7 @@ void NPC_Routine_080BD064(int npc)
   *(undefined4 *)(npc + 0x4d4) = stack_val_9c;
   p_int2 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val10 = *(int *)(npc + 0x4c0);
-  i_val3 = HW_Routine_08007D4C(npc + 0x5d0,*(undefined4 *)(npc + 0x5d4));
+  i_val3 = GBA_Vram_AllocateTileBlock(npc + 0x5d0,*(undefined4 *)(npc + 0x5d4));
   u_val1 = 0;
   if (*(int *)(npc + 0x4c0) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x4c4);
@@ -29529,14 +29529,14 @@ void NPC_Routine_080BD064(int npc)
     }
     p_int2[1] = p_int2[1] + 0x10;
   }
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   i_val3 = Animal_Routine_0805E824(u_val4,*(undefined4 *)(npc + 0x430),0,0x100);
   p_int2 = (int *)(npc + 0x528);
   if (i_val3 != *p_int2) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int2 = i_val3;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -29549,14 +29549,14 @@ void NPC_Routine_080BD064(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int11 = (int *)(0x52C + npc);
   if (p_uint5 != (undefined2 *)*p_int11) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int11 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int2,0);
   *(undefined2 *)*p_int11 = 0x80;
   *(undefined2 *)(*p_int11 + 2) = 0x30;
   i_val3 = *p_int11;
-  u_val1 = HW_Routine_08007D4C(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
   *(undefined2 *)(i_val3 + 6) = u_val1;
   *(undefined2 *)(*p_int11 + 4) = 6;
   p_uint6 = (undefined4 *)*p_int2;
@@ -29574,7 +29574,7 @@ void NPC_Routine_080BD064(int npc)
   *(undefined4 *)(npc + 0x54c) = stack_val_9c;
   p_int2 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val10 = *(int *)(npc + 0x538);
-  i_val3 = HW_Routine_08007D4C(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
+  i_val3 = GBA_Vram_AllocateTileBlock(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
   u_val1 = 0;
   if (*(int *)(npc + 0x538) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x53c);
@@ -29730,14 +29730,14 @@ void NPC_Routine_080BD064(int npc)
     }
     p_int2[1] = p_int2[1] + 0x10;
   }
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   p_uint6 = (undefined4 *)(0x42C + npc);
   i_val3 = Animal_Routine_0805E824(u_val4,*p_uint6,0,0x100);
   if (i_val3 != *(int *)(npc + 0x4d8)) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *(int *)(npc + 0x4d8) = i_val3;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -29750,24 +29750,24 @@ void NPC_Routine_080BD064(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int2 = (int *)(0x4DC + npc);
   if (p_uint5 != (undefined2 *)*p_int2) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int2 = (int)p_uint5;
   *p_uint5 = 0x85;
   p_uint5[1] = 0x50;
-  u_val1 = HW_Routine_08007D4C(npc + 0x5f0,*(undefined4 *)(npc + 0x5f4));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x5f0,*(undefined4 *)(npc + 0x5f4));
   p_uint5[3] = u_val1;
   *(undefined2 *)(*p_int2 + 4) = 10;
   *(undefined2 *)(*p_int2 + 8) = 1;
   *(undefined1 *)(*p_int2 + 0x18) = 1;
-  u_val4 = Dispatcher_Routine_080005D4(0x14);
+  u_val4 = CppRuntime_OperatorNewArray(0x14);
   i_val3 = Animal_Routine_0805E824(u_val4,*p_uint6,0,0x100);
   p_int2 = (int *)(npc + 0x500);
   if (i_val3 != *p_int2) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int2 = i_val3;
-  p_uint5 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint5 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint5 = 0;
   p_uint5[1] = 0;
   p_uint5[2] = 0;
@@ -29780,12 +29780,12 @@ void NPC_Routine_080BD064(int npc)
   *(undefined1 *)(p_uint5 + 0xc) = 0;
   p_int11 = (int *)(0x504 + npc);
   if (p_uint5 != (undefined2 *)*p_int11) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int11 = (int)p_uint5;
   Animal_Routine_0805E860(*p_int2,0x91A);
   i_val3 = *p_int11;
-  u_val1 = HW_Routine_08007D4C(npc + 0x5e8,*(undefined4 *)(npc + 0x5ec));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x5e8,*(undefined4 *)(npc + 0x5ec));
   *(undefined2 *)(i_val3 + 6) = u_val1;
   *(undefined2 *)(*p_int11 + 4) = 8;
   *(undefined2 *)(*p_int11 + 8) = 1;
@@ -29805,7 +29805,7 @@ void NPC_Routine_080BD064(int npc)
   *(undefined4 *)(npc + 0x524) = stack_val_9c;
   p_int2 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val10 = *(int *)(npc + 0x510);
-  i_val3 = HW_Routine_08007D4C(npc + 0x5e8,*(undefined4 *)(npc + 0x5ec));
+  i_val3 = GBA_Vram_AllocateTileBlock(npc + 0x5e8,*(undefined4 *)(npc + 0x5ec));
   u_val1 = 0;
   if (*(int *)(npc + 0x510) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x514);
@@ -30072,7 +30072,7 @@ void NPC_Routine_080BDF40(int npc)
       *(undefined4 *)(npc + 0x54c) = stack_val_4c;
       p_int8 = (int *)HW_GetSpriteAttr0Offset(npc);
       i_val11 = *(int *)(npc + 0x538);
-      i_val9 = HW_Routine_08007D4C(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
+      i_val9 = GBA_Vram_AllocateTileBlock(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
       u_val2 = 0;
       if (*(int *)(npc + 0x538) != 0) {
         u_val2 = *(undefined2 *)(npc + 0x53c);
@@ -30269,7 +30269,7 @@ void NPC_Routine_080BDF40(int npc)
     *(undefined4 *)(npc + 0x4fc) = stack_val_4c;
     p_int8 = (int *)HW_GetSpriteAttr0Offset(npc);
     i_val11 = *(int *)(npc + 0x4e8);
-    i_val9 = HW_Routine_08007D4C(npc + 0x5f0,*(undefined4 *)(npc + 0x5f4));
+    i_val9 = GBA_Vram_AllocateTileBlock(npc + 0x5f0,*(undefined4 *)(npc + 0x5f4));
     u_val2 = 0;
     if (*(int *)(npc + 0x4e8) != 0) {
       u_val2 = *(undefined2 *)(npc + 0x4ec);
@@ -30510,7 +30510,7 @@ void NPC_Routine_080BE728(int npc,int amount)
       ScriptEngine_Routine_0804E958(0x20004,i_val6,0,0,&stack_val_54,0,1);
     }
     p_int2 = (int *)HW_GetSpriteAttr0Offset(npc);
-    i_val3 = HW_Routine_08007D4C(npc + 0x5b0,*(undefined4 *)(npc + 0x5b4));
+    i_val3 = GBA_Vram_AllocateTileBlock(npc + 0x5b0,*(undefined4 *)(npc + 0x5b4));
     HW_Routine_08008F0C(&stack_val_4c,i_val6,i_val3 * 0x20 + 0x06010000,0x100);
     p_uint5 = (undefined4 *)p_int2[1];
     if (p_uint5 == (undefined4 *)p_int2[3]) {
@@ -30745,7 +30745,7 @@ void NPC_Routine_080BEAD4(int npc)
           p_uint12 = (undefined4 *)(npc + 0x43c);
           u_val14 = *(uint *)*p_uint12;
           if (-1 < (int)(-u_val14 | u_val14)) {
-            Farm_Routine_08009378((uint *)*p_uint12 + 3,0x889,1,1);
+            Fade_StartFadeIn((uint *)*p_uint12 + 3,0x889,1,1);
             i_val9 = HW_GetPaletteBankOffset(npc);
             _call_via_r2(i_val9,*p_uint12,*(undefined4 *)(*(int *)(i_val9 + 8) + 0x10));
           }
@@ -30755,7 +30755,7 @@ void NPC_Routine_080BEAD4(int npc)
             NPC_Routine_080BDF40(npc);
             p_uint10 = *(uint **)(npc + 0x43c);
           }
-          Farm_Routine_0800934C(*(int *)(npc + 0x43c) + 0xc,0x889,1,1);
+          Fade_StartFadeOut(*(int *)(npc + 0x43c) + 0xc,0x889,1,1);
           i_val9 = HW_GetPaletteBankOffset(npc);
           _call_via_r2(i_val9,*(int *)(npc + 0x43c),
                           *(undefined4 *)(*(int *)(i_val9 + 8) + 0x10));
@@ -31124,11 +31124,11 @@ void NPC_Routine_080BF348(int npc)
   stack_val_30 = 0;
   stack_val_34 = 0;
   stack_val_2c = 0x8500;
-  u_val1 = Dispatcher_Routine_080005D4(0x14);
+  u_val1 = CppRuntime_OperatorNewArray(0x14);
   i_val2 = Animal_Routine_0805E824(u_val1,*(undefined4 *)(npc + 0x420),0,0x100);
   p_int9 = (int *)(npc + 0x460);
   if (i_val2 != *p_int9) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int9 = i_val2;
   Animal_Routine_0805E860(i_val2,0);
@@ -31147,7 +31147,7 @@ void NPC_Routine_080BF348(int npc)
   *(undefined4 *)(npc + 0x484) = stack_val_48;
   p_int9 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val10 = *(int *)(npc + 0x470);
-  i_val2 = HW_Routine_08007D4C(npc + 0x5b8,*(undefined4 *)(npc + 0x5bc));
+  i_val2 = GBA_Vram_AllocateTileBlock(npc + 0x5b8,*(undefined4 *)(npc + 0x5bc));
   u_val8 = 0;
   if (*(int *)(npc + 0x470) != 0) {
     u_val8 = *(undefined2 *)(npc + 0x474);
@@ -31466,16 +31466,16 @@ void NPC_Routine_080BF764(int npc)
     Animal_Routine_08050D0C(i_val4,3);
   }
   *(int *)(npc + 0x418) = 0;
-  u_val5 = Dispatcher_Routine_080005D4(4);
-  HW_Routine_0800835C(&stack_val_104);
-  HW_Routine_0800770C(&stack_val_100);
+  u_val5 = CppRuntime_OperatorNewArray(4);
+  GBA_TextLayer_Init(&stack_val_104);
+  GBA_BgLayer_Init(&stack_val_100);
   i_val4 = Animal_Routine_08050CC0(u_val5,0,0x18,0,0,&stack_val_104,&stack_val_100);
   i_val6 = *(int *)(npc + 0x418);
   if ((i_val4 != i_val6) && (i_val6 != 0)) {
     Animal_Routine_08050D0C(i_val6,3);
   }
   *(int *)(npc + 0x418) = i_val4;
-  HW_Routine_08007714(&stack_val_100,2);
+  GBA_BgLayer_SetPriority(&stack_val_100,2);
   HW_Routine_08008364(&stack_val_104,2);
   u_val5 = *(undefined4 *)(npc + 0x418);
   u_val7 = HW_Routine_080088DC(npc);
@@ -31484,15 +31484,15 @@ void NPC_Routine_080BF764(int npc)
   u_val10 = HW_GetPaletteBankOffset(npc);
   u_val11 = HW_Routine_0800894C(npc);
   Animal_Routine_08050D3C(u_val5,u_val7,u_val8,u_val9,u_val10,u_val11,0x57C + npc);
-  u_val5 = Dispatcher_Routine_080005D4(0x14);
+  u_val5 = CppRuntime_OperatorNewArray(0x14);
   i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(0x424 + npc),0,0x100);
   p_int22 = (int *)(npc + 0x488);
   if (i_val4 != *p_int22) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int22 = i_val4;
   Animal_Routine_0805E860(i_val4,0x1C9);
-  p_uint3 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint3 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint3 = 0;
   p_uint3[1] = 0;
   p_uint3[2] = 0;
@@ -31505,12 +31505,12 @@ void NPC_Routine_080BF764(int npc)
   *(undefined1 *)(p_uint3 + 0xc) = 0;
   p_int20 = (int *)(0x48C + npc);
   if (p_uint3 != (undefined2 *)*p_int20) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int20 = (int)p_uint3;
   *p_uint3 = 0x60;
   p_uint3[1] = 0x75;
-  u_val1 = HW_Routine_08007D4C(npc + 0x5c0,*(undefined4 *)(npc + 0x5c4));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x5c0,*(undefined4 *)(npc + 0x5c4));
   p_uint3[3] = u_val1;
   *(undefined2 *)(*p_int20 + 4) = 4;
   *(undefined1 *)(*p_int20 + 0x18) = 1;
@@ -31529,7 +31529,7 @@ void NPC_Routine_080BF764(int npc)
   *(undefined4 *)(npc + 0x4ac) = stack_val_dc;
   p_int22 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val6 = *(int *)(npc + 0x498);
-  i_val4 = HW_Routine_08007D4C(npc + 0x5c0,*(undefined4 *)(npc + 0x5c4));
+  i_val4 = GBA_Vram_AllocateTileBlock(npc + 0x5c0,*(undefined4 *)(npc + 0x5c4));
   u_val1 = 0;
   if (*(int *)(npc + 0x498) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x49c);
@@ -31692,7 +31692,7 @@ void NPC_Routine_080BF764(int npc)
   *(undefined2 *)*p_int22 = 0x58;
   *(undefined2 *)(*p_int22 + 2) = 0x7d;
   i_val4 = *p_int22;
-  u_val1 = HW_Routine_08007D4C(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
   *(undefined2 *)(i_val4 + 6) = u_val1;
   *(undefined1 *)(*p_int22 + 0x18) = 1;
   p_uint12 = *(undefined4 **)(npc + 0x528);
@@ -31710,7 +31710,7 @@ void NPC_Routine_080BF764(int npc)
   *(uint *)(npc + 0x54c) = stack_val_e8;
   p_int22 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val6 = *(int *)(npc + 0x538);
-  i_val4 = HW_Routine_08007D4C(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
+  i_val4 = GBA_Vram_AllocateTileBlock(npc + 0x5d8,*(undefined4 *)(npc + 0x5dc));
   u_val1 = 0;
   if (*(int *)(npc + 0x538) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x53c);
@@ -31812,7 +31812,7 @@ void NPC_Routine_080BF764(int npc)
     }
     p_int22 = (int *)HW_GetSpriteAttr0Offset(npc);
     i_val4 = i_val4 + stack_val_64;
-    i_val6 = HW_Routine_08007D4C(stack_val_5c,*(undefined4 *)(stack_val_5c + 4));
+    i_val6 = GBA_Vram_AllocateTileBlock(stack_val_5c,*(undefined4 *)(stack_val_5c + 4));
     HW_Routine_08008F0C(&stack_val_fc,i_val4 * 4 + npc + 0x110,(stack_val_38 + i_val6) * 0x20 + 0x06010000,
                   0x100);
     p_uint14 = puStack_44;
@@ -31898,14 +31898,14 @@ void NPC_Routine_080BF764(int npc)
     }
     if (stack_val_64 == 2) {
       p_uint12 = (undefined4 *)(npc + 0x458);
-      i_val4 = HW_Routine_08007D4C(stack_val_5c,*(undefined4 *)(stack_val_5c + 4));
+      i_val4 = GBA_Vram_AllocateTileBlock(stack_val_5c,*(undefined4 *)(stack_val_5c + 4));
       ScriptEngine_Routine_0804EA94(&stack_val_a4,0xb8,0x8d,i_val4 + 0x10,stack_val_64,0,stack_val_64,1);
       u_val5 = stack_val_a4;
       u_val7 = stack_val_a0;
     }
     else {
       p_uint12 = (undefined4 *)(stack_val_38 + npc + 0x448);
-      i_val4 = HW_Routine_08007D4C(stack_val_5c,*(undefined4 *)(stack_val_5c + 4));
+      i_val4 = GBA_Vram_AllocateTileBlock(stack_val_5c,*(undefined4 *)(stack_val_5c + 4));
       ScriptEngine_Routine_0804EA94(&stack_val_ac,0x68,stack_val_64 * 0x10 + 0x6d,i_val4 + stack_val_38,2,0,2,1);
       u_val5 = stack_val_ac;
       u_val7 = stack_val_a8;
@@ -31915,23 +31915,23 @@ void NPC_Routine_080BF764(int npc)
     stack_val_64 = stack_val_3c;
   } while (stack_val_3c < 3);
   if (*(int *)(0x604 + npc) < (int)(uint)*(byte *)(npc + 0x600)) {
-    u_val5 = Dispatcher_Routine_080005D4(0x14);
+    u_val5 = CppRuntime_OperatorNewArray(0x14);
     i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(npc + 0x438),0,0x100);
     if (i_val4 != *(int *)(npc + 0x550)) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *(int *)(npc + 0x550) = i_val4;
   }
   else {
-    u_val5 = Dispatcher_Routine_080005D4(0x14);
+    u_val5 = CppRuntime_OperatorNewArray(0x14);
     i_val4 = Animal_Routine_0805E824(u_val5,*(undefined4 *)(0x434 + npc),0,0x100);
     if (i_val4 != *(int *)(npc + 0x550)) {
-      Dispatcher_Routine_08000608();
+      CppRuntime_FreeMemory();
     }
     *(int *)(npc + 0x550) = i_val4;
     *(undefined1 *)(npc + 0x610) = 1;
   }
-  p_uint3 = (undefined2 *)Dispatcher_Routine_080005D4(0x1c);
+  p_uint3 = (undefined2 *)CppRuntime_OperatorNewArray(0x1c);
   *p_uint3 = 0;
   p_uint3[1] = 0;
   p_uint3[2] = 0;
@@ -31944,14 +31944,14 @@ void NPC_Routine_080BF764(int npc)
   *(undefined1 *)(p_uint3 + 0xc) = 0;
   p_int22 = (int *)(0x554 + npc);
   if (p_uint3 != (undefined2 *)*p_int22) {
-    Dispatcher_Routine_08000608();
+    CppRuntime_FreeMemory();
   }
   *p_int22 = (int)p_uint3;
   Animal_Routine_0805E860(*(int *)(npc + 0x550),0);
   *(undefined2 *)*p_int22 = 0x40;
   *(undefined2 *)(*p_int22 + 2) = 0x40;
   i_val4 = *p_int22;
-  u_val1 = HW_Routine_08007D4C(npc + 0x5e0,*(undefined4 *)(npc + 0x5e4));
+  u_val1 = GBA_Vram_AllocateTileBlock(npc + 0x5e0,*(undefined4 *)(npc + 0x5e4));
   *(undefined2 *)(i_val4 + 6) = u_val1;
   *(undefined2 *)(*p_int22 + 4) = 7;
   *(undefined1 *)(*p_int22 + 0x18) = 1;
@@ -31975,7 +31975,7 @@ void NPC_Routine_080BF764(int npc)
   *(uint *)(npc + 0x574) = u_val2;
   p_int22 = (int *)HW_GetSpriteAttr0Offset(npc);
   i_val6 = *(int *)(npc + 0x560);
-  i_val4 = HW_Routine_08007D4C(npc + 0x5e0,*(undefined4 *)(npc + 0x5e4));
+  i_val4 = GBA_Vram_AllocateTileBlock(npc + 0x5e0,*(undefined4 *)(npc + 0x5e4));
   u_val1 = 0;
   if (*(int *)(npc + 0x560) != 0) {
     u_val1 = *(undefined2 *)(npc + 0x564);
@@ -32241,7 +32241,7 @@ LAB_080c08e8:
             p_int22 = (int *)HW_GetSpriteAttr0Offset(npc);
             i_val6 = stack_val_50;
             i_val4 = i_val4 + stack_val_50;
-            i_val21 = HW_Routine_08007D4C(npc + 0x5c8,*(undefined4 *)(npc + 0x5cc));
+            i_val21 = GBA_Vram_AllocateTileBlock(npc + 0x5c8,*(undefined4 *)(npc + 0x5cc));
             HW_Routine_08008F0C(&stack_val_f0,i_val4 * 4 + npc + 0x110,
                           (i_val6 * 8 + i_val21) * 0x20 + 0x06010000,0x100);
             p_uint14 = (uint *)p_int22[1];
@@ -32349,7 +32349,7 @@ LAB_080c08e8:
               }
               p_int22 = (int *)HW_GetSpriteAttr0Offset(npc);
               i_val4 = i_val4 + stack_val_64;
-              i_val6 = HW_Routine_08007D4C(npc + 0x5c8,*(undefined4 *)(npc + 0x5cc));
+              i_val6 = GBA_Vram_AllocateTileBlock(npc + 0x5c8,*(undefined4 *)(npc + 0x5cc));
               HW_Routine_08008F0C(&stack_val_f0,i_val4 * 4 + npc + 0x110,
                             (stack_val_64 * 8 + i_val6) * 0x20 + 0x06010000,0x100);
               p_uint14 = puStack_40;

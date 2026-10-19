@@ -1387,7 +1387,7 @@ u32 Entity_Routine_08021634(int entity)
   int i_val4;
   
   u_val1 = Animal_Routine_0809BB34(*(undefined4 *)(entity + 0x34));
-  u_val2 = Dispatcher_Routine_080005D4(0x8c);
+  u_val2 = CppRuntime_OperatorNewArray(0x8c);
   u_val3 = Entity_Routine_0802161C(u_val1);
   u_val1 = Entity_Routine_08021620(u_val1);
   i_val4 = Entity_Routine_080324BC(u_val2,entity,2,6,u_val3,u_val1,0,0);
@@ -2242,7 +2242,7 @@ u32 Entity_Routine_08022348(int entity)
   undefined4 u_val2;
   int i_val3;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   u_val2 = Animal_Routine_0809BC10(*(undefined4 *)(entity + 0x34));
   i_val3 = Entity_Routine_080222A8(u_val1,entity,u_val2);
   if (*(char *)(entity + 0x3c) == '\x04') {
@@ -2790,7 +2790,7 @@ u32 Entity_Routine_08022B70(undefined4 *entity)
   char c_char6;
   
   u_val1 = Animal_Routine_0809BCAC(entity[0xd]);
-  u_val2 = Dispatcher_Routine_080005D4(0x8c);
+  u_val2 = CppRuntime_OperatorNewArray(0x8c);
   u_val3 = Entity_Routine_08022B58(u_val1);
   u_val1 = Entity_Routine_08022B5C(u_val1);
   i_val4 = Entity_Routine_080324BC(u_val2,entity,2,9,u_val3,u_val1,0,0);
@@ -3646,7 +3646,7 @@ u32 Entity_Routine_08023820(int entity)
   int i_val4;
   
   u_val1 = Animal_Routine_0809BD90(*(undefined4 *)(entity + 0x34));
-  u_val2 = Dispatcher_Routine_080005D4(0x8c);
+  u_val2 = CppRuntime_OperatorNewArray(0x8c);
   u_val3 = Entity_Routine_080237F0(u_val1);
   u_val1 = Entity_Routine_08023804(u_val1);
   i_val4 = Entity_Routine_080324BC(u_val2,entity,4,0xc,u_val3,u_val1,0,0);
@@ -4512,7 +4512,7 @@ u32 Entity_Routine_080244EC(int entity)
   int i_val4;
   
   u_val1 = Animal_Routine_0809BEDC(*(undefined4 *)(entity + 0x34));
-  u_val2 = Dispatcher_Routine_080005D4(0x8c);
+  u_val2 = CppRuntime_OperatorNewArray(0x8c);
   u_val3 = Entity_Routine_080244C4(u_val1);
   u_val1 = Entity_Routine_080244D8(u_val1);
   i_val4 = Entity_Routine_080324BC(u_val2,entity,4,0xb,u_val3,u_val1,0,0);
@@ -4881,7 +4881,7 @@ void Entity_Routine_08024B9C(int entity)
     }
   }
   *(undefined1 *)(entity + 0x21) = u_val3;
-  u_val2 = Dispatcher_Routine_080005D4(0x284);
+  u_val2 = CppRuntime_OperatorNewArray(0x284);
   Entity_Routine_0802B260(u_val2,entity);
   return;
 }
@@ -10718,7 +10718,7 @@ void Entity_Routine_0802A400(int entity,undefined4 speed)
   *(undefined4 *)(entity + 0x9c) = 0x150000;
   p_uint5 = *(undefined4 **)(entity + 0x10);
   if (p_uint5 != (undefined4 *)0x0) {
-    u_val2 = Item_Routine_0800DCE0(speed);
+    u_val2 = Item_GetFoodBasePrice(speed);
     u_val3 = _call_via_r1(*(int **)*p_uint5,*(undefined4 *)(**(int **)*p_uint5 + 100));
     Animal_Routine_0805E850(p_uint5 + 0x2d,u_val3,u_val2);
     *(undefined1 *)(p_uint5 + 0x32) = 1;
@@ -11581,7 +11581,7 @@ void Entity_Routine_0802B8EC(undefined4 entity,undefined4 speed)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(200);
+  u_val1 = CppRuntime_OperatorNewArray(200);
   Entity_Routine_08024974(u_val1,entity,speed);
   return;
 }
@@ -11659,7 +11659,7 @@ void Entity_Routine_0802BA10(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0xd0);
+  u_val1 = CppRuntime_OperatorNewArray(0xd0);
   Entity_Routine_0802BF2C(u_val1,entity);
   return;
 }
@@ -12086,7 +12086,7 @@ void Entity_Routine_0802C210(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x5c);
+  u_val1 = CppRuntime_OperatorNewArray(0x5c);
   Entity_Routine_0802B9C0(u_val1,entity);
   return;
 }
@@ -14799,7 +14799,7 @@ LAB_0802f0a8:
               if (entity[4] != 0) {
                 Entity_Routine_0802B46C();
               }
-              i_val9 = Farmer_Routine_0800E324(entity[0xd] + 0x10);
+              i_val9 = Farmer_GetFacingDirection(entity[0xd] + 0x10);
               if (i_val9 == 3) {
                 p_int15 = (int *)_call_via_r1((int *)*entity,
                                                  *(undefined4 *)(*(int *)*entity + 0x14c));
@@ -15517,7 +15517,7 @@ void Entity_Routine_080329B4(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_08032A00(u_val1,entity);
   return;
 }
@@ -16429,7 +16429,7 @@ u32 Entity_Routine_08033A80(int entity)
   int i_val2;
   int i_val3;
   
-  u_val1 = Dispatcher_Routine_080005D4(0xd4);
+  u_val1 = CppRuntime_OperatorNewArray(0xd4);
   i_val2 = Entity_Routine_08034A14(u_val1,entity);
   i_val3 = -1;
   if (*(char *)(entity + 0x40) == '\x02') {
@@ -17539,7 +17539,7 @@ void Entity_Routine_08034DB0(int entity,uint speed)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((speed & 1) != 0) {
-    Dispatcher_Routine_08000608(entity);
+    CppRuntime_FreeMemory(entity);
   }
   return;
 }
@@ -18430,7 +18430,7 @@ void Entity_Routine_08035B38(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -18455,7 +18455,7 @@ void Entity_Routine_08035B9C(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -18533,7 +18533,7 @@ void Entity_Routine_08035CD4(undefined4 entity)
   undefined4 u_val1;
   
   Entity_Routine_08035C04();
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,5,0x1b,1,0,0,0);
   return;
 }
@@ -18558,7 +18558,7 @@ void Entity_Routine_08035D40(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,3,0,0);
   return;
 }
@@ -18583,7 +18583,7 @@ void Entity_Routine_08035DAC(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,1,0,0);
   return;
 }
@@ -18608,7 +18608,7 @@ void Entity_Routine_08035E14(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -18633,7 +18633,7 @@ void Entity_Routine_08035E7C(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,2,0,0);
   return;
 }
@@ -18646,7 +18646,7 @@ void Entity_Routine_08035EE4(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -18671,7 +18671,7 @@ void Entity_Routine_08035F48(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -18696,7 +18696,7 @@ void Entity_Routine_08035FB0(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,2,0,0);
   return;
 }
@@ -18721,7 +18721,7 @@ void Entity_Routine_0803601C(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -18799,7 +18799,7 @@ void Entity_Routine_08036154(undefined4 entity)
   undefined4 u_val1;
   
   Entity_Routine_08036084();
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,5,0x1b,1,0,0,0);
   return;
 }
@@ -18824,7 +18824,7 @@ void Entity_Routine_080361C0(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -18849,7 +18849,7 @@ void Entity_Routine_08036228(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,2,0,0);
   return;
 }
@@ -18874,7 +18874,7 @@ void Entity_Routine_08036290(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,2,0,0);
   return;
 }
@@ -18899,7 +18899,7 @@ void Entity_Routine_080362FC(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,1,0,0);
   return;
 }
@@ -18924,7 +18924,7 @@ void Entity_Routine_08036364(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -18949,7 +18949,7 @@ void Entity_Routine_080363CC(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19027,7 +19027,7 @@ void Entity_Routine_08036500(undefined4 entity)
   undefined4 u_val1;
   
   Entity_Routine_08036430();
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,5,0x1b,1,0,0,0);
   return;
 }
@@ -19040,7 +19040,7 @@ void Entity_Routine_08036564(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19118,7 +19118,7 @@ void Entity_Routine_0803669C(undefined4 entity)
   undefined4 u_val1;
   
   Entity_Routine_080365CC();
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,5,0x1b,1,0,0,0);
   return;
 }
@@ -19143,7 +19143,7 @@ void Entity_Routine_08036704(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19204,7 +19204,7 @@ void Entity_Routine_080367C8(undefined4 entity)
   undefined4 u_val1;
   
   Entity_Routine_08036768();
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,5,0x1b,1,0,0,0);
   return;
 }
@@ -19229,7 +19229,7 @@ void Entity_Routine_08036834(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19254,7 +19254,7 @@ void Entity_Routine_08036898(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19332,7 +19332,7 @@ void Entity_Routine_080369E0(undefined4 entity)
   undefined4 u_val1;
   
   Entity_Routine_08036900();
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,5,0x1b,1,0,0,0);
   return;
 }
@@ -19357,7 +19357,7 @@ void Entity_Routine_08036A4C(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19424,7 +19424,7 @@ void Entity_Routine_08036B1C(undefined4 entity)
   undefined4 u_val1;
   
   Entity_Routine_08036AB4();
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,5,0x1b,1,0,0,0);
   return;
 }
@@ -19437,7 +19437,7 @@ void Entity_Routine_08036B80(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,2,0,0);
   return;
 }
@@ -19501,7 +19501,7 @@ void Entity_Routine_08036C80(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19526,7 +19526,7 @@ void Entity_Routine_08036CDC(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,2,0,0);
   return;
 }
@@ -19551,7 +19551,7 @@ void Entity_Routine_08036D3C(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19576,7 +19576,7 @@ void Entity_Routine_08036D98(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19601,7 +19601,7 @@ void Entity_Routine_08036E00(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0x1b,1,0,0,0);
   return;
 }
@@ -19694,7 +19694,7 @@ u32 Entity_Routine_08036F0C(int entity)
     if (c_char1 != '\0') {
       u_val4 = 4;
     }
-    u_val3 = Dispatcher_Routine_080005D4(0x8c);
+    u_val3 = CppRuntime_OperatorNewArray(0x8c);
     u_val4 = Entity_Routine_080324BC(u_val3,entity,4,0x1b,0,u_val4,0,0);
   }
   return u_val4;
@@ -20113,7 +20113,7 @@ void Entity_Routine_0803753C(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,2,9,0,7,0,0);
   return;
 }
@@ -20208,7 +20208,7 @@ void Entity_Routine_080376E4(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,4,0xc,2,0xc,0,0);
   return;
 }
@@ -20303,7 +20303,7 @@ void Entity_Routine_0803788C(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,2,0x1b,0,8,0,0);
   return;
 }
@@ -20390,7 +20390,7 @@ void Entity_Routine_080379D8(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,2,0x1b,0,8,0,0);
   return;
 }
@@ -20442,7 +20442,7 @@ u32 Entity_Routine_08037A5C(undefined4 entity,undefined4 speed,byte collision)
   undefined2 stack_val_18;
   undefined2 stack_val_16;
   
-  i_val1 = Dispatcher_Routine_080005D4(0x48);
+  i_val1 = CppRuntime_OperatorNewArray(0x48);
   Entity_Routine_08037008(i_val1,entity,speed,0x71C,0);
   *(undefined4 *)(i_val1 + 0x14) = gRomData_080E72E4;
   *(byte *)(i_val1 + 0x44) = *(byte *)(i_val1 + 0x44) & 0xfc | collision & 3;
@@ -20466,7 +20466,7 @@ u32 Entity_Routine_08037AD0(undefined4 entity,undefined4 speed,byte collision)
   undefined2 stack_val_18;
   undefined2 stack_val_16;
   
-  i_val1 = Dispatcher_Routine_080005D4(0x48);
+  i_val1 = CppRuntime_OperatorNewArray(0x48);
   Entity_Routine_08037008(i_val1,entity,speed,0x2ac,0xb);
   *(undefined4 *)(i_val1 + 0x14) = gRomData_080E72A0;
   *(byte *)(i_val1 + 0x44) = *(byte *)(i_val1 + 0x44) & 0xfc | collision & 3;
@@ -20486,7 +20486,7 @@ u32 Entity_Routine_08037B48(undefined4 entity,undefined4 speed)
 {
   int i_val1;
   
-  i_val1 = Dispatcher_Routine_080005D4(0x44);
+  i_val1 = CppRuntime_OperatorNewArray(0x44);
   Entity_Routine_08037008(i_val1,entity,speed,0x379,0xc);
   *(undefined4 *)(i_val1 + 0x14) = gRomData_080E725C;
   return i_val1;
@@ -20500,7 +20500,7 @@ u32 Entity_Routine_08037B80(undefined4 entity,undefined4 speed)
 {
   int i_val1;
   
-  i_val1 = Dispatcher_Routine_080005D4(0x44);
+  i_val1 = CppRuntime_OperatorNewArray(0x44);
   Entity_Routine_08037008(i_val1,entity,speed,0x207,10);
   *(undefined4 *)(i_val1 + 0x14) = gRomData_080E7218;
   return i_val1;
@@ -20594,7 +20594,7 @@ void Entity_Routine_08037CF0(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x54);
+  u_val1 = CppRuntime_OperatorNewArray(0x54);
   Entity_Routine_08037D08(u_val1,entity);
   return;
 }
@@ -20650,7 +20650,7 @@ void Entity_Routine_08037E9C(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x58);
+  u_val1 = CppRuntime_OperatorNewArray(0x58);
   Entity_Routine_08037EF0(u_val1,entity);
   return;
 }
@@ -20925,7 +20925,7 @@ void Entity_Routine_08038334(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x48);
+  u_val1 = CppRuntime_OperatorNewArray(0x48);
   Entity_Routine_0803853C(u_val1,entity);
   return;
 }
@@ -21174,7 +21174,7 @@ void Entity_Routine_080387A0(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x18);
+  u_val1 = CppRuntime_OperatorNewArray(0x18);
   Entity_Routine_08038820(u_val1,entity);
   return;
 }
@@ -21282,7 +21282,7 @@ u32 Entity_Routine_08038820(undefined4 *entity,undefined4 *speed)
   *entity = speed;
   entity[1] = gRomData_080E736C;
   if ((*(byte *)(speed[6] + 0x54) & 0x7f) >> 5 == 1) {
-    i_val1 = Dispatcher_Routine_080005D4(0x4c);
+    i_val1 = CppRuntime_OperatorNewArray(0x4c);
     p_int4 = (int *)*speed;
     p_int2 = (int *)_call_via_r1(p_int4,*(undefined4 *)(*p_int4 + 0x74));
     NPC_Routine_080A4740(i_val1,p_int4,6,0x1b);
@@ -21299,7 +21299,7 @@ u32 Entity_Routine_08038820(undefined4 *entity,undefined4 *speed)
   entity[3] = 0;
   entity[4] = 0;
   entity[5] = 0;
-  u_val3 = Dispatcher_Routine_080005D4(0x194);
+  u_val3 = CppRuntime_OperatorNewArray(0x194);
   p_int2 = (int *)VTable_Routine_080DCB7C(u_val3,*(undefined4 *)*entity,
                                 (*(byte *)(speed[6] + 0x5d) & 0xf) >> 2 == 1);
   p_int4 = (int *)entity[5];
@@ -21308,7 +21308,7 @@ u32 Entity_Routine_08038820(undefined4 *entity,undefined4 *speed)
     for (p_int6 = p_int4 + 1; p_int6 != p_int4 + i_val1 * 0x14 + 1; p_int6 = p_int6 + 0x14) {
       NPC_Routine_080A47B4(p_int6,2);
     }
-    Dispatcher_Routine_08000608(p_int4);
+    CppRuntime_FreeMemory(p_int4);
   }
   entity[5] = p_int2;
   return entity;
@@ -21403,7 +21403,7 @@ void Entity_Routine_08038928(int entity)
         for (p_int7 = p_int11 + 1; p_int7 != p_int11 + pos_y * 0x10 + 1; p_int7 = p_int7 + 0x10) {
           _call_via_r2(p_int7,2,*(undefined4 *)(p_int7[9] + 8));
         }
-        Dispatcher_Routine_08000608(p_int11);
+        CppRuntime_FreeMemory(p_int11);
       }
       *(undefined4 *)(entity + 0x10) = 0;
     }
@@ -21597,7 +21597,7 @@ void Entity_Routine_08038DF0(undefined4 *entity)
   int i_val4;
   undefined2 *apuStack_20 [2];
   
-  i_val1 = Dispatcher_Routine_080005D4(0x54);
+  i_val1 = CppRuntime_OperatorNewArray(0x54);
   p_int3 = *(int **)*entity;
   p_int2 = (int *)_call_via_r1(p_int3,*(undefined4 *)(*p_int3 + 0x70));
   NPC_Routine_080A4740(i_val1,p_int3,6,0x1b);
@@ -21612,7 +21612,7 @@ void Entity_Routine_08038DF0(undefined4 *entity)
   i_val4 = entity[3];
   if ((i_val1 != i_val4) && (i_val4 != 0)) {
     NPC_Routine_080A47B4(i_val4,2);
-    Dispatcher_Routine_08000608(i_val4);
+    CppRuntime_FreeMemory(i_val4);
   }
   entity[3] = i_val1;
   return;
@@ -21639,7 +21639,7 @@ void Entity_Routine_08038EB8(int entity)
   pos_y = *(int *)(entity + 0xc);
   if ((pos_y != 0) && (pos_y != 0)) {
     NPC_Routine_080A47B4(pos_y,2);
-    Dispatcher_Routine_08000608(pos_y);
+    CppRuntime_FreeMemory(pos_y);
   }
   *(undefined4 *)(entity + 0xc) = 0;
   return;
@@ -21673,7 +21673,7 @@ void Entity_Routine_08038EE0(undefined4 *entity)
   undefined1 stack_val_22;
   undefined1 stack_val_21;
   
-  p_uint1 = (uint *)Dispatcher_Routine_080005D4(0x14c);
+  p_uint1 = (uint *)CppRuntime_OperatorNewArray(0x14c);
   p_int7 = *(int **)*entity;
   *p_uint1 = 0;
   p_uint10 = stack_buf_64;
@@ -21747,7 +21747,7 @@ LAB_08039064:
         for (p_uint6 = p_uint8 + 1; p_uint6 != p_uint8 + u_val3 * 0x10 + 1; p_uint6 = p_uint6 + 0x10) {
           _call_via_r2(p_uint6,2,*(undefined4 *)(p_uint6[9] + 8));
         }
-        Dispatcher_Routine_08000608(p_uint8);
+        CppRuntime_FreeMemory(p_uint8);
       }
       entity[4] = p_uint1;
       return;
@@ -22104,7 +22104,7 @@ void Entity_Routine_08039A30(undefined4 entity)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,entity,2,0x1b,0,8,0,0);
   return;
 }
@@ -22197,7 +22197,7 @@ u32 Entity_Routine_08039E98(undefined4 *entity,int *speed,undefined4 collision,i
   u_val1 = _call_via_r1(speed,*(undefined4 *)(*speed + 0x68));
   NPC_Routine_080A4A00(entity + 2,u_val1,collision,speed,3,0x1b,0);
   if (flags == 1) {
-    i_val2 = Dispatcher_Routine_080005D4(0x4c);
+    i_val2 = CppRuntime_OperatorNewArray(0x4c);
     p_int3 = (int *)_call_via_r1(speed,*(undefined4 *)(*speed + 0x68));
     NPC_Routine_080A4740(i_val2,speed,2,0xf);
     *(undefined4 *)(i_val2 + 0x24) = gRomData_080E602C;
@@ -22228,7 +22228,7 @@ void Entity_Routine_08039F50(int entity,uint speed)
   }
   NPC_Routine_080A47B4(entity + 8,2);
   if ((speed & 1) != 0) {
-    Dispatcher_Routine_08000608(entity);
+    CppRuntime_FreeMemory(entity);
   }
   return;
 }
@@ -22562,27 +22562,27 @@ LAB_0803a458:
       entity = 0x803a8b0;
       s_val2 = -0x5acc;
     case 0x803a4f4:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x9B6,1);
       u_val4 = gRomData_080E76A4;
       break;
     case 0x803a55c:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x10,1);
       u_val4 = gRomData_080E768C;
       break;
     case 0x803a578:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x3DB,1);
       u_val4 = gRomData_080E7674;
       break;
     case 0x803a598:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x806,1);
       u_val4 = gRomData_080E765C;
       break;
     case 0x803a5b8:
-      i_val8 = Dispatcher_Routine_080005D4(0x6c);
+      i_val8 = CppRuntime_OperatorNewArray(0x6c);
       Entity_Routine_08039E98(i_val8,speed,0x202,1);
       *(undefined4 *)(i_val8 + 0x4c) = gRomData_080E7644;
       *(undefined4 *)(i_val8 + 0x50) = 0;
@@ -22595,7 +22595,7 @@ LAB_0803a458:
       *(undefined4 *)(i_val8 + 0x68) = 0;
       goto LAB_0803a536;
     case 0x803a608:
-      i_val3 = Dispatcher_Routine_080005D4(0x88);
+      i_val3 = CppRuntime_OperatorNewArray(0x88);
       Entity_Routine_08039E98(i_val3,speed,0x2a4,1);
       *(undefined4 *)(i_val3 + 0x4c) = gRomData_080E762C;
       *(undefined4 *)(i_val3 + 0x50) = 0;
@@ -22609,32 +22609,32 @@ LAB_0803a458:
       *(undefined1 *)(i_val3 + 0x84) = 0xf8;
       goto LAB_0803a75a;
     case 0x803a670:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x87B,1);
       u_val4 = gRomData_080E7614;
       break;
     case 0x803a690:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x65C,1);
       u_val4 = gRomData_080E75FC;
       break;
     case 0x803a6b0:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x8F9,1);
       u_val4 = gRomData_080E75E4;
       break;
     case 0x803a6d0:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x9A9,1);
       u_val4 = gRomData_080E75CC;
       break;
     case 0x803a6f0:
-      i_val8 = Dispatcher_Routine_080005D4(100);
+      i_val8 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val8,speed,0x8FD,1);
       u_val4 = gRomData_080E75B4;
       break;
     case 0x803a710:
-      i_val3 = Dispatcher_Routine_080005D4(100);
+      i_val3 = CppRuntime_OperatorNewArray(100);
       Entity_Routine_08039E98(i_val3,speed,0x15,0);
       *(undefined4 *)(i_val3 + 0x4c) = gRomData_080E759C;
       *(undefined4 *)(i_val3 + 0x50) = 0;
@@ -22687,7 +22687,7 @@ u32 Entity_Routine_0803A798(undefined4 entity,undefined4 speed)
   ushort stack_val_1a;
   ushort stack_val_18;
   
-  i_val2 = Dispatcher_Routine_080005D4(0x20);
+  i_val2 = CppRuntime_OperatorNewArray(0x20);
   u_val1 = (ushort)0xFFFFFC00;
   stack_val_1c = u_val1 & stack_val_1c & 0x3ff;
   stack_val_1a = u_val1 & stack_val_1a & 0x3ff;

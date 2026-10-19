@@ -7,9 +7,9 @@
 #include "../../include/farm/farm.h"
 
 // =============================================================================
-// Function: Farm_Routine_0800901C @ 0x0800901C
+// Function: GBA_Bios_CpuCopyBlock @ 0x0800901C
 // =============================================================================
-void Farm_Routine_0800901C(int *arg_1)
+void GBA_Bios_CpuCopyBlock(int *arg_1)
 
 {
   uint u_val1;
@@ -50,9 +50,9 @@ void Farm_Routine_0800901C(int *arg_1)
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009094 @ 0x08009094
+// Function: GBA_Bios_CpuCopyDescriptorList @ 0x08009094
 // =============================================================================
-void Farm_Routine_08009094(int *arg_1,int *arg_2)
+void GBA_Bios_CpuCopyDescriptorList(int *arg_1,int *arg_2)
 
 {
   uint u_val1;
@@ -147,9 +147,9 @@ u32 Farm_Routine_0800917C(undefined2 *arg_1)
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009190 @ 0x08009190
+// Function: Input_PollTriggers @ 0x08009190
 // =============================================================================
-void Farm_Routine_08009190(ushort *arg_1)
+void Input_PollTriggers(ushort *arg_1)
 
 {
   ushort u_val1;
@@ -162,9 +162,9 @@ void Farm_Routine_08009190(ushort *arg_1)
 }
 
 // =============================================================================
-// Function: Farm_Routine_080091A4 @ 0x080091A4
+// Function: Input_InitKeypadState @ 0x080091A4
 // =============================================================================
-u32 Farm_Routine_080091A4(int arg_1,undefined2 arg_2,undefined2 arg_3)
+u32 Input_InitKeypadState(int arg_1,undefined2 arg_2,undefined2 arg_3)
 
 {
   undefined2 *p_uint1;
@@ -181,9 +181,9 @@ u32 Farm_Routine_080091A4(int arg_1,undefined2 arg_2,undefined2 arg_3)
 }
 
 // =============================================================================
-// Function: Farm_Routine_080091E8 @ 0x080091E8
+// Function: Input_InitDefault @ 0x080091E8
 // =============================================================================
-u32 Farm_Routine_080091E8(int arg_1)
+u32 Input_InitDefault(int arg_1)
 
 {
   undefined2 *p_uint1;
@@ -219,9 +219,9 @@ u32 Farm_Routine_08009224(int arg_1,undefined2 arg_2,undefined2 arg_3,undefined4
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009268 @ 0x08009268
+// Function: Input_ProcessAutoRepeat @ 0x08009268
 // =============================================================================
-u32 Farm_Routine_08009268(ushort *arg_1)
+u32 Input_ProcessAutoRepeat(ushort *arg_1)
 
 {
   ushort u_val1;
@@ -233,7 +233,7 @@ u32 Farm_Routine_08009268(ushort *arg_1)
   uint u_val7;
   uint u_val8;
   
-  u_val5 = Farm_Routine_08009190();
+  u_val5 = Input_PollTriggers();
   u_val1 = *arg_1;
   u_val2 = arg_1[6];
   u_val3 = arg_1[5];
@@ -292,14 +292,14 @@ void Farm_Routine_080092C8(ushort *arg_1,ushort arg_2)
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009300 @ 0x08009300
+// Function: Fade_Init @ 0x08009300
 // =============================================================================
-u32 Farm_Routine_08009300(int *arg_1,undefined4 arg_2)
+u32 Fade_Init(int *arg_1,undefined4 arg_2)
 
 {
   undefined4 *p_uint1;
   
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   *p_uint1 = arg_2;
   *(undefined2 *)(p_uint1 + 1) = 0;
   p_uint1[2] = 0;
@@ -310,23 +310,23 @@ u32 Farm_Routine_08009300(int *arg_1,undefined4 arg_2)
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009324 @ 0x08009324
+// Function: Fade_Deinit @ 0x08009324
 // =============================================================================
-void Farm_Routine_08009324(undefined4 *arg_1,uint arg_2)
+void Fade_Deinit(undefined4 *arg_1,uint arg_2)
 
 {
   
-  Dispatcher_Routine_08000608(*arg_1);
+  CppRuntime_FreeMemory(*arg_1);
   if ((arg_2 & 1) != 0) {
-    Dispatcher_Routine_08000608(arg_1);
+    CppRuntime_FreeMemory(arg_1);
   }
   return;
 }
 
 // =============================================================================
-// Function: Farm_Routine_0800934C @ 0x0800934C
+// Function: Fade_StartFadeOut @ 0x0800934C
 // =============================================================================
-void Farm_Routine_0800934C(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
+void Fade_StartFadeOut(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
 
 {
   int i_val1;
@@ -344,9 +344,9 @@ void Farm_Routine_0800934C(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009378 @ 0x08009378
+// Function: Fade_StartFadeIn @ 0x08009378
 // =============================================================================
-void Farm_Routine_08009378(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
+void Fade_StartFadeIn(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
 
 {
   int i_val1;
@@ -364,9 +364,9 @@ void Farm_Routine_08009378(int *arg_1,short arg_2,undefined4 arg_3,int arg_4)
 }
 
 // =============================================================================
-// Function: Farm_Routine_080093AC @ 0x080093AC
+// Function: Fade_UpdateFrame @ 0x080093AC
 // =============================================================================
-u32 Farm_Routine_080093AC(undefined4 *arg_1)
+u32 Fade_UpdateFrame(undefined4 *arg_1)
 
 {
   short s_val1;
@@ -457,12 +457,12 @@ LAB_0800949e:
 }
 
 // =============================================================================
-// Function: Farm_Routine_080094AC @ 0x080094AC
+// Function: Fade_Update @ 0x080094AC
 // =============================================================================
-void Farm_Routine_080094AC(int arg_1)
+void Fade_Update(int arg_1)
 
 {
-  Farm_Routine_080093AC(arg_1 + 0xc);
+  Fade_UpdateFrame(arg_1 + 0xc);
   return;
 }
 
@@ -474,15 +474,15 @@ void Farm_Routine_080094B8(int arg_1,undefined4 arg_2)
 {
   
   *(undefined4 *)(arg_1 + 8) = gRomData_080E5B80;
-  Farm_Routine_08009324(arg_1 + 0xc,2);
+  Fade_Deinit(arg_1 + 0xc,2);
   Farm_Routine_080098AC(arg_1,arg_2);
   return;
 }
 
 // =============================================================================
-// Function: Farm_Routine_080094E0 @ 0x080094E0
+// Function: Fade_IsActive @ 0x080094E0
 // =============================================================================
-u32 Farm_Routine_080094E0(int arg_1)
+u32 Fade_IsActive(int arg_1)
 
 {
   short s_val1;
@@ -522,7 +522,7 @@ void Farm_Routine_0800951C(int arg_1,short arg_2)
 
 {
   
-  Farm_Routine_08009378(arg_1 + 0xc,(int)arg_2);
+  Fade_StartFadeIn(arg_1 + 0xc,(int)arg_2);
   return;
 }
 
@@ -533,7 +533,7 @@ void Farm_Routine_0800952C(int arg_1,short arg_2)
 
 {
   
-  Farm_Routine_0800934C(arg_1 + 0xc,(int)arg_2);
+  Fade_StartFadeOut(arg_1 + 0xc,(int)arg_2);
   return;
 }
 
@@ -557,7 +557,7 @@ u32 Farm_Routine_08009548(undefined4 *arg_1)
   *arg_1 = 0;
   arg_1[1] = 0;
   arg_1[2] = gRomData_080E5B80;
-  Farm_Routine_08009300(arg_1 + 3);
+  Fade_Init(arg_1 + 3);
   return arg_1;
 }
 
@@ -655,9 +655,9 @@ void Farm_Routine_08009674(undefined4 arg_1,undefined4 arg_2)
 }
 
 // =============================================================================
-// Function: Farm_Routine_080096B0 @ 0x080096B0
+// Function: GBA_Display_InitRegsBuffer @ 0x080096B0
 // =============================================================================
-u32 Farm_Routine_080096B0(undefined4 *arg_1)
+u32 GBA_Display_InitRegsBuffer(undefined4 *arg_1)
 
 {
   undefined2 stack_buf_c [2];
@@ -677,21 +677,21 @@ u32 Farm_Routine_080096B0(undefined4 *arg_1)
 }
 
 // =============================================================================
-// Function: Farm_Routine_080096F0 @ 0x080096F0
+// Function: GBA_Display_FlushRegs @ 0x080096F0
 // =============================================================================
-void Farm_Routine_080096F0(int arg_1)
+void GBA_Display_FlushRegs(int arg_1)
 
 {
   
-  HW_Routine_08008E64(arg_1,0x4000000,0x54);
+  GBA_DMA3_FastCopy(arg_1,0x4000000,0x54);
   *((void *)0x04000054) = *(undefined2 *)(arg_1 + 0x54);
   return;
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009710 @ 0x08009710
+// Function: GBA_Display_ApplyScrollAndBlend @ 0x08009710
 // =============================================================================
-void Farm_Routine_08009710(int arg_1)
+void GBA_Display_ApplyScrollAndBlend(int arg_1)
 
 {
   
@@ -702,9 +702,9 @@ void Farm_Routine_08009710(int arg_1)
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009744 @ 0x08009744
+// Function: OAM_InitSpriteBuffer @ 0x08009744
 // =============================================================================
-u32 Farm_Routine_08009744(byte *arg_1,byte arg_2,byte arg_3)
+u32 OAM_InitSpriteBuffer(byte *arg_1,byte arg_2,byte arg_3)
 
 {
   byte *pbVar1;
@@ -724,20 +724,20 @@ u32 Farm_Routine_08009744(byte *arg_1,byte arg_2,byte arg_3)
 }
 
 // =============================================================================
-// Function: Farm_Routine_0800977C @ 0x0800977C
+// Function: OAM_DMA_FlushBuffer @ 0x0800977C
 // =============================================================================
-void Farm_Routine_0800977C(int arg_1)
+void OAM_DMA_FlushBuffer(int arg_1)
 
 {
   
-  HW_Routine_08008E64(arg_1 + 4,0x7000000,0x400);
+  GBA_DMA3_FastCopy(arg_1 + 4,0x7000000,0x400);
   return;
 }
 
 // =============================================================================
-// Function: Farm_Routine_08009790 @ 0x08009790
+// Function: OAM_CpuFastSet_FlushBuffer @ 0x08009790
 // =============================================================================
-void Farm_Routine_08009790(int arg_1)
+void OAM_CpuFastSet_FlushBuffer(int arg_1)
 
 {
   
@@ -820,7 +820,7 @@ void Farm_Routine_08009864(undefined4 arg_1)
 
 {
   
-  Farm_Routine_0800977C();
+  OAM_DMA_FlushBuffer();
   Farm_Routine_08009834(arg_1);
   return;
 }
@@ -864,7 +864,7 @@ void Farm_Routine_080098AC(undefined4 *arg_1,uint arg_2)
     *(undefined4 **)arg_1[1] = p_uint1;
   }
   if ((arg_2 & 1) != 0) {
-    Dispatcher_Routine_08000608(arg_1);
+    CppRuntime_FreeMemory(arg_1);
   }
   return;
 }

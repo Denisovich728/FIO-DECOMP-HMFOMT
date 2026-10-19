@@ -388,7 +388,7 @@ u32 VTable_Routine_080D3BE8(undefined4 *instance)
 {
   undefined4 u_val1;
   
-  Dispatcher_Routine_080005D4(4);
+  CppRuntime_OperatorNewArray(4);
   u_val1 = HW_Routine_08004C48();
   *instance = u_val1;
   return instance;
@@ -402,7 +402,7 @@ u32 VTable_Routine_080D3C24(undefined4 *instance)
 {
   undefined4 u_val1;
   
-  Dispatcher_Routine_080005D4(8);
+  CppRuntime_OperatorNewArray(8);
   u_val1 = HW_Routine_08004B58();
   *instance = u_val1;
   return instance;
@@ -523,7 +523,7 @@ void VTable_Routine_080D3ED4(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E5A28;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -540,7 +540,7 @@ u32 VTable_Routine_080D3EF4(undefined4 *instance,int arg1)
   int i_val4;
   int i_val5;
   
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x554);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0x554);
   u_val2 = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
   *p_uint1 = gRomData_080E5BF8;
@@ -582,7 +582,7 @@ u32 VTable_Routine_080D4004(undefined4 *instance)
 {
   undefined4 u_val1;
   
-  Dispatcher_Routine_080005D4(8);
+  CppRuntime_OperatorNewArray(8);
   u_val1 = Scene_Routine_080036F8();
   *instance = u_val1;
   return instance;
@@ -879,7 +879,7 @@ void VTable_Routine_080D4480(int instance,uint arg1)
   VTable_Routine_080D6B00(instance + 0x1C38,2);
   VTable_Routine_080D6C08(instance + 0x1AA8,2);
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -2018,7 +2018,7 @@ void VTable_Routine_080D6B00(int *instance,uint arg1)
     p_int1 = p_int1 + 1;
   } while (p_int1 != instance + *instance + 1);
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -2091,7 +2091,7 @@ void VTable_Routine_080D6C08(int instance,uint arg1)
   {
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -2114,10 +2114,10 @@ void VTable_Routine_080D6C58(undefined4 *instance,int arg1)
   undefined4 *puStack_24;
   
   puStack_24 = instance;
-  p_uint2 = (undefined4 *)Dispatcher_Routine_080005D4(0x554);
+  p_uint2 = (undefined4 *)CppRuntime_OperatorNewArray(0x554);
   u_val1 = *(undefined1 *)(arg1 + 0x24);
   *p_uint2 = gRomData_080E5BF8;
-  u_val3 = Dispatcher_Routine_080005D4(0x34F4);
+  u_val3 = CppRuntime_OperatorNewArray(0x34F4);
   u_val3 = Farmer_Routine_08010358(u_val3,arg1 + 4,arg1 + 0x14,u_val1,arg1 + 0x28);
   p_uint2[1] = u_val3;
   ScriptEngine_StartEventScript(p_uint2 + 2);
@@ -2229,7 +2229,7 @@ void VTable_Routine_080D6DB8(int *instance,uint arg1)
       }
       for (; i_val5 != i_val6; i_val5 = i_val5 + 8) {
         if (i_val2 != 0) {
-          HW_Routine_08007128(i_val2);
+          GBA_PaletteManager_Init(i_val2);
           u_val3 = HW_Routine_0800745C(i_val2,*(undefined4 *)(i_val5 + 4));
           *(undefined4 *)(i_val2 + 4) = u_val3;
         }
@@ -2998,7 +2998,7 @@ void VTable_Routine_080D772C(int *instance,uint arg1)
       }
       for (; i_val5 != i_val6; i_val5 = i_val5 + 8) {
         if (i_val2 != 0) {
-          HW_Routine_08007874(i_val2);
+          GBA_ObjAttr_Init(i_val2);
           u_val3 = HW_Routine_08007CD8(i_val2,*(undefined4 *)(i_val5 + 4));
           *(undefined4 *)(i_val2 + 4) = u_val3;
         }
@@ -3027,7 +3027,7 @@ longlong VTable_Routine_080D780C(int instance)
 
 {
   
-  Farm_Routine_080096F0(*(undefined4 *)(instance + 0xc));
+  GBA_Display_FlushRegs(*(undefined4 *)(instance + 0xc));
   return 0;
 }
 
@@ -3210,7 +3210,7 @@ void VTable_Routine_080D7AAC(undefined4 *instance,uint arg1)
   instance[1] = gRomData_080E5B54;
   *gIWRAM_030410 = *instance;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -3225,7 +3225,7 @@ void VTable_Routine_080D7B04(undefined4 *instance,uint arg1)
   instance[1] = gRomData_080E5B54;
   *gIWRAM_030410 = *instance;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -3447,7 +3447,7 @@ void VTable_Routine_080D7E64(int *instance,uint arg1)
   for (; p_int2 != instance + *instance * 2 + 1; p_int2 = p_int2 + 2) {
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -3638,7 +3638,7 @@ void VTable_Routine_080DB0EC(int *instance,uint arg1)
   int *p_int2;
   
   instance[0x3d] = gRomData_080E5C08;
-  Dispatcher_Routine_08000608(instance[0x3c]);
+  CppRuntime_FreeMemory(instance[0x3c]);
   if (instance[0x34] != 0) {
     cpp_operator_delete();
   }
@@ -3666,7 +3666,7 @@ void VTable_Routine_080DB0EC(int *instance,uint arg1)
     _call_via_r2(p_int2,3,*(undefined4 *)(*p_int2 + 8));
   }
   if (instance[0x28] != 0) {
-    Farm_Routine_08009324(instance[0x28],3);
+    Fade_Deinit(instance[0x28],3);
   }
   Farm_Routine_080098DC(instance + 0x1b,2);
   HW_Routine_08008A68(instance + 0x1a,2);
@@ -3676,7 +3676,7 @@ void VTable_Routine_080DB0EC(int *instance,uint arg1)
     cpp_operator_delete();
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -3694,7 +3694,7 @@ u32 VTable_Routine_080DB1E4(undefined4 *instance,int arg1)
   pos_y = *(int *)(arg1 + 0xc);
   temp_buf_20[0] = *(undefined4 *)(arg1 + 8);
   *(undefined4 *)(arg1 + 8) = 0;
-  u_val2 = Dispatcher_Routine_080005D4(8);
+  u_val2 = CppRuntime_OperatorNewArray(8);
   u_val2 = Animal_Routine_0807865C(u_val2,*(undefined4 *)(arg1 + 4),temp_buf_20,pos_y == 2);
   *instance = u_val2;
   return instance;
@@ -3745,7 +3745,7 @@ u32 VTable_Routine_080DB238(undefined4 *instance,undefined4 *arg1)
   p_uint3 = &stack_val_28;
   stack_val_28 = stack_val_34;
 LAB_080db2ae:
-  u_val2 = Dispatcher_Routine_080005D4(8,p_uint3);
+  u_val2 = CppRuntime_OperatorNewArray(8,p_uint3);
   u_val2 = Farmer_Routine_08011DC4(u_val2,arg1[3],&stack_val_34);
   *instance = u_val2;
   return instance;
@@ -3788,7 +3788,7 @@ u32 VTable_Routine_080DB320(undefined4 *instance,int arg1)
   undefined4 u_val2;
   undefined4 u_val3;
   
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0xc);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0xc);
   u_val3 = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
   u_val2 = *(undefined4 *)(arg1 + 8);
@@ -3826,7 +3826,7 @@ u32 VTable_Routine_080DB394(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0805FCD0(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -3859,7 +3859,7 @@ u32 VTable_Routine_080DB404(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(8);
+  u_val1 = CppRuntime_OperatorNewArray(8);
   u_val1 = Animal_Routine_0806D8C8(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined4 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -3894,7 +3894,7 @@ u32 VTable_Routine_080DB474(undefined4 *instance,int arg1)
   undefined4 u_val4;
   undefined4 u_val5;
   
-  p_uint2 = (undefined4 *)Dispatcher_Routine_080005D4(0x14);
+  p_uint2 = (undefined4 *)CppRuntime_OperatorNewArray(0x14);
   u_val5 = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
   u_val1 = *(undefined1 *)(arg1 + 0x10);
@@ -3936,7 +3936,7 @@ u32 VTable_Routine_080DB4F0(undefined4 *instance,int arg1)
   undefined4 u_val3;
   undefined4 u_val4;
   
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val4 = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
   u_val2 = *(undefined4 *)(arg1 + 8);
@@ -3976,7 +3976,7 @@ u32 VTable_Routine_080DB568(undefined4 *instance,int arg1)
   undefined4 u_val3;
   undefined4 u_val4;
   
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val4 = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
   u_val2 = *(undefined4 *)(arg1 + 8);
@@ -4016,7 +4016,7 @@ u32 VTable_Routine_080DB5E0(undefined4 *instance,int arg1)
   undefined4 u_val3;
   undefined4 u_val4;
   
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0x10);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0x10);
   u_val4 = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
   u_val2 = *(undefined4 *)(arg1 + 8);
@@ -4055,7 +4055,7 @@ u32 VTable_Routine_080DB658(undefined4 *instance,int arg1)
   undefined4 u_val2;
   undefined4 u_val3;
   
-  p_uint1 = (undefined4 *)Dispatcher_Routine_080005D4(0xc);
+  p_uint1 = (undefined4 *)CppRuntime_OperatorNewArray(0xc);
   u_val3 = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
   u_val2 = *(undefined4 *)(arg1 + 8);
@@ -4093,7 +4093,7 @@ u32 VTable_Routine_080DB6CC(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = NPC_Routine_080A3744(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4126,7 +4126,7 @@ u32 VTable_Routine_080DB73C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0808AB38(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4159,7 +4159,7 @@ u32 VTable_Routine_080DB7AC(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0808ECD8(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4192,7 +4192,7 @@ u32 VTable_Routine_080DB81C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_08090E54(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4225,7 +4225,7 @@ u32 VTable_Routine_080DB88C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0808C56C(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4258,7 +4258,7 @@ u32 VTable_Routine_080DB8FC(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0805218C(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4291,7 +4291,7 @@ u32 VTable_Routine_080DB96C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_08057DD8(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined1 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -4325,7 +4325,7 @@ u32 VTable_Routine_080DB9DC(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0805E624(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4358,7 +4358,7 @@ u32 VTable_Routine_080DBA4C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0805CEB8(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined1 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -4392,7 +4392,7 @@ u32 VTable_Routine_080DBABC(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0809A4D4(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined1 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -4426,7 +4426,7 @@ u32 VTable_Routine_080DBB2C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0807B038(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined4 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -4460,7 +4460,7 @@ u32 VTable_Routine_080DBB9C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_08081A40(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4493,7 +4493,7 @@ u32 VTable_Routine_080DBC0C(undefined4 *instance,int arg1)
   
   temp_buf_18[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_08077C40(u_val1,temp_buf_18);
   *instance = u_val1;
   return instance;
@@ -4526,7 +4526,7 @@ u32 VTable_Routine_080DBC78(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_080931B0(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4559,7 +4559,7 @@ u32 VTable_Routine_080DBCE8(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0x14);
+  u_val1 = CppRuntime_OperatorNewArray(0x14);
   u_val1 = Animal_Routine_08088168(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined4 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -4593,7 +4593,7 @@ u32 VTable_Routine_080DBD58(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0x14);
+  u_val1 = CppRuntime_OperatorNewArray(0x14);
   u_val1 = Animal_Routine_0807D070(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined4 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -4627,7 +4627,7 @@ u32 VTable_Routine_080DBDC8(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_08080D94(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4660,7 +4660,7 @@ u32 VTable_Routine_080DBE38(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0807F580(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4693,7 +4693,7 @@ u32 VTable_Routine_080DBEA8(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_08082114(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4726,7 +4726,7 @@ u32 VTable_Routine_080DBF18(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0808045C(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4759,7 +4759,7 @@ u32 VTable_Routine_080DBF88(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_080854F4(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4792,7 +4792,7 @@ u32 VTable_Routine_080DBFF8(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0807EE14(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4825,7 +4825,7 @@ u32 VTable_Routine_080DC068(undefined4 *instance,int arg1)
   
   temp_buf_20[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0x20);
+  u_val1 = CppRuntime_OperatorNewArray(0x20);
   u_val1 = Animal_Routine_08083A7C(u_val1,temp_buf_20,*(undefined4 *)(arg1 + 8),
                         *(undefined1 *)(arg1 + 0x1c),*(undefined4 *)(arg1 + 0xc),
                         *(undefined4 *)(arg1 + 0x10),*(undefined4 *)(arg1 + 0x14),
@@ -4861,7 +4861,7 @@ u32 VTable_Routine_080DC0E8(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0807E438(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined4 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -4895,7 +4895,7 @@ u32 VTable_Routine_080DC158(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_0807DD38(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -4939,8 +4939,8 @@ u32 VTable_Routine_080DC1D4(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 8);
   *(undefined4 *)(arg1 + 8) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(8);
-  u_val1 = HW_Routine_08004B94(u_val1,*(undefined4 *)(arg1 + 4),stack_buf_1c);
+  u_val1 = CppRuntime_OperatorNewArray(8);
+  u_val1 = SaveLoadScreen_Deinit(u_val1,*(undefined4 *)(arg1 + 4),stack_buf_1c);
   *instance = u_val1;
   return instance;
 }
@@ -4969,7 +4969,7 @@ u32 VTable_Routine_080DC244(undefined4 *instance,int arg1)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(8);
+  u_val1 = CppRuntime_OperatorNewArray(8);
   u_val1 = Farmer_Routine_08011DC4(u_val1,*(undefined4 *)(arg1 + 4),arg1 + 8);
   *instance = u_val1;
   return instance;
@@ -5102,7 +5102,7 @@ u32 VTable_Routine_080DC42C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 8);
   *(undefined4 *)(arg1 + 8) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(8);
+  u_val1 = CppRuntime_OperatorNewArray(8);
   u_val1 = Animal_Routine_080701BC(u_val1,*(undefined4 *)(arg1 + 4),stack_buf_1c);
   *instance = u_val1;
   return instance;
@@ -5135,7 +5135,7 @@ u32 VTable_Routine_080DC49C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_080755EC(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8));
   *instance = u_val1;
   return instance;
@@ -5168,7 +5168,7 @@ u32 VTable_Routine_080DC50C(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_08069E14(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined1 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -5229,7 +5229,7 @@ void VTable_Routine_080DC5B4(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E61A0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5243,7 +5243,7 @@ void VTable_Routine_080DC5D4(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E61A0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5259,7 +5259,7 @@ void VTable_Routine_080DC5F4(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5278,7 +5278,7 @@ void VTable_Routine_080DC628(int instance,uint arg1)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5292,7 +5292,7 @@ void VTable_Routine_080DC65C(int instance,uint arg1)
   
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5364,7 +5364,7 @@ void VTable_Routine_080DC6F0(int instance,uint arg1)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5381,7 +5381,7 @@ void VTable_Routine_080DC724(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5405,7 +5405,7 @@ void VTable_Routine_080DC764(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5424,7 +5424,7 @@ void VTable_Routine_080DC7CC(int instance,uint arg1)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5443,7 +5443,7 @@ void VTable_Routine_080DC800(int instance,uint arg1)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5471,7 +5471,7 @@ u32 VTable_Routine_080DC840(undefined4 *instance,undefined4 *arg1)
   
   instance[9] = gRomData_080E82D8;
   *instance = *arg1;
-  HW_Routine_08007874(instance + 1);
+  GBA_ObjAttr_Init(instance + 1);
   u_val1 = HW_Routine_08007CD8(instance + 1,arg1[2]);
   instance[2] = u_val1;
   *(undefined2 *)(instance + 3) = *(undefined2 *)(arg1 + 3);
@@ -5497,7 +5497,7 @@ void VTable_Routine_080DC890(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5516,7 +5516,7 @@ void VTable_Routine_080DC8C4(int instance,uint arg1)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5532,7 +5532,7 @@ void VTable_Routine_080DC8F8(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -5549,7 +5549,7 @@ void VTable_Routine_080DC92C(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -6143,7 +6143,7 @@ void VTable_Routine_080DCDB0(int instance,uint arg1)
     for (p_int3 = p_int1 + 1; p_int3 != p_int1 + pos_x * 0x14 + 1; p_int3 = p_int3 + 0x14) {
       NPC_Routine_080A47B4(p_int3,2);
     }
-    Dispatcher_Routine_08000608(p_int1);
+    CppRuntime_FreeMemory(p_int1);
   }
   p_int1 = *(int **)(instance + 0x10);
   if (p_int1 != (int *)0x0) {
@@ -6151,21 +6151,21 @@ void VTable_Routine_080DCDB0(int instance,uint arg1)
     for (p_int3 = p_int1 + 1; p_int3 != p_int1 + pos_x * 0x10 + 1; p_int3 = p_int3 + 0x10) {
       _call_via_r2(p_int3,2,*(undefined4 *)(p_int3[9] + 8));
     }
-    Dispatcher_Routine_08000608(p_int1);
+    CppRuntime_FreeMemory(p_int1);
   }
   pos_x = *(int *)(instance + 0xc);
   if (pos_x != 0) {
     NPC_Routine_080A47B4(pos_x,2);
-    Dispatcher_Routine_08000608(pos_x);
+    CppRuntime_FreeMemory(pos_x);
   }
   pos_x = *(int *)(instance + 8);
   if (pos_x != 0) {
     NPC_Routine_080A47B4(pos_x,2);
-    Dispatcher_Routine_08000608(pos_x);
+    CppRuntime_FreeMemory(pos_x);
   }
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -6184,7 +6184,7 @@ void VTable_Routine_080DCE60(int instance,uint arg1)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -6199,7 +6199,7 @@ void VTable_Routine_080DCE94(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -6214,7 +6214,7 @@ void VTable_Routine_080DCEC0(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -6233,7 +6233,7 @@ void VTable_Routine_080DCEEC(int instance,uint arg1)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -6248,7 +6248,7 @@ void VTable_Routine_080DCF20(int instance,uint arg1)
   NPC_Routine_080A47B4(instance + 8,2);
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -7208,7 +7208,7 @@ void VTable_Routine_080DE1B4(int instance,uint arg1)
   }
   *(undefined4 *)(instance + 4) = gRomData_080E65E0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -7222,7 +7222,7 @@ void VTable_Routine_080DE220(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E76F8;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -7248,7 +7248,7 @@ void VTable_Routine_080DE260(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E76F8;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -7556,14 +7556,14 @@ void VTable_Routine_080E0094(undefined4 instance,int arg1)
   if ((int ***)ppiStack_bc != (int ***)0x0) {
     _call_via_r2(ppiStack_bc,3,(int *)(*ppiStack_bc)[2]);
   }
-  u_val4 = Dispatcher_Routine_080005D4(4);
+  u_val4 = CppRuntime_OperatorNewArray(4);
   u_val5 = HW_GetSpriteAttr1Offset(i_val17);
-  ppiVar6 = (int **)Farm_Routine_08009300(u_val4,u_val5);
+  ppiVar6 = (int **)Fade_Init(u_val4,u_val5);
   i_val13 = 0x370;
   pppiVar11 = (int ***)(arg1 + 0x370);
   ppiVar7 = *pppiVar11;
   if ((ppiVar6 != ppiVar7) && (ppiVar7 != (int **)0x0)) {
-    Farm_Routine_08009324(ppiVar7,3);
+    Fade_Deinit(ppiVar7,3);
   }
   *pppiVar11 = ppiVar6;
   do {
@@ -7581,7 +7581,7 @@ void VTable_Routine_080E0094(undefined4 instance,int arg1)
 LAB_080e04a2:
             i_val13 = 1;
             i_val18 = 0x80e04af;
-            Farm_Routine_08009378(*pppiVar11,0x889,1);
+            Fade_StartFadeIn(*pppiVar11,0x889,1);
             *(int *)(arg1 + 0x364) = 1;
           }
           else {
@@ -7601,7 +7601,7 @@ LAB_080e04a2:
       i_val13 = HW_Routine_080088DC(i_val17);
       i_val8 = *(int *)(arg1 + 0x36c);
       pppiVar11 = (int ***)&piStack_b8;
-      Farm_Routine_080091E8(pppiVar11,(uint)*(ushort *)(i_val13 + 8) & (0xFFFFFF00 | 0xf7));
+      Input_InitDefault(pppiVar11,(uint)*(ushort *)(i_val13 + 8) & (0xFFFFFF00 | 0xf7));
       p_int14 = (int *)HW_GetSpriteAttr2Offset(i_val17);
       i_val13 = HW_GetSpriteAttr1Offset(i_val17);
       u_val4 = HW_GetPaletteBankOffset(i_val17);
@@ -7771,7 +7771,7 @@ LAB_080e04a2:
       }
     }
     i_val13 = 0x370;
-    Farm_Routine_080093AC(*(undefined4 *)(arg1 + 0x370));
+    Fade_UpdateFrame(*(undefined4 *)(arg1 + 0x370));
     HW_Routine_080087C8(i_val17);
   } while( true );
 }
@@ -7922,7 +7922,7 @@ void VTable_Routine_080E0C38(undefined4 *instance,uint arg1)
         Farm_Routine_080098AC(i_val3 + 8,2);
         HW_Routine_08007C28(i_val3,*(undefined4 *)(i_val3 + 4));
         HW_Routine_080079E8(i_val3,2);
-        Dispatcher_Routine_08000608(i_val3);
+        CppRuntime_FreeMemory(i_val3);
       }
     }
   }
@@ -7931,14 +7931,14 @@ void VTable_Routine_080E0C38(undefined4 *instance,uint arg1)
     Farm_Routine_080098AC(i_val3 + 8,2);
     HW_Routine_08007C28(i_val3,*(undefined4 *)(i_val3 + 4));
     HW_Routine_080079E8(i_val3,2);
-    Dispatcher_Routine_08000608(i_val3);
+    CppRuntime_FreeMemory(i_val3);
   }
   Farm_Routine_080098AC(instance + 0xe,2);
   HW_Routine_080073E0(instance + 0xc,instance[0xd]);
   HW_Routine_08007184(instance + 0xc,2);
   *instance = gRomData_080E5A28;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -7950,7 +7950,7 @@ longlong VTable_Routine_080E0D50(int instance)
 
 {
   
-  HW_Routine_08008E64(*(undefined4 *)(instance + 0xc),*(undefined4 *)(instance + 0x10),
+  GBA_DMA3_FastCopy(*(undefined4 *)(instance + 0xc),*(undefined4 *)(instance + 0x10),
                 *(undefined4 *)(instance + 0x14));
   return 0;
 }
@@ -7999,7 +7999,7 @@ void VTable_Routine_080E0D70(undefined4 *instance,uint arg1)
   instance[0xc] = gRomData_080E5A28;
   *instance = u_val1;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8100,7 +8100,7 @@ longlong VTable_Routine_080E0F48(int instance)
   p_int3 = *(int **)(instance + 0xc);
   if (*p_int3 != 0) {
     p_int2 = p_int3 + 1;
-    Farm_Routine_08009094(p_int2,p_int2 + *p_int3 * 4);
+    GBA_Bios_CpuCopyDescriptorList(p_int2,p_int2 + *p_int3 * 4);
     for (p_int1 = p_int2; p_int1 != p_int3 + *p_int3 * 4 + 1; p_int1 = p_int1 + 4) {
     }
     *p_int3 = *p_int3 - ((int)(p_int3 + *p_int3 * 4 + 1) - (int)p_int2 >> 4);
@@ -8133,7 +8133,7 @@ longlong VTable_Routine_080E0F90(int instance)
       if ((char)p_int6[3] != '\0') {
         if ((-p_int6[2] | p_int6[2]) < 0) {
           i_val5 = *p_int6;
-          i_val3 = HW_Routine_08007D4C(p_int6 + 1);
+          i_val3 = GBA_Vram_AllocateTileBlock(p_int6 + 1);
           CpuFastSet(i_val5 + 4,i_val3 * 0x20 + 0x06010000,0x40);
         }
         *(undefined1 *)(p_int6 + 3) = 0;
@@ -8192,7 +8192,7 @@ void VTable_Routine_080E103C(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E78F0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8216,16 +8216,16 @@ void VTable_Routine_080E105C(undefined4 *instance,uint arg1)
         while (p_uint2 != p_uint1) {
           HW_Routine_08007C28(p_uint1 + -3,p_uint1[-2]);
           HW_Routine_080079E8(p_uint1 + -3,2);
-          Dispatcher_Routine_08000608(p_uint1[-4]);
+          CppRuntime_FreeMemory(p_uint1[-4]);
           p_uint1 = p_uint1 + -4;
         }
-        Dispatcher_Routine_08000608(p_uint2);
+        CppRuntime_FreeMemory(p_uint2);
       }
     } while (instance + 2 != p_int3);
   }
   *instance = gRomData_080E7908;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8250,7 +8250,7 @@ void VTable_Routine_080E10F8(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E78F0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8264,7 +8264,7 @@ void VTable_Routine_080E1128(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E7908;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8413,7 +8413,7 @@ void VTable_Routine_080E1498(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E76F8;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8502,7 +8502,7 @@ void VTable_Routine_080E1824(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E76F8;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8576,7 +8576,7 @@ void VTable_Routine_080E1964(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E76F8;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8590,7 +8590,7 @@ void VTable_Routine_080E1984(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E5A28;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -8971,7 +8971,7 @@ void VTable_Routine_080E1E28(int instance,undefined4 arg1)
     if (*(int *)(vel_y + 0x18) != 0) {
       cpp_operator_delete();
     }
-    Dispatcher_Routine_08000608(vel_y);
+    CppRuntime_FreeMemory(vel_y);
   }
   p_int6 = *(int **)(instance + 8);
   if (p_int6 != (int *)0x0) {
@@ -9054,7 +9054,7 @@ void VTable_Routine_080E20C0(int *instance,uint arg1)
     cpp_operator_delete();
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -9970,7 +9970,7 @@ void VTable_Routine_080E2BB4(int instance,byte *arg1,undefined4 *arg2,int arg3,i
         }
         u_val10 = *(uint *)(instance + 8) ^ u_val9;
         if ((int)(-u_val10 | u_val10) < 0) {
-          i_val6 = HW_Routine_08007D4C(instance,*(undefined4 *)(u_val9 + 0x14));
+          i_val6 = GBA_Vram_AllocateTileBlock(instance,*(undefined4 *)(u_val9 + 0x14));
         }
         else {
           i_val6 = -1;
@@ -10025,7 +10025,7 @@ u32 VTable_Routine_080E2DC8(int instance)
 {
   undefined1 *p_uint1;
   
-  HW_Routine_08007874();
+  GBA_ObjAttr_Init();
   *(undefined4 *)(instance + 8) = 0;
   p_uint1 = (undefined1 *)runtime_malloc_aligned(0x18);
   if (p_uint1 == (undefined1 *)0x0) {
@@ -10038,7 +10038,7 @@ u32 VTable_Routine_080E2DC8(int instance)
   *(undefined4 *)(p_uint1 + 4) = 0;
   *(int *)(*(int *)(instance + 8) + 8) = *(int *)(instance + 8);
   *(int *)(*(int *)(instance + 8) + 0xc) = *(int *)(instance + 8);
-  HW_Routine_08007128(instance + 0x14);
+  GBA_PaletteManager_Init(instance + 0x14);
   *(undefined4 *)(instance + 0x1c) = 0;
   p_uint1 = (undefined1 *)runtime_malloc_aligned(0x18);
   if (p_uint1 == (undefined1 *)0x0) {
@@ -10487,7 +10487,7 @@ u32 VTable_Routine_080E3494(undefined4 *instance,int arg1)
   
   stack_buf_1c[0] = *(undefined4 *)(arg1 + 4);
   *(undefined4 *)(arg1 + 4) = 0;
-  u_val1 = Dispatcher_Routine_080005D4(0xc);
+  u_val1 = CppRuntime_OperatorNewArray(0xc);
   u_val1 = Animal_Routine_08092570(u_val1,stack_buf_1c,*(undefined4 *)(arg1 + 8),*(undefined1 *)(arg1 + 0xc)
                        );
   *instance = u_val1;
@@ -10528,7 +10528,7 @@ void VTable_Routine_080E3504(int instance,undefined4 arg1)
     HW_Routine_08007C28(i_val1 + 0x6c,*(undefined4 *)(i_val1 + 0x70));
     HW_Routine_080079E8(i_val1 + 0x6c,2);
     *(undefined4 *)(i_val1 + 4) = gRomData_080E5A28;
-    Dispatcher_Routine_08000608(i_val1);
+    CppRuntime_FreeMemory(i_val1);
   }
   i_val1 = *(int *)(instance + 0x8c);
   if (i_val1 != 0) {
@@ -10537,7 +10537,7 @@ void VTable_Routine_080E3504(int instance,undefined4 arg1)
     HW_Routine_08007184(i_val1 + 0x1c,2);
     HW_Routine_08007C28(i_val1 + 0x14,*(undefined4 *)(i_val1 + 0x18));
     HW_Routine_080079E8(i_val1 + 0x14,2);
-    Dispatcher_Routine_08000608(i_val1);
+    CppRuntime_FreeMemory(i_val1);
   }
   Animal_Routine_08050D0C(instance + 0x80,2);
   i_val1 = *(int *)(instance + 0x7c);
@@ -10632,7 +10632,7 @@ LAB_080e3bf6:
     else if (arg2 == 0xff) {
       if (*(ushort *)(arg1 + 4) < 0xac) {
         Item_SetIdAndClearQuality(temp_buf_18,*(ushort *)(arg1 + 4) - 1);
-        i_val2 = Item_Routine_0800DCB8(temp_buf_18);
+        i_val2 = Item_GetFoodName(temp_buf_18);
       }
       else {
         Item_SetQuality(facing_buffer,*(ushort *)(arg1 + 4) - 0xac);
@@ -10705,7 +10705,7 @@ void VTable_Routine_080E3D94(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E76F8;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -10972,7 +10972,7 @@ void VTable_Routine_080E4190(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E76F8;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -11252,7 +11252,7 @@ void VTable_Routine_080E44B8(undefined4 *instance,uint arg1)
   NPC_Routine_080AC85C(instance + 1,2);
   *instance = gRomData_080E61A0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -11265,7 +11265,7 @@ void VTable_Routine_080E44E4(undefined4 instance)
 {
   undefined4 u_val1;
   
-  u_val1 = Dispatcher_Routine_080005D4(0x8c);
+  u_val1 = CppRuntime_OperatorNewArray(0x8c);
   Entity_Routine_080324BC(u_val1,instance,5,0x1b,1,0,0,0);
   return;
 }
@@ -11284,7 +11284,7 @@ void VTable_Routine_080E4510(int instance,uint arg1)
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 4) + 8));
   }
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -11298,7 +11298,7 @@ void VTable_Routine_080E4544(undefined4 *instance,uint arg1)
   
   *instance = gRomData_080E61A0;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -11317,16 +11317,16 @@ void VTable_Routine_080E4564(int instance,undefined4 arg1)
   VTable_Routine_080E4860(instance + 0x888,2);
   Farm_Routine_080098AC(instance + 0x82C,2);
   Farm_Routine_080098AC(instance + 0x820,2);
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x7e8));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x7E4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x7c0));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x7BC));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x7e8));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x7E4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x7c0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x7BC));
   if (instance != -0x708) {
     p_uint3 = (undefined4 *)(instance + 0x71c);
     if ((undefined4 *)(instance + 0x708) != p_uint3) {
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while ((undefined4 *)(instance + 0x708) != p_uint3);
     }
   }
@@ -11336,7 +11336,7 @@ void VTable_Routine_080E4564(int instance,undefined4 arg1)
       p_uint4 = (undefined4 *)(instance + 0x6F4);
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while (p_uint4 != p_uint3);
     }
   }
@@ -11345,7 +11345,7 @@ void VTable_Routine_080E4564(int instance,undefined4 arg1)
     if ((undefined4 *)(instance + 0x6e0) != p_uint3) {
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while ((undefined4 *)(instance + 0x6e0) != p_uint3);
     }
   }
@@ -11355,7 +11355,7 @@ void VTable_Routine_080E4564(int instance,undefined4 arg1)
       p_uint4 = (undefined4 *)(instance + 0x62C);
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while (p_uint4 != p_uint3);
     }
   }
@@ -11364,7 +11364,7 @@ void VTable_Routine_080E4564(int instance,undefined4 arg1)
     if ((undefined4 *)(instance + 0x618) != p_uint3) {
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while ((undefined4 *)(instance + 0x618) != p_uint3);
     }
   }
@@ -11374,7 +11374,7 @@ void VTable_Routine_080E4564(int instance,undefined4 arg1)
       p_uint4 = (undefined4 *)(instance + 0x564);
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while (p_uint4 != p_uint3);
     }
   }
@@ -11383,22 +11383,22 @@ void VTable_Routine_080E4564(int instance,undefined4 arg1)
     if ((undefined4 *)(instance + 0x550) != p_uint3) {
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while ((undefined4 *)(instance + 0x550) != p_uint3);
     }
   }
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x52C));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x528));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x504));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x500));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x4DC));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x4d8));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x4B4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x4b0));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x48C));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x488));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x464));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x460));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x52C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x528));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x504));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x500));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x4DC));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x4d8));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x4B4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x4b0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x48C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x488));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x464));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x460));
   i_val1 = *(int *)(instance + 0x43C);
   if (i_val1 != 0) {
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 8) + 0xc));
@@ -11472,7 +11472,7 @@ void VTable_Routine_080E4860(int instance,uint arg1)
   HW_Routine_08007C28(instance,*(undefined4 *)(instance + 4));
   HW_Routine_080079E8(instance,2);
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -11497,46 +11497,46 @@ void VTable_Routine_080E4940(int instance,undefined4 arg1)
     p_uint6 = (undefined4 *)(instance + 0xAEC);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0xAC8));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0xAA4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0xa80));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0xA7C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0xAC8));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0xAA4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0xa80));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0xA7C));
   if (((undefined4 *)(instance + 0xA34) != (undefined4 *)0x0) &&
      (p_uint3 = (undefined4 *)(instance + 0xA34 + 8),
      (undefined4 *)(instance + 0xA34) != p_uint3)) {
     p_uint6 = (undefined4 *)(instance + 0xA34);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0xa30));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0xa30));
   if (((undefined4 *)(instance + 0x9E8) != (undefined4 *)0x0) &&
      (p_uint3 = (undefined4 *)(instance + 0x9E8 + 8),
      (undefined4 *)(instance + 0x9E8) != p_uint3)) {
     p_uint6 = (undefined4 *)(instance + 0x9E8);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x9E4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x9c0));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x9BC));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x998));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x994));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x970));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x96C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x9E4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x9c0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x9BC));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x998));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x994));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x970));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x96C));
   if (((undefined4 *)(instance + 0x924) != (undefined4 *)0x0) &&
      (p_uint3 = (undefined4 *)(instance + 0x924 + 8),
      (undefined4 *)(instance + 0x924) != p_uint3)) {
     p_uint6 = (undefined4 *)(instance + 0x924);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
   if (((undefined4 *)(instance + 0x91C) != (undefined4 *)0x0) &&
@@ -11545,20 +11545,20 @@ void VTable_Routine_080E4940(int instance,undefined4 arg1)
     p_uint6 = (undefined4 *)(instance + 0x91C);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x8F8));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x8F4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x8d0));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x8CC));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x8F8));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x8F4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x8d0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x8CC));
   if (((undefined4 *)(instance + 0x884) != (undefined4 *)0x0) &&
      (p_uint3 = (undefined4 *)(instance + 0x884 + 8),
      (undefined4 *)(instance + 0x884) != p_uint3)) {
     p_uint6 = (undefined4 *)(instance + 0x884);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
   if (((undefined4 *)(instance + 0x87C) != (undefined4 *)0x0) &&
@@ -11567,14 +11567,14 @@ void VTable_Routine_080E4940(int instance,undefined4 arg1)
     p_uint6 = (undefined4 *)(instance + 0x87C);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
   if ((instance != -0x7c8) &&
      (p_uint3 = (undefined4 *)(instance + 0x7dc), (undefined4 *)(instance + 0x7c8) != p_uint3)) {
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while ((undefined4 *)(instance + 0x7c8) != p_uint3);
   }
   if (((undefined4 *)(instance + 0x7B4) != (undefined4 *)0x0) &&
@@ -11583,7 +11583,7 @@ void VTable_Routine_080E4940(int instance,undefined4 arg1)
     p_uint6 = (undefined4 *)(instance + 0x7B4);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
   if (((undefined4 *)(instance + 0x7AC) != (undefined4 *)0x0) &&
@@ -11592,7 +11592,7 @@ void VTable_Routine_080E4940(int instance,undefined4 arg1)
     p_uint6 = (undefined4 *)(instance + 0x7AC);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
   if (((undefined4 *)(instance + 0x7A4) != (undefined4 *)0x0) &&
@@ -11601,7 +11601,7 @@ void VTable_Routine_080E4940(int instance,undefined4 arg1)
     p_uint6 = (undefined4 *)(instance + 0x7A4);
     do {
       p_uint3 = p_uint3 + -1;
-      Dispatcher_Routine_08000608(*p_uint3);
+      CppRuntime_FreeMemory(*p_uint3);
     } while (p_uint6 != p_uint3);
   }
   i_val1 = *(int *)(instance + 0x7a0);
@@ -11689,20 +11689,20 @@ void VTable_Routine_080E4D50(int instance,undefined4 arg1)
   VTable_Routine_080E4F34(instance + 0x5b0,2);
   Farm_Routine_080098AC(instance + 0x594,2);
   Farm_Routine_080098AC(instance + 0x588,2);
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x554));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x550));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x52C));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x528));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x504));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x500));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x4DC));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x4d8));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x4B4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x4b0));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x48C));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x488));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x464));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x460));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x554));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x550));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x52C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x528));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x504));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x500));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x4DC));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x4d8));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x4B4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x4b0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x48C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x488));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x464));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x460));
   i_val1 = *(int *)(instance + 0x43C);
   if (i_val1 != 0) {
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 8) + 0xc));
@@ -11772,7 +11772,7 @@ void VTable_Routine_080E4F34(int instance,uint arg1)
   HW_Routine_08007C28(instance,*(undefined4 *)(instance + 4));
   HW_Routine_080079E8(instance,2);
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -11791,48 +11791,48 @@ void VTable_Routine_080E4FF0(int instance,undefined4 arg1)
   VTable_Routine_080E5324(instance + 0x83C,2);
   Farm_Routine_080098AC(instance + 0x830,2);
   Farm_Routine_080098AC(instance + 0x824,2);
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x7EC));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x7e8));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x7C4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x7c0));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x79C));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x798));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x754));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x750));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x72C));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x728));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x7EC));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x7e8));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x7C4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x7c0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x79C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x798));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x754));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x750));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x72C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x728));
   if ((undefined4 *)(instance + 0x6A4) != (undefined4 *)0x0) {
     p_uint3 = (undefined4 *)(instance + 0x6A4 + 100);
     if ((undefined4 *)(instance + 0x6A4) != p_uint3) {
       p_uint4 = (undefined4 *)(instance + 0x6A4);
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while (p_uint4 != p_uint3);
     }
   }
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x6a0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x6a0));
   if ((undefined4 *)(instance + 0x61C) != (undefined4 *)0x0) {
     p_uint3 = (undefined4 *)(instance + 0x61C + 100);
     if ((undefined4 *)(instance + 0x61C) != p_uint3) {
       p_uint4 = (undefined4 *)(instance + 0x61C);
       do {
         p_uint3 = p_uint3 + -1;
-        Dispatcher_Routine_08000608(*p_uint3);
+        CppRuntime_FreeMemory(*p_uint3);
       } while (p_uint4 != p_uint3);
     }
   }
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x618));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x5F4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x5f0));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x5CC));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x5c8));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x5A4));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x5a0));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x57C));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x578));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x554));
-  Dispatcher_Routine_08000608(*(undefined4 *)(instance + 0x550));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x618));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x5F4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x5f0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x5CC));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x5c8));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x5A4));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x5a0));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x57C));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x578));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x554));
+  CppRuntime_FreeMemory(*(undefined4 *)(instance + 0x550));
   i_val1 = *(int *)(instance + 0x544);
   if (i_val1 != 0) {
     _call_via_r2(i_val1,3,*(undefined4 *)(*(int *)(i_val1 + 8) + 0xc));
@@ -11887,29 +11887,29 @@ u32 VTable_Routine_080E52A0(int instance)
 
 {
   
-  HW_Routine_08007874();
+  GBA_ObjAttr_Init();
   *(undefined4 *)(instance + 4) = 0;
-  HW_Routine_08007874(instance + 8);
+  GBA_ObjAttr_Init(instance + 8);
   *(undefined4 *)(instance + 0xc) = 0;
-  HW_Routine_08007874(instance + 0x10);
+  GBA_ObjAttr_Init(instance + 0x10);
   *(undefined4 *)(instance + 0x14) = 0;
-  HW_Routine_08007874(instance + 0x18);
+  GBA_ObjAttr_Init(instance + 0x18);
   *(undefined4 *)(instance + 0x1c) = 0;
-  HW_Routine_08007874(instance + 0x20);
+  GBA_ObjAttr_Init(instance + 0x20);
   *(undefined4 *)(instance + 0x24) = 0;
-  HW_Routine_08007874(instance + 0x28);
+  GBA_ObjAttr_Init(instance + 0x28);
   *(undefined4 *)(instance + 0x2c) = 0;
-  HW_Routine_08007874(instance + 0x30);
+  GBA_ObjAttr_Init(instance + 0x30);
   *(undefined4 *)(instance + 0x34) = 0;
-  HW_Routine_08007874(instance + 0x38);
+  GBA_ObjAttr_Init(instance + 0x38);
   *(undefined4 *)(instance + 0x3c) = 0;
-  HW_Routine_08007874(instance + 0x40);
+  GBA_ObjAttr_Init(instance + 0x40);
   *(undefined4 *)(instance + 0x44) = 0;
-  HW_Routine_08007874(instance + 0x48);
+  GBA_ObjAttr_Init(instance + 0x48);
   *(undefined4 *)(instance + 0x4c) = 0;
-  HW_Routine_08007874(instance + 0x50);
+  GBA_ObjAttr_Init(instance + 0x50);
   *(undefined4 *)(instance + 0x54) = 0;
-  HW_Routine_08007874(instance + 0x58);
+  GBA_ObjAttr_Init(instance + 0x58);
   *(undefined4 *)(instance + 0x5c) = 0;
   return instance;
 }
@@ -11946,7 +11946,7 @@ void VTable_Routine_080E5324(int instance,uint arg1)
   HW_Routine_08007C28(instance,*(undefined4 *)(instance + 4));
   HW_Routine_080079E8(instance,2);
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -12214,7 +12214,7 @@ void VTable_Routine_080E581C(undefined4 *instance,uint arg1)
   instance[1] = gRomData_080E8594;
   *gIWRAM_030414 = *instance;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }
@@ -12229,7 +12229,7 @@ void VTable_Routine_080E5844(undefined4 *instance,uint arg1)
   instance[1] = gRomData_080E8594;
   *gIWRAM_030414 = *instance;
   if ((arg1 & 1) != 0) {
-    Dispatcher_Routine_08000608(instance);
+    CppRuntime_FreeMemory(instance);
   }
   return;
 }

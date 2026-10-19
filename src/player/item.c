@@ -1017,9 +1017,9 @@ void Product_GetIconId(int arg_1,uint arg_2)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DCB8 @ 0x0800DCB8
+// Function: Item_GetFoodName @ 0x0800DCB8
 // =============================================================================
-u32 Item_Routine_0800DCB8(byte *item)
+u32 Item_GetFoodName(byte *item)
 
 {
   undefined4 u_val1;
@@ -1032,9 +1032,9 @@ u32 Item_Routine_0800DCB8(byte *item)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DCE0 @ 0x0800DCE0
+// Function: Item_GetFoodBasePrice @ 0x0800DCE0
 // =============================================================================
-u32 Item_Routine_0800DCE0(byte *item)
+u32 Item_GetFoodBasePrice(byte *item)
 
 {
   uint u_val1;
@@ -1087,9 +1087,9 @@ undefined8 Item_GetFoodFatigueEffect(byte *food_item)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DD6C @ 0x0800DD6C
+// Function: Item_GetFoodStaminaModifier @ 0x0800DD6C
 // =============================================================================
-u32 Item_Routine_0800DD6C(byte *item)
+u32 Item_GetFoodStaminaModifier(byte *item)
 
 {
   int i_val1;
@@ -1104,9 +1104,9 @@ u32 Item_Routine_0800DD6C(byte *item)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DD8C @ 0x0800DD8C
+// Function: Item_GetFoodFatigueModifier @ 0x0800DD8C
 // =============================================================================
-u32 Item_Routine_0800DD8C(byte *item)
+u32 Item_GetFoodFatigueModifier(byte *item)
 
 {
   int i_val1;
@@ -1138,9 +1138,9 @@ u32 Item_GetFoodIsDrinkOrLiquid(byte *item)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DDD4 @ 0x0800DDD4
+// Function: Item_GetFoodDescription @ 0x0800DDD4
 // =============================================================================
-u32 Item_Routine_0800DDD4(byte *item)
+u32 Item_GetFoodDescription(byte *item)
 
 {
   int i_val1;
@@ -1154,9 +1154,9 @@ u32 Item_Routine_0800DDD4(byte *item)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DE0C @ 0x0800DE0C
+// Function: Item_GetFoodIconGraphic @ 0x0800DE0C
 // =============================================================================
-void Item_Routine_0800DE0C(byte *item,char slot,char quantity)
+void Item_GetFoodIconGraphic(byte *item,char slot,char quantity)
 
 {
   int i_val1;
@@ -1180,9 +1180,9 @@ void Item_Routine_0800DE0C(byte *item,char slot,char quantity)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DE68 @ 0x0800DE68
+// Function: Item_ResetSlotData @ 0x0800DE68
 // =============================================================================
-u32 Item_Routine_0800DE68(int item)
+u32 Item_ResetSlotData(int item)
 
 {
   
@@ -1192,9 +1192,9 @@ u32 Item_Routine_0800DE68(int item)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DE80 @ 0x0800DE80
+// Function: Item_GetToolTier @ 0x0800DE80
 // =============================================================================
-u32 Item_Routine_0800DE80(int item,undefined4 slot,uint quantity)
+u32 Item_GetToolTier(int item,undefined4 slot,uint quantity)
 
 {
   undefined1 u_val1;
@@ -1222,9 +1222,9 @@ u32 Item_Routine_0800DE80(int item,undefined4 slot,uint quantity)
 }
 
 // =============================================================================
-// Function: Item_Routine_0800DEB8 @ 0x0800DEB8
+// Function: Item_GetToolExperienceRequired @ 0x0800DEB8
 // =============================================================================
-u32 Item_Routine_0800DEB8(undefined4 item,int slot)
+u32 Item_GetToolExperienceRequired(undefined4 item,int slot)
 
 {
   
@@ -1568,7 +1568,7 @@ u32 Item_Routine_0800E1C0(byte *item)
     }
     else {
       Item_SetIdAndClearQuality(temp_coords,*(undefined1 *)((int)p_int2 + 2));
-      u_val1 = Item_Routine_0800DCB8(temp_coords);
+      u_val1 = Item_GetFoodName(temp_coords);
     }
   }
   return u_val1;
@@ -1593,7 +1593,7 @@ u32 Item_Routine_0800E214(byte *item)
     }
     else {
       Item_SetIdAndClearQuality(temp_coords,*(undefined1 *)((int)p_int2 + 2));
-      u_val1 = Item_Routine_0800DCE0(temp_coords);
+      u_val1 = Item_GetFoodBasePrice(temp_coords);
     }
     u_val1 = u_val1 & 0xffff;
   }

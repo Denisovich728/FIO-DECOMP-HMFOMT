@@ -238,30 +238,30 @@ void Interrupt_DisableFlag(undefined2 arg_1)
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_08000584 @ 0x08000584
+// Function: CppRuntime_OperatorNew @ 0x08000584
 // =============================================================================
-void Dispatcher_Routine_08000584(void)
+void CppRuntime_OperatorNew(void)
 
 {
-  Dispatcher_Routine_080005D4();
+  CppRuntime_OperatorNewArray();
   return;
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_08000590 @ 0x08000590
+// Function: CppRuntime_OperatorDelete @ 0x08000590
 // =============================================================================
-void Dispatcher_Routine_08000590(void)
+void CppRuntime_OperatorDelete(void)
 
 {
   
-  Dispatcher_Routine_08000608();
+  CppRuntime_FreeMemory();
   return;
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_0800059C @ 0x0800059C
+// Function: CppRuntime_AllocateMemory @ 0x0800059C
 // =============================================================================
-void Dispatcher_Routine_0800059C(undefined4 arg_1)
+void CppRuntime_AllocateMemory(undefined4 arg_1)
 
 {
   int i_val1;
@@ -281,14 +281,14 @@ LAB_080005be:
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_080005D4 @ 0x080005D4
+// Function: CppRuntime_OperatorNewArray @ 0x080005D4
 // =============================================================================
-u32 Dispatcher_Routine_080005D4(void)
+u32 CppRuntime_OperatorNewArray(void)
 
 {
   int i_val1;
   
-  i_val1 = Dispatcher_Routine_0800059C();
+  i_val1 = CppRuntime_AllocateMemory();
   if (i_val1 == 0) {
     i_val1 = 0;
   }
@@ -296,39 +296,39 @@ u32 Dispatcher_Routine_080005D4(void)
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_080005E4 @ 0x080005E4
+// Function: CppRuntime_OperatorNewArray_Stub @ 0x080005E4
 // =============================================================================
-void Dispatcher_Routine_080005E4(void)
+void CppRuntime_OperatorNewArray_Stub(void)
 
 {
-  Dispatcher_Routine_080005D4();
+  CppRuntime_OperatorNewArray();
   return;
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_080005F0 @ 0x080005F0
+// Function: CppRuntime_AllocateMemory_NoThrow @ 0x080005F0
 // =============================================================================
-void Dispatcher_Routine_080005F0(void)
+void CppRuntime_AllocateMemory_NoThrow(void)
 
 {
-  Dispatcher_Routine_0800059C();
+  CppRuntime_AllocateMemory();
   return;
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_080005FC @ 0x080005FC
+// Function: CppRuntime_OperatorNewArray_NoThrow @ 0x080005FC
 // =============================================================================
-void Dispatcher_Routine_080005FC(void)
+void CppRuntime_OperatorNewArray_NoThrow(void)
 
 {
-  Dispatcher_Routine_080005F0();
+  CppRuntime_AllocateMemory_NoThrow();
   return;
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_08000608 @ 0x08000608
+// Function: CppRuntime_FreeMemory @ 0x08000608
 // =============================================================================
-void Dispatcher_Routine_08000608(void)
+void CppRuntime_FreeMemory(void)
 
 {
   
@@ -337,20 +337,20 @@ void Dispatcher_Routine_08000608(void)
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_08000614 @ 0x08000614
+// Function: CppRuntime_OperatorDeleteArray @ 0x08000614
 // =============================================================================
-void Dispatcher_Routine_08000614(void)
+void CppRuntime_OperatorDeleteArray(void)
 
 {
   
-  Dispatcher_Routine_08000608();
+  CppRuntime_FreeMemory();
   return;
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_08000620 @ 0x08000620
+// Function: CppRuntime_FreeMemory_NoThrow @ 0x08000620
 // =============================================================================
-void Dispatcher_Routine_08000620(void)
+void CppRuntime_FreeMemory_NoThrow(void)
 
 {
   
@@ -359,13 +359,13 @@ void Dispatcher_Routine_08000620(void)
 }
 
 // =============================================================================
-// Function: Dispatcher_Routine_0800062C @ 0x0800062C
+// Function: CppRuntime_OperatorDeleteArray_NoThrow @ 0x0800062C
 // =============================================================================
-void Dispatcher_Routine_0800062C(void)
+void CppRuntime_OperatorDeleteArray_NoThrow(void)
 
 {
   
-  Dispatcher_Routine_08000620();
+  CppRuntime_FreeMemory_NoThrow();
   return;
 }
 
@@ -533,7 +533,7 @@ void SramProxy_VerifyBufferParity(undefined4 *arg_1,uint arg_2)
   
   *arg_1 = gRomData_080E59CC;
   if ((arg_2 & 1) != 0) {
-    Dispatcher_Routine_08000608(arg_1);
+    CppRuntime_FreeMemory(arg_1);
   }
   return;
 }

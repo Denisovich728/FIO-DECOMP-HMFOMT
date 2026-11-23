@@ -2,7 +2,7 @@
  * MODULE : 02_graphics_tilemap_oam.c
  * RANGE  : 0x08005000 .. 0x08012000 (49,860 bytes, 556 functions)
  * PURPOSE: Motor grafico 2D, descompresion LZ77/RL, tilesets, paletas y OAM
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 454 | Inline-CFG ASM: 102
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 457 | Inline-CFG ASM: 99
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -1255,50 +1255,43 @@ void func_080059D0(u32 *arg0,u32 arg1) {
   func_080007EC(arg0,arg1);
 }
 
-/* --- func_08005A00 @ 0x08005A00 (60B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_08005A00 @ 0x08005A00 (60B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08005A00 @ 0x08005A00 (60 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r2)
- * Fields : +0x00:u32(RW), +0x04:u32(R), +0x08:u32(R)
- * Callees: func_080050F8, func_080D3914
- * CFG Structure:
- *   L_08005A00: call func_080050F8(); if (==) goto L_08005A30
- *   L_08005A30: return
- * ========================================================================== */
-extern void func_080050F8(void);
-extern void func_080D3914(void);
-int func_08005A00(void) {
-    u32 sp0, sp1, sp2;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2));
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	ldr r1, [r1, #4]\n"
-        "	mov r0, sp\n"
-        "	bl func_080050F8\n"
-        "	ldr r2, [sp]\n"
-        "	mov r0, sp\n"
-        "	str r0, [sp, #4]\n"
-        "	str r2, [sp, #8]\n"
-        "	add r1, r0, #0\n"
-        "	mov r0, #0\n"
-        "	str r0, [r1]\n"
-        "	str r2, [r4]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_08005A30\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_08005A30:\n"
-        "	add r0, r4, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct In { int f0; int f4; };
+extern "C" AutoPtr<V1> func_080050F8(int);
+extern "C" AutoPtr<V0> func_08005A00(In *in) {
+    return func_080050F8(in->f4);
 }
 
 /* --- func_08005A3C @ 0x08005A3C (16B) [PURE-C | agbcc_O2] --- */
@@ -4501,50 +4494,43 @@ void func_080070A4(u32 *arg0,u32 arg1) {
   func_080007EC(arg0,arg1);
 }
 
-/* --- func_080070D4 @ 0x080070D4 (60B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080070D4 @ 0x080070D4 (60B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080070D4 @ 0x080070D4 (60 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r2)
- * Fields : +0x00:u32(RW), +0x04:u32(R), +0x08:u32(R)
- * Callees: func_08005B68, func_080D3914
- * CFG Structure:
- *   L_080070D4: call func_08005B68(); if (==) goto L_08007104
- *   L_08007104: return
- * ========================================================================== */
-extern void func_08005B68(void);
-extern void func_080D3914(void);
-int func_080070D4(void) {
-    u32 sp0, sp1, sp2;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2));
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	ldr r1, [r1, #4]\n"
-        "	mov r0, sp\n"
-        "	bl func_08005B68\n"
-        "	ldr r2, [sp]\n"
-        "	mov r0, sp\n"
-        "	str r0, [sp, #4]\n"
-        "	str r2, [sp, #8]\n"
-        "	add r1, r0, #0\n"
-        "	mov r0, #0\n"
-        "	str r0, [r1]\n"
-        "	str r2, [r4]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_08007104\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_08007104:\n"
-        "	add r0, r4, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct In { int f0; int f4; };
+extern "C" AutoPtr<V1> func_08005B68(int);
+extern "C" AutoPtr<V0> func_080070D4(In *in) {
+    return func_08005B68(in->f4);
 }
 
 /* --- func_08007110 @ 0x08007110 (12B) [PURE-C | agbcc_O2] --- */
@@ -9383,48 +9369,15 @@ void func_080092FC(u8 *arg0, u16 arg1) {
     *(u16 *)(arg0 + 12) = arg1;
 }
 
-/* --- func_08009300 @ 0x08009300 (36B) [CFG-ASM (hermes:reg-zero-clobber+clean-c89) | agbcc_O1] --- */
-#define TRUE 1
-#define FALSE 0
+/* --- func_08009300 @ 0x08009300 (36B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
 #define true 1
 #define false 0
-#define NULL ((void *)0)
-#define CONCAT11(a, b) ((u16)(((u16)(u8)(a) << 8) | (u8)(b)))
-#define CONCAT12(a, b) ((u32)(((u32)(u8)(a) << 16) | (u16)(b)))
-#define CONCAT13(a, b) ((u32)(((u32)(u8)(a) << 24) | ((u32)(b) & 0xFFFFFFu)))
-#define CONCAT21(a, b) ((u32)(((u32)(u16)(a) << 8) | (u8)(b)))
-#define CONCAT22(a, b) ((u32)(((u32)(u16)(a) << 16) | (u16)(b)))
-#define CONCAT31(a, b) ((u32)(((u32)(a) << 8) | (u8)(b)))
-#define CONCAT44(a, b) ((u32)(b))
-#define SUB41(a, b) ((u8)((u32)(a) >> ((b) * 8)))
-#define SUB42(a, b) ((u16)((u32)(a) >> ((b) * 8)))
-#define SUB84(a, b) ((u32)(a))
-#define ZEXT14(a) ((u32)(u8)(a))
-#define ZEXT24(a) ((u32)(u16)(a))
-#define ZEXT48(a) ((u32)(a))
-#define SEXT14(a) ((s32)(s8)(a))
-#define SEXT24(a) ((s32)(s16)(a))
-#define SEXT48(a) ((s32)(a))
-#define CARRY4(a, b) ((u32)(a) > (0xFFFFFFFFu - (u32)(b)))
-#define SCARRY4(a, b) (((s32)((u32)(a) + (u32)(b)) < 0) != ((s32)(a) < 0) && ((s32)(a) < 0) == ((s32)(b) < 0))
-#define SBORROW4(a, b) (((s32)((u32)(a) - (u32)(b)) < 0) != ((s32)(a) < 0) && ((s32)(a) < 0) != ((s32)(b) < 0))
-#define BADSPACEBASE 0
-extern u32 func_080005D4();
-u32 func_08009300(int *arg0, u32 arg1) {
-  u32 *mem_ptr;
-  register u32 z2 asm("r2");
-  register u32 z1 asm("r1");
-  mem_ptr = (u32 *)func_080005D4(0x10);
-  *mem_ptr = arg1;
-  z2 = 0;
-  z1 = 0;
-  *(u16 *)(mem_ptr + 1) = z1;
-  mem_ptr[2] = z1;
-  *(u8 *)(mem_ptr + 3) = z2;
-  *(u16 *)((int)mem_ptr + 0xe) = z1;
-  *arg0 = (int)mem_ptr;
-  return (u32)arg0;
-}
+#endif
+#define NULL 0
+
+struct Node { u32 a; u16 b; u32 c; u8 d; u16 e; Node(u32 x) : a(x), b(0), c(0), d(0), e(0) {} }; extern "C" Node **func_08009300(Node **out, u32 x) { *out = new Node(x); return out; }
 
 /* --- func_08009324 @ 0x08009324 (32B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1

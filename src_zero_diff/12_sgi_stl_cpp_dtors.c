@@ -2,7 +2,7 @@
  * MODULE : 12_sgi_stl_cpp_dtors.c
  * RANGE  : 0x080DB000 .. 0x080E6000 (43,008 bytes, 383 functions)
  * PURPOSE: Plantillas C++ SGI STL (_Rb_tree, _List_base, std::__find) y destructores virtuales
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 236 | Inline-CFG ASM: 147
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 243 | Inline-CFG ASM: 140
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -278,57 +278,47 @@ void func_080DB314(void) {
   func_0800080C();
 }
 
-/* --- func_080DB320 @ 0x080DB320 (76B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080DB320 @ 0x080DB320 (76B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080DB320 @ 0x080DB320 (76 bytes)
- * Role   : C++ Factory / Constructor with operator new (func_080005D4) [vtable: 0x080E5E84]
- * Fields : +0x00:u32(RW), +0x04:u32(RW), +0x08:u32(RW)
- * Callees: func_080005D4, func_080D3914
- * CFG Structure:
- *   L_080DB320: call func_080005D4(); if (==) goto L_080DB35E
- *   L_080DB35E: return
- * ========================================================================== */
-extern void func_080005D4(void);
-extern void func_080D3914(void);
-int func_080DB320(void) {
-    u32 sp0, sp1, sp2, sp3;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2), "m"(sp3));
-    __asm__ volatile(
-        "	add r6, r0, #0\n"
-        "	add r4, r1, #0\n"
-        "	mov r0, #0xc\n"
-        "	bl func_080005D4\n"
-        "	ldr r5, [r4, #4]\n"
-        "	mov r2, #0\n"
-        "	str r2, [r4, #4]\n"
-        "	ldr r3, [r4, #8]\n"
-        "	ldr r1, =0x080E5E84\n"
-        "	str r1, [r0]\n"
-        "	str r2, [sp, #4]\n"
-        "	str r5, [r0, #4]\n"
-        "	str r3, [r0, #8]\n"
-        "	str r0, [sp]\n"
-        "	mov r1, sp\n"
-        "	str r1, [sp, #8]\n"
-        "	str r0, [sp, #0xc]\n"
-        "	str r2, [r1]\n"
-        "	str r0, [r6]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080DB35E\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080DB35E:\n"
-        "	add r0, r6, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct C_080E5E84 : public V0 {
+    AutoPtr<V0> f4;
+    int f8;
+    C_080E5E84(AutoPtr<V0> a, int b) : f4(a), f8(b) {}
+};
+struct In { int vtbl; AutoPtr<V0> f4; int f8; };
+extern "C" AutoPtr<V0> func_080DB320(In *in) {
+    return AutoPtr<C_080E5E84>(new C_080E5E84(in->f4, in->f8));
 }
 
 /* --- func_080DB36C @ 0x080DB36C (40B) [PURE-C | agbcc_O2] --- */
@@ -487,63 +477,49 @@ void func_080DB44C(int arg0,u32 arg1) {
   func_0800080C(arg0,arg1);
 }
 
-/* --- func_080DB474 @ 0x080DB474 (84B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080DB474 @ 0x080DB474 (84B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080DB474 @ 0x080DB474 (84 bytes)
- * Role   : C++ Factory / Constructor with operator new (func_080005D4) [vtable: 0x080E82C8]
- * Fields : +0x00:u32(RW), +0x04:u32(RW), +0x08:u32(RW), +0x0C:u32(RW), +0x10:u8(RW)
- * Callees: func_080005D4, func_080D3914
- * CFG Structure:
- *   L_080DB474: call func_080005D4(); if (==) goto L_080DB4BA
- *   L_080DB4BA: return
- * ========================================================================== */
-extern void func_080005D4(void);
-extern void func_080D3914(void);
-int func_080DB474(void) {
-    u32 sp0, sp1, sp2, sp3;
-    int r7_var;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2), "m"(sp3));
-    __asm__ volatile(
-        "	add r7, r0, #0\n"
-        "	add r4, r1, #0\n"
-        "	mov r0, #0x14\n"
-        "	bl func_080005D4\n"
-        "	ldr r5, [r4, #4]\n"
-        "	mov r2, #0\n"
-        "	str r2, [r4, #4]\n"
-        "	ldrb r6, [r4, #0x10]\n"
-        "	ldr r3, [r4, #8]\n"
-        "	ldr r4, [r4, #0xc]\n"
-        "	ldr r1, =0x080E82C8\n"
-        "	str r1, [r0]\n"
-        "	str r2, [sp, #4]\n"
-        "	str r5, [r0, #4]\n"
-        "	str r3, [r0, #8]\n"
-        "	str r4, [r0, #0xc]\n"
-        "	strb r6, [r0, #0x10]\n"
-        "	str r0, [sp]\n"
-        "	mov r1, sp\n"
-        "	str r1, [sp, #8]\n"
-        "	str r0, [sp, #0xc]\n"
-        "	str r2, [r1]\n"
-        "	str r0, [r7]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080DB4BA\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080DB4BA:\n"
-        "	add r0, r7, #0\n"
-        : "=l"(r7_var), "=r"(__ret) : : "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
-    __asm__ volatile("" : "+l"(r7_var), "+l"(r7_var), "+l"(r7_var));
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct C_080E82C8 : public V0 {
+    AutoPtr<V0> f4;
+    int f8;
+    int fc;
+    u8 f10;
+    C_080E82C8(AutoPtr<V0> a, int b, int c, u8 d) : f4(a), f8(b), fc(c), f10(d) {}
+};
+struct In { int vtbl; AutoPtr<V0> f4; int f8; int fc; u8 f10; };
+extern "C" AutoPtr<V0> func_080DB474(In *in) {
+    return AutoPtr<C_080E82C8>(new C_080E82C8(in->f4, in->f8, in->fc, in->f10));
 }
 
 /* --- func_080DB4C8 @ 0x080DB4C8 (40B) [PURE-C | agbcc_O2] --- */
@@ -563,53 +539,48 @@ void func_080DB4C8(int arg0,u32 arg1) {
   func_0800080C(arg0,arg1);
 }
 
-/* --- func_080DB4F0 @ 0x080DB4F0 (80B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080DB4F0 @ 0x080DB4F0 (80B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern int func_080005D4();
-extern void func_080D3914();
-int func_080DB4F0(int param_1, int param_2) {
-    u32 sp0, sp1, sp2, sp3;
-    register int p1 asm("r6");
-    register int r5 asm("r5");
-    register int p2 asm("r4");
-    register int ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2), "m"(sp3));
-    __asm__ volatile(
-        "add %0, r0, #0\n\t"
-        "add %2, r1, #0\n\t"
-        "mov r0, #0x10\n\t"
-        "bl func_080005D4\n\t"
-        "ldr %1, [%2, #4]\n\t"
-        "mov r2, #0\n\t"
-        "str r2, [%2, #4]\n\t"
-        "ldr r3, [%2, #8]\n\t"
-        "ldr %2, [%2, #0xc]\n\t"
-        "ldr r1, =0x080E8288\n\t"
-        "str r1, [r0]\n\t"
-        "str r2, [sp, #4]\n\t"
-        "str %1, [r0, #4]\n\t"
-        "str r3, [r0, #8]\n\t"
-        "str %2, [r0, #0xc]\n\t"
-        "str r0, [sp]\n\t"
-        "mov r1, sp\n\t"
-        "str r1, [sp, #8]\n\t"
-        "str r0, [sp, #0xc]\n\t"
-        "str r2, [r1]\n\t"
-        "str r0, [%0]\n\t"
-        "ldr r1, [sp]\n\t"
-        "cmp r1, #0\n\t"
-        "beq _end_DB4F0\n\t"
-        "ldr r0, [r1]\n\t"
-        "ldr r2, [r0, #8]\n\t"
-        "add r0, r1, #0\n\t"
-        "mov r1, #3\n\t"
-        "bl func_080D3914\n"
-        "_end_DB4F0:\n\t"
-        "add r0, %0, #0"
-        : "=r"(p1), "=r"(r5), "=r"(p2), "=r"(ret) : : "r1", "r2", "r3", "lr", "memory"
-    );
-    return ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct C_080E8288 : public V0 {
+    AutoPtr<V0> f4;
+    int f8;
+    int fc;
+    C_080E8288(AutoPtr<V0> a, int b, int c) : f4(a), f8(b), fc(c) {}
+};
+struct In { int vtbl; AutoPtr<V0> f4; int f8; int fc; };
+extern "C" AutoPtr<V0> func_080DB4F0(In *in) {
+    return AutoPtr<C_080E8288>(new C_080E8288(in->f4, in->f8, in->fc));
 }
 
 /* --- func_080DB540 @ 0x080DB540 (40B) [PURE-C | agbcc_O2] --- */
@@ -629,59 +600,48 @@ void func_080DB540(int arg0,u32 arg1) {
   func_0800080C(arg0,arg1);
 }
 
-/* --- func_080DB568 @ 0x080DB568 (80B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080DB568 @ 0x080DB568 (80B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080DB568 @ 0x080DB568 (80 bytes)
- * Role   : C++ Factory / Constructor with operator new (func_080005D4) [vtable: 0x080E8298]
- * Fields : +0x00:u32(RW), +0x04:u32(RW), +0x08:u32(RW), +0x0C:u32(RW)
- * Callees: func_080005D4, func_080D3914
- * CFG Structure:
- *   L_080DB568: call func_080005D4(); if (==) goto L_080DB5AA
- *   L_080DB5AA: return
- * ========================================================================== */
-extern void func_080005D4(void);
-extern void func_080D3914(void);
-int func_080DB568(void) {
-    u32 sp0, sp1, sp2, sp3;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2), "m"(sp3));
-    __asm__ volatile(
-        "	add r6, r0, #0\n"
-        "	add r4, r1, #0\n"
-        "	mov r0, #0x10\n"
-        "	bl func_080005D4\n"
-        "	ldr r5, [r4, #4]\n"
-        "	mov r2, #0\n"
-        "	str r2, [r4, #4]\n"
-        "	ldr r3, [r4, #8]\n"
-        "	ldr r4, [r4, #0xc]\n"
-        "	ldr r1, =0x080E8298\n"
-        "	str r1, [r0]\n"
-        "	str r2, [sp, #4]\n"
-        "	str r5, [r0, #4]\n"
-        "	str r3, [r0, #8]\n"
-        "	str r4, [r0, #0xc]\n"
-        "	str r0, [sp]\n"
-        "	mov r1, sp\n"
-        "	str r1, [sp, #8]\n"
-        "	str r0, [sp, #0xc]\n"
-        "	str r2, [r1]\n"
-        "	str r0, [r6]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080DB5AA\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080DB5AA:\n"
-        "	add r0, r6, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct C_080E8298 : public V0 {
+    AutoPtr<V0> f4;
+    int f8;
+    int fc;
+    C_080E8298(AutoPtr<V0> a, int b, int c) : f4(a), f8(b), fc(c) {}
+};
+struct In { int vtbl; AutoPtr<V0> f4; int f8; int fc; };
+extern "C" AutoPtr<V0> func_080DB568(In *in) {
+    return AutoPtr<C_080E8298>(new C_080E8298(in->f4, in->f8, in->fc));
 }
 
 /* --- func_080DB5B8 @ 0x080DB5B8 (40B) [PURE-C | agbcc_O2] --- */
@@ -701,53 +661,48 @@ void func_080DB5B8(int arg0,u32 arg1) {
   func_0800080C(arg0,arg1);
 }
 
-/* --- func_080DB5E0 @ 0x080DB5E0 (80B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080DB5E0 @ 0x080DB5E0 (80B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern int func_080005D4();
-extern void func_080D3914();
-int func_080DB5E0(int param_1, int param_2) {
-    u32 sp0, sp1, sp2, sp3;
-    register int p1 asm("r6");
-    register int r5 asm("r5");
-    register int p2 asm("r4");
-    register int ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2), "m"(sp3));
-    __asm__ volatile(
-        "add %0, r0, #0\n\t"
-        "add %2, r1, #0\n\t"
-        "mov r0, #0x10\n\t"
-        "bl func_080005D4\n\t"
-        "ldr %1, [%2, #4]\n\t"
-        "mov r2, #0\n\t"
-        "str r2, [%2, #4]\n\t"
-        "ldr r3, [%2, #8]\n\t"
-        "ldr %2, [%2, #0xc]\n\t"
-        "ldr r1, =0x080E82A8\n\t"
-        "str r1, [r0]\n\t"
-        "str r2, [sp, #4]\n\t"
-        "str %1, [r0, #4]\n\t"
-        "str r3, [r0, #8]\n\t"
-        "str %2, [r0, #0xc]\n\t"
-        "str r0, [sp]\n\t"
-        "mov r1, sp\n\t"
-        "str r1, [sp, #8]\n\t"
-        "str r0, [sp, #0xc]\n\t"
-        "str r2, [r1]\n\t"
-        "str r0, [%0]\n\t"
-        "ldr r1, [sp]\n\t"
-        "cmp r1, #0\n\t"
-        "beq _end_DB5E0\n\t"
-        "ldr r0, [r1]\n\t"
-        "ldr r2, [r0, #8]\n\t"
-        "add r0, r1, #0\n\t"
-        "mov r1, #3\n\t"
-        "bl func_080D3914\n"
-        "_end_DB5E0:\n\t"
-        "add r0, %0, #0"
-        : "=r"(p1), "=r"(r5), "=r"(p2), "=r"(ret) : : "r1", "r2", "r3", "lr", "memory"
-    );
-    return ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct C_080E82A8 : public V0 {
+    AutoPtr<V0> f4;
+    int f8;
+    int fc;
+    C_080E82A8(AutoPtr<V0> a, int b, int c) : f4(a), f8(b), fc(c) {}
+};
+struct In { int vtbl; AutoPtr<V0> f4; int f8; int fc; };
+extern "C" AutoPtr<V0> func_080DB5E0(In *in) {
+    return AutoPtr<C_080E82A8>(new C_080E82A8(in->f4, in->f8, in->fc));
 }
 
 /* --- func_080DB630 @ 0x080DB630 (40B) [PURE-C | agbcc_O2] --- */
@@ -767,57 +722,47 @@ void func_080DB630(int arg0,u32 arg1) {
   func_0800080C(arg0,arg1);
 }
 
-/* --- func_080DB658 @ 0x080DB658 (76B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080DB658 @ 0x080DB658 (76B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080DB658 @ 0x080DB658 (76 bytes)
- * Role   : C++ Factory / Constructor with operator new (func_080005D4) [vtable: 0x080E82B8]
- * Fields : +0x00:u32(RW), +0x04:u32(RW), +0x08:u32(RW)
- * Callees: func_080005D4, func_080D3914
- * CFG Structure:
- *   L_080DB658: call func_080005D4(); if (==) goto L_080DB696
- *   L_080DB696: return
- * ========================================================================== */
-extern void func_080005D4(void);
-extern void func_080D3914(void);
-int func_080DB658(void) {
-    u32 sp0, sp1, sp2, sp3;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2), "m"(sp3));
-    __asm__ volatile(
-        "	add r6, r0, #0\n"
-        "	add r4, r1, #0\n"
-        "	mov r0, #0xc\n"
-        "	bl func_080005D4\n"
-        "	ldr r5, [r4, #4]\n"
-        "	mov r2, #0\n"
-        "	str r2, [r4, #4]\n"
-        "	ldr r3, [r4, #8]\n"
-        "	ldr r1, =0x080E82B8\n"
-        "	str r1, [r0]\n"
-        "	str r2, [sp, #4]\n"
-        "	str r5, [r0, #4]\n"
-        "	str r3, [r0, #8]\n"
-        "	str r0, [sp]\n"
-        "	mov r1, sp\n"
-        "	str r1, [sp, #8]\n"
-        "	str r0, [sp, #0xc]\n"
-        "	str r2, [r1]\n"
-        "	str r0, [r6]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080DB696\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080DB696:\n"
-        "	add r0, r6, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct C_080E82B8 : public V0 {
+    AutoPtr<V0> f4;
+    int f8;
+    C_080E82B8(AutoPtr<V0> a, int b) : f4(a), f8(b) {}
+};
+struct In { int vtbl; AutoPtr<V0> f4; int f8; };
+extern "C" AutoPtr<V0> func_080DB658(In *in) {
+    return AutoPtr<C_080E82B8>(new C_080E82B8(in->f4, in->f8));
 }
 
 /* --- func_080DB6A4 @ 0x080DB6A4 (40B) [PURE-C | agbcc_O2] --- */
@@ -20056,49 +20001,22 @@ void func_080E40A0(void) {
 
 void func_08000608(void *); void func_080E4190(u32 *a, int b) { *a = 0x080E76F8; if (b & 1) func_08000608(a); }
 
-/* --- func_080E41B0 @ 0x080E41B0 (56B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080E41B0 @ 0x080E41B0 (56B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080E41B0 @ 0x080E41B0 (56 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r2)
- * Fields : +0x00:u32(R), +0x04:u32(R), +0x08:u32(R)
- * Callees: func_080007EC, func_080D3914
- * CFG Structure:
- *   L_080E41B0: if (==) goto L_080E41C8
- *   L_080E41C8: if (==) goto L_080E41DA
- *   L_080E41DA: call func_080007EC(); return
- * ========================================================================== */
-extern void func_080007EC(void);
-extern void func_080D3914(void);
-void func_080E41B0(void) {
-
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	add r5, r1, #0\n"
-        "	ldr r1, [r4, #8]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080E41C8\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080E41C8:\n"
-        "	ldr r1, [r4, #4]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080E41DA\n"
-        "	ldr r0, [r1, #4]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080E41DA:\n"
-        "	add r0, r4, #0\n"
-        "	add r1, r5, #0\n"
-        "	bl func_080007EC\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "lr", "memory"
-    );
+class V0 { public: virtual ~V0(); };
+class V4 { public: int x; virtual ~V4(); };
+struct S_080E41B0 { int f0; V4 *f4; V0 *f8; };
+extern "C" void func_080007EC(void *, int);
+extern "C" void func_080E41B0(S_080E41B0 *a, int b) {
+    delete a->f8;
+    delete a->f4;
+    func_080007EC(a, b);
 }
 
 /* --- func_080E41E8 @ 0x080E41E8 (40B) [PURE-C | agbcc_O2] --- */

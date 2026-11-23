@@ -2,7 +2,7 @@
  * MODULE : 10_events_slipspace_vm.c
  * RANGE  : 0x080C0000 .. 0x080D0000 (61,872 bytes, 139 functions)
  * PURPOSE: Maquina virtual SlipSpace de eventos, festivales, bodas y dialogos
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 41 | Inline-CFG ASM: 98
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 43 | Inline-CFG ASM: 96
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -550,50 +550,43 @@ u32 func_080C0D80(u32 *arg0) {
     return *(u32 *)(arg0[1] + 0x604);
 }
 
-/* --- func_080C0D90 @ 0x080C0D90 (60B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080C0D90 @ 0x080C0D90 (60B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080C0D90 @ 0x080C0D90 (60 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r2)
- * Fields : +0x00:u32(RW), +0x04:u32(R), +0x08:u32(R)
- * Callees: func_080BCCE0, func_080D3914
- * CFG Structure:
- *   L_080C0D90: call func_080BCCE0(); if (==) goto L_080C0DC0
- *   L_080C0DC0: return
- * ========================================================================== */
-extern void func_080BCCE0(void);
-extern void func_080D3914(void);
-int func_080C0D90(void) {
-    u32 sp0, sp1, sp2;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2));
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	ldr r1, [r1, #4]\n"
-        "	mov r0, sp\n"
-        "	bl func_080BCCE0\n"
-        "	ldr r2, [sp]\n"
-        "	mov r0, sp\n"
-        "	str r0, [sp, #4]\n"
-        "	str r2, [sp, #8]\n"
-        "	add r1, r0, #0\n"
-        "	mov r0, #0\n"
-        "	str r0, [r1]\n"
-        "	str r2, [r4]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080C0DC0\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080C0DC0:\n"
-        "	add r0, r4, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct In { int f0; int f4; };
+extern "C" AutoPtr<V1> func_080BCCE0(int);
+extern "C" AutoPtr<V0> func_080C0D90(In *in) {
+    return func_080BCCE0(in->f4);
 }
 
 /* --- func_080C0DCC @ 0x080C0DCC (1260B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
@@ -15000,50 +14993,43 @@ u32 func_080C7F0C(u32 *arg0) {
     return *(u32 *)(arg0[1] + 0x974);
 }
 
-/* --- func_080C7F1C @ 0x080C7F1C (60B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080C7F1C @ 0x080C7F1C (60B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080C7F1C @ 0x080C7F1C (60 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r2)
- * Fields : +0x00:u32(RW), +0x04:u32(R), +0x08:u32(R)
- * Callees: func_080C12C4, func_080D3914
- * CFG Structure:
- *   L_080C7F1C: call func_080C12C4(); if (==) goto L_080C7F4C
- *   L_080C7F4C: return
- * ========================================================================== */
-extern void func_080C12C4(void);
-extern void func_080D3914(void);
-int func_080C7F1C(void) {
-    u32 sp0, sp1, sp2;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2));
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	ldr r1, [r1, #4]\n"
-        "	mov r0, sp\n"
-        "	bl func_080C12C4\n"
-        "	ldr r2, [sp]\n"
-        "	mov r0, sp\n"
-        "	str r0, [sp, #4]\n"
-        "	str r2, [sp, #8]\n"
-        "	add r1, r0, #0\n"
-        "	mov r0, #0\n"
-        "	str r0, [r1]\n"
-        "	str r2, [r4]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080C7F4C\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080C7F4C:\n"
-        "	add r0, r4, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct In { int f0; int f4; };
+extern "C" AutoPtr<V1> func_080C12C4(int);
+extern "C" AutoPtr<V0> func_080C7F1C(In *in) {
+    return func_080C12C4(in->f4);
 }
 
 /* --- func_080C7F58 @ 0x080C7F58 (1032B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */

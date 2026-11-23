@@ -2,7 +2,7 @@
  * MODULE : 05_animals_livestock_ai.c
  * RANGE  : 0x08045000 .. 0x0805E000 (77,854 bytes, 167 functions)
  * PURPOSE: IA y cuidado de animales (vacas, ovejas, gallinas, perro, caballo)
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 66 | Inline-CFG ASM: 101
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 68 | Inline-CFG ASM: 99
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -9068,16 +9068,15 @@ u32 func_0804E9CC(void) {
     return 0;
 }
 
-/* --- func_0804E9D0 @ 0x0804E9D0 (36B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_0804E9D0 @ 0x0804E9D0 (36B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern void func_080D374C();
-void func_0804E9D0(u32 param_1, int param_2, int param_3) {
-    register int p3 asm("r3") = param_3;
-    register u32 r2 asm("r2") = ((u32)(u16)param_1 * (param_1 >> 16) << 5) >> 2;
-    r2 &= 0x001FFFFF;
-    func_080D374C(p3, param_2, r2);
-}
+void func_080D374C(void *, u32, u32); void func_0804E9D0(u32 a, u32 b, void *c) { func_080D374C(c, b, ((((u32)(u16)a * (a >> 16)) << 5) >> 2) & 0x1FFFFF); }
 
 /* --- func_0804E9F4 @ 0x0804E9F4 (100B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
 #define NULL 0
@@ -14204,27 +14203,15 @@ u8 func_08050DE4(u8 **arg0) {
     return r;
 }
 
-/* --- func_08050DF0 @ 0x08050DF0 (28B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08050DF0 @ 0x08050DF0 (28B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-int func_08050DF0(int *param_1) {
-    register int r1 asm("r1") = *param_1;
-    register int r0 asm("r0") = *(int *)(r1 + 8);
-    if (r0 != 6) {
-        __asm__ volatile(
-            "mov r2, #0xac\n\t"
-            "lsl r2, r2, #1\n\t"
-            "add r0, %1, r2\n\t"
-            "ldr %0, [r0]\n\t"
-            "b _end_50DF0\n"
-            "_ret0_50DF0:"
-            : "=r"(r0) : "r"(r1) : "r2"
-        );
-    }
-    r0 = 0;
-    __asm__ volatile("_end_50DF0:" : : : "lr");
-    return r0;
-}
+u32 func_08050DF0(u8 **a) { u8 *p = *a; if (*(u32 *)(p + 8) == 6) return 0; return *(u32 *)(p + (0xac << 1)); }
 
 /* --- func_08050E0C @ 0x08050E0C (36B) [PURE-C | agbcc_O2] --- */
 #define NULL 0

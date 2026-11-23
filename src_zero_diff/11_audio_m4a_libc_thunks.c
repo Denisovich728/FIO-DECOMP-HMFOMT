@@ -2,7 +2,7 @@
  * MODULE : 11_audio_m4a_libc_thunks.c
  * RANGE  : 0x080D0000 .. 0x080DB000 (33,178 bytes, 226 functions)
  * PURPOSE: Driver de audio MusicPlayer2000 (m4a), alocador SGI STL y thunks _call_via_rX
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 110 | Inline-CFG ASM: 116
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 113 | Inline-CFG ASM: 113
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -1323,44 +1323,15 @@ void func_080D0A54(u32 a) { **(u32 **)0x0300041C = 0; *(u32 *)(*(u8 **)0x0300042
 
 void func_080D0A74(void) { **(u32 **)0x0300041C = 0; *(u32 *)(*(u8 **)0x03000420 + (0xc0 << 1)) = 0; }
 
-/* --- func_080D0A94 @ 0x080D0A94 (40B) [CFG-ASM (hermes:reg-store-barrier) | agbcc_O2] --- */
-#define TRUE 1
-#define FALSE 0
+/* --- func_080D0A94 @ 0x080D0A94 (40B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
 #define true 1
 #define false 0
-#define NULL ((void *)0)
-#define CONCAT11(a, b) ((u16)(((u16)(u8)(a) << 8) | (u8)(b)))
-#define CONCAT12(a, b) ((u32)(((u32)(u8)(a) << 16) | (u16)(b)))
-#define CONCAT13(a, b) ((u32)(((u32)(u8)(a) << 24) | ((u32)(b) & 0xFFFFFFu)))
-#define CONCAT21(a, b) ((u32)(((u32)(u16)(a) << 8) | (u8)(b)))
-#define CONCAT22(a, b) ((u32)(((u32)(u16)(a) << 16) | (u16)(b)))
-#define CONCAT31(a, b) ((u32)(((u32)(a) << 8) | (u8)(b)))
-#define CONCAT44(a, b) ((u32)(b))
-#define SUB41(a, b) ((u8)((u32)(a) >> ((b) * 8)))
-#define SUB42(a, b) ((u16)((u32)(a) >> ((b) * 8)))
-#define SUB84(a, b) ((u32)(a))
-#define ZEXT14(a) ((u32)(u8)(a))
-#define ZEXT24(a) ((u32)(u16)(a))
-#define ZEXT48(a) ((u32)(a))
-#define SEXT14(a) ((s32)(s8)(a))
-#define SEXT24(a) ((s32)(s16)(a))
-#define SEXT48(a) ((s32)(a))
-#define CARRY4(a, b) ((u32)(a) > (0xFFFFFFFFu - (u32)(b)))
-#define SCARRY4(a, b) (((s32)((u32)(a) + (u32)(b)) < 0) != ((s32)(a) < 0) && ((s32)(a) < 0) == ((s32)(b) < 0))
-#define SBORROW4(a, b) (((s32)((u32)(a) - (u32)(b)) < 0) != ((s32)(a) < 0) && ((s32)(a) < 0) != ((s32)(b) < 0))
-#define BADSPACEBASE 0
-extern u32 func_080D0A54();
-void func_080D0A94(void) {
-  u32 **p = (u32 **)0x03000420;
-  register u32 *ptr asm("r1");
-  register u32 one asm("r2");
-  ptr = (u32 *)((u8 *)*p + 0x17c);
-  __asm__("" : "=r"(ptr) : "0"(ptr));
-  one = 1;
-  *ptr = one;
-  func_080D0A54();
-  *(u32 *)((u8 *)*p + 0x17c) = 0;
-}
+#endif
+#define NULL 0
+
+void func_080D0A54(u32); void func_080D0A94(u32 a) { u8 **p = (u8 **)0x03000420; *(u32 *)(*p + (0xbe << 1)) = 1; func_080D0A54(a); *(u32 *)(*p + (0xbe << 1)) = 0; }
 
 /* --- func_080D0ABC @ 0x080D0ABC (36B) [PURE-C | agbcc_O2] --- */
 #define NULL 0
@@ -10815,14 +10786,19 @@ void func_080D6D8C(void) {
   func_0800080C();
 }
 
-/* --- func_080D6D98 @ 0x080D6D98 (32B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080D6D98 @ 0x080D6D98 (32B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
 u32 *func_080D6D98(u32 *param_1, int param_2, u32 param_3) {
     u32 *base = param_1;
     int off = (param_2 << 2) - 4;
     u32 *p;
-    __asm__("" : "+r"(off));
+    
     p = (u32 *)((int)base + off);
     *p = param_3;
     while (p != base) {
@@ -12343,14 +12319,19 @@ void func_080D76C0(int param_1, int param_2, u32 param_3) {
     );
 }
 
-/* --- func_080D770C @ 0x080D770C (32B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080D770C @ 0x080D770C (32B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
 u32 *func_080D770C(u32 *param_1, int param_2, u32 param_3) {
     u32 *base = param_1;
     int off = (param_2 << 3) - 8;
     u32 *p;
-    __asm__("" : "+r"(off));
+    
     p = (u32 *)((int)base + off);
     *p = param_3;
     while (p != base) {

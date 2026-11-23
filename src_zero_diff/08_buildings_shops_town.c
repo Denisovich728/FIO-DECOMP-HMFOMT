@@ -2,7 +2,7 @@
  * MODULE : 08_buildings_shops_town.c
  * RANGE  : 0x08093000 .. 0x080A8000 (85,576 bytes, 438 functions)
  * PURPOSE: Edificios, tiendas, herreria, carpinteria, clinica y horarios del pueblo
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 230 | Inline-CFG ASM: 208
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 235 | Inline-CFG ASM: 203
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -2058,33 +2058,15 @@ void func_08094110(int param_1, int param_2) {
     );
 }
 
-/* --- func_080941A8 @ 0x080941A8 (32B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080941A8 @ 0x080941A8 (32B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080941A8 @ 0x080941A8 (32 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r4)
- * Fields : +0x00:u32(R), +0x18:u32(R), +0x1C:u32(R), +0x20:u32(R), +0x24:u32(R), +0x34:u32(R)
- * Callees: func_080D391C
- * CFG Structure:
- *   L_080941A8: call _call_via_r4(); return
- * ========================================================================== */
-extern void func_080D391C(void);
-void func_080941A8(void) {
-    u32 sp0;
-    __asm__ volatile("" : : "m"(sp0));
-    __asm__ volatile(
-        "	ldr r5, [r0]\n"
-        "	ldr r1, [r0, #0x18]\n"
-        "	ldr r2, [r0, #0x1c]\n"
-        "	ldr r3, [r0, #0x20]\n"
-        "	ldr r4, [r0, #0x24]\n"
-        "	str r4, [sp]\n"
-        "	ldr r4, [r5, #0x34]\n"
-        "	bl func_080D391C\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "lr", "memory"
-    );
-}
+void func_080941A8(u32 *a) { (*(void (**)(u32 *, u32, u32, u32, u32))(*a + 0x34))(a, a[6], a[7], a[8], a[9]); }
 
 /* --- func_080941C8 @ 0x080941C8 (64B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
 #define NULL 0
@@ -2486,33 +2468,15 @@ void func_080943E4(void) {
     );
 }
 
-/* --- func_0809444C @ 0x0809444C (32B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_0809444C @ 0x0809444C (32B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_0809444C @ 0x0809444C (32 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r4)
- * Fields : +0x00:u32(R), +0x14:u32(R), +0x34:u32(R)
- * Callees: func_080D391C
- * CFG Structure:
- *   L_0809444C: call _call_via_r4(); return
- * ========================================================================== */
-extern void func_080D391C(void);
-void func_0809444C(void) {
-    u32 sp0;
-    __asm__ volatile("" : : "m"(sp0));
-    __asm__ volatile(
-        "	ldr r4, [r0]\n"
-        "	ldr r1, [r0, #0x14]\n"
-        "	add r3, r0, #0\n"
-        "	add r3, #0x18\n"
-        "	mov r2, #8\n"
-        "	str r2, [sp]\n"
-        "	ldr r4, [r4, #0x34]\n"
-        "	bl func_080D391C\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-}
+void func_0809444C(u32 *a) { (*(void (**)(u32 *, u32, int, void *, int))(*a + 0x34))(a, a[5], 8, a + 6, 8); }
 
 /* --- func_0809446C @ 0x0809446C (60B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
 #define NULL 0
@@ -2854,33 +2818,15 @@ void func_080945B0(void) {
     );
 }
 
-/* --- func_08094648 @ 0x08094648 (32B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_08094648 @ 0x08094648 (32B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08094648 @ 0x08094648 (32 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r4)
- * Fields : +0x00:u32(R), +0x20:u32(R), +0x24:u32(R), +0x28:u32(R), +0x2C:u32(R), +0x34:u32(R)
- * Callees: func_080D391C
- * CFG Structure:
- *   L_08094648: call _call_via_r4(); return
- * ========================================================================== */
-extern void func_080D391C(void);
-void func_08094648(void) {
-    u32 sp0;
-    __asm__ volatile("" : : "m"(sp0));
-    __asm__ volatile(
-        "	ldr r5, [r0]\n"
-        "	ldr r1, [r0, #0x20]\n"
-        "	ldr r2, [r0, #0x24]\n"
-        "	ldr r3, [r0, #0x28]\n"
-        "	ldr r4, [r0, #0x2c]\n"
-        "	str r4, [sp]\n"
-        "	ldr r4, [r5, #0x34]\n"
-        "	bl func_080D391C\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "lr", "memory"
-    );
-}
+void func_08094648(u32 *a) { (*(void (**)(u32 *, u32, u32, u32, u32))(*a + 0x34))(a, a[8], a[9], a[10], a[11]); }
 
 /* --- func_08094668 @ 0x08094668 (64B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
 #define NULL 0
@@ -16740,7 +16686,12 @@ void func_0809AA58(void) {
     );
 }
 
-/* --- func_0809AAD4 @ 0x0809AAD4 (52B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_0809AAD4 @ 0x0809AAD4 (52B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
 struct Entry9AAD4 {
@@ -16754,7 +16705,7 @@ int func_0809AAD4(int param_1) {
     int base;
     int res = 0;
     int i;
-    __asm__("" : "+r"(e));
+    
     base = (int)e;
     for (i = 0; i < *(u8 *)(base + 0xa06); i++) {
         if (e->id <= 0xab && e->flg < 0) {
@@ -25189,45 +25140,15 @@ void func_0809EB20(u8 *arg0, u8 *arg1) {
     dst[len] = 0;
 }
 
-/* --- func_0809EB4C @ 0x0809EB4C (28B) [CFG-ASM (hermes:asm-load-order-barrier+clean-c89) | old_agbcc_O2] --- */
-#define TRUE 1
-#define FALSE 0
+/* --- func_0809EB4C @ 0x0809EB4C (28B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
 #define true 1
 #define false 0
-#define NULL ((void *)0)
-#define CONCAT11(a, b) ((u16)(((u16)(u8)(a) << 8) | (u8)(b)))
-#define CONCAT12(a, b) ((u32)(((u32)(u8)(a) << 16) | (u16)(b)))
-#define CONCAT13(a, b) ((u32)(((u32)(u8)(a) << 24) | ((u32)(b) & 0xFFFFFFu)))
-#define CONCAT21(a, b) ((u32)(((u32)(u16)(a) << 8) | (u8)(b)))
-#define CONCAT22(a, b) ((u32)(((u32)(u16)(a) << 16) | (u16)(b)))
-#define CONCAT31(a, b) ((u32)(((u32)(a) << 8) | (u8)(b)))
-#define CONCAT44(a, b) ((u32)(b))
-#define SUB41(a, b) ((u8)((u32)(a) >> ((b) * 8)))
-#define SUB42(a, b) ((u16)((u32)(a) >> ((b) * 8)))
-#define SUB84(a, b) ((u32)(a))
-#define ZEXT14(a) ((u32)(u8)(a))
-#define ZEXT24(a) ((u32)(u16)(a))
-#define ZEXT48(a) ((u32)(a))
-#define SEXT14(a) ((s32)(s8)(a))
-#define SEXT24(a) ((s32)(s16)(a))
-#define SEXT48(a) ((s32)(a))
-#define CARRY4(a, b) ((u32)(a) > (0xFFFFFFFFu - (u32)(b)))
-#define SCARRY4(a, b) (((s32)((u32)(a) + (u32)(b)) < 0) != ((s32)(a) < 0) && ((s32)(a) < 0) == ((s32)(b) < 0))
-#define SBORROW4(a, b) (((s32)((u32)(a) - (u32)(b)) < 0) != ((s32)(a) < 0) && ((s32)(a) < 0) != ((s32)(b) < 0))
-#define BADSPACEBASE 0
-extern u32 func_0809E2D4();
-u32 func_0809EB4C(int arg0) {
-  register u32 r0 asm("r0");
-  register u32 r1 asm("r1");
-  func_0809E2D4();
-  r0 = 0;
-  *(u8 *)(arg0 + 0x14) = r0;
-  r1 = *(u8 *)(arg0 + 0x15);
-  __asm__("" : "+r"(r1));
-  r0 -= 2;
-  *(u8 *)(arg0 + 0x15) = r0 & r1;
-  return arg0;
-}
+#endif
+#define NULL 0
+
+struct S { u8 pad[0x14]; u8 a; u8 b:1; }; void func_0809E2D4(void *); struct S *func_0809EB4C(struct S *s) { func_0809E2D4(s); s->a = 0; s->b = 0; return s; }
 
 /* --- func_0809EB68 @ 0x0809EB68 (8B) [PURE-C | agbcc_O2] --- */
 #define NULL 0

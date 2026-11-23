@@ -2,7 +2,7 @@
  * MODULE : 06_farm_crops_field.c
  * RANGE  : 0x0805E000 .. 0x08078000 (93,664 bytes, 149 functions)
  * PURPOSE: Grilla de granja 43x25, crecimiento de cultivos, suelo y recoleccion
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 43 | Inline-CFG ASM: 106
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 45 | Inline-CFG ASM: 104
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -27710,50 +27710,43 @@ void func_0806D918(u32 *arg0,u32 arg1) {
   func_080007EC(arg0,arg1);
 }
 
-/* --- func_0806D948 @ 0x0806D948 (60B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_0806D948 @ 0x0806D948 (60B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_0806D948 @ 0x0806D948 (60 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r2)
- * Fields : +0x00:u32(RW), +0x04:u32(R), +0x08:u32(R)
- * Callees: func_0806A1F4, func_080D3914
- * CFG Structure:
- *   L_0806D948: call func_0806A1F4(); if (==) goto L_0806D978
- *   L_0806D978: return
- * ========================================================================== */
-extern void func_0806A1F4(void);
-extern void func_080D3914(void);
-int func_0806D948(void) {
-    u32 sp0, sp1, sp2;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2));
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	ldr r1, [r1, #4]\n"
-        "	mov r0, sp\n"
-        "	bl func_0806A1F4\n"
-        "	ldr r2, [sp]\n"
-        "	mov r0, sp\n"
-        "	str r0, [sp, #4]\n"
-        "	str r2, [sp, #8]\n"
-        "	add r1, r0, #0\n"
-        "	mov r0, #0\n"
-        "	str r0, [r1]\n"
-        "	str r2, [r4]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_0806D978\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_0806D978:\n"
-        "	add r0, r4, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct In { int f0; int f4; };
+extern "C" AutoPtr<V1> func_0806A1F4(int);
+extern "C" AutoPtr<V0> func_0806D948(In *in) {
+    return func_0806A1F4(in->f4);
 }
 
 /* --- func_0806D990 @ 0x0806D990 (424B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
@@ -30026,50 +30019,43 @@ void func_0806EA00(u32 *arg0,u32 arg1) {
   func_080007EC(arg0,arg1);
 }
 
-/* --- func_0806EA30 @ 0x0806EA30 (60B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_0806EA30 @ 0x0806EA30 (60B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_0806EA30 @ 0x0806EA30 (60 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r2)
- * Fields : +0x00:u32(RW), +0x04:u32(R), +0x08:u32(R)
- * Callees: func_0806DB38, func_080D3914
- * CFG Structure:
- *   L_0806EA30: call func_0806DB38(); if (==) goto L_0806EA60
- *   L_0806EA60: return
- * ========================================================================== */
-extern void func_0806DB38(void);
-extern void func_080D3914(void);
-int func_0806EA30(void) {
-    u32 sp0, sp1, sp2;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2));
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	ldr r1, [r1, #4]\n"
-        "	mov r0, sp\n"
-        "	bl func_0806DB38\n"
-        "	ldr r2, [sp]\n"
-        "	mov r0, sp\n"
-        "	str r0, [sp, #4]\n"
-        "	str r2, [sp, #8]\n"
-        "	add r1, r0, #0\n"
-        "	mov r0, #0\n"
-        "	str r0, [r1]\n"
-        "	str r2, [r4]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_0806EA60\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_0806EA60:\n"
-        "	add r0, r4, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct In { int f0; int f4; };
+extern "C" AutoPtr<V1> func_0806DB38(int);
+extern "C" AutoPtr<V0> func_0806EA30(In *in) {
+    return func_0806DB38(in->f4);
 }
 
 /* --- func_0806EA6C @ 0x0806EA6C (12B) [PURE-C | agbcc_O2] --- */

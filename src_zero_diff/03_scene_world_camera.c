@@ -2,54 +2,47 @@
  * MODULE : 03_scene_world_camera.c
  * RANGE  : 0x08012000 .. 0x08025000 (73,372 bytes, 411 functions)
  * PURPOSE: Gestor de escenas, transiciones de mapa, camara y colisiones
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 223 | Inline-CFG ASM: 188
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 231 | Inline-CFG ASM: 180
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
-/* --- func_08012028 @ 0x08012028 (60B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_08012028 @ 0x08012028 (60B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08012028 @ 0x08012028 (60 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r2)
- * Fields : +0x00:u32(RW), +0x04:u32(R), +0x08:u32(R)
- * Callees: func_080D3914, func_080D8178
- * CFG Structure:
- *   L_08012028: call func_080D8178(); if (==) goto L_08012058
- *   L_08012058: return
- * ========================================================================== */
-extern void func_080D3914(void);
-extern void func_080D8178(void);
-int func_08012028(void) {
-    u32 sp0, sp1, sp2;
-    register int __ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2));
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	ldr r1, [r1, #4]\n"
-        "	mov r0, sp\n"
-        "	bl func_080D8178\n"
-        "	ldr r2, [sp]\n"
-        "	mov r0, sp\n"
-        "	str r0, [sp, #4]\n"
-        "	str r2, [sp, #8]\n"
-        "	add r1, r0, #0\n"
-        "	mov r0, #0\n"
-        "	str r0, [r1]\n"
-        "	str r2, [r4]\n"
-        "	ldr r1, [sp]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_08012058\n"
-        "	ldr r0, [r1]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_08012058:\n"
-        "	add r0, r4, #0\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-    return __ret;
+class V0 { public: virtual ~V0(); };
+class V1 : public V0 {};
+template <class T>
+struct AutoPtr {
+    T *_M_ptr;
+    explicit AutoPtr(T *p = 0) : _M_ptr(p) {}
+    AutoPtr(AutoPtr &a) : _M_ptr(a.release()) {}
+    ~AutoPtr() { delete _M_ptr; }
+    T *release() {
+        T *tmp = _M_ptr;
+        _M_ptr = 0;
+        return tmp;
+    }
+    struct Ref {
+        void *s;
+        T *p;
+        Ref(void *s, T *p) : s(s), p(p) {}
+    };
+    template <class U>
+    AutoPtr(AutoPtr<U> const &a) {
+        Ref r((void *)&a, a._M_ptr);
+        *(U **)r.s = 0;
+        _M_ptr = r.p;
+    }
+};
+struct In { int f0; int f4; };
+extern "C" AutoPtr<V1> func_080D8178(int);
+extern "C" AutoPtr<V0> func_08012028(In *in) {
+    return func_080D8178(in->f4);
 }
 
 /* --- func_08012064 @ 0x08012064 (64B) [PURE-C | agbcc_O2] --- */
@@ -464,30 +457,15 @@ void func_080122E0(void) {
     __asm__ volatile("" : "+l"(r7_var), "+l"(r7_var), "+l"(r7_var));
 }
 
-/* --- func_0801238C @ 0x0801238C (24B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_0801238C @ 0x0801238C (24B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_0801238C @ 0x0801238C (24 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r4)
- * Fields : +0x00:u32(R), +0x04:u32(R), +0x24:u32(R)
- * Callees: func_080D391C
- * CFG Structure:
- *   L_0801238C: call _call_via_r4(); return
- * ========================================================================== */
-extern void func_080D391C(void);
-void func_0801238C(void) {
-
-    __asm__ volatile(
-        "	ldr r0, [r0, #4]\n"
-        "	add r0, #0xa8\n"
-        "	ldr r0, [r0]\n"
-        "	ldr r4, [r0]\n"
-        "	ldr r4, [r4, #0x24]\n"
-        "	bl func_080D391C\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-}
+void func_0801238C(u8 **a, u32 b, u32 c, u32 d) { u32 *p = *(u32 **)(a[1] + 0xa8); (*(void (**)(u32 *, u32, u32, u32))(*p + 0x24))(p, b, c, d); }
 
 /* --- func_080123A4 @ 0x080123A4 (40B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1
@@ -11194,42 +11172,15 @@ void func_08016E9C(int arg0) {
   *(u32 *)(val2 + 0x9c) = 0x19;
 }
 
-/* --- func_08016EC4 @ 0x08016EC4 (44B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_08016EC4 @ 0x08016EC4 (44B) [PURE-C | agbcc_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08016EC4 @ 0x08016EC4 (44 bytes)
- * Role   : C++ Polymorphic Caller (_call_via_r4)
- * Fields : +0x00:u32(R), +0x04:u32(R)
- * Callees: func_080D391C
- * CFG Structure:
- *   L_08016EC4: call _call_via_r4(); return
- * ========================================================================== */
-extern void func_080D391C(void);
-void func_08016EC4(void) {
-    u32 sp0, sp1;
-    int r7_var;
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "	ldr r6, [sp, #0x1c]\n"
-        "	ldr r5, [sp, #0x20]\n"
-        "	lsl r5, r5, #0x10\n"
-        "	lsr r5, r5, #0x10\n"
-        "	ldr r0, [r0, #4]\n"
-        "	add r0, #0xa8\n"
-        "	ldr r0, [r0]\n"
-        "	ldr r4, [r0]\n"
-        "	mov r7, #0xb0\n"
-        "	lsl r7, r7, #1\n"
-        "	add r4, r4, r7\n"
-        "	str r6, [sp]\n"
-        "	str r5, [sp, #4]\n"
-        "	ldr r4, [r4]\n"
-        "	bl func_080D391C\n"
-        : "=l"(r7_var) : : "r0", "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
-    __asm__ volatile("" : "+l"(r7_var), "+l"(r7_var), "+l"(r7_var));
-}
+void func_08016EC4(u8 **a, u32 b, u32 c, u32 d, u32 e, u16 f) { u32 *p = *(u32 **)(a[1] + 0xa8); (*(void (**)(u32 *, u32, u32, u32, u32, u16))(*p + (0xb0 << 1)))(p, b, c, d, e, f); }
 
 /* --- func_08016EF0 @ 0x08016EF0 (28B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1
@@ -29570,74 +29521,42 @@ u32 func_08020310(int arg0,int *arg1,int arg2,u32 arg3) {
   return arg0;
 }
 
-/* --- func_080203A4 @ 0x080203A4 (108B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080203A4 @ 0x080203A4 (108B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080203A4 @ 0x080203A4 (108 bytes)
- * Role   : C++ Virtual Deleting Destructor ~Class(this, int __in_chrg) [vtable: 0x080E6250, 0x080E64C8]
- * Fields : +0x00:u8(R), +0x04:u32(R), +0x08:u32(RW), +0x0C:u32(W), +0x10:u32(R), +0x14:u32(W), +0x34:u32(R)
- * Callees: func_08000608, func_08032170, func_0809B124, func_080D3914
- * CFG Structure:
- *   L_080203A4: if (==) goto L_080203CA
- *   L_080203CA: call func_08032170(); call func_0809B124(); if (==) goto L_080203F2
- *   L_080203F2: if (==) goto L_08020400
- *   L_08020400: return
- * ========================================================================== */
-extern void func_08000608(void);
-extern void func_08032170(void);
-extern void func_0809B124(void);
-extern void func_080D3914(void);
-void func_080203A4(void) {
-    u32 sp0, sp1;
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "	add r5, r0, #0\n"
-        "	add r6, r1, #0\n"
-        "	ldr r0, =0x080E64C8\n"
-        "	str r0, [r5, #0x14]\n"
-        "	add r0, r5, #0\n"
-        "	add r0, #0x40\n"
-        "	ldrb r0, [r0]\n"
-        "	cmp r0, #0\n"
-        "	beq _L_080203CA\n"
-        "	mov r1, #0x3c\n"
-        "	ldrsh r0, [r5, r1]\n"
-        "	lsl r0, r0, #0x10\n"
-        "	str r0, [r5, #8]\n"
-        "	mov r1, #0x3e\n"
-        "	ldrsh r0, [r5, r1]\n"
-        "	lsl r0, r0, #0x10\n"
-        "	str r0, [r5, #0xc]\n"
-        "_L_080203CA:\n"
-        "	ldr r4, [r5, #0x34]\n"
-        "	mov r0, sp\n"
-        "	add r1, r5, #0\n"
-        "	bl func_08032170\n"
-        "	add r0, r4, #0\n"
-        "	mov r1, sp\n"
-        "	bl func_0809B124\n"
-        "	ldr r0, =0x080E6250\n"
-        "	str r0, [r5, #0x14]\n"
-        "	ldr r1, [r5, #0x10]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080203F2\n"
-        "	ldr r0, [r1, #4]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080203F2:\n"
-        "	mov r0, #1\n"
-        "	and r0, r6\n"
-        "	cmp r0, #0\n"
-        "	beq _L_08020400\n"
-        "	add r0, r5, #0\n"
-        "	bl func_08000608\n"
-        "_L_08020400:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
+struct Loc { u32 a, b; };
+extern "C" Loc func_08032170(void const *);
+extern "C" void func_0809B124(void *, Loc const &);
+struct V4 { u32 f0; virtual ~V4(); };
+struct C_080E6250 {
+    u8 pad[0x8];
+    int x_q16;
+    int y_q16;
+    V4 *unk_10;
+    virtual ~C_080E6250() { delete unk_10; }
+};
+struct C_080E64C8 : public C_080E6250 {
+    u8 pad2[0x1C];
+    void *actor_34;
+    u8 pad3[0x4];
+    s16 sx_3c;
+    s16 sy_3e;
+    u8 flag_40;
+    virtual ~C_080E64C8();
+};
+C_080E64C8::~C_080E64C8() {
+    if (flag_40) {
+        x_q16 = sx_3c << 16;
+        y_q16 = sy_3e << 16;
+    }
+    func_0809B124(actor_34, func_08032170(this));
 }
+extern "C" void func_080203A4() __attribute__((alias("_._10C_080E64C8")));
 
 /* --- func_08020410 @ 0x08020410 (80B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
 #define NULL 0
@@ -32172,74 +32091,42 @@ u32 func_080216BC(int arg0,int *arg1,u32 arg2) {
   return arg0;
 }
 
-/* --- func_0802173C @ 0x0802173C (108B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_0802173C @ 0x0802173C (108B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_0802173C @ 0x0802173C (108 bytes)
- * Role   : C++ Virtual Deleting Destructor ~Class(this, int __in_chrg) [vtable: 0x080E6250, 0x080E6428]
- * Fields : +0x00:u8(R), +0x04:u32(R), +0x08:u32(RW), +0x0C:u32(W), +0x10:u32(R), +0x14:u32(W), +0x34:u32(R)
- * Callees: func_08000608, func_08032170, func_0809B124, func_080D3914
- * CFG Structure:
- *   L_0802173C: if (==) goto L_08021762
- *   L_08021762: call func_08032170(); call func_0809B124(); if (==) goto L_0802178A
- *   L_0802178A: if (==) goto L_08021798
- *   L_08021798: return
- * ========================================================================== */
-extern void func_08000608(void);
-extern void func_08032170(void);
-extern void func_0809B124(void);
-extern void func_080D3914(void);
-void func_0802173C(void) {
-    u32 sp0, sp1;
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "	add r5, r0, #0\n"
-        "	add r6, r1, #0\n"
-        "	ldr r0, =0x080E6428\n"
-        "	str r0, [r5, #0x14]\n"
-        "	add r0, r5, #0\n"
-        "	add r0, #0x3d\n"
-        "	ldrb r0, [r0]\n"
-        "	cmp r0, #0\n"
-        "	beq _L_08021762\n"
-        "	mov r1, #0x38\n"
-        "	ldrsh r0, [r5, r1]\n"
-        "	lsl r0, r0, #0x10\n"
-        "	str r0, [r5, #8]\n"
-        "	mov r1, #0x3a\n"
-        "	ldrsh r0, [r5, r1]\n"
-        "	lsl r0, r0, #0x10\n"
-        "	str r0, [r5, #0xc]\n"
-        "_L_08021762:\n"
-        "	ldr r4, [r5, #0x34]\n"
-        "	mov r0, sp\n"
-        "	add r1, r5, #0\n"
-        "	bl func_08032170\n"
-        "	add r0, r4, #0\n"
-        "	mov r1, sp\n"
-        "	bl func_0809B124\n"
-        "	ldr r0, =0x080E6250\n"
-        "	str r0, [r5, #0x14]\n"
-        "	ldr r1, [r5, #0x10]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_0802178A\n"
-        "	ldr r0, [r1, #4]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_0802178A:\n"
-        "	mov r0, #1\n"
-        "	and r0, r6\n"
-        "	cmp r0, #0\n"
-        "	beq _L_08021798\n"
-        "	add r0, r5, #0\n"
-        "	bl func_08000608\n"
-        "_L_08021798:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
+struct Loc { u32 a, b; };
+extern "C" Loc func_08032170(void const *);
+extern "C" void func_0809B124(void *, Loc const &);
+struct V4 { u32 f0; virtual ~V4(); };
+struct C_080E6250 {
+    u8 pad[0x8];
+    int x_q16;
+    int y_q16;
+    V4 *unk_10;
+    virtual ~C_080E6250() { delete unk_10; }
+};
+struct C_080E6428 : public C_080E6250 {
+    u8 pad2[0x1C];
+    void *actor_34;
+    s16 sx_38;
+    s16 sy_3a;
+    u8 pad3;
+    u8 flag_3d;
+    virtual ~C_080E6428();
+};
+C_080E6428::~C_080E6428() {
+    if (flag_3d) {
+        x_q16 = sx_38 << 16;
+        y_q16 = sy_3a << 16;
+    }
+    func_0809B124(actor_34, func_08032170(this));
 }
+extern "C" void func_0802173C() __attribute__((alias("_._10C_080E6428")));
 
 /* --- func_080217A8 @ 0x080217A8 (68B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1
@@ -33745,59 +33632,32 @@ u32 func_080223A8(int arg0,u32 arg1,u32 arg2) {
   return arg0;
 }
 
-/* --- func_080223F0 @ 0x080223F0 (84B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080223F0 @ 0x080223F0 (84B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080223F0 @ 0x080223F0 (84 bytes)
- * Role   : C++ Virtual Deleting Destructor ~Class(this, int __in_chrg) [vtable: 0x080E6250, 0x080E639C]
- * Fields : +0x04:u32(R), +0x08:u32(R), +0x10:u32(R), +0x14:u32(W), +0x34:u32(R)
- * Callees: func_08000608, func_08032170, func_0809B124, func_080D3914
- * CFG Structure:
- *   L_080223F0: call func_08032170(); call func_0809B124(); if (==) goto L_08022424
- *   L_08022424: if (==) goto L_08022432
- *   L_08022432: return
- * ========================================================================== */
-extern void func_08000608(void);
-extern void func_08032170(void);
-extern void func_0809B124(void);
-extern void func_080D3914(void);
-void func_080223F0(void) {
-    u32 sp0, sp1;
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "	add r5, r0, #0\n"
-        "	add r6, r1, #0\n"
-        "	ldr r0, =0x080E639C\n"
-        "	str r0, [r5, #0x14]\n"
-        "	ldr r4, [r5, #0x34]\n"
-        "	mov r0, sp\n"
-        "	add r1, r5, #0\n"
-        "	bl func_08032170\n"
-        "	add r0, r4, #0\n"
-        "	mov r1, sp\n"
-        "	bl func_0809B124\n"
-        "	ldr r0, =0x080E6250\n"
-        "	str r0, [r5, #0x14]\n"
-        "	ldr r1, [r5, #0x10]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_08022424\n"
-        "	ldr r0, [r1, #4]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_08022424:\n"
-        "	mov r0, #1\n"
-        "	and r0, r6\n"
-        "	cmp r0, #0\n"
-        "	beq _L_08022432\n"
-        "	add r0, r5, #0\n"
-        "	bl func_08000608\n"
-        "_L_08022432:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
+struct Loc { u32 a, b; };
+extern "C" Loc func_08032170(void const *);
+extern "C" void func_0809B124(void *, Loc const &);
+struct V4 { u32 f0; virtual ~V4(); };
+struct C_080E6250 {
+    u8 pad[0x10];
+    V4 *unk_10;
+    virtual ~C_080E6250() { delete unk_10; }
+};
+struct C_080E639C : public C_080E6250 {
+    u8 pad2[0x1C];
+    void *actor_34;
+    virtual ~C_080E639C();
+};
+C_080E639C::~C_080E639C() {
+    func_0809B124(actor_34, func_08032170(this));
 }
+extern "C" void func_080223F0() __attribute__((alias("_._10C_080E639C")));
 
 /* --- func_08022444 @ 0x08022444 (68B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1
@@ -34766,59 +34626,32 @@ u32 func_08022C18(int arg0,u32 arg1,u32 arg2) {
   return arg0;
 }
 
-/* --- func_08022C60 @ 0x08022C60 (84B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_08022C60 @ 0x08022C60 (84B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08022C60 @ 0x08022C60 (84 bytes)
- * Role   : C++ Virtual Deleting Destructor ~Class(this, int __in_chrg) [vtable: 0x080E6250, 0x080E6310]
- * Fields : +0x04:u32(R), +0x08:u32(R), +0x10:u32(R), +0x14:u32(W), +0x34:u32(R)
- * Callees: func_08000608, func_08032170, func_0809B124, func_080D3914
- * CFG Structure:
- *   L_08022C60: call func_08032170(); call func_0809B124(); if (==) goto L_08022C94
- *   L_08022C94: if (==) goto L_08022CA2
- *   L_08022CA2: return
- * ========================================================================== */
-extern void func_08000608(void);
-extern void func_08032170(void);
-extern void func_0809B124(void);
-extern void func_080D3914(void);
-void func_08022C60(void) {
-    u32 sp0, sp1;
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "	add r5, r0, #0\n"
-        "	add r6, r1, #0\n"
-        "	ldr r0, =0x080E6310\n"
-        "	str r0, [r5, #0x14]\n"
-        "	ldr r4, [r5, #0x34]\n"
-        "	mov r0, sp\n"
-        "	add r1, r5, #0\n"
-        "	bl func_08032170\n"
-        "	add r0, r4, #0\n"
-        "	mov r1, sp\n"
-        "	bl func_0809B124\n"
-        "	ldr r0, =0x080E6250\n"
-        "	str r0, [r5, #0x14]\n"
-        "	ldr r1, [r5, #0x10]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_08022C94\n"
-        "	ldr r0, [r1, #4]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_08022C94:\n"
-        "	mov r0, #1\n"
-        "	and r0, r6\n"
-        "	cmp r0, #0\n"
-        "	beq _L_08022CA2\n"
-        "	add r0, r5, #0\n"
-        "	bl func_08000608\n"
-        "_L_08022CA2:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
+struct Loc { u32 a, b; };
+extern "C" Loc func_08032170(void const *);
+extern "C" void func_0809B124(void *, Loc const &);
+struct V4 { u32 f0; virtual ~V4(); };
+struct C_080E6250 {
+    u8 pad[0x10];
+    V4 *unk_10;
+    virtual ~C_080E6250() { delete unk_10; }
+};
+struct C_080E6310 : public C_080E6250 {
+    u8 pad2[0x1C];
+    void *actor_34;
+    virtual ~C_080E6310();
+};
+C_080E6310::~C_080E6310() {
+    func_0809B124(actor_34, func_08032170(this));
 }
+extern "C" void func_08022C60() __attribute__((alias("_._10C_080E6310")));
 
 /* --- func_08022CB4 @ 0x08022CB4 (68B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1
@@ -36377,59 +36210,32 @@ u32 func_080238A8(int arg0,u32 arg1,u32 arg2) {
   return arg0;
 }
 
-/* --- func_080238F4 @ 0x080238F4 (84B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080238F4 @ 0x080238F4 (84B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080238F4 @ 0x080238F4 (84 bytes)
- * Role   : C++ Virtual Deleting Destructor ~Class(this, int __in_chrg) [vtable: 0x080E6250, 0x080E6284]
- * Fields : +0x04:u32(R), +0x08:u32(R), +0x10:u32(R), +0x14:u32(W), +0x34:u32(R)
- * Callees: func_08000608, func_08032170, func_0809B124, func_080D3914
- * CFG Structure:
- *   L_080238F4: call func_08032170(); call func_0809B124(); if (==) goto L_08023928
- *   L_08023928: if (==) goto L_08023936
- *   L_08023936: return
- * ========================================================================== */
-extern void func_08000608(void);
-extern void func_08032170(void);
-extern void func_0809B124(void);
-extern void func_080D3914(void);
-void func_080238F4(void) {
-    u32 sp0, sp1;
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "	add r5, r0, #0\n"
-        "	add r6, r1, #0\n"
-        "	ldr r0, =0x080E6284\n"
-        "	str r0, [r5, #0x14]\n"
-        "	ldr r4, [r5, #0x34]\n"
-        "	mov r0, sp\n"
-        "	add r1, r5, #0\n"
-        "	bl func_08032170\n"
-        "	add r0, r4, #0\n"
-        "	mov r1, sp\n"
-        "	bl func_0809B124\n"
-        "	ldr r0, =0x080E6250\n"
-        "	str r0, [r5, #0x14]\n"
-        "	ldr r1, [r5, #0x10]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_08023928\n"
-        "	ldr r0, [r1, #4]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_08023928:\n"
-        "	mov r0, #1\n"
-        "	and r0, r6\n"
-        "	cmp r0, #0\n"
-        "	beq _L_08023936\n"
-        "	add r0, r5, #0\n"
-        "	bl func_08000608\n"
-        "_L_08023936:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "r6", "lr", "memory"
-    );
+struct Loc { u32 a, b; };
+extern "C" Loc func_08032170(void const *);
+extern "C" void func_0809B124(void *, Loc const &);
+struct V4 { u32 f0; virtual ~V4(); };
+struct C_080E6250 {
+    u8 pad[0x10];
+    V4 *unk_10;
+    virtual ~C_080E6250() { delete unk_10; }
+};
+struct C_080E6284 : public C_080E6250 {
+    u8 pad2[0x1C];
+    void *actor_34;
+    virtual ~C_080E6284();
+};
+C_080E6284::~C_080E6284() {
+    func_0809B124(actor_34, func_08032170(this));
 }
+extern "C" void func_080238F4() __attribute__((alias("_._10C_080E6284")));
 
 /* --- func_08023948 @ 0x08023948 (68B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1

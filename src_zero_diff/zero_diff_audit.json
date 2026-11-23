@@ -1,10 +1,10 @@
 {
   "total_functions": 3454,
   "total_bytes": 866050,
-  "pure_c_functions": 1872,
-  "pure_c_bytes": 87720,
-  "hybrid_asm_functions": 1582,
-  "hybrid_asm_bytes": 778330,
+  "pure_c_functions": 1902,
+  "pure_c_bytes": 89048,
+  "hybrid_asm_functions": 1552,
+  "hybrid_asm_bytes": 777002,
   "zero_diff_verified": 3454,
   "rom_diff_bytes": 0,
   "modules": [
@@ -13,8 +13,8 @@
       "range": "0x080000C0..0x08005000",
       "description": "Arranque crt0, dispatcher BIOS, DMA/VRAM HAL y vectores de interrupcion",
       "functions": 69,
-      "pure_c_functions": 36,
-      "hybrid_asm_functions": 33,
+      "pure_c_functions": 37,
+      "hybrid_asm_functions": 32,
       "bytes": 20032
     },
     {
@@ -22,8 +22,8 @@
       "range": "0x08005000..0x08012000",
       "description": "Motor grafico 2D, descompresion LZ77/RL, tilesets, paletas y OAM",
       "functions": 556,
-      "pure_c_functions": 457,
-      "hybrid_asm_functions": 99,
+      "pure_c_functions": 458,
+      "hybrid_asm_functions": 98,
       "bytes": 49860
     },
     {
@@ -31,8 +31,8 @@
       "range": "0x08012000..0x08025000",
       "description": "Gestor de escenas, transiciones de mapa, camara y colisiones",
       "functions": 411,
-      "pure_c_functions": 231,
-      "hybrid_asm_functions": 180,
+      "pure_c_functions": 233,
+      "hybrid_asm_functions": 178,
       "bytes": 73372
     },
     {
@@ -40,8 +40,8 @@
       "range": "0x08025000..0x08045000",
       "description": "Jerarquia polimorfica C++ de entidades, aldeanos (NPCs) y pretendientes",
       "functions": 504,
-      "pure_c_functions": 229,
-      "hybrid_asm_functions": 275,
+      "pure_c_functions": 233,
+      "hybrid_asm_functions": 271,
       "bytes": 129496
     },
     {
@@ -49,8 +49,8 @@
       "range": "0x08045000..0x0805E000",
       "description": "IA y cuidado de animales (vacas, ovejas, gallinas, perro, caballo)",
       "functions": 167,
-      "pure_c_functions": 68,
-      "hybrid_asm_functions": 99,
+      "pure_c_functions": 69,
+      "hybrid_asm_functions": 98,
       "bytes": 77854
     },
     {
@@ -58,8 +58,8 @@
       "range": "0x0805E000..0x08078000",
       "description": "Grilla de granja 43x25, crecimiento de cultivos, suelo y recoleccion",
       "functions": 149,
-      "pure_c_functions": 45,
-      "hybrid_asm_functions": 104,
+      "pure_c_functions": 48,
+      "hybrid_asm_functions": 101,
       "bytes": 93664
     },
     {
@@ -67,8 +67,8 @@
       "range": "0x08078000..0x08093000",
       "description": "Controlador del granjero, uso de herramientas, stamina, fatiga y mochila",
       "functions": 214,
-      "pure_c_functions": 99,
-      "hybrid_asm_functions": 115,
+      "pure_c_functions": 102,
+      "hybrid_asm_functions": 112,
       "bytes": 104944
     },
     {
@@ -76,8 +76,8 @@
       "range": "0x08093000..0x080A8000",
       "description": "Edificios, tiendas, herreria, carpinteria, clinica y horarios del pueblo",
       "functions": 438,
-      "pure_c_functions": 235,
-      "hybrid_asm_functions": 203,
+      "pure_c_functions": 241,
+      "hybrid_asm_functions": 197,
       "bytes": 85576
     },
     {
@@ -85,8 +85,8 @@
       "range": "0x080A8000..0x080C0000",
       "description": "Interfaz de usuario, menus, inventario, mapa, calendario y diario",
       "functions": 198,
-      "pure_c_functions": 73,
-      "hybrid_asm_functions": 125,
+      "pure_c_functions": 74,
+      "hybrid_asm_functions": 124,
       "bytes": 93194
     },
     {
@@ -94,8 +94,8 @@
       "range": "0x080C0000..0x080D0000",
       "description": "Maquina virtual SlipSpace de eventos, festivales, bodas y dialogos",
       "functions": 139,
-      "pure_c_functions": 43,
-      "hybrid_asm_functions": 96,
+      "pure_c_functions": 44,
+      "hybrid_asm_functions": 95,
       "bytes": 61872
     },
     {
@@ -103,8 +103,8 @@
       "range": "0x080D0000..0x080DB000",
       "description": "Driver de audio MusicPlayer2000 (m4a), alocador SGI STL y thunks _call_via_rX",
       "functions": 226,
-      "pure_c_functions": 113,
-      "hybrid_asm_functions": 113,
+      "pure_c_functions": 117,
+      "hybrid_asm_functions": 109,
       "bytes": 33178
     },
     {
@@ -112,8 +112,8 @@
       "range": "0x080DB000..0x080E6000",
       "description": "Plantillas C++ SGI STL (_Rb_tree, _List_base, std::__find) y destructores virtuales",
       "functions": 383,
-      "pure_c_functions": 243,
-      "hybrid_asm_functions": 140,
+      "pure_c_functions": 246,
+      "hybrid_asm_functions": 137,
       "bytes": 43008
     }
   ]

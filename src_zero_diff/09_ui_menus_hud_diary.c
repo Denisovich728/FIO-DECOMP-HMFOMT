@@ -2,7 +2,7 @@
  * MODULE : 09_ui_menus_hud_diary.c
  * RANGE  : 0x080A8000 .. 0x080C0000 (93,194 bytes, 198 functions)
  * PURPOSE: Interfaz de usuario, menus, inventario, mapa, calendario y diario
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 73 | Inline-CFG ASM: 125
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 74 | Inline-CFG ASM: 124
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -10801,40 +10801,27 @@ void func_080ADCA4(void) {
 
 struct S { u32 x[8]; }; struct S *func_080ADD08(struct S *a, struct S **b) { *a = **b; return a; }
 
-/* --- func_080ADD20 @ 0x080ADD20 (36B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
+/* --- func_080ADD20 @ 0x080ADD20 (36B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080ADD20 @ 0x080ADD20 (36 bytes)
- * Role   : C++ Class Constructor / Polymorphic Method [vtable: 0x080E5A28]
- * Fields : +0x20:u16(R)
- * Callees: func_0805E6CC
- * CFG Structure:
- *   L_080ADD20: call func_0805E6CC(); return
- * ========================================================================== */
-extern void func_0805E6CC(void);
-void func_080ADD20(void) {
-    __asm__ volatile(
-        "	push {lr}\n"
-        "	sub sp, #0x30\n"
-        "	ldr r1, .Lpool_080ADD3C\n"
-        "	mov r0, sp\n"
-        "	bl func_0805E6CC\n"
-        "	mov r0, sp\n"
-        "	ldrh r0, [r0, #0x20]\n"
-        "	ldr r1, .Lpool_080ADD40\n"
-        "	str r1, [sp]\n"
-        "	add sp, #0x30\n"
-        "	pop {r1}\n"
-        "	bx r1\n"
-        "	.hword 0x0000\n"
-        ".Lpool_080ADD3C:\n"
-        "	.word 0x0852D984\n"
-        ".Lpool_080ADD40:\n"
-        "	.word 0x080E5A28\n"
-        "	.macro bx reg\n"
-        "	.endm\n"
-    );
+struct D_0805E6CC {
+    u32 vtbl;
+    u8 pad[0x1c];
+    u16 f20;
+    u8 pad2[0xe];
+};
+extern "C" void func_0805E6CC(D_0805E6CC *, u32);
+extern "C" u16 func_080ADD20(void) {
+    D_0805E6CC s;
+    func_0805E6CC(&s, 0x0852D984);
+    u16 r = s.f20;
+    s.vtbl = 0x080E5A28;
+    return r;
 }
 
 /* --- func_080ADD44 @ 0x080ADD44 (24B) [PURE-C | agbcc_O2] --- */

@@ -2,7 +2,7 @@
  * MODULE : 05_animals_livestock_ai.c
  * RANGE  : 0x08045000 .. 0x0805E000 (77,854 bytes, 167 functions)
  * PURPOSE: IA y cuidado de animales (vacas, ovejas, gallinas, perro, caballo)
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 68 | Inline-CFG ASM: 99
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 69 | Inline-CFG ASM: 98
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -14453,24 +14453,35 @@ loc_08050F58:
     return r1;
 }
 
-/* --- func_08050F74 @ 0x08050F74 (44B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08050F74 @ 0x08050F74 (44B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern u32 func_080D0F4E();
-void func_08050F74(int param_1, u32 param_2, u32 param_3) {
-    register int p1 asm("r4") = param_1;
-    register u32 p2 asm("r5") = param_2;
-    register u32 v3 asm("r0") = param_3;
-    if (v3 > 2) {
-        v3 = func_080D0F4E(v3, 3);
-    }
-    *(u16 *)(p1 + 0x16) = v3;
-    v3 = p2;
-    if (v3 > 0x1b) {
-        v3 = func_080D0F4E(v3, 0x1c);
-    }
-    *(u16 *)(p1 + 0x14) = v3;
-    *(u8 *)(p1 + 0x19) = 0;
+struct S {
+    u8 pad[0x14];
+    u16 f14;
+    u16 f16;
+    u8 pad2;
+    u8 f19;
+};
+inline u16 mod3(u32 c) {
+    if (c > 2)
+        c %= 3;
+    return c;
+}
+inline u16 mod28(u32 b) {
+    if (b > 27)
+        b %= 28;
+    return b;
+}
+extern "C" void func_08050F74(S *s, u32 b, u32 c) {
+    s->f16 = mod3(c);
+    s->f14 = mod28(b);
+    s->f19 = 0;
 }
 
 /* --- func_08050FA0 @ 0x08050FA0 (328B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */

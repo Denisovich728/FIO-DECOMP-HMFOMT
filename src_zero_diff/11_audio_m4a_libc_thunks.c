@@ -2,7 +2,7 @@
  * MODULE : 11_audio_m4a_libc_thunks.c
  * RANGE  : 0x080D0000 .. 0x080DB000 (33,178 bytes, 226 functions)
  * PURPOSE: Driver de audio MusicPlayer2000 (m4a), alocador SGI STL y thunks _call_via_rX
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 113 | Inline-CFG ASM: 113
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 117 | Inline-CFG ASM: 109
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -690,45 +690,17 @@ void func_080D0644(u32 param_1, u32 param_2) {
     func_080D05DC();
 }
 
-/* --- func_080D0678 @ 0x080D0678 (48B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
+/* --- func_080D0678 @ 0x080D0678 (48B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080D0678 @ 0x080D0678 (48 bytes)
- * Role   : Thumb Function / Method
- * Fields : +0x00:u32(R), +0x00:u8(R)
- * CFG Structure:
- *   L_080D0678: return
- * ========================================================================== */
-void func_080D0678(void) {
-    __asm__ volatile(
-        "	ldr r0, .Lpool_080D06A4\n"
-        "	ldr r2, [r0]\n"
-        "	add r0, r2, #0\n"
-        "	add r0, #0x2c\n"
-        "	ldrb r0, [r0]\n"
-        "	add r1, r2, #0\n"
-        "	add r1, #0x2d\n"
-        "	ldrb r1, [r1]\n"
-        "	lsl r1, r1, #8\n"
-        "	orr r0, r1\n"
-        "	add r1, r2, #0\n"
-        "	add r1, #0x2e\n"
-        "	ldrb r1, [r1]\n"
-        "	lsl r1, r1, #0x10\n"
-        "	orr r0, r1\n"
-        "	add r1, r2, #0\n"
-        "	add r1, #0x2f\n"
-        "	ldrb r1, [r1]\n"
-        "	lsl r1, r1, #0x18\n"
-        "	orr r0, r1\n"
-        "	bx lr\n"
-        "	.hword 0x0000\n"
-        ".Lpool_080D06A4:\n"
-        "	.word 0x03000420\n"
-        "	.macro bx reg\n"
-        "	.endm\n"
-    );
+extern "C" u32 func_080D0678(void) {
+    u8 *p = *(u8 **)0x03000420;
+    return p[0x2c] | (p[0x2d] << 8) | (p[0x2e] << 16) | (p[0x2f] << 24);
 }
 
 /* --- func_080D06A8 @ 0x080D06A8 (12B) [PURE-C | agbcc_O2] --- */
@@ -6913,61 +6885,41 @@ int func_080D4178(void) {
     return __ret;
 }
 
-/* --- func_080D4480 @ 0x080D4480 (84B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080D4480 @ 0x080D4480 (84B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080D4480 @ 0x080D4480 (84 bytes)
- * Role   : Thumb Function / Method
- * Fields : +0x00:u32(R)
- * Callees: func_08000608, func_080D6B00, func_080D6C08
- * CFG Structure:
- *   L_080D4480: if (==) goto L_080D44A0
- *   L_080D449A: if (!=) goto L_080D449A
- *   L_080D44A0: call func_080D6B00(); call func_080D6C08(); if (==) goto L_080D44C2
- *   L_080D44C2: return
- * ========================================================================== */
-extern void func_08000608(void);
-extern void func_080D6B00(void);
-extern void func_080D6C08(void);
-void func_080D4480(void) {
-
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	add r5, r1, #0\n"
-        "	mov r0, #0xe5\n"
-        "	lsl r0, r0, #5\n"
-        "	add r1, r4, r0\n"
-        "	ldr r0, [r1]\n"
-        "	add r0, #4\n"
-        "	add r1, r1, r0\n"
-        "	ldr r2, =0x00001CA4\n"
-        "	add r0, r4, r2\n"
-        "	cmp r0, r1\n"
-        "	beq _L_080D44A0\n"
-        "_L_080D449A:\n"
-        "	add r0, #1\n"
-        "	cmp r0, r1\n"
-        "	bne _L_080D449A\n"
-        "_L_080D44A0:\n"
-        "	ldr r1, =0x00001C38\n"
-        "	add r0, r4, r1\n"
-        "	mov r1, #2\n"
-        "	bl func_080D6B00\n"
-        "	ldr r2, =0x00001AA8\n"
-        "	add r0, r4, r2\n"
-        "	mov r1, #2\n"
-        "	bl func_080D6C08\n"
-        "	mov r0, #1\n"
-        "	and r0, r5\n"
-        "	cmp r0, #0\n"
-        "	beq _L_080D44C2\n"
-        "	add r0, r4, #0\n"
-        "	bl func_08000608\n"
-        "_L_080D44C2:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "lr", "memory"
-    );
-}
+struct D_080D6C08 {
+    u8 b[0x190];
+    ~D_080D6C08();
+};
+struct D_080D6B00 {
+    u8 b[0x68];
+    ~D_080D6B00();
+};
+struct FV_U8_Dtor {
+    u32 m_size;
+    u32 m_data[4];
+    u8 *begin() { return reinterpret_cast<u8 *>(m_data); }
+    u8 *end() { return reinterpret_cast<u8 *>(m_data) + m_size; }
+    ~FV_U8_Dtor() {
+        u8 *e = end();
+        for (u8 *it = begin(); it != e; ++it) {}
+    }
+};
+struct C_080D4480 {
+    u8 pad[0x1AA8];
+    D_080D6C08 s1;
+    D_080D6B00 s2;
+    FV_U8_Dtor v;
+    ~C_080D4480();
+};
+C_080D4480::~C_080D4480() {}
+extern "C" void func_080D4480() __attribute__((alias("_._10C_080D4480")));
 
 /* --- func_080D44D4 @ 0x080D44D4 (4096B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
 #define NULL 0
@@ -10391,44 +10343,43 @@ int func_080D6A80(void) {
     return __ret;
 }
 
-/* --- func_080D6B00 @ 0x080D6B00 (64B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080D6B00 @ 0x080D6B00 (64B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern void func_08000608();
-void func_080D6B00(int param_1, int param_2) {
-    register int p1 asm("r3") = param_1;
-    __asm__ volatile(
-        "ldr r0, [%0, #0x24]\n\t"
-        "lsl r0, r0, #1\n\t"
-        "add r0, r0, %0\n\t"
-        "add r0, #0x28\n\t"
-        "add r2, %0, #0\n\t"
-        "add r2, #0x28\n\t"
-        "cmp r2, r0\n\t"
-        "beq _after_loop1_D6B00\n"
-        "_loop1_D6B00:\n\t"
-        "add r2, #2\n\t"
-        "cmp r2, r0\n\t"
-        "bne _loop1_D6B00\n"
-        "_after_loop1_D6B00:\n\t"
-        "ldr r0, [%0]\n\t"
-        "lsl r0, r0, #2\n\t"
-        "add r0, #4\n\t"
-        "add r2, %0, r0\n\t"
-        "add r0, %0, #4\n\t"
-        "cmp r0, r2\n\t"
-        "beq _after_loop2_D6B00\n"
-        "_loop2_D6B00:\n\t"
-        "add r0, #4\n\t"
-        "cmp r0, r2\n\t"
-        "bne _loop2_D6B00\n"
-        "_after_loop2_D6B00:"
-        : : "r"(p1) : "r0", "r2", "memory"
-    );
-    if (param_2 & 1) {
-        func_08000608(p1);
+struct Elem4 { u32 x; ~Elem4() {} };
+template <typename T, u32 Capacity>
+struct FV_Dtor {
+    u32 m_size;
+    u32 m_data[(sizeof(T) * Capacity + 3) / 4];
+    T *begin() { return reinterpret_cast<T *>(m_data); }
+    T *end() { return reinterpret_cast<T *>(m_data) + m_size; }
+    ~FV_Dtor() {
+        T *e = end();
+        for (T *it = begin(); it != e; ++it) { it->~T(); }
     }
-}
+};
+struct FV_U16_Dtor {
+    u32 m_size;
+    u32 m_data[4];
+    u16 *begin() { return reinterpret_cast<u16 *>(m_data); }
+    u16 *end() { return reinterpret_cast<u16 *>(m_data) + m_size; }
+    ~FV_U16_Dtor() {
+        u16 *e = end();
+        for (u16 *it = begin(); it != e; ++it) {}
+    }
+};
+struct C_080D6B00 {
+    FV_Dtor<Elem4, 8> v1;
+    FV_U16_Dtor v2;
+    ~C_080D6B00();
+};
+C_080D6B00::~C_080D6B00() {}
+extern "C" void func_080D6B00() __attribute__((alias("_._10C_080D6B00")));
 
 /* --- func_080D6B40 @ 0x080D6B40 (200B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
 #define NULL 0
@@ -10557,69 +10508,34 @@ int func_080D6B40(void) {
     return __ret;
 }
 
-/* --- func_080D6C08 @ 0x080D6C08 (80B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080D6C08 @ 0x080D6C08 (80B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080D6C08 @ 0x080D6C08 (80 bytes)
- * Role   : Thumb Function / Method
- * Fields : +0x00:u32(R), +0x08:u32(R)
- * Callees: func_08000608
- * CFG Structure:
- *   L_080D6C08: if (==) goto L_080D6C2A
- *   L_080D6C24: if (!=) goto L_080D6C24
- *   L_080D6C2A: if (==) goto L_080D6C44
- *   L_080D6C3E: if (!=) goto L_080D6C3E
- *   L_080D6C44: if (==) goto L_080D6C52
- *   L_080D6C52: return
- * ========================================================================== */
-extern void func_08000608(void);
-void func_080D6C08(void) {
-
-    __asm__ volatile(
-        "	add r2, r0, #0\n"
-        "	add r3, r1, #0\n"
-        "	add r1, r2, #0\n"
-        "	add r1, #0xfc\n"
-        "	ldr r0, [r1]\n"
-        "	lsl r0, r0, #3\n"
-        "	add r0, #4\n"
-        "	add r1, r1, r0\n"
-        "	mov r4, #0x80\n"
-        "	lsl r4, r4, #1\n"
-        "	add r0, r2, r4\n"
-        "	cmp r0, r1\n"
-        "	beq _L_080D6C2A\n"
-        "_L_080D6C24:\n"
-        "	add r0, #8\n"
-        "	cmp r0, r1\n"
-        "	bne _L_080D6C24\n"
-        "_L_080D6C2A:\n"
-        "	add r1, r2, #0\n"
-        "	add r1, #8\n"
-        "	ldr r0, [r2, #8]\n"
-        "	lsl r0, r0, #3\n"
-        "	add r0, #4\n"
-        "	add r1, r1, r0\n"
-        "	add r0, r2, #0\n"
-        "	add r0, #0xc\n"
-        "	cmp r0, r1\n"
-        "	beq _L_080D6C44\n"
-        "_L_080D6C3E:\n"
-        "	add r0, #8\n"
-        "	cmp r0, r1\n"
-        "	bne _L_080D6C3E\n"
-        "_L_080D6C44:\n"
-        "	mov r0, #1\n"
-        "	and r0, r3\n"
-        "	cmp r0, #0\n"
-        "	beq _L_080D6C52\n"
-        "	add r0, r2, #0\n"
-        "	bl func_08000608\n"
-        "_L_080D6C52:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-}
+struct P8 { u32 a, b; ~P8() {} };
+template <typename T, u32 Capacity>
+struct FV_Dtor {
+    u32 m_size;
+    u32 m_data[(sizeof(T) * Capacity + 3) / 4];
+    T *begin() { return reinterpret_cast<T *>(m_data); }
+    T *end() { return reinterpret_cast<T *>(m_data) + m_size; }
+    ~FV_Dtor() {
+        T *e = end();
+        for (T *it = begin(); it != e; ++it) { it->~T(); }
+    }
+};
+struct C_080D6C08 {
+    u32 f0, f4;
+    FV_Dtor<P8, 30> v1;
+    FV_Dtor<P8, 5> v2;
+    ~C_080D6C08();
+};
+C_080D6C08::~C_080D6C08() {}
+extern "C" void func_080D6C08() __attribute__((alias("_._10C_080D6C08")));
 
 /* --- func_080D6C58 @ 0x080D6C58 (308B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
 #define NULL 0

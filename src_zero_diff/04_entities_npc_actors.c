@@ -2,7 +2,7 @@
  * MODULE : 04_entities_npc_actors.c
  * RANGE  : 0x08025000 .. 0x08045000 (129,496 bytes, 504 functions)
  * PURPOSE: Jerarquia polimorfica C++ de entidades, aldeanos (NPCs) y pretendientes
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 229 | Inline-CFG ASM: 275
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 233 | Inline-CFG ASM: 271
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -1552,10 +1552,21 @@ void func_08025A40(void) {
     );
 }
 
-/* --- func_08025AFC @ 0x08025AFC (20B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08025AFC @ 0x08025AFC (20B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-int func_08025AFC(u16 *a) { register int v asm("r0") = a[2]; asm("" : "+r"(v)); if (v <= 8) return 1; else return 0; }
+struct S { u32 f0; u16 f4; };
+extern "C" bool func_08025AFC(S const *s) {
+    int v = s->f4;
+    if (v <= 8)
+        return true;
+    return false;
+}
 
 /* --- func_08025B10 @ 0x08025B10 (84B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
 #define NULL 0
@@ -29657,25 +29668,22 @@ void func_08032AB4(struct S *p, u32 param_2, u8 param_3) {
     p->d = param_3 != 0 ? 2 : 1;
 }
 
-/* --- func_08032B04 @ 0x08032B04 (36B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08032B04 @ 0x08032B04 (36B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern void func_0805E860();
-void func_08032B04(int param_1, int param_2) {
-    register int p1 asm("r4") = param_1;
-    func_0805E860(p1 + 0x30, param_2);
-    __asm__ volatile(
-        "add r0, %0, #0\n\t"
-        "add r0, #0x44\n\t"
-        "mov r2, #0\n\t"
-        "mov r1, #1\n\t"
-        "strb r1, [r0]\n\t"
-        "add r0, #2\n\t"
-        "strb r2, [r0]\n\t"
-        "add r0, #1\n\t"
-        "strb r1, [r0]"
-        : : "r"(p1) : "r0", "r1", "r2", "memory"
-    );
+struct Sub { u8 a; u8 pad; u8 b; u8 c; };
+struct S { u8 pad[0x30]; u8 sub0[0x14]; Sub sub; };
+extern "C" void func_0805E860(void *);
+extern "C" void func_08032B04(S *s) {
+    func_0805E860(s->sub0);
+    s->sub.a = 1;
+    s->sub.b = 0;
+    s->sub.c = 1;
 }
 
 /* --- func_08032B2C @ 0x08032B2C (20B) [PURE-C | agbcc_O2] --- */
@@ -31649,30 +31657,17 @@ u32 func_080338F0(int arg0) {
   return ((u32)(val < arg0 + 0x100U));
 }
 
-/* --- func_08033914 @ 0x08033914 (20B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
+/* --- func_08033914 @ 0x08033914 (20B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08033914 @ 0x08033914 (20 bytes)
- * Role   : Thumb Function / Method
- * CFG Structure:
- *   L_08033914: return
- * ========================================================================== */
-void func_08033914(void) {
-    __asm__ volatile(
-        "	mov r1, #0xc0\n"
-        "	lsl r1, r1, #9\n"
-        "	add r0, #1\n"
-        "	mul r0, r1\n"
-        "	lsr r0, r0, #8\n"
-        "	mov r1, #0x80\n"
-        "	lsl r1, r1, #8\n"
-        "	add r0, r0, r1\n"
-        "	bx lr\n"
-        "	.hword 0x0000\n"
-        "	.macro bx reg\n"
-        "	.endm\n"
-    );
+extern "C" u32 func_08033914(u32 a) {
+    u32 c = 0xc0 << 9;
+    return (((a + 1) * c) >> 8) + (0x80 << 8);
 }
 
 /* --- func_08033928 @ 0x08033928 (260B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
@@ -43899,25 +43894,22 @@ u32 func_080390D0(int *arg0) {
     return ((u32)(-v | v)) >> 31;
 }
 
-/* --- func_080390DC @ 0x080390DC (36B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080390DC @ 0x080390DC (36B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern void func_0805E860();
-void func_080390DC(int param_1, int param_2) {
-    register int p1 asm("r4") = param_1;
-    func_0805E860(p1 + 0x30, param_2);
-    __asm__ volatile(
-        "add r0, %0, #0\n\t"
-        "add r0, #0x44\n\t"
-        "mov r2, #0\n\t"
-        "mov r1, #1\n\t"
-        "strb r1, [r0]\n\t"
-        "add r0, #2\n\t"
-        "strb r2, [r0]\n\t"
-        "add r0, #1\n\t"
-        "strb r1, [r0]"
-        : : "r"(p1) : "r0", "r1", "r2", "memory"
-    );
+struct Sub { u8 a; u8 pad; u8 b; u8 c; };
+struct S { u8 pad[0x30]; u8 sub0[0x14]; Sub sub; };
+extern "C" void func_0805E860(void *);
+extern "C" void func_080390DC(S *s) {
+    func_0805E860(s->sub0);
+    s->sub.a = 1;
+    s->sub.b = 0;
+    s->sub.c = 1;
 }
 
 /* --- func_0803911C @ 0x0803911C (24B) [PURE-C | agbcc_O2] --- */

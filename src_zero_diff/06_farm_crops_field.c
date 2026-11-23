@@ -2,7 +2,7 @@
  * MODULE : 06_farm_crops_field.c
  * RANGE  : 0x0805E000 .. 0x08078000 (93,664 bytes, 149 functions)
  * PURPOSE: Grilla de granja 43x25, crecimiento de cultivos, suelo y recoleccion
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 45 | Inline-CFG ASM: 104
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 48 | Inline-CFG ASM: 101
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -10345,65 +10345,36 @@ u32 func_08063E58(void) {
   return 1;
 }
 
-/* --- func_08063E64 @ 0x08063E64 (40B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08063E64 @ 0x08063E64 (40B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern int func_0809B228();
-extern u32 func_080D0EDA();
-u32 func_08063E64(int param_1) {
-    u32 sp0, sp1;
-    register u32 r0 asm("r0");
-    register u32 r1 asm("r1");
-    register u32 *r2 asm("r2");
-    register u32 *r3 asm("r3");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "mov r1, #0xa\n\t"
-        "str r1, [sp]\n\t"
-        "bl func_0809B228\n\t"
-        "mov r1, #0x19\n\t"
-        "bl func_080D0EDA\n\t"
-        "str r0, [sp, #4]\n\t"
-        "add %2, sp, #4\n\t"
-        "ldr %1, [sp]\n\t"
-        "mov %3, sp"
-        : "=r"(r0), "=r"(r1), "=r"(r2), "=r"(r3) : : "lr", "memory"
-    );
-    if (r1 > r0) {
-        r3 = r2;
-    }
-    return *r3;
+template <class T> inline const T& min_ref(const T& a, const T& b) { return b < a ? b : a; }
+extern "C" u32 func_0809B228(void *);
+extern "C" u32 func_08063E64(void *s) {
+    return min_ref<u32>(10, func_0809B228(s) / 25);
 }
 
-/* --- func_08063E8C @ 0x08063E8C (44B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08063E8C @ 0x08063E8C (44B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern u32 func_0809B50C();
-extern u32 func_0809B504();
-u32 func_08063E8C(u32 param_1) {
-    register u32 r0 asm("r0") = func_0809B50C(param_1);
-    __asm__ volatile(
-        "lsl %0, %0, #0x18\n\t"
-        "cmp %0, #0\n\t"
-        "beq _l1_63E8C\n\t"
-        "mov %0, #0x58\n\t"
-        "b _end_63E8C\n"
-        "_l1_63E8C:"
-        : "+r"(r0)
-    );
-    r0 = func_0809B504(param_1);
-    __asm__ volatile(
-        "lsl %0, %0, #0x18\n\t"
-        "cmp %0, #0\n\t"
-        "bne _ret48_63E8C\n\t"
-        "mov %0, #0x38\n\t"
-        "b _end_63E8C\n"
-        "_ret48_63E8C:\n\t"
-        "mov %0, #0x48\n"
-        "_end_63E8C:"
-        : "+r"(r0)
-    );
-    return r0;
+extern "C" bool func_0809B50C(void const *);
+extern "C" bool func_0809B504(void const *);
+extern "C" u32 func_08063E8C(void const *s) {
+    if (func_0809B50C(s))
+        return 0x58;
+    if (func_0809B504(s))
+        return 0x48;
+    return 0x38;
 }
 
 /* --- func_08063EB8 @ 0x08063EB8 (1128B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
@@ -45970,18 +45941,20 @@ void func_08075C88(void) {
     );
 }
 
-/* --- func_08075DB8 @ 0x08075DB8 (28B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08075DB8 @ 0x08075DB8 (28B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern void func_08075C88();
-void func_08075DB8(int param_1, int param_2) {
-    register u32 c1 asm("r2");
-    __asm__("ldr %0, =0x0000FFFF" : "=r"(c1));
-    *(u16 *)(param_1 + 6) = c1;
-    c1 = -1;
-    __asm__("" : "+r"(c1));
-    *(u16 *)(param_1 + 0xa) = c1;
-    func_08075C88(param_1, (param_2 << 16) >> 16);
+struct S { u16 f0, f2, f4; u16 f6; u16 f8; s16 fa; };
+extern "C" void func_08075C88(void *, s16);
+extern "C" void func_08075DB8(S *a, s16 b) {
+    a->f6 = 0xFFFF;
+    a->fa = -1;
+    func_08075C88(a, b);
 }
 
 /* --- func_08075DD4 @ 0x08075DD4 (24B) [PURE-C | agbcc_O2] --- */

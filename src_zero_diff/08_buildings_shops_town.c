@@ -2,7 +2,7 @@
  * MODULE : 08_buildings_shops_town.c
  * RANGE  : 0x08093000 .. 0x080A8000 (85,576 bytes, 438 functions)
  * PURPOSE: Edificios, tiendas, herreria, carpinteria, clinica y horarios del pueblo
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 235 | Inline-CFG ASM: 203
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 241 | Inline-CFG ASM: 197
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -1902,22 +1902,27 @@ void func_08094048(int param_1) {
     );
 }
 
-/* --- func_080940C0 @ 0x080940C0 (36B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080940C0 @ 0x080940C0 (36B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-void func_080940C0(int param_1, int param_2) {
-    register int p1 asm("r2") = param_1;
-    switch (param_2) {
-        case 2:
-            *(u8 *)(p1 + 0xc) = 1;
-            *(u32 *)(p1 + 8) = 0x0810084C;
-            break;
-        case 3:
-            __asm__ volatile("" : : : "lr");
-            *(u8 *)(p1 + 0xc) = 0;
-            *(u32 *)(p1 + 8) = 0x0810084C;
-            break;
+struct S { u32 f0, f4, f8; u8 fc; };
+extern "C" void func_080940C0(S *s, int x) {
+    switch (x) {
+    case 2:
+        s->fc = 1;
+        break;
+    case 3:
+        s->fc = 0;
+        break;
+    default:
+        return;
     }
+    s->f8 = 0x0810084C;
 }
 
 /* --- func_080940E4 @ 0x080940E4 (44B) [PURE-C | agbcc_O2] --- */
@@ -2127,47 +2132,25 @@ void func_08094208(int arg0) {
   func_080D3910(arg0, *(u32 *)(*(u32 *)(arg0) + 0x2c));
 }
 
-/* --- func_08094224 @ 0x08094224 (40B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
+/* --- func_08094224 @ 0x08094224 (40B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08094224 @ 0x08094224 (40 bytes)
- * Role   : Thumb Function / Method
- * Fields : +0x08:u32(W), +0x10:u32(W)
- * CFG Structure:
- *   L_08094224: if (==) goto L_08094232
- *   L_08094232: goto L_08094242
- *   L_08094244: return
- * ========================================================================== */
-void func_08094224(void) {
-    __asm__ volatile(
-        "	push {lr}\n"
-        "	add r2, r0, #0\n"
-        "	cmp r1, #2\n"
-        "	beq _L_08094232\n"
-        "	cmp r1, #3\n"
-        "	beq _L_0809423C\n"
-        "	b _L_08094244\n"
-        "_L_08094232:\n"
-        "	ldr r0, .Lpool_08094238\n"
-        "	b _L_08094242\n"
-        "	.hword 0x0000\n"
-        ".Lpool_08094238:\n"
-        "	.word 0x081007AC\n"
-        "_L_0809423C:\n"
-        "	mov r0, #1\n"
-        "	str r0, [r2, #0x10]\n"
-        "	ldr r0, .Lpool_08094248\n"
-        "_L_08094242:\n"
-        "	str r0, [r2, #8]\n"
-        "_L_08094244:\n"
-        "	pop {r0}\n"
-        "	bx r0\n"
-        ".Lpool_08094248:\n"
-        "	.word 0x0810089C\n"
-        "	.macro bx reg\n"
-        "	.endm\n"
-    );
+struct S { u32 f0, f4, f8, fc, f10; };
+extern "C" void func_08094224(S *s, int x) {
+    switch (x) {
+    case 2:
+        s->f8 = 0x081007AC;
+        break;
+    case 3:
+        s->f10 = 1;
+        s->f8 = 0x0810089C;
+        break;
+    }
 }
 
 /* --- func_0809424C @ 0x0809424C (28B) [PURE-C | agbcc_O2] --- */
@@ -2648,22 +2631,27 @@ void func_080944E8(void) {
     );
 }
 
-/* --- func_08094560 @ 0x08094560 (36B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08094560 @ 0x08094560 (36B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-void func_08094560(int param_1, int param_2) {
-    register int p1 asm("r2") = param_1;
-    switch (param_2) {
-        case 2:
-            *(u8 *)(p1 + 0xc) = 1;
-            *(u32 *)(p1 + 8) = 0x0810098C;
-            break;
-        case 3:
-            __asm__ volatile("" : : : "lr");
-            *(u8 *)(p1 + 0xc) = 0;
-            *(u32 *)(p1 + 8) = 0x0810098C;
-            break;
+struct S { u32 f0, f4, f8; u8 fc; };
+extern "C" void func_08094560(S *s, int x) {
+    switch (x) {
+    case 2:
+        s->fc = 1;
+        break;
+    case 3:
+        s->fc = 0;
+        break;
+    default:
+        return;
     }
+    s->f8 = 0x0810098C;
 }
 
 /* --- func_08094584 @ 0x08094584 (44B) [PURE-C | old_agbcc_O2] --- */
@@ -2899,47 +2887,25 @@ void func_080946BC(void) {
 void func_080946C0(void) {
 }
 
-/* --- func_080946C4 @ 0x080946C4 (40B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
+/* --- func_080946C4 @ 0x080946C4 (40B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080946C4 @ 0x080946C4 (40 bytes)
- * Role   : Thumb Function / Method
- * Fields : +0x08:u32(W), +0x10:u32(W)
- * CFG Structure:
- *   L_080946C4: if (==) goto L_080946D2
- *   L_080946D2: goto L_080946E2
- *   L_080946E4: return
- * ========================================================================== */
-void func_080946C4(void) {
-    __asm__ volatile(
-        "	push {lr}\n"
-        "	add r2, r0, #0\n"
-        "	cmp r1, #2\n"
-        "	beq _L_080946D2\n"
-        "	cmp r1, #3\n"
-        "	beq _L_080946DC\n"
-        "	b _L_080946E4\n"
-        "_L_080946D2:\n"
-        "	ldr r0, .Lpool_080946D8\n"
-        "	b _L_080946E2\n"
-        "	.hword 0x0000\n"
-        ".Lpool_080946D8:\n"
-        "	.word 0x081008EC\n"
-        "_L_080946DC:\n"
-        "	mov r0, #1\n"
-        "	str r0, [r2, #0x10]\n"
-        "	ldr r0, .Lpool_080946E8\n"
-        "_L_080946E2:\n"
-        "	str r0, [r2, #8]\n"
-        "_L_080946E4:\n"
-        "	pop {r0}\n"
-        "	bx r0\n"
-        ".Lpool_080946E8:\n"
-        "	.word 0x081009DC\n"
-        "	.macro bx reg\n"
-        "	.endm\n"
-    );
+struct S { u32 f0, f4, f8, fc, f10; };
+extern "C" void func_080946C4(S *s, int x) {
+    switch (x) {
+    case 2:
+        s->f8 = 0x081008EC;
+        break;
+    case 3:
+        s->f10 = 1;
+        s->f8 = 0x081009DC;
+        break;
+    }
 }
 
 /* --- func_080947BC @ 0x080947BC (88B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
@@ -19493,10 +19459,20 @@ u32 func_0809C304(int arg0) {
   return ((u32)*(u8 *)(arg0 + val));
 }
 
-/* --- func_0809C318 @ 0x0809C318 (20B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_0809C318 @ 0x0809C318 (20B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-int func_0809C22C(void *); u8 func_0809C318(u8 *a) { register u8 *p asm("r4") = a; int i = func_0809C22C(p); p += 6; p += i; return *p; }
+struct Sub { u8 arr[1]; };
+struct S { u8 pad[6]; Sub sub; } __attribute__((packed));
+extern "C" u32 func_0809C22C(void const *);
+extern "C" u8 func_0809C318(S const *s) {
+    return s->sub.arr[func_0809C22C(s)];
+}
 
 /* --- func_0809C32C @ 0x0809C32C (96B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
 #define NULL 0
@@ -25564,10 +25540,22 @@ void func_0809EE4C(int param_1) {
     );
 }
 
-/* --- func_0809EE8C @ 0x0809EE8C (24B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_0809EE8C @ 0x0809EE8C (24B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-void func_0809E2D4(void *); void *func_0809EE8C(u8 *a) { func_0809E2D4(a); { register u32 z1 asm("r1") = 0; register u32 z0 asm("r0") = 0; asm("" : "+r"(z1), "+r"(z0)); *(u16 *)(a + 0x14) = z0; a[0x16] = z1; } return a; }
+struct S { u8 pad[0x14]; u16 f14; u8 f16; };
+extern "C" void func_0809E2D4(void *);
+extern "C" S *func_0809EE8C(S *s) {
+    func_0809E2D4(s);
+    s->f14 = 0;
+    s->f16 = 0;
+    return s;
+}
 
 /* --- func_0809EEA4 @ 0x0809EEA4 (32B) [PURE-C | agbcc_O2] --- */
 #define NULL 0

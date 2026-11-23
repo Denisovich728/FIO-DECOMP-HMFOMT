@@ -2,7 +2,7 @@
  * MODULE : 01_crt0_bios_interrupts.c
  * RANGE  : 0x080000C0 .. 0x08005000 (20,032 bytes, 69 functions)
  * PURPOSE: Arranque crt0, dispatcher BIOS, DMA/VRAM HAL y vectores de interrupcion
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 36 | Inline-CFG ASM: 33
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 37 | Inline-CFG ASM: 32
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -837,13 +837,18 @@ int func_080006E4(void) {
     return __ret;
 }
 
-/* --- func_08000714 @ 0x08000714 (20B) [CFG-ASM (algebraic-ast-deduction) | agbcc_O2] --- */
-int func_080D100C(int);
+/* --- func_08000714 @ 0x08000714 (20B) [PURE-C | agbcp_O1] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
+#define NULL 0
 
-int func_08000714(u8 *arg0) {
-    u8 val = arg0[4];
-    register int mask asm("r2") = 3;
-    return func_080D100C((val & mask) + 3);
+struct S { u32 a; u8 b; };
+extern "C" u32 func_080D100C(u32, u32);
+extern "C" u32 func_08000714(S *s, u32 v) {
+    return func_080D100C((s->b & 3) + 3, v);
 }
 
 /* --- func_08000728 @ 0x08000728 (196B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */

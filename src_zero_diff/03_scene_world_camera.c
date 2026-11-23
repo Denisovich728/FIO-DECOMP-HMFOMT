@@ -2,7 +2,7 @@
  * MODULE : 03_scene_world_camera.c
  * RANGE  : 0x08012000 .. 0x08025000 (73,372 bytes, 411 functions)
  * PURPOSE: Gestor de escenas, transiciones de mapa, camara y colisiones
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 231 | Inline-CFG ASM: 180
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 233 | Inline-CFG ASM: 178
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -10196,42 +10196,22 @@ void func_08016758(int arg0) {
     func_08008B88(dst, v);
 }
 
-/* --- func_08016784 @ 0x08016784 (40B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_08016784 @ 0x08016784 (40B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08016784 @ 0x08016784 (40 bytes)
- * Role   : Thumb Function / Method
- * Fields : +0x04:u32(R)
- * Callees: func_08008BF8, func_08008CD0
- * CFG Structure:
- *   L_08016784: call func_08008CD0(); if (==) goto L_080167A4
- *   L_080167A6: return
- * ========================================================================== */
-extern void func_08008BF8(void);
-extern void func_08008CD0(void);
-int func_08016784(void) {
-    register int __ret asm("r0");
-    __asm__ volatile(
-        "	ldr r0, [r0, #4]\n"
-        "	add r4, r0, #0\n"
-        "	add r4, #0xbc\n"
-        "	add r0, r4, #0\n"
-        "	bl func_08008CD0\n"
-        "	lsl r0, r0, #0x18\n"
-        "	cmp r0, #0\n"
-        "	beq _L_080167A4\n"
-        "	add r0, r4, #0\n"
-        "	mov r1, #5\n"
-        "	bl func_08008BF8\n"
-        "	mov r0, #1\n"
-        "	b _L_080167A6\n"
-        "_L_080167A4:\n"
-        "	mov r0, #0\n"
-        "_L_080167A6:\n"
-        : "=r"(__ret) : : "r1", "r2", "r3", "r4", "lr", "memory"
-    );
-    return __ret;
+extern "C" bool func_08008CD0(void *);
+extern "C" void func_08008BF8(void *, int);
+extern "C" bool func_08016784(u8 **a) {
+    u8 *p = a[1] + 0xbc;
+    if (!func_08008CD0(p))
+        return false;
+    func_08008BF8(p, 5);
+    return true;
 }
 
 /* --- func_080167AC @ 0x080167AC (32B) [PURE-C | agbcc_O2] --- */
@@ -38855,31 +38835,20 @@ void func_08024C64(int arg0) {
   func_080323C8();
 }
 
-/* --- func_08024C74 @ 0x08024C74 (20B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
+/* --- func_08024C74 @ 0x08024C74 (20B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_08024C74 @ 0x08024C74 (20 bytes)
- * Role   : Thumb Function / Method
- * Fields : +0x00:u16(W), +0x00:u8(W)
- * CFG Structure:
- *   L_08024C74: return
- * ========================================================================== */
-void func_08024C74(void) {
-    __asm__ volatile(
-        "	add r2, r0, #0\n"
-        "	add r0, #0x3c\n"
-        "	mov r1, #0\n"
-        "	strb r1, [r0]\n"
-        "	add r0, #2\n"
-        "	strb r1, [r0]\n"
-        "	add r0, #0x68\n"
-        "	strh r1, [r0]\n"
-        "	bx lr\n"
-        "	.hword 0x0000\n"
-        "	.macro bx reg\n"
-        "	.endm\n"
-    );
+struct Sub { u8 a; u8 pad; u8 b; u8 pad2[0x67]; u16 c; };
+struct S { u8 pad[0x3c]; Sub sub; };
+extern "C" void func_08024C74(S *s) {
+    s->sub.a = 0;
+    s->sub.b = 0;
+    s->sub.c = 0;
 }
 
 /* --- func_08024C88 @ 0x08024C88 (16B) [PURE-C | agbcc_O2] --- */

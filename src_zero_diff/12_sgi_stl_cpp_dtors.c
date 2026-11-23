@@ -2,7 +2,7 @@
  * MODULE : 12_sgi_stl_cpp_dtors.c
  * RANGE  : 0x080DB000 .. 0x080E6000 (43,008 bytes, 383 functions)
  * PURPOSE: Plantillas C++ SGI STL (_Rb_tree, _List_base, std::__find) y destructores virtuales
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 243 | Inline-CFG ASM: 140
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 246 | Inline-CFG ASM: 137
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -3310,38 +3310,50 @@ void func_080DC724(int arg0,u32 arg1) {
   }
 }
 
-/* --- func_080DC764 @ 0x080DC764 (104B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080DC764 @ 0x080DC764 (104B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern void func_080A47B4();
-extern void func_08000608();
-void func_080DC764(int param_1, int param_2) {
-    register int p1 asm("r6") = param_1;
-    int p2 = param_2;
-    register int end asm("r5");
-    register int cur asm("r4");
-    __asm__ volatile("" : "+l"(p2), "+l"(p2), "+l"(p2));
-    {
-        register int *p_cc asm("r2") = (int *)(p1 + 0xcc);
-        register int cnt asm("r1");
-        register int off asm("r0");
-        __asm__("ldr %0, [%1]" : "=r"(cnt) : "r"(p_cc));
-        off = ((cnt * 9) << 3) + 4;
-        __asm__("" : "+r"(off));
-        end = (int)p_cc + off;
+struct D_080A47B4 {
+    u8 b[0x40];
+    ~D_080A47B4();
+};
+struct Elem48 {
+    u32 f0;
+    D_080A47B4 sub;
+    u32 f44;
+    ~Elem48() {}
+};
+template <typename T, u32 Capacity>
+struct FV_Dtor {
+    u32 m_size;
+    u32 m_data[(sizeof(T) * Capacity + 3) / 4];
+    T *begin() { return reinterpret_cast<T *>(m_data); }
+    T *end() { return reinterpret_cast<T *>(m_data) + m_size; }
+    ~FV_Dtor() {
+        T *e = end();
+        for (T *it = begin(); it != e; ++it) { it->~T(); }
     }
-    cur = p1 + 0xd0;
-    for (; cur != end; cur += 0x48) {
-        func_080A47B4(cur + 4, 2);
-    }
-    func_080A47B4(p1 + 0x8c, 2);
-    func_080A47B4(p1 + 0x48, 2);
-    func_080A47B4(p1 + 8, 2);
-    *(u32 *)(p1 + 4) = 0x080E65E0;
-    if (p2 & 1) {
-        func_08000608(p1);
-    }
-}
+};
+struct Base04 {
+    u32 f0;
+    u32 vtbl;
+    ~Base04() { vtbl = 0x080E65E0; }
+};
+struct C_080DC764 : public Base04 {
+    D_080A47B4 s1;
+    D_080A47B4 s2;
+    u32 pad_88;
+    D_080A47B4 s3;
+    FV_Dtor<Elem48, 4> v;
+    ~C_080DC764();
+};
+C_080DC764::~C_080DC764() {}
+extern "C" void func_080DC764() __attribute__((alias("_._10C_080DC764")));
 
 /* --- func_080DC7CC @ 0x080DC7CC (52B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1
@@ -6860,79 +6872,72 @@ void func_080DE184(int param_1) {
     }
 }
 
-/* --- func_080DE1B4 @ 0x080DE1B4 (108B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080DE1B4 @ 0x080DE1B4 (108B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080DE1B4 @ 0x080DE1B4 (108 bytes)
- * Role   : C++ Virtual Deleting Destructor ~Class(this, int __in_chrg) [vtable: 0x080E65E0, 0x080E76D4]
- * Fields : +0x00:u32(R), +0x04:u32(W), +0x08:u32(R), +0x4C:u32(R)
- * Callees: func_08000608, func_080D3914
- * CFG Structure:
- *   L_080DE1B4: goto L_080DE1F2
- *   L_080DE1D8: if (==) goto L_080DE1EC
- *   L_080DE1F2: if (!=) goto L_080DE1FE
- *   L_080DE1FE: if (==) goto L_080DE1D8
- *   L_080DE214: return
- * ========================================================================== */
-extern void func_08000608(void);
-extern void func_080D3914(void);
-void func_080DE1B4(void) {
-    u32 sp0, sp1, sp2, sp3;
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1), "m"(sp2), "m"(sp3));
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	add r5, r1, #0\n"
-        "	ldr r0, .Lpool_080DE1D4\n"
-        "	str r0, [r4, #4]\n"
-        "	ldr r0, [r4, #8]\n"
-        "	lsl r0, r0, #2\n"
-        "	add r0, r0, r4\n"
-        "	add r0, #0xc\n"
-        "	str r0, [sp, #4]\n"
-        "	add r0, r4, #0\n"
-        "	add r0, #0xc\n"
-        "	str r0, [sp, #0xc]\n"
-        "	b _L_080DE1F2\n"
-        "	.align 2, 0\n"
-        ".Lpool_080DE1D4:\n"
-        "	.word 0x080E76D4\n"
-        "_L_080DE1D8:\n"
-        "	sub r0, r2, #4\n"
-        "	ldr r1, [r0]\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080DE1EC\n"
-        "	ldr r0, [r1, #0x4c]\n"
-        "	ldr r2, [r0, #8]\n"
-        "	add r0, r1, #0\n"
-        "	mov r1, #3\n"
-        "	bl func_080D3914\n"
-        "_L_080DE1EC:\n"
-        "	ldr r0, [sp, #4]\n"
-        "	sub r0, #4\n"
-        "	str r0, [sp, #4]\n"
-        "_L_080DE1F2:\n"
-        "	ldr r2, [sp, #4]\n"
-        "	ldr r0, [sp, #0xc]\n"
-        "	mov r1, #0\n"
-        "	cmp r2, r0\n"
-        "	bne _L_080DE1FE\n"
-        "	mov r1, #1\n"
-        "_L_080DE1FE:\n"
-        "	cmp r1, #0\n"
-        "	beq _L_080DE1D8\n"
-        "	ldr r0, =0x080E65E0\n"
-        "	str r0, [r4, #4]\n"
-        "	mov r0, #1\n"
-        "	and r0, r5\n"
-        "	cmp r0, #0\n"
-        "	beq _L_080DE214\n"
-        "	add r0, r4, #0\n"
-        "	bl func_08000608\n"
-        "_L_080DE214:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "lr", "memory"
-    );
+struct V4C {
+    u8 pad[0x4c];
+    virtual ~V4C();
+};
+template <class Iterator>
+class rev_it {
+protected:
+    Iterator current;
+public:
+    typedef rev_it<Iterator> _Self;
+    rev_it() {}
+    explicit rev_it(Iterator x) : current(x) {}
+    rev_it(const _Self& x) : current(x.current) {}
+    template <class Iter>
+    rev_it(const rev_it<Iter>& x) : current(x.base()) {}
+    Iterator base() const { return current; }
+    V4C *&operator*() const {
+        Iterator tmp = current;
+        return *--tmp;
+    }
+    _Self& operator++() {
+        --current;
+        return *this;
+    }
+};
+template <class Iter>
+inline bool operator==(const rev_it<Iter>& x, const rev_it<Iter>& y) {
+    return x.base() == y.base();
 }
+template <class Iter>
+inline bool operator!=(const rev_it<Iter>& x, const rev_it<Iter>& y) {
+    return !(x == y);
+}
+template <typename T, u32 Capacity>
+struct FixedVec {
+    u32 m_size;
+    u32 m_data[(sizeof(T) * Capacity + 3) / 4];
+    T *begin() { return reinterpret_cast<T *>(m_data); }
+    T *end() { return reinterpret_cast<T *>(m_data) + m_size; }
+    rev_it<T *> rbegin() { return rev_it<T *>(end()); }
+    rev_it<T *> rend() { return rev_it<T *>(begin()); }
+};
+struct C_080E65E0 {
+    u32 f0;
+    virtual ~C_080E65E0() {}
+};
+struct C_080E76D4 : public C_080E65E0 {
+    FixedVec<V4C *, 12> v;
+    virtual ~C_080E76D4();
+};
+C_080E76D4::~C_080E76D4() {
+    rev_it<V4C **> d0, it = v.rbegin();
+    rev_it<V4C **> d1, end = v.rend();
+    for (; it != end; ++it) {
+        delete *it;
+    }
+}
+extern "C" void func_080DE1B4() __attribute__((alias("_._10C_080E76D4")));
 
 /* --- func_080DE220 @ 0x080DE220 (32B) [PURE-C | agbcc_O2] --- */
 #define TRUE 1
@@ -22395,55 +22400,38 @@ int func_080E542C(void) {
     return __ret;
 }
 
-/* --- func_080E5478 @ 0x080E5478 (76B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
+/* --- func_080E5478 @ 0x080E5478 (76B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080E5478 @ 0x080E5478 (76 bytes)
- * Role   : C++ Virtual Deleting Destructor ~Class(this, int __in_chrg) [vtable: 0x080E857C, 0x080E8594]
- * Fields : +0x00:u32(W), +0x04:u16(R), +0x08:u32(R), +0x0C:u32(W), +0x10:u32(R), +0x14:u32(W)
- * Callees: func_080004F4, func_08000528, func_08000608, func_080D100C
- * CFG Structure:
- *   L_080E5478: call func_08000528(); call func_080D100C(); if (==) goto L_080E54A4
- *   L_080E54A4: if (==) goto L_080E54B2
- *   L_080E54B2: return
- * ========================================================================== */
-extern void func_080004F4(void);
-extern void func_08000528(void);
-extern void func_08000608(void);
-extern void func_080D100C(void);
-void func_080E5478(void) {
-
-    __asm__ volatile(
-        "	add r4, r0, #0\n"
-        "	add r5, r1, #0\n"
-        "	ldr r0, =0x080E857C\n"
-        "	str r0, [r4, #0x14]\n"
-        "	mov r0, #4\n"
-        "	bl func_08000528\n"
-        "	ldr r1, [r4, #0x10]\n"
-        "	mov r0, #2\n"
-        "	bl func_080D100C\n"
-        "	ldr r0, =0x080E8594\n"
-        "	str r0, [r4, #0xc]\n"
-        "	ldr r1, =0x03000414\n"
-        "	ldr r0, [r4, #8]\n"
-        "	str r0, [r1]\n"
-        "	ldrh r0, [r4, #4]\n"
-        "	cmp r0, #0\n"
-        "	beq _L_080E54A4\n"
-        "	bl func_080004F4\n"
-        "_L_080E54A4:\n"
-        "	mov r0, #1\n"
-        "	and r0, r5\n"
-        "	cmp r0, #0\n"
-        "	beq _L_080E54B2\n"
-        "	add r0, r4, #0\n"
-        "	bl func_08000608\n"
-        "_L_080E54B2:\n"
-        :  : : "r0", "r1", "r2", "r3", "r4", "r5", "lr", "memory"
-    );
+extern "C" void func_08000528(int);
+extern "C" void func_080D100C(int, u32);
+extern "C" void func_080004F4(u16);
+struct C_080E8594 {
+    u32 f0;
+    u16 f4;
+    u16 pad;
+    u32 f8;
+    virtual ~C_080E8594() {
+        *(u32 *)0x03000414 = f8;
+        if (f4)
+            func_080004F4(f4);
+    }
+};
+struct C_080E857C {
+    C_080E8594 base;
+    u32 f10;
+    virtual ~C_080E857C();
+};
+C_080E857C::~C_080E857C() {
+    func_08000528(4);
+    func_080D100C(2, f10);
 }
+extern "C" void func_080E5478() __attribute__((alias("_._10C_080E857C")));
 
 /* --- func_080E54C4 @ 0x080E54C4 (44B) [PURE-C | agbcc_O2] --- */
 #define NULL 0

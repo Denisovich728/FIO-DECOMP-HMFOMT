@@ -2,7 +2,7 @@
  * MODULE : 07_player_tools_stamina.c
  * RANGE  : 0x08078000 .. 0x08093000 (104,944 bytes, 214 functions)
  * PURPOSE: Controlador del granjero, uso de herramientas, stamina, fatiga y mochila
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 99 | Inline-CFG ASM: 115
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 102 | Inline-CFG ASM: 112
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -7949,35 +7949,18 @@ void func_0807B3B0(void) {
     );
 }
 
-/* --- func_0807B8F4 @ 0x0807B8F4 (44B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_0807B8F4 @ 0x0807B8F4 (44B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern int func_0809B228();
-extern u32 func_080D0EDA();
-u32 func_0807B8F4(int param_1, int param_2) {
-    u32 sp0, sp1;
-    register u32 r0 asm("r0");
-    register u32 r1 asm("r1");
-    register u32 *r2 asm("r2");
-    register u32 *r3 asm("r3");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "add r0, r1, #0\n\t"
-        "mov r1, #0xa\n\t"
-        "str r1, [sp]\n\t"
-        "bl func_0809B228\n\t"
-        "mov r1, #0x19\n\t"
-        "bl func_080D0EDA\n\t"
-        "str r0, [sp, #4]\n\t"
-        "add %2, sp, #4\n\t"
-        "ldr %1, [sp]\n\t"
-        "mov %3, sp"
-        : "=r"(r0), "=r"(r1), "=r"(r2), "=r"(r3) : : "lr", "memory"
-    );
-    if (r1 > r0) {
-        r3 = r2;
-    }
-    return *r3;
+template <class T> inline const T& min_ref(const T& a, const T& b) { return b < a ? b : a; }
+extern "C" u32 func_0809B228(void *);
+extern "C" u32 func_0807B8F4(void *a, void *s) {
+    return min_ref<u32>(10, func_0809B228(s) / 25);
 }
 
 /* --- func_0807B920 @ 0x0807B920 (1364B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
@@ -28621,32 +28604,17 @@ void func_0808586C(void) {
     );
 }
 
-/* --- func_08085EC4 @ 0x08085EC4 (40B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_08085EC4 @ 0x08085EC4 (40B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern u32 func_080D0EDA();
-u32 func_08085EC4(int param_1, u32 param_2) {
-    u32 sp0, sp1;
-    register u32 r4 asm("r4");
-    register u32 ret asm("r0");
-    __asm__ volatile("" : : "m"(sp0), "m"(sp1));
-    __asm__ volatile(
-        "add r0, r1, #0\n\t"
-        "mov %0, #0xa\n\t"
-        "str %0, [sp]\n\t"
-        "mov r1, #0x19\n\t"
-        "bl func_080D0EDA\n\t"
-        "str r0, [sp, #4]\n\t"
-        "add r1, sp, #4\n\t"
-        "mov r2, sp\n\t"
-        "cmp %0, r0\n\t"
-        "bls _load_85EC4\n\t"
-        "add r2, r1, #0\n"
-        "_load_85EC4:\n\t"
-        "ldr r0, [r2]"
-        : "=r"(r4), "=r"(ret) : : "r1", "r2", "r3", "lr", "memory"
-    );
-    return ret;
+template <class T> inline const T& min_ref(const T& a, const T& b) { return b < a ? b : a; }
+extern "C" u32 func_08085EC4(void *a, u32 v) {
+    return min_ref<u32>(10, v / 25);
 }
 
 /* --- func_08085EEC @ 0x08085EEC (28B) [PURE-C | agbcc_O2] --- */
@@ -50360,25 +50328,19 @@ void func_08091280(void) {
     __asm__ volatile("" : "+l"(r7_var), "+l"(r7_var), "+l"(r7_var));
 }
 
-/* --- func_080913B0 @ 0x080913B0 (44B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080913B0 @ 0x080913B0 (44B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-extern int func_0800DB30();
-int func_080913B0(int param_1, u8 param_2) {
-    u32 sp0;
-    __asm__ volatile("" : : "m"(sp0));
-    {
-        register u32 *sp_r0 asm("r0");
-        __asm__ volatile("mov %0, sp\n\tstrb r1, [%0]" : "=r"(sp_r0) : : "memory");
-        if (func_0800DB30(sp_r0) <= 0x2f) {
-            register u32 *sp_r0_2 asm("r0");
-            __asm__("mov %0, sp" : "=r"(sp_r0_2));
-            if ((func_0800DB30(sp_r0_2) & 7) == 5) {
-                return 1;
-            }
-        }
-    }
-    return 0;
+extern "C" int func_0800DB30(u8 const *);
+extern "C" bool func_080913B0(void *a, u8 b) {
+    if (func_0800DB30(&b) <= 0x2f && (func_0800DB30(&b) & 7) == 5)
+        return true;
+    return false;
 }
 
 /* --- func_080913DC @ 0x080913DC (68B) [PURE-C | agbcc_O2] --- */

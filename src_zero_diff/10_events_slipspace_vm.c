@@ -2,7 +2,7 @@
  * MODULE : 10_events_slipspace_vm.c
  * RANGE  : 0x080C0000 .. 0x080D0000 (61,872 bytes, 139 functions)
  * PURPOSE: Maquina virtual SlipSpace de eventos, festivales, bodas y dialogos
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 43 | Inline-CFG ASM: 96
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 44 | Inline-CFG ASM: 95
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -30434,33 +30434,21 @@ void func_080CEC84(int param_1, u32 param_2, u32 param_3) {
     *(u32 *)(param_1 + 0x80) = param_3;
 }
 
-/* --- func_080CECD0 @ 0x080CECD0 (24B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */
+/* --- func_080CECD0 @ 0x080CECD0 (24B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-/* ==========================================================================
- * [FSM-LIFTER] func_080CECD0 @ 0x080CECD0 (24 bytes)
- * Role   : Thumb Function / Method
- * Fields : +0x00:u32(W), +0x00:u8(W), +0x7C:u32(W)
- * CFG Structure:
- *   L_080CECD0: return
- * ========================================================================== */
-void func_080CECD0(void) {
-    __asm__ volatile(
-        "	add r2, r0, #0\n"
-        "	add r0, #0x84\n"
-        "	mov r1, #0\n"
-        "	strb r1, [r0]\n"
-        "	sub r0, #0x1c\n"
-        "	strb r1, [r0]\n"
-        "	mov r0, #0x12\n"
-        "	str r0, [r2, #0x7c]\n"
-        "	add r0, r2, #0\n"
-        "	add r0, #0x80\n"
-        "	str r1, [r0]\n"
-        "	bx lr\n"
-        "	.macro bx reg\n"
-        "	.endm\n"
-    );
+struct Sub { u32 a; u8 b; };
+struct S { u8 pad[0x68]; u8 f68; u8 pad2[0x13]; u32 f7c; Sub sub; };
+extern "C" void func_080CECD0(S *s) {
+    s->sub.b = 0;
+    s->f68 = 0;
+    s->f7c = 0x12;
+    s->sub.a = 0;
 }
 
 /* --- func_080CECE8 @ 0x080CECE8 (872B) [CFG-ASM (fsm-tier2-cfg) | agbcc_O2] --- */

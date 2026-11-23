@@ -1,0 +1,120 @@
+{
+  "total_functions": 3454,
+  "total_bytes": 866050,
+  "pure_c_functions": 1828,
+  "pure_c_bytes": 85144,
+  "hybrid_asm_functions": 1626,
+  "hybrid_asm_bytes": 780906,
+  "zero_diff_verified": 3454,
+  "rom_diff_bytes": 0,
+  "modules": [
+    {
+      "module": "01_crt0_bios_interrupts.c",
+      "range": "0x080000C0..0x08005000",
+      "description": "Arranque crt0, dispatcher BIOS, DMA/VRAM HAL y vectores de interrupcion",
+      "functions": 69,
+      "pure_c_functions": 34,
+      "hybrid_asm_functions": 35,
+      "bytes": 20032
+    },
+    {
+      "module": "02_graphics_tilemap_oam.c",
+      "range": "0x08005000..0x08012000",
+      "description": "Motor grafico 2D, descompresion LZ77/RL, tilesets, paletas y OAM",
+      "functions": 556,
+      "pure_c_functions": 454,
+      "hybrid_asm_functions": 102,
+      "bytes": 49860
+    },
+    {
+      "module": "03_scene_world_camera.c",
+      "range": "0x08012000..0x08025000",
+      "description": "Gestor de escenas, transiciones de mapa, camara y colisiones",
+      "functions": 411,
+      "pure_c_functions": 223,
+      "hybrid_asm_functions": 188,
+      "bytes": 73372
+    },
+    {
+      "module": "04_entities_npc_actors.c",
+      "range": "0x08025000..0x08045000",
+      "description": "Jerarquia polimorfica C++ de entidades, aldeanos (NPCs) y pretendientes",
+      "functions": 504,
+      "pure_c_functions": 225,
+      "hybrid_asm_functions": 279,
+      "bytes": 129496
+    },
+    {
+      "module": "05_animals_livestock_ai.c",
+      "range": "0x08045000..0x0805E000",
+      "description": "IA y cuidado de animales (vacas, ovejas, gallinas, perro, caballo)",
+      "functions": 167,
+      "pure_c_functions": 66,
+      "hybrid_asm_functions": 101,
+      "bytes": 77854
+    },
+    {
+      "module": "06_farm_crops_field.c",
+      "range": "0x0805E000..0x08078000",
+      "description": "Grilla de granja 43x25, crecimiento de cultivos, suelo y recoleccion",
+      "functions": 149,
+      "pure_c_functions": 43,
+      "hybrid_asm_functions": 106,
+      "bytes": 93664
+    },
+    {
+      "module": "07_player_tools_stamina.c",
+      "range": "0x08078000..0x08093000",
+      "description": "Controlador del granjero, uso de herramientas, stamina, fatiga y mochila",
+      "functions": 214,
+      "pure_c_functions": 95,
+      "hybrid_asm_functions": 119,
+      "bytes": 104944
+    },
+    {
+      "module": "08_buildings_shops_town.c",
+      "range": "0x08093000..0x080A8000",
+      "description": "Edificios, tiendas, herreria, carpinteria, clinica y horarios del pueblo",
+      "functions": 438,
+      "pure_c_functions": 230,
+      "hybrid_asm_functions": 208,
+      "bytes": 85576
+    },
+    {
+      "module": "09_ui_menus_hud_diary.c",
+      "range": "0x080A8000..0x080C0000",
+      "description": "Interfaz de usuario, menus, inventario, mapa, calendario y diario",
+      "functions": 198,
+      "pure_c_functions": 71,
+      "hybrid_asm_functions": 127,
+      "bytes": 93194
+    },
+    {
+      "module": "10_events_slipspace_vm.c",
+      "range": "0x080C0000..0x080D0000",
+      "description": "Maquina virtual SlipSpace de eventos, festivales, bodas y dialogos",
+      "functions": 139,
+      "pure_c_functions": 41,
+      "hybrid_asm_functions": 98,
+      "bytes": 61872
+    },
+    {
+      "module": "11_audio_m4a_libc_thunks.c",
+      "range": "0x080D0000..0x080DB000",
+      "description": "Driver de audio MusicPlayer2000 (m4a), alocador SGI STL y thunks _call_via_rX",
+      "functions": 226,
+      "pure_c_functions": 110,
+      "hybrid_asm_functions": 116,
+      "bytes": 33178
+    },
+    {
+      "module": "12_sgi_stl_cpp_dtors.c",
+      "range": "0x080DB000..0x080E6000",
+      "description": "Plantillas C++ SGI STL (_Rb_tree, _List_base, std::__find) y destructores virtuales",
+      "functions": 383,
+      "pure_c_functions": 236,
+      "hybrid_asm_functions": 147,
+      "bytes": 43008
+    }
+  ]
+}

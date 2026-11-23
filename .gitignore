@@ -36,3 +36,18 @@ Thumbs.db
 .DS_Store
 *.swp
 *.bak
+
+# Heavy build trees & binaries (keep tools/match/ and src_zero_diff/ tracked in git)
+src_tree/
+src_sweep/
+src_matched/
+FIO-DECOMP-HMFOMT/
+c_math_clean/
+build_ads/
+build_match/
+build_src_sweep/
+UTILITYS/
+refs_dirs.txt
+run_match.bat
+run_sweep.bat
+DECOMPS MADRE/

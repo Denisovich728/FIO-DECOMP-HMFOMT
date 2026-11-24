@@ -2,7 +2,7 @@
  * MODULE : 01_crt0_bios_interrupts.c
  * RANGE  : 0x080000C0 .. 0x08005000 (20,032 bytes, 69 functions)
  * PURPOSE: Arranque crt0, dispatcher BIOS, DMA/VRAM HAL y vectores de interrupcion
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 37 | Inline-CFG ASM: 32
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 38 | Inline-CFG ASM: 31
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -344,12 +344,17 @@ int func_080003A0(int param_1) {
     return ret;
 }
 
-/* --- func_080003DC @ 0x080003DC (12B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080003DC @ 0x080003DC (12B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
 u32 func_080003DC(u32 arg0, u32 arg1) {
     u32 c;
-    asm("ldr %0, =0x3FEC" : "=r"(c));
+    c = 0x3FEC;
     return arg1 * c + 40;
 }
 

@@ -2,7 +2,7 @@
  * MODULE : 04_entities_npc_actors.c
  * RANGE  : 0x08025000 .. 0x08045000 (129,496 bytes, 504 functions)
  * PURPOSE: Jerarquia polimorfica C++ de entidades, aldeanos (NPCs) y pretendientes
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 233 | Inline-CFG ASM: 271
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 234 | Inline-CFG ASM: 270
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -50157,7 +50157,12 @@ int func_0803BF14(int param_1, int param_2, int param_3, int param_4) {
     return ret;
 }
 
-/* --- func_0803BF78 @ 0x0803BF78 (80B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_0803BF78 @ 0x0803BF78 (80B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
 struct S { u32 p0, a, b; u8 c, d, e, f; };
@@ -50165,12 +50170,12 @@ extern void func_0803BDFC();
 extern u32 func_080005D4();
 extern u32 func_080E0A94();
 struct S *func_0803BF78(struct S *p, u32 param_2, u32 param_3, u32 param_4, u32 param_5, u32 param_6) {
-    register u8 z asm("r0");
+    register u8 z;
     func_0803BDFC(p, 0, 0x88, 0xf0, 0x18, param_2, param_3, param_4, param_5);
     p->a = 0x080E77A4;
     p->b = func_080E0A94(func_080005D4(0x41c));
     z = 0;
-    __asm__("" : "+r"(z));
+    
     p->c = param_6;
     p->d = z;
     p->e = 1;

@@ -2,7 +2,7 @@
  * MODULE : 08_buildings_shops_town.c
  * RANGE  : 0x08093000 .. 0x080A8000 (85,576 bytes, 438 functions)
  * PURPOSE: Edificios, tiendas, herreria, carpinteria, clinica y horarios del pueblo
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 241 | Inline-CFG ASM: 197
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 242 | Inline-CFG ASM: 196
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -20026,10 +20026,15 @@ void func_0809C6AC(u8 *arg0, u16 arg1) {
     *(u16 *)(arg0 + 12) = arg1;
 }
 
-/* --- func_0809C6B0 @ 0x0809C6B0 (12B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_0809C6B0 @ 0x0809C6B0 (12B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
-void func_0809C6B0(u16 *a) { u32 v; asm("ldr %0, =0xFFFF" : "=r"(v)); a[6] = v; }
+void func_0809C6B0(u16 *a) { u32 v; v = 0xFFFF; a[6] = v; }
 
 /* --- func_0809C6BC @ 0x0809C6BC (1724B) [CFG-ASM (fsm-tier1-native) | agbcc_O2] --- */
 #define NULL 0

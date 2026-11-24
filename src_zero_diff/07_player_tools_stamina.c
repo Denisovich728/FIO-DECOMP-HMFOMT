@@ -2,7 +2,7 @@
  * MODULE : 07_player_tools_stamina.c
  * RANGE  : 0x08078000 .. 0x08093000 (104,944 bytes, 214 functions)
  * PURPOSE: Controlador del granjero, uso de herramientas, stamina, fatiga y mochila
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 102 | Inline-CFG ASM: 112
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 103 | Inline-CFG ASM: 111
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -32400,21 +32400,26 @@ int func_080881EC(void) {
     return __ret;
 }
 
-/* --- func_080882AC @ 0x080882AC (88B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080882AC @ 0x080882AC (88B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
 extern void func_080CE19C();
 extern u32 func_0800C048();
 int func_080882AC(int param_1, u32 param_2) {
-    register u32 z asm("r5");
-    register u8 *p98 asm("r0");
+    register u32 z;
+    register u8 *p98;
     u32 *pfc;
     u32 *p104;
     int sub;
     func_080CE19C(param_1, param_2);
     *(u32 *)(param_1 + 4) = 0x080E7D4C;
     p98 = (u8 *)(param_1 + 0x98);
-    __asm__("" : "+r"(p98));
+    
     z = 0;
     *p98 = z;
     pfc = (u32 *)(param_1 + 0xfc);

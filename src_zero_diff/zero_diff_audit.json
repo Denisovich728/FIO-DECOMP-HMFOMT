@@ -1,10 +1,10 @@
 {
   "total_functions": 3454,
   "total_bytes": 866050,
-  "pure_c_functions": 1902,
-  "pure_c_bytes": 89048,
-  "hybrid_asm_functions": 1552,
-  "hybrid_asm_bytes": 777002,
+  "pure_c_functions": 1907,
+  "pure_c_bytes": 89292,
+  "hybrid_asm_functions": 1547,
+  "hybrid_asm_bytes": 776758,
   "zero_diff_verified": 3454,
   "rom_diff_bytes": 0,
   "modules": [
@@ -13,8 +13,8 @@
       "range": "0x080000C0..0x08005000",
       "description": "Arranque crt0, dispatcher BIOS, DMA/VRAM HAL y vectores de interrupcion",
       "functions": 69,
-      "pure_c_functions": 37,
-      "hybrid_asm_functions": 32,
+      "pure_c_functions": 38,
+      "hybrid_asm_functions": 31,
       "bytes": 20032
     },
     {
@@ -40,8 +40,8 @@
       "range": "0x08025000..0x08045000",
       "description": "Jerarquia polimorfica C++ de entidades, aldeanos (NPCs) y pretendientes",
       "functions": 504,
-      "pure_c_functions": 233,
-      "hybrid_asm_functions": 271,
+      "pure_c_functions": 234,
+      "hybrid_asm_functions": 270,
       "bytes": 129496
     },
     {
@@ -67,8 +67,8 @@
       "range": "0x08078000..0x08093000",
       "description": "Controlador del granjero, uso de herramientas, stamina, fatiga y mochila",
       "functions": 214,
-      "pure_c_functions": 102,
-      "hybrid_asm_functions": 112,
+      "pure_c_functions": 103,
+      "hybrid_asm_functions": 111,
       "bytes": 104944
     },
     {
@@ -76,8 +76,8 @@
       "range": "0x08093000..0x080A8000",
       "description": "Edificios, tiendas, herreria, carpinteria, clinica y horarios del pueblo",
       "functions": 438,
-      "pure_c_functions": 241,
-      "hybrid_asm_functions": 197,
+      "pure_c_functions": 242,
+      "hybrid_asm_functions": 196,
       "bytes": 85576
     },
     {
@@ -103,8 +103,8 @@
       "range": "0x080D0000..0x080DB000",
       "description": "Driver de audio MusicPlayer2000 (m4a), alocador SGI STL y thunks _call_via_rX",
       "functions": 226,
-      "pure_c_functions": 117,
-      "hybrid_asm_functions": 109,
+      "pure_c_functions": 118,
+      "hybrid_asm_functions": 108,
       "bytes": 33178
     },
     {

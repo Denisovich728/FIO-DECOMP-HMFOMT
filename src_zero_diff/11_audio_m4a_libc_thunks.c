@@ -2,7 +2,7 @@
  * MODULE : 11_audio_m4a_libc_thunks.c
  * RANGE  : 0x080D0000 .. 0x080DB000 (33,178 bytes, 226 functions)
  * PURPOSE: Driver de audio MusicPlayer2000 (m4a), alocador SGI STL y thunks _call_via_rX
- * STATUS : 100% Zero-Diff Verified | Pure C/C++: 117 | Inline-CFG ASM: 109
+ * STATUS : 100% Zero-Diff Verified | Pure C/C++: 118 | Inline-CFG ASM: 108
  * ============================================================================ */
 #include "fomt_zero_diff.h"
 
@@ -660,31 +660,36 @@ void func_080D05DC(void) {
     );
 }
 
-/* --- func_080D0644 @ 0x080D0644 (52B) [CFG-ASM (algebraic-lifter) | agbcc_O2] --- */
+/* --- func_080D0644 @ 0x080D0644 (52B) [PURE-C | agbcp_O2] --- */
+#ifndef __cplusplus
+typedef u32 bool;
+#define true 1
+#define false 0
+#endif
 #define NULL 0
 
 extern void func_080D05DC();
 void func_080D0644(u32 param_1, u32 param_2) {
     u8 **pp = (u8 **)0x03000420;
     u8 *p;
-    register u32 v1 asm("r3");
-    register u32 v2 asm("r3");
-    register u32 v3 asm("r0");
+    register u32 v1;
+    register u32 v2;
+    register u32 v3;
     (*pp)[0x28] = param_1;
     p = *pp;
-    __asm__("" : "+r"(p));
+    
     v1 = param_1 >> 8;
-    __asm__("" : "+r"(v1));
+    
     p[0x29] = v1;
     p = *pp;
-    __asm__("" : "+r"(p));
+    
     v2 = param_1 >> 16;
-    __asm__("" : "+r"(v2));
+    
     p[0x2a] = v2;
     p = *pp;
-    __asm__("" : "+r"(p));
+    
     v3 = param_1 >> 24;
-    __asm__("" : "+r"(v3));
+    
     p[0x2b] = v3;
     *(u32 *)(*pp + 0x30) = param_2;
     func_080D05DC();
